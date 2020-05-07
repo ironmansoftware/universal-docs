@@ -15,6 +15,8 @@
 ## Dashboard
 
 * [About](dashboard/about.md)
+* [Dashboards](dashboard/dashboards.md)
+* [Dashboard Frameworks](dashboard/dashboard-frameworks.md)
 
 ## Configuration <a id="config"></a>
 
