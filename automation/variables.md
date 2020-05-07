@@ -8,7 +8,7 @@ To create a variable, navigate to the Automation / Variables page. Click Add Var
 
 Standard variables are just name \ value pairs of strings. They will be added to your scripts before they are run. 
 
-![&apos;](../.gitbook/assets/image%20%288%29.png)
+![&apos;](../.gitbook/assets/image%20%289%29.png)
 
 ## Creating a Secret Variable
 
@@ -16,7 +16,7 @@ Secret variables are stored within the selected vault. The value of those variab
 
 From this dialog, you'll be able to define string and PSCredentials in the specified vault. 
 
-![](../.gitbook/assets/image%20%286%29.png)
+![](../.gitbook/assets/image%20%287%29.png)
 
 ## Importing Secret Variables
 
