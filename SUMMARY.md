@@ -7,8 +7,7 @@
 ## Automation
 
 * [About](automation/about.md)
-* [Concepts](automation/concepts/README.md)
-  * [Execution Engine](automation/concepts/execution-engine.md)
+* [Scripts](automation/scripts.md)
 
 ## Dashboard
 
@@ -18,4 +17,5 @@
 
 * [Hosting](config/hosting.md)
 * [Settings](config/settings.md)
+* [Security](config/security.md)
 
