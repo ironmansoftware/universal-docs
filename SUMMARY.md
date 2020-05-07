@@ -8,6 +8,9 @@
 
 * [About](automation/about.md)
 * [Scripts](automation/scripts.md)
+* [Jobs](automation/jobs.md)
+* [Schedules](automation/schedules.md)
+* [Variables](automation/variables.md)
 
 ## Dashboard
 
