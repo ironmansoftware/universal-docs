@@ -2,7 +2,7 @@
 
 Dashboards are individual websites created with Universal Dashboard. You can define settings for a dashboard and start and stop the dashboard from within the Universal administrative interface. 
 
-![](../.gitbook/assets/image%20%281%29.png)
+![](../.gitbook/assets/image%20%282%29.png)
 
 ## Adding a Dashboard
 
@@ -28,7 +28,7 @@ The framework that the dashboard was designed for. By default, Universal Dashboa
 
 The version of PowerShell to host this dashboard within. 
 
-![](../.gitbook/assets/image.png)
+![](../.gitbook/assets/image%20%281%29.png)
 
 ## Starting and Stopping Dashboards
 

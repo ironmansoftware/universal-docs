@@ -10,5 +10,5 @@ Schedules can be defined based on simple selections like Every Minute or Every H
 
 You can also define which user the scheduled job will run under as well as which PowerShell version to use. 
 
-![](../.gitbook/assets/image%20%282%29.png)
+![](../.gitbook/assets/image%20%283%29.png)
 

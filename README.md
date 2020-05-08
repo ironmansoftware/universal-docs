@@ -11,5 +11,5 @@ PowerShell Universal brings together PowerShell Universal Dashboard and Universa
 * Report on data using data visualizations 
 * Control access to dashboards and scripts
 
-![](.gitbook/assets/image%20%286%29.png)
+![](.gitbook/assets/image%20%288%29.png)
 
