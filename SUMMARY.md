@@ -2,6 +2,7 @@
 
 * [About](README.md)
 * [Getting Started](getting-started.md)
+* [Supported Browsers](supported-browsers.md)
 * [System Requirements](system-requirements.md)
 
 ## Automation
@@ -21,6 +22,8 @@
 ## Configuration <a id="config"></a>
 
 * [Hosting](config/hosting.md)
+* [Hosting with IIS](config/hosting-iis.md)
+* [IIS Windows Auth](config/hosting-iis-windowsauth.md)
 * [Settings](config/settings.md)
 * [Security](config/security.md)
 
