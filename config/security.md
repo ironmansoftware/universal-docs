@@ -44,7 +44,7 @@ public class Claim
 
 To assign a role to a user, you can create their identity within Universal and then select the role in the drop down on the Identities page. By default, identities receive a role through policy. 
 
-![](../.gitbook/assets/image%20%2815%29.png)
+![](../.gitbook/assets/image%20%2816%29.png)
 
 ## App Tokens
 
@@ -102,5 +102,38 @@ else
 $Result
 ```
 
+## Example: Policy based on Active Directory Group Membership
 
+In this example we will configure out Administrator Policy Script to use LDAP to retrieve the membership of an Active Directory Group. Here we have created a group called "PowerShell Universal Admins" where members of the group should be granted Administrator Access in PowerShell Universal. Here we are doing a simple samaccountname check for the user to ensure they are a member of the group. For more robust environments a SID/DN/ObjectGUID check would be more appropriate.
+
+![](../.gitbook/assets/image%20%2813%29.png)
+
+```text
+param(
+$User
+)
+
+$UserName = ($User.Identity.Name)
+$UserName = $UserName.Substring($UserName.IndexOf('\')+1,($UserName.Length -($UserName.IndexOf('\')+1)))
+
+$IsMember = $false;
+
+# Perform LDAP Group Member Lookup
+$Searcher = New-Object DirectoryServices.DirectorySearcher
+$Searcher.SearchRoot = 'LDAP://CN=Users,DC=berg,DC=com' # INSERT ROOT LDAP HERE
+$Searcher.Filter = "(&(objectCategory=person)(memberOf=CN=PowerShell Universal Admins,OU=Information Technology,DC=berg,DC=com))" #GROUP INSERT DN TO CHECK HERE
+$Users = $Searcher.FindAll()
+$Users | ForEach-Object{
+    If($_.Properties.samaccountname -eq $UserName)
+    {
+        $IsMember = $true;
+        "$UserName is a member of admin group!" | Out-File "C:\test\adgroup.txt"
+    }
+    else {
+        "$UserName is NOT member of admin group!" | Out-File "C:\test\adgroup.txt"
+    }
+}
+
+return $IsMember  
+```
 
