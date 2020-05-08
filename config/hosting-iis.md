@@ -4,6 +4,8 @@
 
 PowerShell Universal supports being hosted in IIS \(Internet Information Services \(IIS\) for Windows® Server\). Please note that a series of host prerequisites and specific configuration steps are required to facilitate running PowerShell universal on IIS. Please review each section carefully as IIS requires many specific configuration settings applied to work with modern .NET Core applications such as PowerShell Universal.
 
+{% embed url="https://www.youtube.com/watch?v=jKdGPAn4WzA&feature=youtu.be" %}
+
 ## Step 1 : Preparing the IIS Host
 
 * [Internet Information Services \(IIS\) Version 10.0](https://docs.microsoft.com/en-us/iis/get-started/whats-new-in-iis-10-version-1709/new-features-introduced-in-iis-10-1709)
