@@ -56,3 +56,51 @@ You can use App Tokens with the Universal cmdlets or by using web requests direc
 
 ![](../.gitbook/assets/image%20%285%29.png)
 
+## Example: Forms Authentication with Active Directory
+
+The following example shows performing a simple "LDAP BIND" in order to validate a users Active Directory Credentials. If a user attempting to access PowerShell Universal is not the Default Admin User they will have to successfully authenticate their credentials with Active Directory via a simple LDAP bind. This can be combined with a AD Group Member check in the Admin, Operator, and Reader role policies to effectively use Active Directory Authentication AND Active Directory Group membership to provide Role Based Access to PowerShell Universal.
+
+```text
+param(
+    [PSCredential]$Credential
+)
+
+#
+#   You can call whatever cmdlets you like to conduct authentication here.
+#   Just make sure to return the $Result with the Success property set to $true
+#
+
+$Result = [Security.AuthenticationResult]::new()
+if ($Credential.UserName -eq 'Admin') 
+{
+    #Maintain the out of box admin user
+    $Result.UserName = 'Default Admin'
+    $Result.Success = $true 
+}
+else
+{
+    # Get current domain using logged-on user's credentials - this validates their credential
+    $CurrentDomain = "LDAP://DC=mydemodomain,DC=com"  # Insert Your Domain Here
+    $domain = New-Object System.DirectoryServices.DirectoryEntry($CurrentDomain,($Credential.UserName),$Credential.GetNetworkCredential().password)
+
+    if ($domain.name -eq $null)
+    {
+        "Authentication failed for $($Credential.UserName)!" | Out-File "C:\test\adlogin.txt"
+        write-host "Authentication failed - please verify your username and password."
+        $Result.UserName = ($Credential.UserName)
+        $Result.Success = $false 
+    }
+    else
+    {
+        write-host "Successfully authenticated with domain $($domain.name)"
+        "Authentication success for $($Credential.UserName)!" | Out-File "C:\test\adlogin.txt"
+        $Result.UserName = ($Credential.UserName)
+        $Result.Success = $true 
+    }
+}
+
+$Result
+```
+
+
+
