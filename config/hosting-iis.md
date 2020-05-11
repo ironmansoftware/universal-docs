@@ -8,8 +8,12 @@ PowerShell Universal supports being hosted in IIS \(Internet Information Service
 
 ## Step 1 : Preparing the IIS Host
 
+The following components are required in order to host PowerShell Universal on IIS. 
+
 * [Internet Information Services \(IIS\) Version 10.0](https://docs.microsoft.com/en-us/iis/get-started/whats-new-in-iis-10-version-1709/new-features-introduced-in-iis-10-1709)
 * [ASP.NET Core Hosting Bundle 3.1](https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-aspnetcore-3.1.3-windows-hosting-bundle-installer). 
+
+First Make sure to enable is IIS feature on Windows Server and then install the ASP.NET Core hosting bundle.
 
 **NOTE**: IIS often requires a host reboot after installing the .NET Core Hosting bundle! It is strongly recommended that you REBOOT the IIS host after installing the .NET Core Hosting bundle.
 
