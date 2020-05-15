@@ -2,9 +2,9 @@
 
 ### Application Service Account
 
-The PowerShell Universal application can be run as a Service Account. This means that the application will run all of its functions as the service account, including local application tasks, jobs \(by default\), and dashboards. This is a suggested configuration and is **REQUIRED** to execute jobs as other Service Accounts that are NOT the Service Account used for PowerShell Universal.
+The PowerShell Universal application can be run as a Service Account. This means that the application will run all of its functions as the service account, including local application tasks, jobs \(by default\), and dashboards. This is a suggested configuration and is **REQUIRED** to execute jobs as other PSCredentials defined in Secret Variables.
 
-When this configuration is made, PowerShell Universal is no longer running as the local system account, and additional permissions are required for the Service Account. **Windows requires a distinct set of permissions for the Service Account if the account is not in the local Administrators group on the host.**
+To run Universal Automation as a Service Account, and not the local system account, an additional set of permissions are required for the Service Account. **Windows requires a distinct set of permissions for the Service Account if it is not in the local Administrators group on the host.**
 
 {% hint style="info" %}
 If you are hosting PowerShell Universal in Internet Information Services \(IIS\) - these permissions **ALSO** are required for the Application Pool Identity account.
@@ -22,7 +22,7 @@ Add the User or Group to the following Rights to ensure PowerShell Universal Fun
 
 ### Script Run As Requirements
 
-By using Secret Variables, you can save PSCredentials that can be used to execute scripts as a service account. These service accounts required a specific set of Windows permissions in order to execute jobs properly.
+By using Secret Variables, you can save PSCredentials that can be used to execute scripts as a service account. These service accounts require a specific set of Windows permissions in order to execute jobs properly.
 
 The service account you wish to use must have the "**Log on as batch job**" rights on the Windows host. Administrators on the machine have this by default, so if the service account is **NOT** an Administrator, you must ensure the account has the permission configured.
 
