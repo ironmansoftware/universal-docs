@@ -26,4 +26,5 @@
 * [IIS Windows Auth](config/hosting-iis-windowsauth.md)
 * [Settings](config/settings.md)
 * [Security](config/security.md)
+* [Running as a Service Account](config/running-as-a-service-account.md)
 

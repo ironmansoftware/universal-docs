@@ -6,7 +6,7 @@ Scripts are the basic entity within Universal Automation. Scripts are just Power
 
 To add a new script, you can click the New Script button within the Automation / Scripts page. There are various settings you can provide for the script. 
 
-![](../.gitbook/assets/image%20%2818%29.png)
+![](../.gitbook/assets/image%20%2821%29.png)
 
 **Name**
 
@@ -40,7 +40,7 @@ Allows you to define the required PowerShell version for the script. By default,
 
 You can run a script in the UI by click the Run button the Automation / Scripts page or by clicking View and then Run. In each case, you will be presented with the Run Dialog that allows you to select various settings for the job. 
 
-![](../.gitbook/assets/image%20%2820%29.png)
+![](../.gitbook/assets/image%20%2823%29.png)
 
 ### Running a Script With Parameters
 
@@ -68,7 +68,7 @@ You can run scripts as another user by configuring secret variables. PowerShell 
 
 To run as another user, simply add or import a PSCredential variable. From there, you can select the credential from within the run dialog. 
 
-![](../.gitbook/assets/image%20%2823%29.png)
+![](../.gitbook/assets/image%20%2826%29.png)
 
 
 

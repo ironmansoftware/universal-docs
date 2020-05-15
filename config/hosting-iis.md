@@ -62,7 +62,7 @@ Now that we have chosen an App Pool identity that has read/write access to the P
 * In IIs Manager, Choose the option to **Add Application Pool...**  
   * **Name:** Use any Name you would like for the Application Pool
   * **.NET CLR Version**: No managed code
-  * ![Application Pool Basic Settings](../.gitbook/assets/image%20%2824%29.png)
+  * ![Application Pool Basic Settings](../.gitbook/assets/image%20%2827%29.png)
   * Click **OK** create the Application Pool.
 
 ### 3.3 : Configure the "Advanced Settings" of the IIS Application Pool
