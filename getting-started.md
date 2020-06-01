@@ -11,6 +11,8 @@
 
 You can also download the ZIP from our [Downloads page](https://ironmansoftware.com/downloads/) if you would like to xcopy deploy the files on Windows or Linux. 
 
+You can start PowerShell Universal by executing `Universal.Server.exe`.
+
 ## Next Steps
 
 At this point, PowerShell Universal is up and running. Please consult other sections in this documentation for instructions on how to configure, secure, and start using PowerShell Universal. Happy Scripting!

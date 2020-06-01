@@ -29,3 +29,15 @@ $Pages += New-UDPage -Name 'Diagnostics' -Content {}
 New-UDDashboard -Pages $Pages -Title 'Dashboard'
 ```
 
+## Debugging
+
+When building a dashboard you will likely run into issues with cmdlet calls or syntax. Dashboards will autoreload as you make changes to the dashboard files. If a dashboard fails to start, you can navigate to the admin page, click Dashboards and click the Info button next to your dashboard. 
+
+The Log tab will show all the logging coming from the PowerShell execution from within in your dashboard. This should allow you to easily see errors and warnings coming from your dashboard. 
+
+You can use `Write-Debug` to add additional log messages to your dashboard. To enable debug logging, you will have to set the DebugPreference variable at the top of your dashboard script.
+
+```text
+$DebugPreference = 'Continue'
+```
+
