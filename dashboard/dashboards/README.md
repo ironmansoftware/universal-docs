@@ -2,7 +2,7 @@
 
 Dashboards are individual websites created with Universal Dashboard. You can define settings for a dashboard and start and stop the dashboard from within the Universal administrative interface. 
 
-![](../.gitbook/assets/image%20%282%29.png)
+![](../../.gitbook/assets/image%20%282%29.png)
 
 ## Adding a Dashboard
 
@@ -28,7 +28,7 @@ The framework that the dashboard was designed for. By default, Universal Dashboa
 
 The version of PowerShell to host this dashboard within. 
 
-![](../.gitbook/assets/image%20%281%29.png)
+![](../../.gitbook/assets/image%20%281%29.png)
 
 ## Starting and Stopping Dashboards
 
@@ -41,4 +41,8 @@ You can view diagnostic information for a dashboard by clicking the Info button 
 ## Viewing the Dashboard
 
 You can view the dashboard by clicking the View button. This will take you to the Base URL for the dashboard. 
+
+## Executing Commands with the Dashboard
+
+On the dashboard information page, click on the Console tab to view the UD console. The console allows you to run scripts from within the UD runspace so you can better debug the state of your script. You can evaluate variables and run commands that are available to the dashboard. You will be running in the context of your user in regards to the runspace but the process will be running as the service account user.
 

@@ -10,14 +10,18 @@
 * [About](automation/about.md)
 * [Scripts](automation/scripts.md)
 * [Jobs](automation/jobs.md)
+* [PowerShell Versions](automation/powershell-versions.md)
 * [Schedules](automation/schedules.md)
 * [Variables](automation/variables.md)
 
 ## Dashboard
 
 * [About](dashboard/about.md)
-* [Dashboards](dashboard/dashboards.md)
-* [Dashboard Frameworks](dashboard/dashboard-frameworks.md)
+* [Dashboards](dashboard/dashboards/README.md)
+  * [Migrating From Universal Dashboard 2.9](dashboard/dashboards/migrating-from-universal-dashboard-2.9.md)
+  * [Building Dashboards](dashboard/dashboards/building-dashboards.md)
+* [Frameworks](dashboard/dashboard-frameworks.md)
+* [Components](dashboard/components.md)
 
 ## Configuration <a id="config"></a>
 

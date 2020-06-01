@@ -4,6 +4,10 @@
 
 By default, the forms authentication script is configured to accept the user Admin and any password. You can configure this authentication policy to interact with whatever system you like. The script will receive a `PSCredential` object that contains the user name and password entered by the user at the login page. 
 
+## OpenID Authentication
+
+You can configure OpenID authentication and authorization by adjusting the settings within the `OpenID` section of the `appsettings.json` file. Authorization policies that you configure within Universal will be run on the user's identity after authentication is successful.
+
 ## Authorization 
 
 User authorization can be achieved in two different ways: Role Assignment or Policy Assignment. 

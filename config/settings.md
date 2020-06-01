@@ -22,7 +22,7 @@ You can create an appsettings.json file within the `$Env:ProgramData\Universal` 
 
 ## Environment Variables 
 
-You can also set environment variables for your settings. Environment variables should have an underscore between each subset of the `appsettings.json` file. For example, if you want to change the JWT signing key via environment variable, you would set the variable `$Env:Jwt_SigningKey`. If you wanted to set the external API URL, you would set `$Env:Api_Url`. 
+You can also set environment variables for your settings. Environment variables should have an underscore between each subset of the `appsettings.json` file. For example, if you want to change the JWT signing key via environment variable, you would set the variable `$Env:Jwt__SigningKey`. If you wanted to set the external API URL, you would set `$Env:Api__Url`. 
 
 ## Setting Descriptions
 
