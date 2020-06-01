@@ -23,6 +23,8 @@ New-UDDashboard -Title 'My New Dashboard' -Content {
 
 Components are the individual widgets that you can place on you dashboard. There are components for displaying data, taking user input, adding text and images and more. Components can be downloaded as PowerShell modules and added to your dashboard. 
 
+Examples of all of the components can be found [on GitHub](https://github.com/ironmansoftware/universal-dashboard/tree/master/src/v3/example/pages).
+
 Components are be caused using the standard verb-name syntax for any PowerShell cmdlet. 
 
 ```text
