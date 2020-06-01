@@ -1,10 +1,10 @@
 # Migrating From Universal Dashboard 2.9
 
-PowerShell Universal Dashboard v2.9 is a PowerShell module that allows you to create dashboard with PowerShell script. It was the predecessor to PowerShell Universal. The technology the enabled UD has been migrated into PowerShell Universal. You should be able to run the same PowerShell scripts in PowerShell Universal that you would in Universal Dashboard with some minor modifications.
+PowerShell Universal Dashboard v2.9 is a PowerShell module that allows you to create dashboard with PowerShell script. It is the predecessor to PowerShell Universal. The technology the enabled UD has been migrated into PowerShell Universal. You should be able to run the same PowerShell scripts in PowerShell Universal that you would in Universal Dashboard with some minor modifications.
 
 ### No need to call Start-UDDashboard
 
-In Universal, all you need to do is return the result of New-UDDashboard from your script. There is no need to call Start-UDDashboard. The configuration of the webserver is taken place using the PSU appsetting.json file. 
+In Universal, all you need to do is return the result of New-UDDashboard from your script. There is no need to call Start-UDDashboard. The configuration of the webserver is taken place using the PSU `appsetting.json` file. 
 
 ```text
 New-UDDashboard -Title 'My dashboard' -Content {
@@ -23,7 +23,7 @@ $Endpoint = New-UDEndpoint -Schedule $Schedule -Endpoint {}
 
 ### REST APIs 
 
-REST APIs are now a separate feature of PSU and not a part of UD. Please read the section on REST APIs in this documentation to learn more about how to build REST APIs with PSU. 
+REST APIs will be a separate feature of PSU and not a part of UD. 
 
 ### Authentication and Authorization
 
