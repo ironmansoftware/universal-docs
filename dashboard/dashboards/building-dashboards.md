@@ -19,6 +19,18 @@ New-UDDashboard -Title 'My New Dashboard' -Content {
 }
 ```
 
+### Components
+
+Components are the individual widgets that you can place on you dashboard. There are components for displaying data, taking user input, adding text and images and more. Components can be downloaded as PowerShell modules and added to your dashboard. 
+
+Components are be caused using the standard verb-name syntax for any PowerShell cmdlet. 
+
+```text
+New-UDPage -Content {
+    New-UDTextbox
+}
+```
+
 ### Pages
 
 You can specify multiple pages within a dashboard. Each page defines a route. As for v3, all pages are dynamic. PowerShell will execute on each page load to render the new page. Since UD is a single page application, the web browser does not need to refresh the entire web page when navigating between the different dashboard pages. 
