@@ -4,6 +4,7 @@
 * [Getting Started](getting-started.md)
 * [Supported Browsers](supported-browsers.md)
 * [System Requirements](system-requirements.md)
+* [Licensing](licensing.md)
 
 ## Automation
 
