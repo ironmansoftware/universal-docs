@@ -6,6 +6,10 @@
 * [System Requirements](system-requirements.md)
 * [Licensing](licensing.md)
 
+## API
+
+* [About](api/about.md)
+
 ## Automation
 
 * [About](automation/about.md)
@@ -26,6 +30,7 @@
 
 ## Configuration <a id="config"></a>
 
+* [About](config/about.md)
 * [Hosting](config/hosting.md)
 * [Hosting with IIS](config/hosting-iis.md)
 * [IIS Windows Auth](config/hosting-iis-windowsauth.md)
