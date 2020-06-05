@@ -24,6 +24,10 @@ Universal is licensed per feature and per server. You do not need to buy the ent
 
 Universal offers a lot of functionality for free. Below is a list of the features that require a paid license. 
 
+### API
+
+You can run as many APIs are you want for free. You will need to purchase a license if you would like to enable authentication and authorization. 
+
 ### Automation 
 
 With the free version of Automation you can run up to 25 jobs a day with 2 jobs running concurrently. 

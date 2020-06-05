@@ -69,6 +69,8 @@ To configure git synchronization, use the `GitRemote`, `GitUserName`, and `GitPa
 
 To learn more about configuration settings, read the [Settings](settings.md) page. 
 
+You can view the status of Git synchronization operations on the `Settings \ General` page within the admin console. Git synchronizations take place one a minute. 
+
 
 
 
