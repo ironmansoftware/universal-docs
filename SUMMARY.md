@@ -36,6 +36,7 @@
 * [Hosting with IIS](config/hosting-iis.md)
 * [IIS Windows Auth](config/hosting-iis-windowsauth.md)
 * [Settings](config/settings.md)
-* [Security](config/security.md)
+* [Security](config/security/README.md)
+  * [WS-Federation](config/security/ws-federation.md)
 * [Running as a Service Account](config/running-as-a-service-account.md)
 

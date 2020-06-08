@@ -58,6 +58,8 @@ Windows - Enables or disables Windows Authentication. This setting only works wh
 
 OIDC - OpenID Connect authentication settings. You will need to set enabled to true and then set your OIDC settings within the subsequent parameters. You will automatically be forwarded to the OIDC login page when attempting to visit the website. 
 
+WSFed - WS-Federation authentication settings. To enable WS-Federation, ensure that enabled is set to true. You will need to MetadataAddress and Wtrealm to the values you configured in your WS-Federation service. 
+
 **JWT**
 
 JSON Web Token configuration settings. These settings are used for enforcement and granting of web tokens. You should override the default signing key if you plan to use App Tokens. Read-only App Tokens are granted internally when a job calls the Universal cmdlets. You can also issue Read\Write tokens so that jobs can invoke other jobs or set variables. 
