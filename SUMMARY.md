@@ -27,6 +27,7 @@
   * [Building Dashboards](dashboard/dashboards/building-dashboards.md)
 * [Frameworks](dashboard/dashboard-frameworks.md)
 * [Components](dashboard/components.md)
+* [Themes](dashboard/themes.md)
 
 ## Configuration <a id="config"></a>
 
