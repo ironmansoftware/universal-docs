@@ -1,5 +1,9 @@
 # WS-Federation
 
+{% hint style="info" %}
+This is documentation for the upcoming and unreleased 1.2 version. 
+{% endhint %}
+
 WS-Federation supports both Active Directory Federation Services and Azure Active Directory.
 
 You first need to configure ADFS or AzureAD to support Universal.
