@@ -1,9 +1,5 @@
 # About
 
-{% hint style="info" %}
-This is documentation for the upcoming and unreleased 1.2 version. 
-{% endhint %}
-
 Universal provides the ability to define REST API endpoints using PowerShell. When the endpoints are executed by a compatible HTTP client, the PowerShell script will execute and return the result to the end user. 
 
 ## Endpoints

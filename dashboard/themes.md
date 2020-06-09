@@ -1,9 +1,5 @@
 # Themes
 
-{% hint style="info" %}
-This is documentation for the upcoming and unreleased 1.2 version. 
-{% endhint %}
-
 Universal Dashboard v3 is built on Material UI. Material UI provides a [built-in theme system ](https://material-ui.com/customization/theming/)that UD now takes advantage of. You can utilize this theme system by providing a hashtable of options to the `New-UDDashboard` 's `-Theme` parameter. 
 
 Here's an example of changing the theme's main color. 
