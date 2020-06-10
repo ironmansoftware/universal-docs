@@ -32,6 +32,7 @@
 ## Configuration <a id="config"></a>
 
 * [About](config/about.md)
+* [API](config/api.md)
 * [Hosting](config/hosting.md)
 * [Hosting with IIS](config/hosting-iis.md)
 * [IIS Windows Auth](config/hosting-iis-windowsauth.md)
