@@ -11,7 +11,19 @@
 
 You can also download the ZIP from our [Downloads page](https://ironmansoftware.com/downloads/) if you would like to xcopy deploy the files on Windows or Linux. 
 
-You can start Universal by executing `Universal.Server.exe`.
+### Windows
+
+You can start Universal by unzipping the contents, unblocking the files and then executing `Universal.Server.exe`.
+
+```text
+Expand-Archive -Path .\Universal.zip -DestinationPath .\Universal
+Get-ChildItem .\Universal -Recurse | Unblock-File
+Start-Process .\Universal\Universal.Server.exe
+```
+
+### Linux
+
+On Linux, start the process `Universal.Server`. You may need to `chmod +x` the file if it does not start.  
 
 ## Next Steps
 
