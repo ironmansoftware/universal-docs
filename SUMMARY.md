@@ -25,6 +25,7 @@
 * [Dashboards](dashboard/dashboards/README.md)
   * [Migrating From Universal Dashboard 2.9](dashboard/dashboards/migrating-from-universal-dashboard-2.9.md)
   * [Building Dashboards](dashboard/dashboards/building-dashboards.md)
+  * [Custom Variable Scopes](dashboard/dashboards/custom-variable-scopes.md)
 * [Frameworks](dashboard/dashboard-frameworks.md)
 * [Components](dashboard/components.md)
 * [Themes](dashboard/themes.md)
