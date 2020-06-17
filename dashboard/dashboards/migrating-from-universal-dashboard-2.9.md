@@ -14,6 +14,10 @@ New-UDDashboard -Title 'My dashboard' -Content {
 }
 ```
 
+### No need to call New-UDEndpointInitialization
+
+This cmdlet has been removed from Universal Dashboard. There is no longer a need to call it.
+
 ### Scheduled Endpoints
 
 You do not need to pass the value of a scheduled endpoint to anything. You can just call `New-UDEndpoint` with a endpoint schedule and it will automatically be registed with PSU. 
