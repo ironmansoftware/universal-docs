@@ -97,7 +97,7 @@ Most Importantly we will need to update "**processPath**" argument value of this
     <handlers>
       <add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified" />
     </handlers>
-    <aspNetCore processPath="dotnet" arguments="C:\Program Files (x86)\Universal\Universal.Server.dll" forwardWindowsAuthToken="false" stdoutLogEnabled="true" stdoutLogFile=".\logs\log" hostingModel="InProcess"/>
+    <aspNetCore processPath="C:\Program Files (x86)\Universal\Universal.Server.exe" arguments="" forwardWindowsAuthToken="false" stdoutLogEnabled="true" stdoutLogFile=".\logs\log" hostingModel="InProcess"/>
   </system.webServer>
 </configuration>
 ```
