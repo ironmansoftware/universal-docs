@@ -27,7 +27,9 @@
   * [Building Dashboards](dashboard/dashboards/building-dashboards.md)
   * [Custom Variable Scopes](dashboard/dashboards/custom-variable-scopes.md)
 * [Frameworks](dashboard/dashboard-frameworks.md)
-* [Components](dashboard/components.md)
+* [Components](dashboard/components/README.md)
+  * [Inputs](dashboard/components/inputs/README.md)
+    * [Button](dashboard/components/inputs/button.md)
 * [Themes](dashboard/themes.md)
 
 ## Configuration <a id="config"></a>
