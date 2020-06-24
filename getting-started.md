@@ -27,6 +27,8 @@ On Linux, start the process `Universal.Server`. You may need to `chmod +x` the f
 
 ### Docker
 
+Our docker image is available on [Docker Hub](https://hub.docker.com/r/ironmansoftware/universal). You can start it by pulling and then running with the default port bound. 
+
 ```text
 docker pull ironmansoftware/universal
 docker run --name 'PSU' -it -p 5000:5000 ironmansoftware/universal 
