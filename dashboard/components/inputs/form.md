@@ -12,6 +12,8 @@ Data entered via the input controls will be sent back to the the OnSubmit script
 
 ## Supported Controls
 
+The following input controls automatically integrate with a form. The values that are set within these controls will be sent during validation and in the OnSubmit event handler. 
+
 * [Autocomplete](automcomplete.md)
 * [Checkbox](checkbox.md)
 * [Date Picker](date-picker.md)
