@@ -28,8 +28,11 @@
   * [Custom Variable Scopes](dashboard/dashboards/custom-variable-scopes.md)
 * [Frameworks](dashboard/dashboard-frameworks.md)
 * [Components](dashboard/components/README.md)
-  * [Layout](dashboard/components/layout/README.md)
-    * [Grid](dashboard/components/layout/grid.md)
+  * [Data Display](dashboard/components/data-display/README.md)
+    * [Icon](dashboard/components/data-display/icon.md)
+    * [List](dashboard/components/data-display/list.md)
+    * [Table](dashboard/components/data-display/table.md)
+    * [Typography](dashboard/components/data-display/typography.md)
   * [Inputs](dashboard/components/inputs/README.md)
     * [Autocomplete](dashboard/components/inputs/automcomplete.md)
     * [Button](dashboard/components/inputs/button.md)
@@ -43,6 +46,8 @@
     * [Switch](dashboard/components/inputs/switch.md)
     * [Textbox](dashboard/components/inputs/textbox.md)
     * [Time Picker](dashboard/components/inputs/time-picker.md)
+  * [Layout](dashboard/components/layout/README.md)
+    * [Grid](dashboard/components/layout/grid.md)
 * [Themes](dashboard/themes.md)
 
 ## Configuration <a id="config"></a>
