@@ -35,10 +35,11 @@
 * [About](config/about.md)
 * [API](config/api.md)
 * [Hosting](config/hosting.md)
-* [Hosting with IIS](config/hosting-iis.md)
-* [IIS Windows Auth](config/hosting-iis-windowsauth.md)
+* [Hosting with IIS](config/hosting-iis/README.md)
+  * [IIS Windows Auth](config/hosting-iis/hosting-iis-windowsauth.md)
 * [Settings](config/settings.md)
 * [Security](config/security/README.md)
+  * [OpenID Connect](config/security/openid-connect.md)
   * [WS-Federation](config/security/ws-federation.md)
 * [Running as a Service Account](config/running-as-a-service-account.md)
 
