@@ -3,7 +3,7 @@
 ## Installing Universal
 
 1. [Download the Universal Installer](https://ironmansoftware.com/downloads/)
-2. Run the MSI as an Administrator. \(**Note**: You may have to launch the installer from a command prompt as an administrator.\)
+2. Run the MSI as an Administrator as it installs a service.
 3. After the installation has completed, "PowerShell Universal" automatically starts and is ready to use.
 4. Using a supported web browser, navigate to `http://localhost:5000` and login with the username "Admin" with any password.
 
