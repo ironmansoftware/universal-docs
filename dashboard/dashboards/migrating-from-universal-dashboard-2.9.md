@@ -37,6 +37,41 @@ Authentication and authorization are now handled by PSU and there is no need to 
 
 To enable role-based access controls, you can assign roles to pages and use the automatic `$Roles` variable to check which roles the user is a part of. The `$User` variable will provide the name of the user. 
 
+#### Authorization Policies
+
+Authorizations policies in Universal work very similar to the ones in Universal Dashboard, you will define them using the New-PSURole cmdlet. When you define the role, you have the option to define a policy that will assign that role automatically to a user. 
+
+For example, let's adjust a claims policy from Universal Dashboard for Universal. 
+
+**Universal Dashboard**
+
+```text
+$AuthorizationPolicy = New-UDAuthorizationPolicy -Name "Policy" -Endpoint {
+    param($User)
+
+    $User.HasClaim("group", "administrator")
+}
+```
+
+**Universal**
+
+```text
+New-PSURole -Name 'User' -Policy {
+   param($User)
+    
+   $User.Claims | Where-Object { $_.Type -eq 'group' -and $_.Value -eq 'administrator' }
+}
+```
+
+#### Enforcing Roles
+
+Much like the `Get-UDAuthorizationPolicy` cmdlet in Universal Dashboard, you also have access to the assigned roles for users in Universal. Simply check the `$Roles` variable to see which roles the user has. 
+
+```text
+PS C:\Users\adamr> $Roles = @('Administrator')
+PS C:\Users\adamr> if ($Roles -contains 'Administrator') { $true }
+```
+
 ### Published Folders 
 
 Published folders are not yet a feature of PSU. They will be implemented at a later time. 
