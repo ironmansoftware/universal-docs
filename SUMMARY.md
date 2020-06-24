@@ -28,6 +28,8 @@
   * [Custom Variable Scopes](dashboard/dashboards/custom-variable-scopes.md)
 * [Frameworks](dashboard/dashboard-frameworks.md)
 * [Components](dashboard/components/README.md)
+  * [Layout](dashboard/components/layout/README.md)
+    * [Grid](dashboard/components/layout/grid.md)
   * [Inputs](dashboard/components/inputs/README.md)
     * [Autocomplete](dashboard/components/inputs/automcomplete.md)
     * [Button](dashboard/components/inputs/button.md)
