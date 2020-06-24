@@ -4,6 +4,10 @@ description: Autocomplete component for Universal Dashboard
 
 # Automcomplete
 
+{% hint style="info" %}
+Requires Universal Dashboard v3
+{% endhint %}
+
 The autocomplete is a normal text input enhanced by a panel of suggested options.
 
 ## Autocomplete with a static list of options
