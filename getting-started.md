@@ -25,6 +25,13 @@ Start-Process .\Universal\Universal.Server.exe
 
 On Linux, start the process `Universal.Server`. You may need to `chmod +x` the file if it does not start.  
 
+### Docker
+
+```text
+docker pull ironmansoftware/universal
+docker run --name 'PSU' -it -p 5000:5000 ironmansoftware/universal 
+```
+
 ## Next Steps
 
 At this point, Universal is up and running. Please consult other sections in this documentation for instructions on how to configure, secure, and start using PowerShell Universal. Happy Scripting!
