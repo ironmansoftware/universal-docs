@@ -29,6 +29,7 @@
 * [Frameworks](dashboard/dashboard-frameworks.md)
 * [Components](dashboard/components/README.md)
   * [Inputs](dashboard/components/inputs/README.md)
+    * [Automcomplete](dashboard/components/inputs/automcomplete.md)
     * [Button](dashboard/components/inputs/button.md)
 * [Themes](dashboard/themes.md)
 
