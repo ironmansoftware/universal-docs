@@ -29,6 +29,7 @@
 * [Frameworks](dashboard/dashboard-frameworks.md)
 * [Components](dashboard/components/README.md)
   * [Data Display](dashboard/components/data-display/README.md)
+    * [Chip](dashboard/components/data-display/chip.md)
     * [Icon](dashboard/components/data-display/icon.md)
     * [List](dashboard/components/data-display/list.md)
     * [Table](dashboard/components/data-display/table.md)
