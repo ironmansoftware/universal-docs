@@ -32,6 +32,10 @@ Finally, you will have to click the Endpoints button to open the Endpoints drawe
 
 ## Configuring Universal
 
+{% hint style="info" %}
+Read more about `appsettings.json` on our [Settings ](../settings.md)page.
+{% endhint %}
+
 Now that we have completed the configuration of an AzureAD App Registration, we can update the `appsettings.json` file with the appropriate settings. For my application, it would look something like this. 
 
 ```text
