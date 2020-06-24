@@ -8,6 +8,15 @@ To host as a Windows Service, you can download and install the PowerShell Univer
 
 After the MSI has finished setup, your default web browser will open to [http://localhost:5000](http://localhost:5000) for login. The default login credentials are set to Admin and any password.
 
+### Configuring a Windows Service Manually
+
+You do not need to use the MSI to configure Universal as a Windows Service. You can also do it manually with the following PowerShell script.
+
+```text
+New-Service -Name "PowerShellUniversal" -BinaryPathName "Universal.Server.exe --service" -Description "PowerShell Universal server service." -DisplayName "PowerShell Universal" -StartupType Automatic
+Start-Service PowerShellUniversal
+```
+
 ## Hosting in IIS
 
 To host in IIS, you will need to download the ZIP of PowerShell Universal. The ZIP contains all the same files as the MSI but requires manual installation.
