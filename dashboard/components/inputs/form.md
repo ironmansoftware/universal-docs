@@ -18,6 +18,9 @@ Data entered via the input controls will be sent back to the the OnSubmit script
 * [Radio](radio.md)
 * [Select](select.md)
 * [Slider](slider.md)
+* [Switch](switch.md)
+* [Textbox](textbox.md)
+* [Time Picker](time-picker.md)
 
 ## Simple Form
 
