@@ -4,15 +4,37 @@ description: Universal is a platform for building web-based IT tools.
 
 # About
 
-Universal brings together Universal Dashboard and Universal Automation to allow you to create web-based tools using your existing PowerShell scripts. 
+Universal is a cross-platform solution for developing web-based tools with PowerShell. It currently provides three main features which include APIs, Automation and Dashboards. 
 
-Universal is a cross-platform.
+Universal provides an Administrator console, management REST API, PowerShell cmdlets and a idempotent configuration system using PowerShell scripts.  
 
-* Run and schedule jobs as scripts
-* Build robust UIs for your end users to support remote work
-* Report on data using data visualizations 
-* Control access to dashboards and scripts
-* Monitor your dashboards
+**APIs**
+
+* Build REST endpoints with PowerShell
+* Accept common HTTP verbs
+* Process request bodies
+* Build dynamic URLs with route parameters and query strings
+
+**Automation**
+
+* Run scripts and view output, pipeline output, and parameters 
+* Respond to feedback from cmdlets like Read-Host
+* Schedule scripts with CRON or one-time schedules
+* Automatically build input forms based on param blocks
+* Set variables and secrets that can be used throughout scripts 
+
+**Dashboard**
+
+* Build web pages with PowerShell script
+* Include input forms, charts and tables 
+* Build interactive websites with buttons, message boxes and more
+
+**Platform**
+
+* Cross-platform and supported on Windows and Linux
+* Git integration for configuration files, scripts and dashboards 
+* Built-in authentication and authorization 
+* Support for Windows PowerShell as well as PowerShell
 
 ![](.gitbook/assets/image%20%2810%29.png)
 
@@ -34,5 +56,5 @@ With the free version of Automation you can run up to 25 jobs a day with 2 jobs 
 
 ### Dashboard 
 
-With the free version of dashboard, you can run a single, unauthenticated dashboard. You will not have access to the diagnostics, console or log pages. 
+With the free version of dashboard, you can run unauthenticated dashboards. You will not have access to the diagnostics, console or log pages. 
 
