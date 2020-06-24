@@ -37,6 +37,10 @@
     * [Form](dashboard/components/inputs/form.md)
     * [Radio](dashboard/components/inputs/radio.md)
     * [Select](dashboard/components/inputs/select.md)
+    * [Slider](dashboard/components/inputs/slider.md)
+    * [Switch](dashboard/components/inputs/switch.md)
+    * [Textbox](dashboard/components/inputs/textbox.md)
+    * [Time Picker](dashboard/components/inputs/time-picker.md)
 * [Themes](dashboard/themes.md)
 
 ## Configuration <a id="config"></a>

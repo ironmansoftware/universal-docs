@@ -4,10 +4,6 @@ description: Form component for Universal Dashboard
 
 # Form
 
-{% hint style="info" %}
-Requires Universal Dashboard v3
-{% endhint %}
-
 Forms provide a way to collect data from users.
 
 Forms can include any type of control you want. This allows you to customize the look and feel and use any input controls.
@@ -19,8 +15,9 @@ Data entered via the input controls will be sent back to the the OnSubmit script
 * [Autocomplete](automcomplete.md)
 * [Checkbox](checkbox.md)
 * [Date Picker](date-picker.md)
-* Textbox
 * [Radio](radio.md)
+* [Select](select.md)
+* [Slider](slider.md)
 
 ## Simple Form
 

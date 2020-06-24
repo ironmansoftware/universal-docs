@@ -4,10 +4,6 @@ description: Select component for Universal Dashboard
 
 # Select
 
-{% hint style="info" %}
-Requires Universal Dashboard v3
-{% endhint %}
-
 Select components are used for collecting user provided information from a list of options.
 
 ## Simple Select

@@ -4,10 +4,6 @@ description: Button component for Universal Dashboard
 
 # Button
 
-{% hint style="info" %}
-Requires Universal Dashboard v3
-{% endhint %}
-
 Buttons allow users to take actions, and make choices, with a single tap.
 
 ## Contained Button
