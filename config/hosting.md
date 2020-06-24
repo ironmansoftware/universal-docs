@@ -20,3 +20,55 @@ Visit our [IIS Hosting](hosting-iis.md) Page for specific IIS Instructions.
 
 You can also host the Universal server as a stand alone application. Simply run the `Universal.Server.exe` from the binary directory to utilize the [Kestrel web server implementation in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-3.1) to start the web server.
 
+## Web Server Configuration 
+
+{% hint style="info" %}
+This section applies to Universal when it is hosted outside of IIS. 
+{% endhint %}
+
+### Setting the Port and Listening Address
+
+You can set the port of the Universal server by modifying the `appsettings.json` file. We recommend that you create an `appsettings.json` file in the [default configuration folder](https://docs.ironmansoftware.com/config/settings).
+
+**Windows** 
+
+`%ProgramData%\PowerShellUniversal`
+
+**Linux** 
+
+`%HOME%/.PowerShellUniversal`
+
+To set the port, change the Kestrel endpoints section of the `appsettings.json`. By default, the configuration is defined to listen on port 5000 and on any address. 
+
+```text
+ "Kestrel": {
+    "Endpoints": {
+      "HTTP": {
+        "Url": "http://*:5000"
+      }
+    }
+  },
+```
+
+### Configuring HTTPS
+
+To configure HTTPS, you can adjust the `appsettings.json` file to use a particular certificate and port. The below configuration uses the `testCert.pfx` file and `testPassword` and listens on port 5463. 
+
+```text
+{
+  "Kestrel": {
+	"Endpoints": {
+	   "HTTP": { "Url": "http://*:5000" },
+           "HTTPS": {
+              "Url": "https://*:5463",
+              "Certificate": {
+                  "Path": "testCert.pfx",
+                  "Password": "testPassword"
+              }
+          }
+    }
+}
+```
+
+For a full set of listening options, you can refer to the [ASP.NET Core Documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-3.1#listenoptionsusehttps).
+
