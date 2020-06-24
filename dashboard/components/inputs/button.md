@@ -1,5 +1,5 @@
 ---
-description: Button control for Universal Dashboard
+description: Button component for Universal Dashboard
 ---
 
 # Button

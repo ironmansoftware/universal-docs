@@ -29,8 +29,14 @@
 * [Frameworks](dashboard/dashboard-frameworks.md)
 * [Components](dashboard/components/README.md)
   * [Inputs](dashboard/components/inputs/README.md)
-    * [Automcomplete](dashboard/components/inputs/automcomplete.md)
+    * [Autocomplete](dashboard/components/inputs/automcomplete.md)
     * [Button](dashboard/components/inputs/button.md)
+    * [Checkbox](dashboard/components/inputs/checkbox.md)
+    * [Date Picker](dashboard/components/inputs/date-picker.md)
+    * [Floating Action Button](dashboard/components/inputs/floating-action-button.md)
+    * [Form](dashboard/components/inputs/form.md)
+    * [Radio](dashboard/components/inputs/radio.md)
+    * [Select](dashboard/components/inputs/select.md)
 * [Themes](dashboard/themes.md)
 
 ## Configuration <a id="config"></a>

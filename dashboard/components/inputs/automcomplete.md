@@ -2,7 +2,7 @@
 description: Autocomplete component for Universal Dashboard
 ---
 
-# Automcomplete
+# Autocomplete
 
 {% hint style="info" %}
 Requires Universal Dashboard v3
