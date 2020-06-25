@@ -8,7 +8,7 @@ Buttons allow users to take actions, and make choices, with a single tap.
 
 ## Contained Button
 
-![](../../../.gitbook/assets/image%20%2865%29.png)
+![](../../../.gitbook/assets/image%20%2872%29.png)
 
 Contained buttons are high-emphasis, distinguished by their use of elevation and fill. They contain actions that are primary to your app.
 
@@ -28,7 +28,7 @@ New-UDButton -Variant 'outlined' -Text 'Default'
 
 ## Buttons with icons and label
 
-![](../../../.gitbook/assets/image%20%2868%29.png)
+![](../../../.gitbook/assets/image%20%2877%29.png)
 
 Sometimes you might want to have icons for certain button to enhance the UX of the application as we recognize logos more easily than plain text. For example, if you have a delete button you can label it with a dustbin icon.
 

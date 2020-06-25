@@ -8,7 +8,7 @@ A textbox lets users enter and edit text.
 
 ## Textbox
 
-![](../../../.gitbook/assets/image%20%2844%29.png)
+![](../../../.gitbook/assets/image%20%2847%29.png)
 
 ```text
 New-UDTextbox -Label 'Standard' -Placeholder 'Textbox'
@@ -18,7 +18,7 @@ New-UDTextbox -Label 'Textbox' -Value 'With value'
 
 ## Password Textbox
 
-![](../../../.gitbook/assets/image%20%2852%29.png)
+![](../../../.gitbook/assets/image%20%2855%29.png)
 
 ```text
 New-UDTextbox -Label 'Password' -Type password

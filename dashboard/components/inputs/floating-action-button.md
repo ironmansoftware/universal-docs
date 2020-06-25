@@ -14,7 +14,7 @@ Only one floating action button is recommended per screen to represent the most 
 
 ## Floating Action Button
 
-![](../../../.gitbook/assets/image%20%2841%29.png)
+![](../../../.gitbook/assets/image%20%2842%29.png)
 
 ```text
 New-UDFloatingActionButton -Icon (New-UDIcon -Icon user) -Size Small

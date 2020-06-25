@@ -8,7 +8,7 @@ Checkboxes allow the user to select one or more items from a set.
 
 ## Checkboxes
 
-![](../../../.gitbook/assets/image%20%2840%29.png)
+![](../../../.gitbook/assets/image%20%2841%29.png)
 
 Checkboxes can be disabled and checked by default
 
@@ -21,7 +21,7 @@ New-UDCheckBox -Checked $true -Disabled
 
 ## Checkboxes with custom icon
 
-![](../../../.gitbook/assets/image%20%2860%29.png)
+![](../../../.gitbook/assets/image%20%2865%29.png)
 
 Create checkboxes that use any icon and style.
 

@@ -18,7 +18,7 @@ New-UDSlider -Value 1
 
 ## Slider with minimum and maximum values
 
-![](../../../.gitbook/assets/image%20%2843%29.png)
+![](../../../.gitbook/assets/image%20%2844%29.png)
 
 ```text
 New-UDSlider -Min 10 -Max 1000
@@ -26,7 +26,7 @@ New-UDSlider -Min 10 -Max 1000
 
 ## Disabled Slider
 
-![](../../../.gitbook/assets/image%20%2855%29.png)
+![](../../../.gitbook/assets/image%20%2858%29.png)
 
 ```text
 New-UDSlider -Disabled
@@ -34,7 +34,7 @@ New-UDSlider -Disabled
 
 ## Slider with custom step size
 
-![](../../../.gitbook/assets/image%20%2845%29.png)
+![](../../../.gitbook/assets/image%20%2848%29.png)
 
 ```text
 New-UDSlider -Min 10 -Max 1000 -Step 100
@@ -50,7 +50,7 @@ New-UDSlider -Marks
 
 ## Range based slider
 
-![](../../../.gitbook/assets/image%20%2858%29.png)
+![](../../../.gitbook/assets/image%20%2863%29.png)
 
 ```text
 New-UDSlider -Value @(1, 10)

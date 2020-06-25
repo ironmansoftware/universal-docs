@@ -10,7 +10,7 @@ Switches are the preferred way to adjust settings on mobile. The option that the
 
 ## Switch
 
-![](../../../.gitbook/assets/image%20%2861%29.png)
+![](../../../.gitbook/assets/image%20%2867%29.png)
 
 ```text
 New-UDSwitch -Checked $true 

@@ -26,7 +26,7 @@ The following input controls automatically integrate with a form. The values tha
 
 ## Simple Form
 
-![](../../../.gitbook/assets/image%20%2857%29.png)
+![](../../../.gitbook/assets/image%20%2862%29.png)
 
 Simple forms can use inputs like text boxes and checkboxes.
 
@@ -41,7 +41,7 @@ New-UDForm -Content {
 
 ## Formatting a Form
 
-![](../../../.gitbook/assets/image%20%2846%29.png)
+![](../../../.gitbook/assets/image%20%2849%29.png)
 
 Since forms can use any component, you can use standard formatting components within the form.
 

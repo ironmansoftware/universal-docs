@@ -6,7 +6,7 @@ description: Icon component for Universal Dashboard
 
 FontAwesome icons to include in your dashboard.
 
-![](../../../.gitbook/assets/image%20%2863%29.png)
+![](../../../.gitbook/assets/image%20%2869%29.png)
 
 ## Visually Search for Icons
 

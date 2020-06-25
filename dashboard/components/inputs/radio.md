@@ -12,7 +12,7 @@ Radio buttons should have the most commonly used option selected by default.
 
 ## Simple Radio
 
-![](../../../.gitbook/assets/image%20%2849%29.png)
+![](../../../.gitbook/assets/image%20%2852%29.png)
 
 ```text
 New-UDRadioGroup -Label "Day" -Content {

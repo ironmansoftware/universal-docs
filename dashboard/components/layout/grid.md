@@ -11,7 +11,7 @@ The grid creates visual consistency between layouts while allowing flexibility a
 
 ## Basic Layout
 
-![](../../../.gitbook/assets/image%20%2853%29.png)
+![](../../../.gitbook/assets/image%20%2856%29.png)
 
 ```text
 New-UDGrid -Container -Content {

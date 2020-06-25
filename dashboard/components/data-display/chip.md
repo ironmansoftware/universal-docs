@@ -12,7 +12,7 @@ While included here as a standalone component, the most common use will be in so
 
 ## Basic Chips
 
-![](../../../.gitbook/assets/image%20%2862%29.png)
+![](../../../.gitbook/assets/image%20%2868%29.png)
 
 ```text
  New-UDChip -Label 'Basic'
@@ -20,7 +20,7 @@ While included here as a standalone component, the most common use will be in so
 
 ## Chips with Icons
 
-![](../../../.gitbook/assets/image%20%2842%29.png)
+![](../../../.gitbook/assets/image%20%2843%29.png)
 
 ```text
 New-UDChip -Label 'Basic' -Icon (New-UDIcon -Icon 'user')
