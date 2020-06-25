@@ -60,6 +60,7 @@
     * [Card](dashboard/components/surfaces/card.md)
     * [Paper](dashboard/components/surfaces/paper.md)
     * [Expansion Panel](dashboard/components/surfaces/expansion-panel.md)
+* [Interaction](dashboard/interaction.md)
 * [Themes](dashboard/themes.md)
 
 ## Configuration <a id="config"></a>
