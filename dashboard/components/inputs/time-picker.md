@@ -8,7 +8,7 @@ Time pickers pickers provide a simple way to select a single value from a pre-de
 
 ## Time Picker
 
-![](../../../.gitbook/assets/image%20%2876%29.png)
+![](../../../.gitbook/assets/image%20%2881%29.png)
 
 ```text
 New-UDTimePicker

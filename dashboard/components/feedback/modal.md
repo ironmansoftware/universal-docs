@@ -20,7 +20,7 @@ New-UDButton -Text 'Basic' -OnClick {
 
 ## Full Screen
 
-![](../../../.gitbook/assets/image%20%2874%29.png)
+![](../../../.gitbook/assets/image%20%2879%29.png)
 
 ```text
 New-UDButton -Text 'Full Screen' -OnClick {
@@ -34,7 +34,7 @@ New-UDButton -Text 'Full Screen' -OnClick {
 
 ## Full Width
 
-![](../../../.gitbook/assets/image%20%2861%29.png)
+![](../../../.gitbook/assets/image%20%2863%29.png)
 
 ```text
 New-UDButton -Text 'Full Width' -OnClick {

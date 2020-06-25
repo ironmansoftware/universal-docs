@@ -10,7 +10,7 @@ Tables display information in a way that’s easy to scan, so that users can loo
 
 ## Simple Table
 
-![](../../../.gitbook/assets/image%20%2857%29.png)
+![](../../../.gitbook/assets/image%20%2858%29.png)
 
 A simple example with no frills. Table columns are defined from the data.
 
@@ -54,7 +54,7 @@ New-UDTable -Id 'customColumnsTable' -Data $Data -Columns $Columns
 
 ## Table with Custom Column Rendering
 
-![](../../../.gitbook/assets/image%20%2859%29.png)
+![](../../../.gitbook/assets/image%20%2860%29.png)
 
 Define column rendering. Sorting and exporting still work for the table.
 

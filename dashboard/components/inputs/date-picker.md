@@ -6,7 +6,7 @@ description: Date Picker component for Universal Dashboard
 
 Date pickers pickers provide a simple way to select a single value from a pre-determined set.
 
-![](../../../.gitbook/assets/image%20%2870%29.png)
+![](../../../.gitbook/assets/image%20%2873%29.png)
 
 ```text
 New-UDDatePicker 

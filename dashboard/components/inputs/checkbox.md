@@ -21,7 +21,7 @@ New-UDCheckBox -Checked $true -Disabled
 
 ## Checkboxes with custom icon
 
-![](../../../.gitbook/assets/image%20%2865%29.png)
+![](../../../.gitbook/assets/image%20%2868%29.png)
 
 Create checkboxes that use any icon and style.
 

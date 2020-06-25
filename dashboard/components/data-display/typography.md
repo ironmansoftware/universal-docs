@@ -8,7 +8,7 @@ Use typography to present your design and content as clearly and efficiently as 
 
 Too many type sizes and styles at once can spoil any layout. A typographic scale has a limited set of type sizes that work well together along with the layout grid.
 
-![](../../../.gitbook/assets/image%20%2873%29.png)
+![](../../../.gitbook/assets/image%20%2876%29.png)
 
 ## All Typography Types
 

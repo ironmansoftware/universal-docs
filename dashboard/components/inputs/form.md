@@ -26,7 +26,7 @@ The following input controls automatically integrate with a form. The values tha
 
 ## Simple Form
 
-![](../../../.gitbook/assets/image%20%2862%29.png)
+![](../../../.gitbook/assets/image%20%2864%29.png)
 
 Simple forms can use inputs like text boxes and checkboxes.
 

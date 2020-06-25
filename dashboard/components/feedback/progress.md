@@ -6,7 +6,7 @@ description: Progress component for Universal Dashboard
 
 ## Circular Progress
 
-![](../../../.gitbook/assets/image%20%2875%29.png)
+![](../../../.gitbook/assets/image%20%2880%29.png)
 
 ```text
 New-UDProgress -Circular -Color Blue 
@@ -14,7 +14,7 @@ New-UDProgress -Circular -Color Blue
 
 ## Linear Indeterminate
 
-![](../../../.gitbook/assets/image%20%2860%29.png)
+![](../../../.gitbook/assets/image%20%2862%29.png)
 
 ```text
 New-UDProgress
@@ -22,7 +22,7 @@ New-UDProgress
 
 ## Linear Determinate
 
-![](../../../.gitbook/assets/image%20%2866%29.png)
+![](../../../.gitbook/assets/image%20%2869%29.png)
 
 ```text
 New-UDProgress -PercentComplete 75

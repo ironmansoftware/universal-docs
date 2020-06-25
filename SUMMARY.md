@@ -51,9 +51,15 @@
     * [Textbox](dashboard/components/inputs/textbox.md)
     * [Time Picker](dashboard/components/inputs/time-picker.md)
   * [Navigation](dashboard/components/navigation/README.md)
+    * [Stepper](dashboard/components/navigation/stepper.md)
     * [Tabs](dashboard/components/navigation/tabs.md)
   * [Layout](dashboard/components/layout/README.md)
     * [Grid](dashboard/components/layout/grid.md)
+  * [Surfaces](dashboard/components/surfaces/README.md)
+    * [AppBar](dashboard/components/surfaces/appbar.md)
+    * [Card](dashboard/components/surfaces/card.md)
+    * [Paper](dashboard/components/surfaces/paper.md)
+    * [Expansion Panel](dashboard/components/surfaces/expansion-panel.md)
 * [Themes](dashboard/themes.md)
 
 ## Configuration <a id="config"></a>

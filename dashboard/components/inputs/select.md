@@ -8,7 +8,7 @@ Select components are used for collecting user provided information from a list 
 
 ## Simple Select
 
-![](../../../.gitbook/assets/image%20%2864%29.png)
+![](../../../.gitbook/assets/image%20%2866%29.png)
 
 ```text
 New-UDSelect -Option {
