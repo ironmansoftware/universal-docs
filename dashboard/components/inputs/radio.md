@@ -12,6 +12,8 @@ Radio buttons should have the most commonly used option selected by default.
 
 ## Simple Radio
 
+![](../../../.gitbook/assets/image%20%2849%29.png)
+
 ```text
 New-UDRadioGroup -Label "Day" -Content {
     New-UDRadio -Label Monday -Value 'monday'
@@ -38,4 +40,16 @@ New-UDRadioGroup -Label "Day" -Content {
 } -OnChange { Show-UDToast -Message $Body }
     }
 ```
+
+
+
+**New-UDRadio**
+
+| Name | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| Id | String | The ID of the component. It defaults to a random GUID. | false |
+| Label | String | The label to show next to the radio. | false |
+| Disabled | SwitchParameter | Whether the radio is disabled. | false |
+| Value | String | The value of the radio. | false |
+| LabelPlacement | String | The position to place the label in relation to the radio. | false |
 

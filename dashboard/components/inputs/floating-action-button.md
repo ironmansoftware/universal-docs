@@ -14,6 +14,8 @@ Only one floating action button is recommended per screen to represent the most 
 
 ## Floating Action Button
 
+![](../../../.gitbook/assets/image%20%2841%29.png)
+
 ```text
 New-UDFloatingActionButton -Icon (New-UDIcon -Icon user) -Size Small
 New-UDFloatingActionButton -Icon (New-UDIcon -Icon user) -Size Medium
@@ -27,4 +29,15 @@ New-UDFloatingActionButton -Icon (New-UDIcon -Icon user) -OnClick {
     Show-UDToast -Message "Hello!"
 }
 ```
+
+
+
+**New-UDFloatingActionButton**
+
+| Name | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| Id | String | The ID of the component. It defaults to a random GUID. | false |
+| Icon | Object | The icon to put within the floating action button. | false |
+| Size | Object | The size of the button. | false |
+| OnClick | Object | A script block to execute when the floating action button is clicked. | false |
 

@@ -10,11 +10,15 @@ Sliders reflect a range of values along a bar, from which users may select a sin
 
 ## Slider 
 
+![](../../../.gitbook/assets/image%20%2837%29.png)
+
 ```text
 New-UDSlider -Value 1
 ```
 
 ## Slider with minimum and maximum values
+
+![](../../../.gitbook/assets/image%20%2843%29.png)
 
 ```text
 New-UDSlider -Min 10 -Max 1000
@@ -22,11 +26,15 @@ New-UDSlider -Min 10 -Max 1000
 
 ## Disabled Slider
 
+![](../../../.gitbook/assets/image%20%2855%29.png)
+
 ```text
 New-UDSlider -Disabled
 ```
 
 ## Slider with custom step size
+
+![](../../../.gitbook/assets/image%20%2845%29.png)
 
 ```text
 New-UDSlider -Min 10 -Max 1000 -Step 100
@@ -34,11 +42,15 @@ New-UDSlider -Min 10 -Max 1000 -Step 100
 
 ## Slider with marks
 
+![](../../../.gitbook/assets/image%20%2839%29.png)
+
 ```text
 New-UDSlider -Marks
 ```
 
 ## Range based slider
+
+![](../../../.gitbook/assets/image%20%2858%29.png)
 
 ```text
 New-UDSlider -Value @(1, 10)
@@ -52,4 +64,21 @@ New-UDSlider -OnChange {
     Set-TestData $Body
 }
 ```
+
+
+
+**New-UDSlider**
+
+| Name | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| Id | string |  | false |
+| Value | int\[\] |  | false |
+| Minimum | int |  | false |
+| Maximum | int |  | false |
+| Disabled | switch |  | false |
+| Marks | switch |  | false |
+| OnChange | Endpoint |  | false |
+| Orientation | string |  | false |
+| Step | int |  | false |
+| ValueLabelDisplay | string |  | false |
 

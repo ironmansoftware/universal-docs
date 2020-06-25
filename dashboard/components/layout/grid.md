@@ -11,6 +11,8 @@ The grid creates visual consistency between layouts while allowing flexibility a
 
 ## Basic Layout
 
+![](../../../.gitbook/assets/image%20%2853%29.png)
+
 ```text
 New-UDGrid -Container -Content {
     New-UDGrid -Item -ExtraSmallSize 12 -Content {
@@ -68,4 +70,21 @@ New-UDSelect -Id 'spacingSelect' -Label Spacing -Option {
     }
 } -OnChange { Sync-UDElement -Id 'spacingGrid' } -DefaultValue 3
 ```
+
+
+
+**New-UDGrid**
+
+| Name | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| Id | String | The ID of the component. It defaults to a random GUID. | false |
+| ExtraSmallSize | Int32 | The size \(1-24\) for extra small devices. | false |
+| SmallSize | Int32 | The size \(1-24\) for small devices. | false |
+| MediumSize | Int32 | The size \(1-24\) for medium devices. | false |
+| LargeSize | Int32 | The size \(1-24\) for large devices. | false |
+| ExtraLargeSize | Int32 | The size \(1-24\) for extra large devices. | false |
+| Container | SwitchParameter | Whether this is a container. A container can be best described as a row. | false |
+| Spacing | Int32 | Spacing between the items. | false |
+| Item | SwitchParameter | Whether this is an item in a container. | false |
+| Children | ScriptBlock | Components included in this grid item. | false |
 

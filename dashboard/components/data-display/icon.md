@@ -6,6 +6,8 @@ description: Icon component for Universal Dashboard
 
 FontAwesome icons to include in your dashboard.
 
+![](../../../.gitbook/assets/image%20%2863%29.png)
+
 ## Visually Search for Icons
 
 ```text
@@ -29,4 +31,29 @@ New-UDDynamic -Id 'icons' -Content {
     }
 }
 ```
+
+
+
+**New-UDIcon**
+
+| Name | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| Id | string |  | false |
+| Icon | FontAwesomeIcons |  | false |
+| FixedWidth | switch |  | false |
+| Inverse | switch |  | false |
+| Rotation | int |  | false |
+| ClassName | string |  | false |
+| Transform | string |  | false |
+| Flip | string |  | false |
+| Pull | string |  | false |
+| ListItem | switch |  | false |
+| Spin | switch |  | false |
+| Border | switch |  | false |
+| Pulse | switch |  | false |
+| Size | string |  | false |
+| Style | hashtable |  | false |
+| Title | string |  | false |
+| Regular | switch |  | false |
+| Color |  |  |  |
 

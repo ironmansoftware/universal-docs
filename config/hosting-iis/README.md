@@ -4,11 +4,11 @@
 
 PowerShell Universal supports being hosted in IIS \(Internet Information Services \(IIS\) for Windows® Server\). Please note that a series of host prerequisites and specific configuration steps are required to facilitate running PowerShell universal on IIS. Please review each section carefully as IIS requires many specific configuration settings applied to work with modern .NET Core applications such as PowerShell Universal.
 
-{% embed url="https://www.youtube.com/watch?v=jKdGPAn4WzA&feature=youtu.be" %}
+{% embed url="https://www.youtube.com/watch?v=jKdGPAn4WzA&feature=youtu.be" caption="" %}
 
 ## Step 1 : Preparing the IIS Host
 
-The following components are required in order to host PowerShell Universal on IIS. 
+The following components are required in order to host PowerShell Universal on IIS.
 
 * [Internet Information Services \(IIS\) Version 10.0](https://docs.microsoft.com/en-us/iis/get-started/whats-new-in-iis-10-version-1709/new-features-introduced-in-iis-10-1709)
   * Including: WebSocket Protocol
@@ -29,10 +29,10 @@ Once these prerequisites are met, you are ready to begin configuration of PowerS
 
 ## Step 2 : Download PowerShell Universal
 
-Download the Latest copy of PowerShell Universal. You will need to download the **ZIP** Archive version of PowerShell Universal. This archive is specifically built for those wishing to configuration PowerShell Universal for IIS or other third party web servers. Extract the contents of the Zip to the intended web host folder location on your IIS Host. 
+Download the Latest copy of PowerShell Universal. You will need to download the **ZIP** Archive version of PowerShell Universal. This archive is specifically built for those wishing to configuration PowerShell Universal for IIS or other third party web servers. Extract the contents of the Zip to the intended web host folder location on your IIS Host.
 
 {% hint style="warning" %}
-This location is very important and will be referenced throughout this document. Most importantly this location must be accessible by the Identity used by the  IIS Application Pool.
+This location is very important and will be referenced throughout this document. Most importantly this location must be accessible by the Identity used by the IIS Application Pool.
 {% endhint %}
 
 ## Step 3 : IIS Application Pool Configuration
@@ -49,7 +49,7 @@ The Application Pool Identity is very important for PowerShell Universal as this
 
 * [ ] Full Read/Write access the PowerShell Universal Application Folder we extracted in **Step 2**
 * [ ] Full Read/Write access to the PowerShell Universal Database : Default: _C:\ProgramData\Universal Automation_
-* [ ] _Log on as a batch job_ rights (e.g. from secpol.msc > Local Policies > User Rights Assignment
+* [ ] _Log on as a batch job_ rights \(e.g. from secpol.msc &gt; Local Policies &gt; User Rights Assignment
 
 {% hint style="info" %}
 The Default Database location can be customized via the PowerShell Universal `appsettings.json` file if desired.
@@ -107,11 +107,9 @@ Most Importantly we will need to update "**processPath**" argument value of this
 There are a variety of additional configurations in this file. We'll be reviewing these in more detail in the "Advanced Configuration" Section but you can refer to the "**Additional web.config configurations**" on this page for more details
 {% endhint %}
 
-### 
-
 ### 4.2 : Creating the IIS Website for IIS
 
-Now that an Application Pool has been created for PowerShell Universal with a valid Identity and we have configured the web.config file,  we are finally ready to create the IIS Website. The Website component of IIS loads the application artifacts and exposes the application on the configured web endpoint.
+Now that an Application Pool has been created for PowerShell Universal with a valid Identity and we have configured the web.config file, we are finally ready to create the IIS Website. The Website component of IIS loads the application artifacts and exposes the application on the configured web endpoint.
 
 1. In the IIS Manager: Click "Add Website.."
 2. Configure the new website options :
@@ -119,7 +117,6 @@ Now that an Application Pool has been created for PowerShell Universal with a va
    * **Application Pool**: **DO NOT** use the _DefaultAppPool_ - **Select** the Application Pool we created in our previous step.
    * **Physical Path**: This must be the physical path to the PowerShell Universal Content we extracted from our download .zip file.  **NOTE**: The AppPool identity must have access to the location.
    * **Binding Settings**: Note, for initial configuration is suggested to use the base defaults, we'll update these later in our advanced configuration
-
      * Type http - For Initial Configuration
      * IP Address: All Unassigned
      * Port: 80

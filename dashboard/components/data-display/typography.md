@@ -8,6 +8,8 @@ Use typography to present your design and content as clearly and efficiently as 
 
 Too many type sizes and styles at once can spoil any layout. A typographic scale has a limited set of type sizes that work well together along with the layout grid.
 
+![](../../../.gitbook/assets/image%20%2866%29.png)
+
 ## All Typography Types
 
 ```text
@@ -18,4 +20,22 @@ Too many type sizes and styles at once can spoil any layout. A typographic scale
     New-UDElement -Tag 'p' -Content {}
 }
 ```
+
+
+
+**New-UDTypography**
+
+| Name | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| Id | String | The ID of the component. It defaults to a random GUID. | false |
+| Variant | String | The type of text to display. | false |
+| Text | String | The text to format. | false |
+| Content | ScriptBlock | The content to format. | false |
+| Style | Hashtable | A set of CSS styles to apply to the typography. | false |
+| ClassName | String | A CSS className to apply to the typography. | false |
+| Align | String | How to align the typography. | false |
+| IsEndPoint | SwitchParameter |  | false |
+| GutterBottom | SwitchParameter | The gutter bottom. | false |
+| NoWrap | SwitchParameter | Disables text wrapping. | false |
+| Paragraph | SwitchParameter | Whether this typography is a paragraph. | false |
 

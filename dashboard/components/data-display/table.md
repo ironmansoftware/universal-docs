@@ -10,6 +10,8 @@ Tables display information in a way that’s easy to scan, so that users can loo
 
 ## Simple Table
 
+![](../../../.gitbook/assets/image%20%2854%29.png)
+
 A simple example with no frills. Table columns are defined from the data.
 
 ```text
@@ -25,6 +27,8 @@ New-UDTable -Data $Data
 ```
 
 ## Table with Custom Columns
+
+![](../../../.gitbook/assets/image%20%2850%29.png)
 
 Define custom columns for your table.
 
@@ -49,6 +53,8 @@ New-UDTable -Id 'customColumnsTable' -Data $Data -Columns $Columns
 ```
 
 ## Table with Custom Column Rendering
+
+![](../../../.gitbook/assets/image%20%2856%29.png)
 
 Define column rendering. Sorting and exporting still work for the table.
 
@@ -76,6 +82,8 @@ New-UDTable -Data $Data -Columns $Columns -Sort -Export
 ```
 
 ## Table with server-side processing
+
+![](../../../.gitbook/assets/image%20%2851%29.png)
 
 Process data on the server so you can perform paging, filtering, sorting and searching in systems like SQL.
 
@@ -111,4 +119,20 @@ New-UDTable -Columns $Columns -LoadData {
     ) | Out-UDTableData -Page 0 -TotalCount 5 -Properties $Query.Properties 
 }
 ```
+
+
+
+**New-UDTable**
+
+| Name | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| Id | String | The ID of the component. It defaults to a random GUID. | false |
+| Title | String | The title to show at the top of the table's card. | false |
+| Data | Object\[\] | The data to put into the table. | true |
+| LoadData | Endpoint | When using dynamic tables, this script block is called. The $Body parameter will contain a hashtable the following options: filters: @\(\) orderBy: string orderDirection: string page: int pageSize: int properties: @\(\) search: string totalCount: int You can use these values to perform server-side processing, like SQL queries, to improve the performance of large grids. After processing the data with these values, output the data via Out-UDTableData. | true |
+| Columns | Hashtable\[\] | Defines the columns to show within the table. Use New-UDTableColumn to define these columns. If this parameter isn't specified, the properties of the data that you pass in will become the columns. | false |
+| Sort | SwitchParameter | Whether sorting is enabled in the table. | false |
+| Filter | SwitchParameter | Whether filtering is enabled in the table. | false |
+| Search | SwitchParameter | Whether search is enabled in the table. | false |
+| Export | SwitchParameter | Whether exporting is enabled within the table. | false |
 
