@@ -65,12 +65,12 @@
 
 ## Configuration <a id="config"></a>
 
-* [Management API](config/management-api.md)
 * [About](config/about.md)
 * [API](config/api.md)
 * [Hosting](config/hosting.md)
 * [Hosting with IIS](config/hosting-iis/README.md)
   * [IIS Windows Auth](config/hosting-iis/hosting-iis-windowsauth.md)
+* [Management API](config/management-api.md)
 * [Settings](config/settings.md)
 * [Security](config/security/README.md)
   * [OpenID Connect](config/security/openid-connect.md)
