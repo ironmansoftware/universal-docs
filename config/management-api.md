@@ -30,6 +30,10 @@ Connect-UAServer -ComputerName http://localhost:5000 -AppToken $AppToken
 
 To call the management API, you will need to grant an App Token to your users. You can grant App Tokens to using the Admin Console or you can use the Management API directly. 
 
+{% hint style="info" %}
+The same App Tokens can be used for both the Management API and the Universal API. 
+{% endhint %}
+
 ### Admin Console
 
 To grant a token in the Admin Console, navigate to Settings \ Security \ AppTokens. Click the Grant App Token button to grant an App Token for the current user. 
