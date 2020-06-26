@@ -27,6 +27,10 @@ First make sure to enable the IIS feature on Windows Server and then install the
 
 Once these prerequisites are met, you are ready to begin configuration of PowerShell Universal on IIS.
 
+{% hint style="warning" %}
+Enabling the IIS WebDav Publishing feature will cause issues with Universal. WebDav Publishing filters HTTP requests and prevents PUT and DELETE verbs by default. If you have WebDav Publishing enabled, please ensure you have it configured properly to allow these verbs. 
+{% endhint %}
+
 ## Step 2 : Download PowerShell Universal
 
 Download the Latest copy of PowerShell Universal. You will need to download the **ZIP** Archive version of PowerShell Universal. This archive is specifically built for those wishing to configuration PowerShell Universal for IIS or other third party web servers. Extract the contents of the Zip to the intended web host folder location on your IIS Host.
