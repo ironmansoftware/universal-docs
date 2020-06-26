@@ -65,6 +65,7 @@
 
 ## Configuration <a id="config"></a>
 
+* [Management API](config/management-api.md)
 * [About](config/about.md)
 * [API](config/api.md)
 * [Hosting](config/hosting.md)
