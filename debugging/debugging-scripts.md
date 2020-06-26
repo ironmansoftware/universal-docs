@@ -28,7 +28,7 @@ You can debug any script within Universal \(or any PowerShell process, really\) 
 
 ### Pausing the Script
 
-First, you will need to ensure that the script will wait for your to connect the debugger before continuing. This means that you'll need to include a `Wait-Debugger` command somewhere in your script. 
+First, you will need to ensure that the script will wait for you to connect the debugger before continuing. This means that you'll need to include a `Wait-Debugger` command somewhere in your script. 
 
 {% hint style="info" %}
 Dashboards will only wait 10 seconds during startup so putting a Wait-Debugger in them may not work. You should rely on the use of $DebugPreference and Write-Debug to diagnosis dashboard startup issues.
@@ -44,7 +44,7 @@ Once you have your `Wait-Debugger` command in the script that you want to debug,
 
 #### Jobs 
 
-Jobs run in their own isolated process within Universal. Allow you will have to do is start the job and it will start the process and wait on your `Wait-Debugger` command. Once your job has started, you can use the  `Get-UAJob` cmdlet to find that job's process ID.
+Jobs run in their own isolated process within Universal. All you will have to do is start the job and it will start the process and wait on your `Wait-Debugger` command. Once your job has started, you can use the  `Get-UAJob` cmdlet to find that job's process ID.
 
 #### APIs
 
@@ -67,7 +67,7 @@ Enter-PSHostProcess -id 1231
 ```
 
 {% hint style="info" %}
-Enter-PSHostProcess uses named pipes and requires that you have permissions to the process that you are accessing. If you are running Universal as a service you may need to run it as your local account to properly connect to the process.
+Enter-PSHostProcess uses named pipes and requires that you have permission to the process that you are accessing. If you are running Universal as a service you may need to run it as your local account to properly connect to the process.
 {% endhint %}
 
 Once you have attached to the process, you will now want to find the runspace where your code is running. To do so, you can use the `Get-Runspace` cmdlet. This will return a list of runspaces currently active in your process. Look for the runspace marked `InBreakpoint`. This is the runspace waiting on the `Wait-Debugger` command. 
