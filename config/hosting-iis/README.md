@@ -47,9 +47,22 @@ The First step in the IIS configuration process is to create a new Application P
 
 ### 3.1 : Choosing an App Pool Identity
 
-The Application Pool Identity is very important for PowerShell Universal as this will be the "default user" that that jobs and dashboards will run under. It will also be the user that will perform read/write operations to the Universal Automation database, and will be used by IIS to read the web content directory and execute the application.
+The Application Pool Identity is crucial for PowerShell Universal as this will be the "default user" that jobs and dashboards will run as. It will also be the user that will perform read/write operations to the Universal Automation database and will be used by IIS to read the web content directory and execute the application. 
 
-**Identity Requirements**
+![Application Pool Identity Configuration](../../.gitbook/assets/image%20%2885%29.png)
+
+It is suggested to use "**LocalSystem"** or a **Service Account** of your choosing.
+
+Due to limitations in IIS, the Application Pool Identity settings have **MAJOR** consequences on the behavior for "**Run As**" options when using Universal Automation.
+
+{% hint style="danger" %}
+**IIS Limitations with Universal Automation**
+
+* **App Service configured as Local System** -  Scripts will execute as the System Account by default and a _Run as Accounts **CAN**_ be specified when executing a in Universal Automation
+* **App Service configured as a Service Account** - Script can **ONLY** be executed with the Service Account and a ****_Run as Account_ **CANNOT** be specified when executing scripts.
+{% endhint %}
+
+**Service Account Identity Requirements**
 
 * [ ] Full Read/Write access the PowerShell Universal Application Folder we extracted in **Step 2**
 * [ ] Full Read/Write access to the PowerShell Universal Database : Default: _C:\ProgramData\Universal Automation_
