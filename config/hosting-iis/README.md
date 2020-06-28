@@ -59,7 +59,7 @@ Due to limitations in IIS, the Application Pool Identity settings have **MAJOR**
 **IIS Limitations with Universal Automation**
 
 * **App Service configured as Local System** -  Scripts will execute as the System Account by default and a _Run as Accounts **CAN**_ be specified when executing a Script in Universal Automation
-* **App Service configured as a Service Account** - Script can **ONLY** be executed with the Service Account and a ****_Run as Account_ **CANNOT** be specified when executing scripts.
+* **App Service configured as a Service Account** - Scripts can **ONLY** be executed with the Service Account and a ****_Run as Account_ **CANNOT** be specified when executing scripts.
 {% endhint %}
 
 **Service Account Identity Requirements**
