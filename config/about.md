@@ -1,9 +1,5 @@
 # About
 
-{% hint style="info" %}
-This is documentation for the upcoming and unreleased 1.2 version. 
-{% endhint %}
-
 Universal utilizes an idempotent configuration system to ensure repeatable deployments of instances of the platform. The same cmdlets that are used to call the REST API are used to configure the system. When they are called by the configuration system, they do not call the REST API and just return objects that are then used to configure Universal. 
 
 A typical configuration file is just a PS1 file. 
