@@ -4,7 +4,7 @@ description: Map component for Universal Dashboard.
 
 # Map
 
-The UDMap component is a robust control that provides a huge series of features. You can select base layers, configure togglable layers, set markers, define vectors and interact with other Universal Dashboard components. 
+The UDMap component is a robust control that provides a huge set of features. You can select base layers, configure togglable layers, set markers, define vectors and interact with other Universal Dashboard components. 
 
 {% hint style="danger" %}
 **Known Issue** 
