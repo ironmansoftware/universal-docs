@@ -4,6 +4,8 @@ description: Map component for Universal Dashboard.
 
 # Map
 
+The UDMap component is a robust control that provides a huge series of features. You can select base layers, configure togglable layers, set markers, define vectors and interact with other Universal Dashboard components. 
+
 {% hint style="danger" %}
 **Known Issue** 
 
@@ -13,8 +15,6 @@ Universal 1.2 does not automatically import components. You will need to import 
 Import-Module "$Env:ProgramData\PowerShellUniversal\Dashboard\Components\UniversalDashboard.Map\1.0\UniversalDashboard.Map.psd1"
 ```
 {% endhint %}
-
-The UDMap component is a robust control that provides a huge series of features. You can select base layers, configure togglable layers, set markers, define vectors and interact with other Universal Dashboard components. 
 
 ### Basic Map
 
