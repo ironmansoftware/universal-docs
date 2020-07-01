@@ -34,6 +34,8 @@
     * [List](dashboard/components/data-display/list.md)
     * [Table](dashboard/components/data-display/table.md)
     * [Typography](dashboard/components/data-display/typography.md)
+  * [Data Visualization](dashboard/components/data-visualization/README.md)
+    * [Charts](dashboard/components/data-visualization/charts.md)
   * [Feedback](dashboard/components/feedback/README.md)
     * [Modal](dashboard/components/feedback/modal.md)
     * [Progress](dashboard/components/feedback/progress.md)
