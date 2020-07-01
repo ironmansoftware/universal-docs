@@ -24,7 +24,7 @@ Universal Dashboard integrates with [Nivo Charts](https://nivo.rocks/components)
 
 All the Nivo charts can be created with `New-UDNivoChart`. You will specify a switch parameter for the different types of charts. Each chart type will take a well defined data format via the `-Data` parameter. 
 
-![](../../../.gitbook/assets/image%20%2891%29.png)
+![](../../../.gitbook/assets/image%20%2893%29.png)
 
 ```text
 $Data = 1..10 | ForEach-Object { 
@@ -41,7 +41,7 @@ New-UDNivoChart -Id 'autoRefreshingNivoBar' -Bar -Keys "value" -IndexBy 'name' -
 
 Nivo provides the ability to specify patterns to display over data sets. You can configure these patterns with `New-UDNivoPattern` and `New-UDNivoFill` .
 
-![](../../../.gitbook/assets/image%20%2890%29.png)
+![](../../../.gitbook/assets/image%20%2892%29.png)
 
 ```text
 $Data = @(
@@ -147,7 +147,7 @@ New-Example -Title 'Bar' -Description '' -Example {
 
 #### Calendar
 
-![](../../../.gitbook/assets/image%20%2894%29.png)
+![](../../../.gitbook/assets/image%20%2898%29.png)
 
 ```text
 $Data = @()
@@ -166,7 +166,7 @@ New-UDNivoChart -Calendar -Data $Data -From $From -To $To -Height 500 -Width 100
 
 #### Heatmap
 
-![](../../../.gitbook/assets/image%20%2892%29.png)
+![](../../../.gitbook/assets/image%20%2895%29.png)
 
 ```text
 $Data = @(
@@ -223,7 +223,7 @@ New-UDNivoChart -Line -Data $Data -Height 500 -Width 1000 -LineWidth 1
 
 #### Stream
 
-![](../../../.gitbook/assets/image%20%2893%29.png)
+![](../../../.gitbook/assets/image%20%2897%29.png)
 
 ```text
 $Data = 1..10 | ForEach-Object { 
@@ -241,7 +241,7 @@ New-UDNivoChart -Stream -Data $Data -Height 500 -Width 1000 -Keys @("adam", "alo
 
 #### Treemap
 
-![](../../../.gitbook/assets/image%20%2889%29.png)
+![](../../../.gitbook/assets/image%20%2891%29.png)
 
 ```text
 $TreeData = @{
