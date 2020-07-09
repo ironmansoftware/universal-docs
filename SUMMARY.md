@@ -1,6 +1,7 @@
 # Table of contents
 
 * [About](README.md)
+* [Additional Resources](additional-resources.md)
 * [Getting Started](getting-started.md)
 * [Supported Browsers](supported-browsers.md)
 * [System Requirements](system-requirements.md)
