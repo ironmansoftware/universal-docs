@@ -145,6 +145,41 @@ New-Example -Title 'Bar' -Description '' -Example {
 }
 ```
 
+#### Bubble
+
+{% hint style="info" %}
+This section covers a pre-release version of Universal. You can download nightly builds from our [Downloads page](https://ironmansoftware.com/downloads).
+{% endhint %}
+
+![](../../../.gitbook/assets/image%20%28102%29.png)
+
+```text
+$TreeData = @{
+    Name     = "root"
+    children = @(
+        @{
+            Name  = "first"
+            children = @(
+                @{
+                    Name = "first-first"
+                    Count = 7
+                }
+                @{
+                    Name = "first-second"
+                    Count = 8
+                }
+            )
+        },
+        @{
+            Name  = "second"
+            Count = 21
+        }
+    )
+}
+
+New-UDNivoChart -Bubble -Data $TreeData -Value "count" -Identity "name" -Height 500 -Width 800
+```
+
 #### Calendar
 
 ![](../../../.gitbook/assets/image%20%2898%29.png)
