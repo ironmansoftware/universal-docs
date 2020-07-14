@@ -28,7 +28,7 @@ First make sure to enable the IIS feature on Windows Server and then install the
 Once these prerequisites are met, you are ready to begin configuration of PowerShell Universal on IIS.
 
 {% hint style="warning" %}
-Enabling the IIS WebDav Publishing feature will cause issues with Universal. WebDav Publishing filters HTTP requests and prevents PUT and DELETE verbs by default. If you have WebDav Publishing enabled, please ensure you have it configured properly to allow these verbs. 
+Enabling the IIS WebDav Publishing feature will cause issues with Universal. WebDav Publishing filters HTTP requests and prevents PUT and DELETE verbs by default. If you have WebDav Publishing enabled, please ensure you have it configured properly to allow these verbs.
 {% endhint %}
 
 ## Step 2 : Download PowerShell Universal
@@ -47,7 +47,7 @@ The First step in the IIS configuration process is to create a new Application P
 
 ### 3.1 : Choosing an App Pool Identity
 
-The Application Pool Identity is crucial for PowerShell Universal as this will be the "default user" that jobs and dashboards will run as. It will also be the user that will perform read/write operations to the Universal Automation database and will be used by IIS to read the web content directory and execute the application. 
+The Application Pool Identity is crucial for PowerShell Universal as this will be the "default user" that jobs and dashboards will run as. It will also be the user that will perform read/write operations to the Universal Automation database and will be used by IIS to read the web content directory and execute the application.
 
 ![Application Pool Identity Configuration](../../.gitbook/assets/image%20%2885%29.png)
 
@@ -59,7 +59,7 @@ Due to limitations in IIS, the Application Pool Identity settings have **MAJOR**
 **IIS Limitations with Universal Automation**
 
 * **App Service configured as Local System** -  Scripts will execute as the System Account by default and a _Run as Accounts **CAN**_ be specified when executing a Script in Universal Automation
-* **App Service configured as a Service Account** - Scripts can **ONLY** be executed with the Service Account and a ****_Run as Account_ **CANNOT** be specified when executing scripts.
+* **App Service configured as a Service Account** - Scripts can **ONLY** be executed with the Service Account and a **\*\***_**Run as Account**_ ****CANNOT\*\* be specified when executing scripts.
 {% endhint %}
 
 **Service Account Identity Requirements**

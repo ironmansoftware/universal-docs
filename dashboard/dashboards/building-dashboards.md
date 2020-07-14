@@ -38,6 +38,7 @@ New-UDPage -Content {
 You can specify multiple pages within a dashboard. Each page defines a route. As for v3, all pages are dynamic. PowerShell will execute on each page load to render the new page. Since UD is a single page application, the web browser does not need to refresh the entire web page when navigating between the different dashboard pages. 
 
 ```text
+$Pages = @()
 $Pages += New-UDPage -Name 'My Home Page' -Content {}
 $Pages += New-UDPage -Name 'Diagnostics' -Content {}
 New-UDDashboard -Pages $Pages -Title 'Dashboard'
