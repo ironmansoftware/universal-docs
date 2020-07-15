@@ -76,6 +76,26 @@ PS C:\Users\adamr> if ($Roles -contains 'Administrator') { $true }
 
 Published folders are not yet a feature of PSU. They will be implemented at a later time. 
 
+### Pages
+
+Pages have a different behavior in v3. All pages are dynamic pages. This means that you don't have to worry about whether a page will be generated at run time or doing start up. Pages are always generated during runtime. 
+
+If you have a page such as this one:
+
+```text
+New-UDPage -Url "/myPage/:owner" -Endpoint {
+    param($owner)
+}
+```
+
+You can convert it to a v3 page by changing the syntax to:
+
+```text
+New-UDPage -Name 'myPage' -Url "/myPage/:owner" -Content {
+    param($owner)
+}
+```
+
 ## Migrating to Universal Dashboard v3
 
 As we more closer to completion of Universal Dashboard v3 this section will become more complete. We'd like to start documenting this so that users can begin working with UDv3. 
