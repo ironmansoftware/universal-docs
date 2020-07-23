@@ -2,7 +2,8 @@
 
 * [About](README.md)
 * [Additional Resources](additional-resources.md)
-* [Getting Started](getting-started.md)
+* [Installation](getting-started/README.md)
+  * [Upgrading](getting-started/upgrading.md)
 * [Supported Browsers](supported-browsers.md)
 * [System Requirements](system-requirements.md)
 * [Licensing](licensing.md)
