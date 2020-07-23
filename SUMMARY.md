@@ -55,6 +55,7 @@
     * [Switch](dashboard/components/inputs/switch.md)
     * [Textbox](dashboard/components/inputs/textbox.md)
     * [Time Picker](dashboard/components/inputs/time-picker.md)
+    * [Upload](dashboard/components/inputs/upload.md)
   * [Navigation](dashboard/components/navigation/README.md)
     * [Stepper](dashboard/components/navigation/stepper.md)
     * [Tabs](dashboard/components/navigation/tabs.md)
