@@ -8,11 +8,11 @@ Forms provide a way to collect data from users.
 
 Forms can include any type of control you want. This allows you to customize the look and feel and use any input controls.
 
-Data entered via the input controls will be sent back to the the OnSubmit script block when the form is submitted.
+Data entered via the input controls will be sent back to the the `OnSubmit` script block when the form is submitted.
 
 ## Supported Controls
 
-The following input controls automatically integrate with a form. The values that are set within these controls will be sent during validation and in the OnSubmit event handler. 
+The following input controls automatically integrate with a form. The values that are set within these controls will be sent during validation and in the `OnSubmit` event handler. 
 
 * [Autocomplete](automcomplete.md)
 * [Checkbox](checkbox.md)
@@ -23,6 +23,7 @@ The following input controls automatically integrate with a form. The values tha
 * [Switch](switch.md)
 * [Textbox](textbox.md)
 * [Time Picker](time-picker.md)
+* [Upload](upload.md)
 
 ## Simple Form
 
