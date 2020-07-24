@@ -20,7 +20,7 @@ If you are using git, changes to the Universal files will be synchronized after 
 
 #### appsettings.json
 
-The `appsettings.json` file that is included in the application installation directory will be overwritten during upgrades. To avoid losing your settings in this file, consider installing it into the `%ProgramData%\UniversalAutomation` folder. Universal will look at this folder first for [configuration settings. ](../config/settings.md#programdata-appsettings-json)
+The `appsettings.json` file that is included in the application installation directory will be overwritten during upgrades. To avoid losing your settings in this file, consider installing it into the `%ProgramData%\PowerShellUniversal` folder. Universal will look at this folder first for [configuration settings. ](../config/settings.md#programdata-appsettings-json)
 
 #### web.config
 
