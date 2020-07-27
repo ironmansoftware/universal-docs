@@ -6,6 +6,10 @@ description: This document outlines how to build custom Universal Dashboard comp
 
 Universal Dashboard is extensible and you can build custom JavaScript components and frameworks. This document will cover how to build custom components that integrate with the Universal Dashboard platform. 
 
+{% hint style="warning" %}
+This is an advanced topic and not required if you simply want to use Universal Dashboard. There are a lot of existing custom components available on the [Universal Dashboard Marketplace](https://marketplace.universaldashboard.io).
+{% endhint %}
+
 ## Technology Overview
 
 Below is a list of some of the technologies used when building Universal Dashboard components. You will not need to be an expert to produce a component but should be aware of what to search when you encounter a problem. 
