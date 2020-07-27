@@ -37,7 +37,7 @@
     <handlers>
       <add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified" />
     </handlers>
-      <aspNetCore processPath="dotnet" arguments="&quot;%ProgramFiles(x86)%\Universal\Universal.Server.dll&quot;" stdoutLogEnabled="true" stdoutLogFile=".\logs\log" forwardWindowsAuthToken="true"  />
+      <aspNetCore processPath="&quot;%ProgramFiles(x86)%\Universal\Universal.Server.exe&quot;" arguments="" stdoutLogEnabled="true" stdoutLogFile=".\logs\log" forwardWindowsAuthToken="true"  />
   </system.webServer>
 </configuration>
 ```
