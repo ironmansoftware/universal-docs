@@ -34,6 +34,20 @@ docker pull ironmansoftware/universal
 docker run --name 'PSU' -it -p 5000:5000 ironmansoftware/universal 
 ```
 
+## MSI Install
+
+{% hint style="info" %}
+This section covers a pre-release version of Universal. You can download nightly builds from our [Downloads page](https://ironmansoftware.com/downloads).
+{% endhint %}
+
+The MSI install will create a PowerShell Universal service and open the admin console after installation. 
+
+### Properties
+
+#### SUPPRESSBROWSER
+
+Setting the SUPPRESBROWSER MSI property to true will prevent the browser from opening after installation. 
+
 ## Next Steps
 
 At this point, Universal is up and running. Please consult other sections in this documentation for instructions on how to configure, secure, and start using PowerShell Universal. Happy Scripting!
