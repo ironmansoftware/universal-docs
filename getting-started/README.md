@@ -1,11 +1,18 @@
+---
+description: Installation instructions for PowerShell Universal.
+---
+
 # Installation
 
-## Installing Universal
+## Chocolatey Package
 
-1. [Download the Universal Installer](https://ironmansoftware.com/downloads/)
-2. Run the MSI as an Administrator as it installs a service.
-3. After the installation has completed, "PowerShell Universal" automatically starts and is ready to use.
-4. Using a supported web browser, navigate to `http://localhost:5000` and login with the username "Admin" with any password.
+You can install PowerShell Universal using the [Chocolatey package](https://chocolatey.org/packages/powershelluniversal). The package runs the MSI install. It will install Universal as a service and open a web browser after the install. 
+
+You can login with the "admin" user and any password.
+
+```text
+choco install powershelluniversal
+```
 
 ## ZIP Install
 
