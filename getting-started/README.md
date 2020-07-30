@@ -41,6 +41,13 @@ docker pull ironmansoftware/universal
 docker run --name 'PSU' -it -p 5000:5000 ironmansoftware/universal 
 ```
 
+#### Tags
+
+| Tag | Platform |
+| :--- | :--- |
+| 1.3.0 | linux/amd64 |
+| 1.3.0-windowsservercore-1909 | windows/amd64 |
+
 ## MSI Install
 
 {% hint style="info" %}
