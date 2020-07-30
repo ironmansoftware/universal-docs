@@ -4,10 +4,6 @@ description: Component for uploading files in Universal Dashboard.
 
 # Upload
 
-{% hint style="info" %}
-This section covers a pre-release version of Universal. You can download nightly builds from our [Downloads page](https://ironmansoftware.com/downloads).
-{% endhint %}
-
 The UDUpload component is used to upload files to Universal Dashboard. You can process files the user uploads. You will receive the data for the file, a file name and the type of file if it can be determined by the web browser. 
 
 This component works with [UDForm](form.md) and [UDStepper](../navigation/stepper.md). 

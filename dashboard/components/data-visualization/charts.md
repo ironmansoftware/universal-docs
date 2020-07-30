@@ -8,16 +8,6 @@ Universal Dashboard provides several built-in charting solutions to help visuali
 
 ## Nivo Charts
 
-{% hint style="danger" %}
-**Known Issue** 
-
-Universal 1.2 does not automatically import components. You will need to import the charts library manually. 
-
-```text
-Import-Module "$Env:ProgramData\PowerShellUniversal\Dashboard\Components\UniversalDashboard.Charts\1.0.0\UniversalDashboard.Charts.psd1"
-```
-{% endhint %}
-
 Universal Dashboard integrates with [Nivo Charts](https://nivo.rocks/components). Below you will find examples and documentation for using these charts. 
 
 ### Creating a Chart

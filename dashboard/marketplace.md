@@ -10,10 +10,6 @@ The [Universal Dashboard Marketplace](https://marketplace.universaldashboard.io/
 
 ### Automatic Install from the Marketplace
 
-{% hint style="info" %}
-This section covers a pre-release version of Universal. You can download nightly builds from our [Downloads page](https://ironmansoftware.com/downloads).
-{% endhint %}
-
 Within PowerShell Universal, you can access the Universal Dashboard Marketplace by navigating to the Dashboard \ Components page and clicking the Marketplace button. This will allow you to browse the Marketplace for components for your dashboard. If you want to install a component, you can click the install button.
 
 ![](../.gitbook/assets/image%20%28104%29.png)

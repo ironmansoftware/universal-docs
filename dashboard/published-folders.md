@@ -4,10 +4,6 @@ description: Serve files from PowerShell Universal
 
 # Published Folders
 
-{% hint style="info" %}
-This section covers a pre-release version of Universal. You can download nightly builds from our [Downloads page](https://ironmansoftware.com/downloads).
-{% endhint %}
-
 Published folders allow you to share a local folder through your Universal website. Any file within the published folder will be accessible via a web request. This can be helpful for storing images or other files that you may want to provide via your Universal Dashboard.
 
 ## Publishing a Folder

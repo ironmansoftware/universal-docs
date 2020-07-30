@@ -60,10 +60,6 @@ The $Body variable will contain a JSON string that contains the current state of
 
 ### Validating a Step
 
-{% hint style="info" %}
-This section covers a pre-release version of Universal. You can download nightly builds from our [Downloads page](https://ironmansoftware.com/downloads).
-{% endhint %}
-
 You can validate a step in a stepper by specifying the `OnValidateStep` parameter. The script block will receive a $Body variable with JSON that provides information about the current state of the stepper. You will need to return a validation result using `New-UDValidationResult` to specify whether the current step state is valid. 
 
 The JSON payload will have the following format.

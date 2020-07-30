@@ -87,10 +87,6 @@ Data returned from endpoints will be assumed to be JSON data. If you return an o
 
 ### Processing Files
 
-{% hint style="info" %}
-This section covers a pre-release version of Universal. You can download nightly builds from our [Downloads page](https://ironmansoftware.com/downloads).
-{% endhint %}
-
 You can process uploaded files by using the `$Data` parameter to access the byte array of data uploaded to the endpoint.
 
 ```text
@@ -109,10 +105,6 @@ Content           : [137,80,78,71,13,10,26,10,0,0,0,13,73,72,68,82,0,0,2,17,0,0,
 
 ### Returning Custom Responses
 
-{% hint style="info" %}
-This section covers a pre-release version of Universal. You can download nightly builds from our [Downloads page](https://ironmansoftware.com/downloads).
-{% endhint %}
-
 You can return custom responses from endpoints by using the `New-PSUApiResponse` cmdlet in your endpoint. This cmdlet allows you to set the status code, content type and even specify the byte\[\] data for the content to be returned. 
 
 ```text
@@ -130,10 +122,6 @@ The REST API execution environment runs in your default PowerShell version. Unli
 Performance is relative to the hardware and network conditions that you are running Universal on. That said, in ideal conditions you can expect the Universal APIs to service about 500 requests per second. This is with an entirely empty endpoint so any script that you add to that endpoint will reduce the throughput. The reduction of throughput will depend on the cmdlets and script executed within the API endpoint. 
 
 ### Variables 
-
-{% hint style="info" %}
-This section covers a pre-release version of Universal. You can download nightly builds from our [Downloads page](https://ironmansoftware.com/downloads).
-{% endhint %}
 
 There are a set of predefined variables that are available in API endpoints. You'll be able to use these variables in your scripts. 
 

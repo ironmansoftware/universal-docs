@@ -6,16 +6,6 @@ description: Map component for Universal Dashboard.
 
 The UDMap component is a robust control that provides a huge set of features. You can select base layers, configure togglable layers, set markers, define vectors and interact with other Universal Dashboard components. 
 
-{% hint style="danger" %}
-**Known Issue** 
-
-Universal 1.2 does not automatically import components. You will need to import the charts library manually. 
-
-```text
-Import-Module "$Env:ProgramData\PowerShellUniversal\Dashboard\Components\UniversalDashboard.Map\1.0\UniversalDashboard.Map.psd1"
-```
-{% endhint %}
-
 ### Basic Map
 
 This basic map defines a simple base layer using the wmflabs.org tile server. You can use your own custom tile server by specifying a URL. The map is position over Hailey, Idaho. 
