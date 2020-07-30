@@ -3,6 +3,7 @@
 * [About](README.md)
 * [Additional Resources](additional-resources.md)
 * [Installation](getting-started/README.md)
+  * [Docker](getting-started/docker.md)
   * [Upgrading](getting-started/upgrading.md)
 * [Supported Browsers](supported-browsers.md)
 * [System Requirements](system-requirements.md)
