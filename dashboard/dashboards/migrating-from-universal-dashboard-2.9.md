@@ -108,7 +108,7 @@ You can view examples of the [table on GitHub](https://github.com/ironmansoftwar
 
 ### New-UDDynamic
 
-Unlink in v3, components do not have `-Endpoint` and `-Content` parameters. Each component will instead simply have a `-Content` parameter. To achieve dynamic sections of a page, you can instead use the `New-UDDynamic` cmdlet. This cmdlets let you define an entire section of a page as dynamic. It also provides auto refresh functionality so you can refresh sections of a page all at once. 
+Unlike in v3, components do not have `-Endpoint` and `-Content` parameters. Each component will instead simply have a `-Content` parameter. To achieve dynamic sections of a page, you can instead use the `New-UDDynamic` cmdlet. This cmdlets let you define an entire section of a page as dynamic. It also provides auto refresh functionality so you can refresh sections of a page all at once. 
 
 ```text
 New-UDDynamic -Endpoint {
