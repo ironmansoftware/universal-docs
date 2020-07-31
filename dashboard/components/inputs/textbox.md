@@ -36,7 +36,19 @@ New-UDButton -OnClick {
 } -Text "Get textbox value"
 ```
 
+## Setting the textbox value
 
+```text
+New-UDTextbox -Id 'txtExample' -Label 'Label' -Value 'Value'
+
+New-UDButton -OnClick {
+
+    Set-UDElement -Id 'txtExample' -Properties @{
+        Value = "test123"
+    }
+
+} -Text "Get textbox value"
+```
 
 **New-UDTextbox**
 
