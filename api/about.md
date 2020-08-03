@@ -87,6 +87,8 @@ Data returned from endpoints will be assumed to be JSON data. If you return an o
 
 ### Processing Files
 
+#### Uploading Files
+
 You can process uploaded files by using the `$Data` parameter to access the byte array of data uploaded to the endpoint.
 
 ```text
@@ -101,6 +103,25 @@ StatusDescription : OK
 Content           : [137,80,78,71,13,10,26,10,0,0,0,13,73,72,68,82,0,0,2,17,0,0,1,92,8,2,0,0,0,249,210,123,106,0,0,0,1,
                     115,82,71,66,0,174,206,28,233,0,0,0,4,103,65,77,65,0,0,177,143,11,252,97,5,0,0,0,9,112,72,89,115,0,
                     0,…
+```
+
+You could also save the file into a directory. 
+
+```text
+New-PSUEndpoint -Url '/file' -Method Post -Endpoint {
+    [IO.File]::WriteAllBytes("tempfile.dat", $Data)
+}
+```
+
+#### Downloading Files 
+
+You can send files down using the `New-PSUApiResponse` cmdlet. 
+
+```text
+New-PSUEndpoint -Url '/image' -Endpoint {
+    $ImageData = [IO.File]::ReadAllBytes("image.jpeg")
+    New-PSUApiResponse -ContentType 'image/jpg' -Data $ImageData
+}
 ```
 
 ### Returning Custom Responses
