@@ -8,7 +8,7 @@ Application settings can be found within the `appsettings.json` file within the 
 
 ## ProgramData AppSettings.json
 
-You can create an appsettings.json file within the `$Env:ProgramData\Universal` folder. You can use a subset of the settings from within the `appsettings.json` file. For example, if you wanted to override the JWT settings, you could have an `appsettings.json` file like this. 
+You can create an appsettings.json file within the `$Env:ProgramData\PowerShellUniversal` folder. You can use a subset of the settings from within the `appsettings.json` file. For example, if you wanted to override the JWT settings, you could have an `appsettings.json` file like this. 
 
 ```text
 {
