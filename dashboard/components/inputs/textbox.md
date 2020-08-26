@@ -18,7 +18,7 @@ New-UDTextbox -Label 'Textbox' -Value 'With value'
 
 ## Password Textbox
 
-A password textbox will mask the input. 
+A password textbox will mask the input.
 
 ![](../../../.gitbook/assets/image%20%2855%29.png)
 
@@ -56,7 +56,7 @@ New-UDButton -OnClick {
 
 ## Icons
 
-You can set the icon of a textbox by using the `-Icon` parameter and the `New-UDIcon` cmdlet. 
+You can set the icon of a textbox by using the `-Icon` parameter and the `New-UDIcon` cmdlet.
 
 ```text
 New-UDTextbox -Id "ServerGroups" -Icon (New-UDIcon -Icon 'server') -Value "This is my server"
