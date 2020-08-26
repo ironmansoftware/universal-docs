@@ -67,6 +67,8 @@ New-UDDynamic -Id 'icons' -Content {
 }
 ```
 
+## Parameters
+
 **New-UDIcon**
 
 | Name | Type | Description | Required |
@@ -75,27 +77,6 @@ New-UDDynamic -Id 'icons' -Content {
 | Icon | FontAwesomeIcons | Icon to select | false |
 | FixedWidth | switch |  | false |
 | Inverse | switch | Whether to inverse the icon | false |
-| Rotation | int |  | false |
-| ClassName | string |  | false |
-| Transform | string |  | false |
-| Flip | string |  | false |
-| Pull | string |  | false |
-| ListItem | switch |  | false |
-| Spin | switch |  | false |
-| Border | switch |  | false |
-| Pulse | switch |  | false |
-| Size | string |  | false |
-| Style | hashtable |  | false |
-| Title | string |  | false |
-| Regular | switch |  | false |
-| Color |  |  |  |
-
-| Name | Type | Description | Required |
-| :--- | :--- | :--- | :--- |
-| Id | string |  | false |
-| Icon | FontAwesomeIcons |  | false |
-| FixedWidth | switch |  | false |
-| Inverse | switch |  | false |
 | Rotation | int |  | false |
 | ClassName | string |  | false |
 | Transform | string |  | false |
