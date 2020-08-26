@@ -50,6 +50,16 @@ New-UDButton -OnClick {
 } -Text "Get textbox value"
 ```
 
+## Icons
+
+You can set the icon of a textbox by using the `-Icon` parameter and the `New-UDIcon` cmdlet. 
+
+```text
+New-UDTextbox -Id "ServerGroups" -Icon (New-UDIcon -Icon 'server') -Value "This is my server"
+```
+
+![](../../../.gitbook/assets/image%20%28107%29.png)
+
 **New-UDTextbox**
 
 | Name | Type | Description | Required |
