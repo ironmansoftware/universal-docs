@@ -24,9 +24,11 @@ New-UDTextbox -Label 'Textbox' -Value 'With value'
 New-UDTextbox -Label 'Password' -Type password
 ```
 
-## Retrieving a textbox value
+## Interaction
 
-You can use Get-UDElement to get the value of a textbox
+### Retrieving a textbox value
+
+You can use `Get-UDElement` to get the value of a textbox
 
 ```text
 New-UDTextbox -Id 'txtExample' 
@@ -36,7 +38,7 @@ New-UDButton -OnClick {
 } -Text "Get textbox value"
 ```
 
-## Setting the textbox value
+### Setting the textbox value
 
 ```text
 New-UDTextbox -Id 'txtExample' -Label 'Label' -Value 'Value'
