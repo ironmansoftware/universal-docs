@@ -18,6 +18,8 @@ New-UDTextbox -Label 'Textbox' -Value 'With value'
 
 ## Password Textbox
 
+A password textbox will mask the input. 
+
 ![](../../../.gitbook/assets/image%20%2855%29.png)
 
 ```text
