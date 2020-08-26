@@ -54,7 +54,19 @@ New-UDCheckBox -Label 'Demo' -LabelPlacement bottom
 New-UDCheckBox -Label 'Demo' -LabelPlacement end
 ```
 
+## Get the value of a Checkbox
 
+You can use `Get-UDElement` to get the value of the checkbox. `Get-UDElement` will also return other properties of the checkbox component. 
+
+The following example shows a toast message with the value of the checkbox. 
+
+```text
+New-UDCheckbox -Id 'MyCheckbox' 
+
+New-UDButton -Text 'Get Value' -OnClick {
+    Show-UDToast -Message (Get-UDElement -Id 'MyCheckbox')['checked']
+}
+```
 
 **New-UDCheckbox**
 
