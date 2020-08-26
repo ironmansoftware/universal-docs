@@ -57,3 +57,7 @@ New-UDDynamic -Id 'icons' -Content {
 | Regular | switch |  | false |
 | Color |  |  |  |
 
+## Icon Reference
+
+
+
