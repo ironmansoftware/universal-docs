@@ -91,3 +91,7 @@
 
 * [Debugging Scripts](debugging/debugging-scripts.md)
 
+---
+
+* [Changelog](changelog.md)
+
