@@ -1,5 +1,36 @@
 # Changelog
 
+# 1.3.1 - 8-26-2020
+
+## Changed
+
+### API
+
+- Fixed an issue where a self-referencing loop with an object would cause an exception during serialization.
+
+### Automation 
+
+- Fixed issue where responding to feedback wouldn't work in the UI
+- Fixed an issue where deleting a schedule wouldn't stop the schedule from running.
+- Fixed an issue where script files would not be deleted when deleting a script
+
+### Dashboard 
+
+- Added dashboard memory history
+- UDv2 - Fixed UDMonitor default values
+- UDv3 - Fixed UDTypography style parameter
+- UDv3 - Fixed an issue with the UDIcon parameter. 
+- UDv3 - Fixed an issue where -ReplaceToast on Show-UDToast would not work
+- Fixed an issue where the dashboard runspace would attempt to set readonly variables
+- Fixed an issue where dashboard files would not be deleted when deleting a dashboard
+
+### Platform
+
+- All files are now written using UTF8 with BOM encoding
+- Fixed an issue where AppTokens were being deleted
+- Fixed swagger API docs. 
+- Fixed an issue where the Admin Console would be blank after upgrades
+
 # 1.3.0 - 7-30-2020
 
 ## Added
