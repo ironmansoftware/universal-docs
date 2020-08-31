@@ -86,6 +86,7 @@
   * [OpenID Connect](config/security/openid-connect.md)
   * [WS-Federation](config/security/ws-federation.md)
 * [Running as a Service Account](config/running-as-a-service-account.md)
+* [Git](config/git.md)
 
 ## Debugging
 
