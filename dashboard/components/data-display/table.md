@@ -83,6 +83,8 @@ New-UDTable -Data $Data -Columns $Columns -Sort -Export
 
 ## Table with server-side processing
 
+For a full example of server-side processing, [see this blog post](https://blog.ironmansoftware.com/universal-dashboard-server-side-table/).
+
 ![](../../../.gitbook/assets/image%20%2854%29.png)
 
 Process data on the server so you can perform paging, filtering, sorting and searching in systems like SQL.
