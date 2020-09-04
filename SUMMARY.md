@@ -8,6 +8,7 @@
 * [Supported Browsers](supported-browsers.md)
 * [System Requirements](system-requirements.md)
 * [Licensing](licensing.md)
+* [Visual Studio Code Extension](visual-studio-code-extension.md)
 
 ## API
 
