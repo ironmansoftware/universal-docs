@@ -1,5 +1,9 @@
 # Building Dashboards
 
+{% hint style="info" %}
+We recommend installing the [PowerShell Universal Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal). 
+{% endhint %}
+
 When building dashboards, you will pick one of the two built in dashboard frameworks. The components that are available for that framework will different. You can find examples of each of the frameworks at the below links. 
 
 * [Universal Dashboard v2](https://github.com/ironmansoftware/universal-dashboard/tree/master/src/v2/example)
