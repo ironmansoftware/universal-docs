@@ -5,7 +5,7 @@ description: Installation instructions for PowerShell Universal.
 # Installation
 
 {% hint style="info" %}
-We recommend installing the [PowerShell Universal Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal). 
+We recommend installing the [PowerShell Universal Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal). The extension will automatically download Universal for development purposes. 
 {% endhint %}
 
 ## Chocolatey Package
