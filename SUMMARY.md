@@ -32,6 +32,7 @@
   * [Custom Variable Scopes](dashboard/dashboards/custom-variable-scopes.md)
 * [Frameworks](dashboard/dashboard-frameworks.md)
 * [Components](dashboard/components/README.md)
+  * [Pages](dashboard/components/pages.md)
   * [Building Custom Components](dashboard/components/building-custom-components.md)
   * [Data Display](dashboard/components/data-display/README.md)
     * [Chip](dashboard/components/data-display/chip.md)
