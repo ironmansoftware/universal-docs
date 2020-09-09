@@ -34,6 +34,20 @@ You can manage dashboards with the extension. You will see a list of dashboards 
 
 ![](.gitbook/assets/image%20%28118%29.png)
 
+#### Debug Dashboard Process
+
+You can connect the Visual Studio debugger to the dashboard process by right clicking on the dashboard and click Debug Dashboard Process. This requires the PowerShell extension for Visual Studio Code. 
+
+![](.gitbook/assets/image%20%28120%29.png)
+
+After connecting the debugger, you can run commands such as `Get-Runspace` and `Debug-Runspace` to begin debugging aspects of your dashboard. 
+
+#### View Dashboard Logs
+
+You can view dashboard logs by right clicking on the dashboard and clicking View Logs. They will open in a new tab.
+
+![](.gitbook/assets/image%20%28119%29.png)
+
 ### Scripts
 
 You can manage scripts with the extension. You will see a list of available scripts underneath this section. You can edit the scripts.ps1, edit an individual script and run scripts. When running scripts, you will receive feedback about the status of the script. Scripts with parameters are not supported in VS Code. You can still run them in PowerShell Universal. 
