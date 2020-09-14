@@ -13,10 +13,12 @@
 ## API
 
 * [About](api/about.md)
+* [Development](api/development.md)
 
 ## Automation
 
 * [About](automation/about.md)
+* [Development](automation/development.md)
 * [Scripts](automation/scripts.md)
 * [Jobs](automation/jobs.md)
 * [PowerShell Versions](automation/powershell-versions.md)
@@ -26,6 +28,7 @@
 ## Dashboard
 
 * [About](dashboard/about.md)
+* [Development](dashboard/development.md)
 * [Dashboards](dashboard/dashboards/README.md)
   * [Migrating From Universal Dashboard 2.9](dashboard/dashboards/migrating-from-universal-dashboard-2.9.md)
   * [Building Dashboards](dashboard/dashboards/building-dashboards.md)

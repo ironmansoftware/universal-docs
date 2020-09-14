@@ -16,6 +16,10 @@ Jobs log extensively. You will see console and pipeline output. If you set`$Debu
 
 ### Dashboards
 
+{% hint style="info" %}
+See [dashboard Development](../dashboard/development.md) for information on how to use VS Code for development. 
+{% endhint %}
+
 Dashboards log informational, warning and error messages to their log. It's recommended to use logging when starting a dashboard rather than trying to attach a debugger. You can also use the `$DebugPreference` variable to get additional information during your dashboard startup. 
 
 ### Authentication and Authorization
@@ -80,7 +84,5 @@ For a full list of debugging commands, you can see the [Microsoft documentation 
 
 To debug a script, you can use the Wait-Debugger cmdlet within your script to pause the script until a debugger is attached. You can then use a debugger, like VS Code, to attach to the process and runspace to view variables, step through code and execute debugging commands. 
 
-PowerShell Pro Tools has a [One-Click Attach feature](https://docs.poshtools.com/powershell-pro-tools-documentation/visual-studio-code/one-click-attach) that makes it easier to debug scripts. 
-
-You can also debug scripts using the built in Enter-PSHostProcess, Get-Runspace and Debug-Runspace cmdlets.
+You can also debug scripts using the built in `Enter-PSHostProcess`, `Get-Runspace` and `Debug-Runspace` cmdlets.
 

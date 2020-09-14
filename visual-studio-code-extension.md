@@ -38,7 +38,7 @@ You can manage dashboards with the extension. You will see a list of dashboards 
 
 You can connect the Visual Studio debugger to the dashboard process by right clicking on the dashboard and click Debug Dashboard Process. This requires the PowerShell extension for Visual Studio Code. 
 
-![](.gitbook/assets/image%20%28121%29.png)
+![](.gitbook/assets/image%20%28130%29.png)
 
 After connecting the debugger, you can run commands such as `Get-Runspace` and `Debug-Runspace` to begin debugging aspects of your dashboard. 
 
@@ -46,7 +46,7 @@ After connecting the debugger, you can run commands such as `Get-Runspace` and `
 
 You can view dashboard logs by right clicking on the dashboard and clicking View Logs. They will open in a new tab.
 
-![](.gitbook/assets/image%20%28119%29.png)
+![](.gitbook/assets/image%20%28121%29.png)
 
 ### Scripts
 

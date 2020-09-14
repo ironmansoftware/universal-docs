@@ -1,0 +1,101 @@
+---
+description: Developing dashboards in VS Code.
+---
+
+# Development
+
+The [Visual Studio Code extension for PowerShell Universal](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal) provides integration for working with dashboards. We recommend you also install the [PowerShell extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell). 
+
+{% hint style="info" %}
+The first time you activate the Visual Studio Code extension, it will download the latest version of PowerShell Universal and start the server on port 5000.
+{% endhint %}
+
+## Developing a Dashboard
+
+To add a new dashboard, visit the admin console and go to Dashboard \ Dashboards and click the Add Dashboard button. 
+
+![](../.gitbook/assets/image%20%28129%29.png)
+
+After adding the dashboard, a dashboard PS1 file will be created and the `dashboards.ps1` file will be updated. You can view your dashboard in VS Code underneath the dashboards tree view. It will show the current state of the dashboard and the framework it is using. 
+
+![](../.gitbook/assets/image%20%28126%29.png)
+
+If you want to edit your dashboard, click the Open Dashboard File button. This will open the dashboard PS1 file in the editor and import the Universal module and Dashboard framework module so you have IntelliSense. 
+
+![](../.gitbook/assets/image%20%28133%29.png)
+
+From here, you can begin editing your dashboard.
+
+![](../.gitbook/assets/bxmax1ree3.gif)
+
+Your dashboard should restart automatically when you make changes. You will be able to view the dashboard in the browser by clicking the View button. 
+
+![](../.gitbook/assets/image%20%28127%29.png)
+
+If you need to restart your dashboard manually, you can click the Restart button. 
+
+![](../.gitbook/assets/image%20%28132%29.png)
+
+## Debugging a Dashboard
+
+### Logs
+
+You can view the dashboard logs by right clicking on the Dashboard and clicking View Log. The log should provide information about start up issues or errors when executing sections of your dashboard. 
+
+![](../.gitbook/assets/p8biqj6yvo.gif)
+
+### Debugger
+
+{% hint style="info" %}
+This section requires the PowerShell extension.
+{% endhint %}
+
+You can debug individual endpoints within your dashboard by using `Wait-Debugger`
+
+For example, if I wanted to debug the button on my dashboard, I would add it to the `OnClick` event handler. 
+
+```text
+New-UDDashboard -Title "Hello, World!" -Content {
+    New-UDTypography -Text "Hello, World!"
+
+    New-UDButton -Text "Learn more about Universal Dashboard" -OnClick {
+        Wait-Debugger
+        Invoke-UDRedirect https://docs.ironmansoftware.com
+    }
+}
+```
+
+Now, I can right click on my dashboard and click Debug Dashboard Process.
+
+![](../.gitbook/assets/image%20%28123%29.png)
+
+This will issue an `Enter-PSHostProcess` command in the Integrated Terminal. 
+
+```text
+PS C:\Users\adamr\Desktop> Enter-PSHostProcess -Id 15464
+
+[Process:15464]: PS C:\Users\adamr\Documents>
+```
+
+Next, you'll want to navigate to your page and click the button. Once the button is clicked, issue a `Get-Runspace` command in the Integrated Terminal. You'll notice that one of the runspaces is in `InBreakpoint` availability. 
+
+```text
+[Process:15464]: PS C:\Users\adamr\Documents> Get-Runspace
+
+
+ Id Name            ComputerName    Type          State         Availability
+ -- ----            ------------    ----          -----         ------------
+  1 Runspace1       localhost       Local         Opened        Busy        
+  2 Runspace2       localhost       Local         Opened        Available   
+  3 RemoteHost      localhost       Local         Opened        Available   
+  4 e8be011f-40f8-… localhost       Local         Opened        InBreakpoint
+```
+
+Finally, issue the `Debug-Runspace` command and VS Code will automatically open your endpoint in the debugger. You'll be able to step through your code, view variables and issue commands against the runspace. 
+
+![](../.gitbook/assets/jidgnpmbwy.gif)
+
+
+
+
+
