@@ -65,6 +65,7 @@
     * [Time Picker](dashboard/components/inputs/time-picker.md)
     * [Upload](dashboard/components/inputs/upload.md)
   * [Navigation](dashboard/components/navigation/README.md)
+    * [Drawer](dashboard/components/navigation/drawer.md)
     * [Stepper](dashboard/components/navigation/stepper.md)
     * [Tabs](dashboard/components/navigation/tabs.md)
   * [Layout](dashboard/components/layout/README.md)
