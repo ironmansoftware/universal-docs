@@ -8,3 +8,11 @@ PowerShell versions are used for jobs and for dashboards. When you create a new 
 
 You can configure versions by navigating to the Settings\General page. There is a table of the current PowerShell versions that are available. You will need to specify a name and path to the PowerShell version. 
 
+## Migration to Environments
+
+{% hint style="warning" %}
+This documentation is for the prelease version of PowerShell Universal. You can download pre-release versions on our [Downloads page](https://ironmansoftware.com/downloads).
+{% endhint %}
+
+As of version 1.4, PowerShell versions have been migrated to [Environments](../config/environments.md). 
+

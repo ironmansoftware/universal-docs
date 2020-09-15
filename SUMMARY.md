@@ -83,6 +83,7 @@
 
 * [About](config/about.md)
 * [API](config/api.md)
+* [Environments](config/environments.md)
 * [Hosting](config/hosting.md)
 * [Hosting with IIS](config/hosting-iis/README.md)
   * [IIS Windows Auth](config/hosting-iis/hosting-iis-windowsauth.md)
