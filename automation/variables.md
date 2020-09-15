@@ -2,6 +2,10 @@
 
 Variables allow for the global definition of variables that are available within scripts. You can also import secrets that are also available within scripts or as run as credentials. 
 
+{% hint style="info" %}
+Variables are stored in the `variables.ps1` configuration file.
+{% endhint %}
+
 ## Creating a Variable 
 
 To create a variable, navigate to the Automation / Variables page. Click Add Variable to define a new variable. 

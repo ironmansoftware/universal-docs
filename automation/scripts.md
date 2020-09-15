@@ -2,6 +2,10 @@
 
 Scripts are the basic entity within Universal Automation. Scripts are just PowerShell scripts. They are stored on disk and also persisted to a local or remote Git repository. 
 
+{% hint style="info" %}
+Script properties are stored in the `scripts.ps1` configuration file.
+{% endhint %}
+
 ## Add a New Script
 
 To add a new script, you can click the New Script button within the Automation / Scripts page. There are various settings you can provide for the script. 

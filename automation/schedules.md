@@ -2,6 +2,10 @@
 
 Schedules can be assigned to scripts and allow you to define frequency and other parameters for a script such as run as credentials. 
 
+{% hint style="info" %}
+Schedules are stored in the `schedules.ps1` configuration file.
+{% endhint %}
+
 ## Scheduling a Job 
 
 To schedule a job, you can do so from the Automation / Schedules page and by clicking the New Schedule button. You can also schedule a script by click the Schedule option from the script's page. 
