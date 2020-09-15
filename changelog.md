@@ -2,6 +2,20 @@
 
 ## Changelog
 
+## 1.3.2 - 9-15-2020
+
+### Changed
+
+#### Automation
+
+* Fixed an issue where you couldn't set the concurrent job limit
+
+#### Dashboard
+
+* Fixed an issue where the broadcast parameter would not work on cmdlets
+* Fixed an issue where the theme background would not be applied
+* Fixed an issue where custom dark and light themes would not work 
+
 ## 1.3.1 - 8-26-2020
 
 ### Changed
