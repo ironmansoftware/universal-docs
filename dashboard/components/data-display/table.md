@@ -137,4 +137,6 @@ New-UDTable -Columns $Columns -LoadData {
 | Filter | SwitchParameter | Whether filtering is enabled in the table. | false |
 | Search | SwitchParameter | Whether search is enabled in the table. | false |
 | Export | SwitchParameter | Whether exporting is enabled within the table. | false |
+| PageSize   | int | Number of items to show in a page by default \(prerelease\) | 5 |
+| PageSizeOptions | int\[\] | Page size options to show in the selector. | @\(5, 10, 20\) |
 
