@@ -78,6 +78,7 @@
 * [Interaction](dashboard/interaction.md)
 * [Published Folders](dashboard/published-folders.md)
 * [Themes](dashboard/themes.md)
+* [Role Based Access](dashboard/role-based-access.md)
 * [Marketplace](dashboard/marketplace.md)
 
 ## Configuration <a id="config"></a>
