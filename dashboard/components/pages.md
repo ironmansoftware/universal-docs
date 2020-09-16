@@ -88,7 +88,7 @@ This documentation is for the prelease version of PowerShell Universal. You can 
 This feature requires a [license](../../licensing.md). 
 {% endhint %}
 
-You can prevent users from accessing pages based on their role by using the `-Role` parameter of pages. 
+You can prevent users from accessing pages based on their role by using the `-Role` parameter of pages. You can configure roles and role policies on the [Security page](../../config/security/#policy-assignment). 
 
 ```text
 $Pages = @()
