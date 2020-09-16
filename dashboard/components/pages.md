@@ -78,3 +78,28 @@ $Pages += New-UDPage -Name 'Dashboard' -Url '/db/:user' -Content {
 New-UDDashboard -Title 'Pages' -Pages $Pages
 ```
 
+## Role-Based Access
+
+{% hint style="warning" %}
+This documentation is for the prelease version of PowerShell Universal. You can download pre-release versions on our [Downloads page](https://ironmansoftware.com/downloads).
+{% endhint %}
+
+{% hint style="info" %}
+This feature requires a [license](../../licensing.md). 
+{% endhint %}
+
+You can prevent users from accessing pages based on their role by using the `-Role` parameter of pages. 
+
+```text
+$Pages = @()
+$Pages += New-UDPage -Name 'Administrators' -Content {
+    New-UDTypography -Text 'Dashboard for user: $User'
+} -Role 'Administrator'
+
+$Pages += New-UDPage -Name 'Operators' -Content {
+    New-UDTypography -Text 'Dashboard for user: $User'
+} -Role 'Operator'
+
+New-UDDashboard -Title 'Pages' -Pages $Pages
+```
+
