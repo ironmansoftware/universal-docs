@@ -8,6 +8,10 @@ description: Role based access for dashboards.
 This documentation is for the prelease version of PowerShell Universal. You can download pre-release versions on our [Downloads page](https://ironmansoftware.com/downloads).
 {% endhint %}
 
+{% hint style="info" %}
+This feature requires a [license](../licensing.md). 
+{% endhint %}
+
 When dashboard authentication is enabled, you can define the role that a user must be a part of in order to access the dashboard. Roles are configured on the Settings \ Security page or from within the `roles.ps1` configuration file. 
 
 ![](../.gitbook/assets/image%20%28138%29.png)

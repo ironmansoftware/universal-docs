@@ -13,6 +13,7 @@
 ## API
 
 * [About](api/about.md)
+* [Rate Limiting](api/rate-limiting.md)
 * [Development](api/development.md)
 
 ## Automation
