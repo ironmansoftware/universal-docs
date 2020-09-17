@@ -42,6 +42,18 @@ New-UDForm -Content {
 
 The body of the `OnSubmit` script block is the same one you will see with any form and the file will be contains as one of the fields within the form. 
 
+## Example: Uploading a file and save to it the temp directory
+
+This example allows a user to upload a file. Once the file is uploaded, it will be saved to the temporary directory.
+
+```text
+New-UDUpload -Text 'Upload Image' -OnUpload {
+    $Data = $Body | ConvertFrom-Json 
+    $bytes = [System.Convert]::FromBase64String($Data.Data)
+    [System.IO.File]::WriteAllBytes("$env:temp\$($Data.Name)", $bytes)
+}
+```
+
 
 
 **New-UDUpload**
