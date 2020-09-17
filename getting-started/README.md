@@ -8,6 +8,12 @@ description: Installation instructions for PowerShell Universal.
 We recommend installing the [PowerShell Universal Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal). The extension will automatically download Universal for development purposes. 
 {% endhint %}
 
+## Getting Started
+
+{% embed url="https://youtu.be/ISoZbY9YPvo" %}
+
+
+
 ## Chocolatey Package
 
 You can install PowerShell Universal using the [Chocolatey package](https://chocolatey.org/packages/powershelluniversal). The package runs the MSI install. It will install Universal as a service and open a web browser after the install. 
