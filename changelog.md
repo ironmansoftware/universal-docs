@@ -2,6 +2,61 @@
 
 ## Changelog
 
+## 1.4.0 - Unreleased
+
+Download pre-release versions [here](https://imsreleases.z19.web.core.windows.net/).
+
+### Added
+
+#### API
+
+* Added -ApiEnvironment parameter to Set-PSUSettings
+* Added API rate limiting
+
+#### Automation
+
+* Continuous scheduling
+
+#### Dashboard
+
+* UDCodeEditor component is now included
+* UDv3 - Added -Variant to New-UDDrawer
+* UDv3 - Added -Anchor to New-UDDrawer
+* UDv3 - Added -PageSize to New-UDTable
+* UDv3 - Added -PageSizeOptions to New-UDTable
+* UDv3 - Added -Padding to New-UDTable
+* Role-based access for dashboards
+* UDv3 - Role-based access for dashboard pages. 
+* UDv3 - Display page when dashboard isn't running
+
+#### Platform
+
+* Added New-PSUAuthenticationResult and New-PSUAuthorizationClaim
+* Added support for defining custom claims during authentication
+* Added support for Environments
+
+### Changed
+
+#### API
+
+* Redesigned APIs and API page
+
+#### Automation
+
+* Fixed an issue where the job processes would inherit the parent process's PSModulePath
+
+#### Dashboard
+
+* Redesigned dashboard page
+* Fixed an issue with UDCodeEditor were Get-UDElement would not work. 
+* Fixed an issue where New-UDTabs wouldn't work with one tab.
+
+### Removed
+
+#### Platform
+
+* PowerShell version has been removed and merged into Environments
+
 ## 1.3.2 - 9-15-2020
 
 ### Changed
