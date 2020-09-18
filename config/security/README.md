@@ -14,7 +14,7 @@ Windows Authentication provides single-sign on support for browsers and environm
 
 ```text
 "Windows": {
-  "Enabled": "false"
+  "Enabled": "true"
 },
 ```
 
