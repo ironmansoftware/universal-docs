@@ -8,6 +8,33 @@ By default, the forms authentication script is configured to accept the user Adm
 
 You can configure OpenID authentication and authorization by adjusting the settings within the `OpenID` section of the `appsettings.json` file. Authorization policies that you configure within Universal will be run on the user's identity after authentication is successful.
 
+## Windows Authentication
+
+Windows Authentication provides single-sign on support for browsers and environments that support it. To enable Windows Authentication, set the `WindowsAuthentication` enabled setting to true in `appsettings.json`. 
+
+```text
+"Windows": {
+  "Enabled": "false"
+},
+```
+
+### Windows Authentication in IIS 
+
+To enable Windows Authentication in IIS, ensure that you enable Windows Authentication and disable anonymous authentication.
+
+![](../../.gitbook/assets/image%20%28149%29.png)
+
+### Windows Authentication outside of IIS
+
+{% hint style="warning" %}
+This documentation is for the prelease version of PowerShell Universal. You can download pre-release versions on our [Downloads page](https://ironmansoftware.com/downloads).
+{% endhint %}
+
+Windows Authentication is supported outside of IIS but requires configuration of the account running the Universal service. 
+
+* [Configuring a Windows machine for Windows Authentication](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/windowsauth?view=aspnetcore-3.1&tabs=visual-studio#windows-environment-configuration)
+* [Configuring a Linux or Mac OS machine for Windows Authentication](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/windowsauth?view=aspnetcore-3.1&tabs=visual-studio#linux-and-macos-environment-configuration)
+
 ## Authorization 
 
 User authorization can be achieved in two different ways: Role Assignment or Policy Assignment. 
