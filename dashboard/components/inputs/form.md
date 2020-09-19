@@ -94,7 +94,28 @@ New-UDForm -Content {
 }
 ```
 
+## Canceling a Form
 
+{% hint style="warning" %}
+This documentation is for the prelease version of PowerShell Universal. You can download pre-release versions on our [Downloads page](https://ironmansoftware.com/downloads).
+{% endhint %}
+
+You can define an `-OnCancel` event handler to invoke when the cancel button is pressed. This can be used to take actions like close a modal. 
+
+```text
+New-UDButton -Text 'On Form' -OnClick {
+    Show-UDModal -Content {
+        New-UDForm -Content {
+            New-UDTextbox -Label 'Hello'
+        } -OnSubmit {
+            Show-UDToast -Message 'Submitted!'
+            Hide-UDModal
+        } -OnCancel {
+            Hide-UDModal
+        }
+    }
+}
+```
 
 **New-UDForm**
 
@@ -105,6 +126,7 @@ New-UDForm -Content {
 | OnSubmit | Endpoint | A script block that is execute when the form is submitted. You can return controls from this script block and the form will be replaced by the script block. The $EventData variable will contain a hashtable of all the input fields and their values. | true |
 | OnValidate | Endpoint | A script block that validates the form. Return the result of a call to New-UDFormValidationResult. | false |
 | OnProcessing | ScriptBlock | A script block that is called when the form begins processing. The return value of this script block should be a component that displays a loading dialog. The script block will receive the current form data. | false |
+| OnCancel | Endpoint | An endpoint that is called when this form is cancelled. When this parameter is defined a cancel button will appear. | false |
 
 
 
