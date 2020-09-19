@@ -6,6 +6,107 @@ description: Charting components for Universal Dashboard.
 
 Universal Dashboard provides several built-in charting solutions to help visualize your data retrieved from PowerShell.
 
+## ChartJS
+
+{% hint style="warning" %}
+This documentation is for the prelease version of PowerShell Universal. You can download pre-release versions on our [Downloads page](https://ironmansoftware.com/downloads).
+{% endhint %}
+
+Universal Dashboard integrates with [ChartJS](https://www.chartjs.org/). 
+
+### Creating a Chart
+
+To create a chart, use `New-UDChartJS` and `New-UDChartJSData`. The below chart shows the top ten CPU using processes.
+
+```text
+ $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
+ New-UDChartJS -Type 'bar' -Data $Data -DataProperty CPU -LabelProperty ProcessName
+```
+
+### Types
+
+#### Bar
+
+```text
+ $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
+ New-UDChartJS -Type 'bar' -Data $Data -DataProperty CPU -LabelProperty ProcessName
+```
+
+#### Horizontal Bar
+
+```text
+ $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
+ New-UDChartJS -Type 'horizontalBar' -Data $Data -DataProperty CPU -LabelProperty ProcessName
+```
+
+#### Line
+
+```text
+ $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
+ New-UDChartJS -Type 'line' -Data $Data -DataProperty CPU -LabelProperty ProcessName
+```
+
+#### Doughnut
+
+```text
+ $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
+ New-UDChartJS -Type 'doughnut' -Data $Data -DataProperty CPU -LabelProperty ProcessName
+```
+
+#### Pie
+
+```text
+ $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
+ New-UDChartJS -Type 'pie' -Data $Data -DataProperty CPU -LabelProperty ProcessName
+```
+
+#### Radar
+
+```text
+ $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
+ New-UDChartJS -Type 'radar' -Data $Data -DataProperty CPU -LabelProperty ProcessName
+```
+
+### Colors
+
+Colors can be defined using the various color parameters of `New-UDChartJS`.
+
+```text
+ $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
+ 
+ $Options = @{
+   Type = 'bar'
+   Data = $Data
+   BackgroundColor = 'Red'
+   BorderColor = '#c61d4a'
+   HoverBackgroundColor = 'Blue'
+   HoverBorderColor = '#451dc6'
+   DataProperty = 'CPU'
+   LabelProperty = 'ProcessName'
+ }
+ 
+ New-UDChartJS @Options
+```
+
+### Data Sets
+
+By default, you do not need to define data sets manually. A single data set is created automatically when you use the `-DataProperty` and `-LabelProperty` parameters. If you want to define multiple data sets for a single chart, you can use the `-Dataset` property in conjunction with `New-UDChartJSDataset`. 
+
+```text
+ $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
+ 
+ $CPUDataset = New-UDChartJSDataset -DataProperty CPU -LabelProperty ProcessName
+ $MemoryDataset = New-UDChartJSDataset -DataProperty WorkingSet -LabelProperty ProcessName
+ 
+ $Options = @{
+   Type = 'bar'
+   Data = $Data
+   Datasets = @($CPUDataset, $MemoryDataset)
+ }
+ 
+ New-UDChartJS @Options
+```
+
 ## Nivo Charts
 
 Universal Dashboard integrates with [Nivo Charts](https://nivo.rocks/components). Below you will find examples and documentation for using these charts. 
