@@ -18,6 +18,8 @@ Universal Dashboard integrates with [ChartJS](https://www.chartjs.org/).
 
 To create a chart, use `New-UDChartJS` and `New-UDChartJSData`. The below chart shows the top ten CPU using processes.
 
+![](../../../.gitbook/assets/image%20%28150%29.png)
+
 ```text
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
  New-UDChartJS -Type 'bar' -Data $Data -DataProperty CPU -LabelProperty ProcessName
@@ -27,12 +29,16 @@ To create a chart, use `New-UDChartJS` and `New-UDChartJSData`. The below chart 
 
 #### Bar
 
+![](../../../.gitbook/assets/image%20%28157%29.png)
+
 ```text
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
  New-UDChartJS -Type 'bar' -Data $Data -DataProperty CPU -LabelProperty ProcessName
 ```
 
 #### Horizontal Bar
+
+![](../../../.gitbook/assets/image%20%28155%29.png)
 
 ```text
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
@@ -41,12 +47,16 @@ To create a chart, use `New-UDChartJS` and `New-UDChartJSData`. The below chart 
 
 #### Line
 
+![](../../../.gitbook/assets/image%20%28152%29.png)
+
 ```text
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
  New-UDChartJS -Type 'line' -Data $Data -DataProperty CPU -LabelProperty ProcessName
 ```
 
 #### Doughnut
+
+![](../../../.gitbook/assets/image%20%28153%29.png)
 
 ```text
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
@@ -55,12 +65,16 @@ To create a chart, use `New-UDChartJS` and `New-UDChartJSData`. The below chart 
 
 #### Pie
 
+![](../../../.gitbook/assets/image%20%28154%29.png)
+
 ```text
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
  New-UDChartJS -Type 'pie' -Data $Data -DataProperty CPU -LabelProperty ProcessName
 ```
 
 #### Radar
+
+![](../../../.gitbook/assets/image%20%28158%29.png)
 
 ```text
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
@@ -70,6 +84,8 @@ To create a chart, use `New-UDChartJS` and `New-UDChartJSData`. The below chart 
 ### Colors
 
 Colors can be defined using the various color parameters of `New-UDChartJS`.
+
+![](../../../.gitbook/assets/image%20%28151%29.png)
 
 ```text
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
@@ -92,19 +108,60 @@ Colors can be defined using the various color parameters of `New-UDChartJS`.
 
 By default, you do not need to define data sets manually. A single data set is created automatically when you use the `-DataProperty` and `-LabelProperty` parameters. If you want to define multiple data sets for a single chart, you can use the `-Dataset` property in conjunction with `New-UDChartJSDataset`. 
 
+![](../../../.gitbook/assets/image%20%28156%29.png)
+
 ```text
- $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
+$Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
  
- $CPUDataset = New-UDChartJSDataset -DataProperty CPU -LabelProperty ProcessName
- $MemoryDataset = New-UDChartJSDataset -DataProperty WorkingSet -LabelProperty ProcessName
+ $CPUDataset = New-UDChartJSDataset -DataProperty CPU -Label CPU -BackgroundColor '#126f8c'
+ $MemoryDataset = New-UDChartJSDataset -DataProperty HandleCount -Label 'Handle Count' -BackgroundColor '#8da322'
  
  $Options = @{
    Type = 'bar'
    Data = $Data
-   Datasets = @($CPUDataset, $MemoryDataset)
+   Dataset = @($CPUDataset, $MemoryDataset)
+   LabelProperty = "ProcessName"
  }
  
  New-UDChartJS @Options
+```
+
+### Click Events
+
+You can take action when a user clicks the chart. This example shows a toast with the contents of the `$Body`  variable. The `$Body` variable contains a JSON string with information about the elements that were clicked. 
+
+![](../../../.gitbook/assets/z4axjkkvyu.gif)
+
+```text
+ $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
+ 
+  $Options = @{
+   Type = 'bar'
+   Data = $Data
+   DataProperty = 'CPU'
+   LabelProperty = "ProcessName"
+   OnClick = { 
+      Show-UDToast -Message $Body
+   }
+ }
+ 
+ 
+ New-UDChartJS @Options
+```
+
+### Auto refreshing charts
+
+You can use `New-UDDynamic` to create charts that refresh on an interval.
+
+![](../../../.gitbook/assets/cxez8afan4.gif)
+
+```text
+New-UDDynamic -Content {
+    $Data = 1..10 | % { 
+        [PSCustomObject]@{ Name = $_; value = get-random }
+    }
+    New-UDChartJS -Type 'bar' -Data $Data -DataProperty Value -Id 'test' -LabelProperty Name -BackgroundColor Blue
+} -AutoRefresh -AutoRefreshInterval 1 
 ```
 
 ## Nivo Charts
