@@ -28,6 +28,8 @@ New-UDRadioGroup -Label "Day" -Content {
 
 ## OnChange
 
+An event handler that is called when the radio group is changed. the $Body variable will contain the current value. 
+
 ```text
 New-UDRadioGroup -Label "Day" -Content {
     New-UDRadio -Label Monday -Value 'monday'
@@ -41,7 +43,38 @@ New-UDRadioGroup -Label "Day" -Content {
     }
 ```
 
+## Default Value
 
+Set the default value of the radio group.
+
+```text
+New-UDRadioGroup -Label "Day" -Content {
+    New-UDRadio -Label Monday -Value 'monday'
+    New-UDRadio -Label Tuesday -Value 'tuesday'
+    New-UDRadio -Label Wednesday -Value 'wednesday'
+    New-UDRadio -Label Thursday -Value 'thursday'
+    New-UDRadio -Label Friday  -Value 'friday'
+    New-UDRadio -Label Saturday -Value 'saturday'
+    New-UDRadio -Label Sunday -Value 'sunday'
+} -Value 'sunday'
+```
+
+## Custom Formatting
+
+You can use custom formatting within the radio group. The below example will place the radio buttons next to each other instead of on top of each other. 
+
+```text
+New-UDRadioGroup -Label "Day" -Content {
+    New-UDRow -Columns {
+        New-UDColumn -LargeSize 1 -Content {
+            New-UDRadio -Label Monday -Value 'monday'        
+        }
+        New-UDColumn -LargeSize 1 -Content {
+            New-UDRadio -Label Sunday -Value 'sunday'
+        }
+    }
+} 
+```
 
 **New-UDRadio**
 
