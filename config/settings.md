@@ -38,6 +38,10 @@ The logging options define the level of logging exposed by Universal. The core U
 
 **AllowedHosts**
 
+The hosts that are allowed to connect to the webserver. Defaults to any host. 
+
+**CorsHosts**
+
 {% hint style="warning" %}
 This documentation is for the prelease version of PowerShell Universal. You can download pre-release versions on our [Downloads page](https://ironmansoftware.com/downloads).
 {% endhint %}
@@ -45,7 +49,7 @@ This documentation is for the prelease version of PowerShell Universal. You can 
 Configures the hosts that are allowed to make cross-origin resource sharing requests \(CORS\) to the server. To allow multiple hosts, separate each host by a semicolon. 
 
 ```text
-"AllowedHosts" : "https://www.google.com;https://login.microsoftonline.com"
+"CorsHosts" : "https://www.google.com;https://login.microsoftonline.com"
 ```
 
 **Data**
