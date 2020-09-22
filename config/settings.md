@@ -38,7 +38,11 @@ The logging options define the level of logging exposed by Universal. The core U
 
 **AllowedHosts**
 
-Configures the hosts that are allowed to make cross-origin resource sharing requests \(CORS\) to the server. 
+Configures the hosts that are allowed to make cross-origin resource sharing requests \(CORS\) to the server. To allow multiple hosts, separate each host by a semicolon. 
+
+```text
+"AllowedHosts" : "https://www.google.com;https://login.microsoftonline.com"
+```
 
 **Data**
 
