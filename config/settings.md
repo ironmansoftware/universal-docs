@@ -38,7 +38,7 @@ The logging options define the level of logging exposed by Universal. The core U
 
 **AllowedHosts**
 
-Configures the hosts that are allowed to connect to the webserver. By default, allow hosts are allowed. 
+Configures the hosts that are allowed to make cross-origin resource sharing requests \(CORS\) to the server. 
 
 **Data**
 
