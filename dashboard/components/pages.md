@@ -103,3 +103,80 @@ $Pages += New-UDPage -Name 'Operators' -Content {
 New-UDDashboard -Title 'Pages' -Pages $Pages
 ```
 
+## Navigation
+
+{% hint style="warning" %}
+This documentation is for the prelease version of PowerShell Universal. You can download pre-release versions on our [Downloads page](https://ironmansoftware.com/downloads).
+{% endhint %}
+
+You can customize the navigation of a page using the `-Navigation` and `-NavigationLayout` parameters. Navigation is defined using the [List](data-display/list.md#list) component. Navigation layouts are either permanent or temporary. 
+
+### Custom Navigation 
+
+Custom navigation can be defined with a list. List items can include children to create drop down sections in the navigation. 
+
+```text
+$Navigation = @(
+    New-UDListItem -Label "Home"
+    New-UDListItem -Label "Getting Started" -Children {
+        New-UDListItem -Label "Installation" -OnClick {}
+        New-UDListItem -Label "Usage" -OnClick {}
+        New-UDListItem -Label "FAQs" -OnClick {}
+        New-UDListItem -Label "System Requirements" -OnClick {}
+        New-UDListItem -Label "Purchasing" -OnClick {}
+    }
+)
+
+$Pages = @()
+$Pages += New-UDPage -Name 'Test' -Content {
+ New-UDTypography -Text "Hello"
+} -NavigationLayout permanent -Navigation $Navigation
+
+$Pages += New-UDPage -Name 'Test2' -Content {
+    New-UDTypography -Text "Hello"
+} -NavigationLayout permanent -Navigation $Navigation
+
+
+New-UDDashboard -Title "Hello, World!" -Pages $Pages
+```
+
+![Custom navigation](../../.gitbook/assets/image%20%28160%29.png)
+
+### Layouts
+
+The permanent layout creates a static navigation drawer on the left hand side of the page. It cannot be hidden by the user. 
+
+```text
+$Pages = @()
+$Pages += New-UDPage -Name 'Test' -Content {
+ New-UDTypography -Text "Hello"
+} -NavigationLayout permanent
+
+$Pages += New-UDPage -Name 'Test2' -Content {
+    New-UDTypography -Text "Hello"
+} -NavigationLayout permanent
+
+
+New-UDDashboard -Title "Hello, World!" -Pages $Pages
+```
+
+![Permanent navigation drawer](../../.gitbook/assets/image%20%28159%29.png)
+
+The temporary layout creates a navigation drawer that can be opened using a hamburger menu found in the top left corner. This is the default setting. 
+
+```text
+$Pages = @()
+$Pages += New-UDPage -Name 'Test' -Content {
+ New-UDTypography -Text "Hello"
+} -NavigationLayout temporary
+
+$Pages += New-UDPage -Name 'Test2' -Content {
+    New-UDTypography -Text "Hello"
+} -NavigationLayout temporary
+
+
+New-UDDashboard -Title "Hello, World!" -Pages $Pages
+```
+
+![Temporary navigation drawer](../../.gitbook/assets/temporary.gif)
+
