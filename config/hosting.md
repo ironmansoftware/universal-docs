@@ -79,5 +79,21 @@ To configure HTTPS, you can adjust the `appsettings.json` file to use a particul
 }
 ```
 
+To configure a certificate in a particular location and store, you can use a configuration such as this. 
+
+```text
+"HTTPS": {
+  "Url": "https://*443",
+  "Certificate": {
+    "Subject": "windows-server.ironman.local",
+    "Store": "My",
+    "Location": "LocalMachine",
+    "AllowInvalid": "true"
+  }
+}
+```
+
+Location can be either `CurrentUser` or `LocalMachine`.
+
 For a full set of listening options, you can refer to the [ASP.NET Core Documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-3.1#listenoptionsusehttps).
 
