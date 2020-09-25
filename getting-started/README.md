@@ -24,6 +24,20 @@ You can login with the "admin" user and any password.
 choco install powershelluniversal
 ```
 
+## Winget
+
+You can install PowerShell Universal using Winget. It will run the MSI and install as a service. 
+
+```text
+winget install ironmansoftware.powershelluniversal
+```
+
+You can also specify the `--silent` flag to prevent the installer from showing and the web browser from opening at the end of the install. 
+
+```text
+winget install ironmansoftware.powershelluniversal --silent
+```
+
 ## ZIP Install
 
 You can also download the ZIP from our [Downloads page](https://ironmansoftware.com/downloads/) if you would like to xcopy deploy the files on Windows or Linux. 
