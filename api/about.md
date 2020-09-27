@@ -6,6 +6,10 @@ Universal provides the ability to define REST API endpoints using PowerShell. Wh
 This feature is for developing custom APIs run by Universal. It not required for managing Universal. Universal provides a set of management APIs that are included with the platform. 
 {% endhint %}
 
+{% embed url="https://youtu.be/M6z0iYhmUkQ" %}
+
+
+
 ## Endpoints
 
 Endpoints are defined by their URI and HTTP method. Calls made to the Universal server that match the API endpoint and method that you define will execute the API endpoint script. 
