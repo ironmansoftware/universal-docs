@@ -39,7 +39,7 @@ To enable role-based access controls, you can assign roles to pages and use the 
 
 #### Authorization Policies
 
-Authorizations policies in Universal work very similar to the ones in Universal Dashboard, you will define them using the New-PSURole cmdlet. When you define the role, you have the option to define a policy that will assign that role automatically to a user.
+Authorizations policies in Universal work very similar to the ones in Universal Dashboard, you will define them using the `New-PSURole` cmdlet. When you define the role, you have the option to define a policy that will assign that role automatically to a user.
 
 For example, let's adjust a claims policy from Universal Dashboard for Universal.
 
