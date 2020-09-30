@@ -29,7 +29,7 @@ $Endpoint = New-UDEndpoint -Schedule $Schedule -Endpoint {}
 
 ### REST APIs
 
-REST APIs will be a separate feature of PSU and not a part of UD.
+To learn more about APIs, [click here](../../api/about.md). 
 
 ### Authentication and Authorization
 
