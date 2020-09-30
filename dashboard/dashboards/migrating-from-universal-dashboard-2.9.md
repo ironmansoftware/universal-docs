@@ -74,7 +74,7 @@ PS C:\Users\adamr> if ($Roles -contains 'Administrator') { $true }
 
 ### Published Folders
 
-Published folders are not yet a feature of PSU. They will be implemented at a later time.
+[Click here](../published-folders.md) to learn more about Published Folders in PowerShell Universal. 
 
 ### Pages
 
@@ -98,7 +98,7 @@ New-UDPage -Name 'myPage' -Url "/myPage/:owner" -Content {
 
 ## Migrating to Universal Dashboard v3
 
-As we more closer to completion of Universal Dashboard v3 this section will become more complete. We'd like to start documenting this so that users can begin working with UDv3.
+This section contains migration information for upgrading from UDv2 to UDv3. They are vastly different frameworks and will require rewriting your dashboard. Many of the concepts are the same. 
 
 ### New-UDTable \(formerly UDGrid and UDTable\)
 
