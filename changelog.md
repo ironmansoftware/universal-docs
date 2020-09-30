@@ -6,8 +6,6 @@
 
 Download pre-release versions [here](https://imsreleases.z19.web.core.windows.net/).
 
-### 
-
 ### Added
 
 #### API
