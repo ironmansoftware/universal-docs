@@ -20,7 +20,7 @@ This cmdlet has been removed from Universal Dashboard. There is no longer a need
 
 ### Scheduled Endpoints
 
-You do not need to pass the value of a scheduled endpoint to anything. You can just call `New-UDEndpoint` with a endpoint schedule and it will automatically be registed with PSU.
+You do not need to pass the value of a scheduled endpoint to anything. You can just call `New-UDEndpoint` with a endpoint schedule and it will automatically be registered with PSU.
 
 ```text
 $Schedule = New-UDEndpointSchedule -Every 10 -Minute
