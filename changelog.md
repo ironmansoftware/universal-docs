@@ -6,12 +6,15 @@
 
 Download pre-release versions [here](https://imsreleases.z19.web.core.windows.net/).
 
+### 
+
 ### Added
 
 #### API
 
 * Added -ApiEnvironment parameter to Set-PSUSettings
 * Added API rate limiting
+* Added LocalIpAddress, RemoteIpAddress, LocalPort and RemotePort variables
 
 #### Automation
 
@@ -28,12 +31,22 @@ Download pre-release versions [here](https://imsreleases.z19.web.core.windows.ne
 * Role-based access for dashboards
 * UDv3 - Role-based access for dashboard pages. 
 * UDv3 - Display page when dashboard isn't running
+* UDv2 - Fixed an issue where UDMonitor colors would not work
+* Added ChartJS charts to the charts component library
+* Added OnCancel to New-UDForm
+* Added $EventData hashtable to events that take data. 
+* UDv3 - Added -NavigationLayout and -Navigation to New-UDPage
+* UDv3 - Added -Multiline, -Rows, -RowsMax to New-UDTextbox
 
 #### Platform
 
 * Added New-PSUAuthenticationResult and New-PSUAuthorizationClaim
 * Added support for defining custom claims during authentication
 * Added support for Environments
+* Windows Authentication support without IIS
+* Added a setting to hide the admin console
+* Added a setting to configure CORS
+* Aliases for all cmdlets that start with PSU
 
 ### Changed
 
@@ -44,12 +57,21 @@ Download pre-release versions [here](https://imsreleases.z19.web.core.windows.ne
 #### Automation
 
 * Fixed an issue where the job processes would inherit the parent process's PSModulePath
+* Fixed an issue where Switch parameters would not work correctly 
+* Fixed an issue where -ForegroundColor on Write-Host would add an extra line
 
 #### Dashboard
 
 * Redesigned dashboard page
 * Fixed an issue with UDCodeEditor were Get-UDElement would not work. 
 * Fixed an issue where New-UDTabs wouldn't work with one tab.
+* Fixed an issue that would prevent custom components from using additional assets \(like images in UDMap\)
+* Fixed an issue with UDMap that prevented it from including default images
+* Fixed an issue where OpenID Connect and WS-Federation would not redirect correctly
+
+#### Platform
+
+* Fixed an issue where logging level would not apply to file logging
 
 ### Removed
 
