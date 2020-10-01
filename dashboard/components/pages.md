@@ -101,10 +101,6 @@ New-UDDashboard -Title 'Pages' -Pages $Pages
 
 ## Navigation
 
-{% hint style="warning" %}
-This documentation is for the prelease version of PowerShell Universal. You can download pre-release versions on our [Downloads page](https://ironmansoftware.com/downloads).
-{% endhint %}
-
 You can customize the navigation of a page using the `-Navigation` and `-NavigationLayout` parameters. Navigation is defined using the [List](data-display/list.md#list) component. Navigation layouts are either permanent or temporary. 
 
 ### Custom Navigation 
