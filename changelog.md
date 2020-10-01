@@ -2,6 +2,14 @@
 
 ## Changelog
 
+## 1.4.2 - Unreleased
+
+### Changed
+
+#### Dashboard
+
+* Fixed an issue where saving dashboards.ps1 configuration file would lose components
+
 ## 1.4.1 - 10-01-2020
 
 ### Changed
