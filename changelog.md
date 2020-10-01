@@ -2,9 +2,7 @@
 
 ## Changelog
 
-## 1.4.0 - Unreleased
-
-Download pre-release versions [here](https://imsreleases.z19.web.core.windows.net/).
+## 1.4.0 - 10-01-2020
 
 ### Added
 
