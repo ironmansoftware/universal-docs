@@ -1,7 +1,5 @@
 # Changelog
 
-## Changelog
-
 ## 1.4.2 - Unreleased
 
 ### Changed
