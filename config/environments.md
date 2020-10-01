@@ -4,10 +4,6 @@ description: Information about execution environments.
 
 # Environments
 
-{% hint style="warning" %}
-This documentation is for the prelease version of PowerShell Universal. You can download pre-release versions on our [Downloads page](https://ironmansoftware.com/downloads).
-{% endhint %}
-
 Environments allow you to define an executable, arguments, modules and variables to use when running scripts, hosting APIs and dashboards. 
 
 Environments are stored within the `environments.ps1` file. 

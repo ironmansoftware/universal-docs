@@ -10,9 +10,5 @@ You can configure versions by navigating to the Settings\General page. There is 
 
 ## Migration to Environments
 
-{% hint style="warning" %}
-This documentation is for the prelease version of PowerShell Universal. You can download pre-release versions on our [Downloads page](https://ironmansoftware.com/downloads).
-{% endhint %}
-
 As of version 1.4, PowerShell versions have been migrated to [Environments](../config/environments.md). 
 

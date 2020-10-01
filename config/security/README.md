@@ -26,10 +26,6 @@ To enable Windows Authentication in IIS, ensure that you enable Windows Authenti
 
 ### Windows Authentication outside of IIS
 
-{% hint style="warning" %}
-This documentation is for the prelease version of PowerShell Universal. You can download pre-release versions on our [Downloads page](https://ironmansoftware.com/downloads).
-{% endhint %}
-
 Windows Authentication is supported outside of IIS but requires configuration of the account running the Universal service. 
 
 * [Configuring a Windows machine for Windows Authentication](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/windowsauth?view=aspnetcore-3.1&tabs=visual-studio#windows-environment-configuration)

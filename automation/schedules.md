@@ -36,10 +36,6 @@ One time schedules will run once in the future. You can select the time and day 
 
 ### Continuous
 
-{% hint style="warning" %}
-This documentation is for the prelease version of PowerShell Universal. You can download pre-release versions on our [Downloads page](https://ironmansoftware.com/downloads).
-{% endhint %}
-
 Continuous schedules will run over and over again. You can define a delay between each scheduled job run. 
 
 ![](../.gitbook/assets/image%20%28141%29.png)

@@ -4,10 +4,6 @@ description: Rate limiting options for Universal.
 
 # Rate Limiting
 
-{% hint style="warning" %}
-This documentation is for the prelease version of PowerShell Universal. You can download pre-release versions on our [Downloads page](https://ironmansoftware.com/downloads).
-{% endhint %}
-
 {% hint style="info" %}
 This feature requires a [license](../licensing.md). 
 {% endhint %}

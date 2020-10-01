@@ -8,10 +8,6 @@ Universal Dashboard provides several built-in charting solutions to help visuali
 
 ## ChartJS
 
-{% hint style="warning" %}
-This documentation is for the prelease version of PowerShell Universal. You can download pre-release versions on our [Downloads page](https://ironmansoftware.com/downloads).
-{% endhint %}
-
 Universal Dashboard integrates with [ChartJS](https://www.chartjs.org/). 
 
 ### Creating a Chart

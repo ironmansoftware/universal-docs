@@ -96,10 +96,6 @@ New-UDForm -Content {
 
 ## Canceling a Form
 
-{% hint style="warning" %}
-This documentation is for the prelease version of PowerShell Universal. You can download pre-release versions on our [Downloads page](https://ironmansoftware.com/downloads).
-{% endhint %}
-
 You can define an `-OnCancel` event handler to invoke when the cancel button is pressed. This can be used to take actions like close a modal. 
 
 ```text

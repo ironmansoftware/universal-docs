@@ -42,10 +42,6 @@ The hosts that are allowed to connect to the webserver. Defaults to any host.
 
 **CorsHosts**
 
-{% hint style="warning" %}
-This documentation is for the prelease version of PowerShell Universal. You can download pre-release versions on our [Downloads page](https://ironmansoftware.com/downloads).
-{% endhint %}
-
 Configures the hosts that are allowed to make cross-origin resource sharing requests \(CORS\) to the server. To allow multiple hosts, separate each host by a semicolon. 
 
 ```text
@@ -77,10 +73,6 @@ WSFed - WS-Federation authentication settings. To enable WS-Federation, ensure t
 JSON Web Token configuration settings. These settings are used for enforcement and granting of web tokens. You should override the default signing key if you plan to use App Tokens. Read-only App Tokens are granted internally when a job calls the Universal cmdlets. You can also issue Read\Write tokens so that jobs can invoke other jobs or set variables. 
 
 **HideAdminConsole**
-
-{% hint style="warning" %}
-This documentation is for the prelease version of PowerShell Universal. You can download pre-release versions on our [Downloads page](https://ironmansoftware.com/downloads).
-{% endhint %}
 
 Prevents the service from serving the admin console. 
 
