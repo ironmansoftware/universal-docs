@@ -2,6 +2,14 @@
 
 ## Changelog
 
+## 1.4.1 - 10-01-2020
+
+### Changed
+
+#### Platform
+
+* Fixed an issue that would prevent forms based authentication form working. 
+
 ## 1.4.0 - 10-01-2020
 
 ### Added
