@@ -70,6 +70,7 @@
     * [Stepper](dashboard/components/navigation/stepper.md)
     * [Tabs](dashboard/components/navigation/tabs.md)
   * [Layout](dashboard/components/layout/README.md)
+    * [Grid Layout](dashboard/components/layout/grid-layout.md)
     * [Grid](dashboard/components/layout/grid.md)
   * [Surfaces](dashboard/components/surfaces/README.md)
     * [AppBar](dashboard/components/surfaces/appbar.md)
