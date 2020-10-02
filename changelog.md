@@ -1,12 +1,20 @@
 # Changelog
 
-## 1.4.2 - Unreleased
+## 1.4.2 - 10-02-2020
 
 ### Changed
 
 #### Dashboard
 
 * Fixed an issue where saving dashboards.ps1 configuration file would lose components
+* Fixed an issue where upgrading would cause the loss of a one of the PS versions
+* UDv3 - Fixed an issue where table would show an error if an object was passed to a column
+* Fixed an issue where the Code Editor diff tool wouldn't work
+
+#### Platform
+
+* Fixed an issue where the configuration refresh endpoint would only work with cookie auth
+* Fixed an issue where secrets would not be set in an environment
 
 ## 1.4.1 - 10-01-2020
 
