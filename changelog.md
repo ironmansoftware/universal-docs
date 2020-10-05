@@ -1,5 +1,29 @@
 # Changelog
 
+## 1.4.3 - Unrelease Nightly
+
+### Added
+
+#### Platform
+
+* Added a setting to disable checking for updates
+
+### Changed
+
+#### API
+
+* Extra validation on endpoint URL
+* Fixed issue with authentication setting not persisting from UI
+
+#### Automation
+
+* Fixed an issue where parameters for schedules were not formatted correctly in the UI
+* Fixed an issue where updating the properties of a script in the UI would remove the environment parameter
+
+#### Platform
+
+* Fixes for accessibility of menus
+
 ## 1.4.2 - 10-02-2020
 
 ### Changed
