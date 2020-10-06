@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.4.3 - Unrelease Nightly
+## 1.4.3 - 10-06-2020
 
 ### Added
 
@@ -14,15 +14,24 @@
 
 * Extra validation on endpoint URL
 * Fixed issue with authentication setting not persisting from UI
+* Fixed an issue where modifying variables or environments wouldn't change until service restart
 
 #### Automation
 
 * Fixed an issue where parameters for schedules were not formatted correctly in the UI
 * Fixed an issue where updating the properties of a script in the UI would remove the environment parameter
 
+#### Dashboard
+
+* Fixed an issue where modifying variables or environments wouldn't change until service restart
+* Fixed an issue where OnNodeClicked would not work with New-UDTreeView
+* Fixed an issue that was preventing the dashboard from loading in IE11
+
 #### Platform
 
 * Fixes for accessibility of menus
+* Fixed an issue where secrets may not be set correctly in an environment
+* Fixed an issue that would cause the service to crash when dashboards were logging
 
 ## 1.4.2 - 10-02-2020
 
