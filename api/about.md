@@ -177,7 +177,11 @@ There are a set of predefined variables that are available in API endpoints. You
 | $Headers | Headers provided by the client to call the endpoint | Hashtable |
 | $Body | The UTF8 encoded string of the content of the request | String |
 | $Data | Binary byte array for the content of the request | Byte\[\] |
-|  |  |  |
+| $RemoteIpAddress | The remote IP address used to make the request.  | String |
+| $LocalIpAddress | The local IP address used to service the request.  | String |
+| $RemotePort | The remote port that was called to make the request.  | Integer |
+| $LocalPort | The local port that was used to service the request.  | Integer |
+| $Identity | The identity name of the principal accessing the API. | String |
 
 
 
