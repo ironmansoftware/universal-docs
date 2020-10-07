@@ -44,6 +44,7 @@
     * [Icon](dashboard/components/data-display/icon.md)
     * [List](dashboard/components/data-display/list.md)
     * [Table](dashboard/components/data-display/table.md)
+    * [Tree View](dashboard/components/data-display/tree-view.md)
     * [Typography](dashboard/components/data-display/typography.md)
   * [Data Visualization](dashboard/components/data-visualization/README.md)
     * [Charts](dashboard/components/data-visualization/charts.md)
