@@ -69,7 +69,7 @@ New-PSUEndpoint -Url '/user' -Method 'GET' -Endpoint {
 The resulting `Invoke-RestMethod` call must then include the query string parameter. 
 
 ```text
-Invoke-RestMethod http://localhost:5000?Id=123
+Invoke-RestMethod http://localhost:5000/user?Id=123
 ```
 
 ### Body
