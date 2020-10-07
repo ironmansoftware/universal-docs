@@ -36,3 +36,9 @@ Add the User or Group to the "Log on as a batch job properties" members to allow
 Please consider that some of these settings may already be managed by Group Policy Object \(GPO\) definitions. This may cause these settings to be overwritten or unable to be applied.
 {% endhint %}
 
+### Configuring a PowerShell Universal Service to run as the account
+
+Once you have configured the service account to use with PowerShell Universal, you will need to configure the PowerShell Universal Service to use that account. 
+
+Open the Services snapin by executing `services.msc` . Find the `PowerShell Universal` service and right click it and then click Properties. Click the Log On tab and enter the credentials for the service account. 
+
