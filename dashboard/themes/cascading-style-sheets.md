@@ -29,7 +29,7 @@ You can then create a style sheet to manipulate whatever portion of the dashboar
 
 ```text
 .ud-dashboard > div {
-    background-image: url("/assets/image.jpeg") !important;
+    background-image: url("/assets/image.jpeg");
 }
 ```
 
