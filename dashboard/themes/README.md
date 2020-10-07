@@ -42,7 +42,7 @@ New-UDDashboard -Theme $Theme -Title 'Hello' -Content {
 }
 ```
 
-![](../.gitbook/assets/image%20%28145%29.png)
+![](../../.gitbook/assets/image%20%28145%29.png)
 
 ## Supporting dark and light palettes
 
@@ -70,7 +70,7 @@ New-UDDashboard -Theme $Theme -Title 'Hello' -Content {
 }
 ```
 
-![](../.gitbook/assets/3yizyxdoaa.gif)
+![](../../.gitbook/assets/3yizyxdoaa.gif)
 
 ## Changing the font size
 
@@ -87,7 +87,7 @@ New-UDDashboard -Theme $Theme -Title 'Hello' -Content {
 }
 ```
 
-![](../.gitbook/assets/image%20%28146%29.png)
+![](../../.gitbook/assets/image%20%28146%29.png)
 
 ## Changing default button colors
 
@@ -104,7 +104,7 @@ New-UDDashboard -Theme $Theme -Title 'Hello' -Content {
 }
 ```
 
-![](../.gitbook/assets/image%20%28144%29.png)
+![](../../.gitbook/assets/image%20%28144%29.png)
 
 
 

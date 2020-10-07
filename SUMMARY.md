@@ -80,7 +80,8 @@
     * [Expansion Panel](dashboard/components/surfaces/expansion-panel.md)
 * [Interaction](dashboard/interaction.md)
 * [Published Folders](dashboard/published-folders.md)
-* [Themes](dashboard/themes.md)
+* [Themes](dashboard/themes/README.md)
+  * [Cascading Style Sheets](dashboard/themes/cascading-style-sheets.md)
 * [Role Based Access](dashboard/role-based-access.md)
 * [Marketplace](dashboard/marketplace.md)
 
