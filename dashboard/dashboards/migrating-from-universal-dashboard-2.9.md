@@ -76,6 +76,10 @@ PS C:\Users\adamr> if ($Roles -contains 'Administrator') { $true }
 
 [Click here](../published-folders.md) to learn more about Published Folders in PowerShell Universal. 
 
+## Migrating to Universal Dashboard v3
+
+This section contains migration information for upgrading from UDv2 to UDv3. They are vastly different frameworks and will require rewriting your dashboard. Many of the concepts are the same. 
+
 ### Pages
 
 Pages have a different behavior in v3. All pages are dynamic pages. This means that you don't have to worry about whether a page will be generated at run time or doing start up. Pages are always generated during runtime.
@@ -95,10 +99,6 @@ New-UDPage -Name 'myPage' -Url "/myPage/:owner" -Content {
     param($owner)
 }
 ```
-
-## Migrating to Universal Dashboard v3
-
-This section contains migration information for upgrading from UDv2 to UDv3. They are vastly different frameworks and will require rewriting your dashboard. Many of the concepts are the same. 
 
 ### New-UDTable \(formerly UDGrid and UDTable\)
 
