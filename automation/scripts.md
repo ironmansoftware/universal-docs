@@ -40,6 +40,14 @@ Changes how the script reacts when there is an error within the script. By defau
 
 Allows you to define the required PowerShell version for the script. By default, it uses the server-wide default PowerShell version. PowerShell versions are automatically located the first the Universal Server starts up. You can also add PowerShell Versions on the Settings / General page. 
 
+**Timeout**
+
+{% hint style="warning" %}
+This is documentation for an upcoming version of PowerShell Universal. You can download [nightly builds](https://imsreleases.z19.web.core.windows.net/) if you want to try it out.
+{% endhint %}
+
+The number of minutes before the script will timeout. The default value of 0 means the script will run forever. Once a script reaches it's time out, it will be cancelled. 
+
 ## Running a Script
 
 You can run a script in the UI by click the Run button the Automation / Scripts page or by clicking View and then Run. In each case, you will be presented with the Run Dialog that allows you to select various settings for the job. 

@@ -41,6 +41,7 @@
   * [Building Custom Components](dashboard/components/building-custom-components.md)
   * [Data Display](dashboard/components/data-display/README.md)
     * [Chip](dashboard/components/data-display/chip.md)
+    * [Date and Time](dashboard/components/data-display/date-and-time.md)
     * [Icon](dashboard/components/data-display/icon.md)
     * [List](dashboard/components/data-display/list.md)
     * [Table](dashboard/components/data-display/table.md)
