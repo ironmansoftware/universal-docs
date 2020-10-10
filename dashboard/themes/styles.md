@@ -28,5 +28,5 @@ New-UDStyle -Style '
     }
 ```
 
-![UDStyled card](../../.gitbook/assets/image%20%28166%29.png)
+![UDStyled card](../../.gitbook/assets/image%20%28168%29.png)
 

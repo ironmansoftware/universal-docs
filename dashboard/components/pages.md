@@ -172,3 +172,28 @@ New-UDDashboard -Title "Hello, World!" -Pages $Pages
 
 ![Temporary navigation drawer](../../.gitbook/assets/temporary.gif)
 
+## Logo
+
+{% hint style="warning" %}
+This is documentation for an upcoming version of PowerShell Universal. You can download [nightly builds](https://imsreleases.z19.web.core.windows.net/) if you want to try it out.
+{% endhint %}
+
+You can display a logo in the navigation bar by using the `-Logo` parameter. 
+
+First, setup a [published folder](../published-folders.md) to host your logo. 
+
+![Published assets folder](../../.gitbook/assets/image%20%28166%29.png)
+
+Now, when creating your page, you can specify the path to the logo. 
+
+```text
+New-UDPage -Name 'Home' -Logo '/assets/favicon.png' -Content {
+}
+```
+
+The logo will display in the top left corner. 
+
+![Logo](../../.gitbook/assets/image%20%28167%29.png)
+
+To customize the style of your logo, you can use a [cascading style sheet](../themes/cascading-style-sheets.md) and target the `ud-logo` element ID. 
+
