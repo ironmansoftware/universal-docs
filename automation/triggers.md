@@ -32,7 +32,7 @@ Global triggers will start the assigned script whenever the event type is invoke
 For example, the `Script.ps1` will be run whenever any job is run. 
 
 ```text
-New-PSUTrigger -EventType JobStarted -TriggerScript Script.ps1
+New-PSUTrigger -Name 'Trigger' -EventType JobStarted -TriggerScript Script.ps1
 ```
 
 ## Resource Triggers
@@ -42,7 +42,7 @@ Resource triggers will start the assigned script when the event takes place on t
 For example, the `Script.ps1` will be run whenever the `Dashboard` is stopped. 
 
 ```text
-New-PSUTrigger -EventType DashboardStopped -TriggerScript Script.ps1 -Dashboard 'Dashboard'
+New-PSUTrigger -Name 'Trigger' -EventType DashboardStopped -TriggerScript Script.ps1 -Dashboard 'Dashboard'
 ```
 
 ## Event Metadata
