@@ -24,6 +24,7 @@
 * [Jobs](automation/jobs.md)
 * [PowerShell Versions](automation/powershell-versions.md)
 * [Schedules](automation/schedules.md)
+* [Triggers](automation/triggers.md)
 * [Variables](automation/variables.md)
 
 ## Dashboard

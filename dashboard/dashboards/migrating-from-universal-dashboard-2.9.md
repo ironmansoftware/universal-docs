@@ -29,7 +29,7 @@ $Endpoint = New-UDEndpoint -Schedule $Schedule -Endpoint {}
 
 ### REST APIs
 
-To learn more about APIs, [click here](../../api/about.md). 
+To learn more about APIs, [click here](../../api/about.md).
 
 ### Authentication and Authorization
 
@@ -74,11 +74,11 @@ PS C:\Users\adamr> if ($Roles -contains 'Administrator') { $true }
 
 ### Published Folders
 
-[Click here](../published-folders.md) to learn more about Published Folders in PowerShell Universal. 
+[Click here](../published-folders.md) to learn more about Published Folders in PowerShell Universal.
 
 ## Migrating to Universal Dashboard v3
 
-This section contains migration information for upgrading from UDv2 to UDv3. They are vastly different frameworks and will require rewriting your dashboard. Many of the concepts are the same. 
+This section contains migration information for upgrading from UDv2 to UDv3. They are vastly different frameworks and will require rewriting your dashboard. Many of the concepts are the same.
 
 ### Pages
 
