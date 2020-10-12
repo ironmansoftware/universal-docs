@@ -8,6 +8,10 @@ description: Universal Automation triggers.
 This is documentation for an upcoming version of PowerShell Universal. You can download [nightly builds](https://imsreleases.z19.web.core.windows.net/) if you want to try it out.
 {% endhint %}
 
+{% hint style="info" %}
+This feature requires an [Automation license](../licensing.md).
+{% endhint %}
+
 Triggers allow for automation jobs to be started when certain events happen within PowerShell Universal. For example, this allows you to take action when jobs complete, the server starts or dashboards stop. Triggers are useful for assigning global error handling or sending notifications when certain things happen. 
 
 Triggered jobs will not cause additional triggers to start. Triggers are stored in the `triggers.ps1`.

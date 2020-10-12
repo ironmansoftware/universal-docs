@@ -20,6 +20,7 @@ Universal can be used forever for free with the following limitations.
 
 * 25 jobs per day
 * 2 concurrent jobs
+* No Triggers
 
 ### Universal Dashboard
 
