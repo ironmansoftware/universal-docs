@@ -48,6 +48,19 @@ $Pages += New-UDPage -Name 'Diagnostics' -Content {}
 New-UDDashboard -Pages $Pages -Title 'Dashboard'
 ```
 
+## Built-in Variables
+
+There are several built-in variables that are available in dashboards. 
+
+| Name | Description | Type |
+| :--- | :--- | :--- |
+| $User | The user name of the logged in user. $Null if authentication is disabled. | String |
+| $Roles | The roles that the user has been granted. $Null if authentication is disabled. | String\[\] |
+| $RemoteIpAddress | The remote IP address of the connected user. **Only available in the nightly build** | String |
+| $RmotePort | The remote port of the connected user. **Only available in the nightly build** | Int |
+
+
+
 ## Debugging
 
 When building a dashboard you will likely run into issues with cmdlet calls or syntax. Dashboards will auto reload as you make changes to the dashboard files. If a dashboard fails to start, you can navigate to the admin page, click Dashboards and click the Info button next to your dashboard. 
