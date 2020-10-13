@@ -1,5 +1,32 @@
 # Changelog
 
+## 1.4.4 - 10-13-2020
+
+### Added
+
+#### API
+
+* Added -ErrorAction support to New-PSUEndpoint
+
+### Changed
+
+#### API
+
+* Enhanced logging for endpoints that throw errors
+
+#### Dashboard
+
+* UDv3 - Fixed an issue with UDTable not working within UDCard.
+* UDv3 - Fixed an issue where calling Set-UDElement on a UDTextbox would overlay the label.
+* UDv2 - Fixed an issue where OpenID Connect and WS-Federation authentication would fail
+* UDv2\UDv3 - Fixed an issue where client elements of UDElement would not rerender. 
+* Fixed an issue where saving a component from the marketplace would return a 400 error
+
+#### Platform
+
+* Removed red dots in the menu when a license wasn't installed
+* Fixed an issue where the WindowsCompatibility module would not work in Universal
+
 ## 1.4.3 - 10-06-2020
 
 ### Added
