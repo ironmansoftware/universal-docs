@@ -28,7 +28,9 @@ The `web.config` file that is included in the application installation directory
 
 #### Dashboard Components and Frameworks
 
-New versions of Universal may include new versions of Universal Dashboard Frameworks or Components. By default, these components and frameworks are deployed to `%ProgramData%\PowerShellUniversal` during startup of the Universal server. During an upgrade, these files are not deleted. This ensures that dashboards will continue to run on the previous dashboard framework and component versions. You will have to manually upgrade your dashboards to use the new framework after the installation is complete. 
+New versions of Universal may include new versions of Universal Dashboard Frameworks or Components. By default, these components and frameworks are deployed to `%ProgramData%\PowerShellUniversal` during startup of the Universal server. During an upgrade, these files are not deleted. This ensures that dashboards will continue to run on the previous dashboard framework and component versions. 
+
+You will have to manually upgrade your dashboards to use the new framework after the installation is complete. 
 
 You should have multiple versions of the dashboard frameworks and components available when you start the new version of Universal. 
 
