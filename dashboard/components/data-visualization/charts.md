@@ -6,6 +6,10 @@ description: Charting components for Universal Dashboard.
 
 Universal Dashboard provides several built-in charting solutions to help visualize your data retrieved from PowerShell.
 
+{% hint style="info" %}
+To use charts within your dashboard, you will need to add the UniversalDashboard.Charts component. 
+{% endhint %}
+
 ## ChartJS
 
 Universal Dashboard integrates with [ChartJS](https://www.chartjs.org/). 
