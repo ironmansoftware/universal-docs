@@ -78,6 +78,18 @@ $Pages += New-UDPage -Name 'Dashboard' -Url '/db/:user' -Content {
 New-UDDashboard -Title 'Pages' -Pages $Pages
 ```
 
+### Query string parameters
+
+{% hint style="warning" %}
+This is documentation for an upcoming version of PowerShell Universal. You can download [nightly builds](https://imsreleases.z19.web.core.windows.net/) if you want to try it out.
+{% endhint %}
+
+Query string parameters are passed to pages and other endpoints as variables. 
+
+For example, if you visited a page with the following query string parameter: `http://localhost:5000/dashboard/Page1?test=123`
+
+You would then have access to a `$Test` variable that contained the value `123`.
+
 ## Role-Based Access
 
 {% hint style="info" %}

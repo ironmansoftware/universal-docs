@@ -291,10 +291,6 @@ New-Example -Title 'Bar' -Description '' -Example {
 
 #### Bubble
 
-{% hint style="info" %}
-This section covers a pre-release version of Universal. You can download nightly builds from our [Downloads page](https://ironmansoftware.com/downloads).
-{% endhint %}
-
 ![](../../../.gitbook/assets/image%20%28102%29.png)
 
 ```text
