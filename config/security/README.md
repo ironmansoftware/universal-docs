@@ -83,6 +83,16 @@ You can use App Tokens with the Universal cmdlets or by using web requests direc
 
 ![](../../.gitbook/assets/image%20%285%29.png)
 
+## Environment
+
+By default, the forms authentication and policy assignment scripts run within the PowerShell Universal process. You can optional configure an external [Environment ](../environments.md)to run your authentication and authorization scripts. When you configure a security environment, an external PowerShell process will be started and configured use your Environment's settings. 
+
+To adjust the environment used by the security process, set the `-SecurityEnvironment` in `settings.ps`. 
+
+```text
+Set-PSUSetting -SecurityEnvironment '5.1'
+```
+
 ## Example: Forms Authentication with Active Directory
 
 The following example shows performing a simple "LDAP BIND" in order to validate a users Active Directory Credentials. If a user attempting to access PowerShell Universal is not the Default Admin User they will have to successfully authenticate their credentials with Active Directory via a simple LDAP bind. This can be combined with a AD Group Member check in the Admin, Operator, and Reader role policies to effectively use Active Directory Authentication AND Active Directory Group membership to provide Role Based Access to PowerShell Universal.
