@@ -52,13 +52,13 @@ Universal offers a lot of functionality for free. Below is a list of the feature
 
 ### API
 
-You can run as many APIs are you want for free. You will need to purchase a license if you would like to enable authentication and authorization. 
+You can run as many APIs are you want for free. You will need to purchase a license if you would like to enable authentication, authorization and rate limiting. 
 
 ### Automation 
 
-With the free version of Automation you can run up to 25 jobs a day with 2 jobs running concurrently. 
+With the free version of Automation you can run up to 25 jobs a day with 2 jobs running concurrently. You will need a license to use [triggers](automation/triggers.md).
 
 ### Dashboard 
 
-With the free version of dashboard, you can run unauthenticated dashboards. You will not have access to the diagnostics, console or log pages. 
+With the free version of dashboard, you can run unauthenticated dashboards. You will not have access to the diagnostics or console pages. 
 
