@@ -51,5 +51,9 @@ Now that we have completed the configuration of an AzureAD App Registration, we 
     },
 ```
 
+{% hint style="warning" %}
+Due to changes in the Chromium browser, you may need to disable the `Cookies without SameSite must be secure` setting to test OpenID Connect when running on localhost without HTTPS. 
 
+Navigate to `chrome://flags` and search for the setting to set it to disabled. 
+{% endhint %}
 
