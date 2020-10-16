@@ -36,7 +36,8 @@ New-UDForm -Content {
     New-UDTextbox -Id 'txtTextfield'
     New-UDCheckbox -Id 'chkCheckbox'
 } -OnSubmit {
-    Show-UDToast -Message $Body
+    Show-UDToast -Message $EventData.txtTextfield
+    Show-UDToast -Message $EventData.chkCheckbox
 }
 ```
 
@@ -51,10 +52,10 @@ New-UDForm -Content {
 
     New-UDRow -Columns {
         New-UDColumn -SmallSize 6 -LargeSize 6 -Content {
-            New-UDTextbox -Id 'txtTextfield' -Label 'First Name' 
+            New-UDTextbox -Id 'txtFirstName' -Label 'First Name' 
         }
         New-UDColumn -SmallSize 6 -LargeSize 6 -Content {
-            New-UDTextbox -Id 'txtTextfield' -Label 'Last Name'
+            New-UDTextbox -Id 'txtLastName' -Label 'Last Name'
         }
     }
 
@@ -70,7 +71,8 @@ New-UDForm -Content {
     }
 
 } -OnSubmit {
-    Show-UDToast -Message $Body
+    Show-UDToast -Message $EventData.txtFirstName
+    Show-UDToast -Message $EventData.txtLastName
 }
 ```
 
@@ -82,7 +84,7 @@ Form validation can be accomplished by using the OnValidate script block paramet
 New-UDForm -Content {
     New-UDTextbox -Id 'txtValidateForm'
 } -OnValidate {
-    $FormContent = $Body | ConvertFrom-Json 
+    $FormContent = $EventData
 
     if ($FormContent.txtValidateForm -eq $null -or $FormContent.txtValidateForm -eq '') {
         New-UDFormValidationResult -ValidationError "txtValidateForm is required"
