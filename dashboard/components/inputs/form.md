@@ -8,7 +8,19 @@ Forms provide a way to collect data from users.
 
 Forms can include any type of control you want. This allows you to customize the look and feel and use any input controls.
 
-Data entered via the input controls will be sent back to the the `OnSubmit` script block when the form is submitted.
+Data entered via the input controls will be sent back to the the `OnSubmit` script block when the form is submitted. Within the `OnSubmit` event handler, you will access to the `$EventData` variable that will contain properties for each of the fields in the form. 
+
+For example, if you have two fields, you will have two properties on `$EventData`.
+
+```text
+New-UDForm -Content {
+    New-UDTextbox -Id 'txtTextfield'
+    New-UDCheckbox -Id 'chkCheckbox'
+} -OnSubmit {
+    Show-UDToast -Message $EventData.txtTextfield
+    Show-UDToast -Message $EventData.chkCheckbox
+}
+```
 
 ## Supported Controls
 
