@@ -73,6 +73,28 @@ To assign a role to a user, you can create their identity within Universal and t
 
 ![](../../.gitbook/assets/image%20%2818%29.png)
 
+### Built in Roles
+
+#### Administrator
+
+Full access to the entire PowerShell Universal platform and settings. 
+
+#### Operator
+
+Operators have access to add and remove resources such as APIs, Scripts and Dashboards. Operators cannot change settings like environments, roles, or general settings. 
+
+#### Execute
+
+{% hint style="warning" %}
+This is documentation for an upcoming version of PowerShell Universal. You can download [nightly builds](https://imsreleases.z19.web.core.windows.net/) if you want to try it out.
+{% endhint %}
+
+The Execute role grants the ability to run scripts and read access for everything else. 
+
+#### Reader
+
+The Reader role provides read-only access to PowerShell Universal.
+
 ## App Tokens
 
 App Tokens can be assigned to services that cannot login interactively. You can grant a new app token to your account by clicking the Grant App Token button within the Security / App Tokens tab. 
