@@ -101,5 +101,13 @@ Invoke-UAJob -Script 'Script1.ps1' -RequiredParameter 'Hello'
 
 You can also call UA scripts from UA scripts. When running a job in UA, you don't need to define an app token or the computer name manually. These will be defined for you. You can just call `Invoke-UAScript` within your script to start another script. Both jobs will be shown in the UI. If you want to wait for the script to finish, use `Wait-UAJob`. 
 
+## Return Pipeline Data
+
+You can use the `Get-PSUJobPipelineOutput` cmdlet to return the pipeline output that was produced by a job. This pipeline output will be deserialized objects that were written to the pipeline during the job. You can access this data from where you have access to the PowerShell Universal Management API. 
+
+```text
+Get-PSUJobPipelineOutput -JobId 10
+```
+
 
 
