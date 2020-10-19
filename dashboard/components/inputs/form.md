@@ -14,10 +14,10 @@ For example, if you have two fields, you will have two properties on `$EventData
 
 ```text
 New-UDForm -Content {
-    New-UDTextbox -Id 'txtTextfield'
+    New-UDTextbox -Id 'txtTextField'
     New-UDCheckbox -Id 'chkCheckbox'
 } -OnSubmit {
-    Show-UDToast -Message $EventData.txtTextfield
+    Show-UDToast -Message $EventData.txtTextField
     Show-UDToast -Message $EventData.chkCheckbox
 }
 ```
@@ -96,7 +96,7 @@ When a form is submitted, you can optionally return another component to replace
 New-UDForm -Content {
     New-UDTextbox -Id 'txtTextfield'
 } -OnSubmit {
-    New-UDTypography -Text $EventData.txtTextField
+    New-UDTypography -Text $EventData.txtTextfield
 }
 ```
 
