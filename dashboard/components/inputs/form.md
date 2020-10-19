@@ -88,6 +88,18 @@ New-UDForm -Content {
 }
 ```
 
+## Returning Components 
+
+When a form is submitted, you can optionally return another component to replace the form on the page. You can return any Universal Dashboard component. All you need to do is ensure that the component is written to the pipeline within the `OnSubmit` event handler. 
+
+```text
+New-UDForm -Content {
+    New-UDTextbox -Id 'txtTextfield'
+} -OnSubmit {
+    New-UDTypography -Text $EventData.txtTextField
+}
+```
+
 ## Validating a Form
 
 Form validation can be accomplished by using the OnValidate script block parameter
