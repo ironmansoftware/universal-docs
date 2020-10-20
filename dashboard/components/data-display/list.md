@@ -21,7 +21,20 @@ New-UDList -Content {
 }
 ```
 
+## OnClick Event Handler
 
+You can define an action to take when an item is clicked by using the `-OnClick` parameter of `New-UDListItem`. 
+
+```text
+New-UDList -Content {
+    New-UDListItem -Label 'Inbox' -Icon (New-UDIcon -Icon envelope -Size 3x) -SubTitle 'New Stuff'
+    New-UDListItem -Label 'Drafts' -Icon (New-UDIcon -Icon edit -Size 3x) -SubTitle "Stuff I'm working on "
+    New-UDListItem -Label 'Trash' -Icon (New-UDIcon -Icon trash -Size 3x) -SubTitle 'Stuff I deleted'
+    New-UDListItem -Label 'Spam' -Icon (New-UDIcon -Icon bug -Size 3x) -SubTitle "Stuff I didn't want" -OnClick {
+        Show-UDToast -Message 'Clicked'
+    }
+}
+```
 
 **New-UDList**
 

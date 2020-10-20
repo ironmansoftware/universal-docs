@@ -34,6 +34,8 @@ New-UDButton -Text 'Full Screen' -OnClick {
 
 ## Full Width
 
+Full width modals take up the full width as defined by the `-MaxWidth` parameter. 
+
 ![](../../../.gitbook/assets/image%20%2863%29.png)
 
 ```text
@@ -45,6 +47,8 @@ New-UDButton -Text 'Full Width' -OnClick {
 ```
 
 ## Persistent
+
+Persistent modals do not close when you click off of them. You will have to close it with `Hide-UDModal`.
 
 ![](../../../.gitbook/assets/image%20%2845%29.png)
 
@@ -64,11 +68,11 @@ New-UDButton -Text 'Persistent' -OnClick {
 
 | Name | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
-| FullScreen | switch |  | false |
-| Footer | scriptblock |  | false |
-| Header | scriptblock |  | false |
-| Content | scriptblock |  | false |
-| Persistent | switch |  | false |
-| FullWidth | switch |  | false |
-| MaxWidth | string |  | false |
+| FullScreen | switch | Creates a full screen modal | false |
+| Footer | ScriptBlock | Sets the footer content for the modal. | false |
+| Header | ScriptBlock | Sets the header content for the modal. | false |
+| Content | ScriptBlock | Sets the main body content for the modal. | false |
+| Persistent | switch | Creates a persistent modal. | false |
+| FullWidth | switch | Creates a full width modal. | false |
+| MaxWidth | string | Defines the max width of a full width modal. | false |
 

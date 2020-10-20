@@ -21,7 +21,13 @@ Too many type sizes and styles at once can spoil any layout. A typographic scale
 }
 ```
 
+## Colored Text
 
+You can use the `-Style` parameter to define colors for your text. 
+
+```text
+New-UDTypography -Text 'My Text' -Style @{ color = 'blue' }
+```
 
 **New-UDTypography**
 
@@ -34,7 +40,6 @@ Too many type sizes and styles at once can spoil any layout. A typographic scale
 | Style | Hashtable | A set of CSS styles to apply to the typography. | false |
 | ClassName | String | A CSS className to apply to the typography. | false |
 | Align | String | How to align the typography. | false |
-| IsEndPoint | SwitchParameter |  | false |
 | GutterBottom | SwitchParameter | The gutter bottom. | false |
 | NoWrap | SwitchParameter | Disables text wrapping. | false |
 | Paragraph | SwitchParameter | Whether this typography is a paragraph. | false |
