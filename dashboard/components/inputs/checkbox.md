@@ -64,7 +64,7 @@ The following example shows a toast message with the value of the checkbox.
 New-UDCheckbox -Id 'MyCheckbox' 
 
 New-UDButton -Text 'Get Value' -OnClick {
-    Show-UDToast -Message (Get-UDElement -Id 'MyCheckbox')['checked']
+    Show-UDToast -Message (Get-UDElement -Id 'MyCheckbox').checked
 }
 ```
 
