@@ -1,5 +1,26 @@
 # Changelog
 
+## 1.4.5 - 10-20-2020
+
+#### API
+
+* Fixed an issue where Windows Auth outside of IIS would not work with APIs
+
+#### Dashboard
+
+* UDv3 - Fixed an issue with UDTable custom rendering performance
+* Fixed an issue where if a dashboard was stopped, no statistics could be retrieved for any dashboards
+* Fixed an issue with icons not working
+* UDv2 Fixed issue an where Get-UDElement would not work. 
+* UDv2 Fixed an issue where Write-UDLog would not work.
+* UDv3 Fixed an issue where -Role was case sensitive for New-UDPage
+* UDv2 Fixed an issue where -Role was missing on New-UDPage
+
+#### Platform
+
+* Fixed an issue where an exception could be thrown when using OpenID Connect
+* Fixed issue where you couldn't set arguments in the UI for Environments
+
 ## 1.4.4 - 10-13-2020
 
 ### Added
