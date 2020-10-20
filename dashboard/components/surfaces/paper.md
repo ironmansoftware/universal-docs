@@ -18,7 +18,25 @@ New-UDPaper -Elevation 1 -Content {}
 New-UDPaper -Elevation 3 -Content {}
 ```
 
+## Square Paper
 
+By default, paper will have rounded edges. You can reduce the rounding by using a square paper.
+
+```text
+New-UDPaper -Square -Content {}
+```
+
+## Colored Paper 
+
+The `-Style` parameter can be used to color paper. Any valid CSS can be included in the hashtable for a style. 
+
+The following example creates paper with a red background. 
+
+```text
+New-UDPaper  -Content { } -Style @{ 
+     backgroundColor = 'red'
+}
+```
 
 **New-UDPaper**
 

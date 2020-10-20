@@ -32,7 +32,17 @@ New-UDTabs -Tabs {
 } -Orientation vertical
 ```
 
+## Dynamic Tabs
 
+Dynamic tabs will refresh their content when they are selected. You will need to include the `-RenderOnActive` parameter to prevent all the tabs from rendering even if they are not shown. 
+
+```text
+New-UDTabs -Tabs {
+    New-UDTab -Text 'Item One' -Content { Get-Date } -Dynamic
+    New-UDTab -Text 'Item Two' -Content { Get-Date } -Dynamic
+    New-UDTab -Text 'Item Three' -Content { Get-Date } -Dynamic
+} -RenderOnActive
+```
 
 **New-UDTabs**
 
@@ -49,10 +59,10 @@ New-UDTabs -Tabs {
 
 | Name | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
-| Text | string |  | false |
-| Content | scriptblock |  | true |
-| Id | string |  | false |
-| Dynamic | switch |  | false |
+| Text | string | The text to display in the header. | false |
+| Content | scriptblock | The content of the tab.  | true |
+| Id | string | The ID of the tab. | false |
+| Dynamic | switch | A dynamic tab will reload every time it is selected. | false |
 | Icon | Object |  | false |
 | Stacked | switch |  | false |
 
