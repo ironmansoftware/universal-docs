@@ -89,19 +89,27 @@ $RequiredParameter
 
 ![](../.gitbook/assets/image%20%2886%29.png)
 
-## Invoking Jobs from the Command Line
+## Invoking Jobs from PowerShell
 
-You can use `Invoke-UAJob` to invoke jobs from the command line. You will need a valid [App Token](../config/security/#app-tokens) to do so. Parameters are defined using dynamic parameters on the `Invoke-UAJob` cmdlet. 
+You can use `Invoke-UAScript` to invoke jobs from the command line. You will need a valid [App Token](../config/security/#app-tokens) to do so. Parameters are defined using dynamic parameters on the `Invoke-UAScript` cmdlet. 
 
 ```text
-Invoke-UAJob -Script 'Script1.ps1' -RequiredParameter 'Hello'
+Invoke-UAScript -Script 'Script1.ps1' -RequiredParameter 'Hello'
 ```
 
 ### Call Scripts from Scripts
 
 You can also call UA scripts from UA scripts. When running a job in UA, you don't need to define an app token or the computer name manually. These will be defined for you. You can just call `Invoke-UAScript` within your script to start another script. Both jobs will be shown in the UI. If you want to wait for the script to finish, use `Wait-UAJob`. 
 
-## Return Pipeline Data
+### Waiting for a Script to Finished
+
+You can use the `Wait-UAJob` cmdlet to wait for a job to finish. Pipe the return value of `Invoke-UAScript` to `Wait-UAJob` to wait for the job to complete. `Wait-UAJob` will wait indefinitely unless the `-Timeout` parameter is specified. 
+
+```text
+Invoke-UAScript -Script 'Script1.ps1' -RequiredParameter 'Hello' | Wait-UAJob
+```
+
+### Return Pipeline Data
 
 You can use the `Get-PSUJobPipelineOutput` cmdlet to return the pipeline output that was produced by a job. This pipeline output will be deserialized objects that were written to the pipeline during the job. You can access this data from where you have access to the PowerShell Universal Management API. 
 
@@ -109,5 +117,24 @@ You can use the `Get-PSUJobPipelineOutput` cmdlet to return the pipeline output 
 Get-PSUJobPipelineOutput -JobId 10
 ```
 
+### Returning the last job's output
 
+It may be required to return the output from a script's last job run. In order to do this, you will need to use a combination of cmdlets to retrieve the script, the last job's ID and then return the pipeline or host output. 
+
+```text
+$Job = Get-UAScript -Name 'Script.ps1' | Get-UAJob -OrderDirection Descending -First 1
+Get-UAJobPipelineOutput -Job $Job
+Get-UAJobOutput -Job $Job
+```
+
+### Invoke a Script and Wait for Output
+
+The following example invokes a script, stores the job object in a `$job` variable, waits for the job to complete and then returns the pipeline and host output.
+
+```text
+Invoke-UAScript -Script 'Script1.ps1' -RequiredParameter 'Hello' | Tee-Job -Variable job | Wait-UAJob
+
+$Pipeline = Get-UAJobPipelineOutput -Job $Job
+$HostOutput = Get-UAJobOutput -Job $Job
+```
 

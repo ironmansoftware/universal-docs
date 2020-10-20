@@ -123,11 +123,11 @@ Custom navigation can be defined with a list. List items can include children to
 $Navigation = @(
     New-UDListItem -Label "Home"
     New-UDListItem -Label "Getting Started" -Children {
-        New-UDListItem -Label "Installation" -OnClick {}
-        New-UDListItem -Label "Usage" -OnClick {}
-        New-UDListItem -Label "FAQs" -OnClick {}
-        New-UDListItem -Label "System Requirements" -OnClick {}
-        New-UDListItem -Label "Purchasing" -OnClick {}
+        New-UDListItem -Label "Installation" -OnClick { Invoke-UDRedirect '/installation' }
+        New-UDListItem -Label "Usage" -OnClick { Invoke-UDRedirect '/usage' }
+        New-UDListItem -Label "FAQs" -OnClick { Invoke-UDRedirect '/faqs' }
+        New-UDListItem -Label "System Requirements" -OnClick { Invoke-UDRedirect '/requirements' }
+        New-UDListItem -Label "Purchasing" -OnClick { Invoke-UDRedirect '/purchasing'}
     }
 )
 
