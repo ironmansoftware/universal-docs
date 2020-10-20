@@ -132,7 +132,7 @@ Get-UAJobOutput -Job $Job
 The following example invokes a script, stores the job object in a `$job` variable, waits for the job to complete and then returns the pipeline and host output.
 
 ```text
-Invoke-UAScript -Script 'Script1.ps1' -RequiredParameter 'Hello' | Tee-Job -Variable job | Wait-UAJob
+Invoke-UAScript -Script 'Script1.ps1' -RequiredParameter 'Hello' | Tee-Object -Variable job | Wait-UAJob
 
 $Pipeline = Get-UAJobPipelineOutput -Job $Job
 $HostOutput = Get-UAJobOutput -Job $Job
