@@ -69,8 +69,7 @@ $Data = @(
 
 $Columns = @(
     New-UDTableColumn -Property Dessert -Title Dessert -Render { 
-        $Item = $Body | ConvertFrom-Json 
-        New-UDButton -Id "btn$($Item.Dessert)" -Text "Click for Dessert!" -OnClick { Show-UDToast -Message $Item.Dessert } 
+        New-UDButton -Id "btn$($EventData.Dessert)" -Text "Click for Dessert!" -OnClick { Show-UDToast -Message $EventData.Dessert } 
     }
     New-UDTableColumn -Property Calories -Title Calories 
     New-UDTableColumn -Property Fat -Title Fat 
