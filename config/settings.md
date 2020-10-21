@@ -6,6 +6,10 @@ description: Describes how to set application settings and a definition of the s
 
 Application settings can be found within the `appsettings.json` file within the installation directory. This file defines various settings you can apply to Universal. Although you can edit this file directly, it's recommended that you use one of the following methods to persist settings as the `appsettings.json` file in the installation directory will be overridden on upgrades. 
 
+{% hint style="info" %}
+When installed from the MSI, the installation directory for PowerShell Universal is `${env:ProgramFiles(x86)}\Universal`. 
+{% endhint %}
+
 ## ProgramData AppSettings.json
 
 You can create an appsettings.json file within the `$Env:ProgramData\PowerShellUniversal` folder. You can use a subset of the settings from within the `appsettings.json` file. For example, if you wanted to override the JWT settings, you could have an `appsettings.json` file like this. 
