@@ -106,6 +106,7 @@
 
 ## Debugging
 
+* [Logging](debugging/logging.md)
 * [Debugging Scripts](debugging/debugging-scripts.md)
 
 ---
