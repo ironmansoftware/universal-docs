@@ -30,7 +30,7 @@ Windows Authentication is supported outside of IIS but requires configuration of
 
 #### Windows
 
-On Windows, you should install PowerShell Universal as a [Windows Service](../../getting-started/#windows). Once the service is installed, you will need to create a [service account user](../running-as-a-service-account.md#application-service-account) and assign it to the Windows Service. The Windows authentication [setting ](../settings.md)needs to be set to true. 
+On Windows, you should install PowerShell Universal as a [Windows Service](../../getting-started/#windows). Once the service is installed, you will need to create a [service account user](../running-as-a-service-account.md#application-service-account) and set the service to run with that user's account. The Windows authentication [setting ](../settings.md)needs to be set to true. 
 
 ```text
 "Windows": {
@@ -38,7 +38,7 @@ On Windows, you should install PowerShell Universal as a [Windows Service](../..
 },
 ```
 
-The service account needs to have a Service Principal Name \(spn\) configured for the computer account. You can do this using the `setspn` command.
+The service account needs to have a Service Principal Name \(spn\) configured for the computer account. You can do this using the `setspn` command. The computer name needs to be the full qualified name of the machine running Universal. 
 
 ```text
 setspn -S HTTP/myservername.mydomain.com myuser
