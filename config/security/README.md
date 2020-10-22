@@ -28,8 +28,27 @@ To enable Windows Authentication in IIS, ensure that you enable Windows Authenti
 
 Windows Authentication is supported outside of IIS but requires configuration of the account running the Universal service. 
 
-* [Configuring a Windows machine for Windows Authentication](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/windowsauth?view=aspnetcore-3.1&tabs=visual-studio#windows-environment-configuration)
-* [Configuring a Linux or Mac OS machine for Windows Authentication](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/windowsauth?view=aspnetcore-3.1&tabs=visual-studio#linux-and-macos-environment-configuration)
+#### Windows
+
+On Windows, you should install PowerShell Universal as a [Windows Service](../../getting-started/#windows). Once the service is installed, you will need to create a [service account user](../running-as-a-service-account.md#application-service-account) and assign it to the Windows Service. The Windows authentication [setting ](../settings.md)needs to be set to true. 
+
+```text
+"Windows": {
+  "Enabled": "true"
+},
+```
+
+The service account needs to have a Service Principal Name \(spn\) configured for the computer account. You can do this using the `setspn` command.
+
+```text
+setspn -S HTTP/myservername.mydomain.com myuser
+```
+
+For more information, you can follow the Microsoft documentation for configuring ASP.NET Core Windows Authentication: [Configuring a Windows machine for Windows Authentication](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/windowsauth?view=aspnetcore-3.1&tabs=visual-studio#windows-environment-configuration)
+
+#### Linux
+
+[Configuring a Linux or Mac OS machine for Windows Authentication](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/windowsauth?view=aspnetcore-3.1&tabs=visual-studio#linux-and-macos-environment-configuration)
 
 ## Authorization 
 
