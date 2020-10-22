@@ -96,6 +96,7 @@
 * [Hosting](config/hosting.md)
 * [Hosting with IIS](config/hosting-iis/README.md)
   * [IIS Windows Auth](config/hosting-iis/hosting-iis-windowsauth.md)
+* [Login Page](config/login-page.md)
 * [Management API](config/management-api.md)
 * [Settings](config/settings.md)
 * [Security](config/security/README.md)
