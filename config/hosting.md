@@ -112,7 +112,7 @@ For a full set of listening options, you can refer to the [ASP.NET Core Document
 You can configure and run the PowerShell Universal server from the command line. The `Start-PSUServer` and `Install-PSUServer` cmdlets can be used to install, configure and run a Universal instance in a single file. 
 
 {% hint style="danger" %}
-Command line hosting is designed to be temporary. Once you stop the server, the database file will be deleted. Your original script will not be deleted. If you wish to have a persistent configuration, use an alternate hosting method. 
+Command line hosting is designed to be temporary. Once you stop the server, the database file will be deleted. Your original script will not be deleted. You can run the script again to start another instance with the same configuration. If you wish to have a persistent configuration, use an alternate hosting method. 
 {% endhint %}
 
 ### Installing 
