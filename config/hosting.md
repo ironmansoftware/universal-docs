@@ -103,3 +103,56 @@ Location can be either `CurrentUser` or `LocalMachine`.
 
 For a full set of listening options, you can refer to the [ASP.NET Core Documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-3.1#listenoptionsusehttps).
 
+## Command Line Hosting
+
+{% hint style="warning" %}
+ is documentation for an upcoming version of PowerShell Universal. You can download [nightly builds](https://imsreleases.z19.web.core.windows.net/) if you want to try it out.
+{% endhint %}
+
+You can configure and run the PowerShell Universal server from the command line. The `Start-PSUServer` and `Install-PSUServer` cmdlets can be used to install, configure and run a Universal instance in a single file. 
+
+{% hint style="danger" %}
+Command line hosting is designed to be temporary. Once you stop the server, the database file will be deleted. Your original script will not be deleted. If you wish to have a persistent configuration, use an alternate hosting method. 
+{% endhint %}
+
+### Installing 
+
+To install from the command line, use `Install-PSUServer`. By default, it will store the latest version of the PowerShell Universal Server to the `$Env:ProgramData\PowerShellUniversal` folder. You can specify an alternate path and optionally add the older to the `$Env:Path` environment variable . 
+
+```text
+Install-PSUServer -AddToPath
+```
+
+Once the server is installed, you can start it with `Start-PSUServer`.
+
+### Configuration 
+
+You can configure a PSU server from the command line by using script blocks for the various aspects of your server. The following example creates a server that has a couple of REST API endpoints, a published folder and a dashboard. 
+
+```text
+$Endpoints = {
+    New-PSUEndpoint -Method GET -Url '/user' -Endpoint { "User1" }
+    New-PSUEndpoint -Method POST -Url '/user' -Endpoint { $Body }
+}
+
+$PublishedFolders = {
+    New-PSUPublishedFolder -Path C:\images -RequestPath /images
+}
+
+{ 
+   New-UDDashboard -Title 'Test' -Content {
+       New-UDTypography -Text 'Hello, world!'
+   }
+}.ToString() | Out-File C:\src\dashboard.ps1
+
+$Dashboards = {
+    New-PSUDashboard -Path C:\src\dashboard.ps1 -Name 'Dashboard' -BaseUrl '/' -Framework "UniversalDashboard:latest"  
+}
+```
+
+Once you have configured that various script blocks, you can then pass them to `Start-PSUServer` and it will configure itself and start on the port that you configure. 
+
+```text
+Start-PSUServer -Port 8080 -Endpoint $Endpoints -PublishedFolder $PublishedFolders -Dashboard $Dashboards
+```
+
