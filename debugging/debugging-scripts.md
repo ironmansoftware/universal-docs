@@ -22,6 +22,16 @@ See [dashboard Development](../dashboard/development.md) for information on how 
 
 Dashboards log informational, warning and error messages to their log. It's recommended to use logging when starting a dashboard rather than trying to attach a debugger. You can also use the `$DebugPreference` variable to get additional information during your dashboard startup. 
 
+```text
+$DebugPreference = 'Continue'
+
+New-UDDashboard -Title 'Test' -Content {
+    Write-Debug "My dashboard is loading. I have am $user with $roles"
+    
+    New-UDTypography -Text 'Hello, world'
+}
+```
+
 ### Authentication and Authorization
 
 Authentication and authorization currently do not log. You can use `Out-File` to log messages from these scripts. 
