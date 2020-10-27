@@ -36,6 +36,12 @@ The Kestrel endpoints section allows you to configure the web server. This setti
 
 Kestrel is the web server implementation for ASP.NET Core that PowerShell Universal uses. For more information on the configuration options for Kestrel, visit this [Microsoft Documentation page](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-3.1#listenoptionsusehttps). 
 
+{% hint style="warning" %}
+The below setting will be available in an upcoming version of PowerShell Universal. You can download [nightly builds](https://imsreleases.z19.web.core.windows.net/) if you want to try it out.
+{% endhint %}
+
+* RedirectToHttps - When true, the web server will redirect HTTP requests to HTTPS
+
 **Logging**
 
 The logging options define the level of logging exposed by Universal. The core Universal logging setting Logging / LogLevel / Default can be adjusted to increase the level of logging by the Universal components.
