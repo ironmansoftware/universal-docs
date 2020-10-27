@@ -1,5 +1,35 @@
 # Changelog
 
+## 1.4.6 - 10-27-2020
+
+### Added
+
+#### Dashboard
+
+* UDv3 - Added -FullWidth parameter to New-UDTextbox
+
+### Changed
+
+#### API
+
+* Fixed issue where endpoint modal was not setting authentication setting correctly. 
+
+#### Automation
+
+* Fixed an issue where job logs would not update during job runs. 
+
+#### Dashboard
+
+* Fixed issue where session timeout was only honored on the cookie
+* Fixed issue with dashboard modal not setting authentication setting correctly. 
+* Fixed issue where the dashboard log may not be written and would throw an exception
+* UDv3 - Fixed an issue where PSCustomObjects would not work in New-UDTable
+
+#### Platform
+
+* Fixed an issue where arguments were not correctly applied to Environments
+* Fixed an issue where setting the ExecutionPolicy as an argument in Environments would not apply
+
 ## 1.4.5 - 10-20-2020
 
 #### API
