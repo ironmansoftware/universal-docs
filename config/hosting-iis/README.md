@@ -105,7 +105,7 @@ Most Importantly we will need to update "**processPath**" argument value of this
 
 * Open the web.config file in the PowerShell Universal Application Folder
   * Locate the **&lt;aspNetCore** **processPath** section of the configuration file
-  * Update the arguments=**"PATH"** value to be the exact location of the Universal.Server.dll path.
+  * Update the arguments=**"PATH"** value to be the exact location of the Universal.Server.exe path.
   * Save the file to apply the configuration
 
 ```text
