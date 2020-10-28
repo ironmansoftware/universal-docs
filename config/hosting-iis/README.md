@@ -4,8 +4,6 @@
 
 PowerShell Universal supports being hosted in IIS \(Internet Information Services \(IIS\) for Windows® Server\). Please note that a series of host prerequisites and specific configuration steps are required to facilitate running PowerShell universal on IIS. Please review each section carefully as IIS requires many specific configuration settings applied to work with modern .NET Core applications such as PowerShell Universal.
 
-{% embed url="https://www.youtube.com/watch?v=jKdGPAn4WzA&feature=youtu.be" caption="" %}
-
 ## Step 1 : Preparing the IIS Host
 
 The following components are required in order to host PowerShell Universal on IIS.
@@ -105,7 +103,7 @@ Most Importantly we will need to update "**processPath**" argument value of this
 
 * Open the web.config file in the PowerShell Universal Application Folder
   * Locate the **&lt;aspNetCore** **processPath** section of the configuration file
-  * Update the arguments=**"PATH"** value to be the exact location of the Universal.Server.dll path.
+  * Update the arguments=**"PATH"** value to be the exact location of the Universal.Server.exe path.
   * Save the file to apply the configuration
 
 ```text
