@@ -33,3 +33,17 @@ PS C:\src\universal\src> invoke-webrequest http://localhost:5000/src/test.txt
 Invoke-WebRequest: Response status code does not indicate success: 401 (Unauthorized).
 ```
 
+## Default Documents
+
+{% hint style="warning" %}
+This is documentation for an upcoming version of PowerShell Universal. You can download [nightly builds](https://imsreleases.z19.web.core.windows.net/) if you want to try it out.
+{% endhint %}
+
+Default documents allow you to load files when a user specifies the folder and not the document within a folder. This can be handy when a user visits `/docs` but does not specify `/docs/index.html`. Instead of returning a 404, you can return the `index.html` when the user specifies `/docs`. 
+
+To configure default documents, set the `-DefaultDocument` parameter on `New-PSUPublishedFolder`.
+
+```text
+New-PSUPublishedFolder -Path C:\website -RequestPath /docs -DefaultDocument @("index.hml")
+```
+
