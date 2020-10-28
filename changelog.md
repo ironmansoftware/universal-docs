@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.4.7 - 10-28-2020
+
+### Changed 
+
+#### Dashboard
+
+* Fixed an issue where dashboards wouldn't start on Linux
+
 ## 1.4.6 - 10-27-2020
 
 ### Added
