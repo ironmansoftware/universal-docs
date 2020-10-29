@@ -51,6 +51,43 @@
 * Fixed an issue where an exception could be thrown when using OpenID Connect
 * Fixed issue where you couldn't set arguments in the UI for Environments
 
+#### Breaking Change 
+
+There was a breaking change made to `New-UDTableColumn` -Render. The `$Body`  variable is no longer available and you need to use `$EventData` instead. See the below example for the syntax that will be required. 
+
+Prior to 1.4.5, the syntax would have been like this. 
+
+```text
+$Data = @(
+    @{ link = "http://www.google.com" }
+)
+
+$Columns = @(
+    New-UDTableColumn -Property Link -Render { 
+      $Data = $Body | ConvertFrom-Json
+      New-UDLink -Text 'Link' -Url $Data.link
+    }
+)
+
+New-UDTable -Title 'Link' -Column $Column -Data $Data
+```
+
+1.4.5 and later, the syntax will be like this. `$EventData` is a special variable that will be available in the `-Render` parameter and does not require converting from JSON.
+
+```text
+$Data = @(
+    @{ link = "http://www.google.com" }
+)
+
+$Columns = @(
+    New-UDTableColumn -Property Link -Render { 
+    New-UDLink -Text 'Link' -Url $EventData.link
+    }
+)
+
+New-UDTable -Title 'Link' -Columns $Columns -Data $Data
+```
+
 ## 1.4.4 - 10-13-2020
 
 ### Added
