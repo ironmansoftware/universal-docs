@@ -1,5 +1,39 @@
 # Changelog
 
+## 1.4.7 - 11-2-2020
+
+### Includes
+
+* UniversalDashboard - v3.1.5
+* UniversalDashboard - v2.9.7
+* UniversalDashboard.Charts - 1.2.0
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.0.4
+
+### Added
+
+#### Dashboard
+
+* UDv3 - Added Debug-PSUDashboard
+* UDv2 - Added session timeout modal 
+
+#### Platform
+
+* Added setting for RedirectToHttps
+
+### Changed
+
+#### Dashboard
+
+* Improved error logging. 
+* UDv3 - Fixed an issue with Set-UDElement not updating the form context for UDTextbox
+* UDv3 - Fixed an issue where PSCustomObjects wouldn't work after a table refresh 
+* UDv3 - Fixed an issue where server-side tables $EventData.properties field was not populated
+
+#### Platform
+
+* Fixed an issue where $ and " would not be escaped in variable values
+
 ## 1.4.6 - 10-27-2020
 
 ### Added
