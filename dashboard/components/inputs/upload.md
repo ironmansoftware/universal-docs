@@ -47,10 +47,10 @@ The body of the `OnSubmit` script block is the same one you will see with any fo
 This example allows a user to upload a file. Once the file is uploaded, it will be saved to the temporary directory.
 
 ```text
-New-UDUpload -Text 'Upload Image' -OnUpload {
+New-UDUpload -Id 'myFile' -Text 'Upload Image' -OnUpload {
     $Data = $Body | ConvertFrom-Json 
-    $bytes = [System.Convert]::FromBase64String($Data.Data)
-    [System.IO.File]::WriteAllBytes("$env:temp\$($Data.Name)", $bytes)
+    $bytes = [System.Convert]::FromBase64String($Data.context.myfile.data)
+    [System.IO.File]::WriteAllBytes("$env:temp\$($Data.context.myfile.name)", $bytes)
 }
 ```
 
