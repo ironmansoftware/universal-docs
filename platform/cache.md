@@ -50,7 +50,7 @@ Set-PSUCache -Key "CurrentDate" -Value (Get-Date) -AbsoluteExpirationFromNow ([T
 
 The `SlidingExpiration` parameter allows you to defines the amount of time before the cache item is invalidated. Each time the cache item is accessed, the timer is reset. 
 
-The following cache item will be invalidated in 5 minutes. If it's accessed without those 5 minutes, it will be reset for another 5 minutes. 
+The following cache item will be invalidated in 5 minutes. If it's accessed within those 5 minutes, it will be reset for another 5 minutes. 
 
 ```text
 Set-PSUCache -Key "CurrentDate" -Value (Get-Date) -SlidingExpiration ([TimeSpan]::FromMinutes(5))
