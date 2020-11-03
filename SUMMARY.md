@@ -89,6 +89,10 @@
 * [Role Based Access](dashboard/role-based-access.md)
 * [Marketplace](dashboard/marketplace.md)
 
+## Platform
+
+* [Cache](platform/cache.md)
+
 ## Configuration <a id="config"></a>
 
 * [About](config/about.md)
