@@ -30,7 +30,6 @@ Dynamic tree views allow you to run PowerShell whenever a node is clicked. You c
 
 ```text
 New-UDTreeView -Node { New-UDTreeNode -Name root } -OnNodeClicked {
-    $EventData = $Body | ConvertFrom-Json
     New-UDTreeNode -name "$($EventData.Name)child"
 }
 ```
