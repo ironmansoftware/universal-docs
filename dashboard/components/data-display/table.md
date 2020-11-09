@@ -121,7 +121,56 @@ New-UDTable -Columns $Columns -LoadData {
 }
 ```
 
+## Selection 
 
+{% hint style="warning" %}
+This is documentation for an upcoming version of PowerShell Universal. You can download [nightly builds](https://imsreleases.z19.web.core.windows.net/) if you want to try it out.
+{% endhint %}
+
+Tables support selection of rows. You can create an event handler for the `OnRowSelected` parameter to receive when a new row is selected or you can use `Get-UDElement` to retrieve the current set of selected rows. 
+
+The following example creates a table with row selection enabled.  A toast is show when clicking the row or when clicking the GET Rows button. 
+
+```text
+$Data = try { get-service -ea Stop | select Name,@{n = "Status";e={ $_.Status.ToString()}},@{n = "StartupType";e={ $_.StartupType.ToString()}},@{n = "StartType";e={ $_.StartType.ToString()}} } catch {}
+$Columns = @(
+    New-UDTableColumn -Property Name -Title "Service Name" -ShowSort -IncludeInExport -IncludeInSearch -ShowFilter -FilterType text
+    New-UDTableColumn -Property Status -Title Status -ShowSort -DefaultSortColumn -IncludeInExport -IncludeInSearch -ShowFilter -FilterType select 
+    New-UDTableColumn -Property StartupType -Title StartupType -IncludeInExport -ShowFilter -FilterType select
+    New-UDTableColumn -Property StartType -Title StartType -IncludeInExport -ShowFilter -FilterType select 
+)
+New-UDTable -Id 'service_table' -Data $Data -Columns $Columns -Title 'Services' -ShowSearch -ShowPagination -ShowSelection -Dense -OnRowSelection {
+    $Item = $EventData
+    Show-UDToast -Message "$($Item | out-string)"
+}
+New-UDButton -Text "GET Rows" -OnClick {
+    $value = Get-UDElement -Id "service_table"
+    Show-UDToast -Message "$( $value.selectedRows | Out-String )"
+}
+```
+
+![Row selection](../../../.gitbook/assets/table.gif)
+
+## Exporting 
+
+{% hint style="warning" %}
+This is documentation for an upcoming version of PowerShell Universal. You can download [nightly builds](https://imsreleases.z19.web.core.windows.net/) if you want to try it out.
+{% endhint %}
+
+Tables support exporting the data within the table. You can export as CSV, XLSX, JSON or PDF. You can define which columns to include in an export and choose to export just the current page or all the data within the table.
+
+```text
+$Data = try { get-service -ea Stop | select Name,@{n = "Status";e={ $_.Status.ToString()}},@{n = "StartupType";e={ $_.StartupType.ToString()}},@{n = "StartType";e={ $_.StartType.ToString()}} } catch {}
+$Columns = @(
+    New-UDTableColumn -Property Name -Title "Service Name" -IncludeInExport
+    New-UDTableColumn -Property Status -Title Status 
+    New-UDTableColumn -Property StartupType
+    New-UDTableColumn -Property StartType -IncludeInExport
+)
+New-UDTable -Id 'service_table' -Data $Data -Columns $Columns -Title 'Services' -ShowSearch -ShowPagination -Dense -Export
+```
+
+![](../../../.gitbook/assets/image%20%28176%29.png)
 
 **New-UDTable**
 
