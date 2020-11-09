@@ -1,5 +1,42 @@
 # Changelog
 
+## 1.4.8 - 11-9-2020
+
+### Includes
+
+* UniversalDashboard - v3.1.6
+* UniversalDashboard - v2.9.8
+* UniversalDashboard.Charts - 1.2.0
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.0.4
+
+### Added
+
+#### Platform
+
+* Added -PersistentRunspace to New-PSUEnvironment to prevent APIs from resetting runspaces per execution.
+
+### Changed
+
+#### API
+
+* Fixed an issue where characters would be lost when saving API changes
+* Fixed an issue where editor themes would conflict between the API editor and other editors
+* Fixed an issue where the API host would fail to load the Universal module
+
+#### Automation
+
+* Fixed an issue where running as a service, you wouldn't be able to change the selected credential
+
+#### Dashboard
+
+* UDv2 - Fixed an issue where the session timeout modal would use the existing header of a modal 
+* UDv2 - Fixed an issue where New-UDSideNav -Endpoint would not work
+* Fixed an issue where dashboards could be marked as running when they actually were not
+* Fixed an issue where the alt text for the View button was Global.
+* Fixed an issue where Windows auth would not redirect correctly for dashboards
+* UDv3 - Fixed an issue where -LoadingComponent would only work once
+
 ## 1.4.7 - 11-2-2020
 
 ### Includes
