@@ -1,5 +1,27 @@
 # Changelog
 
+## 1.4.9 - 11-10-2020
+
+### Includes
+
+* UniversalDashboard - v3.1.6
+* UniversalDashboard - v2.9.8
+* UniversalDashboard.Charts - 1.2.0
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.0.4
+
+### Added
+
+#### Dashboard
+
+* Added support for RemoteIpAddress, LocalIpAddress, RemotePort, and LocalPort variables
+
+### Changed
+
+#### Platform
+
+* Fixed a significant issue with web server performance on Windows \(10-15x performance improvement\)
+
 ## 1.4.8 - 11-9-2020
 
 ### Includes
