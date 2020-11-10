@@ -20,7 +20,7 @@
 
 #### Platform
 
-* Fixed a significant issue with web server performance on Windows
+* Fixed an issue with web server performance on Windows
 
 ## 1.4.8 - 11-9-2020
 
