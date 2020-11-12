@@ -119,4 +119,5 @@
 ---
 
 * [Changelog](changelog.md)
+* [Legacy Universal Dashboard Docs](https://legacydocs.universaldashboard.io)
 
