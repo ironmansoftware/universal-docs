@@ -31,7 +31,7 @@ To host in IIS, you will need to download the ZIP of PowerShell Universal. The Z
 
 Hosting in IIS is fully supported but there are a number of specific configuration options that need to applied in order to host with IIS.
 
-Visit our [IIS Hosting](hosting-iis/) Page for specific IIS Instructions.
+Visit our [IIS Hosting](../hosting-iis/) Page for specific IIS Instructions.
 
 ## Hosting Manually
 
@@ -105,75 +105,5 @@ Location can be either `CurrentUser` or `LocalMachine`.
 
 For a full set of listening options, you can refer to the [ASP.NET Core Documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-3.1#listenoptionsusehttps).
 
-## Single File Hosting
-
-You can configure and run the PowerShell Universal server from the command line. The `Start-PSUServer` and `Install-PSUServer` cmdlets can be used to install, configure and run a Universal instance in a single file. 
-
-### Installing 
-
-To install from the command line, use `Install-PSUServer`. By default, it will store the latest version of the PowerShell Universal Server to the `$Env:ProgramData\PowerShellUniversal` folder. You can specify an alternate path and optionally add the older to the `$Env:Path` environment variable . 
-
-```text
-Install-PSUServer -AddToPath
-```
-
-Once the server is installed, you can start it with `Start-PSUServer`.
-
-### Configuration 
-
-You can configure PowerShell Universal from the command line using `Start-PSUServer` and the `-Configuration` parameter. You can use the same cmdlets that you would use in the various configuration files but utilize a single file. You should save this file and then execute the PS1 file. Any changes to the file will be auto-reloaded.
-
-```text
-Start-PSUServer -Port 8080 -Configuration {
-    New-PSUEndpoint -Method GET -Url '/user' -Endpoint { "User1" }
-    New-PSUEndpoint -Method POST -Url '/user' -Endpoint { $Body }
-    New-PSUPublishedFolder -Path C:\images -RequestPath /images
-    New-PSUDashboard  -Name 'Dashboard' -BaseUrl '/' -Framework "UniversalDashboard:Latest" -Content {
-       New-UDDashboard -Title 'Test' -Content {
-           New-UDTypography -Text 'Hello, world!'
-       }
-    }  
-} -ExecutablePath "$Env:ProgramData\PowerShellUniversal\Universal.Server.exe"
-```
-
-### Limitations
-
-Single file hosting has some limitations in terms of scoping. Variables, functions and modules used within the parent scope or the configuration script block scope will not be accessible in the dashboard, endpoint or script content scopes.
-
-```text
-$MyVariable = "Nice"
-
-Start-PSUServer -Port 8080 -Configuration {
-    # $MyVariable available here
-    New-PSUEndpoint -Method GET -Url '/user' -Endpoint { 
-        # $MyVariable not available here
-    }
-    New-PSUDashboard  -Name 'Dashboard' -BaseUrl '/' -Framework "UniversalDashboard:Latest" -Content {
-       # $MyVariable not available here
-       New-UDDashboard -Title 'Test' -Content {
-           New-UDTypography -Text 'Hello, world!'
-       }
-    }  
-}
-```
-
-You can work around these limitations by using variables and environments. 
-
-```text
-$MyVariable = "Nice"
-
-Start-PSUServer -Port 8080 -Configuration {
-    New-PSUVariable -Name 'MyVariable' -Value $MyVariable
-    # $MyVariable available here
-    New-PSUEndpoint -Method GET -Url '/user' -Endpoint { 
-        # $MyVariable available here
-    }
-    New-PSUDashboard  -Name 'Dashboard' -BaseUrl '/' -Framework "UniversalDashboard:Latest" -Content {
-       # $MyVariable available here
-       New-UDDashboard -Title 'Test' -Content {
-           New-UDTypography -Text 'Hello, world!'
-       }
-    }  
-}
-```
+## 
 
