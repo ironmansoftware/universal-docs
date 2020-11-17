@@ -201,3 +201,5 @@ There are a set of predefined variables that are available in API endpoints. You
 | $LocalPort | The local port that was used to service the request. | Integer |
 | $Identity | The identity name of the principal accessing the API. | String |
 
+
+
