@@ -80,10 +80,6 @@ New-UDDashboard -Title 'Pages' -Pages $Pages
 
 ### Query string parameters
 
-{% hint style="warning" %}
-This is documentation for an upcoming version of PowerShell Universal. You can download [nightly builds](https://imsreleases.z19.web.core.windows.net/) if you want to try it out.
-{% endhint %}
-
 Query string parameters are passed to pages and other endpoints as variables. 
 
 For example, if you visited a page with the following query string parameter: `http://localhost:5000/dashboard/Page1?test=123`
