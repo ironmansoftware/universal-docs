@@ -44,6 +44,14 @@ Allows you to define the required PowerShell version for the script. By default,
 
 The number of minutes before the script will timeout. The default value of 0 means the script will run forever. Once a script reaches it's time out, it will be cancelled. 
 
+**Concurrent Jobs**
+
+Defines the maximum concurrent jobs the script can be run. Defaults to 100. 
+
+```text
+New-PSUScript -Name Script.ps1 -Path Script.Ps1 -ConcurrentJobs 1
+```
+
 ## Running a Script
 
 You can run a script in the UI by click the Run button the Automation / Scripts page or by clicking View and then Run. In each case, you will be presented with the Run Dialog that allows you to select various settings for the job. 
