@@ -30,13 +30,9 @@ The `web.config` file that is included in the application installation directory
 
 New versions of Universal may include new versions of Universal Dashboard Frameworks or Components. By default, these components and frameworks are deployed to `%ProgramData%\PowerShellUniversal` during startup of the Universal server. During an upgrade, these files are not deleted. This ensures that dashboards will continue to run on the previous dashboard framework and component versions. 
 
-You will have to manually upgrade your dashboards to use the new framework after the installation is complete. 
+You should have multiple versions of the dashboard frameworks and components available when you start the new version of Universal.
 
-You should have multiple versions of the dashboard frameworks and components available when you start the new version of Universal. 
-
-{% hint style="warning" %}
-Note that if you are using nightly builds that the dashboard framework version may not change. This means you may not see changes if you have installed previous versions of a nightly build. You can delete the %ProgramData%\PowerShellUniversal folder to ensure that the most recent version of the dashboard framework is deployed. 
-{% endhint %}
+By default, new dashboards are set to always use the latest version of the dashboard framework. You can chose to set it to a specific version if you would like but will have to manually change the version during an upgrade. 
 
 ## ZIP Upgrade
 

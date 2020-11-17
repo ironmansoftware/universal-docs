@@ -14,12 +14,6 @@ To grant a token in the Admin Console, navigate to Settings \ Security \ AppToke
 
 ![](../../.gitbook/assets/image%20%2883%29.png)
 
-{% hint style="warning" %}
-This is documentation for an upcoming version of PowerShell Universal. You can download [nightly builds](https://imsreleases.z19.web.core.windows.net/) if you want to try it out.
-
-1.5 adds the following dialog. You can still grant app tokens in 1.4 but without the following configuration options.
-{% endhint %}
-
 When you click Grant App Token, you will be provided with a dialog that allows you to specify the Identity, Role and expiration time of the token. 
 
 ![App Token options. ](../../.gitbook/assets/image%20%28175%29.png)

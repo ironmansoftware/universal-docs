@@ -164,6 +164,18 @@ New-UDDynamic -Content {
 } -AutoRefresh -AutoRefreshInterval 1 
 ```
 
+### Monitors
+
+Monitors are a special kind of chart that tracks data over time. Monitors are good for displaying data such as server performance stats that change frequently. You return a single value from a monitor and it is graphed automatically over time. 
+
+```text
+New-UDChartJSMonitor -LoadData {
+    Get-Random -Max 100 | Out-UDChartJSMonitorData
+} -Labels "Random" -ChartBackgroundColor "#297741" -RefreshInterval 1
+```
+
+![](../../../.gitbook/assets/monitor.gif)
+
 ## Nivo Charts
 
 Universal Dashboard integrates with [Nivo Charts](https://nivo.rocks/components). Below you will find examples and documentation for using these charts. 

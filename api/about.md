@@ -142,10 +142,6 @@ New-PSUEndpoint -Url '/file' -Method Get -Endpoint {
 
 ### Error Handling
 
-{% hint style="warning" %}
-This is documentation for an upcoming version of PowerShell Universal. You can download [nightly builds](https://imsreleases.z19.web.core.windows.net/) if you want to try it out.
-{% endhint %}
-
 By default, endpoints will return a 200 OK message even if there are non-terminating errors. To change this behavior, you can set the `-ErrorAction` parameter of `New-PSUEndpoint` to `Stop`. Any non-terminating errors will cause an 500 Internal Server Error to be returned with a list of the errors and stack trace.
 
 Terminating errors will always return a 500 Internal Server Error.

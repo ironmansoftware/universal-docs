@@ -4,10 +4,6 @@ description: Documentation on how to customize the login page.
 
 # Login Page
 
-{% hint style="warning" %}
-This is documentation for an upcoming version of PowerShell Universal. You can download [nightly builds](https://imsreleases.z19.web.core.windows.net/) if you want to try it out.
-{% endhint %}
-
 {% hint style="info" %}
 This feature requires any type of [PowerShell Universal license](../licensing.md). 
 {% endhint %}

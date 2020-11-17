@@ -105,10 +105,6 @@ For a full set of listening options, you can refer to the [ASP.NET Core Document
 
 ## Single File Hosting
 
-{% hint style="warning" %}
-This is documentation for an upcoming version of PowerShell Universal. You can download [nightly builds](https://imsreleases.z19.web.core.windows.net/) if you want to try it out.
-{% endhint %}
-
 You can configure and run the PowerShell Universal server from the command line. The `Start-PSUServer` and `Install-PSUServer` cmdlets can be used to install, configure and run a Universal instance in a single file. 
 
 ### Installing 

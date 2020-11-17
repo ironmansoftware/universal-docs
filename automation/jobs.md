@@ -52,7 +52,7 @@ $Test
 
 ### Type Parameters
 
-UA supports various types of parameters. You can use String, Int, DateTime, Boolean, Switch and Enum types. 
+UA supports various types of parameters. You can use String, String\[\], Int, DateTime, Boolean, Switch and Enum types. 
 
 ```text
 param(

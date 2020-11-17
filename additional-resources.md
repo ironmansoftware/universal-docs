@@ -24,3 +24,7 @@ File a bug report or feature request for PowerShell Universal.
 
 Download or contribute a PowerShell Universal template. 
 
+## [Videos](https://www.youtube.com/channel/UC8HyhY8iCqyX6-rmAPN7SvA)
+
+Check out video tutorials for PowerShell Universal. 
+

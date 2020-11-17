@@ -1,6 +1,7 @@
 # Table of contents
 
 * [About](README.md)
+* [Get Started](get-started.md)
 * [Additional Resources](additional-resources.md)
 * [Installation](getting-started/README.md)
   * [Docker](getting-started/docker.md)
@@ -22,7 +23,6 @@
 * [Development](automation/development.md)
 * [Scripts](automation/scripts.md)
 * [Jobs](automation/jobs.md)
-* [PowerShell Versions](automation/powershell-versions.md)
 * [Schedules](automation/schedules.md)
 * [Triggers](automation/triggers.md)
 * [Variables](automation/variables.md)

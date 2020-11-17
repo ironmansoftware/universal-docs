@@ -1,5 +1,88 @@
 # Changelog
 
+## 1.5.0 - 11/17/2020
+
+### Includes
+
+* UniversalDashboard - v3.2.0
+* UniversalDashboard - v2.9.8
+* UniversalDashboard.Charts - 1.3.0
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.0.4
+
+### Added
+
+#### Automation
+
+* Added timeout value to jobs 
+* Added execute only role
+* Added concurrent job limit for scripts
+* Added support for string\[\] parameters in the UI
+
+#### Dashboard
+
+* Added $RemoteIpAddress, $LocalIpAddress, $LocalPort and $RemotePort automatic variables
+* UDv3 - Added New-UDDateTime
+* UDv3 - Added -Logo to New-UDDashboard and New-UDPage
+* Added support for query string parameters 
+* Added support for setting the dashboard to use the latest UD version. 
+* Added $ClaimsPrincipal variable
+* Added support for defining default documents for published folders
+* UDv3 - Added New-UDErrorBoundary
+* UDV3 - Added -DefaultTheme to New-UDDashboard
+* Added New-UDChartJSMonitor and Out-UDChartJSMonitorData to UniversalDashboard.Charts.
+* Added a Refresh context menu command to the dashboard log
+* UDv3 - Added -Content parameter to Set-UDElement
+
+#### Platform
+
+* Added support for updating and retrieving configuration files through the management API
+* Added support for setting the PSModulePath on environments
+* Added support for Mac OS
+* Added support for customizing login pages.
+* Added support for disabling redirection from HTTP to HTTPS
+* Added server-level cache support
+* Added support for creating custom app tokens.
+* Added support for disabling forms authentication
+
+### Changed
+
+#### API
+
+* Fixed an issue with the API editor where it would lose characters
+* Licensed API modals will default to authenticated
+
+#### Automation
+
+* Fixed an issue where using the same script multiple times would cause issues
+
+#### Dashboard
+
+* UDv3 - Fixed an issue with MaxWidth on Show-UDModal
+* Fixed an issue where boolean $EventData variables would be hashtables rather than bools
+* Fixed an issue where an error would be shown when a new runspace was created
+* Automatically reload client's browsers when dashboards change
+* Fixed an issue where the configuration reload would delete files 
+* Marketplace won't let you install already installed modules
+* Licensed dashboard modals will default to authenticated
+
+#### Automation
+
+* Fixed an issue where running as a service, you wouldn't be able to change the selected credential
+
+#### Dashboard
+
+* Fixed an issue with gRPC and Linux ARM
+* Fixed an issue where deploying dashboard assets could fail during startup
+* Fixed an issue where attempting to retrieve the highest dashboard version would fail 
+* Optimized configuration loading behavior to only reload items that changed
+* Moving some configuration data to an in-memory database for better performance
+
+#### Platform
+
+* Prevent custom roles from viewing the admin console
+* Fixed an issue where standard cmdlets wouldn't work in authentication.ps1
+
 ## 1.4.9 - 11-10-2020
 
 ### Includes

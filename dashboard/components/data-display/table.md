@@ -123,10 +123,6 @@ New-UDTable -Columns $Columns -LoadData {
 
 ## Selection 
 
-{% hint style="warning" %}
-This is documentation for an upcoming version of PowerShell Universal. You can download [nightly builds](https://imsreleases.z19.web.core.windows.net/) if you want to try it out.
-{% endhint %}
-
 Tables support selection of rows. You can create an event handler for the `OnRowSelected` parameter to receive when a new row is selected or you can use `Get-UDElement` to retrieve the current set of selected rows. 
 
 The following example creates a table with row selection enabled.  A toast is show when clicking the row or when clicking the GET Rows button. 
@@ -152,10 +148,6 @@ New-UDButton -Text "GET Rows" -OnClick {
 ![Row selection](../../../.gitbook/assets/table.gif)
 
 ## Exporting 
-
-{% hint style="warning" %}
-This is documentation for an upcoming version of PowerShell Universal. You can download [nightly builds](https://imsreleases.z19.web.core.windows.net/) if you want to try it out.
-{% endhint %}
 
 Tables support exporting the data within the table. You can export as CSV, XLSX, JSON or PDF. You can define which columns to include in an export and choose to export just the current page or all the data within the table.
 

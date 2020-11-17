@@ -186,10 +186,6 @@ New-UDDashboard -Title "Hello, World!" -Pages $Pages
 
 ## Logo
 
-{% hint style="warning" %}
-This is documentation for an upcoming version of PowerShell Universal. You can download [nightly builds](https://imsreleases.z19.web.core.windows.net/) if you want to try it out.
-{% endhint %}
-
 You can display a logo in the navigation bar by using the `-Logo` parameter. 
 
 First, setup a [published folder](../published-folders.md) to host your logo. 

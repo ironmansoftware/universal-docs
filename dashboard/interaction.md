@@ -40,6 +40,16 @@ $Value = (Get-UDElement -Id 'txtExample').value
 
 Alternatively, you can set component state using `Set-UDElement` . You will need to specify an ID and a hashtable of properties to set on the component. All built in components support Set-UDElement. 
 
+```text
+New-UDTextbox -Id 'textbox'
+
+New-UDButton -Text 'Click' -OnClick {
+    Set-UDElement -Id 'textbox' -Properties @{
+        Value = 'My Value'
+    }
+}
+```
+
 ## Removing a Component
 
 You can remove components from the page using `Remove-UDElement` . The component will no longer appear on the page. 

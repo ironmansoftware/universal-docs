@@ -4,10 +4,6 @@ description: Server-level caching mechanism in PowerShell Universal.
 
 # Cache
 
-{% hint style="warning" %}
-This is documentation for an upcoming version of PowerShell Universal. You can download [nightly builds](https://imsreleases.z19.web.core.windows.net/) if you want to try it out.
-{% endhint %}
-
 PowerShell Universal provides the ability to use a server-level cache to store data that you use between APIs, Automation and Dashboards. You can configure cache item life times use the `Set-PSUCache` cmdlet in any PowerShell script you run in PowerShell Universal. You can also retrieve items from the cache using `Get-PSUCache`. 
 
 Some examples of usages for the cache may be: 
@@ -63,4 +59,6 @@ You can use the `Get-PSUCache` cmdlet to retrieve items from the cache. You simp
 ```text
 Get-PSUCache -Key "CurrentDate"
 ```
+
+
 
