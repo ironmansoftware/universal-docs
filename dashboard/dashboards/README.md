@@ -24,11 +24,23 @@ The full file name to the dashboard file. This file needs to return a dashboard 
 
 The framework that the dashboard was designed for. By default, Universal Dashboard v2.9 and v3.0 are supported. 
 
-**PowerShell Version**
+**Environment**
 
-The version of PowerShell to host this dashboard within. 
+The [environment ](../../config/environments.md)to run the dashboard within. 
 
-![](../../.gitbook/assets/image%20%281%29.png)
+**Auth**
+
+Enables authentication for the dashboard. 
+
+**Role**
+
+Defines the role that is required to access the dashboard. 
+
+**AutoStart**
+
+Determines whether the dashboard should start \(or restart\) when the server starts or changes are made to the dashboard files. 
+
+![](../../.gitbook/assets/image%20%28178%29.png)
 
 ## Starting and Stopping Dashboards
 
