@@ -66,10 +66,6 @@ New-UDTextbox -Id "ServerGroups" -Icon (New-UDIcon -Icon 'server') -Value "This 
 
 ## Mask
 
-{% hint style="warning" %}
-his is documentation for an upcoming version of PowerShell Universal. You can download [nightly builds](https://imsreleases.z19.web.core.windows.net/) if you want to try it out.
-{% endhint %}
-
 You can define a text mask with a combination of strings and regular expressions. To specify a regular expression, use the JavaScript syntax in your string to start and finish the expression: `/\d/`. 
 
 This example creates a mask for US based phone numbers. 
