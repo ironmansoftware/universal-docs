@@ -19,6 +19,18 @@ New-UDDashboard -Theme $Theme -Title 'Hello' -Content {
 }
 ```
 
+## Setting the default theme
+
+You can set the default theme to either Light or Dark using the `-DefaultTheme` parameter. 
+
+```text
+New-UDDashboard -Title 'Hello' -Content {
+    New-UDButton -Text "Test " -OnClick {
+        Show-UDToast -Message 'HEllo'
+    }
+} -DefaultTheme dark
+```
+
 ## Changing the background color
 
 You can change the page background color by setting the background default color. To adjust the header background color, set the primary main color. 
