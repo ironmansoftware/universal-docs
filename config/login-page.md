@@ -27,7 +27,7 @@ $LoginPage = @{
  HeaderColor = '#4bc0d9' 
  SecondaryColor = '#6457a6'
  SecondaryFontColor = 'white'
- Image = http://localhost:5000/images/dbatools.png 
+ Image = 'http://localhost:5000/images/dbatools.png'
 }
 
 New-PSULoginPage @LoginPage
