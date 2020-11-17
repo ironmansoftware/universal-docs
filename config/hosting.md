@@ -133,7 +133,7 @@ Start-PSUServer -Port 8080 -Configuration {
            New-UDTypography -Text 'Hello, world!'
        }
     }  
-}
+} -ExecutablePath "$Env:ProgramData\PowerShellUniversal\Universal.Server.exe"
 ```
 
 ### Limitations
