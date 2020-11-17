@@ -140,6 +140,30 @@ New-PSUEndpoint -Url '/file' -Method Get -Endpoint {
 }
 ```
 
+You can also return custom body data by using the `-Body` parameter of `New-PSUApiResponse`. 
+
+```text
+New-PSUEndpoint -Url '/file' -Method Get -Endpoint {
+    New-PSUApiResponse -Body "Not what you're looking for." -StatusCode 404
+}
+```
+
+Invoking the REST method will return the custom error code. 
+
+```text
+PS C:\Users\adamr\Desktop> invoke-restmethod http://localhost:8080/file
+
+Invoke-RestMethod: Not what you're looking for.
+```
+
+You can control the content type of the data that is returned by using the `-ContentType` parameter. 
+
+```text
+New-PSUEndpoint -Url '/file' -Method Get -Endpoint {
+    New-PSUApiResponse -Body "<xml><node>1</node><node2>2</node2></xml>" -ContentType 'text/xml'
+}
+```
+
 ### Error Handling
 
 By default, endpoints will return a 200 OK message even if there are non-terminating errors. To change this behavior, you can set the `-ErrorAction` parameter of `New-PSUEndpoint` to `Stop`. Any non-terminating errors will cause an 500 Internal Server Error to be returned with a list of the errors and stack trace.
