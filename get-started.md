@@ -4,11 +4,12 @@ description: Get started with PowerShell Universal
 
 # Get Started
 
-You can get up and running with PowerShell Universal by installing the `Universal` PowerShell Module.
+You can get up and running with PowerShell Universal by installing the `Universal` PowerShell Module. We've added some configuration for a REST API endpoint and Dashboard below. 
 
 ```text
+$Path = Join-Path $Env:ProgramData "PowerShellUniversal"
 Install-Module Universal
-Install-PSUServer -AddToPath -LatestVersion
+Install-PSUServer -LatestVersion -Path $Path
 Start-PSUServer -Port 8080 -Configuration {
     New-PSUEndpoint -Url '/hello' -Method GET -Endpoint {
         'Hello'
@@ -22,7 +23,7 @@ Start-PSUServer -Port 8080 -Configuration {
             }
         }
     }
-}
+} -ExecutablePath (Join-Path $Path "Universal.Server.exe")
 ```
 
 Once your server is up and running, try executing a REST API request.
@@ -39,7 +40,7 @@ Start-Process http://localhost:8080/dashboard
 
 Enter some text in the form to say hi. 
 
-
+![](.gitbook/assets/hello.gif)
 
 Visit the admin console to see all the features of PowerShell Universal. You can login with `admin` and any password. 
 
