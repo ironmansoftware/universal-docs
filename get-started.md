@@ -8,7 +8,7 @@ You can get up and running with PowerShell Universal by installing the `Universa
 
 ```text
 Install-Module Universal
-Install-PSUServer -AddToPath
+Install-PSUServer -AddToPath -LatestVersion
 Start-PSUServer -Port 8080 -Configuration {
     New-PSUEndpoint -Url '/hello' -Method GET -Endpoint {
         'Hello'
