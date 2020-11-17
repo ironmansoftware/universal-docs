@@ -4,6 +4,37 @@
 
 By default, the forms authentication script is configured to accept the user Admin and any password. You can configure this authentication policy to interact with whatever system you like. The script will receive a `PSCredential` object that contains the user name and password entered by the user at the login page. 
 
+{% hint style="info" %}
+Authentication settings are also stored with `authentication.ps1`
+{% endhint %}
+
+To update forms authentication, you can click Settings \ Security and then click the Settings button for the forms authentication. 
+
+![](../../.gitbook/assets/image%20%28179%29.png)
+
+You can update the PowerShell script found in settings to configure how the user is authenticated. You'll need to return a `New-PSUAuthenticationResult` from the script to indicate whether the user was successfully authenticated. 
+
+```text
+param(
+    [PSCredential]$Credential
+)
+
+#
+#   You can call whatever cmdlets you like to conduct authentication here.
+#   Just make sure to return the $Result with the Success property set to $true
+#
+
+if ($Credential.UserName -eq 'Admin') 
+{
+    New-PSUAuthenticationResult -Success -UserName 'Admin'
+}
+else 
+{
+    New-PSUAuthenticationResult -ErrorMessage 'Bad username or password'
+}
+        
+```
+
 ## OpenID Authentication
 
 You can configure OpenID authentication and authorization by adjusting the settings within the `OpenID` section of the `appsettings.json` file. Authorization policies that you configure within Universal will be run on the user's identity after authentication is successful.
