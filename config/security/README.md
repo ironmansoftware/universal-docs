@@ -135,10 +135,6 @@ Operators have access to add and remove resources such as APIs, Scripts and Dash
 
 #### Execute
 
-{% hint style="warning" %}
-This is documentation for an upcoming version of PowerShell Universal. You can download [nightly builds](https://imsreleases.z19.web.core.windows.net/) if you want to try it out.
-{% endhint %}
-
 The Execute role grants the ability to run scripts and read access for everything else. 
 
 #### Reader
@@ -159,7 +155,7 @@ You can use App Tokens with the Universal cmdlets or by using web requests direc
 
 By default, the forms authentication and policy assignment scripts run within the PowerShell Universal process. You can optional configure an external [Environment ](../environments.md)to run your authentication and authorization scripts. When you configure a security environment, an external PowerShell process will be started and configured use your Environment's settings. 
 
-To adjust the environment used by the security process, set the `-SecurityEnvironment` in `settings.ps`. 
+To adjust the environment used by the security process, set the `-SecurityEnvironment` in `settings.ps1`. 
 
 ```text
 Set-PSUSetting -SecurityEnvironment '5.1'
