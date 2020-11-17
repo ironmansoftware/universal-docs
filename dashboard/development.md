@@ -10,7 +10,47 @@ The [Visual Studio Code extension for PowerShell Universal](https://marketplace.
 The first time you activate the Visual Studio Code extension, it will download the latest version of PowerShell Universal and start the server on port 5000.
 {% endhint %}
 
-## Developing a Dashboard
+## Developing a Dashboard with Single-File Configuration
+
+You can use the Universal Dashboard PowerShell module and single-file configuration to build a dashboard directly from PowerShell. 
+
+Install the Universal Dashboard PowerShell Module. This will install both the Universal Dashboard framework module and the PowerShell Universal module. 
+
+```text
+Install-Module UniversalDashboard
+```
+
+Install the latest version of the Universal server.
+
+```text
+Install-PSUServer -LatestVersion
+```
+
+Create a PS1 file for your configuration data and start the server.
+
+```text
+Start-PSUServer -Port 8080 -Configuration {
+    New-PSUDashboard -Name 'Dashboard' -BaseUrl '/dashboard' -Framework 'UniversalDashboard:Latest' -Content {
+        New-UDDashboard -Title 'Hello, World' -Content {
+            New-UDForm -Content {
+                New-UDTextbox -Label 'Say Hi' -Id 'textbox'
+            } -OnSubmit {
+                Show-UDToast -Message $EventData.textbox
+            }
+        }
+    }
+}
+```
+
+Navigate to your dashboard.
+
+```text
+Start-Process http://localhost:8080/dashboard
+```
+
+Changes you make to your PS1 file will cause Universal to automatically reload your dashboard and reflect the changes. 
+
+## Developing a Dashboard with VS Code
 
 To add a new dashboard, visit the admin console and go to Dashboard \ Dashboards and click the Add Dashboard button. 
 
