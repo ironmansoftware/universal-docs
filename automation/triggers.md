@@ -71,7 +71,7 @@ $Dashboard
 
 Triggers related to the server status will not receive a parameter.
 
-## API
+## Related Cmdlets
 
 * [New-PSUTrigger](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/New-PSUTrigger.md)
 * [Remove-PSUTrigger](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/Remove-PSUTrigger.md)

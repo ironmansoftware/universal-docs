@@ -86,7 +86,7 @@ To run as another user, simply add or import a PSCredential variable. From there
 
 ![](../.gitbook/assets/image%20%2826%29.png)
 
-## API
+## Related Cmdlets
 
 * [New-PSUScript](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/New-PSUScript.md)
 * [Get-UAScript](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/Get-UAScript.md)

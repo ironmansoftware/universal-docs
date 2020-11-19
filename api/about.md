@@ -188,5 +188,10 @@ There are a set of predefined variables that are available in API endpoints. You
 | $LocalPort | The local port that was used to service the request. | Integer |
 | $Identity | The identity name of the principal accessing the API. | String |
 
+## Related Cmdlets
 
+* [New-PSUEndpoint](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/New-PSUEndpoint.md)
+* [Get-PSUEndpoint](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/Get-PSUEndpoint.md)
+* [Remove-PSUEndpoint](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/Remove-PSUEndpoint.md)
+* [New-PSUApiResponse](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/New-PSUApiResponse.md)
 
