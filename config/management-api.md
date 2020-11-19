@@ -26,6 +26,10 @@ Additionally, you can connect to the Universal server using `Connect-UAServer`.
 Connect-UAServer -ComputerName http://localhost:5000 -AppToken $AppToken
 ```
 
+## REST API
+
+The PowerShell Universal Management API can be accessed via REST calls. You can view the available calls using the built in Swagger API documentation. You will need an App Token to make calls to the REST API.
+
 ## App Tokens
 
 [App Tokens](security/app-tokens.md) are required by the Management API. You will need to use an App Token with both the PowerShell Cmdlets as well as the calling the Management API directly through REST. 
