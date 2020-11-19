@@ -8,6 +8,8 @@ Universal Dashboard provides several built-in charting solutions to help visuali
 
 {% hint style="info" %}
 To use charts within your dashboard, you will need to add the UniversalDashboard.Charts component. 
+
+[Learn more about adding custom component libraries](../../dashboards/#adding-custom-component-libraries)
 {% endhint %}
 
 ## ChartJS

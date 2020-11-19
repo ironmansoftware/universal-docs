@@ -61,6 +61,7 @@
     * [Autocomplete](dashboard/components/inputs/automcomplete.md)
     * [Button](dashboard/components/inputs/button.md)
     * [Checkbox](dashboard/components/inputs/checkbox.md)
+    * [Code Editor](dashboard/components/inputs/code-editor.md)
     * [Date Picker](dashboard/components/inputs/date-picker.md)
     * [Floating Action Button](dashboard/components/inputs/floating-action-button.md)
     * [Form](dashboard/components/inputs/form.md)
