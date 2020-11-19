@@ -60,3 +60,21 @@ When editing schedules from PowerShell, you can define the parameters on the `Ne
 New-PSUSchedule -Script "MyScript.ps1" -Cron '* * * * *' -UserName 'adam'
 ```
 
+## Environments
+
+When creating a schedule, you have the option to specify the [environment ](../config/environments.md)for your job to run. By default, it will use the default environment. You can define an environment in the UI by using the Environment drop down. You can define an environment using the `-Environment` parameter in `New-PSUSchedule`.
+
+```text
+New-PSUSchedule -Script "MyScript.ps1" -Cron '* * * * *' -Environment '7.1'
+```
+
+## Run As
+
+You can define which user to run the schedule as by using the Run As selector in the UI. The Run As selector contains a list of PSCredential [variables](variables.md) you have defined. You will need to define a PSCredential variable before the Run As selector is visible. By default, scheduled jobs will run under the credentials of the user that is running PowerShell Universal. 
+
+You can define a Run As user in a script by using the `-Credential` parameter. The value should be the name of the variable that contains your credential. 
+
+```text
+New-PSUSchedule -Script "MyScript.ps1" -Cron '* * * * *' -Credential 'MyUser'
+```
+
