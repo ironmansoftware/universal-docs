@@ -121,5 +121,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[New-PSUAuthorizationClaim](New-PSUAuthorizationClaim)
-[Set-PSUAuthenticationMethod](Set-PSUAuthenticationMethod)
+[New-PSUAuthorizationClaim](New-PSUAuthorizationClaim.md)
+[Set-PSUAuthenticationMethod](Set-PSUAuthenticationMethod.md)

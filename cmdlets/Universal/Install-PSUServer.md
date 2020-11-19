@@ -129,4 +129,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Start-PSUServer](Start-PSUServer)
+[Start-PSUServer](Start-PSUServer.md)

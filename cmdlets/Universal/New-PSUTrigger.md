@@ -193,7 +193,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[New-PSUScript](New-PSUScript)
-[New-PSUDashboard](New-PSUDashboard)
-[Get-PSUDashboard](Get-PSUDashboard)
-[Get-PSUScript](Get-PSUScript)
+[New-PSUScript](New-PSUScript.md)
+[New-PSUDashboard](New-PSUDashboard.md)
+[Get-PSUDashboard](Get-PSUDashboard.md)
+[Get-PSUScript](Get-PSUScript.md)

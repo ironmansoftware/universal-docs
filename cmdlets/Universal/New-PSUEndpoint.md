@@ -212,4 +212,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[New-PSUApiResponse](New-PSUApiResponse)
+[New-PSUApiResponse](New-PSUApiResponse.md)
