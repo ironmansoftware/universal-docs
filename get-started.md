@@ -56,7 +56,7 @@ Start-Process http://localhost:8080/admin
 
 Learn more about the various features of PowerShell Universal
 
-* [APIs](api/about.md)
+* [APIs](api/about/)
 * [Automation](automation/about.md)
 * [Dashboards](dashboard/about.md)
 

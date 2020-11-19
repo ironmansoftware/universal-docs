@@ -27,7 +27,7 @@ Invoke-RestMethod http://localhost:5000/endpoint
 ### Authentication and Authorization
 
 {% hint style="info" %}
-This feature requires a [license](../licensing.md).
+This feature requires a [license](../../licensing.md).
 {% endhint %}
 
 REST API authentication requires a Universal API license. Once enabled, you will be able to enforce authentication and authorization on your endpoints. Authentication and authorization for APIs is managed via app tokens. You can manage user app tokens under `Settings \ Security \ AppTokens`.
@@ -162,19 +162,6 @@ You can control the content type of the data that is returned by using the `-Con
 New-PSUEndpoint -Url '/file' -Method Get -Endpoint {
     New-PSUApiResponse -Body "<xml><node>1</node><node2>2</node2></xml>" -ContentType 'text/xml'
 }
-```
-
-### Error Handling
-
-By default, endpoints will return a 200 OK message even if there are non-terminating errors. To change this behavior, you can set the `-ErrorAction` parameter of `New-PSUEndpoint` to `Stop`. Any non-terminating errors will cause an 500 Internal Server Error to be returned with a list of the errors and stack trace.
-
-Terminating errors will always return a 500 Internal Server Error.
-
-```text
-New-PSUEndpoint -Url "/user" -Endpoint { 
-   $obj = [object]::new()
-   $obj.UserName = "test"
-} -ErrorAction stop
 ```
 
 ## Execution Environment
