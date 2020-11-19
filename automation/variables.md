@@ -34,7 +34,12 @@ From this dialog, you'll be able to define string and PSCredentials in the speci
 
 You can also import pre-existing secrets as variables into Universal. The variable values are not imported but will be looked up during execution. Click the Import Secret button to import secrets. 
 
+## Related Cmdlets
 
+* [New-UAVariable](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/New-UAVariable.md)
+* [Get-UAVariable](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/Get-UAVariable.md)
+* [Remove-UAVariable](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/Remove-UAVariable.md)
+* [Set-UAVariable](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/Set-UAVariable.md)
 
 
 

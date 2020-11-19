@@ -3,6 +3,7 @@
 * [About](README.md)
 * [Get Started](get-started.md)
 * [Additional Resources](additional-resources.md)
+* [Cmdlet Help](https://github.com/ironmansoftware/universal-docs/tree/master/cmdlets)
 * [Installation](getting-started/README.md)
   * [Docker](getting-started/docker.md)
   * [Upgrading](getting-started/upgrading.md)

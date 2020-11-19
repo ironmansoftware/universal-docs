@@ -44,5 +44,8 @@ To disable rate limiting for particular IP Addresses, clients and endpoints you 
 
 ![](../.gitbook/assets/image%20%28148%29.png)
 
+## Related Cmdlets
 
+* [New-PSURateLimit](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/New-PSURateLimit.md)
+* [Set-UASetting](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/Set-UASetting.md)
 

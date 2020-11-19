@@ -179,5 +179,5 @@ New-UDTable -Id 'service_table' -Data $Data -Columns $Columns -Title 'Services' 
 | Export | SwitchParameter | Whether exporting is enabled within the table. | false |
 | PageSize   | int | Number of items to show in a page by default. Defaults to 5. | false |
 | PageSizeOptions | int\[\] | Page size options to show in the selector. Defaults to @\(5, 10, 20\) **** | false |
-| Padding | string | The padding size of the cells. Can be set to dense or default. Defaults to default.  | false |
+| Dense | SwitchParameter | Enables dense padding.  | false |
 

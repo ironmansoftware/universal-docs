@@ -71,3 +71,11 @@ $Dashboard
 
 Triggers related to the server status will not receive a parameter.
 
+## Related Cmdlets
+
+* [New-PSUTrigger](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/New-PSUTrigger.md)
+* [Remove-PSUTrigger](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/Remove-PSUTrigger.md)
+* [Set-PSUTrigger](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/Set-PSUTrigger.md)
+* [Get-UAScript](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/Get-UAScript.md)
+* [Get-PSUDashboard](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/Get-PSUDashboard.md)
+
