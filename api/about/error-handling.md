@@ -4,7 +4,7 @@ description: Error handling for Universal API.
 
 # Error Handling
 
-By default, endpoints will return a 200 OK message even if there are non-terminating errors. This document demonstrates different ways to handle errors within APIs. 
+By default, endpoints will return a 200 OK message even if there are errors. If an error occurs, you will get a blank response from the endpoint. This document demonstrates different ways to handle errors within APIs. 
 
 ## Automatically Returning Errors
 
