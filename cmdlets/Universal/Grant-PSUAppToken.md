@@ -8,7 +8,8 @@ schema: 2.0.0
 # Grant-PSUAppToken
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+
+Grants a new app token.
 
 ## SYNTAX
 
@@ -31,21 +32,29 @@ Grant-PSUAppToken -IdentityName <String> [-Expiry <DateTime>] [-Role <String>] [
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Grants a new app token. App tokens can be used to call the PowerShell Universal Management API and other custom REST APIs. 
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Grant-PSUAppToken -IdentityName 'MyIdentity' -Expiry (Get-Date).AddDays(30) -Role 'Reader'
 ```
 
-{{ Add example description here }}
+Grants a new app token to the MyIdentity user that expires in 30 days and provides Reader access.
+
+### Example 2
+```powershell
+PS C:\> Grant-PSUAppToken -IdentityName 'MyIdentity' -Expiry (Get-Date).AddDays(30) -Role 'Reader' -SigningKey 'MySigningKey'
+```
+
+Generates a new app token using the specified signing key for the MyIdentity user.
 
 ## PARAMETERS
 
 ### -AppToken
-{{ Fill AppToken Description }}
+The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
+
 
 ```yaml
 Type: String
@@ -60,7 +69,7 @@ Accept wildcard characters: False
 ```
 
 ### -Audience
-{{ Fill Audience Description }}
+The audience to use when generating a new app token. This needs to match the audience value on the server.
 
 ```yaml
 Type: String
@@ -75,7 +84,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
-{{ Fill ComputerName Description }}
+Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session. 
 
 ```yaml
 Type: String
@@ -90,7 +99,7 @@ Accept wildcard characters: False
 ```
 
 ### -Expiry
-{{ Fill Expiry Description }}
+The expiration date of the app token. 
 
 ```yaml
 Type: DateTime
@@ -105,7 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -Identity
-{{ Fill Identity Description }}
+The Identity object to create the app token for. Use Get-PSUIdentity to retrieve the identities.
 
 ```yaml
 Type: Identity
@@ -120,7 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -IdentityName
-{{ Fill IdentityName Description }}
+The name of the identity to generate or grant for the app token. 
 
 ```yaml
 Type: String
@@ -135,7 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -Issuer
-{{ Fill Issuer Description }}
+The issue to set in the app token metadata. This needs to match the server's configuration settings.
 
 ```yaml
 Type: String
@@ -150,7 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -Role
-{{ Fill Role Description }}
+The role to grant to the identity of the app token. 
 
 ```yaml
 Type: String
@@ -165,7 +174,7 @@ Accept wildcard characters: False
 ```
 
 ### -SigningKey
-{{ Fill SigningKey Description }}
+The signing key used to sign the app token. This needs to match the server's configuration settings. 
 
 ```yaml
 Type: String
@@ -192,3 +201,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[Get-PSUIdentity](Get-UAIdentity.md)

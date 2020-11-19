@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-PSUCache
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Sets an object into the PowerShell Universal server-side cache.
 
 ## SYNTAX
 
@@ -33,21 +33,42 @@ Set-PSUCache -Key <String> -Value <Object> [-SlidingExpiration <TimeSpan>] [<Com
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Sets an object into the PowerShell Universal server-side cache. This cmdlet is to be used within APIs, Dashboards and Scripts. You cannot retrieve cache data from the Management API.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Set-PSUCache -Key 'Data' -Value 'MyValue'
 ```
 
-{{ Add example description here }}
+Caches data forever within the server-level cache. 
+
+### Example 2
+```powershell
+PS C:\> Set-PSUCache -Key 'Data' -Value 'MyValue' -AbsoluteExpirationTime (Get-Date).AddMinutes(10)
+```
+
+Caches data within the cache that will expire in 10 minutes. 
+
+### Example 3
+```powershell
+PS C:\> Set-PSUCache -Key 'Data' -Value 'MyValue' -AbsoluteExpirationFromNow [TimeSpan]::FromMinutes(30)
+```
+
+Caches data within the cache that will expire in 30 minutes. 
+
+### Example 4
+```powershell
+PS C:\> Set-PSUCache -Key 'Data' -Value 'MyValue' -SlidingExpiration [TimeSpan]::FromMinutes(10)
+```
+
+Caches data with a sliding cache of 10 minutes. If the data isn't accessed for 10 minutes, it will be invalidated and purged from the cache. If the data is accessed, the timer will reset for another 10 minutes. 
 
 ## PARAMETERS
 
 ### -AbsoluteExpiration
-{{ Fill AbsoluteExpiration Description }}
+An absolute expiration time for the data in the cache. 
 
 ```yaml
 Type: DateTime
@@ -62,7 +83,7 @@ Accept wildcard characters: False
 ```
 
 ### -AbsoluteExpirationFromNow
-{{ Fill AbsoluteExpirationFromNow Description }}
+A TimeSpan indicating how long from now the data should be removed from the cache. 
 
 ```yaml
 Type: TimeSpan
@@ -77,7 +98,7 @@ Accept wildcard characters: False
 ```
 
 ### -Key
-{{ Fill Key Description }}
+A key for looking up the data in the cache. 
 
 ```yaml
 Type: String
@@ -92,7 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -SlidingExpiration
-{{ Fill SlidingExpiration Description }}
+A TimeSpan indicating the sliding expiration for data in the cache. 
 
 ```yaml
 Type: TimeSpan
@@ -107,7 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -Value
-{{ Fill Value Description }}
+The object to store in the cache. This object will be serialized to CLIXML. 
 
 ```yaml
 Type: Object
@@ -134,3 +155,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[Get-PSUCache](Get-PSUCache.md)

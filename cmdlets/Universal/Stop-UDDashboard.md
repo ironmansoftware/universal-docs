@@ -5,10 +5,10 @@ online version: https://go.microsoft.com/fwlink/?LinkID=217032
 schema: 2.0.0
 ---
 
-# Stop-UDDashboard
+# Stop-UDDashboard (Stop-PSUDashboard)
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Stops a PowerShell Universal dashboard.
 
 ## SYNTAX
 
@@ -17,21 +17,21 @@ Stop-UDDashboard -Dashboard <Dashboard> [-ComputerName <String>] [-AppToken <Str
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Stops a PowerShell Universal dashboard. Use Get-PSUDashboard to retrieve dashboards to stop. 
 
 ## EXAMPLES
 
 ### Example 1
 ```
-PS C:\> {{ Add example code here }}
+PS C:\> Get-PSUDashboard | Stop-PSUDashboard
 ```
 
-{{ Add example description here }}
+Stops all dashboards on the server.
 
 ## PARAMETERS
 
 ### -AppToken
-{{ Fill AppToken Description }}
+The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
 
 ```yaml
 Type: String
@@ -46,7 +46,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
-{{ Fill ComputerName Description }}
+Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session. 
 
 ```yaml
 Type: String
@@ -61,7 +61,7 @@ Accept wildcard characters: False
 ```
 
 ### -Dashboard
-{{ Fill Dashboard Description }}
+The dashboard to stop. 
 
 ```yaml
 Type: Dashboard
@@ -87,3 +87,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[Get-PSUDashboard](Get-PSUDashboard.md)
+[Start-PSUDashboard](Start-UDDashboard.md)

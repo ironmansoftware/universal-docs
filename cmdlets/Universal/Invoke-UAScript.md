@@ -129,7 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-{{ Fill Name Description }}
+The name of the script to invoke.
 
 ```yaml
 Type: String
@@ -190,7 +190,7 @@ Accept wildcard characters: False
 ```
 
 ### -Environment
-{{ Fill Environment Description }}
+The environment to use when invoke this script. You can see available environments by using Get-PSUEnvironment.
 
 ```yaml
 Type: String
@@ -217,3 +217,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[Get-PSUEnvironment](Get-PSUEnvironment.md)

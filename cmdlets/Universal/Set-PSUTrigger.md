@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-PSUTrigger
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Updates an existing PowerShell Universal Automation trigger.
 
 ## SYNTAX
 

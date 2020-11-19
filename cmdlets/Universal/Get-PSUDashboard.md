@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-PSUDashboard
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Returns all the dashboards defined in a PowerShell Universal server.
 
 ## SYNTAX
 
@@ -17,21 +17,21 @@ Get-PSUDashboard [-ComputerName <String>] [-AppToken <String>] [<CommonParameter
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Returns all the dashboards defined in a PowerShell Universal server.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Get-PSUDashboard
 ```
 
-{{ Add example description here }}
+Returns all the dashboards defined.
 
 ## PARAMETERS
 
 ### -AppToken
-{{ Fill AppToken Description }}
+The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
 
 ```yaml
 Type: String
@@ -46,7 +46,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
-{{ Fill ComputerName Description }}
+Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session. 
 
 ```yaml
 Type: String

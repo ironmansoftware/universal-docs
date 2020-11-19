@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-PSUEndpoint
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+
+Deletes a PowerShell Universal endpoint
 
 ## SYNTAX
 
@@ -17,21 +18,21 @@ Remove-PSUEndpoint [-Endpoint] <Endpoint> [-ComputerName <String>] [-AppToken <S
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Deletes a PowerShell Universal endpoint
 
 ## EXAMPLES
 
 ### Example 1
 ```
-PS C:\> {{ Add example code here }}
+PS C:\> Get-PSUEndpoint -Id 1 | Remove-PSUEndpoint
 ```
 
-{{ Add example description here }}
+Removes the endpoint with Id 1. 
 
 ## PARAMETERS
 
 ### -AppToken
-{{ Fill AppToken Description }}
+The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
 
 ```yaml
 Type: String
@@ -46,7 +47,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
-{{ Fill ComputerName Description }}
+Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session. 
 
 ```yaml
 Type: String
@@ -61,7 +62,7 @@ Accept wildcard characters: False
 ```
 
 ### -Endpoint
-{{ Fill Endpoint Description }}
+The endpoint to remove. Use Get-PSUEndpoint to retrieve endpoints. 
 
 ```yaml
 Type: Endpoint
@@ -87,3 +88,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[Get-PSUEndpoint](Get-PSUEndpoint.md)

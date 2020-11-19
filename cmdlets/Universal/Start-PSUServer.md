@@ -8,7 +8,7 @@ schema: 2.0.0
 # Start-PSUServer
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Starts the PowerShell Universal server. 
 
 ## SYNTAX
 
@@ -18,21 +18,40 @@ Start-PSUServer [[-ExecutablePath] <String>] [[-ListenAddress] <String>] [-Port 
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Starts the PowerShell Universal server. This cmdlet performs discovery and configuration of the Universal.Server executable. It uses Start-Process to start up the server after the configuration has been completed. This cmdlet requires that it can find the Universal.Server executable. You can use Install-PSUServer to download the proper binaries for your system. 
 
 ## EXAMPLES
 
 ### Example 1
 ```
-PS C:\> {{ Add example code here }}
+PS C:\> Start-PSUServer -Port 8080
 ```
 
-{{ Add example description here }}
+Starts a PowerShell Universal server on port 8080
+
+### Example 2
+```
+PS C:\> Start-PSUServer -Port 8080 -Configuration {
+    New-PSUEndpoint -Url '/test' -Method 'GET' -Endpoint {
+        "Hi"
+    }
+}
+```
+
+Starts a PowerShell Universal server on port 8080 and uses single-file configuration to setup a new endpoint listening on '/test'
+
+### Example 3
+```
+PS C:\> $Env:Data__RepositoryPath = "C:\repo" 
+PS C:\> Start-PSUServer -Port 8080 
+```
+
+Sets an alternative repository path and starts the PowerShell Universal server. 
 
 ## PARAMETERS
 
 ### -ExecutablePath
-{{ Fill ExecutablePath Description }}
+The path to the Universal.Server executable. This defaults to $Env:ProgramData\Universal.Server. If not found in this location, Start-PSUServer will also search the $ENV:PATH
 
 ```yaml
 Type: String
@@ -47,7 +66,7 @@ Accept wildcard characters: False
 ```
 
 ### -ListenAddress
-{{ Fill ListenAddress Description }}
+The address to listen on. For example: http://*:4000
 
 ```yaml
 Type: String
@@ -62,7 +81,7 @@ Accept wildcard characters: False
 ```
 
 ### -Configuration
-{{ Fill Configuration Description }}
+A configuration script block. This enables single-file configuration. 
 
 ```yaml
 Type: ScriptBlock
@@ -77,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -Port
-{{ Fill Port Description }}
+A port to listen on. 
 
 ```yaml
 Type: Int32
@@ -103,3 +122,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[Install-PSUServer](Install-PSUServer.md)

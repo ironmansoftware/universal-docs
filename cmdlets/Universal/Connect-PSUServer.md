@@ -8,7 +8,7 @@ schema: 2.0.0
 # Connect-PSUServer
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Connects to a PowerShell Universal server.
 
 ## SYNTAX
 
@@ -17,21 +17,21 @@ Connect-PSUServer -ComputerName <String> [-AppToken <String>] [<CommonParameters
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Connects to a PowerShell Universal server. When you connect using this cmdlet, you will no longer need to specify the -ComputerName and -AppToken parameters for each cmdlet that is accessing the PowerShell Universal Management API.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Connect-PSUServer -ComputerName http://localhost:5000 -AppToken 'appToken123'
 ```
 
-{{ Add example description here }}
+Connects to the PSU server listening on port 5000 of localhost using the app token appToken123.
 
 ## PARAMETERS
 
 ### -AppToken
-{{ Fill AppToken Description }}
+The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
 
 ```yaml
 Type: String
@@ -46,7 +46,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
-{{ Fill ComputerName Description }}
+Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session. 
 
 ```yaml
 Type: String

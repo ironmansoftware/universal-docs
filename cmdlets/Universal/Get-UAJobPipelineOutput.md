@@ -5,10 +5,11 @@ online version: https://go.microsoft.com/fwlink/?LinkID=217032
 schema: 2.0.0
 ---
 
-# Get-UAJobPipelineOutput
+# Get-UAJobPipelineOutput (Get-PSUJobPipelineOutput)
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+
+Gets the pipeline output written by a job. 
 
 ## SYNTAX
 
@@ -23,21 +24,29 @@ Get-UAJobPipelineOutput -Job <Job> [-ComputerName <String>] [-AppToken <String>]
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Gets the pipeline output written by a job. Pipeline output that is written to a job is stored as CLIXML and can be retrieved by this cmdlet. 
 
 ## EXAMPLES
 
 ### Example 1
 ```
-PS C:\> {{ Add example code here }}
+PS C:\> Get-UAJobPipelineOutput -JobId 10
 ```
 
-{{ Add example description here }}
+Returns pipeline output for job 10.
+
+### Example 2
+```
+PS C:\> $Job = Get-UAJob -Id 12
+PS C:\> Get-UAJobPipelineOutput -Job $Job
+```
+
+Returns pipeline output for job 12.
 
 ## PARAMETERS
 
 ### -AppToken
-{{ Fill AppToken Description }}
+The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
 
 ```yaml
 Type: String
@@ -52,7 +61,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
-{{ Fill ComputerName Description }}
+Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session. 
 
 ```yaml
 Type: String
@@ -67,7 +76,7 @@ Accept wildcard characters: False
 ```
 
 ### -Job
-{{ Fill Job Description }}
+The job to retrieve pipeline output for. You can retrieve jobs with Get-PSUJob.
 
 ```yaml
 Type: Job
@@ -82,7 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -JobId
-{{ Fill JobId Description }}
+The ID of the job to retrieve pipeline output for. 
 
 ```yaml
 Type: Int64
@@ -108,3 +117,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[Get-PSUJob](Get-UAJob.md)

@@ -31,15 +31,45 @@ You can also use this cmdlet to create environments through the REST API.
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> New-PSUEnvironment -Name '7.1' -Path 'pwsh.exe' 
 ```
 
-{{ Add example description here }}
+Creates a new environment called 7.1 that uses the pwsh.exe for running APIs, scripts or dashboards. 
+
+### Example 2
+```powershell
+PS C:\> New-PSUEnvironment -Name '7.1' -Path 'pwsh.exe' -ArgumentList "-ExecutionPolicy Bypass"
+```
+
+Creates a new environment called 7.1 that uses the pwsh.exe executable and sets the execution policy to ByPass. 
+
+### Example 3
+```powershell
+PS C:\> New-PSUEnvironment -Name '7.1' -Path 'pwsh.exe' -ArgumentList "-ExecutionPolicy Bypass" -Variables @("*")
+```
+
+Creates a new environment that uses all the variables defined with New-PSUVariable. 
+
+
+### Example 4
+```powershell
+PS C:\> New-PSUEnvironment -Name '7.1' -Path 'pwsh.exe' -ArgumentList "-ExecutionPolicy Bypass" -Modules @("ActiveDirectory")
+```
+
+Creates a new environment that automatically loads the ActiveDirectory module.
+
+### Example 5
+```powershell
+PS C:\> New-PSUEnvironment -Name '7.1' -Path 'pwsh.exe' -ArgumentList "-ExecutionPolicy Bypass" -PersistentRunspace
+```
+
+Creates a new environment that uses persistent runspaces. Persistent runspaces are used for APIs and do not reset between each execution.
 
 ## PARAMETERS
 
 ### -AppToken
-{{ Fill AppToken Description }}
+The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
+
 
 ```yaml
 Type: String
@@ -54,7 +84,7 @@ Accept wildcard characters: False
 ```
 
 ### -Arguments
-{{ Fill Arguments Description }}
+Arguments to pass to the PowerShell process when starting the environment.
 
 ```yaml
 Type: String
@@ -69,7 +99,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
-{{ Fill ComputerName Description }}
+Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session. 
 
 ```yaml
 Type: String
@@ -84,7 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -Modules
-{{ Fill Modules Description }}
+Modules to automatically load when creating new runspaces in the environment.
 
 ```yaml
 Type: String[]
@@ -99,7 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-{{ Fill Name Description }}
+The name of the environment. 
 
 ```yaml
 Type: String
@@ -114,7 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -PSModulePath
-{{ Fill PSModulePath Description }}
+Additional paths to add to the PSModulePath for the environment. 
 
 ```yaml
 Type: String[]
@@ -129,7 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
-{{ Fill Path Description }}
+The path to the PowerShell executable. 
 
 ```yaml
 Type: String
@@ -144,7 +174,7 @@ Accept wildcard characters: False
 ```
 
 ### -PersistentRunspace
-{{ Fill PersistentRunspace Description }}
+Whether to enable persistent runspaces. This is only used for APIs. 
 
 ```yaml
 Type: SwitchParameter
@@ -159,7 +189,7 @@ Accept wildcard characters: False
 ```
 
 ### -Variables
-{{ Fill Variables Description }}
+Variables to import into the runspace. These are variables defined by New-PSUVariable. 
 
 ```yaml
 Type: String[]
@@ -186,3 +216,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[New-PSUVariable](New-UAVariable.md)

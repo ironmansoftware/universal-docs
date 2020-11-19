@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-PSUAuthenticationMethod
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Sets the authentication method settings.
 
 ## SYNTAX
 
@@ -18,21 +18,37 @@ Set-PSUAuthenticationMethod -ScriptBlock <ScriptBlock> [-Disabled] [-ComputerNam
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Sets the authentication method settings. This is currently only used to configure forms authentication. 
+
+Authentication settings are stored in .universal/authentication.ps1
+
+You can also use this cmdlet with the PowerShell Universal Management API.
 
 ## EXAMPLES
 
 ### Example 1
 ```
-PS C:\> {{ Add example code here }}
+PS C:\> Set-PSUAuthenticationMethod -ScriptBlock {
+    param($Credential) 
+
+    if ($Credential.UserName -eq 'Adam')
+    {
+        New-PSUAuthenticationResult -Success -UserName 'Adam'
+    }
+    else 
+    {
+        New-PSUAuthenticationResult -ErrorMessage 'Not Adam!'
+    }
+
+}
 ```
 
-{{ Add example description here }}
+Forms authentication script blocks receive a single $Credential parameter that contains a PSCredential object. You need to return a New-PSUAuthenticationResult from the script block to grant and deny access. 
 
 ## PARAMETERS
 
 ### -AppToken
-{{ Fill AppToken Description }}
+The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
 
 ```yaml
 Type: String
@@ -47,7 +63,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
-{{ Fill ComputerName Description }}
+Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session. 
 
 ```yaml
 Type: String
@@ -62,7 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScriptBlock
-{{ Fill ScriptBlock Description }}
+The script block to execute when a user is logging in. 
 
 ```yaml
 Type: ScriptBlock
@@ -77,7 +93,7 @@ Accept wildcard characters: False
 ```
 
 ### -Disabled
-{{ Fill Disabled Description }}
+Whether forms authentication is disabled. 
 
 ```yaml
 Type: SwitchParameter
@@ -103,3 +119,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[New-PSUAuthenticationResult](New-PSUAuthenticationResult.md)

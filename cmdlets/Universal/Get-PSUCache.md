@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-PSUCache
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Returns data from the server-wide cache.
 
 ## SYNTAX
 
@@ -17,21 +17,23 @@ Get-PSUCache -Key <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Returns data from the server-wide cache. The server-wide cache is used to store data that is used between APIs, dashboards and scripts. 
+
+This cmdlet can only be called within APIs, dashboards and scripts. You cannot access the server-wide cache through the PowerShell Universal Management API.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Get-PSUCache -Key 'DataTable'
 ```
 
-{{ Add example description here }}
+Returns the DataTable cache data. Server-wide cache data is stored as CLIXML and deserialized before being returned to the pipeline.
 
 ## PARAMETERS
 
 ### -Key
-{{ Fill Key Description }}
+The cache key of the data to return. 
 
 ```yaml
 Type: String
@@ -58,3 +60,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[Set-PSUCache](Set-PSUCache.md)

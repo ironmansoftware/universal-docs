@@ -5,10 +5,10 @@ online version: https://go.microsoft.com/fwlink/?LinkID=217032
 schema: 2.0.0
 ---
 
-# Start-UDDashboard
+# Start-UDDashboard (Start-PSUDashboard)
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Starts a PowerShell Universal dashboard. 
 
 ## SYNTAX
 
@@ -17,21 +17,21 @@ Start-UDDashboard -Dashboard <Dashboard> [-ComputerName <String>] [-AppToken <St
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Starts a PowerShell Universal dashboard. 
 
 ## EXAMPLES
 
 ### Example 1
 ```
-PS C:\> {{ Add example code here }}
+PS C:\> Get-PSUDashboard | Start-PSUDashboard 
 ```
 
-{{ Add example description here }}
+Starts all the dashboards on the PowerShell Universal server.
 
 ## PARAMETERS
 
 ### -AppToken
-{{ Fill AppToken Description }}
+The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
 
 ```yaml
 Type: String
@@ -46,7 +46,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
-{{ Fill ComputerName Description }}
+Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session. 
 
 ```yaml
 Type: String
@@ -61,7 +61,7 @@ Accept wildcard characters: False
 ```
 
 ### -Dashboard
-{{ Fill Dashboard Description }}
+The dashboard to start. 
 
 ```yaml
 Type: Dashboard
@@ -87,3 +87,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[Get-PSUDashboard](Get-PSUDashboard.md)

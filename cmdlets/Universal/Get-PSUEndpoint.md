@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-PSUEndpoint
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Returns all endpoints defined in PowerShell Universal. 
 
 ## SYNTAX
 
@@ -28,21 +28,35 @@ Get-PSUEndpoint [-Url <String>] [-ComputerName <String>] [-AppToken <String>] [<
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Returns all endpoints defined in PowerShell Universal. 
 
 ## EXAMPLES
 
 ### Example 1
 ```
-PS C:\> {{ Add example code here }}
+PS C:\> Get-PSUEndpoint
 ```
 
-{{ Add example description here }}
+Returns all endpoints.
+
+### Example 2
+```
+PS C:\> Get-PSUEndpoint -Id 1
+```
+
+Returns the endpoint that has Id 1. Ids are reset when the server is restarted. 
+
+### Example 3
+```
+PS C:\> Get-PSUEndpoint -Url '/url'
+```
+
+Returns the endpoints that have the URL '/url'.
 
 ## PARAMETERS
 
 ### -AppToken
-{{ Fill AppToken Description }}
+The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
 
 ```yaml
 Type: String
@@ -57,7 +71,8 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
-{{ Fill ComputerName Description }}
+Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session. 
+
 
 ```yaml
 Type: String
@@ -72,7 +87,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-{{ Fill Id Description }}
+The ID of the endpoint to return. 
 
 ```yaml
 Type: Int64
@@ -87,7 +102,7 @@ Accept wildcard characters: False
 ```
 
 ### -Url
-{{ Fill Url Description }}
+The URL of the endpoints to return. Multiple endpoints may have the same URL and different verbs. 
 
 ```yaml
 Type: String
