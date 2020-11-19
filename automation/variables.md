@@ -16,7 +16,15 @@ Standard variables are just name \ value pairs of strings. They will be added to
 
 ## Creating a Secret Variable
 
+{% hint style="warning" %}
+Secret management is currently only supported on Windows. 
+{% endhint %}
+
 Secret variables are stored within the selected vault. The value of those variables are never stored within Universal. To define a new secret variable, click Add Variable on the variables page and select the Secret tab. 
+
+{% hint style="warning" %}
+Values for secrets are stored within the current user's Windows Credential Manager instance. If you change users \(such as running as a service account\), the account will not have access to the previous user's secrets and you will need to add those secrets again.
+{% endhint %}
 
 From this dialog, you'll be able to define string and PSCredentials in the specified vault. 
 

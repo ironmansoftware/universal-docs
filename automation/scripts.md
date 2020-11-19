@@ -80,7 +80,7 @@ The result is a set of input options that are based on the types of parameters.
 
 ### Running a Script as Another User
 
-You can run scripts as another user by configuring secret variables. PowerShell Universal uses the Microsoft Secret Management module to integrate with secret providers. See variables for more information on secrets. 
+You can run scripts as another user by configuring [secret variables](variables.md#creating-a-secret-variable). PowerShell Universal uses the Microsoft Secret Management module to integrate with secret providers. See variables for more information on secrets. 
 
 To run as another user, simply add or import a PSCredential variable. From there, you can select the credential from within the run dialog. 
 
