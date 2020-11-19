@@ -78,3 +78,19 @@ Start-PSUServer -Port 8080 -Configuration {
 }
 ```
 
+## Referencing Other Files
+
+The single-file hosting and configuration does not actually require the use of a single file. Rather, it means that you have a single entry point for the hosting and configuration of your PowerShell Universal server. You can reference other files within the `-Configuration`  script block parameter. 
+
+For example, if you wanted to load endpoints from a nested folder, you could do the following. 
+
+```text
+Start-PSUServer -Port 8080 -Configuration {
+    Get-ChildItem (Join-Path $PSScriptRoot 'endpoints') | ForEach-Object {
+        & $_.FullPath
+    }
+}
+```
+
+With this configuration, you can have an `endpoints` folder within the same directory as your root file and they will be loaded automatically when the server starts of the files change. 
+
