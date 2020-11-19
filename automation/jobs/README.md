@@ -6,13 +6,13 @@ Jobs are the result of running a script. Jobs are retained based on the script a
 
 Jobs can be viewed by clicking the Automation / Jobs page. Click the View button to navigate to the job. Jobs in progress can also bee cancelled. 
 
-![](../.gitbook/assets/image%20%2819%29.png)
+![](../../.gitbook/assets/image%20%2819%29.png)
 
 ### View Job Output
 
 Standard job output is shown on the Output Tab of the job page. This should contain text from various PowerShell streams. 
 
-![](../.gitbook/assets/image%20%2813%29.png)
+![](../../.gitbook/assets/image%20%2813%29.png)
 
 ### View Job Pipeline Output
 
@@ -20,78 +20,23 @@ Pipeline output for jobs are also stored within UA. Any object that is written t
 
 You can expand the tree view to see the objects and properties from the pipeline. 
 
-![](../.gitbook/assets/image%20%2822%29.png)
+![](../../.gitbook/assets/image%20%2822%29.png)
 
 ### Viewing Errors
 
 Any errors written to the error stream will be available on the Error tab within the job page. 
 
-![](../.gitbook/assets/image%20%2825%29.png)
+![](../../.gitbook/assets/image%20%2825%29.png)
 
 ## Feedback 
 
 Some jobs will require feedback. Any script that contains a Read-Host call will wait until there is user interaction with that job. The job will be in a Waiting for Feedback state and you can respond to that feedback by click the Response to Feedback button on the job page. 
 
-![](../.gitbook/assets/image%20%2817%29.png)
-
-## Parameters
-
-Jobs support automatically generating forms with parameters based on your script's `param` block. The type of control will change based on the type you define in the block. Parameters that are mandatory will also be required by the UI. 
-
-### Basic Parameters
-
-Parameters can be simply defined without any type of parameter attribute and they will show up as text boxes in the UI. 
-
-```text
-param($Test)
-
-$Test
-```
-
-![](../.gitbook/assets/image%20%2887%29.png)
-
-### Type Parameters
-
-UA supports various types of parameters. You can use String, String\[\], Int, DateTime, Boolean, Switch and Enum types. 
-
-```text
-param(
-    [String]$Textbox,
-    [Int]$NumberPicker,
-    [DateTime]$DateTime,
-    [Bool]$Switch,
-    [Switch]$Switch2,
-    [System.DayOfWeek]$Select
-)
-
-$Textbox
-$NumberPicker
-$DateTime
-$Switch
-$Switch2
-$Select
-```
-
-![](../.gitbook/assets/image%20%2888%29.png)
-
-### Required Parameters
-
-You can use the Parameter attribute to define required parameters. 
-
-```text
-param(
-    [Parameter(Mandatory)]
-    $RequiredParameter
-)
-
-$RequiredParameter
-```
-
-![](../.gitbook/assets/image%20%2886%29.png)
+![](../../.gitbook/assets/image%20%2817%29.png)
 
 ## Invoking Jobs from PowerShell
 
-You can use `Invoke-UAScript` to invoke jobs from the command line. You will need a valid [App Token](../config/security/#app-tokens) to do so. Parameters are defined using dynamic parameters on the `Invoke-UAScript` cmdlet. 
+You can use `Invoke-UAScript` to invoke jobs from the command line. You will need a valid [App Token](../../config/security/#app-tokens) to do so. Parameters are defined using dynamic parameters on the `Invoke-UAScript` cmdlet. 
 
 ```text
 Invoke-UAScript -Script 'Script1.ps1' -RequiredParameter 'Hello'
