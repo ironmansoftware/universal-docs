@@ -58,3 +58,31 @@ You can view the dashboard by clicking the View button. This will take you to th
 
 On the dashboard information page, click on the Console tab to view the UD console. The console allows you to run scripts from within the UD runspace so you can better debug the state of your script. You can evaluate variables and run commands that are available to the dashboard. You will be running in the context of your user in regards to the runspace but the process will be running as the service account user.
 
+## Adding Custom Component Libraries
+
+Custom component libraries provide additional components to dashboards. There are three built in component libraries that are not automatically imported into your dashboards. 
+
+* UniversalDashboard.Charts
+* UniversalDashboard.Map
+* UniversalDashboard.CodeEditor
+
+To add these components to your dashboard, you can use the dashboard UI. 
+
+Click the info button on the dashboard page. 
+
+![](../../.gitbook/assets/image%20%28183%29.png)
+
+Next, click the components button in the top right of your dashboard. 
+
+![](../../.gitbook/assets/image%20%28181%29.png)
+
+Finally, check the component library you'd like added to your dashboard. 
+
+![](../../.gitbook/assets/image%20%28182%29.png)
+
+You can also add component libraries directly to your `dashboards.ps1` script within the `.unversal` folder or when using [single-file hosting and configuration](../../config/hosting/single-file.md).
+
+```text
+New-PSUDashboard -Name 'Dashboard' -BaseUrl '/' -Framework "UniversalDashboard:Latest" -Component @("UniversalDashboard.Charts:1.3.0")
+```
+
