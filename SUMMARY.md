@@ -13,8 +13,8 @@
 
 ## API
 
-* [About](api/about/README.md)
-  * [Error Handling](api/about/error-handling.md)
+* [About](api/about.md)
+* [Error Handling](api/error-handling.md)
 * [Rate Limiting](api/rate-limiting.md)
 * [Development](api/development.md)
 

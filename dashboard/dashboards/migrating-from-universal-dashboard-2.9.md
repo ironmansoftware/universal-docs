@@ -29,7 +29,7 @@ $Endpoint = New-UDEndpoint -Schedule $Schedule -Endpoint {}
 
 ### REST APIs
 
-To learn more about APIs, [click here](../../api/about/).
+To learn more about APIs, [click here](../../api/about.md).
 
 ### Authentication and Authorization
 
