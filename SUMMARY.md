@@ -89,6 +89,7 @@
 * [Themes](dashboard/themes/README.md)
   * [Cascading Style Sheets](dashboard/themes/cascading-style-sheets.md)
   * [Styles](dashboard/themes/styles.md)
+* [Scheduled Endpoints](dashboard/scheduled-endpoints.md)
 * [Role Based Access](dashboard/role-based-access.md)
 * [Marketplace](dashboard/marketplace.md)
 
