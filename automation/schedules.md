@@ -40,3 +40,23 @@ Continuous schedules will run over and over again. You can define a delay betwee
 
 ![](../.gitbook/assets/image%20%28141%29.png)
 
+## Parameters
+
+Schedules support setting parameters for scripts. For example, if you have a script that accepts a parameter, you can choose to pass a value to the parameter during the schedule. 
+
+```text
+param($UserName)
+
+$UserName
+```
+
+Within the modal for defining the schedule, you will have the option to set the parameter value.
+
+![](../.gitbook/assets/image%20%28180%29.png)
+
+When editing schedules from PowerShell, you can define the parameters on the `New-PSUSchedule` cmdlet. This cmdlet accepts dynamic parameters so that you can pass the values in for your schedule. 
+
+```text
+New-PSUSchedule -Script "MyScript.ps1" -Cron '* * * * *' -UserName 'adam'
+```
+
