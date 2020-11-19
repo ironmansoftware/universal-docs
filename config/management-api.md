@@ -28,5 +28,13 @@ Connect-UAServer -ComputerName http://localhost:5000 -AppToken $AppToken
 
 ## App Tokens
 
+[App Tokens](security/app-tokens.md) are required by the Management API. You will need to use an App Token with both the PowerShell Cmdlets as well as the calling the Management API directly through REST. 
+
+You can use an App Token with `Invoke-RestMethod` by specifying the authorization header. 
+
+```text
+Invoke-RestMethod http://localhost:5000/api/v1/script -Headers @{ Authorization = "Bearer appToken" }
+```
+
 
 
