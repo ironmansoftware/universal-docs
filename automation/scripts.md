@@ -89,4 +89,7 @@ To run as another user, simply add or import a PSCredential variable. From there
 ## API
 
 * [New-PSUScript](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/New-PSUScript.md)
+* [Get-UAScript](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/Get-UAScript.md)
+* [Remove-UAScript](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/Remove-UAScript.md)
+* [Set-UAScript](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/Set-UAScript.md)
 
