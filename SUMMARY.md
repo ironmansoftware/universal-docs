@@ -15,6 +15,7 @@
 ## API
 
 * [About](api/about.md)
+* [Endpoints](api/endpoints.md)
 * [Security](api/security.md)
 * [Error Handling](api/error-handling.md)
 * [Rate Limiting](api/rate-limiting.md)
