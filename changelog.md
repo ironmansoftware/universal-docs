@@ -1,5 +1,48 @@
 # Changelog
 
+## 1.5.1 - 11/20/2020
+
+### Includes
+
+* UniversalDashboard - v3.2.1
+* UniversalDashboard - v2.9.8
+* UniversalDashboard.Charts - 1.3.0
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.0.4
+
+### Added
+
+#### Dashboard
+
+* UDv3 - Added -Text parameter to New-UDCard
+* UDv3 - Added -LoadNavigation to New-UDPage
+
+### Changed
+
+#### Automation
+
+* Fixed an issue where automation jobs would not run as the selected user
+* Fixed an issue where the Get-Job -Script parameter would not work
+
+#### Dashboard
+
+* UDv3 - Fixed an issue with -Disable didn't work for New-UDSelect
+* UDv3 - Fixed an issue where -PageSize and -PageOptions would not work in New-UDTable
+* UDv3 - Fixed an issue where export would not work
+* UDv3 - Fixed an issue where search would not work
+* Fixed an issue where multiple dashboard processes could be started for one dashboard.
+
+#### Platform
+
+* Fixed an issue where Start-PSUServer would located the Universal.Server.exe correctly
+* Fixed an issue where Install-PSUServer didn't have a default parameter set.
+* Fixed an issue where an upgrade from 1.4 to 1.5 would fail
+* Fixed an issue where the login page customizations wouldn't work for certain license types
+* Fixed an issue with the ZIP file created for Mac OS X systems
+* Fixed an issue where Start-PSUServer would not work on Linux or Mac OS X
+* Fixed an issue where Start-PSUServer would not call chmod +x on Linux and Mac OS X
+* Fixed an issue where the New-PSUAuthorizationClaim cmdlet wasn't exported from the module manifest
+
 ## 1.5.0 - 11/17/2020
 
 ### Includes
