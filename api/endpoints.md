@@ -18,12 +18,6 @@ To invoke the above method, you could use `Invoke-RestMethod`.
 Invoke-RestMethod http://localhost:5000/endpoint
 ```
 
-### Authentication and Authorization
-
-{% hint style="info" %}
-
-{% endhint %}
-
 ### Variable URL
 
 URLs can contain variable segments. You can denote a variable segment using a colon \(`:`\). For example, the following URL would provide a variable for the ID of the user. The `$Id` variable will be defined within the endpoint when it is executed. Variables must be unique in the same endpoint URL.
@@ -149,4 +143,12 @@ New-PSUEndpoint -Url '/file' -Method Get -Endpoint {
     New-PSUApiResponse -Body "<xml><node>1</node><node2>2</node2></xml>" -ContentType 'text/xml'
 }
 ```
+
+## Related Cmdlets
+
+* [New-PSUEndpoint](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/New-PSUEndpoint.md)
+* [Get-PSUEndpoint](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/Get-PSUEndpoint.md)
+* [Remove-PSUEndpoint](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/Remove-PSUEndpoint.md)
+* [New-PSUApiResponse](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/New-PSUApiResponse.md)
+* [Set-UASetting](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/Set-UASetting.md)
 
