@@ -18,7 +18,7 @@ To invoke the above method, you could use `Invoke-RestMethod`.
 Invoke-RestMethod http://localhost:5000/endpoint
 ```
 
-### Variable URL
+## Variable URL
 
 URLs can contain variable segments. You can denote a variable segment using a colon \(`:`\). For example, the following URL would provide a variable for the ID of the user. The `$Id` variable will be defined within the endpoint when it is executed. Variables must be unique in the same endpoint URL.
 
@@ -34,7 +34,7 @@ To call this API and specify the ID, you would do the following.
 Invoke-RestMethod http://localhost:5000/user/123
 ```
 
-### Query String Parameters
+## Query String Parameters
 
 Query string parameters are automatically passed into endpoints as variables that you can then access. For example, if you had an endpoint that expected an `$Id` variable, it could be provided via the query string.
 
@@ -50,7 +50,7 @@ The resulting `Invoke-RestMethod` call must then include the query string parame
 Invoke-RestMethod http://localhost:5000/user?Id=123
 ```
 
-### Body
+## Body
 
 To access a request body, you will simply access the `$Body` variable. Universal `$Body` variable will be a string. If you expect JSON, you should use `ConvertFrom-Json`.
 
@@ -67,13 +67,13 @@ To call the above endpoint, you would have to specify the body of `Invoke-RestMe
 Invoke-RestMethod http://localhost:5000/user -Method Post -Body "{'username': 'adam'}"
 ```
 
-### Returning Data
+## Returning Data
 
 Data returned from endpoints will be assumed to be JSON data. If you return an object from the endpoint script block, it will be automatically serialized to JSON. If you want to return another type of data, you can return a string formatted however you chose.
 
-### Processing Files
+## Processing Files
 
-#### Uploading Files
+### Uploading Files
 
 You can process uploaded files by using the `$Data` parameter to access the byte array of data uploaded to the endpoint.
 
@@ -99,7 +99,7 @@ New-PSUEndpoint -Url '/file' -Method Post -Endpoint {
 }
 ```
 
-#### Downloading Files
+### Downloading Files
 
 You can send files down using the `New-PSUApiResponse` cmdlet.
 
@@ -110,7 +110,7 @@ New-PSUEndpoint -Url '/image' -Endpoint {
 }
 ```
 
-### Returning Custom Responses
+## Returning Custom Responses
 
 You can return custom responses from endpoints by using the `New-PSUApiResponse` cmdlet in your endpoint. This cmdlet allows you to set the status code, content type and even specify the byte\[\] data for the content to be returned.
 
