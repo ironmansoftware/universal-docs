@@ -24,25 +24,81 @@ $Test
 
 UA supports various types of parameters. You can use String, String\[\], Int, DateTime, Boolean, Switch and Enum types. 
 
+#### String
+
+You can define string parameters by specifying the `[String]` type of by not specifying a type at all. Strings will generate a textbox. 
+
 ```text
 param(
     [String]$Textbox,
-    [Int]$NumberPicker,
-    [DateTime]$DateTime,
-    [Bool]$Switch,
-    [Switch]$Switch2,
-    [System.DayOfWeek]$Select
+    $Textbox2
 )
-
-$Textbox
-$NumberPicker
-$DateTime
-$Switch
-$Switch2
-$Select
 ```
 
-![](../../.gitbook/assets/image%20%2888%29.png)
+![](../../.gitbook/assets/image%20%28189%29.png)
+
+#### String Arrays
+
+You can specify string arrays by using the `[String[]]` type specifier. String arrays will generate a multi-tag select box. 
+
+```text
+param([String[]]$Array)
+```
+
+![](../../.gitbook/assets/image%20%28190%29.png)
+
+#### Date and Time
+
+You can use the `[DateTime]` type specifier to create a date and time selector. 
+
+```text
+param([DateTime]$DateTime)
+```
+
+![](../../.gitbook/assets/image%20%28193%29.png)
+
+#### Boolean
+
+You can use a `[Bool]` type selector to create a switch.
+
+```text
+param([Bool]$Switch)
+```
+
+![](../../.gitbook/assets/image%20%28186%29.png)
+
+#### Switch Parameter
+
+You can define a switch parameter using the `[Switch]` type specifier to create a switch.
+
+```text
+param([Switch]$Switch)
+```
+
+![](../../.gitbook/assets/image%20%28187%29.png)
+
+#### Enumerations
+
+You can use System.Enum values to create select boxes. For example, you could use the `System.DayOrWeek` to create a day of the week selection box. 
+
+```text
+param([System.DayOfWeek]$DayOfWeek)
+```
+
+![](../../.gitbook/assets/image%20%28192%29.png)
+
+### Help Messages
+
+You can define help messages for your parameters by using the `HelpMessage` property of the `Parameter` attribute.
+
+```text
+param(
+    [Parameter(HelpMessage = "Class you want to enroll in")]
+    [string]$Class
+)
+```
+
+![](../../.gitbook/assets/image%20%28185%29.png)
 
 ### Required Parameters
 

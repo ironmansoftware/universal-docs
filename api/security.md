@@ -14,7 +14,7 @@ REST API authentication requires a Universal API license. Once enabled, you will
 
 You can define secure endpoints in the UI by enabling authentication. 
 
-![](../.gitbook/assets/image%20%28185%29.png)
+![](../.gitbook/assets/image%20%28188%29.png)
 
 You can also define secure endpoints using the `.universal/endpoints.ps1` file or the Management API using `New-PSUEndpoint`. 
 
@@ -44,7 +44,7 @@ To authenticate with tokens, first, you need generate a new app token for use. Y
 
 Click Grant App Token to create a new one. 
 
-![](../.gitbook/assets/image%20%28186%29.png)
+![](../.gitbook/assets/image%20%28191%29.png)
 
 Once you have created your app token, you can now use it to authenticate against the secure endpoint. To do so, pass the Authorization header along with the request. 
 
