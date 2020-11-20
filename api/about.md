@@ -27,16 +27,8 @@ Invoke-RestMethod http://localhost:5000/endpoint
 ### Authentication and Authorization
 
 {% hint style="info" %}
-This feature requires a [license](../licensing.md).
+
 {% endhint %}
-
-REST API authentication requires a Universal API license. Once enabled, you will be able to enforce authentication and authorization on your endpoints. Authentication and authorization for APIs is managed via app tokens. You can manage user app tokens under `Settings \ Security \ AppTokens`.
-
-```text
-New-PSUEndpoint -Url '/endpoint' -Method 'GET' -Endpoint {
-   "Hello, world!"
-} -Authentication -Role 'Administrator'
-```
 
 ### Variable URL
 
