@@ -25,9 +25,9 @@
 
 * [About](automation/about.md)
 * [Development](automation/development.md)
-* [Scripts](automation/scripts.md)
-* [Jobs](automation/jobs/README.md)
-  * [Parameters](automation/jobs/parameters.md)
+* [Scripts](automation/scripts/README.md)
+  * [Parameters](automation/scripts/parameters.md)
+* [Jobs](automation/jobs.md)
 * [Schedules](automation/schedules.md)
 * [Triggers](automation/triggers.md)
 * [Variables](automation/variables.md)

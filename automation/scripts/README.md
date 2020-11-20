@@ -10,7 +10,7 @@ Script properties are stored in the `scripts.ps1` configuration file.
 
 To add a new script, you can click the New Script button within the Automation / Scripts page. There are various settings you can provide for the script. 
 
-![](../.gitbook/assets/image%20%2821%29.png)
+![](../../.gitbook/assets/image%20%2821%29.png)
 
 **Name**
 
@@ -56,7 +56,7 @@ New-PSUScript -Name Script.ps1 -Path Script.Ps1 -ConcurrentJobs 1
 
 You can run a script in the UI by click the Run button the Automation / Scripts page or by clicking View and then Run. In each case, you will be presented with the Run Dialog that allows you to select various settings for the job. 
 
-![](../.gitbook/assets/image%20%2823%29.png)
+![](../../.gitbook/assets/image%20%2823%29.png)
 
 ### Running a Script With Parameters
 
@@ -76,15 +76,15 @@ param(
 
 The result is a set of input options that are based on the types of parameters. 
 
-![](../.gitbook/assets/image%20%286%29.png)
+![](../../.gitbook/assets/image%20%286%29.png)
 
 ### Running a Script as Another User
 
-You can run scripts as another user by configuring [secret variables](variables.md#creating-a-secret-variable). PowerShell Universal uses the Microsoft Secret Management module to integrate with secret providers. See variables for more information on secrets. 
+You can run scripts as another user by configuring [secret variables](../variables.md#creating-a-secret-variable). PowerShell Universal uses the Microsoft Secret Management module to integrate with secret providers. See variables for more information on secrets. 
 
 To run as another user, simply add or import a PSCredential variable. From there, you can select the credential from within the run dialog. 
 
-![](../.gitbook/assets/image%20%2826%29.png)
+![](../../.gitbook/assets/image%20%2826%29.png)
 
 ## Related Cmdlets
 
