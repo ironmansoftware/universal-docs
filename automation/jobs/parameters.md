@@ -67,6 +67,16 @@ param([Bool]$Switch)
 
 ![](../../.gitbook/assets/image%20%28186%29.png)
 
+#### Integer 
+
+You can define a number selector by using the `[Int]` type specifier. 
+
+```text
+param([Int]$Number)
+```
+
+![](../../.gitbook/assets/image%20%28194%29.png)
+
 #### Switch Parameter
 
 You can define a switch parameter using the `[Switch]` type specifier to create a switch.
