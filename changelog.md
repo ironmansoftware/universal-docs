@@ -1,5 +1,39 @@
 # Changelog
 
+## 1.5.2 - 11/22/2020
+
+### Includes
+
+* UniversalDashboard - v3.2.1
+* UniversalDashboard - v2.9.8
+* UniversalDashboard.Charts - 1.3.0
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.0.4
+
+### Changed
+
+#### API
+
+* Fixed an issue where non-global rate limits would not work
+* Fixed an issue where New-PSURateLimit would call the incorrect REST API method
+
+#### Automation
+
+* Fixed an issue with Invoke-UAScript not working
+* Fixed an issue where -ScriptBlock would not work on New-PSUScript when using single-file configuration.
+* Fixed an issue where -TimeOut was an int instead of a double on New-PSUScript
+
+#### Dashboard
+
+* Fixed an issue where missing components could cause dashboards to fail to start or update from the UI
+
+#### Platform
+
+* Fixed an issue where Start-PSUServer wouldn't correctly identify the configuration script.
+* Fixed an issue where Get-PSUEnvironment was not exported in the module manifest
+* Fixed an issue where Grant-PSUAppToken would not generate custom tokens
+* Fixed an issue where Remove-PSUEnvironment was not exported in the module manifest
+
 ## 1.5.1 - 11/20/2020
 
 ### Includes
