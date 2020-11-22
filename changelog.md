@@ -38,6 +38,7 @@ description: Changelog for PowerShell Universal.
 * Fixed an issue where Get-PSUEnvironment was not exported in the module manifest
 * Fixed an issue where Grant-PSUAppToken would not generate custom tokens
 * Fixed an issue where Remove-PSUEnvironment was not exported in the module manifest
+* Added icon to the MSI
 
 ## 1.5.1 - 11/20/2020
 
