@@ -5,46 +5,29 @@ online version: https://go.microsoft.com/fwlink/?LinkID=217032
 schema: 2.0.0
 ---
 
-# Get-PSUTrigger
+# Remove-PSUEnvironment
 
 ## SYNOPSIS
-Returns automation triggers defined in PowerShell Universal.
+Removes an environment from PowerShell Universal.
 
 ## SYNTAX
 
-### All (Default)
 ```
-Get-PSUTrigger [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
-```
-
-### Id
-```
-Get-PSUTrigger [-Id] <Int64> [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
-```
-
-### Name
-```
-Get-PSUTrigger [-Name] <String> [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Remove-PSUEnvironment [-Environment] <ExecutionEnvironment> [-ComputerName <String>] [-AppToken <String>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Returns automation triggers defined in PowerShell Universal.
+{{ Fill in the Description }}
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> Get-PSUTrigger
+PS C:\> Remove-PSUEnvironment -Environment (Get-PSUEnvironment -Id 1)
 ```
 
-Returns all triggers.
-
-### Example 2
-```powershell
-PS C:\> Get-PSUTrigger -Name 'Job Failed'
-```
-
-Returns the trigger with the name 'Job Failed'
+Removes environment with ID 1 from the system.
 
 ## PARAMETERS
 
@@ -80,33 +63,18 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Id
-The ID of the trigger to return.
+### -Environment
+The environment to remove. Use Get-PSUEnvironment to retrieve an environment.
 
 ```yaml
-Type: Int64
-Parameter Sets: Id
+Type: ExecutionEnvironment
+Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 0
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Name
-The name of the trigger to return.
-
-```yaml
-Type: String
-Parameter Sets: Name
-Aliases:
-
-Required: True
-Position: 0
-Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -115,7 +83,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
+### UniversalAutomation.ExecutionEnvironment
 
 ## OUTPUTS
 
@@ -124,6 +92,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[New-PSUTrigger](New-PSUTrigger.md)
-[Set-PSUTrigger](Set-PSUTrigger.md)
-[Remove-PSUTrigger](Remove-PSUTrigger.md)
+[New-PSUEnvironment](New-PSUEnvironment.md)
+[Set-PSUEnvironment](Set-PSUEnvironment.md)
+[Get-PSUEnvironment](Get-PSUEnvironment.md)

@@ -5,46 +5,41 @@ online version: https://go.microsoft.com/fwlink/?LinkID=217032
 schema: 2.0.0
 ---
 
-# Get-PSUTrigger
+# Get-PSUEnvironment
 
 ## SYNOPSIS
-Returns automation triggers defined in PowerShell Universal.
+Returns the environments defined in PowerShell Universal.
 
 ## SYNTAX
 
 ### All (Default)
 ```
-Get-PSUTrigger [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-PSUEnvironment [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
 ```
 
 ### Id
 ```
-Get-PSUTrigger [-Id] <Int64> [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
-```
-
-### Name
-```
-Get-PSUTrigger [-Name] <String> [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-PSUEnvironment [-Id] <Int64> [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Returns automation triggers defined in PowerShell Universal.
+Returns the environments defined in PowerShell Universal.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> Get-PSUTrigger
+PS C:\> Get-PSUEnvironment
 ```
 
-Returns all triggers.
+Returns all the environments.
 
 ### Example 2
 ```powershell
-PS C:\> Get-PSUTrigger -Name 'Job Failed'
+PS C:\> Get-PSUEnvironment -Id 1
 ```
 
-Returns the trigger with the name 'Job Failed'
+Returns the environment with ID 1. 
 
 ## PARAMETERS
 
@@ -67,7 +62,6 @@ Accept wildcard characters: False
 ### -ComputerName
 Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session. 
 
-
 ```yaml
 Type: String
 Parameter Sets: (All)
@@ -81,26 +75,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-The ID of the trigger to return.
+The ID of the environment.
 
 ```yaml
 Type: Int64
 Parameter Sets: Id
-Aliases:
-
-Required: True
-Position: 0
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Name
-The name of the trigger to return.
-
-```yaml
-Type: String
-Parameter Sets: Name
 Aliases:
 
 Required: True
@@ -124,6 +103,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[New-PSUTrigger](New-PSUTrigger.md)
-[Set-PSUTrigger](Set-PSUTrigger.md)
-[Remove-PSUTrigger](Remove-PSUTrigger.md)
+[New-PSUEnvironment](New-PSUEnvironment.md)
+[Remove-PSUEnvironment](Remove-PSUEnvironment.md)
+[Set-PSUEnvironment](Set-PSUEnvironment.md)
