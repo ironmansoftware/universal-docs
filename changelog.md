@@ -26,6 +26,7 @@
 #### Dashboard
 
 * Fixed an issue where missing components could cause dashboards to fail to start or update from the UI
+* Fixed an issue where dashboard could be started multiple times and would not stop properly
 
 #### Platform
 
