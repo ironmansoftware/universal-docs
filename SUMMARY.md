@@ -99,6 +99,7 @@
 ## Platform
 
 * [Cache](platform/cache.md)
+* [Monitoring](platform/monitoring.md)
 
 ## Configuration <a id="config"></a>
 
