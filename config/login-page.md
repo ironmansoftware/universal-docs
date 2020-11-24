@@ -8,7 +8,7 @@ description: Documentation on how to customize the login page.
 This feature requires any type of [PowerShell Universal license](../licensing.md). 
 {% endhint %}
 
-The login page colors, image, copyright and title can be customized by editing the `loginPage.ps1` file. 
+The login page colors, image, copyright and title can be customized by editing the `.universal/loginPage.ps1` file. 
 
 ## Customizing the login page
 
