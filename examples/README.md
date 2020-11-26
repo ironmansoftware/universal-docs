@@ -17,4 +17,8 @@ You can login to PowerShell Universal using the username `admin` and any passwor
 
 * Active Directory
   * [Reset Password](active-directory.md#reset-password)
+  * [List Locked Accounts](active-directory.md#list-locked-accounts)
+* Slack
+  * [Send a Message to Slack](slack.md#send-message-to-slack)
+  * [Send a Message to Slack when a Script Fails](slack.md#send-slack-message-on-failed-job)
 
