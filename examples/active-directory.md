@@ -4,6 +4,31 @@ description: Active Directory examples for PowerShell Universal.
 
 # Active Directory
 
+## List Locked Accounts
+
+Shows an example of how to list locked Active Directory accounts. This example assumes that the user running PowerShell Universal has access to the local Active Directory environment. 
+
+```text
+Start-PSUServer -Port 8080 -Configuration {
+    New-PSUScript -Name 'Locked Accounts' -ScriptBlock {
+        Search-ADAccount -LockedOut
+    }
+}
+```
+
+Locked accounts will be listed on the job page's pipeline output. 
+
+![](../.gitbook/assets/image%20%28198%29.png)
+
+You can also access the locked accounts by using the Universal PowerShell module.
+
+```text
+$Job = Get-PSUJob -Script (Get-PSUScript -name 'Locked Accounts.ps1') -First 1 -OrderDirection Descending
+Get-PSUJobPipelineOuptut -Job $Job
+```
+
+
+
 ## Reset Password
 
 Shows an example of how to reset an Active Directory user account using PowerShell Universal Automation. This script accepts the identity of the account to reset, the password to set, whether to unlock the account and whether to require the user to change their password on logon.
