@@ -27,6 +27,8 @@ Have an example of an API, Dashboard or Script that you think would fit nicely o
   * [Virtual Machine Creator](hyper-v.md#virtual-machine-creator)
 * Image Processing
   * [Convert JPEG to PNG](image-processing.md#convert-jpeg-to-png)
+  * [Convert JPEG to PNG API](image-processing.md#convert-jpeg-to-png-api)
+  * [Rate Limited API](image-processing.md#rate-limited-conversion-api)
 * Slack
   * [Send a Message to Slack](slack.md#send-message-to-slack)
   * [Send a Message to Slack when a Script Fails](slack.md#send-slack-message-on-failed-job)

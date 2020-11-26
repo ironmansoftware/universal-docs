@@ -59,3 +59,33 @@ We can invoke the API with `Invoke-WebRequest`. The below example posts the IMG\
 invoke-webrequest -InFile .\IMG_2260.jpeg -Uri http://localhost:8080/image -Method POST -OutFile .\image.png
 ```
 
+## Rate Limited Conversion API
+
+This example uses [PowerShell Universal API](../api/about.md). This example requires a [license](../get-started/licensing.md).
+
+This example provides the same functionality as the previous example but rate limits the number of requests to 5 per 10 minutes. We can use `New-PSURateLimit` to set the request limit. 
+
+```text
+Start-PSUServer -Port 8080 -Configuration {
+    Set-PSULicense -Key "key"
+
+    New-PSURateLimit -Endpoint "POST:/image" -Period ([TimeSpan]::FromMinutes(10)) -Limit 5
+
+    New-PSUEndpoint -Url "/image" -Method POST -Endpoint {
+        $Bitmap = [System.Drawing.Image]::FromStream([System.IO.MemoryStream]::new($Data))
+        $Bitmap.Save("$Env:Temp\image.png", 'PNG')
+
+        New-PSUApiResponse -Data ([IO.File]::ReadAllBytes("$Env:Temp\image.png")) -ContentType 'application\png'
+
+        Remove-Item "$Env:Temp\image.png"
+    }
+} 
+```
+
+Invoking this request most than the specified number of times will result in an error. 
+
+```text
+PS C:\Users\adamr> invoke-webrequest -InFile .\IMG_2260.jpeg -Uri http://localhost:8080/image -Method POST -OutFile .\image.png
+Invoke-WebRequest: API calls quota exceeded! maximum admitted 5 per .
+```
+
