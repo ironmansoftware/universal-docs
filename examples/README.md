@@ -18,6 +18,8 @@ You can login to PowerShell Universal using the username `admin` and any passwor
 * Active Directory
   * [Reset Password](active-directory.md#reset-password)
   * [List Locked Accounts](active-directory.md#list-locked-accounts)
+* Hyper-V
+  * [Virtual Machine Creator](hyper-v.md#virtual-machine-creator)
 * Image Processing
   * [Convert JPEG to PNG](image-processing.md#convert-jpeg-to-png)
 * Slack
