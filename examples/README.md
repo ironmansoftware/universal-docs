@@ -13,6 +13,10 @@ Install-PSUServer -AddToPath
 
 You can login to PowerShell Universal using the username `admin` and any password. 
 
+{% hint style="info" %}
+Have an example of an API, Dashboard or Script that you think would fit nicely on this page? Feel free to open a pull-request on our [documentation repository](https://github.com/ironmansoftware/universal-docs). 
+{% endhint %}
+
 ## Table of Contents
 
 * Active Directory
