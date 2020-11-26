@@ -15,6 +15,7 @@
   * [Active Directory](examples/active-directory.md)
   * [Hyper-V](examples/hyper-v.md)
   * [Image Processing](examples/image-processing.md)
+  * [Monitoring](examples/monitoring.md)
   * [Slack](examples/slack.md)
 
 ## API
