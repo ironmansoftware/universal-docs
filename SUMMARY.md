@@ -13,6 +13,7 @@
 * [Cmdlet Help](https://github.com/ironmansoftware/universal-docs/tree/master/cmdlets)
 * [Examples](examples/README.md)
   * [Active Directory](examples/active-directory.md)
+  * [Slack](examples/slack.md)
 
 ## API
 
