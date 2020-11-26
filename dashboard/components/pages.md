@@ -89,7 +89,7 @@ You would then have access to a `$Test` variable that contained the value `123`.
 ## Role-Based Access
 
 {% hint style="info" %}
-This feature requires a [license](../../licensing.md). 
+This feature requires a [license](../../get-started/licensing.md). 
 {% endhint %}
 
 You can prevent users from accessing pages based on their role by using the `-Role` parameter of pages. You can configure roles and role policies on the [Security page](../../config/security/#policy-assignment). 

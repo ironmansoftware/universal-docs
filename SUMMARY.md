@@ -1,16 +1,16 @@
 # Table of contents
 
 * [About](README.md)
-* [Get Started](get-started.md)
-* [Additional Resources](additional-resources.md)
+* [Get Started](get-started/README.md)
+  * [Additional Resources](get-started/additional-resources.md)
+  * [Installation](get-started/getting-started/README.md)
+    * [Docker](get-started/getting-started/docker.md)
+    * [Upgrading](get-started/getting-started/upgrading.md)
+  * [Licensing](get-started/licensing.md)
+  * [System Requirements](get-started/system-requirements.md)
+  * [Supported Browsers](get-started/supported-browsers.md)
+  * [Visual Studio Code Extension](get-started/visual-studio-code-extension.md)
 * [Cmdlet Help](https://github.com/ironmansoftware/universal-docs/tree/master/cmdlets)
-* [Installation](getting-started/README.md)
-  * [Docker](getting-started/docker.md)
-  * [Upgrading](getting-started/upgrading.md)
-* [Supported Browsers](supported-browsers.md)
-* [System Requirements](system-requirements.md)
-* [Licensing](licensing.md)
-* [Visual Studio Code Extension](visual-studio-code-extension.md)
 
 ## API
 
