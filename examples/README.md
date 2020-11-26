@@ -4,7 +4,7 @@ description: Examples of PowerShell Universal configurations.
 
 # Examples
 
-These examples assume that you have PowerShell Universal installed. To install PowerShell Universal, use the following command line. 
+This page contains examples of PowerShell Universal configurations. All examples are built using single-file hosting and configuration. These examples assume that you have PowerShell Universal installed. To install PowerShell Universal, use the following command line. 
 
 ```text
 Install-Module Universal
