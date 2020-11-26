@@ -6,6 +6,8 @@ description: Active Directory examples for PowerShell Universal.
 
 ## List Locked Accounts
 
+This example uses [Universal Automation](../automation/about.md).
+
 Shows an example of how to list locked Active Directory accounts. This example assumes that the user running PowerShell Universal has access to the local Active Directory environment. 
 
 ```text
@@ -30,6 +32,8 @@ Get-PSUJobPipelineOuptut -Job $Job
 
 
 ## Reset Password
+
+This example uses [Universal Automation](../automation/about.md).
 
 Shows an example of how to reset an Active Directory user account using PowerShell Universal Automation. This script accepts the identity of the account to reset, the password to set, whether to unlock the account and whether to require the user to change their password on logon.
 
