@@ -1,0 +1,20 @@
+---
+description: Examples of PowerShell Universal configurations.
+---
+
+# Examples
+
+These examples assume that you have PowerShell Universal installed. To install PowerShell Universal, use the following command line. 
+
+```text
+Install-Module Universal
+Install-PSUServer -AddToPath
+```
+
+You can login to PowerShell Universal using the username `admin` and any password. 
+
+## Table of Contents
+
+* Active Directory
+  * [Reset Password](active-directory.md#reset-password)
+
