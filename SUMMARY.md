@@ -13,6 +13,7 @@
 * [Cmdlet Help](https://github.com/ironmansoftware/universal-docs/tree/master/cmdlets)
 * [Examples](examples/README.md)
   * [Active Directory](examples/active-directory.md)
+  * [Hyper-V](examples/hyper-v.md)
   * [Image Processing](examples/image-processing.md)
   * [Slack](examples/slack.md)
 
