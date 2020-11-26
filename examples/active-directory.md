@@ -6,7 +6,7 @@ description: Active Directory examples for PowerShell Universal.
 
 ## Reset Password
 
-Reset Active Directory User passwords. 
+Shows an example of how to reset an Active Directory user account using PowerShell Universal Automation. This script accepts the identity of the account to reset, the password to set, whether to unlock the account and whether to require the user to change their password on logon.
 
 ```text
 Start-PSUServer -Port 8080 -Configuration {
