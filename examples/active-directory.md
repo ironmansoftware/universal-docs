@@ -10,7 +10,7 @@ Shows an example of how to list locked Active Directory accounts. This example a
 
 ```text
 Start-PSUServer -Port 8080 -Configuration {
-    New-PSUScript -Name 'Locked Accounts' -ScriptBlock {
+    New-PSUScript -Name 'LockedAccounts' -ScriptBlock {
         Search-ADAccount -LockedOut
     }
 }
@@ -23,7 +23,7 @@ Locked accounts will be listed on the job page's pipeline output.
 You can also access the locked accounts by using the Universal PowerShell module.
 
 ```text
-$Job = Get-PSUJob -Script (Get-PSUScript -name 'Locked Accounts.ps1') -First 1 -OrderDirection Descending
+$Job = Get-PSUJob -Script (Get-PSUScript -name 'LockedAccounts.ps1') -First 1 -OrderDirection Descending
 Get-PSUJobPipelineOuptut -Job $Job
 ```
 
