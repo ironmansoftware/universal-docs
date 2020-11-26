@@ -100,10 +100,6 @@ See the [Docker page](docker.md#installation).
 
 ## MSI Install
 
-{% hint style="info" %}
-This section covers a pre-release version of Universal. You can download nightly builds from our [Downloads page](https://ironmansoftware.com/downloads).
-{% endhint %}
-
 The MSI install will create a PowerShell Universal service and open the admin console after installation. 
 
 ### Properties
