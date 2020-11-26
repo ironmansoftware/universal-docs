@@ -20,7 +20,6 @@ Start-PSUServer -Port 8080 -Configuration {
                 New-UDUpload -Id 'image' -Text 'Image to Convert'
             } -OnSubmit {
                 $bytes = [System.Convert]::FromBase64String($EventData.image.Data)
-                [System.IO.File]::WriteAllBytes("C:\$($EventData.Image.Name)", $bytes)
 
                 $Bitmap = [System.Drawing.Image]::FromStream([System.IO.MemoryStream]::new($bytes))
                 $Bitmap.Save("C:\images\$($EventData.Image.Name)".Replace("jpeg", "png"), 'PNG')
@@ -34,4 +33,29 @@ Start-PSUServer -Port 8080 -Configuration {
 ```
 
 ![](../.gitbook/assets/convert.gif)
+
+## Convert JPEG to PNG API
+
+This example uses [PowerShell Universal API](../api/about.md).
+
+This example is similar to the dashboard example but exposes the functionality as an API rather than a webpage. The API accepts a POST request that contains the image as a the body. We use the `$Data` variable which contains the byte array for the image file and then convert it use the same method. We then take advantage of the `New-PSUApiResponse` cmdlet to return a custom response. 
+
+```text
+Start-PSUServer -Port 8080 -Configuration {
+    New-PSUEndpoint -Url "/image" -Method POST -Endpoint {
+        $Bitmap = [System.Drawing.Image]::FromStream([System.IO.MemoryStream]::new($Data))
+        $Bitmap.Save("$Env:Temp\image.png", 'PNG')
+
+        New-PSUApiResponse -Data ([IO.File]::ReadAllBytes("$Env:Temp\image.png")) -ContentType 'application\png'
+
+        Remove-Item "$Env:Temp\image.png"
+    }
+}
+```
+
+We can invoke the API with `Invoke-WebRequest`. The below example posts the IMG\_2260.jpeg file and converts it to an image.png file.
+
+```text
+invoke-webrequest -InFile .\IMG_2260.jpeg -Uri http://localhost:8080/image -Method POST -OutFile .\image.png
+```
 
