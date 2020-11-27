@@ -69,10 +69,6 @@ Invoke-RestMethod http://localhost:5000/user -Method Post -Body "{'username': 'a
 
 ## Param Block
 
-{% hint style="warning" %}
-The below feature will be available in an upcoming version of PowerShell Universal. You can download [nightly builds](https://imsreleases.z19.web.core.windows.net/) if you want to try it out.
-{% endhint %}
-
 You can use a `param` block within your script to enforce mandatory parameters and provide default values for optional parameters such as query string parameters. Variables such as `$Body`, `$Headers` and `$User` are provided automatically. 
 
 In the below example, the `$Name` parameter is mandatory and the `$Role` parameter has a default value of Default. 
