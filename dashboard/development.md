@@ -4,12 +4,6 @@ description: Developing dashboards in VS Code.
 
 # Development
 
-The [Visual Studio Code extension for PowerShell Universal](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal) provides integration for working with dashboards. We recommend you also install the [PowerShell extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell). 
-
-{% hint style="info" %}
-The first time you activate the Visual Studio Code extension, it will download the latest version of PowerShell Universal and start the server on port 5000.
-{% endhint %}
-
 ## Developing a Dashboard with Single-File Configuration
 
 You can use the Universal Dashboard PowerShell module and single-file configuration to build a dashboard directly from PowerShell. 
@@ -51,6 +45,12 @@ Start-Process http://localhost:8080/dashboard
 Changes you make to your PS1 file will cause Universal to automatically reload your dashboard and reflect the changes. 
 
 ## Developing a Dashboard with VS Code
+
+The [Visual Studio Code extension for PowerShell Universal](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal) provides integration for working with dashboards. We recommend you also install the [PowerShell extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell). 
+
+{% hint style="info" %}
+The first time you activate the Visual Studio Code extension, it will download the latest version of PowerShell Universal and start the server on port 5000.
+{% endhint %}
 
 To add a new dashboard, visit the admin console and go to Dashboard \ Dashboards and click the Add Dashboard button. 
 
