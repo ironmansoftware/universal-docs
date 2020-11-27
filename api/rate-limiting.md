@@ -5,7 +5,7 @@ description: Rate limiting options for Universal.
 # Rate Limiting
 
 {% hint style="info" %}
-This feature requires a [license](../licensing.md). 
+This feature requires a [license](../get-started/licensing.md). 
 {% endhint %}
 
 PowerShell Universal provides the ability to rate limit requests made to the web server. Rate limiting can be configured on a per endpoint and per period. By default, the client IP address is used to rate limit clients. 

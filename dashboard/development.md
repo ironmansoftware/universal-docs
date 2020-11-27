@@ -4,12 +4,6 @@ description: Developing dashboards in VS Code.
 
 # Development
 
-The [Visual Studio Code extension for PowerShell Universal](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal) provides integration for working with dashboards. We recommend you also install the [PowerShell extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell). 
-
-{% hint style="info" %}
-The first time you activate the Visual Studio Code extension, it will download the latest version of PowerShell Universal and start the server on port 5000.
-{% endhint %}
-
 ## Developing a Dashboard with Single-File Configuration
 
 You can use the Universal Dashboard PowerShell module and single-file configuration to build a dashboard directly from PowerShell. 
@@ -51,6 +45,12 @@ Start-Process http://localhost:8080/dashboard
 Changes you make to your PS1 file will cause Universal to automatically reload your dashboard and reflect the changes. 
 
 ## Developing a Dashboard with VS Code
+
+The [Visual Studio Code extension for PowerShell Universal](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal) provides integration for working with dashboards. We recommend you also install the [PowerShell extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell). 
+
+{% hint style="info" %}
+The first time you activate the Visual Studio Code extension, it will download the latest version of PowerShell Universal and start the server on port 5000.
+{% endhint %}
 
 To add a new dashboard, visit the admin console and go to Dashboard \ Dashboards and click the Add Dashboard button. 
 
@@ -137,10 +137,6 @@ Finally, issue the `Debug-Runspace` command and VS Code will automatically open 
 
 ### Debug-PSUDashboard
 
-{% hint style="warning" %}
-This is documentation for an upcoming version of PowerShell Universal. You can download [nightly builds](https://imsreleases.z19.web.core.windows.net/) if you want to try it out.
-{% endhint %}
-
 `Debug-PSUDashboard` can be used instead of `Wait-Debugger` to more easily debug aspects of your dashboard. `Debug-PSUDashboard` requires the PowerShell Universal VS Code extension. When placed within a dashboard, this cmdlet will trigger a modal to be show with some information about connecting to the runspace that is currently running the code you are trying to debug. 
 
 ![](../.gitbook/assets/image%20%28174%29.png)
@@ -149,7 +145,7 @@ You can enter the commands listed in any PowerShell host to connect to the runsp
 
 If you have VS Code and the PowerShell Universal extension installed, you can use the Debug with VS Code button to automatically launch VS Code and connect to the runspace. You can see how that works by watching this video. 
 
-{% file src="../.gitbook/assets/debugdashboard.mp4" caption="Debugging a Dashboard with VS Code" %}
+{% embed url="https://youtu.be/47Dj7Hdx3ag" %}
 
 
 

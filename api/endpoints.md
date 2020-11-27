@@ -67,6 +67,18 @@ To call the above endpoint, you would have to specify the body of `Invoke-RestMe
 Invoke-RestMethod http://localhost:5000/user -Method Post -Body "{'username': 'adam'}"
 ```
 
+## Param Block
+
+You can use a `param` block within your script to enforce mandatory parameters and provide default values for optional parameters such as query string parameters. Variables such as `$Body`, `$Headers` and `$User` are provided automatically. 
+
+In the below example, the `$Name` parameter is mandatory and the `$Role` parameter has a default value of Default. 
+
+```text
+New-PSUEndpoint -Url '/user/:name' -Endpoint {
+    param([Parameter(Mandatory)$Name, $Role = "Default")
+}
+```
+
 ## Returning Data
 
 Data returned from endpoints will be assumed to be JSON data. If you return an object from the endpoint script block, it will be automatically serialized to JSON. If you want to return another type of data, you can return a string formatted however you chose.

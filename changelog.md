@@ -4,6 +4,43 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 1.5.3 - 11/26/2020
+
+### Includes
+
+* UniversalDashboard - v3.2.1
+* UniversalDashboard - v2.9.8
+* UniversalDashboard.Charts - 1.3.0
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.0.4
+
+### Changed
+
+#### Automation
+
+* Fixed an issue where you couldn't create a schedule with Run As credentials
+* Fixed an issue where you couldn't create two schedules for one script
+* Fixed an issue where Run As credentials wouldn't be listed in the schedule table
+* Fixed an issue where One Time jobs could run more than once
+* Fixed an issue where scripts with absolute or nested paths would not be visible in the admin console 
+
+#### Platform
+
+* Fixed an issue where login page would not reload on server restart
+* Fixed an issue where you could not change the Identity role within the admin console
+
+### Added
+
+#### API
+
+* Added support for param block in API endpoints
+
+### Removed
+
+#### Platform
+
+* Removed the Never expiration lifetime for app tokens. 
+
 ## 1.5.2 - 11/22/2020
 
 ### Includes

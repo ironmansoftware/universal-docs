@@ -4,10 +4,6 @@ description: Installation instructions for PowerShell Universal.
 
 # Installation
 
-{% hint style="info" %}
-We recommend installing the [PowerShell Universal Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal). The extension will automatically download Universal for development purposes. 
-{% endhint %}
-
 ## Getting Started
 
 {% embed url="https://youtu.be/ISoZbY9YPvo" %}
@@ -99,10 +95,6 @@ On Linux, start the process `Universal.Server`. You may need to `chmod +x` the f
 See the [Docker page](docker.md#installation).
 
 ## MSI Install
-
-{% hint style="info" %}
-This section covers a pre-release version of Universal. You can download nightly builds from our [Downloads page](https://ironmansoftware.com/downloads).
-{% endhint %}
 
 The MSI install will create a PowerShell Universal service and open the admin console after installation. 
 

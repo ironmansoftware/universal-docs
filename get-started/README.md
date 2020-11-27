@@ -43,7 +43,7 @@ Start-Process http://localhost:8080/dashboard
 
 Enter some text in the form to say hi. 
 
-![](.gitbook/assets/hello.gif)
+![](../.gitbook/assets/hello.gif)
 
 Visit the admin console to see all the features of PowerShell Universal. You can login with `admin` and any password. 
 
@@ -53,7 +53,7 @@ Start-Process http://localhost:8080/admin
 
 Learn more about the various features of PowerShell Universal
 
-* [APIs](api/about.md)
-* [Automation](automation/about.md)
-* [Dashboards](dashboard/about.md)
+* [APIs](../api/about.md)
+* [Automation](../automation/about.md)
+* [Dashboards](../dashboard/about.md)
 
