@@ -12,7 +12,7 @@ This document will outline the steps necessary to configure AzureAD OpenID Conne
 
 Within the Azure Portal, navigate to your Azure Active Directory blade. Next, click the App registrations node and then click New registration.
 
-![](../../.gitbook/assets/image%20%2830%29.png)
+![](../../.gitbook/assets/image%20%2831%29.png)
 
 In the New registration page, enter the name of your application and the reply URL. The URL can be configured in the `appsettings.json` for Universal but the default value is shown below. 
 
