@@ -17,6 +17,7 @@
   * [Image Processing](examples/image-processing.md)
   * [Monitoring](examples/monitoring.md)
   * [Slack](examples/slack.md)
+  * [SQL](examples/sql.md)
 
 ## API
 
