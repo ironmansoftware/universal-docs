@@ -4,6 +4,47 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 1.5.4 - 12/04/2020
+
+### Includes
+
+* UniversalDashboard - v3.2.2
+* UniversalDashboard - v2.9.8
+* UniversalDashboard.Charts - 1.3.1
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.0.4
+
+### Added
+
+#### Dashboard
+
+* Added cmdlet help
+
+### Changed
+
+#### API
+
+* Fixed an issue where -UseDefaultCredentials would not work with an API running as a service with Windows Auth 
+
+#### Automation
+
+* Fixed an issue where triggers could not use the Management API
+* Fixed an issue where the Execute role would not be able to login to the admin console.
+
+#### Dashboard
+
+* Fixed an issue where -DataPointHistory would not work on New-UDChartJSMonitor
+* Set default values for -BaseUrl and -DashboardFramework on New-PSUDashboard
+* Fixed an issue where -Role was not being enforced properly for authenticated dashboards
+* Fixed an issue where authentication could not be enabled on a dashboard even with a license
+* UDv3 - Fixed a regression with Set-UDElement and UDTextbox in a UDForm
+* UDv3 - Added -FullWidth to New-UDAutocomplete
+
+#### Platform
+
+* Universal cmdlets will now show a warning if connecting to a mismatched server and module version
+* Fixed an issue where Install-PSUServer wouldn't work for Linux or Mac. 
+
 ## 1.5.3 - 11/26/2020
 
 ### Includes
