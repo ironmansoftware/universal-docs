@@ -83,3 +83,24 @@ $Pipeline = Get-UAJobPipelineOutput -Job $Job
 $HostOutput = Get-UAJobOutput -Job $Job
 ```
 
+## Variables Defined in Jobs
+
+There are several built-in variables that are defined when a job is run. You can use these variables in your scripts to retrieve information about the current job. 
+
+| Name | Description |
+| :--- | :--- |
+| $UAJob | The current job that is running. This will include properties such as the script, the user that started the job and when the job was started.  |
+| $UAJobId | The ID of the running job. |
+| $UAScript | The script that is running. This will include properties such as the name of the script and path to the script.  |
+| $UAScriptId | The ID of the running script.  |
+| $UASchedule | The schedule that was used to start the script. |
+| $UAScheduleId | The ID of the schedule that started the script.  |
+
+### Retrieving the user that started a script
+
+You can retrieve the name of the user that started the script by using the `UAJob` variable
+
+```text
+$UAJob.Identity.Name
+```
+
