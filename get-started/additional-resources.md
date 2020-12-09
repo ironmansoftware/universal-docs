@@ -12,6 +12,10 @@ The Ironman Software blog has articles about PowerShell Universal.
 
 Connect with the PowerShell Universal community. 
 
+## [Discord](https://discord.gg/csWyH2arD3)
+
+Chat with other PowerShell Universal users. 
+
 ## [Purchasing](https://ironmansoftware.com/pricing)
 
 Purchase a license for the features of PowerShell Universal. 
