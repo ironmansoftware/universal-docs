@@ -19,7 +19,12 @@ This configuration checks to see if the user is include the string `\\corp\human
 The body of the HTTP request will contain the computer name and user name separated by a comma.
 
 ```text
-$Condition = New-PSPCondition -Property "script" -Contains -Value "\\corp\human-resources"$Block = New-PSPAction -Http -Address "http://localhost:8080/protect" -Format "{computerName},{userName}" -Name 'Universal'$Rule = New-PSPRule -Action $Block -Condition $Condition -Name "HR Share"$Config = New-PSPConfiguration -Rule $Rule -Action $Block -License "<License><Terms>PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8TGljZW5zZVRlcm1zIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiPg0KICA8U3RhcnREYXRlPjIwMjAtMTItMTBUMjM6MTc6MzMuNTE1MTY1NVo8L1N0YXJ0RGF0ZT4NCiAgPFVzZXJOYW1lPmFkYW08L1VzZXJOYW1lPg0KICA8UHJvZHVjdE5hbWU+UG93ZXJTaGVsbFByb3RlY3Q8L1Byb2R1Y3ROYW1lPg0KICA8RW5kRGF0ZT4yMDIxLTEyLTEwVDIzOjE3OjMzLjUxNTE2NTVaPC9FbmREYXRlPg0KICA8U2VhdE51bWJlcj4xPC9TZWF0TnVtYmVyPg0KICA8SXNUcmlhbD5mYWxzZTwvSXNUcmlhbD4NCjwvTGljZW5zZVRlcm1zPg==</Terms><Signature>yRfAEsw2tExuT5icqeQiaLiTGA54ckYc1EqpANPhCq7l9mxj4FA6Xw==</Signature></License>"​Set-PSPConfiguration -Configuration $Config -FileSystem
+$Condition = New-PSPCondition -Property "script" -Contains -Value "\\corp\human-resources"
+$Block = New-PSPAction -Http -Address "http://localhost:8080/protect" -Format "{computerName},{userName}" -Name 'Universal'
+$Rule = New-PSPRule -Action $Block -Condition $Condition -Name "HR Share"
+$Config = New-PSPConfiguration -Rule $Rule -Action $Block -License "<License></License>"
+
+Set-PSPConfiguration -Configuration $Config -FileSystem
 ```
 
 ### PowerShell Universal Configuration <a id="powershell-universal-configuration"></a>
