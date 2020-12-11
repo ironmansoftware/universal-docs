@@ -16,6 +16,7 @@
   * [Hyper-V](examples/hyper-v.md)
   * [Image Processing](examples/image-processing.md)
   * [Monitoring](examples/monitoring.md)
+  * [PowerShell Protect](examples/powershell-protect.md)
   * [Slack](examples/slack.md)
   * [SQL](examples/sql.md)
 
