@@ -4,6 +4,38 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 1.5.5 - 12/11/2020
+
+### Includes
+
+* UniversalDashboard - v3.2.3
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.1
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.0.4
+
+### Changed
+
+#### API
+
+* Fixed an issue where variables would not be available in APIs are server restart
+
+#### Automation
+
+* Fixed an issue where calling a job from another job could fail
+
+#### Dashboard
+
+* UDv3 - Fixed an issue with New-UDButton and New-UDButtonIcon -Disabled not working properly
+* UDv3 - Fixed an issue where passing a $null value to -Data of New-UDTable would cause a React error. 
+* UDv3 - Fixed an issue where passing complex object properties to -Data of New-UDTable would result in a React error
+* UDv2 - Fixed an issue where Set-UDElement -Content would not work with New-UDElement
+
+#### Platform
+
+* Fixed an issue where Get-PSUCache would throw an error when a key did not exist
+* Default RedirectToHttps to false because there is no default HTTPS endpoint
+
 ## 1.5.4 - 12/04/2020
 
 ### Includes
