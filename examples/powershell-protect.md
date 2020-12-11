@@ -14,7 +14,7 @@ This example configures PowerShell Protect to send log messages to a PowerShell 
 
 ### PowerShell Protect Configuration <a id="powershell-protect-configuration"></a>
 
-This configuration checks to see if the user is include the string `\\corp\human-resources` anywhere in their script. If they do, it sends an HTTP POST to the URL `http://localhost:8080/protect`
+This configuration checks to see if the user has included the string `\\corp\human-resources` anywhere in their script. If they do, it sends an HTTP POST to the URL `http://localhost:8080/protect`
 
 The body of the HTTP request will contain the computer name and user name separated by a comma.
 
