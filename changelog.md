@@ -4,6 +4,20 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 1.5.6 - 12/12/2020
+
+### Includes
+
+* UniversalDashboard - v3.2.3
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.1
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.0.4
+
+### Changed
+
+* Fixed an issue where subscription licenses could cause the server to hang on startup.
+
 ## 1.5.5 - 12/11/2020
 
 ### Includes
