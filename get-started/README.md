@@ -9,6 +9,7 @@ You can get up and running with PowerShell Universal by installing the `Universa
 ```csharp
 # Install the Latest version of PowerShell Universal
 Install-Module Universal
+Install-Module UniversalDashboard
 Install-PSUServer 
 
 # Start the PowerShell Universal server on port 8080 and configure
