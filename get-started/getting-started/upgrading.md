@@ -24,7 +24,7 @@ The `appsettings.json` file that is included in the application installation dir
 
 #### web.config
 
-The `web.config` file that is included in the application installation directory will be overwritten during upgrades. If you have moved your web.config file to an alternate location, it will not be overwritten. When creating an IIS website, you can simply include the `web.config` file in the web app's directory and have the [binaries stored in a different location](../../config/hosting-iis/). 
+The `web.config` file that is included in the application installation directory will be overwritten during upgrades. If you have moved your web.config file to an alternate location, it will not be overwritten. When creating an IIS website, you can simply include the `web.config` file in the web app's directory and have the [binaries stored in a different location](../../config/hosting/hosting-iis.md). 
 
 #### Dashboard Components and Frameworks
 

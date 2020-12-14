@@ -31,7 +31,7 @@ To host in IIS, you will need to download the ZIP of PowerShell Universal. The Z
 
 Hosting in IIS is fully supported but there are a number of specific configuration options that need to applied in order to host with IIS.
 
-Visit our [IIS Hosting](../hosting-iis/) Page for specific IIS Instructions.
+Visit our [IIS Hosting](hosting-iis.md) Page for specific IIS Instructions.
 
 ## Hosting Manually
 
