@@ -83,7 +83,9 @@ For more information, you can follow the Microsoft documentation for configuring
 
 ## Authorization 
 
-User authorization can be achieved in two different ways: Role Assignment or Policy Assignment. 
+{% embed url="https://youtu.be/0lqyb-PdCxc" %}
+
+User authorization is accomplished with roles. Roles are either assigned based on the policy script you define or a role is assigned manually to the user.  
 
 ### Policy Assignment
 
