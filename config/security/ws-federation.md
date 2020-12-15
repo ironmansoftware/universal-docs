@@ -32,8 +32,15 @@ Follow the documentation for the Azure Active Directory configuration found on t
 
 After configuring ADFS or AAD, you can now provide the properties to Universal for the MetadataAddress and Wtrealm. Read about these settings on the our [Settings ](../settings.md)page. 
 
+Here is an example of how to update the `appsettings.json` file to accommodate the correct settings for WS-Federation.
+
 ```text
-$Authentication = New-UDAuthenticationMethod -MetadataAddress 'https://ironman.local:443/FederationMetadata/2007-06/FederationMetadata.xml' -Wtrealm https://ironman.local:12345$LoginPage = New-UDLoginPage -AuthenticationMethod $Authentication
+"WSFed": {
+    "Enabled": "true",
+    "MetadataAddress": "https://ironman.local:443/FederationMetadata/2007-06/FederationMetadata.xml",
+    "Wtrealm": "https://ironman.local:12345",
+    "CallbackPath": "/auth/signin-wsfed"
+},
 ```
 
 When running your server, you should now be prompted for your credentials either via the Internet Explorer single-sign system or you will be forwarded to the WS-Fed login page.![](https://gblobscdn.gitbook.com/assets%2F-L9mVQO4zbOX7ZcHvIte%2F-Lob6ow15SQRLl3vo8ZV%2F-Lob9yeDdGENbUiyz4Sj%2Fimage.png?alt=media&token=910db2dd-85f3-46eb-b3ec-9f551f244439)
