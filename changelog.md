@@ -4,6 +4,30 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 1.5.7 - Unreleased
+
+### Includes
+
+* UniversalDashboard - v3.2.3
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.1
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.0.4
+
+### Changed
+
+#### Dashboard
+
+* Fixed an issue where you would have to delete a dashboard twice to get it to delete
+* Fixed an issue where adding a dashboard in the UI would enable auto-start even when it wasn't on
+
+#### Platform
+
+* Fixed an issue where authorization policies would run on every request when using Windows Authentication
+* Fixed an issue where the Universal PowerShell module would show a warning when running in Windows PowerShell
+* Fixed an issue where alternate security environments would not work
+* Fixed an issue where upgrading via MSI would remove the configured service account
+
 ## 1.5.6 - 12/12/2020
 
 ### Includes

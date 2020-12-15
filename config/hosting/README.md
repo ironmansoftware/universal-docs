@@ -23,16 +23,6 @@ You can host PowerShell Universal in Azure as a Linux, Windows or Docker web app
 
 We have a [GitHub repository that contains a GitHub action workflow](https://github.com/ironmansoftware/universal-azure-actions) for downloading the latest version of PowerShell Universal, updating `appsettings.json` and `web.config` to work with Azure and then deploying to an existing web app. 
 
-
-
-## Hosting in IIS
-
-To host in IIS, you will need to download the ZIP of PowerShell Universal. The ZIP contains all the same files as the MSI but requires manual installation.
-
-Hosting in IIS is fully supported but there are a number of specific configuration options that need to applied in order to host with IIS.
-
-Visit our [IIS Hosting](hosting-iis.md) Page for specific IIS Instructions.
-
 ## Hosting Manually
 
 You can also host the Universal server as a stand alone application. Simply run the `Universal.Server.exe` from the binary directory to utilize the [Kestrel web server implementation in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-3.1) to start the web server.
