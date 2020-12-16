@@ -8,7 +8,7 @@ This retro looking dashboard displays the top 10 CPU and memory using processes,
 
 ```text
 Start-PSUServer -Port 8080 -Configuration {
-    New-PSUDashboard -Name 'Hacker Dash' -BaseUrl '/' -Framework 'UniversalDashboard:Latest' -Content {
+    New-PSUDashboard -Name 'Hacker Dash' -BaseUrl '/' -Component 'UniversalDashboard.Charts:1.3.1' -Framework 'UniversalDashboard:Latest' -Content {
     
     $Green =  '#4bdd35'
     
