@@ -8,7 +8,7 @@ description: Changelog for PowerShell Universal.
 
 ### Includes
 
-* UniversalDashboard - v3.2.3
+* UniversalDashboard - v3.2.4
 * UniversalDashboard - v2.9.9
 * UniversalDashboard.Charts - 1.3.1
 * UniversalDashboard.Map - 1.0
@@ -20,6 +20,7 @@ description: Changelog for PowerShell Universal.
 
 * Fixed an issue where you would have to delete a dashboard twice to get it to delete
 * Fixed an issue where adding a dashboard in the UI would enable auto-start even when it wasn't on
+* UDv3 - Fixed an issue where New-UDPage -Blank would not work
 
 #### Platform
 
