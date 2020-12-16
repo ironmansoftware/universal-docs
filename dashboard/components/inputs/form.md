@@ -4,6 +4,8 @@ description: Form component for Universal Dashboard
 
 # Form
 
+{% embed url="https://youtu.be/o8Bl1NsCc2Y" %}
+
 Forms provide a way to collect data from users.
 
 Forms can include any type of control you want. This allows you to customize the look and feel and use any input controls.
