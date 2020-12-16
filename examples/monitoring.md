@@ -1,6 +1,6 @@
 # Monitoring
 
-## Hacker Dashboard
+## Retro Dashboard
 
 This retro looking dashboard displays the top 10 CPU and memory using processes, disk usage, and live CPU and network usage. It also demonstrates how to use themes to custom the backcolor, text color and font family. 
 
