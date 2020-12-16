@@ -14,3 +14,9 @@ New-UDDashboard -Title 'Dashboard' -Content {
 }
 ```
 
+## Adding Components to Dashboards
+
+Some components are not included automatically. You can add component modules by clicking the Components button on the Dashboard page and then adding the components. This list will also include components downloaded from the Marketplace. 
+
+![Adding a component module](../../.gitbook/assets/adding-components.gif)
+
