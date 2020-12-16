@@ -209,6 +209,163 @@ else
 $Result
 ```
 
+## Example: Policy based on Active Directory Direct Group Membership
+
+{% hint style="info" %}
+This example requires an authentication method that will provide group information during the authentication process. Methods like Windows authentication and WS-Federation can provide this information. Forms authentication will not work with this type of policy. 
+{% endhint %}
+
+This example takes advantage of the claims that are provided during authentication. You can check to see if the user has a groupsid \(group membership\) by using the `HasClaim` method of the `$User` object. This method will check the `Claims` array to see if they have a particular `groupsid` claim. Use the SID of the group to validate whether they are a group member. 
+
+```text
+New-PSURole -Name 'Administrators' -Policy {
+    param(
+        $User
+    )
+    
+    $User.HasClaim("http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", 'S-1-5-21-22222222-111111-3333333-153')
+}
+```
+
+For debugging and development purposes, you can check to see what claims a user has been exporting the `$User` variable to a file.
+
+```text
+New-PSURole -Name 'Administrators' -Policy {
+    param(
+        $User
+    )
+    
+    $User | ConvertTo-Json | Out-File .\myUser.json
+    
+    $User.HasClaim("http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", 'S-1-5-21-22222222-111111-3333333-153')
+}
+```
+
+You should see a JSON file that contains the user's identity and claims array. 
+
+```text
+{
+  "Claims": [
+    {
+      "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+      "Value": "LAPTOP-496LAUK8\\adamr",
+      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
+      "Issuer": "AD AUTHORITY",
+      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
+    },
+    {
+      "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/primarysid",
+      "Value": "S-1-5-21-1001",
+      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
+      "Issuer": "AD AUTHORITY",
+      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
+    },
+    {
+      "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid",
+      "Value": "S-1-1-0",
+      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
+      "Issuer": "AD AUTHORITY",
+      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
+    },
+    {
+      "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/denyonlysid",
+      "Value": "S-1-5-114",
+      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
+      "Issuer": "AD AUTHORITY",
+      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
+    },
+    {
+      "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid",
+      "Value": "S-1-5-21-1002",
+      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
+      "Issuer": "AD AUTHORITY",
+      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
+    },
+    {
+      "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/denyonlysid",
+      "Value": "S-1-5-32-544",
+      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
+      "Issuer": "AD AUTHORITY",
+      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
+    },
+    {
+      "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid",
+      "Value": "S-1-5-32-559",
+      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
+      "Issuer": "AD AUTHORITY",
+      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
+    },
+    {
+      "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid",
+      "Value": "S-1-5-32-545",
+      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
+      "Issuer": "AD AUTHORITY",
+      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
+    },
+    {
+      "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid",
+      "Value": "S-1-5-4",
+      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
+      "Issuer": "AD AUTHORITY",
+      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
+    },
+    {
+      "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid",
+      "Value": "S-1-2-1",
+      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
+      "Issuer": "AD AUTHORITY",
+      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
+    },
+    {
+      "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid",
+      "Value": "S-1-5-11",
+      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
+      "Issuer": "AD AUTHORITY",
+      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
+    },
+    {
+      "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid",
+      "Value": "S-1-5-15",
+      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
+      "Issuer": "AD AUTHORITY",
+      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
+    },
+    {
+      "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid",
+      "Value": "S-1-11-96-977963020-1793067495-765970767",
+      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
+      "Issuer": "AD AUTHORITY",
+      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
+    },
+    {
+      "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid",
+      "Value": "S-1-5-113",
+      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
+      "Issuer": "AD AUTHORITY",
+      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
+    },
+    {
+      "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid",
+      "Value": "S-1-2-0",
+      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
+      "Issuer": "AD AUTHORITY",
+      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
+    },
+    {
+      "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid",
+      "Value": "S-1-5-64-36",
+      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
+      "Issuer": "AD AUTHORITY",
+      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
+    }
+  ],
+  "Identity": {
+    "Name": "LAPTOP-496LAUK8\\adamr"
+  }
+}
+
+```
+
 ## Example: Policy based on Active Directory Group Membership
 
 In this example we will configure out Administrator Policy Script to use LDAP to retrieve the membership of an Active Directory Group. Here we have created a group called "PowerShell Universal Admins" where members of the group should be granted Administrator Access in PowerShell Universal. Here we are doing a simple samaccountname check for the user to ensure they are a member of the group. For more robust environments a SID/DN/ObjectGUID check would be more appropriate.
