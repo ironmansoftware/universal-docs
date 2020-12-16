@@ -35,12 +35,73 @@ After configuring ADFS or AAD, you can now provide the properties to Universal f
 Here is an example of how to update the `appsettings.json` file to accommodate the correct settings for WS-Federation.
 
 ```text
-"WSFed": {
-    "Enabled": "true",
-    "MetadataAddress": "https://ironman.local:443/FederationMetadata/2007-06/FederationMetadata.xml",
-    "Wtrealm": "https://ironman.local:12345",
-    "CallbackPath": "/auth/signin-wsfed"
-},
+{
+  "Kestrel": {
+    "Endpoints": {
+      "HTTP": {
+        "Url": "http://*:5000"
+      }
+    },
+    "RedirectToHttps": "false"
+  },
+  "ApplicationInsights": {
+    "InstrumentationKey": ""
+  },
+  "Logging": {
+    "Path": "%PROGRAMDATA%/PowerShellUniversal/log.txt",
+    "RetainedFileCountLimit": 31,
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "AllowedHosts": "*",
+  "CorsHosts": "",
+  "Data": {
+    "RepositoryPath": "%ProgramData%\\UniversalAutomation\\Repository",
+    "ConnectionString": "%ProgramData%\\UniversalAutomation\\database.db",
+    "GitRemote": "",
+    "GitUserName": "",
+    "GitPassword": "", 
+    "ConfigurationScript": ""
+  },
+  "Api": {
+    "Url": ""
+  },
+  "Authentication" : {
+    "Windows": {
+      "Enabled": "false"
+    },
+    "WSFed": {
+        "Enabled": "true",
+        "MetadataAddress": "https://ironman.local:443/FederationMetadata/2007-06/FederationMetadata.xml",
+        "Wtrealm": "https://ironman.local:12345",
+        "CallbackPath": "/auth/signin-wsfed"
+    },
+    "OIDC": {
+      "Enabled": "false",
+      "CallbackPath": "/auth/signin-oidc",
+      "ClientID": "",
+      "ClientSecret": "",
+      "Resource": "",
+      "Authority": "",
+      "ResponseType": "",
+      "SaveTokens": "false"
+    },
+    "SessionTimeout": "25"
+  },
+  "Jwt": {  
+    "SigningKey": "PleaseUseYourOwnSigningKeyHere",  
+    "Issuer": "IronmanSoftware",
+    "Audience": "PowerShellUniversal"
+  },
+  "UniversalDashboard": {
+    "AssetsFolder": "%ProgramData%\\PowerShellUniversal\\Dashboard"
+  },
+  "ShowDevTools": false,
+  "HideAdminConsole": false
+}
 ```
 
 When running your server, you should now be prompted for your credentials either via the Internet Explorer single-sign system or you will be forwarded to the WS-Fed login page.![](https://gblobscdn.gitbook.com/assets%2F-L9mVQO4zbOX7ZcHvIte%2F-Lob6ow15SQRLl3vo8ZV%2F-Lob9yeDdGENbUiyz4Sj%2Fimage.png?alt=media&token=910db2dd-85f3-46eb-b3ec-9f551f244439)
