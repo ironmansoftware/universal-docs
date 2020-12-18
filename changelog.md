@@ -18,11 +18,11 @@ Note that although it is listed that the MSI upgrade will not reset the service 
 
 ### Changed
 
-### Automation
+#### Automation
 
 * Fixed an issue where clicking the run button on the second page of scripts would execute the wrong script
 
-### Dashboard
+#### Dashboard
 
 * Fixed an issue where you would have to delete a dashboard twice to get it to delete
 * Fixed an issue where adding a dashboard in the UI would enable auto-start even when it wasn't on
