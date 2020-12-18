@@ -4,7 +4,7 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
-## 1.5.7 - Unreleased
+## 1.5.7 - 12/18/2020
 
 {% hint style="info" %}
 Note that although it is listed that the MSI upgrade will not reset the service account, this will not actually take effect until the next version. The change had to make in how we uninstall so the previous version's MSIs are used to do that. 
