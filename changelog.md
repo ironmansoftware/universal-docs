@@ -6,7 +6,9 @@ description: Changelog for PowerShell Universal.
 
 ## 1.5.7 - Unreleased
 
-### Includes
+{% hint style="info" %}
+Note that although it is listed that the MSI upgrade will not reset the service account, this will not actually take effect until the next version. The change had to make in how we uninstall so the previous version's MSIs are used to do that. 
+{% endhint %}
 
 * UniversalDashboard - v3.2.4
 * UniversalDashboard - v2.9.9
@@ -16,18 +18,26 @@ description: Changelog for PowerShell Universal.
 
 ### Changed
 
-#### Dashboard
+### Automation
+
+* Fixed an issue where clicking the run button on the second page of scripts would execute the wrong script
+
+### Dashboard
 
 * Fixed an issue where you would have to delete a dashboard twice to get it to delete
 * Fixed an issue where adding a dashboard in the UI would enable auto-start even when it wasn't on
-* UDv3 - Fixed an issue where New-UDPage -Blank would not work
+* UDv3 - Fixed an issue with blank pages. 
+* UDv3 - Fixed an issue where New-UDTable would return an error when it only had 1 row. 
 
 #### Platform
 
-* Fixed an issue where authorization policies would run on every request when using Windows Authentication
+* Fixed an issue where authorization policies would run on every request when using Windows Auth outside of IIS.
 * Fixed an issue where the Universal PowerShell module would show a warning when running in Windows PowerShell
 * Fixed an issue where alternate security environments would not work
 * Fixed an issue where upgrading via MSI would remove the configured service account
+* Fixed an issue where Install-PSUServer would not work on Mac OS
+
+## 
 
 ## 1.5.6 - 12/12/2020
 
