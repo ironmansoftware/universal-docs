@@ -209,7 +209,7 @@ else
 $Result
 ```
 
-## Example: Policy based on Active Directory Direct Group Membership
+## Example: Policy based on Active Directory Group Membership \(Windows Authentication\)
 
 {% hint style="info" %}
 This example requires an authentication method that will provide group information during the authentication process. Methods like Windows authentication and WS-Federation can provide this information. Forms authentication will not work with this type of policy. 
