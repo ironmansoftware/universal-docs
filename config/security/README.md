@@ -2,6 +2,10 @@
 
 ## Forms Authentication
 
+{% hint style="warning" %}
+The forms authentication script is only called when users login through the login page. If you use any other authentication method, this script is not called. Role policy scripts are called for all authentication types.
+{% endhint %}
+
 By default, the forms authentication script is configured to accept the user Admin and any password. You can configure this authentication policy to interact with whatever system you like. The script will receive a `PSCredential` object that contains the user name and password entered by the user at the login page. 
 
 {% hint style="info" %}
