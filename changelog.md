@@ -8,15 +8,16 @@ description: Changelog for PowerShell Universal.
 
 * UniversalDashboard - v3.2.5
 * UniversalDashboard - v2.9.9
-* UniversalDashboard.Charts - 1.3.1
+* UniversalDashboard.Charts - 1.3.2
 * UniversalDashboard.Map - 1.0
 * UniversalDashboard.CodeEditor - 1.0.4
 
 ### Changed
 
-#### Automation
+#### Dashboard
 
 * UDv3 - Fixed an issue with New-UDTable and PSCustomObject. 
+* UniversalDashboard.Charts - Added MinValue and MaxValue to New-UDNivoChart -Calendar
 
 ## 1.5.7 - 12/18/2020
 
