@@ -6,6 +6,10 @@ description: Changelog for PowerShell Universal.
 
 ## 1.5.8 - 12/27/2020
 
+{% hint style="warning" %}
+Known Issue: The Universal PowerShell module included with 1.5.8 is 1.5.7 and will show a warning when running against the 1.5.8 server. This can be safely ignored.
+{% endhint %}
+
 * UniversalDashboard - v3.2.5
 * UniversalDashboard - v2.9.9
 * UniversalDashboard.Charts - 1.3.2
