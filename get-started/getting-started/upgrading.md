@@ -36,6 +36,10 @@ By default, new dashboards are set to always use the latest version of the dashb
 
 ## ZIP Upgrade
 
+{% hint style="info" %}
+Always ensure to run `Unblock-File` on Windows to unblock all the files extracted the ZIP. If you do not, PowerShell Universal will not function properly.
+{% endhint %}
+
 When upgrading an manual ZIP file installation, you will need to stop the application, delete the entire binary folder and replace it with the new binary folder. When you start the new version of Universal, new dashboard frameworks and components will be deployed and the existing database will be loaded. 
 
 ## MSI Upgrade
@@ -46,5 +50,5 @@ You will want to follow the guide on data and configuration persistence above to
 
 ## IIS Upgrade
 
-When upgrading with IIS, you will need to first stop your application pool to ensure that the binaries used by IIS are no longer in use and then replace the binaries with the new ones. Ensure that you follow the configuration persistence recommendations above with regards to the web.config file. 
+When upgrading with IIS, you will need to first stop your application pool to ensure that the binaries used by IIS are no longer in use and then replace the binaries with the new ones. Ensure that you follow the configuration persistence recommendations above with regards to the `web.config` file. 
 
