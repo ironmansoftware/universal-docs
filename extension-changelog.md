@@ -22,14 +22,14 @@ Breaking Change: This version of the extension only works with version 1.5.0 or 
 * Deprecated the Port and Computer name settings in favor of the URL setting
 * The extension no longer automatically downloads PowerShell Universal
 
-## \[1.6.1\]
+### \[1.6.1\]
 
 #### Changed
 
 * Fixed issue when attempting to download on Windows or Mac
 * Fixed issue where extension would not work with Mac OS X
 
-## \[1.6.0\]
+### \[1.6.0\]
 
 #### Added
 
@@ -39,13 +39,13 @@ Breaking Change: This version of the extension only works with version 1.5.0 or 
 
 * Replaced PowerShell Versions with Environments in the configuration tree view
 
-## \[1.5.1\]
+### \[1.5.1\]
 
 #### Changed
 
 * Fixed an issue where the extension wouldn't activate correctly.
 
-## \[1.5.0\]
+### \[1.5.0\]
 
 #### Added
 
@@ -55,7 +55,7 @@ Breaking Change: This version of the extension only works with version 1.5.0 or 
 
 * Fixed an issue where components wouldn't import correctly
 
-## \[1.4.0\]
+### \[1.4.0\]
 
 #### Added
 
@@ -65,19 +65,19 @@ Breaking Change: This version of the extension only works with version 1.5.0 or 
 
 * Extension will fail to activate after a number of retries while connecting to the Universal server.
 
-## \[1.3.0\]
+### \[1.3.0\]
 
 * Added support configuration files. 
 
-## \[1.2.0\]
+### \[1.2.0\]
 
 * Added support for scripts and jobs.
 
-## \[1.1.0\]
+### \[1.1.0\]
 
 * Added support for APIs
 
-## \[1.0.0\]
+### \[1.0.0\]
 
 * Initial release
 
