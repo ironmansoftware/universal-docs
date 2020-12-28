@@ -4,7 +4,7 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
-## 1.6.0 - 12/28/2020
+## 1.7.0 - 12/28/2020
 
 **Added**
 
