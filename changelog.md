@@ -4,6 +4,20 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 1.5.8 - 12/27/2020
+
+* UniversalDashboard - v3.2.5
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.1
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.0.4
+
+### Changed
+
+#### Automation
+
+* UDv3 - Fixed an issue with New-UDTable and PSCustomObject. 
+
 ## 1.5.7 - 12/18/2020
 
 {% hint style="info" %}
