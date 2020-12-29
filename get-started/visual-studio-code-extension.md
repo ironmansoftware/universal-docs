@@ -56,3 +56,7 @@ You can manage scripts with the extension. You will see a list of available scri
 
 The sample browser can be used to insert samples from the PowerShell Universal Sample Repository into your PowerShell Universal instance. Just save the files it updates and your PowerShell Universal system will reflect the changes. 
 
+{% embed url="https://youtu.be/HkCVe1PUX0Q" %}
+
+
+
