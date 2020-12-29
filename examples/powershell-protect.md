@@ -19,23 +19,12 @@ This configuration checks to see if the user has included the string `\\corp\hum
 The body of the HTTP request will contain the computer name and user name separated by a comma.
 
 ```text
-Start-PSUServer -Port 8080 -Configuration {
-    New-PSUEndpoint -Url "/protect" -Method POST -Endpoint {
-        $Data = "$Env:Temp\data.csv"
-        if (-not (Test-Path $Data))
-        {
-            "computer,user" | Out-File $Data
-        }
-        $Body | Out-File $Data
-    }
+$Condition = New-PSPCondition -Property "script" -Contains -Value "\\corp\human-resources"
+$Block = New-PSPAction -Http -Address "http://localhost:8080/protect" -Format "{computerName},{userName}" -Name 'Universal'
+$Rule = New-PSPRule -Action $Block -Condition $Condition -Name "HR Share"
+$Config = New-PSPConfiguration -Rule $Rule -Action $Block -License "<License></License>"
 
-    New-PSUDashboard -Name "Protect" -Content {
-        New-UDDashboard -Title 'Protect' -Content {
-            $Data = Import-Csv -Path "$Env:Temp\data.csv"
-            New-UDTable -Data $Data
-        }
-    }
-}
+Set-PSPConfiguration -Configuration $Config -FileSystem
 ```
 
 ### PowerShell Universal Configuration <a id="powershell-universal-configuration"></a>
