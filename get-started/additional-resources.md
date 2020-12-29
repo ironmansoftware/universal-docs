@@ -24,6 +24,10 @@ Purchase a license for the features of PowerShell Universal.
 
 File a bug report or feature request for PowerShell Universal.
 
+## [Samples](https://github.com/ironmansoftware/universal-samples)
+
+Samples that can be inserted into your PowerShell Universal system using the [PowerShell Universal extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal).
+
 ## [Videos](https://www.youtube.com/channel/UC8HyhY8iCqyX6-rmAPN7SvA)
 
 Check out video tutorials for PowerShell Universal. 
