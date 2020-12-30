@@ -4,6 +4,12 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 1.7.3 - 12/31/2020
+
+**Changed**
+
+* Simplified first-time start up to attempt to connect with default settings to avoid having to do any configuration manually. 
+
 ## 1.7.2 - 12/30/2020
 
 **Added**
