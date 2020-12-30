@@ -4,6 +4,16 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 1.7.2 - 12/30/2020
+
+**Added**
+
+* Settings for controlling the sample browser
+
+**Changed**
+
+* Improved the error message returned when attempting to automatically grant an app token and it fails. 
+
 ## 1.7.1 - 12/29/2020
 
 #### Added
