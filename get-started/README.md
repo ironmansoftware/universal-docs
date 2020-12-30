@@ -4,6 +4,10 @@ description: Get started with PowerShell Universal
 
 # Get Started
 
+{% hint style="info" %}
+We recommend installing the [PowerShell Universal Visual Studio Code Extension](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal) to provide the best possible editing experience. 
+{% endhint %}
+
 You can get up and running with PowerShell Universal by installing the `Universal` PowerShell Module. We've added some configuration for a REST API endpoint and Dashboard below. 
 
 ```csharp
