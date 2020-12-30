@@ -22,14 +22,14 @@ Set-PSUCache -Key "CurrentDate" -Value (Get-Date)
 
 There are three types of cache invalidation techniques you can employ. 
 
-### Absolute
+### Absolute Expiration
 
-The `Absolute` parameter defines at what time the item in the cache is invalidated. 
+The `AbsoluteExpiration` parameter defines at what time the item in the cache is invalidated. 
 
 The follow example invalidates the cache item after 10 minutes. 
 
 ```text
-Set-PSUCache -Key "CurrentDate" -Value (Get-Date) -Absolute (Get-Date).AddMinutes(10)
+Set-PSUCache -Key "CurrentDate" -Value (Get-Date) -AbsoluteExpiration (Get-Date).AddMinutes(10)
 ```
 
 ### Absolute Expiration From Now
