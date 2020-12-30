@@ -48,7 +48,7 @@ You can specify the path to the executable using the `-ExecutablePath` parameter
 Start-PSUServer -Port 8080 -ExecutablePath (Join-Path $MyPath "Universal.Server.exe")
 ```
 
-## Chocolatey Package
+## Chocolatey Package \(Windows\)
 
 You can install PowerShell Universal using the [Chocolatey package](https://chocolatey.org/packages/powershelluniversal). The package runs the MSI install. It will install Universal as a service and open a web browser after the install. 
 
@@ -58,7 +58,7 @@ You can login with the "admin" user and any password.
 choco install powershelluniversal
 ```
 
-## Winget
+## Winget \(Windows\)
 
 You can install PowerShell Universal using Winget. It will run the MSI and install as a service. 
 
@@ -94,7 +94,7 @@ On Linux, start the process `Universal.Server`. You may need to `chmod +x` the f
 
 See the [Docker page](docker.md#installation).
 
-## MSI Install
+## MSI Install \(Windows\)
 
 The MSI install will create a PowerShell Universal service and open the admin console after installation. 
 
