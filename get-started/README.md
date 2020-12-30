@@ -4,57 +4,51 @@ description: Get started with PowerShell Universal
 
 # Get Started
 
-{% hint style="info" %}
-We recommend installing the [PowerShell Universal Visual Studio Code Extension](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal) to provide the best possible editing experience. 
-{% endhint %}
+## Install PowerShell Universal
 
-You can get up and running with PowerShell Universal by installing the `Universal` PowerShell Module. We've added some configuration for a REST API endpoint and Dashboard below. 
+{% tabs %}
+{% tab title="Windows" %}
+You can install PowerShell Universal as a service using Chocolatey.
 
-```csharp
-# Install the Latest version of PowerShell Universal
+```text
+choco install powershelluniversal
+```
+{% endtab %}
+
+{% tab title="Linux" %}
+You can install PowerShell Universal using the Universal PowerShell module.
+
+```text
 Install-Module Universal
-Install-Module UniversalDashboard
-Install-PSUServer 
-
-# Start the PowerShell Universal server on port 8080 and configure
-# a REST API endpoint and dashboard
-Start-PSUServer -Port 8080 -Configuration {
-    New-PSUEndpoint -Url '/hello' -Method GET -Endpoint {
-        'Hello'
-    }
-    New-PSUDashboard -Name 'Dashboard' -BaseUrl '/dashboard' -Framework 'UniversalDashboard:Latest' -Content {
-        New-UDDashboard -Title 'Hello, World' -Content {
-            New-UDForm -Content {
-                New-UDTextbox -Label 'Say Hi' -Id 'textbox'
-            } -OnSubmit {
-                Show-UDToast -Message $EventData.textbox
-            }
-        }
-    }
-}
+Install-PSUServer -AddToPath
+Start-PSUServer -Port 5000
 ```
+{% endtab %}
 
-Once your server is up and running, try executing a REST API request.
+{% tab title="Mac OS X" %}
+You can install PowerShell Universal using the Universal PowerShell module.
 
 ```text
-Invoke-RestMethod http://localhost:8080/hello
+Install-Module Universal
+Install-PSUServer -AddToPath
+Start-PSUServer -Port 5000
 ```
+{% endtab %}
+{% endtabs %}
 
-You can also visit the dashboard.
+## Open PowerShell Universal
 
-```text
-Start-Process http://localhost:8080/dashboard
-```
+By default, PowerShell Universal is running on port 5000 of localhost. You can access the admin console with the user name `admin` and any password.
 
-Enter some text in the form to say hi. 
+![](../.gitbook/assets/login.gif)
 
-![](../.gitbook/assets/hello.gif)
+## Install the PowerShell Universal Visual Studio Code Extension
 
-Visit the admin console to see all the features of PowerShell Universal. You can login with `admin` and any password. 
+We recommend installing the [PowerShell Universal Visual Studio Code Extension](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal) to provide the best possible editing experience.
 
-```text
-Start-Process http://localhost:8080/admin
-```
+You can connect to your instance of PowerShell Universal, browse and insert samples and get up and running right away. 
+
+![Getting started with the VS Code Extension](../.gitbook/assets/vscode.gif)
 
 Learn more about the various features of PowerShell Universal
 
