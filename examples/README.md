@@ -4,6 +4,10 @@ description: Examples of PowerShell Universal configurations.
 
 # Examples
 
+{% hint style="warning" %}
+We recommend using the Sample Browser in the [PowerShell Universal Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal) extension to easily view these examples.
+{% endhint %}
+
 This page contains examples of PowerShell Universal configurations. All examples are built using single-file hosting and configuration. These examples assume that you have PowerShell Universal installed. To install PowerShell Universal, use the following command line. 
 
 ```text
