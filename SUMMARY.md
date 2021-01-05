@@ -52,6 +52,7 @@
 * [Components](dashboard/components/README.md)
   * [Pages](dashboard/components/pages.md)
   * [Dynamic Regions](dashboard/components/dynamic-regions.md)
+  * [Element](dashboard/components/element.md)
   * [Error Boundary](dashboard/components/error-boundary.md)
   * [Building Custom Components](dashboard/components/building-custom-components.md)
   * [Data Display](dashboard/components/data-display/README.md)
