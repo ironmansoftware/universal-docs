@@ -54,6 +54,7 @@
   * [Dynamic Regions](dashboard/components/dynamic-regions.md)
   * [Element](dashboard/components/element.md)
   * [Error Boundary](dashboard/components/error-boundary.md)
+  * [HTML](dashboard/components/html.md)
   * [Building Custom Components](dashboard/components/building-custom-components.md)
   * [Data Display](dashboard/components/data-display/README.md)
     * [Chip](dashboard/components/data-display/chip.md)
