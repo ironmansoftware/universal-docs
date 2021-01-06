@@ -4,6 +4,34 @@ description: Developing dashboards in VS Code.
 
 # Development
 
+## Developing a Dashboard with VS Code
+
+The [Visual Studio Code extension for PowerShell Universal](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal) provides integration for working with dashboards. We recommend you also install the [PowerShell extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell). 
+
+To add a new dashboard, visit the admin console and go to Dashboard \ Dashboards and click the Add Dashboard button. 
+
+![](../.gitbook/assets/image%20%28129%29.png)
+
+After adding the dashboard, a dashboard PS1 file will be created and the `dashboards.ps1` file will be updated. You can view your dashboard in VS Code underneath the dashboards tree view. It will show the current state of the dashboard and the framework it is using. 
+
+![](../.gitbook/assets/image%20%28126%29.png)
+
+If you want to edit your dashboard, click the Open Dashboard File button. This will open the dashboard PS1 file in the editor and import the Universal module and Dashboard framework module so you have IntelliSense. 
+
+![](../.gitbook/assets/image%20%28133%29.png)
+
+From here, you can begin editing your dashboard.
+
+![](../.gitbook/assets/bxmax1ree3.gif)
+
+Your dashboard should restart automatically when you make changes. You will be able to view the dashboard in the browser by clicking the View button. 
+
+![](../.gitbook/assets/image%20%28127%29.png)
+
+If you need to restart your dashboard manually, you can click the Restart button. 
+
+![](../.gitbook/assets/image%20%28132%29.png)
+
 ## Developing a Dashboard with Single-File Configuration
 
 You can use the Universal Dashboard PowerShell module and single-file configuration to build a dashboard directly from PowerShell. 
@@ -43,38 +71,6 @@ Start-Process http://localhost:8080/dashboard
 ```
 
 Changes you make to your PS1 file will cause Universal to automatically reload your dashboard and reflect the changes. 
-
-## Developing a Dashboard with VS Code
-
-The [Visual Studio Code extension for PowerShell Universal](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal) provides integration for working with dashboards. We recommend you also install the [PowerShell extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell). 
-
-{% hint style="info" %}
-The first time you activate the Visual Studio Code extension, it will download the latest version of PowerShell Universal and start the server on port 5000.
-{% endhint %}
-
-To add a new dashboard, visit the admin console and go to Dashboard \ Dashboards and click the Add Dashboard button. 
-
-![](../.gitbook/assets/image%20%28129%29.png)
-
-After adding the dashboard, a dashboard PS1 file will be created and the `dashboards.ps1` file will be updated. You can view your dashboard in VS Code underneath the dashboards tree view. It will show the current state of the dashboard and the framework it is using. 
-
-![](../.gitbook/assets/image%20%28126%29.png)
-
-If you want to edit your dashboard, click the Open Dashboard File button. This will open the dashboard PS1 file in the editor and import the Universal module and Dashboard framework module so you have IntelliSense. 
-
-![](../.gitbook/assets/image%20%28133%29.png)
-
-From here, you can begin editing your dashboard.
-
-![](../.gitbook/assets/bxmax1ree3.gif)
-
-Your dashboard should restart automatically when you make changes. You will be able to view the dashboard in the browser by clicking the View button. 
-
-![](../.gitbook/assets/image%20%28127%29.png)
-
-If you need to restart your dashboard manually, you can click the Restart button. 
-
-![](../.gitbook/assets/image%20%28132%29.png)
 
 ## Debugging a Dashboard
 

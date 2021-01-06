@@ -6,10 +6,6 @@ description: Building APIs in VS Code.
 
 The [Visual Studio Code extension for PowerShell Universal](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal) provides integration for working with APIs. We recommend you also install the [PowerShell extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell). 
 
-{% hint style="info" %}
-The first time you activate the Visual Studio Code extension, it will download the latest version of PowerShell Universal and start the server on port 5000.
-{% endhint %}
-
 ## Developing APIs
 
 You can add APIs by using the admin console or through the editor in Visual Studio Code. 

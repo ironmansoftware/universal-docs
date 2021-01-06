@@ -6,10 +6,6 @@ description: Developing scripts in VS Code
 
 The [Visual Studio Code extension for PowerShell Universal](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal) provides integration for working with automation. We recommend you also install the [PowerShell extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell). 
 
-{% hint style="info" %}
-The first time you activate the Visual Studio Code extension, it will download the latest version of PowerShell Universal and start the server on port 5000.
-{% endhint %}
-
 ## Developing Scripts
 
 To add scripts to the Universal platform, you can do it via the admin console or the file system. The Visual Studio Code extension also provides integration for managing the `scripts.ps1` configuration file. 

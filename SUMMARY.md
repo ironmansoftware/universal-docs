@@ -23,11 +23,11 @@
 ## API
 
 * [About](api/about.md)
+* [Development](api/development.md)
 * [Endpoints](api/endpoints.md)
 * [Security](api/security.md)
 * [Error Handling](api/error-handling.md)
 * [Rate Limiting](api/rate-limiting.md)
-* [Development](api/development.md)
 
 ## Automation
 
