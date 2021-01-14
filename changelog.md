@@ -4,6 +4,50 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 1.5.9 - 1/14/2020
+
+### Includes
+
+* UniversalDashboard - v3.2.6
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.0.4
+
+### Added
+
+#### Platform
+
+* Added -UseDefaultCredentials to all Management API cmdlets. 
+
+### Changed
+
+#### API
+
+* Fixed an issue where updating APIs with the management API could duplicate the endpoint
+* Fixed an issue where API URLs and Methods wouldn't update 
+* BREAKING CHANGE: Errors thrown in APIs now return 400 \(bad request\) rather than 500 \(internal server error\)
+
+#### Automation
+
+* Fixed issue where -MaxHistory would not persist on New-PSUScript
+* The environment drop down is now hidden in the run dialog when an environment is set on the script
+* Fixed an issue where switch parameters would not work with schedules
+
+#### Dashboard
+
+* UDv3 - Fixed an issue where New-UDTable would show a React error with certain empty properties
+* UDv3 - Fixed an issue where New-UDDynamic would remove\add components causing a flash when they reloaded
+* UDv3 - Fixed an issue where -Label on New-UDDatePicker would not work
+* Fixed an issue where you couldn't delete a dashboard framework from the UI
+
+#### Platform
+
+* Fixed a mismatch with the PowerShell module version and the Universal server
+* Removed the Log Level setting from the General settings page because it doesn't do anything
+* Added -Uri alias to the -ComputerName parameter for cmdlets in the Universal module since Urls are supported
+* Added Wreply option for WS-Federation authentication
+
 ## 1.5.8 - 12/27/2020
 
 {% hint style="warning" %}
