@@ -93,6 +93,22 @@ To configure a certificate in a particular location and store, you can use a con
 
 Location can be either `CurrentUser` or `LocalMachine`.
 
+### Protocol
+
+By default, Universal will listen on HTTP1. You can adjust the protocols that the server listens to by setting the Protocols property. To enable HTTP2, you can use the following setting. 
+
+```text
+"Kestrel": {
+  "Endpoints": {
+    "HTTP": {
+      "Url": "http://*:5000",
+      "Protocols": "Http1AndHttp2"
+    }
+  },
+  "RedirectToHttps": "false"
+},
+```
+
 For a full set of listening options, you can refer to the [ASP.NET Core Documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-3.1#listenoptionsusehttps).
 
 ## 
