@@ -34,6 +34,10 @@ You should have multiple versions of the dashboard frameworks and components ava
 
 By default, new dashboards are set to always use the latest version of the dashboard framework. You can chose to set it to a specific version if you would like but will have to manually change the version during an upgrade. 
 
+**Repository**
+
+Most of the settings for PowerShell Universal are stored within the repository folder. By default, this is in `%ProgramData%\UniversalAutomation\Repository`. While the upgrade should not affect these files, you may want to backup the files before upgrading. 
+
 ## ZIP Upgrade
 
 {% hint style="info" %}
