@@ -95,7 +95,7 @@ Location can be either `CurrentUser` or `LocalMachine`.
 
 ### Protocol
 
-By default, Universal will listen on HTTP1. You can adjust the protocols that the server listens to by setting the Protocols property. To enable HTTP2, you can use the following setting. 
+By default, Universal will listen on HTTP1 and HTTP2. You can adjust the protocols that the server listens to by setting the Protocols property. For example, you can specifically set HTTP1 and HTTP2 support with the following setting.
 
 ```text
 "Kestrel": {
@@ -103,6 +103,20 @@ By default, Universal will listen on HTTP1. You can adjust the protocols that th
     "HTTP": {
       "Url": "http://*:5000",
       "Protocols": "Http1AndHttp2"
+    }
+  },
+  "RedirectToHttps": "false"
+},
+```
+
+Some versions of Windows Server \(like 2012R2\), do not support HTTP2. To disable HTTP2 support, set the listener to only listen on HTTP1.
+
+```text
+"Kestrel": {
+  "Endpoints": {
+    "HTTP": {
+      "Url": "http://*:5000",
+      "Protocols": "Http1"
     }
   },
   "RedirectToHttps": "false"
