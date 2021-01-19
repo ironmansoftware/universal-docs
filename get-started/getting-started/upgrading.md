@@ -48,6 +48,10 @@ To upgrade using the MSI, you can simply run the new version of the MSI. The MSI
 
 You will want to follow the guide on data and configuration persistence above to ensure all your settings are saved. 
 
+{% hint style="warning" %}
+If you have configured a service account for your MSI installation, you will need to set the service account after upgrading.
+{% endhint %}
+
 ## IIS Upgrade
 
 When upgrading with IIS, you will need to first stop your application pool to ensure that the binaries used by IIS are no longer in use and then replace the binaries with the new ones. Ensure that you follow the configuration persistence recommendations above with regards to the `web.config` file. 
