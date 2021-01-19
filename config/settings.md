@@ -28,6 +28,20 @@ You can create an appsettings.json file within the `$Env:ProgramData\PowerShellU
 
 You can also set environment variables for your settings. Environment variables should have an underscore between each subset of the `appsettings.json` file. For example, if you want to change the JWT signing key via environment variable, you would set the variable `$Env:Jwt__SigningKey`. If you wanted to set the external API URL, you would set `$Env:Api__Url`. 
 
+### Examples
+
+Using an environment variable for the OpenID Connect secret.
+
+```text
+$Env:Authentication__OIDC__ClientSecret = "mySecret"
+```
+
+Using an environment variable for JWT signing key.
+
+```text
+$Env:Jwt__SigningKey = "mySigningKey"
+```
+
 ## Setting Descriptions
 
 **Kestrel / Endpoints** 
