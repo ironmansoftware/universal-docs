@@ -26,7 +26,7 @@ Now, you will need to take note of your Application \(client\) ID GUID. This wil
 
 ![](../../.gitbook/assets/image%20%2834%29.png)
 
-Finally, you will have to click the Endpoints button to open the Endpoints drawer. This contains a list of the endpoints. Make note of the OAuth 2.0 authorization endpoint URL. You will need this for the `appsettings.json`.
+Finally, you will have to click the Endpoints button to open the Endpoints drawer. This contains a list of the endpoints. Make note of the OAuth 2.0 authorization endpoint URL. You will need this for the `appsettings.json`. Note that you will not input the entire endpoint URL. You will need to include the portion of the URL through the GUID but without the path after oauth2 in the Authority setting below \(e.g. [https://login.microsoftonline.com/fffffff-4b76-4470-a736-8481d7a2ed87](https://login.microsoftonline.com/fffffff-4b76-4470-a736-8481d7a2ed87)\). 
 
 ![](../../.gitbook/assets/image%20%2832%29.png)
 
