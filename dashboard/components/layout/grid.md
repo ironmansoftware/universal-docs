@@ -6,7 +6,6 @@ description: Grid layout component for Universal Dashboard.
 
 The responsive layout grid adapts to screen size and orientation, ensuring consistency across layouts.
 
-  
 The grid creates visual consistency between layouts while allowing flexibility across a wide variety of designs. Material Design’s responsive UI is based on a 12-column grid layout.
 
 ## Basic Layout
@@ -71,7 +70,20 @@ New-UDSelect -Id 'spacingSelect' -Label Spacing -Option {
 } -OnChange { Sync-UDElement -Id 'spacingGrid' } -DefaultValue 3
 ```
 
+## Row and Columns
 
+You can also use the `New-UDRow` and `New-UDColumn` functions when working with the grid. 
+
+```text
+New-UDRow -Columns {
+    New-UDColumn -SmallSize 12 -Content {
+        New-UDPaper -Content { "xs-12" } -Elevation 2
+    }
+    New-UDColumn -SmallSize 12 -Content {
+        New-UDPaper -Content { "xs-12" } -Elevation 2
+    }
+}
+```
 
 **New-UDGrid**
 
