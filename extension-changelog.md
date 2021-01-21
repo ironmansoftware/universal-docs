@@ -4,6 +4,10 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 1.7.4 - 1/21/2021
+
+* Fixed an issue where the extension would fail to initialize on non-internet connected machines. 
+
 ## 1.7.3 - 12/31/2020
 
 **Changed**
