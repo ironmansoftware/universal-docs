@@ -37,6 +37,12 @@ Enabling the IIS WebDav Publishing feature will cause issues with Universal. Web
 
 Download the Latest copy of PowerShell Universal. You will need to download the **ZIP** Archive version of PowerShell Universal. This archive is specifically built for those wishing to configure PowerShell Universal for IIS or other third party web servers. Extract the contents of the Zip to the intended web host folder location on your IIS Host.
 
+You must ensure that the PowerShell Universal application files are unblocked after extracting them. You can unblock them with the `Unblock-File` cmdlet. 
+
+```text
+Get-ChildItem C:\inetpub\wwwroot -Recurse | Unblock-File
+```
+
 {% hint style="warning" %}
 This location is very important and will be referenced throughout this document. Most importantly this location must be accessible by the Identity used by the IIS Application Pool.
 {% endhint %}
