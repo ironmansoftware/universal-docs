@@ -75,6 +75,7 @@ Configures the hosts that are allowed to make cross-origin resource sharing requ
 * GitRemote - Git remote used to sync to Universal
 * GitUserName - Git user name used to sync to the GitRemote
 * GitPassword - Git password used to sync to the GitRemote
+* ConfigurationScript - Location of a custom configuration script to load. You can return objects like scripts, dashboards and endpoints from this script. 
 
 **API**
 
