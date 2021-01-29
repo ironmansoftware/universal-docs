@@ -83,6 +83,70 @@ $Pipeline = Get-UAJobPipelineOutput -Job $Job
 $HostOutput = Get-UAJobOutput -Job $Job
 ```
 
+## Invoking Jobs with REST 
+
+You can call jobs over REST using the management API for PowerShell Universal. You will need a valid app token to invoke jobs. 
+
+### Call Scripts with REST
+
+To call a script, you call an HTTP POST to the script endpoint with the ID of the script you wish to execute. 
+
+```text
+Invoke-RestMethod http://localhost:5000/api/v1/script/7 -Method POST -Body "" -Headers @{ Authorization = "Bearer appToken" } -ContentType 'application/json'
+```
+
+### Providing Parameters
+
+To provide parameters to scripts, you will need to define the parameters are part of the body. Currently the value is required to be a CLIXML string. 
+
+```text
+$JobContext = @{
+    JobParameters = @(
+        @{ Name = "parameter1"; Value = '<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04">
+          <S>String</S>
+        </Objs>' },
+    )
+} | ConvertTo-Json -Depth 5
+
+Invoke-RestMethod http://localhost:5000/api/v1/script/7 -Method POST -Body $JobContext -Headers @{ Authorization = "Bearer appToken" } -ContentType 'application/json'
+```
+
+If you want to pass a credential you will need to pass in the parameter as a variable. 
+
+```text
+ontext = @{
+    JobParameters = @(
+        @{ Name = "parameter1"; Value = "myCredential"; IsVariable = $true },
+    )
+} | ConvertTo-Json -Depth 5
+
+Invoke-RestMethod http://localhost:5000/api/v1/script/7 -Method POST -Body $JobContext -Headers @{ Authorization = "Bearer appToken" } -ContentType 'application/json'
+```
+
+### Setting the Environment
+
+You can set the environment by pass in the environment property to the job context. The property must be the name of an environment defined within your PSU instance.
+
+```text
+ontext = @{
+    Environment = "PowerShell 7"
+} | ConvertTo-Json
+
+Invoke-RestMethod http://localhost:5000/api/v1/script/7 -Method POST -Body $JobContext -Headers @{ Authorization = "Bearer appToken" } -ContentType 'application/json'
+```
+
+### Setting the Run As account
+
+You can set the run as account by passing in the name of a PSCredential variable to the Credential property. 
+
+```text
+ontext = @{
+    Credential = "MyUser"
+} | ConvertTo-Json
+
+Invoke-RestMethod http://localhost:5000/api/v1/script/7 -Method POST -Body $JobContext -Headers @{ Authorization = "Bearer appToken" } -ContentType 'application/json'
+```
+
 ## Variables Defined in Jobs
 
 There are several built-in variables that are defined when a job is run. You can use these variables in your scripts to retrieve information about the current job. 
