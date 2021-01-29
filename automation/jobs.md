@@ -111,7 +111,13 @@ $JobContext = @{
 Invoke-RestMethod http://localhost:5000/api/v1/script/7 -Method POST -Body $JobContext -Headers @{ Authorization = "Bearer appToken" } -ContentType 'application/json'
 ```
 
-If you want to pass a credential you will need to pass in the parameter as a variable. 
+To generate CLIXML, you can use the `PSSerializer` class in PowerShell. You can pass any object into the serialize method.
+
+```text
+[System.Management.Automation.PSSerializer]::Serialize("String")
+```
+
+If you want to pass a credential you will need to pass in the parameter as a variable. You do not need to serialize the variable name. 
 
 ```text
 ontext = @{
