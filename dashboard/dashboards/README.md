@@ -86,3 +86,17 @@ You can also add component libraries directly to your `dashboards.ps1` script wi
 New-PSUDashboard -Name 'Dashboard' -BaseUrl '/' -Framework "UniversalDashboard:Latest" -Component @("UniversalDashboard.Charts:1.3.0")
 ```
 
+## Persistent Runspaces
+
+Persistent runspaces allow you to maintain runspace state within your dashboard endpoints. This is important for users that perform some sort of initialization within their endpoints that they do not want to execute on subsequent calls.
+
+By default, runspaces will be reset after each execution. This will cause variables, modules and functions defined during the execution of an endpoint.
+
+To enable persistent runspaces, you will need to configure an [environment ](../../config/environments.md)for your API. Set the `-PersistentRunspace` parameter to enable this feature. This is configured in the `environments.ps1` script.
+
+```text
+New-PSUEnvironment -Name 'Env' -Path 'powershell.exe' -PersistentRunspace
+```
+
+You will need to ensure that the environment is used by the dashboard. 
+
