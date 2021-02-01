@@ -6,6 +6,10 @@ description: Changelog for PowerShell Universal.
 
 ## 1.5.10 - 2/1/2020
 
+{% hint style="warning" %}
+Known issue: Some users may experience problems signing in with certain OIDC providers. 
+{% endhint %}
+
 ### Includes
 
 * UniversalDashboard - v3.2.7
