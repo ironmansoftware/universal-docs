@@ -156,6 +156,24 @@ New-PSUEndpoint -Url '/file' -Method Get -Endpoint {
 }
 ```
 
+## Persistent Runspaces
+
+Persistent runspaces allow you to maintain runspace state between API calls. This is important for users that perform some sort of initialization within their endpoints that they do not want to execute on subsequent API calls. 
+
+By default, runspaces will be reset after each execution. This will cause variables, modules and functions defined during the execution of the API to be removed. 
+
+To enable persistent runspaces, you will need to configure an [environment ](../config/environments.md)for your API. Set the `-PersistentRunspace` parameter to enable this feature. This is configured in the `environments.ps1` script.
+
+```text
+New-PSUEnvironment -Name 'Env' -Path 'powershell.exe' -PersistentRunspace
+```
+
+You can then assign the API environment in the `settings.ps1` script. 
+
+```text
+Set-PSUSetting -ApiEnvironment 'Env'
+```
+
 ## Related Cmdlets
 
 * [New-PSUEndpoint](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/New-PSUEndpoint.md)
