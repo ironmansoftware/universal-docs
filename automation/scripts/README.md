@@ -86,6 +86,10 @@ To run as another user, simply add or import a PSCredential variable. From there
 
 ![](../../.gitbook/assets/image%20%2826%29.png)
 
+## Remoting
+
+Note that you can use PowerShell remoting by taking advantage of `Invoke-Command` . We do not support the use of `Enter-PSSession` or `Import-PSSession`. 
+
 ## Related Cmdlets
 
 * [New-PSUScript](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/New-PSUScript.md)
