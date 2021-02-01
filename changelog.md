@@ -4,6 +4,59 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 1.5.10 - 2/1/2020
+
+### Includes
+
+* UniversalDashboard - v3.2.7
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.0.4
+
+### Changed
+
+#### API
+
+* When an AppToken is used for authentication with the API, it will be available as $AppToken within the API's endpoint
+* Fixed issue where saving endpoints would not update from the admin console
+* Fixed an issue where New-PSUApiResponse -Cookies would not be sent to the client
+
+#### Automation
+
+* Fixed an issue with PSCredential parameters
+
+#### Dashboard
+
+* Honor Environment's Persistent Runspace setting in dashboards. 
+* UDv3 - Disable fetch service when session times out
+* UDv3 - Session time out now checks for expired authorization cookies
+
+#### Platform
+
+* Display app tokens per user
+
+### Added
+
+#### API
+
+* Added $Method variable to indicate the HTTP method of the endpoint called.
+* Added $Cookies variable with a hashtable of cookie values 
+* Added -Headers parameter to New-PSUApiResponse
+
+#### Automation
+
+* Added the ability to assign run as credentials for scripts and a -Credential parameter to New-PSUScript
+
+**Dashboard**
+
+* Added $Headers variable to dashboard to provide access to HTTP headers.
+* Added $Cookies variable with a hashtable of cookie values
+
+#### Platform
+
+* Added UseTokenLifetime setting for WS-Federation and OIDC 
+
 ## 1.5.9 - 1/14/2020
 
 ### Includes
