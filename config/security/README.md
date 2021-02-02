@@ -171,6 +171,14 @@ HKLM:\System\CurrentControlSet\Services\Http\Parameters
 
 More information can be found on [Microsoft's documentation](https://docs.microsoft.com/en-us/troubleshoot/iis/http-bad-request-response-kerberos#workaround-2-set-maxfieldlength-and-maxrequestbytes-registry-entries). 
 
+As an alternative to increasing the request size, you can also reduce the number of groups sent. In Azure Active Directory, you can set to just the groups assigned to the application to prevent all groups from being sent. 
+
+In Azure go to **App registrations** &gt; \(Select the app\) &gt; **Token Configuration**, and specify Groups assigned to the application. ![](https://support.ironmansoftware.com/api/v1/threads/548223000001702109/inlineImages/edbsndabe757f382adbd6bf97fb8f980f999a0299e9db01c2972b353b3c8c4ffe29e6ae82d11d75341af2d224cd8f4103b9b009cb9d18e2809c18ece1c19c88900fe13e6b2866bb6604db1b7c9360f4da552d?et=17798841e64&ha=5d1aea069a1f58d946c8dad4e93abec12ca48d705aad7500a321b0c311d7e581&f=1.png)
+
+Now go to **Enterprise Application** &gt; \(Select the app\) &gt; **Users and groups**. Assign the group\(s\) you are interested in including in the claims. \(Note: this can also be used as a security boundary if you set “User Assignment Required” to Yes in the ‘Properties’ section of the app\)
+
+![](https://support.ironmansoftware.com/api/v1/threads/548223000001702109/inlineImages/edbsndabe757f382adbd6bf97fb8f980f999a0299e9db01c2972b353b3c8c4ffe29e6ae82d11d75341af2d224cd8f4103b9b0ba101ed249f6cf46a1cf05c5cfe5650d84cedc32ef9ab20a4535665ec422da7b?et=17798841e64&ha=0397e6316da5e7ab913c1ec8c932ba854c1a88d27c54044ea299ca2dac438aef&f=2.png)
+
 ## App Tokens
 
 App Tokens can be assigned to services that cannot login interactively. You can grant a new app token to your account by clicking the Grant App Token button within the Security / App Tokens tab. 
