@@ -147,6 +147,30 @@ The Execute role grants the ability to run scripts and read access for everythin
 
 The Reader role provides read-only access to PowerShell Universal.
 
+### IIS Authorization 
+
+Authorization in IIS works as with any other method but you need to be aware of the request header size limit. You may receive errors when you enable claims that include many groups. They can exceed the header size limit and IIS will return errors. We have found that about 40 Azure Active Directory groups will cause this issue on a default IIS installation. 
+
+The error you will receive will either be a 400 error with the request is too long.
+
+![](../../.gitbook/assets/image%20%28150%29.png)
+
+If you have HTTPS enabled, you will receive an error about a HTTP2 protocol error. 
+
+![](../../.gitbook/assets/image%20%284%29.png)
+
+You can increase the IIS request size by setting the following registry keys. You will need to restart you machine in order for them to take affect. 
+
+```text
+HKLM:\System\CurrentControlSet\Services\Http\Parameters
+    MaxFieldLength: DWORD
+    
+HKLM:\System\CurrentControlSet\Services\Http\Parameters
+    MaxRequestBytes: DWORD
+```
+
+More information can be found on [Microsoft's documentation](https://docs.microsoft.com/en-us/troubleshoot/iis/http-bad-request-response-kerberos#workaround-2-set-maxfieldlength-and-maxrequestbytes-registry-entries). 
+
 ## App Tokens
 
 App Tokens can be assigned to services that cannot login interactively. You can grant a new app token to your account by clicking the Grant App Token button within the Security / App Tokens tab. 
