@@ -167,7 +167,7 @@ $Pages += New-UDPage -Name 'Test' -Content {
 
 $Pages += New-UDPage -Name 'Test2' -Content {
     New-UDTypography -Text "Hello"
-} -NavigationLayout permanent -Navigation $Navigation
+} -NavigationLayout permanent -LoadNavigation $Navigation
 
 
 New-UDDashboard -Title "Hello, World!" -Pages $Pages
