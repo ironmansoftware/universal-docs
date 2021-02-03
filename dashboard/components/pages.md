@@ -142,6 +142,37 @@ New-UDDashboard -Title "Hello, World!" -Pages $Pages
 
 ![Custom navigation](../../.gitbook/assets/image%20%28160%29.png)
 
+### Dynamic Navigation
+
+Dynamic navigation can be used to execute scripts during page load to determine which navigation components to show based on variables like the user, IP address or roles. 
+
+You can generate dynamic navigation by using the `-LoadNavigation` parameter. The value of the parameter should be a script block to execute when loading the navigation.
+
+```text
+$Navigation = {
+    New-UDListItem -Label "Home - $(Get-Date)"
+    New-UDListItem -Label "Getting Started" -Children {
+        New-UDListItem -Label "Installation" -OnClick { Invoke-UDRedirect '/installation' }
+        New-UDListItem -Label "Usage" -OnClick { Invoke-UDRedirect '/usage' }
+        New-UDListItem -Label "FAQs" -OnClick { Invoke-UDRedirect '/faqs' }
+        New-UDListItem -Label "System Requirements" -OnClick { Invoke-UDRedirect '/requirements' }
+        New-UDListItem -Label "Purchasing" -OnClick { Invoke-UDRedirect '/purchasing'}
+    }
+}
+
+$Pages = @()
+$Pages += New-UDPage -Name 'Test' -Content {
+ New-UDTypography -Text "Hello"
+} -NavigationLayout permanent -LoadNavigation $Navigation
+
+$Pages += New-UDPage -Name 'Test2' -Content {
+    New-UDTypography -Text "Hello"
+} -NavigationLayout permanent -Navigation $Navigation
+
+
+New-UDDashboard -Title "Hello, World!" -Pages $Pages
+```
+
 ### Layouts
 
 The permanent layout creates a static navigation drawer on the left hand side of the page. It cannot be hidden by the user. 
