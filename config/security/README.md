@@ -147,6 +147,27 @@ The Execute role grants the ability to run scripts and read access for everythin
 
 The Reader role provides read-only access to PowerShell Universal.
 
+### Users with Many Groups
+
+If your users are members of more than about 40 groups you may experience problems logging in. This is due to size limits of the HTTP headers in IIS and Kestrel. The more groups a user is a member of, the more authorization claims they have and the large the header. 
+
+You can increase the header limit for Kestrel by using the limits configuration in `appsettings.json` file. You will need to increase the header size. It is a value in bytes and defaults to 32kb.  
+
+```text
+{
+  "Kestrel": {
+    "Endpoints": {
+      "HTTP": {
+        "Url": "http://*:5000"
+      }
+    },
+    "Limits": {
+      "MaxRequestHeadersTotalSize": 132768
+    },
+    "RedirectToHttps": "false"
+  },
+```
+
 ### IIS Authorization 
 
 Authorization in IIS works as with any other method but you need to be aware of the request header size limit. You may receive errors when you enable claims that include many groups. They can exceed the header size limit and IIS will return errors. We have found that about 40 Azure Active Directory groups will cause this issue on a default IIS installation. 
