@@ -58,7 +58,7 @@ The $Body variable will contain a JSON string that contains the current state of
 }
 ```
 
-### Validating a Step
+## Validating a Step
 
 You can validate a step in a stepper by specifying the `OnValidateStep` parameter. The script block will receive a $Body variable with JSON that provides information about the current state of the stepper. You will need to return a validation result using `New-UDValidationResult` to specify whether the current step state is valid. 
 
@@ -95,8 +95,8 @@ New-UDStepper -Steps {
     New-UDTypography -Text 'Nice! You did it!' -Variant h3
     New-UDElement -Tag 'div' -Id 'result' -Content {$Body}
 } -OnValidateStep {
-    $Context = ConvertFrom-Json $Body
-    if ($Context.CurrentStep -eq 1 -and $Context.Context.txtStep1 -eq 'bad')
+    $Context = $EventData
+    if ($Context.CurrentStep -eq 0 -and $Context.Context.txtStep1 -eq 'bad')
     {
         New-UDValidationResult 
     }
