@@ -62,7 +62,7 @@ The $Body variable will contain a JSON string that contains the current state of
 
 You can validate a step in a stepper by specifying the `OnValidateStep` parameter. The script block will receive a $Body variable with JSON that provides information about the current state of the stepper. You will need to return a validation result using `New-UDValidationResult` to specify whether the current step state is valid. 
 
-The JSON payload will have the following format.
+The JSON payload will have the following format. Note that steps are 0 indexed. If you want to validate the first step, check to make sure the step is 0. 
 
 ```text
 {
