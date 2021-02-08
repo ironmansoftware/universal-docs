@@ -4,6 +4,61 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 1.5.11 - Unreleased 
+
+{% hint style="info" %}
+These changes are available in [our nightly builds](https://ironmansoftware.com/downloads).
+{% endhint %}
+
+### Includes
+
+* UniversalDashboard - v3.2.8
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.0.4
+* UniversalDashboard.Style - 1.0.0
+
+### Added
+
+#### Dashboard
+
+* UDv3 - Added New-UDTableTextOption to allow for customizing table text like search and export labels.
+* The UDStyle component is now included with the Universal package 
+* Added Restart button to the dashboard page in the admin console
+* Added -ExportOption to New-UDTable to configure which options to allow for export 
+
+#### Platform
+
+* Added support for configuring the correlation cookie same site settings for OIDC. 
+
+### Changed
+
+#### Automation
+
+* Fixed an issue where continuous schedules would cause the server to fail to execute jobs due to worker threads being exhausted
+* Fixed an issue where a schedule could run multiple times after service restart. 
+* Fixed an issue where one-time schedules could run more than once
+
+#### Dashboard
+
+* UDv3 - Fixed an issue where vertical tabs would have a static height.
+* UDv3 - Fixed an issue with New-UDTable -ShowPagination where it would automatically turn on pagination even when it wasn't used
+* UDv3 - Fixed an issue where New-UDTable would sort the first column ascending by default \(now uses the data as-is if no sort is specified\)
+* UDv3 - Fixed an issue where sorting was enabled on New-UDTable by default. You now need to enable it with -ShowSort
+* UDv3 - Fixed an issue where -ArgumentList would not work on New-UDDynamic
+* UDv3 - Fixed an issue where New-UDSelect with no options defined would cause a React error
+* Improved error message shown when a terminating exception is thrown during dashboard start up
+* Fixed an issue where cmdlets that rely on websockets and that use the -Broadcast parameter or when executed from scheduled endpoints would appear on all dashboards.
+
+#### Platform
+
+* Fixed a problem where certain authentication providers wouldn't work with OIDC due to correlation cookie problems. 
+* Fixed an issue where setting an identity from a specific role back to Policy Defined would result in the policy not executing correctly
+* Fixed an issue where authenticating against Okta with OIDC wouldn't set the user name properly
+* Fixed an issue where authenticating with a large number of claims would cause the web server to return a 431 error
+* Fixed an issue where revoked app tokens would be deleted in the groom service immediately
+
 ## 1.5.10 - 2/1/2020
 
 {% hint style="warning" %}
