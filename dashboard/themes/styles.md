@@ -30,3 +30,19 @@ New-UDStyle -Style '
 
 ![UDStyled card](../../.gitbook/assets/image%20%28168%29.png)
 
+## Overriding Built in Styles
+
+Each Material UI component has a set of built in classes that you can override using `New-UDStyle`. To determine the class names that you need to override, you can view the API documentation for the component you are trying to modify on the Material UI site. For example, here is a listing of the Alert component's CSS [class names](https://material-ui.com/api/alert/#css). 
+
+When using a success alert, you will have the `.MuiAlert-standardSuccess` class applied to your component. You can override this default style like this. 
+
+```text
+New-UDStyle -Style '.MuiAlert-standardSuccess { background-color: red !important;  }  ' -Content {
+    New-UDAlert -Text "Hello"
+}
+```
+
+The resulting alert will be red instead of the default green. 
+
+![Alert with Red Background](../../.gitbook/assets/image%20%28213%29.png)
+
