@@ -71,6 +71,7 @@
   * [Feedback](dashboard/components/feedback/README.md)
     * [Modal](dashboard/components/feedback/modal.md)
     * [Progress](dashboard/components/feedback/progress.md)
+    * [Skeleton](dashboard/components/feedback/skeleton.md)
   * [Inputs](dashboard/components/inputs/README.md)
     * [Autocomplete](dashboard/components/inputs/automcomplete.md)
     * [Button](dashboard/components/inputs/button.md)
