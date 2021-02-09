@@ -69,6 +69,7 @@
     * [Charts](dashboard/components/data-visualization/charts.md)
     * [Map](dashboard/components/data-visualization/map.md)
   * [Feedback](dashboard/components/feedback/README.md)
+    * [Backdrop](dashboard/components/feedback/backdrop.md)
     * [Modal](dashboard/components/feedback/modal.md)
     * [Progress](dashboard/components/feedback/progress.md)
     * [Skeleton](dashboard/components/feedback/skeleton.md)
