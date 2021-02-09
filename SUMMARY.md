@@ -92,6 +92,8 @@
   * [Layout](dashboard/components/layout/README.md)
     * [Grid Layout](dashboard/components/layout/grid-layout.md)
     * [Grid](dashboard/components/layout/grid.md)
+  * [Utilities](dashboard/components/utilities/README.md)
+    * [Transitions](dashboard/components/utilities/transitions.md)
   * [Surfaces](dashboard/components/surfaces/README.md)
     * [AppBar](dashboard/components/surfaces/appbar.md)
     * [Card](dashboard/components/surfaces/card.md)
