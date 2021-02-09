@@ -4,17 +4,9 @@ description: Transition component for Universal Dashboard.
 
 # Transitions
 
+
+
 {% hint style="warning" %}
-```text
-        New-UDCard -Text "Hey"
-    } -In -Collapse -CollapseHeight 100 -Timeout 1000
-
-    New-UDSwitch -OnChange {
-        Set-UDElement -Id 'test' -Properties @{
-            in = $EventData -eq 'True'
-        }
-```
-
 This component is coming in a future version of Universal Dashboard.
 {% endhint %}
 
