@@ -57,6 +57,7 @@
   * [HTML](dashboard/components/html.md)
   * [Building Custom Components](dashboard/components/building-custom-components.md)
   * [Data Display](dashboard/components/data-display/README.md)
+    * [Alert](dashboard/components/data-display/alert.md)
     * [Chip](dashboard/components/data-display/chip.md)
     * [Date and Time](dashboard/components/data-display/date-and-time.md)
     * [Icon](dashboard/components/data-display/icon.md)
