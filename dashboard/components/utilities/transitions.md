@@ -116,3 +116,5 @@ New-UDSwitch -OnChange {
 } -Checked $true
 ```
 
+![Zoom Transition](../../../.gitbook/assets/zoom.gif)
+
