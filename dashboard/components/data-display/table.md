@@ -164,6 +164,24 @@ New-UDTable -Id 'service_table' -Data $Data -Columns $Columns -Title 'Services' 
 
 ![](../../../.gitbook/assets/image%20%28176%29.png)
 
+## Customizing Labels
+
+You can use the `-TextOption` parameter along with the `New-UDTableTextOption` cmdlet to set text fields within the table. 
+
+```text
+$Data = @(
+    @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+) 
+
+$Option = New-UDTableTextOption -Search "Search all these records"
+
+New-UDTable -Data $Data -TextOption $Option -ShowSearch
+```
+
 **New-UDTable**
 
 | Name | Type | Description | Required |
