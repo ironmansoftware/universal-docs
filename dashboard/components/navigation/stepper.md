@@ -27,17 +27,17 @@ Steppers display progress through a sequence of logical and numbered steps. They
 New-UDStepper -Steps {
     New-UDStep -OnLoad {
         New-UDElement -tag 'div' -Content { "Step 1" }
-        New-UDTextbox -Id 'txtStep1' 
+        New-UDTextbox -Id 'txtStep1' -Value $EventData.Context.txtStep1
     } -Label "Step 1"
     New-UDStep -OnLoad {
         New-UDElement -tag 'div' -Content { "Step 2" }
         New-UDElement -tag 'div' -Content { "Previous data: $Body" }
-        New-UDTextbox -Id 'txtStep2' 
+        New-UDTextbox -Id 'txtStep2' -Value $EventData.Context.txtStep2
     } -Label "Step 2"
     New-UDStep -OnLoad {
         New-UDElement -tag 'div' -Content { "Step 3" }
         New-UDElement -tag 'div' -Content { "Previous data: $Body" }
-        New-UDTextbox -Id 'txtStep3' 
+        New-UDTextbox -Id 'txtStep3' -Value $EventData.Context.txtStep3
     } -Label "Step 3"
 } -OnFinish {
     New-UDTypography -Text 'Nice! You did it!' -Variant h3
@@ -79,17 +79,17 @@ You will have to convert the JSON string to an object to work with in PowerShell
 New-UDStepper -Steps {
     New-UDStep -OnLoad {
         New-UDElement -tag 'div' -Content { "Step 1" }
-        New-UDTextbox -Id 'txtStep1' 
+        New-UDTextbox -Id 'txtStep1' -Value $EventData.Context.txtStep1
     } -Label "Step 1"
     New-UDStep -OnLoad {
         New-UDElement -tag 'div' -Content { "Step 2" }
         New-UDElement -tag 'div' -Content { "Previous data: $Body" }
-        New-UDTextbox -Id 'txtStep2' 
+        New-UDTextbox -Id 'txtStep2' -Value $EventData.Context.txtStep2
     } -Label "Step 2"
     New-UDStep -OnLoad {
         New-UDElement -tag 'div' -Content { "Step 3" }
         New-UDElement -tag 'div' -Content { "Previous data: $Body" }
-        New-UDTextbox -Id 'txtStep3' 
+        New-UDTextbox -Id 'txtStep3' -Value $EventData.Context.txtStep3
     } -Label "Step 3"
 } -OnFinish {
     New-UDTypography -Text 'Nice! You did it!' -Variant h3
