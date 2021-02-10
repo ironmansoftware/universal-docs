@@ -4,15 +4,11 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
-## 1.5.11 - Unreleased 
-
-{% hint style="info" %}
-These changes are available in [our nightly builds](https://ironmansoftware.com/downloads).
-{% endhint %}
+## 1.5.11 - 2/10/2021
 
 ### Includes
 
-* UniversalDashboard - v3.2.8
+* UniversalDashboard - v3.3.0
 * UniversalDashboard - v2.9.9
 * UniversalDashboard.Charts - 1.3.2
 * UniversalDashboard.Map - 1.0
@@ -27,10 +23,22 @@ These changes are available in [our nightly builds](https://ironmansoftware.com/
 * The UDStyle component is now included with the Universal package 
 * Added Restart button to the dashboard page in the admin console
 * Added -ExportOption to New-UDTable to configure which options to allow for export 
+* UDv3 - Added -Truncate to New-UDTableColumn to truncate and hide text that's long than the width of the column
+* UDv3 - Added -Footer to New-UDAppBar to allow for the creation of footers
+* UDv3 - Added -DisableThemeToggle to New-UDAppBar to hide the theme toggle switch
+* UDv3 - Added New-UDTransition
+* UDv3 - Added New-UDAlert
+* UDv3 - Added New-UDSkeleton
+* Added -SessionTimeout to New-UDDashboard to override the server session timeout per dashboard
+* Added support for assigning multiple roles to a dashboard.
+* UDv3 - Added New-UDBackdrop
+* UDv3 - Added -OnClick to New-UDLink
+* UDv3 - Added -Orientation to New-UDStepper
 
 #### Platform
 
 * Added support for configuring the correlation cookie same site settings for OIDC. 
+* Added support for specifying Git Branch for Git Sync
 
 ### Changed
 
@@ -39,6 +47,8 @@ These changes are available in [our nightly builds](https://ironmansoftware.com/
 * Fixed an issue where continuous schedules would cause the server to fail to execute jobs due to worker threads being exhausted
 * Fixed an issue where a schedule could run multiple times after service restart. 
 * Fixed an issue where one-time schedules could run more than once
+* Improved New-PSUSchedule -Script so you can pass a string in as well as a Script object
+* Fixed an issue where parameters names would hang off the schedule modal in the admin console. 
 
 #### Dashboard
 
@@ -50,6 +60,10 @@ These changes are available in [our nightly builds](https://ironmansoftware.com/
 * UDv3 - Fixed an issue where New-UDSelect with no options defined would cause a React error
 * Improved error message shown when a terminating exception is thrown during dashboard start up
 * Fixed an issue where cmdlets that rely on websockets and that use the -Broadcast parameter or when executed from scheduled endpoints would appear on all dashboards.
+* UDv3 - Fixed an issue where -Width on New-UDTableColumn didn't work.
+* UDv3 - Fixed an issue where New-UDDatePicker wouldn't work with non-US date formats.
+* UDv3 - Fixed an issue where New-UDProgress -Color, -ProgressColor and -BackgroundColor would not work.
+* UDv3 - Fixed -Icon on New-UDTab.
 
 #### Platform
 
@@ -58,6 +72,13 @@ These changes are available in [our nightly builds](https://ironmansoftware.com/
 * Fixed an issue where authenticating against Okta with OIDC wouldn't set the user name properly
 * Fixed an issue where authenticating with a large number of claims would cause the web server to return a 431 error
 * Fixed an issue where revoked app tokens would be deleted in the groom service immediately
+* Fixed an issue where variables were not available in authentication or authorization scripts.
+
+### Removed
+
+#### Dashboard
+
+* UDv3 - Removed -Stacked from New-UDTab
 
 ## 1.5.10 - 2/1/2020
 
