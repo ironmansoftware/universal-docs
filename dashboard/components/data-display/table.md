@@ -80,6 +80,27 @@ $Columns = @(
 New-UDTable -Data $Data -Columns $Columns -Sort -Export
 ```
 
+## Table Column Width 
+
+Column width can be defined using the `-Width` parameter. You can also decide to truncate columns that extend past that width. 
+
+```text
+    @{Dessert = 'Gingerbread'; Calories = 200; Fat = 6.0; Carbs = 24; Protein = 4.0}
+) 
+
+$Columns = @(
+    New-UDTableColumn -Property Dessert -Title Dessert -Render { 
+        New-UDButton -Id "btn$($EventData.Dessert)" -Text "Click for Dessert!" -OnClick { Show-UDToast -Message $EventData.Dessert } 
+    }
+    New-UDTableColumn -Property Calories -Title Calories -Width 5 -Truncate
+    New-UDTableColumn -Property Fat -Title Fat 
+    New-UDTableColumn -Property Carbs -Title Carbs 
+    New-UDTableColumn -Property Protein -Title Protein 
+)
+
+New-UDTable -Data $Data -Columns $Columns -Sort -Export
+```
+
 ## Table with server-side processing
 
 For a full example of server-side processing, [see this blog post](https://blog.ironmansoftware.com/universal-dashboard-server-side-table/).
