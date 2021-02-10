@@ -164,6 +164,22 @@ New-UDTable -Id 'service_table' -Data $Data -Columns $Columns -Title 'Services' 
 
 ![](../../../.gitbook/assets/image%20%28176%29.png)
 
+## Customizing Export Options
+
+You can decide which export options to present to your users using the `-ExportOption` cmdlet. The following example would only show the CSV export option. 
+
+```text
+
+$Data = try { get-service -ea Stop | select Name,@{n = "Status";e={ $_.Status.ToString()}},@{n = "StartupType";e={ $_.StartupType.ToString()}},@{n = "StartType";e={ $_.StartType.ToString()}} } catch {}
+$Columns = @(
+    New-UDTableColumn -Property Name -Title "Service Name" -IncludeInExport
+    New-UDTableColumn -Property Status -Title Status 
+    New-UDTableColumn -Property StartupType
+    New-UDTableColumn -Property StartType -IncludeInExport
+)
+New-UDTable -Id 'service_table' -Data $Data -Columns $Columns -Title 'Services' -ShowSearch -ShowPagination -Dense -Export -ExportOption "csv"
+```
+
 ## Customizing Labels
 
 You can use the `-TextOption` parameter along with the `New-UDTableTextOption` cmdlet to set text fields within the table. 
