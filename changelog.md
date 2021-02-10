@@ -83,6 +83,7 @@ description: Changelog for PowerShell Universal.
 ### Known Issues
 
 * Error with UDProgress - [https://github.com/ironmansoftware/universal-dashboard/issues/1680](https://github.com/ironmansoftware/universal-dashboard/issues/1680)
+* Manually run jobs will continue to run up to 10 times after finishing
 
 ## 1.5.10 - 2/1/2020
 
