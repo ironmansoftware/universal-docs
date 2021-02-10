@@ -4,6 +4,33 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 1.5.12 - 2/10/2021
+
+### Includes
+
+* UniversalDashboard - v3.3.1
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.0.4
+* UniversalDashboard.Style - 1.0.0
+
+### Added
+
+#### Dashboard
+
+* Added $AccessToken and $IdToken variables for accessing OIDC and WS-Fed tokens within dashboards. 
+
+### Changed
+
+#### Automation
+
+* Fixed an issue where manually executed jobs would continue to run after completing.
+
+#### Dashboard
+
+* UDv3 - Fixed an issue with UDProgress where an error about an invalid constructor would be shown.
+
 ## 1.5.11 - 2/10/2021
 
 ### Includes
