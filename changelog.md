@@ -80,6 +80,10 @@ description: Changelog for PowerShell Universal.
 
 * UDv3 - Removed -Stacked from New-UDTab
 
+### Known Issues
+
+* Error with UDProgress - [https://github.com/ironmansoftware/universal-dashboard/issues/1680](https://github.com/ironmansoftware/universal-dashboard/issues/1680)
+
 ## 1.5.10 - 2/1/2020
 
 {% hint style="warning" %}
