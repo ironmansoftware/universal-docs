@@ -4,10 +4,6 @@ description: A skeleton component for PowerShell Universal Dashboard.
 
 # Skeleton
 
-{% hint style="warning" %}
-The component will be available in a future version of Universal Dashboard.
-{% endhint %}
-
 A skeleton is a form of a loading component that can show a placeholder while data is received. 
 
 ## Variants

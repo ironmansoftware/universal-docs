@@ -4,10 +4,6 @@ description: Alert component for Universal Dashboard.
 
 # Alert
 
-{% hint style="warning" %}
-This component will be available in a future version of Universal Dashboard.
-{% endhint %}
-
 Alerts provide a simple way to communicate information to a user.
 
 ## Simple Alerts

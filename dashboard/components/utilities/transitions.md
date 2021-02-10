@@ -4,12 +4,6 @@ description: Transition component for Universal Dashboard.
 
 # Transitions
 
-
-
-{% hint style="warning" %}
-This component is coming in a future version of Universal Dashboard.
-{% endhint %}
-
 Transitions allow you to transition components in and out of view within your dashboard using various animations. You can take advantage of interactive cmdlets like `Set-UDElement` to change the transition state and cause an element to move in.
 
 In the following example, we have a card that transitions in via a Fade. Clicking the switch the toggle the card in and out. 
