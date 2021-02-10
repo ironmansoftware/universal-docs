@@ -4,7 +4,7 @@ description: UDStyle component for Universal Dashboard
 
 # Styles
 
-You can apply styles to individual components within Universal Dashboard by using the `UDStyle` component. This component can be found on the [Universal Dashboard Marketplace](https://marketplace.universaldashboard.io/Dashboard/UniversalDashboard.Style).
+You can apply styles to individual components within Universal Dashboard by using the `UDStyle` component. This component will need to be added to your dashboard and is part of the core components included with PowerShell Universal. 
 
 ## Applying a Style
 
