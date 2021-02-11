@@ -60,3 +60,20 @@ If you have configured a service account for your MSI installation, you will nee
 
 When upgrading with IIS, you will need to first stop your application pool to ensure that the binaries used by IIS are no longer in use and then replace the binaries with the new ones. Ensure that you follow the configuration persistence recommendations above with regards to the `web.config` file. 
 
+## LiteDB v5 Upgrade
+
+{% hint style="warning" %}
+This documentation is for a future version of PowerShell Universal
+{% endhint %}
+
+PowerShell Universal uses LiteDB to store jobs, app tokens, identities and git sync history. The original version of LiteDB included with PSU is version 4. We will be moving to version 5 in a future version. We have added version 5 support but are not yet upgrading users databases. You can choose to upgrade your database to version 5 by adjusting your connection string to perform an upgrade on the database. We suggest backing up your database file before doing so. 
+
+In `appsettings.json`, you will need to change the database type to `LiteDBv5` and add the upgrade parameter to the connection string. 
+
+```text
+  "Data": {
+    "RepositoryPath": "%ProgramData%\\UniversalAutomation\\Repository",
+    "ConnectionString": "filename=%ProgramData%\\UniversalAutomation\\database.db;upgrade=true",
+    "DatabaseType": "LiteDBv5",
+```
+
