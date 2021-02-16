@@ -107,6 +107,34 @@ New-UDStepper -Steps {
 }
 ```
 
+## Vertical Steppers
+
+You can create a vertical stepper by setting the `-Orientation` parameter to vertical. 
+
+```text
+New-UDStepper -Steps {
+    New-UDStep -OnLoad {
+        New-UDElement -tag 'div' -Content { "Step 1" }
+        New-UDTextbox -Id 'txtStep1' -Value $EventData.Context.txtStep1
+    } -Label "Step 1"
+    New-UDStep -OnLoad {
+        New-UDElement -tag 'div' -Content { "Step 2" }
+        New-UDElement -tag 'div' -Content { "Previous data: $Body" }
+        New-UDTextbox -Id 'txtStep2' -Value $EventData.Context.txtStep2
+    } -Label "Step 2"
+    New-UDStep -OnLoad {
+        New-UDElement -tag 'div' -Content { "Step 3" }
+        New-UDElement -tag 'div' -Content { "Previous data: $Body" }
+        New-UDTextbox -Id 'txtStep3' -Value $EventData.Context.txtStep3
+    } -Label "Step 3"
+} -OnFinish {
+    New-UDTypography -Text 'Nice! You did it!' -Variant h3
+    New-UDElement -Tag 'div' -Id 'result' -Content {$Body}
+} -Orientation 'vertical'
+```
+
+![](../../../.gitbook/assets/image%20%28217%29.png)
+
 **New-UDStepper**
 
 | Name | Type | Description | Required |
@@ -118,6 +146,7 @@ New-UDStepper -Steps {
 | AlternativeLabel | SwitchParameter | Places the step label under the step number. | false |
 | OnFinish | Endpoint | A script block that is executed when the stepper is finished. | true |
 | OnValidateStep | Endpoint | A script block that is executed when validating each step. | false |
+| Orientation | string | Vertical or Horizontal | false |
 
 
 
