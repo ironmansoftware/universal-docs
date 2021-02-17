@@ -397,6 +397,8 @@ New-UDNivoChart -Heatmap -Data $Data -IndexBy 'state' -keys @('cats', 'dogs', 'm
 
 #### Line
 
+![](../../../.gitbook/assets/image%20%28218%29.png)
+
 ```text
 [array]$Data = [PSCustomObject]@{
     id = "DataSet"
