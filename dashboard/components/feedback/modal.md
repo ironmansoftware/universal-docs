@@ -71,11 +71,8 @@ New-UDButton -Text 'Basic' -OnClick {
     Show-UDModal -Content {
         New-UDTypography -Text "Hello"
     }
-}
-
-New-UDynamic -Content {
-   Start-Sleep 5
-   Hide-UDModal
+    Start-Sleep 5
+    Hide-UDModal
 }
 ```
 
