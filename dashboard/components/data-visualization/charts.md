@@ -398,19 +398,16 @@ New-UDNivoChart -Heatmap -Data $Data -IndexBy 'state' -keys @('cats', 'dogs', 'm
 #### Line
 
 ```text
-$Data = 1..10 | ForEach-Object { 
-    @{
-        id = "Line$_"
-        data = @(
-            $item = Get-Random -Max 1000 
-            [PSCustomObject]@{
-                x = "Test$item"
-                y = $item
-            }
-        )
-    }
+[array]$Data = [PSCustomObject]@{
+    id = "DataSet"
+    data = (1..20 | ForEach-Object {
+        $item = Get-Random -Max 500 
+        [PSCustomObject]@{
+            x = "Test$item"
+            y = $item
+        }
+    })
 }
-
 New-UDNivoChart -Line -Data $Data -Height 500 -Width 1000 -LineWidth 1
 ```
 
