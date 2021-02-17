@@ -62,7 +62,22 @@ New-UDButton -Text 'Persistent' -OnClick {
 }
 ```
 
+## Hide a Modal
 
+You can use the `Hide-UDModal` button to hide a modal that is currently show. 
+
+```text
+New-UDButton -Text 'Basic' -OnClick {
+    Show-UDModal -Content {
+        New-UDTypography -Text "Hello"
+    }
+}
+
+New-UDynamic -Content {
+   Start-Sleep 5
+   Hide-UDModal
+}
+```
 
 **Show-UDModal**
 
