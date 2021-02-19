@@ -141,7 +141,7 @@ New-UDStepper -Steps {
 | :--- | :--- | :--- | :--- |
 | Id | String | The ID of the component. It defaults to a random GUID. | false |
 | ActiveStep | Int32 | Sets the active step. This should be the index of the step. | false |
-| Children | ScriptBlock | The steps for this stepper. Use New-UDStep to create new steps. | true |
+| Steps | ScriptBlock | The steps for this stepper. Use New-UDStep to create new steps. | true |
 | NonLinear | SwitchParameter | Allows the user to progress to steps out of order. | false |
 | AlternativeLabel | SwitchParameter | Places the step label under the step number. | false |
 | OnFinish | Endpoint | A script block that is executed when the stepper is finished. | true |
