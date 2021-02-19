@@ -60,7 +60,7 @@ Install the extension by searching for it in the extension page and clicking Ins
 
 Click the PowerShell Universal icon on the left hand side and the extension will attempt to connect using the default URL and user name. The extension will notify you once it has connected. 
 
-![](../.gitbook/assets/image%20%28162%29.png)
+![](../.gitbook/assets/image%20%28162%29%20%281%29.png)
 
 ### Inserting a Sample
 
