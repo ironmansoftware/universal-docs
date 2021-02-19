@@ -42,11 +42,11 @@ You may want to organize your dashboard into multiple PS1 files. You can do this
 $UDScriptRoot = $PSScriptRoot
 $Pages = @()
 $Pages += New-UDPage -Name 'Dashboard One' -Content {
-    . "$PSScriptRoot\db1.ps1"
+    . "$UDScriptRoot\db1.ps1"
 }
 
 $Pages += New-UDPage -Name 'Dashboard Two' -Content {
-    . "$PSScriptRoot\db2.ps1"
+    . "$UDScriptRoot\db2.ps1"
 }
 
 New-UDDashboard -Title 'Pages' -Pages $Pages
