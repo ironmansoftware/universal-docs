@@ -4,6 +4,47 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 1.5.13 - 2/19/2021
+
+### Includes
+
+* UniversalDashboard - v3.3.2
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.0.4
+* UniversalDashboard.Style - 1.0.0
+
+### **Added**
+
+#### Dashboard
+
+* Added -AutoDeploy to New-PSUDashboard allow configuring of whether a dashboard restarts when changes are made.
+* UDv3 - Added -SubmitText and -CancelText to New-UDForm for customizing button text.
+* UDv3 - Added -NextButtonText, -BackButtonText and -FinishButtonText to New-UDStepper.
+
+#### Platform
+
+* Added support for defining git sync behavior. You can now specify One-Way git sync that will make the console and API readonly and will only pull changes.
+* Added support for LiteDB v5
+
+### Changed
+
+#### Automation
+
+* Fixed an issue where string array parameters would not be passed correctly to scheduled jobs.
+
+#### Dashboard
+
+* UDv3 - Fixed an issue where table column max-width would be set to 0 by default. 
+* UDv3 - Fixed an issue where -Multiple and New-UDSelectGroup would not work together
+* No longer statically assign a Reader role when -GrantAppToken is used with New-PSUDashboard. 
+
+#### Platform
+
+* Fixed an issue where the admin console would redirect to the login page when the session timed out even if forms auth wasn't being used. 
+* Enabled the ability to disable forms authentication form the UI.
+
 ## 1.5.12 - 2/10/2021
 
 ### Includes
