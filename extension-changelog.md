@@ -4,6 +4,17 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 1.7.5 - 2/25/2021
+
+* Scripts are now sorted by name alphabetically
+* An error is now shown when the extension cannot connect to PowerShell Universal 
+* Removed the auto-import of UD and PSU modules. We recommend you install these from the PowerShell Gallery 
+
+```text
+Install-Module Universal
+Install-Module UniversalDashboard
+```
+
 ## 1.7.4 - 1/21/2021
 
 * Fixed an issue where the extension would fail to initialize on non-internet connected machines. 
