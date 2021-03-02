@@ -38,6 +38,45 @@ To create a chart, use `New-UDChartJS` and `New-UDChartJSData`. The below chart 
  New-UDChartJS -Type 'bar' -Data $Data -DataProperty CPU -LabelProperty ProcessName
 ```
 
+#### Stacked Bar
+
+```text
+    $GraphPrep = @(
+        @{ RAM = "Server1"; AvailableRam = 128; UsedRAM = 10 }
+        @{ RAM = "Server2"; AvailableRam = 64; UsedRAM = 63 }
+        @{ RAM = "Server3"; AvailableRam = 48; UsedRAM = 40 }
+        @{ RAM = "Server4"; AvailableRam = 64;; UsedRAM = 26 }
+        @{ RAM = "Server5"; AvailableRam = 128; UsedRAM = 120 }
+    )
+
+    $AvailableRamDataSet = New-UDChartJSDataset -DataProperty AvailableRAM -Label 'Available' -BackgroundColor blue
+    $UsedRamDataset = New-UDChartJSDataset -DataProperty UsedRAM -Label 'Used' -BackgroundColor red
+    $Options = @{
+        Type          = 'bar'
+        Data          = $GraphPrep
+        Dataset       = @($AvailableRamDataSet, $UsedRamDataset)
+        LabelProperty = "RAM"
+        Options = @{
+            scales = @{
+                xAxes = @(
+                @{
+                    stacked = $true
+                }
+            )
+            yAxes = @(
+                @{
+                    stacked = $true
+                }
+            )
+            }
+        }
+    } 
+
+    New-UDChartJS @Options   
+```
+
+![](../../../.gitbook/assets/image%20%28162%29.png)
+
 #### Horizontal Bar
 
 ![](../../../.gitbook/assets/image%20%28155%29.png)
