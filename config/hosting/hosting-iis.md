@@ -155,11 +155,21 @@ At this point, all the required configurations should be in place, and the IIS w
 You are are still experiencing issues with the basic IIS Configuration try checking the "Logs" path specified in the web.config for common issues. If you are still experiencing issues reach out on the forums or support for assistance.
 {% endhint %}
 
-## Idle Timeout 
+## Configuration for Jobs
 
-If you are going to be running scheduled jobs within your PowerShell Universal instance hosted in IIS, you must make sure to disable idle timeouts. If you do not, IIS will terminate your PSU process after a default of 20 minutes of idle time. This will cause jobs to fail to run since the process is not running. You can set the idle timeout to 0 to disable timeouts. 
+If you are going to be running scheduled jobs within your PowerShell Universal instance hosted in IIS, you must make sure to configure IIS appropriately. There are several settings to validate when configuring your application pool.
+
+### Idle Timeout
+
+IIS will terminate your PSU process after a default of 20 minutes of idle time. This will cause jobs to fail to run since the process is not running. You can set the idle timeout to 0 to disable timeouts. 
 
 ![](../../.gitbook/assets/image%20%28157%29.png)
+
+### Start Mode
+
+When the IIS server is restarted, the application pool will not start until the website is requested. You can avoid this by changing the start mode to Always Running for your application pool in Advanced Settings. 
+
+![](../../.gitbook/assets/image%20%28219%29.png)
 
 ## Authentication 
 
