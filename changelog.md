@@ -39,7 +39,7 @@ description: Changelog for PowerShell Universal.
 
 #### Dashboard
 
-* UDv3 - Fixed an issue with server-side filtering.
+* UDv3 - Fixed an issue with New-UDTable server-side filtering.
 * Multiple roles can now be assigned to a published folder
 * Fixed an issue where creating a new dashboard would always have auto start and auto deploy disabled.
 * UDv3 - Fixed an issue with -Endpoint on New-UDColumn.
