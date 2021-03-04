@@ -276,5 +276,5 @@ JSON Web Token configuration settings
 
 ### **HideAdminConsole**
 
-Prevents the service from serving the admin console. 
+Prevents the service from serving the admin console.  This will prevent the admin console from being used by any user, including administrators. 
 
