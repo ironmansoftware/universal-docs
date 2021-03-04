@@ -4,6 +4,53 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 1.5.14 - 3/4/2021
+
+### Includes
+
+* UniversalDashboard - v3.3.3
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.0.4
+* UniversalDashboard.Style - 1.0.0
+
+### Added
+
+#### Dashboard
+
+* UDv3 - Added -DisableThemeToggle to New-UDDashboard
+
+#### Platform
+
+* Added a CorrelationCookie setting to WS-Federation authentication.
+
+### Changed
+
+#### API
+
+* Multiple roles can now be assigned to an endpoint
+
+#### Automation
+
+* Help - Invoke-UAScript - Fixed an issue with one of the examples 
+* Fixed an issue where Get-PSUJobOutput would only return errors. 
+* Fixed an issue where one-time schedules could be updated or deleted incorrectly
+
+#### Dashboard
+
+* UDv3 - Fixed an issue with server-side filtering.
+* Multiple roles can now be assigned to a published folder
+* Fixed an issue where creating a new dashboard would always have auto start and auto deploy disabled.
+* UDv3 - Fixed an issue with -Endpoint on New-UDColumn.
+* UDv3 - New-UDPage now supports an array of roles for the -Role parameter
+* Fixed an issue where the authentication switch wouldn't work in the dashboard properties dialog.
+
+#### Platform
+
+* Fixed an issue where roles would be duplicated
+* Fixed an issue where WS-Federation would not work due to an correlation cookie problem.
+
 ## 1.5.13 - 2/19/2021
 
 ### Includes
