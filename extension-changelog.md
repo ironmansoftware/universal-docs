@@ -4,6 +4,15 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 1.8.1 - 3/4/2021
+
+* Fixed an issue where the Local Editing setting was on by default
+* Added an error message when a local file isn't found
+
+## 1.8.0 - 3/1/2021
+
+* Added Local Editing Setting to edit files locally rather than via the REST API. 
+
 ## 1.7.5 - 2/25/2021
 
 * Scripts are now sorted by name alphabetically
