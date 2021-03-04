@@ -184,7 +184,8 @@ Configures the hosts that are allowed to make cross-origin resource sharing requ
       "Wtrealm": "",
       "CallbackPath": "/auth/signin-wsfed",
       "Wreply": "",
-      "UseTokenLifetime": true
+      "UseTokenLifetime": true,
+      "CorrelationCookieSameSite": ""
     },
     "OIDC": {
       "Enabled": "false",
@@ -237,6 +238,7 @@ WS-Federation authentication settings.
 | Wreply |  |
 | CallbackPath | The path that the OIDC provider will call back to. |
 | UseTokenLifetime | If set to true, the cookie life time will be set to the token life time. This overrides the session time out value. |
+| CorrelationCookieSameSite | [Correlation cookie same settings. ](https://docs.microsoft.com/en-us/aspnet/core/security/samesite?view=aspnetcore-5.0) |
 
 ### **JWT**
 
