@@ -4,9 +4,18 @@ description: Examples of PowerShell Universal configurations.
 
 # Examples
 
-{% hint style="warning" %}
-We recommend using the Sample Browser in the [PowerShell Universal Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal) extension to easily view these examples.
-{% endhint %}
+## Component Examples
+
+We maintain several component libraries that you can use in your dashboards directly or as examples. 
+
+* [Active Directory](https://github.com/ironmansoftware/powershell-universal/blob/master/Components/ActiveDirectory/UniversalDashboard.ActiveDirectory.psm1)
+* [Azure](https://github.com/ironmansoftware/powershell-universal/tree/master/Components/Azure) 
+* [Hyper-V](https://github.com/ironmansoftware/powershell-universal/tree/master/Components/Hyper-V) 
+* [Monitoring](https://github.com/ironmansoftware/powershell-universal/tree/master/Components/Monitoring)
+* [Network](https://github.com/ironmansoftware/powershell-universal/tree/master/Components/Network)
+* [SQL](https://github.com/ironmansoftware/powershell-universal/tree/master/Components/SQL)
+
+## Single-File Configuration Examples 
 
 This page contains examples of PowerShell Universal configurations. All examples are built using single-file hosting and configuration. These examples assume that you have PowerShell Universal installed. To install PowerShell Universal, use the following command line. 
 
