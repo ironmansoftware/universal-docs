@@ -28,7 +28,7 @@ File a bug report or feature request for PowerShell Universal.
 
 Samples that can be inserted into your PowerShell Universal system using the [PowerShell Universal extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal).
 
-## [Videos](https://www.youtube.com/channel/UC8HyhY8iCqyX6-rmAPN7SvA)
+## [Videos](https://www.youtube.com/watch?v=LaZA90UzLPw&list=PL-0mHH7DlSiQ5q66FXHerWv2vOOodD2U9)
 
 Check out video tutorials for PowerShell Universal. 
 
