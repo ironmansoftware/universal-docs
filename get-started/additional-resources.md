@@ -8,7 +8,7 @@ Download the latest version of PowerShell Universal.
 
 The Ironman Software blog has articles about PowerShell Universal. 
 
-## [Forums](https://forums.universaldashboard.io)
+## [Forums](https://forums.ironmansoftware.com)
 
 Connect with the PowerShell Universal community. 
 
