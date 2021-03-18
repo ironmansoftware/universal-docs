@@ -90,11 +90,11 @@ New-UDRow -Columns {
 | Name | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | Id | String | The ID of the component. It defaults to a random GUID. | false |
-| ExtraSmallSize | Int32 | The size \(1-24\) for extra small devices. | false |
-| SmallSize | Int32 | The size \(1-24\) for small devices. | false |
-| MediumSize | Int32 | The size \(1-24\) for medium devices. | false |
-| LargeSize | Int32 | The size \(1-24\) for large devices. | false |
-| ExtraLargeSize | Int32 | The size \(1-24\) for extra large devices. | false |
+| ExtraSmallSize | Int32 | The size \(1-12\) for extra small devices. | false |
+| SmallSize | Int32 | The size \(1-12\) for small devices. | false |
+| MediumSize | Int32 | The size \(1-12\) for medium devices. | false |
+| LargeSize | Int32 | The size \(1-12\) for large devices. | false |
+| ExtraLargeSize | Int32 | The size \(1-12\) for extra large devices. | false |
 | Container | SwitchParameter | Whether this is a container. A container can be best described as a row. | false |
 | Spacing | Int32 | Spacing between the items. | false |
 | Item | SwitchParameter | Whether this is an item in a container. | false |
