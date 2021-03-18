@@ -37,5 +37,15 @@ This produces a dashboard with a background image of Austin the dog sleeping in 
 
 ![](../../.gitbook/assets/image%20%28165%29.png)
 
+## Determining the Correct Class Names
 
+Every Material UI component has a series of global class names that you can use to apply styles throughout your dashboard. To determine the correct class names, you can view the a particular component's API documentation. There is a list of the global class names that apply to that component. 
+
+For example, here is the [CSS documentation for the Alert component](https://material-ui.com/api/alert/#css). 
+
+Within your CSS file, you can use these class names to override styles throughout your dashboard. If you wanted to set all success alerts to have a red background, you could create a CSS file like this. 
+
+```css
+.MuiAlert-standardSuccess { background-color: red !important;  }
+```
 

@@ -40,7 +40,7 @@ Install-Module UniversalDashboard.Helmet
 
 Depending on how the components were installed, you may need to import the module in your dashboard file.
 
-```js
+```PowerShell
 import-Module UniversalDashboard.Helmet
 ```
 

@@ -44,23 +44,84 @@ $Env:Jwt__SigningKey = "mySigningKey"
 
 ## Setting Descriptions
 
-**Kestrel / Endpoints** 
+### Kestrel / Endpoints 
+
+**Default Value**
+
+```json
+	"Kestrel": {
+  "Endpoints": {
+    "HTTP": {
+      "Url": "http://*:5000"
+    }
+  },
+  "RedirectToHttps": "false"
+},
+```
 
 The Kestrel endpoints section allows you to configure the web server. This settings are not used when hosting in IIS. In this section you can configure options like HTTPS and the port that Universal is listening on. 
 
 Kestrel is the web server implementation for ASP.NET Core that PowerShell Universal uses. For more information on the configuration options for Kestrel, visit this [Microsoft Documentation page](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-3.1#listenoptionsusehttps). 
 
-* RedirectToHttps - When true, the web server will redirect HTTP requests to HTTPS
+| Key | Description |
+| :--- | :--- |
+| RedirectToHttps | When true, the web server will redirect HTTP requests to HTTPS |
 
-**Logging**
+### Application Insights
+
+**Default value**
+
+```json
+	"ApplicationInsights": {
+  "InstrumentationKey": ""
+},
+```
+
+| Key | Description |
+| :--- | :--- |
+| InstrumentationKey | Sets the instrumentation key for Application Insights.  |
+
+### Logging
+
+**Default Value**
+
+```json
+	"Logging": {
+  "Path": "%PROGRAMDATA%/PowerShellUniversal/log.txt",
+  "RetainedFileCountLimit": 31,
+  "LogLevel": {
+    "Default": "Information",
+    "Microsoft": "Warning",
+    "Microsoft.Hosting.Lifetime": "Information"
+  }
+},
+```
 
 The logging options define the level of logging exposed by Universal. The core Universal logging setting Logging / LogLevel / Default can be adjusted to increase the level of logging by the Universal components.
 
-**AllowedHosts**
+| Key | Description |
+| :--- | :--- |
+| Path | Path to the log file. |
+| RetainedFileCountLimit | The number of log files to retain. A new log file will be created each day. |
+| LogLevel | The log levels for various portions for the Universal server. You can set values such as Debug, Information, Warning and Error.  |
+
+### AllowedHosts
+
+**Default Value**
+
+```json
+	"AllowedHosts": "*",
+```
 
 The hosts that are allowed to connect to the webserver. Defaults to any host. 
 
-**CorsHosts**
+### **CorsHosts**
+
+**Default Value**
+
+```json
+	"CorsHosts": "",
+```
 
 Configures the hosts that are allowed to make cross-origin resource sharing requests \(CORS\) to the server. To allow multiple hosts, separate each host by a semicolon. 
 
@@ -68,32 +129,152 @@ Configures the hosts that are allowed to make cross-origin resource sharing requ
 "CorsHosts" : "https://www.google.com;https://login.microsoftonline.com"
 ```
 
-**Data**
+### **Data**
 
-* RepositoryPath - Path to the internal git repository used by Universal
-* ConnectionString - Path to the database used by Universal
-* GitRemote - Git remote used to sync to Universal
-* GitUserName - Git user name used to sync to the GitRemote
-* GitPassword - Git password used to sync to the GitRemote
-* ConfigurationScript - Location of a custom configuration script to load. You can return objects like scripts, dashboards and endpoints from this script. 
+**Default Value**
 
-**API**
+```json
+	"Data": {
+  "RepositoryPath": "%ProgramData%\\UniversalAutomation\\Repository",
+  "ConnectionString": "%ProgramData%\\UniversalAutomation\\database.db",
+  "GitRemote": "",
+  "GitUserName": "",
+  "GitPassword": "", 
+  "GitBranch": "",
+  "ConfigurationScript": ""
+},
+```
 
-Url - Sets the external URL used internally by Universal. This is necessary when running Universal from within a reverse proxy like IIS. When using cmdlets like `Get-UAScript` from within a running job, the Universal server needs to determine where the web server. When running within a proxy, it cannot determine this itself. You will want to configure this to point to the name and port of the IIS website in this configuration. 
+| Key | Description |
+| :--- | :--- |
+| RepositoryPath | Path to the storage location of the configuration files used by Universal. |
+| ConnectionString | Path to the database used by Universal. |
+| GitRemote | Git remote used to sync to Universal. |
+| GitBranch  | Git branch to checkout when syncing to Universal. |
+| GitUserName | Git user name used to sync to the GitRemote. When using a PAT, this can be any value. |
+| GitPassword | The Git user password or personal access token used to sync to the GitRemote. |
+| ConfigurationScript | Location of a custom configuration script to load. You can return objects like scripts, dashboards and endpoints from this script.  |
 
-**Authentication**
+### **API**
 
-Windows - Enables or disables Windows Authentication. This setting only works when hosting in IIS and requires that the IIS website has Windows Authentication enabled and Anonymous Authentication disabled. 
+**Default Value**
 
-OIDC - OpenID Connect authentication settings. You will need to set enabled to true and then set your OIDC settings within the subsequent parameters. You will automatically be forwarded to the OIDC login page when attempting to visit the website. 
+```json
+	"Api": {
+  "Url": ""
+},
+```
 
-WSFed - WS-Federation authentication settings. To enable WS-Federation, ensure that enabled is set to true. You will need to MetadataAddress and Wtrealm to the values you configured in your WS-Federation service. 
+| Key | Description |
+| :--- | :--- |
+| Url | Sets the external URL used internally by Universal. This is necessary when running Universal from within a reverse proxy like IIS. When using cmdlets like `Get-UAScript` from within a running job, the Universal server needs to determine where the web server. When running within a proxy, it cannot determine this itself. You will want to configure this to point to the name and port of the IIS website in this configuration.  |
 
-**JWT**
+### **Authentication**
 
-JSON Web Token configuration settings. These settings are used for enforcement and granting of web tokens. You should override the default signing key if you plan to use App Tokens. Read-only App Tokens are granted internally when a job calls the Universal cmdlets. You can also issue Read\Write tokens so that jobs can invoke other jobs or set variables. 
+**Default Value**
 
-**HideAdminConsole**
+```json
+	"Authentication" : {
+    "Windows": {
+      "Enabled": "false"
+    },
+    "WSFed": {
+      "Enabled": "false",
+      "MetadataAddress": "",
+      "Wtrealm": "",
+      "CallbackPath": "/auth/signin-wsfed",
+      "Wreply": "",
+      "UseTokenLifetime": true,
+      "CorrelationCookieSameSite": ""
+    },
+    "OIDC": {
+      "Enabled": "false",
+      "CallbackPath": "/auth/signin-oidc",
+      "ClientID": "",
+      "ClientSecret": "",
+      "Resource": "",
+      "Authority": "",
+      "ResponseType": "",
+      "SaveTokens": "false",
+      "CorrelationCookieSameSite": "",
+      "UseTokenLifetime": true
+    },
+    "SessionTimeout": "25"
+  },
+```
 
-Prevents the service from serving the admin console. 
+**Windows**
+
+| **Key** | Description |
+| :--- | :--- |
+| Enabled | Enables or disables [Windows Authentication](../api/security.md#authenticating-with-windows-authentication).  |
+
+#### OIDC
+
+OpenID Connect authentication settings. 
+
+| Key | Description |
+| :--- | :--- |
+| Enabled | Whether OIDC is enabled. |
+| CallbackPath | The path that the OIDC provider will call back to. |
+| ClientID | The configured OIDC client ID. |
+| ClientSecret | The configured OIDC client secret.  |
+| Resource | Resources granted with this OIDC token. |
+| Authority | The authority to invoke when authenticating. This is the URL of your OIDC provider.  |
+| ResponseType | The type of response returned by the provider. This most common value here is `code` |
+| SaveTokens | Whether to save the token so it is available to endpoints like dashboards.  |
+| CorrelationCookieSameSite | [Correlation cookie same settings. ](https://docs.microsoft.com/en-us/aspnet/core/security/samesite?view=aspnetcore-5.0) |
+| UseTokenLifetime | If set to true, the cookie life time will be set to the token life time. This overrides the session time out value.   |
+
+#### WSFed
+
+WS-Federation authentication settings. 
+
+| Key | Description |
+| :--- | :--- |
+| Enabled | Whether WS-Fed is enabled. |
+| MetadataAddress | The metadata address to retrieve information about the WS-Fed instance.  |
+| Wrealm |  |
+| Wreply |  |
+| CallbackPath | The path that the OIDC provider will call back to. |
+| UseTokenLifetime | If set to true, the cookie life time will be set to the token life time. This overrides the session time out value. |
+| CorrelationCookieSameSite | [Correlation cookie same settings. ](https://docs.microsoft.com/en-us/aspnet/core/security/samesite?view=aspnetcore-5.0) |
+
+### **JWT**
+
+JSON Web Token configuration settings
+
+**Default Value**
+
+```json
+	"Jwt": {  
+  "SigningKey": "PleaseUseYourOwnSigningKeyHere",  
+  "Issuer": "IronmanSoftware",
+  "Audience": "PowerShellUniversal"
+},
+```
+
+| Key | Description |
+| :--- | :--- |
+| SigningKey | The signing key for the JWT tokens.  |
+| Issuer | The issuer that will be included in the token. |
+| Audience | The audience that will be included in the token. |
+
+### UniversalDashboard
+
+**Default Value**
+
+```json
+	"UniversalDashboard": {
+  "AssetsFolder": "%ProgramData%\\PowerShellUniversal\\Dashboard"
+},
+```
+
+| Key | Description |
+| :--- | :--- |
+| AssetsFolder | The location to store components and frameworks.  |
+
+### **HideAdminConsole**
+
+Prevents the service from serving the admin console.  This will prevent the admin console from being used by any user, including administrators. 
 

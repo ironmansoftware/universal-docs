@@ -4,6 +4,202 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 1.5.14 - 3/4/2021
+
+### Includes
+
+* UniversalDashboard - v3.3.3
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.0.4
+* UniversalDashboard.Style - 1.0.0
+
+### Added
+
+#### Dashboard
+
+* UDv3 - Added -DisableThemeToggle to New-UDDashboard
+
+#### Platform
+
+* Added a CorrelationCookie setting to WS-Federation authentication.
+
+### Changed
+
+#### API
+
+* Multiple roles can now be assigned to an endpoint
+
+#### Automation
+
+* Help - Invoke-UAScript - Fixed an issue with one of the examples 
+* Fixed an issue where Get-PSUJobOutput would only return errors. 
+* Fixed an issue where one-time schedules could be updated or deleted incorrectly
+
+#### Dashboard
+
+* UDv3 - Fixed an issue with New-UDTable server-side filtering.
+* Multiple roles can now be assigned to a published folder
+* Fixed an issue where creating a new dashboard would always have auto start and auto deploy disabled.
+* UDv3 - Fixed an issue with -Endpoint on New-UDColumn.
+* UDv3 - New-UDPage now supports an array of roles for the -Role parameter
+* Fixed an issue where the authentication switch wouldn't work in the dashboard properties dialog.
+
+#### Platform
+
+* Fixed an issue where roles would be duplicated
+* Fixed an issue where WS-Federation would not work due to an correlation cookie problem.
+
+## 1.5.13 - 2/19/2021
+
+### Includes
+
+* UniversalDashboard - v3.3.2
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.0.4
+* UniversalDashboard.Style - 1.0.0
+
+### **Added**
+
+#### Dashboard
+
+* Added -AutoDeploy to New-PSUDashboard allow configuring of whether a dashboard restarts when changes are made.
+* UDv3 - Added -SubmitText and -CancelText to New-UDForm for customizing button text.
+* UDv3 - Added -NextButtonText, -BackButtonText and -FinishButtonText to New-UDStepper.
+
+#### Platform
+
+* Added support for defining git sync behavior. You can now specify One-Way git sync that will make the console and API readonly and will only pull changes.
+* Added support for LiteDB v5
+
+### Changed
+
+#### Automation
+
+* Fixed an issue where string array parameters would not be passed correctly to scheduled jobs.
+
+#### Dashboard
+
+* UDv3 - Fixed an issue where table column max-width would be set to 0 by default. 
+* UDv3 - Fixed an issue where -Multiple and New-UDSelectGroup would not work together
+* No longer statically assign a Reader role when -GrantAppToken is used with New-PSUDashboard. 
+
+#### Platform
+
+* Fixed an issue where the admin console would redirect to the login page when the session timed out even if forms auth wasn't being used. 
+* Enabled the ability to disable forms authentication form the UI.
+
+## 1.5.12 - 2/10/2021
+
+### Includes
+
+* UniversalDashboard - v3.3.1
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.0.4
+* UniversalDashboard.Style - 1.0.0
+
+### Added
+
+#### Dashboard
+
+* Added $AccessToken and $IdToken variables for accessing OIDC and WS-Fed tokens within dashboards. 
+
+### Changed
+
+#### Automation
+
+* Fixed an issue where manually executed jobs would continue to run after completing.
+
+#### Dashboard
+
+* UDv3 - Fixed an issue with UDProgress where an error about an invalid constructor would be shown.
+
+## 1.5.11 - 2/10/2021
+
+### Includes
+
+* UniversalDashboard - v3.3.0
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.0.4
+* UniversalDashboard.Style - 1.0.0
+
+### Added
+
+#### Dashboard
+
+* UDv3 - Added New-UDTableTextOption to allow for customizing table text like search and export labels.
+* The UDStyle component is now included with the Universal package 
+* Added Restart button to the dashboard page in the admin console
+* Added -ExportOption to New-UDTable to configure which options to allow for export 
+* UDv3 - Added -Truncate to New-UDTableColumn to truncate and hide text that's long than the width of the column
+* UDv3 - Added -Footer to New-UDAppBar to allow for the creation of footers
+* UDv3 - Added -DisableThemeToggle to New-UDAppBar to hide the theme toggle switch
+* UDv3 - Added New-UDTransition
+* UDv3 - Added New-UDAlert
+* UDv3 - Added New-UDSkeleton
+* Added -SessionTimeout to New-UDDashboard to override the server session timeout per dashboard
+* Added support for assigning multiple roles to a dashboard.
+* UDv3 - Added New-UDBackdrop
+* UDv3 - Added -OnClick to New-UDLink
+* UDv3 - Added -Orientation to New-UDStepper
+
+#### Platform
+
+* Added support for configuring the correlation cookie same site settings for OIDC. 
+* Added support for specifying Git Branch for Git Sync
+
+### Changed
+
+#### Automation
+
+* Fixed an issue where continuous schedules would cause the server to fail to execute jobs due to worker threads being exhausted
+* Fixed an issue where a schedule could run multiple times after service restart. 
+* Fixed an issue where one-time schedules could run more than once
+* Improved New-PSUSchedule -Script so you can pass a string in as well as a Script object
+* Fixed an issue where parameters names would hang off the schedule modal in the admin console. 
+
+#### Dashboard
+
+* UDv3 - Fixed an issue where vertical tabs would have a static height.
+* UDv3 - Fixed an issue with New-UDTable -ShowPagination where it would automatically turn on pagination even when it wasn't used
+* UDv3 - Fixed an issue where New-UDTable would sort the first column ascending by default \(now uses the data as-is if no sort is specified\)
+* UDv3 - Fixed an issue where sorting was enabled on New-UDTable by default. You now need to enable it with -ShowSort
+* UDv3 - Fixed an issue where -ArgumentList would not work on New-UDDynamic
+* UDv3 - Fixed an issue where New-UDSelect with no options defined would cause a React error
+* Improved error message shown when a terminating exception is thrown during dashboard start up
+* Fixed an issue where cmdlets that rely on websockets and that use the -Broadcast parameter or when executed from scheduled endpoints would appear on all dashboards.
+* UDv3 - Fixed an issue where -Width on New-UDTableColumn didn't work.
+* UDv3 - Fixed an issue where New-UDDatePicker wouldn't work with non-US date formats.
+* UDv3 - Fixed an issue where New-UDProgress -Color, -ProgressColor and -BackgroundColor would not work.
+* UDv3 - Fixed -Icon on New-UDTab.
+
+#### Platform
+
+* Fixed a problem where certain authentication providers wouldn't work with OIDC due to correlation cookie problems. 
+* Fixed an issue where setting an identity from a specific role back to Policy Defined would result in the policy not executing correctly
+* Fixed an issue where authenticating against Okta with OIDC wouldn't set the user name properly
+* Fixed an issue where authenticating with a large number of claims would cause the web server to return a 431 error
+* Fixed an issue where revoked app tokens would be deleted in the groom service immediately
+* Fixed an issue where variables were not available in authentication or authorization scripts.
+
+### Removed
+
+#### Dashboard
+
+* UDv3 - Removed -Stacked from New-UDTab
+
+### Known Issues
+
+* Error with UDProgress - [https://github.com/ironmansoftware/universal-dashboard/issues/1680](https://github.com/ironmansoftware/universal-dashboard/issues/1680)
+* Manually run jobs will continue to run up to 10 times after finishing
+
 ## 1.5.10 - 2/1/2020
 
 {% hint style="warning" %}

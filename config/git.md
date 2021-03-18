@@ -8,11 +8,33 @@ PowerShell Universal is capable of synchronizing the configuration scripts with 
 
 ## Git Synchronization Behavior
 
-Git sync will automatically push and pull changes between the default remote branch. Universal currently does not support multiple branches. 
+### Two-Way
+
+By default, git synchronization will work both ways. If you make changes within the PSU admin console, those changes will be committed and sync'd to the configured remote. 
+
+Any changes that are made in the remote will be pulled locally. 
 
 If you setup git sync with a preexisting git remote, the changes will be pulled and synchronized locally. You cannot have any changes locally.
 
 If you setup git sync with a bare repository, the local changes will be sync'd and the repository will be initialized. 
+
+### One-Way
+
+You can adjust the git synchronization behavior by changing the `GitSyncBehavior` setting in `appsettings.json`. When set to `OneWay`, the admin console and management API will become read-only. The PowerShell Universal system will pull from the remote but will never push or commit locally. 
+
+```json
+	"Data": {
+    "RepositoryPath": "%ProgramData%\\UniversalAutomation\\Repository",
+    "ConnectionString": "%ProgramData%\\UniversalAutomation\\database.db",
+    "DatabaseType": "LiteDB",
+    "GitRemote": "https://github.com/myorg/myrepo.git",
+    "GitUserName": "any",
+    "GitPassword": "MYPAT----------------"
+    "GitBranch": "dev",
+    "GitSyncBehavior": "OneWay",
+    "ConfigurationScript": ""
+  },
+```
 
 ## Personal Access Token
 

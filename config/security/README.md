@@ -147,6 +147,59 @@ The Execute role grants the ability to run scripts and read access for everythin
 
 The Reader role provides read-only access to PowerShell Universal.
 
+### Users with Many Groups
+
+If your users are members of more than about 40 groups you may experience problems logging in. This is due to size limits of the HTTP headers in IIS and Kestrel. The more groups a user is a member of, the more authorization claims they have and the large the header. 
+
+You can increase the header limit for Kestrel by using the limits configuration in `appsettings.json` file. You will need to increase the header size. It is a value in bytes and defaults to 32kb.  
+
+```PowerShell
+{
+  "Kestrel": {
+    "Endpoints": {
+      "HTTP": {
+        "Url": "http://*:5000"
+      }
+    },
+    "Limits": {
+      "MaxRequestHeadersTotalSize": 132768
+    },
+    "RedirectToHttps": "false"
+  },
+```
+
+### IIS Authorization 
+
+Authorization in IIS works as with any other method but you need to be aware of the request header size limit. You may receive errors when you enable claims that include many groups. They can exceed the header size limit and IIS will return errors. We have found that about 40 Azure Active Directory groups will cause this issue on a default IIS installation. 
+
+The error you will receive will either be a 400 error with the request is too long.
+
+![](../../.gitbook/assets/image%20%28150%29.png)
+
+If you have HTTPS enabled, you will receive an error about a HTTP2 protocol error. 
+
+![](../../.gitbook/assets/image%20%284%29.png)
+
+You can increase the IIS request size by setting the following registry keys. You will need to restart you machine in order for them to take affect. 
+
+```PowerShell
+HKLM:\System\CurrentControlSet\Services\Http\Parameters
+    MaxFieldLength: DWORD
+    
+HKLM:\System\CurrentControlSet\Services\Http\Parameters
+    MaxRequestBytes: DWORD
+```
+
+More information can be found on [Microsoft's documentation](https://docs.microsoft.com/en-us/troubleshoot/iis/http-bad-request-response-kerberos#workaround-2-set-maxfieldlength-and-maxrequestbytes-registry-entries). 
+
+As an alternative to increasing the request size, you can also reduce the number of groups sent. In Azure Active Directory, you can set to just the groups assigned to the application to prevent all groups from being sent. 
+
+In Azure go to **App registrations** &gt; \(Select the app\) &gt; **Token Configuration**, and specify Groups assigned to the application. ![](https://support.ironmansoftware.com/api/v1/threads/548223000001702109/inlineImages/edbsndabe757f382adbd6bf97fb8f980f999a0299e9db01c2972b353b3c8c4ffe29e6ae82d11d75341af2d224cd8f4103b9b009cb9d18e2809c18ece1c19c88900fe13e6b2866bb6604db1b7c9360f4da552d?et=17798841e64&ha=5d1aea069a1f58d946c8dad4e93abec12ca48d705aad7500a321b0c311d7e581&f=1.png)
+
+Now go to **Enterprise Application** &gt; \(Select the app\) &gt; **Users and groups**. Assign the group\(s\) you are interested in including in the claims. \(Note: this can also be used as a security boundary if you set “User Assignment Required” to Yes in the ‘Properties’ section of the app\)
+
+![](https://support.ironmansoftware.com/api/v1/threads/548223000001702109/inlineImages/edbsndabe757f382adbd6bf97fb8f980f999a0299e9db01c2972b353b3c8c4ffe29e6ae82d11d75341af2d224cd8f4103b9b0ba101ed249f6cf46a1cf05c5cfe5650d84cedc32ef9ab20a4535665ec422da7b?et=17798841e64&ha=0397e6316da5e7ab913c1ec8c932ba854c1a88d27c54044ea299ca2dac438aef&f=2.png)
+
 ## App Tokens
 
 App Tokens can be assigned to services that cannot login interactively. You can grant a new app token to your account by clicking the Grant App Token button within the Security / App Tokens tab. 

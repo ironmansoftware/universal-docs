@@ -26,6 +26,12 @@ Outlined buttons are medium-emphasis buttons. They contain actions that are impo
 New-UDButton -Variant 'outlined' -Text 'Default' 
 ```
 
+## Control Button Size
+
+You can control the pixel size of a button based on pixel size by using the Style parameter
+
+'''text New-UDButton -Id "Submit" -Text "Submit" -Style @{ Width = "150px" Height = "100px" }
+
 ## Buttons with icons and label
 
 ![](../../../.gitbook/assets/image%20%2882%29.png)
@@ -45,8 +51,6 @@ New-UDButton -Text 'Message Box' -OnClick {
     Show-UDToast -Message 'Hello, world!'
 }
 ```
-
-
 
 **New-UDButton**
 

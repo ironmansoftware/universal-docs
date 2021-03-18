@@ -100,3 +100,21 @@ New-PSUEnvironment -Name 'Env' -Path 'powershell.exe' -PersistentRunspace
 
 You will need to ensure that the environment is used by the dashboard. 
 
+## Automatically Granting App Tokens
+
+You can automatically grant app tokens to users that visit dashboards. This is useful if you want to invoke the management API for PowerShell Universal from within a dashboard. Your dashboard will need to have authentication enabled and you will have to use the `-GrantAppToken` switch parameter on `New-PSUDashboard`. 
+
+```PowerShell
+New-PSUDashboard -Name 'Dashboard' -BaseUrl '/' -Framework "UniversalDashboard:Latest" -Authenticated -GrantAppToken
+```
+
+From within your dashboard, you can now invoke the management API without having to worry about app token management. The API will be invoked in the context of the user that is visiting the dashboard. 
+
+```PowerShell
+New-UDDashboard -Title "Hello, World!" -Content {
+    New-UDButton -Text 'Job' -OnClick {
+        Invoke-UAScript -Name 'Test.ps1'
+    }
+}
+```
+

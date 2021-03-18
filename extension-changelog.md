@@ -4,6 +4,26 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 1.8.1 - 3/4/2021
+
+* Fixed an issue where the Local Editing setting was on by default
+* Added an error message when a local file isn't found
+
+## 1.8.0 - 3/1/2021
+
+* Added Local Editing Setting to edit files locally rather than via the REST API. 
+
+## 1.7.5 - 2/25/2021
+
+* Scripts are now sorted by name alphabetically
+* An error is now shown when the extension cannot connect to PowerShell Universal 
+* Removed the auto-import of UD and PSU modules. We recommend you install these from the PowerShell Gallery 
+
+```PowerShell
+Install-Module Universal
+Install-Module UniversalDashboard
+```
+
 ## 1.7.4 - 1/21/2021
 
 * Fixed an issue where the extension would fail to initialize on non-internet connected machines. 

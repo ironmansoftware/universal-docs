@@ -141,6 +141,24 @@ New-UDButton -Text 'On Form' -OnClick {
 }
 ```
 
+## Displaying output without Replacing the form
+
+Although you can return components directly from a form, you may want to retain the form so users can input data again. To do so, you can use `Set-UDElement` and a placeholder element that you can set the content to. 
+
+In this example, we have an empty form that, when submitted, will update the `results` element with a UDCard.
+
+```PowerShell
+New-UDForm -Content {
+  
+} -OnSubmit {
+   Set-UDElement -Id 'results' -Content {
+      New-UDCard -Content { "Hello " + (Get-Date) }
+   }
+}
+
+New-UDElement -Id 'results' -Tag 'div'
+```
+
 **New-UDForm**
 
 | Name | Type | Description | Required |

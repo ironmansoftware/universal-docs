@@ -48,7 +48,7 @@ First, you will need to ensure that the script will wait for you to connect the 
 Dashboards will only wait 10 seconds during startup so putting a Wait-Debugger in them may not work. You should rely on the use of $DebugPreference and Write-Debug to diagnosis dashboard startup issues.
 {% endhint %}
 
-## Executing your script
+### Executing your script
 
 Now that you have your script setup to pause and wait for the debugger, you will want to execute your script. For jobs, just start the job. For APIs, you will need to make a request to the API via the endpoint you are trying to test. For dashboards, you will want to load the page in your browser. For authentication and authorization, you will want to login. 
 

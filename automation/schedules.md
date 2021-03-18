@@ -78,3 +78,5 @@ You can define a Run As user in a script by using the `-Credential` parameter. T
 New-PSUSchedule -Script "MyScript.ps1" -Cron '* * * * *' -Credential 'MyUser'
 ```
 
+
+
