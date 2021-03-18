@@ -20,7 +20,7 @@ You can call the Remove cmdlets to invoke the Universal REST API. The REST API w
 
 For example, scripts are added to the system by adding a `New-PSUScript` cmdlet call to the `./universal/scripts.ps1`file.
 
-If you had two scripts, you `scripts.ps1`would look like this.
+If you had two scripts, your `scripts.ps1`would look like this.
 
 ```PowerShell
 New-PSUScript -Name 'Script1.ps1' -Path 'Script1.ps1'
