@@ -12,7 +12,7 @@ After the MSI has finished setup, your default web browser will open to [http://
 
 You do not need to use the MSI to configure Universal as a Windows Service. You can also do it manually with the following PowerShell script.
 
-```text
+```PowerShell
 New-Service -Name "PowerShellUniversal" -BinaryPathName "Universal.Server.exe --service" -Description "PowerShell Universal server service." -DisplayName "PowerShell Universal" -StartupType Automatic
 Start-Service PowerShellUniversal
 ```
@@ -47,8 +47,8 @@ You can set the port of the Universal server by modifying the `appsettings.json`
 
 To set the port, change the Kestrel endpoints section of the `appsettings.json`. By default, the configuration is defined to listen on port 5000 and on any address. 
 
-```text
- "Kestrel": {
+```Json
+	"Kestrel": {
     "Endpoints": {
       "HTTP": {
         "Url": "http://*:5000"
@@ -61,7 +61,7 @@ To set the port, change the Kestrel endpoints section of the `appsettings.json`.
 
 To configure HTTPS, you can adjust the `appsettings.json` file to use a particular certificate and port. The below configuration uses the `testCert.pfx` file and `testPassword` and listens on port 5463. 
 
-```text
+```json
 {
   "Kestrel": {
 	"Endpoints": {
@@ -79,7 +79,7 @@ To configure HTTPS, you can adjust the `appsettings.json` file to use a particul
 
 To configure a certificate in a particular location and store, you can use a configuration such as this. 
 
-```text
+```Json
 "HTTPS": {
   "Url": "https://*:443",
   "Certificate": {
@@ -97,7 +97,7 @@ Location can be either `CurrentUser` or `LocalMachine`.
 
 By default, Universal will listen on HTTP1 and HTTP2. You can adjust the protocols that the server listens to by setting the Protocols property. For example, you can specifically set HTTP1 and HTTP2 support with the following setting.
 
-```text
+```Json
 "Kestrel": {
   "Endpoints": {
     "HTTP": {
@@ -111,7 +111,7 @@ By default, Universal will listen on HTTP1 and HTTP2. You can adjust the protoco
 
 Some versions of Windows Server \(like 2012R2\), do not support HTTP2. To disable HTTP2 support, set the listener to only listen on HTTP1.
 
-```text
+```Json
 "Kestrel": {
   "Endpoints": {
     "HTTP": {

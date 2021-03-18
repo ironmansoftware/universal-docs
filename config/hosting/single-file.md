@@ -14,7 +14,7 @@ You can configure and run the PowerShell Universal server from the command line.
 
 To install from the command line, use `Install-PSUServer`. By default, it will store the latest version of the PowerShell Universal Server to the `$Env:ProgramData\PowerShellUniversal` folder. You can specify an alternate path and optionally add the older to the `$Env:Path` environment variable . 
 
-```text
+```PowerShell
 Install-PSUServer -AddToPath
 ```
 
@@ -24,7 +24,7 @@ Once the server is installed, you can start it with `Start-PSUServer`.
 
 You can configure PowerShell Universal from the command line using `Start-PSUServer` and the `-Configuration` parameter. You can use the same cmdlets that you would use in the various configuration files but utilize a single file. You should save this file and then execute the PS1 file. Any changes to the file will be auto-reloaded.
 
-```text
+```PowerShell
 Start-PSUServer -Port 8080 -Configuration {
     New-PSUEndpoint -Method GET -Url '/user' -Endpoint { "User1" }
     New-PSUEndpoint -Method POST -Url '/user' -Endpoint { $Body }
@@ -41,7 +41,7 @@ Start-PSUServer -Port 8080 -Configuration {
 
 Single file hosting has some limitations in terms of scoping. Variables, functions and modules used within the parent scope or the configuration script block scope will not be accessible in the dashboard, endpoint or script content scopes.
 
-```text
+```PowerShell
 $MyVariable = "Nice"
 
 Start-PSUServer -Port 8080 -Configuration {
@@ -60,7 +60,7 @@ Start-PSUServer -Port 8080 -Configuration {
 
 You can work around these limitations by using variables and environments. 
 
-```text
+```PowerShell
 $MyVariable = "Nice"
 
 Start-PSUServer -Port 8080 -Configuration {
@@ -84,7 +84,7 @@ The single-file hosting and configuration does not actually require the use of a
 
 For example, if you wanted to load endpoints from a nested folder, you could do the following. 
 
-```text
+```PowerShell
 Start-PSUServer -Port 8080 -Configuration {
     Get-ChildItem (Join-Path $PSScriptRoot 'endpoints') | ForEach-Object {
         & $_.FullPath

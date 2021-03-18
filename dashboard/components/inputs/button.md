@@ -12,7 +12,7 @@ Buttons allow users to take actions, and make choices, with a single tap.
 
 Contained buttons are high-emphasis, distinguished by their use of elevation and fill. They contain actions that are primary to your app.
 
-```text
+```PowerShell
  New-UDButton -Variant 'contained' -Text 'Default'
 ```
 
@@ -22,7 +22,7 @@ Contained buttons are high-emphasis, distinguished by their use of elevation and
 
 Outlined buttons are medium-emphasis buttons. They contain actions that are important, but aren’t the primary action in an app.
 
-```text
+```PowerShell
 New-UDButton -Variant 'outlined' -Text 'Default' 
 ```
 
@@ -32,7 +32,7 @@ New-UDButton -Variant 'outlined' -Text 'Default'
 
 Sometimes you might want to have icons for certain button to enhance the UX of the application as we recognize logos more easily than plain text. For example, if you have a delete button you can label it with a dustbin icon.
 
-```text
+```PowerShell
 New-UDButton -Icon (New-UDIcon -Icon trash) -Text 'Delete'
 ```
 
@@ -40,7 +40,7 @@ New-UDButton -Icon (New-UDIcon -Icon trash) -Text 'Delete'
 
 You can specify a script block to execute when the button is clicked
 
-```text
+```PowerShell
 New-UDButton -Text 'Message Box' -OnClick {
     Show-UDToast -Message 'Hello, world!'
 }

@@ -22,7 +22,7 @@ See [dashboard Development](../dashboard/development.md) for information on how 
 
 Dashboards log informational, warning and error messages to their log. It's recommended to use logging when starting a dashboard rather than trying to attach a debugger. You can also use the `$DebugPreference` variable to get additional information during your dashboard startup. 
 
-```text
+```PowerShell
 $DebugPreference = 'Continue'
 
 New-UDDashboard -Title 'Test' -Content {
@@ -76,7 +76,7 @@ Authentication and authorization scripts run within the Universal server. You ca
 
 Once you have the process that you want to attach to, you can do so by using `Enter-PSHostProcess` . Simply specify the process ID that you found in the previous step. 
 
-```text
+```PowerShell
 Enter-PSHostProcess -id 1231
 ```
 

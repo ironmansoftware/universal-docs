@@ -22,7 +22,7 @@ If a user attempts to visit a dashboard that they do not have access to, they wi
 
 You can also show or hide pages based on roles. To define a role for a page, use the `-Role` parameter of `New-UDPage`. Only users of the specified role will have access to this page. 
 
-```text
+```PowerShell
 New-UDPage -Role 'Administrators' -Content {
     New-UDTypography -Text 'Admins only'
 }
@@ -34,7 +34,7 @@ In addition to dashboard and page roles, you can also check with roles a user is
 
 For example, you could show the `Restart-Computer` button to only Administrators. 
 
-```text
+```PowerShell
 if ($Roles -contains "Administrator") {
     New-UDButton -Text 'Restart Server' -OnClick {
         Restart-Computer

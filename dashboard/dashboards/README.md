@@ -82,7 +82,7 @@ Finally, check the component library you'd like added to your dashboard.
 
 You can also add component libraries directly to your `dashboards.ps1` script within the `.unversal` folder or when using [single-file hosting and configuration](../../config/hosting/single-file.md).
 
-```text
+```PowerShell
 New-PSUDashboard -Name 'Dashboard' -BaseUrl '/' -Framework "UniversalDashboard:Latest" -Component @("UniversalDashboard.Charts:1.3.0")
 ```
 
@@ -94,7 +94,7 @@ By default, runspaces will be reset after each execution. This will cause variab
 
 To enable persistent runspaces, you will need to configure an [environment ](../../config/environments.md)for your API. Set the `-PersistentRunspace` parameter to enable this feature. This is configured in the `environments.ps1` script.
 
-```text
+```PowerShell
 New-PSUEnvironment -Name 'Env' -Path 'powershell.exe' -PersistentRunspace
 ```
 

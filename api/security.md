@@ -18,7 +18,7 @@ You can define secure endpoints in the UI by enabling authentication.
 
 You can also define secure endpoints using the `.universal/endpoints.ps1` file or the Management API using `New-PSUEndpoint`. 
 
-```text
+```PowerShell
 New-PSUEndpoint -Url '/endpoint' -Method 'GET' -Endpoint {
    "Hello, world!"
 } -Authentication
@@ -48,7 +48,7 @@ Click Grant App Token to create a new one.
 
 Once you have created your app token, you can now use it to authenticate against the secure endpoint. To do so, pass the Authorization header along with the request. 
 
-```text
+```PowerShell
 Invoke-RestMethod http://localhost:5000/auth -Headers @{ Authorization = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9oYXNoIjoiMWUyY2IzNzAtMmMyNS00ZDU5LTk4YzgtMzc5MTFjMDAyZmI5Iiwic3ViIjoiUG93ZXJTaGVsbFVuaXZlcnNhbCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE2MDU2NjEyNTUsImV4cCI6MTYzNzM2NzI1OCwiaXNzIjoiSXJvbm1hblNvZnR3YXJlIiwiYXVkIjoiUG" }
 ```
 
@@ -56,7 +56,7 @@ Invoke-RestMethod http://localhost:5000/auth -Headers @{ Authorization = "Bearer
 
 To authenticate with [Windows Authentication](../config/security/#windows-authentication-in-iis), you can use the  `-UseDefaultCredentials` parameter of `Invoke-RestMethod` and `Invoke-WebRequest` . This will perform negotiate authentication whether you are running inside IIS or a service. 
 
-```text
+```PowerShell
 Invoke-RestMethod http://localhost:5000/auth -UseDefaultCredentials
 ```
 
@@ -64,7 +64,7 @@ Invoke-RestMethod http://localhost:5000/auth -UseDefaultCredentials
 
 To authenticate with cookies, you will first need to call the login API to receive a valid cookie from the system. You can use `Invoke-WebRequest` to do so. Pass the user name and password as the body. Specify the `-SessionVariable` parameter to establish a session. 
 
-```text
+```PowerShell
 Invoke-WebRequest http://localhost:5000/api/v1/signin -Body (@{ 
     UserName = "Admin"
     Password = "Any"
@@ -73,7 +73,7 @@ Invoke-WebRequest http://localhost:5000/api/v1/signin -Body (@{
 
 Once you have successfully authenticated, you can use your `$mySession` variable to call secure endpoints. 
 
-```text
+```PowerShell
  Invoke-WebRequest http://localhost:5000/auth -WebSession $mySession
 ```
 

@@ -8,7 +8,7 @@ You can use a cascading style sheet \(CSS\) by add a `.css` file to a published 
 
 For example, the `dashboard.ps1` file would look like this. 
 
-```text
+```PowerShell
 New-UDDashboard -Title "Server Monitor" -Content {
 
 
@@ -17,7 +17,7 @@ New-UDDashboard -Title "Server Monitor" -Content {
 
 You could then setup a published folder to provide the assets route. This is what the contents of `publishedFolders.ps1` will look like. 
 
-```text
+```PowerShell
 New-PSUPublishedFolder -RequestPath "/assets" -Path "C:\assets"
 ```
 
@@ -27,7 +27,7 @@ Within the `C:\assets` folder, you can place any assets you'd like to access on 
 
 You can then create a style sheet to manipulate whatever portion of the dashboard you'd like. 
 
-```text
+```css
 .ud-dashboard > div {
     background-image: url("/assets/image.jpeg");
 }

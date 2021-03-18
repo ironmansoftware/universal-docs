@@ -16,7 +16,7 @@ The Scripts tree view will provide access to each of your scripts, the admin con
 
 To add a new script to the Universal platform, you can create the PS1 file on the file system and then add the script to the `scripts.ps1`. The file name is relative to the repository folder. You can also use fully qualified file paths. 
 
-```text
+```PowerShell
 New-PSUScript -Name "Script1.ps1" -Path "Script1.ps1" -InformationAction "Continue"
 ```
 
@@ -40,7 +40,7 @@ You can edit schedules for scripts by editing the `schedules.ps1` file. A link t
 
 Schedules are defined using `New-PSUSchedule` cmdlet.
 
-```text
+```PowerShell
 New-PSUSchedule -Cron "0 */4 * * *" -Script "Script1.ps1" -TimeZone "America/Denver"
 ```
 

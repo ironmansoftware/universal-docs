@@ -14,7 +14,7 @@ When installed from the MSI, the installation directory for PowerShell Universal
 
 You can create an appsettings.json file within the `$Env:ProgramData\PowerShellUniversal` folder. You can use a subset of the settings from within the `appsettings.json` file. For example, if you wanted to override the JWT settings, you could have an `appsettings.json` file like this. 
 
-```text
+```json
 {
   "Jwt": {  
     "SigningKey": "PleaseUseYourOwnSigningKeyHere",  
@@ -32,13 +32,13 @@ You can also set environment variables for your settings. Environment variables 
 
 Using an environment variable for the OpenID Connect secret.
 
-```text
+```PowerShell
 $Env:Authentication__OIDC__ClientSecret = "mySecret"
 ```
 
 Using an environment variable for JWT signing key.
 
-```text
+```PowerShell
 $Env:Jwt__SigningKey = "mySigningKey"
 ```
 
@@ -64,7 +64,7 @@ The hosts that are allowed to connect to the webserver. Defaults to any host.
 
 Configures the hosts that are allowed to make cross-origin resource sharing requests \(CORS\) to the server. To allow multiple hosts, separate each host by a semicolon. 
 
-```text
+```Json
 "CorsHosts" : "https://www.google.com;https://login.microsoftonline.com"
 ```
 

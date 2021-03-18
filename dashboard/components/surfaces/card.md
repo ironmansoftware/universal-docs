@@ -14,7 +14,7 @@ Although cards can support multiple actions, UI controls, and an overflow menu, 
 
 ![](../../../.gitbook/assets/image%20%2856%29.png)
 
-```text
+```PowerShell
 New-UDCard -Title 'Simple Card' -Content {
     "This is some content"
 }

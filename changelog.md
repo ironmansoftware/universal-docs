@@ -595,7 +595,7 @@ There was a breaking change made to `New-UDTableColumn` -Render. The `$Body`  va
 
 Prior to 1.4.5, the syntax would have been like this. 
 
-```text
+```PowerShell
 $Data = @(
     @{ link = "http://www.google.com" }
 )
@@ -612,7 +612,7 @@ New-UDTable -Title 'Link' -Column $Column -Data $Data
 
 1.4.5 and later, the syntax will be like this. `$EventData` is a special variable that will be available in the `-Render` parameter and does not require converting from JSON.
 
-```text
+```PowerShell
 $Data = @(
     @{ link = "http://www.google.com" }
 )

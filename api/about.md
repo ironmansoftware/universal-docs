@@ -14,7 +14,7 @@ The REST API execution environment runs in your default PowerShell version. Unli
 
 You can define the [environment ](../config/environments.md)that runs the PowerShell Universal API process by specifying the `-ApiEnvironment` on `Set-PSUSetting`. Changing this setting will cause the API process to restart. 
 
-```text
+```PowerShell
 Set-PSUSetting -ApiEnvironment '7.1'
 ```
 

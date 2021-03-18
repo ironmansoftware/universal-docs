@@ -34,14 +34,14 @@ The drawer will show which components are already added and which components can
 
 You can install any of the components from the Marketplace by using the `Install-Module` or `Save-Module` cmdlets provided by `PowerShellGet`. Since the components are just listed on the PowerShell Gallery, you'll be able to use their module name during install. 
 
-```text
+```PowerShell
 Install-Module UniversalDashboard.Helmet
 ```
 
 Depending on how the components were installed, you may need to import the module in your dashboard file.
 
-```text
-Import-Module UniversalDashboard.Helmet
+```js
+import-Module UniversalDashboard.Helmet
 ```
 
 ## Publishing to the Universal Dashboard Marketplace

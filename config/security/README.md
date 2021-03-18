@@ -18,7 +18,7 @@ To update forms authentication, you can click Settings \ Security and then click
 
 You can update the PowerShell script found in settings to configure how the user is authenticated. You'll need to return a `New-PSUAuthenticationResult` from the script to indicate whether the user was successfully authenticated. 
 
-```text
+```PowerShell
 param(
     [PSCredential]$Credential
 )
@@ -47,7 +47,7 @@ You can configure OpenID authentication and authorization by adjusting the setti
 
 Windows Authentication provides single-sign on support for browsers and environments that support it. To enable Windows Authentication, set the `WindowsAuthentication` enabled setting to true in `appsettings.json`. 
 
-```text
+```Json
 "Windows": {
   "Enabled": "true"
 },
@@ -67,7 +67,7 @@ Windows Authentication is supported outside of IIS but requires configuration of
 
 On Windows, you should install PowerShell Universal as a [Windows Service](../../get-started/getting-started/#windows). Once the service is installed, you will need to create a [service account user](../running-as-a-service-account.md#application-service-account) and set the service to run with that user's account. The Windows authentication [setting ](../settings.md)needs to be set to true. 
 
-```text
+```Json
 "Windows": {
   "Enabled": "true"
 },
@@ -75,7 +75,7 @@ On Windows, you should install PowerShell Universal as a [Windows Service](../..
 
 The service account needs to have a Service Principal Name \(spn\) configured for the computer account. You can do this using the `setspn` command. The computer name needs to be the full qualified name of the machine running Universal. 
 
-```text
+```PowerShell
 setspn -S HTTP/myservername.mydomain.com myuser
 ```
 
@@ -101,7 +101,7 @@ Policy scripts will receive a `ClaimsPrincipal` object as a parameter and need t
 
 You can expect an object with this structure. 
 
-```text
+```PowerShell
 public class ClaimsPrincipal
 {
     public List<Claim> Claims { get; set; } = new List<Claim>();
@@ -163,7 +163,7 @@ By default, the forms authentication and policy assignment scripts run within th
 
 To adjust the environment used by the security process, set the `-SecurityEnvironment` in `settings.ps1`. 
 
-```text
+```PowerShell
 Set-PSUSetting -SecurityEnvironment '5.1'
 ```
 
@@ -171,7 +171,7 @@ Set-PSUSetting -SecurityEnvironment '5.1'
 
 The following example shows performing a simple "LDAP BIND" in order to validate a users Active Directory Credentials. If a user attempting to access PowerShell Universal is not the Default Admin User they will have to successfully authenticate their credentials with Active Directory via a simple LDAP bind. This can be combined with a AD Group Member check in the Admin, Operator, and Reader role policies to effectively use Active Directory Authentication AND Active Directory Group membership to provide Role Based Access to PowerShell Universal.
 
-```text
+```PowerShell
 param(
     [PSCredential]$Credential
 )
@@ -221,7 +221,7 @@ This example requires an authentication method that will provide group informati
 
 This example takes advantage of the claims that are provided during authentication. You can check to see if the user has a groupsid \(group membership\) by using the `HasClaim` method of the `$User` object. This method will check the `Claims` array to see if they have a particular `groupsid` claim. Use the SID of the group to validate whether they are a group member. 
 
-```text
+```PowerShell
 New-PSURole -Name 'Administrators' -Policy {
     param(
         $User
@@ -233,7 +233,7 @@ New-PSURole -Name 'Administrators' -Policy {
 
 For debugging and development purposes, you can check to see what claims a user has been exporting the `$User` variable to a file.
 
-```text
+```PowerShell
 New-PSURole -Name 'Administrators' -Policy {
     param(
         $User
@@ -247,7 +247,7 @@ New-PSURole -Name 'Administrators' -Policy {
 
 You should see a JSON file that contains the user's identity and claims array. 
 
-```text
+```json
 {
   "Claims": [
     {
@@ -376,7 +376,7 @@ In this example we will configure out Administrator Policy Script to use LDAP to
 
 ![](../../.gitbook/assets/image%20%2815%29.png)
 
-```text
+```PowerShell
 param(
 $User
 )

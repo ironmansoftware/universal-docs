@@ -12,7 +12,7 @@ This example takes advantage of a SQL server and the `New-UDTable` cmdlet to cre
 
 This example assumes that we have a database called podcasts running in the local MS SQL Server. It has a table called shows that includes a column called host and a column called name. 
 
-```text
+```PowerShell
 Start-PSUServer -Port 8080 -Configuration {
     New-PSUDashboard -Name 'SQL' -BaseUrl "/" -Framework 'UniversalDashboard:Latest' -Content {
         New-UDDashboard -Title 'SQL' -Content {

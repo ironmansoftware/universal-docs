@@ -48,7 +48,7 @@ The number of minutes before the script will timeout. The default value of 0 mea
 
 Defines the maximum concurrent jobs the script can be run. Defaults to 100. 
 
-```text
+```PowerShell
 New-PSUScript -Name Script.ps1 -Path Script.Ps1 -ConcurrentJobs 1
 ```
 
@@ -64,7 +64,7 @@ Universal Automation automatically determines the parameters as defined within y
 
 For example, you may have a script with the following parameters. 
 
-```text
+```PowerShell
 param(
     $Test,
     [DateTime]$Time, 

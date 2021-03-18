@@ -16,7 +16,7 @@ Some examples of usages for the cache may be:
 
 To set items in the cache, you can use `Set-PSUCache`. Items in the cache are serialized to strings using CLIXML and the PowerShell serializer. When you retrieve objects from the cache, they will no longer be live objects.
 
-```text
+```PowerShell
 Set-PSUCache -Key "CurrentDate" -Value (Get-Date)
 ```
 
@@ -28,7 +28,7 @@ The `AbsoluteExpiration` parameter defines at what time the item in the cache is
 
 The follow example invalidates the cache item after 10 minutes.
 
-```text
+```PowerShell
 Set-PSUCache -Key "CurrentDate" -Value (Get-Date) -AbsoluteExpiration (Get-Date).AddMinutes(10)
 ```
 
@@ -38,7 +38,7 @@ The `AbsoluteExpirationFromNow` parameter defines when a cache item is invalidat
 
 The following cache item is invalidated 1 hour from now.
 
-```text
+```PowerShell
 Set-PSUCache -Key "CurrentDate" -Value (Get-Date) -AbsoluteExpirationFromNow ([TimeSpan]::FromHours(1))
 ```
 
@@ -48,7 +48,7 @@ The `SlidingExpiration` parameter allows you to defines the amount of time befor
 
 The following cache item will be invalidated in 5 minutes. If it's accessed within those 5 minutes, it will be reset for another 5 minutes.
 
-```text
+```PowerShell
 Set-PSUCache -Key "CurrentDate" -Value (Get-Date) -SlidingExpiration ([TimeSpan]::FromMinutes(5))
 ```
 
@@ -56,7 +56,7 @@ Set-PSUCache -Key "CurrentDate" -Value (Get-Date) -SlidingExpiration ([TimeSpan]
 
 You can use the `Get-PSUCache` cmdlet to retrieve items from the cache. You simply need to supply the key of the item you wish to retrieve. The deserialized object will be returned from the cmdlet.
 
-```text
+```PowerShell
 Get-PSUCache -Key "CurrentDate"
 ```
 

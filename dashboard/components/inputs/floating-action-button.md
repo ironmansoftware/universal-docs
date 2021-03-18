@@ -16,7 +16,7 @@ Only one floating action button is recommended per screen to represent the most 
 
 ![](../../../.gitbook/assets/image%20%2842%29.png)
 
-```text
+```PowerShell
 New-UDFloatingActionButton -Icon (New-UDIcon -Icon user) -Size Small
 New-UDFloatingActionButton -Icon (New-UDIcon -Icon user) -Size Medium
 New-UDFloatingActionButton -Icon (New-UDIcon -Icon user) -Size Large
@@ -24,7 +24,7 @@ New-UDFloatingActionButton -Icon (New-UDIcon -Icon user) -Size Large
 
 ## OnClick
 
-```text
+```PowerShell
 New-UDFloatingActionButton -Icon (New-UDIcon -Icon user) -OnClick {
     Show-UDToast -Message "Hello!"
 }

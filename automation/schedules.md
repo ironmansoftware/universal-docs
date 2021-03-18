@@ -44,7 +44,7 @@ Continuous schedules will run over and over again. You can define a delay betwee
 
 Schedules support setting parameters for scripts. For example, if you have a script that accepts a parameter, you can choose to pass a value to the parameter during the schedule. 
 
-```text
+```PowerShell
 param($UserName)
 
 $UserName
@@ -56,7 +56,7 @@ Within the modal for defining the schedule, you will have the option to set the 
 
 When editing schedules from PowerShell, you can define the parameters on the `New-PSUSchedule` cmdlet. This cmdlet accepts dynamic parameters so that you can pass the values in for your schedule. 
 
-```text
+```PowerShell
 New-PSUSchedule -Script "MyScript.ps1" -Cron '* * * * *' -UserName 'adam'
 ```
 
@@ -64,7 +64,7 @@ New-PSUSchedule -Script "MyScript.ps1" -Cron '* * * * *' -UserName 'adam'
 
 When creating a schedule, you have the option to specify the [environment ](../config/environments.md)for your job to run. By default, it will use the default environment. You can define an environment in the UI by using the Environment drop down. You can define an environment using the `-Environment` parameter in `New-PSUSchedule`.
 
-```text
+```PowerShell
 New-PSUSchedule -Script "MyScript.ps1" -Cron '* * * * *' -Environment '7.1'
 ```
 
@@ -74,7 +74,7 @@ You can define which user to run the schedule as by using the Run As selector in
 
 You can define a Run As user in a script by using the `-Credential` parameter. The value should be the name of the variable that contains your credential. 
 
-```text
+```PowerShell
 New-PSUSchedule -Script "MyScript.ps1" -Cron '* * * * *' -Credential 'MyUser'
 ```
 

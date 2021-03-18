@@ -12,7 +12,7 @@ The date and time component uses DayJS. For a full list of custom formatting opt
 
 By default, the date and time will be formatted using the `LLL` localized formatting template. 
 
-```text
+```PowerShell
 New-UDDateTime -InputObject (Get-Date)
 ```
 
@@ -22,7 +22,7 @@ Resulting output: August 16, 2018 8:02 PM
 
 You can specify custom formatting strings using the [DayJS formatting template](https://day.js.org/docs/en/display/format).
 
-```text
+```PowerShell
 New-UDDateTime -InputObject (Get-Date) -Format 'DD/MM/YYYY'
 ```
 

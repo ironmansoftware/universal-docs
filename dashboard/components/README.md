@@ -8,7 +8,7 @@ External components are distributed as PowerShell modules and can be used in a d
 
 When building a dashboard, you can simply call the PowerShell cmdlets within your dashboard script to create a new component.
 
-```text
+```PowerShell
 New-UDDashboard -Title 'Dashboard' -Content {
     New-UDTypography -Text 'Hello, world!'
 }

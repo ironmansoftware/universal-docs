@@ -10,7 +10,7 @@ Time pickers pickers provide a simple way to select a single value from a pre-de
 
 ![](../../../.gitbook/assets/image%20%2881%29.png)
 
-```text
+```PowerShell
 New-UDTimePicker
 ```
 

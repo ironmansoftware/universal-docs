@@ -12,7 +12,7 @@ To adjust the logging level, change the values in the `appsettings.json` file in
 
 For example, to enable debug logging, set all the levels to debug. 
 
-```text
+```json
 "Logging": {
     "Path":"%HOME%/.PowerShellUniversal/log.txt",
     "LogLevel": {
@@ -25,7 +25,7 @@ For example, to enable debug logging, set all the levels to debug.
 
 This setting can also be set using environment variables. These values need to be set before starting the Universal server. 
 
-```text
+```PowerShell
 $Env:Logging__LogLevel__Default = "Debug"
 ```
 
@@ -33,7 +33,7 @@ $Env:Logging__LogLevel__Default = "Debug"
 
 To adjust the logging path, change the values in the `appsettings.json` file in the Logging \ Path section. 
 
-```text
+```json
   "Logging": {
       "Path":"C:\log.txt",
       "LogLevel": {
@@ -46,7 +46,7 @@ To adjust the logging path, change the values in the `appsettings.json` file in 
 
 This setting can also be set using environment variables. These values need to be set before starting the Universal server. 
 
-```text
+```PowerShell
 $Env:Logging__Path = "C:\log.txt"
 ```
 
@@ -56,7 +56,7 @@ In addition to the logs produced by the Universal server, you can also retrieve 
 
 You can disable these logs by setting `stdoutLogEnabled` to false. 
 
-```text
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
   <system.webServer>

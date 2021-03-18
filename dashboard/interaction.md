@@ -10,7 +10,7 @@ Universal Dashboard enables the ability to create interactive websites with Powe
 
 You can use the `Show-UDToast` cmdlet to create a toast message that will appear on the end user's webpage. It happens over a websocket and will show the toast immediately as it is called. 
 
-```text
+```PowerShell
 Show-UDToast -Message 'Hello, World!'
 ```
 
@@ -18,7 +18,7 @@ Show-UDToast -Message 'Hello, World!'
 
 You can redirect users to different pages using the `Invoke-UDRedirect` cmdlet. It happens over a websocket and will redirect as soon as the cmdlet is called. 
 
-```text
+```PowerShell
 Invoke-UDRedirect http://www.ironmansoftware.com
 ```
 
@@ -32,7 +32,7 @@ Read more about [Modals here](components/feedback/modal.md).
 
 You can receive the state of an element using `Get-UDElement` . The state will be returned as a hashtable. This is primarily useful for input components. 
 
-```text
+```PowerShell
 $Value = (Get-UDElement -Id 'txtExample').value 
 ```
 
@@ -40,7 +40,7 @@ $Value = (Get-UDElement -Id 'txtExample').value
 
 Alternatively, you can set component state using `Set-UDElement` . You will need to specify an ID and a hashtable of properties to set on the component. All built in components support Set-UDElement. 
 
-```text
+```PowerShell
 New-UDTextbox -Id 'textbox'
 
 New-UDButton -Text 'Click' -OnClick {
@@ -54,7 +54,7 @@ New-UDButton -Text 'Click' -OnClick {
 
 You can remove components from the page using `Remove-UDElement` . The component will no longer appear on the page. 
 
-```text
+```PowerShell
 Remove-UDComponent -Id 'txtExample'
 ```
 

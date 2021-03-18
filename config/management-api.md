@@ -10,19 +10,19 @@ The Management API is built in and does not require a license to Universal API.
 
 We provide a PowerShell module that calls the API on your behalf so you do not have to write the HTTP requests yourself. You can download this module from the PowerShell Gallery.
 
-```text
+```PowerShell
 Install-Module Universal
 ```
 
 The PowerShell module requires an app token and computer name to call the Universal server. You can provide this items on each call. 
 
-```text
+```PowerShell
 Invoke-UAScript -Script $Script -ComputerName http://localhost:5000 -AppToken $AppToken
 ```
 
 Additionally, you can connect to the Universal server using `Connect-UAServer`.
 
-```text
+```PowerShell
 Connect-UAServer -ComputerName http://localhost:5000 -AppToken $AppToken
 ```
 
@@ -36,7 +36,7 @@ The PowerShell Universal Management API can be accessed via REST calls. You can 
 
 You can use an App Token with `Invoke-RestMethod` by specifying the authorization header. 
 
-```text
+```PowerShell
 Invoke-RestMethod http://localhost:5000/api/v1/script -Headers @{ Authorization = "Bearer appToken" }
 ```
 

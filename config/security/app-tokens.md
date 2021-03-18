@@ -24,7 +24,7 @@ When you click Grant App Token, you will be provided with a dialog that allows y
 
 You can also grant app tokens to users from the management API. To grant an App Token programmatically using the API, you can do the following. 
 
-```text
+```
 PS C:\Users\adamr> Invoke-RestMethod http://localhost:5000/api/v1/signin -Method POST -Body (@{ username = 'admin'; password = 'test' } | ConvertTo-Json) -SessionVariable Session -ContentType 'application/json'
 PS C:\Users\adamr> Invoke-RestMethod http://localhost:5000/api/v1/apptoken/grant  -WebSession $Session
 
@@ -48,7 +48,7 @@ Administrators can grant app tokens to any user by specifying the user's identit
 
 ![](../../.gitbook/assets/image%20%2884%29.png)
 
-```text
+```
 PS C:\Users\adamr> Invoke-RestMethod http://localhost:5000/api/v1/apptoken/grant/2  -WebSession $Session
 
 id          : 4

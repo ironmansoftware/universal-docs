@@ -22,7 +22,7 @@ The configuration file uses the Universal PowerShell cmdlets to define the endpo
 
 If you created a blank endpoint, it would look something like this.
 
-```text
+```PowerShell
 New-PSUEndpoint -Url "/test" -Endpoint { 
     # Enter your script to process requests.
 }
@@ -30,7 +30,7 @@ New-PSUEndpoint -Url "/test" -Endpoint {
 
 If you edit the `endpoints.ps1` file, it will update the API automatically. For example, if I added a new API, it would then appear in the admin console. 
 
-```text
+```PowerShell
 New-PSUEndpoint -Url "/test" -Endpoint { 
  "hello"
 }

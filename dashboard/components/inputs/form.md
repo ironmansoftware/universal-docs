@@ -14,7 +14,7 @@ Data entered via the input controls will be sent back to the the `OnSubmit` scri
 
 For example, if you have two fields, you will have two properties on `$EventData`.
 
-```text
+```PowerShell
 New-UDForm -Content {
     New-UDTextbox -Id 'txtTextField'
     New-UDCheckbox -Id 'chkCheckbox'
@@ -45,7 +45,7 @@ The following input controls automatically integrate with a form. The values tha
 
 Simple forms can use inputs like text boxes and checkboxes.
 
-```text
+```PowerShell
 New-UDForm -Content {
     New-UDTextbox -Id 'txtTextfield'
     New-UDCheckbox -Id 'chkCheckbox'
@@ -61,7 +61,7 @@ New-UDForm -Content {
 
 Since forms can use any component, you can use standard formatting components within the form.
 
-```text
+```PowerShell
 New-UDForm -Content {
 
     New-UDRow -Columns {
@@ -94,7 +94,7 @@ New-UDForm -Content {
 
 When a form is submitted, you can optionally return another component to replace the form on the page. You can return any Universal Dashboard component. All you need to do is ensure that the component is written to the pipeline within the `OnSubmit` event handler. 
 
-```text
+```PowerShell
 New-UDForm -Content {
     New-UDTextbox -Id 'txtTextfield'
 } -OnSubmit {
@@ -106,7 +106,7 @@ New-UDForm -Content {
 
 Form validation can be accomplished by using the OnValidate script block parameter
 
-```text
+```PowerShell
 New-UDForm -Content {
     New-UDTextbox -Id 'txtValidateForm'
 } -OnValidate {
@@ -126,7 +126,7 @@ New-UDForm -Content {
 
 You can define an `-OnCancel` event handler to invoke when the cancel button is pressed. This can be used to take actions like close a modal. 
 
-```text
+```PowerShell
 New-UDButton -Text 'On Form' -OnClick {
     Show-UDModal -Content {
         New-UDForm -Content {

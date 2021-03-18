@@ -12,7 +12,7 @@ To automatically return errors from APIs, you can change the default behavior by
 
 Terminating errors will always return a 500 Internal Server Error.
 
-```text
+```PowerShell
 New-PSUEndpoint -Url "/error" -Endpoint { 
    throw "Uh oh!"
 } -ErrorAction stop
@@ -24,7 +24,7 @@ New-PSUEndpoint -Url /error2 -Endpoint {
 
 You will notice different behavior in Windows PowerShell and PowerShell 7 when calling REST APIs that return errors. In Windows PowerShell, you will receive a generic error that doesn't return the error message.
 
-```text
+```
 PS C:\Users\adamr> invoke-restmethod http://localhost:5000/error2
 invoke-restmethod : The remote server returned an error: (500) Internal Server Error.
 At line:1 char:1
@@ -37,7 +37,7 @@ At line:1 char:1
 
 In PowerShell 7, when an error is returned, you will see the error message returned. 
 
-```text
+```
 PS C:\Users\adamr\Desktop> invoke-restmethod http://localhost:5000/error 
 
 Invoke-RestMethod: Uh oh!
@@ -53,7 +53,7 @@ at , : line 1
 
 You can retrieve the error message in Windows PowerShell, by using the following syntax. 
 
-```text
+```
 PS C:\Users\adamr> try { invoke-restmethod http://localhost:5000/error2 } catch { [System.IO.StreamReader]::new($_.Exception.Response.GetResponseStream()).ReadToEnd()}
 Whoa!
 at <ScriptBlock>, <No file>: line 2
@@ -66,7 +66,7 @@ To manually return errors, you need to use the `New-PSUApiResponse` cmdlet. This
 
 In this example, we are returning a 404 error code from the endpoint. 
 
-```text
+```PowerShell
 New-PSUEndpoint -Url /broken -Endpoint {
     New-PSUApiResponse -StatusCode 404 -Body 'Failed!'
 }
@@ -74,7 +74,7 @@ New-PSUEndpoint -Url /broken -Endpoint {
 
 Similar to the automatic error codes, error codes returned manually will as display better in PowerShell 7. Here's an example of calling the endpoint. 
 
-```text
+```
 PS C:\Users\adamr\Desktop> invoke-restmethod http://localhost:5000/broken
 
 Invoke-RestMethod: Failed!
@@ -82,7 +82,7 @@ Invoke-RestMethod: Failed!
 
 If called from Windows PowerShell, you will receive an error similar to the one returned automatically.
 
-```text
+```
 PS C:\Users\adamr> invoke-restmethod http://localhost:5000/broken
 invoke-restmethod : The remote server returned an error: (404) Not Found.
 At line:1 char:1
@@ -95,7 +95,7 @@ At line:1 char:1
 
 You can choose to return error codes if certain conditions are met by using your PowerShell script within the endpoint. 
 
-```text
+```PowerShell
 New-PSUEndpoint -Url /user/:name -Endpoint {
     if ($Name -eq 'User')
     {

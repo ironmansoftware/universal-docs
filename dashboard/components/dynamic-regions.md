@@ -10,7 +10,7 @@ description: Dynamic regions allow you control the reload of data within the reg
 
 This dynamic region reloads when the button is clicked. 
 
-```text
+```PowerShell
 New-UDDashboard -Title "Hello, World!" -Content {
     New-UDDynamic -Id 'date' -Content {
         New-UDTypography -Text "$(Get-Date)"
@@ -30,7 +30,7 @@ Dynamic regions enable the ability to auto refresh components after a certain am
 If you have multiple related components that use the same data, consider putting them in the same dynamic region to improve performance. 
 {% endhint %}
 
-```text
+```PowerShell
     New-UDDynamic -Id 'date' -Content {
         New-UDTypography -Text "$(Get-Date)" -Variant h3
         New-UDTypography -Text "$(Get-Random)" -Variant h3
@@ -43,7 +43,7 @@ If you have multiple related components that use the same data, consider putting
 
 Sometimes refreshing a dynamic component may take some time. For example, if you are querying another service's REST API or a data. Dynamic regions support configuration of the component that shows when the region is reloading. By default, nothing is shown. This can be any Universal Dashboard component. 
 
-```text
+```PowerShell
     New-UDDynamic -Content {
         Start-Sleep -Seconds 3
         New-UDTypography -Text "Done!"

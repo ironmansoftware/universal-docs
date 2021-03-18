@@ -12,7 +12,7 @@ This component works with [UDForm](form.md) and [UDStepper](../navigation/steppe
 
 Uploads a file and shows the contents via a toast. 
 
-```text
+```PowerShell
 New-UDUpload -OnUpload {
     Show-UDToast $Body
 }
@@ -20,11 +20,11 @@ New-UDUpload -OnUpload {
 
 The body of the `OnUpload` script block is a JSON string with the following format. 
 
-```text
+```json
 {
-  data: 'base64 encoded string of data',
-  name: 'file name of the file uploaded',
-  type: 'file type as determined by the browser'
+  data: "base64 encoded string of data",
+  name: "file name of the file uploaded",
+  type: "file type as determined by the browser"
 }
 ```
 
@@ -32,7 +32,7 @@ The body of the `OnUpload` script block is a JSON string with the following form
 
 Uploads a file as part of a UDForm. 
 
-```text
+```PowerShell
 New-UDForm -Content {
     New-UDUpload -Id 'myFile' 
 } -OnSubmit {
@@ -46,7 +46,7 @@ The body of the `OnSubmit` script block is the same one you will see with any fo
 
 This example allows a user to upload a file. Once the file is uploaded, it will be saved to the temporary directory.
 
-```text
+```PowerShell
 New-UDUpload -Text 'Upload Image' -OnUpload {
     $Data = $Body | ConvertFrom-Json 
     $bytes = [System.Convert]::FromBase64String($Data.Data)

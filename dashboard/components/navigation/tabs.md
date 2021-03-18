@@ -12,7 +12,7 @@ Tabs organize and allow navigation between groups of content that are related an
 
 ![](../../../.gitbook/assets/image%20%2840%29.png)
 
-```text
+```PowerShell
 New-UDTabs -Tabs {
     New-UDTab -Text 'Item One' -Content { New-UDTypography -Text 'Item One' -Variant 'h2' }
     New-UDTab -Text 'Item Two' -Content { New-UDTypography -Text 'Item Two' -Variant 'h2' }
@@ -24,7 +24,7 @@ New-UDTabs -Tabs {
 
 ![](../../../.gitbook/assets/image%20%2874%29.png)
 
-```text
+```PowerShell
 New-UDTabs -Tabs {
     New-UDTab -Text 'Item One' -Content { New-UDTypography -Text 'Item One' -Variant 'h2' }
     New-UDTab -Text 'Item Two' -Content { New-UDTypography -Text 'Item Two' -Variant 'h2' }
@@ -36,7 +36,7 @@ New-UDTabs -Tabs {
 
 Dynamic tabs will refresh their content when they are selected. You will need to include the `-RenderOnActive` parameter to prevent all the tabs from rendering even if they are not shown. 
 
-```text
+```PowerShell
 New-UDTabs -Tabs {
     New-UDTab -Text 'Item One' -Content { Get-Date } -Dynamic
     New-UDTab -Text 'Item Two' -Content { Get-Date } -Dynamic

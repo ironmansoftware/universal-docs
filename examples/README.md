@@ -10,7 +10,7 @@ We recommend using the Sample Browser in the [PowerShell Universal Visual Studio
 
 This page contains examples of PowerShell Universal configurations. All examples are built using single-file hosting and configuration. These examples assume that you have PowerShell Universal installed. To install PowerShell Universal, use the following command line. 
 
-```text
+```PowerShell
 Install-Module Universal
 Install-PSUServer -AddToPath
 ```

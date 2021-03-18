@@ -10,7 +10,7 @@ This example uses [Universal API](../api/about.md).
 
 This example uses a custom Slack webhook to send a message from a Universal API. 
 
-```text
+```PowerShell
 Start-PSUServer -Port 8080 -Configuration {
     New-PSUEndpoint -Url "/slack" -Method POST -Endpoint {
 
@@ -25,7 +25,7 @@ Start-PSUServer -Port 8080 -Configuration {
 
 You can invoke this API by calling `Invoke-RestMethod`
 
-```text
+```PowerShell
 Invoke-RestMethod http://localhost:8080/slack -Method POST
 ```
 
@@ -39,7 +39,7 @@ This following example uses [Universal Automation](../automation/about.md). This
 
 This example takes advantage of triggers to send a message to Slack when a job fails within PowerShell Universal. We define two scripts. The first script simply throws and error and is set to fail by using the `-ErrorAction Stop` setting. The second script receives the job that failed and sends a message to the team's Slack channel.
 
-```text
+```PowerShell
 Start-PSUServer -Port 8080 -Configuration {
 
     Set-PSULicense -Key 'license'

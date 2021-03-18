@@ -10,13 +10,13 @@ Cache scope is used to store a variable that will be available in any endpoint. 
 
 Just like any other scope, cache variables are defined with a prefix and a colon separator.
 
-```text
+```PowerShell
 $Cache:Computers = Get-ADComputer
 ```
 
 Once assigned, the `$Cache:Computer` variable is available within any endpoint.
 
-```text
+```PowerShell
 New-UDMonitor -Title Computers -Endpoint {
     $Cache:Computers.Length | Out-UDMonitorData
 }
@@ -28,7 +28,7 @@ Session scope is used to store a variable per session. A session is established 
 
 Just like any other scope, cache variables are defined with a prefix and a colon separator.
 
-```text
+```PowerShell
 New-UDCheckbox -Label "Show chart" -OnChange {
    $Session:ShowChart = $EventData
 }
@@ -36,7 +36,7 @@ New-UDCheckbox -Label "Show chart" -OnChange {
 
 Once assigned, the `$Session:ShowChart` variable is available in dashboard endpoints. Session variables are not available in REST API endpoints or scheduled endpoints.
 
-```text
+```PowerShell
 New-UDColumn -Endpoint {
     if ($Session:ShowChart) {
          New-UDChart ...

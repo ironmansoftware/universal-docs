@@ -12,7 +12,7 @@ The top App Bar provides content and actions related to the current screen. It's
 
 ![](../../../.gitbook/assets/image%20%2877%29.png)
 
-```text
+```PowerShell
 $Drawer = New-UDDrawer -Children {
     New-UDList -Children {
         New-UDListItem -Label "Home"

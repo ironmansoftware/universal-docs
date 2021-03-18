@@ -38,8 +38,8 @@ Read more about `appsettings.json` on our [Settings ](../settings.md)page.
 
 Now that we have completed the configuration of an AzureAD App Registration, we can update the `appsettings.json` file with the appropriate settings. For my application, it would look something like this. 
 
-```text
-  "OIDC": {
+```Json
+	"OIDC": {
       "Enabled": "true",
       "CallbackPath": "/auth/signin-oidc",
       "ClientID": "6f006906-643a-40fe-af00-9060ceffffff",
