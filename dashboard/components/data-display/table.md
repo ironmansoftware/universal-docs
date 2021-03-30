@@ -185,6 +185,86 @@ New-UDTable -Id 'service_table' -Data $Data -Columns $Columns -Title 'Services' 
 
 ![](../../../.gitbook/assets/image%20%28176%29.png)
 
+## Server-Side Exporting
+
+{% hint style="warning" %}
+This documentation is in reference to a future version of PowerShell Universal.
+{% endhint %}
+
+You can control the export functionality with a PowerShell script block. This is useful when exporting from server-side sources like SQL server tables. 
+
+In this example, I have a SQL table that contains podcasts. When exporting, you will receive information about the current state of the table to allow you to customize what data is exported. 
+
+```text
+New-UDDashboard -Title "Hello, World!" -Content {
+    New-UDTable -Title 'Shows' -LoadData {
+        $TableData = ConvertFrom-Json $Body
+
+        $OrderBy = $TableData.orderBy.field
+        if ($OrderBy -eq $null)
+        {
+            $OrderBy = "name"
+        }
+
+        $OrderDirection = $TableData.OrderDirection
+        if ($OrderDirection -eq $null)
+        {
+            $OrderDirection = 'asc'
+        }
+
+        $Where = ""
+        if ($TableData.Filters) 
+        {
+            $Where = "WHERE "
+
+            foreach($filter in $TableData.Filters)
+            {
+                $Where += $filter.column.field + " LIKE '%" + $filter.value + "%' AND "
+            }
+
+            $Where += " 1 = 1"
+        }
+
+        $PageSize = $TableData.PageSize 
+        # Calculate the number of rows to skip
+        $Offset = $TableData.Page * $PageSize
+        $Count = Invoke-DbaQuery -SqlInstance localhost\MSSQLSERVER -Database 'podcasts' -Query "SELECT COUNT(*) as count FROM shows $Where"
+
+        $Data = Invoke-DbaQuery -SqlInstance localhost\MSSQLSERVER -Database 'podcasts' -Query "SELECT * FROM shows $Where ORDER BY $orderBy $orderdirection OFFSET $Offset ROWS FETCH NEXT $PageSize ROWS ONLY" | ForEach-Object {
+            @{ 
+                name = $_.name 
+                host = $_.host
+            }
+        } 
+        $Data | Out-UDTableData -Page $TableData.page -TotalCount $Count.Count -Properties $TableData.properties
+    } -Columns @(
+        New-UDTableColumn -Property 'name' -Sort -Filter -Export
+        New-UDTableColumn -Property 'host' -Sort -Filter -Export
+    ) -Sort -Filter -Export -OnExport {
+        $Query = $Body | ConvertFrom-Json
+
+        <# Query will contain
+            filters: []
+            orderBy: undefined
+            orderDirection: ""
+            page: 0
+            pageSize: 5
+            properties: (5) ["dessert", "calories", "fat", "carbs", "protein"]
+            search: ""
+            totalCount: 0
+            allRows: true
+        #>
+    
+        Invoke-DbaQuery -SqlInstance localhost\MSSQLSERVER -Database 'podcasts' -Query "SELECT * FROM shows" | ForEach-Object {
+            @{ 
+                name = $_.name 
+                host = $_.host
+            }
+        } 
+    }
+}
+```
+
 ## Customizing Export Options
 
 You can decide which export options to present to your users using the `-ExportOption` cmdlet. The following example would only show the CSV export option. 
