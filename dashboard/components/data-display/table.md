@@ -219,6 +219,23 @@ $Option = New-UDTableTextOption -Search "Search all these records"
 New-UDTable -Data $Data -TextOption $Option -ShowSearch
 ```
 
+## Refresh with a button
+
+You can externally refresh a table by putting the table within a dynamic region and using `Sync-UDElement`. 
+
+This example creates a button to refresh the table. 
+
+```text
+New-UDDynamic -Id 'table' -Content {
+    $Data = Get-Service
+    New-UDTable -Data $Data
+}
+
+New-UDButton -Text 'Refresh Table' -OnClick {
+    Sync-UDElement -Id 'table'
+}
+```
+
 **New-UDTable**
 
 | Name | Type | Description | Required |
