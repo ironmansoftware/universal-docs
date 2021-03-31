@@ -39,6 +39,65 @@ else
         
 ```
 
+### Setting Claims
+
+During forms authentication, you can set claims that will be available within role policies. This can provide a performance benefit when interacting with remote systems since you can perform a single claim lookup and then evaluate the claims locally rather than having to make additional calls to the remote system. 
+
+This example uses Active Directory to look up group membership and assign the as claims that will be available within the roles scripts. 
+
+```text
+param(
+    [PSCredential]$Credential
+)
+
+#
+#   You can call whatever cmdlets you like to conduct authentication here.
+#   Just make sure to return the $Result with the Success property set to $true
+#
+
+$Result = [Security.AuthenticationResult]::new()
+if ($Credential.UserName -eq 'Admin') 
+{
+    #Maintain the out of box admin user
+    New-PSUAuthenticationResult -UserName 'Admin' -Success
+}
+else
+{
+    # Get current domain using logged-on user's credentials - this validates their credential
+    $CurrentDomain = "LDAP://DC=mydemodomain,DC=com"  # Insert Your Domain Here
+    $domain = New-Object System.DirectoryServices.DirectoryEntry($CurrentDomain,($Credential.UserName),$Credential.GetNetworkCredential().password)
+
+    if ($domain.name -eq $null)
+    {
+        "Authentication failed for $($Credential.UserName)!" | Out-File "C:\test\adlogin.txt"
+        write-host "Authentication failed - please verify your username and password."
+        New-PSUAuthenticationResult -UserName $Credential.UserName
+    }
+    else
+    {
+        write-host "Successfully authenticated with domain $($domain.name)"
+        "Authentication success for $($Credential.UserName)!" | Out-File "C:\test\adlogin.txt"
+
+        New-PSUAuthenticationResult -UserName $Credential.UserName -Success -Claims { 
+            Get-ADPrincipalGroupMembership $Credential.UserName | Select-Object -ExpandProperty name | ForEach-Object {
+                New-PSUAuthorizationClaim -Type Role -Value $_
+            }
+        }
+    }
+}
+```
+
+Within your `roles.ps1` file, you will be able to use these claims to validate group membership. 
+
+This example checks to see if the user is part of the SOC\_Admins group. 
+
+```text
+param($User)
+
+$Roles = $User.Claims | Where-Object Type -eq Role | Select-Object -ExpandProperty Value
+$Roles -contains 'SOC_Admins'
+```
+
 ## OpenID Authentication
 
 You can configure OpenID authentication and authorization by adjusting the settings within the `OpenID` section of the `appsettings.json` file. Authorization policies that you configure within Universal will be run on the user's identity after authentication is successful.
