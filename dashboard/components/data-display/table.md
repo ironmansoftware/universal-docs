@@ -85,8 +85,14 @@ New-UDTable -Data $Data -Columns $Columns -Sort -Export
 Column width can be defined using the `-Width` parameter. You can also decide to truncate columns that extend past that width. 
 
 ```text
-    @{Dessert = 'Gingerbread'; Calories = 200; Fat = 6.0; Carbs = 24; Protein = 4.0}
+$Data = @(
+    @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
 ) 
+
 
 $Columns = @(
     New-UDTableColumn -Property Dessert -Title Dessert -Render { 
@@ -98,7 +104,7 @@ $Columns = @(
     New-UDTableColumn -Property Protein -Title Protein 
 )
 
-New-UDTable -Data $Data -Columns $Columns -Sort -Export
+New-UDTable -Data $Data -Columns $Columns -Sort
 ```
 
 ## Table with server-side processing
@@ -308,7 +314,9 @@ This example creates a button to refresh the table.
 ```text
 New-UDDynamic -Id 'table' -Content {
     $Data = Get-Service
-    New-UDTable -Data $Data
+    New-UDTable -Data $Data -Paging
+} -LoadingComponent {
+    "Loading"
 }
 
 New-UDButton -Text 'Refresh Table' -OnClick {
