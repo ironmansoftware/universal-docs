@@ -38,7 +38,7 @@ else
 }
 ```
 
-### Settings a Password
+### Setting a Password
 
 You can check the password of the credential by using the `GetNetworkCredential()` method of `PSCredential`.
 
