@@ -36,7 +36,30 @@ else
 {
     New-PSUAuthenticationResult -ErrorMessage 'Bad username or password'
 }
-        
+```
+
+### Settings a Password
+
+You can check the password of the credential by using the `GetNetworkCredential()` method of `PSCredential`.
+
+```text
+param(
+    [PSCredential]$Credential
+)
+
+#
+#   You can call whatever cmdlets you like to conduct authentication here.
+#   Just make sure to return the $Result with the Success property set to $true
+#
+
+if ($Credential.UserName -eq 'Admin' -and $Credential.GetNetworkCredential().Password -eq 'MySuperSecretPassword') 
+{
+    New-PSUAuthenticationResult -Success -UserName 'Admin'
+}
+else 
+{
+    New-PSUAuthenticationResult -ErrorMessage 'Bad username or password'
+}
 ```
 
 ### Setting Claims
