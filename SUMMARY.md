@@ -143,6 +143,7 @@
 ---
 
 * [Changelog](changelog.md)
+* [Changelog \(Beta\)](changelog-beta.md)
 * [Extension Changelog](extension-changelog.md)
 * [Legacy Universal Dashboard Docs](https://legacydocs.universaldashboard.io)
 
