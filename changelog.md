@@ -4,6 +4,48 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 1.5.15 -4/5/2021
+
+### Includes
+
+* UniversalDashboard - v3.3.4
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.0.4
+* UniversalDashboard.Style - 1.0.0
+
+### Added
+
+#### Automation
+
+* Added JobDebugging setting to enable logging directly from the job process
+* Added JobHandshakeTimeout setting to adjust the number of seconds a job will wait for the handshake before timing out
+* Added ContinueJobOnServerStop setting to prevent jobs from terminating if the server process stops
+
+#### Dashboard
+
+* UDv3 - Added -SortType to New-UDTableColumn to allow for selecting the type of sorting \(alphanumeric vs datetime\) - [\#9](https://github.com/ironmansoftware/issues/issues/9)
+* UDv3 - Added loading progress bar when server-side processing is performing a server-side function
+* UDv3 - Added -OnExport to New-UDTable to control what data is exported from PowerShell
+* UDv3 - Added -DisablePageSizeAll to New-UDTable
+
+### Changed
+
+#### Dashboard
+
+* Dashboard startup now honors -PersistentRunspace
+* UDv3 - Fixed an issue with New-UDTable where the export would use an invalid file name - [\#76](https://github.com/ironmansoftware/issues/issues/76)
+* UDv3 - Fixed an issue where New-UDTable sort was case sensitive - [\#8](https://github.com/ironmansoftware/issues/issues/8)
+* UDv3 - Fixed an issue where the counts in the search field would be incorrect when using server-side processing
+* UDv3 - Fixed an issue where the filter search text was not being honored for New-UDTextOption 
+
+#### Platform
+
+* Fixed an issue where Install-PSUServer would use the wrong separator for the $ENV:PATH variable on Linux and OSX
+* Fixed an issue where PSU would try to sign out in Windows Auth configurations resulting in an error in the event log
+* Fixed an issue where git sync branch selection would not work
+
 ## 1.5.14 - 3/4/2021
 
 ### Includes

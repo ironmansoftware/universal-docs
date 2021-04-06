@@ -72,7 +72,7 @@ New-UDSelect -Id 'spacingSelect' -Label Spacing -Option {
 
 ## Row and Columns
 
-You can also use the `New-UDRow` and `New-UDColumn` functions when working with the grid. 
+You can also use the `New-UDRow` and `New-UDColumn` functions when working with the grid.
 
 ```PowerShell
 New-UDRow -Columns {
