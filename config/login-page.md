@@ -18,7 +18,7 @@ You can host an image by using [Published Folders](../dashboard/published-folder
 
 Next, we can create a `loginPage.ps1` file in the repository folder. Add the various colors, text and image URL to customize the login page. As soon as you save this file, you can refresh the login page to see the result. 
 
-```text
+```PowerShell
 $LoginPage = @{
  PrimaryColor = '#5c2751' 
  Title = 'DBATools Web Portal'

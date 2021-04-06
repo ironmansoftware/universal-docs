@@ -10,7 +10,7 @@ This example uses [PowerShell Universal Dashboard](../dashboard/about.md).
 
 This examples accepts a JPEG file and converts to to a PNG using Universal Dashboard. To implement this example, we need to use published folders and a dashboard that uses UDForm and the UDUpload component. After converting the image, it displays it. 
 
-```text
+```PowerShell
 Start-PSUServer -Port 8080 -Configuration {
     New-PSUPublishedFolder -Path 'C:\images' -RequestPath '/images'
 
@@ -40,7 +40,7 @@ This example uses [PowerShell Universal API](../api/about.md).
 
 This example is similar to the dashboard example but exposes the functionality as an API rather than a webpage. The API accepts a POST request that contains the image as a the body. We use the `$Data` variable which contains the byte array for the image file and then convert it use the same method. We then take advantage of the `New-PSUApiResponse` cmdlet to return a custom response. 
 
-```text
+```PowerShell
 Start-PSUServer -Port 8080 -Configuration {
     New-PSUEndpoint -Url "/image" -Method POST -Endpoint {
         $Bitmap = [System.Drawing.Image]::FromStream([System.IO.MemoryStream]::new($Data))
@@ -55,8 +55,8 @@ Start-PSUServer -Port 8080 -Configuration {
 
 We can invoke the API with `Invoke-WebRequest`. The below example posts the IMG\_2260.jpeg file and converts it to an image.png file.
 
-```text
-invoke-webrequest -InFile .\IMG_2260.jpeg -Uri http://localhost:8080/image -Method POST -OutFile .\image.png
+```PowerShell
+Invoke-WebRequest -InFile .\IMG_2260.jpeg -Uri http://localhost:8080/image -Method POST -OutFile .\image.png
 ```
 
 ## Rate Limited Conversion API
@@ -65,7 +65,7 @@ This example uses [PowerShell Universal API](../api/about.md). This example requ
 
 This example provides the same functionality as the previous example but rate limits the number of requests to 5 per 10 minutes. We can use `New-PSURateLimit` to set the request limit. 
 
-```text
+```PowerShell
 Start-PSUServer -Port 8080 -Configuration {
     Set-PSULicense -Key "key"
 
@@ -84,7 +84,7 @@ Start-PSUServer -Port 8080 -Configuration {
 
 Invoking this request most than the specified number of times will result in an error. 
 
-```text
+```
 PS C:\Users\adamr> invoke-webrequest -InFile .\IMG_2260.jpeg -Uri http://localhost:8080/image -Method POST -OutFile .\image.png
 Invoke-WebRequest: API calls quota exceeded! maximum admitted 5 per .
 ```

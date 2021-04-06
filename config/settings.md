@@ -14,7 +14,7 @@ When installed from the MSI, the installation directory for PowerShell Universal
 
 You can create an appsettings.json file within the `$Env:ProgramData\PowerShellUniversal` folder. You can use a subset of the settings from within the `appsettings.json` file. For example, if you wanted to override the JWT settings, you could have an `appsettings.json` file like this. 
 
-```text
+```json
 {
   "Jwt": {  
     "SigningKey": "PleaseUseYourOwnSigningKeyHere",  
@@ -32,13 +32,13 @@ You can also set environment variables for your settings. Environment variables 
 
 Using an environment variable for the OpenID Connect secret.
 
-```text
+```PowerShell
 $Env:Authentication__OIDC__ClientSecret = "mySecret"
 ```
 
 Using an environment variable for JWT signing key.
 
-```text
+```PowerShell
 $Env:Jwt__SigningKey = "mySigningKey"
 ```
 
@@ -48,8 +48,8 @@ $Env:Jwt__SigningKey = "mySigningKey"
 
 **Default Value**
 
-```text
-"Kestrel": {
+```json
+	"Kestrel": {
   "Endpoints": {
     "HTTP": {
       "Url": "http://*:5000"
@@ -71,8 +71,8 @@ Kestrel is the web server implementation for ASP.NET Core that PowerShell Univer
 
 **Default value**
 
-```text
-"ApplicationInsights": {
+```json
+	"ApplicationInsights": {
   "InstrumentationKey": ""
 },
 ```
@@ -85,8 +85,8 @@ Kestrel is the web server implementation for ASP.NET Core that PowerShell Univer
 
 **Default Value**
 
-```text
-"Logging": {
+```json
+	"Logging": {
   "Path": "%PROGRAMDATA%/PowerShellUniversal/log.txt",
   "RetainedFileCountLimit": 31,
   "LogLevel": {
@@ -109,8 +109,8 @@ The logging options define the level of logging exposed by Universal. The core U
 
 **Default Value**
 
-```text
-"AllowedHosts": "*",
+```json
+	"AllowedHosts": "*",
 ```
 
 The hosts that are allowed to connect to the webserver. Defaults to any host. 
@@ -119,13 +119,13 @@ The hosts that are allowed to connect to the webserver. Defaults to any host.
 
 **Default Value**
 
-```text
-"CorsHosts": "",
+```json
+	"CorsHosts": "",
 ```
 
 Configures the hosts that are allowed to make cross-origin resource sharing requests \(CORS\) to the server. To allow multiple hosts, separate each host by a semicolon. 
 
-```text
+```Json
 "CorsHosts" : "https://www.google.com;https://login.microsoftonline.com"
 ```
 
@@ -133,8 +133,8 @@ Configures the hosts that are allowed to make cross-origin resource sharing requ
 
 **Default Value**
 
-```text
-"Data": {
+```json
+	"Data": {
   "RepositoryPath": "%ProgramData%\\UniversalAutomation\\Repository",
   "ConnectionString": "%ProgramData%\\UniversalAutomation\\database.db",
   "GitRemote": "",
@@ -159,8 +159,8 @@ Configures the hosts that are allowed to make cross-origin resource sharing requ
 
 **Default Value**
 
-```text
-"Api": {
+```json
+	"Api": {
   "Url": ""
 },
 ```
@@ -173,8 +173,8 @@ Configures the hosts that are allowed to make cross-origin resource sharing requ
 
 **Default Value**
 
-```text
-"Authentication" : {
+```json
+	"Authentication" : {
     "Windows": {
       "Enabled": "false"
     },
@@ -246,8 +246,8 @@ JSON Web Token configuration settings
 
 **Default Value**
 
-```text
-"Jwt": {  
+```json
+	"Jwt": {  
   "SigningKey": "PleaseUseYourOwnSigningKeyHere",  
   "Issuer": "IronmanSoftware",
   "Audience": "PowerShellUniversal"
@@ -264,8 +264,8 @@ JSON Web Token configuration settings
 
 **Default Value**
 
-```text
-"UniversalDashboard": {
+```json
+	"UniversalDashboard": {
   "AssetsFolder": "%ProgramData%\\PowerShellUniversal\\Dashboard"
 },
 ```

@@ -14,7 +14,7 @@ Tables display information in a way that’s easy to scan, so that users can loo
 
 A simple example with no frills. Table columns are defined from the data.
 
-```text
+```PowerShell
 $Data = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -32,7 +32,7 @@ New-UDTable -Data $Data
 
 Define custom columns for your table.
 
-```text
+```PowerShell
 $Data = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -58,7 +58,7 @@ New-UDTable -Id 'customColumnsTable' -Data $Data -Columns $Columns
 
 Define column rendering. Sorting and exporting still work for the table.
 
-```text
+```PowerShell
 $Data = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 1; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -84,7 +84,7 @@ New-UDTable -Data $Data -Columns $Columns -Sort -Export
 
 Column width can be defined using the `-Width` parameter. You can also decide to truncate columns that extend past that width. 
 
-```text
+```PowerShell
 $Data = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -92,7 +92,6 @@ $Data = @(
     @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
 ) 
-
 
 $Columns = @(
     New-UDTableColumn -Property Dessert -Title Dessert -Render { 
@@ -115,7 +114,7 @@ For a full example of server-side processing, [see this blog post](https://blog.
 
 Process data on the server so you can perform paging, filtering, sorting and searching in systems like SQL.
 
-```text
+```PowerShell
 $Columns = @(
     New-UDTableColumn -Property Dessert -Title "A Dessert"
     New-UDTableColumn -Property Calories -Title Calories 
@@ -154,7 +153,7 @@ Tables support selection of rows. You can create an event handler for the `OnRow
 
 The following example creates a table with row selection enabled.  A toast is show when clicking the row or when clicking the GET Rows button. 
 
-```text
+```PowerShell
 $Data = try { get-service -ea Stop | select Name,@{n = "Status";e={ $_.Status.ToString()}},@{n = "StartupType";e={ $_.StartupType.ToString()}},@{n = "StartType";e={ $_.StartType.ToString()}} } catch {}
 $Columns = @(
     New-UDTableColumn -Property Name -Title "Service Name" -ShowSort -IncludeInExport -IncludeInSearch -ShowFilter -FilterType text
@@ -178,7 +177,7 @@ New-UDButton -Text "GET Rows" -OnClick {
 
 Tables support exporting the data within the table. You can export as CSV, XLSX, JSON or PDF. You can define which columns to include in an export and choose to export just the current page or all the data within the table.
 
-```text
+```PowerShell
 $Data = try { get-service -ea Stop | select Name,@{n = "Status";e={ $_.Status.ToString()}},@{n = "StartupType";e={ $_.StartupType.ToString()}},@{n = "StartType";e={ $_.StartType.ToString()}} } catch {}
 $Columns = @(
     New-UDTableColumn -Property Name -Title "Service Name" -IncludeInExport
@@ -275,7 +274,7 @@ New-UDDashboard -Title "Hello, World!" -Content {
 
 You can decide which export options to present to your users using the `-ExportOption` cmdlet. The following example would only show the CSV export option. 
 
-```text
+```PowerShell
 
 $Data = try { get-service -ea Stop | select Name,@{n = "Status";e={ $_.Status.ToString()}},@{n = "StartupType";e={ $_.StartupType.ToString()}},@{n = "StartType";e={ $_.StartType.ToString()}} } catch {}
 $Columns = @(
@@ -291,7 +290,7 @@ New-UDTable -Id 'service_table' -Data $Data -Columns $Columns -Title 'Services' 
 
 You can use the `-TextOption` parameter along with the `New-UDTableTextOption` cmdlet to set text fields within the table. 
 
-```text
+```PowerShell
 $Data = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}

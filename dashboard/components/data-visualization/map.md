@@ -16,7 +16,7 @@ The UDMap component is a robust control that provides a huge set of features. Yo
 
 This basic map defines a simple base layer using the wmflabs.org tile server. You can use your own custom tile server by specifying a URL. The map is position over Hailey, Idaho. 
 
-```text
+```PowerShell
 New-UDMap -Endpoint {
     New-UDMapRasterLayer -TileServer 'https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png' 
 } -Latitude 43.52107 -Longitude -114.31644 -Zoom 13 -Height '100vh'
@@ -28,7 +28,7 @@ New-UDMap -Endpoint {
 
 You can enable the layer control by using the `New-UDMapLayerControl` cmdlet. This map defines several layers with components that you can toggle on and off. You can only have one base layer selected as a time. Map overlay layers can toggle on and off. 
 
-```text
+```PowerShell
 New-UDMap -Endpoint {
     New-UDMapLayerControl -Content {
         New-UDMapBaseLayer -Name 'Black and White' -Content {
@@ -53,7 +53,7 @@ New-UDMap -Endpoint {
 
 Heatmaps can be defined by creating a heatmap layer. The intesity and location of the heatmap clusters can be defined by using the `New-UDMapHeatmapLayer` cmdlet. 
 
-```text
+```PowerShell
 New-UDMap -Endpoint {
     New-UDMapRasterLayer -TileServer 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' 
     New-UDMapHeatmapLayer -Points @(
@@ -80,7 +80,7 @@ New-UDMap -Endpoint {
 
 Marker clusters group together markers that are close to each other. As you zoom in or out, the clusters will either combine or explode. 
 
-```text
+```PowerShell
 New-UDMap -Endpoint {
     New-UDMapRasterLayer -TileServer 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' 
     New-UDMapMarkerClusterLayer -Id 'cluster-layer' -Markers @(
@@ -101,7 +101,7 @@ Maps provide a series of interactive capabilities for add components to and mani
 
 ![](../../../.gitbook/assets/interactive.gif)
 
-```text
+```PowerShell
 New-UDButton -Text 'Add Circle' -OnClick {
     Add-UDElement -ParentId 'Feature-Group' -Content {
         New-UDMapVectorLayer -Id 'Vectors' -Circle -Latitude 51.505 -Longitude -0.09 -Radius 500 -Color blue -FillColor blue -FillOpacity .5 

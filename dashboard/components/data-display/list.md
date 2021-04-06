@@ -12,7 +12,7 @@ Lists are a continuous group of text or images. They are composed of items conta
 
 ![](../../../.gitbook/assets/image%20%2851%29.png)
 
-```text
+```PowerShell
 New-UDList -Content {
     New-UDListItem -Label 'Inbox' -Icon (New-UDIcon -Icon envelope -Size 3x) -SubTitle 'New Stuff'
     New-UDListItem -Label 'Drafts' -Icon (New-UDIcon -Icon edit -Size 3x) -SubTitle "Stuff I'm working on "
@@ -25,7 +25,7 @@ New-UDList -Content {
 
 You can define an action to take when an item is clicked by using the `-OnClick` parameter of `New-UDListItem`. 
 
-```text
+```PowerShell
 New-UDList -Content {
     New-UDListItem -Label 'Inbox' -Icon (New-UDIcon -Icon envelope -Size 3x) -SubTitle 'New Stuff'
     New-UDListItem -Label 'Drafts' -Icon (New-UDIcon -Icon edit -Size 3x) -SubTitle "Stuff I'm working on "

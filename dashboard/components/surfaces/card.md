@@ -14,7 +14,7 @@ Although cards can support multiple actions, UI controls, and an overflow menu, 
 
 ![](../../../.gitbook/assets/image%20%2856%29.png)
 
-```text
+```PowerShell
 New-UDCard -Title 'Simple Card' -Content {
     "This is some content"
 }
@@ -24,7 +24,7 @@ New-UDCard -Title 'Simple Card' -Content {
 
 You can use the body, header, footer and expand cmdlets to create advanced cards. The below example creates a card with various features based on a Hyper-V VM. 
 
-```text
+```PowerShell
 $VM = Get-VM -Name $VMName @ConnectionInfo
 
 $Header = New-UDCardHeader -Title $VM.Name

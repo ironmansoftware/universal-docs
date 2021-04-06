@@ -8,7 +8,7 @@ description: Progress component for Universal Dashboard
 
 ![](../../../.gitbook/assets/image%20%2880%29.png)
 
-```text
+```PowerShell
 New-UDProgress -Circular -Color Blue 
 ```
 
@@ -16,7 +16,7 @@ New-UDProgress -Circular -Color Blue
 
 ![](../../../.gitbook/assets/image%20%2862%29.png)
 
-```text
+```PowerShell
 New-UDProgress
 ```
 
@@ -24,7 +24,7 @@ New-UDProgress
 
 ![](../../../.gitbook/assets/image%20%2869%29.png)
 
-```text
+```PowerShell
 New-UDProgress -PercentComplete 75
 ```
 

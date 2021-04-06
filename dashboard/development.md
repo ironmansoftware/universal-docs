@@ -38,19 +38,19 @@ You can use the Universal Dashboard PowerShell module and single-file configurat
 
 Install the Universal Dashboard PowerShell Module. This will install both the Universal Dashboard framework module and the PowerShell Universal module. 
 
-```text
+```PowerShell
 Install-Module UniversalDashboard
 ```
 
 Install the latest version of the Universal server.
 
-```text
+```PowerShell
 Install-PSUServer -LatestVersion
 ```
 
 Create a PS1 file for your configuration data and start the server.
 
-```text
+```PowerShell
 Start-PSUServer -Port 8080 -Configuration {
     New-PSUDashboard -Name 'Dashboard' -BaseUrl '/dashboard' -Framework 'UniversalDashboard:Latest' -Content {
         New-UDDashboard -Title 'Hello, World' -Content {
@@ -66,7 +66,7 @@ Start-PSUServer -Port 8080 -Configuration {
 
 Navigate to your dashboard.
 
-```text
+```PowerShell
 Start-Process http://localhost:8080/dashboard
 ```
 
@@ -90,7 +90,7 @@ You can debug individual endpoints within your dashboard by using `Wait-Debugger
 
 For example, if I wanted to debug the button on my dashboard, I would add it to the `OnClick` event handler. 
 
-```text
+```PowerShell
 New-UDDashboard -Title "Hello, World!" -Content {
     New-UDTypography -Text "Hello, World!"
 
@@ -107,7 +107,7 @@ Now, I can right click on my dashboard and click Debug Dashboard Process.
 
 This will issue an `Enter-PSHostProcess` command in the Integrated Terminal. 
 
-```text
+```
 PS C:\Users\adamr\Desktop> Enter-PSHostProcess -Id 15464
 
 [Process:15464]: PS C:\Users\adamr\Documents>
@@ -115,7 +115,7 @@ PS C:\Users\adamr\Desktop> Enter-PSHostProcess -Id 15464
 
 Next, you'll want to navigate to your page and click the button. Once the button is clicked, issue a `Get-Runspace` command in the Integrated Terminal. You'll notice that one of the runspaces is in `InBreakpoint` availability. 
 
-```text
+```PowerShell
 [Process:15464]: PS C:\Users\adamr\Documents> Get-Runspace
 
 

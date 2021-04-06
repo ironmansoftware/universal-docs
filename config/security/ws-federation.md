@@ -34,7 +34,7 @@ After configuring ADFS or AAD, you can now provide the properties to Universal f
 
 Here is an example of how to update the `appsettings.json` file to accommodate the correct settings for WS-Federation.
 
-```text
+```json
 {
   "Kestrel": {
     "Endpoints": {

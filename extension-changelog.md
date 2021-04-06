@@ -19,7 +19,7 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 * An error is now shown when the extension cannot connect to PowerShell Universal 
 * Removed the auto-import of UD and PSU modules. We recommend you install these from the PowerShell Gallery 
 
-```text
+```PowerShell
 Install-Module Universal
 Install-Module UniversalDashboard
 ```

@@ -14,7 +14,7 @@ Create a basic switch.
 
 ![](../../../.gitbook/assets/image%20%2870%29.png)
 
-```text
+```PowerShell
 New-UDSwitch -Checked $true 
 New-UDSwitch -Checked $true -Disabled
 ```
@@ -23,7 +23,7 @@ New-UDSwitch -Checked $true -Disabled
 
 Respond to when a switch value is changed. The `$EventData` variable will include whether or not the switch was checked or unchecked. 
 
-```text
+```PowerShell
 New-UDSwitch -OnChange { Show-UDToast -Message $EventData }
 ```
 
@@ -31,7 +31,7 @@ New-UDSwitch -OnChange { Show-UDToast -Message $EventData }
 
 You can retrieve the value of the switch within another component by using `Get-UDElement`. Use the Checked property to determine whether the switch is checked out not. 
 
-```text
+```PowerShell
 New-UDSwitch -Id 'switch' 
 New-UDButton -Text 'Click' -OnClick {
     Show-UDToast -Message (Get-UDElement -Id 'switch').checked

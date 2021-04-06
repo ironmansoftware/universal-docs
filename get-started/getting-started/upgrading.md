@@ -66,8 +66,8 @@ PowerShell Universal uses LiteDB to store jobs, app tokens, identities and git s
 
 In `appsettings.json`, you will need to change the database type to `LiteDBv5` and add the upgrade parameter to the connection string. 
 
-```text
-  "Data": {
+```json
+	"Data": {
     "RepositoryPath": "%ProgramData%\\UniversalAutomation\\Repository",
     "ConnectionString": "filename=%ProgramData%\\UniversalAutomation\\database.db;upgrade=true",
     "DatabaseType": "LiteDBv5",

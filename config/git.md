@@ -22,8 +22,8 @@ If you setup git sync with a bare repository, the local changes will be sync'd a
 
 You can adjust the git synchronization behavior by changing the `GitSyncBehavior` setting in `appsettings.json`. When set to `OneWay`, the admin console and management API will become read-only. The PowerShell Universal system will pull from the remote but will never push or commit locally. 
 
-```text
-  "Data": {
+```json
+	"Data": {
     "RepositoryPath": "%ProgramData%\\UniversalAutomation\\Repository",
     "ConnectionString": "%ProgramData%\\UniversalAutomation\\database.db",
     "DatabaseType": "LiteDB",
@@ -40,8 +40,8 @@ You can adjust the git synchronization behavior by changing the `GitSyncBehavior
 
 We recommend that you use a personal access token \(PAT\) over a user name and password. You can configure a personal access token by setting the password property in the `appsettings.json` or other configuration methods. 
 
-```text
-  "Data": {
+```Json
+	"Data": {
     "RepositoryPath": "%ProgramData%\\UniversalAutomation\\Repository",
     "ConnectionString": "%ProgramData%\\UniversalAutomation\\database.db",
     "GitRemote": "https://github.com/myorg/myrepo.git",
@@ -54,8 +54,8 @@ We recommend that you use a personal access token \(PAT\) over a user name and p
 
 You can also configure a git remote to authenticate with a user name and password. Set the user name and password either with the `appsettings.json` file or another configuration method. 
 
-```text
-  "Data": {
+```Json
+	"Data": {
     "RepositoryPath": "%ProgramData%\\UniversalAutomation\\Repository",
     "ConnectionString": "%ProgramData%\\UniversalAutomation\\database.db",
     "GitRemote": "https://github.com/myorg/myrepo.git",

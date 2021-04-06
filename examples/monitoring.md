@@ -6,7 +6,7 @@ This retro looking dashboard displays the top 10 CPU and memory using processes,
 
 ![](../.gitbook/assets/hacker-dash.gif)
 
-```text
+```PowerShell
 Start-PSUServer -Port 8080 -Configuration {
     New-PSUDashboard -Name 'Hacker Dash' -BaseUrl '/' -Component 'UniversalDashboard.Charts:1.3.1' -Framework 'UniversalDashboard:Latest' -Content {
     
@@ -100,7 +100,7 @@ This example uses [PowerShell Universal Dashboard](../dashboard/about.md).
 
 In this example, we take advantage of Universal Dashboard scheduled endpoints, the in-memory cache and the UDMonitor component. We update the counter sets to use in the cache and load each of the counters' value in the set into an array to use in the dashboard. We then create a dashboard that dynamically creates UDMonitor charts within the page. Each monitor will update every 3 seconds with new data.
 
-```text
+```PowerShell
 Start-PSUServer -Port 8080 -Configuration {
     New-PSUDashboard -Name 'Performance' -BaseUrl '/' -Framework 'UniversalDashboard:Latest' -Content {
 

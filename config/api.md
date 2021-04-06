@@ -6,7 +6,7 @@ The Universal API can be used to manage the platform from any compatible REST cl
 
 To invoke the API, you can send an HTTP request with the Bearer token set for authorization.
 
-```text
+```PowerShell
 Invoke-RestMethod http://localhost:5000/api/v1/script -Headers @{ Authorization = "Bearer myAppToken" }
 ```
 

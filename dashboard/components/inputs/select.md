@@ -12,7 +12,7 @@ Create a simple select with multiple options.
 
 ![](../../../.gitbook/assets/image%20%2866%29.png)
 
-```text
+```PowerShell
 New-UDSelect -Option {
     New-UDSelectOption -Name 'One' -Value 1
     New-UDSelectOption -Name 'Two' -Value 2
@@ -26,7 +26,7 @@ Create a select with groups of selections.
 
 ![](../../../.gitbook/assets/image%20%2850%29.png)
 
-```text
+```PowerShell
 New-UDSelect -Option {
     New-UDSelectGroup -Name 'Group One' -Option {
         New-UDSelectOption -Name 'One' -Value 1
@@ -45,7 +45,7 @@ New-UDSelect -Option {
 
 Execute a PowerShell event handler when the value of the select is changed. 
 
-```text
+```PowerShell
 New-UDSelect -Option {
     New-UDSelectOption -Name 'One' -Value 1
     New-UDSelectOption -Name 'Two' -Value 2
@@ -57,7 +57,7 @@ New-UDSelect -Option {
 
 Retrieve the value of the select from another component. 
 
-```text
+```PowerShell
   New-UDSelect -Option {
       New-UDSelectOption -Name 'One' -Value 1
       New-UDSelectOption -Name 'Two' -Value 2

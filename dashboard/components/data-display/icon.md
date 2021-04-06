@@ -12,7 +12,7 @@ FontAwesome icons to include in your dashboard.
 
 Create icons by specifying their names. You can use the icon reference below to find icons.
 
-```text
+```PowerShell
 New-UDIcon -Icon 'address_book'
 ```
 
@@ -24,7 +24,7 @@ New-UDIcon -Icon 'address_book'
 
 Set the size of the icon. Valid values are: `xs`, `sm`, `lg`, `2x`, `3x`, `4x`, `5x`, `6x`, `7x`, `8x`, `9x`, `10x`
 
-```text
+```PowerShell
     New-UDIcon -Icon 'address_book' -Size 'sm'
     New-UDIcon -Icon 'address_book' -Size 'lg'
     New-UDIcon -Icon 'address_book' -Size '5x'
@@ -37,7 +37,7 @@ Set the size of the icon. Valid values are: `xs`, `sm`, `lg`, `2x`, `3x`, `4x`, 
 
 Rotate icons. The value represents the degrees of rotation.
 
-```text
+```PowerShell
 New-UDIcon -Icon 'address_book' -Size '5x' -Rotation 90
 ```
 
@@ -47,7 +47,7 @@ New-UDIcon -Icon 'address_book' -Size '5x' -Rotation 90
 
 Add a border to your icon. 
 
-```text
+```PowerShell
 New-UDIcon -Icon 'address_book' -Size '5x' -Border 
 ```
 
@@ -57,7 +57,7 @@ New-UDIcon -Icon 'address_book' -Size '5x' -Border
 
 Apply CSS styles to your icon. 
 
-```text
+```PowerShell
 New-UDIcon -Icon 'address_book' -Size '5x' -Style @{
     backgroundColor = "red"
 } 
@@ -67,7 +67,7 @@ New-UDIcon -Icon 'address_book' -Size '5x' -Style @{
 
 ## Visually Search for Icons
 
-```text
+```PowerShell
 New-UDTextbox -Id 'txtIconSearch' -Label 'Search' 
 New-UDButton -Text 'Search' -OnClick {
     Sync-UDElement -Id 'icons'

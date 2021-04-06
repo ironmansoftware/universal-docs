@@ -106,7 +106,7 @@ Most Importantly we will need to update "**processPath**" argument value of this
   * Update the arguments=**"PATH"** value to be the exact location of the Universal.Server.exe path.
   * Save the file to apply the configuration
 
-```text
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
   <system.webServer>
@@ -163,7 +163,7 @@ Once authentication is enabled in IIS, you will have to ensure that Windows Auth
 
 First, adjust the `web.config` file to forward the Windows authentication token.
 
-```text
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
   <system.webServer>
@@ -178,8 +178,8 @@ First, adjust the `web.config` file to forward the Windows authentication token.
 
 Next, enable Windows Authentication in the `appsettings.json` file for PowerShell Universal. 
 
-```text
-  "Authentication" : {
+```Json
+	"Authentication" : {
     "Windows": {
       "Enabled": "true"
     },

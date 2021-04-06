@@ -10,7 +10,7 @@ You can apply styles to individual components within Universal Dashboard by usin
 
 To apply a style to a component or a set of components, you call the `New-UDStyle` cmdlet, specify a CSS style and then include the components you wish to style within the `-Content` script block.
 
-```text
+```PowerShell
 New-UDStyle -Style '
     padding: 32px;
     background-color: hotpink;
@@ -36,7 +36,7 @@ Each Material UI component has a set of built in classes that you can override u
 
 When using a success alert, you will have the `.MuiAlert-standardSuccess` class applied to your component. You can override this default style like this. 
 
-```text
+```PowerShell
 New-UDStyle -Style '.MuiAlert-standardSuccess { background-color: red !important;  }  ' -Content {
     New-UDAlert -Text "Hello"
 }

@@ -82,7 +82,7 @@ Finally, check the component library you'd like added to your dashboard.
 
 You can also add component libraries directly to your `dashboards.ps1` script within the `.unversal` folder or when using [single-file hosting and configuration](../../config/hosting/single-file.md).
 
-```text
+```PowerShell
 New-PSUDashboard -Name 'Dashboard' -BaseUrl '/' -Framework "UniversalDashboard:Latest" -Component @("UniversalDashboard.Charts:1.3.0")
 ```
 
@@ -94,7 +94,7 @@ By default, runspaces will be reset after each execution. This will cause variab
 
 To enable persistent runspaces, you will need to configure an [environment ](../../config/environments.md)for your API. Set the `-PersistentRunspace` parameter to enable this feature. This is configured in the `environments.ps1` script.
 
-```text
+```PowerShell
 New-PSUEnvironment -Name 'Env' -Path 'powershell.exe' -PersistentRunspace
 ```
 
@@ -104,13 +104,13 @@ You will need to ensure that the environment is used by the dashboard.
 
 You can automatically grant app tokens to users that visit dashboards. This is useful if you want to invoke the management API for PowerShell Universal from within a dashboard. Your dashboard will need to have authentication enabled and you will have to use the `-GrantAppToken` switch parameter on `New-PSUDashboard`. 
 
-```text
+```PowerShell
 New-PSUDashboard -Name 'Dashboard' -BaseUrl '/' -Framework "UniversalDashboard:Latest" -Authenticated -GrantAppToken
 ```
 
 From within your dashboard, you can now invoke the management API without having to worry about app token management. The API will be invoked in the context of the user that is visiting the dashboard. 
 
-```text
+```PowerShell
 New-UDDashboard -Title "Hello, World!" -Content {
     New-UDButton -Text 'Job' -OnClick {
         Invoke-UAScript -Name 'Test.ps1'

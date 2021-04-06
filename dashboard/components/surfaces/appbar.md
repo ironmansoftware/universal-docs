@@ -12,7 +12,7 @@ The top App Bar provides content and actions related to the current screen. It's
 
 ![](../../../.gitbook/assets/image%20%2877%29.png)
 
-```text
+```PowerShell
 $Drawer = New-UDDrawer -Children {
     New-UDList -Children {
         New-UDListItem -Label "Home"
@@ -33,7 +33,7 @@ New-UDAppBar -Position relative -Children { New-UDElement -Tag 'div' -Content { 
 
 To create an app bar that is pinned to the bottom of the page, you can use the `-Footer` parameter.
 
-```text
+```PowerShell
 New-UDAppBar -Children { "Hello" } -Footer
 ```
 

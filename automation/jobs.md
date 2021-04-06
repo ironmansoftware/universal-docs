@@ -38,7 +38,7 @@ Some jobs will require feedback. Any script that contains a Read-Host call will 
 
 You can use `Invoke-UAScript` to invoke jobs from the command line. You will need a valid [App Token](../config/security/#app-tokens) to do so. Parameters are defined using dynamic parameters on the `Invoke-UAScript` cmdlet. 
 
-```text
+```PowerShell
 Invoke-UAScript -Script 'Script1.ps1' -RequiredParameter 'Hello'
 ```
 
@@ -50,7 +50,7 @@ You can also call UA scripts from UA scripts. When running a job in UA, you don'
 
 You can use the `Wait-UAJob` cmdlet to wait for a job to finish. Pipe the return value of `Invoke-UAScript` to `Wait-UAJob` to wait for the job to complete. `Wait-UAJob` will wait indefinitely unless the `-Timeout` parameter is specified. 
 
-```text
+```PowerShell
 Invoke-UAScript -Script 'Script1.ps1' -RequiredParameter 'Hello' | Wait-UAJob
 ```
 
@@ -58,7 +58,7 @@ Invoke-UAScript -Script 'Script1.ps1' -RequiredParameter 'Hello' | Wait-UAJob
 
 You can use the `Get-PSUJobPipelineOutput` cmdlet to return the pipeline output that was produced by a job. This pipeline output will be deserialized objects that were written to the pipeline during the job. You can access this data from where you have access to the PowerShell Universal Management API. 
 
-```text
+```PowerShell
 Get-PSUJobPipelineOutput -JobId 10
 ```
 
@@ -66,7 +66,7 @@ Get-PSUJobPipelineOutput -JobId 10
 
 It may be required to return the output from a script's last job run. In order to do this, you will need to use a combination of cmdlets to retrieve the script, the last job's ID and then return the pipeline or host output. 
 
-```text
+```PowerShell
 $Job = Get-UAScript -Name 'Script.ps1' | Get-UAJob -OrderDirection Descending -First 1
 Get-UAJobPipelineOutput -Job $Job
 Get-UAJobOutput -Job $Job
@@ -76,7 +76,7 @@ Get-UAJobOutput -Job $Job
 
 The following example invokes a script, stores the job object in a `$job` variable, waits for the job to complete and then returns the pipeline and host output.
 
-```text
+```PowerShell
 Invoke-UAScript -Script 'Script1.ps1' -RequiredParameter 'Hello' | Tee-Object -Variable job | Wait-UAJob
 
 $Pipeline = Get-UAJobPipelineOutput -Job $Job
@@ -91,7 +91,7 @@ You can call jobs over REST using the management API for PowerShell Universal. Y
 
 To call a script, you call an HTTP POST to the script endpoint with the ID of the script you wish to execute. 
 
-```text
+```PowerShell
 Invoke-RestMethod http://localhost:5000/api/v1/script/7 -Method POST -Body "" -Headers @{ Authorization = "Bearer appToken" } -ContentType 'application/json'
 ```
 
@@ -99,7 +99,7 @@ Invoke-RestMethod http://localhost:5000/api/v1/script/7 -Method POST -Body "" -H
 
 To provide parameters to scripts, you will need to define the parameters are part of the body. Currently the value is required to be a CLIXML string. 
 
-```text
+```PowerShell
 $JobContext = @{
     JobParameters = @(
         @{ Name = "parameter1"; Value = '<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04">
@@ -113,14 +113,14 @@ Invoke-RestMethod http://localhost:5000/api/v1/script/7 -Method POST -Body $JobC
 
 To generate CLIXML, you can use the `PSSerializer` class in PowerShell. You can pass any object into the serialize method.
 
-```text
+```PowerShell
 [System.Management.Automation.PSSerializer]::Serialize("String")
 ```
 
 If you want to pass a credential you will need to pass in the parameter as a variable. You do not need to serialize the variable name. 
 
-```text
-ontext = @{
+```PowerShell
+$JobContext = @{
     JobParameters = @(
         @{ Name = "parameter1"; Value = "myCredential"; IsVariable = $true },
     )
@@ -133,8 +133,8 @@ Invoke-RestMethod http://localhost:5000/api/v1/script/7 -Method POST -Body $JobC
 
 You can set the environment by pass in the environment property to the job context. The property must be the name of an environment defined within your PSU instance.
 
-```text
-ontext = @{
+```PowerShell
+$JobContext = @{
     Environment = "PowerShell 7"
 } | ConvertTo-Json
 
@@ -145,8 +145,8 @@ Invoke-RestMethod http://localhost:5000/api/v1/script/7 -Method POST -Body $JobC
 
 You can set the run as account by passing in the name of a PSCredential variable to the Credential property. 
 
-```text
-ontext = @{
+```PowerShell
+$JobContext = @{
     Credential = "MyUser"
 } | ConvertTo-Json
 
@@ -170,7 +170,7 @@ There are several built-in variables that are defined when a job is run. You can
 
 You can retrieve the name of the user that started the script by using the `UAJob` variable
 
-```text
+```PowerShell
 $UAJob.Identity.Name
 ```
 

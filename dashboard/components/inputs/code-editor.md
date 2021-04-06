@@ -16,7 +16,7 @@ The code editor component allows you to host the [Microsoft Monaco ](https://mic
 
 You can create a new code editor with the `New-UDCodeEditor` cmdlet. Specifying the `-Language` parameter will enable syntax highlighting for that language. You will need to specify a height in pixels. 
 
-```text
+```PowerShell
 New-UDCodeEditor -Height '500' -Language 'powershell'
 ```
 
@@ -26,7 +26,7 @@ New-UDCodeEditor -Height '500' -Language 'powershell'
 
 Use the `-Code` parameter to specify code that will be populated within the code editor when it loads. 
 
-```text
+```PowerShell
 New-UDCodeEditor -Height '500' -Language 'powershell' -Code '#Hello, world!'
 ```
 
@@ -34,7 +34,7 @@ New-UDCodeEditor -Height '500' -Language 'powershell' -Code '#Hello, world!'
 
 You can retrieve code from another component using the `Get-UDElement` cmdlet and accessing the code property of the hashtable that is returned. 
 
-```text
+```PowerShell
 New-UDCodeEditor -Height '500' -Language 'powershell' -Code '#Hello, world!' -Id 'editor'
 
 New-UDButton -Text 'Get Code' -OnClick {
@@ -46,7 +46,7 @@ New-UDButton -Text 'Get Code' -OnClick {
 
 You can set code from another component using the `Set-UDElement` cmdlet. Specify the code value in a hashtable passed to the `-Properties` parameter. 
 
-```text
+```PowerShell
 New-UDCodeEditor -Height '500' -Language 'powershell' -Code '#Hello, world!' -Id 'editor'
 
 New-UDButton -Text 'Get Code' -OnClick {

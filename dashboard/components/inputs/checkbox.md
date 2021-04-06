@@ -12,7 +12,7 @@ Checkboxes allow the user to select one or more items from a set.
 
 Checkboxes can be disabled and checked by default
 
-```text
+```PowerShell
 New-UDCheckBox
 New-UDCheckBox -Disabled
 New-UDCheckBox -Checked $true
@@ -25,7 +25,7 @@ New-UDCheckBox -Checked $true -Disabled
 
 Create checkboxes that use any icon and style.
 
-```text
+```PowerShell
 $Icon = New-UDIcon -Icon angry -Size lg -Regular
 $CheckedIcon = New-UDIcon -Icon angry -Size lg
 New-UDCheckBox -Icon $Icon -CheckedIcon $CheckedIcon -Style @{color = '#2196f3'}
@@ -35,7 +35,7 @@ New-UDCheckBox -Icon $Icon -CheckedIcon $CheckedIcon -Style @{color = '#2196f3'}
 
 Create checkboxes that fire script blocks when changed.
 
-```text
+```PowerShell
 New-UDCheckBox -OnChange {
     Show-UDToast -Title 'Checkbox' -Message $Body
 }    
@@ -47,7 +47,7 @@ New-UDCheckBox -OnChange {
 
 You can adjust where the label for the checkbox is placed.
 
-```text
+```PowerShell
 New-UDCheckBox -Label 'Demo' -LabelPlacement start
 New-UDCheckBox -Label 'Demo' -LabelPlacement top
 New-UDCheckBox -Label 'Demo' -LabelPlacement bottom
@@ -60,7 +60,7 @@ You can use `Get-UDElement` to get the value of the checkbox. `Get-UDElement` wi
 
 The following example shows a toast message with the value of the checkbox. 
 
-```text
+```PowerShell
 New-UDCheckbox -Id 'MyCheckbox' 
 
 New-UDButton -Text 'Get Value' -OnClick {

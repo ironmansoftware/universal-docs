@@ -17,7 +17,7 @@ Dashboards can contain one or more pages. The simplest dashboard will contain a 
 
 Here's an example of simple dashboard that displays some text. 
 
-```text
+```PowerShell
 New-UDDashboard -Title 'My New Dashboard' -Content {
     New-UDTypography -Text 'Hello!'
 }
@@ -31,7 +31,7 @@ Examples of all of the components can be found [on GitHub](https://github.com/ir
 
 Components are be caused using the standard verb-name syntax for any PowerShell cmdlet. 
 
-```text
+```PowerShell
 New-UDPage -Content {
     New-UDTextbox
 }
@@ -41,7 +41,7 @@ New-UDPage -Content {
 
 You can specify multiple pages within a dashboard. Each page defines a route. As for v3, all pages are dynamic. PowerShell will execute on each page load to render the new page. Since UD is a single page application, the web browser does not need to refresh the entire web page when navigating between the different dashboard pages. 
 
-```text
+```PowerShell
 $Pages = @()
 $Pages += New-UDPage -Name 'My Home Page' -Content {}
 $Pages += New-UDPage -Name 'Diagnostics' -Content {}
@@ -69,7 +69,7 @@ The Log tab will show all the logging coming from the PowerShell execution from 
 
 You can use `Write-Debug` to add additional log messages to your dashboard. To enable debug logging, you will have to set the `$DebugPreference` variable at the top of your dashboard script.
 
-```text
+```PowerShell
 $DebugPreference = 'Continue'
 ```
 

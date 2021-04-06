@@ -12,7 +12,7 @@ The grid creates visual consistency between layouts while allowing flexibility a
 
 ![](../../../.gitbook/assets/image%20%2857%29.png)
 
-```text
+```PowerShell
 New-UDGrid -Container -Content {
     New-UDGrid -Item -ExtraSmallSize 12 -Content {
         New-UDPaper -Content { "xs-12" } -Elevation 2
@@ -42,7 +42,7 @@ New-UDGrid -Container -Content {
 
 Adjust the spacing between items in the grid
 
-```text
+```PowerShell
 New-UDDynamic -Id 'spacingGrid' -Content {
     $Spacing = (Get-UDElement -Id 'spacingSelect').value
 
@@ -74,7 +74,7 @@ New-UDSelect -Id 'spacingSelect' -Label Spacing -Option {
 
 You can also use the `New-UDRow` and `New-UDColumn` functions when working with the grid.
 
-```text
+```PowerShell
 New-UDRow -Columns {
     New-UDColumn -SmallSize 12 -Content {
         New-UDPaper -Content { "xs-12" } -Elevation 2

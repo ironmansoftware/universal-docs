@@ -46,7 +46,7 @@ The JavaScript bundle is produced by the Webpack bundling process. It consists o
 
 The most basic structure for a UD component module will include a single JavaScript file, a PSM1 file to export a function and register the JavaScript and a PSD1 module manifest.
 
-```text
+```PowerShell
 - UniversalDashboard.95
     - index.23adfdasf.js
     - UniversalDashboard.95.psd1
@@ -70,7 +70,7 @@ You will need to install the following dependencies before creating your compone
 
 After installing Node, you will have access to the `npm` command. You will need to initialize the node package to start. This will create a `package.json` file in your directory. 
 
-```text
+```bash
 npm init 
 ```
 
@@ -80,7 +80,7 @@ npm init
 
 You will need several JavaScript packages to build your bundle. You will first want to install the dev dependencies. These are used to build your project.
 
-```text
+```bash
 npm install @babel/core --save-dev
 npm install @babel/plugin-proposal-class-properties --save-dev
 npm install @babel/plugin-syntax-dynamic-import --save-dev
@@ -94,7 +94,7 @@ npm install webpack-cli --save-dev
 
 Next, you'll want to install the `universal-dashboard` package along with any other packages you wish to use in your component. We are using React95 in this example. We will build a control based on that library. 
 
-```text
+```bash
 npm install universal-dashboard --save
 npm install react95 --save
 npm install styled-components --save
@@ -104,7 +104,7 @@ npm install styled-components --save
 
 You will need to create a `.babelrc` file to configure Babel for React.
 
-```text
+```json
 {
     "presets": ["@babel/preset-react"]
 }
@@ -114,7 +114,7 @@ You will need to create a `.babelrc` file to configure Babel for React.
 
 Webpack is extremely customizable and sometimes very hard to get right. Below is a basic `webpack.config.js` file you can use to configure Webpack. You can safely change the `ud95` entry key name and library value to one that matches your library. 
 
-```text
+```js
 var path = require('path');
 
 var BUILD_DIR = path.resolve(__dirname, 'dist');
@@ -155,7 +155,7 @@ module.exports = (env) => {
 
 Now you can build your first component. You will need to export a single function component from your component.jsx file. We suggest the use of functional React components rather than class-based React components. We need to wrap the component in withComponentFeatures to ensure the component has access to the Universal Dashboard platform features. 
 
-```text
+```js
 import React from 'react';
 import { withComponentFeatures } from 'universal-dashboard';
 import { Button } from 'react95';
@@ -176,7 +176,7 @@ export default withComponentFeatures(UD95Button);
 
 Once your component is completed, you'll need to add it to an `index`.js file. The entry point for your library is the first place Webpack will look. It will discover all other components from import statements in your code. The index.js file is where you should register your components. You can use the `registerComponent` function to do so. 
 
-```text
+```js
 import { registerComponent } from 'universal-dashboard'
 import UD95Button from './component';
 
@@ -187,7 +187,7 @@ registerComponent("ud95-button", UD95Button);
 
 To bundle the JavaScript, run the following command to start webpack. This will output a file into the dist folder. 
 
-```text
+```bash
 npm run build
 ```
 
@@ -197,7 +197,7 @@ Now you will need to create a PowerShell script that registers and creates your 
 
 First, register the JavaScript with Universal Dashboard.
 
-```text
+```PowerShell
 $JsFile = Get-ChildItem "$PSScriptRoot\ud95.*.js"
 $AssetId = [UniversalDashboard.Services.AssetService]::Instance.RegisterAsset($JsFile.FullName)
 ```
@@ -206,7 +206,7 @@ Next, create a function that returns a hashtable that defines which component we
 
 The `type` property of your hashtable needs to match with the first parameter of `registerComponent` that you called in your JavaScript.  
 
-```text
+```PowerShell
 function New-UD95Button {
     param(
         [Parameter()]
@@ -238,7 +238,7 @@ function New-UD95Button {
 
 We suggest the use of InvokeBuild to create a build script to run all the steps of packaging and staging your module. The below build script deletes the dist folder, runs an NPM install to install packages, runs an NPM build to bundle the JavaScript and then copies the PS module to the dist folder. 
 
-```text
+```
 task Clean {
     Remove-Item "$PSScriptRoot\dist" -Recurse -Force
 }
@@ -280,7 +280,7 @@ The properties that you set in your hashtable in PowerShell will automatically b
 
 For example, if you set the `text` property of the hashtable like this. 
 
-```text
+```PowerShell
 function New-UDText {
     param(
         [Parameter()]
@@ -299,7 +299,7 @@ function New-UDText {
 
 Then you will have access to that prop in React. 
 
-```text
+```js
 import React from 'react';
 import { withComponentFeatures } from 'universal-dashboard';
 
@@ -314,7 +314,7 @@ export default withComponentFeatures(UDText);
 
 Endpoints are special in the way they are registered and the way that they are passed as props to your component. You will need to call `Register` on the endpoint in PowerShell and pass in the Id and PSCmdlet variables. 
 
-```text
+```PowerShell
 function New-UD95Button {
     param(
         [Parameter()]
@@ -344,7 +344,7 @@ function New-UD95Button {
 
 Endpoints are created from ScriptBlocks and are executed when that event happens. 
 
-```text
+```PowerShell
 New-UD95Button -Text 'Hello' -OnClick {
     Show-UDToast -Message 'Test' 
 }
@@ -354,7 +354,7 @@ Universal Dashboard will automatically wire up the endpoint to a function within
 
 Notice the `props.onClick` function call. This will automatically call the PowerShell script block on the server. 
 
-```text
+```js
 import React from 'react';
 import { withComponentFeatures } from 'universal-dashboard';
 import { Button } from 'react95';
@@ -377,7 +377,7 @@ The `setState` prop is used to set the state of the component. This ensures that
 
 For example, with a text field, you'll want to call `props.setState` and pass in the new text value for the state. 
 
-```text
+```js
 const UDTextField = (props) => {
     const onChange = (e) => {
         props.setState({value: e.target.value})

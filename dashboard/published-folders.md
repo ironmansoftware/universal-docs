@@ -22,13 +22,13 @@ Once the folder has been published, it will be listed in the published folders t
 
 You can now download files that are found in the published folder by visit the request path. In the example above, I could visit the following URL to download the test.txt file. 
 
-```text
+```http
 http://localhost:5000/src/test.txt
 ```
 
 You'll notice that unauthenticated requests will not be able to access the file. 
 
-```text
+```
 PS C:\src\universal\src> invoke-webrequest http://localhost:5000/src/test.txt
 Invoke-WebRequest: Response status code does not indicate success: 401 (Unauthorized).
 ```
@@ -39,7 +39,7 @@ Default documents allow you to load files when a user specifies the folder and n
 
 To configure default documents, set the `-DefaultDocument` parameter on `New-PSUPublishedFolder`.
 
-```text
+```PowerShell
 New-PSUPublishedFolder -Path C:\website -RequestPath /docs -DefaultDocument @("index.hml")
 ```
 

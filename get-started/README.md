@@ -12,7 +12,7 @@ You'll need to install the PowerShell Universal server. [There are a lot of ways
 {% tab title="Windows" %}
 You can install PowerShell Universal as a service using Chocolatey.
 
-```text
+```PowerShell
 choco install powershelluniversal
 ```
 {% endtab %}
@@ -20,7 +20,7 @@ choco install powershelluniversal
 {% tab title="Linux" %}
 You can install PowerShell Universal using the Universal PowerShell module.
 
-```text
+```PowerShell
 Install-Module Universal
 Install-PSUServer -AddToPath
 Start-PSUServer -Port 5000
@@ -30,7 +30,7 @@ Start-PSUServer -Port 5000
 {% tab title="Mac OS X" %}
 You can install PowerShell Universal using the Universal PowerShell module.
 
-```text
+```PowerShell
 Install-Module Universal
 Install-PSUServer -AddToPath
 Start-PSUServer -Port 5000

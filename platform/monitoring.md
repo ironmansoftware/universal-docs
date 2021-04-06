@@ -14,7 +14,7 @@ Within the Azure Portal, you will need to create a new Application Insights reso
 
 Next, paste your instrumentation key into the [Settings file ](../config/settings.md)for PowerShell Universal. Finally, restart the PowerShell Universal server. Application monitoring will now be enabled. 
 
-```text
+```PowerShell
   "ApplicationInsights": {
     "InstrumentationKey": "73b84b67-6fc9-4c37-9f54-000000000000"
   },

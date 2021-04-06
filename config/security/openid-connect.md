@@ -38,8 +38,8 @@ Read more about `appsettings.json` on our [Settings ](../settings.md)page.
 
 Now that we have completed the configuration of an AzureAD App Registration, we can update the `appsettings.json` file with the appropriate settings. For my application, it would look something like this. 
 
-```text
-  "OIDC": {
+```Json
+	"OIDC": {
       "Enabled": "true",
       "CallbackPath": "/auth/signin-oidc",
       "ClientID": "6f006906-643a-40fe-af00-9060ceffffff",
@@ -71,8 +71,8 @@ Finally, within your PSU `appsettings.json` file, you will need to ensure that `
 
 The below example adds a resource for Microsoft O365. 
 
-```text
-"OIDC": {
+```json
+	"OIDC": {
   "Enabled": "true",
   "CallbackPath": "/auth/signin-oidc",
   "ClientID": "<clientID>",
@@ -89,7 +89,7 @@ Within your dashboard, you will now have access to an `$AccessToken` and `$IdTok
 
 For example, the `Connect-AzureAd` cmdlet accepts an access token.
 
-```text
+```PowerShell
 Connect-AzureAD
        [-AzureEnvironmentName <EnvironmentName>]
        [-TenantId <String>]

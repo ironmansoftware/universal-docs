@@ -14,7 +14,7 @@ Radio buttons should have the most commonly used option selected by default.
 
 ![](../../../.gitbook/assets/image%20%2852%29.png)
 
-```text
+```PowerShell
 New-UDRadioGroup -Label "Day" -Content {
     New-UDRadio -Label Monday -Value 'monday'
     New-UDRadio -Label Tuesday -Value 'tuesday'
@@ -30,7 +30,7 @@ New-UDRadioGroup -Label "Day" -Content {
 
 An event handler that is called when the radio group is changed. the $Body variable will contain the current value. 
 
-```text
+```PowerShell
 New-UDRadioGroup -Label "Day" -Content {
     New-UDRadio -Label Monday -Value 'monday'
     New-UDRadio -Label Tuesday -Value 'tuesday'
@@ -47,7 +47,7 @@ New-UDRadioGroup -Label "Day" -Content {
 
 Set the default value of the radio group.
 
-```text
+```PowerShell
 New-UDRadioGroup -Label "Day" -Content {
     New-UDRadio -Label Monday -Value 'monday'
     New-UDRadio -Label Tuesday -Value 'tuesday'
@@ -63,7 +63,7 @@ New-UDRadioGroup -Label "Day" -Content {
 
 You can use custom formatting within the radio group. The below example will place the radio buttons next to each other instead of on top of each other. 
 
-```text
+```PowerShell
 New-UDRadioGroup -Label "Day" -Content {
     New-UDRow -Columns {
         New-UDColumn -LargeSize 1 -Content {

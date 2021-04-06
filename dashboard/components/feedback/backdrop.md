@@ -14,7 +14,7 @@ The backdrop component places an overlay over the drop of the entire page. It's 
 
 To create a basic backdrop, you can use the `New-UDBackdrop` cmdlet and include content to show within the backdrop. The content will be centered on the page. To show the backdrop, use the `-Open` switch parameter. 
 
-```text
+```PowerShell
 New-UDBackdrop -Content {
     New-UDTypography -Text "Loading..." -Variant h2
 } -Open 
@@ -26,7 +26,7 @@ New-UDBackdrop -Content {
 
 The backdrop provides an `-OnClick` handler that you can use to close the backdrop when clicked. You can use `Set-UDElement` to open and close the backdrop.
 
-```text
+```PowerShell
 New-UDBackdrop -Id 'backdrop' -Content {
     New-UDTypography -Text "Loading..." -Variant h2
 } -Open -OnClick {

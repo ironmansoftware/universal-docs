@@ -8,7 +8,7 @@ You can define static HTML using `New-UDHtml`. This cmdlet does not create React
 
 The following creates an unordered list.
 
-```text
+```PowerShell
 New-UDHtml -Markup "<ul><li>First</li><li>Second</li><li>Third</li></ul>"
 ```
 
