@@ -1,10 +1,10 @@
 # Themes
 
-Universal Dashboard v3 is built on Material UI. Material UI provides a [built-in theme system ](https://material-ui.com/customization/theming/)that UD now takes advantage of. You can utilize this theme system by providing a hashtable of options to the `New-UDDashboard` 's `-Theme` parameter. 
+Universal Dashboard v3 is built on Material UI. Material UI provides a [built-in theme system ](https://material-ui.com/customization/theming/)that UD now takes advantage of. You can utilize this theme system by providing a hashtable of options to the `New-UDDashboard` 's `-Theme` parameter.
 
-Here's an example of changing the theme's main color. 
+Here's an example of changing the theme's main color.
 
-```PowerShell
+```text
 $Theme = @{
     palette = @{
         primary = @{
@@ -21,9 +21,9 @@ New-UDDashboard -Theme $Theme -Title 'Hello' -Content {
 
 ## Setting the default theme
 
-You can set the default theme to either Light or Dark using the `-DefaultTheme` parameter. 
+You can set the default theme to either Light or Dark using the `-DefaultTheme` parameter.
 
-```PowerShell
+```text
 New-UDDashboard -Title 'Hello' -Content {
     New-UDButton -Text "Test " -OnClick {
         Show-UDToast -Message 'HEllo'
@@ -33,9 +33,9 @@ New-UDDashboard -Title 'Hello' -Content {
 
 ## Changing the background color
 
-You can change the page background color by setting the background default color. To adjust the header background color, set the primary main color. 
+You can change the page background color by setting the background default color. To adjust the header background color, set the primary main color.
 
-```PowerShell
+```text
 $Theme = @{
     palette = @{
         primary = @{
@@ -60,7 +60,7 @@ New-UDDashboard -Theme $Theme -Title 'Hello' -Content {
 
 To support dark and light palettes, you can define a dark and light sections in your hashtable. They have the same properties as a theme.
 
-```PowerShell
+```text
 $Theme = @{
     light = @{
         palette = @{
@@ -86,9 +86,9 @@ New-UDDashboard -Theme $Theme -Title 'Hello' -Content {
 
 ## Changing the font size
 
-To change the font size, set the typography fontSize property. 
+To change the font size, set the typography fontSize property.
 
-```PowerShell
+```text
 $Theme = @{
     typography = @{
         fontSize = 20
@@ -103,7 +103,7 @@ New-UDDashboard -Theme $Theme -Title 'Hello' -Content {
 
 ## Changing default button colors
 
-```PowerShell
+```text
 $Theme = @{
     palette = @{
         grey = @{
@@ -117,8 +117,6 @@ New-UDDashboard -Theme $Theme -Title 'Hello' -Content {
 ```
 
 ![](../../.gitbook/assets/image%20%28144%29.png)
-
-
 
 For a full list of options available for the theme system, you can look at the [default theme for Material UI](https://material-ui.com/customization/default-theme/).
 

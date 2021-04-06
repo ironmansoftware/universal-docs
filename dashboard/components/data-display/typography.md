@@ -12,7 +12,7 @@ Too many type sizes and styles at once can spoil any layout. A typographic scale
 
 ## All Typography Types
 
-```PowerShell
+```text
 @("h1", "h2", "h3", "h4", "h5", "h6", "subtitle1", "subtitle2", "body1", "body2", 
 "caption", "button", "overline", "srOnly", "inherit", 
 "display4", "display3", "display2", "display1", "headline", "title", "subheading") | ForEach-Object {
@@ -23,9 +23,9 @@ Too many type sizes and styles at once can spoil any layout. A typographic scale
 
 ## Colored Text
 
-You can use the `-Style` parameter to define colors for your text. 
+You can use the `-Style` parameter to define colors for your text.
 
-```PowerShell
+```text
 New-UDTypography -Text 'My Text' -Style @{ color = 'blue' }
 ```
 

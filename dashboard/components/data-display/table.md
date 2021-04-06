@@ -14,7 +14,7 @@ Tables display information in a way that’s easy to scan, so that users can loo
 
 A simple example with no frills. Table columns are defined from the data.
 
-```PowerShell
+```text
 $Data = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -32,7 +32,7 @@ New-UDTable -Data $Data
 
 Define custom columns for your table.
 
-```PowerShell
+```text
 $Data = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -58,7 +58,7 @@ New-UDTable -Id 'customColumnsTable' -Data $Data -Columns $Columns
 
 Define column rendering. Sorting and exporting still work for the table.
 
-```PowerShell
+```text
 $Data = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 1; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -80,11 +80,11 @@ $Columns = @(
 New-UDTable -Data $Data -Columns $Columns -Sort -Export
 ```
 
-## Table Column Width 
+## Table Column Width
 
-Column width can be defined using the `-Width` parameter. You can also decide to truncate columns that extend past that width. 
+Column width can be defined using the `-Width` parameter. You can also decide to truncate columns that extend past that width.
 
-```PowerShell
+```text
 $Data = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -114,7 +114,7 @@ For a full example of server-side processing, [see this blog post](https://blog.
 
 Process data on the server so you can perform paging, filtering, sorting and searching in systems like SQL.
 
-```PowerShell
+```text
 $Columns = @(
     New-UDTableColumn -Property Dessert -Title "A Dessert"
     New-UDTableColumn -Property Calories -Title Calories 
@@ -147,13 +147,13 @@ New-UDTable -Columns $Columns -LoadData {
 }
 ```
 
-## Selection 
+## Selection
 
-Tables support selection of rows. You can create an event handler for the `OnRowSelected` parameter to receive when a new row is selected or you can use `Get-UDElement` to retrieve the current set of selected rows. 
+Tables support selection of rows. You can create an event handler for the `OnRowSelected` parameter to receive when a new row is selected or you can use `Get-UDElement` to retrieve the current set of selected rows.
 
-The following example creates a table with row selection enabled.  A toast is show when clicking the row or when clicking the GET Rows button. 
+The following example creates a table with row selection enabled. A toast is show when clicking the row or when clicking the GET Rows button.
 
-```PowerShell
+```text
 $Data = try { get-service -ea Stop | select Name,@{n = "Status";e={ $_.Status.ToString()}},@{n = "StartupType";e={ $_.StartupType.ToString()}},@{n = "StartType";e={ $_.StartType.ToString()}} } catch {}
 $Columns = @(
     New-UDTableColumn -Property Name -Title "Service Name" -ShowSort -IncludeInExport -IncludeInSearch -ShowFilter -FilterType text
@@ -173,11 +173,11 @@ New-UDButton -Text "GET Rows" -OnClick {
 
 ![Row selection](../../../.gitbook/assets/table.gif)
 
-## Exporting 
+## Exporting
 
 Tables support exporting the data within the table. You can export as CSV, XLSX, JSON or PDF. You can define which columns to include in an export and choose to export just the current page or all the data within the table.
 
-```PowerShell
+```text
 $Data = try { get-service -ea Stop | select Name,@{n = "Status";e={ $_.Status.ToString()}},@{n = "StartupType";e={ $_.StartupType.ToString()}},@{n = "StartType";e={ $_.StartType.ToString()}} } catch {}
 $Columns = @(
     New-UDTableColumn -Property Name -Title "Service Name" -IncludeInExport
@@ -196,9 +196,9 @@ New-UDTable -Id 'service_table' -Data $Data -Columns $Columns -Title 'Services' 
 This documentation is in reference to a future version of PowerShell Universal.
 {% endhint %}
 
-You can control the export functionality with a PowerShell script block. This is useful when exporting from server-side sources like SQL server tables. 
+You can control the export functionality with a PowerShell script block. This is useful when exporting from server-side sources like SQL server tables.
 
-In this example, I have a SQL table that contains podcasts. When exporting, you will receive information about the current state of the table to allow you to customize what data is exported. 
+In this example, I have a SQL table that contains podcasts. When exporting, you will receive information about the current state of the table to allow you to customize what data is exported.
 
 ```text
 New-UDDashboard -Title "Hello, World!" -Content {
@@ -259,7 +259,7 @@ New-UDDashboard -Title "Hello, World!" -Content {
             totalCount: 0
             allRows: true
         #>
-    
+
         Invoke-DbaQuery -SqlInstance localhost\MSSQLSERVER -Database 'podcasts' -Query "SELECT * FROM shows" | ForEach-Object {
             @{ 
                 name = $_.name 
@@ -272,10 +272,9 @@ New-UDDashboard -Title "Hello, World!" -Content {
 
 ## Customizing Export Options
 
-You can decide which export options to present to your users using the `-ExportOption` cmdlet. The following example would only show the CSV export option. 
+You can decide which export options to present to your users using the `-ExportOption` cmdlet. The following example would only show the CSV export option.
 
-```PowerShell
-
+```text
 $Data = try { get-service -ea Stop | select Name,@{n = "Status";e={ $_.Status.ToString()}},@{n = "StartupType";e={ $_.StartupType.ToString()}},@{n = "StartType";e={ $_.StartType.ToString()}} } catch {}
 $Columns = @(
     New-UDTableColumn -Property Name -Title "Service Name" -IncludeInExport
@@ -288,9 +287,9 @@ New-UDTable -Id 'service_table' -Data $Data -Columns $Columns -Title 'Services' 
 
 ## Customizing Labels
 
-You can use the `-TextOption` parameter along with the `New-UDTableTextOption` cmdlet to set text fields within the table. 
+You can use the `-TextOption` parameter along with the `New-UDTableTextOption` cmdlet to set text fields within the table.
 
-```PowerShell
+```text
 $Data = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -306,9 +305,9 @@ New-UDTable -Data $Data -TextOption $Option -ShowSearch
 
 ## Refresh with a button
 
-You can externally refresh a table by putting the table within a dynamic region and using `Sync-UDElement`. 
+You can externally refresh a table by putting the table within a dynamic region and using `Sync-UDElement`.
 
-This example creates a button to refresh the table. 
+This example creates a button to refresh the table.
 
 ```text
 New-UDDynamic -Id 'table' -Content {
@@ -336,7 +335,7 @@ New-UDButton -Text 'Refresh Table' -OnClick {
 | Filter | SwitchParameter | Whether filtering is enabled in the table. | false |
 | Search | SwitchParameter | Whether search is enabled in the table. | false |
 | Export | SwitchParameter | Whether exporting is enabled within the table. | false |
-| PageSize   | int | Number of items to show in a page by default. Defaults to 5. | false |
-| PageSizeOptions | int\[\] | Page size options to show in the selector. Defaults to @\(5, 10, 20\) **** | false |
-| Dense | SwitchParameter | Enables dense padding.  | false |
+| PageSize | int | Number of items to show in a page by default. Defaults to 5. | false |
+| PageSizeOptions | int\[\] | Page size options to show in the selector. Defaults to @\(5, 10, 20\) _\*\*_ | false |
+| Dense | SwitchParameter | Enables dense padding. | false |
 

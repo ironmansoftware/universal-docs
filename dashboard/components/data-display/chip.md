@@ -14,7 +14,7 @@ While included here as a standalone component, the most common use will be in so
 
 ![](../../../.gitbook/assets/image%20%2871%29.png)
 
-```PowerShell
+```text
  New-UDChip -Label 'Basic'
 ```
 
@@ -22,15 +22,15 @@ While included here as a standalone component, the most common use will be in so
 
 ![](../../../.gitbook/assets/image%20%2843%29.png)
 
-```PowerShell
+```text
 New-UDChip -Label 'Basic' -Icon (New-UDIcon -Icon 'user')
 ```
 
 ## OnClick
 
-Shows a toast when the chip is clicked. 
+Shows a toast when the chip is clicked.
 
-```PowerShell
+```text
 New-UDChip -Label 'OnClick' -OnClick {
     Show-UDToast -Message 'Hello!'
 }
@@ -38,13 +38,11 @@ New-UDChip -Label 'OnClick' -OnClick {
 
 ## OnDelete
 
-```PowerShell
+```text
 New-UDChip -Label 'OnDelete' -OnClick {
     Show-UDToast -Message 'Goodbye!'
 }
 ```
-
-
 
 **New-UDChip**
 

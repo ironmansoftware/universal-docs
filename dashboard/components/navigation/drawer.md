@@ -8,7 +8,7 @@ description: Drawer component for Universal Dashboard
 
 A permanent drawer will be shown at all times. By default, it is show on the left side of the screen.
 
-```PowerShell
+```text
 New-UDDrawer -Variant 'permanent' -Content {
   New-UDList -Children {
         New-UDListItem -Label "Home"

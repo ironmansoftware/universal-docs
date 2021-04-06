@@ -12,7 +12,7 @@ The top App Bar provides content and actions related to the current screen. It's
 
 ![](../../../.gitbook/assets/image%20%2877%29.png)
 
-```PowerShell
+```text
 $Drawer = New-UDDrawer -Children {
     New-UDList -Children {
         New-UDListItem -Label "Home"
@@ -33,7 +33,7 @@ New-UDAppBar -Position relative -Children { New-UDElement -Tag 'div' -Content { 
 
 To create an app bar that is pinned to the bottom of the page, you can use the `-Footer` parameter.
 
-```PowerShell
+```text
 New-UDAppBar -Children { "Hello" } -Footer
 ```
 
@@ -45,5 +45,5 @@ New-UDAppBar -Children { "Hello" } -Footer
 | Drawer | Hashtable | A drawer that can be opened from this AppBar. Use New-UDDrawer to create a drawer to pass to this parameter. | false |
 | Children | ScriptBlock | Children of this AppBar. The children of an AppBar are commonly text and buttons. | false |
 | Position | String | The position of this AppBar. A fixed position will override the default AppBar. | false |
-| Footer | Switch | Creates an app bar pinned to the bottom of the page.  | false |
+| Footer | Switch | Creates an app bar pinned to the bottom of the page. | false |
 

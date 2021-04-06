@@ -19,7 +19,7 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 * An error is now shown when the extension cannot connect to PowerShell Universal 
 * Removed the auto-import of UD and PSU modules. We recommend you install these from the PowerShell Gallery 
 
-```PowerShell
+```text
 Install-Module Universal
 Install-Module UniversalDashboard
 ```
@@ -46,14 +46,14 @@ Install-Module UniversalDashboard
 
 ## 1.7.1 - 12/29/2020
 
-#### Added
+### Added
 
 * Added a Sample Browser for inserting samples from the PowerShell Universal Samples Repository
 
 ## 1.7.0 - 12/28/2020
 
 {% hint style="warning" %}
-Breaking Change: This version of the extension only works with version 1.5.0 or later of PowerShell Universal 
+Breaking Change: This version of the extension only works with version 1.5.0 or later of PowerShell Universal
 {% endhint %}
 
 **Added**
@@ -70,44 +70,44 @@ Breaking Change: This version of the extension only works with version 1.5.0 or 
 
 ## \[1.6.1\]
 
-#### Changed
+### Changed
 
 * Fixed issue when attempting to download on Windows or Mac
 * Fixed issue where extension would not work with Mac OS X
 
 ## \[1.6.0\]
 
-#### Added
+### Added
 
 * Added support for Debug-PSUDashboard
 
-#### Changed
+### Changed
 
 * Replaced PowerShell Versions with Environments in the configuration tree view
 
 ## \[1.5.1\]
 
-#### Changed
+### Changed
 
 * Fixed an issue where the extension wouldn't activate correctly.
 
 ## \[1.5.0\]
 
-#### Added
+### Added
 
 * Add a command for manually refreshing the PSU configuration
 
-#### Changed
+### Changed
 
 * Fixed an issue where components wouldn't import correctly
 
 ## \[1.4.0\]
 
-#### Added
+### Added
 
 * Added a setting to disable starting the PowerShell Universal server on extension activation.
 
-#### Changed
+### Changed
 
 * Extension will fail to activate after a number of retries while connecting to the Universal server.
 

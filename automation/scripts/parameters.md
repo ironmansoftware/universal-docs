@@ -6,13 +6,13 @@ description: Parameters for PowerShell Universal jobs.
 
 ## Parameters
 
-Jobs support automatically generating forms with parameters based on your script's `param` block. The type of control will change based on the type you define in the block. Parameters that are mandatory will also be required by the UI. 
+Jobs support automatically generating forms with parameters based on your script's `param` block. The type of control will change based on the type you define in the block. Parameters that are mandatory will also be required by the UI.
 
 ### Basic Parameters
 
-Parameters can be simply defined without any type of parameter attribute and they will show up as text boxes in the UI. 
+Parameters can be simply defined without any type of parameter attribute and they will show up as text boxes in the UI.
 
-```PowerShell
+```text
 param($Test)
 
 $Test
@@ -22,13 +22,13 @@ $Test
 
 ### Type Parameters
 
-UA supports various types of parameters. You can use String, String\[\], Int, DateTime, Boolean, Switch and Enum types. 
+UA supports various types of parameters. You can use String, String\[\], Int, DateTime, Boolean, Switch and Enum types.
 
 #### String
 
-You can define string parameters by specifying the `[String]` type of by not specifying a type at all. Strings will generate a textbox. 
+You can define string parameters by specifying the `[String]` type of by not specifying a type at all. Strings will generate a textbox.
 
-```PowerShell
+```text
 param(
     [String]$Textbox,
     $Textbox2
@@ -39,9 +39,9 @@ param(
 
 #### String Arrays
 
-You can specify string arrays by using the `[String[]]` type specifier. String arrays will generate a multi-tag select box. 
+You can specify string arrays by using the `[String[]]` type specifier. String arrays will generate a multi-tag select box.
 
-```PowerShell
+```text
 param([String[]]$Array)
 ```
 
@@ -49,9 +49,9 @@ param([String[]]$Array)
 
 #### Date and Time
 
-You can use the `[DateTime]` type specifier to create a date and time selector. 
+You can use the `[DateTime]` type specifier to create a date and time selector.
 
-```PowerShell
+```text
 param([DateTime]$DateTime)
 ```
 
@@ -61,17 +61,17 @@ param([DateTime]$DateTime)
 
 You can use a `[Bool]` type selector to create a switch.
 
-```PowerShell
+```text
 param([Bool]$Switch)
 ```
 
 ![](../../.gitbook/assets/image%20%28186%29.png)
 
-#### Integer 
+#### Integer
 
-You can define a number selector by using the `[Int]` type specifier. 
+You can define a number selector by using the `[Int]` type specifier.
 
-```PowerShell
+```text
 param([Int]$Number)
 ```
 
@@ -81,7 +81,7 @@ param([Int]$Number)
 
 You can define a switch parameter using the `[Switch]` type specifier to create a switch.
 
-```PowerShell
+```text
 param([Switch]$Switch)
 ```
 
@@ -89,9 +89,9 @@ param([Switch]$Switch)
 
 #### Enumerations
 
-You can use System.Enum values to create select boxes. For example, you could use the `System.DayOrWeek` to create a day of the week selection box. 
+You can use System.Enum values to create select boxes. For example, you could use the `System.DayOrWeek` to create a day of the week selection box.
 
-```PowerShell
+```text
 param([System.DayOfWeek]$DayOfWeek)
 ```
 
@@ -101,7 +101,7 @@ param([System.DayOfWeek]$DayOfWeek)
 
 You can define help messages for your parameters by using the `HelpMessage` property of the `Parameter` attribute.
 
-```PowerShell
+```text
 param(
     [Parameter(HelpMessage = "Class you want to enroll in")]
     [string]$Class
@@ -112,9 +112,9 @@ param(
 
 ### Required Parameters
 
-You can use the Parameter attribute to define required parameters. 
+You can use the Parameter attribute to define required parameters.
 
-```PowerShell
+```text
 param(
     [Parameter(Mandatory)]
     $RequiredParameter
@@ -127,21 +127,21 @@ $RequiredParameter
 
 ## Passing Parameters from PowerShell
 
-You can pass parameters from PowerShell using the `Invoke-UAJob` cmdlet. This cmdlet supports dynamic parameters. If you have a `param` block on your script, these parameters will automatically be added to `Invoke-UAJob`. 
+You can pass parameters from PowerShell using the `Invoke-UAJob` cmdlet. This cmdlet supports dynamic parameters. If you have a `param` block on your script, these parameters will automatically be added to `Invoke-UAJob`.
 
-For example, I had a script named Script1.ps1 and the contents were are follows. 
+For example, I had a script named Script1.ps1 and the contents were are follows.
 
-```PowerShell
+```text
 param($MyParameter)
 
 $MyParameter
 ```
 
-I could then invoke that script using this syntax. 
+I could then invoke that script using this syntax.
 
-```PowerShell
+```text
 Invoke-UAScript -Name 'Script.ps1' -MyParameter "Hello"
 ```
 
-The result would be that Hello was output in the job log and pipeline. 
+The result would be that Hello was output in the job log and pipeline.
 

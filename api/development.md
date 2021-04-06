@@ -4,33 +4,33 @@ description: Building APIs in VS Code.
 
 # Development
 
-The [Visual Studio Code extension for PowerShell Universal](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal) provides integration for working with APIs. We recommend you also install the [PowerShell extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell). 
+The [Visual Studio Code extension for PowerShell Universal](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal) provides integration for working with APIs. We recommend you also install the [PowerShell extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell).
 
 ## Developing APIs
 
-You can add APIs by using the admin console or through the editor in Visual Studio Code. 
+You can add APIs by using the admin console or through the editor in Visual Studio Code.
 
 To add an API in the Admin Console, you can visit `http://localhost:5000/admin/apis` and click Add Endpoint.
 
 ![](../.gitbook/assets/image%20%28124%29.png)
 
-Once an `endpoints.ps1` file has been created, you can click the Open Endpoints.ps1 button within the API tree view to view the configuration file for APIs. 
+Once an `endpoints.ps1` file has been created, you can click the Open Endpoints.ps1 button within the API tree view to view the configuration file for APIs.
 
 ![](../.gitbook/assets/image%20%28122%29.png)
 
-The configuration file uses the Universal PowerShell cmdlets to define the endpoints within Universal. 
+The configuration file uses the Universal PowerShell cmdlets to define the endpoints within Universal.
 
 If you created a blank endpoint, it would look something like this.
 
-```PowerShell
+```text
 New-PSUEndpoint -Url "/test" -Endpoint { 
     # Enter your script to process requests.
 }
 ```
 
-If you edit the `endpoints.ps1` file, it will update the API automatically. For example, if I added a new API, it would then appear in the admin console. 
+If you edit the `endpoints.ps1` file, it will update the API automatically. For example, if I added a new API, it would then appear in the admin console.
 
-```PowerShell
+```text
 New-PSUEndpoint -Url "/test" -Endpoint { 
  "hello"
 }

@@ -12,7 +12,7 @@ An expansion panel is a lightweight container that may either stand alone or be 
 
 ![](../../../.gitbook/assets/image%20%2878%29.png)
 
-```PowerShell
+```text
 New-UDExpansionPanelGroup -Children {
     New-UDExpansionPanel -Title "Hello" -Children {}
 
@@ -21,8 +21,6 @@ New-UDExpansionPanelGroup -Children {
     }
 }
 ```
-
-
 
 **New-UDExpansionPanel**
 

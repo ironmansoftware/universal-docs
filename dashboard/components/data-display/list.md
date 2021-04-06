@@ -8,11 +8,11 @@ Lists are continuous, vertical indexes of text or images.
 
 Lists are a continuous group of text or images. They are composed of items containing primary and supplemental actions, which are represented by icons and text.
 
-## List 
+## List
 
 ![](../../../.gitbook/assets/image%20%2851%29.png)
 
-```PowerShell
+```text
 New-UDList -Content {
     New-UDListItem -Label 'Inbox' -Icon (New-UDIcon -Icon envelope -Size 3x) -SubTitle 'New Stuff'
     New-UDListItem -Label 'Drafts' -Icon (New-UDIcon -Icon edit -Size 3x) -SubTitle "Stuff I'm working on "
@@ -23,9 +23,9 @@ New-UDList -Content {
 
 ## OnClick Event Handler
 
-You can define an action to take when an item is clicked by using the `-OnClick` parameter of `New-UDListItem`. 
+You can define an action to take when an item is clicked by using the `-OnClick` parameter of `New-UDListItem`.
 
-```PowerShell
+```text
 New-UDList -Content {
     New-UDListItem -Label 'Inbox' -Icon (New-UDIcon -Icon envelope -Size 3x) -SubTitle 'New Stuff'
     New-UDListItem -Label 'Drafts' -Icon (New-UDIcon -Icon edit -Size 3x) -SubTitle "Stuff I'm working on "
@@ -43,8 +43,6 @@ New-UDList -Content {
 | Id | String | The ID of the component. It defaults to a random GUID. | false |
 | Children | ScriptBlock | The items in the list. | false |
 | SubHeader | String | Text to show within the sub header. | false |
-
-
 
 **New-UDListItem**
 

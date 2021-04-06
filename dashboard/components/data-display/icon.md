@@ -12,19 +12,17 @@ FontAwesome icons to include in your dashboard.
 
 Create icons by specifying their names. You can use the icon reference below to find icons.
 
-```PowerShell
+```text
 New-UDIcon -Icon 'address_book'
 ```
 
 ![](../../../.gitbook/assets/image%20%28109%29.png)
 
-
-
 ## Size
 
 Set the size of the icon. Valid values are: `xs`, `sm`, `lg`, `2x`, `3x`, `4x`, `5x`, `6x`, `7x`, `8x`, `9x`, `10x`
 
-```PowerShell
+```text
     New-UDIcon -Icon 'address_book' -Size 'sm'
     New-UDIcon -Icon 'address_book' -Size 'lg'
     New-UDIcon -Icon 'address_book' -Size '5x'
@@ -33,41 +31,41 @@ Set the size of the icon. Valid values are: `xs`, `sm`, `lg`, `2x`, `3x`, `4x`, 
 
 ![](../../../.gitbook/assets/image%20%28111%29.png)
 
-## Rotation 
+## Rotation
 
 Rotate icons. The value represents the degrees of rotation.
 
-```PowerShell
+```text
 New-UDIcon -Icon 'address_book' -Size '5x' -Rotation 90
 ```
 
 ![](../../../.gitbook/assets/image%20%28110%29.png)
 
-## Border 
+## Border
 
-Add a border to your icon. 
+Add a border to your icon.
 
-```PowerShell
-New-UDIcon -Icon 'address_book' -Size '5x' -Border 
+```text
+New-UDIcon -Icon 'address_book' -Size '5x' -Border
 ```
 
 ![](../../../.gitbook/assets/image%20%28108%29.png)
 
 ## Style
 
-Apply CSS styles to your icon. 
+Apply CSS styles to your icon.
 
-```PowerShell
+```text
 New-UDIcon -Icon 'address_book' -Size '5x' -Style @{
     backgroundColor = "red"
-} 
+}
 ```
 
 ![](../../../.gitbook/assets/image%20%28112%29.png)
 
 ## Visually Search for Icons
 
-```PowerShell
+```text
 New-UDTextbox -Id 'txtIconSearch' -Label 'Search' 
 New-UDButton -Text 'Search' -OnClick {
     Sync-UDElement -Id 'icons'

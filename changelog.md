@@ -245,7 +245,7 @@ description: Changelog for PowerShell Universal.
 ## 1.5.10 - 2/1/2020
 
 {% hint style="warning" %}
-Known issue: Some users may experience problems signing in with certain OIDC providers. 
+Known issue: Some users may experience problems signing in with certain OIDC providers.
 {% endhint %}
 
 ### Includes
@@ -365,7 +365,7 @@ Known Issue: The Universal PowerShell module included with 1.5.8 is 1.5.7 and wi
 ## 1.5.7 - 12/18/2020
 
 {% hint style="info" %}
-Note that although it is listed that the MSI upgrade will not reset the service account, this will not actually take effect until the next version. 
+Note that although it is listed that the MSI upgrade will not reset the service account, this will not actually take effect until the next version.
 {% endhint %}
 
 * UniversalDashboard - v3.2.4
@@ -394,8 +394,6 @@ Note that although it is listed that the MSI upgrade will not reset the service 
 * Fixed an issue where alternate security environments would not work
 * Fixed an issue where upgrading via MSI would remove the configured service account
 * Fixed an issue where Install-PSUServer would not work on Mac OS
-
-## 
 
 ## 1.5.6 - 12/12/2020
 
@@ -827,13 +825,13 @@ Note that although it is listed that the MSI upgrade will not reset the service 
 * Fixed an issue where an exception could be thrown when using OpenID Connect
 * Fixed issue where you couldn't set arguments in the UI for Environments
 
-#### Breaking Change 
+#### Breaking Change
 
-There was a breaking change made to `New-UDTableColumn` -Render. The `$Body`  variable is no longer available and you need to use `$EventData` instead. See the below example for the syntax that will be required. 
+There was a breaking change made to `New-UDTableColumn` -Render. The `$Body` variable is no longer available and you need to use `$EventData` instead. See the below example for the syntax that will be required.
 
-Prior to 1.4.5, the syntax would have been like this. 
+Prior to 1.4.5, the syntax would have been like this.
 
-```PowerShell
+```text
 $Data = @(
     @{ link = "http://www.google.com" }
 )
@@ -850,7 +848,7 @@ New-UDTable -Title 'Link' -Column $Column -Data $Data
 
 1.4.5 and later, the syntax will be like this. `$EventData` is a special variable that will be available in the `-Render` parameter and does not require converting from JSON.
 
-```PowerShell
+```text
 $Data = @(
     @{ link = "http://www.google.com" }
 )

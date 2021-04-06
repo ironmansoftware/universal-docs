@@ -18,7 +18,7 @@ This configuration checks to see if the user has included the string `\\corp\hum
 
 The body of the HTTP request will contain the computer name and user name separated by a comma.
 
-```PowerShell
+```text
 $Condition = New-PSPCondition -Property "script" -Contains -Value "\\corp\human-resources"
 $Block = New-PSPAction -Http -Address "http://localhost:8080/protect" -Format "{computerName},{userName}" -Name 'Universal'
 $Rule = New-PSPRule -Action $Block -Condition $Condition -Name "HR Share"
@@ -31,7 +31,7 @@ Set-PSPConfiguration -Configuration $Config -FileSystem
 
 This PSU configuration defines an endpoint to accept the POST data from PowerShell Protect. It then saves the data to a file. It also defines a dashboard that will read the data and display it in a table. This assumes that you have installed the PowerShell Universal module and server.
 
-```PowerShell
+```text
 Start-PSUServer -Port 8080 -Configuration {    New-PSUEndpoint -Url "/protect" -Method POST -Endpoint {        $Data = "$Env:Temp\data.csv"        if (-not (Test-Path $Data))        {            "computer,user" | Out-File $Data        }        $Body | Out-File $Data    }​    New-PSUDashboard -Name "Protect" -Content {        New-UDDashboard -Title 'Protect' -Content {            $Data = Import-Csv -Path "$Env:Temp\data.csv"            New-UDTable -Data $Data        }    }}
 ```
 

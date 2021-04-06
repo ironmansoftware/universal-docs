@@ -10,7 +10,7 @@ Modals inform users about a task and can contain critical information, require d
 
 ![](../../../.gitbook/assets/image%20%2846%29.png)
 
-```PowerShell
+```text
 New-UDButton -Text 'Basic' -OnClick {
     Show-UDModal -Content {
         New-UDTypography -Text "Hello"
@@ -22,7 +22,7 @@ New-UDButton -Text 'Basic' -OnClick {
 
 ![](../../../.gitbook/assets/image%20%2879%29.png)
 
-```PowerShell
+```text
 New-UDButton -Text 'Full Screen' -OnClick {
     Show-UDModal -Content {
         New-UDTypography -Text "Hello"
@@ -34,11 +34,11 @@ New-UDButton -Text 'Full Screen' -OnClick {
 
 ## Full Width
 
-Full width modals take up the full width as defined by the `-MaxWidth` parameter. 
+Full width modals take up the full width as defined by the `-MaxWidth` parameter.
 
 ![](../../../.gitbook/assets/image%20%2863%29.png)
 
-```PowerShell
+```text
 New-UDButton -Text 'Full Width' -OnClick {
     Show-UDModal -Content {
         New-UDTypography -Text "Hello"
@@ -52,7 +52,7 @@ Persistent modals do not close when you click off of them. You will have to clos
 
 ![](../../../.gitbook/assets/image%20%2845%29.png)
 
-```PowerShell
+```text
 New-UDButton -Text 'Persistent' -OnClick {
     Show-UDModal -Content {
         New-UDTypography -Text "Hello"
@@ -64,9 +64,9 @@ New-UDButton -Text 'Persistent' -OnClick {
 
 ## Hide a Modal
 
-You can use the `Hide-UDModal` button to hide a modal that is currently show. 
+You can use the `Hide-UDModal` button to hide a modal that is currently show.
 
-```PowerShell
+```text
 New-UDButton -Text 'Basic' -OnClick {
     Show-UDModal -Content {
         New-UDTypography -Text "Hello"

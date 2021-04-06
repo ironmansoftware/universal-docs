@@ -6,13 +6,13 @@ description: Get started with PowerShell Universal
 
 ## Install PowerShell Universal
 
-You'll need to install the PowerShell Universal server. [There are a lot of ways to do so](getting-started/) but you can use the command line below to get started quickly. 
+You'll need to install the PowerShell Universal server. [There are a lot of ways to do so](getting-started/) but you can use the command line below to get started quickly.
 
 {% tabs %}
 {% tab title="Windows" %}
 You can install PowerShell Universal as a service using Chocolatey.
 
-```PowerShell
+```text
 choco install powershelluniversal
 ```
 {% endtab %}
@@ -20,7 +20,7 @@ choco install powershelluniversal
 {% tab title="Linux" %}
 You can install PowerShell Universal using the Universal PowerShell module.
 
-```PowerShell
+```text
 Install-Module Universal
 Install-PSUServer -AddToPath
 Start-PSUServer -Port 5000
@@ -30,7 +30,7 @@ Start-PSUServer -Port 5000
 {% tab title="Mac OS X" %}
 You can install PowerShell Universal using the Universal PowerShell module.
 
-```PowerShell
+```text
 Install-Module Universal
 Install-PSUServer -AddToPath
 Start-PSUServer -Port 5000
@@ -48,7 +48,7 @@ By default, PowerShell Universal is running on port 5000 of localhost. You can a
 
 We recommend installing the [PowerShell Universal Visual Studio Code Extension](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal) to provide the best possible editing experience.
 
-You can connect to your instance of PowerShell Universal, browse and insert samples and get up and running right away. 
+You can connect to your instance of PowerShell Universal, browse and insert samples and get up and running right away.
 
 ### Install the Extension
 
@@ -58,7 +58,7 @@ Install the extension by searching for it in the extension page and clicking Ins
 
 ### Connect to PowerShell Universal
 
-Click the PowerShell Universal icon on the left hand side and the extension will attempt to connect using the default URL and user name. The extension will notify you once it has connected. 
+Click the PowerShell Universal icon on the left hand side and the extension will attempt to connect using the default URL and user name. The extension will notify you once it has connected.
 
 ![](../.gitbook/assets/image%20%28162%29%20%281%29.png)
 

@@ -2,16 +2,16 @@
 
 ## Retro Dashboard
 
-This retro looking dashboard displays the top 10 CPU and memory using processes, disk usage, and live CPU and network usage. It also demonstrates how to use themes to custom the backcolor, text color and font family. 
+This retro looking dashboard displays the top 10 CPU and memory using processes, disk usage, and live CPU and network usage. It also demonstrates how to use themes to custom the backcolor, text color and font family.
 
 ![](../.gitbook/assets/hacker-dash.gif)
 
-```PowerShell
+```text
 Start-PSUServer -Port 8080 -Configuration {
     New-PSUDashboard -Name 'Hacker Dash' -BaseUrl '/' -Component 'UniversalDashboard.Charts:1.3.1' -Framework 'UniversalDashboard:Latest' -Content {
-    
+
     $Green =  '#4bdd35'
-    
+
     $Theme = @{
         palette = @{
             primary = @{
@@ -29,10 +29,10 @@ Start-PSUServer -Port 8080 -Configuration {
             fontFamily = "Consolas"
         }
     }
-    
+
     $Pages = @()
     $Pages += New-UDPage -Name 'Hacker Dash' -Content {
-    
+
         New-UDRow -Columns {
             New-UDColumn -LargeSize 4 -Content {
                     New-UDCard -Title 'Top CPU Usage Processes' -Content {
@@ -40,22 +40,22 @@ Start-PSUServer -Port 8080 -Configuration {
                             (Get-Process | Sort-Object -Property Cpu -Descending | Select-Object -First 10 | Out-String)
                         }
                     } 
-                
+
             }
             New-UDColumn -LargeSize 4 -Content {
                 $Data = Get-CimInstance -Class CIM_LogicalDisk | Select-Object @{Name="Size";Expression={$_.size/1gb}}, @{Name="FreeSpace";Expression={$_.freespace/1gb}}, @{Name="Free (%)";Expression={"{0,6:P0}" -f(($_.freespace/1gb) / ($_.size/1gb))}}, DeviceID, DriveType | Where-Object DriveType -EQ '3'
-            
+
                 $SizeDs = New-UDChartJSDataset -DataProperty Size -Label Size -BackgroundColor $Green
                 $MemoryDs = New-UDChartJSDataset -DataProperty FreeSpace -Label 'Free Space' -BackgroundColor $Green
-                
-    
+
+
                 $Options = @{
                     Type = 'bar'
                     Data = $Data
                     Dataset = @($SizeDs, $MemoryDs)
                     LabelProperty = "DeviceId"
                 }
-                
+
                 New-UDChartJS @Options
             }
             New-UDColumn -LargeSize 4 -Content {
@@ -64,7 +64,7 @@ Start-PSUServer -Port 8080 -Configuration {
                 } -Labels "CPU" -ChartBackgroundColor 'black' -ChartBorderColor $Green -RefreshInterval 1
             }
         }
-    
+
         New-UDRow -Columns {
             New-UDColumn -LargeSize 4 -Content {
                     New-UDCard -Title 'Top Memory Usage Processes' -Content {
@@ -84,11 +84,11 @@ Start-PSUServer -Port 8080 -Configuration {
                 } -Labels "Received Bytes" -ChartBackgroundColor 'black' -ChartBorderColor $Green -RefreshInterval 1
             }
         }
-    
-    
-    
+
+
+
     } 
-    
+
     New-UDDashboard -Title "Hello, World!" -Pages $Pages -Theme $Theme
     }
 }
@@ -100,7 +100,7 @@ This example uses [PowerShell Universal Dashboard](../dashboard/about.md).
 
 In this example, we take advantage of Universal Dashboard scheduled endpoints, the in-memory cache and the UDMonitor component. We update the counter sets to use in the cache and load each of the counters' value in the set into an array to use in the dashboard. We then create a dashboard that dynamically creates UDMonitor charts within the page. Each monitor will update every 3 seconds with new data.
 
-```PowerShell
+```text
 Start-PSUServer -Port 8080 -Configuration {
     New-PSUDashboard -Name 'Performance' -BaseUrl '/' -Framework 'UniversalDashboard:Latest' -Content {
 
@@ -111,7 +111,7 @@ Start-PSUServer -Port 8080 -Configuration {
                 $Cache:CounterSets = Get-Counter -ListSet * | Select-Object -ExpandProperty 'CounterSetName'
                 $Cache:CurrentSets = @( "IPv4")
             }
-            
+
             $Cache:Data = @()
             foreach($set in $Cache:CurrentSets)
             {
@@ -123,12 +123,12 @@ Start-PSUServer -Port 8080 -Configuration {
                 $Counters = (Get-Counter -ListSet $set).Paths
                 foreach($Counter in $Counters)
                 {
-                    
+
                     $Value = 0 
                     try {
                         $Value = (Get-Counter -Counter $Counter -ErrorAction SilentlyContinue).CounterSamples[0].CookedValue
                     } catch {}
-                    
+
                     $Data.Counters += @{ Name = $Counter; Value = $Value }
                 }
 
@@ -160,7 +160,7 @@ Start-PSUServer -Port 8080 -Configuration {
             }
         }
     } -Component @("UniversalDashboard.Charts:1.3.0")
-} 
+}
 ```
 
 ![](../.gitbook/assets/image%20%28204%29.png)

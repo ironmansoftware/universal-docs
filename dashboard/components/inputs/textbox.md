@@ -10,7 +10,7 @@ A textbox lets users enter and edit text.
 
 ![](../../../.gitbook/assets/image%20%2847%29.png)
 
-```PowerShell
+```text
 New-UDTextbox -Label 'Standard' -Placeholder 'Textbox'
 New-UDTextbox -Label 'Disabled' -Placeholder 'Textbox' -Disabled
 New-UDTextbox -Label 'Textbox' -Value 'With value'
@@ -22,7 +22,7 @@ A password textbox will mask the input.
 
 ![](../../../.gitbook/assets/image%20%2855%29.png)
 
-```PowerShell
+```text
 New-UDTextbox -Label 'Password' -Type password
 ```
 
@@ -32,7 +32,7 @@ New-UDTextbox -Label 'Password' -Type password
 
 You can use `Get-UDElement` to get the value of a textbox
 
-```PowerShell
+```text
 New-UDTextbox -Id 'txtExample' 
 New-UDButton -OnClick {
     $Value = (Get-UDElement -Id 'txtExample').value 
@@ -42,7 +42,7 @@ New-UDButton -OnClick {
 
 ### Setting the textbox value
 
-```PowerShell
+```text
 New-UDTextbox -Id 'txtExample' -Label 'Label' -Value 'Value'
 
 New-UDButton -OnClick {
@@ -58,7 +58,7 @@ New-UDButton -OnClick {
 
 You can set the icon of a textbox by using the `-Icon` parameter and the `New-UDIcon` cmdlet.
 
-```PowerShell
+```text
 New-UDTextbox -Id "ServerGroups" -Icon (New-UDIcon -Icon 'server') -Value "This is my server"
 ```
 
@@ -66,11 +66,11 @@ New-UDTextbox -Id "ServerGroups" -Icon (New-UDIcon -Icon 'server') -Value "This 
 
 ## Mask
 
-You can define a text mask with a combination of strings and regular expressions. To specify a regular expression, use the JavaScript syntax in your string to start and finish the expression: `/\d/`. 
+You can define a text mask with a combination of strings and regular expressions. To specify a regular expression, use the JavaScript syntax in your string to start and finish the expression: `/\d/`.
 
-This example creates a mask for US based phone numbers. 
+This example creates a mask for US based phone numbers.
 
-```PowerShell
+```text
 New-UDTextbox -Mask @('+', '1', ' ', '(', '/[1-9]/', '/\d/', '/\d/', ')', ' ', '/\d/', '/\d/', '/\d/', '-', '/\d/', '/\d/', '/\d/', '/\d/')
 ```
 

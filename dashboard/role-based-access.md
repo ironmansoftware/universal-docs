@@ -5,24 +5,24 @@ description: Role based access for dashboards.
 # Role Based Access
 
 {% hint style="info" %}
-This feature requires a [license](../get-started/licensing.md). 
+This feature requires a [license](../get-started/licensing.md).
 {% endhint %}
 
 ## Dashboard Roles
 
-When dashboard authentication is enabled, you can define the role that a user must be a part of in order to access the dashboard. Roles are configured on the Settings \ Security page or from within the `roles.ps1` configuration file. 
+When dashboard authentication is enabled, you can define the role that a user must be a part of in order to access the dashboard. Roles are configured on the Settings  Security page or from within the `roles.ps1` configuration file.
 
 ![](../.gitbook/assets/image%20%28138%29.png)
 
-If a user attempts to visit a dashboard that they do not have access to, they will be presented with a Not Authorized page. 
+If a user attempts to visit a dashboard that they do not have access to, they will be presented with a Not Authorized page.
 
 ![](../.gitbook/assets/image%20%28139%29.png)
 
 ## Pages Roles
 
-You can also show or hide pages based on roles. To define a role for a page, use the `-Role` parameter of `New-UDPage`. Only users of the specified role will have access to this page. 
+You can also show or hide pages based on roles. To define a role for a page, use the `-Role` parameter of `New-UDPage`. Only users of the specified role will have access to this page.
 
-```PowerShell
+```text
 New-UDPage -Role 'Administrators' -Content {
     New-UDTypography -Text 'Admins only'
 }
@@ -30,11 +30,11 @@ New-UDPage -Role 'Administrators' -Content {
 
 ## $Roles Variable
 
-In addition to dashboard and page roles, you can also check with roles a user is a part of by using the `$Roles` variable that is available within Dashboards. This variable contains an array of the roles that are assigned to the user. 
+In addition to dashboard and page roles, you can also check with roles a user is a part of by using the `$Roles` variable that is available within Dashboards. This variable contains an array of the roles that are assigned to the user.
 
-For example, you could show the `Restart-Computer` button to only Administrators. 
+For example, you could show the `Restart-Computer` button to only Administrators.
 
-```PowerShell
+```text
 if ($Roles -contains "Administrator") {
     New-UDButton -Text 'Restart Server' -OnClick {
         Restart-Computer

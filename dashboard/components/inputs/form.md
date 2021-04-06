@@ -4,17 +4,17 @@ description: Form component for Universal Dashboard
 
 # Form
 
-{% embed url="https://youtu.be/o8Bl1NsCc2Y" %}
+{% embed url="https://youtu.be/o8Bl1NsCc2Y" caption="" %}
 
 Forms provide a way to collect data from users.
 
 Forms can include any type of control you want. This allows you to customize the look and feel and use any input controls.
 
-Data entered via the input controls will be sent back to the the `OnSubmit` script block when the form is submitted. Within the `OnSubmit` event handler, you will access to the `$EventData` variable that will contain properties for each of the fields in the form. 
+Data entered via the input controls will be sent back to the the `OnSubmit` script block when the form is submitted. Within the `OnSubmit` event handler, you will access to the `$EventData` variable that will contain properties for each of the fields in the form.
 
 For example, if you have two fields, you will have two properties on `$EventData`.
 
-```PowerShell
+```text
 New-UDForm -Content {
     New-UDTextbox -Id 'txtTextField'
     New-UDCheckbox -Id 'chkCheckbox'
@@ -26,7 +26,7 @@ New-UDForm -Content {
 
 ## Supported Controls
 
-The following input controls automatically integrate with a form. The values that are set within these controls will be sent during validation and in the `OnSubmit` event handler. 
+The following input controls automatically integrate with a form. The values that are set within these controls will be sent during validation and in the `OnSubmit` event handler.
 
 * [Autocomplete](automcomplete.md)
 * [Checkbox](checkbox.md)
@@ -45,7 +45,7 @@ The following input controls automatically integrate with a form. The values tha
 
 Simple forms can use inputs like text boxes and checkboxes.
 
-```PowerShell
+```text
 New-UDForm -Content {
     New-UDTextbox -Id 'txtTextfield'
     New-UDCheckbox -Id 'chkCheckbox'
@@ -61,7 +61,7 @@ New-UDForm -Content {
 
 Since forms can use any component, you can use standard formatting components within the form.
 
-```PowerShell
+```text
 New-UDForm -Content {
 
     New-UDRow -Columns {
@@ -90,11 +90,11 @@ New-UDForm -Content {
 }
 ```
 
-## Returning Components 
+## Returning Components
 
-When a form is submitted, you can optionally return another component to replace the form on the page. You can return any Universal Dashboard component. All you need to do is ensure that the component is written to the pipeline within the `OnSubmit` event handler. 
+When a form is submitted, you can optionally return another component to replace the form on the page. You can return any Universal Dashboard component. All you need to do is ensure that the component is written to the pipeline within the `OnSubmit` event handler.
 
-```PowerShell
+```text
 New-UDForm -Content {
     New-UDTextbox -Id 'txtTextfield'
 } -OnSubmit {
@@ -106,7 +106,7 @@ New-UDForm -Content {
 
 Form validation can be accomplished by using the OnValidate script block parameter
 
-```PowerShell
+```text
 New-UDForm -Content {
     New-UDTextbox -Id 'txtValidateForm'
 } -OnValidate {
@@ -124,9 +124,9 @@ New-UDForm -Content {
 
 ## Canceling a Form
 
-You can define an `-OnCancel` event handler to invoke when the cancel button is pressed. This can be used to take actions like close a modal. 
+You can define an `-OnCancel` event handler to invoke when the cancel button is pressed. This can be used to take actions like close a modal.
 
-```PowerShell
+```text
 New-UDButton -Text 'On Form' -OnClick {
     Show-UDModal -Content {
         New-UDForm -Content {
@@ -143,13 +143,13 @@ New-UDButton -Text 'On Form' -OnClick {
 
 ## Displaying output without Replacing the form
 
-Although you can return components directly from a form, you may want to retain the form so users can input data again. To do so, you can use `Set-UDElement` and a placeholder element that you can set the content to. 
+Although you can return components directly from a form, you may want to retain the form so users can input data again. To do so, you can use `Set-UDElement` and a placeholder element that you can set the content to.
 
 In this example, we have an empty form that, when submitted, will update the `results` element with a UDCard.
 
-```PowerShell
+```text
 New-UDForm -Content {
-  
+
 } -OnSubmit {
    Set-UDElement -Id 'results' -Content {
       New-UDCard -Content { "Hello " + (Get-Date) }
@@ -169,8 +169,6 @@ New-UDElement -Id 'results' -Tag 'div'
 | OnValidate | Endpoint | A script block that validates the form. Return the result of a call to New-UDFormValidationResult. | false |
 | OnProcessing | ScriptBlock | A script block that is called when the form begins processing. The return value of this script block should be a component that displays a loading dialog. The script block will receive the current form data. | false |
 | OnCancel | Endpoint | An endpoint that is called when this form is cancelled. When this parameter is defined a cancel button will appear. | false |
-
-
 
 **New-UDFormValidationResult**
 

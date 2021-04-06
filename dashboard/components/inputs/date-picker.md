@@ -10,15 +10,15 @@ Date pickers can be used in [Forms](form.md) and [Steppers](../navigation/steppe
 
 ![](../../../.gitbook/assets/image%20%2873%29.png)
 
-```PowerShell
-New-UDDatePicker 
+```text
+New-UDDatePicker
 ```
 
 ## OnChange Event Handler
 
-The OnChange event handler is called when the date changes. You can access the current date by using the `$Body` variable. 
+The OnChange event handler is called when the date changes. You can access the current date by using the `$Body` variable.
 
-```PowerShell
+```text
 New-UDDatePicker -OnChange {
     Show-UDToast -Message $body
 }
@@ -26,9 +26,9 @@ New-UDDatePicker -OnChange {
 
 ## Variant
 
-You can customize how the date picker is show. The default is the `inline` variant that displays the date picker popup inline with the input control. You can also use the `dialog` variant that pops the date picker up in the middle of the screen. Finally, the `static` variant displays the date picker without having to click anything. 
+You can customize how the date picker is show. The default is the `inline` variant that displays the date picker popup inline with the input control. You can also use the `dialog` variant that pops the date picker up in the middle of the screen. Finally, the `static` variant displays the date picker without having to click anything.
 
-```PowerShell
+```text
 New-UDDatePicker -Variant static
 ```
 

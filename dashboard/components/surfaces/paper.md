@@ -12,7 +12,7 @@ The background of an application resembles the flat, opaque texture of a sheet o
 
 ![](../../../.gitbook/assets/image%20%2867%29.png)
 
-```PowerShell
+```text
 New-UDPaper -Elevation 0 -Content {} 
 New-UDPaper -Elevation 1 -Content {} 
 New-UDPaper -Elevation 3 -Content {}
@@ -22,17 +22,17 @@ New-UDPaper -Elevation 3 -Content {}
 
 By default, paper will have rounded edges. You can reduce the rounding by using a square paper.
 
-```PowerShell
+```text
 New-UDPaper -Square -Content {}
 ```
 
-## Colored Paper 
+## Colored Paper
 
-The `-Style` parameter can be used to color paper. Any valid CSS can be included in the hashtable for a style. 
+The `-Style` parameter can be used to color paper. Any valid CSS can be included in the hashtable for a style.
 
-The following example creates paper with a red background. 
+The following example creates paper with a red background.
 
-```PowerShell
+```text
 New-UDPaper  -Content { } -Style @{ 
      backgroundColor = 'red'
 }

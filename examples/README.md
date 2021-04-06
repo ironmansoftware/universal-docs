@@ -6,7 +6,7 @@ description: Examples of PowerShell Universal configurations.
 
 ## Component Examples
 
-We maintain several component libraries that you can use in your dashboards directly or as examples. 
+We maintain several component libraries that you can use in your dashboards directly or as examples.
 
 * [Active Directory](https://github.com/ironmansoftware/powershell-universal/blob/master/Components/ActiveDirectory/UniversalDashboard.ActiveDirectory.psm1)
 * [Azure](https://github.com/ironmansoftware/powershell-universal/tree/master/Components/Azure) 
@@ -15,19 +15,19 @@ We maintain several component libraries that you can use in your dashboards dire
 * [Network](https://github.com/ironmansoftware/powershell-universal/tree/master/Components/Network)
 * [SQL](https://github.com/ironmansoftware/powershell-universal/tree/master/Components/SQL)
 
-## Single-File Configuration Examples 
+## Single-File Configuration Examples
 
-This page contains examples of PowerShell Universal configurations. All examples are built using single-file hosting and configuration. These examples assume that you have PowerShell Universal installed. To install PowerShell Universal, use the following command line. 
+This page contains examples of PowerShell Universal configurations. All examples are built using single-file hosting and configuration. These examples assume that you have PowerShell Universal installed. To install PowerShell Universal, use the following command line.
 
-```PowerShell
+```text
 Install-Module Universal
 Install-PSUServer -AddToPath
 ```
 
-You can login to PowerShell Universal using the username `admin` and any password. 
+You can login to PowerShell Universal using the username `admin` and any password.
 
 {% hint style="info" %}
-Have an example of an API, Dashboard or Script that you think would fit nicely on this page? Feel free to open a pull-request on our [documentation repository](https://github.com/ironmansoftware/universal-docs). 
+Have an example of an API, Dashboard or Script that you think would fit nicely on this page? Feel free to open a pull-request on our [documentation repository](https://github.com/ironmansoftware/universal-docs).
 {% endhint %}
 
 ## Table of Contents

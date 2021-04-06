@@ -8,15 +8,15 @@ description: Progress component for Universal Dashboard
 
 ![](../../../.gitbook/assets/image%20%2880%29.png)
 
-```PowerShell
-New-UDProgress -Circular -Color Blue 
+```text
+New-UDProgress -Circular -Color Blue
 ```
 
 ## Linear Indeterminate
 
 ![](../../../.gitbook/assets/image%20%2862%29.png)
 
-```PowerShell
+```text
 New-UDProgress
 ```
 
@@ -24,11 +24,9 @@ New-UDProgress
 
 ![](../../../.gitbook/assets/image%20%2869%29.png)
 
-```PowerShell
+```text
 New-UDProgress -PercentComplete 75
 ```
-
-
 
 **New-UDProgress**
 

@@ -8,16 +8,16 @@ description: Backdrop component for Universal Dashboard.
 This component will be available in a future version of Universal Dashboard.
 {% endhint %}
 
-The backdrop component places an overlay over the drop of the entire page. It's useful for displaying loading states. 
+The backdrop component places an overlay over the drop of the entire page. It's useful for displaying loading states.
 
 ## Basic Backdrop
 
-To create a basic backdrop, you can use the `New-UDBackdrop` cmdlet and include content to show within the backdrop. The content will be centered on the page. To show the backdrop, use the `-Open` switch parameter. 
+To create a basic backdrop, you can use the `New-UDBackdrop` cmdlet and include content to show within the backdrop. The content will be centered on the page. To show the backdrop, use the `-Open` switch parameter.
 
-```PowerShell
+```text
 New-UDBackdrop -Content {
     New-UDTypography -Text "Loading..." -Variant h2
-} -Open 
+} -Open
 ```
 
 ![Backdrop component](../../../.gitbook/assets/image%20%28214%29.png)
@@ -26,7 +26,7 @@ New-UDBackdrop -Content {
 
 The backdrop provides an `-OnClick` handler that you can use to close the backdrop when clicked. You can use `Set-UDElement` to open and close the backdrop.
 
-```PowerShell
+```text
 New-UDBackdrop -Id 'backdrop' -Content {
     New-UDTypography -Text "Loading..." -Variant h2
 } -Open -OnClick {

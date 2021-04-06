@@ -4,6 +4,10 @@ description: Changelog for the PowerShell Universal 1.6 beta.
 
 # Changelog \(Beta\)
 
+{% hint style="warning" %}
+MSI upgrades of the beta are not supported. Please uninstall and then reinstall to upgrade.
+{% endhint %}
+
 ## 1.6.0-beta2 - 4/6/2021
 
 ### Changed

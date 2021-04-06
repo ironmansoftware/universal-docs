@@ -6,7 +6,7 @@ description: Endpoint configuration for Universal APIs.
 
 Endpoints are defined by their URI and HTTP method. Calls made to the Universal server that match the API endpoint and method that you define will execute the API endpoint script.
 
-```PowerShell
+```text
 New-PSUEndpoint -Url '/endpoint' -Method 'GET' -Endpoint {
    "Hello, world!"
 }
@@ -14,7 +14,7 @@ New-PSUEndpoint -Url '/endpoint' -Method 'GET' -Endpoint {
 
 To invoke the above method, you could use `Invoke-RestMethod`.
 
-```PowerShell
+```text
 Invoke-RestMethod http://localhost:5000/endpoint
 ```
 
@@ -22,7 +22,7 @@ Invoke-RestMethod http://localhost:5000/endpoint
 
 URLs can contain variable segments. You can denote a variable segment using a colon \(`:`\). For example, the following URL would provide a variable for the ID of the user. The `$Id` variable will be defined within the endpoint when it is executed. Variables must be unique in the same endpoint URL.
 
-```PowerShell
+```text
 New-PSUEndpoint -Url '/user/:id' -Method 'GET' -Endpoint {
    Get-User -Id $Id
 }
@@ -30,7 +30,7 @@ New-PSUEndpoint -Url '/user/:id' -Method 'GET' -Endpoint {
 
 To call this API and specify the ID, you would do the following.
 
-```PowerShell
+```text
 Invoke-RestMethod http://localhost:5000/user/123
 ```
 
@@ -38,7 +38,7 @@ Invoke-RestMethod http://localhost:5000/user/123
 
 Query string parameters are automatically passed into endpoints as variables that you can then access. For example, if you had an endpoint that expected an `$Id` variable, it could be provided via the query string.
 
-```PowerShell
+```text
 New-PSUEndpoint -Url '/user' -Method 'GET' -Endpoint {
    Get-User -Id $Id
 }
@@ -46,7 +46,7 @@ New-PSUEndpoint -Url '/user' -Method 'GET' -Endpoint {
 
 The resulting `Invoke-RestMethod` call must then include the query string parameter.
 
-```PowerShell
+```text
 Invoke-RestMethod http://localhost:5000/user?Id=123
 ```
 
@@ -54,7 +54,7 @@ Invoke-RestMethod http://localhost:5000/user?Id=123
 
 To access a request body, you will simply access the `$Body` variable. Universal `$Body` variable will be a string. If you expect JSON, you should use `ConvertFrom-Json`.
 
-```PowerShell
+```text
 New-PSUEndpoint -Url '/user' -Method Post -Endpoint {
     $User = ConvertFrom-Json $Body 
     New-User $User
@@ -63,17 +63,17 @@ New-PSUEndpoint -Url '/user' -Method Post -Endpoint {
 
 To call the above endpoint, you would have to specify the body of `Invoke-RestMethod`.
 
-```PowerShell
+```text
 Invoke-RestMethod http://localhost:5000/user -Method Post -Body "{'username': 'adam'}"
 ```
 
 ## Param Block
 
-You can use a `param` block within your script to enforce mandatory parameters and provide default values for optional parameters such as query string parameters. Variables such as `$Body`, `$Headers` and `$User` are provided automatically. 
+You can use a `param` block within your script to enforce mandatory parameters and provide default values for optional parameters such as query string parameters. Variables such as `$Body`, `$Headers` and `$User` are provided automatically.
 
-In the below example, the `$Name` parameter is mandatory and the `$Role` parameter has a default value of Default. 
+In the below example, the `$Name` parameter is mandatory and the `$Role` parameter has a default value of Default.
 
-```PowerShell
+```text
 New-PSUEndpoint -Url '/user/:name' -Endpoint {
     param([Parameter(Mandatory)$Name, $Role = "Default")
 }
@@ -89,7 +89,7 @@ Data returned from endpoints will be assumed to be JSON data. If you return an o
 
 You can process uploaded files by using the `$Data` parameter to access the byte array of data uploaded to the endpoint.
 
-```PowerShell
+```text
 New-PSUEndpoint -Url '/file' -Method Post -Endpoint {
     $Data
 }
@@ -105,7 +105,7 @@ Content           : [137,80,78,71,13,10,26,10,0,0,0,13,73,72,68,82,0,0,2,17,0,0,
 
 You could also save the file into a directory.
 
-```PowerShell
+```text
 New-PSUEndpoint -Url '/file' -Method Post -Endpoint {
     [IO.File]::WriteAllBytes("tempfile.dat", $Data)
 }
@@ -115,7 +115,7 @@ New-PSUEndpoint -Url '/file' -Method Post -Endpoint {
 
 You can send files down using the `New-PSUApiResponse` cmdlet.
 
-```PowerShell
+```text
 New-PSUEndpoint -Url '/image' -Endpoint {
     $ImageData = [IO.File]::ReadAllBytes("image.jpeg")
     New-PSUApiResponse -ContentType 'image/jpg' -Data $ImageData
@@ -126,31 +126,31 @@ New-PSUEndpoint -Url '/image' -Endpoint {
 
 You can return custom responses from endpoints by using the `New-PSUApiResponse` cmdlet in your endpoint. This cmdlet allows you to set the status code, content type and even specify the byte\[\] data for the content to be returned.
 
-```PowerShell
+```text
 New-PSUEndpoint -Url '/file' -Method Get -Endpoint {
     New-PSUApiResponse -StatusCode 410
 }
 ```
 
-You can also return custom body data by using the `-Body` parameter of `New-PSUApiResponse`. 
+You can also return custom body data by using the `-Body` parameter of `New-PSUApiResponse`.
 
-```PowerShell
+```text
 New-PSUEndpoint -Url '/file' -Method Get -Endpoint {
     New-PSUApiResponse -Body "Not what you're looking for." -StatusCode 404
 }
 ```
 
-Invoking the REST method will return the custom error code. 
+Invoking the REST method will return the custom error code.
 
-```
+```text
 PS C:\Users\adamr\Desktop> invoke-restmethod http://localhost:8080/file
 
 Invoke-RestMethod: Not what you're looking for.
 ```
 
-You can control the content type of the data that is returned by using the `-ContentType` parameter. 
+You can control the content type of the data that is returned by using the `-ContentType` parameter.
 
-```PowerShell
+```text
 New-PSUEndpoint -Url '/file' -Method Get -Endpoint {
     New-PSUApiResponse -Body "<xml><node>1</node><node2>2</node2></xml>" -ContentType 'text/xml'
 }
@@ -158,19 +158,19 @@ New-PSUEndpoint -Url '/file' -Method Get -Endpoint {
 
 ## Persistent Runspaces
 
-Persistent runspaces allow you to maintain runspace state between API calls. This is important for users that perform some sort of initialization within their endpoints that they do not want to execute on subsequent API calls. 
+Persistent runspaces allow you to maintain runspace state between API calls. This is important for users that perform some sort of initialization within their endpoints that they do not want to execute on subsequent API calls.
 
-By default, runspaces will be reset after each execution. This will cause variables, modules and functions defined during the execution of the API to be removed. 
+By default, runspaces will be reset after each execution. This will cause variables, modules and functions defined during the execution of the API to be removed.
 
 To enable persistent runspaces, you will need to configure an [environment ](../config/environments.md)for your API. Set the `-PersistentRunspace` parameter to enable this feature. This is configured in the `environments.ps1` script.
 
-```PowerShell
+```text
 New-PSUEnvironment -Name 'Env' -Path 'powershell.exe' -PersistentRunspace
 ```
 
-You can then assign the API environment in the `settings.ps1` script. 
+You can then assign the API environment in the `settings.ps1` script.
 
-```PowerShell
+```text
 Set-PSUSetting -ApiEnvironment 'Env'
 ```
 

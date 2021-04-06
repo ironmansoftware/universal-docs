@@ -8,11 +8,11 @@ Select components are used for collecting user provided information from a list 
 
 ## Simple Select
 
-Create a simple select with multiple options. 
+Create a simple select with multiple options.
 
 ![](../../../.gitbook/assets/image%20%2866%29.png)
 
-```PowerShell
+```text
 New-UDSelect -Option {
     New-UDSelectOption -Name 'One' -Value 1
     New-UDSelectOption -Name 'Two' -Value 2
@@ -22,11 +22,11 @@ New-UDSelect -Option {
 
 ## Grouped Select
 
-Create a select with groups of selections. 
+Create a select with groups of selections.
 
 ![](../../../.gitbook/assets/image%20%2850%29.png)
 
-```PowerShell
+```text
 New-UDSelect -Option {
     New-UDSelectGroup -Name 'Group One' -Option {
         New-UDSelectOption -Name 'One' -Value 1
@@ -43,9 +43,9 @@ New-UDSelect -Option {
 
 ## OnChange
 
-Execute a PowerShell event handler when the value of the select is changed. 
+Execute a PowerShell event handler when the value of the select is changed.
 
-```PowerShell
+```text
 New-UDSelect -Option {
     New-UDSelectOption -Name 'One' -Value 1
     New-UDSelectOption -Name 'Two' -Value 2
@@ -55,9 +55,9 @@ New-UDSelect -Option {
 
 ## Get-UDElement
 
-Retrieve the value of the select from another component. 
+Retrieve the value of the select from another component.
 
-```PowerShell
+```text
   New-UDSelect -Option {
       New-UDSelectOption -Name 'One' -Value 1
       New-UDSelectOption -Name 'Two' -Value 2

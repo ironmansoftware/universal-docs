@@ -23,7 +23,7 @@ Steppers display progress through a sequence of logical and numbered steps. They
 
 ![](../../../.gitbook/assets/image%20%2861%29.png)
 
-```PowerShell
+```text
 New-UDStepper -Steps {
     New-UDStep -OnLoad {
         New-UDElement -tag 'div' -Content { "Step 1" }
@@ -47,7 +47,7 @@ New-UDStepper -Steps {
 
 The $Body variable will contain a JSON string that contains the current state of the stepper. You will receive information about the fields that have been defined within the stepper and info about the current step that has been completed. The $Body JSON string will have the following format.
 
-```json
+```javascript
 {
     context: {
         txtStep1: "value1",
@@ -64,7 +64,7 @@ You can validate a step in a stepper by specifying the `OnValidateStep` paramete
 
 The JSON payload will have the following format. Note that steps are 0 indexed. If you want to validate the first step, check to make sure the step is 0.
 
-```json
+```javascript
 {
     context: {
         field1: "value1" 
@@ -75,7 +75,7 @@ The JSON payload will have the following format. Note that steps are 0 indexed. 
 
 You will have to convert the JSON string to an object to work with in PowerShell and then return the validation result.
 
-```PowerShell
+```text
 New-UDStepper -Steps {
     New-UDStep -OnLoad {
         New-UDElement -tag 'div' -Content { "Step 1" }
@@ -111,7 +111,7 @@ New-UDStepper -Steps {
 
 You can create a vertical stepper by setting the `-Orientation` parameter to vertical.
 
-```PowerShell
+```text
 New-UDStepper -Steps {
     New-UDStep -OnLoad {
         New-UDElement -tag 'div' -Content { "Step 1" }

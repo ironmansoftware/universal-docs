@@ -8,11 +8,11 @@ Sliders allow users to make selections from a range of values.
 
 Sliders reflect a range of values along a bar, from which users may select a single value. They are ideal for adjusting settings such as volume, brightness, or applying image filters.
 
-## Slider 
+## Slider
 
 ![](../../../.gitbook/assets/image%20%2837%29.png)
 
-```PowerShell
+```text
 New-UDSlider -Value 1
 ```
 
@@ -20,7 +20,7 @@ New-UDSlider -Value 1
 
 ![](../../../.gitbook/assets/image%20%2844%29.png)
 
-```PowerShell
+```text
 New-UDSlider -Min 10 -Max 1000
 ```
 
@@ -28,7 +28,7 @@ New-UDSlider -Min 10 -Max 1000
 
 ![](../../../.gitbook/assets/image%20%2859%29.png)
 
-```PowerShell
+```text
 New-UDSlider -Disabled
 ```
 
@@ -36,7 +36,7 @@ New-UDSlider -Disabled
 
 ![](../../../.gitbook/assets/image%20%2848%29.png)
 
-```PowerShell
+```text
 New-UDSlider -Min 10 -Max 1000 -Step 100
 ```
 
@@ -44,7 +44,7 @@ New-UDSlider -Min 10 -Max 1000 -Step 100
 
 ![](../../../.gitbook/assets/image%20%2839%29.png)
 
-```PowerShell
+```text
 New-UDSlider -Marks
 ```
 
@@ -52,20 +52,18 @@ New-UDSlider -Marks
 
 ![](../../../.gitbook/assets/image%20%2865%29.png)
 
-```PowerShell
+```text
 New-UDSlider -Value @(1, 10)
 ```
 
 ## OnChange event for slider
 
-```PowerShell
+```text
 New-UDSlider -OnChange {
     Show-UDToast -Message $Body 
     Set-TestData $Body
 }
 ```
-
-
 
 **New-UDSlider**
 

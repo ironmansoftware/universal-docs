@@ -8,7 +8,7 @@ PowerShell Universal Dashboard v2.9 is a PowerShell module that allows you to cr
 
 In Universal, all you need to do is return the result of New-UDDashboard from your script. There is no need to call Start-UDDashboard. The configuration of the webserver is taken place using the PSU `appsetting.json` file.
 
-```PowerShell
+```text
 New-UDDashboard -Title 'My dashboard' -Content {
 
 }
@@ -22,7 +22,7 @@ This cmdlet has been removed from Universal Dashboard. There is no longer a need
 
 You do not need to pass the value of a scheduled endpoint to anything. You can just call `New-UDEndpoint` with a endpoint schedule and it will automatically be registered with PSU.
 
-```PowerShell
+```text
 $Schedule = New-UDEndpointSchedule -Every 10 -Minute
 $Endpoint = New-UDEndpoint -Schedule $Schedule -Endpoint {}
 ```
@@ -45,7 +45,7 @@ For example, let's adjust a claims policy from Universal Dashboard for Universal
 
 **Universal Dashboard**
 
-```PowerShell
+```text
 $AuthorizationPolicy = New-UDAuthorizationPolicy -Name "Policy" -Endpoint {
     param($User)
 
@@ -55,7 +55,7 @@ $AuthorizationPolicy = New-UDAuthorizationPolicy -Name "Policy" -Endpoint {
 
 **Universal**
 
-```PowerShell
+```text
 New-PSURole -Name 'User' -Policy {
    param($User)
 
@@ -67,7 +67,7 @@ New-PSURole -Name 'User' -Policy {
 
 Much like the `Get-UDAuthorizationPolicy` cmdlet in Universal Dashboard, you also have access to the assigned roles for users in Universal. Simply check the `$Roles` variable to see which roles the user has.
 
-```
+```text
 PS C:\Users\adamr> $Roles = @('Administrator')
 PS C:\Users\adamr> if ($Roles -contains 'Administrator') { $true }
 ```
@@ -86,7 +86,7 @@ Pages have a different behavior in v3. All pages are dynamic pages. This means t
 
 If you have a page such as this one:
 
-```PowerShell
+```text
 New-UDPage -Url "/myPage/:owner" -Endpoint {
     param($owner)
 }
@@ -94,7 +94,7 @@ New-UDPage -Url "/myPage/:owner" -Endpoint {
 
 You can convert it to a v3 page by changing the syntax to:
 
-```PowerShell
+```text
 New-UDPage -Name 'myPage' -Url "/myPage/:owner" -Content {
     param($owner)
 }
@@ -110,7 +110,7 @@ You can view examples of the [table on GitHub](https://github.com/ironmansoftwar
 
 Unlike in v3, components do not have `-Endpoint` and `-Content` parameters. Each component will instead simply have a `-Content` parameter. To achieve dynamic sections of a page, you can instead use the `New-UDDynamic` cmdlet. This cmdlets let you define an entire section of a page as dynamic. It also provides auto refresh functionality so you can refresh sections of a page all at once.
 
-```PowerShell
+```text
 New-UDDynamic -Content {
     New-UDTypography -Text (Get-Date)
 }

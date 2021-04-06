@@ -14,7 +14,7 @@ Although cards can support multiple actions, UI controls, and an overflow menu, 
 
 ![](../../../.gitbook/assets/image%20%2856%29.png)
 
-```PowerShell
+```text
 New-UDCard -Title 'Simple Card' -Content {
     "This is some content"
 }
@@ -22,9 +22,9 @@ New-UDCard -Title 'Simple Card' -Content {
 
 ## Advanced Card
 
-You can use the body, header, footer and expand cmdlets to create advanced cards. The below example creates a card with various features based on a Hyper-V VM. 
+You can use the body, header, footer and expand cmdlets to create advanced cards. The below example creates a card with various features based on a Hyper-V VM.
 
-```PowerShell
+```text
 $VM = Get-VM -Name $VMName @ConnectionInfo
 
 $Header = New-UDCardHeader -Title $VM.Name
@@ -44,7 +44,7 @@ $Footer = New-UDCardFooter -Content {
             Sync-UDElement -Id "$($VMName)_card"
         }
     }
-    
+
 }
 
 $Body = New-UDCardBody -Content {
@@ -55,7 +55,7 @@ $Expand = New-UDCardExpand -Content {
     New-UDElement -Tag 'div' -Content {
         New-UDTable -Data ($VM.DvdDrives | Select-Object Name, DvdMediaType, Path) -Title 'DVD Drives' -Dense
     } 
-    
+
     $Drives = Get-VMHardDiskDrive -VMName $VM.Name @ConnectionInfo | Select-Object Name, Path
     New-UDTable -Data $Drives -Title 'Hard Disk Drives' -Dense
 
@@ -65,7 +65,6 @@ $Expand = New-UDCardExpand -Content {
 New-UDStyle -Style '.ud-mu-cardexpand { display: block !important }' -Content {
     New-UDCard -Body $Body -Header $Header -Footer $Footer -Expand $Expand
 }
-        
 ```
 
 ![Expandable Card](../../../.gitbook/assets/image%20%28220%29.png)
