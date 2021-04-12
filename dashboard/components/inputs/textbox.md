@@ -96,4 +96,7 @@ New-UDTextbox -Mask @('+', '1', ' ', '(', '/[1-9]/', '/\d/', '/\d/', ')', ' ', '
 | Disabled | SwitchParameter | Whether this textbox is disabled. | false |
 | Icon | Object | The icon to show next to the textbox. | false |
 | Autofocus | SwitchParameter | Whether to autofocus this textbox. | false |
+| Multiline | SwitchParameter | Whether the textbox accepts multiple lines. | false |
+| Rows | int | The number of rows in a multiline textbox | false |
+| RowsMax | int | The max number of rows in a multiline textbox | false |
 
