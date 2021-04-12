@@ -26,6 +26,14 @@ A password textbox will mask the input.
 New-UDTextbox -Label 'Password' -Type password
 ```
 
+## Multiline
+
+You can create a multiline textbox by using the `-Multiline` parameter. Pressing enter will add a new line. You can define the number of rows and the max number of rows using `-Rows` and `-RowsMax`.
+
+```text
+New-UDTextbox -Multiline -Rows 4 -RowsMax 10
+```
+
 ## Interaction
 
 ### Retrieving a textbox value
