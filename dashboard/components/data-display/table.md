@@ -192,10 +192,6 @@ New-UDTable -Id 'service_table' -Data $Data -Columns $Columns -Title 'Services' 
 
 ## Server-Side Exporting
 
-{% hint style="warning" %}
-This documentation is in reference to a future version of PowerShell Universal.
-{% endhint %}
-
 You can control the export functionality with a PowerShell script block. This is useful when exporting from server-side sources like SQL server tables.
 
 In this example, I have a SQL table that contains podcasts. When exporting, you will receive information about the current state of the table to allow you to customize what data is exported.
