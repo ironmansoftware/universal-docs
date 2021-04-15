@@ -106,6 +106,32 @@ $Columns = @(
 New-UDTable -Data $Data -Columns $Columns -Sort
 ```
 
+## Filters
+
+You can configure custom filters per column. The table supports `text`, `select`, `fuzzy` , `slider`, `range`, `date` , `number`, and `autocomplete` filters.
+
+```text
+$Data = @(
+    @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+) 
+
+$Columns = @(
+    New-UDTableColumn -Property Dessert -Title "A Dessert" -Filter -FilterType AutoComplete
+    New-UDTableColumn -Property Calories -Title Calories -Filter -FilterType Range
+    New-UDTableColumn -Property Fat -Title Fat -Filter -FilterType Range
+    New-UDTableColumn -Property Carbs -Title Carbs -Filter -FilterType Range
+    New-UDTableColumn -Property Protein -Title Protein -Filter -FilterType Range
+)
+
+New-UDTable -Id 'customColumnsTable' -Data $Data -Columns $Columns -ShowFilter
+```
+
+![](../../../.gitbook/assets/image%20%28221%29.png)
+
 ## Table with server-side processing
 
 For a full example of server-side processing, [see this blog post](https://blog.ironmansoftware.com/universal-dashboard-server-side-table/).
