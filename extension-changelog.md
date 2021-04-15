@@ -4,6 +4,10 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 1.8.2 - 4/15/2021
+
+* Fixed an issue where endpoints.ps1 and dashboards.ps1 could not be opened remotely
+
 ## 1.8.1 - 3/4/2021
 
 * Fixed an issue where the Local Editing setting was on by default
