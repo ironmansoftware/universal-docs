@@ -107,6 +107,74 @@ New-UDStepper -Steps {
 }
 ```
 
+## Skipping Steps
+
+You can direct the user to a particular step in the `OnValidateStep` event handler. Use the `New-UDValidationResult` `-ActiveStep` parameter to move the user to any step after clicking next. Step indices are 0 based. 
+
+This example moves the user to the last step after completing the first step. 
+
+```text
+New-UDStepper -Steps {
+    New-UDStep -OnLoad {
+        New-UDElement -tag 'div' -Content { "Step 1" }
+        New-UDTextbox -Id 'txtStep1' -Value $EventData.Context.txtStep1
+    } -Label "Step 1"
+    New-UDStep -OnLoad {
+        New-UDElement -tag 'div' -Content { "Step 2" }
+        New-UDElement -tag 'div' -Content { "Previous data: $Body" }
+        New-UDTextbox -Id 'txtStep2' -Value $EventData.Context.txtStep2
+    } -Label "Step 2"
+    New-UDStep -OnLoad {
+        New-UDElement -tag 'div' -Content { "Step 3" }
+        New-UDElement -tag 'div' -Content { "Previous data: $Body" }
+        New-UDTextbox -Id 'txtStep3' -Value $EventData.Context.txtStep3
+    } -Label "Step 3"
+} -OnFinish {
+    New-UDTypography -Text 'Nice! You did it!' -Variant h3
+    New-UDElement -Tag 'div' -Id 'result' -Content {$Body}
+} -OnValidateStep {
+    $Context = $EventData
+    if ($Context.CurrentStep -eq 0 -and $Context.Context.txtStep1 -eq 'bad')
+    {
+        New-UDValidationResult 
+    }
+    else
+    {
+        New-UDValidationResult -Valid -ActiveStep 2
+    }
+}
+```
+
+## Disable Previous Button
+
+You can disable the previous button by using the `-DisablePrevious` parameter of `New-UDValidationResult` . 
+
+This example disables the previous step whenever the user moves forward in the stepper.
+
+```text
+New-UDStepper -Steps {
+    New-UDStep -OnLoad {
+        New-UDElement -tag 'div' -Content { "Step 1" }
+        New-UDTextbox -Id 'txtStep1' -Value $EventData.Context.txtStep1
+    } -Label "Step 1"
+    New-UDStep -OnLoad {
+        New-UDElement -tag 'div' -Content { "Step 2" }
+        New-UDElement -tag 'div' -Content { "Previous data: $Body" }
+        New-UDTextbox -Id 'txtStep2' -Value $EventData.Context.txtStep2
+    } -Label "Step 2"
+    New-UDStep -OnLoad {
+        New-UDElement -tag 'div' -Content { "Step 3" }
+        New-UDElement -tag 'div' -Content { "Previous data: $Body" }
+        New-UDTextbox -Id 'txtStep3' -Value $EventData.Context.txtStep3
+    } -Label "Step 3"
+} -OnFinish {
+    New-UDTypography -Text 'Nice! You did it!' -Variant h3
+    New-UDElement -Tag 'div' -Id 'result' -Content {$Body}
+} -OnValidateStep {
+    New-UDValidationResult -Valid -DisablePrevious
+}
+```
+
 ## Vertical Steppers
 
 You can create a vertical stepper by setting the `-Orientation` parameter to vertical.
