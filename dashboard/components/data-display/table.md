@@ -360,4 +360,5 @@ New-UDButton -Text 'Refresh Table' -OnClick {
 | PageSize | int | Number of items to show in a page by default. Defaults to 5. | false |
 | PageSizeOptions | int\[\] | Page size options to show in the selector. Defaults to @\(5, 10, 20\) _\*\*_ | false |
 | Dense | SwitchParameter | Enables dense padding. | false |
+| DefaultSort Direction | string | Sets the default sort direction for the table.  | None |
 
