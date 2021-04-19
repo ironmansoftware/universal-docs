@@ -4,6 +4,55 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 1.5.16 - 4/19/2021
+
+### Includes
+
+* UniversalDashboard - v3.3.5
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.0.4
+* UniversalDashboard.Style - 1.0.0
+
+### Added
+
+#### API
+
+* Added support for passing parameters via form data
+
+#### Dashboard
+
+* UDv3 - Added ability to set active step and disable previous step in UDStepper.
+* UDv3 - Added avatar and logout button 
+* UDv3 - Added -Variant to New-UDTextbox
+* UDv3 - Added Autocomplete to -FilterType on New-UDTable
+* UDv3 - Added -Variant to New-UDAutoComplete
+* UDv3 - Added Debug with VS Code Insiders button to Debug-PSUDashboard
+* Added configuration option for dashboard startup timeout.
+* UDv3 - Added -DefaultSortDirection to New-UDTable
+
+### Changed
+
+#### API
+
+* Fixed an issue where a variable and route piece sharing the same name would cause the route to fail
+
+#### Automation
+
+* Improved error message when an invalid parameter is used with Invoke-UAScript\Invoke-PSUScript
+* Fixed an issue where -UseDefaultCredentials would not work with Invoke-UAScript
+
+#### Dashboard
+
+* UDv3 - Sort select filters on New-UDTable
+* UDv3 - Fixed an issue with New-UDTable filters where they would list the count as 0
+* UDv3 - Fixed an issue where the dashboard would timeout but would not notify the user
+
+#### Platform
+
+* Fixed 4MB size limitation of PSUCache.
+
 ## 1.5.15 -4/5/2021
 
 ### Includes
