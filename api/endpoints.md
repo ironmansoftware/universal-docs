@@ -67,6 +67,28 @@ To call the above endpoint, you would have to specify the body of `Invoke-RestMe
 Invoke-RestMethod http://localhost:5000/user -Method Post -Body "{'username': 'adam'}"
 ```
 
+## Form Data
+
+You can pass data to an endpoint as form data. Form data will be passed into your endpoint as parameters. 
+
+```text
+New-PSUEndpoint -Url '/user' -Method Post -Endpoint {
+    param([Parameter(Mandatory)]$userName, $FirstName, $LastName)
+     
+    New-User $UserName -FirstName $FirstName -LastName $LastName
+}
+```
+
+You can then use a hashtable with Invoke-RestMethod to pass form data. 
+
+```text
+Invoke-RestMethod http://localhost:5000/user -Method Post -Body @{ 
+    UserName = "adriscoll"
+    FirstName = "Adam"
+    LastName = "Driscoll"
+}
+```
+
 ## Param Block
 
 You can use a `param` block within your script to enforce mandatory parameters and provide default values for optional parameters such as query string parameters. Variables such as `$Body`, `$Headers` and `$User` are provided automatically.
