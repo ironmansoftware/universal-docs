@@ -4,6 +4,57 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 
+
+## 1.5.17 - 5/6/2021
+
+
+
+### Includes
+
+* UniversalDashboard - v3.3.6
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.0.4
+* UniversalDashboard.Style - 1.0.0
+
+### Added
+
+#### Dashboard
+
+* UDv3 - Added -MaxWidth to New-UDSelect
+* UDv3 - Added -FontWeight to New-UDTypography
+* UDv3 - Added -Style to New-UDTreeView
+* UDv3 - Added -Multiple to New-UDAutocomplete
+
+### Changed
+
+#### API
+
+* Fixed an issue where requests over 2KB would return a 404 not found. 
+
+#### Automation
+
+* Fixed an issue when scheduling a script with boolean parameters
+* Fixed an issue when scheduling delayed schedules with different sets of credentials.
+* Reduce memory consumption when running many jobs a day 
+
+#### Dashboard
+
+* UDv3 - Fixed an issue where selecting a multioption select group wouldn't select the items in the group.
+* UDv3 - Fixed an issue with putting a UDProgress bar within a UDCard. 
+* Fixed an issue with published folder roles in the admin console
+* UDv3 - Fixed an issue where server-side export would not show a progress bar
+* UDv3 - Fixed an issue where return $null from -Render in New-UDTableColumn would cause the table to fail to load
+* UDv3 - Fixed an issue where -Active would not work on New-UDExpansionPanel
+* Load dashboard framework before other modules
+* Fixed an issue where the session time out window would not appear in IIS
+
+#### Platform
+
+* Fixed an issue where changing from role-based to policy-based identites would cause a user to fail to login
+
 ## 1.5.16 - 4/19/2021
 
 ### Includes
