@@ -9,7 +9,7 @@ description: Changelog for PowerShell Universal.
 ## 1.5.17 - 5/6/2021
 
 {% hint style="warning" %}
-Known issue with authentication and authorization. You may experience problems logging in. 
+Known issue with authentication and authorization. You may experience problems logging in.  
 {% endhint %}
 
 ### Includes
