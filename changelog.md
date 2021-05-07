@@ -6,6 +6,23 @@ description: Changelog for PowerShell Universal.
 
 ## 
 
+## 1.5.18 - 5/7/2021
+
+### Includes
+
+* UniversalDashboard - v3.3.6
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.0.4
+* UniversalDashboard.Style - 1.0.0
+
+### Changed
+
+#### Platform
+
+* Fixed an issue where an exception would be thrown during certain types of authentication
+
 ## 1.5.17 - 5/6/2021
 
 {% hint style="warning" %}
