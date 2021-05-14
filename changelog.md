@@ -6,6 +6,48 @@ description: Changelog for PowerShell Universal.
 
 ## 
 
+## 1.5.19 - 5/14/2021
+
+### Includes
+
+* UniversalDashboard - v3.3.7
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.0.4
+* UniversalDashboard.Style - 1.0.0
+
+### Added
+
+#### Dashboard
+
+* UDv3 - Added New-UDHidden
+* UDv3 - Added -HideToggleAllRowsSelect to remove the select all rows toggle
+* UDv3 - Added -DisableMultiSelect to New-UDTable
+
+### Changed
+
+#### Automation
+
+* Removed the need to call the REST API from jobs
+* Fixed an issue with scheduling one-time schedules and time zones
+* Fixed an issue where error action would not work for scheduled scripts
+
+#### Dashboard
+
+* Fixed an issue where the user name would not be shown on the sessions tab
+* UDv3 - Fixed an issue with New-UDExpansionPanel -Active
+* UDv3 - Fixed an issue where validation would happen twice for textboxes within forms
+* UDv3 - Fixed an issue where autocomplete default values would not be available in forms
+* UDv3 - OnRowSelected for New-UDTable will trigger for both selecting and unselecting a row and will now include whether the row was selected or not
+* UDv3 - Fixed an issue where OnRowSelected would not trigger when all rows were toggled
+* UDv3 - Fixed an issue where the logout button would redirect to a blank page
+
+#### Platform
+
+* Fixed an issue with the UniversalDashboard module install
+* Increase max request and header size
+
 ## 1.5.18 - 5/7/2021
 
 ### Includes
