@@ -37,3 +37,26 @@ This login page looks like this.
 
 ![DBATools Web Portal Example](../.gitbook/assets/image%20%28170%29.png)
 
+## Adding Links
+
+{% hint style="warning" %}
+This documentation is for the upcoming 1.6 release.
+{% endhint %}
+
+You can add links to other web pages by using the `New-PSULoginPageLink` cmdlet. 
+
+```text
+$LoginPage = @{
+    Links = @(
+        New-PSULoginPageLink -Text 'Google' -Url 'http://www.google.com'
+        New-PSULoginPageLink -Text 'Microsoft' -Url 'http://www.microsoft.com'
+    )
+}
+
+New-PSULoginPage @LoginPage
+```
+
+Links will appear at the top of the page. 
+
+![](../.gitbook/assets/image%20%28222%29.png)
+
