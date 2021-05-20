@@ -32,3 +32,15 @@ New-UDAlert -Severity 'success' -Content { New-UDHtml 'This is an success alert 
 
 ![Advanced Alerts](../../../.gitbook/assets/image%20%28211%29.png)
 
+## API
+
+**New-UDAlert**
+
+| **Name** | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| Id | string | The ID of this component. | False |
+| Severity | string | The type of alert to display. | False |
+| Content | ScriptBlock | Custom alert content to display. | False |
+| Text | string | Text to display within the alert. | False |
+| Title | string | The title of the alert. | False |
+
