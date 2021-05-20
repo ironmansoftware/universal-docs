@@ -128,3 +128,68 @@ New-UDButton -Text 'Click Me' -OnClick {
 }
 ```
 
+## API
+
+**Get-UDElement**
+
+Get component state.
+
+| **Name** | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| Id | string | The ID of the component to receive.  | true |
+
+**Set-UDElement**
+
+Set component state.
+
+| Name | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| Id | string | The ID of the component to set. | true |
+| Properties | Hashtable | Properties to set on the component | false |
+| Broadcast | Switch | Set the properties of a component for all users. | false |
+| Content | ScriptBlock | The content of the component to set. | false |
+
+**Remove-UDElement**
+
+Remove a component.
+
+| Name | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| Id | string | The ID of the component to remove. | true |
+
+**Add-UDElement**
+
+Add a child component.
+
+| **Name** | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| ParentId | string | The ID of the component to add a child to. | true |
+| Content | ScriptBlock | The child content to add. | true |
+| Broadcast | Switch | Whether to add the child component to all users. | false |
+
+**Clear-UDElement**
+
+Clear child components out of a component.
+
+| Name | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| Id | string | The ID of the component to clear. | true |
+
+**Sync-UDElement**
+
+Reload a component
+
+| Name | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| Id | string | The ID of the component to reload. | true |
+| Broadcast | Switch | Whether to reload the component for all users. | false |
+
+**Select-UDElement**
+
+Select a component.
+
+| **Name** | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| Id | string | The ID of the element to select | true |
+| ScrollToElement | Switch | Whether to scroll the user's window to the element | false |
+
