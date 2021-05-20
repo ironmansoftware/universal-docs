@@ -54,3 +54,18 @@ Sometimes refreshing a dynamic component may take some time. For example, if you
 
 ![Loading component for dynamic region](../../.gitbook/assets/vwly75oka9.gif)
 
+## API
+
+### New-UDDynamic 
+
+Defines a dynamic region on a page. 
+
+| Name | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| Id | string | Unique identifier for this region | false |
+| ArgumentList | object\[\] | Arguments to pass to the region. Available within the -Content by using $ArgumentList | false |
+| Content | ScriptBlock | The content to load within the dynamic region | true |
+| AutoRefresh | Switch | Whether this dynamic region will refresh on an interval | false |
+| AutoRefreshInterval | int | The number of seconds between auto refreshes. | false |
+| LoadingComponent | ScriptBlock | A component to display when the dynamic is loading | false |
+
