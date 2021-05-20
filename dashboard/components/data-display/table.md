@@ -173,6 +173,41 @@ New-UDTable -Columns $Columns -LoadData {
 }
 ```
 
+## Sorting
+
+To enable sorting for a table, use the `-ShowSort` parameter. When you enable sorting, you will be able to click the table headers to sort the table by clicking the headers. By default, multi-sort is enabled. To multi-hold shift and click a column header. 
+
+```text
+$Data = @(
+    @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+) 
+
+New-UDTable -Data $Data
+```
+
+You can control which columns can be sorted by using `New-UDTableColumn` and `-ShowSort` parameter. 
+
+```text
+    @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+) 
+
+$Columns = @(
+    New-UDTableColumn -Property Dessert -Title "A Dessert" -ShowSort
+    New-UDTableColumn -Property Calories -Title Calories 
+    New-UDTableColumn -Property Fat -Title Fat 
+    New-UDTableColumn -Property Carbs -Title Carbs -ShowSort
+    New-UDTableColumn -Property Protein -Title Protein -ShowSort
+)
+
+New-UDTable -Id 'customColumnsTable' -Data $Data -Columns $Columns
+```
+
 ## Selection
 
 Tables support selection of rows. You can create an event handler for the `OnRowSelected` parameter to receive when a new row is selected or unselected or you can use `Get-UDElement` to retrieve the current set of selected rows.
