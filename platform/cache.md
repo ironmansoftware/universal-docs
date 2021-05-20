@@ -60,3 +60,27 @@ You can use the `Get-PSUCache` cmdlet to retrieve items from the cache. You simp
 Get-PSUCache -Key "CurrentDate"
 ```
 
+## API
+
+**Get-PSUCache**
+
+Returns data from the cache. 
+
+| Name | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| Key | string | The key to the data stored in the cache. | True |
+
+**Set-PSUCache**
+
+Sets data into the cache.
+
+| Name | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| Key | string | The key for the data stored in the cache. | True |
+| Value | string | The data to be stored in the cache. It will be stored as CliXml. | True |
+| AbsoluteExpiration | DateTime | The date and time of the expiration of this data. It will be removed from the cache at this time. | False |
+| AbsoluteExpirationFromNow | TimeSpan | A length of time to keep the data within the cache. It will be removed after that amount of time. | False |
+| SlidingExpiration | TimeSpan | A length of time to keep the data within the cache. Each time the data is accessed, the time is reset. If the data isn't accessed during the expiration time, it will be removed from the cache. | False |
+
+
+
