@@ -175,7 +175,7 @@ New-UDTable -Columns $Columns -LoadData {
 
 ## Selection
 
-Tables support selection of rows. You can create an event handler for the `OnRowSelected` parameter to receive when a new row is selected or you can use `Get-UDElement` to retrieve the current set of selected rows.
+Tables support selection of rows. You can create an event handler for the `OnRowSelected` parameter to receive when a new row is selected or unselected or you can use `Get-UDElement` to retrieve the current set of selected rows.
 
 The following example creates a table with row selection enabled. A toast is show when clicking the row or when clicking the GET Rows button.
 
@@ -198,6 +198,21 @@ New-UDButton -Text "GET Rows" -OnClick {
 ```
 
 ![Row selection](../../../.gitbook/assets/table.gif)
+
+The `$EventData` variable for the `-OnRowSelected` event will include all the columns as properties and a selected property as to whether the row was selected or unselected. 
+
+For example, the service table data would look like this. 
+
+```text
+@{
+   Id = 0
+   Name = 'AESMService',
+   Status = 'Running'
+   StartupType = 'AutomaticDelayedStart'
+   StartType = 'Automation'
+   selected = $true
+}
+```
 
 ## Exporting
 
