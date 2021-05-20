@@ -43,3 +43,20 @@ To configure default documents, set the `-DefaultDocument` parameter on `New-PSU
 New-PSUPublishedFolder -Path C:\website -RequestPath /docs -DefaultDocument @("index.hml")
 ```
 
+## API 
+
+### New-PSUPublishedFolder
+
+Create a published folder. Can be used in the `publishedFolders.ps1` file or via the management REST API.
+
+| Name | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| RequestPath | string | The relative path to server documents from. | true |
+| Path | string | The absolute file system path to server files from. | true |
+| Authentication | Switch | Whether authentication is required to access this folder. | false |
+| Role | string\[\] | Roles that can access this folder. Leave blank for any role. | false |
+| DefaultDocument | string\[\] | Default documents to server with out specifying the file name. | false |
+| ComputerName | string | The URL to the PSU management API.  | false |
+| AppToken | string | The AppToken used to access the PSU management API | false |
+| UseDefaultCredentials | Switch | Whether to use the current user's credentials to access the PSU management API | false |
+
