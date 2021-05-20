@@ -173,6 +173,26 @@ New-UDTable -Columns $Columns -LoadData {
 }
 ```
 
+## Paging
+
+By default, paging is disable and tables will grow based on how many rows of data you provide. You can enable paging by using the `-ShowPagination` cmdlet \(alias `-Paging`\). You can configure the page size using the `-PageSize` cmdlet. 
+
+```text
+$Data = @(
+    @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+) 
+
+New-UDTable -Data $Data -Paging -PageSize 2
+```
+
+### Disable Page Size All 
+
+By default, the page size selector provides an option to show all rows. If you want to prevent users from doing this, use the `-DisablePageSizeAll` cmdlet. 
+
 ## Sorting
 
 To enable sorting for a table, use the `-ShowSort` parameter. When you enable sorting, you will be able to click the table headers to sort the table by clicking the headers. By default, multi-sort is enabled. To multi-hold shift and click a column header. 
@@ -427,6 +447,7 @@ New-UDButton -Text 'Refresh Table' -OnClick {
 | Filter | SwitchParameter | Whether filtering is enabled in the table. | false |
 | Search | SwitchParameter | Whether search is enabled in the table. | false |
 | Export | SwitchParameter | Whether exporting is enabled within the table. | false |
+| Paging | SwitchParameter | Whether to enable paging. | false |
 | PageSize | int | Number of items to show in a page by default. Defaults to 5. | false |
 | PageSizeOptions | int\[\] | Page size options to show in the selector. Defaults to @\(5, 10, 20\) _\*\*_ | false |
 | Dense | SwitchParameter | Enables dense padding. | false |
