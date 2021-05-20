@@ -186,7 +186,7 @@ $Data = @(
     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
 ) 
 
-New-UDTable -Data $Data
+New-UDTable -Data $Data -ShowSort
 ```
 
 You can control which columns can be sorted by using `New-UDTableColumn` and `-ShowSort` parameter. 
@@ -206,6 +206,26 @@ $Columns = @(
 )
 
 New-UDTable -Id 'customColumnsTable' -Data $Data -Columns $Columns
+```
+
+### Disable Sort Remove
+
+{% hint style="warning" %}
+This documentation is for a feature that will be available in a future version of PowerShell Universal.
+{% endhint %}
+
+By default, the sorting of a table has 3 states. Unsorted, ascending and descending. If you would like to disable the unsorted state, use the `-DisableSortRemove` parameter of `New-UDTable`.
+
+```text
+$Data = @(
+    @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+) 
+
+New-UDTable -Data $Data -ShowSort -DisableSortRemove
 ```
 
 ## Selection
