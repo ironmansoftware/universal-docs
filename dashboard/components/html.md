@@ -12,3 +12,13 @@ The following creates an unordered list.
 New-UDHtml -Markup "<ul><li>First</li><li>Second</li><li>Third</li></ul>"
 ```
 
+## API
+
+**New-UDHtml**
+
+Write raw HTML to your dashboard.
+
+| Name | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| Markup | string | The HTML to display. | True |
+
