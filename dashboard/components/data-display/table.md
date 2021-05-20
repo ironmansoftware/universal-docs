@@ -434,7 +434,11 @@ New-UDButton -Text 'Refresh Table' -OnClick {
 }
 ```
 
-**New-UDTable**
+## API
+
+### New-UDTable
+
+Creates a new table. 
 
 | Name | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
@@ -449,9 +453,61 @@ New-UDButton -Text 'Refresh Table' -OnClick {
 | Export | SwitchParameter | Whether exporting is enabled within the table. | false |
 | Paging | SwitchParameter | Whether to enable paging. | false |
 | PageSize | int | Number of items to show in a page by default. Defaults to 5. | false |
-| PageSizeOptions | int\[\] | Page size options to show in the selector. Defaults to @\(5, 10, 20\) _\*\*_ | false |
+| PageSizeOptions | int\[\] | Page size options to show in the selector. Defaults to @\(5, 10, 20\) | false |
 | Dense | SwitchParameter | Enables dense padding. | false |
-| DefaultSort Direction | string | Sets the default sort direction for the table.  | false |
+| DefaultSortDirection | string | Sets the default sort direction for the table.  | false |
 | HideToggleAllRowsSelected | SwitchParameter | Disables the toggle all rows when using selection | false |
 | DisableMultiSelect | SwitchParameter | Disables multiple selections | false |
+| DisablePageSizeAll | SwitchParameter | Disables the ability to show all records in a paged table. | false |
+
+### New-UDTableColumn
+
+Defines column properties for a table. 
+
+| Name | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| Id | String | The ID of the component. It defaults to a random GUID. | false |
+| Property | String | The property to select from the data for this column | true |
+| Title | String | The title to display at the top of the column. Property name is used if not specified.  | false |
+| Render | ScriptBlock | A script block that is called when rendering this column. The $\_ variable will contain the current row. Return any control from this scriptblock.  | false |
+| ShowSort | Switch | Include this column in sorting. | false |
+| ShowFilter | Switch | Include a filter for this column. | false |
+| FilterType | string | The type of filter to display. text, select, fuzzy, slider, range, date, number, autocomplete | false |
+| Style | Hashtable | A CSS style applied to the column | false |
+| Width | int | The width of the column in pixels | false |
+| IncludeInSearch | Switch | Whether to include this column when searching. | false |
+| IncludeInExport | Switch | Whether to include this column when exporting. | false |
+| DefaultSortColumn | Switch | This column defines the default sorting when the table is loaded. | false |
+| Align | string | The alignment of the data in the table.  | false |
+| Truncate | Switch | Whether to truncate the text in the column if it is longer than -Width | false |
+| SortType | string | How to sort the data within the column | false |
+
+### Out-UDTableData
+
+Returns data from the `-LoadData` parameter of `New-UDTable`. 
+
+| Name | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| Data | object | The data to display in the table | true |
+| Page | int | The current page.  | true |
+| TotalCount | int | The total count of rows in the entire data set. This is not just what is passed to data.  | true |
+| Properties | string\[\] | Properties included in the data. Use $EventData.Properties. | true |
+
+### New-UDTableTextOption
+
+Allows for custom text in the table controls. 
+
+| Name | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| ExportAllCsv | string | Export all as CSV text | false |
+| ExportCurrentViewCsv | string | Export Current View as CSV text | false |
+| ExportAllXLSX | string | Export all as XLSX text | false |
+| ExportCurrentViewXLSX | string | Export Current View as XLSX text | false |
+| ExportAllPDF | string | Export all as PDF text | false |
+| ExportCurrentViewPDF | string | Export Current View as PDF text | false |
+| ExportAllJson | string | Export all as JSON text | false |
+| ExportCurrentViewJson | string | Export Current View as JSON text | false |
+| ExportFileName | string | File Name text | false |
+| Search | string | Search {0} records... text | false |
+| FilterSearch | string | Search {0} records... text | false |
 
