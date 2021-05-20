@@ -18,3 +18,13 @@ If any error is thrown from the content, you will see an error such as thing.
 
 ![](../../.gitbook/assets/image%20%28173%29.png)
 
+## API
+
+**New-UDErrorBoundary**
+
+Display an error card when an error is thrown in your script.
+
+| Name | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| Content | ScriptBlock | A script block to prevent from throwing an error to the top of the page. | True |
+
