@@ -28,3 +28,14 @@ New-UDDateTime -InputObject (Get-Date) -Format 'DD/MM/YYYY'
 
 Resulting output: 25/01/2019
 
+## API
+
+**New-UDDateTime**
+
+| **Name** | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| Id | string | ID of this component. | False |
+| InputObject | string | The date and time to format. | True |
+| Format | string | The DayJS format string. | False |
+| LocalizedFormat | string | The DayJS localized formatting string. | False |
+
