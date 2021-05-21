@@ -1,6 +1,6 @@
 # Licensing
 
-PowerShell Universal is licensed per server. We order a low cost lite version and well as the full platform. 
+PowerShell Universal is licensed per server. We provide licenses for individuals and organizations.
 
 You can purchase a license on [our website](https://store.ironmansoftware.com/pricing/powershell-universal). 
 
