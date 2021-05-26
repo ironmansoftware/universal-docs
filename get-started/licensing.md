@@ -15,6 +15,7 @@ Universal can be used forever for free with the following limitations.
 ### Universal API
 
 * No authentication
+* No Rate Limiting
 
 ### Universal Automation
 
