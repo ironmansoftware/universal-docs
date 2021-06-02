@@ -4,6 +4,10 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 1.9.0 - 6/1/2021
+
+* Added support for self configuration in PowerShell Universal v2
+
 ## 1.8.2 - 4/15/2021
 
 * Fixed an issue where endpoints.ps1 and dashboards.ps1 could not be opened remotely
