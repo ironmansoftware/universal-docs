@@ -96,12 +96,6 @@ See the [Docker page](docker.md#installation).
 
 The MSI install will create a PowerShell Universal service and open the admin console after installation.
 
-### Properties
-
-#### SUPPRESSBROWSER
-
-Setting the SUPPRESBROWSER MSI property to true will prevent the browser from opening after installation.
-
 ## Next Steps
 
 At this point, Universal is up and running. Please consult other sections in this documentation for instructions on how to configure, secure, and start using PowerShell Universal. Happy Scripting!
