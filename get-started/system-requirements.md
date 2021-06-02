@@ -10,5 +10,5 @@
 * PowerShell v7.0 or great
 * Validated Distributions: Ubuntu 18.04
 
-## Mac OS X
+
 

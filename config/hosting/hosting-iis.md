@@ -14,7 +14,7 @@ The following components are required in order to host PowerShell Universal on I
 
 * [Internet Information Services \(IIS\) Version 10.0](https://docs.microsoft.com/en-us/iis/get-started/whats-new-in-iis-10-version-1709/new-features-introduced-in-iis-10-1709)
   * Including: WebSocket Protocol
-* [ASP.NET Core Hosting Bundle 3.1](https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-aspnetcore-3.1.3-windows-hosting-bundle-installer). 
+* [ASP.NET Core Hosting Bundle 5.0](https://dotnet.microsoft.com/download/dotnet/5.0)
 
 The following Windows Server IIS features are also required to be enabled on the IIS Host:
 
