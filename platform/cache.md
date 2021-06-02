@@ -1,8 +1,10 @@
 ---
-description: Server-level caching mechanism in PowerShell Universal.
+description: Caching mechanisms in PowerShell Universal.
 ---
 
 # Cache
+
+## Server-Level Cache
 
 PowerShell Universal provides the ability to use a server-level cache to store data that you use between APIs, Automation and Dashboards. You can configure cache item life times use the `Set-PSUCache` cmdlet in any PowerShell script you run in PowerShell Universal. You can also retrieve items from the cache using `Get-PSUCache`.
 
@@ -12,7 +14,7 @@ Some examples of usages for the cache may be:
 * Collecting data from an API and using it in a job
 * Collecting using input from a dashboard and queuing it to run in a scheduled job
 
-## Setting items in the cache
+#### Setting items in the cache
 
 To set items in the cache, you can use `Set-PSUCache`. Items in the cache are serialized to strings using CLIXML and the PowerShell serializer. When you retrieve objects from the cache, they will no longer be live objects.
 
@@ -22,7 +24,7 @@ Set-PSUCache -Key "CurrentDate" -Value (Get-Date)
 
 There are three types of cache invalidation techniques you can employ.
 
-### Absolute Expiration
+#### Absolute Expiration
 
 The `AbsoluteExpiration` parameter defines at what time the item in the cache is invalidated.
 
@@ -32,7 +34,7 @@ The follow example invalidates the cache item after 10 minutes.
 Set-PSUCache -Key "CurrentDate" -Value (Get-Date) -AbsoluteExpiration (Get-Date).AddMinutes(10)
 ```
 
-### Absolute Expiration From Now
+#### Absolute Expiration From Now
 
 The `AbsoluteExpirationFromNow` parameter defines when a cache item is invalidated using a TimeSpan rather than a calculated DateTime.
 
@@ -42,7 +44,7 @@ The following cache item is invalidated 1 hour from now.
 Set-PSUCache -Key "CurrentDate" -Value (Get-Date) -AbsoluteExpirationFromNow ([TimeSpan]::FromHours(1))
 ```
 
-### Sliding Expiration
+#### Sliding Expiration
 
 The `SlidingExpiration` parameter allows you to defines the amount of time before the cache item is invalidated. Each time the cache item is accessed, the timer is reset.
 
