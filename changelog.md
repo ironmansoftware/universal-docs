@@ -6,60 +6,6 @@ description: Changelog for PowerShell Universal.
 
 ## 
 
-## 2.0.0 - 6/2/2021
-
-### Includes
-
-* UniversalDashboard - v3.4.0
-* UniversalDashboard - v2.9.9
-* UniversalDashboard.Charts - 1.3.2
-* UniversalDashboard.Map - 1.0
-* UniversalDashboard.CodeEditor - 1.1.0
-* UniversalDashboard.Style - 1.0.0
-
-### Changed
-
-#### API
-
-* Fixed an issue api with space in the url
-* Fixed an issue where a large API request could lock the browser UI
-
-#### Automation
-
-* Fixed an issue where a script would not be deleted from disk when deleted in PSU
-
-### Added
-
-#### API
-
-* Integrated environment support
-* Added support for $Cache: scope
-
-#### Automation
-
-* Tag Support
-* Access Controls for Scripts
-* Integrated environment support
-* Added support for $Cache: scope 
-
-#### Dashboard
-
-* Added support for syncing components via git
-* Added description to dashboard components. 
-* Added description to dashboards
-* Integrated environment support
-
-#### Platform
-
-* Plugin support 
-* New Admin Console
-* Added Tags and script tags
-* Improved Access Controls
-* Added support for notifications
-* Add New-PSULoginPageLink cmdlet to add login links
-* Integrated environment
-* Add Remove-Item support for $Cache: scope
-
 ## 1.5.19 - 5/14/2021
 
 ### Includes

@@ -129,7 +129,6 @@
 * [Management API](config/management-api.md)
 * [Settings](config/settings.md)
 * [Security](config/security/README.md)
-  * [Access Controls](config/security/access-controls.md)
   * [App Tokens](config/security/app-tokens.md)
   * [OpenID Connect](config/security/openid-connect.md)
   * [WS-Federation](config/security/ws-federation.md)
