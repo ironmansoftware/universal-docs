@@ -38,6 +38,20 @@ By default, new dashboards are set to always use the latest version of the dashb
 
 Most of the settings for PowerShell Universal are stored within the repository folder. By default, this is in `%ProgramData%\UniversalAutomation\Repository`. While the upgrade should not affect these files, you may want to backup the files before upgrading.
 
+## 2.0 Breaking Changes
+
+If you are upgrading from 1.x, you will have a couple of breaking changes. 
+
+### Integrated Environment by Default
+
+The integrated environment is now the default configuration. If you do not want to use the integrated environment by default, select a default environment in General settings. 
+
+![](../../.gitbook/assets/image%20%28223%29.png)
+
+### IIS Hosting Package
+
+If you are hosting in IIS, ensure that you install the [.NET 5.0 hosting bundle](https://dotnet.microsoft.com/download/dotnet/5.0). 
+
 ## ZIP Upgrade
 
 {% hint style="info" %}
