@@ -4,10 +4,6 @@ description: Access controls for PowerShell Universal.
 
 # Access Controls
 
-{% hint style="warning" %}
-This documentation is for the upcoming PowerShell Universal 1.6 release.
-{% endhint %}
-
 ## About
 
 Access controls allow you to define who has access to particular resources inside PowerShell Universal. Currently, access controls only apply to scripts. 
