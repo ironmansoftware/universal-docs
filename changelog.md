@@ -8,6 +8,10 @@ description: Changelog for PowerShell Universal.
 
 ## 2.0.0 - 6/2/2021
 
+{% hint style="warning" %}
+Please see notes about [upgrading](get-started/getting-started/upgrading.md) from 1.x to 2.x
+{% endhint %}
+
 ### Includes
 
 * UniversalDashboard - v3.4.0

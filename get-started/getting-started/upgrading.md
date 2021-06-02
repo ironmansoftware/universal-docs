@@ -56,6 +56,10 @@ You will want to follow the guide on data and configuration persistence above to
 If you have configured a service account for your MSI installation, you will need to set the service account after upgrading.
 {% endhint %}
 
+### Upgrading from 1.x to 2.x 
+
+To upgrade from 1.x to 2.x, you will need to uninstall 1.x first. Once the uninstalled, run the 2.x installer to install the latest version.
+
 ## IIS Upgrade
 
 When upgrading with IIS, you will need to first stop your application pool to ensure that the binaries used by IIS are no longer in use and then replace the binaries with the new ones. Ensure that you follow the configuration persistence recommendations above with regards to the `web.config` file.
