@@ -86,7 +86,15 @@ Start-Process .\Universal\Universal.Server.exe
 
 ### Linux
 
-On Linux, start the process `Universal.Server`. You may need to `chmod +x` the file if it does not start.
+You can use the following command line on Linux to install and start PowerShell Universal. 
+
+```text
+ wget https://imsreleases.blob.core.windows.net/universal/production/2.0.0/Universal.linux-x64.2.0.0.zip
+ sudo apt install unzip 
+ unzip Universal.linux-x64.2.0.0.zip -d PSU
+ chmod +x ./PSU/Universal.Server
+ ./PSU/Universal.Server
+```
 
 ### Docker
 
