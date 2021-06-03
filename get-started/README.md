@@ -22,9 +22,11 @@ msiexec /i Universal.msi /qn
 You can install PowerShell Universal using the Universal PowerShell module.
 
 ```text
-Install-Module Universal
-Install-PSUServer -AddToPath
-Start-PSUServer -Port 5000
+ wget https://imsreleases.blob.core.windows.net/universal/production/2.0.0/Universal.linux-x64.2.0.0.zip
+ sudo apt install unzip 
+ unzip Universal.linux-x64.2.0.0.zip -d PSU
+ chmod +x ./PSU/Universal.Server
+ ./PSU/Universal.Server
 ```
 {% endtab %}
 
