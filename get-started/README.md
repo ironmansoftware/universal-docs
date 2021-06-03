@@ -10,7 +10,7 @@ You'll need to install the PowerShell Universal server. [There are a lot of ways
 
 {% tabs %}
 {% tab title="Windows" %}
-You can install PowerShell Universal as a service.
+You can install PowerShell Universal as a service. Ensure that PowerShell is running as administrator or the service won't install correctly. 
 
 ```text
 Invoke-WebRequest https://imsreleases.blob.core.windows.net/universal/production/2.0.0/PowerShellUniversal.2.0.0.msi -OutFile Universal.msi
