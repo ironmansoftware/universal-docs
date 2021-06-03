@@ -19,7 +19,7 @@ msiexec /i Universal.msi /qn
 {% endtab %}
 
 {% tab title="Linux" %}
-You can install PowerShell Universal using the Universal PowerShell module.
+You can install PowerShell Universal using the following shell script.
 
 ```text
  wget https://imsreleases.blob.core.windows.net/universal/production/2.0.0/Universal.linux-x64.2.0.0.zip
