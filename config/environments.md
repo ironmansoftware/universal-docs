@@ -84,9 +84,19 @@ Set-PSUSetting -ApiEnvironment 'Integrated'
 
 ### Automation
 
-Automation does not support the integrated environment.
+You can assign the integrated environment to scripts and schedules. You can also set the integrated environment as the default environment for the platform. 
+
+```text
+Set-PSUSetting -DefaultEnvironment 'Integrated'
+```
+
+You can also choose the integrated environment from the run dialog. 
+
+![](../.gitbook/assets/image%20%28224%29.png)
 
 ### Dashboards
 
-Dashboards do not support the integrated environment.
+You can run dashboards in the integrated environment. Select the integrated environment from the environment drop down. 
+
+![](../.gitbook/assets/image%20%28225%29.png)
 
