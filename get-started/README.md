@@ -36,6 +36,16 @@ Install-PSUServer -AddToPath
 Start-PSUServer -Port 5000
 ```
 {% endtab %}
+
+{% tab title="Raspberry PI OS" %}
+```text
+wget https://imsreleases.blob.core.windows.net/universal/production/2.0.0/Universal.linux-arm.2.0.0.zip
+unzip Universal.linux-arm.2.0.0.zip -d ./PSU
+chmod +x ./PSU/Universal.Server
+./PSU/Universal.Server
+
+```
+{% endtab %}
 {% endtabs %}
 
 ## Open PowerShell Universal
