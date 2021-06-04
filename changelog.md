@@ -6,6 +6,45 @@ description: Changelog for PowerShell Universal.
 
 ## 
 
+## 2.0.1 - 6/4/2021
+
+### Includes
+
+* UniversalDashboard - v3.4.1
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.1.1
+* UniversalDashboard.Style - 1.0.0
+
+### Added
+
+#### Platform
+
+* Added $Headers, $Cookies, $RemoteIpAddress, $LocalIpAddress, $RemotePort, and $LocalPort to authentication.ps1
+
+### Changed
+
+#### Automation
+
+* Fixed an issue where Get-PSUScript would throw an exception when the script didn't exist
+
+#### Dashboard
+
+* UDv3 - Fixed an issue where New-UDTableTextOption was not exported in the module manifest.
+* UDv3 - Fixed an issue where Show-UDTooltip -Icon didn't work. 
+* UDv3 - Fixed an issue where New-UDAlert was not exported in the module manifest.
+* UDv3 - Fixed an issue where the New-UDCodeEditor didn't have a default parameter set provided
+
+#### Platform
+
+* Fixed an issue where many app tokens could be created automatically 
+* Hide Trial Info button if platform is licensed
+* Enabled BinaryFormatter to allow for PowerShell remoting in an the integrated environment
+* Fixed an issue where the LTS Docker container would not start
+* Fixed an issue where Policy Defined identities would have a blank role in the Identities table 
+* Fixed an issue where the session timeout modal would not be shown in the admin console
+
 ## 2.0.0 - 6/2/2021
 
 {% hint style="warning" %}
