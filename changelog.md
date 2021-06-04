@@ -4,7 +4,33 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
-## 
+## 1.5.20 - 6/4/2021
+
+### Includes
+
+* UniversalDashboard - v3.3.8
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.1.0
+* UniversalDashboard.Style - 1.0.0
+
+### Added
+
+#### Dashboard
+
+* Added -Options to New-UDCodeEditor
+
+#### Platform
+
+* Added $Headers, $Cookies, $RemoteIpAddress, $LocalIpAddress, $RemotePort, and $LocalPort to authentication.ps1
+
+### Changed
+
+#### Dashboard
+
+* UDv3 - Fixed an issue where setting a default sort column in a UDTable without setting the default sort direction wouldn't sort the table
+* UDv3 - Fixed an issue with Show-UDToast and -Icon
 
 ## 1.5.19 - 5/14/2021
 
