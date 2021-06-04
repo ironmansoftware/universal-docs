@@ -36,7 +36,7 @@ You can also import pre-existing secrets as variables into Universal. The variab
 
 ## Using Variables
 
-Variables can be used in APIs, Scripts and Dashboards. By default, all variables are automatically imported into an environment. You can reference a variable like you would any other PowerShell variable. 
+Variables can be used in APIs, Scripts and Dashboards. By default, all variables are automatically imported into an environment. You can reference a variable like you would any other PowerShell variable. The variable will contain the value you set. If you use a secret, it will contain the secret's value.  
 
 ```text
 $MyVariable
