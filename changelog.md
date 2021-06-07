@@ -6,6 +6,29 @@ description: Changelog for PowerShell Universal.
 
 ## 
 
+## 2.0.2 - 6/7/2021
+
+### Includes
+
+* UniversalDashboard - v3.4.2
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.1.1
+* UniversalDashboard.Style - 1.0.0
+
+### Changed
+
+#### Dashboard
+
+* Fixed an issue where the integrated environment wouldn't log
+* UDv3 - Fixed an issue where Show-UDIcon would not work without an icon
+
+#### Platform
+
+* Fixed an issue where the favicon was missing on the admin console
+* Rolling back a change to session time out for the admin console as it was causing problems with forms resetting 
+
 ## 2.0.1 - 6/4/2021
 
 ### Includes
