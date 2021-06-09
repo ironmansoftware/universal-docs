@@ -145,5 +145,5 @@
 
 * [Changelog](changelog.md)
 * [Extension Changelog](extension-changelog.md)
-* [Legacy Universal Dashboard Docs](https://legacydocs.universaldashboard.io)
+* [Legacy Universal Dashboard Docs](https://docs.universaldashboard.io)
 
