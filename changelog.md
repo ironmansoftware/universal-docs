@@ -6,6 +6,55 @@ description: Changelog for PowerShell Universal.
 
 ## 
 
+## 2.0.3 - 6/10/2021
+
+### Includes
+
+* UniversalDashboard - v3.4.3
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.1.1
+* UniversalDashboard.Style - 1.0.0
+
+### Added
+
+#### Dashboard
+
+* Added a Remove button to the components drawer
+
+### Changed
+
+#### API
+
+* Fixed an issue where the $UserName would not be available in APIs
+
+#### Automation
+
+* Fixed an issue where string\[\] types could not be used with ValidateSet attributes
+* Fixed an issue where you could select an environment in the run dialog even though it was set on the script
+* Fixed an issue where you could select a credential in the run dialog even though it was set on the script
+* Fixed an issue where the credential selector was missing in the script properties dialog
+
+#### Dashboard
+
+* Fixed a null reference exception that could happen when stopping a dashboard
+* Fixed an issue where the access denied page was missing
+* UDv3 - Fixed an issue where after logging out and logging back in the user wouldn't go back to the dashboard
+
+#### Platform
+
+* Added loading button to modals in the admin console
+* Fixed an issue where the close icon wouldn't load correctly for modals in the admin console
+* Fixed an issue where large tables could overflow off the screen in the admin console
+* Fixed an issue where the total memory usage would be reported as NaN when no dashboards were running
+* Fixed an issue where leaving the admin console tab and coming back would clear modal forms
+* Fixed an issue where the session time out dialog would not be shown in the admin console
+* Fixed an issue where a JavaScript error could be shown when loading a dashboard page
+* Fixed notification text for dashboard restarts
+* Fixed an issue where Windows PowerShell 5 would fail to start dashboards and APIs.
+* Fixed MSI upgrade from 1.5 to 2.0
+
 ## 2.0.2 - 6/7/2021
 
 ### Includes
