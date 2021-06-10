@@ -4,8 +4,6 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
-## 
-
 ## 2.0.3 - 6/10/2021
 
 ### Includes
