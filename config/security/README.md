@@ -121,6 +121,19 @@ $Roles = $User.Claims | Where-Object Type -eq Role | Select-Object -ExpandProper
 $Roles -contains 'SOC_Admins'
 ```
 
+### Variables 
+
+These are the variables defined within the security scripts.
+
+| Name | Description | Type |
+| :--- | :--- | :--- |
+| $Cookies | Cookies provided in the client's HTTP request. | hashtable |
+| $Headers | Headers provided in the client's HTTP request. | hashtable |
+| $LocalIpAddress | The local IP address of the request.  | string |
+| $LocalPort | The local port of the request. | string |
+| $RemoteIpAddress | The remote IP address of the request. | string |
+| $RemotePort | The remote port of the request. | string |
+
 ## OpenID Authentication
 
 You can configure OpenID authentication and authorization by adjusting the settings within the `OpenID` section of the `appsettings.json` file. Authorization policies that you configure within Universal will be run on the user's identity after authentication is successful.
