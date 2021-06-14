@@ -46,11 +46,10 @@ You can use the $UserName variable in all your scripts.
 
 ### Example 2
 ```
-PS C:\> $SecretManager = Get-UASecretManager -Name 'Vault'
-PS C:\> New-UAVariable -Name 'UserName' -Value 'Adam' -SecretManager $SecretManager
+PS C:\> New-UAVariable -Name 'UserName' -Value 'Adam' -Vault 'Vault'
 ```
 
-Creates a new variable in the secert manager \`Vault\`.
+Creates a new variable in the vault \`Vault\`.
 The variable's value is not stored in UA and will only be retrieved when running scripts.
 
 ## PARAMETERS
