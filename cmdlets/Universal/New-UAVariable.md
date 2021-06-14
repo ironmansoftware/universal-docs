@@ -46,10 +46,10 @@ You can use the $UserName variable in all your scripts.
 
 ### Example 2
 ```
-PS C:\> New-UAVariable -Name 'UserName' -Value 'Adam' -Vault 'Vault'
+PS C:\> New-UAVariable -Name 'UserName' -Value 'Adam' -Vault "Vault"
 ```
 
-Creates a new variable in the vault \`Vault\`.
+Creates a new variable in the vault named \`Vault\`.
 The variable's value is not stored in UA and will only be retrieved when running scripts.
 
 ## PARAMETERS
@@ -116,7 +116,7 @@ Accept wildcard characters: False
 ```
 
 ### -Type
-{{ Fill Type Description }}
+The .NET type of object .
 
 ```yaml
 Type: String
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 ```
 
 ### -Vault
-{{ Fill Vault Description }}
+The vault to store the variable within.
 
 ```yaml
 Type: String
