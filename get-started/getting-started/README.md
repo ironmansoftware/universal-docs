@@ -6,9 +6,7 @@ description: Installation instructions for PowerShell Universal.
 
 ## Getting Started
 
-{% embed url="https://youtu.be/ISoZbY9YPvo" %}
-
-
+{% embed url="https://youtu.be/ISoZbY9YPvo" caption="" %}
 
 ## PowerShell Module
 
@@ -18,19 +16,19 @@ You can use the PowerShell Universal PowerShell module to install the Universal 
 Install-Module Universal
 ```
 
-To install the Universal server, you can use `Install-PSUServer`. 
+To install the Universal server, you can use `Install-PSUServer`.
 
 ```text
 Install-PSUServer -LatestVersion
 ```
 
-You can configure the path that the server is stored in by using the `-Path` parameter. 
+You can configure the path that the server is stored in by using the `-Path` parameter.
 
 ```text
 Install-PSUServer -Path (Join-Path $Env:AppData "PSU")
 ```
 
-You can add the PSU server to the PATH environment variable by use the `-AddToPath` parameter. 
+You can add the PSU server to the PATH environment variable by use the `-AddToPath` parameter.
 
 ```text
 Install-PSUServer -AddToPath
@@ -48,9 +46,9 @@ You can specify the path to the executable using the `-ExecutablePath` parameter
 Start-PSUServer -Port 8080 -ExecutablePath (Join-Path $MyPath "Universal.Server.exe")
 ```
 
-## Chocolatey Package
+## Chocolatey Package \(Windows\)
 
-You can install PowerShell Universal using the [Chocolatey package](https://chocolatey.org/packages/powershelluniversal). The package runs the MSI install. It will install Universal as a service and open a web browser after the install. 
+You can install PowerShell Universal using the [Chocolatey package](https://chocolatey.org/packages/powershelluniversal). The package runs the MSI install. It will install Universal as a service and open a web browser after the install.
 
 You can login with the "admin" user and any password.
 
@@ -58,15 +56,15 @@ You can login with the "admin" user and any password.
 choco install powershelluniversal
 ```
 
-## Winget
+## Winget \(Windows\)
 
-You can install PowerShell Universal using Winget. It will run the MSI and install as a service. 
+You can install PowerShell Universal using Winget. It will run the MSI and install as a service.
 
 ```text
 winget install ironmansoftware.powershelluniversal
 ```
 
-You can also specify the `--silent` flag to prevent the installer from showing and the web browser from opening at the end of the install. 
+You can also specify the `--silent` flag to prevent the installer from showing and the web browser from opening at the end of the install.
 
 ```text
 winget install ironmansoftware.powershelluniversal --silent
@@ -74,7 +72,7 @@ winget install ironmansoftware.powershelluniversal --silent
 
 ## ZIP Install
 
-You can also download the ZIP from our [Downloads page](https://ironmansoftware.com/downloads/) if you would like to xcopy deploy the files on Windows or Linux. 
+You can also download the ZIP from our [Downloads page](https://ironmansoftware.com/downloads/) if you would like to xcopy deploy the files on Windows or Linux.
 
 ### Windows
 
@@ -88,21 +86,23 @@ Start-Process .\Universal\Universal.Server.exe
 
 ### Linux
 
-On Linux, start the process `Universal.Server`. You may need to `chmod +x` the file if it does not start.  
+You can use the following command line on Linux to install and start PowerShell Universal. 
+
+```text
+ wget https://imsreleases.blob.core.windows.net/universal/production/2.0.0/Universal.linux-x64.2.0.0.zip
+ sudo apt install unzip 
+ unzip Universal.linux-x64.2.0.0.zip -d PSU
+ chmod +x ./PSU/Universal.Server
+ ./PSU/Universal.Server
+```
 
 ### Docker
 
 See the [Docker page](docker.md#installation).
 
-## MSI Install
+## MSI Install \(Windows\)
 
-The MSI install will create a PowerShell Universal service and open the admin console after installation. 
-
-### Properties
-
-#### SUPPRESSBROWSER
-
-Setting the SUPPRESBROWSER MSI property to true will prevent the browser from opening after installation. 
+The MSI install will create a PowerShell Universal service and open the admin console after installation.
 
 ## Next Steps
 

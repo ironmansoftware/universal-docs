@@ -14,8 +14,6 @@ Time pickers pickers provide a simple way to select a single value from a pre-de
 New-UDTimePicker
 ```
 
-
-
 **New-UDTimePicker**
 
 | Name | Type | Description | Required |

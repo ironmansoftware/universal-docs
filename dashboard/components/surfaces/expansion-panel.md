@@ -22,8 +22,6 @@ New-UDExpansionPanelGroup -Children {
 }
 ```
 
-
-
 **New-UDExpansionPanel**
 
 | Name | Type | Description | Required |

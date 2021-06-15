@@ -4,13 +4,13 @@ WS-Federation supports both Active Directory Federation Services and Azure Activ
 
 You first need to configure ADFS or AzureAD to support Universal.
 
-### Configuring ADFS for Universal <a id="configuring-adfs-for-universal-dashboard"></a>
+## Configuring ADFS for Universal <a id="configuring-adfs-for-universal-dashboard"></a>
 
-#### Service Settings <a id="service-settings"></a>
+### Service Settings <a id="service-settings"></a>
 
 These are the current Federation Service settings for our domain.![](https://gblobscdn.gitbook.com/assets%2F-L9mVQO4zbOX7ZcHvIte%2F-Lob6ow15SQRLl3vo8ZV%2F-Lob7luBvuEGUTrLIors%2Fimage.png?alt=media&token=64c3c00f-1d2c-4346-bcc1-dd89e7cf4c24)
 
-#### Relying Parties <a id="relying-parties"></a>
+### Relying Parties <a id="relying-parties"></a>
 
 You need to configure the following Relying Parties settings for Universal. On the Identifiers tab, provide the URL to the Universal website. HTTPS is required.
 
@@ -22,18 +22,86 @@ On the Endpoints tab. You'll need to include a WS-Federation Passive Endpoint. M
 
 Finally, you'll need to configure a Claim Issuance Policy for the Relying Party Trust. Create an Issuance Transform Rule that sends at least the Name and Name ID to Universal.![](https://gblobscdn.gitbook.com/assets%2F-L9mVQO4zbOX7ZcHvIte%2F-Lob6ow15SQRLl3vo8ZV%2F-Lob92zcF4qYpWtR0g_4%2Fimage.png?alt=media&token=34dfd4db-d742-4f8b-a271-86d37542dc35)
 
-You can configure additional claims you'd like to use if you are using policies in Universal. 
+You can configure additional claims you'd like to use if you are using policies in Universal.
 
-### Configuring For Azure Active Directory <a id="configuring-for-azure-active-directory"></a>
+## Configuring For Azure Active Directory <a id="configuring-for-azure-active-directory"></a>
 
 Follow the documentation for the Azure Active Directory configuration found on this [Microsoft Document](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/ws-federation?view=aspnetcore-2.2#azure-active-directory).
 
-### Configuring Universal <a id="configuring-universal-dashboard"></a>
+## Configuring Universal <a id="configuring-universal-dashboard"></a>
 
-After configuring ADFS or AAD, you can now provide the properties to Universal for the MetadataAddress and Wtrealm. Read about these settings on the our [Settings ](../settings.md)page. 
+After configuring ADFS or AAD, you can now provide the properties to Universal for the MetadataAddress and Wtrealm. Read about these settings on the our [Settings ](../settings.md)page.
 
-```text
-$Authentication = New-UDAuthenticationMethod -MetadataAddress 'https://ironman.local:443/FederationMetadata/2007-06/FederationMetadata.xml' -Wtrealm https://ironman.local:12345$LoginPage = New-UDLoginPage -AuthenticationMethod $Authentication
+Here is an example of how to update the `appsettings.json` file to accommodate the correct settings for WS-Federation.
+
+```javascript
+{
+  "Kestrel": {
+    "Endpoints": {
+      "HTTP": {
+        "Url": "http://*:5000"
+      }
+    },
+    "RedirectToHttps": "false"
+  },
+  "ApplicationInsights": {
+    "InstrumentationKey": ""
+  },
+  "Logging": {
+    "Path": "%PROGRAMDATA%/PowerShellUniversal/log.txt",
+    "RetainedFileCountLimit": 31,
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "AllowedHosts": "*",
+  "CorsHosts": "",
+  "Data": {
+    "RepositoryPath": "%ProgramData%\\UniversalAutomation\\Repository",
+    "ConnectionString": "%ProgramData%\\UniversalAutomation\\database.db",
+    "GitRemote": "",
+    "GitUserName": "",
+    "GitPassword": "", 
+    "ConfigurationScript": ""
+  },
+  "Api": {
+    "Url": ""
+  },
+  "Authentication" : {
+    "Windows": {
+      "Enabled": "false"
+    },
+    "WSFed": {
+        "Enabled": "true",
+        "MetadataAddress": "https://ironman.local:443/FederationMetadata/2007-06/FederationMetadata.xml",
+        "Wtrealm": "https://ironman.local:12345",
+        "CallbackPath": "/auth/signin-wsfed"
+    },
+    "OIDC": {
+      "Enabled": "false",
+      "CallbackPath": "/auth/signin-oidc",
+      "ClientID": "",
+      "ClientSecret": "",
+      "Resource": "",
+      "Authority": "",
+      "ResponseType": "",
+      "SaveTokens": "false"
+    },
+    "SessionTimeout": "25"
+  },
+  "Jwt": {  
+    "SigningKey": "PleaseUseYourOwnSigningKeyHere",  
+    "Issuer": "IronmanSoftware",
+    "Audience": "PowerShellUniversal"
+  },
+  "UniversalDashboard": {
+    "AssetsFolder": "%ProgramData%\\PowerShellUniversal\\Dashboard"
+  },
+  "ShowDevTools": false,
+  "HideAdminConsole": false
+}
 ```
 
 When running your server, you should now be prompted for your credentials either via the Internet Explorer single-sign system or you will be forwarded to the WS-Fed login page.![](https://gblobscdn.gitbook.com/assets%2F-L9mVQO4zbOX7ZcHvIte%2F-Lob6ow15SQRLl3vo8ZV%2F-Lob9yeDdGENbUiyz4Sj%2Fimage.png?alt=media&token=910db2dd-85f3-46eb-b3ec-9f551f244439)

@@ -26,6 +26,14 @@ A password textbox will mask the input.
 New-UDTextbox -Label 'Password' -Type password
 ```
 
+## Multiline
+
+You can create a multiline textbox by using the `-Multiline` parameter. Pressing enter will add a new line. You can define the number of rows and the max number of rows using `-Rows` and `-RowsMax`.
+
+```text
+New-UDTextbox -Multiline -Rows 4 -RowsMax 10
+```
+
 ## Interaction
 
 ### Retrieving a textbox value
@@ -66,9 +74,9 @@ New-UDTextbox -Id "ServerGroups" -Icon (New-UDIcon -Icon 'server') -Value "This 
 
 ## Mask
 
-You can define a text mask with a combination of strings and regular expressions. To specify a regular expression, use the JavaScript syntax in your string to start and finish the expression: `/\d/`. 
+You can define a text mask with a combination of strings and regular expressions. To specify a regular expression, use the JavaScript syntax in your string to start and finish the expression: `/\d/`.
 
-This example creates a mask for US based phone numbers. 
+This example creates a mask for US based phone numbers.
 
 ```text
 New-UDTextbox -Mask @('+', '1', ' ', '(', '/[1-9]/', '/\d/', '/\d/', ')', ' ', '/\d/', '/\d/', '/\d/', '-', '/\d/', '/\d/', '/\d/', '/\d/')
@@ -88,4 +96,7 @@ New-UDTextbox -Mask @('+', '1', ' ', '(', '/[1-9]/', '/\d/', '/\d/', ')', ' ', '
 | Disabled | SwitchParameter | Whether this textbox is disabled. | false |
 | Icon | Object | The icon to show next to the textbox. | false |
 | Autofocus | SwitchParameter | Whether to autofocus this textbox. | false |
+| Multiline | SwitchParameter | Whether the textbox accepts multiple lines. | false |
+| Rows | int | The number of rows in a multiline textbox | false |
+| RowsMax | int | The max number of rows in a multiline textbox | false |
 

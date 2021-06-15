@@ -8,7 +8,7 @@ description: Active Directory examples for PowerShell Universal.
 
 This example uses [Universal Automation](../automation/about.md).
 
-Shows an example of how to list locked Active Directory accounts. This example assumes that the user running PowerShell Universal has access to the local Active Directory environment. 
+Shows an example of how to list locked Active Directory accounts. This example assumes that the user running PowerShell Universal has access to the local Active Directory environment.
 
 ```text
 Start-PSUServer -Port 8080 -Configuration {
@@ -18,7 +18,7 @@ Start-PSUServer -Port 8080 -Configuration {
 }
 ```
 
-Locked accounts will be listed on the job page's pipeline output. 
+Locked accounts will be listed on the job page's pipeline output.
 
 ![](../.gitbook/assets/image%20%28198%29.png)
 
@@ -28,8 +28,6 @@ You can also access the locked accounts by using the Universal PowerShell module
 $Job = Get-PSUJob -Script (Get-PSUScript -name 'LockedAccounts.ps1') -First 1 -OrderDirection Descending
 Get-PSUJobPipelineOuptut -Job $Job
 ```
-
-
 
 ## Reset Password
 
@@ -46,16 +44,16 @@ Start-PSUServer -Port 8080 -Configuration {
             [Switch]$Unlock,
             [Switch]$ChangePasswordOnLogon
         )
-        
+
         $SecurePassword = ConvertTo-SecureString $Password -AsPlainText -Force
-        
+
         Set-ADAccountPassword -Identity $Identity -NewPassword $SecurePassword -Reset -Server $ComputerName -Credential $Domain
-        
+
         if ($Unlock)
         {
             Unlock-ADAccount –Identity $Identity -Server $ComputerName -Credential $Domain
         }
-        
+
         if ($ChangePasswordOnLogon)
         {
             Set-ADUser –Identity $Identity -ChangePasswordAtLogon $true -Server $ComputerName -Credential $Domain
@@ -68,9 +66,9 @@ Start-PSUServer -Port 8080 -Configuration {
 
 ## Restore Deleted User
 
-This account users PowerShell Universal [Dashboard ](../dashboard/about.md)and [Automation](../automation/about.md). 
+This account users PowerShell Universal [Dashboard ](../dashboard/about.md)and [Automation](../automation/about.md).
 
-In this example, we use Universal Dashboard to create a dashboard that displays a table that includes all the deleted user accounts for the domain. It creates a custom column with a button that includes a Restore button that executes a script to restore the specified account. This example assumes that the identity running the script is capable of accessing Active Directory. 
+In this example, we use Universal Dashboard to create a dashboard that displays a table that includes all the deleted user accounts for the domain. It creates a custom column with a button that includes a Restore button that executes a script to restore the specified account. This example assumes that the identity running the script is capable of accessing Active Directory.
 
 ```text
 Start-PSUServer -Port 8080 -Configuration {
@@ -89,9 +87,9 @@ Start-PSUServer -Port 8080 -Configuration {
                     $Item = $EventData
                     New-UDButton -Id "btn$($Item.ObjectGuid)" -Text "Restore" -OnClick { 
                         Show-UDToast -Message "Restoring user $($Item.Name)" -Duration 5000
-    
+
                         Invoke-UAScript -Name 'Restore User.ps1' -DistinguishedName $Item.DistinguishedName | Tee-Object -Variable job | Wait-UAJob
-    
+
                         $Job = Get-UAJob -Id $Job.Id 
                         if ($Job.Status -eq 'Completed')
                         {
@@ -105,7 +103,7 @@ Start-PSUServer -Port 8080 -Configuration {
                     }
                 }
             )
-    
+
             $DeletedUsers = Get-ADObject -Filter 'IsDeleted -eq $true -and objectClass -eq "user"' -IncludeDeletedObjects | ForEach-Object {
                 @{
                     distinguishedname = $_.DistinguishedName

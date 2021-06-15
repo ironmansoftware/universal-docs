@@ -34,7 +34,7 @@ New-UDTabs -Tabs {
 
 ## Dynamic Tabs
 
-Dynamic tabs will refresh their content when they are selected. You will need to include the `-RenderOnActive` parameter to prevent all the tabs from rendering even if they are not shown. 
+Dynamic tabs will refresh their content when they are selected. You will need to include the `-RenderOnActive` parameter to prevent all the tabs from rendering even if they are not shown.
 
 ```text
 New-UDTabs -Tabs {
@@ -53,14 +53,12 @@ New-UDTabs -Tabs {
 | RenderOnActive | SwitchParameter | Whether to render the tabs when they are clicked. Is this value isn't present, all the tabs are rendered, even if they are not shown. | false |
 | Orientation | String | The orientation of the tabs. | false |
 
-
-
 **New-UDTab**
 
 | Name | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | Text | string | The text to display in the header. | false |
-| Content | scriptblock | The content of the tab.  | true |
+| Content | scriptblock | The content of the tab. | true |
 | Id | string | The ID of the tab. | false |
 | Dynamic | switch | A dynamic tab will reload every time it is selected. | false |
 | Icon | Object |  | false |

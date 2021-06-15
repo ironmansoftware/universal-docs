@@ -16,16 +16,18 @@
   * [Hyper-V](examples/hyper-v.md)
   * [Image Processing](examples/image-processing.md)
   * [Monitoring](examples/monitoring.md)
+  * [PowerShell Protect](examples/powershell-protect.md)
   * [Slack](examples/slack.md)
+  * [SQL](examples/sql.md)
 
 ## API
 
 * [About](api/about.md)
+* [Development](api/development.md)
 * [Endpoints](api/endpoints.md)
 * [Security](api/security.md)
 * [Error Handling](api/error-handling.md)
 * [Rate Limiting](api/rate-limiting.md)
-* [Development](api/development.md)
 
 ## Automation
 
@@ -50,9 +52,12 @@
 * [Components](dashboard/components/README.md)
   * [Pages](dashboard/components/pages.md)
   * [Dynamic Regions](dashboard/components/dynamic-regions.md)
+  * [Element](dashboard/components/element.md)
   * [Error Boundary](dashboard/components/error-boundary.md)
+  * [HTML](dashboard/components/html.md)
   * [Building Custom Components](dashboard/components/building-custom-components.md)
   * [Data Display](dashboard/components/data-display/README.md)
+    * [Alert](dashboard/components/data-display/alert.md)
     * [Chip](dashboard/components/data-display/chip.md)
     * [Date and Time](dashboard/components/data-display/date-and-time.md)
     * [Icon](dashboard/components/data-display/icon.md)
@@ -64,8 +69,10 @@
     * [Charts](dashboard/components/data-visualization/charts.md)
     * [Map](dashboard/components/data-visualization/map.md)
   * [Feedback](dashboard/components/feedback/README.md)
+    * [Backdrop](dashboard/components/feedback/backdrop.md)
     * [Modal](dashboard/components/feedback/modal.md)
     * [Progress](dashboard/components/feedback/progress.md)
+    * [Skeleton](dashboard/components/feedback/skeleton.md)
   * [Inputs](dashboard/components/inputs/README.md)
     * [Autocomplete](dashboard/components/inputs/automcomplete.md)
     * [Button](dashboard/components/inputs/button.md)
@@ -88,6 +95,9 @@
   * [Layout](dashboard/components/layout/README.md)
     * [Grid Layout](dashboard/components/layout/grid-layout.md)
     * [Grid](dashboard/components/layout/grid.md)
+    * [Hidden](dashboard/components/layout/hidden.md)
+  * [Utilities](dashboard/components/utilities/README.md)
+    * [Transitions](dashboard/components/utilities/transitions.md)
   * [Surfaces](dashboard/components/surfaces/README.md)
     * [AppBar](dashboard/components/surfaces/appbar.md)
     * [Card](dashboard/components/surfaces/card.md)
@@ -113,13 +123,13 @@
 * [API](config/api.md)
 * [Environments](config/environments.md)
 * [Hosting](config/hosting/README.md)
+  * [IIS](config/hosting/hosting-iis.md)
   * [Single-File](config/hosting/single-file.md)
-* [Hosting with IIS](config/hosting-iis/README.md)
-  * [IIS Windows Auth](config/hosting-iis/hosting-iis-windowsauth.md)
 * [Login Page](config/login-page.md)
 * [Management API](config/management-api.md)
 * [Settings](config/settings.md)
 * [Security](config/security/README.md)
+  * [Access Controls](config/security/access-controls.md)
   * [App Tokens](config/security/app-tokens.md)
   * [OpenID Connect](config/security/openid-connect.md)
   * [WS-Federation](config/security/ws-federation.md)
@@ -134,5 +144,6 @@
 ---
 
 * [Changelog](changelog.md)
-* [Legacy Universal Dashboard Docs](https://legacydocs.universaldashboard.io)
+* [Extension Changelog](extension-changelog.md)
+* [Legacy Universal Dashboard Docs](https://docs.universaldashboard.io)
 

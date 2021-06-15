@@ -9,7 +9,7 @@ The autocomplete is a normal text input enhanced by a panel of suggested options
 ## Autocomplete with a static list of options
 
 ```text
-New-UDAutocomplete -Options @('Test', 'Test2', 'Test3', 'Test4') 
+New-UDAutocomplete -Options @('Test', 'Test2', 'Test3', 'Test4')
 ```
 
 ## Autocomplete with a dynamic list of options

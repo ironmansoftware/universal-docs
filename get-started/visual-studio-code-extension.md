@@ -14,9 +14,7 @@ You can download the extension from the [Visual Studio Marketplace](https://mark
 
 ## Configuration
 
-When the extension first installs, it will download the latest version of PowerShell Universal for your platform and store it in `%AppData%\PowerShellUniversal`. It will then start the server, login and generate an app token. The installation directory and app token as stored in settings. 
-
-![](../.gitbook/assets/image%20%28114%29.png)
+The extension will prompt you for the URL and App Token used to connect to your PowerShell Universal instance. Follow the instructions within the extension when it starts up. 
 
 ## Features
 
@@ -53,4 +51,12 @@ You can view dashboard logs by right clicking on the dashboard and clicking View
 You can manage scripts with the extension. You will see a list of available scripts underneath this section. You can edit the scripts.ps1, edit an individual script and run scripts. When running scripts, you will receive feedback about the status of the script. Scripts with parameters are not supported in VS Code. You can still run them in PowerShell Universal. 
 
 ![](../.gitbook/assets/image%20%28115%29.png)
+
+## Sample Browser
+
+The sample browser can be used to insert samples from the PowerShell Universal Sample Repository into your PowerShell Universal instance. Just save the files it updates and your PowerShell Universal system will reflect the changes. 
+
+{% embed url="https://youtu.be/HkCVe1PUX0Q" %}
+
+
 

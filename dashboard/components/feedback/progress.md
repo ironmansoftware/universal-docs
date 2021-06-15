@@ -9,7 +9,7 @@ description: Progress component for Universal Dashboard
 ![](../../../.gitbook/assets/image%20%2880%29.png)
 
 ```text
-New-UDProgress -Circular -Color Blue 
+New-UDProgress -Circular -Color Blue
 ```
 
 ## Linear Indeterminate
@@ -27,8 +27,6 @@ New-UDProgress
 ```text
 New-UDProgress -PercentComplete 75
 ```
-
-
 
 **New-UDProgress**
 

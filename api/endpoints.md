@@ -67,11 +67,33 @@ To call the above endpoint, you would have to specify the body of `Invoke-RestMe
 Invoke-RestMethod http://localhost:5000/user -Method Post -Body "{'username': 'adam'}"
 ```
 
+## Form Data
+
+You can pass data to an endpoint as form data. Form data will be passed into your endpoint as parameters. 
+
+```text
+New-PSUEndpoint -Url '/user' -Method Post -Endpoint {
+    param([Parameter(Mandatory)]$userName, $FirstName, $LastName)
+     
+    New-User $UserName -FirstName $FirstName -LastName $LastName
+}
+```
+
+You can then use a hashtable with Invoke-RestMethod to pass form data. 
+
+```text
+Invoke-RestMethod http://localhost:5000/user -Method Post -Body @{ 
+    UserName = "adriscoll"
+    FirstName = "Adam"
+    LastName = "Driscoll"
+}
+```
+
 ## Param Block
 
-You can use a `param` block within your script to enforce mandatory parameters and provide default values for optional parameters such as query string parameters. Variables such as `$Body`, `$Headers` and `$User` are provided automatically. 
+You can use a `param` block within your script to enforce mandatory parameters and provide default values for optional parameters such as query string parameters. Variables such as `$Body`, `$Headers` and `$User` are provided automatically.
 
-In the below example, the `$Name` parameter is mandatory and the `$Role` parameter has a default value of Default. 
+In the below example, the `$Name` parameter is mandatory and the `$Role` parameter has a default value of Default.
 
 ```text
 New-PSUEndpoint -Url '/user/:name' -Endpoint {
@@ -132,7 +154,7 @@ New-PSUEndpoint -Url '/file' -Method Get -Endpoint {
 }
 ```
 
-You can also return custom body data by using the `-Body` parameter of `New-PSUApiResponse`. 
+You can also return custom body data by using the `-Body` parameter of `New-PSUApiResponse`.
 
 ```text
 New-PSUEndpoint -Url '/file' -Method Get -Endpoint {
@@ -140,7 +162,7 @@ New-PSUEndpoint -Url '/file' -Method Get -Endpoint {
 }
 ```
 
-Invoking the REST method will return the custom error code. 
+Invoking the REST method will return the custom error code.
 
 ```text
 PS C:\Users\adamr\Desktop> invoke-restmethod http://localhost:8080/file
@@ -148,12 +170,30 @@ PS C:\Users\adamr\Desktop> invoke-restmethod http://localhost:8080/file
 Invoke-RestMethod: Not what you're looking for.
 ```
 
-You can control the content type of the data that is returned by using the `-ContentType` parameter. 
+You can control the content type of the data that is returned by using the `-ContentType` parameter.
 
 ```text
 New-PSUEndpoint -Url '/file' -Method Get -Endpoint {
     New-PSUApiResponse -Body "<xml><node>1</node><node2>2</node2></xml>" -ContentType 'text/xml'
 }
+```
+
+## Persistent Runspaces
+
+Persistent runspaces allow you to maintain runspace state between API calls. This is important for users that perform some sort of initialization within their endpoints that they do not want to execute on subsequent API calls.
+
+By default, runspaces will be reset after each execution. This will cause variables, modules and functions defined during the execution of the API to be removed.
+
+To enable persistent runspaces, you will need to configure an [environment ](../config/environments.md)for your API. Set the `-PersistentRunspace` parameter to enable this feature. This is configured in the `environments.ps1` script.
+
+```text
+New-PSUEnvironment -Name 'Env' -Path 'powershell.exe' -PersistentRunspace
+```
+
+You can then assign the API environment in the `settings.ps1` script.
+
+```text
+Set-PSUSetting -ApiEnvironment 'Env'
 ```
 
 ## Related Cmdlets

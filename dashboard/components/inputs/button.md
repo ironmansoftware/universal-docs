@@ -23,8 +23,14 @@ Contained buttons are high-emphasis, distinguished by their use of elevation and
 Outlined buttons are medium-emphasis buttons. They contain actions that are important, but aren’t the primary action in an app.
 
 ```text
-New-UDButton -Variant 'outlined' -Text 'Default' 
+New-UDButton -Variant 'outlined' -Text 'Default'
 ```
+
+## Control Button Size
+
+You can control the pixel size of a button based on pixel size by using the Style parameter
+
+'''text New-UDButton -Id "Submit" -Text "Submit" -Style @{ Width = "150px" Height = "100px" }
 
 ## Buttons with icons and label
 
@@ -45,8 +51,6 @@ New-UDButton -Text 'Message Box' -OnClick {
     Show-UDToast -Message 'Hello, world!'
 }
 ```
-
-
 
 **New-UDButton**
 

@@ -5,16 +5,16 @@ description: Simple scheduled endpoints within dashboards.
 # Scheduled Endpoints
 
 {% hint style="info" %}
-We recommend you consider [Scheduled jobs](../automation/schedules.md) over scheduled endpoints for jobs that require tracking of output, input, history or complex scheduling rules. 
+We recommend you consider [Scheduled jobs](../automation/schedules.md) over scheduled endpoints for jobs that require tracking of output, input, history or complex scheduling rules.
 {% endhint %}
 
-Scheduled endpoints allow you to run PowerShell script blocks on a schedule within your dashboards. Scheduled endpoints are more light weight than scheduled jobs but do not provide the same level of functionality. They do not track any history, the output is not logged and the schedules are not visible within the UI. 
+Scheduled endpoints allow you to run PowerShell script blocks on a schedule within your dashboards. Scheduled endpoints are more light weight than scheduled jobs but do not provide the same level of functionality. They do not track any history, the output is not logged and the schedules are not visible within the UI.
 
-Scheduled endpoints are useful when loading and caching data that you will only use in your dashboard. Data stored within the dashboard cache is not shared across PowerShell Universal. 
+Scheduled endpoints are useful when loading and caching data that you will only use in your dashboard. Data stored within the dashboard cache is not shared across PowerShell Universal.
 
 ## Scheduling an Endpoint
 
-The below is an example of scheduling an endpoint that runs every 10 seconds and stores information in a cache variable. This type of configuration increases performance of the dashboard for end users since the cache data is returned rather than calling Get-Process with each load of the dashboard. 
+The below is an example of scheduling an endpoint that runs every 10 seconds and stores information in a cache variable. This type of configuration increases performance of the dashboard for end users since the cache data is returned rather than calling Get-Process with each load of the dashboard.
 
 ```text
 $EndpointSchedule = New-UDEndpointSchedule -Every 10 -Second
@@ -39,7 +39,7 @@ New-UDEndpoint -Schedule $EndpointSchedule -Endpoint {
 } | Out-Null
 
 New-UDDashboard -Name 'Test' -Content {
-   
+
 }
 ```
 

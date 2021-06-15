@@ -19,46 +19,36 @@ Start-Service PowerShellUniversal
 
 ## Hosting in Azure
 
-You can host PowerShell Universal in Azure as a Linux, Windows or Docker web app. To create a persistent web app, it's easiest to deploy using a standard Azure Web App. 
+You can host PowerShell Universal in Azure as a Linux, Windows or Docker web app. To create a persistent web app, it's easiest to deploy using a standard Azure Web App.
 
-We have a [GitHub repository that contains a GitHub action workflow](https://github.com/ironmansoftware/universal-azure-actions) for downloading the latest version of PowerShell Universal, updating `appsettings.json` and `web.config` to work with Azure and then deploying to an existing web app. 
-
-
-
-## Hosting in IIS
-
-To host in IIS, you will need to download the ZIP of PowerShell Universal. The ZIP contains all the same files as the MSI but requires manual installation.
-
-Hosting in IIS is fully supported but there are a number of specific configuration options that need to applied in order to host with IIS.
-
-Visit our [IIS Hosting](../hosting-iis/) Page for specific IIS Instructions.
+We have a [GitHub repository that contains a GitHub action workflow](https://github.com/ironmansoftware/universal-azure-actions) for downloading the latest version of PowerShell Universal, updating `appsettings.json` and `web.config` to work with Azure and then deploying to an existing web app.
 
 ## Hosting Manually
 
 You can also host the Universal server as a stand alone application. Simply run the `Universal.Server.exe` from the binary directory to utilize the [Kestrel web server implementation in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-3.1) to start the web server.
 
-## Web Server Configuration 
+## Web Server Configuration
 
 {% hint style="info" %}
-This section applies to Universal when it is hosted outside of IIS. 
+This section applies to Universal when it is hosted outside of IIS.
 {% endhint %}
 
 ### Setting the Port and Listening Address
 
 You can set the port of the Universal server by modifying the `appsettings.json` file. We recommend that you create an `appsettings.json` file in the [default configuration folder](https://docs.ironmansoftware.com/config/settings).
 
-**Windows** 
+**Windows**
 
 `%ProgramData%\PowerShellUniversal`
 
-**Linux** 
+**Linux**
 
 `%HOME%/.PowerShellUniversal`
 
-To set the port, change the Kestrel endpoints section of the `appsettings.json`. By default, the configuration is defined to listen on port 5000 and on any address. 
+To set the port, change the Kestrel endpoints section of the `appsettings.json`. By default, the configuration is defined to listen on port 5000 and on any address.
 
-```text
- "Kestrel": {
+```javascript
+    "Kestrel": {
     "Endpoints": {
       "HTTP": {
         "Url": "http://*:5000"
@@ -69,13 +59,13 @@ To set the port, change the Kestrel endpoints section of the `appsettings.json`.
 
 ### Configuring HTTPS
 
-To configure HTTPS, you can adjust the `appsettings.json` file to use a particular certificate and port. The below configuration uses the `testCert.pfx` file and `testPassword` and listens on port 5463. 
+To configure HTTPS, you can adjust the `appsettings.json` file to use a particular certificate and port. The below configuration uses the `testCert.pfx` file and `testPassword` and listens on port 5463.
 
-```text
+```javascript
 {
   "Kestrel": {
-	"Endpoints": {
-	   "HTTP": { "Url": "http://*:5000" },
+    "Endpoints": {
+       "HTTP": { "Url": "http://*:5000" },
            "HTTPS": {
               "Url": "https://*:5463",
               "Certificate": {
@@ -87,11 +77,11 @@ To configure HTTPS, you can adjust the `appsettings.json` file to use a particul
 }
 ```
 
-To configure a certificate in a particular location and store, you can use a configuration such as this. 
+To configure a certificate in a particular location and store, you can use a configuration such as this.
 
-```text
+```javascript
 "HTTPS": {
-  "Url": "https://*443",
+  "Url": "https://*:443",
   "Certificate": {
     "Subject": "windows-server.ironman.local",
     "Store": "My",
@@ -103,7 +93,35 @@ To configure a certificate in a particular location and store, you can use a con
 
 Location can be either `CurrentUser` or `LocalMachine`.
 
-For a full set of listening options, you can refer to the [ASP.NET Core Documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-3.1#listenoptionsusehttps).
+### Protocol
 
-## 
+By default, Universal will listen on HTTP1 and HTTP2. You can adjust the protocols that the server listens to by setting the Protocols property. For example, you can specifically set HTTP1 and HTTP2 support with the following setting.
+
+```javascript
+"Kestrel": {
+  "Endpoints": {
+    "HTTP": {
+      "Url": "http://*:5000",
+      "Protocols": "Http1AndHttp2"
+    }
+  },
+  "RedirectToHttps": "false"
+},
+```
+
+Some versions of Windows Server \(like 2012R2\), do not support HTTP2. To disable HTTP2 support, set the listener to only listen on HTTP1.
+
+```javascript
+"Kestrel": {
+  "Endpoints": {
+    "HTTP": {
+      "Url": "http://*:5000",
+      "Protocols": "Http1"
+    }
+  },
+  "RedirectToHttps": "false"
+},
+```
+
+For a full set of listening options, you can refer to the [ASP.NET Core Documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-3.1#listenoptionsusehttps).
 

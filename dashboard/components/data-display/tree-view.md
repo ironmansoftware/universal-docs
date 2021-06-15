@@ -6,9 +6,9 @@ description: Tree view component for Universal Dashboard.
 
 `New-UDTreeView` allows you to create a tree of items and, optionally, dynamically expand the list when clicked.
 
-## Basic Tree View 
+## Basic Tree View
 
-Create a basic tree view by using the `New-UDTreeNode` cmdlet. 
+Create a basic tree view by using the `New-UDTreeNode` cmdlet.
 
 ```text
 New-UDTreeView -Node {
@@ -22,11 +22,11 @@ New-UDTreeView -Node {
 }
 ```
 
-![Basic Tree View](../../../.gitbook/assets/image%20%28162%29.png)
+![Basic Tree View](../../../.gitbook/assets/image%20%28163%29.png)
 
 ## Dynamic Tree View
 
-Dynamic tree views allow you to run PowerShell whenever a node is clicked. You can then return a list of nodes that should be rendered underneath the clicked node. You can also take other actions such as opening a modal or showing a toast. 
+Dynamic tree views allow you to run PowerShell whenever a node is clicked. You can then return a list of nodes that should be rendered underneath the clicked node. You can also take other actions such as opening a modal or showing a toast.
 
 ```text
 New-UDTreeView -Node { New-UDTreeNode -Name root } -OnNodeClicked {
@@ -35,6 +35,4 @@ New-UDTreeView -Node { New-UDTreeNode -Name root } -OnNodeClicked {
 ```
 
 ![Dynamic Tree View](../../../.gitbook/assets/image%20%28161%29.png)
-
-
 

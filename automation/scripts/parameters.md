@@ -6,11 +6,11 @@ description: Parameters for PowerShell Universal jobs.
 
 ## Parameters
 
-Jobs support automatically generating forms with parameters based on your script's `param` block. The type of control will change based on the type you define in the block. Parameters that are mandatory will also be required by the UI. 
+Jobs support automatically generating forms with parameters based on your script's `param` block. The type of control will change based on the type you define in the block. Parameters that are mandatory will also be required by the UI.
 
 ### Basic Parameters
 
-Parameters can be simply defined without any type of parameter attribute and they will show up as text boxes in the UI. 
+Parameters can be simply defined without any type of parameter attribute and they will show up as text boxes in the UI.
 
 ```text
 param($Test)
@@ -22,11 +22,11 @@ $Test
 
 ### Type Parameters
 
-UA supports various types of parameters. You can use String, String\[\], Int, DateTime, Boolean, Switch and Enum types. 
+UA supports various types of parameters. You can use String, String\[\], Int, DateTime, Boolean, Switch and Enum types.
 
 #### String
 
-You can define string parameters by specifying the `[String]` type of by not specifying a type at all. Strings will generate a textbox. 
+You can define string parameters by specifying the `[String]` type of by not specifying a type at all. Strings will generate a textbox.
 
 ```text
 param(
@@ -39,7 +39,7 @@ param(
 
 #### String Arrays
 
-You can specify string arrays by using the `[String[]]` type specifier. String arrays will generate a multi-tag select box. 
+You can specify string arrays by using the `[String[]]` type specifier. String arrays will generate a multi-tag select box.
 
 ```text
 param([String[]]$Array)
@@ -49,7 +49,7 @@ param([String[]]$Array)
 
 #### Date and Time
 
-You can use the `[DateTime]` type specifier to create a date and time selector. 
+You can use the `[DateTime]` type specifier to create a date and time selector.
 
 ```text
 param([DateTime]$DateTime)
@@ -67,9 +67,9 @@ param([Bool]$Switch)
 
 ![](../../.gitbook/assets/image%20%28186%29.png)
 
-#### Integer 
+#### Integer
 
-You can define a number selector by using the `[Int]` type specifier. 
+You can define a number selector by using the `[Int]` type specifier.
 
 ```text
 param([Int]$Number)
@@ -89,7 +89,7 @@ param([Switch]$Switch)
 
 #### Enumerations
 
-You can use System.Enum values to create select boxes. For example, you could use the `System.DayOrWeek` to create a day of the week selection box. 
+You can use System.Enum values to create select boxes. For example, you could use the `System.DayOrWeek` to create a day of the week selection box.
 
 ```text
 param([System.DayOfWeek]$DayOfWeek)
@@ -112,7 +112,7 @@ param(
 
 ### Required Parameters
 
-You can use the Parameter attribute to define required parameters. 
+You can use the Parameter attribute to define required parameters.
 
 ```text
 param(
@@ -127,9 +127,9 @@ $RequiredParameter
 
 ## Passing Parameters from PowerShell
 
-You can pass parameters from PowerShell using the `Invoke-UAJob` cmdlet. This cmdlet supports dynamic parameters. If you have a `param` block on your script, these parameters will automatically be added to `Invoke-UAJob`. 
+You can pass parameters from PowerShell using the `Invoke-UAJob` cmdlet. This cmdlet supports dynamic parameters. If you have a `param` block on your script, these parameters will automatically be added to `Invoke-UAJob`.
 
-For example, I had a script named Script1.ps1 and the contents were are follows. 
+For example, I had a script named Script1.ps1 and the contents were are follows.
 
 ```text
 param($MyParameter)
@@ -137,11 +137,11 @@ param($MyParameter)
 $MyParameter
 ```
 
-I could then invoke that script using this syntax. 
+I could then invoke that script using this syntax.
 
 ```text
 Invoke-UAScript -Name 'Script.ps1' -MyParameter "Hello"
 ```
 
-The result would be that Hello was output in the job log and pipeline. 
+The result would be that Hello was output in the job log and pipeline.
 

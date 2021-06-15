@@ -22,7 +22,7 @@ Policy scripts will receive a `ClaimsPrincipal` object as a parameter and need t
 
 You can expect an object with this structure. 
 
-```text
+```csharp
 public class ClaimsPrincipal
 {
     public List<Claim> Claims { get; set; } = new List<Claim>();
@@ -64,7 +64,7 @@ You can use App Tokens with the Universal cmdlets or by using web requests direc
 
 The following example shows performing a simple "LDAP BIND" in order to validate a users Active Directory Credentials. If a user attempting to access PowerShell Universal is not the Default Admin User they will have to successfully authenticate their credentials with Active Directory via a simple LDAP bind. This can be combined with a AD Group Member check in the Admin, Operator, and Reader role policies to effectively use Active Directory Authentication AND Active Directory Group membership to provide Role Based Access to PowerShell Universal.
 
-```text
+```PowerShell
 param(
     [PSCredential]$Credential
 )
@@ -112,7 +112,7 @@ In this example we will configure out Administrator Policy Script to use LDAP to
 
 ![](../.gitbook/assets/image%20%2815%29.png)
 
-```text
+```PowerShell
 param(
 $User
 )

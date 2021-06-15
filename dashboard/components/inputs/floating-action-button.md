@@ -30,8 +30,6 @@ New-UDFloatingActionButton -Icon (New-UDIcon -Icon user) -OnClick {
 }
 ```
 
-
-
 **New-UDFloatingActionButton**
 
 | Name | Type | Description | Required |

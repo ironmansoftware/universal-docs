@@ -8,7 +8,7 @@ description: Universal Automation triggers.
 This feature requires an [Automation license](../get-started/licensing.md).
 {% endhint %}
 
-Triggers allow for automation jobs to be started when certain events happen within PowerShell Universal. For example, this allows you to take action when jobs complete, the server starts or dashboards stop. Triggers are useful for assigning global error handling or sending notifications when certain things happen. 
+Triggers allow for automation jobs to be started when certain events happen within PowerShell Universal. For example, this allows you to take action when jobs complete, the server starts or dashboards stop. Triggers are useful for assigning global error handling or sending notifications when certain things happen.
 
 ![](../.gitbook/assets/image%20%28177%29.png)
 
@@ -18,7 +18,7 @@ Triggered jobs will not cause additional triggers to start. Triggers are stored 
 
 ## Trigger Events
 
-The following types of events can be assigned a trigger. 
+The following types of events can be assigned a trigger.
 
 * Job Started
 * Job Completed
@@ -31,9 +31,9 @@ The following types of events can be assigned a trigger.
 
 ## Global Triggers
 
-Global triggers will start the assigned script whenever the event type is invoked. 
+Global triggers will start the assigned script whenever the event type is invoked.
 
-For example, the `Script.ps1` will be run whenever any job is run. 
+For example, the `Script.ps1` will be run whenever any job is run.
 
 ```text
 New-PSUTrigger -Name 'Trigger' -EventType JobStarted -TriggerScript Script.ps1
@@ -41,9 +41,9 @@ New-PSUTrigger -Name 'Trigger' -EventType JobStarted -TriggerScript Script.ps1
 
 ## Resource Triggers
 
-Resource triggers will start the assigned script when the event takes place on the selected resource. 
+Resource triggers will start the assigned script when the event takes place on the selected resource.
 
-For example, the `Script.ps1` will be run whenever the `Dashboard` is stopped. 
+For example, the `Script.ps1` will be run whenever the `Dashboard` is stopped.
 
 ```text
 New-PSUTrigger -Name 'Trigger' -EventType DashboardStopped -TriggerScript Script.ps1 -Dashboard 'Dashboard'
@@ -51,9 +51,9 @@ New-PSUTrigger -Name 'Trigger' -EventType DashboardStopped -TriggerScript Script
 
 ## Event Metadata
 
-Whenever a job is started from a trigger, it will be provided with metadata about object that caused the event to trigger. 
+Whenever a job is started from a trigger, it will be provided with metadata about object that caused the event to trigger.
 
-Triggers related to jobs will be provided a `$Job` parameter. 
+Triggers related to jobs will be provided a `$Job` parameter.
 
 ```text
 param($Job)
@@ -61,7 +61,7 @@ param($Job)
 $Job
 ```
 
-Triggers related to dashboards will be provided a `$Dashboard` parameter. 
+Triggers related to dashboards will be provided a `$Dashboard` parameter.
 
 ```text
 param($Dashboard)

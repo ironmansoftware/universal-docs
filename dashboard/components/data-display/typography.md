@@ -23,7 +23,7 @@ Too many type sizes and styles at once can spoil any layout. A typographic scale
 
 ## Colored Text
 
-You can use the `-Style` parameter to define colors for your text. 
+You can use the `-Style` parameter to define colors for your text.
 
 ```text
 New-UDTypography -Text 'My Text' -Style @{ color = 'blue' }

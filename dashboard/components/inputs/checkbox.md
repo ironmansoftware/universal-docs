@@ -38,7 +38,7 @@ Create checkboxes that fire script blocks when changed.
 ```text
 New-UDCheckBox -OnChange {
     Show-UDToast -Title 'Checkbox' -Message $Body
-}    
+}
 ```
 
 ## Checkbox with custom label placement
@@ -56,9 +56,9 @@ New-UDCheckBox -Label 'Demo' -LabelPlacement end
 
 ## Get the value of a Checkbox
 
-You can use `Get-UDElement` to get the value of the checkbox. `Get-UDElement` will also return other properties of the checkbox component. 
+You can use `Get-UDElement` to get the value of the checkbox. `Get-UDElement` will also return other properties of the checkbox component.
 
-The following example shows a toast message with the value of the checkbox. 
+The following example shows a toast message with the value of the checkbox.
 
 ```text
 New-UDCheckbox -Id 'MyCheckbox' 

@@ -8,7 +8,7 @@ description: Examples of integrating Slack with PowerShell Universal.
 
 This example uses [Universal API](../api/about.md).
 
-This example uses a custom Slack webhook to send a message from a Universal API. 
+This example uses a custom Slack webhook to send a message from a Universal API.
 
 ```text
 Start-PSUServer -Port 8080 -Configuration {
@@ -20,7 +20,7 @@ Start-PSUServer -Port 8080 -Configuration {
 
         Invoke-RestMethod -Uri 'https://hooks.slack.com/services/0000000000/00000000/00000000000000000' -Body $Body -Method POST
     }
-} 
+}
 ```
 
 You can invoke this API by calling `Invoke-RestMethod`
@@ -57,16 +57,14 @@ Start-PSUServer -Port 8080 -Configuration {
     } -ErrorAction Stop
 
     New-PSUTrigger -Name 'ScriptFailed' -TriggerScript 'ScriptFailed.ps1' -EventType 'JobFailed'
-} 
+}
 ```
 
 When the failing script is running, it will report failure in the UI.
 
 ![](../.gitbook/assets/image%20%28199%29.png)
 
-Due to the failure, the trigger will execute and send a message to Slack. 
+Due to the failure, the trigger will execute and send a message to Slack.
 
 ![](../.gitbook/assets/image%20%28201%29.png)
-
-
 

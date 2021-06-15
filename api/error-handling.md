@@ -4,7 +4,7 @@ description: Error handling for Universal API.
 
 # Error Handling
 
-By default, endpoints will return a 200 OK message even if there are errors. If an error occurs, you will get a blank response from the endpoint. This document demonstrates different ways to handle errors within APIs. 
+By default, endpoints will return a 200 OK message even if there are errors. If an error occurs, you will get a blank response from the endpoint. This document demonstrates different ways to handle errors within APIs.
 
 ## Automatically Returning Errors
 
@@ -35,7 +35,7 @@ At line:1 char:1
     + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
 ```
 
-In PowerShell 7, when an error is returned, you will see the error message returned. 
+In PowerShell 7, when an error is returned, you will see the error message returned.
 
 ```text
 PS C:\Users\adamr\Desktop> invoke-restmethod http://localhost:5000/error 
@@ -51,7 +51,7 @@ at , : line 2
 at , : line 1
 ```
 
-You can retrieve the error message in Windows PowerShell, by using the following syntax. 
+You can retrieve the error message in Windows PowerShell, by using the following syntax.
 
 ```text
 PS C:\Users\adamr> try { invoke-restmethod http://localhost:5000/error2 } catch { [System.IO.StreamReader]::new($_.Exception.Response.GetResponseStream()).ReadToEnd()}
@@ -62,9 +62,9 @@ at <ScriptBlock>, <No file>: line 1
 
 ## Manually Returning Errors
 
-To manually return errors, you need to use the `New-PSUApiResponse` cmdlet. This cmdlet allows you to define the status code and body for the response. 
+To manually return errors, you need to use the `New-PSUApiResponse` cmdlet. This cmdlet allows you to define the status code and body for the response.
 
-In this example, we are returning a 404 error code from the endpoint. 
+In this example, we are returning a 404 error code from the endpoint.
 
 ```text
 New-PSUEndpoint -Url /broken -Endpoint {
@@ -72,7 +72,7 @@ New-PSUEndpoint -Url /broken -Endpoint {
 }
 ```
 
-Similar to the automatic error codes, error codes returned manually will as display better in PowerShell 7. Here's an example of calling the endpoint. 
+Similar to the automatic error codes, error codes returned manually will as display better in PowerShell 7. Here's an example of calling the endpoint.
 
 ```text
 PS C:\Users\adamr\Desktop> invoke-restmethod http://localhost:5000/broken
@@ -93,7 +93,7 @@ At line:1 char:1
     + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
 ```
 
-You can choose to return error codes if certain conditions are met by using your PowerShell script within the endpoint. 
+You can choose to return error codes if certain conditions are met by using your PowerShell script within the endpoint.
 
 ```text
 New-PSUEndpoint -Url /user/:name -Endpoint {

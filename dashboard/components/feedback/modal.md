@@ -34,7 +34,7 @@ New-UDButton -Text 'Full Screen' -OnClick {
 
 ## Full Width
 
-Full width modals take up the full width as defined by the `-MaxWidth` parameter. 
+Full width modals take up the full width as defined by the `-MaxWidth` parameter.
 
 ![](../../../.gitbook/assets/image%20%2863%29.png)
 
@@ -62,7 +62,19 @@ New-UDButton -Text 'Persistent' -OnClick {
 }
 ```
 
+## Hide a Modal
 
+You can use the `Hide-UDModal` button to hide a modal that is currently show.
+
+```text
+New-UDButton -Text 'Basic' -OnClick {
+    Show-UDModal -Content {
+        New-UDTypography -Text "Hello"
+    }
+    Start-Sleep 5
+    Hide-UDModal
+}
+```
 
 **Show-UDModal**
 

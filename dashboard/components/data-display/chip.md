@@ -28,7 +28,7 @@ New-UDChip -Label 'Basic' -Icon (New-UDIcon -Icon 'user')
 
 ## OnClick
 
-Shows a toast when the chip is clicked. 
+Shows a toast when the chip is clicked.
 
 ```text
 New-UDChip -Label 'OnClick' -OnClick {
@@ -43,8 +43,6 @@ New-UDChip -Label 'OnDelete' -OnClick {
     Show-UDToast -Message 'Goodbye!'
 }
 ```
-
-
 
 **New-UDChip**
 

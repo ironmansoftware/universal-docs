@@ -1,8 +1,8 @@
 # Themes
 
-Universal Dashboard v3 is built on Material UI. Material UI provides a [built-in theme system ](https://material-ui.com/customization/theming/)that UD now takes advantage of. You can utilize this theme system by providing a hashtable of options to the `New-UDDashboard` 's `-Theme` parameter. 
+Universal Dashboard v3 is built on Material UI. Material UI provides a [built-in theme system ](https://material-ui.com/customization/theming/)that UD now takes advantage of. You can utilize this theme system by providing a hashtable of options to the `New-UDDashboard` 's `-Theme` parameter.
 
-Here's an example of changing the theme's main color. 
+Here's an example of changing the theme's main color.
 
 ```text
 $Theme = @{
@@ -21,7 +21,7 @@ New-UDDashboard -Theme $Theme -Title 'Hello' -Content {
 
 ## Setting the default theme
 
-You can set the default theme to either Light or Dark using the `-DefaultTheme` parameter. 
+You can set the default theme to either Light or Dark using the `-DefaultTheme` parameter.
 
 ```text
 New-UDDashboard -Title 'Hello' -Content {
@@ -33,7 +33,7 @@ New-UDDashboard -Title 'Hello' -Content {
 
 ## Changing the background color
 
-You can change the page background color by setting the background default color. To adjust the header background color, set the primary main color. 
+You can change the page background color by setting the background default color. To adjust the header background color, set the primary main color.
 
 ```text
 $Theme = @{
@@ -86,7 +86,7 @@ New-UDDashboard -Theme $Theme -Title 'Hello' -Content {
 
 ## Changing the font size
 
-To change the font size, set the typography fontSize property. 
+To change the font size, set the typography fontSize property.
 
 ```text
 $Theme = @{
@@ -117,8 +117,6 @@ New-UDDashboard -Theme $Theme -Title 'Hello' -Content {
 ```
 
 ![](../../.gitbook/assets/image%20%28144%29.png)
-
-
 
 For a full list of options available for the theme system, you can look at the [default theme for Material UI](https://material-ui.com/customization/default-theme/).
 

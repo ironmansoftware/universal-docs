@@ -106,7 +106,7 @@ Most Importantly we will need to update "**processPath**" argument value of this
   * Update the arguments=**"PATH"** value to be the exact location of the Universal.Server.exe path.
   * Save the file to apply the configuration
 
-```text
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
   <system.webServer>
@@ -144,6 +144,59 @@ At this point, all the required configurations should be in place, and the IIS w
 {% hint style="info" %}
 You are are still experiencing issues with the basic IIS Configuration try checking the "Logs" path specified in the web.config for common issues. If you are still experiencing issues reach out on the forums or support for assistance.
 {% endhint %}
+
+## Authentication 
+
+PowerShell Universal can use anonymous authentication and Windows Authentication in IIS. 
+
+### Windows Authentication
+
+To enable Windows Authentication, you will first need to enable it for your Web Server and then for your website. You can find the authentication settings under the Authentication section in IIS Manager. 
+
+![](../../.gitbook/assets/image.png)
+
+For the website, set the same settings.
+
+![](../../.gitbook/assets/image%20%2824%29.png)
+
+Once authentication is enabled in IIS, you will have to ensure that Windows Authentication is enabled for PowerShell Universal. 
+
+First, adjust the `web.config` file to forward the Windows authentication token.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <system.webServer>
+    <handlers>
+      <add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified" />
+    </handlers>
+    <aspNetCore processPath=".\Universal.Server.exe" arguments="" forwardWindowsAuthToken="true" stdoutLogEnabled="true" stdoutLogFile=".\logs\log" hostingModel="OutOfProcess" />
+  </system.webServer>
+</configuration>
+<!--ProjectGuid: 588ACF2E-9AE5-4DF1-BC42-BCE16A4C4EDE-->
+```
+
+Next, enable Windows Authentication in the `appsettings.json` file for PowerShell Universal. 
+
+```Json
+	"Authentication" : {
+    "Windows": {
+      "Enabled": "true"
+    },
+  }
+```
+
+Restart your Application Pool and now you should be able to login with Windows credentials. 
+
+{% hint style="warning" %}
+When enabling Windows Authentication but not Anonymous Authentication, you will no longer be able to use PowerShell Universal AppTokens. You will need to enable both authentication methods to support Windows Credentials as well as App Tokens. 
+{% endhint %}
+
+### Anonymous Authentication
+
+Anonymous Authentication can be enabled to allow for app tokens and other requests to be transmitted through the IIS proxy. You will need to enable Anonymous Authentication on both the Server and Web site levels. There is no additional configuration to do within PowerShell Universal. 
+
+## 
 
 ## Additional web.config configurations
 

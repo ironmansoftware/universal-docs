@@ -4,15 +4,15 @@ description: Single-file hosting and configuration for PowerShell Universal.
 
 # Single-File
 
-{% embed url="https://youtu.be/ISTgtGHcYHs" %}
+{% embed url="https://youtu.be/ISTgtGHcYHs" caption="" %}
 
 ## Single File Hosting and Configuration
 
-You can configure and run the PowerShell Universal server from the command line. The `Start-PSUServer` and `Install-PSUServer` cmdlets can be used to install, configure and run a Universal instance in a single file. 
+You can configure and run the PowerShell Universal server from the command line. The `Start-PSUServer` and `Install-PSUServer` cmdlets can be used to install, configure and run a Universal instance in a single file.
 
-### Installing 
+### Installing
 
-To install from the command line, use `Install-PSUServer`. By default, it will store the latest version of the PowerShell Universal Server to the `$Env:ProgramData\PowerShellUniversal` folder. You can specify an alternate path and optionally add the older to the `$Env:Path` environment variable . 
+To install from the command line, use `Install-PSUServer`. By default, it will store the latest version of the PowerShell Universal Server to the `$Env:ProgramData\PowerShellUniversal` folder. You can specify an alternate path and optionally add the older to the `$Env:Path` environment variable .
 
 ```text
 Install-PSUServer -AddToPath
@@ -20,7 +20,7 @@ Install-PSUServer -AddToPath
 
 Once the server is installed, you can start it with `Start-PSUServer`.
 
-### Configuration 
+### Configuration
 
 You can configure PowerShell Universal from the command line using `Start-PSUServer` and the `-Configuration` parameter. You can use the same cmdlets that you would use in the various configuration files but utilize a single file. You should save this file and then execute the PS1 file. Any changes to the file will be auto-reloaded.
 
@@ -58,7 +58,7 @@ Start-PSUServer -Port 8080 -Configuration {
 }
 ```
 
-You can work around these limitations by using variables and environments. 
+You can work around these limitations by using variables and environments.
 
 ```text
 $MyVariable = "Nice"
@@ -80,9 +80,9 @@ Start-PSUServer -Port 8080 -Configuration {
 
 ## Referencing Other Files
 
-The single-file hosting and configuration does not actually require the use of a single file. Rather, it means that you have a single entry point for the hosting and configuration of your PowerShell Universal server. You can reference other files within the `-Configuration`  script block parameter. 
+The single-file hosting and configuration does not actually require the use of a single file. Rather, it means that you have a single entry point for the hosting and configuration of your PowerShell Universal server. You can reference other files within the `-Configuration` script block parameter.
 
-For example, if you wanted to load endpoints from a nested folder, you could do the following. 
+For example, if you wanted to load endpoints from a nested folder, you could do the following.
 
 ```text
 Start-PSUServer -Port 8080 -Configuration {
@@ -92,5 +92,5 @@ Start-PSUServer -Port 8080 -Configuration {
 }
 ```
 
-With this configuration, you can have an `endpoints` folder within the same directory as your root file and they will be loaded automatically when the server starts of the files change. 
+With this configuration, you can have an `endpoints` folder within the same directory as your root file and they will be loaded automatically when the server starts of the files change.
 

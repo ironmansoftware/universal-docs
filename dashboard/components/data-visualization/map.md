@@ -5,16 +5,16 @@ description: Map component for Universal Dashboard.
 # Map
 
 {% hint style="info" %}
-To use maps within your dashboard, you will need to add the UniversalDashboard.Map component. 
+To use maps within your dashboard, you will need to add the UniversalDashboard.Map component.
 
 [Learn more about adding custom component libraries](../../dashboards/#adding-custom-component-libraries)
 {% endhint %}
 
-The UDMap component is a robust control that provides a huge set of features. You can select base layers, configure togglable layers, set markers, define vectors and interact with other Universal Dashboard components. 
+The UDMap component is a robust control that provides a huge set of features. You can select base layers, configure togglable layers, set markers, define vectors and interact with other Universal Dashboard components.
 
-### Basic Map
+## Basic Map
 
-This basic map defines a simple base layer using the wmflabs.org tile server. You can use your own custom tile server by specifying a URL. The map is position over Hailey, Idaho. 
+This basic map defines a simple base layer using the wmflabs.org tile server. You can use your own custom tile server by specifying a URL. The map is position over Hailey, Idaho.
 
 ```text
 New-UDMap -Endpoint {
@@ -24,9 +24,9 @@ New-UDMap -Endpoint {
 
 ![](../../../.gitbook/assets/image%20%2890%29.png)
 
-### Layer Control
+## Layer Control
 
-You can enable the layer control by using the `New-UDMapLayerControl` cmdlet. This map defines several layers with components that you can toggle on and off. You can only have one base layer selected as a time. Map overlay layers can toggle on and off. 
+You can enable the layer control by using the `New-UDMapLayerControl` cmdlet. This map defines several layers with components that you can toggle on and off. You can only have one base layer selected as a time. Map overlay layers can toggle on and off.
 
 ```text
 New-UDMap -Endpoint {
@@ -49,9 +49,9 @@ New-UDMap -Endpoint {
 
 ![](../../../.gitbook/assets/image%20%2896%29.png)
 
-### Heatmaps
+## Heatmaps
 
-Heatmaps can be defined by creating a heatmap layer. The intesity and location of the heatmap clusters can be defined by using the `New-UDMapHeatmapLayer` cmdlet. 
+Heatmaps can be defined by creating a heatmap layer. The intesity and location of the heatmap clusters can be defined by using the `New-UDMapHeatmapLayer` cmdlet.
 
 ```text
 New-UDMap -Endpoint {
@@ -76,9 +76,9 @@ New-UDMap -Endpoint {
 
 ![](../../../.gitbook/assets/image%20%2889%29.png)
 
-### Marker Clusters
+## Marker Clusters
 
-Marker clusters group together markers that are close to each other. As you zoom in or out, the clusters will either combine or explode. 
+Marker clusters group together markers that are close to each other. As you zoom in or out, the clusters will either combine or explode.
 
 ```text
 New-UDMap -Endpoint {
@@ -95,9 +95,9 @@ New-UDMap -Endpoint {
 
 ![](../../../.gitbook/assets/image%20%2894%29.png)
 
-### Interactive Maps
+## Interactive Maps
 
-Maps provide a series of interactive capabilities for add components to and manipulating the map. 
+Maps provide a series of interactive capabilities for add components to and manipulating the map.
 
 ![](../../../.gitbook/assets/interactive.gif)
 
@@ -135,7 +135,7 @@ New-UDButton -Text 'Add Layer' -OnClick {
                 }
             }
         } -Checked
-        
+
     }
 }
 
@@ -226,7 +226,7 @@ New-UDMap -Id 'map' -Endpoint {
         } -Checked
 
     }
-    
+
 } -Latitude 51.505 -Longitude -0.09 -Zoom 13 -Height '100vh' -Animate
 ```
 

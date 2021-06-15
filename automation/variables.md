@@ -34,6 +34,18 @@ From this dialog, you'll be able to define string and PSCredentials in the speci
 
 You can also import pre-existing secrets as variables into Universal. The variable values are not imported but will be looked up during execution. Click the Import Secret button to import secrets. 
 
+## Using Variables
+
+Variables can be used in APIs, Scripts and Dashboards. By default, all variables are automatically imported into an environment. You can reference a variable like you would any other PowerShell variable. The variable will contain the value you set. If you use a secret, it will contain the secret's value.  
+
+```text
+$MyVariable
+```
+
+You can customize which variables are allowed in an environment by customizing the environments `-Variable` parameter. 
+
+See [Environments](../config/environments.md#variables) for more information. 
+
 ## Related Cmdlets
 
 * [New-UAVariable](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/New-UAVariable.md)

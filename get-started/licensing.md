@@ -1,8 +1,8 @@
 # Licensing
 
-Universal API, Dashboard and Automation are licensed per server. Each of the included products is licensed separately. You only need to pay for what you want to use. You can also purchase a license for the full platform at a discount. 
+PowerShell Universal is licensed per server. We provide licenses for individuals and organizations.
 
-You can purchase a license on [our website](https://ironmansoftware.com/pricing). 
+You can purchase a license on [our website](https://store.ironmansoftware.com/pricing/powershell-universal). 
 
 ### What's a server? 
 
@@ -15,6 +15,7 @@ Universal can be used forever for free with the following limitations.
 ### Universal API
 
 * No authentication
+* No Rate Limiting
 
 ### Universal Automation
 

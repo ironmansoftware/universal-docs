@@ -4,9 +4,9 @@ description: Error boundary component for Universal Dashboard.
 
 # Error Boundary
 
-The `New-UDErrorBoundary` component is used for isolating portions of a dashboard to contain components that may throw an error. Many Universal Dashboard components use the error boundary component internally. 
+The `New-UDErrorBoundary` component is used for isolating portions of a dashboard to contain components that may throw an error. Many Universal Dashboard components use the error boundary component internally.
 
-If you'd like to isolate a portion of your dashboard to prevent the entire page from failing to load, you can use the following syntax. 
+If you'd like to isolate a portion of your dashboard to prevent the entire page from failing to load, you can use the following syntax.
 
 ```text
 New-UDErrorBoundary -Content {
@@ -14,7 +14,17 @@ New-UDErrorBoundary -Content {
 }
 ```
 
-If any error is thrown from the content, you will see an error such as thing. 
+If any error is thrown from the content, you will see an error such as thing.
 
 ![](../../.gitbook/assets/image%20%28173%29.png)
+
+## API
+
+**New-UDErrorBoundary**
+
+Display an error card when an error is thrown in your script.
+
+| Name | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| Content | ScriptBlock | A script block to prevent from throwing an error to the top of the page. | True |
 
