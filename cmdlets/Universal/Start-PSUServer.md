@@ -43,7 +43,7 @@ Starts a PowerShell Universal server on port 8080 and uses single-file configura
 ### Example 3
 ```
 PS C:\> $Env:Data__RepositoryPath = "C:\repo" 
-PS C:\> Start-PSUServer -Port 8080 
+PS C:\> Start-PSUServer -Port 8080
 ```
 
 Sets an alternative repository path and starts the PowerShell Universal server. 

@@ -14,12 +14,14 @@ Returns feedback requested by jobs.
 
 ### ById
 ```
-Get-UAJobFeedback -JobId <Int64> [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-UAJobFeedback -JobId <Int64> [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
 ```
 
 ### ByObject
 ```
-Get-UAJobFeedback -Job <Job> [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-UAJobFeedback -Job <Job> [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -57,7 +59,7 @@ The HTTP address of the UA REST API server.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Uri
 
 Required: False
 Position: Named
@@ -90,6 +92,21 @@ Parameter Sets: ById
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

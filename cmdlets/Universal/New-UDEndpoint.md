@@ -14,14 +14,14 @@ schema: 2.0.0
 
 ### Generic (Default)
 ```
-New-UDEndpoint -Endpoint <ScriptBlock> [-ArgumentList <Object[]>] [-Id <String>] [-Role <String>]
+New-UDEndpoint -Endpoint <ScriptBlock> [-ArgumentList <Object[]>] [-Id <String>] [-Role <String[]>]
  [<CommonParameters>]
 ```
 
 ### Scheduled
 ```
 New-UDEndpoint -Endpoint <ScriptBlock> [-ArgumentList <Object[]>] [-Id <String>] -Schedule <EndpointSchedule>
- [-Role <String>] [<CommonParameters>]
+ [-Role <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -87,7 +87,7 @@ Accept wildcard characters: False
 {{ Fill Role Description }}
 
 ```yaml
-Type: String
+Type: String[]
 Parameter Sets: (All)
 Aliases:
 

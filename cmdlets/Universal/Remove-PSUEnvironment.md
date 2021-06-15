@@ -14,7 +14,7 @@ Removes an environment from PowerShell Universal.
 
 ```
 Remove-PSUEnvironment [-Environment] <ExecutionEnvironment> [-ComputerName <String>] [-AppToken <String>]
- [<CommonParameters>]
+ [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -54,7 +54,7 @@ Specifies the computer name or URL that should be called when accessing the Powe
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Uri
 
 Required: False
 Position: Named
@@ -75,6 +75,21 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

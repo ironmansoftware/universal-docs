@@ -15,19 +15,21 @@ Invokes a script within UA.
 ### Script
 ```
 Invoke-UAScript [-Script] <Script> [-WaitForDebugger] [-Environment <String>] [-Notes <String>]
- [-Credential <Variable>] [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+ [-Credential <Variable>] [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
 ```
 
 ### Id
 ```
 Invoke-UAScript [-Id] <Int64> [-WaitForDebugger] [-Environment <String>] [-Notes <String>]
- [-Credential <Variable>] [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+ [-Credential <Variable>] [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
 ```
 
 ### Name
 ```
 Invoke-UAScript [-WaitForDebugger] [-Environment <String>] [-Notes <String>] [-Credential <Variable>]
- [-Name] <String> [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+ [-Name] <String> [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -88,7 +90,7 @@ The HTTP address of the UA REST API server.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Uri
 
 Required: False
 Position: Named
@@ -196,6 +198,21 @@ The environment to use when invoke this script. You can see available environmen
 Type: String
 Parameter Sets: (All)
 Aliases: PowerShellVersion
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
 
 Required: False
 Position: Named

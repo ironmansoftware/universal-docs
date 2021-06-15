@@ -14,17 +14,20 @@ Returns variables defined in UA.
 
 ### All (Default)
 ```
-Get-UAVariable [-ValueOnly] [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-UAVariable [-ValueOnly] [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
 ```
 
 ### Id
 ```
-Get-UAVariable [-Id] <Int64> [-ValueOnly] [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-UAVariable [-Id] <Int64> [-ValueOnly] [-ComputerName <String>] [-AppToken <String>]
+ [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ### Name
 ```
-Get-UAVariable [-Name] <String> [-ValueOnly] [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-UAVariable [-Name] <String> [-ValueOnly] [-ComputerName <String>] [-AppToken <String>]
+ [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -69,7 +72,7 @@ The HTTP address of the UA REST API server.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Uri
 
 Required: False
 Position: Named
@@ -119,6 +122,21 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -15,19 +15,19 @@ Creates a new variable in UA.
 ### Value
 ```
 New-UAVariable -Name <String> [-Value <String>] [-Type <String>] [-ComputerName <String>] [-AppToken <String>]
- [<CommonParameters>]
+ [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ### InputObject
 ```
 New-UAVariable -Name <String> [-InputObject <Object>] [-Type <String>] [-ComputerName <String>]
- [-AppToken <String>] [<CommonParameters>]
+ [-AppToken <String>] [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ### Secret
 ```
 New-UAVariable -Name <String> -Vault <String> [-Type <String>] [-ComputerName <String>] [-AppToken <String>]
- [<CommonParameters>]
+ [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,11 +46,10 @@ You can use the $UserName variable in all your scripts.
 
 ### Example 2
 ```
-PS C:\> $SecretManager = Get-UASecretManager -Name 'Vault'
-PS C:\> New-UAVariable -Name 'UserName' -Value 'Adam' -SecretManager $SecretManager
+PS C:\> New-UAVariable -Name 'UserName' -Value 'Adam' -Vault "Vault"
 ```
 
-Creates a new variable in the secert manager \`Vault\`.
+Creates a new variable in the vault named \`Vault\`.
 The variable's value is not stored in UA and will only be retrieved when running scripts.
 
 ## PARAMETERS
@@ -76,7 +75,7 @@ The HTTP address of the UA REST API server.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Uri
 
 Required: False
 Position: Named
@@ -117,7 +116,7 @@ Accept wildcard characters: False
 ```
 
 ### -Type
-{{ Fill Type Description }}
+The .NET type of object .
 
 ```yaml
 Type: String
@@ -147,7 +146,7 @@ Accept wildcard characters: False
 ```
 
 ### -Vault
-{{ Fill Vault Description }}
+The vault to store the variable within.
 
 ```yaml
 Type: String
@@ -155,6 +154,21 @@ Parameter Sets: Secret
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

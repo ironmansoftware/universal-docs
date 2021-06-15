@@ -16,7 +16,7 @@ Creates a new PowerShell Universal environment.
 ```
 New-PSUEnvironment -Name <String> -Path <String> [-Arguments <String>] [-Modules <String[]>]
  [-Variables <String[]>] [-PSModulePath <String[]>] [-PersistentRunspace] [-ComputerName <String>]
- [-AppToken <String>] [<CommonParameters>]
+ [-AppToken <String>] [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -31,7 +31,7 @@ You can also use this cmdlet to create environments through the REST API.
 
 ### Example 1
 ```powershell
-PS C:\> New-PSUEnvironment -Name '7.1' -Path 'pwsh.exe' 
+PS C:\> New-PSUEnvironment -Name '7.1' -Path 'pwsh.exe'
 ```
 
 Creates a new environment called 7.1 that uses the pwsh.exe for running APIs, scripts or dashboards. 
@@ -49,7 +49,6 @@ PS C:\> New-PSUEnvironment -Name '7.1' -Path 'pwsh.exe' -ArgumentList "-Executio
 ```
 
 Creates a new environment that uses all the variables defined with New-PSUVariable. 
-
 
 ### Example 4
 ```powershell
@@ -104,7 +103,7 @@ Specifies the computer name or URL that should be called when accessing the Powe
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Uri
 
 Required: False
 Position: Named
@@ -193,6 +192,21 @@ Variables to import into the runspace. These are variables defined by New-PSUVar
 
 ```yaml
 Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
+
+```yaml
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

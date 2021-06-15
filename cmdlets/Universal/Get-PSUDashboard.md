@@ -13,7 +13,7 @@ Returns all the dashboards defined in a PowerShell Universal server.
 ## SYNTAX
 
 ```
-Get-PSUDashboard [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-PSUDashboard [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -50,6 +50,21 @@ Specifies the computer name or URL that should be called when accessing the Powe
 
 ```yaml
 Type: String
+Parameter Sets: (All)
+Aliases: Uri
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
+
+```yaml
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

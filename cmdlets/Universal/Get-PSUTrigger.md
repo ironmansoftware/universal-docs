@@ -14,17 +14,19 @@ Returns automation triggers defined in PowerShell Universal.
 
 ### All (Default)
 ```
-Get-PSUTrigger [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-PSUTrigger [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ### Id
 ```
-Get-PSUTrigger [-Id] <Int64> [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-PSUTrigger [-Id] <Int64> [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
 ```
 
 ### Name
 ```
-Get-PSUTrigger [-Name] <String> [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-PSUTrigger [-Name] <String> [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -71,7 +73,7 @@ Specifies the computer name or URL that should be called when accessing the Powe
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Uri
 
 Required: False
 Position: Named
@@ -105,6 +107,21 @@ Aliases:
 
 Required: True
 Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

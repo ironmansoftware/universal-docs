@@ -13,7 +13,7 @@ Returns stats about the UA instance.
 ## SYNTAX
 
 ```
-Get-UAStats [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-UAStats [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -50,6 +50,21 @@ The HTTP address of the UA REST API server.
 
 ```yaml
 Type: String
+Parameter Sets: (All)
+Aliases: Uri
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
+
+```yaml
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

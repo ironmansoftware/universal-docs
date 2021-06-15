@@ -5,86 +5,62 @@ online version: https://go.microsoft.com/fwlink/?LinkID=217032
 schema: 2.0.0
 ---
 
-# Remove-PSUTrigger
+# New-PSULoginPageLink
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Creates a new link on the login page.
 
 ## SYNTAX
 
 ```
-Remove-PSUTrigger [-Trigger] <Trigger> [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
- [<CommonParameters>]
+New-PSULoginPageLink -Text <String> -Url <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Creates a new link on the login page. Use in conjunction with New-PSULoginPage.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+$LoginPage = @{
+    Links = @(
+        New-PSULoginPageLink -Text 'Google' -Url 'http://www.google.com'
+        New-PSULoginPageLink -Text 'Microsoft' -Url 'http://www.microsoft.com'
+    )
+}
+
+New-PSULoginPage @LoginPage
 ```
 
-{{ Add example description here }}
+Creates a login page with two links.
 
 ## PARAMETERS
 
-### -AppToken
-{{ Fill AppToken Description }}
+### -Text
+The text of the link.
 
 ```yaml
 Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ComputerName
-{{ Fill ComputerName Description }}
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: Uri
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Trigger
-{{ Fill Trigger Description }}
-
-```yaml
-Type: Trigger
 Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 0
+Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -UseDefaultCredentials
-Use default credentials when connecting to the management API
+### -Url
+The URL the link should go to.
 
 ```yaml
-Type: SwitchParameter
+Type: String
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -96,7 +72,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### UniversalAutomation.Trigger
+### None
 
 ## OUTPUTS
 

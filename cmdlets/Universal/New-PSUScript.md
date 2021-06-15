@@ -15,18 +15,20 @@ Creates a new script within PowerShell Universal.
 
 ### ScriptBlock
 ```
-New-PSUScript -ScriptBlock <ScriptBlock> [-ManualTime <Int32>] [-TimeOut <Int32>] -Name <String>
+New-PSUScript -ScriptBlock <ScriptBlock> [-ManualTime <Int32>] [-TimeOut <Double>] -Name <String>
  [-Description <String>] [-Parameter <ScriptParameter[]>] [-Tag <Tag[]>] [-Status <ScriptStatus>]
  [-Folder <Folder>] [-Environment <String>] [-Notes <String>] [-DisableManualInvocation] [-MaxHistory <Int32>]
- [-ConcurrentJobs <Int32>] [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+ [-ConcurrentJobs <Int32>] [-Credential <Variable>] [-ComputerName <String>] [-AppToken <String>]
+ [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ### Path
 ```
-New-PSUScript [-ManualTime <Int32>] [-TimeOut <Int32>] -Name <String> [-Description <String>]
+New-PSUScript [-ManualTime <Int32>] [-TimeOut <Double>] -Name <String> [-Description <String>]
  [-Parameter <ScriptParameter[]>] [-Tag <Tag[]>] [-Status <ScriptStatus>] [-Folder <Folder>]
  [-Environment <String>] [-Notes <String>] [-DisableManualInvocation] -Path <String> [-MaxHistory <Int32>]
- [-ConcurrentJobs <Int32>] [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+ [-ConcurrentJobs <Int32>] [-Credential <Variable>] [-ComputerName <String>] [-AppToken <String>]
+ [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -41,7 +43,7 @@ You can also use this cmdlet to create scripts through the REST API.
 
 ### Example 1
 ```
-New-PSUScript -Name 'Script1.ps1' -Path 'Script1.ps1' 
+New-PSUScript -Name 'Script1.ps1' -Path 'Script1.ps1'
 ```
 
 Creates a script within PSU that references a relative path of Script1.ps1 in the repository folder. 
@@ -54,7 +56,6 @@ New-PSUScript -Name 'Script1.ps1' -ScriptBlock {
 ```
 
 Creates a script within PSU based on the script block provided. This will create a Script1.ps1 file within the repository directory. 
-
 
 ## PARAMETERS
 
@@ -81,7 +82,7 @@ Specifies the computer name or URL that should be called when accessing the Powe
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Uri
 
 Required: False
 Position: Named
@@ -320,7 +321,37 @@ Accept wildcard characters: False
 The number of minutes before jobs based on this script will time out. 
 
 ```yaml
-Type: Int32
+Type: Double
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Credential
+The user credential variable to use when executing this script.
+
+```yaml
+Type: Variable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
+
+```yaml
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

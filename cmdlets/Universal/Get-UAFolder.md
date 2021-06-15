@@ -14,22 +14,25 @@ Returns folders defined within UA.
 
 ### All (Default)
 ```
-Get-UAFolder [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-UAFolder [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ### Children
 ```
-Get-UAFolder [-Parent <Folder>] [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-UAFolder [-Parent <Folder>] [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
 ```
 
 ### Id
 ```
-Get-UAFolder [-Id <Int64>] [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-UAFolder [-Id <Int64>] [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
 ```
 
 ### Name
 ```
-Get-UAFolder [-Name <String>] [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-UAFolder [-Name <String>] [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -83,7 +86,7 @@ The HTTP address of the UA REST API server.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Uri
 
 Required: False
 Position: Named
@@ -128,6 +131,21 @@ The parent folder to return children for.
 ```yaml
 Type: Folder
 Parameter Sets: Children
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False

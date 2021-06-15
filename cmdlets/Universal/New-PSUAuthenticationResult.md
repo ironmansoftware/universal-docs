@@ -36,7 +36,6 @@ else
 {
     New-PSUAuthenticationResult -ErrorMessage "Hey! You aren't Adam"
 }
-
 ```
 
 Returns a successful authentication result if the user name is 'Adam'. Returns a custom error message if that user is not. 

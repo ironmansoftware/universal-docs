@@ -14,12 +14,13 @@ Returns the environments defined in PowerShell Universal.
 
 ### All (Default)
 ```
-Get-PSUEnvironment [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-PSUEnvironment [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ### Id
 ```
-Get-PSUEnvironment [-Id] <Int64> [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-PSUEnvironment [-Id] <Int64> [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -65,7 +66,7 @@ Specifies the computer name or URL that should be called when accessing the Powe
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Uri
 
 Required: False
 Position: Named
@@ -84,6 +85,21 @@ Aliases:
 
 Required: True
 Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

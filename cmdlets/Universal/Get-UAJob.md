@@ -15,28 +15,29 @@ Returns jobs run within UA.
 ### All (Default)
 ```
 Get-UAJob [-Status <JobStatus>] [-OrderBy <String>] [-OrderDirection <OrderDirection>] [-ComputerName <String>]
- [-AppToken <String>] [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
+ [-AppToken <String>] [-UseDefaultCredentials] [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>]
+ [<CommonParameters>]
 ```
 
 ### Id
 ```
 Get-UAJob [-Id] <Int64> [-Status <JobStatus>] [-OrderBy <String>] [-OrderDirection <OrderDirection>]
- [-ComputerName <String>] [-AppToken <String>] [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>]
- [<CommonParameters>]
+ [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials] [-IncludeTotalCount] [-Skip <UInt64>]
+ [-First <UInt64>] [<CommonParameters>]
 ```
 
 ### Identity
 ```
 Get-UAJob [-Identity] <Identity> [-Status <JobStatus>] [-OrderBy <String>] [-OrderDirection <OrderDirection>]
- [-ComputerName <String>] [-AppToken <String>] [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>]
- [<CommonParameters>]
+ [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials] [-IncludeTotalCount] [-Skip <UInt64>]
+ [-First <UInt64>] [<CommonParameters>]
 ```
 
 ### Script
 ```
 Get-UAJob [-Script] <Script> [-Status <JobStatus>] [-OrderBy <String>] [-OrderDirection <OrderDirection>]
- [-ComputerName <String>] [-AppToken <String>] [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>]
- [<CommonParameters>]
+ [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials] [-IncludeTotalCount] [-Skip <UInt64>]
+ [-First <UInt64>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -96,7 +97,7 @@ The HTTP address of the UA REST API server.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Uri
 
 Required: False
 Position: Named
@@ -239,6 +240,21 @@ Type: JobStatus
 Parameter Sets: (All)
 Aliases:
 Accepted values: Queued, Running, Completed, Failed, WaitingOnFeedback, Canceled, Canceling, Historical, Active
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
 
 Required: False
 Position: Named

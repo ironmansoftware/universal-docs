@@ -14,32 +14,37 @@ Returns scripts defined within UA.
 
 ### All (Default)
 ```
-Get-UAScript [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-UAScript [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ### Id
 ```
-Get-UAScript [-Id] <Int64> [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-UAScript [-Id] <Int64> [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
 ```
 
 ### Identity
 ```
-Get-UAScript [-Identity] <Identity> [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-UAScript [-Identity] <Identity> [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
 ```
 
 ### FolderId
 ```
-Get-UAScript [-FolderId] <Int64> [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-UAScript [-FolderId] <Int64> [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
 ```
 
 ### Name
 ```
-Get-UAScript [-Name] <String> [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-UAScript [-Name] <String> [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
 ```
 
 ### ByTagObject
 ```
-Get-UAScript [-Tag <Tag>] [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-UAScript [-Tag <Tag>] [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -114,7 +119,7 @@ The HTTP address of the UA REST API server.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Uri
 
 Required: False
 Position: Named
@@ -190,6 +195,21 @@ Use Get-UATag to retrieve tags.
 ```yaml
 Type: Tag
 Parameter Sets: ByTagObject
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False

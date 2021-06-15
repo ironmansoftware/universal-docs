@@ -14,12 +14,14 @@ Waits for a job to finish.
 
 ### ById
 ```
-Wait-UAJob -JobId <Int64> [-Timeout <Int32>] [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Wait-UAJob -JobId <Int64> [-Timeout <Int32>] [-ComputerName <String>] [-AppToken <String>]
+ [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ### ByObject
 ```
-Wait-UAJob -Job <Job> [-Timeout <Int32>] [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Wait-UAJob -Job <Job> [-Timeout <Int32>] [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -58,7 +60,7 @@ The HTTP address of the UA REST API server.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Uri
 
 Required: False
 Position: Named
@@ -103,6 +105,21 @@ The number of seconds to wait for the job to finish.
 
 ```yaml
 Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
+
+```yaml
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

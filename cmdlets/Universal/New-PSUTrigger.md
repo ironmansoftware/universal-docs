@@ -16,7 +16,7 @@ Creates a new Automation trigger in PowerShell Universal.
 ```
 New-PSUTrigger -Name <String> -EventType <EventType> -TriggerScript <Script> [-Script <Script>]
  [-Dashboard <Dashboard>] [-Environment <String>] [-ComputerName <String>] [-AppToken <String>]
- [<CommonParameters>]
+ [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -31,21 +31,21 @@ You can also use this cmdlet to create triggers through the REST API.
 
 ### Example 1
 ```powershell
-New-PSUTrigger -Name 'Script Failed' -EventType JobFailed -TriggerScript 'ScriptFailed.ps1' 
+New-PSUTrigger -Name 'Script Failed' -EventType JobFailed -TriggerScript 'ScriptFailed.ps1'
 ```
 
 Creates a new trigger that calls the ScriptFailed.ps1 file when any job within PowerShell Universal fails. 
 
 ### Example 2
 ```powershell
-New-PSUTrigger -Name 'Dashboard Stopped' -Dashboard 'MyDashboard' -EventType DashboardStopped -TriggerScript 'DashboardStopped.ps1' 
+New-PSUTrigger -Name 'Dashboard Stopped' -Dashboard 'MyDashboard' -EventType DashboardStopped -TriggerScript 'DashboardStopped.ps1'
 ```
 
 Creates a new trigger that calls the DashboardStopped.ps1 file when the dashboard MyDashboard stops. 
 
 ### Example 3
 ```powershell
-New-PSUTrigger -Name 'Server Started' -EventType ServerStarted -TriggerScript 'LogServerStart.ps1' 
+New-PSUTrigger -Name 'Server Started' -EventType ServerStarted -TriggerScript 'LogServerStart.ps1'
 ```
 
 Creates a new trigger that calls the LogServerStart.ps1 file when the PowerShell Universal server is started. 
@@ -73,7 +73,7 @@ The computer name or URL of the Powershell Universal server.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Uri
 
 Required: False
 Position: Named
@@ -173,6 +173,21 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

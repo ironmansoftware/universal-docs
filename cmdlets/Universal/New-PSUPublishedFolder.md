@@ -14,8 +14,9 @@ Creates a new published folder in PowerShell Universal.
 ## SYNTAX
 
 ```
-New-PSUPublishedFolder -RequestPath <String> -Path <String> [-Authentication] [-Role <String>]
- [-DefaultDocument <String[]>] [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+New-PSUPublishedFolder -RequestPath <String> -Path <String> [-Authentication] [-Role <String[]>]
+ [-DefaultDocument <String[]>] [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -26,7 +27,7 @@ Creates a new published folder in PowerShell Universal. Published folders allow 
 
 ### Example 1
 ```powershell
-New-PSUPublishedFolder -RequestPath '/images' -Path 'C:\images' 
+New-PSUPublishedFolder -RequestPath '/images' -Path 'C:\images'
 ```
 
 Publishes the images folder to the request path of images. You will be able to download images from this folder by using URLs like: http://localhost:5000/images/myImage.png
@@ -79,7 +80,7 @@ Specifies the computer name or URL that should be called when accessing the Powe
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Uri
 
 Required: False
 Position: Named
@@ -141,7 +142,22 @@ Accept wildcard characters: False
 The role to require when viewing files in this published folder. -Authentication is required when using roles. 
 
 ```yaml
-Type: String
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
+
+```yaml
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

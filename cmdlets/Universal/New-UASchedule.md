@@ -15,20 +15,23 @@ Creates a new schedule within UA.
 ### Cron
 ```
 New-UASchedule [-Script] <Script> [-Cron] <String> [-Credential <Variable>] [-TimeZone <String>]
- [-Environment <String>] [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+ [-Environment <String>] [-Name <String>] [-Description <String>] [-ComputerName <String>] [-AppToken <String>]
+ [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ### Continuous
 ```
 New-UASchedule [-Script] <Script> [-Credential <Variable>] [-TimeZone <String>] [-Continuous]
  [-Delay <TimeSpan>] [-DelaySecond <Int32>] [-DelayMinute <Int32>] [-DelayHour <Int32>] [-Environment <String>]
- [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+ [-Name <String>] [-Description <String>] [-ComputerName <String>] [-AppToken <String>]
+ [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ### OneTime
 ```
 New-UASchedule [-Script] <Script> [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>]
- [-OneTime <DateTime>] [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+ [-Name <String>] [-OneTime <DateTime>] [-Description <String>] [-ComputerName <String>] [-AppToken <String>]
+ [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -87,7 +90,7 @@ The HTTP address of the UA REST API server.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Uri
 
 Required: False
 Position: Named
@@ -255,6 +258,51 @@ Accept wildcard characters: False
 ```yaml
 Type: DateTime
 Parameter Sets: OneTime
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Description
+Description for the schedule.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+Name of the schedule to display in the admin console.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False

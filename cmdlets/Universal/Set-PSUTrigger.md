@@ -16,14 +16,14 @@ Updates an existing PowerShell Universal Automation trigger.
 ```
 Set-PSUTrigger [-Id] <Int64> [-Name <String>] [-EventType <EventType>] [-Script <String>]
  [-TriggerScript <String>] [-Environment <String>] [-Dashboard <String>] [-ComputerName <String>]
- [-AppToken <String>] [<CommonParameters>]
+ [-AppToken <String>] [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ### Trigger
 ```
 Set-PSUTrigger [-Trigger] <Trigger> [-Name <String>] [-EventType <EventType>] [-Script <String>]
  [-TriggerScript <String>] [-Environment <String>] [-Dashboard <String>] [-ComputerName <String>]
- [-AppToken <String>] [<CommonParameters>]
+ [-AppToken <String>] [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -61,7 +61,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Uri
 
 Required: False
 Position: Named
@@ -181,6 +181,21 @@ Accept wildcard characters: False
 
 ```yaml
 Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
+
+```yaml
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

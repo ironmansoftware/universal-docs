@@ -17,7 +17,7 @@ Sets properties of a script.
 Set-UAScript [-Id] <Int64> [-Name <String>] [-Description <String>] [-ManualTime <Double>] [-TimeOut <Double>]
  [-Status <String>] [-Content <String>] [-Notes <String>] [-Environment <String>]
  [-DisableManualInvocation <Boolean>] [-ScriptErrorAction <ActionPreference>] [-MaxHistory <Int32>]
- [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+ [-Tag <Tag[]>] [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ### Script
@@ -25,7 +25,7 @@ Set-UAScript [-Id] <Int64> [-Name <String>] [-Description <String>] [-ManualTime
 Set-UAScript [-Script] <Script> [-Name <String>] [-Description <String>] [-ManualTime <Double>]
  [-TimeOut <Double>] [-Status <String>] [-Content <String>] [-Notes <String>] [-Environment <String>]
  [-DisableManualInvocation <Boolean>] [-ScriptErrorAction <ActionPreference>] [-MaxHistory <Int32>]
- [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+ [-Tag <Tag[]>] [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ### ScriptBlock
@@ -33,7 +33,7 @@ Set-UAScript [-Script] <Script> [-Name <String>] [-Description <String>] [-Manua
 Set-UAScript [-Name <String>] [-Description <String>] [-ManualTime <Double>] [-TimeOut <Double>]
  [-Status <String>] [-Content <String>] [-ScriptBlock <ScriptBlock>] [-Notes <String>] [-Environment <String>]
  [-DisableManualInvocation <Boolean>] [-ScriptErrorAction <ActionPreference>] [-MaxHistory <Int32>]
- [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+ [-Tag <Tag[]>] [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -73,7 +73,7 @@ The HTTP address of the UA REST API server.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Uri
 
 Required: False
 Position: Named
@@ -287,6 +287,36 @@ Accept wildcard characters: False
 
 ```yaml
 Type: Double
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tag
+Sets the tags for a script.
+
+```yaml
+Type: Tag[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
+
+```yaml
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

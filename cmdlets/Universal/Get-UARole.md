@@ -14,17 +14,19 @@ Returns the roles defined within UA.
 
 ### All (Default)
 ```
-Get-UARole [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-UARole [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ### Name
 ```
-Get-UARole [[-Name] <String>] [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-UARole [[-Name] <String>] [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
 ```
 
 ### Id
 ```
-Get-UARole [[-Id] <Int64>] [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-UARole [[-Id] <Int64>] [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -70,7 +72,7 @@ The HTTP address of the UA REST API server.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Uri
 
 Required: False
 Position: Named
@@ -104,6 +106,21 @@ Aliases:
 
 Required: False
 Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

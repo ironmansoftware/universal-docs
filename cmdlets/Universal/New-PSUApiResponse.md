@@ -16,13 +16,13 @@ Returns a custom API response from a PowerShell Universal REST API.
 ### Body (Default)
 ```
 New-PSUApiResponse [-StatusCode <Int32>] [-Body <String>] [-Cookies <Hashtable>] [-ContentType <String>]
- [<CommonParameters>]
+ [-Headers <Hashtable>] [<CommonParameters>]
 ```
 
 ### Data
 ```
 New-PSUApiResponse [-StatusCode <Int32>] [-Cookies <Hashtable>] [-Data <Byte[]>] [-ContentType <String>]
- [<CommonParameters>]
+ [-Headers <Hashtable>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -112,6 +112,21 @@ The HTTP status code to set for this response. The default value is 200.
 
 ```yaml
 Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Headers
+A hashtable of headers to return from the API request.
+
+```yaml
+Type: Hashtable
 Parameter Sets: (All)
 Aliases:
 

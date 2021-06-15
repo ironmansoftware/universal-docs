@@ -14,22 +14,25 @@ Returns schedules defined in UA.
 
 ### All (Default)
 ```
-Get-UASchedule [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-UASchedule [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ### Id
 ```
-Get-UASchedule [-Id] <Int64> [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-UASchedule [-Id] <Int64> [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
 ```
 
 ### Identity
 ```
-Get-UASchedule [-Identity] <Identity> [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-UASchedule [-Identity] <Identity> [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
 ```
 
 ### Script
 ```
-Get-UASchedule [-Script] <Script> [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-UASchedule [-Script] <Script> [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -84,7 +87,7 @@ The HTTP address of the UA REST API server.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Uri
 
 Required: False
 Position: Named
@@ -135,6 +138,21 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

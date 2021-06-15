@@ -15,25 +15,25 @@ Sets the properties of a variable.
 ### IdValue
 ```
 Set-UAVariable [-Id] <Int64> [-Value <String>] [-Name <String>] [-ComputerName <String>] [-AppToken <String>]
- [<CommonParameters>]
+ [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ### IdInputObject
 ```
 Set-UAVariable [-Id] <Int64> [-InputObject <Object>] [-Name <String>] [-ComputerName <String>]
- [-AppToken <String>] [<CommonParameters>]
+ [-AppToken <String>] [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ### VariableInputObject
 ```
 Set-UAVariable [-Variable] <Variable> [-InputObject <Object>] [-Name <String>] [-ComputerName <String>]
- [-AppToken <String>] [<CommonParameters>]
+ [-AppToken <String>] [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ### VariableValue
 ```
 Set-UAVariable [-Variable] <Variable> [-Value <String>] [-Name <String>] [-ComputerName <String>]
- [-AppToken <String>] [<CommonParameters>]
+ [-AppToken <String>] [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -72,7 +72,7 @@ The HTTP address of the UA REST API server.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Uri
 
 Required: False
 Position: Named
@@ -154,6 +154,21 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

@@ -14,17 +14,19 @@ Returns all endpoints defined in PowerShell Universal.
 
 ### All (Default)
 ```
-Get-PSUEndpoint [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-PSUEndpoint [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ### Id
 ```
-Get-PSUEndpoint [-Id <Int64>] [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-PSUEndpoint [-Id <Int64>] [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
 ```
 
 ### Url
 ```
-Get-PSUEndpoint [-Url <String>] [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-PSUEndpoint [-Url <String>] [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -77,7 +79,7 @@ Specifies the computer name or URL that should be called when accessing the Powe
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Uri
 
 Required: False
 Position: Named
@@ -107,6 +109,21 @@ The URL of the endpoints to return. Multiple endpoints may have the same URL and
 ```yaml
 Type: String
 Parameter Sets: Url
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False

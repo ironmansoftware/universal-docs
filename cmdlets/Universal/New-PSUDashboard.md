@@ -5,40 +5,47 @@ online version: https://go.microsoft.com/fwlink/?LinkID=217032
 schema: 2.0.0
 ---
 
-# Set-UASetting
+# New-PSUDashboard
 
 ## SYNOPSIS
-Sets a UA setting.
+Creates a new dashboard.
 
 ## SYNTAX
 
+### FilePath
 ```
-Set-UASetting [-LogLevel <String>] [-LoggingFilePath <String>] [-DefaultEnvironment <String>]
- [-GroomDays <Int32>] [-ConcurrentJobLimit <Int32>] [-Telemetry] [-HideApi] [-HideAutomation] [-HideDashboard]
- [-DisableAutoReload] [-SecurityEnvironment <String>] [-ApiEnvironment <String>] [-DefaultPage <String>]
- [-ShowDevTools] [-RateLimitClientAllowList <String[]>] [-RateLimitIpAddressAllowList <String[]>]
- [-RateLimitEndpointAllowList <String[]>] [-DisableUpdateCheck] [-ComputerName <String>] [-AppToken <String>]
- [-UseDefaultCredentials] [<CommonParameters>]
+New-PSUDashboard -FilePath <String> [-BaseUrl <String>] -Name <String> [-Framework <DashboardFramework>]
+ [-Environment <String>] [-GrantAppToken] [-Authenticated] [-Role <String[]>] [-DisableAutoStart]
+ [-Component <DashboardComponent[]>] [-SessionTimeout <Int32>] [-AutoDeploy] [-Description <String>]
+ [-Credential <String>] [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
+```
+
+### Content
+```
+New-PSUDashboard -Content <ScriptBlock> [-BaseUrl <String>] -Name <String> [-Framework <DashboardFramework>]
+ [-Environment <String>] [-GrantAppToken] [-Authenticated] [-Role <String[]>] [-DisableAutoStart]
+ [-Component <DashboardComponent[]>] [-SessionTimeout <Int32>] [-AutoDeploy] [-Description <String>]
+ [-Credential <String>] [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Sets a UA setting.
+Creates a new dashboard. Dashboards allow you to create websites with PowerShell. 
 
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> $Settings = Get-UASetting
-PS C:\> $Settings.LogLevel = 'Debug'
-PS C:\> Set-UASetting -Setting $Settings
+```powershell
+New-PSUDashboard -Name 'Dashboard' -BaseUrl '/dashboard' -FilePath "dashboard.ps1"
 ```
 
-Sets the log level to 'Debug'
+Creates a dashboard using the dashboard.ps1 file in the repository directory and serves it at the base URL of /dashboard. 
 
 ## PARAMETERS
 
 ### -AppToken
-An app token to access the UA API.
+An app token used to connect to the management console.
 
 ```yaml
 Type: String
@@ -52,8 +59,68 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Authenticated
+Whether authentication is required for this dashboard.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AutoDeploy
+Whether to automatically deploy the dashboard when it changes.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BaseUrl
+The base URL to serve the dashboard on.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Component
+A list of component modules to import.
+
+```yaml
+Type: DashboardComponent[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ComputerName
-The HTTP address of the UA REST API server.
+The URI of the management API.
 
 ```yaml
 Type: String
@@ -67,266 +134,161 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ConcurrentJobLimit
-{{ Fill ConcurrentJobLimit Description }}
+### -Content
+A script block containing dashboard content.
+
+```yaml
+Type: ScriptBlock
+Parameter Sets: Content
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Credential
+The user credential variable to use when starting the dashboard.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Description
+A description of the dashboard.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DisableAutoStart
+Whether to disable starting the dashboard when PSU starts.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Environment
+The environment to use with the dashboard.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FilePath
+The file path of the dashboard PowerShell script that defines this dashboard.
+
+```yaml
+Type: String
+Parameter Sets: FilePath
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Framework
+The Universal Dashboard framework to use for this dashboard.
+
+```yaml
+Type: DashboardFramework
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -GrantAppToken
+Whether to automatically grant an app token to users accessing the dashboard. This is used if your dashboard requires access to the management API.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+The name of the dashboard.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Role
+An array of roles that can access the dashboard.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SessionTimeout
+The number of minutes before a session will time out in the dashboard.
 
 ```yaml
 Type: Int32
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DisableAutoReload
-{{ Fill DisableAutoReload Description }}
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -GroomDays
-{{ Fill GroomDays Description }}
-
-```yaml
-Type: Int32
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -HideApi
-{{ Fill HideApi Description }}
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -HideAutomation
-{{ Fill HideAutomation Description }}
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -HideDashboard
-{{ Fill HideDashboard Description }}
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LogLevel
-{{ Fill LogLevel Description }}
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LoggingFilePath
-{{ Fill LoggingFilePath Description }}
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Telemetry
-{{ Fill Telemetry Description }}
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ApiEnvironment
-{{ Fill ApiEnvironment Description }}
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DefaultEnvironment
-{{ Fill DefaultEnvironment Description }}
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DisableUpdateCheck
-{{ Fill DisableUpdateCheck Description }}
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RateLimitClientAllowList
-{{ Fill RateLimitClientAllowList Description }}
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RateLimitEndpointAllowList
-{{ Fill RateLimitEndpointAllowList Description }}
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RateLimitIpAddressAllowList
-{{ Fill RateLimitIpAddressAllowList Description }}
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SecurityEnvironment
-{{ Fill SecurityEnvironment Description }}
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ShowDevTools
-{{ Fill ShowDevTools Description }}
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DefaultPage
-Sets the default page for the admin console. 
-
-```yaml
-Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -358,6 +320,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### None
+
 ## OUTPUTS
 
 ### System.Object

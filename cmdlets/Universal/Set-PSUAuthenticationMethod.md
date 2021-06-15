@@ -14,7 +14,7 @@ Sets the authentication method settings.
 
 ```
 Set-PSUAuthenticationMethod -ScriptBlock <ScriptBlock> [-Disabled] [-ComputerName <String>]
- [-AppToken <String>] [<CommonParameters>]
+ [-AppToken <String>] [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -68,7 +68,7 @@ Specifies the computer name or URL that should be called when accessing the Powe
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Uri
 
 Required: False
 Position: Named
@@ -94,6 +94,21 @@ Accept wildcard characters: False
 
 ### -Disabled
 Whether forms authentication is disabled. 
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
 
 ```yaml
 Type: SwitchParameter

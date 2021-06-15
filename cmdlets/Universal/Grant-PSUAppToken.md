@@ -16,19 +16,20 @@ Grants a new app token.
 ### GrantCustom (Default)
 ```
 Grant-PSUAppToken -IdentityName <String> [-Expiry <DateTime>] [-Role <String>] [-ComputerName <String>]
- [-AppToken <String>] [<CommonParameters>]
+ [-AppToken <String>] [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ### Grant
 ```
 Grant-PSUAppToken -Identity <Identity> [-Expiry <DateTime>] [-Role <String>] [-ComputerName <String>]
- [-AppToken <String>] [<CommonParameters>]
+ [-AppToken <String>] [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ### Generate
 ```
 Grant-PSUAppToken -IdentityName <String> [-Expiry <DateTime>] [-Role <String>] [-Audience <String>]
- [-Issuer <String>] [-SigningKey <String>] [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+ [-Issuer <String>] [-SigningKey <String>] [-ComputerName <String>] [-AppToken <String>]
+ [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -89,7 +90,7 @@ Specifies the computer name or URL that should be called when accessing the Powe
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Uri
 
 Required: False
 Position: Named
@@ -179,6 +180,21 @@ The signing key used to sign the app token. This needs to match the server's con
 ```yaml
 Type: String
 Parameter Sets: Generate
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False

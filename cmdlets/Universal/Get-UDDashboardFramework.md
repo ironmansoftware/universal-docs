@@ -14,7 +14,8 @@ Returns Universal Dashboard frameworks currently installed on the system.
 ## SYNTAX
 
 ```
-Get-UDDashboardFramework [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+Get-UDDashboardFramework [-ComputerName <String>] [-AppToken <String>] [-UseDefaultCredentials]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -55,6 +56,21 @@ The computer name or URL to the PowerShell Universal server.
 
 ```yaml
 Type: String
+Parameter Sets: (All)
+Aliases: Uri
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
+
+```yaml
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

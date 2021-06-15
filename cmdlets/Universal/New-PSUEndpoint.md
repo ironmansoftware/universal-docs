@@ -14,8 +14,9 @@ Creates a new REST API endpoint.
 ## SYNTAX
 
 ```
-New-PSUEndpoint [-Method <String>] -Url <String> -Endpoint <ScriptBlock> [-Authentication] [-Role <String>]
- [-RegEx] [-ComputerName <String>] [-AppToken <String>] [<CommonParameters>]
+New-PSUEndpoint [-Method <String>] -Url <String> [-Description <String>] -Endpoint <ScriptBlock>
+ [-Authentication] [-Role <String[]>] [-RegEx] [-ComputerName <String>] [-AppToken <String>]
+ [-UseDefaultCredentials] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -109,7 +110,7 @@ Specifies the computer name or URL that should be called when accessing the Powe
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Uri
 
 Required: False
 Position: Named
@@ -172,7 +173,7 @@ Accept wildcard characters: False
 Specifies the role that is required for accessing this endpoint. The -Authentication parameter should also be specified when using the -Role parameter. Roles require an API license.
 
 ```yaml
-Type: String
+Type: String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -193,6 +194,36 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Description
+A description for the endpoint to display in the console.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseDefaultCredentials
+Use default credentials when connecting to the management API
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
