@@ -4,6 +4,79 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2.1.0 - 6/29/2021
+
+### Includes
+
+* UniversalDashboard - v3.5.0
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.1.1
+* UniversalDashboard.Style - 1.0.0
+
+### Added
+
+#### Automation
+
+* Added Name to schedules
+* Added Description to variables
+
+#### Dashboard
+
+* Added Run As support for dashboards
+* Added an error toast when an error happens in an endpoint
+* UDv3 - Added -ButtonVariant to New-UDForm
+* Added $ClaimsPrincipal variable to dashboard endpoints
+* UDv3 - Added a ValidateSet to the -Color parameter of New-UDButton
+* UDv3 - Added Persistent to Show-UDToast
+* UDv3 - Added New-UDLayout
+* UDv3 - Added -Icon to New-UDTable
+* Added $DashboardName, $DashboardFilePath, and $DashboardBaseUrl to endpoints
+
+#### Platform
+
+* Added support for templates
+
+### Changed
+
+#### API
+
+* Fixed an issue where descriptions would not persist when set in the admin console
+* Fixed an issue where roles would not be populated when editing an endpoint
+
+#### Automation
+
+* Fixed an issue where you could not create a schedule with an environment in the admin console
+* Fixed an issue where you could not create a schedule with a credential in the admin console
+* Increased the Set-PSUCache limit to 32GB
+* Fixed an issue with displaying nested scripts within the admin console
+
+#### Dashboard
+
+* By default, dashboards are now created in their own folder in the repository folder
+* UDv3 - Fixed an issue where New-UDTable would fail to export a rendered column
+* UDv3 - Hide logout button when using Windows authentication
+* UDv3 - Fixed an issue where -SortType datetime would not function correctly on New-UDTable 
+* UDv3 - Upgraded to the latest version of SignalR to fix issues with Chrome tab idling.
+* UDv3 - Removed a restriction on what element was supported with New-UDListItem and -Icon
+* Fixed an issue where the Operator role could not save dashboards
+* Fixed an issue where users with no matching roles for a dashboard page would receive an error
+
+#### Platform
+
+* Fixed an issue where scroll bars were missing from editors and logs in the admin console
+* Fixed an issue where you couldn't delete app tokens or schedules on the identity page
+* Fixed an issue where the document title for the login page wouldn't update for custom login pages
+* Fixed an issue where you couldn't clear run as credentials from scripts, schedules or dashboards
+* Display integrated PowerShell version on environments page
+* Fixed an issue where you couldn't create secrets with New-PSUVariable
+* Fixed an issue where Windows authentication would not work
+* Fixed an issue where standard \(online\) licenses would become inactive after some time
+* Fixed an issue where setting the Security Environment to integrated would cause the service to fail to start.
+* Fixed an issue where you couldn't clear roles once they were set.
+* Fixed an issue where saving a role policy would not work
+
 ## 2.0.3 - 6/10/2021
 
 ### Includes
