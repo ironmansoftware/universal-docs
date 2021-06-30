@@ -4,8 +4,6 @@ description: PowerShell Universal Templates
 
 # Templates
 
-
-
 {% hint style="warning" %}
 This documentation is for a future version of PSU. 
 {% endhint %}
