@@ -4,10 +4,6 @@ description: PowerShell Universal Templates
 
 # Templates
 
-{% hint style="warning" %}
-This documentation is for a future version of PSU. 
-{% endhint %}
-
 PowerShell Universal templates allow you to share your configurations with other users internally or with the PSU community. Configuration import and export functionality is built directly into PSU. You will need at least version 2.1.0 to use this functionality. 
 
 ## Exporting a Template
