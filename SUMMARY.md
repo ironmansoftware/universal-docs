@@ -116,6 +116,7 @@
 
 * [Cache](platform/cache.md)
 * [Monitoring](platform/monitoring.md)
+* [Templates](platform/templates.md)
 
 ## Configuration <a id="config"></a>
 
