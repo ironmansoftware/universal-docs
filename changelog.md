@@ -4,6 +4,27 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2.1.1 - 7/1/2021
+
+### Includes
+
+* UniversalDashboard - v3.5.0
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.1.1
+* UniversalDashboard.Style - 1.0.0
+
+### Changed
+
+#### Automation
+
+* Fixed an issue where the script was not displayed in the jobs table
+
+#### Platform
+
+* Reverting a change made to status code pages \(Unauthorized page\) because it causes issues with SSO \(Windows\WS-Fed\OIDC\)
+
 ## 2.1.0 - 6/29/2021
 
 ### Includes
