@@ -118,6 +118,22 @@ New-UDDashboard -Title "Hello, World!" -Content {
 }
 ```
 
+## Disable Error Toasts
+
+By default, dashboards will display a toast message when an error is generated within an endpoint script. To avoid this behavior, you can use the `-DisableErrorToast` parameter of `New-UDDashboard`
+
+```text
+New-PSUDashboard -Name 'Dashboard' -BaseUrl '/' -Framework "UniversalDashboard:Latest" -Authenticated -DisableErrorToast
+```
+
+```text
+New-UDDashboard -Title "Hello, World!" -Content {
+    New-UDButton -Text 'Job' -OnClick {
+        throw "Exception
+    }
+} 
+```
+
 ## Variables Available in Dashboards
 
 | Name | Description | Type |

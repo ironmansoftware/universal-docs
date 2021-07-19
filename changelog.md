@@ -4,6 +4,44 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2.1.2 - 7/7/2021
+
+### Includes
+
+* UniversalDashboard - v3.5.0
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.1.1
+* UniversalDashboard.Style - 1.0.0
+
+### Changed
+
+#### APIs
+
+* Fixed an issue where endpoint content could fail to save.
+* Fixed an issue where editing the environment for the API would result in the API no longer functioning
+
+#### Automation
+
+* Fixed an issue where the job parameter table was not visible on the job page
+* Fixed an issue where you were unable to select a credential for a PSCredential parameter
+* Fixed an issue where Next Execution would show an invalid date for Continuous schedules
+
+#### Dashboards
+
+* Fixed an issue where dashboard content could fail to save.
+* Improved performance of dashboard auto-deploy
+* Added DisableErrorToast to disable error toast messages within the UI
+* Fixed an issue where dashboards would restart when adding\editing a variable even when DisableAutoStart was set
+
+#### Platform
+
+* Updating .NET 5.0 runtime version to support Windows Update KB5003638 and to mitigate CVE-2021-26701
+* Changed template description input to textarea for more space
+* Fixed an issue where the Execute role couldn't login to the admin console
+* Fixed an issue where git sync would create a master branch on the remote if the directory wasn't empty
+
 ## 2.1.1 - 7/1/2021
 
 ### Includes
