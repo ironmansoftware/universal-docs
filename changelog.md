@@ -4,6 +4,28 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 1.5.21 - 7/7/2021
+
+### Includes
+
+* UniversalDashboard - v3.3.8
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.1.0
+* UniversalDashboard.Style - 1.0.0
+
+### Changed
+
+#### Dashboard
+
+* Fixed an issue where dashboards would restart when managing variables 
+
+#### Platform
+
+* Updated to PowerShell SDK version 7.0.6
+* Fixed an issue with git sync 
+
 ## 1.5.20 - 6/4/2021
 
 ### Includes
