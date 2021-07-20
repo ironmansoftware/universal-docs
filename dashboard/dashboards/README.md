@@ -139,6 +139,7 @@ New-UDDashboard -Title "Hello, World!" -Content {
 | Name | Description | Type |
 | :--- | :--- | :--- |
 | $AccessToken | An access token granted by an OpenID Connect provider. This access token can be used to authorize access to different services. This will be null of not configure. | string |
+| $ClaimsPrincipal | The user information for the authenticated user. This will include user name and claims.  | [ClaimsPrincipal](../../config/security/#policy-assignment) |
 | $Cookies | Cookies provided in the client's HTTP request. | hashtable |
 | $Headers | Headers provided in the client's HTTP request. | hashtable |
 | $LocalIpAddress | The local IP address of the request.  | string |
