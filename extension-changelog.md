@@ -4,6 +4,18 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 2.0.0 - 7/20/2021
+
+* Added 'Connect via Admin Console' to the connection dialog
+* Added support for dashboard components and frameworks
+* Added commands to install dashboard components and frameworks
+* Added a check during startup for the current version of the Universal and UniversalDashboard modules
+* Added a setting to disable the update module check \(Check Modules\) 
+* Improved the error message generated when the extension fails to connect to the server
+* Fixed an issue with the URL for viewing jobs
+* Fixed an issue with the URL for viewing the admin console page
+* Dropped support for Universal 1.5 
+
 ## 1.9.0 - 6/1/2021
 
 * Added support for self configuration in PowerShell Universal v2
