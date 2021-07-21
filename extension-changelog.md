@@ -4,6 +4,10 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 2.0.1 - 7/21/2021
+
+* Fixed an issue where remote editing of dashboards would not work
+
 ## 2.0.0 - 7/20/2021
 
 * Added 'Connect via Admin Console' to the connection dialog
