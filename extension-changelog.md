@@ -4,6 +4,10 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 2.1.0 - 7/22/2021
+
+* Added support for view job status, logs, and pipeline output
+
 ## 2.0.1 - 7/21/2021
 
 * Fixed an issue where remote editing of dashboards would not work
