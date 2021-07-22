@@ -41,3 +41,27 @@ This login page looks like this.
 
 ![](../.gitbook/assets/image%20%28226%29.png)
 
+## API
+
+### New-PSULoginPage
+
+| Name | Description | Type | Required |
+| :--- | :--- | :--- | :--- |
+| Image | The URL of the image to display | string | false |
+| Title | The title text to display  | string | false |
+| PrimaryColor | The primary color for the login page. You can use any valid HTML color. | string | false |
+| SecondaryColor | The secondary color for the login page. You can use any valid HTML color. | string | false |
+| PrimaryFontColor | The primary font color for the login page.  You can use any valid HTML color. | string | false |
+| SecondaryFontColor | The secondary font color for the login page.  You can use any valid HTML color. | string | false |
+| HeaderColor | The header color for the login page.  You can use any valid HTML color. | string | false |
+| HeaderFontColor | The header color for the login page.  You can use any valid HTML color. | string | false |
+| Links | A list of links to display in the header. Use New-PSULoginPageLink to create these links. | LoginPageLink | false |
+| Copyright | The copyright text to display. | string | false |
+
+### New-PSULoginPageLink
+
+| Name | Description | Type | Required |
+| :--- | :--- | :--- | :--- |
+| Text | The text of the link. | string | true |
+| Url | The URL the link points to. | string | true |
+
