@@ -4,6 +4,11 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 2.1.1 - 7/22/2021
+
+* Fixed an issue with module updates
+* Fixed an issue with Connect-PSUServer being called before modules were installed
+
 ## 2.1.0 - 7/22/2021
 
 * Added support for view job status, logs, and pipeline output
