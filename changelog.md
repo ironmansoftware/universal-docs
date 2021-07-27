@@ -4,6 +4,46 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2.1.3 - 7/26/2021
+
+### Includes
+
+* UniversalDashboard - v3.5.1
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.1.1
+* UniversalDashboard.Style - 1.0.0
+
+### Changed
+
+#### API
+
+* Fixed an issue where returning a $null from an API would cause it to fail
+
+#### Automation
+
+* Fixed an issue where the dashboard log would not update in real-time
+* Fixed a memory leak that would cause memory to grow over several days of running jobs
+* Fixed an issue where continuous jobs would show an invalid Next Execution time
+
+#### Dashboard
+
+* Fixed an issue where the dashboard log didn't have scroll bars
+* Fixed an issue where multiple roles would not work with New-UDPage
+* Fixed an issue where dashboards would be slow to start
+* Fixed an issue where New-UDTable -LoadData would show an error when first loading
+* Fixed an issue where New-UDTimepicker -Label wouldn't work
+* Fixed an issue where pressing enter in a textbox would not submit a form
+
+### Platform
+
+* Fixed an issue where app tokens would be created automatically 
+* Fixed an issue where the swagger documentation was not generated correctly 
+* Fixed an issue where empty configuration files could cause problems
+* Fixed an issue where Start-PSUServer would only listen on localhost
+* Fixed an issue where the update check service would hold a copy of the database open and cause a memory leak
+
 ## 2.1.2 - 7/7/2021
 
 ### Includes
