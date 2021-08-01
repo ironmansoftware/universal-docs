@@ -12,7 +12,7 @@ The login page colors, image, copyright and title can be customized by editing t
 
 ## Customizing the login page
 
-You can host an image by using [Published Folders](../dashboard/published-folders.md). In this example, we have a `dbatools.png` file in our local folder.
+You can host an image by using [Published Folders](../platform/published-folders.md). In this example, we have a `dbatools.png` file in our local folder.
 
 ![DBATools Logo](../.gitbook/assets/image%20%28171%29.png)
 

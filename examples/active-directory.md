@@ -66,7 +66,7 @@ Start-PSUServer -Port 8080 -Configuration {
 
 ## Restore Deleted User
 
-This account users PowerShell Universal [Dashboard ](../dashboard/about.md)and [Automation](../automation/about.md).
+This account users PowerShell Universal [Dashboard ](../userinterfaces/about.md)and [Automation](../automation/about.md).
 
 In this example, we use Universal Dashboard to create a dashboard that displays a table that includes all the deleted user accounts for the domain. It creates a custom column with a button that includes a Restore button that executes a script to restore the specified account. This example assumes that the identity running the script is capable of accessing Active Directory.
 

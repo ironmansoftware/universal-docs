@@ -85,5 +85,5 @@ Learn more about the various features of PowerShell Universal
 
 * [APIs](../api/about.md)
 * [Automation](../automation/about.md)
-* [Dashboards](../dashboard/about.md)
+* [Dashboards](../userinterfaces/about.md)
 

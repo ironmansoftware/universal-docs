@@ -6,7 +6,7 @@ description: Image Processing examples
 
 ## Convert JPEG to PNG
 
-This example uses [PowerShell Universal Dashboard](../dashboard/about.md).
+This example uses [PowerShell Universal Dashboard](../userinterfaces/about.md).
 
 This examples accepts a JPEG file and converts to to a PNG using Universal Dashboard. To implement this example, we need to use published folders and a dashboard that uses UDForm and the UDUpload component. After converting the image, it displays it.
 

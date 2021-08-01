@@ -96,7 +96,7 @@ Start-PSUServer -Port 8080 -Configuration {
 
 ## Windows Performance Counter Charts
 
-This example uses [PowerShell Universal Dashboard](../dashboard/about.md).
+This example uses [PowerShell Universal Dashboard](../userinterfaces/about.md).
 
 In this example, we take advantage of Universal Dashboard scheduled endpoints, the in-memory cache and the UDMonitor component. We update the counter sets to use in the cache and load each of the counters' value in the set into an array to use in the dashboard. We then create a dashboard that dynamically creates UDMonitor charts within the page. Each monitor will update every 3 seconds with new data.
 

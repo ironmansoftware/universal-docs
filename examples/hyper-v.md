@@ -6,7 +6,7 @@ description: Hyper-V examples for PowerShell Universal.
 
 ## Virtual Machine Creator
 
-This example uses [PowerShell Universal Dashboard](../dashboard/about.md).
+This example uses [PowerShell Universal Dashboard](../userinterfaces/about.md).
 
 This example can be used to create virtual machines on a Hyper-V host. This dashboard assumes it's being run on the host in question. You could adjust the dashboard script to run on a remote host.
 
