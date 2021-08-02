@@ -4,6 +4,38 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2.2.0 - 8/2/2021
+
+### Includes
+
+* UniversalDashboard - v3.5.2
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.1.1
+* UniversalDashboard.Style - 1.0.0
+
+### Added
+
+#### User Interfaces
+
+* Added pages feature with new page designer
+* Dashboards: Fixed an issue where dashboards wouldn't use the configured default environment
+* Dashboards: Fixed an issue where auto-deploy would refresh the browser before setting the new settings 
+
+### Changed
+
+#### Automation
+
+* Fixed an issue where if a script PS1 file didn't exist but was configured in scripts.ps1, it would cause all configuration to fail
+* Fixed an issue where jobs could restart \(retry\) even after running successfully
+
+#### Platform
+
+* Reorganized admin console menu 
+* Fixed an issue where the admin console would display an error when trying to load pages when not logged in
+* Fixed an issue where the user name text color in the menu when using single sign on
+
 ## 2.1.4 - 7/28/2021
 
 ### Includes
