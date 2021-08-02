@@ -4,10 +4,6 @@ description: 'Simple, drag and drop web pages that can execute PowerShell and RE
 
 # Pages
 
-{% hint style="warning" %}
-This feature will be available in PowerShell Universal 2.2. 
-{% endhint %}
-
 Pages allow you to create basic websites that do not require any coding of the user interface. You can drag and drop UI components on to the designer and set properties of each component. Components can interact with APIs and Scripts that are defined within Universal. 
 
 ## Adding a Page
