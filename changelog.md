@@ -4,6 +4,42 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2.2.1 - 8/11/2021
+
+### Includes
+
+* UniversalDashboard - v3.5.2
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.1.1
+* UniversalDashboard.Style - 1.0.0
+
+### Changed
+
+#### Automation
+
+* Fixed an issue where a default value of \[DateTime\]::Now would cause the run script modal to show an error
+* Increased the width of the run script modal to accommodate longer parameter names
+* Enforce authorization for the Hangfire dashboard
+* Fixed an issue where naming scripts with certain characters would cause them to fail to save.
+
+#### User Interfaces
+
+* Pages: Fixed an issue where the page table would not show that authentication was enabled
+* Pages: Fixed an issue where the page would flicker when a chart was on the page 
+* Pages: Fixed an issue where a component wouldn't show up after adding it to the page 
+
+#### Platform
+
+* Fixed an issue where upgrading Windows PowerShell could cause PSU to fail to start, run jobs or start dashboards
+* Added display of execution environment PowerShell version
+* Fixed an issue where redirect to login page would take about 5 seconds
+* Fixed an issue where login wouldn't work correctly when going to admin page for OIDC and WS-Fed. 
+* Added telemetry for page views
+* Fixed an issue where you couldn't delete the last item \(Endpoints, scripts, dashboards, etc\)
+* Fixed an issue where the configurations page would show an empty file name
+
 ## 2.2.0 - 8/2/2021
 
 ### Includes
