@@ -43,9 +43,9 @@
 ## User Interfaces <a id="userinterfaces"></a>
 
 * [About](userinterfaces/about.md)
-* [Development](userinterfaces/development.md)
 * [Dashboards](userinterfaces/dashboards/README.md)
   * [Building Dashboards](userinterfaces/dashboards/building-dashboards.md)
+  * [Development](userinterfaces/dashboards/development.md)
   * [Components](userinterfaces/dashboards/components/README.md)
     * [Pages](userinterfaces/dashboards/components/pages.md)
     * [Dynamic Regions](userinterfaces/dashboards/components/dynamic-regions.md)

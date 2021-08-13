@@ -17,7 +17,7 @@ Jobs log extensively. You will see console and pipeline output. If you set`$Debu
 ### Dashboards
 
 {% hint style="info" %}
-See [dashboard Development](../userinterfaces/development.md) for information on how to use VS Code for development.
+See [dashboard Development](../userinterfaces/dashboards/development.md) for information on how to use VS Code for development.
 {% endhint %}
 
 Dashboards log informational, warning and error messages to their log. It's recommended to use logging when starting a dashboard rather than trying to attach a debugger. You can also use the `$DebugPreference` variable to get additional information during your dashboard startup.

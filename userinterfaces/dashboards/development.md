@@ -10,27 +10,27 @@ The [Visual Studio Code extension for PowerShell Universal](https://marketplace.
 
 To add a new dashboard, visit the admin console and go to Dashboard  Dashboards and click the Add Dashboard button.
 
-![](../.gitbook/assets/image%20%28129%29.png)
+![](../../.gitbook/assets/image%20%28129%29.png)
 
 After adding the dashboard, a dashboard PS1 file will be created and the `dashboards.ps1` file will be updated. You can view your dashboard in VS Code underneath the dashboards tree view. It will show the current state of the dashboard and the framework it is using.
 
-![](../.gitbook/assets/image%20%28126%29.png)
+![](../../.gitbook/assets/image%20%28126%29.png)
 
 If you want to edit your dashboard, click the Open Dashboard File button. This will open the dashboard PS1 file in the editor and import the Universal module and Dashboard framework module so you have IntelliSense.
 
-![](../.gitbook/assets/image%20%28133%29.png)
+![](../../.gitbook/assets/image%20%28133%29.png)
 
 From here, you can begin editing your dashboard.
 
-![](../.gitbook/assets/bxmax1ree3.gif)
+![](../../.gitbook/assets/bxmax1ree3.gif)
 
 Your dashboard should restart automatically when you make changes. You will be able to view the dashboard in the browser by clicking the View button.
 
-![](../.gitbook/assets/image%20%28127%29.png)
+![](../../.gitbook/assets/image%20%28127%29.png)
 
 If you need to restart your dashboard manually, you can click the Restart button.
 
-![](../.gitbook/assets/image%20%28132%29.png)
+![](../../.gitbook/assets/image%20%28132%29.png)
 
 ## Developing a Dashboard with Single-File Configuration
 
@@ -78,7 +78,7 @@ Changes you make to your PS1 file will cause Universal to automatically reload y
 
 You can view the dashboard logs by right clicking on the Dashboard and clicking View Log. The log should provide information about start up issues or errors when executing sections of your dashboard.
 
-![](../.gitbook/assets/p8biqj6yvo.gif)
+![](../../.gitbook/assets/p8biqj6yvo.gif)
 
 ### Debugger
 
@@ -103,7 +103,7 @@ New-UDDashboard -Title "Hello, World!" -Content {
 
 Now, I can right click on my dashboard and click Debug Dashboard Process.
 
-![](../.gitbook/assets/image%20%28123%29.png)
+![](../../.gitbook/assets/image%20%28123%29.png)
 
 This will issue an `Enter-PSHostProcess` command in the Integrated Terminal.
 
@@ -129,13 +129,13 @@ Next, you'll want to navigate to your page and click the button. Once the button
 
 Finally, issue the `Debug-Runspace` command and VS Code will automatically open your endpoint in the debugger. You'll be able to step through your code, view variables and issue commands against the runspace.
 
-![](../.gitbook/assets/jidgnpmbwy.gif)
+![](../../.gitbook/assets/jidgnpmbwy.gif)
 
 ### Debug-PSUDashboard
 
 `Debug-PSUDashboard` can be used instead of `Wait-Debugger` to more easily debug aspects of your dashboard. `Debug-PSUDashboard` requires the PowerShell Universal VS Code extension. When placed within a dashboard, this cmdlet will trigger a modal to be show with some information about connecting to the runspace that is currently running the code you are trying to debug.
 
-![](../.gitbook/assets/image%20%28174%29.png)
+![](../../.gitbook/assets/image%20%28174%29.png)
 
 You can enter the commands listed in any PowerShell host to connect to the runspace that is currently running in the dashboard.
 
