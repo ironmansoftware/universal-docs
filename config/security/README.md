@@ -558,7 +558,9 @@ This example takes advantage of [OpenID Connect and Azure Active Directory](open
 
 Once you have configured PowerShell Universal and Azure Active Directory, you can configure role scripts to verify whether users are members of groups found in Azure AD. You can take advantage of the `HasClaim` method of the `$User` variable to check membership.
 
-First, ensure that you have group membership claims enabled in the manifest for your application registration. This will include all group membership so it is accessible in PowerShell Universal.
+First, ensure that you have group membership claims enabled in the manifest for your application registration. This will include all group membership so it is accessible in PowerShell Universal. 
+
+![](../../.gitbook/assets/image%20%28231%29.png)
 
 ```text
 "groupMembershipClaims": "All",
@@ -566,9 +568,9 @@ First, ensure that you have group membership claims enabled in the manifest for 
 
 Once configured, you can update your role script to check for a group membership. First make note of the object ID of the group you are looking to check within Azure AD. 
 
-![](../../.gitbook/assets/image%20%28231%29.png)
+![](../../.gitbook/assets/image%20%28232%29.png)
 
-Next, within your `roles.ps1` script, you can validate a user has a particular role by using `HasClaims` and providing the object GUID. 
+Next, within your `roles.ps1` script, you can validate a user has a particular role by using `HasClaim` and providing the object GUID. 
 
 ```text
 param(
