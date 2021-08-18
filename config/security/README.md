@@ -154,6 +154,12 @@ To enable Windows Authentication in IIS, ensure that you enable Windows Authenti
 
 ![](../../.gitbook/assets/image%20%28149%29.png)
 
+In the web.config file that is included with PowerShell Universal, ensure that you have set the `forwardWindowsAuthToken` to `true`.
+
+```text
+<aspNetCore processPath="Universal.Server.exe" arguments="" forwardWindowsAuthToken="true" stdoutLogEnabled="true" stdoutLogFile=".\logs\log" hostingModel="OutOfProcess"/>
+```
+
 ### Windows Authentication outside of IIS
 
 Windows Authentication is supported outside of IIS but requires configuration of the account running the Universal service.
