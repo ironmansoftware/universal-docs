@@ -16,11 +16,11 @@ This example returns a random percentage.
 
 Select an API from the list of available APIs. 
 
-![](../../.gitbook/assets/image%20%28269%29.png)
+![](../../.gitbook/assets/image%20%28270%29.png)
 
 The liquid chart will display the value. 
 
-![](../../.gitbook/assets/image%20%28265%29.png)
+![](../../.gitbook/assets/image%20%28266%29.png)
 
 ## Display a chart from a Script
 
@@ -34,11 +34,11 @@ This script we are executing in this example returns a random percentage.
 
 Select the script as the data source. 
 
-![](../../.gitbook/assets/image%20%28271%29.png)
+![](../../.gitbook/assets/image%20%28272%29.png)
 
 The chart will display based on the data returned. 
 
-![](../../.gitbook/assets/image%20%28265%29.png)
+![](../../.gitbook/assets/image%20%28266%29.png)
 
 ## Properties
 

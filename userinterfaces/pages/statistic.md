@@ -16,11 +16,11 @@ Get-Random -Min 100 -Max 1000
 
 You can then select the API under the data source tab. 
 
-![](../../.gitbook/assets/image%20%28261%29.png)
+![](../../.gitbook/assets/image%20%28262%29.png)
 
 Each time the page is loaded, the API is called and the random value is shown. 
 
-![](../../.gitbook/assets/image%20%28268%29.png)
+![](../../.gitbook/assets/image%20%28269%29.png)
 
 ## Display a statistic from a Script
 
@@ -34,11 +34,11 @@ Get-Random -Min 100 -Max 1000
 
 Select the script on the data source tab. 
 
-![](../../.gitbook/assets/image%20%28257%29.png)
+![](../../.gitbook/assets/image%20%28258%29.png)
 
 The statistic will be shown on the page based on the output of the script. You'll notice that refreshing the page does not change the value of the statistic unless the job is run again. 
 
-![](../../.gitbook/assets/image%20%28262%29.png)
+![](../../.gitbook/assets/image%20%28263%29.png)
 
 ## Customizing the Statistic
 
@@ -46,7 +46,7 @@ You can customize features such as the prefix, suffix, precision and whether to 
 
 ![](../../.gitbook/assets/image%20%28255%29.png)
 
-![](../../.gitbook/assets/image%20%28263%29.png)
+![](../../.gitbook/assets/image%20%28264%29.png)
 
 ## Properties
 

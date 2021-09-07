@@ -4,7 +4,7 @@ description: Display text is various paragraph forms.
 
 # Paragraph
 
-![](../../.gitbook/assets/image%20%28266%29.png)
+![](../../.gitbook/assets/image%20%28267%29.png)
 
 Paragraphs display text with different styles depending on properties. 
 

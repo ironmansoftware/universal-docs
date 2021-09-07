@@ -14,7 +14,7 @@ This feature will be available in PowerShell Universal 2.3.
 
 The git status page lists the synchronized repository, branch and the list of commits that have occurred. 
 
-![](../.gitbook/assets/image%20%28274%29.png)
+![](../.gitbook/assets/image%20%28275%29.png)
 
 ## Git Synchronization Behavior
 

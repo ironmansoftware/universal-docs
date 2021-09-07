@@ -41,6 +41,16 @@ This login page looks like this.
 
 ![](../.gitbook/assets/image%20%28226%29.png)
 
+## Customizing the login page in the Admin Console
+
+{% hint style="warning" %}
+This feature will be available in PowerShell Universal 2.3. 
+{% endhint %}
+
+In addition to being able to customize the login page via PowerShell, you can also do so in the admin console. Click Settings \ Login page to adjust the settings. 
+
+![](../.gitbook/assets/image%20%28257%29.png)
+
 ## API
 
 ### New-PSULoginPage
