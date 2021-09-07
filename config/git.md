@@ -6,6 +6,16 @@ description: Git integration for PowerShell Universal.
 
 PowerShell Universal is capable of synchronizing the configuration scripts with a remote git repository. You can use the [Configuration settings](settings.md) to setup git sync.
 
+## Git Status Page
+
+{% hint style="warning" %}
+This feature will be available in PowerShell Universal 2.3. 
+{% endhint %}
+
+The git status page lists the synchronized repository, branch and the list of commits that have occurred. 
+
+![](../.gitbook/assets/image%20%28274%29.png)
+
 ## Git Synchronization Behavior
 
 ### Two-Way

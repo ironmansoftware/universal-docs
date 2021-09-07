@@ -39,7 +39,7 @@ The resulting chart contains the data from the API. Each time the page is loaded
 
 ![](../../.gitbook/assets/image%20%28245%29.png)
 
-### Display Data from an API
+### Display Data from a Script
 
 You will need to return PSCustomObjects, objects or hashtables from your script in order to display a chart from a script. 
 

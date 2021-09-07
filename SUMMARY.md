@@ -120,6 +120,7 @@
   * [Line Chart](userinterfaces/pages/line-chart.md)
   * [Liquid Chart](userinterfaces/pages/liquid-chart.md)
   * [Paragraph](userinterfaces/pages/paragraph.md)
+  * [Statistic](userinterfaces/pages/statistic.md)
 
 ## Platform
 
@@ -133,6 +134,7 @@
 * [About](config/about.md)
 * [API](config/api.md)
 * [Environments](config/environments.md)
+* [Git](config/git.md)
 * [Hosting](config/hosting/README.md)
   * [IIS](config/hosting/hosting-iis.md)
   * [Single-File](config/hosting/single-file.md)
@@ -145,7 +147,6 @@
   * [OpenID Connect](config/security/openid-connect.md)
   * [WS-Federation](config/security/ws-federation.md)
 * [Running as a Service Account](config/running-as-a-service-account.md)
-* [Git](config/git.md)
 
 ## Debugging
 
