@@ -84,6 +84,7 @@
       * [Switch](userinterfaces/dashboards/components/inputs/switch.md)
       * [Textbox](userinterfaces/dashboards/components/inputs/textbox.md)
       * [Time Picker](userinterfaces/dashboards/components/inputs/time-picker.md)
+      * [Transfer List](userinterfaces/dashboards/components/inputs/transfer-list.md)
       * [Upload](userinterfaces/dashboards/components/inputs/upload.md)
     * [Navigation](userinterfaces/dashboards/components/navigation/README.md)
       * [Drawer](userinterfaces/dashboards/components/navigation/drawer.md)

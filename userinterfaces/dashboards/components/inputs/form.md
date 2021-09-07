@@ -37,6 +37,7 @@ The following input controls automatically integrate with a form. The values tha
 * [Switch](switch.md)
 * [Textbox](textbox.md)
 * [Time Picker](time-picker.md)
+* [Transfer List](transfer-list.md)
 * [Upload](upload.md)
 
 ## Simple Form
