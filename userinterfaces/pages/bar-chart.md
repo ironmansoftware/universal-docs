@@ -33,11 +33,11 @@ In this example, you would configure the data source to an API and select your A
 
 ![](../../.gitbook/assets/image%20%28233%29.png)
 
-![](../../.gitbook/assets/image%20%28239%29.png)
+![](../../.gitbook/assets/image%20%28241%29.png)
 
 The resulting chart contains the data from the API. Each time the page is loaded, the API is called. 
 
-![](../../.gitbook/assets/image%20%28240%29.png)
+![](../../.gitbook/assets/image%20%28242%29.png)
 
 ### Display Data from an API
 
@@ -63,7 +63,7 @@ You will need to return PSCustomObjects, objects or hashtables from your script 
 
 You will need to set the data source to script and select the script you want to retrieve data for. 
 
-![](../../.gitbook/assets/image%20%28242%29.png)
+![](../../.gitbook/assets/image%20%28246%29.png)
 
 You will need to set the Y and X axis to the properties of the object returned from the script. 
 
@@ -71,7 +71,7 @@ You will need to set the Y and X axis to the properties of the object returned f
 
 The chart will appear on the page like this. Loading the page will not call the script again. It will load the result of the last time the script ran. 
 
-![](../../.gitbook/assets/image%20%28241%29.png)
+![](../../.gitbook/assets/image%20%28243%29.png)
 
 ## Properties
 

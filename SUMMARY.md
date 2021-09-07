@@ -114,6 +114,7 @@
 * [Pages](userinterfaces/pages/README.md)
   * [Alerts](userinterfaces/pages/alerts.md)
   * [Bar Chart](userinterfaces/pages/bar-chart.md)
+  * [Button](userinterfaces/pages/button.md)
 
 ## Platform
 
