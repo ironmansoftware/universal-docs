@@ -117,6 +117,9 @@
   * [Button](userinterfaces/pages/button.md)
   * [Form](userinterfaces/pages/form.md)
   * [Image](userinterfaces/pages/image.md)
+  * [Line Chart](userinterfaces/pages/line-chart.md)
+  * [Liquid Chart](userinterfaces/pages/liquid-chart.md)
+  * [Paragraph](userinterfaces/pages/paragraph.md)
 
 ## Platform
 
