@@ -77,5 +77,23 @@ Scripts that request feedback will prompt the user to enter more information.
 
 ## Invoke an API with a Form
 
+Invoking an API with a form can be done by selecting API from the Target Type and then selecting the API endpoint you wish to call. 
 
+![](../../.gitbook/assets/image%20%28255%29.png)
+
+API endpoints do not support progress, feedback, or output while running the API. They do support returning results as text or tables. APIs that return 200 will show a Success result and other status codes will return Failure. 
+
+Fields provided to an API endpoint will be sent as a single JSON object with properties for each field. 
+
+## Fields 
+
+You can specify fields for each form. Currently forms support text boxes, checkboxes and hidden values. Fields can have a tooltip description and marked as required. 
+
+![](../../.gitbook/assets/image%20%28257%29.png)
+
+## Text
+
+You can customize the text of numerous features of a field including the success and failure text, waiting on feedback text and button text. 
+
+![](../../.gitbook/assets/image%20%28256%29.png)
 
