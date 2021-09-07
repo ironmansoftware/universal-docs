@@ -116,6 +116,7 @@
   * [Bar Chart](userinterfaces/pages/bar-chart.md)
   * [Button](userinterfaces/pages/button.md)
   * [Form](userinterfaces/pages/form.md)
+  * [Image](userinterfaces/pages/image.md)
 
 ## Platform
 
