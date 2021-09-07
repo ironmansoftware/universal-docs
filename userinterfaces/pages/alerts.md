@@ -4,9 +4,9 @@ description: Alerts show colored text and icons to notify users.
 
 # Alerts
 
-![An information alert.](../../.gitbook/assets/image%20%28235%29.png)
+![An information alert.](../../.gitbook/assets/image%20%28237%29.png)
 
-![An error alert.](../../.gitbook/assets/image%20%28237%29.png)
+![An error alert.](../../.gitbook/assets/image%20%28240%29.png)
 
 ## Properties
 

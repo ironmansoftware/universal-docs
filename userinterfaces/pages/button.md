@@ -10,23 +10,23 @@ You can invoke a script with a button. This will allow you to specify arguments,
 
 Set the target of the button to script and select the script you would like to use. You can then select the environment and run as credentials. Finally, specify parameters to pass to the script. 
 
-![](../../.gitbook/assets/image%20%28239%29.png)
+![](../../.gitbook/assets/image%20%28242%29.png)
 
 Clicking the button will run the script and show a toast notification after the click. 
 
-![](../../.gitbook/assets/image%20%28245%29.png)
+![](../../.gitbook/assets/image%20%28250%29.png)
 
 ## Invoke an API with a Button
 
 Set the target to API and select the endpoint that you want to invoke. The endpoint must be a POST endpoint. Parameters can be specified. Parameters will be passed as part of a JSON object. 
 
-![](../../.gitbook/assets/image%20%28238%29.png)
+![](../../.gitbook/assets/image%20%28241%29.png)
 
 ## Customize the Button 
 
 Buttons support customizing the text and icon shown within the button.
 
-![](../../.gitbook/assets/image%20%28244%29.png)
+![](../../.gitbook/assets/image%20%28249%29.png)
 
 ## Properties
 

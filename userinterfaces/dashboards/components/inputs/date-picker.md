@@ -44,7 +44,7 @@ To set the locate of the date picker, specify the `-Locale` parameter.
 New-UDDatePicker -Locale fr
 ```
 
-![](../../../../.gitbook/assets/image%20%28240%29.png)
+![](../../../../.gitbook/assets/image%20%28243%29.png)
 
 **New-UDDatePicker**
 
