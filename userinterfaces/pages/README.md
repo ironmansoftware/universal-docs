@@ -12,7 +12,7 @@ To add a page, navigate to User Interfaces \ Pages within the admin console. Cli
 
 The name of the page will also be the URL used to access the page. 
 
-![](../.gitbook/assets/image%20%28230%29.png)
+![](../../.gitbook/assets/image%20%28230%29.png)
 
 Pages can take advantage of role based access. You can turn on authentication for a page and limit the access to the page to users based on role. This feature requires a license. 
 
@@ -20,19 +20,19 @@ Pages can take advantage of role based access. You can turn on authentication fo
 
 To edit the content of the page, you can view the page as an administrator. When you view the page, you will have access to an edit button for managing the components and layout of the page. 
 
-![](../.gitbook/assets/editing.gif)
+![](../../.gitbook/assets/editing.gif)
 
 ## Adding a Component
 
 To add a component, click the Toolbox button and select the component to add. Properties for a component can be set by clicking the properties button on the component and editing the required and optional properties. 
 
-![](../.gitbook/assets/addcomponent.gif)
+![](../../.gitbook/assets/addcomponent.gif)
 
 ## Layouts
 
 Layouts are setup by resizing and dragging components around the designer surface. Layouts are responsive. If you want to setup layouts for smaller screens, reduce the width of your window and setup a new layout. 
 
-![](../.gitbook/assets/layouts.gif)
+![](../../.gitbook/assets/layouts.gif)
 
 ## Invoking Scripts and APIs
 
@@ -40,11 +40,11 @@ Certain components can interact with scripts or API endpoints. These include but
 
 This example uses a script to populate a table. 
 
-![](../.gitbook/assets/table%20%281%29.gif)
+![](../../.gitbook/assets/table%20%281%29.gif)
 
 This example invokes a script when a button is clicked. 
 
-![](../.gitbook/assets/button.gif)
+![](../../.gitbook/assets/button.gif)
 
 ## Configuration Files
 

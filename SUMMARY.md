@@ -111,7 +111,9 @@
     * [Styles](userinterfaces/dashboards/themes/styles.md)
   * [Custom Variable Scopes](userinterfaces/dashboards/custom-variable-scopes.md)
   * [Migrating From Universal Dashboard 2.9](userinterfaces/dashboards/migrating-from-universal-dashboard-2.9.md)
-* [Pages](userinterfaces/pages.md)
+* [Pages](userinterfaces/pages/README.md)
+  * [Alerts](userinterfaces/pages/alerts.md)
+  * [Bar Chart](userinterfaces/pages/bar-chart.md)
 
 ## Platform
 
