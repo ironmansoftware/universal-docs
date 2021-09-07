@@ -52,6 +52,9 @@ New-UDTabs -Tabs {
 | Id | String | The ID of the component. It defaults to a random GUID. | false |
 | RenderOnActive | SwitchParameter | Whether to render the tabs when they are clicked. Is this value isn't present, all the tabs are rendered, even if they are not shown. | false |
 | Orientation | String | The orientation of the tabs. | false |
+| Variant | String | Changes the variation of the tabs. Supports fullWidth, scrollable and standard. Available since 2.3 | false |
+| ScrollButtons | String | Changes when the scrollbars appear. Supports on, off, auto and desktop. Available since 2.3. | false |
+| Centered | SwitchParameter | Centers the tabs within the tab container. Available since 2.3. | false |
 
 **New-UDTab**
 
@@ -63,4 +66,5 @@ New-UDTabs -Tabs {
 | Dynamic | switch | A dynamic tab will reload every time it is selected. | false |
 | Icon | Object |  | false |
 | Stacked | switch |  | false |
+| Disabled | SwitchParameter | Disables the tab. Available since 2.3. | false |
 
