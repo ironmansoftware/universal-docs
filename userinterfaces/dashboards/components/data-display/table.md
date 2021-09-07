@@ -498,6 +498,7 @@ Defines column properties for a table.
 | Align | string | The alignment of the data in the table.  | false |
 | Truncate | Switch | Whether to truncate the text in the column if it is longer than -Width | false |
 | SortType | string | How to sort the data within the column | false |
+| Hidden | SwitchParameter | Includes the column in an export but does not display it in the webpage. Available since 2.3. | false |
 
 ### Out-UDTableData
 

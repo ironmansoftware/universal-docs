@@ -32,6 +32,20 @@ You can customize how the date picker is show. The default is the `inline` varia
 New-UDDatePicker -Variant static
 ```
 
+## Locale
+
+{% hint style="warning" %}
+This feature is coming in PowerShell Universal 2.3.
+{% endhint %}
+
+To set the locate of the date picker, specify the `-Locale` parameter. 
+
+```text
+New-UDDatePicker -Locale fr
+```
+
+![](../../../../.gitbook/assets/image%20%28234%29.png)
+
 **New-UDDatePicker**
 
 | Name | Type | Description | Required |
@@ -43,4 +57,5 @@ New-UDDatePicker -Variant static
 | OnChange | Endpoint | A script block to call with the selected date. The $EventData variable will be the date selected. | false |
 | Format | String | The format of the date when it is selected. | false |
 | Value | DateTime | The current value of the date picker. | false |
+| Locale | String | Specifies the locale for the date picker. Supports en, de, ru, and fr. Defaults to en. Available since 2.3. | false |
 
