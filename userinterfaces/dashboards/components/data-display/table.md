@@ -302,6 +302,27 @@ New-UDTable -Id 'service_table' -Data $Data -Columns $Columns -Title 'Services' 
 
 ![](../../../../.gitbook/assets/image%20%28176%29.png)
 
+### Hidden Columns
+
+{% hint style="warning" %}
+This feature will be available in PowerShell Universal 2.3.
+{% endhint %}
+
+Hidden columns allow you to include data that is not displayed in the table but is included in the exported data. 
+
+The following hides the StartType column from the user but includes it in the export. 
+
+```text
+$Data = try { get-service -ea Stop | select Name,@{n = "Status";e={ $_.Status.ToString()}},@{n = "StartupType";e={ $_.StartupType.ToString()}},@{n = "StartType";e={ $_.StartType.ToString()}} } catch {}
+$Columns = @(
+    New-UDTableColumn -Property Name -Title "Service Name" -IncludeInExport
+    New-UDTableColumn -Property Status -Title Status 
+    New-UDTableColumn -Property StartupType
+    New-UDTableColumn -Property StartType -IncludeInExport -Hidden
+)
+New-UDTable -Id 'service_table' -Data $Data -Columns $Columns -Title 'Services' -ShowSearch -ShowPagination -Dense -Export
+```
+
 ## Server-Side Exporting
 
 You can control the export functionality with a PowerShell script block. This is useful when exporting from server-side sources like SQL server tables.
