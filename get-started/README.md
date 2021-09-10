@@ -13,7 +13,7 @@ You'll need to install the PowerShell Universal server. [There are a lot of ways
 You can install PowerShell Universal as a service. Ensure that PowerShell is running as administrator or the service won't install correctly. 
 
 ```text
-Invoke-WebRequest https://imsreleases.blob.core.windows.net/universal/production/2.0.0/PowerShellUniversal.2.0.0.msi -OutFile Universal.msi
+Invoke-WebRequest https://imsreleases.blob.core.windows.net/universal/production/2.2.1/PowerShellUniversal.2.2.1.msi -OutFile Universal.msi
 msiexec /i Universal.msi /qn
 ```
 {% endtab %}
@@ -22,9 +22,9 @@ msiexec /i Universal.msi /qn
 You can install PowerShell Universal using the following shell script.
 
 ```text
- wget https://imsreleases.blob.core.windows.net/universal/production/2.0.0/Universal.linux-x64.2.0.0.zip
+ wget https://imsreleases.blob.core.windows.net/universal/production/2.2.1/Universal.linux-x64.2.2.1.zip
  sudo apt install unzip 
- unzip Universal.linux-x64.2.0.0.zip -d PSU
+ unzip Universal.linux-x64.2.2.1.zip -d PSU
  chmod +x ./PSU/Universal.Server
  ./PSU/Universal.Server
 ```
@@ -42,8 +42,8 @@ Start-PSUServer -Port 5000
 
 {% tab title="Raspberry PI OS" %}
 ```text
-wget https://imsreleases.blob.core.windows.net/universal/production/2.0.0/Universal.linux-arm.2.0.0.zip
-unzip Universal.linux-arm.2.0.0.zip -d ./PSU
+wget https://imsreleases.blob.core.windows.net/universal/production/2.2.1/Universal.linux-arm.2.2.1.zip
+unzip Universal.linux-arm.2.2.1.zip -d ./PSU
 chmod +x ./PSU/Universal.Server
 ./PSU/Universal.Server
 
