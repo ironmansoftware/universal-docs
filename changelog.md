@@ -41,6 +41,9 @@ description: Changelog for PowerShell Universal.
 * Pages - Added support for showing table output in forms
 * Pages - Added support for customize the submit button text and icon
 * Pages - Added support for handling feedback in scripts
+* UDv3 - Added support for -IdleTimeout on New-PSUDashboard
+
+
 
 #### Platform
 
