@@ -16,6 +16,8 @@ You can download the extension from the [Visual Studio Marketplace](https://mark
 
 The extension will prompt you for the URL and App Token used to connect to your PowerShell Universal instance. Follow the instructions within the extension when it starts up. 
 
+You can also configure the extension by navigating to your PowerShell Universal admin console and then logging in. Navigate to Settings \ Configurations and click Edit with VS Code. A new app token will be generated and the URL will be set automatically. 
+
 ## Features
 
 The PowerShell Universal extension adds a new activity pane panel for PowerShell Universal. It has the following sections. 
