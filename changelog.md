@@ -4,6 +4,122 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2.3.0 - 9/14/2021
+
+### Includes
+
+* UniversalDashboard - v3.6.0
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.1.1
+* UniversalDashboard.Style - 1.0.0
+
+### Added
+
+#### APIs
+
+* Added support for PATCH HTTP method
+* Added $UrlDefinition, $RequestId, $ConnectionId and $SessionId as built in variables.
+* Added support for OpenAPI documentation for endpoints
+* Added ErrorAction to the endpoint properties modal
+
+#### Automation
+
+* Added support for DisplayName attributes on script parameters
+* Added support for $AccessToken and $IdToken in scripts
+
+#### User Interfaces
+
+* UDv3 - Added New-UDTransferList and New-UDTransferListItem
+* UDv3 - Added -Variant, -ScrollButtons and -Centered to New-UDTabs
+* UDv3 - Added -Disabled to New-UDTab
+* UDv3 - Added -Hidden to New-UDTableColumn for including data with tables for export purposes but not to show in the table itself.
+* UDv3 - Added -Locale to New-UDDatePicker and New-UDTimePicker
+* Pages - Added support for showing progress in Forms
+* Pages - Added support for showing text output in forms
+* Pages - Added support for showing table output in forms
+* Pages - Added support for customize the submit button text and icon
+* Pages - Added support for handling feedback in scripts
+
+#### Platform
+
+* Added notification about default authentication and authorization.
+* Added support for -CssStylesheet on New-PSULoginPage
+* Added support for customizing the login page within the Admin Console
+* Added a notification for when the license file fails to activate
+* Added support for client certificate authentication
+* Added support for PowerShell 6.x
+* Added Modules to the Environment settings modal
+* Added Git synchronization page
+* Added support for specifying scopes in OIDC connection
+* Added support for accessing additional user information passed from OIDC providers in the $UserInfo variable.
+* Added Sync-PSUComponent to reload components on dashboards from APIs and Scripts
+
+### Changed
+
+#### API
+
+* Fixed an issue where variables would not show up when the API was using the integrated environment
+* Fixed an issue where authenticated APIs could fail if they had a param block without $Identity and $User
+
+#### Automation
+
+* Fixed an issue where the job end time would by UTC rather than local in triggers
+* Fixed an issue where deleting a tag that was assigned to a script would cause the scripts page to fail to load
+* Fixed an issue where failed jobs would have an invalid start date
+* Fixed an issue where Completed and Failed jobs that produced no output would still show waiting for job logs on the job's page
+* Fixed an issue where Hashtable output by jobs couldn't be viewed in the Pipeline Output view
+* Fixed an issue where the job view would not update automatically
+* Fixed an issue where progress was not shown on the job view
+* Fixed an issue where the server could crash when a job was cancelled 
+* Fixed an issue where error action would display the numeric value rather than the name of the error action
+* Fixed an issue where string\[\] params would fail to work correctly 
+
+#### User Interface
+
+* Fixed an issue where a base URL of / on a dashboard prevents pages from working
+* UDv3 - Fixed an issue where New-UDPage -Url was not honored in default navigation
+* Added links to scripts and APIs from the page designer
+* UDv3 - Fixed an issue where passing empty data to -Data of New-UDTable would throw an error. 
+* UDv3 - Fixed an issue where New-UDTable sorting could result in an error on the page about toUpperCase not being defined
+* UDv3 - Fixed an issue where null values in rows of New-UDTable would cause filters to fail
+* Fixed an issue where dashboard logs could show an error
+* Fixed an issue where dashboard logs would not clear when using Auto Deploy
+* Put new log messages on the top of the dashboard log \(reversed log order\)
+* UDv3 - Fixed an issue where using server-side exporting of UDTable wouldn't honor -IncludeInExport on columns
+* UDv3 - Fixed an issue where using server-side exporting of UDTable wouldn't use the -Title in exports
+* UDv3 - Fixed an issue where using server-side exporting of UDTable would change the case of the title in exports
+* Pages - Fixed an issue where Statistics would display script output as \[object Object\]
+* Pages - Fixed an issue where Form checkboxes in pages would not send data 
+* Pages Fixed an issue where required fields in forms would not be enforced
+* Pages - Fixed an issue where you could drag components when modals were open
+* Pages - Cleaned up the properties dialog and toolbox
+
+#### Platform
+
+* Swagger documentation now requires authentication to view
+* MSI installer now verifies that .NET 4.7.2 or later is installed
+* Fixed an issue where Concurrent Job Limit setting wouldn't persist on the General page
+* Updated latest docker image to 7.1.4 
+* Updated PowerShell Universal PowerShell SDK to 7.1.4
+* Fixed an issue where OpenID Connect login would result in a white screen
+* Fixed an issue where visiting the Settings  Configurations page would issue an app token
+* Added Telemetry setting to General settings page 
+* Fixed an issue where the Reader role could see buttons they can't use. 
+* Fixed an issue where access control assigned privileges would show things they couldn't use.
+* Fixed an issue where subscription licenses would show an invalid end date in the admin console
+* Fixed an issue where subscription licenses would not show any information if they failed to activate
+* Fixed an issue where PowerShell 7.0.x would not work with Universal
+* Updated to Hangfire 1.7.25
+* Fixed an issue loading the Pnp.PowerShell module in Universal
+* Fixed an issue where Git sync could cause the server to fail to start
+* Added documentation links to all pages.
+* Fixed an issue where the security service could stop and not restart
+* Fixed an issue where switching to the integrated environment for the security service would fail
+* Fixed an issue where users without built in roles could view the admin console
+* Fixed an issue where identities, roles, settings, published folders and rate limits limits could be viewed without reader access
+
 ## 2.2.1 - 8/10/2021
 
 ### Includes
