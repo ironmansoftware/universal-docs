@@ -4,6 +4,11 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 2.3.0 - 9/14/2021
+
+* Aligned PSU version with extension version 
+* Fixed an issue where an error would be shown when loading the extension
+
 ## 2.1.1 - 7/22/2021
 
 * Fixed an issue with module updates
