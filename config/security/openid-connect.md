@@ -49,7 +49,8 @@ Now that we have completed the configuration of an AzureAD App Registration, we 
       "Resource": "",
       "Authority": "https://login.microsoftonline.com/fffffff-4b76-4470-a736-8481d7a2ed87",
       "ResponseType": "code",
-      "SaveTokens": "false"
+      "SaveTokens": "false",
+      "GetUserInfo": false
     },
 ```
 
@@ -149,15 +150,12 @@ Once you have defined your Okta application, you can set your `appsettings.json`
       "SaveTokens": "true",
       "CorrelationCookieSameSite": "",
       "UseTokenLifetime": true,
-      "Scope": "openid profile groups"
+      "Scope": "openid profile groups",
+      "GetUserInfo": true
     },
 ```
 
 ### Role-Based Access
-
-{% hint style="warning" %}
-This feature will be available in PowerShell Universal 2.3.
-{% endhint %}
 
 In order to look up group membership for Okta, you will need to use the `$UserInfo` variable that is available within `roles.ps1`. This variable provides additional information about the user logging in. 
 
@@ -170,10 +168,6 @@ $UserInfo.groups -contains 'Administrators'
 ```
 
 ### Delegated Access Tokens 
-
-{% hint style="warning" %}
-This feature will be available in PowerShell Universal 2.3.
-{% endhint %}
 
 Access tokens are available for users within their scripts. You can use access tokens in jobs started by users and dashboards. 
 
