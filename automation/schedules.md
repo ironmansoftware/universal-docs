@@ -70,7 +70,7 @@ New-PSUSchedule -Script "MyScript.ps1" -Cron '* * * * *' -Environment '7.1'
 
 ## Run As
 
-You can define which user to run the schedule as by using the Run As selector in the UI. The Run As selector contains a list of PSCredential [variables](variables.md) you have defined. You will need to define a PSCredential variable before the Run As selector is visible. By default, scheduled jobs will run under the credentials of the user that is running PowerShell Universal.
+You can define which user to run the schedule as by using the Run As selector in the UI. The Run As selector contains a list of PSCredential [variables](../platform/variables.md) you have defined. You will need to define a PSCredential variable before the Run As selector is visible. By default, scheduled jobs will run under the credentials of the user that is running PowerShell Universal.
 
 You can define a Run As user in a script by using the `-Credential` parameter. The value should be the name of the variable that contains your credential.
 

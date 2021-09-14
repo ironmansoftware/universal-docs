@@ -38,7 +38,6 @@
 * [Jobs](automation/jobs.md)
 * [Schedules](automation/schedules.md)
 * [Triggers](automation/triggers.md)
-* [Variables](automation/variables.md)
 
 ## User Interfaces <a id="userinterfaces"></a>
 
@@ -129,6 +128,7 @@
 * [Monitoring](platform/monitoring.md)
 * [Published Folders](platform/published-folders.md)
 * [Templates](platform/templates.md)
+* [Variables](platform/variables.md)
 
 ## Configuration <a id="config"></a>
 

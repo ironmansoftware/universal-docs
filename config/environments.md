@@ -34,7 +34,7 @@ The modules list allows you to define zero or more modules to load in the PowerS
 
 ### Variables
 
-The variables list allows you to define zero or more variables to load in the PowerShell runspaces for the environment. This list can consist of variable names from the [variable configuration](../automation/variables.md). 
+The variables list allows you to define zero or more variables to load in the PowerShell runspaces for the environment. This list can consist of variable names from the [variable configuration](../platform/variables.md). 
 
 You can also use wild cards \(`*`\) to bring in multiple variables that match a pattern.
 
