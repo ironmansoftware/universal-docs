@@ -106,6 +106,7 @@
   * [Marketplace](userinterfaces/dashboards/marketplace.md)
   * [Role Based Access](userinterfaces/dashboards/role-based-access.md)
   * [Scheduled Endpoints](userinterfaces/dashboards/scheduled-endpoints.md)
+  * [Sessions](userinterfaces/dashboards/sessions.md)
   * [Themes](userinterfaces/dashboards/themes/README.md)
     * [Cascading Style Sheets](userinterfaces/dashboards/themes/cascading-style-sheets.md)
     * [Styles](userinterfaces/dashboards/themes/styles.md)
