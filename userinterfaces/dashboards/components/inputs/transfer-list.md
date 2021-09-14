@@ -6,10 +6,6 @@ description: >-
 
 # Transfer List
 
-{% hint style="warning" %}
-This feature will be available in PowerShell Universal 2.3
-{% endhint %}
-
 ## Simple Transfer List
 
 Create a simple transfer list.
