@@ -22,19 +22,11 @@ If the script succeeds, you'll see a success result. If it fails, it will return
 
 ### Viewing Output
 
-{% hint style="warning" %}
-This feature will be available in PowerShell Universal 2.3
-{% endhint %}
-
 You can view the output as the script runs by using the Show Output check box. 
 
 ![](../../.gitbook/assets/image%20%28248%29.png)
 
 ### Viewing Progress
-
-{% hint style="warning" %}
-This feature will be available in PowerShell Universal 2.3
-{% endhint %}
 
 To view the output of cmdlets like `Write-Progress`, you can use the Show Progress check box. While the script executes, you'll see the progress messages. 
 
@@ -51,10 +43,6 @@ The script in this example simply shows progress.
 
 ### Viewing Output after the script has run
 
-{% hint style="warning" %}
-This feature will be available in PowerShell Universal 2.3.
-{% endhint %}
-
 To view the output of the script after it has run, you can use the Result Type drop down. The Text result type, will display output as text. 
 
 ![](../../.gitbook/assets/image%20%28246%29.png)
@@ -64,10 +52,6 @@ To view output as a table, select the result type of Table.
 ![](../../.gitbook/assets/image%20%28239%29.png)
 
 ### Responding to Feedback
-
-{% hint style="warning" %}
-This feature is available in PowerShell Universal 2.3.
-{% endhint %}
 
 Scripts that request feedback will prompt the user to enter more information. 
 
