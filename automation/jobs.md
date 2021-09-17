@@ -97,36 +97,18 @@ Invoke-RestMethod http://localhost:5000/api/v1/script/7 -Method POST -Body "" -H
 
 ### Providing Parameters
 
-To provide parameters to scripts, you will need to define the parameters are part of the body. Currently the value is required to be a CLIXML string.
+You can provide parameters to the job via a query string. Parameters will be provided to your script as strings. 
 
 ```text
-$JobContext = @{
-    JobParameters = @(
-        @{ Name = "parameter1"; Value = '<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04">
-          <S>String</S>
-        </Objs>' },
-    )
-} | ConvertTo-Json -Depth 5
+$Parameters = @{
+    Uri = "http://localhost:5000/api/v1/script/path/PNP.ps1?Server=tester&Domain=test" 
+    Method = "POST"
+    Headers = @{Authorization = "Bearer $Apptoken"}
+    ContentType = 'application/json'
+    Body = '{}'
+}
 
-Invoke-RestMethod http://localhost:5000/api/v1/script/7 -Method POST -Body $JobContext -Headers @{ Authorization = "Bearer appToken" } -ContentType 'application/json'
-```
-
-To generate CLIXML, you can use the `PSSerializer` class in PowerShell. You can pass any object into the serialize method.
-
-```text
-
-```
-
-If you want to pass a credential you will need to pass in the parameter as a variable. You do not need to serialize the variable name.
-
-```text
-$JobContext = @{
-    JobParameters = @(
-        @{ Name = "parameter1"; Value = "myCredential"; IsVariable = $true },
-    )
-} | ConvertTo-Json -Depth 5
-
-Invoke-RestMethod http://localhost:5000/api/v1/script/7 -Method POST -Body $JobContext -Headers @{ Authorization = "Bearer appToken" } -ContentType 'application/json'
+Invoke-RestMethod @Parameters
 ```
 
 ### Setting the Environment
