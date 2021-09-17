@@ -127,3 +127,13 @@ You can also configure a git remote to authenticate with a user name and passwor
   },
 ```
 
+## Benefits of Git Sync vs Manual Git Sync
+
+It is possible to manually git sync a repository. PowerShell Universal uses very basic commands when dealing with git. Any changes made to PowerShell Universal through the admin console or API invoke a `git commit` and the author is set to the identity of the user making the change. During a git sync operation, we first perform a `git pull` to ensure that we have the latest version of files on the remote. Next, we perform a `git push` to push up local commits that have happened since the last sync. 
+
+You could achieve this functionality with a scheduled job. 
+
+That said, one feature of the git sync is that it analyzes the commit to ensure that only files that were changed during the sync are reloaded. This will stop dashboards from auto-deploying when they haven't changed or APIs services from restarting when environments haven't been updated. So there is a performance gain here. 
+
+The other issue is that due to the way that PowerShell Universal watches files \(with a `FileSystemWatcher`\) and the way that git updates files, the configurations will not reload automatically after a pull. You will have to ensure that you force the configurations to be reevaluated. 
+
