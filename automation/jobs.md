@@ -147,6 +147,7 @@ There are several built-in variables that are defined when a job is run. You can
 | $UAScriptId | The ID of the running script. |
 | $UASchedule | The schedule that was used to start the script. |
 | $UAScheduleId | The ID of the schedule that started the script. |
+| $AccessToken | When using OIDC authentication, you can retrieve the current user's access token for access resources on their behalf.  |
 
 ### Retrieving the user that started a script
 
