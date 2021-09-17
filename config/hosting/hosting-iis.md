@@ -238,3 +238,7 @@ This setting is used for debugging start up issues with your Universal setup. It
 
 The hosting model sets how the Universal server will run. When set to InProcess, the Universal Server will run from within the IIS agent. This provides better performance than using OutOfProcess hosting. InProcess hosting does not work with StdOutLogEnabled. It's recommended to use OutOfProcess hosting only while configuring Universal and, InProcess when your configuration steps have been completed.
 
+## Upgrading
+
+When upgrading, ensure that you do not copy files over the top of your existing install. Instead, delete the current application files and copy the new ones into the directory. Copying over the top of the files can result in binaries being present in the installation directory that are not expected and can issues with the system. 
+
