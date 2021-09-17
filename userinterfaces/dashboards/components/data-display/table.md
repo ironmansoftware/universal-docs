@@ -304,10 +304,6 @@ New-UDTable -Id 'service_table' -Data $Data -Columns $Columns -Title 'Services' 
 
 ### Hidden Columns
 
-{% hint style="warning" %}
-This feature will be available in PowerShell Universal 2.3.
-{% endhint %}
-
 Hidden columns allow you to include data that is not displayed in the table but is included in the exported data. 
 
 The following hides the StartType column from the user but includes it in the export. 
