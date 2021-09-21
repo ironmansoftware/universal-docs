@@ -4,6 +4,27 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2.3.1 - 9/17/2021
+
+### Includes
+
+* UniversalDashboard - v3.6.0
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.1.1
+* UniversalDashboard.Style - 1.0.0
+
+### Changes
+
+#### Automation
+
+* Fixed an issue where jobs could fail due to certain types of pipeline output
+
+#### Platform
+
+* Fixed an issue where global cache cmdlets would not work in non-integrated environments
+
 ## 2.3.0 - 9/14/2021
 
 ### Includes
