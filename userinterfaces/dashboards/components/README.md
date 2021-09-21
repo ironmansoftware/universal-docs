@@ -20,3 +20,5 @@ Some components are not included automatically. You can add component modules by
 
 ![Adding a component module](../../../.gitbook/assets/adding-components.gif)
 
+
+

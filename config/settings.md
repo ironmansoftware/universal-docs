@@ -225,6 +225,7 @@ OpenID Connect authentication settings.
 | SaveTokens | Whether to save the token so it is available to endpoints like dashboards. |
 | CorrelationCookieSameSite | [Correlation cookie same settings. ](https://docs.microsoft.com/en-us/aspnet/core/security/samesite?view=aspnetcore-5.0) |
 | UseTokenLifetime | If set to true, the cookie life time will be set to the token life time. This overrides the session time out value. |
+| GetUserInfo | Returns additional user information for use within roles.ps1 files. You can access the additional information using the $UserInfo variable. |
 
 #### WSFed
 
