@@ -13,7 +13,7 @@ Creates a new form.
 ## SYNTAX
 
 ```
-New-UDForm [[-Id] <String>] [-Children] <ScriptBlock> [-OnSubmit] <Endpoint> [[-OnValidate] <Endpoint>]
+New-UDForm [[-Id] <String>] [-Content] <ScriptBlock> [-Children] <ScriptBlock> [-OnSubmit] <Endpoint> [[-OnValidate] <Endpoint>]
  [[-OnProcessing] <ScriptBlock>] [[-OnCancel] <Endpoint>] [<CommonParameters>]
 ```
 
