@@ -77,17 +77,22 @@ To configure HTTPS, you can adjust the `appsettings.json` file to use a particul
 }
 ```
 
-To configure a certificate in a particular location and store, you can use a configuration such as this.
+To configure a certificate in a particular location and store, you can use a configuration such as this. When selecting the certificate by subject name, ensure you use the common name with out `CN=` prefix. 
 
 ```javascript
-"HTTPS": {
-  "Url": "https://*:443",
-  "Certificate": {
-    "Subject": "windows-server.ironman.local",
-    "Store": "My",
-    "Location": "LocalMachine",
-    "AllowInvalid": "true"
-  }
+{
+  "Kestrel": {
+    "Endpoints": {
+      "HTTPS": {
+         "Url": "https://*:443",
+           "Certificate": {
+             "Subject": "windows-server.ironman.local",
+             "Store": "My",
+             "Location": "LocalMachine",
+             "AllowInvalid": "true"
+           }
+      }
+   }
 }
 ```
 
