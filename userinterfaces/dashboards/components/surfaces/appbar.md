@@ -37,6 +37,22 @@ To create an app bar that is pinned to the bottom of the page, you can use the `
 New-UDAppBar -Children { "Hello" } -Footer
 ```
 
+## Fixed AppBar
+
+A fixed AppBar will show even when the screen is scrolled. It will remain stuck to the top. This example creates an AppBar that is fixed with a div that is 10000 pixels high.
+
+```text
+New-UDAppBar -Position fixed -Children { New-UDElement -Tag 'div' -Content { "Title" } }
+
+New-UDElement -Tag 'div' -Content {
+
+} -Attributes @{
+    style = @{
+        height = "10000px"
+    }
+}
+```
+
 **New-UDAppBar**
 
 | Name | Type | Description | Required |
