@@ -57,6 +57,12 @@ Scripts that request feedback will prompt the user to enter more information.
 
 ![](../../.gitbook/assets/image%20%28235%29.png)
 
+An example of a script that may request feedback is one that uses `Read-Host`
+
+```text
+Read-Host "Enter some feedback"
+```
+
 
 
 ## Invoke an API with a Form
