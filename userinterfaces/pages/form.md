@@ -104,6 +104,20 @@ $Fields.FirstName
 $Fields.LastName
 ```
 
+### Field Types
+
+#### Checkbox
+
+The checkbox field provides a checkbox the user can select and `$true` or `$false` will be sent to the target. 
+
+#### Hidden
+
+Hidden fields provide a value to the target that is not shown to the user. The value will be a string.
+
+#### Textbox
+
+The textbox field allows the user to enter any text into the field and it will be submitted to the target. The value will be a string. 
+
 ## Text
 
 You can customize the text of numerous features of a field including the success and failure text, waiting on feedback text and button text. 
