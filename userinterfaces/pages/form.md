@@ -75,6 +75,29 @@ You can specify fields for each form. Currently forms support text boxes, checkb
 
 ![](../../.gitbook/assets/image%20%28273%29.png)
 
+### Fields in Scripts
+
+Fields are provided to scripts as parameters. You can use a `param` block to capture these field values. 
+
+For example, if you had a FirstName and LastName field, you would define the following param block in your script. 
+
+```text
+param(
+    $FirstName,
+    $LastName
+)
+```
+
+### Fields in APIs
+
+Fields are provided to APIs as a JSON body to the POST endpoint. Each field will be a property of the JSON object passed to the API. 
+
+```text
+$Fields = $Body | ConvertFrom-Json
+$Fields.FirstName
+$Fields.LastName
+```
+
 ## Text
 
 You can customize the text of numerous features of a field including the success and failure text, waiting on feedback text and button text. 
