@@ -4,6 +4,23 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2.3.2 - 10/2/2021
+
+### Includes
+
+* UniversalDashboard - v3.6.0
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.1.1
+* UniversalDashboard.Style - 1.0.0
+
+### Changed
+
+#### Platform
+
+* Fixed an issue where non-integrated environments would not work on Linux
+
 ## 2.3.1 - 9/17/2021
 
 ### Includes
