@@ -11,14 +11,6 @@
   * [Supported Browsers](get-started/supported-browsers.md)
 * [Visual Studio Code Extension](visual-studio-code-extension.md)
 * [Cmdlet Help](https://github.com/ironmansoftware/universal-docs/tree/master/cmdlets)
-* [Examples](examples/README.md)
-  * [Active Directory](examples/active-directory.md)
-  * [Hyper-V](examples/hyper-v.md)
-  * [Image Processing](examples/image-processing.md)
-  * [Monitoring](examples/monitoring.md)
-  * [PowerShell Protect](examples/powershell-protect.md)
-  * [Slack](examples/slack.md)
-  * [SQL](examples/sql.md)
 
 ## API
 
