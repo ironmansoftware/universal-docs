@@ -2,15 +2,16 @@
 
 * [About](README.md)
 * [Get Started](get-started/README.md)
-  * [Additional Resources](get-started/additional-resources.md)
-  * [Installation](get-started/getting-started/README.md)
-    * [Docker](get-started/getting-started/docker.md)
-    * [Upgrading](get-started/getting-started/upgrading.md)
-  * [Licensing](get-started/licensing.md)
-  * [System Requirements](get-started/system-requirements.md)
-  * [Supported Browsers](get-started/supported-browsers.md)
-* [Visual Studio Code Extension](visual-studio-code-extension.md)
+* [Additional Resources](get-started/additional-resources.md)
+* [Installation](get-started/getting-started/README.md)
+  * [Docker](get-started/getting-started/docker.md)
+  * [Upgrading](get-started/getting-started/upgrading.md)
+* [Licensing](get-started/licensing.md)
+* [System Requirements](get-started/system-requirements.md)
+* [Supported Browsers](get-started/supported-browsers.md)
 * [Cmdlet Help](https://github.com/ironmansoftware/universal-docs/tree/master/cmdlets)
+* [Templates](https://ironmansoftware.com/powershell-universal/templates)
+* [Visual Studio Code Extension](visual-studio-code-extension.md)
 
 ## API
 
