@@ -13,13 +13,6 @@ docker pull ironmansoftware/universal
 docker run --name 'PSU' -it -p 5000:5000 ironmansoftware/universal
 ```
 
-#### Tags
-
-| Tag | Platform |
-| :--- | :--- |
-| 1.3.0 | linux/amd64 |
-| 1.3.0-windowsservercore-1909 | windows/amd64 |
-
 ## Persistent Data
 
 To create a Docker image that can persist the Universal data, you can create a dockerfile like the one below.
