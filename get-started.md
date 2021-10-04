@@ -55,31 +55,62 @@ chmod +x ./PSU/Universal.Server
 
 By default, PowerShell Universal is running on port 5000 of localhost. You can access the admin console with the user name `admin` and any password.
 
-![](.gitbook/assets/login.gif)
+![](.gitbook/assets/image%20%28288%29.png)
 
-## PowerShell Universal Visual Studio Code Extension
+## Create an API
 
-We recommend installing the [PowerShell Universal Visual Studio Code Extension](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal) to provide the best possible editing experience.
+APIs allow you to call PowerShell scripts over HTTP. To create an API, click API \ Endpoints and click Create New Endpoint. Specify a URL. 
 
-You can connect to your instance of PowerShell Universal, browse and insert samples and get up and running right away.
+![](.gitbook/assets/image%20%28260%29.png)
 
-### Install the Extension
+Next, click details on the API that was created an enter the following command into the editor. 
 
-Install the extension by searching for it in the extension page and clicking Install.
+```text
+Get-ComputerInfo
+```
 
-![](.gitbook/assets/image%20%28207%29.png)
+Save the script and then click the Execute button to test it out. 
 
-### Connect to PowerShell Universal
+![](.gitbook/assets/image%20%28290%29.png)
 
-Click the PowerShell Universal icon on the left hand side and the extension will attempt to connect using the default URL and user name. The extension will notify you once it has connected.
+You can also execute the API via `Invoke-RestMethod`. 
 
-![](.gitbook/assets/image%20%28162%29%20%281%29.png)
+```text
+PS C:\Users\adamr> Invoke-RestMethod http://localhost:5000/hello-world
 
-### Inserting a Sample
+WindowsBuildLabEx                                       : 22000.1.amd64fre.co_release.210604-1628
+WindowsCurrentVersion                                   : 6.3
+WindowsEditionId                                        : Professional
+WindowsInstallationType                                 : Client
+WindowsInstallDateFromRegistry                          : 8/6/2021 4:05:12 PM
+WindowsProductId                                        : 00330-52452-93139-AAOEM
+WindowsProductName                                      : Windows 10 Pro
+WindowsRegisteredOrganization                           :
+```
 
-[Samples ](https://github.com/ironmansoftware/universal-samples)are available via the sample browser. You can select a sample and insert it into your PowerShell Universal instance. You'll need to save the file that is opened by Visual Studio Code for the sample to be inserted.
+## Create a Script
 
-![](.gitbook/assets/image%20%28206%29.png)
+To create a script, click Automation \ Scripts and then click Create New Script. 
+
+![](.gitbook/assets/image%20%28270%29.png)
+
+Enter the following script into the editor and save. 
+
+```text
+Read-Host "What should I say?"
+
+1..100 | ForEach-Object {
+    Write-Progress -PercentComplete $_ -Activity "Processing..."
+}
+
+Get-Service
+```
+
+Once the script is saved, click Run. 
+
+![](.gitbook/assets/runjob.gif)
+
+
 
 Learn more about the various features of PowerShell Universal
 
