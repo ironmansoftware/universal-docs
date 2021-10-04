@@ -55,7 +55,7 @@ chmod +x ./PSU/Universal.Server
 
 By default, PowerShell Universal is running on port 5000 of localhost. You can access the admin console with the user name `admin` and any password.
 
-![](../.gitbook/assets/login.gif)
+![](.gitbook/assets/login.gif)
 
 ## PowerShell Universal Visual Studio Code Extension
 
@@ -67,23 +67,23 @@ You can connect to your instance of PowerShell Universal, browse and insert samp
 
 Install the extension by searching for it in the extension page and clicking Install.
 
-![](../.gitbook/assets/image%20%28207%29.png)
+![](.gitbook/assets/image%20%28207%29.png)
 
 ### Connect to PowerShell Universal
 
 Click the PowerShell Universal icon on the left hand side and the extension will attempt to connect using the default URL and user name. The extension will notify you once it has connected.
 
-![](../.gitbook/assets/image%20%28162%29%20%281%29.png)
+![](.gitbook/assets/image%20%28162%29%20%281%29.png)
 
 ### Inserting a Sample
 
 [Samples ](https://github.com/ironmansoftware/universal-samples)are available via the sample browser. You can select a sample and insert it into your PowerShell Universal instance. You'll need to save the file that is opened by Visual Studio Code for the sample to be inserted.
 
-![](../.gitbook/assets/image%20%28206%29.png)
+![](.gitbook/assets/image%20%28206%29.png)
 
 Learn more about the various features of PowerShell Universal
 
-* [APIs](../api/about.md)
-* [Automation](../automation/about.md)
-* [Dashboards](../userinterfaces/about.md)
+* [APIs](api/about.md)
+* [Automation](automation/about.md)
+* [Dashboards](userinterfaces/about.md)
 

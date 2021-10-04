@@ -5,7 +5,7 @@ description: Universal Automation triggers.
 # Triggers
 
 {% hint style="info" %}
-This feature requires an [Automation license](../get-started/licensing.md).
+This feature requires an [Automation license](../licensing.md).
 {% endhint %}
 
 Triggers allow for automation jobs to be started when certain events happen within PowerShell Universal. For example, this allows you to take action when jobs complete, the server starts or dashboards stop. Triggers are useful for assigning global error handling or sending notifications when certain things happen.

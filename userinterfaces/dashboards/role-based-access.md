@@ -5,7 +5,7 @@ description: Role based access for dashboards.
 # Role Based Access
 
 {% hint style="info" %}
-This feature requires a [license](../../get-started/licensing.md).
+This feature requires a [license](../../licensing.md).
 {% endhint %}
 
 ## Dashboard Roles

@@ -8,6 +8,8 @@ description: Universal is a platform for building web-based IT tools.
 [Download Universal for free](https://ironmansoftware.com/downloads)
 {% endhint %}
 
+![PowerShell Universal Admin Console](.gitbook/assets/image%20%28260%29.png)
+
 Universal is a cross-platform solution for developing web-based tools with PowerShell. It currently provides three main features which include APIs, Automation and Dashboards. 
 
 Universal provides an Administrator console, management REST API, PowerShell cmdlets and a idempotent configuration system using PowerShell scripts.  
@@ -18,6 +20,7 @@ Universal provides an Administrator console, management REST API, PowerShell cmd
 * Accept common HTTP verbs
 * Process request bodies
 * Build dynamic URLs with route parameters and query strings
+* Rate-limit APIs
 
 **Automation**
 
@@ -26,21 +29,23 @@ Universal provides an Administrator console, management REST API, PowerShell cmd
 * Schedule scripts with CRON or one-time schedules
 * Automatically build input forms based on param blocks
 * Set variables and secrets that can be used throughout scripts 
+* Trigger scripts based on events
 
-**Dashboard**
+**User Interfaces**
 
 * Build web pages with PowerShell script
 * Include input forms, charts and tables 
 * Build interactive websites with buttons, message boxes and more
+* Drag and drop page designer for simple UIs
 
 **Platform**
 
-* Cross-platform and supported on Windows and Linux
+* Cross-platform and supported on Windows, Linux and Mac OS
 * Git integration for configuration files, scripts and dashboards 
 * Built-in authentication and authorization 
-* Support for Windows PowerShell as well as PowerShell
+* Support for Windows PowerShell as well as PowerShell 6 and 7
 
-![](.gitbook/assets/image%20%2810%29.png)
+
 
 ## Licensing 
 

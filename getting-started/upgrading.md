@@ -20,11 +20,11 @@ If you are using git, changes to the Universal files will be synchronized after 
 
 #### appsettings.json
 
-The `appsettings.json` file that is included in the application installation directory will be overwritten during upgrades. To avoid losing your settings in this file, consider installing it into the `%ProgramData%\PowerShellUniversal` folder. Universal will look at this folder first for [configuration settings. ](../../config/settings.md#programdata-appsettings-json)
+The `appsettings.json` file that is included in the application installation directory will be overwritten during upgrades. To avoid losing your settings in this file, consider installing it into the `%ProgramData%\PowerShellUniversal` folder. Universal will look at this folder first for [configuration settings. ](../config/settings.md#programdata-appsettings-json)
 
 #### web.config
 
-The `web.config` file that is included in the application installation directory will be overwritten during upgrades. If you have moved your web.config file to an alternate location, it will not be overwritten. When creating an IIS website, you can simply include the `web.config` file in the web app's directory and have the [binaries stored in a different location](../../config/hosting/hosting-iis.md).
+The `web.config` file that is included in the application installation directory will be overwritten during upgrades. If you have moved your web.config file to an alternate location, it will not be overwritten. When creating an IIS website, you can simply include the `web.config` file in the web app's directory and have the [binaries stored in a different location](../config/hosting/hosting-iis.md).
 
 #### Dashboard Components and Frameworks
 
@@ -46,7 +46,7 @@ If you are upgrading from 1.x, you will have a couple of breaking changes.
 
 The integrated environment is now the default configuration. If you do not want to use the integrated environment by default, select a default environment in General settings. 
 
-![](../../.gitbook/assets/image%20%28223%29.png)
+![](../.gitbook/assets/image%20%28223%29.png)
 
 ### IIS Hosting Package
 

@@ -16,7 +16,7 @@ This example returns a random percentage.
 
 Select an API from the list of available APIs. 
 
-![](../../.gitbook/assets/image%20%28260%29%20%281%29.png)
+![](../../.gitbook/assets/image%20%28260%29%20%281%29%20%281%29.png)
 
 The liquid chart will display the value. 
 

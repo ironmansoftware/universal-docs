@@ -166,7 +166,7 @@ Windows Authentication is supported outside of IIS but requires configuration of
 
 #### Windows
 
-On Windows, you should install PowerShell Universal as a [Windows Service](../../get-started/getting-started/#windows). Once the service is installed, you will need to create a [service account user](../running-as-a-service-account.md#application-service-account) and set the service to run with that user's account. The Windows authentication [setting ](../settings.md)needs to be set to true.
+On Windows, you should install PowerShell Universal as a [Windows Service](../../getting-started/#windows). Once the service is installed, you will need to create a [service account user](../running-as-a-service-account.md#application-service-account) and set the service to run with that user's account. The Windows authentication [setting ](../settings.md)needs to be set to true.
 
 ```javascript
 "Windows": {
