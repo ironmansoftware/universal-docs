@@ -22,9 +22,9 @@ Some components are not included automatically. You can add component modules by
 
 ## Component Storage
 
-Each version of PowerShell Universal includes some built in components. These components are included in the local installation directory. During start up, they are deployed to the assets folder. By default, this folder is `%ProgramData%\PowerShellUniversal\Dashboard\Components` . 
+Each version of PowerShell Universal includes some built in components. These components are included in the local installation directory. During start up, they are deployed to the assets folder. By default, this folder is `%ProgramData%\PowerShellUniversal\Dashboard\Components` .
 
-You can change the assets folder by updating appsettings.json. 
+You can change the assets folder by updating appsettings.json.
 
 ```text
   "UniversalDashboard": {
@@ -34,19 +34,17 @@ You can change the assets folder by updating appsettings.json.
 
 ### Manual Component Installation
 
-You can manually install components into the assets folder by including the appropriate folder structure and files. All components need to be valid PowerShell modules. 
+You can manually install components into the assets folder by including the appropriate folder structure and files. All components need to be valid PowerShell modules.
 
-Each component should be in a folder with the module name and an additional folder with the version. 
+Each component should be in a folder with the module name and an additional folder with the version.
 
 ![](../../../.gitbook/assets/image%20%28285%29.png)
 
 ### Including Components in the Repository
 
-You can also include components within the code Repository. By including them in the repository, they will be downloaded when using [git sync](../../../config/git.md). This functionality is only enabled when git sync is enabled. 
+You can also include components within the code Repository. By including them in the repository, they will be downloaded when using [git sync](../../../config/git.md). This functionality is only enabled when git sync is enabled.
 
-After a git pull is performed on the remote repository, Components will be automatically loaded and available within the Components page within PowerShell Universal. The structure and layout of the components folder is the same as the main assets folder. 
+After a git pull is performed on the remote repository, Components will be automatically loaded and available within the Components page within PowerShell Universal. The structure and layout of the components folder is the same as the main assets folder.
 
 ![](../../../.gitbook/assets/image%20%28286%29.png)
-
-
 

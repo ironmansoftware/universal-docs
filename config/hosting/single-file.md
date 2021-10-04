@@ -4,7 +4,9 @@ description: Single-file hosting and configuration for PowerShell Universal.
 
 # Single-File
 
-{% embed url="https://youtu.be/ISTgtGHcYHs" caption="" %}
+{% hint style="danger" %}
+Single-file hosting is deprecated and will be removed in the next major version. 
+{% endhint %}
 
 ## Single File Hosting and Configuration
 

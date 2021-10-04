@@ -28,7 +28,7 @@ New-UDButton -Text 'Clipboard' -OnClick {
 
 ## JavaScript
 
-You can invoke JavaScript from PowerShell by using the `Invoke-UDJavaScript` cmdlet. 
+You can invoke JavaScript from PowerShell by using the `Invoke-UDJavaScript` cmdlet.
 
 ```text
 New-UDButton -Text 'Alert Me' -OnClick {
@@ -56,7 +56,7 @@ Show-UDToast -Message 'Hello, World!'
 
 ### Hide a toast
 
-Hides a toast based on the specified ID. 
+Hides a toast based on the specified ID.
 
 ```text
 Show-UDToast -Message 'Hello, World!' -Id 'Toast' -Duration 30000
@@ -76,7 +76,7 @@ New-UDButton -Text 'Click' -OnClick {
 | MessageColor | DashboardColor | The color of the message to display | false |
 | MessageSize | string | The size of the message to display | false |
 | Duration | int | The number of milliseconds to display the message. Defaults to 1000 | false |
-| Title | string | A title to display above the message.  | false |
+| Title | string | A title to display above the message. | false |
 | TitleColor | DashboardColor | The color of the title. | false |
 | TitleSize | string | The size of the title. | false |
 | Id | string | The ID of this toast. | false |
@@ -87,7 +87,7 @@ New-UDButton -Text 'Click' -OnClick {
 | CloseOnClick | Switch | Close the toast when it is clicked. | false |
 | CloseOnEscape | Switch | Close the toast when escape is pressed. | false |
 | ReplaceToast | Switch | Replace an existing toast if one is already shown. Otherwise, show both. | false |
-| Balloon | Switch | Balloon style toast.  | false |
+| Balloon | Switch | Balloon style toast. | false |
 | Overlay | Switch | Display an overlay behind the toast | false |
 | OverlayClose | Switch | Allow the user to close the overlay | false |
 | OverlayColor | DashboardColor | The color of the overlay. | false |
@@ -127,7 +127,7 @@ Read more about [Modals here](components/feedback/modal.md).
 
 ## Managing Component State
 
-You can manage component state dynamically by using the UDElement commands. 
+You can manage component state dynamically by using the UDElement commands.
 
 ### Getting Component State
 
@@ -143,7 +143,7 @@ $Value = (Get-UDElement -Id 'txtExample').value
 
 | **Name** | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
-| Id | string | The ID of the component to receive.  | true |
+| Id | string | The ID of the component to receive. | true |
 
 ### Setting Component State
 
@@ -178,7 +178,7 @@ You can remove components from the page using `Remove-UDElement` . The component
 Remove-UDComponent -Id 'txtExample'
 ```
 
-#### API 
+#### API
 
 **Remove-UDElement**
 
@@ -188,7 +188,7 @@ Remove-UDComponent -Id 'txtExample'
 
 ### Adding a component
 
-Add a child component to an existing parent component. 
+Add a child component to an existing parent component.
 
 ```text
 New-UDElement -Id 'myDiv' -Tag div
@@ -200,7 +200,7 @@ New-UDButton -Text 'Click' -OnClick {
 }
 ```
 
-#### API 
+#### API
 
 **Add-UDElement**
 
@@ -234,7 +234,7 @@ New-UDButton -Text 'Clear' -OnClick {
 }
 ```
 
-#### API 
+#### API
 
 **Clear-UDElement**
 
@@ -256,7 +256,7 @@ New-UDButton -Text 'Reload' -OnClick {
 }
 ```
 
-#### API 
+#### API
 
 **Sync-UDElement**
 
@@ -267,7 +267,7 @@ New-UDButton -Text 'Reload' -OnClick {
 
 ### Select a component
 
-You can select a component with `Select-UDElement`. 
+You can select a component with `Select-UDElement`.
 
 ```text
 New-UDElement -Id 'txt' -Tag input -Properties @{ type = text }
