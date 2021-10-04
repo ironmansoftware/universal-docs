@@ -12,18 +12,18 @@ A server is a single running instance of PowerShell Universal.
 
 Universal can be used forever for free with the following limitations.
 
-### Universal API
+### API
 
 * No authentication
 * No Rate Limiting
 
-### Universal Automation
+### Automation
 
 * 25 jobs per day
 * 2 concurrent jobs
 * No Triggers
 
-### Universal Dashboard
+### User Interfaces
 
 * No authentication
 * No access to diagnostic tools
