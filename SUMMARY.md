@@ -16,7 +16,6 @@
 ## API
 
 * [About](api/about.md)
-* [Development](api/development.md)
 * [Endpoints](api/endpoints.md)
 * [Security](api/security.md)
 * [Error Handling](api/error-handling.md)
@@ -36,7 +35,6 @@
 * [About](userinterfaces/about.md)
 * [Dashboards](userinterfaces/dashboards/README.md)
   * [Building Dashboards](userinterfaces/dashboards/building-dashboards.md)
-  * [Development](userinterfaces/dashboards/development.md)
   * [Components](userinterfaces/dashboards/components/README.md)
     * [Pages](userinterfaces/dashboards/components/pages.md)
     * [Dynamic Regions](userinterfaces/dashboards/components/dynamic-regions.md)
