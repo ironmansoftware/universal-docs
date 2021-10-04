@@ -29,7 +29,6 @@ You can change the assets folder by updating appsettings.json.
 ```text
   "UniversalDashboard": {
     "AssetsFolder": "%ProgramData%\\PowerShellUniversal\\Dashboard",
-    "DashboardStartupTimeout": 10
   },
 ```
 
