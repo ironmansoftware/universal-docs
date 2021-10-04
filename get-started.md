@@ -55,7 +55,7 @@ chmod +x ./PSU/Universal.Server
 
 By default, PowerShell Universal is running on port 5000 of localhost. You can access the admin console with the user name `admin` and any password.
 
-![](.gitbook/assets/image%20%28288%29.png)
+![](.gitbook/assets/image%20%28289%29.png)
 
 ## Create an API
 
@@ -71,7 +71,7 @@ Get-ComputerInfo
 
 Save the script and then click the Execute button to test it out. 
 
-![](.gitbook/assets/image%20%28290%29.png)
+![](.gitbook/assets/image%20%28291%29.png)
 
 You can also execute the API via `Invoke-RestMethod`. 
 
@@ -92,7 +92,7 @@ WindowsRegisteredOrganization                           :
 
 To create a script, click Automation \ Scripts and then click Create New Script. 
 
-![](.gitbook/assets/image%20%28270%29.png)
+![](.gitbook/assets/image%20%28288%29.png)
 
 Enter the following script into the editor and save. 
 
@@ -110,7 +110,25 @@ Once the script is saved, click Run.
 
 ![](.gitbook/assets/runjob.gif)
 
+## Create a Dashboard
 
+To create a new PowerShell-based user interface \(dashboard\), you can click User Interfaces \ Dashboard and then Create New Dashboard. 
+
+![](.gitbook/assets/image%20%28270%29.png)
+
+After clicking Ok, click the Details button to edit the PowerShell script. Add the following script to the editor.
+
+```text
+New-UDDashboard -Title "Hello, World!" -Content {
+    New-UDButton -Text "Click Me" -OnClick {
+        Show-UDToast -Message 'Success!!'
+    }
+}
+```
+
+Save the dashboard, click the Restart button and then click the View button. Click the Click Me button. 
+
+![](.gitbook/assets/image%20%28292%29.png)
 
 Learn more about the various features of PowerShell Universal
 
