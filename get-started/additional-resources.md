@@ -12,15 +12,11 @@ The Ironman Software blog has articles about PowerShell Universal.
 
 Connect with the PowerShell Universal community. 
 
-## [Discord](https://discord.gg/csWyH2arD3)
-
-Chat with other PowerShell Universal users. 
-
-## [Purchasing](https://ironmansoftware.com/pricing)
+## [Pricing](https://ironmansoftware.com/pricing/powershell-universal)
 
 Purchase a license for the features of PowerShell Universal. 
 
-## [Issue Tracker](https://github.com/ironmansoftware/powershell-universal)
+## [Issue Tracker](https://github.com/ironmansoftware/issues)
 
 File a bug report or feature request for PowerShell Universal.
 
