@@ -135,6 +135,7 @@
 * [Security](config/security/README.md)
   * [Access Controls](config/security/access-controls.md)
   * [App Tokens](config/security/app-tokens.md)
+  * [Client Certificate](config/security/client-certificate.md)
   * [OpenID Connect](config/security/openid-connect.md)
   * [WS-Federation](config/security/ws-federation.md)
 * [Running as a Service Account](config/running-as-a-service-account.md)
