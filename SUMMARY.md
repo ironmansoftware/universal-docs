@@ -25,7 +25,6 @@
 ## Automation
 
 * [About Automation](automation/about.md)
-* [Development](automation/development.md)
 * [Scripts](automation/scripts/README.md)
   * [Parameters](automation/scripts/parameters.md)
 * [Jobs](automation/jobs.md)
