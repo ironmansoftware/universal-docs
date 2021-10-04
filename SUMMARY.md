@@ -9,7 +9,7 @@
   * [Licensing](get-started/licensing.md)
   * [System Requirements](get-started/system-requirements.md)
   * [Supported Browsers](get-started/supported-browsers.md)
-  * [Visual Studio Code Extension](get-started/visual-studio-code-extension.md)
+* [Visual Studio Code Extension](visual-studio-code-extension.md)
 * [Cmdlet Help](https://github.com/ironmansoftware/universal-docs/tree/master/cmdlets)
 * [Examples](examples/README.md)
   * [Active Directory](examples/active-directory.md)
