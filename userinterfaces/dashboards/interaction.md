@@ -94,6 +94,7 @@ New-UDButton -Text 'Click' -OnClick {
 | TransitionIn | string | The transition to use when the toast is appearing. | false |
 | TransitionOut | string | The transition to use when the toast is disappearing. | false |
 | Broadcast | Switch | Show the toast to all users. | false |
+| Persistent | Switch | Persist the toast until dismissed. | false |
 
 **Hide-UDToast**
 
