@@ -63,3 +63,23 @@ expiration  : 26/06/2021 17:26:00
 revokedDate : 01/01/0001 00:00:00
 ```
 
+## Migrating App Tokens 
+
+You can migrate app tokens between systems by using the management API. This is helpful when developing for high availability scenarios. 
+
+The following is an example of the POST that is required to create an existing app token in any PSU instance. Note that the signing key must be the same between the instances. You need a valid app token in the target system to create the migrated tokens. 
+
+```text
+Invoke-RestMethod http://localhost:5000/api/v1/apptoken -Method POST -Body (@{
+        Token      = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9oYXNoIjoiMDhiYTFlMTktMjgyZi00YTRjLWIxZGUtNTY0Zjk3NWU2ODEwIiwic3ViIjoiUG93ZXJTaGVsbFVuaXZlcnNhbCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6InBvbGljeSIsIm5iZiI6MTYzMzEwNjkzMywiZXhwIjoxNjQwODg2NDgwLCJpc3MiOiJJcm9ubWFuU29mdHdhcmUiLCJhdWQiOiJQb3dlclNoZWxsVW5pdmVyc2FsIn0.GHjJI3kMpcAY1pvOGLWOdPqC2-IPo0-4lJfHZwStmOk'
+        Identity   = @{
+            Name = 'Admin'
+        }
+        Role       = 'Administrator'
+        Expiration = (Get-Date).AddMonths(6)
+    } | ConvertTo-Json) -Headers @{
+    "Content-Type"  = "application/json";
+    "Authorization" = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9oYXNoIjoiMjVjMzFlZTAtMGM4Mi00NzBiLWJkZGYtOGFmOTgxZGI2ZDdmIiwic3ViIjoiUG93ZXJTaGVsbFVuaXZlcnNhbCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE2MzM2NDY5OTgsImV4cCI6MTYzNjIzODk0MCwiaXNzIjoiSXJvbm1hblNvZnR3YXJlIiwiYXVkIjoiUG93ZXJTaGVsbFVuaXZlcnNhbCJ9.jw2VCvtpOWpgnpIUlO8sTdK9Z5RMoWLmvYn0MDmzkNM"   
+}
+```
+
