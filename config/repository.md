@@ -12,6 +12,8 @@ All configuration cmdlets are part of the [Universal ](https://www.powershellgal
 
 ## What's Stored in the Repository
 
+Files stored in the repository are stored as plain text to allow for easy differencing with source control tools. 
+
 * Authentication
 * Dashboards
 * Endpoints
@@ -29,6 +31,8 @@ All configuration cmdlets are part of the [Universal ](https://www.powershellgal
 * Triggers
 
 ## What's Not Stored in the Repository
+
+This entities are stored within the PowerShell Universal database. 
 
 * App Tokens
 * Identities
