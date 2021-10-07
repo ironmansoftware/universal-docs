@@ -60,6 +60,10 @@ By default, authentication and authorization happen within the `Universal.Server
 
 ## Integrated Environment
 
+{% hint style="info" %}
+The integrated environment does not support running as alternate credentials. 
+{% endhint %}
+
 The integrated environment uses the PowerShell Universal server process directly rather than starting external PowerShell processes to service requests. 
 
 The integrated environment is easier to configure and use than having multiple disparate environments. You will also see a performance improvement because there is no need to serialize and communicate via interprocess communication. 
