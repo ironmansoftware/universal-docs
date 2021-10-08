@@ -34,10 +34,6 @@ New-UDDatePicker -Variant static
 
 ## Locale
 
-{% hint style="warning" %}
-This feature is coming in PowerShell Universal 2.3.
-{% endhint %}
-
 To set the locate of the date picker, specify the `-Locale` parameter. 
 
 ```text
