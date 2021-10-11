@@ -23,10 +23,13 @@ Universal can be used forever for free with the following limitations.
 * 2 concurrent jobs
 * No Triggers
 
-### User Interfaces
+### Dashboards
 
 * No authentication
 * No access to diagnostic tools
 
+### Pages
 
+* No authentication
+* No variables
 
