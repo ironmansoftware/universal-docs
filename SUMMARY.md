@@ -30,7 +30,7 @@
 * [Schedules](automation/schedules.md)
 * [Triggers](automation/triggers.md)
 
-## User Interfaces <a id="userinterfaces"></a>
+## User Interfaces <a href="userinterfaces" id="userinterfaces"></a>
 
 * [About](userinterfaces/about.md)
 * [Dashboards](userinterfaces/dashboards/README.md)
@@ -111,6 +111,7 @@
   * [Liquid Chart](userinterfaces/pages/liquid-chart.md)
   * [Paragraph](userinterfaces/pages/paragraph.md)
   * [Statistic](userinterfaces/pages/statistic.md)
+  * [Variables](userinterfaces/pages/variables.md)
 
 ## Platform
 
@@ -120,7 +121,7 @@
 * [Templates](platform/templates.md)
 * [Variables](platform/variables.md)
 
-## Configuration <a id="config"></a>
+## Configuration <a href="config" id="config"></a>
 
 * [About](config/about.md)
 * [API](config/api.md)
@@ -146,9 +147,8 @@
 * [Logging](debugging/logging.md)
 * [Debugging Scripts](debugging/debugging-scripts.md)
 
----
+***
 
 * [Changelog](changelog.md)
 * [Extension Changelog](extension-changelog.md)
 * [Legacy Universal Dashboard Docs](https://docs.universaldashboard.io)
-

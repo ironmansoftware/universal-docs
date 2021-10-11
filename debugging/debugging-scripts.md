@@ -17,12 +17,12 @@ Jobs log extensively. You will see console and pipeline output. If you set`$Debu
 ### Dashboards
 
 {% hint style="info" %}
-See [dashboard Development]() for information on how to use VS Code for development.
+See [dashboard Development](broken-reference) for information on how to use VS Code for development.
 {% endhint %}
 
 Dashboards log informational, warning and error messages to their log. It's recommended to use logging when starting a dashboard rather than trying to attach a debugger. You can also use the `$DebugPreference` variable to get additional information during your dashboard startup.
 
-```text
+```
 $DebugPreference = 'Continue'
 
 New-UDDashboard -Title 'Test' -Content {
@@ -38,7 +38,7 @@ Authentication and authorization currently do not log. You can use `Out-File` to
 
 ## Debugging Scripts from a PowerShell Console
 
-You can debug any script within Universal \(or any PowerShell process, really\) using the debugging cmdlets that are available in PowerShell. These cmdlets allow you to connect to local PowerShell processes, like Universal, and step through your scripts right in the terminal.
+You can debug any script within Universal (or any PowerShell process, really) using the debugging cmdlets that are available in PowerShell. These cmdlets allow you to connect to local PowerShell processes, like Universal, and step through your scripts right in the terminal.
 
 ### Pausing the Script
 
@@ -76,7 +76,7 @@ Authentication and authorization scripts run within the Universal server. You ca
 
 Once you have the process that you want to attach to, you can do so by using `Enter-PSHostProcess` . Simply specify the process ID that you found in the previous step.
 
-```text
+```
 Enter-PSHostProcess -id 1231
 ```
 
@@ -95,4 +95,3 @@ For a full list of debugging commands, you can see the [Microsoft documentation 
 To debug a script, you can use the Wait-Debugger cmdlet within your script to pause the script until a debugger is attached. You can then use a debugger, like VS Code, to attach to the process and runspace to view variables, step through code and execute debugging commands.
 
 You can also debug scripts using the built in `Enter-PSHostProcess`, `Get-Runspace` and `Debug-Runspace` cmdlets.
-
