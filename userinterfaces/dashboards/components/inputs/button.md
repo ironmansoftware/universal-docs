@@ -30,7 +30,9 @@ New-UDButton -Variant 'outlined' -Text 'Default'
 
 You can control the pixel size of a button based on pixel size by using the Style parameter
 
-'''text New-UDButton -Id "Submit" -Text "Submit" -Style @{ Width = "150px" Height = "100px" }
+```text
+New-UDButton -Id "Submit" -Text "Submit" -Style @{ Width = "150px"; Height = "100px" }
+```
 
 ## Buttons with icons and label
 
