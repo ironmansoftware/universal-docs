@@ -2,8 +2,6 @@
 
 Dashboards are individual websites created with Universal Dashboard. You can define settings for a dashboard and start and stop the dashboard from within the Universal administrative interface.
 
-![](../../.gitbook/assets/image%20%282%29.png)
-
 ## Adding a Dashboard
 
 Dashboards can be added to Universal using the Add Dashboard button from the Dashboard / Dashboards page.
@@ -38,9 +36,9 @@ Defines the role that is required to access the dashboard.
 
 **AutoStart**
 
-Determines whether the dashboard should start \(or restart\) when the server starts or changes are made to the dashboard files.
+Determines whether the dashboard should start (or restart) when the server starts or changes are made to the dashboard files.
 
-![](../../.gitbook/assets/image%20%28178%29.png)
+![](<../../.gitbook/assets/image (178).png>)
 
 ## Starting and Stopping Dashboards
 
@@ -70,19 +68,19 @@ To add these components to your dashboard, you can use the dashboard UI.
 
 Click the info button on the dashboard page.
 
-![](../../.gitbook/assets/image%20%28184%29.png)
+![](<../../.gitbook/assets/image (184).png>)
 
 Next, click the components button in the top right of your dashboard.
 
-![](../../.gitbook/assets/image%20%28182%29.png)
+![](<../../.gitbook/assets/image (182).png>)
 
 Finally, check the component library you'd like added to your dashboard.
 
-![](../../.gitbook/assets/image%20%28183%29.png)
+![](<../../.gitbook/assets/image (183).png>)
 
 You can also add component libraries directly to your `dashboards.ps1` script within the `.unversal` folder or when using [single-file hosting and configuration](../../config/hosting/single-file.md).
 
-```text
+```
 New-PSUDashboard -Name 'Dashboard' -BaseUrl '/' -Framework "UniversalDashboard:Latest" -Component @("UniversalDashboard.Charts:1.3.0")
 ```
 
@@ -94,7 +92,7 @@ By default, runspaces will be reset after each execution. This will cause variab
 
 To enable persistent runspaces, you will need to configure an [environment ](../../config/environments.md)for your API. Set the `-PersistentRunspace` parameter to enable this feature. This is configured in the `environments.ps1` script.
 
-```text
+```
 New-PSUEnvironment -Name 'Env' -Path 'powershell.exe' -PersistentRunspace
 ```
 
@@ -104,13 +102,13 @@ You will need to ensure that the environment is used by the dashboard.
 
 You can automatically grant app tokens to users that visit dashboards. This is useful if you want to invoke the management API for PowerShell Universal from within a dashboard. Your dashboard will need to have authentication enabled and you will have to use the `-GrantAppToken` switch parameter on `New-PSUDashboard`.
 
-```text
+```
 New-PSUDashboard -Name 'Dashboard' -BaseUrl '/' -Framework "UniversalDashboard:Latest" -Authenticated -GrantAppToken
 ```
 
 From within your dashboard, you can now invoke the management API without having to worry about app token management. The API will be invoked in the context of the user that is visiting the dashboard.
 
-```text
+```
 New-UDDashboard -Title "Hello, World!" -Content {
     New-UDButton -Text 'Job' -OnClick {
         Invoke-UAScript -Name 'Test.ps1'
@@ -122,11 +120,11 @@ New-UDDashboard -Title "Hello, World!" -Content {
 
 By default, dashboards will display a toast message when an error is generated within an endpoint script. To avoid this behavior, you can use the `-DisableErrorToast` parameter of `New-UDDashboard`
 
-```text
+```
 New-PSUDashboard -Name 'Dashboard' -BaseUrl '/' -Framework "UniversalDashboard:Latest" -Authenticated -DisableErrorToast
 ```
 
-```text
+```
 New-UDDashboard -Title "Hello, World!" -Content {
     New-UDButton -Text 'Job' -OnClick {
         throw "Exception
@@ -136,17 +134,16 @@ New-UDDashboard -Title "Hello, World!" -Content {
 
 ## Variables Available in Dashboards
 
-| Name | Description | Type |
-| :--- | :--- | :--- |
-| $AccessToken | An access token granted by an OpenID Connect provider. This access token can be used to authorize access to different services. This will be null of not configure. | string |
-| $ClaimsPrincipal | The user information for the authenticated user. This will include user name and claims.  | [ClaimsPrincipal](../../config/security/#policy-assignment) |
-| $Cookies | Cookies provided in the client's HTTP request. | hashtable |
-| $Headers | Headers provided in the client's HTTP request. | hashtable |
-| $LocalIpAddress | The local IP address of the request.  | string |
-| $LocalPort | The local port of the request. | string |
-| $RemoteIpAddress | The remote IP address of the request. | string |
-| $RemotePort | The remote port of the request. | string |
-| $Roles | An array of role names that the user is a part of. | string\[\] |
-| $UserName | The user name of the currently logged in user. If authentication is disabled, this will be $null | string |
-|  |  |  |
-
+| Name             | Description                                                                                                                                                         | Type                                                        |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| $AccessToken     | An access token granted by an OpenID Connect provider. This access token can be used to authorize access to different services. This will be null of not configure. | string                                                      |
+| $ClaimsPrincipal | The user information for the authenticated user. This will include user name and claims.                                                                            | [ClaimsPrincipal](../../config/security/#policy-assignment) |
+| $Cookies         | Cookies provided in the client's HTTP request.                                                                                                                      | hashtable                                                   |
+| $Headers         | Headers provided in the client's HTTP request.                                                                                                                      | hashtable                                                   |
+| $LocalIpAddress  | The local IP address of the request.                                                                                                                                | string                                                      |
+| $LocalPort       | The local port of the request.                                                                                                                                      | string                                                      |
+| $RemoteIpAddress | The remote IP address of the request.                                                                                                                               | string                                                      |
+| $RemotePort      | The remote port of the request.                                                                                                                                     | string                                                      |
+| $Roles           | An array of role names that the user is a part of.                                                                                                                  | string\[]                                                   |
+| $UserName        | The user name of the currently logged in user. If authentication is disabled, this will be $null                                                                    | string                                                      |
+|                  |                                                                                                                                                                     |                                                             |
