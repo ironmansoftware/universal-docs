@@ -91,6 +91,14 @@ You can use the `Show-UDToast` cmdlet to create a toast message that will appear
 Show-UDToast -Message 'Hello, World!'
 ```
 
+### Show as toast with an Icon
+
+Toasts support icons as strings. You can use all the FontAwesome v5 icons. 
+
+```
+Show-UDToast -Icon "Ad" -Message "Test"
+```
+
 ### Hide a toast
 
 Hides a toast based on the specified ID.
