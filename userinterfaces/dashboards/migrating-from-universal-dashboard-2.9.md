@@ -2,13 +2,17 @@
 
 PowerShell Universal Dashboard v2.9 is a PowerShell module that allows you to create dashboard with PowerShell script. It is the predecessor to PowerShell Universal. The technology the enabled UD has been migrated into PowerShell Universal. You should be able to run the same PowerShell scripts in PowerShell Universal that you would in Universal Dashboard with some minor modifications.
 
+{% hint style="info" %}
+When looking at the [Universal Dashboard v2 documentation](https://docs.universaldashboard.io), you can click the link at the top of each page to take you to the corresponding documentation for PowerShell Universal.
+{% endhint %}
+
 ## Migrating from Universal dashboard to PowerShell Universal
 
 ### No need to call Start-UDDashboard
 
 In Universal, all you need to do is return the result of New-UDDashboard from your script. There is no need to call Start-UDDashboard. The configuration of the webserver is taken place using the PSU `appsetting.json` file.
 
-```text
+```
 New-UDDashboard -Title 'My dashboard' -Content {
 
 }
@@ -22,7 +26,7 @@ This cmdlet has been removed from Universal Dashboard. There is no longer a need
 
 You do not need to pass the value of a scheduled endpoint to anything. You can just call `New-UDEndpoint` with a endpoint schedule and it will automatically be registered with PSU.
 
-```text
+```
 $Schedule = New-UDEndpointSchedule -Every 10 -Minute
 $Endpoint = New-UDEndpoint -Schedule $Schedule -Endpoint {}
 ```
@@ -45,7 +49,7 @@ For example, let's adjust a claims policy from Universal Dashboard for Universal
 
 **Universal Dashboard**
 
-```text
+```
 $AuthorizationPolicy = New-UDAuthorizationPolicy -Name "Policy" -Endpoint {
     param($User)
 
@@ -55,7 +59,7 @@ $AuthorizationPolicy = New-UDAuthorizationPolicy -Name "Policy" -Endpoint {
 
 **Universal**
 
-```text
+```
 New-PSURole -Name 'User' -Policy {
    param($User)
 
@@ -67,7 +71,7 @@ New-PSURole -Name 'User' -Policy {
 
 Much like the `Get-UDAuthorizationPolicy` cmdlet in Universal Dashboard, you also have access to the assigned roles for users in Universal. Simply check the `$Roles` variable to see which roles the user has.
 
-```text
+```
 PS C:\Users\adamr> $Roles = @('Administrator')
 PS C:\Users\adamr> if ($Roles -contains 'Administrator') { $true }
 ```
@@ -86,7 +90,7 @@ Pages have a different behavior in v3. All pages are dynamic pages. This means t
 
 If you have a page such as this one:
 
-```text
+```
 New-UDPage -Url "/myPage/:owner" -Endpoint {
     param($owner)
 }
@@ -94,15 +98,15 @@ New-UDPage -Url "/myPage/:owner" -Endpoint {
 
 You can convert it to a v3 page by changing the syntax to:
 
-```text
+```
 New-UDPage -Name 'myPage' -Url "/myPage/:owner" -Content {
     param($owner)
 }
 ```
 
-### New-UDTable \(formerly UDGrid and UDTable\)
+### New-UDTable (formerly UDGrid and UDTable)
 
-Rather than having two cmdlets for tables \(New-UDTable and New-UDGrid\). The New-UDTable in v3 provides the ability to display data in a table, filter, page, and sort it. It supports both client and server-side processing.
+Rather than having two cmdlets for tables (New-UDTable and New-UDGrid). The New-UDTable in v3 provides the ability to display data in a table, filter, page, and sort it. It supports both client and server-side processing.
 
 You can view examples of the [table on GitHub](https://github.com/ironmansoftware/universal-dashboard/blob/master/src/v3/example/pages/data-display/table.ps1).
 
@@ -110,7 +114,7 @@ You can view examples of the [table on GitHub](https://github.com/ironmansoftwar
 
 Unlike in v3, components do not have `-Endpoint` and `-Content` parameters. Each component will instead simply have a `-Content` parameter. To achieve dynamic sections of a page, you can instead use the `New-UDDynamic` cmdlet. This cmdlets let you define an entire section of a page as dynamic. It also provides auto refresh functionality so you can refresh sections of a page all at once.
 
-```text
+```
 New-UDDynamic -Content {
     New-UDTypography -Text (Get-Date)
 }
@@ -122,7 +126,7 @@ New-UDGrid allows you to define a grid layout using the Material UI library. You
 
 You can view examples of the [grid on GitHub](https://github.com/ironmansoftware/universal-dashboard/blob/master/src/v3/example/pages/layout/grid.ps1).
 
-### New-UDForm \(formerly UDInput\)
+### New-UDForm (formerly UDInput)
 
 `New-UDInput` has been replaced by `New-UDForm`. The UDForm component allows far more configuration that UDInput did. You will use the standard controls like UDTextbox, UDCheckbox, and UDSelect instead of New-UDInputField. This means that there are a single set of input cmdlets to use for UD.
 
@@ -145,4 +149,3 @@ For more examples of Nivo and sparklines controls, [see GitHub](https://github.c
 The map control is also open source and on GitHub.
 
 You can find examples [on GitHub](https://github.com/ironmansoftware/universal-dashboard/blob/master/src/v3/example/pages/data-display/map.ps1).
-
