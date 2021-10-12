@@ -4,10 +4,6 @@ description: Installation instructions for PowerShell Universal.
 
 # Installation
 
-## Getting Started
-
-{% embed url="https://youtu.be/ISoZbY9YPvo" %}
-
 ## PowerShell Module
 
 You can use the PowerShell Universal PowerShell module to install the Universal server. To install the module, use `Install-Module`.
@@ -26,6 +22,10 @@ If you run this command on Windows, a Windows service will be created and starte
 
 ## Chocolatey Package (Windows)
 
+{% hint style="warning" %}
+Chocolatey packages for PowerShell Universal are usually available within a week of release but will not be available the day of a release. 
+{% endhint %}
+
 You can install PowerShell Universal using the [Chocolatey package](https://chocolatey.org/packages/powershelluniversal). The package runs the MSI install. It will install Universal as a service and open a web browser after the install.
 
 You can login with the "admin" user and any password.
@@ -34,19 +34,7 @@ You can login with the "admin" user and any password.
 choco install powershelluniversal
 ```
 
-## Winget (Windows)
 
-You can install PowerShell Universal using Winget. It will run the MSI and install as a service.
-
-```
-winget install ironmansoftware.powershelluniversal
-```
-
-You can also specify the `--silent` flag to prevent the installer from showing and the web browser from opening at the end of the install.
-
-```
-winget install ironmansoftware.powershelluniversal --silent
-```
 
 ## ZIP Install
 
@@ -80,8 +68,12 @@ See the [Docker page](docker.md#installation).
 
 ## MSI Install (Windows)
 
-The MSI install will create a PowerShell Universal service and open the admin console after installation.
+The MSI install will create a PowerShell Universal service and open the admin console after installation. 
+
+## IIS Install
+
+Please visit the [IIS hosting documentation](../config/hosting/hosting-iis.md) for information on how to configure PowerShell Universal as an IIS website. 
 
 ## Next Steps
 
-At this point, Universal is up and running. Please consult other sections in this documentation for instructions on how to configure, secure, and start using PowerShell Universal. Happy Scripting!
+At this point, Universal is up and running. You can navigate to the admin console by visiting `http://localhost:5000` by default. The default user name is admin with any password. 
