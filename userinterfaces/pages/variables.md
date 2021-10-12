@@ -4,10 +4,6 @@ description: Variables available in PowerShell Universal pages.
 
 # Variables
 
-{% hint style="warning" %}
-This feature will be available in an upcoming version of PowerShell Universal.
-{% endhint %}
-
 {% hint style="info" %}
 This feature requires a [PowerShell Universal license](../../licensing.md). 
 {% endhint %}

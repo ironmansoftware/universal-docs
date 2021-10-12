@@ -4,6 +4,136 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2.4.0 - 10/12/2021
+
+### Includes
+
+* UniversalDashboard - v3.7.0
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.1.1
+* UniversalDashboard.Style - 1.0.0
+
+### Breaking Change
+
+* Due to an issue with roles for pages, you will need to reset roles for existing pages after upgrade
+
+### Added
+
+#### APIs
+
+* Added support for tagging endpoints
+* Added the ability to filter endpoints by tags
+
+#### Automation
+
+* Added the ability to pause a schedule
+* Added support for changing the base folder for storing scripts
+* Added -Wait parameter to Invoke-PSUScript to wait for a script to return and write pipeline output
+* Added the ability to filter scripts by tags
+* Added support for folders within the scripts page
+* Added job timeout support
+* Added job retry support
+* Added -Delay to triggers
+* Added -Condition to schedules
+
+#### User Interface
+
+* Dashboards - Added support for tagging dashboards
+* Dashboards - Added the ability to filter dashboards by tags
+* Dashboards - All visual components now support -ClassName parameter for specifying a CSS class to apply
+* Dashboards - Added support for large files and New-UDUpload
+* Dashboards - Added progress when uploading files with New-UDUpload
+* Pages - Added the ability to export from Table in a Page
+* Pages - Added support for Select controls in forms within a Page
+* Pages - Added support for button columns within tables in a Page
+* Pages - Added select, rating, number, date, time, and switch as form controls
+* Pages - Added support for help text for fields
+* Pages - Added support for hiding the header
+* Pages - Form results will now show the error message when a job fails
+* Pages - Added refresh interval to tables
+* Pages - Added manual refresh to tables
+* Pages - Added support for variables
+* Pages - Added support for URLs
+* Pages - Added Pie chart
+
+#### Platform
+
+* Added Home page dashboard in admin console
+* Added Repository\Modules to PSModulePath
+* Added Hide Home Page setting
+* Added Modules page to view modules in each environment
+* Added Impersonation support to published folders
+* Added setting for configuring Microsoft log level
+* Added the ability to download logs from the console
+* Added support for developer license
+* Added Ubuntu 20.04 docker image
+* Added Remove-PSUServer and Update-PSUServer
+* Added a notification page to view all notifications
+* Added support for developer licenses.
+
+### Changed
+
+#### API
+
+* Fixed an issue where objects return by Select-Object wouldn't serialize correctly
+* Fixed an issue where the editor in the admin console would not show all the code without scrolling correctly
+* Fixed an issue where descriptions would not show up in Swagger documentation
+* Fixed an issue where parameters would not have the correct type in Swagger documentations.
+* Fixed an issue where Swagger documents wouldn't update unless the server restarted
+* Fixed an issue where saving on edit ErrorAction does not work in the admin console
+* \-Depth 100 and -Compress added to the automatic serialization in endpoints.
+
+#### Automation
+
+* Catch an exception that could be thrown when attempting to parse pipeline output
+* Fixed an issue where parsing pipeline output could cause an exception
+* Fixed an issue where string\[] parameters would have a blank value by default
+* Fixed an issue where the Pnp.PowerShell module would not load correctly
+* Fixed an issue where string\[] parameters with a ValidateSet would not work correctly
+* Fixed an issue where missing scripts could cause all schedules to fail
+* Fixed an issue where scheduling a script with a Switch parameter would not work
+
+#### User Interface
+
+* Fixed an issue where roles with spaces would not work with pages
+* Dashboard components are now read from the repository on start up
+* Dashboards - Fixed an issue where overrides for MUI themes would not work
+* Dashboards - Fixed an issue where UDUpload would look different than UDButton
+* Dashboards - Fixed an issue where -Icon would not work on New-UDExpansionPanel
+* Dashboards - Fixed an issue where clicking previous in a stepper could go back to the wrong step
+* Dashboards - Fixed an issue where New-UDSkeleton was not exposed from the module manifest
+* Dashboards - Improved performance of file updates
+* Dashboards - Fixed an issue with New-UDDatePicker where the server time zone would be used for the default value
+* Dashboards - Fixed an issue where you couldn't disable auto start in the admin console
+* Dashboards - Removed back and home buttons from the dashboard maintenance page
+* Dashboards - Fixed an issue where UDTable wouldn't display a column data if all row didn't have the table value
+* Pages - Improved the performance of tables by caching query data
+* Pages - Fixed an issue where renaming a page would create a new page
+* Moved links to frameworks, components and marketplace to the dashboards page
+
+#### Platform
+
+* Fixed an issue where cache options would not be honored for Set-PSUCache
+* Reorganized the general settings page
+* Fixed an issue where setting the log level in the UI wouldn't have any effect
+* Fixed an issue where accessing the swagger URL could return a 403
+* Fixed an issue where roles couldn't be set on published folders in the admin console
+* Fixed an issue where environments could not set wild card variables
+* Variables for environments now default to \*
+* License dialog is now a file upload rather than a text box
+* Install-PSUServer now installs the server as a service on Windows, systemd service on Linux and can install to IIS.
+* Fixed an issue where conflicting entity URLs could be specified. An error message is now shown.
+* Fixed an issue where administrators would not be able to access the console when One-Way git sync was enabled
+* Fixed an issue where non-terminating errors could cause configuration scripts to fail
+* Fixed an issue where displaying many notifications could cause the admin console to freeze
+* Operator and Executor roles can now create app tokens for themselves
+* Administrators can now view all app tokens
+* Single-file hosting is now deprecated and will be removed in v3
+* Fixed an issue where using a custom login page wouldn't redirect to the correct URL after login
+* Fixed incorrectly named Ubuntu docker images
+
 ## 2.3.2 - 10/2/2021
 
 ### Includes
@@ -115,7 +245,7 @@ description: Changelog for PowerShell Universal.
 * Fixed an issue where progress was not shown on the job view
 * Fixed an issue where the server could crash when a job was cancelled 
 * Fixed an issue where error action would display the numeric value rather than the name of the error action
-* Fixed an issue where string\[\] params would fail to work correctly 
+* Fixed an issue where string\[] params would fail to work correctly 
 
 #### User Interface
 
@@ -127,11 +257,11 @@ description: Changelog for PowerShell Universal.
 * UDv3 - Fixed an issue where null values in rows of New-UDTable would cause filters to fail
 * Fixed an issue where dashboard logs could show an error
 * Fixed an issue where dashboard logs would not clear when using Auto Deploy
-* Put new log messages on the top of the dashboard log \(reversed log order\)
+* Put new log messages on the top of the dashboard log (reversed log order)
 * UDv3 - Fixed an issue where using server-side exporting of UDTable wouldn't honor -IncludeInExport on columns
 * UDv3 - Fixed an issue where using server-side exporting of UDTable wouldn't use the -Title in exports
 * UDv3 - Fixed an issue where using server-side exporting of UDTable would change the case of the title in exports
-* Pages - Fixed an issue where Statistics would display script output as \[object Object\]
+* Pages - Fixed an issue where Statistics would display script output as \[object Object]
 * Pages - Fixed an issue where Form checkboxes in pages would not send data 
 * Pages Fixed an issue where required fields in forms would not be enforced
 * Pages - Fixed an issue where you could drag components when modals were open
@@ -176,7 +306,7 @@ description: Changelog for PowerShell Universal.
 
 #### Automation
 
-* Fixed an issue where a default value of \[DateTime\]::Now would cause the run script modal to show an error
+* Fixed an issue where a default value of \[DateTime]::Now would cause the run script modal to show an error
 * Increased the width of the run script modal to accommodate longer parameter names
 * Enforce authorization for the Hangfire dashboard
 * Fixed an issue where naming scripts with certain characters would cause them to fail to save.
@@ -194,7 +324,7 @@ description: Changelog for PowerShell Universal.
 * Fixed an issue where redirect to login page would take about 5 seconds
 * Fixed an issue where login wouldn't work correctly when going to admin page for OIDC and WS-Fed. 
 * Added telemetry for page views
-* Fixed an issue where you couldn't delete the last item \(Endpoints, scripts, dashboards, etc\)
+* Fixed an issue where you couldn't delete the last item (Endpoints, scripts, dashboards, etc)
 * Fixed an issue where the configurations page would show an empty file name
 
 ## 2.2.0 - 8/2/2021
@@ -221,7 +351,7 @@ description: Changelog for PowerShell Universal.
 #### Automation
 
 * Fixed an issue where if a script PS1 file didn't exist but was configured in scripts.ps1, it would cause all configuration to fail
-* Fixed an issue where jobs could restart \(retry\) even after running successfully
+* Fixed an issue where jobs could restart (retry) even after running successfully
 
 #### Platform
 
@@ -343,7 +473,7 @@ description: Changelog for PowerShell Universal.
 
 #### Platform
 
-* Reverting a change made to status code pages \(Unauthorized page\) because it causes issues with SSO \(Windows\WS-Fed\OIDC\)
+* Reverting a change made to status code pages (Unauthorized page) because it causes issues with SSO (Windows\WS-Fed\OIDC)
 
 ## 2.1.0 - 6/29/2021
 
@@ -413,7 +543,7 @@ description: Changelog for PowerShell Universal.
 * Display integrated PowerShell version on environments page
 * Fixed an issue where you couldn't create secrets with New-PSUVariable
 * Fixed an issue where Windows authentication would not work
-* Fixed an issue where standard \(online\) licenses would become inactive after some time
+* Fixed an issue where standard (online) licenses would become inactive after some time
 * Fixed an issue where setting the Security Environment to integrated would cause the service to fail to start.
 * Fixed an issue where you couldn't clear roles once they were set.
 * Fixed an issue where saving a role policy would not work
@@ -443,7 +573,7 @@ description: Changelog for PowerShell Universal.
 
 #### Automation
 
-* Fixed an issue where string\[\] types could not be used with ValidateSet attributes
+* Fixed an issue where string\[] types could not be used with ValidateSet attributes
 * Fixed an issue where you could select an environment in the run dialog even though it was set on the script
 * Fixed an issue where you could select a credential in the run dialog even though it was set on the script
 * Fixed an issue where the credential selector was missing in the script properties dialog
@@ -590,4 +720,3 @@ Please see notes about [upgrading](getting-started/upgrading.md) from 1.x to 2.x
 ## 1.0 Changelog
 
 The 1.x changelog can be found [here](https://docs.powershelluniversal.com/v/v1/changelog).
-
