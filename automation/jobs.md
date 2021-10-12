@@ -81,6 +81,10 @@ Invoke-UAScript -Script 'Script1.ps1' -RequiredParameter 'Hello' | Tee-Object -V
 
 $Pipeline = Get-UAJobPipelineOutput -Job $Job
 $HostOutput = Get-UAJobOutput -Job $Job
+
+# Access the actual string returned by the job
+# $HostOutput may be an array 
+$HostOutput.Data
 ```
 
 If you are using PowerShell Universal 2.4 or later, you can use the `-Wait` parameter of `Invoke-UAScript` to achieve this. 
