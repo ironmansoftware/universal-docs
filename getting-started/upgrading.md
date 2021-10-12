@@ -46,11 +46,31 @@ If you are upgrading from 1.x, you will have a couple of breaking changes.
 
 The integrated environment is now the default configuration. If you do not want to use the integrated environment by default, select a default environment in General settings. 
 
-![](../.gitbook/assets/image%20%28223%29.png)
+![](<../.gitbook/assets/image (223).png>)
 
 ### IIS Hosting Package
 
 If you are hosting in IIS, ensure that you install the [.NET 5.0 hosting bundle](https://dotnet.microsoft.com/download/dotnet/5.0). 
+
+## PowerShell Upgrade
+
+If you installed the platform using `Install-PSUServer`, you can use the `Update-PSUServer` cmdlet to upgrade the system. 
+
+### Upgrade a Service
+
+To upgrade a service, use `Update-PSUServer` and optionally specify the path to where the executable is stored. 
+
+```
+Update-PSUServer
+```
+
+### Upgrade an IIS Website
+
+You can upgrade an IIS website by using the `-IISWebsite` parameter of `Update-PSUServer`.
+
+```
+Update-PSUServer -IISWebsite 'PSU'
+```
 
 ## ZIP Upgrade
 
@@ -81,4 +101,3 @@ When upgrading with IIS, you will need to first stop your application pool to en
 ### Upgrading from 1.x to 2.x
 
 You will need to install the [.NET 5.0 hosting bundle](https://dotnet.microsoft.com/download/dotnet/5.0). 
-
