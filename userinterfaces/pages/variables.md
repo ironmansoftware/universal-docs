@@ -20,7 +20,7 @@ Variables can be viewed when editing a page. To view variables, click Edit and t
 
 A drawer will appear with the variables for the current page. 
 
-![](<../../.gitbook/assets/image (301).png>)
+![](<../../.gitbook/assets/image (301) (1).png>)
 
 ## Using Variables
 
@@ -42,7 +42,24 @@ You can also use variables to provide hidden input fields to APIs and scripts.
 
  
 
-![](<../../.gitbook/assets/image (296).png>)
+![](<../../.gitbook/assets/image (296) (1).png>)
+
+## Page Variables
+
+You can load additional data when the page is loading by providing a data source to in the page properties. The data source should return a single PSCustomObject or hashtable. The properties of the object will become variables within the page. 
+
+For example, assume you have an API that returns the following hashtable. 
+
+```
+@{
+    Name = "My Name"
+    Title = "My Title"
+}
+```
+
+Selecting this API as the data source for the page would then create the variables `$Name` and `$Title` within the page. 
+
+You can also use Route Variables within the data source to customize which API is called based on the route visited. 
 
 ## Route Variables
 
@@ -54,5 +71,5 @@ For example, this page defines a single route variable.
 
 Within the page, the route variables will appear within the variable drawer. 
 
-![](<../../.gitbook/assets/image (300).png>)
+![](<../../.gitbook/assets/image (300) (1).png>)
 

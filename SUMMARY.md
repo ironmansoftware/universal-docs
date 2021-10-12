@@ -111,6 +111,7 @@
   * [Liquid Chart](userinterfaces/pages/liquid-chart.md)
   * [Paragraph](userinterfaces/pages/paragraph.md)
   * [Statistic](userinterfaces/pages/statistic.md)
+  * [Table](userinterfaces/pages/table.md)
   * [Variables](userinterfaces/pages/variables.md)
 
 ## Platform
