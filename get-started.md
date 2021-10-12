@@ -12,28 +12,25 @@ You'll need to install the PowerShell Universal server. [There are a lot of ways
 {% tab title="Windows" %}
 You can install PowerShell Universal as a service. Ensure that PowerShell is running as administrator or the service won't install correctly. 
 
-```text
-Invoke-WebRequest https://imsreleases.blob.core.windows.net/universal/production/2.3.2/PowerShellUniversal.2.3.2.msi -OutFile Universal.msi
-msiexec /i Universal.msi /qn
+```
+Install-Module Universal
+Install-PSUServer
 ```
 {% endtab %}
 
 {% tab title="Linux" %}
 You can install PowerShell Universal using the following shell script.
 
-```text
- wget https://imsreleases.blob.core.windows.net/universal/production/2.3.2/Universal.linux-x64.2.3.2.zip
- sudo apt install unzip 
- unzip Universal.linux-x64.2.3.2.zip -d PSU
- chmod +x ./PSU/Universal.Server
- ./PSU/Universal.Server
+```
+Install-Module Universal
+Install-PSUServer
 ```
 {% endtab %}
 
 {% tab title="Mac OS X" %}
 You can install PowerShell Universal using the Universal PowerShell module.
 
-```text
+```
 Install-Module Universal
 Install-PSUServer -AddToPath
 Start-PSUServer -Port 5000
@@ -41,8 +38,8 @@ Start-PSUServer -Port 5000
 {% endtab %}
 
 {% tab title="Raspberry PI OS" %}
-```text
-wget https://imsreleases.blob.core.windows.net/universal/production/2.3.2/Universal.linux-arm.2.3.2.zip
+```
+wget https://imsreleases.blob.core.windows.net/universal/production/2.4.0/Universal.linux-arm.2.4.0.zip
 unzip Universal.linux-arm.2.3.2.zip -d ./PSU
 chmod +x ./PSU/Universal.Server
 ./PSU/Universal.Server
@@ -55,27 +52,27 @@ chmod +x ./PSU/Universal.Server
 
 By default, PowerShell Universal is running on port 5000 of localhost. You can access the admin console with the user name `admin` and any password.
 
-![](.gitbook/assets/image%20%28289%29.png)
+![](<.gitbook/assets/image (289).png>)
 
 ## Create an API
 
 APIs allow you to call PowerShell scripts over HTTP. To create an API, click API \ Endpoints and click Create New Endpoint. Specify a URL. 
 
-![](.gitbook/assets/image%20%28260%29.png)
+![](<.gitbook/assets/image (260).png>)
 
 Next, click details on the API that was created an enter the following command into the editor. 
 
-```text
+```
 Get-ComputerInfo
 ```
 
 Save the script and then click the Execute button to test it out. 
 
-![](.gitbook/assets/image%20%28291%29.png)
+![](<.gitbook/assets/image (291).png>)
 
 You can also execute the API via `Invoke-RestMethod`. 
 
-```text
+```
 PS C:\Users\adamr> Invoke-RestMethod http://localhost:5000/hello-world
 
 WindowsBuildLabEx                                       : 22000.1.amd64fre.co_release.210604-1628
@@ -92,11 +89,11 @@ WindowsRegisteredOrganization                           :
 
 To create a script, click Automation \ Scripts and then click Create New Script. 
 
-![](.gitbook/assets/image%20%28288%29.png)
+![](<.gitbook/assets/image (288).png>)
 
 Enter the following script into the editor and save. 
 
-```text
+```
 Read-Host "What should I say?"
 
 1..100 | ForEach-Object {
@@ -112,13 +109,13 @@ Once the script is saved, click Run.
 
 ## Create a Dashboard
 
-To create a new PowerShell-based user interface \(dashboard\), you can click User Interfaces \ Dashboard and then Create New Dashboard. 
+To create a new PowerShell-based user interface (dashboard), you can click User Interfaces \ Dashboard and then Create New Dashboard. 
 
-![](.gitbook/assets/image%20%28270%29.png)
+![](<.gitbook/assets/image (270).png>)
 
 After clicking Ok, click the Details button to edit the PowerShell script. Add the following script to the editor.
 
-```text
+```
 New-UDDashboard -Title "Hello, World!" -Content {
     New-UDButton -Text "Click Me" -OnClick {
         Show-UDToast -Message 'Success!!'
@@ -128,11 +125,10 @@ New-UDDashboard -Title "Hello, World!" -Content {
 
 Save the dashboard, click the Restart button and then click the View button. Click the Click Me button. 
 
-![](.gitbook/assets/image%20%28292%29.png)
+![](<.gitbook/assets/image (292).png>)
 
 Learn more about the various features of PowerShell Universal
 
 * [APIs](api/about.md)
 * [Automation](automation/about.md)
 * [Dashboards](userinterfaces/about.md)
-
