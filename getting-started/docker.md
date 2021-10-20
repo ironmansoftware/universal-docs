@@ -8,7 +8,7 @@ description: This page provides installation and configuration information for D
 
 Our docker image is available on [Docker Hub](https://hub.docker.com/r/ironmansoftware/universal). You can start it by pulling and then running with the default port bound.
 
-```text
+```
 docker pull ironmansoftware/universal
 docker run --name 'PSU' -it -p 5000:5000 ironmansoftware/universal
 ```
@@ -21,7 +21,7 @@ This dockerfile exposes port 5000, creates a `/data` volume, sets configuration 
 
 ### Linux
 
-```text
+```
 FROM ironmansoftware/universal:latest
 LABEL description="Universal - The ultimate platform for building web-based IT Tools" 
 
@@ -36,7 +36,7 @@ ENTRYPOINT ["./home/Universal/Universal.Server"]
 
 ### Windows
 
-```text
+```
 FROM ironmansoftware/universal:1.3.1-windowsservercore-1809
 LABEL description="Universal - The ultimate platform for building web-based IT Tools" 
 
@@ -51,13 +51,21 @@ ENTRYPOINT ["C:/ProgramData/Universal/Universal.Server.exe"]
 
 You can run a build with the build command.
 
-```text
+```
 docker build . --tag=universal-persistent
 ```
 
 You can start the docker container with the run command and make sure to specify the volume to mount.
 
-```text
+```
 docker run --name powershelluniversal --mount source=psudata,target=/data --rm -d  -p 5000:5000/tcp universal-persistent:latest
 ```
 
+## Time Zones
+
+To properly support time zones on Linux when scheduling jobs, you will need to include the `tzdata` package in your dockerfile along with an environment variable that specifies the server time zone.&#x20;
+
+```
+ENV TZ Europe/Amsterdam
+RUN apt-get install -y tzdata
+```
