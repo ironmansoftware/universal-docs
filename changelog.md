@@ -4,6 +4,32 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2.4.1 - 10/21/2021
+
+
+
+### Includes
+
+* UniversalDashboard - v3.7.1
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.1.1
+* UniversalDashboard.Style - 1.0.0
+
+***
+
+### Changed
+
+#### User Interfaces
+
+* Dashboard - Fixed render issue with New-UDIconButton
+* Dashboard - Fixed an issue where New-UDUpload -OnChange did not behave the same as the previous version
+
+#### Platform
+
+* Fixed an issue where authorization policies would throw an exception and not log why it happened
+
 ## 2.4.0 - 10/12/2021
 
 ### Includes
@@ -243,16 +269,16 @@ description: Changelog for PowerShell Universal.
 * Fixed an issue where Hashtable output by jobs couldn't be viewed in the Pipeline Output view
 * Fixed an issue where the job view would not update automatically
 * Fixed an issue where progress was not shown on the job view
-* Fixed an issue where the server could crash when a job was cancelled 
+* Fixed an issue where the server could crash when a job was cancelled&#x20;
 * Fixed an issue where error action would display the numeric value rather than the name of the error action
-* Fixed an issue where string\[] params would fail to work correctly 
+* Fixed an issue where string\[] params would fail to work correctly&#x20;
 
 #### User Interface
 
 * Fixed an issue where a base URL of / on a dashboard prevents pages from working
 * UDv3 - Fixed an issue where New-UDPage -Url was not honored in default navigation
 * Added links to scripts and APIs from the page designer
-* UDv3 - Fixed an issue where passing empty data to -Data of New-UDTable would throw an error. 
+* UDv3 - Fixed an issue where passing empty data to -Data of New-UDTable would throw an error.&#x20;
 * UDv3 - Fixed an issue where New-UDTable sorting could result in an error on the page about toUpperCase not being defined
 * UDv3 - Fixed an issue where null values in rows of New-UDTable would cause filters to fail
 * Fixed an issue where dashboard logs could show an error
@@ -262,7 +288,7 @@ description: Changelog for PowerShell Universal.
 * UDv3 - Fixed an issue where using server-side exporting of UDTable wouldn't use the -Title in exports
 * UDv3 - Fixed an issue where using server-side exporting of UDTable would change the case of the title in exports
 * Pages - Fixed an issue where Statistics would display script output as \[object Object]
-* Pages - Fixed an issue where Form checkboxes in pages would not send data 
+* Pages - Fixed an issue where Form checkboxes in pages would not send data&#x20;
 * Pages Fixed an issue where required fields in forms would not be enforced
 * Pages - Fixed an issue where you could drag components when modals were open
 * Pages - Cleaned up the properties dialog and toolbox
@@ -272,12 +298,12 @@ description: Changelog for PowerShell Universal.
 * Swagger documentation now requires authentication to view
 * MSI installer now verifies that .NET 4.7.2 or later is installed
 * Fixed an issue where Concurrent Job Limit setting wouldn't persist on the General page
-* Updated latest docker image to 7.1.4 
+* Updated latest docker image to 7.1.4&#x20;
 * Updated PowerShell Universal PowerShell SDK to 7.1.4
 * Fixed an issue where OpenID Connect login would result in a white screen
 * Fixed an issue where visiting the Settings  Configurations page would issue an app token
-* Added Telemetry setting to General settings page 
-* Fixed an issue where the Reader role could see buttons they can't use. 
+* Added Telemetry setting to General settings page&#x20;
+* Fixed an issue where the Reader role could see buttons they can't use.&#x20;
 * Fixed an issue where access control assigned privileges would show things they couldn't use.
 * Fixed an issue where subscription licenses would show an invalid end date in the admin console
 * Fixed an issue where subscription licenses would not show any information if they failed to activate
@@ -314,15 +340,15 @@ description: Changelog for PowerShell Universal.
 #### User Interfaces
 
 * Pages: Fixed an issue where the page table would not show that authentication was enabled
-* Pages: Fixed an issue where the page would flicker when a chart was on the page 
-* Pages: Fixed an issue where a component wouldn't show up after adding it to the page 
+* Pages: Fixed an issue where the page would flicker when a chart was on the page&#x20;
+* Pages: Fixed an issue where a component wouldn't show up after adding it to the page&#x20;
 
 #### Platform
 
 * Fixed an issue where upgrading Windows PowerShell could cause PSU to fail to start, run jobs or start dashboards
 * Added display of execution environment PowerShell version
 * Fixed an issue where redirect to login page would take about 5 seconds
-* Fixed an issue where login wouldn't work correctly when going to admin page for OIDC and WS-Fed. 
+* Fixed an issue where login wouldn't work correctly when going to admin page for OIDC and WS-Fed.&#x20;
 * Added telemetry for page views
 * Fixed an issue where you couldn't delete the last item (Endpoints, scripts, dashboards, etc)
 * Fixed an issue where the configurations page would show an empty file name
@@ -344,7 +370,7 @@ description: Changelog for PowerShell Universal.
 
 * Added pages feature with new page designer
 * Dashboards: Fixed an issue where dashboards wouldn't use the configured default environment
-* Dashboards: Fixed an issue where auto-deploy would refresh the browser before setting the new settings 
+* Dashboards: Fixed an issue where auto-deploy would refresh the browser before setting the new settings&#x20;
 
 ### Changed
 
@@ -355,7 +381,7 @@ description: Changelog for PowerShell Universal.
 
 #### Platform
 
-* Reorganized admin console menu 
+* Reorganized admin console menu&#x20;
 * Fixed an issue where the admin console would display an error when trying to load pages when not logged in
 * Fixed an issue where the user name text color in the menu when using single sign on
 
@@ -374,7 +400,7 @@ description: Changelog for PowerShell Universal.
 
 #### Dashboard
 
-* Fixed an issue where New-UDTable -Data would fail to show a table with a single record. 
+* Fixed an issue where New-UDTable -Data would fail to show a table with a single record.&#x20;
 
 ## 2.1.3 - 7/26/2021
 
@@ -410,8 +436,8 @@ description: Changelog for PowerShell Universal.
 
 ### Platform
 
-* Fixed an issue where app tokens would be created automatically 
-* Fixed an issue where the swagger documentation was not generated correctly 
+* Fixed an issue where app tokens would be created automatically&#x20;
+* Fixed an issue where the swagger documentation was not generated correctly&#x20;
 * Fixed an issue where empty configuration files could cause problems
 * Fixed an issue where Start-PSUServer would only listen on localhost
 * Fixed an issue where the update check service would hold a copy of the database open and cause a memory leak
@@ -528,7 +554,7 @@ description: Changelog for PowerShell Universal.
 * By default, dashboards are now created in their own folder in the repository folder
 * UDv3 - Fixed an issue where New-UDTable would fail to export a rendered column
 * UDv3 - Hide logout button when using Windows authentication
-* UDv3 - Fixed an issue where -SortType datetime would not function correctly on New-UDTable 
+* UDv3 - Fixed an issue where -SortType datetime would not function correctly on New-UDTable&#x20;
 * UDv3 - Upgraded to the latest version of SignalR to fix issues with Chrome tab idling.
 * UDv3 - Removed a restriction on what element was supported with New-UDListItem and -Icon
 * Fixed an issue where the Operator role could not save dashboards
@@ -618,7 +644,7 @@ description: Changelog for PowerShell Universal.
 #### Platform
 
 * Fixed an issue where the favicon was missing on the admin console
-* Rolling back a change to session time out for the admin console as it was causing problems with forms resetting 
+* Rolling back a change to session time out for the admin console as it was causing problems with forms resetting&#x20;
 
 ## 2.0.1 - 6/4/2021
 
@@ -646,17 +672,17 @@ description: Changelog for PowerShell Universal.
 #### Dashboard
 
 * UDv3 - Fixed an issue where New-UDTableTextOption was not exported in the module manifest.
-* UDv3 - Fixed an issue where Show-UDTooltip -Icon didn't work. 
+* UDv3 - Fixed an issue where Show-UDTooltip -Icon didn't work.&#x20;
 * UDv3 - Fixed an issue where New-UDAlert was not exported in the module manifest.
 * UDv3 - Fixed an issue where the New-UDCodeEditor didn't have a default parameter set provided
 
 #### Platform
 
-* Fixed an issue where many app tokens could be created automatically 
+* Fixed an issue where many app tokens could be created automatically&#x20;
 * Hide Trial Info button if platform is licensed
 * Enabled BinaryFormatter to allow for PowerShell remoting in an the integrated environment
 * Fixed an issue where the LTS Docker container would not start
-* Fixed an issue where Policy Defined identities would have a blank role in the Identities table 
+* Fixed an issue where Policy Defined identities would have a blank role in the Identities table&#x20;
 * Fixed an issue where the session timeout modal would not be shown in the admin console
 
 ## 2.0.0 - 6/2/2021
@@ -697,18 +723,18 @@ Please see notes about [upgrading](getting-started/upgrading.md) from 1.x to 2.x
 * Tag Support
 * Access Controls for Scripts
 * Integrated environment support
-* Added support for $Cache: scope 
+* Added support for $Cache: scope&#x20;
 
 #### Dashboard
 
 * Added support for syncing components via git
-* Added description to dashboard components. 
+* Added description to dashboard components.&#x20;
 * Added description to dashboards
 * Integrated environment support
 
 #### Platform
 
-* Plugin support 
+* Plugin support&#x20;
 * New Admin Console
 * Added Tags and script tags
 * Improved Access Controls
