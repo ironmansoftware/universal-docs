@@ -72,6 +72,10 @@ Dashboards run in their own isolated PowerShell process. The process ID is liste
 
 Authentication and authorization scripts run within the Universal server. You can find the `Universal.Server.exe` process and attach to that.
 
+**Integrated Environment**
+
+Any feature running within the integrated environment will be running within the `Universal.Server.exe` process. You will need to attach to this process in order to debug them.&#x20;
+
 ### Attaching to the Process and Debugging the Runspace
 
 Once you have the process that you want to attach to, you can do so by using `Enter-PSHostProcess` . Simply specify the process ID that you found in the previous step.
@@ -88,7 +92,18 @@ Once you have attached to the process, you will now want to find the runspace wh
 
 Now that you found your runspace, use `Debug-Runspace` to attached to the runspace. You will now have the opportunity to issue debugging commands against that runspace. You can view the status of variables, issue commands and even step through the script.
 
-For a full list of debugging commands, you can see the [Microsoft documentation here](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_debuggers?view=powershell-7#starting-and-stopping-the-debugger).
+For a full list of debugging commands, you can see the [Microsoft documentation here](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about\_debuggers?view=powershell-7#starting-and-stopping-the-debugger).
+
+### Example of Connecting to API Process
+
+The following is an example of how to connect to an API process.&#x20;
+
+```
+$Process = Get-Process pwsh | Where-Object { $_.CommandLine.Contains('StartApi') }
+Enter-PSHostProcess -Id $Process.Id
+Get-Runspace
+Debug-Runspace -Id 2
+```
 
 ## Debugging with Visual Studio Code
 
