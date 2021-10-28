@@ -14,15 +14,15 @@ To use charts within your dashboard, you will need to add the UniversalDashboard
 
 ## ChartJS
 
-Universal Dashboard integrates with [ChartJS](https://www.chartjs.org/).
+Universal Dashboard integrates with [ChartJS](https://www.chartjs.org).
 
 ### Creating a Chart
 
 To create a chart, use `New-UDChartJS` and `New-UDChartJSData`. The below chart shows the top ten CPU using processes.
 
-![](../../../../.gitbook/assets/image%20%28157%29%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
+![](<../../../../.gitbook/assets/image (157) (1) (2) (2) (2) (2).png>)
 
-```text
+```
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
  New-UDChartJS -Type 'bar' -Data $Data -DataProperty CPU -LabelProperty ProcessName
 ```
@@ -31,16 +31,16 @@ To create a chart, use `New-UDChartJS` and `New-UDChartJSData`. The below chart 
 
 #### Bar
 
-![](../../../../.gitbook/assets/image%20%28157%29%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29.png)
+![](<../../../../.gitbook/assets/image (157) (1) (2) (2) (2) (2) (1).png>)
 
-```text
+```
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
  New-UDChartJS -Type 'bar' -Data $Data -DataProperty CPU -LabelProperty ProcessName
 ```
 
 #### Stacked Bar
 
-```text
+```
     $GraphPrep = @(
         @{ RAM = "Server1"; AvailableRam = 128; UsedRAM = 10 }
         @{ RAM = "Server2"; AvailableRam = 64; UsedRAM = 63 }
@@ -75,49 +75,49 @@ To create a chart, use `New-UDChartJS` and `New-UDChartJSData`. The below chart 
     New-UDChartJS @Options
 ```
 
-![](../../../../.gitbook/assets/image%20%28162%29.png)
+![](<../../../../.gitbook/assets/image (162).png>)
 
 #### Horizontal Bar
 
-![](../../../../.gitbook/assets/image%20%28155%29.png)
+![](<../../../../.gitbook/assets/image (155).png>)
 
-```text
+```
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
  New-UDChartJS -Type 'horizontalBar' -Data $Data -DataProperty CPU -LabelProperty ProcessName
 ```
 
 #### Line
 
-![](../../../../.gitbook/assets/image%20%28152%29.png)
+![](<../../../../.gitbook/assets/image (152).png>)
 
-```text
+```
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
  New-UDChartJS -Type 'line' -Data $Data -DataProperty CPU -LabelProperty ProcessName
 ```
 
 #### Doughnut
 
-![](../../../../.gitbook/assets/image%20%28153%29.png)
+![](<../../../../.gitbook/assets/image (153).png>)
 
-```text
+```
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
  New-UDChartJS -Type 'doughnut' -Data $Data -DataProperty CPU -LabelProperty ProcessName
 ```
 
 #### Pie
 
-![](../../../../.gitbook/assets/image%20%28154%29.png)
+![](<../../../../.gitbook/assets/image (154).png>)
 
-```text
+```
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
  New-UDChartJS -Type 'pie' -Data $Data -DataProperty CPU -LabelProperty ProcessName
 ```
 
 #### Radar
 
-![](../../../../.gitbook/assets/image%20%28158%29.png)
+![](<../../../../.gitbook/assets/image (158).png>)
 
-```text
+```
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
  New-UDChartJS -Type 'radar' -Data $Data -DataProperty CPU -LabelProperty ProcessName
 ```
@@ -126,9 +126,9 @@ To create a chart, use `New-UDChartJS` and `New-UDChartJSData`. The below chart 
 
 Colors can be defined using the various color parameters of `New-UDChartJS`.
 
-![](../../../../.gitbook/assets/image%20%28151%29.png)
+![](<../../../../.gitbook/assets/image (151).png>)
 
-```text
+```
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
 
  $Options = @{
@@ -149,9 +149,9 @@ Colors can be defined using the various color parameters of `New-UDChartJS`.
 
 By default, you do not need to define data sets manually. A single data set is created automatically when you use the `-DataProperty` and `-LabelProperty` parameters. If you want to define multiple data sets for a single chart, you can use the `-Dataset` property in conjunction with `New-UDChartJSDataset`.
 
-![](../../../../.gitbook/assets/image%20%28156%29.png)
+![](<../../../../.gitbook/assets/image (156).png>)
 
-```text
+```
 $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
 
  $CPUDataset = New-UDChartJSDataset -DataProperty CPU -Label CPU -BackgroundColor '#126f8c'
@@ -173,7 +173,7 @@ You can take action when a user clicks the chart. This example shows a toast wit
 
 ![](../../../../.gitbook/assets/z4axjkkvyu.gif)
 
-```text
+```
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
 
   $Options = @{
@@ -196,7 +196,7 @@ You can use `New-UDDynamic` to create charts that refresh on an interval.
 
 ![](../../../../.gitbook/assets/cxez8afan4.gif)
 
-```text
+```
 New-UDDynamic -Content {
     $Data = 1..10 | % { 
         [PSCustomObject]@{ Name = $_; value = get-random }
@@ -209,13 +209,28 @@ New-UDDynamic -Content {
 
 Monitors are a special kind of chart that tracks data over time. Monitors are good for displaying data such as server performance stats that change frequently. You return a single value from a monitor and it is graphed automatically over time.
 
-```text
+```
 New-UDChartJSMonitor -LoadData {
     Get-Random -Max 100 | Out-UDChartJSMonitorData
 } -Labels "Random" -ChartBackgroundColor "#297741" -RefreshInterval 1
 ```
 
 ![](../../../../.gitbook/assets/monitor.gif)
+
+### Options
+
+The `New-UDChartJS` cmdlet supports accepting advanced ChartJS options. You can use the `-Options` parameter to pass in a hashtable.&#x20;
+
+This example hides the legend.
+
+```
+ $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
+ New-UDChartJS -Type 'bar' -Data $Data -DataProperty CPU -LabelProperty ProcessName -Options @{  
+ legend = @{  
+     display = $false  
+ }  
+}
+```
 
 ## Nivo Charts
 
@@ -225,9 +240,9 @@ Universal Dashboard integrates with [Nivo Charts](https://nivo.rocks/components)
 
 All the Nivo charts can be created with `New-UDNivoChart`. You will specify a switch parameter for the different types of charts. Each chart type will take a well defined data format via the `-Data` parameter.
 
-![](../../../../.gitbook/assets/image%20%2893%29.png)
+![](<../../../../.gitbook/assets/image (93).png>)
 
-```text
+```
 $Data = 1..10 | ForEach-Object { 
     $item = Get-Random -Max 1000 
     [PSCustomObject]@{
@@ -242,9 +257,9 @@ New-UDNivoChart -Id 'autoRefreshingNivoBar' -Bar -Keys "value" -IndexBy 'name' -
 
 Nivo provides the ability to specify patterns to display over data sets. You can configure these patterns with `New-UDNivoPattern` and `New-UDNivoFill` .
 
-![](../../../../.gitbook/assets/image%20%2892%29.png)
+![](<../../../../.gitbook/assets/image (92).png>)
 
-```text
+```
 $Data = @(
     @{
         country = 'USA'
@@ -284,7 +299,7 @@ Like many components in Universal Dashboard v3, Nivo charts do not define auto-r
 
 ![](../../../../.gitbook/assets/autorefresh.gif)
 
-```text
+```
 New-UDDynamic -Content {
     $Data = 1..10 | ForEach-Object { 
         $item = Get-Random -Max 1000 
@@ -303,7 +318,7 @@ Nivo charts support OnClick event handlers. You will be provided with informatio
 
 ![](../../../../.gitbook/assets/onclick.gif)
 
-```text
+```
 $Data = @(
     @{
         country = 'USA'
@@ -333,7 +348,7 @@ New-UDNivoChart -Bar -Data $Data -Height 400 -Width 900 -Keys @('burgers', 'frie
 
 #### Bar
 
-```text
+```
 New-Example -Title 'Bar' -Description '' -Example {
     $Data = 1..10 | ForEach-Object { 
         $item = Get-Random -Max 1000 
@@ -348,9 +363,9 @@ New-Example -Title 'Bar' -Description '' -Example {
 
 #### Bubble
 
-![](../../../../.gitbook/assets/image%20%28102%29.png)
+![](<../../../../.gitbook/assets/image (102).png>)
 
-```text
+```
 $TreeData = @{
     Name     = "root"
     children = @(
@@ -379,9 +394,9 @@ New-UDNivoChart -Bubble -Data $TreeData -Value "count" -Identity "name" -Height 
 
 #### Calendar
 
-![](../../../../.gitbook/assets/image%20%2898%29.png)
+![](<../../../../.gitbook/assets/image (98).png>)
 
-```text
+```
 $Data = @()
 for($i = 365; $i -gt 0; $i--) {
     $Data += @{
@@ -398,9 +413,9 @@ New-UDNivoChart -Calendar -Data $Data -From $From -To $To -Height 500 -Width 100
 
 #### Heatmap
 
-![](../../../../.gitbook/assets/image%20%2895%29.png)
+![](<../../../../.gitbook/assets/image (95).png>)
 
-```text
+```
 $Data = @(
     @{
         state = "idaho"
@@ -436,9 +451,9 @@ New-UDNivoChart -Heatmap -Data $Data -IndexBy 'state' -keys @('cats', 'dogs', 'm
 
 #### Line
 
-![](../../../../.gitbook/assets/image%20%28218%29.png)
+![](<../../../../.gitbook/assets/image (218).png>)
 
-```text
+```
 [array]$Data = [PSCustomObject]@{
     id = "DataSet"
     data = (1..20 | ForEach-Object {
@@ -454,9 +469,9 @@ New-UDNivoChart -Line -Data $Data -Height 500 -Width 1000 -LineWidth 1
 
 #### Stream
 
-![](../../../../.gitbook/assets/image%20%2897%29.png)
+![](<../../../../.gitbook/assets/image (97).png>)
 
-```text
+```
 $Data = 1..10 | ForEach-Object { 
     @{
         "Adam" = Get-Random 
@@ -472,9 +487,9 @@ New-UDNivoChart -Stream -Data $Data -Height 500 -Width 1000 -Keys @("adam", "alo
 
 #### Treemap
 
-![](../../../../.gitbook/assets/image%20%2891%29.png)
+![](<../../../../.gitbook/assets/image (91).png>)
 
-```text
+```
 $TreeData = @{
     Name     = "root"
     children = @(
@@ -500,4 +515,3 @@ $TreeData = @{
 
 New-UDNivoChart -Treemap -Data $TreeData -Value "count" -Identity "name" -Height 500 -Width 800
 ```
-
