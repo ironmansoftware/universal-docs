@@ -40,17 +40,37 @@ Most of the settings for PowerShell Universal are stored within the repository f
 
 ## 2.0 Breaking Changes
 
-If you are upgrading from 1.x, you will have a couple of breaking changes. 
+If you are upgrading from 1.x, you will have a couple of breaking changes.&#x20;
 
 ### Integrated Environment by Default
 
-The integrated environment is now the default configuration. If you do not want to use the integrated environment by default, select a default environment in General settings. 
+The integrated environment is now the default configuration. If you do not want to use the integrated environment by default, select a default environment in General settings.&#x20;
 
-![](../.gitbook/assets/image%20%28223%29.png)
+![](<../.gitbook/assets/image (223).png>)
 
 ### IIS Hosting Package
 
-If you are hosting in IIS, ensure that you install the [.NET 5.0 hosting bundle](https://dotnet.microsoft.com/download/dotnet/5.0). 
+If you are hosting in IIS, ensure that you install the [.NET 5.0 hosting bundle](https://dotnet.microsoft.com/download/dotnet/5.0).&#x20;
+
+## PowerShell Upgrade
+
+If you installed the platform using `Install-PSUServer`, you can use the `Update-PSUServer` cmdlet to upgrade the system.&#x20;
+
+### Upgrade a Service
+
+To upgrade a service, use `Update-PSUServer` and optionally specify the path to where the executable is stored.&#x20;
+
+```
+Update-PSUServer
+```
+
+### Upgrade an IIS Website
+
+You can upgrade an IIS website by using the `-IISWebsite` parameter of `Update-PSUServer`.
+
+```
+Update-PSUServer -IISWebsite 'PSU'
+```
 
 ## ZIP Upgrade
 
@@ -70,7 +90,7 @@ You will want to follow the guide on data and configuration persistence above to
 If you have configured a service account for your MSI installation, you will need to set the service account after upgrading.
 {% endhint %}
 
-### Upgrading from 1.x to 2.x 
+### Upgrading from 1.x to 2.x&#x20;
 
 To upgrade from 1.x to 2.x, you will need to uninstall 1.x first. Once the uninstalled, run the 2.x installer to install the latest version.
 
@@ -80,5 +100,4 @@ When upgrading with IIS, you will need to first stop your application pool to en
 
 ### Upgrading from 1.x to 2.x
 
-You will need to install the [.NET 5.0 hosting bundle](https://dotnet.microsoft.com/download/dotnet/5.0). 
-
+You will need to install the [.NET 5.0 hosting bundle](https://dotnet.microsoft.com/download/dotnet/5.0).&#x20;
