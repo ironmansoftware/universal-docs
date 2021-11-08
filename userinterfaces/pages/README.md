@@ -1,56 +1,82 @@
 ---
-description: 'Simple, drag and drop web pages that can execute PowerShell and REST APIs.'
+description: Simple, drag and drop web pages that can execute PowerShell and REST APIs.
 ---
 
 # Pages
 
-Pages allow you to create basic websites that do not require any coding of the user interface. You can drag and drop UI components on to the designer and set properties of each component. Components can interact with APIs and Scripts that are defined within Universal. 
+Pages allow you to create basic websites that do not require any coding of the user interface. You can drag and drop UI components on to the designer and set properties of each component. Components can interact with APIs and Scripts that are defined within Universal.&#x20;
 
 ## Adding a Page
 
-To add a page, navigate to User Interfaces \ Pages within the admin console. Click the Create New Page button to create a page. 
+To add a page, navigate to User Interfaces \ Pages within the admin console. Click the Create New Page button to create a page.&#x20;
 
-The name of the page will also be the URL used to access the page. 
+The name of the page will also be the URL used to access the page.&#x20;
 
-![](../../.gitbook/assets/image%20%28230%29.png)
+![](<../../.gitbook/assets/image (230).png>)
 
-Pages can take advantage of role based access. You can turn on authentication for a page and limit the access to the page to users based on role. This feature requires a license. 
+Pages can take advantage of role based access. You can turn on authentication for a page and limit the access to the page to users based on role. This feature requires a license.&#x20;
 
 ## Editing a Page
 
-To edit the content of the page, you can view the page as an administrator. When you view the page, you will have access to an edit button for managing the components and layout of the page. 
+To edit the content of the page, you can view the page as an administrator. When you view the page, you will have access to an edit button for managing the components and layout of the page.&#x20;
 
 ![](../../.gitbook/assets/editing.gif)
 
 ## Adding a Component
 
-To add a component, click the Toolbox button and select the component to add. Properties for a component can be set by clicking the properties button on the component and editing the required and optional properties. 
+To add a component, click the Toolbox button and select the component to add. Properties for a component can be set by clicking the properties button on the component and editing the required and optional properties.&#x20;
 
 ![](../../.gitbook/assets/addcomponent.gif)
 
 ## Layouts
 
-Layouts are setup by resizing and dragging components around the designer surface. Layouts are responsive. If you want to setup layouts for smaller screens, reduce the width of your window and setup a new layout. 
+Layouts are setup by resizing and dragging components around the designer surface. Layouts are responsive. If you want to setup layouts for smaller screens, reduce the width of your window and setup a new layout.&#x20;
 
 ![](../../.gitbook/assets/layouts.gif)
 
 ## Invoking Scripts and APIs
 
-Certain components can interact with scripts or API endpoints. These include buttons, forms, statistics and tables. You can configure the script or API that is invoked as well as the parameters that are passed to those targets. 
+Certain components can interact with scripts or API endpoints. These include buttons, forms, statistics and tables. You can configure the script or API that is invoked as well as the parameters that are passed to those targets.&#x20;
 
-This example uses a script to populate a table. 
+This example uses a script to populate a table.&#x20;
 
-![](../../.gitbook/assets/table%20%281%29.gif)
+![](<../../.gitbook/assets/table (1).gif>)
 
-This example invokes a script when a button is clicked. 
+This example invokes a script when a button is clicked.&#x20;
 
 ![](../../.gitbook/assets/button.gif)
 
+## Grouping Pages
+
+{% hint style="info" %}
+Available in PowerShell Universal 2.5 or later.
+{% endhint %}
+
+Grouping pages will create nested navigation within the page section. Select a group in the page properties. Matching pages will be displayed in that group.
+
+&#x20;
+
+![](<../../.gitbook/assets/image (298).png>)
+
+## Page URLs
+
+By default, the page URL will be the Name of the page. So for example, if the page's name was Services the URL will be `/Services`.&#x20;
+
+You can customize the URL in the page properties.&#x20;
+
+### Default URL
+
+{% hint style="info" %}
+Available in PowerShell Universal 2.5 or later.
+{% endhint %}
+
+You can change the default URL of the PowerShell Universal instance by setting the page URL to `/` . When users login or visit the server name directly, they will not be directed to `/admin` but rather the page defined with `/`.&#x20;
+
 ## Configuration Files
 
-Pages are stored as XML. Unlike dashboards, they do not allow for direct programmatic configuration. The layout and components are static but can interact with APIs and scripts. 
+Pages are stored as XML. Unlike dashboards, they do not allow for direct programmatic configuration. The layout and components are static but can interact with APIs and scripts.&#x20;
 
-```text
+```
 <?xml version="1.0" encoding="utf-8"?>
 <Page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Page1" Description="This is a great page. " Authenticated="false" Icon="SkypeOutlined" ShowInNavigation="false">
   <Components>
@@ -90,4 +116,3 @@ Pages are stored as XML. Unlike dashboards, they do not allow for direct program
   <AccessControls>All</AccessControls>
 </Page>
 ```
-

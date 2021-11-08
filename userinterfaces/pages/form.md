@@ -130,6 +130,14 @@ Hidden fields provide a value to the target that is not shown to the user. The v
 
 Allows the user to select a number. The value will be passed as an integer.&#x20;
 
+**Password**
+
+{% hint style="info" %}
+Available in PowerShell Universal 2.5 or later
+{% endhint %}
+
+A textbox with a mask to prevent you from seeing the characters typed.&#x20;
+
 **Select**
 
 Allows the user to select an option from a drop down. The value will be passed as a string.&#x20;
