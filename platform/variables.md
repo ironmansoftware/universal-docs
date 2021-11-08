@@ -59,8 +59,24 @@ The following variables are available throughout all environments within PowerSh
 | Name            | Type   | Description                                                                |
 | --------------- | ------ | -------------------------------------------------------------------------- |
 | $PSUEnvironment | string | The name of the environment the script is running within (e.g. Integrated) |
-|                 |        |                                                                            |
-|                 |        |                                                                            |
+
+### Dashboards
+
+Below are variables that are available in dashboards in addition to the global variables.
+
+| Name             | Description                                                                                                       | Type                                                                |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| $User            | The user name of the logged in user. $Null if authentication is disabled.                                         | String                                                              |
+| $Roles           | The roles that the user has been granted. $Null if authentication is disabled.                                    | String\[]                                                           |
+| $RemoteIpAddress | The remote IP address of the connected user.                                                                      | String                                                              |
+| $RemotePort      | The remote port of the connected user.                                                                            | Int                                                                 |
+| $ClaimsPrincipal | The claims principal of the current user. This is the same object that is provided to role-based access policies. | [ClaimPrincipal](../userinterfaces/dashboards/role-based-access.md) |
+| $Headers         | The headers provided by the browser.                                                                              | hashtable                                                           |
+| $Cookies         | The request cookies provided by the browser.                                                                      | hashtable                                                           |
+| $PSUAppToken     | The app token of the current user. Only available when -GrantAppToken is enabled.                                 | string                                                              |
+| $PSUComputerName | The URL of the PSU server. Only available when -GrantAppToken is enabled.                                         | string                                                              |
+
+
 
 ## Related Cmdlets
 

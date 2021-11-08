@@ -146,16 +146,4 @@ New-PSUDashboard -Name 'Dashboard' -BaseUrl '/' -Framework "UniversalDashboard:L
 
 ## Variables Available in Dashboards
 
-| Name             | Description                                                                                                                                                         | Type                                                        |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
-| $AccessToken     | An access token granted by an OpenID Connect provider. This access token can be used to authorize access to different services. This will be null of not configure. | string                                                      |
-| $ClaimsPrincipal | The user information for the authenticated user. This will include user name and claims.                                                                            | [ClaimsPrincipal](../../config/security/#policy-assignment) |
-| $Cookies         | Cookies provided in the client's HTTP request.                                                                                                                      | hashtable                                                   |
-| $Headers         | Headers provided in the client's HTTP request.                                                                                                                      | hashtable                                                   |
-| $LocalIpAddress  | The local IP address of the request.                                                                                                                                | string                                                      |
-| $LocalPort       | The local port of the request.                                                                                                                                      | string                                                      |
-| $RemoteIpAddress | The remote IP address of the request.                                                                                                                               | string                                                      |
-| $RemotePort      | The remote port of the request.                                                                                                                                     | string                                                      |
-| $Roles           | An array of role names that the user is a part of.                                                                                                                  | string\[]                                                   |
-| $User            | The user name of the currently logged in user. If authentication is disabled, this will be $null                                                                    | string                                                      |
-|                  |                                                                                                                                                                     |                                                             |
+Built-in variables are listed on the [variables page.](../../platform/variables.md#dashboards)
