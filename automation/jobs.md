@@ -87,7 +87,7 @@ $HostOutput = Get-UAJobOutput -Job $Job
 $HostOutput.Data
 ```
 
-If you are using PowerShell Universal 2.4 or later, you can use the `-Wait` parameter of `Invoke-UAScript` to achieve this. 
+If you are using PowerShell Universal 2.4 or later, you can use the `-Wait` parameter of `Invoke-UAScript` to achieve this.&#x20;
 
 ```
 $Pipeline = Invoke-UAScript -Script 'Script1.ps1' -RequiredParameter 'Hello' -Wait
@@ -107,7 +107,7 @@ Invoke-RestMethod http://localhost:5000/api/v1/script/7 -Method POST -Body "" -H
 
 ### Providing Parameters
 
-You can provide parameters to the job via a query string. Parameters will be provided to your script as strings. 
+You can provide parameters to the job via a query string. Parameters will be provided to your script as strings.&#x20;
 
 ```
 $Parameters = @{
@@ -147,22 +147,4 @@ Invoke-RestMethod http://localhost:5000/api/v1/script/7 -Method POST -Body $JobC
 
 ## Variables Defined in Jobs
 
-There are several built-in variables that are defined when a job is run. You can use these variables in your scripts to retrieve information about the current job.
-
-| Name          | Description                                                                                                                                   |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| $UAJob        | The current job that is running. This will include properties such as the script, the user that started the job and when the job was started. |
-| $UAJobId      | The ID of the running job.                                                                                                                    |
-| $UAScript     | The script that is running. This will include properties such as the name of the script and path to the script.                               |
-| $UAScriptId   | The ID of the running script.                                                                                                                 |
-| $UASchedule   | The schedule that was used to start the script.                                                                                               |
-| $UAScheduleId | The ID of the schedule that started the script.                                                                                               |
-| $AccessToken  | When using OIDC authentication, you can retrieve the current user's access token for access resources on their behalf.                        |
-
-### Retrieving the user that started a script
-
-You can retrieve the name of the user that started the script by using the `UAJob` variable
-
-```
-$UAJob.Identity.Name
-```
+Variables defined in jobs can be found on the [variables page](../platform/variables.md#scripts).

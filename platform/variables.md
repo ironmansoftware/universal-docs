@@ -60,6 +60,22 @@ The following variables are available throughout all environments within PowerSh
 | --------------- | ------ | -------------------------------------------------------------------------- |
 | $PSUEnvironment | string | The name of the environment the script is running within (e.g. Integrated) |
 
+### API
+
+There are a set of predefined variables that are available in API endpoints. You'll be able to use these variables in your scripts.
+
+| Variable         | Description                                           | Type      |
+| ---------------- | ----------------------------------------------------- | --------- |
+| $Url             | URL the client used to call the endpoint              | String    |
+| $Headers         | Headers provided by the client to call the endpoint   | Hashtable |
+| $Body            | The UTF8 encoded string of the content of the request | String    |
+| $Data            | Binary byte array for the content of the request      | Byte\[]   |
+| $RemoteIpAddress | The remote IP address used to make the request.       | String    |
+| $LocalIpAddress  | The local IP address used to service the request.     | String    |
+| $RemotePort      | The remote port that was called to make the request.  | Integer   |
+| $LocalPort       | The local port that was used to service the request.  | Integer   |
+| $Identity        | The identity name of the principal accessing the API. | String    |
+
 ### Dashboards
 
 Below are variables that are available in dashboards in addition to the global variables.
@@ -76,7 +92,27 @@ Below are variables that are available in dashboards in addition to the global v
 | $PSUAppToken     | The app token of the current user. Only available when -GrantAppToken is enabled.                                 | string                                                              |
 | $PSUComputerName | The URL of the PSU server. Only available when -GrantAppToken is enabled.                                         | string                                                              |
 
+### Scripts
 
+There are several built-in variables that are defined when a job is run. You can use these variables in your scripts to retrieve information about the current job.
+
+| Name          | Description                                                                                                                                   |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| $UAJob        | The current job that is running. This will include properties such as the script, the user that started the job and when the job was started. |
+| $UAJobId      | The ID of the running job.                                                                                                                    |
+| $UAScript     | The script that is running. This will include properties such as the name of the script and path to the script.                               |
+| $UAScriptId   | The ID of the running script.                                                                                                                 |
+| $UASchedule   | The schedule that was used to start the script.                                                                                               |
+| $UAScheduleId | The ID of the schedule that started the script.                                                                                               |
+| $AccessToken  | When using OIDC authentication, you can retrieve the current user's access token for access resources on their behalf.                        |
+
+#### Retrieving the user that started a script
+
+You can retrieve the name of the user that started the script by using the `UAJob` variable
+
+```
+$UAJob.Identity.Name
+```
 
 ## Related Cmdlets
 
