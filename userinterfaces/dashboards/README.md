@@ -132,6 +132,18 @@ New-UDDashboard -Title "Hello, World!" -Content {
 } 
 ```
 
+## Disable Startup Logging
+
+{% hint style="info" %}
+Available in PowerShell Universal 2.5 or later.&#x20;
+{% endhint %}
+
+When starting a dashboard, information about the variables and modules is displayed within the dashboard log. If you wish to suppress this information, you can use the `-DisableStartupLogging` parameter.&#x20;
+
+```
+New-PSUDashboard -Name 'Dashboard' -BaseUrl '/' -Framework "UniversalDashboard:Latest" -DisableStartupLogging
+```
+
 ## Variables Available in Dashboards
 
 | Name             | Description                                                                                                                                                         | Type                                                        |
