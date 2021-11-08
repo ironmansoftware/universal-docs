@@ -42,5 +42,5 @@ Once created, the module will be listed under Universal Modules with the option 
 
 When editing the module, it will open a code editor where you can define functions, variables and aliases to export.&#x20;
 
-![](<../.gitbook/assets/image (302).png>)
+![](<../.gitbook/assets/image (302) (1).png>)
 

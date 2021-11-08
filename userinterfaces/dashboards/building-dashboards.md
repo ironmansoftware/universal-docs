@@ -88,20 +88,7 @@ Learn more about [Pages here](building-dashboards.md#pages).&#x20;
 
 ## Built-in Variables
 
-There are several built-in variables that are available in dashboards.
-
-| Name             | Description                                                                                                       | Type                                   |
-| ---------------- | ----------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
-| $User            | The user name of the logged in user. $Null if authentication is disabled.                                         | String                                 |
-| $Roles           | The roles that the user has been granted. $Null if authentication is disabled.                                    | String\[]                              |
-| $RemoteIpAddress | The remote IP address of the connected user.                                                                      | String                                 |
-| $RemotePort      | The remote port of the connected user.                                                                            | Int                                    |
-| $ClaimsPrincipal | The claims principal of the current user. This is the same object that is provided to role-based access policies. | [ClaimPrincipal](role-based-access.md) |
-| $Headers         | The headers provided by the browser.                                                                              | hashtable                              |
-| $Cookies         | The request cookies provided by the browser.                                                                      | hashtable                              |
-| $PSUAppToken     | The app token of the current user. Only available when -GrantAppToken is enabled.                                 | string                                 |
-| $PSUComputerName | The URL of the PSU server. Only available when -GrantAppToken is enabled.                                         | string                                 |
-|                  |                                                                                                                   |                                        |
+Built-in variables can be found on the [variables page](../../platform/variables.md#dashboards).
 
 ## Debugging
 

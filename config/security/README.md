@@ -14,11 +14,11 @@ Authentication settings are also stored with `authentication.ps1`
 
 To update forms authentication, you can click Settings  Security and then click the Settings button for the forms authentication.
 
-![](../../.gitbook/assets/image%20%28179%29.png)
+![](<../../.gitbook/assets/image (300).png>)
 
 You can update the PowerShell script found in settings to configure how the user is authenticated. You'll need to return a `New-PSUAuthenticationResult` from the script to indicate whether the user was successfully authenticated.
 
-```text
+```
 param(
     [PSCredential]$Credential
 )
@@ -42,7 +42,7 @@ else
 
 You can check the password of the credential by using the `GetNetworkCredential()` method of `PSCredential`.
 
-```text
+```
 param(
     [PSCredential]$Credential
 )
@@ -68,7 +68,7 @@ During forms authentication, you can set claims that will be available within ro
 
 This example uses Active Directory to look up group membership and assign the as claims that will be available within the roles scripts.
 
-```text
+```
 param(
     [PSCredential]$Credential
 )
@@ -114,31 +114,33 @@ Within your `roles.ps1` file, you will be able to use these claims to validate g
 
 This example checks to see if the user is part of the SOC\_Admins group.
 
-```text
+```
 param($User)
 
 $Roles = $User.Claims | Where-Object Type -eq Role | Select-Object -ExpandProperty Value
 $Roles -contains 'SOC_Admins'
 ```
 
-### Variables 
+### Variables&#x20;
 
 These are the variables defined within the security scripts.
 
-| Name | Description | Type |
-| :--- | :--- | :--- |
-| $Cookies | Cookies provided in the client's HTTP request. | hashtable |
-| $Headers | Headers provided in the client's HTTP request. | hashtable |
-| $LocalIpAddress | The local IP address of the request.  | string |
-| $LocalPort | The local port of the request. | string |
-| $RemoteIpAddress | The remote IP address of the request. | string |
-| $RemotePort | The remote port of the request. | string |
+| Name             | Description                                    | Type      |
+| ---------------- | ---------------------------------------------- | --------- |
+| $Cookies         | Cookies provided in the client's HTTP request. | hashtable |
+| $Headers         | Headers provided in the client's HTTP request. | hashtable |
+| $LocalIpAddress  | The local IP address of the request.           | string    |
+| $LocalPort       | The local port of the request.                 | string    |
+| $RemoteIpAddress | The remote IP address of the request.          | string    |
+| $RemotePort      | The remote port of the request.                | string    |
 
 ## OpenID Authentication
 
 You can configure OpenID authentication and authorization by adjusting the settings within the `OpenID` section of the `appsettings.json` file. Authorization policies that you configure within Universal will be run on the user's identity after authentication is successful.
 
 ## Windows Authentication
+
+### appsettings.json
 
 Windows Authentication provides single-sign on support for browsers and environments that support it. To enable Windows Authentication, set the `WindowsAuthentication` enabled setting to true in `appsettings.json`.
 
@@ -148,15 +150,27 @@ Windows Authentication provides single-sign on support for browsers and environm
 },
 ```
 
+### Authentication.ps1
+
+{% hint style="info" %}
+Available in PowerShell Universal 2.5 and later.&#x20;
+{% endhint %}
+
+You can enable Windows authentication by adding a new authentication provider in Security \ Authentication. Select Windows and enable the authentication.&#x20;
+
+![](<../../.gitbook/assets/image (294).png>)
+
+Once Windows set to authenticated, Windows authentication can now be used against Universal. You will have to log out in order to use Windows authentication.
+
 ### Windows Authentication in IIS
 
 To enable Windows Authentication in IIS, ensure that you enable Windows Authentication and disable anonymous authentication.
 
-![](../../.gitbook/assets/image%20%28149%29.png)
+![](<../../.gitbook/assets/image (149).png>)
 
 In the web.config file that is included with PowerShell Universal, ensure that you have set the `forwardWindowsAuthToken` to `true`.
 
-```text
+```
 <aspNetCore processPath="Universal.Server.exe" arguments="" forwardWindowsAuthToken="true" stdoutLogEnabled="true" stdoutLogFile=".\logs\log" hostingModel="OutOfProcess"/>
 ```
 
@@ -174,21 +188,21 @@ On Windows, you should install PowerShell Universal as a [Windows Service](../..
 },
 ```
 
-The service account needs to have a Service Principal Name \(spn\) configured for the computer account. You can do this using the `setspn` command. The computer name needs to be the full qualified name of the machine running Universal.
+The service account needs to have a Service Principal Name (spn) configured for the computer account. You can do this using the `setspn` command. The computer name needs to be the full qualified name of the machine running Universal.
 
-```text
+```
 setspn -S HTTP/myservername.mydomain.com myuser
 ```
 
-For more information, you can follow the Microsoft documentation for configuring ASP.NET Core Windows Authentication: [Configuring a Windows machine for Windows Authentication](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/windowsauth?view=aspnetcore-3.1&tabs=visual-studio#windows-environment-configuration)
+For more information, you can follow the Microsoft documentation for configuring ASP.NET Core Windows Authentication: [Configuring a Windows machine for Windows Authentication](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/windowsauth?view=aspnetcore-3.1\&tabs=visual-studio#windows-environment-configuration)
 
 #### Linux
 
-[Configuring a Linux or Mac OS machine for Windows Authentication](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/windowsauth?view=aspnetcore-3.1&tabs=visual-studio#linux-and-macos-environment-configuration)
+[Configuring a Linux or Mac OS machine for Windows Authentication](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/windowsauth?view=aspnetcore-3.1\&tabs=visual-studio#linux-and-macos-environment-configuration)
 
 ## Authorization
 
-{% embed url="https://youtu.be/0lqyb-PdCxc" caption="" %}
+{% embed url="https://youtu.be/0lqyb-PdCxc" %}
 
 User authorization is accomplished with roles. Roles are either assigned based on the policy script you define or a role is assigned manually to the user.
 
@@ -196,13 +210,13 @@ User authorization is accomplished with roles. Roles are either assigned based o
 
 By default, roles are assigned by policies. Policies are run when the user logs in. You can change the policy scripts by visiting the Security / Roles tab. Click the Edit Policy button to configure the Policy script.
 
-![](../../.gitbook/assets/image%20%288%29.png)
+![](<../../.gitbook/assets/image (8).png>)
 
 Policy scripts will receive a `ClaimsPrincipal` object as a parameter and need to return true or false. Policies that throw errors will be assumed to be false. The `ClaimsPrincipal` object contains the user's identity and the claims that the user has received. These may include group assignments or other features of a user's account.
 
 You can expect an object with this structure.
 
-```text
+```
 public class ClaimsPrincipal
 {
     public List<Claim> Claims { get; set; } = new List<Claim>();
@@ -228,7 +242,7 @@ public class Claim
 
 To assign a role to a user, you can create their identity within Universal and then select the role in the drop down on the Identities page. By default, identities receive a role through policy.
 
-![](../../.gitbook/assets/image%20%2818%29.png)
+![](<../../.gitbook/assets/image (18).png>)
 
 ### Built in Roles
 
@@ -254,7 +268,7 @@ If your users are members of more than about 40 groups you may experience proble
 
 You can increase the header limit for Kestrel by using the limits configuration in `appsettings.json` file. You will need to increase the header size. It is a value in bytes and defaults to 32kb.
 
-```text
+```
 {
   "Kestrel": {
     "Endpoints": {
@@ -275,15 +289,15 @@ Authorization in IIS works as with any other method but you need to be aware of 
 
 The error you will receive will either be a 400 error with the request is too long.
 
-![](../../.gitbook/assets/image%20%28150%29.png)
+![](<../../.gitbook/assets/image (150).png>)
 
 If you have HTTPS enabled, you will receive an error about a HTTP2 protocol error.
 
-![](../../.gitbook/assets/image%20%284%29.png)
+![](<../../.gitbook/assets/image (4).png>)
 
 You can increase the IIS request size by setting the following registry keys. You will need to restart you machine in order for them to take affect.
 
-```text
+```
 HKLM:\System\CurrentControlSet\Services\Http\Parameters
     MaxFieldLength: DWORD
 
@@ -295,11 +309,11 @@ More information can be found on [Microsoft's documentation](https://docs.micros
 
 As an alternative to increasing the request size, you can also reduce the number of groups sent. In Azure Active Directory, you can set to just the groups assigned to the application to prevent all groups from being sent.
 
-In Azure go to **App registrations** &gt; \(Select the app\) &gt; **Token Configuration**, and specify Groups assigned to the application. ![](https://support.ironmansoftware.com/api/v1/threads/548223000001702109/inlineImages/edbsndabe757f382adbd6bf97fb8f980f999a0299e9db01c2972b353b3c8c4ffe29e6ae82d11d75341af2d224cd8f4103b9b009cb9d18e2809c18ece1c19c88900fe13e6b2866bb6604db1b7c9360f4da552d?et=17798841e64&ha=5d1aea069a1f58d946c8dad4e93abec12ca48d705aad7500a321b0c311d7e581&f=1.png)
+In Azure go to **App registrations** > (Select the app) > **Token Configuration**, and specify Groups assigned to the application. ![](https://support.ironmansoftware.com/api/v1/threads/548223000001702109/inlineImages/edbsndabe757f382adbd6bf97fb8f980f999a0299e9db01c2972b353b3c8c4ffe29e6ae82d11d75341af2d224cd8f4103b9b009cb9d18e2809c18ece1c19c88900fe13e6b2866bb6604db1b7c9360f4da552d?et=17798841e64\&ha=5d1aea069a1f58d946c8dad4e93abec12ca48d705aad7500a321b0c311d7e581\&f=1.png)
 
-Now go to **Enterprise Application** &gt; \(Select the app\) &gt; **Users and groups**. Assign the group\(s\) you are interested in including in the claims. \(Note: this can also be used as a security boundary if you set “User Assignment Required” to Yes in the ‘Properties’ section of the app\)
+Now go to **Enterprise Application** > (Select the app) > **Users and groups**. Assign the group(s) you are interested in including in the claims. (Note: this can also be used as a security boundary if you set “User Assignment Required” to Yes in the ‘Properties’ section of the app)
 
-![](https://support.ironmansoftware.com/api/v1/threads/548223000001702109/inlineImages/edbsndabe757f382adbd6bf97fb8f980f999a0299e9db01c2972b353b3c8c4ffe29e6ae82d11d75341af2d224cd8f4103b9b0ba101ed249f6cf46a1cf05c5cfe5650d84cedc32ef9ab20a4535665ec422da7b?et=17798841e64&ha=0397e6316da5e7ab913c1ec8c932ba854c1a88d27c54044ea299ca2dac438aef&f=2.png)
+![](https://support.ironmansoftware.com/api/v1/threads/548223000001702109/inlineImages/edbsndabe757f382adbd6bf97fb8f980f999a0299e9db01c2972b353b3c8c4ffe29e6ae82d11d75341af2d224cd8f4103b9b0ba101ed249f6cf46a1cf05c5cfe5650d84cedc32ef9ab20a4535665ec422da7b?et=17798841e64\&ha=0397e6316da5e7ab913c1ec8c932ba854c1a88d27c54044ea299ca2dac438aef\&f=2.png)
 
 ## App Tokens
 
@@ -309,7 +323,7 @@ The token will have a expiration of one year and have the valid roles for your a
 
 You can use App Tokens with the Universal cmdlets or by using web requests directly using Bearer authorization.
 
-![](../../.gitbook/assets/image%20%285%29.png)
+![](<../../.gitbook/assets/image (5).png>)
 
 ## Environment
 
@@ -317,7 +331,7 @@ By default, the forms authentication and policy assignment scripts run within th
 
 To adjust the environment used by the security process, set the `-SecurityEnvironment` in `settings.ps1`.
 
-```text
+```
 Set-PSUSetting -SecurityEnvironment '5.1'
 ```
 
@@ -325,7 +339,7 @@ Set-PSUSetting -SecurityEnvironment '5.1'
 
 The following example shows performing a simple "LDAP BIND" in order to validate a users Active Directory Credentials. If a user attempting to access PowerShell Universal is not the Default Admin User they will have to successfully authenticate their credentials with Active Directory via a simple LDAP bind. This can be combined with a AD Group Member check in the Admin, Operator, and Reader role policies to effectively use Active Directory Authentication AND Active Directory Group membership to provide Role Based Access to PowerShell Universal.
 
-```text
+```
 param(
     [PSCredential]$Credential
 )
@@ -367,15 +381,15 @@ else
 $Result
 ```
 
-## Example: Policy based on Active Directory Group Membership \(Windows Authentication\)
+## Example: Policy based on Active Directory Group Membership (Windows Authentication)
 
 {% hint style="info" %}
 This example requires an authentication method that will provide group information during the authentication process. Methods like Windows authentication and WS-Federation can provide this information. Forms authentication will not work with this type of policy.
 {% endhint %}
 
-This example takes advantage of the claims that are provided during authentication. You can check to see if the user has a groupsid \(group membership\) by using the `HasClaim` method of the `$User` object. This method will check the `Claims` array to see if they have a particular `groupsid` claim. Use the SID of the group to validate whether they are a group member.
+This example takes advantage of the claims that are provided during authentication. You can check to see if the user has a groupsid (group membership) by using the `HasClaim` method of the `$User` object. This method will check the `Claims` array to see if they have a particular `groupsid` claim. Use the SID of the group to validate whether they are a group member.
 
-```text
+```
 New-PSURole -Name 'Administrators' -Policy {
     param(
         $User
@@ -387,7 +401,7 @@ New-PSURole -Name 'Administrators' -Policy {
 
 For debugging and development purposes, you can check to see what claims a user has been exporting the `$User` variable to a file.
 
-```text
+```
 New-PSURole -Name 'Administrators' -Policy {
     param(
         $User
@@ -527,9 +541,9 @@ You should see a JSON file that contains the user's identity and claims array.
 
 In this example we will configure out Administrator Policy Script to use LDAP to retrieve the membership of an Active Directory Group. Here we have created a group called "PowerShell Universal Admins" where members of the group should be granted Administrator Access in PowerShell Universal. Here we are doing a simple samaccountname check for the user to ensure they are a member of the group. For more robust environments a SID/DN/ObjectGUID check would be more appropriate.
 
-![](../../.gitbook/assets/image%20%2815%29.png)
+![](<../../.gitbook/assets/image (15).png>)
 
-```text
+```
 param(
 $User
 )
@@ -560,25 +574,25 @@ return $IsMember
 
 ## Example: Group membership based on Azure Active Directory
 
-This example takes advantage of [OpenID Connect and Azure Active Directory](openid-connect.md#configuring-azuread). 
+This example takes advantage of [OpenID Connect and Azure Active Directory](openid-connect.md#configuring-azuread).&#x20;
 
 Once you have configured PowerShell Universal and Azure Active Directory, you can configure role scripts to verify whether users are members of groups found in Azure AD. You can take advantage of the `HasClaim` method of the `$User` variable to check membership.
 
-First, ensure that you have group membership claims enabled in the manifest for your application registration. This will include all group membership so it is accessible in PowerShell Universal. 
+First, ensure that you have group membership claims enabled in the manifest for your application registration. This will include all group membership so it is accessible in PowerShell Universal.&#x20;
 
-![](../../.gitbook/assets/image%20%28231%29.png)
+![](<../../.gitbook/assets/image (231).png>)
 
-```text
+```
 "groupMembershipClaims": "All",
 ```
 
-Once configured, you can update your role script to check for a group membership. First make note of the object ID of the group you are looking to check within Azure AD. 
+Once configured, you can update your role script to check for a group membership. First make note of the object ID of the group you are looking to check within Azure AD.&#x20;
 
-![](../../.gitbook/assets/image%20%28232%29.png)
+![](<../../.gitbook/assets/image (232).png>)
 
-Next, within your `roles.ps1` script, you can validate a user has a particular role by using `HasClaim` and providing the object GUID. 
+Next, within your `roles.ps1` script, you can validate a user has a particular role by using `HasClaim` and providing the object GUID.&#x20;
 
-```text
+```
 param(
 $User
 )
@@ -587,4 +601,3 @@ $User.HasClaim("groups", "4acabc67-56cc-4590-9de6-164f3c4faf10")
 ```
 
 As users login, their group membership will be validated against their claims and a role will be assigned.
-
