@@ -10,7 +10,7 @@ Script properties are stored in the `scripts.ps1` configuration file.
 
 To add a new script, you can click the New Script button within the Automation / Scripts page. There are various settings you can provide for the script.
 
-![](../../.gitbook/assets/image%20%2821%29.png)
+![](<../../.gitbook/assets/image (21).png>)
 
 **Name**
 
@@ -48,7 +48,7 @@ The number of minutes before the script will timeout. The default value of 0 mea
 
 Defines the maximum concurrent jobs the script can be run. Defaults to 100.
 
-```text
+```
 New-PSUScript -Name Script.ps1 -Path Script.Ps1 -ConcurrentJobs 1
 ```
 
@@ -56,7 +56,7 @@ New-PSUScript -Name Script.ps1 -Path Script.Ps1 -ConcurrentJobs 1
 
 You can run a script in the UI by click the Run button the Automation / Scripts page or by clicking View and then Run. In each case, you will be presented with the Run Dialog that allows you to select various settings for the job.
 
-![](../../.gitbook/assets/image%20%2823%29.png)
+![](<../../.gitbook/assets/image (23).png>)
 
 ### Running a Script With Parameters
 
@@ -64,7 +64,7 @@ Universal Automation automatically determines the parameters as defined within y
 
 For example, you may have a script with the following parameters.
 
-```text
+```
 param(
     $Test,
     [DateTime]$Time, 
@@ -76,28 +76,63 @@ param(
 
 The result is a set of input options that are based on the types of parameters.
 
-![](../../.gitbook/assets/image%20%286%29.png)
+![](<../../.gitbook/assets/image (6).png>)
 
 ### Running a Script as Another User
 
 {% hint style="info" %}
-The integrated [environment](../../config/environments.md) does not support running as alternate credentials. 
+The integrated [environment](../../config/environments.md) does not support running as alternate credentials.&#x20;
 {% endhint %}
 
 You can run scripts as another user by configuring [secret variables](../../platform/variables.md#creating-a-secret-variable). PowerShell Universal uses the Microsoft Secret Management module to integrate with secret providers. See variables for more information on secrets.
 
 To run as another user, simply add or import a PSCredential variable. From there, you can select the credential from within the run dialog.
 
-![](../../.gitbook/assets/image%20%2826%29.png)
+![](<../../.gitbook/assets/image (26).png>)
 
 ## Remoting
 
 Note that you can use PowerShell remoting by taking advantage of `Invoke-Command` . We do not support the use of `Enter-PSSession` or `Import-PSSession`.
 
+## Comment-Based Help
+
+{% hint style="info" %}
+This feature is available in PowerShell Universal 2.5 or later.
+{% endhint %}
+
+You can use comment-based to define the description, a synopsis, parameter based help, and links for your scripts. These will be displayed within the PowerShell Universal UI.&#x20;
+
+```
+<#
+.SYNOPSIS 
+
+This is a script for pinging other computers. 
+
+.DESCRIPTION
+
+This script can ping other computers. 
+
+.PARAMETER HostName
+
+The host name or address to ping. 
+
+.LINK
+https://www.ironmansoftware.com
+#>
+param($HostName)
+
+Test-NetConnection $HostName
+```
+
+This above will yield the following user interface. The synopsis will be shown as the short description and a longer description can be shown in the description section. Links will appear under the description.&#x20;
+
+![](<../../.gitbook/assets/image (303).png>)
+
+
+
 ## Related Cmdlets
 
-* [New-PSUScript](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/New-PSUScript.md)
-* [Get-UAScript](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/Get-UAScript.md)
-* [Remove-UAScript](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/Remove-UAScript.md)
-* [Set-UAScript](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Universal/Set-UAScript.md)
-
+* [New-PSUScript](../../cmdlets/Universal/New-PSUScript.md)
+* [Get-UAScript](../../cmdlets/Universal/Get-UAScript.md)
+* [Remove-UAScript](../../cmdlets/Universal/Remove-UAScript.md)
+* [Set-UAScript](../../cmdlets/Universal/Set-UAScript.md)

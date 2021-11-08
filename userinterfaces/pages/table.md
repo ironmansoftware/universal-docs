@@ -30,7 +30,7 @@ In this example, we are selecting the name and service type from a call to `Get-
 
 The resulting table only has these two properties displayed.&#x20;
 
-![](<../../.gitbook/assets/image (302) (1).png>)
+![](<../../.gitbook/assets/image (302) (1) (1).png>)
 
 ### Buttons
 

@@ -10,7 +10,7 @@ A dashboard can consist of one or more pages. A page can have a particular name 
 
 A basic page can be defined using the `New-UDPage` cmdlet. You could navigate to this page by visiting the `/dashboard` URL of your dashboard.
 
-```text
+```
 $Pages = @()
 $Pages += New-UDPage -Name 'Dashboard' -Content {
     New-UDTypography -Text 'Dashboard'
@@ -23,7 +23,7 @@ New-UDDashboard -Title 'Pages' -Pages $Pages
 
 Dashboards can have multiple pages and those pages can be defined by passing an array of UDPages to `New-UDDashboard`
 
-```text
+```
 $Pages = @()
 $Pages += New-UDPage -Name 'Dashboard One' -Content {
     New-UDTypography -Text 'Dashboard Two'
@@ -38,7 +38,7 @@ New-UDDashboard -Title 'Pages' -Pages $Pages
 
 You may want to organize your dashboard into multiple PS1 files. You can do this using pages.
 
-```text
+```
 $UDScriptRoot = $PSScriptRoot
 $Pages = @()
 $Pages += New-UDPage -Name 'Dashboard One' -Content {
@@ -56,7 +56,7 @@ New-UDDashboard -Title 'Pages' -Pages $Pages
 
 A page can have a custom URL by using the `-Url` parameter. You could navigate to this page by visiting the `/db` URL of your dashboard.
 
-```text
+```
 $Pages = @()
 $Pages += New-UDPage -Name 'Dashboard' -Url '/db' -Content {
     New-UDTypography -Text 'Dashboard'
@@ -69,7 +69,7 @@ New-UDDashboard -Title 'Pages' -Pages $Pages
 
 You can define a page with variables in the URL to create pages that adapt based on that URL.
 
-```text
+```
 $Pages = @()
 $Pages += New-UDPage -Name 'Dashboard' -Url '/db/:user' -Content {
     New-UDTypography -Text 'Dashboard for user: $User'
@@ -94,7 +94,7 @@ This feature requires a [license](../../../licensing.md).
 
 You can prevent users from accessing pages based on their role by using the `-Role` parameter of pages. You can configure roles and role policies on the [Security page](../../../config/security/#policy-assignment).
 
-```text
+```
 $Pages = @()
 $Pages += New-UDPage -Name 'Administrators' -Content {
     New-UDTypography -Text 'Dashboard for user: $User'
@@ -107,6 +107,31 @@ $Pages += New-UDPage -Name 'Operators' -Content {
 New-UDDashboard -Title 'Pages' -Pages $Pages
 ```
 
+## Header
+
+The following options are available for customizing the header.&#x20;
+
+### Position
+
+{% hint style="info" %}
+Available in PowerShell Universal 2.5 or later.
+{% endhint %}
+
+Use the `-HeaderPosition` parameter to adjust the behavior of the header.&#x20;
+
+* absolute\fixed - Remains at the top of the page, even when scrolling
+* relative - Remains at the top of the page. Not visible when scrolling.
+
+```
+New-UDPage -HeaderPosition fixed -Content {
+    New-UDElement -tag div -Attributes @{
+        style = @{
+            height = '150vh'
+        }
+    }
+}
+```
+
 ## Navigation
 
 You can customize the navigation of a page using the `-Navigation` and `-NavigationLayout` parameters. Navigation is defined using the [List](data-display/list.md#list) component. Navigation layouts are either permanent or temporary.
@@ -115,7 +140,7 @@ You can customize the navigation of a page using the `-Navigation` and `-Navigat
 
 Custom navigation can be defined with a list. List items can include children to create drop down sections in the navigation.
 
-```text
+```
 $Navigation = @(
     New-UDListItem -Label "Home"
     New-UDListItem -Label "Getting Started" -Children {
@@ -140,7 +165,7 @@ $Pages += New-UDPage -Name 'Test2' -Content {
 New-UDDashboard -Title "Hello, World!" -Pages $Pages
 ```
 
-![Custom navigation](../../../.gitbook/assets/image%20%28160%29.png)
+![Custom navigation](<../../../.gitbook/assets/image (160).png>)
 
 ### Dynamic Navigation
 
@@ -148,7 +173,7 @@ Dynamic navigation can be used to execute scripts during page load to determine 
 
 You can generate dynamic navigation by using the `-LoadNavigation` parameter. The value of the parameter should be a script block to execute when loading the navigation.
 
-```text
+```
 $Navigation = {
     New-UDListItem -Label "Home - $(Get-Date)"
     New-UDListItem -Label "Getting Started" -Children {
@@ -177,7 +202,7 @@ New-UDDashboard -Title "Hello, World!" -Pages $Pages
 
 The permanent layout creates a static navigation drawer on the left hand side of the page. It cannot be hidden by the user.
 
-```text
+```
 $Pages = @()
 $Pages += New-UDPage -Name 'Test' -Content {
  New-UDTypography -Text "Hello"
@@ -191,11 +216,11 @@ $Pages += New-UDPage -Name 'Test2' -Content {
 New-UDDashboard -Title "Hello, World!" -Pages $Pages
 ```
 
-![Permanent navigation drawer](../../../.gitbook/assets/image%20%28159%29.png)
+![Permanent navigation drawer](<../../../.gitbook/assets/image (159).png>)
 
 The temporary layout creates a navigation drawer that can be opened using a hamburger menu found in the top left corner. This is the default setting.
 
-```text
+```
 $Pages = @()
 $Pages += New-UDPage -Name 'Test' -Content {
  New-UDTypography -Text "Hello"
@@ -217,18 +242,18 @@ You can display a logo in the navigation bar by using the `-Logo` parameter.
 
 First, setup a [published folder](../../../platform/published-folders.md) to host your logo.
 
-![Published assets folder](../../../.gitbook/assets/image%20%28166%29.png)
+![Published assets folder](<../../../.gitbook/assets/image (166).png>)
 
 Now, when creating your page, you can specify the path to the logo.
 
-```text
+```
 New-UDPage -Name 'Home' -Logo '/assets/favicon.png' -Content {
 }
 ```
 
 The logo will display in the top left corner.
 
-![Logo](../../../.gitbook/assets/image%20%28167%29.png)
+![Logo](<../../../.gitbook/assets/image (167).png>)
 
 To customize the style of your logo, you can use a [cascading style sheet](../themes/cascading-style-sheets.md) and target the `ud-logo` element ID.
 
@@ -238,21 +263,20 @@ To customize the style of your logo, you can use a [cascading style sheet](../th
 
 Creates a new page. Pass the results to `New-UDDashboard` `-Pages`
 
-| Name | Type | Description | Required |
-| :--- | :--- | :--- | :--- |
-| Name | string | The name of the page. | true |
-| Content | ScriptBlock | The content of the page. | true |
-| Url | string | The URL for the page. Name is used if no URL is specified. | false |
-| DefaultHomePage | Switch | The page is the default home page. | false |
-| Title | string | The title to display at the top of the page | false |
-| Blank | Switch | Creates a page that has no toolbar.  | false |
-| Id | string | The ID for the page. This needs to be unique. | false |
-| OnLoading | ScriptBlock | Return a component to show when the page is loading | false |
-| Role | string\[\] | Roles that have access to this page. | false |
-| NavigationLayout | string | Whether to popup or pin navigation. | false |
-| Navigation | Hashtable\[\] | A collection of UDListItems to display for navigation | false |
-| Logo | string | The URL to a logo to display in the toolbar. | false |
-| LoadNavigation | ScriptBlock | Dynamically load navigation when the user loads the page. | false |
-
-
+| Name             | Type         | Description                                                   | Required |
+| ---------------- | ------------ | ------------------------------------------------------------- | -------- |
+| Name             | string       | The name of the page.                                         | true     |
+| Content          | ScriptBlock  | The content of the page.                                      | true     |
+| Url              | string       | The URL for the page. Name is used if no URL is specified.    | false    |
+| DefaultHomePage  | Switch       | The page is the default home page.                            | false    |
+| Title            | string       | The title to display at the top of the page                   | false    |
+| Blank            | Switch       | Creates a page that has no toolbar.                           | false    |
+| Id               | string       | The ID for the page. This needs to be unique.                 | false    |
+| OnLoading        | ScriptBlock  | Return a component to show when the page is loading           | false    |
+| Role             | string\[]    | Roles that have access to this page.                          | false    |
+| NavigationLayout | string       | Whether to popup or pin navigation.                           | false    |
+| Navigation       | Hashtable\[] | A collection of UDListItems to display for navigation         | false    |
+| Logo             | string       | The URL to a logo to display in the toolbar.                  | false    |
+| LoadNavigation   | ScriptBlock  | Dynamically load navigation when the user loads the page.     | false    |
+| HeaderPosition   | string       | Position of the header: absolute,fixed,relative,static,sticky | false    |
 
