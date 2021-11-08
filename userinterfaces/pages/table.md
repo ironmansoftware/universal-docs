@@ -14,7 +14,7 @@ Both APIs and Scripts are supported by tables. When selecting an API, the API wi
 
 When columns are not defined, all the properties of the objects will be displayed.&#x20;
 
-![](<../../.gitbook/assets/image (296).png>)
+![](<../../.gitbook/assets/image (296) (1).png>)
 
 ## Customizing Columns
 

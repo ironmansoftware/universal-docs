@@ -108,6 +108,7 @@
   * [Bar Chart](userinterfaces/pages/bar-chart.md)
   * [Button](userinterfaces/pages/button.md)
   * [Form](userinterfaces/pages/form.md)
+  * [iFrame](userinterfaces/pages/iframe.md)
   * [Image](userinterfaces/pages/image.md)
   * [Line Chart](userinterfaces/pages/line-chart.md)
   * [Liquid Chart](userinterfaces/pages/liquid-chart.md)
