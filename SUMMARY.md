@@ -65,6 +65,7 @@
       * [Checkbox](userinterfaces/dashboards/components/inputs/checkbox.md)
       * [Code Editor](userinterfaces/dashboards/components/inputs/code-editor.md)
       * [Date Picker](userinterfaces/dashboards/components/inputs/date-picker.md)
+      * [Editor](userinterfaces/dashboards/components/inputs/editor.md)
       * [Floating Action Button](userinterfaces/dashboards/components/inputs/floating-action-button.md)
       * [Form](userinterfaces/dashboards/components/inputs/form.md)
       * [Radio](userinterfaces/dashboards/components/inputs/radio.md)
