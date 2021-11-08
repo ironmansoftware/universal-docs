@@ -132,6 +132,19 @@ New-UDPage -HeaderPosition fixed -Content {
 }
 ```
 
+### Colors
+
+{% hint style="info" %}
+Available in PowerShell Universal 2.5 or later.
+{% endhint %}
+
+You can adjust the colors of the header by specifying the `-HeaderColor` and `-HeaderBackgroundColor` parameters. These colors will override the theme colors.&#x20;
+
+```
+New-UDPage -Name 'Home' -Content {
+} -HeaderColor 'black' -HeaderBackgroundColor 'white'
+```
+
 ## Navigation
 
 You can customize the navigation of a page using the `-Navigation` and `-NavigationLayout` parameters. Navigation is defined using the [List](data-display/list.md#list) component. Navigation layouts are either permanent or temporary.
@@ -263,20 +276,22 @@ To customize the style of your logo, you can use a [cascading style sheet](../th
 
 Creates a new page. Pass the results to `New-UDDashboard` `-Pages`
 
-| Name             | Type         | Description                                                   | Required |
-| ---------------- | ------------ | ------------------------------------------------------------- | -------- |
-| Name             | string       | The name of the page.                                         | true     |
-| Content          | ScriptBlock  | The content of the page.                                      | true     |
-| Url              | string       | The URL for the page. Name is used if no URL is specified.    | false    |
-| DefaultHomePage  | Switch       | The page is the default home page.                            | false    |
-| Title            | string       | The title to display at the top of the page                   | false    |
-| Blank            | Switch       | Creates a page that has no toolbar.                           | false    |
-| Id               | string       | The ID for the page. This needs to be unique.                 | false    |
-| OnLoading        | ScriptBlock  | Return a component to show when the page is loading           | false    |
-| Role             | string\[]    | Roles that have access to this page.                          | false    |
-| NavigationLayout | string       | Whether to popup or pin navigation.                           | false    |
-| Navigation       | Hashtable\[] | A collection of UDListItems to display for navigation         | false    |
-| Logo             | string       | The URL to a logo to display in the toolbar.                  | false    |
-| LoadNavigation   | ScriptBlock  | Dynamically load navigation when the user loads the page.     | false    |
-| HeaderPosition   | string       | Position of the header: absolute,fixed,relative,static,sticky | false    |
+| Name                  | Type         | Description                                                   | Required |
+| --------------------- | ------------ | ------------------------------------------------------------- | -------- |
+| Name                  | string       | The name of the page.                                         | true     |
+| Content               | ScriptBlock  | The content of the page.                                      | true     |
+| Url                   | string       | The URL for the page. Name is used if no URL is specified.    | false    |
+| DefaultHomePage       | Switch       | The page is the default home page.                            | false    |
+| Title                 | string       | The title to display at the top of the page                   | false    |
+| Blank                 | Switch       | Creates a page that has no toolbar.                           | false    |
+| Id                    | string       | The ID for the page. This needs to be unique.                 | false    |
+| OnLoading             | ScriptBlock  | Return a component to show when the page is loading           | false    |
+| Role                  | string\[]    | Roles that have access to this page.                          | false    |
+| NavigationLayout      | string       | Whether to popup or pin navigation.                           | false    |
+| Navigation            | Hashtable\[] | A collection of UDListItems to display for navigation         | false    |
+| Logo                  | string       | The URL to a logo to display in the toolbar.                  | false    |
+| LoadNavigation        | ScriptBlock  | Dynamically load navigation when the user loads the page.     | false    |
+| HeaderPosition        | string       | Position of the header: absolute,fixed,relative,static,sticky | false    |
+| HeaderColor           | string       | The font color of the header                                  | false    |
+| HeaderBackgroundColor | string       | The background color of the header                            | false    |
 
