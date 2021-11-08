@@ -52,6 +52,16 @@ PowerShell Universal uses the Microsoft Secret Management module. The built-in v
 
 You may want to consider limiting the number of secrets that you include in each environment to improve performance.
 
+## Built-In Variables
+
+The following variables are available throughout all environments within PowerShell Universal.&#x20;
+
+| Name            | Type   | Description                                                                |
+| --------------- | ------ | -------------------------------------------------------------------------- |
+| $PSUEnvironment | string | The name of the environment the script is running within (e.g. Integrated) |
+|                 |        |                                                                            |
+|                 |        |                                                                            |
+
 ## Related Cmdlets
 
 * [New-UAVariable](../cmdlets/Universal/New-UAVariable.md)

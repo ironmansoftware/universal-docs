@@ -120,6 +120,7 @@
 ## Platform
 
 * [Cache](platform/cache.md)
+* [Modules](platform/modules.md)
 * [Monitoring](platform/monitoring.md)
 * [Published Folders](platform/published-folders.md)
 * [Templates](platform/templates.md)

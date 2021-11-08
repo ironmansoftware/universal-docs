@@ -126,7 +126,7 @@ Test-NetConnection $HostName
 
 This above will yield the following user interface. The synopsis will be shown as the short description and a longer description can be shown in the description section. Links will appear under the description.&#x20;
 
-![](<../../.gitbook/assets/image (304).png>)
+![](<../../.gitbook/assets/image (306).png>)
 
 
 
