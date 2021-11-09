@@ -4,6 +4,111 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2.5.0 - 11/8/2021
+
+
+
+### Includes
+
+* UniversalDashboard - v3.8.0
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.2.0
+* UniversalDashboard.Editor - 1.0.0
+* UniversalDashboard.Style - 1.0.0
+
+***
+
+### Breaking Changes
+
+* Grant-PSUAppToken no longer can generate app tokens locally and send them to the server
+
+### Added
+
+#### Automation
+
+* Added support for displaying comment based help in the UI
+
+#### User Interfaces
+
+* Dashboard - Added -HeaderPosition to New-UDPage and New-UDDashboard
+* Dashboard - Added New-UDMenu and New-UDMenuItem
+* Dashboard - Added -FullWidth to New-UDSelect
+* Dashboard - Added -HeaderColor and -HeaderBackgroundColor to New-UDPage and New-UDDashboard
+* Dashboard - Added support for escape and clear-host in the dashboard console
+* Dashboard - Added New-UDEditor component
+* Dashboard - Added -Navigation and -NavigationLayout to New-UDDashboard
+* Dashboard - Added -DisableStartupLogging to New-PSUDashboard
+* Pages - Added support for IFrame component
+* Pages - Added support for grouping pages in the navigation menu
+* Pages - Added support for hiding the title and description on a page
+* Pages - Added Password field to forms
+* Pages - Added support for setting a page URL to /
+
+#### Platform
+
+* Added page size drop down to tables in the admin console
+* Added server side configuration of authentication
+* Added startup scripts to environments
+* Added $PSUEnvironment variable to all endpoints
+* Added support for creating and editing modules
+* Added support for installing modules from the PowerShell Gallery
+* Added support for setting secrets when One-Way git sync is enabled
+* Added support for identifying when a secret variable does not exist in the vault.
+* Added the tzdata package to the dockerfile to correctly support time zones on Linux
+* Added support for SAML2 authentication
+* Added support for custom authentication configuration via PowerShell script blocks.
+* Added support for customizing the admin console title and logo
+* Added a link to the hangfire details page from the Settings \ General \ Diagnostics page
+* Added support for integrated cmdlet transport
+
+### Changed
+
+#### API
+
+* Fixed an issue where returning multiple API responses from an API endpoint would consume all CPU
+
+#### Automation
+
+* Updated to the most recent version of Hangfire
+* Fixed an issue where setting the Time Out value for a schedule in the UI would not work
+* Fixed an issue where editing schedules would not work correctly
+* Fixed an issue where Pnp.PowerShell would not work in Windows PowerShell jobs
+* Fixed an issue where New-PSUScript -ScriptBlock would not work against the REST API
+
+#### User Interfaces
+
+* Dashboard: Fixed an issue where New-UDTextbox -Multiline would not allow you to enter additional lines
+* Dashboard: Fixed an issue where New-UDTransferList would only show the first selected value in -OnChange $EventData
+* Dashboard: Fixed an issue where New-UDTransferList would not should the name\value pair for the default selected items
+* Dashboard: Fixed issue where the -Title parameter of New-UDDashboard would not set the title
+* Dashboard: Fixed an issue where the dashboard console would not accept backspace
+* Dashboard: Fixed an issue where nested UDExpansionPanels would be arrange horizontally
+* Dashboard: Fixed an issue where dashboards could be marked as stopped after server restart
+* Dashboard: Fixed an issue where New-UDDrawer persistent would hide the content of the page with no way to close it
+* Dashboard: Fixed an issue with New-UDUpload and integrated environments
+* Dashboard: Fixed an issue where New-UDUpload would not work correctly in New-UDForm
+* Pages: Fixed an issue where specifying a URL for a page that starts with a / would cause the page to fail to load
+* Pages: Fixed an issue where specifying a URL for a page would prevent it from working in navigation
+* Pages: Fixed an issue where going directly to a page with a custom URL would not work
+
+#### Platform
+
+* Fixed an issue where retrieving an app token by ID would not work if you were an administrator
+* The folder\list view setting in the Scripts page is now persistent
+* Removed the dependency on System.IdentityModel.Tokens.Jwt in the Universal module
+* Fixed an issue where administrators couldn't clear notifications with one-way git sync enabled
+* Fixed an issue where app tokens couldn't be generated when one-way git sync was enabled
+* Fixed an issue where git status was not visit to administrators when one-way git sync was enabled
+* Fixed an issue where administrator and operator roles would be changed to an execute role when one-way git sync was enabled.
+* Fixed an issue where PSModulePath could grow too long and prevent the environment from being configured correctly
+* Fixed an issue where you could not revoke app tokens or retrieve individual tokens
+* Fixed an issue where git sync status would display an invalid time stamp
+* Fixed an issue where tags would not work properly if a color wasn't set
+* Added a backdrop to the session expired notification so you can't navigate the admin console when not authenticated
+* Fixed an issue where Set-PSUCache -SlidingExpiration would not be honored.
+
 ## 2.4.1 - 10/21/2021
 
 
