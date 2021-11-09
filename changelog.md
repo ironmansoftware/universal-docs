@@ -20,11 +20,15 @@ description: Changelog for PowerShell Universal.
 
 ***
 
-### Breaking Changes
+### 🐛 Known Issues
+
+* Windows Authentication with IIS does not work properly.&#x20;
+
+### 💔Breaking Changes
 
 * Grant-PSUAppToken no longer can generate app tokens locally and send them to the server
 
-### Added
+### ✔️Added
 
 #### Automation
 
@@ -63,7 +67,7 @@ description: Changelog for PowerShell Universal.
 * Added a link to the hangfire details page from the Settings \ General \ Diagnostics page
 * Added support for integrated cmdlet transport
 
-### Changed
+### 👍Changed
 
 #### API
 
