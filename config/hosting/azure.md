@@ -117,3 +117,45 @@ Invoke-RestMethod @Parameters
 ```
 
 Once you've delete the application files, you can redeploy them by running the manual creation steps again.
+
+## Setting Adjustments Required
+
+### JWT Signing Key
+
+The default JWT signing key is not of a sufficient length and will need to be updated. This can be done in `appsettings.json` or by using environment variables.&#x20;
+
+#### appsettings.json
+
+```
+  "Jwt": {
+    "SigningKey": "xXyt9UpJKB4Pb*4$hprd!JJoyOcK4ZOV**O7Hug9&@gYHc$",
+    "Issuer": "IronmanSoftware",
+    "Audience": "PowerShellUniversal"
+  },
+```
+
+#### Environment Variable
+
+```
+$Env:Jwt__SigningKey = 'xXyt9UpJKB4Pb*4$hprd!JJoyOcK4ZOV**O7Hug9&@gYHc$'
+```
+
+### API URL
+
+Azure Web Apps use a reverse proxy and PowerShell Universal does not detect the external URL appropriately. When running jobs, Universal uses the Management API to automatically look up job, script and schedule information. This means that this will fail if it cannot correctly address the external API URL.&#x20;
+
+The API URL should be the external HTTP address of your Web App. You can update this in `appsettings.json` or by using an environment variable.&#x20;
+
+#### appsettings.json
+
+```
+"Api": {
+ "Url": "https://psudemo.azurewebsites.net"
+ },
+```
+
+#### Environment Variable
+
+```
+$Env:Api__Url = "https://psudemo.azurewebsites.net"
+```
