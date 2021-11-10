@@ -133,6 +133,7 @@
 * [Environments](config/environments.md)
 * [Git](config/git.md)
 * [Hosting](config/hosting/README.md)
+  * [Azure](config/hosting/azure.md)
   * [IIS](config/hosting/hosting-iis.md)
   * [Single-File](config/hosting/single-file.md)
 * [Login Page](config/login-page.md)

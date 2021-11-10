@@ -12,16 +12,14 @@ After the MSI has finished setup, your default web browser will open to [http://
 
 You do not need to use the MSI to configure Universal as a Windows Service. You can also do it manually with the following PowerShell script.
 
-```text
+```
 New-Service -Name "PowerShellUniversal" -BinaryPathName "Universal.Server.exe --service" -Description "PowerShell Universal server service." -DisplayName "PowerShell Universal" -StartupType Automatic
 Start-Service PowerShellUniversal
 ```
 
 ## Hosting in Azure
 
-You can host PowerShell Universal in Azure as a Linux, Windows or Docker web app. To create a persistent web app, it's easiest to deploy using a standard Azure Web App.
-
-We have a [GitHub repository that contains a GitHub action workflow](https://github.com/ironmansoftware/universal-azure-actions) for downloading the latest version of PowerShell Universal, updating `appsettings.json` and `web.config` to work with Azure and then deploying to an existing web app.
+Read our [Azure hosting guide](azure.md).
 
 ## Hosting Manually
 
@@ -77,7 +75,7 @@ To configure HTTPS, you can adjust the `appsettings.json` file to use a particul
 }
 ```
 
-To configure a certificate in a particular location and store, you can use a configuration such as this. When selecting the certificate by subject name, ensure you use the common name with out `CN=` prefix. 
+To configure a certificate in a particular location and store, you can use a configuration such as this. When selecting the certificate by subject name, ensure you use the common name with out `CN=` prefix.&#x20;
 
 ```javascript
 {
@@ -114,7 +112,7 @@ By default, Universal will listen on HTTP1 and HTTP2. You can adjust the protoco
 },
 ```
 
-Some versions of Windows Server \(like 2012R2\), do not support HTTP2. To disable HTTP2 support, set the listener to only listen on HTTP1.
+Some versions of Windows Server (like 2012R2), do not support HTTP2. To disable HTTP2 support, set the listener to only listen on HTTP1.
 
 ```javascript
 "Kestrel": {
@@ -129,4 +127,3 @@ Some versions of Windows Server \(like 2012R2\), do not support HTTP2. To disabl
 ```
 
 For a full set of listening options, you can refer to the [ASP.NET Core Documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-3.1#listenoptionsusehttps).
-
