@@ -28,6 +28,10 @@ Connect-AzAccount
 
 ### Linux
 
+{% hint style="danger" %}
+There is a Known Issue with deploying PowerShell 2.5.x to Linux Web Apps.&#x20;
+{% endhint %}
+
 Now, you can download the latest version of PowerShell Universal. In this example, we'll download the latest Linux version.&#x20;
 
 ```
