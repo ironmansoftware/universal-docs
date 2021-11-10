@@ -4,6 +4,27 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2.5.1 - 11/9/2021
+
+### Includes
+
+* UniversalDashboard - v3.8.0
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.2.0
+* UniversalDashboard.Editor - 1.0.0
+* UniversalDashboard.Style - 1.0.0
+
+### 👍Changed
+
+#### Platform
+
+* Fixed an issue where hosting in IIS would not work
+* Fixed an issue where Start-PSUServer was not available&#x20;
+* Fixed an issue where the wrong parameter types were generated for authentication methods
+* Fixed an issue where Swagger documentation was not available
+
 ## 2.5.0 - 11/8/2021
 
 
