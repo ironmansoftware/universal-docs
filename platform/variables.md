@@ -64,17 +64,21 @@ The following variables are available throughout all environments within PowerSh
 
 There are a set of predefined variables that are available in API endpoints. You'll be able to use these variables in your scripts.
 
-| Variable         | Description                                           | Type      |
-| ---------------- | ----------------------------------------------------- | --------- |
-| $Url             | URL the client used to call the endpoint              | String    |
-| $Headers         | Headers provided by the client to call the endpoint   | Hashtable |
-| $Body            | The UTF8 encoded string of the content of the request | String    |
-| $Data            | Binary byte array for the content of the request      | Byte\[]   |
-| $RemoteIpAddress | The remote IP address used to make the request.       | String    |
-| $LocalIpAddress  | The local IP address used to service the request.     | String    |
-| $RemotePort      | The remote port that was called to make the request.  | Integer   |
-| $LocalPort       | The local port that was used to service the request.  | Integer   |
-| $Identity        | The identity name of the principal accessing the API. | String    |
+| Variable         | Description                                                                                                                                                                                                     | Type      |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| $Url             | URL the client used to call the endpoint                                                                                                                                                                        | String    |
+| $Headers         | Headers provided by the client to call the endpoint                                                                                                                                                             | Hashtable |
+| $Body            | The UTF8 encoded string of the content of the request                                                                                                                                                           | String    |
+| $Data            | Binary byte array for the content of the request                                                                                                                                                                | Byte\[]   |
+| $RemoteIpAddress | The remote IP address used to make the request.                                                                                                                                                                 | String    |
+| $LocalIpAddress  | The local IP address used to service the request.                                                                                                                                                               | String    |
+| $RemotePort      | The remote port that was called to make the request.                                                                                                                                                            | Integer   |
+| $LocalPort       | The local port that was used to service the request.                                                                                                                                                            | Integer   |
+| $Identity        | The identity name of the principal accessing the API.                                                                                                                                                           | String    |
+| $UrlDefinition   | The definition for the URL.                                                                                                                                                                                     | String    |
+| $ConnectionId    | The [HTTP Context connection ID](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.http.connectioninfo.id?view=aspnetcore-6.0#Microsoft\_AspNetCore\_Http\_ConnectionInfo\_Id).                  | String    |
+| $SessionId       | The [HTTP Context session ID.](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.http.isession.id?view=aspnetcore-6.0#Microsoft\_AspNetCore\_Http\_ISession\_Id)                                 | String    |
+| $RequestId       | The [HTTP Context request ID.](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.http.httpcontext.traceidentifier?view=aspnetcore-6.0#Microsoft\_AspNetCore\_Http\_HttpContext\_TraceIdentifier) | String    |
 
 ### Dashboards
 
