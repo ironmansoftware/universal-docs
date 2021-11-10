@@ -26,11 +26,36 @@ Once installed, you'll need to connect to your subscription.&#x20;
 Connect-AzAccount
 ```
 
+### Linux
+
 Now, you can download the latest version of PowerShell Universal. In this example, we'll download the latest Linux version.&#x20;
 
 ```
 $LatestVersion = Invoke-RestMethod https://imsreleases.blob.core.windows.net/universal/production/version.txt
 Invoke-WebRequest "https://imsreleases.blob.core.windows.net/universal/production/$LatestVersion/Universal.linux-x64.$LatestVersion.zip" -OutFile .\Universal.zip
+```
+
+Now that we have the Az module configured and the Universal ZIP downloaded, we can deploy the Web App.&#x20;
+
+```
+$Parameters = @{
+    Force = $true
+    ResourceGroupName = 'psu-demo'
+    Name = 'psudemo'
+    ArchivePath = '.\Universal.zip'
+}
+Publish-AzWebApp @Parameters
+```
+
+After publishing the Web App, view your PowerShell Universal instance by navigating to the Web App's URL.
+
+### Windows
+
+Now, you can download the latest version of PowerShell Universal. In this example, we'll download the latest Windows version.&#x20;
+
+```
+$LatestVersion = Invoke-RestMethod https://imsreleases.blob.core.windows.net/universal/production/version.txt
+Invoke-WebRequest "https://imsreleases.blob.core.windows.net/universal/production/$LatestVersion/Universal.win7-x64.$LatestVersion.zip" -OutFile .\Universal.zip
 ```
 
 Now that we have the Az module configured and the Universal ZIP downloaded, we can deploy the Web App.&#x20;
@@ -53,6 +78,8 @@ When a new version of PowerShell Universal is released, you will need to update 
 
 You can delete the files for your Web App by using the Kudu command API. Your Kudu credentials use Basic authentication and are the same as your [deployment credentials](https://github.com/projectkudu/kudu/wiki/Deployment-credentials).
 
+### Linux
+
 To delete all the files in your Web App, issue the following command.&#x20;
 
 ```
@@ -62,6 +89,23 @@ $Parameters = @{
    Body = (@{
       command = "rm -r /home/site/wwwroot"
       dir = "/home/site/wwwroot"
+   } | ConvertTo-Json)
+}
+
+Invoke-RestMethod @Parameters
+```
+
+### Windows
+
+To delete all the files in your Web App, issue the following command.&#x20;
+
+```
+$Parameters = @{
+   Uri = "https://psudemo.scm.azurewebsites.net/api/command"
+   Credential = (Get-Credential)
+   Body = (@{
+      command = "rd /s /q D:\home\site\wwwroot"
+      dir = "D:\home\site\wwwroot"
    } | ConvertTo-Json)
 }
 
