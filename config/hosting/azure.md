@@ -76,6 +76,12 @@ Publish-AzWebApp @Parameters
 
 After publishing the Web App, view your PowerShell Universal instance by navigating to the Web App's URL.
 
+### Persistent Storage
+
+The default `appsettings.json` file will store the database and configuration files in a non-persistent location. You can add environment variables to move them to persistent storage within your web app. Note the `Data__ConnectionString` and `Data__RepositoryPath` environment variables.&#x20;
+
+![](<../../.gitbook/assets/image (309).png>)
+
 ## Updating your Web App
 
 When a new version of PowerShell Universal is released, you will need to update the application files for your Web App. We recommend removing the application directory and redeploying the files. The database and configuration files are not stored in the application directory.&#x20;
