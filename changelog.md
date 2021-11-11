@@ -4,6 +4,27 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+##
+
+## 2.5.2 - 11/11/2021
+
+### Includes
+
+* UniversalDashboard - v3.8.0
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.2.0
+* UniversalDashboard.Editor - 1.0.0
+* UniversalDashboard.Style - 1.0.0
+
+### 👍Changed
+
+#### Platform
+
+* Fixed an issue where InProcess IIS hosting would not work
+* Fixed an issue where using AppTokens with OIDC would not work.&#x20;
+
 ## 2.5.1 - 11/9/2021
 
 ### Includes
