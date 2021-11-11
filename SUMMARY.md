@@ -78,6 +78,7 @@
       * [Upload](userinterfaces/dashboards/components/inputs/upload.md)
     * [Navigation](userinterfaces/dashboards/components/navigation/README.md)
       * [Drawer](userinterfaces/dashboards/components/navigation/drawer.md)
+      * [Link](userinterfaces/dashboards/components/navigation/link.md)
       * [Menu](userinterfaces/dashboards/components/navigation/menu.md)
       * [Stepper](userinterfaces/dashboards/components/navigation/stepper.md)
       * [Tabs](userinterfaces/dashboards/components/navigation/tabs.md)
