@@ -6,6 +6,26 @@ description: Changelog for PowerShell Universal.
 
 ##
 
+## 2.5.3 - 11/12/2021
+
+### Includes
+
+* UniversalDashboard - v3.8.0
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.2.0
+* UniversalDashboard.Editor - 1.0.0
+* UniversalDashboard.Style - 1.0.0
+
+### 👍Changed
+
+#### Platform
+
+* Fixed an issue where an invalid authentication.ps1 file would be generated when editing authentication in the admin console.&#x20;
+
+If you cannot login to your PowerShell Universal platform due to an invalid authentication.ps1, please refer to this [forum thread.](https://forums.ironmansoftware.com/t/2-4-0-to-2-5-2-upgrade-breaks-something/5975/8?u=adam)
+
 ## 2.5.2 - 11/11/2021
 
 ### Includes
