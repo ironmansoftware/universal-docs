@@ -6,6 +6,30 @@ description: Changelog for PowerShell Universal.
 
 ##
 
+## 2.5.4 - 11/15/2021
+
+### Includes
+
+* UniversalDashboard - v3.8.0
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.2.0
+* UniversalDashboard.Editor - 1.0.0
+* UniversalDashboard.Style - 1.0.0
+
+### 👍Changes
+
+#### Automation
+
+* Fixed an issue where Invoke-PSUScript -Integrated would not work with parameters
+* Fixed an issue where using blocks in script block content could cause scripts to not load properly
+
+#### Platform
+
+* Fixed an issue where invalid authenticationMethod.ps1 file could break authentication
+* Fixed an issue where enabling client certificate authentication would result in a 500 error
+
 ## 2.5.3 - 11/12/2021
 
 ### Includes
