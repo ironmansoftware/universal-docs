@@ -8,9 +8,9 @@ A textbox lets users enter and edit text.
 
 ## Textbox
 
-![](../../../../.gitbook/assets/image%20%2847%29.png)
+![](<../../../../.gitbook/assets/image (47).png>)
 
-```text
+```
 New-UDTextbox -Label 'Standard' -Placeholder 'Textbox'
 New-UDTextbox -Label 'Disabled' -Placeholder 'Textbox' -Disabled
 New-UDTextbox -Label 'Textbox' -Value 'With value'
@@ -20,9 +20,9 @@ New-UDTextbox -Label 'Textbox' -Value 'With value'
 
 A password textbox will mask the input.
 
-![](../../../../.gitbook/assets/image%20%2855%29.png)
+![](<../../../../.gitbook/assets/image (55).png>)
 
-```text
+```
 New-UDTextbox -Label 'Password' -Type password
 ```
 
@@ -30,7 +30,7 @@ New-UDTextbox -Label 'Password' -Type password
 
 You can create a multiline textbox by using the `-Multiline` parameter. Pressing enter will add a new line. You can define the number of rows and the max number of rows using `-Rows` and `-RowsMax`.
 
-```text
+```
 New-UDTextbox -Multiline -Rows 4 -RowsMax 10
 ```
 
@@ -40,7 +40,7 @@ New-UDTextbox -Multiline -Rows 4 -RowsMax 10
 
 You can use `Get-UDElement` to get the value of a textbox
 
-```text
+```
 New-UDTextbox -Id 'txtExample' 
 New-UDButton -OnClick {
     $Value = (Get-UDElement -Id 'txtExample').value 
@@ -50,7 +50,7 @@ New-UDButton -OnClick {
 
 ### Setting the textbox value
 
-```text
+```
 New-UDTextbox -Id 'txtExample' -Label 'Label' -Value 'Value'
 
 New-UDButton -OnClick {
@@ -66,11 +66,11 @@ New-UDButton -OnClick {
 
 You can set the icon of a textbox by using the `-Icon` parameter and the `New-UDIcon` cmdlet.
 
-```text
+```
 New-UDTextbox -Id "ServerGroups" -Icon (New-UDIcon -Icon 'server') -Value "This is my server"
 ```
 
-![](../../../../.gitbook/assets/image%20%28107%29.png)
+![](<../../../../.gitbook/assets/image (107).png>)
 
 ## Mask
 
@@ -78,25 +78,12 @@ You can define a text mask with a combination of strings and regular expressions
 
 This example creates a mask for US based phone numbers.
 
-```text
+```
 New-UDTextbox -Mask @('+', '1', ' ', '(', '/[1-9]/', '/\d/', '/\d/', ')', ' ', '/\d/', '/\d/', '/\d/', '-', '/\d/', '/\d/', '/\d/', '/\d/')
 ```
 
-![](../../../../.gitbook/assets/image%20%28172%29.png)
+![](<../../../../.gitbook/assets/image (172).png>)
 
-**New-UDTextbox**
+## API
 
-| Name | Type | Description | Required |
-| :--- | :--- | :--- | :--- |
-| Id | String | The ID of the component. It defaults to a random GUID. | false |
-| Label | String | A label to show above this textbox. | false |
-| Placeholder | String | A placeholder to place within the text box. | false |
-| Value | Object | The current value of the textbox. | false |
-| Type | String | The type of textbox. This can be values such as text, password or email. | false |
-| Disabled | SwitchParameter | Whether this textbox is disabled. | false |
-| Icon | Object | The icon to show next to the textbox. | false |
-| Autofocus | SwitchParameter | Whether to autofocus this textbox. | false |
-| Multiline | SwitchParameter | Whether the textbox accepts multiple lines. | false |
-| Rows | int | The number of rows in a multiline textbox | false |
-| RowsMax | int | The max number of rows in a multiline textbox | false |
-
+[New-UDTextbox](../../../../cmdlets/New-UDTextbox.txt)
