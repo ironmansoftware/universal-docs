@@ -69,6 +69,4 @@ New-UDUpload -Text 'Upload Image' -OnUpload {
 
 ## API
 
-**New-UDUpload**
-
-{% embed url="https://github.com/ironmansoftware/universal-docs/raw/master/cmdlets/New-UDUpload.txt" %}
+****[**New-UDUpload**](../../../../cmdlets/New-UDUpload.txt)****
