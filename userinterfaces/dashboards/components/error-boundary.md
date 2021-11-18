@@ -8,7 +8,7 @@ The `New-UDErrorBoundary` component is used for isolating portions of a dashboar
 
 If you'd like to isolate a portion of your dashboard to prevent the entire page from failing to load, you can use the following syntax.
 
-```text
+```
 New-UDErrorBoundary -Content {
     throw "Oh no!"
 }
@@ -16,15 +16,8 @@ New-UDErrorBoundary -Content {
 
 If any error is thrown from the content, you will see an error such as thing.
 
-![](../../../.gitbook/assets/image%20%28173%29.png)
+![](<../../../.gitbook/assets/image (173).png>)
 
 ## API
 
-**New-UDErrorBoundary**
-
-Display an error card when an error is thrown in your script.
-
-| Name | Type | Description | Required |
-| :--- | :--- | :--- | :--- |
-| Content | ScriptBlock | A script block to prevent from throwing an error to the top of the page. | True |
-
+****[**New-UDErrorBoundary**](../../../cmdlets/New-UDErrorBoundary.txt)****
