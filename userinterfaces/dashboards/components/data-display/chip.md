@@ -12,17 +12,17 @@ While included here as a standalone component, the most common use will be in so
 
 ## Basic Chips
 
-![](../../../../.gitbook/assets/image%20%2871%29.png)
+![](<../../../../.gitbook/assets/image (71).png>)
 
-```text
+```
  New-UDChip -Label 'Basic'
 ```
 
 ## Chips with Icons
 
-![](../../../../.gitbook/assets/image%20%2843%29.png)
+![](<../../../../.gitbook/assets/image (43).png>)
 
-```text
+```
 New-UDChip -Label 'Basic' -Icon (New-UDIcon -Icon 'user')
 ```
 
@@ -30,7 +30,7 @@ New-UDChip -Label 'Basic' -Icon (New-UDIcon -Icon 'user')
 
 Shows a toast when the chip is clicked.
 
-```text
+```
 New-UDChip -Label 'OnClick' -OnClick {
     Show-UDToast -Message 'Hello!'
 }
@@ -38,23 +38,12 @@ New-UDChip -Label 'OnClick' -OnClick {
 
 ## OnDelete
 
-```text
+```
 New-UDChip -Label 'OnDelete' -OnClick {
     Show-UDToast -Message 'Goodbye!'
 }
 ```
 
-**New-UDChip**
+## **API**
 
-| Name | Type | Description | Required |
-| :--- | :--- | :--- | :--- |
-| Id | String | The ID of the component. It defaults to a random GUID. | false |
-| Label | String | The label for the chip. | false |
-| OnDelete | Object | A script block to call when the chip is deleted. | false |
-| OnClick | Object | A script block to call when the chip is clicked. | false |
-| Icon | Object | An icon to show within the chip. | false |
-| Style | Hashtable | CSS styles to apply to the chip. | false |
-| Variant | String | The theme variant to apply to the chip. | false |
-| Avatar | String | An avatar to show within the chip. | false |
-| AvatarType | String | The type of avatar to show in the chip. | false |
-
+[New-UDChip](../../../../cmdlets/New-UDChip.txt)
