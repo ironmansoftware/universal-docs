@@ -8,7 +8,7 @@ The `New-UDErrorBoundary` component is used for isolating portions of a dashboar
 
 If you'd like to isolate a portion of your dashboard to prevent the entire page from failing to load, you can use the following syntax.
 
-```
+```powershell
 New-UDErrorBoundary -Content {
     throw "Oh no!"
 }

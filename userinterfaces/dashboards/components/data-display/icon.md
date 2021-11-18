@@ -4,9 +4,9 @@ description: Icon component for Universal Dashboard
 
 # Icon
 
-[FontAwesome ](https://fontawesome.com/?from=io)icons to include in your dashboard. Icon names are slightly different than those shown on the FontAwesome website. For example, if you want to use the `network-wired` icon, you would use the following string. 
+[FontAwesome ](https://fontawesome.com/?from=io)icons to include in your dashboard. Icon names are slightly different than those shown on the FontAwesome website. For example, if you want to use the `network-wired` icon, you would use the following string.&#x20;
 
-```
+```powershell
 New-UDIcon -Icon 'NetworkWired'
 ```
 
@@ -14,7 +14,7 @@ New-UDIcon -Icon 'NetworkWired'
 
 Create icons by specifying their names. You can use the icon reference below to find icons.
 
-```
+```powershell
 New-UDIcon -Icon 'AddressBook'
 ```
 
@@ -24,7 +24,7 @@ New-UDIcon -Icon 'AddressBook'
 
 Set the size of the icon. Valid values are: `xs`, `sm`, `lg`, `2x`, `3x`, `4x`, `5x`, `6x`, `7x`, `8x`, `9x`, `10x`
 
-```
+```powershell
     New-UDIcon -Icon 'AddressBook' -Size 'sm'
     New-UDIcon -Icon 'AddressBook' -Size 'lg'
     New-UDIcon -Icon 'AddressBook' -Size '5x'
@@ -37,7 +37,7 @@ Set the size of the icon. Valid values are: `xs`, `sm`, `lg`, `2x`, `3x`, `4x`, 
 
 Rotate icons. The value represents the degrees of rotation.
 
-```
+```powershell
 New-UDIcon -Icon 'AddressBook' -Size '5x' -Rotation 90
 ```
 
@@ -47,7 +47,7 @@ New-UDIcon -Icon 'AddressBook' -Size '5x' -Rotation 90
 
 Add a border to your icon.
 
-```
+```powershell
 New-UDIcon -Icon 'AddressBook' -Size '5x' -Border
 ```
 
@@ -57,7 +57,7 @@ New-UDIcon -Icon 'AddressBook' -Size '5x' -Border
 
 Apply CSS styles to your icon.
 
-```
+```powershell
 New-UDIcon -Icon 'AddressBook' -Size '5x' -Style @{
     backgroundColor = "red"
 }
@@ -67,7 +67,7 @@ New-UDIcon -Icon 'AddressBook' -Size '5x' -Style @{
 
 ## Visually Search for Icons
 
-```
+```powershell
 New-UDTextbox -Id 'txtIconSearch' -Label 'Search' 
 New-UDButton -Text 'Search' -OnClick {
     Sync-UDElement -Id 'icons'
@@ -84,33 +84,12 @@ New-UDDynamic -Id 'icons' -Content {
     }
 
     foreach($icon in $icons) {
-        New-UDIcon -Icon $icon -Size lg
+        New-UDChip -Label $icon -Icon (New-UDIcon -Icon $icon)
     }
 }
 ```
 
-## Parameters
+## API
 
-**New-UDIcon**
-
-| Name       | Type             | Description                                              | Required |
-| ---------- | ---------------- | -------------------------------------------------------- | -------- |
-| Id         | string           | Id of the icon                                           | false    |
-| Icon       | FontAwesomeIcons | Icon to select                                           | false    |
-| FixedWidth | switch           |                                                          | false    |
-| Inverse    | switch           | Whether to inverse the icon                              | false    |
-| Rotation   | int              | Rotates an icon clockwise based on the degrees specified | false    |
-| ClassName  | string           |                                                          | false    |
-| Transform  | string           |                                                          | false    |
-| Flip       | string           |                                                          | false    |
-| Pull       | string           |                                                          | false    |
-| ListItem   | switch           |                                                          | false    |
-| Spin       | switch           | Caues the icon to spin.                                  | false    |
-| Border     | switch           | Adds a border to the icon.                               | false    |
-| Pulse      | switch           |                                                          | false    |
-| Size       | string           | The size of the icon                                     | false    |
-| Style      | hashtable        | A CSS style to apply to the icon.                        | false    |
-| Title      | string           |                                                          | false    |
-| Regular    | switch           |                                                          | false    |
-| Color      |                  |                                                          |          |
+****[**New-UDIcon**](../../../../cmdlets/New-UDIcon.txt)****
 
