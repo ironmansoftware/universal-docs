@@ -1,0 +1,212 @@
+
+NAME
+    New-UASchedule
+    
+SYNOPSIS
+    Creates a new schedule within UA.
+    
+    
+SYNTAX
+    New-UASchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] -Continuous [-Credential <Variable>] [-Delay <TimeSpan>] [-DelayHour <Int32>] [-DelayMinute <Int32>] [-DelaySecond <Int32>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    New-UASchedule [-Script] <Script> [-Cron] <String> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    New-UASchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-OneTime <DateTime>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new schedule within UA. Schedules allow you to automate when jobs run and run jobs continously.
+    
+
+PARAMETERS
+    -AppToken <String>
+        An app token to access the UA API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The HTTP address of the UA REST API server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Continuous [<SwitchParameter>]
+        Runs a job continously with an optional delay between executions.
+        
+        Required?                    true
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Credential <Variable>
+        A credential for the user to run the job as. Use New-UACredential to create this credential object.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Cron <String>
+        The CRON schedule to use for this schedule.
+        
+        Required?                    true
+        Position?                    2
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Delay <TimeSpan>
+        The delay inbetween continous job executions.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -DelayHour <Int32>
+        The delay in hours inbetween continous job executions.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -DelayMinute <Int32>
+        The delay in minutes inbetween continous job executions.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -DelaySecond <Int32>
+        The delay in seconds inbetween continous job executions.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Script <Script>
+        The script to schedule. Use Get-UAScript to retrieve a script object.
+        
+        Required?                    true
+        Position?                    1
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Accept wildcard characters?  false
+        
+    -TimeZone <String>
+        The TimeZone to execute the script in. By default, it runs in the current user's time zone.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Environment <String>
+        {{ Fill Environment Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -OneTime <DateTime>
+        {{ Fill OneTime Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Description <String>
+        Description for the schedule.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        Name of the schedule to display in the admin console.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    UniversalAutomation.Script
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> $Script = Get-UAScript -Name 'Script1.ps1'
+    PS C:\> New-UASchedule -Script $Script -Cron '*/5 * * * *'
+    
+    Creates a new schedule that runs every five minutes.
+    -------------------------- Example 2 --------------------------
+    
+    PS C:\> $Password = Get-UAVariable -Name 'password'
+    PS C:\> $Credential = New-UACredential -Name 'adam' -Password $Password
+    PS C:\> $Script = Get-UAScript -Name 'Script1.ps1'
+    PS C:\> New-UASchedule -Script $Script -Cron '*/5 * * * *'
+    
+    Creates a new schedule that runs every five minutes as 'adam'.
+    -------------------------- Example 3 --------------------------
+    
+    PS C:\> $Script = Get-UAScript -Name 'Script1.ps1'
+    PS C:\> New-UASchedule -Script $Script -Continous -DelayMinute 5
+    
+    Creates a schedule that runs conintously. It will start a new job once the previous one finishes with a delay of 5 minutes inbetween executions.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+
+

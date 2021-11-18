@@ -1,0 +1,70 @@
+
+NAME
+    New-UDSelectGroup
+    
+SYNOPSIS
+    Creates a new select group.
+    
+    
+SYNTAX
+    New-UDSelectGroup [-Option] <ScriptBlock> [-Name] <String> [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new select group. This cmdlet is to be used with New-UDSelect. Pass the result of this cmdlet to the -Option parameter to create a new select group.
+    
+
+PARAMETERS
+    -Option <ScriptBlock>
+        Options to include in this group.
+        
+        Required?                    true
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        The name of the group. This will be displayed in the select.
+        
+        Required?                    true
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Creates a new select with two select groups.
+    
+    New-UDSelect -Id 'selectGrouped' -Option {
+        New-UDSelectGroup -Name "Category 1" -Option {
+            New-UDSelectOption -Name "One" -Value 1
+            New-UDSelectOption -Name "Two" -Value 2
+            New-UDSelectOption -Name "Three" -Value 3
+        }
+        New-UDSelectGroup -Name "Category 2" -Option {
+            New-UDSelectOption -Name "Four" -Value 4
+            New-UDSelectOption -Name "Five" -Value 5
+            New-UDSelectOption -Name "Six" -Value 6
+        }
+    } -DefaultValue 2 -OnChange { Show-UDToast -Message $EventData }
+    
+    
+    
+    
+    
+RELATED LINKS
+
+
+

@@ -1,0 +1,145 @@
+
+NAME
+    New-UDTableTextOption
+    
+SYNOPSIS
+    Creates a hashtable to set the text options of a table.
+    
+    
+SYNTAX
+    New-UDTableTextOption [[-ExportAllCsv] <String>] [[-ExportCurrentViewCsv] <String>] [[-ExportAllXLSX] <String>] [[-ExportCurrentViewXLSX] <String>] [[-ExportAllPDF] <String>] [[-ExportCurrentViewPDF] <String>] [[-ExportAllJson] <String>] [[-ExportCurrentViewJson] <String>] [[-ExportFileName] <String>] [[-Search] <String>] [[-FilterSearch] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a hashtable to set the text options of a table.
+    
+
+PARAMETERS
+    -ExportAllCsv <String>
+        Overrides the Export All to CSV text.
+        
+        Required?                    false
+        Position?                    1
+        Default value                Export all as CSV
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ExportCurrentViewCsv <String>
+        Overrides the Export Current View as CSV text.
+        
+        Required?                    false
+        Position?                    2
+        Default value                Export Current View as CSV
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ExportAllXLSX <String>
+        Overrides the Export All to XLSX text.
+        
+        Required?                    false
+        Position?                    3
+        Default value                Export all as XLSX
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ExportCurrentViewXLSX <String>
+        Overrides the Export Current View as XLSX text.
+        
+        Required?                    false
+        Position?                    4
+        Default value                Export Current View as XLSX
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ExportAllPDF <String>
+        Overrides the Export All to PDF text.
+        
+        Required?                    false
+        Position?                    5
+        Default value                Export all as PDF
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ExportCurrentViewPDF <String>
+        Overrides the Export Current View as PDF text.
+        
+        Required?                    false
+        Position?                    6
+        Default value                Export Current View as PDF
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ExportAllJson <String>
+        Overrides the Export All to JSON text.
+        
+        Required?                    false
+        Position?                    7
+        Default value                Export all as JSON
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ExportCurrentViewJson <String>
+        Overrides the Export Current View as JSON text.
+        
+        Required?                    false
+        Position?                    8
+        Default value                Export Current View as JSON
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ExportFileName <String>
+        
+        Required?                    false
+        Position?                    9
+        Default value                File Name
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Search <String>
+        Overrides the Search text. You can use {0} to use as a place holder for the number of rows.
+        
+        Required?                    false
+        Position?                    10
+        Default value                Search {0} records...
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -FilterSearch <String>
+        Overrides the column filter text. You can use {0} to use as a place holder for the number of rows.
+        
+        Required?                    false
+        Position?                    11
+        Default value                Search {0} records...
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+NOTES
+    
+    
+        General notes
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > $Options = New-UDTableTextOption -Search "Filter all the rows"
+    New-UDTable -Data $Data -TextOption $Ootions
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
+
+
+

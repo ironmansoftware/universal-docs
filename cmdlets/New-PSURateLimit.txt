@@ -1,0 +1,110 @@
+
+NAME
+    New-PSURateLimit
+    
+SYNOPSIS
+    Creates a new rate limit for the PowerShell Universal server.
+    
+    
+SYNTAX
+    New-PSURateLimit [-AppToken <String>] [-ComputerName <String>] -Endpoint <String> -Limit <Int32> -Period <TimeSpan> [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new rate limit for the PowerShell Universal server. Rate limits affect the entire server. You can limit the scope of the rate limit based on URLs.
+    
+    Rate limit configurations are stored in .universal/rateLimits.ps1
+    
+    You can also use this cmdlet to create rate limits through the REST API.
+    
+    You can use Set-PSUSetting to configure allow lists for IPs, endpoints and computer names that are not affected by the rate limiting.
+    
+
+PARAMETERS
+    -AppToken <String>
+        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Endpoint <String>
+        The URL of the endpoint to rate limit. The URL can contain wildcards using the * character.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Limit <Int32>
+        The number of requests over the period.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Period <TimeSpan>
+        The period of time to enforce the limit.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    New-PSURateLimit -Endpoint "/myEndpoint" -Period ([TimeSpan]::FromMinutes(10)) -Limit 100
+    
+    Creates a new rate limit that prevents the user from calling the /myEndpoint endpoint more than 100 times in 10 minutes.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    Set-PSUSetting 
+
+
+

@@ -1,0 +1,100 @@
+
+NAME
+    Start-PSUServer
+    
+SYNOPSIS
+    Starts the PowerShell Universal server.
+    
+    
+SYNTAX
+    Start-PSUServer [[-ExecutablePath] <String>] [[-ListenAddress] <String>] [-Configuration <ScriptBlock>] [-Port <Int32>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Starts the PowerShell Universal server. This cmdlet performs discovery and configuration of the Universal.Server executable. It uses Start-Process to start up the server after the configuration has been completed. This cmdlet requires that it can find the Universal.Server executable. You can use Install-PSUServer to download the proper binaries for your system.
+    
+
+PARAMETERS
+    -ExecutablePath <String>
+        The path to the Universal.Server executable. This defaults to $Env:ProgramData\Universal.Server. If not found in this location, Start-PSUServer will also search the $ENV:PATH
+        
+        Required?                    false
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ListenAddress <String>
+        The address to listen on. For example: http://*:4000
+        
+        Required?                    false
+        Position?                    1
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Configuration <ScriptBlock>
+        A configuration script block. This enables single-file configuration.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Port <Int32>
+        A port to listen on.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Start-PSUServer -Port 8080
+    
+    Starts a PowerShell Universal server on port 8080
+    -------------------------- Example 2 --------------------------
+    
+    PS C:\> Start-PSUServer -Port 8080 -Configuration {
+        New-PSUEndpoint -Url '/test' -Method 'GET' -Endpoint {
+            "Hi"
+        }
+    }
+    
+    Starts a PowerShell Universal server on port 8080 and uses single-file configuration to setup a new endpoint listening on '/test'
+    -------------------------- Example 3 --------------------------
+    
+    PS C:\> $Env:Data__RepositoryPath = "C:\repo" 
+    PS C:\> Start-PSUServer -Port 8080
+    
+    Sets an alternative repository path and starts the PowerShell Universal server.
+    
+RELATED LINKS
+    Install-PSUServer 
+
+
+

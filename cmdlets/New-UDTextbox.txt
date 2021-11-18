@@ -1,0 +1,178 @@
+
+NAME
+    New-UDTextbox
+    
+SYNOPSIS
+    Creates a textbox.
+    
+    
+SYNTAX
+    New-UDTextbox [[-Id] <String>] [[-Label] <String>] [[-Placeholder] <String>] [[-Value] <Object>] [[-Type] <String>] [-Disabled] [[-Icon] <Object>] [-Autofocus] [-Multiline] [[-Rows] <Int32>] [[-RowsMax] <Int32>] [-FullWidth] [[-Mask] <String[]>] [[-Variant] <String>] [[-ClassName] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a textbox. Textboxes can be used by themselves or within a New-UDForm.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    1
+        Default value                ([Guid]::NewGuid())
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Label <String>
+        A label to show above this textbox.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Placeholder <String>
+        A placeholder to place within the text box.
+        
+        Required?                    false
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Value <Object>
+        The current value of the textbox.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Type <String>
+        The type of textbox. This can be values such as text, password or email.
+        
+        Required?                    false
+        Position?                    5
+        Default value                text
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Disabled [<SwitchParameter>]
+        Whether this textbox is disabled.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Icon <Object>
+        The icon to show next to the textbox.
+        
+        Required?                    false
+        Position?                    6
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Autofocus [<SwitchParameter>]
+        Whether to autofocus this textbox.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Multiline [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Rows <Int32>
+        
+        Required?                    false
+        Position?                    7
+        Default value                1
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -RowsMax <Int32>
+        
+        Required?                    false
+        Position?                    8
+        Default value                9999
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -FullWidth [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Mask <String[]>
+        
+        Required?                    false
+        Position?                    9
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Variant <String>
+        
+        Required?                    false
+        Position?                    10
+        Default value                standard
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        
+        Required?                    false
+        Position?                    11
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Creates a standard textbox.
+    
+    New-UDTextbox -Label 'text' -Id 'txtLabel'
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS > Creates a password textbox.
+    
+    New-UDTextbox -Label 'password' -Id 'txtPassword' -Type 'password'
+    
+    
+    
+    
+    
+RELATED LINKS
+
+
+

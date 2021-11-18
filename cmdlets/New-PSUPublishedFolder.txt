@@ -1,0 +1,126 @@
+
+NAME
+    New-PSUPublishedFolder
+    
+SYNOPSIS
+    Creates a new published folder in PowerShell Universal.
+    
+    
+SYNTAX
+    New-PSUPublishedFolder [-AppToken <String>] [-Authentication] [-ComputerName <String>] [-DefaultDocument <String[]>] -Path <String> -RequestPath <String> [-Role <String[]>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new published folder in PowerShell Universal. Published folders allow you to host files in the PowerShell Universal web server. You can optionally configure authentication, authorization and default documents.
+    
+
+PARAMETERS
+    -AppToken <String>
+        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Authentication [<SwitchParameter>]
+        Specifies whether authentication is required to view files in this published folder. Authentication requires a Dashboard license.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -DefaultDocument <String[]>
+        The default document to server when visiting the root of this published folder.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Path <String>
+        The local file system path.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -RequestPath <String>
+        The HTTP request path.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Role <String[]>
+        The role to require when viewing files in this published folder. -Authentication is required when using roles.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    New-PSUPublishedFolder -RequestPath '/images' -Path 'C:\images'
+    
+    Publishes the images folder to the request path of images. You will be able to download images from this folder by using URLs like: http://localhost:5000/images/myImage.png
+    -------------------------- Example 2 --------------------------
+    
+    New-PSUPublishedFolder -RequestPath '/website' -Path 'C:\website' -DefaultDocument "index.html"
+    
+    Publishes the website folder and sets the default document to index.html. This allows the you to navigate to the URL http://localhost:5000/website and the web server will return the index.html file automatically. This is helpful for static websites.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+
+

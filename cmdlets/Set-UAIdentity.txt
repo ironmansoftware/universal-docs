@@ -1,0 +1,120 @@
+
+NAME
+    Set-UAIdentity
+    
+SYNOPSIS
+    Sets properties of an identity.
+    
+    
+SYNTAX
+    Set-UAIdentity [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Name <String>] [-Role <Role>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Set-UAIdentity [-Identity] <Identity> [-AppToken <String>] [-ComputerName <String>] [-Name <String>] [-Role <Role>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Sets properties of an identity.
+    
+
+PARAMETERS
+    -AppToken <String>
+        An app token to access the UA API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The HTTP address of the UA REST API server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Id <Int64>
+        The ID of the identity.
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Identity <Identity>
+        An Identity object returned by Get-UAIdentity.
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        The name to set on the identity.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Role <Role>
+        The Role to set on the identity. Use Get-UARole to retrieve built in roles.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    UniversalAutomation.Identity
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Set-UAIdentity -Id 123 -Name 'Adam'
+    
+    Sets Identity 123's name to 'Adam'
+    -------------------------- Example 2 --------------------------
+    
+    PS C:\> $Identity = Get-UAIdentity -Name 'Adam'
+    PS C:\> Set-UAIdentity -Identity $Identity -Name 'Lee'
+    
+    Sets the Identity Adam to Lee.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+
+

@@ -1,0 +1,70 @@
+
+NAME
+    New-UDParagraph
+    
+SYNOPSIS
+    A paragraph.
+    
+    
+SYNTAX
+    New-UDParagraph [-Content <ScriptBlock>] [-Color <DashboardColor>] [<CommonParameters>]
+    
+    New-UDParagraph [-Text <String>] [-Color <DashboardColor>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    A paragraph. Used to define a P HTML tag.
+    
+
+PARAMETERS
+    -Content <ScriptBlock>
+        The content of the paragraph.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Text <String>
+        The text of the paragraph.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Color <DashboardColor>
+        The font color of the paragraph.
+        
+        Required?                    false
+        Position?                    named
+        Default value                black
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > A simple paragraph.
+    
+    New-UDParagraph -Text 'Hello, world!'
+    
+    
+    
+    
+    
+RELATED LINKS
+
+
+

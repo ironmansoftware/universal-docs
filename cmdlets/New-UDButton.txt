@@ -1,0 +1,170 @@
+
+NAME
+    New-UDButton
+    
+SYNOPSIS
+    Creates a new button.
+    
+    
+SYNTAX
+    New-UDButton [[-Text] <String>] [[-Icon] <Object>] [[-Variant] <String>] [[-IconAlignment] <String>] [[-FullWidth]] [[-OnClick] <Endpoint>] [[-Size] <String>] [[-Style] <Hashtable>] [[-Href] <String>] [-Id <String>] [-Color <String>] [-Disabled] [-ClassName <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new button. Buttons are used to allow the user to take action.
+    
+
+PARAMETERS
+    -Text <String>
+        The text to show within the button.
+        
+        Required?                    false
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Icon <Object>
+        An icon to show within the button. Use New-UDIcon to create an icon for this parameter.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Variant <String>
+        The variant type for this button.
+        
+        Required?                    false
+        Position?                    3
+        Default value                contained
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -IconAlignment <String>
+        How to align the icon within the button.
+        
+        Required?                    false
+        Position?                    4
+        Default value                left
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -FullWidth [<SwitchParameter>]
+        Whether the button takes the full width of the it's container.
+        
+        Required?                    false
+        Position?                    7
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnClick <Endpoint>
+        The action to take when the button is clicked.
+        
+        Required?                    false
+        Position?                    8
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Size <String>
+        The size of the button.
+        
+        Required?                    false
+        Position?                    9
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        Styles to apply to the button.
+        
+        Required?                    false
+        Position?                    10
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Href <String>
+        A URL that the user should be redirected to when clicking the button.
+        
+        Required?                    false
+        Position?                    11
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    named
+        Default value                ([Guid]::NewGuid()).ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Color <String>
+        The color of the component. It supports those theme colors that make sense for this component.
+        
+        Required?                    false
+        Position?                    named
+        Default value                default
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Disabled [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Creates a button with the GitHub logo and redirects the user to GitHub when clicked.
+    
+    $Icon = New-UDIcon -Icon 'github'
+    New-UDButton -Text "Submit" -Id "btnClick" -Icon $Icon -OnClick {
+        Invoke-UDRedirect https://github.com
+    }
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS > Creates a button with a blue background.
+    
+    New-UDButton -Text "Submit" -Style @{ backgroundColor = "blue"}  -OnClick {
+        Invoke-UDRedirect https://github.com
+    }
+    
+    
+    
+    
+    
+RELATED LINKS
+
+
+

@@ -1,0 +1,149 @@
+
+NAME
+    New-UDTypography
+    
+SYNOPSIS
+    Creates typography.
+    
+    
+SYNTAX
+    New-UDTypography [-Id <String>] [-Variant <String>] [[-Text] <String>] [-Style <Hashtable>] [-ClassName <String>] [-Align <String>] [-IsEndPoint] [-GutterBottom] [-NoWrap] [-Paragraph] [-FontWeight <String>] [<CommonParameters>]
+    
+    New-UDTypography [-Id <String>] [-Variant <String>] [-Content <ScriptBlock>] [-Style <Hashtable>] [-ClassName <String>] [-Align <String>] [-IsEndPoint] [-GutterBottom] [-NoWrap] [-Paragraph] [-FontWeight <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates typography. Typography allows you to configure text within a dashboard.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    named
+        Default value                ([Guid]::NewGuid()).ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Variant <String>
+        The type of text to display.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Text <String>
+        The text to format.
+        
+        Required?                    false
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Content <ScriptBlock>
+        The content to format.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        A set of CSS styles to apply to the typography.
+        
+        Required?                    false
+        Position?                    named
+        Default value                @{}
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        A CSS className to apply to the typography.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Align <String>
+        How to align the typography.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -IsEndPoint [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -GutterBottom [<SwitchParameter>]
+        The gutter bottom.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -NoWrap [<SwitchParameter>]
+        Disables text wrapping.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Paragraph [<SwitchParameter>]
+        Whether this typography is a paragraph.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -FontWeight <String>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > New-UDTypography -Text 'Hello' -Paragraph
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
+
+
+

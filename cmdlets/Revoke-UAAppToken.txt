@@ -1,0 +1,86 @@
+
+NAME
+    Revoke-UAAppToken
+    
+SYNOPSIS
+    Revokes an app token.
+    
+    
+SYNTAX
+    Revoke-UAAppToken [-AppTokenToRevoke] <AppToken> [-AppToken <String>] [-ComputerName <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Revokes an app token.
+    
+
+PARAMETERS
+    -AppToken <String>
+        An app token to access the UA API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -AppTokenToRevoke <AppToken>
+        The app token to revoke.
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The HTTP address of the UA REST API server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    UniversalAutomation.AppToken
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> $AppToken = Get-UAAppToken -Id 1
+    PS C:\> Revoke-UAAppToken -AppTokenToRevoke $AppToken
+    
+    Revokes app token 1.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+
+

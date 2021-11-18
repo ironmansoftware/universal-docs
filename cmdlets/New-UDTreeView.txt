@@ -1,0 +1,97 @@
+
+NAME
+    New-UDTreeView
+    
+SYNOPSIS
+    Creates a new tree view.
+    
+    
+SYNTAX
+    New-UDTreeView [[-Id] <String>] [-Node] <ScriptBlock> [[-OnNodeClicked] <Endpoint>] [[-Style] <Hashtable>] [[-ClassName] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new tree view.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    1
+        Default value                [Guid]::NewGuid()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Node <ScriptBlock>
+        A collection of root nodes to show within the tree view.
+        
+        Required?                    true
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnNodeClicked <Endpoint>
+        A script block that is called when a node is clicked. $EventData will contain the node that was clicked.
+        
+        Required?                    false
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Creates a basic tree view.
+    
+    New-UDTreeView -Node {
+        New-UDTreeNode -Id 'Root' -Name 'Root' -Children {
+            New-UDTreeNode -Id 'Level1' -Name 'Level 1' -Children {
+                New-UDTreeNode -Id 'Level2' -Name 'Level 2'
+            }
+            New-UDTreeNode -Name 'Level 1' -Children {
+                New-UDTreeNode -Name 'Level 2'
+            }
+            New-UDTreeNode -Name 'Level 1' -Children {
+                New-UDTreeNode -Name 'Level 2'
+            }   
+        }
+        New-UDTreeNode -Id 'Root2' -Name 'Root 2'
+    }
+    
+    
+    
+    
+    
+RELATED LINKS
+
+
+

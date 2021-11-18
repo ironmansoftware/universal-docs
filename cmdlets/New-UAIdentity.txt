@@ -1,0 +1,95 @@
+
+NAME
+    New-UAIdentity
+    
+SYNOPSIS
+    Creates a new identity within UA.
+    
+    
+SYNTAX
+    New-UAIdentity [-AppToken <String>] [-ComputerName <String>] -Name <String> [-Role <Role>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new identity within UA. An identity is either a user or an application that needs to interact with UA. Identities are created automatically from git commits. You should create a new identity for users accessing UA if you wish to audit the system or provide authentication and authorization.
+    
+
+PARAMETERS
+    -AppToken <String>
+        An app token to access the UA API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The HTTP address of the UA REST API server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        The name of the identity.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Role <Role>
+        The role of the identity. Use Get-UARole to receive a Role object.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> $Role = Get-UARole -Name 'Administrator'
+    PS C:\> New-UAIdentity -Name 'Adam'
+    
+    Creates the identity 'Adam' and assigns the role of administrator.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+
+

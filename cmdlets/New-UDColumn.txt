@@ -1,0 +1,144 @@
+
+NAME
+    New-UDColumn
+    
+SYNTAX
+    New-UDColumn [[-Content] <scriptblock>] [-Id <string>] [-SmallSize <int>] [-LargeSize <int>] [-MediumSize <int>] [-SmallOffset <int>] [-MediumOffset <int>] [-LargeOffset <int>] [<CommonParameters>]
+    
+    New-UDColumn [-Id <string>] [-SmallSize <int>] [-LargeSize <int>] [-MediumSize <int>] [-SmallOffset <int>] [-MediumOffset <int>] [-LargeOffset <int>] [-Endpoint <Endpoint>] [-AutoRefresh] [-RefreshInterval <int>] [<CommonParameters>]
+    
+    
+PARAMETERS
+    -AutoRefresh
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           endpoint
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Content <scriptblock>
+        
+        Required?                    false
+        Position?                    1
+        Accept pipeline input?       false
+        Parameter set name           content
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Endpoint <Endpoint>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           endpoint
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Id <string>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -LargeOffset <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -LargeSize <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -MediumOffset <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -MediumSize <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -RefreshInterval <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           endpoint
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -SmallOffset <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -SmallSize <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      Size
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+    
+INPUTS
+    None
+    
+    
+OUTPUTS
+    System.Object
+    
+ALIASES
+    None
+    
+
+REMARKS
+    None
+
+
+

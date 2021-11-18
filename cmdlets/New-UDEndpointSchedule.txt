@@ -1,0 +1,129 @@
+
+NAME
+    New-UDEndpointSchedule
+    
+SYNOPSIS
+    {{ Fill in the Synopsis }}
+    
+    
+SYNTAX
+    New-UDEndpointSchedule [-Consecutive] [-Cron <String>] [<CommonParameters>]
+    
+    New-UDEndpointSchedule [-Consecutive] -Day -Every <Int32> [-Repeat <Int32>] [<CommonParameters>]
+    
+    New-UDEndpointSchedule [-Consecutive] -Every <Int32> [-Repeat <Int32>] -Second [<CommonParameters>]
+    
+    New-UDEndpointSchedule [-Consecutive] -Every <Int32> -Minute [-Repeat <Int32>] [<CommonParameters>]
+    
+    New-UDEndpointSchedule [-Consecutive] -Every <Int32> -Hour [-Repeat <Int32>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    {{ Fill in the Description }}
+    
+
+PARAMETERS
+    -Consecutive [<SwitchParameter>]
+        {{ Fill Consecutive Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Cron <String>
+        {{ Fill Cron Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Day [<SwitchParameter>]
+        {{ Fill Day Description }}
+        
+        Required?                    true
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Every <Int32>
+        {{ Fill Every Description }}
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Hour [<SwitchParameter>]
+        {{ Fill Hour Description }}
+        
+        Required?                    true
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Minute [<SwitchParameter>]
+        {{ Fill Minute Description }}
+        
+        Required?                    true
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Repeat <Int32>
+        {{ Fill Repeat Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Second [<SwitchParameter>]
+        {{ Fill Second Description }}
+        
+        Required?                    true
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> {{ Add example code here }}
+    
+    {{ Add example description here }}
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+
+

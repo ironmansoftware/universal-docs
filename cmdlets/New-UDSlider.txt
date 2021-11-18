@@ -1,0 +1,144 @@
+
+NAME
+    New-UDSlider
+    
+SYNOPSIS
+    A slider component.
+    
+    
+SYNTAX
+    New-UDSlider [[-Id] <String>] [[-Value] <Int32[]>] [[-Minimum] <Int32>] [[-Maximum] <Int32>] [-Disabled] [-Marks] [[-OnChange] <Endpoint>] [[-Orientation] <String>] [[-Step] <Int32>] [[-ValueLabelDisplay] <String>] [[-ClassName] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    A slider component. Sliders can be used to define values within a range or selecting a range of values. You can use this component with New-UDForm.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of this component.
+        
+        Required?                    false
+        Position?                    1
+        Default value                ([Guid]::NewGuid())
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Value <Int32[]>
+        The value of the slider.
+        
+        Required?                    false
+        Position?                    2
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Minimum <Int32>
+        The minimum value of the slider.
+        
+        Required?                    false
+        Position?                    3
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Maximum <Int32>
+        The maximum value of the slider.
+        
+        Required?                    false
+        Position?                    4
+        Default value                100
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Disabled [<SwitchParameter>]
+        Whether the slider is disabled.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Marks [<SwitchParameter>]
+        Whether to display marks on the slider.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnChange <Endpoint>
+        A script block that is invoked when the slider value changes. You can access the slider value within the script block by referencing the $EventData variable.
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Orientation <String>
+        The orientation of the slider.
+        
+        Required?                    false
+        Position?                    6
+        Default value                horizontal
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Step <Int32>
+        Step size of the slider.
+        
+        Required?                    false
+        Position?                    7
+        Default value                1
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ValueLabelDisplay <String>
+        Whether to display value labels.
+        
+        Required?                    false
+        Position?                    8
+        Default value                auto
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        
+        Required?                    false
+        Position?                    9
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+NOTES
+    
+    
+        General notes
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > An example
+    
+    New-UDSlider
+    
+    
+    
+    
+    
+RELATED LINKS
+
+
+

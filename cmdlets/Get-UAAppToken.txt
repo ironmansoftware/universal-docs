@@ -1,0 +1,96 @@
+
+NAME
+    Get-PSUAppToken
+    
+SYNOPSIS
+    {{ Fill in the Synopsis }}
+    
+    
+SYNTAX
+    Get-PSUAppToken [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Get-PSUAppToken [-Identity] <Identity> [-AppToken <String>] [-ComputerName <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    {{ Fill in the Description }}
+    
+
+PARAMETERS
+    -AppToken <String>
+        {{ Fill AppToken Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        {{ Fill ComputerName Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Id <Int64>
+        {{ Fill Id Description }}
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Identity <Identity>
+        {{ Fill Identity Description }}
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    UniversalAutomation.Identity
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> {{ Add example code here }}
+    
+    {{ Add example description here }}
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+
+

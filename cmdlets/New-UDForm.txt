@@ -1,0 +1,154 @@
+
+NAME
+    New-UDForm
+    
+SYNOPSIS
+    Creates a new form.
+    
+    
+SYNTAX
+    New-UDForm [[-Id] <String>] [-Children] <ScriptBlock> [-OnSubmit] <Endpoint> [[-OnValidate] <Endpoint>] [[-OnProcessing] <ScriptBlock>] [[-OnCancel] <Endpoint>] [[-SubmitText] <String>] [[-CancelText] <String>] [[-ButtonVariant] <String>] [[-ClassName] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new form. Forms can contain any set of input controls. Each of the controls will report its value back up to the form when the submit button is clicked.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    1
+        Default value                [Guid]::NewGuid().ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Children <ScriptBlock>
+        Controls that make up this form. This can be any combination of controls. Input controls will report their state to the form.
+        
+        Required?                    true
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnSubmit <Endpoint>
+        A script block that is execute when the form is submitted. You can return controls from this script block and the form will be replaced by the script block. The $EventData variable will contain a hashtable of all the input fields and their values.
+        
+        Required?                    true
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnValidate <Endpoint>
+        A script block that validates the form. Return the result of a call to New-UDFormValidationResult.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnProcessing <ScriptBlock>
+        A script block that is called when the form begins processing. The return value of this script block should be a component that displays a loading dialog. The script block will receive the current form data.
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnCancel <Endpoint>
+        A script block that is called when a form is cancelled. Useful for closing forms in modals.
+        
+        Required?                    false
+        Position?                    6
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -SubmitText <String>
+        Text to show within the submit button
+        
+        Required?                    false
+        Position?                    7
+        Default value                Submit
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -CancelText <String>
+        Text to show within the cancel button.
+        
+        Required?                    false
+        Position?                    8
+        Default value                Cancel
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ButtonVariant <String>
+        Type of button to display.
+        
+        Required?                    false
+        Position?                    9
+        Default value                text
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        
+        Required?                    false
+        Position?                    10
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Creates a form that contains many input controls and displays the $eventdata hashtable as a toast.
+    
+    New-UDForm -Id 'defaultForm' -Content {
+        New-UDTextbox -Id 'txtNameDefault' -Value 'Name'
+        New-UDTextbox -Id 'txtLastNameDefault' -Value 'LastName'
+        New-UDCheckbox -Id 'chkYesDefault' -Label YesOrNo -Checked $true
+    
+        New-UDSelect -Label '1-3' -Id 'selectDefault' -Option {
+            New-UDSelectOption -Name "OneDefault" -Value 1
+            New-UDSelectOption -Name "TwoDefault" -Value 2
+            New-UDSelectOption -Name "ThreeDefault" -Value 3
+        } -DefaultValue '1'
+    
+        New-UDSwitch -Id 'switchYesDefault' -Checked $true
+    
+        New-UDDatePicker -Id 'dateDateDefault' -Value '1-2-2020'
+    
+        New-UDTimePicker -Id 'timePickerDefault' -Value '10:30 AM'
+    
+        New-UDRadioGroup -Label 'group' -Id 'simpleRadioDefault' -Children {
+            New-UDRadio -Value 'Adam' -Label 'Adam'  -Id 'adamDefault'
+            New-UDRadio -Value 'Alon' -Label 'Alon' -Id 'alonDefault'
+            New-UDRadio -Value 'Lee' -Label 'Lee' -Id 'leeDefault'
+        } -Value 'Adam'
+    } -OnSubmit {
+        Show-UDToast -Message $Body
+    }
+    
+    
+    
+    
+    
+RELATED LINKS
+
+
+

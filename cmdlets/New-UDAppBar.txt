@@ -1,0 +1,103 @@
+
+NAME
+    New-UDAppBar
+    
+SYNOPSIS
+    Creates an AppBar.
+    
+    
+SYNTAX
+    New-UDAppBar [[-Id] <String>] [[-Drawer] <Hashtable>] [[-Children] <ScriptBlock>] [[-Position] <String>] [-Footer] [-DisableThemeToggle] [[-ClassName] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates an AppBar. This can be used to replace the built-in AppBar.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    1
+        Default value                [Guid]::NewGuid()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Drawer <Hashtable>
+        A drawer that can be opened from this AppBar. Use New-UDDrawer to create a drawer to pass to this parameter.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Children <ScriptBlock>
+        Children of this AppBar. The children of an AppBar are commonly text and buttons.
+        
+        Required?                    false
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Position <String>
+        The position of this AppBar. A fixed position will override the default AppBar.
+        
+        Required?                    false
+        Position?                    4
+        Default value                fixed
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Footer [<SwitchParameter>]
+        Positions the app bar at the bottom of the page to create a footer
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DisableThemeToggle [<SwitchParameter>]
+        Removes the theme toggle switch from the app bar.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Creates a new AppBar that is relative to other components.
+    
+    New-UDAppBar -Children { New-UDTypography -Text 'Hello' -Paragraph } -Position relative
+    
+    
+    
+    
+    
+RELATED LINKS
+
+
+

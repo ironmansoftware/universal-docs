@@ -1,0 +1,64 @@
+
+NAME
+    New-UDLayout
+    
+SYNOPSIS
+    Create a layout based on the number of components within the layout.
+    
+    
+SYNTAX
+    New-UDLayout [-Columns] <Int32> [-Content] <ScriptBlock> [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Create a layout based on the number of components within the layout. The component wraps New-UDRow and New-UDColumn to automatically layout components in the content.
+    
+
+PARAMETERS
+    -Columns <Int32>
+        The number of columns in this layout.
+        
+        Required?                    true
+        Position?                    1
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Content <ScriptBlock>
+        The content for this layout.
+        
+        Required?                    true
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > New-UDLayout -Columns 2 -Content {
+        New-UDTypography "Row 1, Col 1"
+        New-UDTypography "Row 1, Col 2"
+        New-UDTypography "Row 2, Col 1"
+        New-UDTypography "Row 2, Col 2"
+    }
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
+
+
+

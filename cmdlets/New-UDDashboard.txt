@@ -1,0 +1,185 @@
+
+NAME
+    New-UDDashboard
+    
+SYNOPSIS
+    Creates a new dashboard.
+    
+    
+SYNTAX
+    New-UDDashboard [-Title <String>] -Content <Endpoint> [-Theme <Hashtable>] [-Scripts <String[]>] [-Stylesheets <String[]>] [-Logo <String>] [-DefaultTheme <String>] [-DisableThemeToggle] [-HeaderPosition <String>] [-HeaderColor <DashboardColor>] [-HeaderBackgroundColor <DashboardColor>] [-NavigationLayout <String>] [-Navigation <Hashtable[]>] [<CommonParameters>]
+    
+    New-UDDashboard [-Title <String>] -Pages <Hashtable[]> [-Theme <Hashtable>] [-Scripts <String[]>] [-Stylesheets <String[]>] [-Logo <String>] [-DefaultTheme <String>] [-DisableThemeToggle] [-HeaderPosition <String>] [-HeaderColor <DashboardColor>] [-HeaderBackgroundColor <DashboardColor>] [-NavigationLayout <String>] [-Navigation <Hashtable[]>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new dashboard. This component is the root element for all dashboards. You can define content, pages, themes and more.
+    
+
+PARAMETERS
+    -Title <String>
+        The title of the dashboard.
+        
+        Required?                    false
+        Position?                    named
+        Default value                PowerShell Universal Dashboard
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Content <Endpoint>
+        The content for this dashboard. When using content, it creates a dashboard with a single page.
+        
+        Required?                    true
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Pages <Hashtable[]>
+        Pages for this dashboard. Use New-UDPage to define a page and pass an array of pages to this parameter.
+        
+        Required?                    true
+        Position?                    named
+        Default value                @()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Theme <Hashtable>
+        The theme for this dashboard. You can define a theme with New-UDTheme.
+        
+        Required?                    false
+        Position?                    named
+        Default value                @{}
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Scripts <String[]>
+        JavaScript files to run when this dashboard is loaded. These JavaScript files can be absolute and hosted in a third-party CDN or you can host them yourself with New-PSUPublishedFolder.
+        
+        Required?                    false
+        Position?                    named
+        Default value                @()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Stylesheets <String[]>
+        CSS files to run when this dashboard is loaded. These CSS files can be absolute and hosted in a third-party CDN or you can host them yourself with New-PSUPublishedFolder.
+        
+        Required?                    false
+        Position?                    named
+        Default value                @()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Logo <String>
+        A logo to display in the navigation bar. You can use New-PSUPublishedFolder to host this logo file.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DefaultTheme <String>
+        The default theme to show when the page is loaded. The default is to use the light theme.
+        
+        Required?                    false
+        Position?                    named
+        Default value                Light
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DisableThemeToggle [<SwitchParameter>]
+        Disables the toggle for the theme.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -HeaderPosition <String>
+        Position of the header within the dashboard.
+        
+        Required?                    false
+        Position?                    named
+        Default value                static
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -HeaderColor <DashboardColor>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -HeaderBackgroundColor <DashboardColor>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -NavigationLayout <String>
+        
+        Required?                    false
+        Position?                    named
+        Default value                Temporary
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Navigation <Hashtable[]>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Creates a new dashboard with a single page.
+    
+    New-UDDashboard -Title 'My Dashboard' -Content {
+        New-UDTypography -Text 'Hello, world!'
+    }
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS > Creates a new dashboard with multiple pages.
+    
+    $Pages = @(
+        New-UDPage -Name 'HomePage' -Content {
+            New-UDTypography -Text 'Home Page'
+        }
+        New-UDPage -Name 'Page2' -Content {
+            New-UDTypography -Text 'Page2'
+        }
+    )
+    
+    New-UDDashboard -Title 'My Dashboard' -Pages $Pages
+    
+    
+    
+    
+    
+RELATED LINKS
+
+
+

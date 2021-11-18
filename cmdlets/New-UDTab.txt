@@ -1,0 +1,86 @@
+
+NAME
+    New-UDTab
+    
+SYNOPSIS
+    Creates a new tab.
+    
+    
+SYNTAX
+    New-UDTab [[-Text] <String>] [-Content] <ScriptBlock> [[-Id] <String>] [-Dynamic] [[-Icon] <Object>] [-Disabled] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new tab. Use New-UDTabs as a container for tabs.
+    
+
+PARAMETERS
+    -Text <String>
+        The text to display for this tab.
+        
+        Required?                    false
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Content <ScriptBlock>
+        The content to display when the tab is selected.
+        
+        Required?                    true
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Id <String>
+        The ID of this component.
+        
+        Required?                    false
+        Position?                    3
+        Default value                ([Guid]::NewGuid()).ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Dynamic [<SwitchParameter>]
+        Whether this tab is dynamic. Dynamic tabs won't render until they are displayed.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Icon <Object>
+        The Icon to display within the tab header.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Disabled [<SwitchParameter>]
+        Whether this tab is disabled.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    
+RELATED LINKS
+
+
+

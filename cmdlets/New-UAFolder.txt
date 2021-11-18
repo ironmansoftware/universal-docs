@@ -1,0 +1,111 @@
+
+NAME
+    New-UAFolder
+    
+SYNOPSIS
+    Creates a new folder within UA.
+    
+    
+SYNTAX
+    New-UAFolder [-AppToken <String>] [-ComputerName <String>] -Name <String> [-Parent <Folder>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    New-UAFolder [-AppToken <String>] [-ComputerName <String>] [-Path <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new folder within UA. This will create a new folder within the internal git repository and additionally a configured remote.
+    
+
+PARAMETERS
+    -AppToken <String>
+        An app token to access the UA API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The HTTP address of the UA REST API server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        The name of the folder to create.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Parent <Folder>
+        The parent folder to create this folder underneath.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Path <String>
+        {{ Fill Path Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> New-UAFolder -Name 'Scripts'
+    
+    Creates a new Scripts folder in the root of the UA folder structure.
+    -------------------------- Example 2 --------------------------
+    
+    PS C:\> $Parent = Get-UAFolder -Name 'Scripts'
+    PS C:\> New-UAFolder -Name 'Private' -Parent $Parent
+    
+    Creates a new Private folder in the Scripts folder of the UA folder structure.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+
+

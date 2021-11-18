@@ -1,0 +1,102 @@
+
+NAME
+    Show-UDModal
+    
+SYNTAX
+    Show-UDModal [[-Footer] <scriptblock>] [[-Header] <scriptblock>] [[-Content] <scriptblock>] [[-MaxWidth] {xs | sm | md | lg | xl}] [-FullScreen] [-Persistent] [-FullWidth] [<CommonParameters>]
+    
+    
+PARAMETERS
+    -Content <scriptblock>
+        
+        Required?                    false
+        Position?                    2
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Footer <scriptblock>
+        
+        Required?                    false
+        Position?                    0
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -FullScreen
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -FullWidth
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Header <scriptblock>
+        
+        Required?                    false
+        Position?                    1
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -MaxWidth <string>
+        
+        Required?                    false
+        Position?                    3
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Persistent
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+    
+INPUTS
+    None
+    
+    
+OUTPUTS
+    System.Object
+    
+ALIASES
+    None
+    
+
+REMARKS
+    None
+
+
+

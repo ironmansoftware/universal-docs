@@ -1,0 +1,108 @@
+
+NAME
+    New-PSUApiResponse
+    
+SYNOPSIS
+    Returns a custom API response from a PowerShell Universal REST API.
+    
+    
+SYNTAX
+    New-PSUApiResponse [-Body <String>] [-ContentType <String>] [-Cookies <Hashtable>] [-StatusCode <Int32>] [-Headers <Hashtable>] [<CommonParameters>]
+    
+    New-PSUApiResponse [-ContentType <String>] [-Cookies <Hashtable>] [-Data <Byte[]>] [-StatusCode <Int32>] [-Headers <Hashtable>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Returns a custom API response from a PowerShell Universal REST API. This cmdlet should be called within the -Endpoint script block defined in New-PSUEndpoint.
+    
+
+PARAMETERS
+    -Body <String>
+        The body of the response to send back from the endpoint request.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ContentType <String>
+        The content-type header to set on the response from the endpoint.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Cookies <Hashtable>
+        A hashtable of cookies to set in the HTTP response.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Data <Byte[]>
+        Binary data to return from the endpoint. This can be used to send binary files back to the user.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -StatusCode <Int32>
+        The HTTP status code to set for this response. The default value is 200.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Headers <Hashtable>
+        A hashtable of headers to return from the API request.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    New-PSUEndpoint -Url '/hello' -Method "GET" -Endpoint {
+        New-PSUApiResponse -StatusCode 404 -Body "Not found!"
+    }
+    
+    Returns a 404 status code from the /hello endpoint when the GET method is called. This is specifying a custom body as well.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    New-PSUEndpoint 
+
+
+

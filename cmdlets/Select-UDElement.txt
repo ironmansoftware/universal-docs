@@ -1,0 +1,52 @@
+
+NAME
+    Select-UDElement
+    
+SYNTAX
+    Select-UDElement -Id <string> [-ScrollToElement] [<CommonParameters>]
+    
+    
+PARAMETERS
+    -Id <string>
+        
+        Required?                    true
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Normal
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -ScrollToElement
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Normal
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+    
+INPUTS
+    None
+    
+    
+OUTPUTS
+    System.Object
+    
+ALIASES
+    None
+    
+
+REMARKS
+    None
+
+
+

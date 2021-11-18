@@ -1,0 +1,65 @@
+
+NAME
+    New-UDMenuItem
+    
+SYNOPSIS
+    Creates a menu item.
+    
+    
+SYNTAX
+    New-UDMenuItem [-Text] <String> [[-Value] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a menu item.
+    
+
+PARAMETERS
+    -Text <String>
+        The text to display in the menu item.
+        
+        Required?                    true
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Value <String>
+        The value of the menu item. If not specified, the text will be used.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > New-UDMenu -Text 'Click Me' -OnChange {
+        Show-UDToast $EventData
+    } -Children {
+        New-UDMenuItem -Text 'Test'
+        New-UDMenuItem -Text 'Test2'
+        New-UDMenuItem -Text 'Test3'
+    }
+    
+    Creates a simple menu.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+
+

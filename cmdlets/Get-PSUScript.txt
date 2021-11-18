@@ -1,0 +1,159 @@
+
+NAME
+    Get-UAScript
+    
+SYNOPSIS
+    Returns scripts defined within UA.
+    
+    
+SYNTAX
+    Get-UAScript [-FolderId] <Int64> [-AppToken <String>] [-ComputerName <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Get-UAScript [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Get-UAScript [-Identity] <Identity> [-AppToken <String>] [-ComputerName <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Get-UAScript [-Name] <String> [-AppToken <String>] [-ComputerName <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Get-UAScript [-AppToken <String>] [-ComputerName <String>] [-Tag <Tag>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Returns scripts defined within UA.
+    
+
+PARAMETERS
+    -AppToken <String>
+        An app token to access the UA API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The HTTP address of the UA REST API server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -FolderId <Int64>
+        The ID of the folder to return scripts from.
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Accept wildcard characters?  false
+        
+    -Id <Int64>
+        The ID of the script to return.
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Identity <Identity>
+        Returns scripts based created or edited by this Identity.
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        The name of the script to return.
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Tag <Tag>
+        Returns scripts based on this tag. Use Get-UATag to retrieve tags.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    UniversalAutomation.Identity
+        
+    
+    System.Int64
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Get-UAScript
+    
+    Returns all scripts defined within UA.
+    -------------------------- Example 2 --------------------------
+    
+    PS C:\> Get-UAScript -Id 12
+    
+    Returns the script with ID 12.
+    -------------------------- Example 3 --------------------------
+    
+    PS C:\> $Identity = Get-UAIdentity -Name 'Adam'
+    PS C:\> Get-UAScript -Identity $Identity
+    
+    Returns all scripts created or modified by the identity 'Adam'.
+    -------------------------- Example 4 --------------------------
+    
+    PS C:\> Get-UAScript -FolderId 12
+    
+    Returns all scripts with the folder with ID 12.
+    -------------------------- Example 4 --------------------------
+    
+    PS C:\> Get-UAScript -Name 'Script1.ps1'
+    
+    Returns script 'Script1.ps1'
+    -------------------------- Example 5 --------------------------
+    
+    PS C:\> $Tag = Get-UATag -Name 'Release'
+    PS C:\> Get-UAScript -Tag $Tag
+    
+    Returns all scripts with the 'Release' tag.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+
+

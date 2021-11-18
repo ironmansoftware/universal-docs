@@ -1,0 +1,86 @@
+
+NAME
+    New-UDAvatar
+    
+SYNOPSIS
+    Creates a new Avatar.
+    
+    
+SYNTAX
+    New-UDAvatar [[-Id] <String>] [[-Image] <String>] [[-Alt] <String>] [[-ClassName] <String>] [[-Variant] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new Avatar. An avatar is typically an image of a user.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    1
+        Default value                ([Guid]::NewGuid()).ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Image <String>
+        The URL of an image to show in the avatar.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Alt <String>
+        The alt text to assign to the avatar.
+        
+        Required?                    false
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        Classes to assign to the avatar component.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Variant <String>
+        The variant type of the avatar.
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > A small avatar using Alon's image.
+    
+    New-UDAvatar -Image 'https://avatars2.githubusercontent.com/u/34351424?s=460&v=4' -Alt 'alon gvili avatar' -Id 'avatarContent' -Variant small
+    
+    
+    
+    
+    
+RELATED LINKS
+
+
+

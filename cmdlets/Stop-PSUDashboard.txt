@@ -1,0 +1,82 @@
+
+NAME
+    Stop-UDDashboard
+    
+SYNTAX
+    Stop-UDDashboard -Dashboard <Dashboard> [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    
+    
+PARAMETERS
+    -AppToken <string>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -ComputerName <string>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      Uri
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Dashboard <Dashboard>
+        
+        Required?                    true
+        Position?                    Named
+        Accept pipeline input?       true (ByValue)
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Integrated
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+    
+INPUTS
+    PowerShellUniversal.Dashboard
+    
+    
+OUTPUTS
+    System.Object
+    
+ALIASES
+    Stop-PSUDashboard
+    
+
+REMARKS
+    None
+
+
+

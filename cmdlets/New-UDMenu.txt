@@ -1,0 +1,101 @@
+
+NAME
+    New-UDMenu
+    
+SYNOPSIS
+    Creates a pop up menu.
+    
+    
+SYNTAX
+    New-UDMenu [[-Id] <String>] [-Text] <String> [[-OnChange] <Endpoint>] [[-Children] <ScriptBlock>] [[-ClassName] <ParameterAttribute>] [[-Variant] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a pop up menu.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of this component.
+        
+        Required?                    false
+        Position?                    1
+        Default value                [Guid]::NewGuid()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Text <String>
+        The text to display in the button that opens this menu.
+        
+        Required?                    true
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnChange <Endpoint>
+        An event handler to call when the user selects an item from the menu. $EventData will include the selected item.
+        
+        Required?                    false
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Children <ScriptBlock>
+        The items to display in the menu.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <ParameterAttribute>
+        The class name of the menu.
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Variant <String>
+        The button variant for the menu.
+        
+        Required?                    false
+        Position?                    6
+        Default value                contained
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > New-UDMenu -Text 'Click Me' -OnChange {
+        Show-UDToast $EventData
+    } -Children {
+        New-UDMenuItem -Text 'Test'
+        New-UDMenuItem -Text 'Test2'
+        New-UDMenuItem -Text 'Test3'
+    }
+    
+    Creates a simple menu.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+
+

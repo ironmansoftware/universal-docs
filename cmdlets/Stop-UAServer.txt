@@ -1,0 +1,94 @@
+
+NAME
+    Stop-UAServer
+    
+SYNOPSIS
+    Stops the UA server.
+    
+    
+SYNTAX
+    Stop-UAServer [[-Server] <Process>] [-AppToken <String>] [-ComputerName <String>] [-Force] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Stops the UA server.
+    
+
+PARAMETERS
+    -AppToken <String>
+        {{ Fill AppToken Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        {{ Fill ComputerName Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Force [<SwitchParameter>]
+        {{ Fill Force Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Server <Process>
+        {{ Fill Server Description }}
+        
+        Required?                    false
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Stop-UAServer
+    
+    Stops the UA server.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+
+

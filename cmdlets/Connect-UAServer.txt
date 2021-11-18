@@ -1,0 +1,75 @@
+
+NAME
+    Connect-PSUServer
+    
+SYNOPSIS
+    Connects to a PowerShell Universal server.
+    
+    
+SYNTAX
+    Connect-PSUServer [-AppToken <String>] -ComputerName <String> [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Connects to a PowerShell Universal server. When you connect using this cmdlet, you will no longer need to specify the -ComputerName and -AppToken parameters for each cmdlet that is accessing the PowerShell Universal Management API.
+    
+
+PARAMETERS
+    -AppToken <String>
+        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Connect-PSUServer -ComputerName http://localhost:5000 -AppToken 'appToken123'
+    
+    Connects to the PSU server listening on port 5000 of localhost using the app token appToken123.
+    
+RELATED LINKS
+
+
+

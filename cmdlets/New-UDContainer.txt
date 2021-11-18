@@ -1,0 +1,69 @@
+
+NAME
+    New-UDContainer
+    
+SYNOPSIS
+    Creates a Material UI container.
+    
+    
+SYNTAX
+    New-UDContainer [-Id <String>] [-Children] <ScriptBlock> [-ClassName <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a Material UI container. Containers pad the left and right side of the contained content to center it on larger resolution screens.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of this component.
+        
+        Required?                    false
+        Position?                    named
+        Default value                ([Guid]::NewGuid()).ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Children <ScriptBlock>
+        The child items to include within the container.
+        
+        Required?                    true
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Creates a container with some text.
+    
+    New-UDContainer -Content {
+        New-UDTypography -Text 'Nice'
+    }
+    
+    
+    
+    
+    
+RELATED LINKS
+
+
+

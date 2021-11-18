@@ -1,0 +1,191 @@
+
+NAME
+    New-PSULoginPage
+    
+SYNOPSIS
+    Configuration settings for the login page in PowerShell Universal.
+    
+    
+SYNTAX
+    New-PSULoginPage [-AppToken <String>] [-ComputerName <String>] [-Copyright <String>] [-CssStylesheet <String[]>] [-HeaderColor <String>] [-HeaderFontColor <String>] [-Image <String>] [-PrimaryColor <String>] [-PrimaryFontColor <String>] [-SecondaryColor <String>] [-SecondaryFontColor <String>] [-Title <String>] [-Links <LoginPageLink[]>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Configuration settings for the login page in PowerShell Universal. The login page is displayed when using forms authentication. You can configure colors, text and images for the login page.
+    
+    Login page configurations are stored in .universal/loginPage.ps1
+    
+    You can also use this cmdlet to update the login page through the REST API.
+    
+
+PARAMETERS
+    -AppToken <String>
+        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Copyright <String>
+        The copyright text to display at the bottom of the page.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -CssStylesheet <String[]>
+        One or more URLs to stylesheets to apply to the login page.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -HeaderColor <String>
+        The background color of the header.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -HeaderFontColor <String>
+        The font color of the header.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Image <String>
+        An image to display within the login page. You can use published folders to host images.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -PrimaryColor <String>
+        The primary background color.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -PrimaryFontColor <String>
+        The primary font color.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -SecondaryColor <String>
+        The secondary background color.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -SecondaryFontColor <String>
+        The secondary font color.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Title <String>
+        The tile to display in the header.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Links <LoginPageLink[]>
+        Links to display on the login page. Use New-PSULoginPageLink.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    $LoginPage = @{
+     PrimaryColor = '#5c2751' 
+     Title = 'DBATools Web Portal'
+     Copyright = 'DBATools 2020' 
+     HeaderFontColor = 'white'
+     HeaderColor = '#4bc0d9' 
+     SecondaryColor = '#6457a6'
+     SecondaryFontColor = 'white'
+     Image = 'http://localhost:5000/images/dbatools.png'
+    }
+    
+    New-PSULoginPage @LoginPage
+    
+    Creates a custom login page with colors, images and text.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    New-PSUPublishedFolder 
+
+
+

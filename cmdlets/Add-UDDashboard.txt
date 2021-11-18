@@ -1,0 +1,213 @@
+
+NAME
+    New-PSUDashboard
+    
+SYNOPSIS
+    Creates a new dashboard.
+    
+    
+SYNTAX
+    New-PSUDashboard [-AppToken <String>] [-Authenticated] [-AutoDeploy] [-BaseUrl <String>] [-Component <DashboardComponent[]>] [-ComputerName <String>] -Content <ScriptBlock> [-Credential <String>] [-Description <String>] [-DisableAutoStart] [-Environment <String>] [-Framework <DashboardFramework>] [-GrantAppToken] -Name <String> [-Role <String[]>] [-SessionTimeout <Int32>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    New-PSUDashboard [-AppToken <String>] [-Authenticated] [-AutoDeploy] [-BaseUrl <String>] [-Component <DashboardComponent[]>] [-ComputerName <String>] [-Credential <String>] [-Description <String>] [-DisableAutoStart] [-Environment <String>] -FilePath <String> [-Framework <DashboardFramework>] [-GrantAppToken] -Name <String> [-Role <String[]>] [-SessionTimeout <Int32>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new dashboard. Dashboards allow you to create websites with PowerShell.
+    
+
+PARAMETERS
+    -AppToken <String>
+        An app token used to connect to the management console.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Authenticated [<SwitchParameter>]
+        Whether authentication is required for this dashboard.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -AutoDeploy [<SwitchParameter>]
+        Whether to automatically deploy the dashboard when it changes.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -BaseUrl <String>
+        The base URL to serve the dashboard on.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Component <DashboardComponent[]>
+        A list of component modules to import.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The URI of the management API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Content <ScriptBlock>
+        A script block containing dashboard content.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Credential <String>
+        The user credential variable to use when starting the dashboard.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Description <String>
+        A description of the dashboard.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -DisableAutoStart [<SwitchParameter>]
+        Whether to disable starting the dashboard when PSU starts.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Environment <String>
+        The environment to use with the dashboard.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -FilePath <String>
+        The file path of the dashboard PowerShell script that defines this dashboard.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Framework <DashboardFramework>
+        The Universal Dashboard framework to use for this dashboard.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -GrantAppToken [<SwitchParameter>]
+        Whether to automatically grant an app token to users accessing the dashboard. This is used if your dashboard requires access to the management API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        The name of the dashboard.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Role <String[]>
+        An array of roles that can access the dashboard.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -SessionTimeout <Int32>
+        The number of minutes before a session will time out in the dashboard.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    New-PSUDashboard -Name 'Dashboard' -BaseUrl '/dashboard' -FilePath "dashboard.ps1"
+    
+    Creates a dashboard using the dashboard.ps1 file in the repository directory and serves it at the base URL of /dashboard.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+
+

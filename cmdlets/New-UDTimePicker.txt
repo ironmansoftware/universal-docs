@@ -1,0 +1,94 @@
+
+NAME
+    New-UDTimePicker
+    
+SYNOPSIS
+    Creates a time picker.
+    
+    
+SYNTAX
+    New-UDTimePicker [[-Id] <String>] [[-Label] <String>] [[-OnChange] <Endpoint>] [[-Value] <String>] [[-Locale] <String>] [[-ClassName] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a time picker. This component can be used stand alone or within New-UDForm.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    1
+        Default value                [Guid]::NewGuid().ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Label <String>
+        The label to show with the time picker.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnChange <Endpoint>
+        A script block to call when the time is changed. The $EventData variable contains the currently selected time.
+        
+        Required?                    false
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Value <String>
+        The current value of the time picker.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Locale <String>
+        Change the language of the time picker.
+        
+        Required?                    false
+        Position?                    5
+        Default value                en
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        
+        Required?                    false
+        Position?                    6
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Creates a new time picker
+    
+    New-UDTimePicker -Id 'timePicker'
+    
+    
+    
+    
+    
+RELATED LINKS
+
+
+

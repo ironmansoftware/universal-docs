@@ -1,0 +1,28 @@
+
+NAME
+    Hide-UDModal
+    
+SYNTAX
+    Hide-UDModal 
+    
+    
+PARAMETERS
+    None
+    
+    
+INPUTS
+    None
+    
+    
+OUTPUTS
+    System.Object
+    
+ALIASES
+    None
+    
+
+REMARKS
+    None
+
+
+

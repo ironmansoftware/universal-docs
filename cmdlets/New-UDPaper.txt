@@ -1,0 +1,121 @@
+
+NAME
+    New-UDPaper
+    
+SYNOPSIS
+    Creates a paper.
+    
+    
+SYNTAX
+    New-UDPaper [[-Id] <String>] [[-Children] <ScriptBlock>] [[-Width] <String>] [[-Height] <String>] [-Square] [[-Style] <Hashtable>] [[-Elevation] <Int32>] [[-ClassName] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a paper. Paper is used to highlight content within a page.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    1
+        Default value                ([Guid]::NewGuid()).ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Children <ScriptBlock>
+        The content of this paper element.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Width <String>
+        The width of this paper.
+        
+        Required?                    false
+        Position?                    3
+        Default value                500
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Height <String>
+        The height of this paper.
+        
+        Required?                    false
+        Position?                    4
+        Default value                500
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Square [<SwitchParameter>]
+        Whether this paper is square.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        The CSS style to apply to this paper.
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Elevation <Int32>
+        The elevation of this paper.
+        
+        Required?                    false
+        Position?                    6
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        
+        Required?                    false
+        Position?                    7
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+NOTES
+    
+    
+        General notes
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Creates paper with a heading, custom style and an elevation of 4.
+    
+    New-UDPaper -Children {
+        New-UDHeading -Text "hi" -Id 'hi'
+    } -Style @{
+        backgroundColor = '#90caf9'
+    } -Id 'paperElevation' -Elevation 4
+    
+    
+    
+    
+    
+RELATED LINKS
+
+
+

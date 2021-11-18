@@ -1,0 +1,123 @@
+
+NAME
+    New-UDDynamic
+    
+SYNOPSIS
+    Defines a new dynamic region in a dashboard.
+    
+    
+SYNTAX
+    New-UDDynamic [-Id <String>] [-ArgumentList <Object[]>] [-Content] <Endpoint> [-AutoRefresh] [-AutoRefreshInterval <Int32>] [-LoadingComponent <ScriptBlock>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Defines a new dynamic region in a dashboard. Dynamic regions are used for loading data when the page is loaded or for loading data dynamically through user interaction or auto-reloading.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of this component.
+        
+        Required?                    false
+        Position?                    named
+        Default value                [Guid]::NewGuid()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ArgumentList <Object[]>
+        Arguments to pass to this dynamic endpoint.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Content <Endpoint>
+        The content of this dynamic region.
+        
+        Required?                    true
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -AutoRefresh [<SwitchParameter>]
+        Whether this dynamic region should refresh on an interval.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -AutoRefreshInterval <Int32>
+        The amount of seconds between refreshes for this dynamic region.
+        
+        Required?                    false
+        Position?                    named
+        Default value                10
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LoadingComponent <ScriptBlock>
+        A component to display while this dynamic region is loading.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > A simple dynamic region that executes when the user loads the page.
+    
+    New-UDDynamic -Content {
+        New-UDTypography -Text (Get-Date)
+    }
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS > A dynamic region that refreshes every 3 seconds
+    
+    New-UDDynamic -Content {
+        New-UDTypography -Text (Get-Date)
+    } -AutoRefresh -AutoRefreshInterval 3
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS > A dynamic region that is updated when a button is clicked.
+    
+    New-UDDynamic -Content {
+        New-UDTypography -Text (Get-Date)
+    } -Id 'dynamic'
+    
+    New-UDButton -Text 'Refresh' -OnClick {
+        Sync-UDElement -Id 'dynamic'
+    }
+    
+    
+    
+    
+    
+RELATED LINKS
+
+
+

@@ -1,0 +1,174 @@
+
+NAME
+    New-UDTableColumn
+    
+SYNOPSIS
+    Defines a table column.
+    
+    
+SYNTAX
+    New-UDTableColumn [[-Id] <String>] [-Property] <String> [[-Title] <String>] [[-Render] <ScriptBlock>] [-ShowSort] [-ShowFilter] [[-FilterType] <String>] [[-Style] <Hashtable>] [[-Width] <Int32>] [-IncludeInSearch] [-IncludeInExport] [-DefaultSortColumn] [[-Align] <String>] [-Truncate] [[-SortType] <String>] [-Hidden] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Defines a table column. Use this cmdlet in conjunction with New-UDTable's -Column property. Table columns can be used to control many aspects of the columns within a table.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    1
+        Default value                [Guid]::NewGuid().ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Property <String>
+        The property to select from the data.
+        
+        Required?                    true
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Title <String>
+        The title of the column to show at the top of the table.
+        
+        Required?                    false
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Render <ScriptBlock>
+        How to render this table. Use this parameter instead of property to render custom content within a column. The $Body variable will contain the current row being rendered.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ShowSort [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ShowFilter [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -FilterType <String>
+        
+        Required?                    false
+        Position?                    5
+        Default value                text
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        
+        Required?                    false
+        Position?                    6
+        Default value                @{}
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Width <Int32>
+        
+        Required?                    false
+        Position?                    7
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -IncludeInSearch [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -IncludeInExport [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DefaultSortColumn [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Align <String>
+        
+        Required?                    false
+        Position?                    8
+        Default value                inherit
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Truncate [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -SortType <String>
+        
+        Required?                    false
+        Position?                    9
+        Default value                alphanumeric
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Hidden [<SwitchParameter>]
+        Includes a column in the table but does not show it. This is useful for columns that are used for filtering and exporting but are not meant to be displayed in the table.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > See New-UDTable for examples.
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
+
+
+

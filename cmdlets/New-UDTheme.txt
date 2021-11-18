@@ -1,0 +1,72 @@
+
+NAME
+    New-UDTheme
+    
+SYNTAX
+    New-UDTheme [[-name] <string>] [[-Colors] <ThemeColors>] [[-ColorModes] <ThemeColorModes>] [[-Variants] <hashtable>] [<CommonParameters>]
+    
+    
+PARAMETERS
+    -ColorModes <ThemeColorModes>
+        
+        Required?                    false
+        Position?                    2
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Colors <ThemeColors>
+        
+        Required?                    false
+        Position?                    1
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Variants <hashtable>
+        
+        Required?                    false
+        Position?                    3
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -name <string>
+        
+        Required?                    false
+        Position?                    0
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+    
+INPUTS
+    None
+    
+    
+OUTPUTS
+    System.Object
+    
+ALIASES
+    None
+    
+
+REMARKS
+    None
+
+
+

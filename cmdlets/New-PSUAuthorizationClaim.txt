@@ -1,0 +1,115 @@
+
+NAME
+    New-PSUAuthorizationClaim
+    
+SYNOPSIS
+    Creates a new authorization claim.
+    
+    
+SYNTAX
+    New-PSUAuthorizationClaim [-Issuer <String>] [-Properties <Hashtable>] -Type <String> -Value <String> [-ValueType <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new authorization claim. This cmdlet should be used within the Set-PSUAuthenticationMethod script block to assign claims to the user being authenticated.
+    
+
+PARAMETERS
+    -Issuer <String>
+        The issuer of the authorization claim.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Properties <Hashtable>
+        A hashtable of properties to include with the claim.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Type <String>
+        The type of claim.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Value <String>
+        The value of the claim.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ValueType <String>
+        The type of value for the claim.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    Set-PSUAuthenticationMethod -ScriptBlock {
+        param([PSCredential]$Credential)
+    
+        if ($Credential.UserName -eq 'admin')
+        {
+            New-PSUAuthenticationResult -Success -UserName 'admin' -Claims {
+                New-PSUAuthorizationClaim -Type 'MyRole' -Value 'MyValue' -ValueType 'String' -Issuer 'Something'
+            }
+        }
+        else 
+        {
+            New-PSUAuthenticationResult -ErrorMessage 'Hello'
+        }
+    }
+    
+    New-PSURole -Name 'CustomRole' -Policy {
+        param($User)
+    
+        $User.HasClaim("MyRole", "MyValue")
+    }
+    
+    Authenticates a user named 'admin' and adds a custom authorization claim. Authorization claims can be used in role policy scripts and are accessible in dashboards.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    Set-PSUAuthenticationMethod 
+    New-PSUAuthenticationResult 
+
+
+

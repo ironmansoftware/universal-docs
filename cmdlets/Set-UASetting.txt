@@ -1,0 +1,240 @@
+
+NAME
+    Set-UASetting
+    
+SYNOPSIS
+    Sets a UA setting.
+    
+    
+SYNTAX
+    Set-UASetting [-AppToken <String>] [-ComputerName <String>] [-ConcurrentJobLimit <Int32>] [-DisableAutoReload] [-GroomDays <Int32>] [-HideApi] [-HideAutomation] [-HideDashboard] [-LogLevel <String>] [-LoggingFilePath <String>] [-Telemetry] [-ApiEnvironment <String>] [-DefaultEnvironment <String>] [-DisableUpdateCheck] [-RateLimitClientAllowList <String[]>] [-RateLimitEndpointAllowList <String[]>] [-RateLimitIpAddressAllowList <String[]>] [-SecurityEnvironment <String>] [-ShowDevTools] [-DefaultPage <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Sets a UA setting.
+    
+
+PARAMETERS
+    -AppToken <String>
+        An app token to access the UA API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The HTTP address of the UA REST API server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ConcurrentJobLimit <Int32>
+        {{ Fill ConcurrentJobLimit Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -DisableAutoReload [<SwitchParameter>]
+        {{ Fill DisableAutoReload Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -GroomDays <Int32>
+        {{ Fill GroomDays Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -HideApi [<SwitchParameter>]
+        {{ Fill HideApi Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -HideAutomation [<SwitchParameter>]
+        {{ Fill HideAutomation Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -HideDashboard [<SwitchParameter>]
+        {{ Fill HideDashboard Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -LogLevel <String>
+        {{ Fill LogLevel Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -LoggingFilePath <String>
+        {{ Fill LoggingFilePath Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Telemetry [<SwitchParameter>]
+        {{ Fill Telemetry Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ApiEnvironment <String>
+        {{ Fill ApiEnvironment Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -DefaultEnvironment <String>
+        {{ Fill DefaultEnvironment Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -DisableUpdateCheck [<SwitchParameter>]
+        {{ Fill DisableUpdateCheck Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -RateLimitClientAllowList <String[]>
+        {{ Fill RateLimitClientAllowList Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -RateLimitEndpointAllowList <String[]>
+        {{ Fill RateLimitEndpointAllowList Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -RateLimitIpAddressAllowList <String[]>
+        {{ Fill RateLimitIpAddressAllowList Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -SecurityEnvironment <String>
+        {{ Fill SecurityEnvironment Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ShowDevTools [<SwitchParameter>]
+        {{ Fill ShowDevTools Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -DefaultPage <String>
+        Sets the default page for the admin console.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> $Settings = Get-UASetting
+    PS C:\> $Settings.LogLevel = 'Debug'
+    PS C:\> Set-UASetting -Setting $Settings
+    
+    Sets the log level to 'Debug'
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+
+

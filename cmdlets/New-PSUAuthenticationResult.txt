@@ -1,0 +1,96 @@
+
+NAME
+    New-PSUAuthenticationResult
+    
+SYNOPSIS
+    Returns an authentication result for forms authentication.
+    
+    
+SYNTAX
+    New-PSUAuthenticationResult [-Claims <ScriptBlock>] [-ErrorMessage <String>] [-Success] [-UserName <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Returns an authentication result for forms authentication. This allows you to return the user name, whether the authentication was successful, custom claims and an error message when the user attempts to login.
+    
+
+PARAMETERS
+    -Claims <ScriptBlock>
+        The claims to return from this authentication result. Claims typically are features of the current user account like the Active Directory group membership. Use the new-PSUAuthorizationClaim cmdlet to define these claims.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ErrorMessage <String>
+        The custom error message to return upon unsuccessful logins.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Success [<SwitchParameter>]
+        A switch parameter that signals that this authentication attempt was successful.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UserName <String>
+        The user name to set on the identity of the user logging in.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    param($Credential)
+    
+    if ($Credential.UserName -eq 'Adam')
+    {
+        New-PSUAuthenticationResult -UserName 'Adam' -Success
+    }
+    else 
+    {
+        New-PSUAuthenticationResult -ErrorMessage "Hey! You aren't Adam"
+    }
+    
+    Returns a successful authentication result if the user name is 'Adam'. Returns a custom error message if that user is not.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    New-PSUAuthorizationClaim 
+    Set-PSUAuthenticationMethod 
+
+
+

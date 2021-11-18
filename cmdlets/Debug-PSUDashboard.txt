@@ -1,0 +1,43 @@
+
+NAME
+    Debug-PSUDashboard
+    
+SYNOPSIS
+    Provides a utility function for debugging scripts running PowerShell Universal Dashboard.
+    
+    
+SYNTAX
+    Debug-PSUDashboard [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Provides a utility function for debugging scripts running PowerShell Universal Dashboard. This cmdlet integrates with the VS Code PowerShell Universal extension to automatically connect the debugger to endpoints running in UD.
+    
+
+PARAMETERS
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Creates an element that invokes the Debug-PSUDashboard cmdlet.
+    
+    New-UDElement -Tag div -Endpoint {
+        Debug-PSUDashboard
+    }
+    
+    
+    
+    
+    
+RELATED LINKS
+
+
+

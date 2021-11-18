@@ -1,0 +1,72 @@
+
+NAME
+    New-UDCardExpand
+    
+SYNTAX
+    New-UDCardExpand [[-Id] <string>] [[-ClassName] <string>] [[-Content] <scriptblock>] [[-Style] <hashtable>] [<CommonParameters>]
+    
+    
+PARAMETERS
+    -ClassName <string>
+        
+        Required?                    false
+        Position?                    1
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Content <scriptblock>
+        
+        Required?                    false
+        Position?                    2
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Id <string>
+        
+        Required?                    false
+        Position?                    0
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Style <hashtable>
+        
+        Required?                    false
+        Position?                    3
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+    
+INPUTS
+    None
+    
+    
+OUTPUTS
+    System.Object
+    
+ALIASES
+    None
+    
+
+REMARKS
+    None
+
+
+

@@ -1,0 +1,114 @@
+
+NAME
+    Set-PSUCache
+    
+SYNOPSIS
+    Sets an object into the PowerShell Universal server-side cache.
+    
+    
+SYNTAX
+    Set-PSUCache [-AbsoluteExpiration <DateTime>] -Key <String> -Value <Object> [<CommonParameters>]
+    
+    Set-PSUCache [-AbsoluteExpirationFromNow <TimeSpan>] -Key <String> -Value <Object> [<CommonParameters>]
+    
+    Set-PSUCache -Key <String> [-SlidingExpiration <TimeSpan>] -Value <Object> [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Sets an object into the PowerShell Universal server-side cache. This cmdlet is to be used within APIs, Dashboards and Scripts. You cannot retrieve cache data from the Management API.
+    
+
+PARAMETERS
+    -AbsoluteExpiration <DateTime>
+        An absolute expiration time for the data in the cache.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -AbsoluteExpirationFromNow <TimeSpan>
+        A TimeSpan indicating how long from now the data should be removed from the cache.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Key <String>
+        A key for looking up the data in the cache.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -SlidingExpiration <TimeSpan>
+        A TimeSpan indicating the sliding expiration for data in the cache.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Value <Object>
+        The object to store in the cache. This object will be serialized to CLIXML.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Set-PSUCache -Key 'Data' -Value 'MyValue'
+    
+    Caches data forever within the server-level cache.
+    -------------------------- Example 2 --------------------------
+    
+    PS C:\> Set-PSUCache -Key 'Data' -Value 'MyValue' -AbsoluteExpirationTime (Get-Date).AddMinutes(10)
+    
+    Caches data within the cache that will expire in 10 minutes.
+    -------------------------- Example 3 --------------------------
+    
+    PS C:\> Set-PSUCache -Key 'Data' -Value 'MyValue' -AbsoluteExpirationFromNow [TimeSpan]::FromMinutes(30)
+    
+    Caches data within the cache that will expire in 30 minutes.
+    -------------------------- Example 4 --------------------------
+    
+    PS C:\> Set-PSUCache -Key 'Data' -Value 'MyValue' -SlidingExpiration [TimeSpan]::FromMinutes(10)
+    
+    Caches data with a sliding cache of 10 minutes. If the data isn't accessed for 10 minutes, it will be invalidated and purged from the cache. If the data is accessed, the timer will reset for another 10 minutes.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    Get-PSUCache 
+
+
+

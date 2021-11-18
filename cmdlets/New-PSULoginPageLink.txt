@@ -1,0 +1,74 @@
+
+NAME
+    New-PSULoginPageLink
+    
+SYNOPSIS
+    Creates a new link on the login page.
+    
+    
+SYNTAX
+    New-PSULoginPageLink -Text <String> -Url <String> [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new link on the login page. Use in conjunction with New-PSULoginPage.
+    
+
+PARAMETERS
+    -Text <String>
+        The text of the link.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Url <String>
+        The URL the link should go to.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    $LoginPage = @{
+        Links = @(
+            New-PSULoginPageLink -Text 'Google' -Url 'http://www.google.com'
+            New-PSULoginPageLink -Text 'Microsoft' -Url 'http://www.microsoft.com'
+        )
+    }
+    
+    New-PSULoginPage @LoginPage
+    
+    Creates a login page with two links.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+
+

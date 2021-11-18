@@ -1,0 +1,50 @@
+
+NAME
+    New-UDTransferListItem
+    
+SYNOPSIS
+    Creates an item for use in a transfer list.
+    
+    
+SYNTAX
+    New-UDTransferListItem [-Name] <String> [-Value] <String> [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates an item for use in a transfer list.
+    
+
+PARAMETERS
+    -Name <String>
+        The display name of the item.
+        
+        Required?                    true
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Value <String>
+        The value of the item.
+        
+        Required?                    true
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    
+RELATED LINKS
+
+
+

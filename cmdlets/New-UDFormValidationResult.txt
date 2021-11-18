@@ -1,0 +1,76 @@
+
+NAME
+    New-UDValidationResult
+    
+SYNOPSIS
+    Creates a new validation result.
+    
+    
+SYNTAX
+    New-UDValidationResult [-Valid] [[-ValidationError] <String>] [[-Context] <Hashtable>] [-DisablePrevious] [[-ActiveStep] <Int32>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new validation result. This cmdlet should return its value from the OnValidate script block parameter on New-UDForm or New-UDStepper.
+    
+
+PARAMETERS
+    -Valid [<SwitchParameter>]
+        Whether the status is considered valid.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ValidationError <String>
+        An error to display if the is not valid.
+        
+        Required?                    false
+        Position?                    1
+        Default value                Form is invalid.
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Context <Hashtable>
+        Update the context based on validation. This is only used for New-UDStepper.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DisablePrevious [<SwitchParameter>]
+        Disables the previous button. This is only used for New-UDStepper.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ActiveStep <Int32>
+        
+        Required?                    false
+        Position?                    3
+        Default value                -1
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    
+RELATED LINKS
+
+
+

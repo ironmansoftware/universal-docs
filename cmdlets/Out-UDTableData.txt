@@ -1,0 +1,77 @@
+
+NAME
+    Out-UDTableData
+    
+SYNOPSIS
+    Formats data to be output from New-UDTable's -LoadData script block.
+    
+    
+SYNTAX
+    Out-UDTableData [-Data] <Object> [-Page] <Int32> [-TotalCount] <Int32> [-Properties] <String[]> [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Formats data to be output from New-UDTable's -LoadData script block.
+    
+
+PARAMETERS
+    -Data <Object>
+        The data to return from LoadData.
+        
+        Required?                    true
+        Position?                    1
+        Default value                
+        Accept pipeline input?       true (ByValue)
+        Accept wildcard characters?  false
+        
+    -Page <Int32>
+        The current page we are on within the table.
+        
+        Required?                    true
+        Position?                    2
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -TotalCount <Int32>
+        The total count of items within the data set.
+        
+        Required?                    true
+        Position?                    3
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Properties <String[]>
+        The properties that are currently passed from the table. You can return the array from the $EventData.Properties array.
+        
+        Required?                    true
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > See New-UDTable for examples.
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
+
+
+

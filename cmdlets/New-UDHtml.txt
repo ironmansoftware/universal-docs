@@ -1,0 +1,58 @@
+
+NAME
+    New-UDHtml
+    
+SYNOPSIS
+    {{ Fill in the Synopsis }}
+    
+    
+SYNTAX
+    New-UDHtml [-Markup] <String> [<CommonParameters>]
+    
+    
+DESCRIPTION
+    {{ Fill in the Description }}
+    
+
+PARAMETERS
+    -Markup <String>
+        {{ Fill Markup Description }}
+        
+        Required?                    true
+        Position?                    1
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> {{ Add example code here }}
+    
+    {{ Add example description here }}
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+
+
