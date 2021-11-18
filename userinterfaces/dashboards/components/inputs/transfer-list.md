@@ -10,7 +10,7 @@ description: >-
 
 Create a simple transfer list.
 
-```text
+```
 New-UDTransferList -Item {
     New-UDTransferListItem -Name 'test1' -Value 1
     New-UDTransferListItem -Name 'test2' -Value 2
@@ -20,13 +20,13 @@ New-UDTransferList -Item {
 } 
 ```
 
-![](../../../../.gitbook/assets/image%20%28238%29.png)
+![](<../../../../.gitbook/assets/image (238).png>)
 
 ## Transfer List Value on Change
 
-Use the `OnChange` event handler to get the value of the selected items. 
+Use the `OnChange` event handler to get the value of the selected items.&#x20;
 
-```text
+```
 New-UDTransferList -Item {
     New-UDTransferListItem -Name 'test1' -Value 1
     New-UDTransferListItem -Name 'test2' -Value 2
@@ -40,9 +40,9 @@ New-UDTransferList -Item {
 
 ## Transfer List in a Form
 
-Transfer lists can be used within forms and steppers. 
+Transfer lists can be used within forms and steppers.&#x20;
 
-```text
+```
 New-UDForm -Content {
     New-UDTransferList -Item {
         New-UDTransferListItem -Name 'test1' -Value 1
@@ -56,3 +56,7 @@ New-UDForm -Content {
 }
 ```
 
+## API&#x20;
+
+* [New-UDTransferList](../../../../cmdlets/New-UDTransferList.txt)
+* [New-UDTransferListItem](../../../../cmdlets/New-UDTransferListItem.txt)
