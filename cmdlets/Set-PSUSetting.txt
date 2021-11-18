@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    Set-UASetting [-AppToken <String>] [-ComputerName <String>] [-ConcurrentJobLimit <Int32>] [-DisableAutoReload] [-GroomDays <Int32>] [-HideApi] [-HideAutomation] [-HideDashboard] [-LogLevel <String>] [-LoggingFilePath <String>] [-Telemetry] [-ApiEnvironment <String>] [-DefaultEnvironment <String>] [-DisableUpdateCheck] [-RateLimitClientAllowList <String[]>] [-RateLimitEndpointAllowList <String[]>] [-RateLimitIpAddressAllowList <String[]>] [-SecurityEnvironment <String>] [-ShowDevTools] [-DefaultPage <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    Set-UASetting [-AppToken <String>] [-ComputerName <String>] [-ConcurrentJobLimit <Int32>] [-DisableAutoReload] [-GroomDays <Int32>] [-HideApi] [-HideAutomation] [-HideDashboard] [-LogLevel <String>] [-LoggingFilePath <String>] [-Telemetry] [-ApiEnvironment <String>] [-DefaultEnvironment <String>] [-DisableUpdateCheck] [-RateLimitClientAllowList <String[]>] [-RateLimitEndpointAllowList <String[]>] [-RateLimitIpAddressAllowList <String[]>] [-SecurityEnvironment <String>] [-ShowDevTools] [-DefaultPage <String>] [-UseDefaultCredentials] [-AdminConsoleLogo <String>] [-AdminConsoleTitle <String>] [-HideHomePage] [-Integrated] [-MicrosoftLogLevel <String>] [-ScriptBaseFolder <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -201,6 +201,60 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -AdminConsoleLogo <String>
+        {{ Fill AdminConsoleLogo Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -AdminConsoleTitle <String>
+        {{ Fill AdminConsoleTitle Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -HideHomePage [<SwitchParameter>]
+        {{ Fill HideHomePage Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -MicrosoftLogLevel <String>
+        {{ Fill MicrosoftLogLevel Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ScriptBaseFolder <String>
+        {{ Fill ScriptBaseFolder Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         

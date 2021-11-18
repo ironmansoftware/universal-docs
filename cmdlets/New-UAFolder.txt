@@ -7,9 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UAFolder [-AppToken <String>] [-ComputerName <String>] -Name <String> [-Parent <Folder>] [-UseDefaultCredentials] [<CommonParameters>]
-    
-    New-UAFolder [-AppToken <String>] [-ComputerName <String>] [-Path <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    New-UAFolder [-AppToken <String>] [-ComputerName <String>] -Path <String> [-UseDefaultCredentials] [-Integrated] [-Type <FolderType>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -35,28 +33,10 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Name <String>
-        The name of the folder to create.
-        
-        Required?                    true
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Parent <Folder>
-        The parent folder to create this folder underneath.
-        
-        Required?                    false
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
     -Path <String>
         {{ Fill Path Description }}
         
-        Required?                    false
+        Required?                    true
         Position?                    named
         Default value                None
         Accept pipeline input?       False
@@ -68,6 +48,24 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Type <FolderType>
+        {{ Fill Type Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         

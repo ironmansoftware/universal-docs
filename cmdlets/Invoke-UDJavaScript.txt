@@ -2,19 +2,26 @@
 NAME
     Invoke-UDJavaScript
     
+SYNOPSIS
+    Invokes JavaScript within the browser.
+    
+    
 SYNTAX
-    Invoke-UDJavaScript [-JavaScript] <string> [<CommonParameters>]
+    Invoke-UDJavaScript [-JavaScript] <String> [<CommonParameters>]
     
     
+DESCRIPTION
+    Invokes JavaScript within the browser. JavaScript is executed with eval()
+    
+
 PARAMETERS
-    -JavaScript <string>
+    -JavaScript <String>
+        The JavaScript to execute.
         
         Required?                    true
-        Position?                    0
+        Position?                    1
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -23,20 +30,23 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
+    -------------------------- EXAMPLE 1 --------------------------
     
-
-REMARKS
-    None
+    PS > New-UDButton -Text 'Click Me' -OnClick {
+        Invoke-UDJavaScript 'alert("Hello World!")'
+    }
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
 
 
 

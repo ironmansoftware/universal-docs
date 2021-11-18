@@ -1,45 +1,13 @@
 
 NAME
-    New-UDColumn
+    Invoke-PSUTerminalCommand
     
 SYNTAX
-    New-UDColumn [[-Content] <scriptblock>] [-Id <string>] [-SmallSize <int>] [-LargeSize <int>] [-MediumSize <int>] [<CommonParameters>]
-    
-    New-UDColumn [-Id <string>] [-SmallSize <int>] [-LargeSize <int>] [-MediumSize <int>] [-Endpoint <Endpoint>] [-AutoRefresh] [-RefreshInterval <int>] [<CommonParameters>]
+    Invoke-PSUTerminalCommand -TerminalInstance <TerminalInstance> -Command <string> [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
     
 PARAMETERS
-    -AutoRefresh
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           endpoint
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Content <scriptblock>
-        
-        Required?                    false
-        Position?                    1
-        Accept pipeline input?       false
-        Parameter set name           content
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Endpoint <Endpoint>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           endpoint
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Id <string>
+    -AppToken <string>
         
         Required?                    false
         Position?                    Named
@@ -49,7 +17,27 @@ PARAMETERS
         Dynamic?                     false
         Accept wildcard characters?  false
         
-    -LargeSize <int>
+    -Command <string>
+        
+        Required?                    true
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -ComputerName <string>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      Uri
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Integrated
         
         Required?                    false
         Position?                    Named
@@ -59,33 +47,23 @@ PARAMETERS
         Dynamic?                     false
         Accept wildcard characters?  false
         
-    -MediumSize <int>
+    -TerminalInstance <TerminalInstance>
+        
+        Required?                    true
+        Position?                    Named
+        Accept pipeline input?       true (ByValue)
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials
         
         Required?                    false
         Position?                    Named
         Accept pipeline input?       false
         Parameter set name           (All)
         Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -RefreshInterval <int>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           endpoint
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -SmallSize <int>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      Size
         Dynamic?                     false
         Accept wildcard characters?  false
         
@@ -97,7 +75,7 @@ PARAMETERS
     
     
 INPUTS
-    None
+    PowerShellUniversal.TerminalInstance
     
     
 OUTPUTS

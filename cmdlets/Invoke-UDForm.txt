@@ -1,22 +1,22 @@
 
 NAME
-    Clear-UDElement
+    Invoke-UDForm
     
 SYNOPSIS
-    Removes all children from the specified element.
+    Invokes a form.
     
     
 SYNTAX
-    Clear-UDElement [-Id] <String> [-Broadcast] [<CommonParameters>]
+    Invoke-UDForm [-Id] <String> [-Validate] [<CommonParameters>]
     
     
 DESCRIPTION
-    Removes all children from the specified element. This cmdlet may behave differently depending on the type of parent element.
+    Invokes a form and optionally validates it.
     
 
 PARAMETERS
     -Id <String>
-        The ID of the element to clear.
+        The ID of the form to invoke.
         
         Required?                    true
         Position?                    1
@@ -24,8 +24,8 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -Broadcast [<SwitchParameter>]
-        Whether to clear the element on all connected clients.
+    -Validate [<SwitchParameter>]
+        Whether to run form validation.
         
         Required?                    false
         Position?                    named
@@ -45,13 +45,9 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > New-UDElement -Tag 'div' -Id 'parent' -Content {
-        New-UDTypography -Text 'Hello World'
-    }
+    PS > Invoke-UDForm -Id "MyForm" -Validate
     
-    New-UDButton -Text 'Click Me' -OnClick {
-        Clear-UDElement -Id 'parent'
-    }
+    
     
     
     

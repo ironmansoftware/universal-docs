@@ -1,24 +1,22 @@
 
 NAME
-    Grant-PSUAppToken
+    New-PSUTerminal
     
 SYNOPSIS
-    Grants a new app token.
+    Creates a new terminal.
     
     
 SYNTAX
-    Grant-PSUAppToken [-AppToken <String>] [-ComputerName <String>] [-Expiry <DateTime>] -Identity <Identity> [-Role <String>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
-    
-    Grant-PSUAppToken [-AppToken <String>] [-ComputerName <String>] [-Expiry <DateTime>] -IdentityName <String> [-Role <String>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    New-PSUTerminal [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-Description <String>] [-Environment <String>] [-IdleTimeout <Int32>] [-Integrated] -Name <String> [-Role <String[]>] [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION
-    Grants a new app token. App tokens can be used to call the PowerShell Universal Management API and other custom REST APIs.
+    Creates a new terminal. Terminals allow for execution of commands within PowerShell processes in the PSU admin console.
     
 
 PARAMETERS
     -AppToken <String>
-        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
+        An app token used for authenticating with the PSU management API.
         
         Required?                    false
         Position?                    named
@@ -27,7 +25,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session.
+        The computer name or URL of the PSU management API.
         
         Required?                    false
         Position?                    named
@@ -35,8 +33,8 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Expiry <DateTime>
-        The expiration date of the app token.
+    -Credential <Variable>
+        A credential variable to run the terminal as.
         
         Required?                    false
         Position?                    named
@@ -44,8 +42,44 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Identity <Identity>
-        The Identity object to create the app token for. Use Get-PSUIdentity to retrieve the identities.
+    -Description <String>
+        A description of the terminal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Environment <String>
+        The environment to run the terminal within.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -IdleTimeout <Int32>
+        The number of minutes the terminal can remain idle before it is terminated.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        The name of the terminal.
         
         Required?                    true
         Position?                    named
@@ -53,17 +87,8 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -IdentityName <String>
-        The name of the identity to generate or grant for the app token.
-        
-        Required?                    true
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Role <String>
-        The role to grant to the identity of the app token.
+    -Role <String[]>
+        Not supported.
         
         Required?                    false
         Position?                    named
@@ -72,16 +97,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
-        Use default credentials when connecting to the management API
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        Whether to use the default credentials when connecting to the PSU management API.
         
         Required?                    false
         Position?                    named
@@ -112,18 +128,12 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> Grant-PSUAppToken -IdentityName 'MyIdentity' -Expiry (Get-Date).AddDays(30) -Role 'Reader'
+    PS C:\> New-PSUTerminal -Name 'Terminal1'
     
-    Grants a new app token to the MyIdentity user that expires in 30 days and provides Reader access.
-    -------------------------- Example 2 --------------------------
-    
-    PS C:\> Grant-PSUAppToken -IdentityName 'MyIdentity' -Expiry (Get-Date).AddDays(30) -Role 'Reader' -SigningKey 'MySigningKey'
-    
-    Generates a new app token using the specified signing key for the MyIdentity user.
+    Creates a new terminal for the integrated environment.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
-    Get-PSUIdentity 
 
 
 

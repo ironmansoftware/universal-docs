@@ -2,79 +2,80 @@
 NAME
     Show-UDModal
     
+SYNOPSIS
+    Show a modal.
+    
+    
 SYNTAX
-    Show-UDModal [[-Footer] <scriptblock>] [[-Header] <scriptblock>] [[-Content] <scriptblock>] [[-MaxWidth] {xs | sm | md | lg | xl}] [-FullScreen] [-Persistent] [-FullWidth] [<CommonParameters>]
+    Show-UDModal [-FullScreen] [[-Footer] <ScriptBlock>] [[-Header] <ScriptBlock>] [[-Content] <ScriptBlock>] [-Persistent] [-FullWidth] [[-MaxWidth] <String>] [<CommonParameters>]
     
     
+DESCRIPTION
+    Show a modal.
+    
+
 PARAMETERS
-    -Content <scriptblock>
+    -FullScreen [<SwitchParameter>]
+        Create a full screen modal.
         
         Required?                    false
-        Position?                    2
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Footer <scriptblock>
-        
-        Required?                    false
-        Position?                    0
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -FullScreen
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -FullWidth
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Header <scriptblock>
+    -Footer <ScriptBlock>
+        The footer components for the modal.
         
         Required?                    false
         Position?                    1
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -MaxWidth <string>
+    -Header <ScriptBlock>
+        The header components for the modal.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Content <ScriptBlock>
+        The content of the modal.
         
         Required?                    false
         Position?                    3
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Persistent
+    -Persistent [<SwitchParameter>]
+        Whether the modal can be closed by clicking outside of it.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -FullWidth [<SwitchParameter>]
+        Whether the modal is full width.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -MaxWidth <String>
+        The max width of the modal.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -83,20 +84,25 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
+    -------------------------- EXAMPLE 1 --------------------------
     
-
-REMARKS
-    None
+    PS > New-UDButton -Text 'Click Me' -OnClick {
+        Show-UDModal -Content {
+            New-UDTypography -Text "Hello World"
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
 
 
 

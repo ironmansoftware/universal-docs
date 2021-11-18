@@ -7,7 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    Set-PSUAuthenticationMethod [-AppToken <String>] [-ComputerName <String>] -ScriptBlock <ScriptBlock> [-Disabled] [-UseDefaultCredentials] [<CommonParameters>]
+    Set-PSUAuthenticationMethod [-AppToken <String>] [-ComputerName <String>] [-ScriptBlock <ScriptBlock>] [-Disabled] [-UseDefaultCredentials] [-Authority <String>] -CallbackPath <String> -ClientId <String> [-ClientSecret <String>] [-Configure <ScriptBlock>] [-CorrelationCookieSameSite <String>] [-GetClaimsFromUserInfoEndpoint <Boolean>] [-Integrated] [-Resource <String>] [-ResponseType <String>] [-SaveTokens <Boolean>] [-Scopes <String>] [-Type <AuthenticationMethodType>] [-UseTokenLifetime <Boolean>] [<CommonParameters>]
+    
+    Set-PSUAuthenticationMethod [-AppToken <String>] [-ComputerName <String>] [-ScriptBlock <ScriptBlock>] [-Disabled] [-UseDefaultCredentials] -CallbackPath <String> [-Configure <ScriptBlock>] [-CorrelationCookieSameSite <String>] [-Integrated] -MetadataAddress <String> [-Type <AuthenticationMethodType>] [-UseTokenLifetime <Boolean>] -Wreply <String> -Wtrealm <String> [<CommonParameters>]
+    
+    Set-PSUAuthenticationMethod [-AppToken <String>] [-ComputerName <String>] [-ScriptBlock <ScriptBlock>] [-Disabled] [-UseDefaultCredentials] [-Configure <ScriptBlock>] -EntityId <String> [-IdentityProviderEntityId <String>] [-Integrated] [-MetadataAddress <String>] [-ServiceCertificate <String>] [-Type <AuthenticationMethodType>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -40,7 +44,7 @@ PARAMETERS
     -ScriptBlock <ScriptBlock>
         The script block to execute when a user is logging in.
         
-        Required?                    true
+        Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
@@ -61,6 +65,186 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Authority <String>
+        {{ Fill Authority Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -CallbackPath <String>
+        {{ Fill CallbackPath Description }}
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ClientId <String>
+        {{ Fill ClientId Description }}
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ClientSecret <String>
+        {{ Fill ClientSecret Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Configure <ScriptBlock>
+        {{ Fill Configure Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -CorrelationCookieSameSite <String>
+        {{ Fill CorrelationCookieSameSite Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -EntityId <String>
+        {{ Fill EntityId Description }}
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -GetClaimsFromUserInfoEndpoint <Boolean>
+        {{ Fill GetClaimsFromUserInfoEndpoint Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -IdentityProviderEntityId <String>
+        {{ Fill IdentityProviderEntityId Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -MetadataAddress <String>
+        {{ Fill MetadataAddress Description }}
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Resource <String>
+        {{ Fill Resource Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ResponseType <String>
+        {{ Fill ResponseType Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -SaveTokens <Boolean>
+        {{ Fill SaveTokens Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Scopes <String>
+        {{ Fill Scopes Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ServiceCertificate <String>
+        {{ Fill ServiceCertificate Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Type <AuthenticationMethodType>
+        {{ Fill Type Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseTokenLifetime <Boolean>
+        {{ Fill UseTokenLifetime Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Wreply <String>
+        {{ Fill Wreply Description }}
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Wtrealm <String>
+        {{ Fill Wtrealm Description }}
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         

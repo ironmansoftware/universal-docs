@@ -7,11 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    Set-UAScript [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Content <String>] [-Description <String>] [-DisableManualInvocation <Boolean>] [-ManualTime <Double>] [-MaxHistory <Int32>] [-Name <String>] [-Notes <String>] [-ScriptErrorAction {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend}] [-Status {Draft | Pending Review | Pending | Review | Published | Disabled}] [-Environment <String>] [-TimeOut <Double>] [-Tag <Tag[]>] [-UseDefaultCredentials] [<CommonParameters>]
+    Set-UAScript [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Content <String>] [-Description <String>] [-DisableManualInvocation <Boolean>] [-ManualTime <Double>] [-MaxHistory <Int32>] [-Name <String>] [-Notes <String>] [-ScriptErrorAction {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend}] [-Status {Draft | Pending Review | Pending | Review | Published | Disabled}] [-Environment <String>] [-TimeOut <Double>] [-Tag <Tag[]>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
-    Set-UAScript [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Content <String>] [-Description <String>] [-DisableManualInvocation <Boolean>] [-ManualTime <Double>] [-MaxHistory <Int32>] [-Name <String>] [-Notes <String>] [-ScriptErrorAction {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend}] [-Status {Draft | Pending Review | Pending | Review | Published | Disabled}] [-Environment <String>] [-TimeOut <Double>] [-Tag <Tag[]>] [-UseDefaultCredentials] [<CommonParameters>]
+    Set-UAScript [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Content <String>] [-Description <String>] [-DisableManualInvocation <Boolean>] [-ManualTime <Double>] [-MaxHistory <Int32>] [-Name <String>] [-Notes <String>] [-ScriptErrorAction {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend}] [-Status {Draft | Pending Review | Pending | Review | Published | Disabled}] [-Environment <String>] [-TimeOut <Double>] [-Tag <Tag[]>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
-    Set-UAScript [-AppToken <String>] [-ComputerName <String>] [-Content <String>] [-Description <String>] [-DisableManualInvocation <Boolean>] [-ManualTime <Double>] [-MaxHistory <Int32>] [-Name <String>] [-Notes <String>] [-ScriptBlock <ScriptBlock>] [-ScriptErrorAction {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend}] [-Status {Draft | Pending Review | Pending | Review | Published | Disabled}] [-Environment <String>] [-TimeOut <Double>] [-Tag <Tag[]>] [-UseDefaultCredentials] [<CommonParameters>]
+    Set-UAScript [-AppToken <String>] [-ComputerName <String>] [-Content <String>] [-Description <String>] [-DisableManualInvocation <Boolean>] [-ManualTime <Double>] [-MaxHistory <Int32>] [-Name <String>] [-Notes <String>] [-ScriptBlock <ScriptBlock>] [-ScriptErrorAction {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend}] [-Status {Draft | Pending Review | Pending | Review | Published | Disabled}] [-Environment <String>] [-TimeOut <Double>] [-Tag <Tag[]>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -174,6 +174,15 @@ PARAMETERS
         
     -UseDefaultCredentials [<SwitchParameter>]
         Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
         
         Required?                    false
         Position?                    named

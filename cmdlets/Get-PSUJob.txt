@@ -7,11 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    Get-UAJob [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-First <UInt64>] [-IncludeTotalCount] [-OrderBy {Id | StartTime | EndTime}] [-OrderDirection {Descending | Ascending}] [-Skip <UInt64>] [-Status {Queued | Running | Completed | Failed | WaitingOnFeedback | Canceled | Canceling | Historical | Active}] [-UseDefaultCredentials] [<CommonParameters>]
+    Get-UAJob [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-First <UInt64>] [-IncludeTotalCount] [-OrderBy {Id | StartTime | EndTime}] [-OrderDirection {Descending | Ascending}] [-Skip <UInt64>] [-Status {Queued | Running | Completed | Failed | WaitingOnFeedback | Canceled | Canceling | Historical | Active}] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
-    Get-UAJob [-Identity] <Identity> [-AppToken <String>] [-ComputerName <String>] [-First <UInt64>] [-IncludeTotalCount] [-OrderBy {Id | StartTime | EndTime}] [-OrderDirection {Descending | Ascending}] [-Skip <UInt64>] [-Status {Queued | Running | Completed | Failed | WaitingOnFeedback | Canceled | Canceling | Historical | Active}] [-UseDefaultCredentials] [<CommonParameters>]
+    Get-UAJob [-Identity] <Identity> [-AppToken <String>] [-ComputerName <String>] [-First <UInt64>] [-IncludeTotalCount] [-OrderBy {Id | StartTime | EndTime}] [-OrderDirection {Descending | Ascending}] [-Skip <UInt64>] [-Status {Queued | Running | Completed | Failed | WaitingOnFeedback | Canceled | Canceling | Historical | Active}] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
-    Get-UAJob [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-First <UInt64>] [-IncludeTotalCount] [-OrderBy {Id | StartTime | EndTime}] [-OrderDirection {Descending | Ascending}] [-Skip <UInt64>] [-Status {Queued | Running | Completed | Failed | WaitingOnFeedback | Canceled | Canceling | Historical | Active}] [-UseDefaultCredentials] [<CommonParameters>]
+    Get-UAJob [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-First <UInt64>] [-IncludeTotalCount] [-OrderBy {Id | StartTime | EndTime}] [-OrderDirection {Descending | Ascending}] [-Skip <UInt64>] [-Status {Queued | Running | Completed | Failed | WaitingOnFeedback | Canceled | Canceling | Historical | Active}] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -120,6 +120,15 @@ PARAMETERS
         
     -UseDefaultCredentials [<SwitchParameter>]
         Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
         
         Required?                    false
         Position?                    named

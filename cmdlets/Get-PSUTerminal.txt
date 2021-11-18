@@ -1,45 +1,15 @@
 
 NAME
-    New-UDColumn
+    Get-PSUTerminal
     
 SYNTAX
-    New-UDColumn [[-Content] <scriptblock>] [-Id <string>] [-SmallSize <int>] [-LargeSize <int>] [-MediumSize <int>] [<CommonParameters>]
+    Get-PSUTerminal [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
-    New-UDColumn [-Id <string>] [-SmallSize <int>] [-LargeSize <int>] [-MediumSize <int>] [-Endpoint <Endpoint>] [-AutoRefresh] [-RefreshInterval <int>] [<CommonParameters>]
+    Get-PSUTerminal [-Id] <long> [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
     
 PARAMETERS
-    -AutoRefresh
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           endpoint
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Content <scriptblock>
-        
-        Required?                    false
-        Position?                    1
-        Accept pipeline input?       false
-        Parameter set name           content
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Endpoint <Endpoint>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           endpoint
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Id <string>
+    -AppToken <string>
         
         Required?                    false
         Position?                    Named
@@ -49,7 +19,27 @@ PARAMETERS
         Dynamic?                     false
         Accept wildcard characters?  false
         
-    -LargeSize <int>
+    -ComputerName <string>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      Uri
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Id <long>
+        
+        Required?                    true
+        Position?                    0
+        Accept pipeline input?       false
+        Parameter set name           Id
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Integrated
         
         Required?                    false
         Position?                    Named
@@ -59,33 +49,13 @@ PARAMETERS
         Dynamic?                     false
         Accept wildcard characters?  false
         
-    -MediumSize <int>
+    -UseDefaultCredentials
         
         Required?                    false
         Position?                    Named
         Accept pipeline input?       false
         Parameter set name           (All)
         Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -RefreshInterval <int>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           endpoint
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -SmallSize <int>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      Size
         Dynamic?                     false
         Accept wildcard characters?  false
         

@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSUDashboard [-AppToken <String>] [-Authenticated] [-AutoDeploy] [-BaseUrl <String>] [-Component <DashboardComponent[]>] [-ComputerName <String>] -Content <ScriptBlock> [-Credential <String>] [-Description <String>] [-DisableAutoStart] [-Environment <String>] [-Framework <DashboardFramework>] [-GrantAppToken] -Name <String> [-Role <String[]>] [-SessionTimeout <Int32>] [-UseDefaultCredentials] [<CommonParameters>]
+    New-PSUDashboard [-AppToken <String>] [-Authenticated] [-AutoDeploy] [-BaseUrl <String>] [-Component <DashboardComponent[]>] [-ComputerName <String>] -Content <ScriptBlock> [-Credential <String>] [-Description <String>] [-DisableAutoStart] [-Environment <String>] [-Framework <DashboardFramework>] [-GrantAppToken] -Name <String> [-Role <String[]>] [-SessionTimeout <Int32>] [-UseDefaultCredentials] [-DisableErrorToast] [-DisableStartupLog] [-IdleTimeout <Int32>] [-Integrated] [-Maintenance] [-Tag <Tag[]>] [<CommonParameters>]
     
-    New-PSUDashboard [-AppToken <String>] [-Authenticated] [-AutoDeploy] [-BaseUrl <String>] [-Component <DashboardComponent[]>] [-ComputerName <String>] [-Credential <String>] [-Description <String>] [-DisableAutoStart] [-Environment <String>] -FilePath <String> [-Framework <DashboardFramework>] [-GrantAppToken] -Name <String> [-Role <String[]>] [-SessionTimeout <Int32>] [-UseDefaultCredentials] [<CommonParameters>]
+    New-PSUDashboard [-AppToken <String>] [-Authenticated] [-AutoDeploy] [-BaseUrl <String>] [-Component <DashboardComponent[]>] [-ComputerName <String>] [-Credential <String>] [-Description <String>] [-DisableAutoStart] [-Environment <String>] [-FilePath <String>] [-Framework <DashboardFramework>] [-GrantAppToken] -Name <String> [-Role <String[]>] [-SessionTimeout <Int32>] [-UseDefaultCredentials] [-DisableErrorToast] [-DisableStartupLog] [-IdleTimeout <Int32>] [-Integrated] [-Maintenance] [-Tag <Tag[]>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -119,7 +119,7 @@ PARAMETERS
     -FilePath <String>
         The file path of the dashboard PowerShell script that defines this dashboard.
         
-        Required?                    true
+        Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
@@ -176,6 +176,60 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -DisableErrorToast [<SwitchParameter>]
+        {{ Fill DisableErrorToast Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -DisableStartupLog [<SwitchParameter>]
+        {{ Fill DisableStartupLog Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -IdleTimeout <Int32>
+        {{ Fill IdleTimeout Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Maintenance [<SwitchParameter>]
+        {{ Fill Maintenance Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Tag <Tag[]>
+        {{ Fill Tag Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         

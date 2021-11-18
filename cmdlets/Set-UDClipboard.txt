@@ -2,39 +2,44 @@
 NAME
     Set-UDClipboard
     
+SYNOPSIS
+    Sets string data into the clipboard.
+    
+    
 SYNTAX
-    Set-UDClipboard [-Data] <string> [-ToastOnSuccess] [-ToastOnError] [<CommonParameters>]
+    Set-UDClipboard [-Data] <String> [-ToastOnSuccess] [-ToastOnError] [<CommonParameters>]
     
     
+DESCRIPTION
+    Sets string data into the clipboard.
+    
+
 PARAMETERS
-    -Data <string>
+    -Data <String>
+        The data to set into the clipboard.
         
         Required?                    true
-        Position?                    0
+        Position?                    1
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -ToastOnError
+    -ToastOnSuccess [<SwitchParameter>]
+        Show a toast if the clipboard data was sent successfully.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -ToastOnSuccess
+    -ToastOnError [<SwitchParameter>]
+        Show a toast if the clipboard data was not sent successfully.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -43,20 +48,23 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
+    -------------------------- EXAMPLE 1 --------------------------
     
-
-REMARKS
-    None
+    PS > New-UDButton -Text 'Click Me' -OnClick {
+        Set-UDClipboard -Data 'Hello World!' -ShowToastOnSuccess
+    }
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
 
 
 

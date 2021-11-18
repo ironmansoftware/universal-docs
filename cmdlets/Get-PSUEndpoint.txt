@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    Get-PSUEndpoint [-AppToken <String>] [-ComputerName <String>] [-Id <Int64>] [-UseDefaultCredentials] [<CommonParameters>]
+    Get-PSUEndpoint [-AppToken <String>] [-ComputerName <String>] [-Id <Int64>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
-    Get-PSUEndpoint [-AppToken <String>] [-ComputerName <String>] [-Url <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    Get-PSUEndpoint [-AppToken <String>] [-ComputerName <String>] [-Url <String>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -55,6 +55,15 @@ PARAMETERS
         
     -UseDefaultCredentials [<SwitchParameter>]
         Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
         
         Required?                    false
         Position?                    named

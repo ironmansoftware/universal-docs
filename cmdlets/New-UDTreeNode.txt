@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTreeNode [-Name] <String> [-Id <String>] [-Children <ScriptBlock>] [<CommonParameters>]
+    New-UDTreeNode [-Name] <String> [-Id <String>] [-Children <ScriptBlock>] [-Leaf] [-Icon <Object>] [-ExpandedIcon <Object>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -35,6 +35,31 @@ PARAMETERS
         
     -Children <ScriptBlock>
         The children of this node. This should be a collection of New-UDTreeNodes.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Leaf [<SwitchParameter>]
+        This is a leaf node and should not display children.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Icon <Object>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ExpandedIcon <Object>
         
         Required?                    false
         Position?                    named

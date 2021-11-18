@@ -2,29 +2,35 @@
 NAME
     Invoke-UDRedirect
     
+SYNOPSIS
+    Redirect the user to another page.
+    
+    
 SYNTAX
-    Invoke-UDRedirect [-Url] <string> [-OpenInNewWindow] [<CommonParameters>]
+    Invoke-UDRedirect [-Url] <String> [-OpenInNewWindow] [<CommonParameters>]
     
     
+DESCRIPTION
+    Redirect the user to another page.
+    
+
 PARAMETERS
-    -OpenInNewWindow
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Url <string>
+    -Url <String>
+        The URL to redirect the user to.
         
         Required?                    true
-        Position?                    0
+        Position?                    1
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -OpenInNewWindow [<SwitchParameter>]
+        Whether to open the URL in a new window.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -33,20 +39,23 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
+    -------------------------- EXAMPLE 1 --------------------------
     
-
-REMARKS
-    None
+    PS > New-UDButton -Text 'Click Me' -OnClick {
+        Invoke-UDRedirect 'https://www.google.com'
+    }
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
 
 
 

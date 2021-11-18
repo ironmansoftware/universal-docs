@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSULoginPage [-AppToken <String>] [-ComputerName <String>] [-Copyright <String>] [-CssStylesheet <String[]>] [-HeaderColor <String>] [-HeaderFontColor <String>] [-Image <String>] [-PrimaryColor <String>] [-PrimaryFontColor <String>] [-SecondaryColor <String>] [-SecondaryFontColor <String>] [-Title <String>] [-Links <LoginPageLink[]>] [-UseDefaultCredentials] [<CommonParameters>]
+    New-PSULoginPage [-AppToken <String>] [-ComputerName <String>] [-Copyright <String>] [-CssStylesheet <String[]>] [-HeaderColor <String>] [-HeaderFontColor <String>] [-Image <String>] [-PrimaryColor <String>] [-PrimaryFontColor <String>] [-SecondaryColor <String>] [-SecondaryFontColor <String>] [-Title <String>] [-Links <LoginPageLink[]>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -138,6 +138,15 @@ PARAMETERS
         
     -UseDefaultCredentials [<SwitchParameter>]
         Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
         
         Required?                    false
         Position?                    named

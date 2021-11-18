@@ -2,29 +2,35 @@
 NAME
     Sync-UDElement
     
+SYNOPSIS
+    Causes an element to update.
+    
+    
 SYNTAX
-    Sync-UDElement [-Id] <string[]> [-Broadcast] [<CommonParameters>]
+    Sync-UDElement [-Id] <String[]> [-Broadcast] [<CommonParameters>]
     
     
+DESCRIPTION
+    Causes an element to update. Not all elements can be updated. For elements that cannot be updated, wrap them in New-UDDynamic and update that.
+    
+
 PARAMETERS
-    -Broadcast
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Id <string[]>
+    -Id <String[]>
+        The ID of the element to update.
         
         Required?                    true
-        Position?                    0
+        Position?                    1
+        Default value                
         Accept pipeline input?       true (ByValue)
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Broadcast [<SwitchParameter>]
+        Whether to broadcast the update to all clients.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -33,20 +39,25 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    System.String[]
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
+    -------------------------- EXAMPLE 1 --------------------------
     
-
-REMARKS
-    None
+    PS > New-UDDyanmic -Id 'dateTime' -Content {
+        Get-Date
+    }
+    
+    New-UDButton -Text 'Refresh' -Content {
+        Sync-UDElement 'dateTime'
+    }
+    
+    
+    
+    
+    
+RELATED LINKS
 
 
 

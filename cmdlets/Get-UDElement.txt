@@ -2,19 +2,26 @@
 NAME
     Get-UDElement
     
+SYNOPSIS
+    Get the state of the specified element.
+    
+    
 SYNTAX
-    Get-UDElement [-Id] <string> [<CommonParameters>]
+    Get-UDElement [-Id] <String> [<CommonParameters>]
     
     
+DESCRIPTION
+    Get the state of the specified element. This cmdlet may behave differently depending on the type of parent element.
+    
+
 PARAMETERS
-    -Id <string>
+    -Id <String>
+        The ID of the element to retreive the state of.
         
         Required?                    true
-        Position?                    0
+        Position?                    1
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -23,20 +30,23 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
+    -------------------------- EXAMPLE 1 --------------------------
     
-
-REMARKS
-    None
+    PS > New-UDCodeEditor -Id 'editor' -Code 'Hello World'
+    
+    New-UDButton -Text 'Click Me' -OnClick {
+        Show-UDToast (Get-UDElement).Code
+    }
+    
+    
+    
+    
+    
+RELATED LINKS
 
 
 

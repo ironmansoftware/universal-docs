@@ -42,6 +42,14 @@ PARAMETERS
             type: 'type of file, if known'
         }
         
+        $EventData will contain a class with the following properties:
+        
+        public string Name { get; set; }
+        public string FileName { get; set; }
+        public DateTime TimeStamp { get; set; }
+        public string ContentType { get; set; }
+        public string Type => ContentType;
+        
         Required?                    false
         Position?                    3
         Default value                
@@ -58,7 +66,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Variant <String>
-        The variant of button
+        The variant of button. Defaults to contained. Valid values: "text", "outlined", "contained"
         
         Required?                    false
         Position?                    5
@@ -67,7 +75,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Color <String>
-        The color of the button.
+        The color of the button. Defaults to 'default'. Valid values: "default", "primary", "secondary", "inherit"
         
         Required?                    false
         Position?                    6
@@ -76,6 +84,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ClassName <String>
+        A CSS class to apply to the button.
         
         Required?                    false
         Position?                    7

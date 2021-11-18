@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSUPublishedFolder [-AppToken <String>] [-Authentication] [-ComputerName <String>] [-DefaultDocument <String[]>] -Path <String> -RequestPath <String> [-Role <String[]>] [-UseDefaultCredentials] [<CommonParameters>]
+    New-PSUPublishedFolder [-AppToken <String>] [-Authentication] [-ComputerName <String>] [-DefaultDocument <String[]>] -Path <String> -RequestPath <String> [-Role <String[]>] [-UseDefaultCredentials] [-Impersonation] [-Integrated] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -80,6 +80,24 @@ PARAMETERS
         
     -UseDefaultCredentials [<SwitchParameter>]
         Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Impersonation [<SwitchParameter>]
+        {{ Fill Impersonation Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
         
         Required?                    false
         Position?                    named

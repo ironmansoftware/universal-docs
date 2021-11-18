@@ -2,39 +2,44 @@
 NAME
     Remove-UDElement
     
+SYNOPSIS
+    Removes an element from the page.
+    
+    
 SYNTAX
-    Remove-UDElement [-Id] <string> [[-ParentId] <string>] [-Broadcast] [<CommonParameters>]
+    Remove-UDElement [-Id] <String> [[-ParentId] <String>] [-Broadcast] [<CommonParameters>]
     
     
+DESCRIPTION
+    Removes an element from the page.
+    
+
 PARAMETERS
-    -Broadcast
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Id <string>
+    -Id <String>
+        The ID of the element to remove.
         
         Required?                    true
-        Position?                    0
+        Position?                    1
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -ParentId <string>
+    -ParentId <String>
+        Not used
         
         Required?                    false
-        Position?                    1
+        Position?                    2
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Broadcast [<SwitchParameter>]
+        Whether to remove this element from the page of all connected users.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -43,20 +48,25 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
+    -------------------------- EXAMPLE 1 --------------------------
     
-
-REMARKS
-    None
+    PS > New-UDElement -Id 'myElement' -Tag 'div' -Content {
+        New-UDTypography -Text 'Hello World'
+    }
+    
+    New-UDButton -Text 'Click Me' -OnClick {
+        Remove-UDElement -Id 'myElement'
+    }
+    
+    
+    
+    
+    
+RELATED LINKS
 
 
 

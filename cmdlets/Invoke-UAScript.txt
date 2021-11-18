@@ -7,11 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    Invoke-UAScript [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-Notes <String>] [-WaitForDebugger] [-Environment <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    Invoke-UAScript [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-Notes <String>] [-WaitForDebugger] [-Environment <String>] [-UseDefaultCredentials] [-Integrated] [-Wait] [<CommonParameters>]
     
-    Invoke-UAScript [-Name] <String> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-Notes <String>] [-WaitForDebugger] [-Environment <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    Invoke-UAScript [-Name] <String> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-Notes <String>] [-WaitForDebugger] [-Environment <String>] [-UseDefaultCredentials] [-Integrated] [-Wait] [<CommonParameters>]
     
-    Invoke-UAScript [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-Notes <String>] [-WaitForDebugger] [-Environment <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    Invoke-UAScript [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-Notes <String>] [-WaitForDebugger] [-Environment <String>] [-UseDefaultCredentials] [-Integrated] [-Wait] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -102,6 +102,24 @@ PARAMETERS
         
     -UseDefaultCredentials [<SwitchParameter>]
         Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Wait [<SwitchParameter>]
+        {{ Fill Wait Description }}
         
         Required?                    false
         Position?                    named
