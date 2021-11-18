@@ -25,7 +25,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Icon <Object>
-        The icon to show instead of the default icon.
+        The icon to show instead of the default icon. Use New-UDIcon to create an icon.
         
         Required?                    false
         Position?                    2
@@ -34,7 +34,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -CheckedIcon <Object>
-        The icon to show instead of the default checked icon.
+        The icon to show instead of the default checked icon. Use New-UDIcon to create an icon.
         
         Required?                    false
         Position?                    3
@@ -88,7 +88,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -LabelPlacement <String>
-        Where to place the label.
+        Where to place the label. Valid values are: "top","start","bottom","end"
         
         Required?                    false
         Position?                    8

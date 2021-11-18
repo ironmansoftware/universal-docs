@@ -72,6 +72,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -FullWidth [<SwitchParameter>]
+        Whether the component should take up the full width of its parent.
         
         Required?                    false
         Position?                    named
@@ -80,6 +81,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Variant <String>
+        The variant of the text box. Valid values are: "filled", "outlined", "standard"
         
         Required?                    false
         Position?                    named
@@ -88,6 +90,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Multiple [<SwitchParameter>]
+        Whether multiple items can be selected.
         
         Required?                    false
         Position?                    named
@@ -96,6 +99,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ClassName <String>
+        A CSS class to apply to the component.
         
         Required?                    false
         Position?                    named

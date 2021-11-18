@@ -70,7 +70,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Icon <Object>
-        The icon to show next to the textbox.
+        The icon to show next to the textbox. Use New-UDIcon to create an icon.
         
         Required?                    false
         Position?                    6
@@ -96,6 +96,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Rows <Int32>
+        The number of rows in a multiline textbox.
         
         Required?                    false
         Position?                    7
@@ -104,6 +105,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -RowsMax <Int32>
+        The maximum number of rows in a multiline textbox.
         
         Required?                    false
         Position?                    8
@@ -112,6 +114,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -FullWidth [<SwitchParameter>]
+        Whether to make this textbox take up the full width of the parent control.
         
         Required?                    false
         Position?                    named
@@ -120,6 +123,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Mask <String[]>
+        The mask to apply over a textbox.
         
         Required?                    false
         Position?                    9
@@ -128,6 +132,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Variant <String>
+        The variant of textbox. Valid values are "filled", "outlined", "standard"
         
         Required?                    false
         Position?                    10

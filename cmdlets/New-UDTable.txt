@@ -76,6 +76,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -OnRowSelection <Endpoint>
+        A script block to call when a row is selected. $EventData will contain the selected rows.
         
         Required?                    false
         Position?                    named
@@ -84,6 +85,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ShowSort [<SwitchParameter>]
+        Whether to show sort controls on columns
         
         Required?                    false
         Position?                    named
@@ -92,6 +94,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ShowFilter [<SwitchParameter>]
+        Whether to show filter controls on columns
         
         Required?                    false
         Position?                    named
@@ -100,6 +103,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ShowSearch [<SwitchParameter>]
+        Whether to show full table search
         
         Required?                    false
         Position?                    named
@@ -108,6 +112,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Dense [<SwitchParameter>]
+        Reduces the white-space used within the table.
         
         Required?                    false
         Position?                    named
@@ -124,6 +129,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -StickyHeader [<SwitchParameter>]
+        Makes the header sticky.
         
         Required?                    false
         Position?                    named
@@ -132,6 +138,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -PageSize <Int32>
+        The default page size.
         
         Required?                    false
         Position?                    named
@@ -140,6 +147,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -PageSizeOptions <Int32[]>
+        An array of available page size options.
         
         Required?                    false
         Position?                    named
@@ -148,6 +156,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ShowSelection [<SwitchParameter>]
+        Whether to allow selection within the table.
         
         Required?                    false
         Position?                    named
@@ -156,6 +165,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ShowPagination [<SwitchParameter>]
+        Whether to show pagination controls.
         
         Required?                    false
         Position?                    named
@@ -172,6 +182,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Size <String>
+        The size of the table. Defaults to medium. Valid values are medium and small.
         
         Required?                    false
         Position?                    named
@@ -180,6 +191,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -TextOption <Hashtable>
+        Customizations to standard text within the table. Use New-UDTextOption to create the text options.
         
         Required?                    false
         Position?                    named
@@ -188,6 +200,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ExportOption <String[]>
+        An array of export options.
         
         Required?                    false
         Position?                    named
@@ -196,6 +209,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -OnExport <Endpoint>
+        A script block used to customize how the export is performed.
         
         Required?                    false
         Position?                    named
@@ -204,6 +218,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -DisablePageSizeAll [<SwitchParameter>]
+        Removes the All option from page size options.
         
         Required?                    false
         Position?                    named
@@ -212,6 +227,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -DefaultSortDirection <String>
+        The default sort direction.
         
         Required?                    false
         Position?                    named
@@ -220,6 +236,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -HideToggleAllRowsSelected [<SwitchParameter>]
+        Hides the toggle all rows selected button.
         
         Required?                    false
         Position?                    named
@@ -228,6 +245,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -DisableMultiSelect [<SwitchParameter>]
+        Disables multi-select.
         
         Required?                    false
         Position?                    named
@@ -236,6 +254,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -DisableSortRemove [<SwitchParameter>]
+        Removes the sort option for unsorted columns. Columns will always be ascending or descending.
         
         Required?                    false
         Position?                    named
@@ -253,6 +272,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ClassName <String>
+        A CSS class to apply to the table.
         
         Required?                    false
         Position?                    named

@@ -25,7 +25,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Variant <String>
-        The type of skeleton to display.
+        The type of skeleton to display. Valid values are "text", "rect", "circle"
         
         Required?                    false
         Position?                    2
@@ -52,7 +52,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Animation <String>
-        The type of animation to use for the skeleton.
+        The type of animation to use for the skeleton. Valid values are: "wave", "disabled", "pulsate"
         
         Required?                    false
         Position?                    5

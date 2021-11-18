@@ -52,6 +52,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ShowSort [<SwitchParameter>]
+        Whether this column supports sorting.
         
         Required?                    false
         Position?                    named
@@ -60,6 +61,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ShowFilter [<SwitchParameter>]
+        Whether this column supports filtering.
         
         Required?                    false
         Position?                    named
@@ -68,6 +70,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -FilterType <String>
+        The type of filter to use with this column. Valid values are "text", "select", "fuzzy", "slider", "range", "date", "number", 'autocomplete'
         
         Required?                    false
         Position?                    5
@@ -76,6 +79,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Style <Hashtable>
+        A hashtable of style attributes to apply to the column.
         
         Required?                    false
         Position?                    6
@@ -84,6 +88,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Width <Int32>
+        The width of this column in pixels.
         
         Required?                    false
         Position?                    7
@@ -92,6 +97,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -IncludeInSearch [<SwitchParameter>]
+        Whether to include this column in the search.
         
         Required?                    false
         Position?                    named
@@ -100,6 +106,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -IncludeInExport [<SwitchParameter>]
+        Whether to include this column in the export.
         
         Required?                    false
         Position?                    named
@@ -108,6 +115,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -DefaultSortColumn [<SwitchParameter>]
+        Sets this column as the default sort column.
         
         Required?                    false
         Position?                    named
@@ -116,6 +124,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Align <String>
+        The alignment of the column. Supported values are 'center', 'inherit', 'justify', 'left', 'right'.
         
         Required?                    false
         Position?                    8
@@ -124,6 +133,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Truncate [<SwitchParameter>]
+        Whether to truncate the text in this column. A -Width is required to use truncate.
         
         Required?                    false
         Position?                    named
@@ -132,6 +142,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -SortType <String>
+        Whether to sort this column as a string or datetime.
         
         Required?                    false
         Position?                    9

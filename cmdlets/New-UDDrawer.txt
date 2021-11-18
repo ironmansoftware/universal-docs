@@ -34,6 +34,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Variant <String>
+        The type of drawer. Valid values include "persistent", "permanent", "temporary"
         
         Required?                    false
         Position?                    3
@@ -42,6 +43,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Anchor <String>
+        Where to anchor the drawer. Valid values incldue "left", "right", "top", "bottom"
         
         Required?                    false
         Position?                    4

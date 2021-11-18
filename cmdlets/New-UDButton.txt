@@ -34,7 +34,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Variant <String>
-        The variant type for this button.
+        The variant type for this button. Valid values are: "text", "outlined", "contained"
         
         Required?                    false
         Position?                    3
@@ -43,7 +43,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -IconAlignment <String>
-        How to align the icon within the button.
+        How to align the icon within the button. Valid values are: "left", "right"
         
         Required?                    false
         Position?                    4
@@ -106,7 +106,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Color <String>
-        The color of the component. It supports those theme colors that make sense for this component.
+        The color of the component. Valid values are: 'default', 'inherit', 'primary', 'secondary'
         
         Required?                    false
         Position?                    named
@@ -115,6 +115,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Disabled [<SwitchParameter>]
+        Whether the button is disabled.
         
         Required?                    false
         Position?                    named
@@ -123,6 +124,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ClassName <String>
+        The CSS Class to apply to the button.
         
         Required?                    false
         Position?                    named

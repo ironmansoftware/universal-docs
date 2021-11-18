@@ -52,6 +52,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ActiveStep <Int32>
+        Sets the active step. This is only used for New-UDStepper.
         
         Required?                    false
         Position?                    3

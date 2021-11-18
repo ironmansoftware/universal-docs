@@ -43,7 +43,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Leaf [<SwitchParameter>]
-        This is a leaf node and should not display children.
+        This is a leaf node and should not display children. Added in PSU 2.6.
         
         Required?                    false
         Position?                    named
@@ -52,6 +52,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Icon <Object>
+        The icon to display for this node. Use New-UDIcon to create this icon. Added in PSU 2.6.
         
         Required?                    false
         Position?                    named
@@ -60,6 +61,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ExpandedIcon <Object>
+        The icon to display for this node when it is expanded. Use New-UDIcon to create this icon. Added in PSU 2.6.
         
         Required?                    false
         Position?                    named

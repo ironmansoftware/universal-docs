@@ -3,7 +3,7 @@ NAME
     New-UDHtml
     
 SYNOPSIS
-    {{ Fill in the Synopsis }}
+    Display HTML in your dashboard.
     
     
 SYNTAX
@@ -11,12 +11,12 @@ SYNTAX
     
     
 DESCRIPTION
-    {{ Fill in the Description }}
+    Display HTML in your dashboard.
     
 
 PARAMETERS
     -Markup <String>
-        {{ Fill Markup Description }}
+        The HTML markup to display.
         
         Required?                    true
         Position?                    1
@@ -47,9 +47,9 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> {{ Add example code here }}
+    PS C:\> New-UDHtml -Markup "<ul><li>First</li><li>Second</li><li>Third</li></ul>"
     
-    {{ Add example description here }}
+    Displays a list.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
