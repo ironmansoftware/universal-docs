@@ -32,7 +32,7 @@ Files stored in the repository are stored as plain text to allow for easy differ
 
 ## What's Not Stored in the Repository
 
-This entities are stored within the PowerShell Universal database.&#x20;
+These entities are stored within the PowerShell Universal database.&#x20;
 
 * App Tokens
 * Identities
