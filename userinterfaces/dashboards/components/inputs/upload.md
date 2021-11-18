@@ -12,7 +12,7 @@ This component works with [UDForm](form.md) and [UDStepper](../navigation/steppe
 
 Uploads a file and shows the contents via a toast.
 
-```text
+```powershell
 New-UDUpload -OnUpload {
     Show-UDToast $Body
 }
@@ -28,11 +28,24 @@ The body of the `OnUpload` script block is a JSON string with the following form
 }
 ```
 
+The `$EventData` is an object with the following structure.&#x20;
+
+```csharp
+public class Upload
+{
+    public string Name { get; set; }
+    public string FileName { get; set; }
+    public DateTime TimeStamp { get; set; }
+    public string ContentType { get; set; }
+    public string Type => ContentType;
+}
+```
+
 ## Uploading a File with a Form
 
 Uploads a file as part of a UDForm.
 
-```text
+```powershell
 New-UDForm -Content {
     New-UDUpload -Id 'myFile' 
 } -OnSubmit {
@@ -46,7 +59,7 @@ The body of the `OnSubmit` script block is the same one you will see with any fo
 
 This example allows a user to upload a file. Once the file is uploaded, it will be saved to the temporary directory.
 
-```text
+```powershell
 New-UDUpload -Text 'Upload Image' -OnUpload {
     $Data = $Body | ConvertFrom-Json 
     $bytes = [System.Convert]::FromBase64String($Data.Data)
@@ -54,14 +67,69 @@ New-UDUpload -Text 'Upload Image' -OnUpload {
 }
 ```
 
+## API
+
 **New-UDUpload**
 
-| Name | Type | Description | Required |
-| :--- | :--- | :--- | :--- |
-| Id | String | The ID of the component. It defaults to a random GUID. | false |
-| Accept | String | The type of files to accept. By default, this component accepts all files. | false |
-| OnUpload | Endpoint | A script block to call when the file is uploaded. | false |
-| Text | String | The text to display in the upload button. | false |
-| Variant | String | The type of button to show for the upload button. | false |
-| Color | String | The color to use for the upload button. | false |
+```markdown
+    .SYNOPSIS
+    Upload files
+    
+    .DESCRIPTION
+    Upload files. This component works with UDForm and UDStepper.
+    
+    .PARAMETER Id
+    The ID of the uploader.
+    
+    .PARAMETER Accept
+    The type of files to accept. By default, this component accepts all files. 
+    
+    .PARAMETER OnUpload
+    A script block to execute when a file is uploaded. This $body parameter will contain JSON in the following format: 
 
+    {
+        data: 'base64 encoded string of file data',
+        name: 'filename',
+        type: 'type of file, if known'
+    }
+
+    $EventData will contain a class with the following properties:
+
+    public string Name { get; set; }
+    public string FileName { get; set; }
+    public DateTime TimeStamp { get; set; }
+    public string ContentType { get; set; }
+    public string Type => ContentType;
+    
+    .PARAMETER Text
+    The text to display on the upload button.
+    
+    .PARAMETER Variant
+    The variant of button. Defaults to contained. Valid values: "text", "outlined", "contained"
+    
+    .PARAMETER Color
+    The color of the button. Defaults to 'default'. Valid values: "default", "primary", "secondary", "inherit"
+
+    .PARAMETER ClassName
+    A CSS class to apply to the button.
+
+    .EXAMPLE
+    A file uploader 
+
+    New-UDDashboard -Title "Hello, World!" -Content {
+        New-UDUpload -Text "Upload" -OnUpload {
+            Show-UDToast $Body
+        }
+    }
+    
+    .EXAMPLE
+    A file uploader in a form 
+
+    New-UDDashboard -Title "Hello, World!" -Content {
+        New-UDForm -Content {
+            New-UDUpload -Text "Upload" 
+        } -OnSubmit {
+            Show-UDToast $Body
+        }
+    }
+```
