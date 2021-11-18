@@ -4,7 +4,7 @@ description: Icon component for Universal Dashboard
 
 # Icon
 
-[FontAwesome ](https://fontawesome.com/?from=io)icons to include in your dashboard. Icon names are slightly different than those shown on the FontAwesome website. For example, if you want to use the `network-wired` icon, you would use the following string. 
+[FontAwesome ](https://fontawesome.com/?from=io)icons to include in your dashboard. Icon names are slightly different than those shown on the FontAwesome website. For example, if you want to use the `network-wired` icon, you would use the following string.&#x20;
 
 ```
 New-UDIcon -Icon 'NetworkWired'
@@ -84,7 +84,7 @@ New-UDDynamic -Id 'icons' -Content {
     }
 
     foreach($icon in $icons) {
-        New-UDIcon -Icon $icon -Size lg
+        New-UDChip -Label $icon -Icon (New-UDIcon -Icon $icon)
     }
 }
 ```

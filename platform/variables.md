@@ -23,7 +23,7 @@ Secret management is currently only supported on Windows.&#x20;
 Secret variables are stored within the selected vault. The value of those variables are never stored within Universal. To define a new secret variable, click Add Variable on the variables page and select the Secret tab.&#x20;
 
 {% hint style="warning" %}
-Values for secrets are stored within the current user's Windows Credential Manager instance. If you change users (such as running as a service account), the account will not have access to the previous user's secrets and you will need to add those secrets again.
+Values for secrets are stored within the Windows Credential Manager instance of the security principal that is running PSU. For example, the service account of the user running the Universal service. If you change users (such as running as a service account), the account will not have access to the previous user's secrets and you will need to add those secrets again.
 {% endhint %}
 
 From this dialog, you'll be able to define string and PSCredentials in the specified vault.&#x20;
