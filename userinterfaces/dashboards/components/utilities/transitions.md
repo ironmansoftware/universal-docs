@@ -8,7 +8,7 @@ Transitions allow you to transition components in and out of view within your da
 
 In the following example, we have a card that transitions in via a Fade. Clicking the switch the toggle the card in and out.
 
-```text
+```powershell
 New-UDTransition -Id 'test' -Content {
     New-UDCard -Text "Hey"
 } -In -Fade -Timeout 1000
@@ -28,7 +28,7 @@ The resulting effect looks like this.
 
 The collapse transition will collapse a section in and out. You can specify a collapse height to only collapse a portion of the section.
 
-```text
+```powershell
 New-UDTransition -Id 'test' -Content {
     New-UDCard -Text "Hey"
 } -In -Collapse -CollapseHeight 100 -Timeout 1000
@@ -46,7 +46,7 @@ New-UDSwitch -OnChange {
 
 A fade transition fades a component in and out as seen in the previous example. You can configure the timeout value to specify the number of seconds it takes to complete the transition.
 
-```text
+```powershell
 New-UDTransition -Id 'test' -Content {
     New-UDCard -Text "Hey"
 } -In -Fade -Timeout 1000
@@ -62,7 +62,7 @@ New-UDSwitch -OnChange {
 
 The slide transition moves a component into position. You can determine the position of the slide by specifying the `-SlideDirection` parameter.
 
-```text
+```powershell
 New-UDTransition -Id 'test' -Content {
     New-UDCard -Text "Hey"
 } -In -Slide -SlideDirection 'left' -Timeout 1000
@@ -80,7 +80,7 @@ New-UDSwitch -OnChange {
 
 The grow transition will fade and grow a component into place.
 
-```text
+```powershell
 New-UDTransition -Id 'test' -Content {
     New-UDCard -Text "Hey"
 } -In -Grow -Timeout 1000
@@ -98,7 +98,7 @@ New-UDSwitch -OnChange {
 
 The zoom transition will zoom a component into place.
 
-```text
+```powershell
 New-UDTransition -Id 'test' -Content {
     New-UDCard -Text "Hey"
 } -In -Zoom -Timeout 1000
@@ -112,3 +112,6 @@ New-UDSwitch -OnChange {
 
 ![Zoom Transition](../../../../.gitbook/assets/zoom.gif)
 
+## API
+
+* [New-UDTransition](../../../../cmdlets/New-UDTransition.txt)
