@@ -8,11 +8,11 @@ Checkboxes allow the user to select one or more items from a set.
 
 ## Checkboxes
 
-![](../../../../.gitbook/assets/image%20%2841%29.png)
+![](<../../../../.gitbook/assets/image (41).png>)
 
 Checkboxes can be disabled and checked by default
 
-```text
+```powershell
 New-UDCheckBox
 New-UDCheckBox -Disabled
 New-UDCheckBox -Checked $true
@@ -21,11 +21,11 @@ New-UDCheckBox -Checked $true -Disabled
 
 ## Checkboxes with custom icon
 
-![](../../../../.gitbook/assets/image%20%2868%29.png)
+![](<../../../../.gitbook/assets/image (68).png>)
 
 Create checkboxes that use any icon and style.
 
-```text
+```powershell
 $Icon = New-UDIcon -Icon angry -Size lg -Regular
 $CheckedIcon = New-UDIcon -Icon angry -Size lg
 New-UDCheckBox -Icon $Icon -CheckedIcon $CheckedIcon -Style @{color = '#2196f3'}
@@ -35,7 +35,7 @@ New-UDCheckBox -Icon $Icon -CheckedIcon $CheckedIcon -Style @{color = '#2196f3'}
 
 Create checkboxes that fire script blocks when changed.
 
-```text
+```powershell
 New-UDCheckBox -OnChange {
     Show-UDToast -Title 'Checkbox' -Message $Body
 }
@@ -43,11 +43,11 @@ New-UDCheckBox -OnChange {
 
 ## Checkbox with custom label placement
 
-![](../../../../.gitbook/assets/image%20%2838%29.png)
+![](<../../../../.gitbook/assets/image (38).png>)
 
 You can adjust where the label for the checkbox is placed.
 
-```text
+```powershell
 New-UDCheckBox -Label 'Demo' -LabelPlacement start
 New-UDCheckBox -Label 'Demo' -LabelPlacement top
 New-UDCheckBox -Label 'Demo' -LabelPlacement bottom
@@ -60,7 +60,7 @@ You can use `Get-UDElement` to get the value of the checkbox. `Get-UDElement` wi
 
 The following example shows a toast message with the value of the checkbox.
 
-```text
+```powershell
 New-UDCheckbox -Id 'MyCheckbox' 
 
 New-UDButton -Text 'Get Value' -OnClick {
@@ -68,18 +68,6 @@ New-UDButton -Text 'Get Value' -OnClick {
 }
 ```
 
-**New-UDCheckbox**
+## API
 
-| Name | Type | Description | Required |
-| :--- | :--- | :--- | :--- |
-| Label | String | The label to show next to the checkbox. | false |
-| Icon | Object | The icon to show instead of the default icon. | false |
-| CheckedIcon | Object | The icon to show instead of the default checked icon. | false |
-| OnChange | Endpoint | Called when the value of the checkbox changes. The $EventData variable will have the current value of the checkbox. | false |
-| Style | Hashtable | A hashtable of styles to apply to the checkbox. | false |
-| Disabled | SwitchParameter | Whether the checkbox is disabled. | false |
-| Checked | Boolean | Whether the checkbox is checked. | false |
-| ClassName | String | A CSS class to assign to the checkbox. | false |
-| LabelPlacement | String | Where to place the label. | false |
-| Id | String | The ID of the component. It defaults to a random GUID. | false |
-
+* [New-UDCheckbox](../../../../cmdlets/New-UDCheckBox.txt)

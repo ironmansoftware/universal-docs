@@ -6,37 +6,30 @@ description: Progress component for Universal Dashboard
 
 ## Circular Progress
 
-![](../../../../.gitbook/assets/image%20%2880%29.png)
+![](<../../../../.gitbook/assets/image (80).png>)
 
-```text
+```powershell
 New-UDProgress -Circular -Color Blue
 ```
 
 ## Linear Indeterminate
 
-![](../../../../.gitbook/assets/image%20%2862%29.png)
+![](<../../../../.gitbook/assets/image (62).png>)
 
-```text
+```powershell
 New-UDProgress
 ```
 
 ## Linear Determinate
 
-![](../../../../.gitbook/assets/image%20%2869%29.png)
+![](<../../../../.gitbook/assets/image (69).png>)
 
-```text
+```powershell
 New-UDProgress -PercentComplete 75
 ```
 
-**New-UDProgress**
+## API
 
-| Name | Type | Description | Required |
-| :--- | :--- | :--- | :--- |
-| Id | String | The ID of the component. It defaults to a random GUID. | false |
-| PercentComplete | Object | The percent complete for the progress. | false |
-| BackgroundColor | DashboardColor | The background color. | false |
-| ProgressColor | DashboardColor | The progress bar color. | false |
-| Circular | SwitchParameter | Whether the progress is circular. | false |
-| Color | String | The color of the progress. | false |
-| Size | String | The size of the progress. | false |
+* [New-UDProgress](../../../../cmdlets/New-UDProgress.txt)
 
+****

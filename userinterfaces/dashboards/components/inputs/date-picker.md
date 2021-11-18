@@ -8,9 +8,9 @@ Date pickers pickers provide a simple way to select a single value from a pre-de
 
 Date pickers can be used in [Forms](form.md) and [Steppers](../navigation/stepper.md).
 
-![](../../../../.gitbook/assets/image%20%2873%29.png)
+![](<../../../../.gitbook/assets/image (73).png>)
 
-```text
+```powershell
 New-UDDatePicker
 ```
 
@@ -18,7 +18,7 @@ New-UDDatePicker
 
 The OnChange event handler is called when the date changes. You can access the current date by using the `$Body` variable.
 
-```text
+```powershell
 New-UDDatePicker -OnChange {
     Show-UDToast -Message $body
 }
@@ -28,30 +28,22 @@ New-UDDatePicker -OnChange {
 
 You can customize how the date picker is show. The default is the `inline` variant that displays the date picker popup inline with the input control. You can also use the `dialog` variant that pops the date picker up in the middle of the screen. Finally, the `static` variant displays the date picker without having to click anything.
 
-```text
+```powershell
 New-UDDatePicker -Variant static
 ```
 
 ## Locale
 
-To set the locate of the date picker, specify the `-Locale` parameter. 
+To set the locate of the date picker, specify the `-Locale` parameter.&#x20;
 
-```text
+```powershell
 New-UDDatePicker -Locale fr
 ```
 
-![](../../../../.gitbook/assets/image%20%28243%29.png)
+![](<../../../../.gitbook/assets/image (243).png>)
 
-**New-UDDatePicker**
+## API
 
-| Name | Type | Description | Required |
-| :--- | :--- | :--- | :--- |
-| Id | String | The ID of the component. It defaults to a random GUID. | false |
-| Label | String | The label to show next to the date picker. | false |
-| Variant | String | The theme variant to apply to the date picker. | false |
-| DisableToolbar | SwitchParameter | Disables the date picker toolbar. | false |
-| OnChange | Endpoint | A script block to call with the selected date. The $EventData variable will be the date selected. | false |
-| Format | String | The format of the date when it is selected. | false |
-| Value | DateTime | The current value of the date picker. | false |
-| Locale | String | Specifies the locale for the date picker. Supports en, de, ru, and fr. Defaults to en. Available since 2.3. | false |
+* [New-UDDatePicker](../../../../cmdlets/New-UDDatePicker.txt)
 
+****
