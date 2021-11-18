@@ -10,73 +10,63 @@ Sliders reflect a range of values along a bar, from which users may select a sin
 
 ## Slider
 
-![](../../../../.gitbook/assets/image%20%2837%29.png)
+![](<../../../../.gitbook/assets/image (37).png>)
 
-```text
+```powershell
 New-UDSlider -Value 1
 ```
 
 ## Slider with minimum and maximum values
 
-![](../../../../.gitbook/assets/image%20%2844%29.png)
+![](<../../../../.gitbook/assets/image (44).png>)
 
-```text
+```powershell
 New-UDSlider -Min 10 -Max 1000
 ```
 
 ## Disabled Slider
 
-![](../../../../.gitbook/assets/image%20%2859%29.png)
+![](<../../../../.gitbook/assets/image (59).png>)
 
-```text
+```powershell
 New-UDSlider -Disabled
 ```
 
 ## Slider with custom step size
 
-![](../../../../.gitbook/assets/image%20%2848%29.png)
+![](<../../../../.gitbook/assets/image (48).png>)
 
-```text
+```powershell
 New-UDSlider -Min 10 -Max 1000 -Step 100
 ```
 
 ## Slider with marks
 
-![](../../../../.gitbook/assets/image%20%2839%29.png)
+![](<../../../../.gitbook/assets/image (39).png>)
 
-```text
+```powershell
 New-UDSlider -Marks
 ```
 
 ## Range based slider
 
-![](../../../../.gitbook/assets/image%20%2865%29.png)
+![](<../../../../.gitbook/assets/image (65).png>)
 
-```text
+```powershell
 New-UDSlider -Value @(1, 10)
 ```
 
 ## OnChange event for slider
 
-```text
+```powershell
 New-UDSlider -OnChange {
     Show-UDToast -Message $Body 
     Set-TestData $Body
 }
 ```
 
-**New-UDSlider**
+## API
 
-| Name | Type | Description | Required |
-| :--- | :--- | :--- | :--- |
-| Id | string |  | false |
-| Value | int\[\] |  | false |
-| Minimum | int |  | false |
-| Maximum | int |  | false |
-| Disabled | switch |  | false |
-| Marks | switch |  | false |
-| OnChange | Endpoint |  | false |
-| Orientation | string |  | false |
-| Step | int |  | false |
-| ValueLabelDisplay | string |  | false |
+* [New-UDSlider](../../../../cmdlets/New-UDSlider.txt)
 
+****

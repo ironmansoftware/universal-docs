@@ -10,7 +10,7 @@ Create a hyper link in a dashboard.&#x20;
 
 Create a basic link that goes to a web page.&#x20;
 
-```
+```powershell
 New-UDLink -Text 'Ironman Software' -Url https://www.ironmansoftware.com
 ```
 
@@ -18,7 +18,7 @@ New-UDLink -Text 'Ironman Software' -Url https://www.ironmansoftware.com
 
 Adjust the underline and text style.
 
-```
+```powershell
     New-UDLink -Text 'Ironman Software' -Url https://www.ironmansoftware.com -Variant h2 -Underline always
 ```
 
@@ -26,7 +26,7 @@ Adjust the underline and text style.
 
 Open the link a new window when clicked.&#x20;
 
-```
+```powershell
 New-UDLink -Text 'Ironman Software' -Url https://www.ironmansoftware.com -OpenInNewWindow
 ```
 
@@ -34,7 +34,7 @@ New-UDLink -Text 'Ironman Software' -Url https://www.ironmansoftware.com -OpenIn
 
 Execute a PowerShell script block when the link is clicked.&#x20;
 
-```
+```powershell
 New-UDLink -Text 'Ironman Software' -OnClick {
     Show-UDToast "Hello!"
 }
@@ -42,6 +42,5 @@ New-UDLink -Text 'Ironman Software' -OnClick {
 
 ## API
 
-### New-UDLink
+* [New-UDLink](../../../../cmdlets/New-UDLink.txt)
 
-<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th data-type="checkbox">Required</th></tr></thead><tbody><tr><td>Id</td><td>string</td><td>The ID of this component</td><td>true</td></tr><tr><td>Url</td><td>string</td><td>The URL to navigate to</td><td>false</td></tr><tr><td>Underline</td><td>string</td><td>The underline behavior: none, hover, always</td><td>false</td></tr><tr><td>Style</td><td>Hashtable</td><td>CSS styles to apply to the link</td><td>false</td></tr><tr><td>Variant</td><td>String</td><td>The variant of text</td><td>false</td></tr><tr><td>ClassName</td><td>String</td><td>The CSS class to apply to the link.</td><td>false</td></tr><tr><td>OpenInNewWindow</td><td>SwitchParameter</td><td>Whether to open the link in a new window.</td><td>false</td></tr><tr><td>Content</td><td>ScriptBlock</td><td>Content to wrap in the link (like a card)</td><td>false</td></tr><tr><td>Text</td><td>string</td><td>Text to display in the link</td><td>false</td></tr><tr><td>OnClick</td><td>ScriptBlock</td><td>A script block to execute when the link is clicked. </td><td>false</td></tr></tbody></table>

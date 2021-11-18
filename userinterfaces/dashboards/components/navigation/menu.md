@@ -14,7 +14,7 @@ The menu component can be used to provide a drop down list of options for the us
 
 Create a basic menu.&#x20;
 
-```
+```powershell
 New-UDMenu -Content {
    New-UDMenuItem -Text 'Item 1'
    New-UDMenuItem -Text 'Item 1'
@@ -28,7 +28,7 @@ New-UDMenu -Content {
 
 You can edit the style of the menu by adjusting the variant parameter.&#x20;
 
-```
+```powershell
 New-UDMenu -Content {
    New-UDMenuItem -Text 'Item 1'
    New-UDMenuItem -Text 'Item 1'
@@ -40,7 +40,7 @@ New-UDMenu -Content {
 
 You can use the value parameter to define a value that differs from the text displayed.&#x20;
 
-```
+```powershell
 New-UDMenu -Content {
    New-UDMenuItem -Text 'Item 1' -Value 'item1'
    New-UDMenuItem -Text 'Item 1' -Value 'item2'
@@ -52,7 +52,7 @@ New-UDMenu -Content {
 
 Use the `-OnChange` parameter to specify a script block to call when a new value is selected.  The value of the selected item will be available in `$EventData`.
 
-```
+```powershell
 New-UDMenu -Text 'Click Me' -OnChange {
     Show-UDToast $EventData
 } -Children {
@@ -64,10 +64,5 @@ New-UDMenu -Text 'Click Me' -OnChange {
 
 ## API
 
-### New-UDMenu
-
-<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th data-type="checkbox">Required</th></tr></thead><tbody><tr><td>Id</td><td>string</td><td>The ID of this component.</td><td>false</td></tr><tr><td>Text</td><td>string</td><td>The text to display in the button that opens this menu.</td><td>true</td></tr><tr><td>OnChange</td><td>ScriptBlock</td><td></td><td>true</td></tr><tr><td>Children</td><td>ScriptBlock</td><td>Items to display in the menu.</td><td>true</td></tr><tr><td>ClassName</td><td>string</td><td>A CSS class to apply to the element</td><td>false</td></tr><tr><td>Variant</td><td>string</td><td>Style of the menu button: text, outlined, contained</td><td>false</td></tr></tbody></table>
-
-### New-UDMenuItem
-
-<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th data-type="checkbox">Required</th></tr></thead><tbody><tr><td>Text</td><td>string</td><td>The text to display in the menu item.</td><td>true</td></tr><tr><td>Value</td><td>string</td><td>An alternate value to use for this menu item. When not specified. the text is used. </td><td>false</td></tr></tbody></table>
+* [New-UDMenu](../../../../cmdlets/New-UDMenu.txt)
+* [New-UDMenuItem](../../../../cmdlets/New-UDMenuItem.txt)

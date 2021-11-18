@@ -21,9 +21,9 @@ Steppers display progress through a sequence of logical and numbered steps. They
 
 ## Stepper
 
-![](../../../../.gitbook/assets/image%20%2861%29.png)
+![](<../../../../.gitbook/assets/image (61).png>)
 
-```text
+```powershell
 New-UDStepper -Steps {
     New-UDStep -OnLoad {
         New-UDElement -tag 'div' -Content { "Step 1" }
@@ -75,7 +75,7 @@ The JSON payload will have the following format. Note that steps are 0 indexed. 
 
 You will have to convert the JSON string to an object to work with in PowerShell and then return the validation result.
 
-```text
+```powershell
 New-UDStepper -Steps {
     New-UDStep -OnLoad {
         New-UDElement -tag 'div' -Content { "Step 1" }
@@ -109,11 +109,11 @@ New-UDStepper -Steps {
 
 ## Skipping Steps
 
-You can direct the user to a particular step in the `OnValidateStep` event handler. Use the `New-UDValidationResult` `-ActiveStep` parameter to move the user to any step after clicking next. Step indices are 0 based. 
+You can direct the user to a particular step in the `OnValidateStep` event handler. Use the `New-UDValidationResult` `-ActiveStep` parameter to move the user to any step after clicking next. Step indices are 0 based.&#x20;
 
-This example moves the user to the last step after completing the first step. 
+This example moves the user to the last step after completing the first step.&#x20;
 
-```text
+```powershell
 New-UDStepper -Steps {
     New-UDStep -OnLoad {
         New-UDElement -tag 'div' -Content { "Step 1" }
@@ -147,11 +147,11 @@ New-UDStepper -Steps {
 
 ## Disable Previous Button
 
-You can disable the previous button by using the `-DisablePrevious` parameter of `New-UDValidationResult` . 
+You can disable the previous button by using the `-DisablePrevious` parameter of `New-UDValidationResult` .&#x20;
 
 This example disables the previous step whenever the user moves forward in the stepper.
 
-```text
+```powershell
 New-UDStepper -Steps {
     New-UDStep -OnLoad {
         New-UDElement -tag 'div' -Content { "Step 1" }
@@ -179,7 +179,7 @@ New-UDStepper -Steps {
 
 You can create a vertical stepper by setting the `-Orientation` parameter to vertical.
 
-```text
+```powershell
 New-UDStepper -Steps {
     New-UDStep -OnLoad {
         New-UDElement -tag 'div' -Content { "Step 1" }
@@ -201,27 +201,14 @@ New-UDStepper -Steps {
 } -Orientation 'vertical'
 ```
 
-![](../../../../.gitbook/assets/image%20%28217%29.png)
+![](<../../../../.gitbook/assets/image (217).png>)
 
-**New-UDStepper**
+## API
 
-| Name | Type | Description | Required |
-| :--- | :--- | :--- | :--- |
-| Id | String | The ID of the component. It defaults to a random GUID. | false |
-| ActiveStep | Int32 | Sets the active step. This should be the index of the step. | false |
-| Steps | ScriptBlock | The steps for this stepper. Use New-UDStep to create new steps. | true |
-| NonLinear | SwitchParameter | Allows the user to progress to steps out of order. | false |
-| AlternativeLabel | SwitchParameter | Places the step label under the step number. | false |
-| OnFinish | Endpoint | A script block that is executed when the stepper is finished. | true |
-| OnValidateStep | Endpoint | A script block that is executed when validating each step. | false |
-| Orientation | string | Vertical or Horizontal | false |
+* [New-UDStepper](../../../../cmdlets/New-UDStepper.txt)
+* [New-UDStep](../../../../cmdlets/New-UDStep.txt)
+* [New-UDValidationResult](../../../../cmdlets/New-UDValidationResult.txt)
 
-**New-UDStep**
+****
 
-| Name | Type | Description | Required |
-| :--- | :--- | :--- | :--- |
-| Id | String | The ID of the component. It defaults to a random GUID. | false |
-| OnLoad | Endpoint | The script block that is executed when the step is loaded. The script block will receive the $Body parameter which contains JSON for the current state of the stepper. If you are using form controls, their data will be availalble in the $Body.Context property. | true |
-| Label | String | A label for this step. | false |
-| Optional | SwitchParameter | Whether this step is optional. | false |
-
+****

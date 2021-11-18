@@ -10,7 +10,7 @@ description: >-
 
 Create a simple transfer list.
 
-```
+```powershell
 New-UDTransferList -Item {
     New-UDTransferListItem -Name 'test1' -Value 1
     New-UDTransferListItem -Name 'test2' -Value 2
@@ -26,7 +26,7 @@ New-UDTransferList -Item {
 
 Use the `OnChange` event handler to get the value of the selected items.&#x20;
 
-```
+```powershell
 New-UDTransferList -Item {
     New-UDTransferListItem -Name 'test1' -Value 1
     New-UDTransferListItem -Name 'test2' -Value 2
@@ -42,7 +42,7 @@ New-UDTransferList -Item {
 
 Transfer lists can be used within forms and steppers.&#x20;
 
-```
+```powershell
 New-UDForm -Content {
     New-UDTransferList -Item {
         New-UDTransferListItem -Name 'test1' -Value 1

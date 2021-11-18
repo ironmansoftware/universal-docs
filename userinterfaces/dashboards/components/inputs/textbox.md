@@ -10,7 +10,7 @@ A textbox lets users enter and edit text.
 
 ![](<../../../../.gitbook/assets/image (47).png>)
 
-```
+```powershell
 New-UDTextbox -Label 'Standard' -Placeholder 'Textbox'
 New-UDTextbox -Label 'Disabled' -Placeholder 'Textbox' -Disabled
 New-UDTextbox -Label 'Textbox' -Value 'With value'
@@ -22,7 +22,7 @@ A password textbox will mask the input.
 
 ![](<../../../../.gitbook/assets/image (55).png>)
 
-```
+```powershell
 New-UDTextbox -Label 'Password' -Type password
 ```
 
@@ -30,7 +30,7 @@ New-UDTextbox -Label 'Password' -Type password
 
 You can create a multiline textbox by using the `-Multiline` parameter. Pressing enter will add a new line. You can define the number of rows and the max number of rows using `-Rows` and `-RowsMax`.
 
-```
+```powershell
 New-UDTextbox -Multiline -Rows 4 -RowsMax 10
 ```
 
@@ -40,7 +40,7 @@ New-UDTextbox -Multiline -Rows 4 -RowsMax 10
 
 You can use `Get-UDElement` to get the value of a textbox
 
-```
+```powershell
 New-UDTextbox -Id 'txtExample' 
 New-UDButton -OnClick {
     $Value = (Get-UDElement -Id 'txtExample').value 
@@ -50,7 +50,7 @@ New-UDButton -OnClick {
 
 ### Setting the textbox value
 
-```
+```powershell
 New-UDTextbox -Id 'txtExample' -Label 'Label' -Value 'Value'
 
 New-UDButton -OnClick {
@@ -66,7 +66,7 @@ New-UDButton -OnClick {
 
 You can set the icon of a textbox by using the `-Icon` parameter and the `New-UDIcon` cmdlet.
 
-```
+```powershell
 New-UDTextbox -Id "ServerGroups" -Icon (New-UDIcon -Icon 'server') -Value "This is my server"
 ```
 
@@ -78,7 +78,7 @@ You can define a text mask with a combination of strings and regular expressions
 
 This example creates a mask for US based phone numbers.
 
-```
+```powershell
 New-UDTextbox -Mask @('+', '1', ' ', '(', '/[1-9]/', '/\d/', '/\d/', ')', ' ', '/\d/', '/\d/', '/\d/', '-', '/\d/', '/\d/', '/\d/', '/\d/')
 ```
 

@@ -8,7 +8,7 @@ description: Drawer component for Universal Dashboard
 
 A permanent drawer will be shown at all times. By default, it is show on the left side of the screen.
 
-```text
+```powershell
 New-UDDrawer -Variant 'permanent' -Content {
   New-UDList -Children {
         New-UDListItem -Label "Home"
@@ -23,16 +23,10 @@ New-UDDrawer -Variant 'permanent' -Content {
 }
 ```
 
-![Permanent Drawer](../../../../.gitbook/assets/image%20%28137%29.png)
+![Permanent Drawer](<../../../../.gitbook/assets/image (137).png>)
 
-## API 
+## API&#x20;
 
-### New-UDDrawer
+* [New-UDDrawer](../../../../cmdlets/New-UDDrawer.txt)
 
-| Name | Description | Required | Type | Default Value |
-| :--- | :--- | :--- | :--- | :--- |
-| Id | The ID of this component. | false | string | Guid |
-| Children | Children of this drawer. You can use components such as New-UDList within the drawer. | true | ScriptBlock |  |
-| Variant | The type of drawer. | false | string \(persistent, permanent, temporary\) | temporary |
-| Anchor | Where to anchor the drawer. | false | string \(left, right, top, bottom\) | left |
-
+###

@@ -10,9 +10,9 @@ Tabs organize and allow navigation between groups of content that are related an
 
 ## Tabs
 
-![](../../../../.gitbook/assets/image%20%2840%29.png)
+![](<../../../../.gitbook/assets/image (40).png>)
 
-```text
+```powershell
 New-UDTabs -Tabs {
     New-UDTab -Text 'Item One' -Content { New-UDTypography -Text 'Item One' -Variant 'h2' }
     New-UDTab -Text 'Item Two' -Content { New-UDTypography -Text 'Item Two' -Variant 'h2' }
@@ -22,9 +22,9 @@ New-UDTabs -Tabs {
 
 ## Vertical Tabs
 
-![](../../../../.gitbook/assets/image%20%2874%29.png)
+![](<../../../../.gitbook/assets/image (74).png>)
 
-```text
+```powershell
 New-UDTabs -Tabs {
     New-UDTab -Text 'Item One' -Content { New-UDTypography -Text 'Item One' -Variant 'h2' }
     New-UDTab -Text 'Item Two' -Content { New-UDTypography -Text 'Item Two' -Variant 'h2' }
@@ -36,7 +36,7 @@ New-UDTabs -Tabs {
 
 Dynamic tabs will refresh their content when they are selected. You will need to include the `-RenderOnActive` parameter to prevent all the tabs from rendering even if they are not shown.
 
-```text
+```powershell
 New-UDTabs -Tabs {
     New-UDTab -Text 'Item One' -Content { Get-Date } -Dynamic
     New-UDTab -Text 'Item Two' -Content { Get-Date } -Dynamic
@@ -44,27 +44,9 @@ New-UDTabs -Tabs {
 } -RenderOnActive
 ```
 
-**New-UDTabs**
+## API
 
-| Name | Type | Description | Required |
-| :--- | :--- | :--- | :--- |
-| Tabs | ScriptBlock | The tabs to put within this container. | true |
-| Id | String | The ID of the component. It defaults to a random GUID. | false |
-| RenderOnActive | SwitchParameter | Whether to render the tabs when they are clicked. Is this value isn't present, all the tabs are rendered, even if they are not shown. | false |
-| Orientation | String | The orientation of the tabs. | false |
-| Variant | String | Changes the variation of the tabs. Supports fullWidth, scrollable and standard. Available since 2.3 | false |
-| ScrollButtons | String | Changes when the scrollbars appear. Supports on, off, auto and desktop. Available since 2.3. | false |
-| Centered | SwitchParameter | Centers the tabs within the tab container. Available since 2.3. | false |
+* [New-UDTabs](../../../../cmdlets/New-UDStepper.txt)
+* [New-UDTab](../../../../cmdlets/New-UDTab.txt)
 
-**New-UDTab**
-
-| Name | Type | Description | Required |
-| :--- | :--- | :--- | :--- |
-| Text | string | The text to display in the header. | false |
-| Content | scriptblock | The content of the tab. | true |
-| Id | string | The ID of the tab. | false |
-| Dynamic | switch | A dynamic tab will reload every time it is selected. | false |
-| Icon | Object |  | false |
-| Stacked | switch |  | false |
-| Disabled | SwitchParameter | Disables the tab. Available since 2.3. | false |
-
+****
