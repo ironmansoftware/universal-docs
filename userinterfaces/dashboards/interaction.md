@@ -10,7 +10,7 @@ Universal Dashboard enables the ability to create interactive websites with Powe
 
 You can set string data into the user's clipboard with `Set-UDClipboard`.
 
-```
+```powershell
 New-UDButton -Text 'Clipboard' -OnClick {
     Set-UDClipboard -Data 'Hello, there!'
 }
@@ -18,21 +18,15 @@ New-UDButton -Text 'Clipboard' -OnClick {
 
 #### API
 
-**Set-UDClipboard**
-
-| **Name**       | Type   | Description                                                        | Required |
-| -------------- | ------ | ------------------------------------------------------------------ | -------- |
-| Data           | string | The content to set to the clipboard                                | true     |
-| ToastOnSuccess | Switch | Shows a toast if the data was successfully set in the clipboard    | false    |
-| ToastOnError   | Switch | Shows as toast if the data was unsuccessfully set in the clipboard | false    |
+* [Set-UDClipboard](../../cmdlets/Set-UDClipboard.txt)
 
 ## Event Handlers
 
-Many components support event handlers in the form of script blocks. You may also see these referred to as endpoints as that is what they were called in Universal Dashboard v2. These event handlers allow you to invoke PowerShell scripts when certain actions take place on the page. 
+Many components support event handlers in the form of script blocks. You may also see these referred to as endpoints as that is what they were called in Universal Dashboard v2. These event handlers allow you to invoke PowerShell scripts when certain actions take place on the page.&#x20;
 
-For example, you may have a button click that calls an event handler. This button will show a toast when clicked. You can include any valid PowerShell cmdlet within the event handler code. 
+For example, you may have a button click that calls an event handler. This button will show a toast when clicked. You can include any valid PowerShell cmdlet within the event handler code.&#x20;
 
-```
+```powershell
 New-UDButton -Text 'Click Me' -OnClick {
    Show-UDToast 'Hello!'
 }
@@ -40,22 +34,22 @@ New-UDButton -Text 'Click Me' -OnClick {
 
 ### Variable Scope
 
-Variables are automatically scoped into event handlers. You will be able to access variables that you define outside of the variable within the event handler. 
+Variables are automatically scoped into event handlers. You will be able to access variables that you define outside of the variable within the event handler.&#x20;
 
-```
+```powershell
 $MyVariable = "Hello!"
 New-UDButton -Text 'Click Me' -OnClick {
    Show-UDToast $MyVariable
 }
 ```
 
-### Event Data 
+### Event Data&#x20;
 
-Some event handlers handlers will provide data as a string or as a hashtable. This depends on the event handler you are using. For example, the `New-UDButton` `-OnClick` event handler does not provide any data. On the other hand, the `New-UDSelect` `-OnChange` will provider event data. 
+Some event handlers handlers will provide data as a string or as a hashtable. This depends on the event handler you are using. For example, the `New-UDButton` `-OnClick` event handler does not provide any data. On the other hand, the `New-UDSelect` `-OnChange` will provider event data.&#x20;
 
-You can access the event data by using the `$Body` variable to access the data as a string (sometimes formatted as JSON) or as a hashtable by using the `$EventData` variable. 
+You can access the event data by using the `$Body` variable to access the data as a string (sometimes formatted as JSON) or as a hashtable by using the `$EventData` variable.&#x20;
 
-```
+```powershell
 New-UDSelect -Option {
     New-UDSelectOption -Name 'One' -Value 1
     New-UDSelectOption -Name 'Two' -Value 2
@@ -67,7 +61,7 @@ New-UDSelect -Option {
 
 You can invoke JavaScript from PowerShell by using the `Invoke-UDJavaScript` cmdlet.
 
-```
+```powershell
 New-UDButton -Text 'Alert Me' -OnClick {
     Invoke-UDJavaScript -JavaScript 'alert("Hello!")'
 }
@@ -75,11 +69,7 @@ New-UDButton -Text 'Alert Me' -OnClick {
 
 #### **API**
 
-**Invoke-UDJavaScript**
-
-| Name           | Type   | Description               | Required |
-| -------------- | ------ | ------------------------- | -------- |
-| **JavaScript** | string | The JavaScript to invoke. | true     |
+* [Invoke-UDJavaScript](../../cmdlets/Invoke-UDJavaScript.txt)
 
 ## Toast
 
@@ -87,15 +77,15 @@ New-UDButton -Text 'Alert Me' -OnClick {
 
 You can use the `Show-UDToast` cmdlet to create a toast message that will appear on the end user's webpage. It happens over a websocket and will show the toast immediately as it is called.
 
-```
+```powershell
 Show-UDToast -Message 'Hello, World!'
 ```
 
 ### Show as toast with an Icon
 
-Toasts support icons as strings. You can use all the FontAwesome v5 icons. 
+Toasts support icons as strings. You can use all the FontAwesome v5 icons.&#x20;
 
-```
+```powershell
 Show-UDToast -Icon "Ad" -Message "Test"
 ```
 
@@ -103,7 +93,7 @@ Show-UDToast -Icon "Ad" -Message "Test"
 
 Hides a toast based on the specified ID.
 
-```
+```powershell
 Show-UDToast -Message 'Hello, World!' -Id 'Toast' -Duration 30000
 
 New-UDButton -Text 'Click' -OnClick {
@@ -113,56 +103,20 @@ New-UDButton -Text 'Click' -OnClick {
 
 ### API
 
-**Show-UDToast**
-
-| Name            | Type           | Description                                                              | Required |
-| --------------- | -------------- | ------------------------------------------------------------------------ | -------- |
-| Message         | string         | The message to display                                                   | true     |
-| MessageColor    | DashboardColor | The color of the message to display                                      | false    |
-| MessageSize     | string         | The size of the message to display                                       | false    |
-| Duration        | int            | The number of milliseconds to display the message. Defaults to 1000      | false    |
-| Title           | string         | A title to display above the message.                                    | false    |
-| TitleColor      | DashboardColor | The color of the title.                                                  | false    |
-| TitleSize       | string         | The size of the title.                                                   | false    |
-| Id              | string         | The ID of this toast.                                                    | false    |
-| BackgroundColor | DashboardColor | The background color of the toast.                                       | false    |
-| Theme           | string         | Light or dark theme.                                                     | false    |
-| Position        | string         | The position of the toast.                                               | false    |
-| HideCloseButton | Switch         | Hide the close button to prevent the user from hiding the toast.         | false    |
-| CloseOnClick    | Switch         | Close the toast when it is clicked.                                      | false    |
-| CloseOnEscape   | Switch         | Close the toast when escape is pressed.                                  | false    |
-| ReplaceToast    | Switch         | Replace an existing toast if one is already shown. Otherwise, show both. | false    |
-| Balloon         | Switch         | Balloon style toast.                                                     | false    |
-| Overlay         | Switch         | Display an overlay behind the toast                                      | false    |
-| OverlayClose    | Switch         | Allow the user to close the overlay                                      | false    |
-| OverlayColor    | DashboardColor | The color of the overlay.                                                | false    |
-| TransitionIn    | string         | The transition to use when the toast is appearing.                       | false    |
-| TransitionOut   | string         | The transition to use when the toast is disappearing.                    | false    |
-| Broadcast       | Switch         | Show the toast to all users.                                             | false    |
-| Persistent      | Switch         | Persist the toast until dismissed.                                       | false    |
-
-**Hide-UDToast**
-
-| Name   | Type   | Description                  | Required |
-| ------ | ------ | ---------------------------- | -------- |
-| **Id** | string | The ID of the toast to hide. | true     |
+* [Show-UDToast](../../cmdlets/Show-UDToast.txt)
+* [Hide-UDToast](../../cmdlets/Hide-UDToast.txt)
 
 ## Redirect
 
 You can redirect users to different pages using the `Invoke-UDRedirect` cmdlet. It happens over a websocket and will redirect as soon as the cmdlet is called.
 
-```
+```powershell
 Invoke-UDRedirect http://www.ironmansoftware.com
 ```
 
 #### API
 
-**Invoke-UDRedirect**
-
-| **Name**        | Type   | Description                          | Required |
-| --------------- | ------ | ------------------------------------ | -------- |
-| Url             | string | The URL to redirect the user to.     | true     |
-| OpenInNewWindow | Switch | Open the URL in a new window or tab. | false    |
+* [Invoke-UDRedirect](../../cmdlets/Invoke-UDRedirect.txt)
 
 ## Modal
 
@@ -178,7 +132,7 @@ You can manage component state dynamically by using the UDElement commands.
 
 You can receive the state of an element using `Get-UDElement` . The state will be returned as a hashtable. This is primarily useful for input components.
 
-```
+```powershell
 $Value = (Get-UDElement -Id 'txtExample').value
 ```
 
