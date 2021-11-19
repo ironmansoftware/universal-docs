@@ -18,7 +18,7 @@ To update forms authentication, you can click Settings  Security and then click 
 
 You can update the PowerShell script found in settings to configure how the user is authenticated. You'll need to return a `New-PSUAuthenticationResult` from the script to indicate whether the user was successfully authenticated.
 
-```
+```powershell
 param(
     [PSCredential]$Credential
 )
@@ -42,7 +42,7 @@ else
 
 You can check the password of the credential by using the `GetNetworkCredential()` method of `PSCredential`.
 
-```
+```powershell
 param(
     [PSCredential]$Credential
 )
@@ -68,7 +68,7 @@ During forms authentication, you can set claims that will be available within ro
 
 This example uses Active Directory to look up group membership and assign the as claims that will be available within the roles scripts.
 
-```
+```powershell
 param(
     [PSCredential]$Credential
 )
@@ -114,7 +114,7 @@ Within your `roles.ps1` file, you will be able to use these claims to validate g
 
 This example checks to see if the user is part of the SOC\_Admins group.
 
-```
+```powershell
 param($User)
 
 $Roles = $User.Claims | Where-Object Type -eq Role | Select-Object -ExpandProperty Value
@@ -216,7 +216,7 @@ Policy scripts will receive a `ClaimsPrincipal` object as a parameter and need t
 
 You can expect an object with this structure.
 
-```
+```csharp
 public class ClaimsPrincipal
 {
     public List<Claim> Claims { get; set; } = new List<Claim>();
@@ -331,7 +331,7 @@ By default, the forms authentication and policy assignment scripts run within th
 
 To adjust the environment used by the security process, set the `-SecurityEnvironment` in `settings.ps1`.
 
-```
+```powershell
 Set-PSUSetting -SecurityEnvironment '5.1'
 ```
 
@@ -339,7 +339,7 @@ Set-PSUSetting -SecurityEnvironment '5.1'
 
 The following example shows performing a simple "LDAP BIND" in order to validate a users Active Directory Credentials. If a user attempting to access PowerShell Universal is not the Default Admin User they will have to successfully authenticate their credentials with Active Directory via a simple LDAP bind. This can be combined with a AD Group Member check in the Admin, Operator, and Reader role policies to effectively use Active Directory Authentication AND Active Directory Group membership to provide Role Based Access to PowerShell Universal.
 
-```
+```powershell
 param(
     [PSCredential]$Credential
 )
@@ -389,7 +389,7 @@ This example requires an authentication method that will provide group informati
 
 This example takes advantage of the claims that are provided during authentication. You can check to see if the user has a groupsid (group membership) by using the `HasClaim` method of the `$User` object. This method will check the `Claims` array to see if they have a particular `groupsid` claim. Use the SID of the group to validate whether they are a group member.
 
-```
+```powershell
 New-PSURole -Name 'Administrators' -Policy {
     param(
         $User
@@ -401,7 +401,7 @@ New-PSURole -Name 'Administrators' -Policy {
 
 For debugging and development purposes, you can check to see what claims a user has been exporting the `$User` variable to a file.
 
-```
+```powershell
 New-PSURole -Name 'Administrators' -Policy {
     param(
         $User
@@ -543,7 +543,7 @@ In this example we will configure out Administrator Policy Script to use LDAP to
 
 ![](<../../.gitbook/assets/image (15).png>)
 
-```
+```powershell
 param(
 $User
 )
@@ -592,7 +592,7 @@ Once configured, you can update your role script to check for a group membership
 
 Next, within your `roles.ps1` script, you can validate a user has a particular role by using `HasClaim` and providing the object GUID.&#x20;
 
-```
+```powershell
 param(
 $User
 )

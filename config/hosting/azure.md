@@ -16,13 +16,13 @@ In this example, we'll use the Azure PowerShell module to deploy the Web App man
 
 You'll first need to install Azure PowerShell.&#x20;
 
-```
+```powershell
 Install-Module Az
 ```
 
 Once installed, you'll need to connect to your subscription.&#x20;
 
-```
+```powershell
 Connect-AzAccount
 ```
 
@@ -34,14 +34,14 @@ There is a Known Issue with deploying PowerShell 2.5.x to Linux Web Apps.&#x20;
 
 Now, you can download the latest version of PowerShell Universal. In this example, we'll download the latest Linux version.&#x20;
 
-```
+```powershell
 $LatestVersion = Invoke-RestMethod https://imsreleases.blob.core.windows.net/universal/production/version.txt
 Invoke-WebRequest "https://imsreleases.blob.core.windows.net/universal/production/$LatestVersion/Universal.linux-x64.$LatestVersion.zip" -OutFile .\Universal.zip
 ```
 
 Now that we have the Az module configured and the Universal ZIP downloaded, we can deploy the Web App.&#x20;
 
-```
+```powershell
 $Parameters = @{
     Force = $true
     ResourceGroupName = 'psu-demo'
@@ -57,14 +57,14 @@ After publishing the Web App, view your PowerShell Universal instance by navigat
 
 Now, you can download the latest version of PowerShell Universal. In this example, we'll download the latest Windows version.&#x20;
 
-```
+```powershell
 $LatestVersion = Invoke-RestMethod https://imsreleases.blob.core.windows.net/universal/production/version.txt
 Invoke-WebRequest "https://imsreleases.blob.core.windows.net/universal/production/$LatestVersion/Universal.win7-x64.$LatestVersion.zip" -OutFile .\Universal.zip
 ```
 
 Now that we have the Az module configured and the Universal ZIP downloaded, we can deploy the Web App.&#x20;
 
-```
+```powershell
 $Parameters = @{
     Force = $true
     ResourceGroupName = 'psu-demo'
@@ -92,7 +92,7 @@ You can delete the files for your Web App by using the Kudu command API. Your Ku
 
 To delete all the files in your Web App, issue the following command.&#x20;
 
-```
+```powershell
 $Parameters = @{
    Uri = "https://psudemo.scm.azurewebsites.net/api/command"
    Credential = (Get-Credential)
@@ -109,7 +109,7 @@ Invoke-RestMethod @Parameters
 
 To delete all the files in your Web App, issue the following command.&#x20;
 
-```
+```powershell
 $Parameters = @{
    Uri = "https://psudemo.scm.azurewebsites.net/api/command"
    Credential = (Get-Credential)

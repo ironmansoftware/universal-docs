@@ -12,17 +12,17 @@ You can grant App Tokens to using the Admin Console or you can use the Managemen
 
 To grant a token in the Admin Console, navigate to Settings  Security  AppTokens. Click the Grant App Token button to grant an App Token for the current user.
 
-![](../../.gitbook/assets/image%20%2883%29.png)
+![](<../../.gitbook/assets/image (83).png>)
 
 When you click Grant App Token, you will be provided with a dialog that allows you to specify the Identity, Role and expiration time of the token.
 
-![App Token options. ](../../.gitbook/assets/image%20%28175%29.png)
+![App Token options. ](<../../.gitbook/assets/image (175).png>)
 
 ## Management API
 
 You can also grant app tokens to users from the management API. To grant an App Token programmatically using the API, you can do the following.
 
-```text
+```
 PS C:\Users\adamr> Invoke-RestMethod http://localhost:5000/api/v1/signin -Method POST -Body (@{ username = 'admin'; password = 'test' } | ConvertTo-Json) -SessionVariable Session -ContentType 'application/json'
 PS C:\Users\adamr> Invoke-RestMethod http://localhost:5000/api/v1/apptoken/grant  -WebSession $Session
 
@@ -43,9 +43,9 @@ revokedDate : 01/01/0001 00:00:00
 
 Administrators can grant app tokens to any user by specifying the user's identity ID. In order to grant an app token to an identity via the REST API, the user needs to have a defined role. The user is defined with the Operator role and thus their App Token will be granted access based on that role.
 
-![](../../.gitbook/assets/image%20%2884%29.png)
+![](<../../.gitbook/assets/image (84).png>)
 
-```text
+```
 PS C:\Users\adamr> Invoke-RestMethod http://localhost:5000/api/v1/apptoken/grant/2  -WebSession $Session
 
 id          : 4
@@ -63,13 +63,13 @@ expiration  : 26/06/2021 17:26:00
 revokedDate : 01/01/0001 00:00:00
 ```
 
-## Migrating App Tokens 
+## Migrating App Tokens&#x20;
 
-You can migrate app tokens between systems by using the management API. This is helpful when developing for high availability scenarios. 
+You can migrate app tokens between systems by using the management API. This is helpful when developing for high availability scenarios.&#x20;
 
-The following is an example of the POST that is required to create an existing app token in any PSU instance. Note that the signing key must be the same between the instances. You need a valid app token in the target system to create the migrated tokens. 
+The following is an example of the POST that is required to create an existing app token in any PSU instance. Note that the signing key must be the same between the instances. You need a valid app token in the target system to create the migrated tokens.&#x20;
 
-```text
+```powershell
 Invoke-RestMethod http://localhost:5000/api/v1/apptoken -Method POST -Body (@{
         Token      = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9oYXNoIjoiMDhiYTFlMTktMjgyZi00YTRjLWIxZGUtNTY0Zjk3NWU2ODEwIiwic3ViIjoiUG93ZXJTaGVsbFVuaXZlcnNhbCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6InBvbGljeSIsIm5iZiI6MTYzMzEwNjkzMywiZXhwIjoxNjQwODg2NDgwLCJpc3MiOiJJcm9ubWFuU29mdHdhcmUiLCJhdWQiOiJQb3dlclNoZWxsVW5pdmVyc2FsIn0.GHjJI3kMpcAY1pvOGLWOdPqC2-IPo0-4lJfHZwStmOk'
         Identity   = @{
@@ -82,4 +82,3 @@ Invoke-RestMethod http://localhost:5000/api/v1/apptoken -Method POST -Body (@{
     "Authorization" = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9oYXNoIjoiMjVjMzFlZTAtMGM4Mi00NzBiLWJkZGYtOGFmOTgxZGI2ZDdmIiwic3ViIjoiUG93ZXJTaGVsbFVuaXZlcnNhbCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE2MzM2NDY5OTgsImV4cCI6MTYzNjIzODk0MCwiaXNzIjoiSXJvbm1hblNvZnR3YXJlIiwiYXVkIjoiUG93ZXJTaGVsbFVuaXZlcnNhbCJ9.jw2VCvtpOWpgnpIUlO8sTdK9Z5RMoWLmvYn0MDmzkNM"   
 }
 ```
-

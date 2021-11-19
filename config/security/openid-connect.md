@@ -108,7 +108,7 @@ Within your dashboard, you will now have access to an `$AccessToken` and `$IdTok
 
 For example, the `Connect-AzureAd` cmdlet accepts an access token.
 
-```
+```powershell
 Connect-AzureAD
        [-AzureEnvironmentName <EnvironmentName>]
        [-TenantId <String>]
@@ -154,7 +154,7 @@ Once you have your Application configured, you can configure PowerShell Universa
 
 Once you have defined your Okta application, you can set your `appsettings.json` file to use the provider for logins. Below is an example of the section required for Okta to function. Take note of the scope functionality as it is required for retrieving group membership.
 
-```
+```json
     "OIDC": {
       "Enabled": "true",
       "CallbackPath": "/authorization-code/callback",
@@ -177,7 +177,7 @@ In order to look up group membership for Okta, you will need to use the `$UserIn
 
 The groups property will contain a list of groups the user is a member of. You can validate membership by checking whether the list contains the desired group.&#x20;
 
-```
+```powershell
 param($User)
 
 $UserInfo.groups -contains 'Administrators'
@@ -189,7 +189,7 @@ Access tokens are available for users within their scripts. You can use access t
 
 For example, you could return the current user's information by using the access token provided by Okta.&#x20;
 
-```
+```powershell
 Invoke-RestMethod https://poshtools.okta.com/oauth2/v1/userinfo -Headers @{
     Authorization = "Bearer $AccessToken"
 }

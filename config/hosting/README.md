@@ -12,7 +12,7 @@ After the MSI has finished setup, your default web browser will open to [http://
 
 You do not need to use the MSI to configure Universal as a Windows Service. You can also do it manually with the following PowerShell script.
 
-```
+```powershell
 New-Service -Name "PowerShellUniversal" -BinaryPathName "Universal.Server.exe --service" -Description "PowerShell Universal server service." -DisplayName "PowerShell Universal" -StartupType Automatic
 Start-Service PowerShellUniversal
 ```

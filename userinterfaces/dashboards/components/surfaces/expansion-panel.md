@@ -10,9 +10,9 @@ An expansion panel is a lightweight container that may either stand alone or be 
 
 ## Simple Expansion Panel
 
-![](../../../../.gitbook/assets/image%20%2878%29.png)
+![](<../../../../.gitbook/assets/image (78).png>)
 
-```text
+```powershell
 New-UDExpansionPanelGroup -Children {
     New-UDExpansionPanel -Title "Hello" -Children {}
 
@@ -22,13 +22,7 @@ New-UDExpansionPanelGroup -Children {
 }
 ```
 
-**New-UDExpansionPanel**
+## API
 
-| Name | Type | Description | Required |
-| :--- | :--- | :--- | :--- |
-| Id | String | The ID of the component. It defaults to a random GUID. | false |
-| Title | String | The title show within the header of the expansion panel. | false |
-| Icon | FontAwesomeIcons | An icon to show within the header of the expansion panel. | false |
-| Children | ScriptBlock | Children components to put within the expansion panel. | false |
-| Active | SwitchParameter | Whether the expansion panel is currently active \(open\). | false |
-
+* [New-UDExpansionPanel](../../../../cmdlets/New-UDExpansionPanel.txt)
+* [New-UDExpansionPanelGroup](../../../../cmdlets/New-UDExpansionPanelGroup.txt)

@@ -22,7 +22,7 @@ See [dashboard Development](broken-reference) for information on how to use VS C
 
 Dashboards log informational, warning and error messages to their log. It's recommended to use logging when starting a dashboard rather than trying to attach a debugger. You can also use the `$DebugPreference` variable to get additional information during your dashboard startup.
 
-```
+```powershell
 $DebugPreference = 'Continue'
 
 New-UDDashboard -Title 'Test' -Content {
@@ -80,7 +80,7 @@ Any feature running within the integrated environment will be running within the
 
 Once you have the process that you want to attach to, you can do so by using `Enter-PSHostProcess` . Simply specify the process ID that you found in the previous step.
 
-```
+```powershell
 Enter-PSHostProcess -id 1231
 ```
 
@@ -98,7 +98,7 @@ For a full list of debugging commands, you can see the [Microsoft documentation 
 
 The following is an example of how to connect to an API process.&#x20;
 
-```
+```powershell
 $Process = Get-Process pwsh | Where-Object { $_.CommandLine.Contains('StartApi') }
 Enter-PSHostProcess -Id $Process.Id
 Get-Runspace

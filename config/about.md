@@ -4,7 +4,7 @@ Universal utilizes an idempotent configuration system to ensure repeatable deplo
 
 A typical configuration file is just a PS1 file.
 
-```powershell
+```text
 New-PSUDashboard -Name 'Dashboard' -Path 'dashboard.ps1' -Framework 'UniversalDashboard:3.0.0'
 ```
 
@@ -22,14 +22,14 @@ For example, scripts are added to the system by adding a `New-PSUScript` cmdlet 
 
 If you had two scripts, your `scripts.ps1`would look like this.
 
-```powershell
+```text
 New-PSUScript -Name 'Script1.ps1' -Path 'Script1.ps1'
 New-PSUScript -Name 'Script2.ps1' -Path 'Script2.ps1'
 ```
 
 To remove `Script2.ps1`from the system, you would just remove the second line.
 
-```powershell
+```text
 New-PSUScript -Name 'Script2.ps1' -Path 'Script2.ps1'
 ```
 
@@ -43,13 +43,13 @@ By default, configuration files will automatically be reloaded when changed. Thi
 
 For example, if you wanted to disable telemetry collection, you could change the `./universal/settings.ps1`file. The original settings file may look like this.
 
-```powershell
+```text
 Set-PSUSetting -Telemetry
 ```
 
 To reconfigure Universal to turn off telemetry collection, you would just remove the `-Telemetry` switch parameter.
 
-```powershell
+```text
 Set-PSUSetting
 ```
 
@@ -66,3 +66,4 @@ To configure git synchronization, use the `GitRemote`, `GitUserName`, and `GitPa
 To learn more about configuration settings, read the [Settings](settings.md) page.
 
 You can view the status of Git synchronization operations on the `Settings \ General` page within the admin console. Git synchronizations take place one a minute.
+

@@ -10,9 +10,9 @@ The top App Bar provides content and actions related to the current screen. It's
 
 ## AppBar with Custom Drawer
 
-![](../../../../.gitbook/assets/image%20%2877%29.png)
+![](<../../../../.gitbook/assets/image (77).png>)
 
-```text
+```powershell
 $Drawer = New-UDDrawer -Children {
     New-UDList -Children {
         New-UDListItem -Label "Home"
@@ -33,7 +33,7 @@ New-UDAppBar -Position relative -Children { New-UDElement -Tag 'div' -Content { 
 
 To create an app bar that is pinned to the bottom of the page, you can use the `-Footer` parameter.
 
-```text
+```powershell
 New-UDAppBar -Children { "Hello" } -Footer
 ```
 
@@ -41,7 +41,7 @@ New-UDAppBar -Children { "Hello" } -Footer
 
 A fixed AppBar will show even when the screen is scrolled. It will remain stuck to the top. This example creates an AppBar that is fixed with a div that is 10000 pixels high.
 
-```text
+```powershell
 New-UDAppBar -Position fixed -Children { New-UDElement -Tag 'div' -Content { "Title" } }
 
 New-UDElement -Tag 'div' -Content {
@@ -53,13 +53,6 @@ New-UDElement -Tag 'div' -Content {
 }
 ```
 
-**New-UDAppBar**
+## API&#x20;
 
-| Name | Type | Description | Required |
-| :--- | :--- | :--- | :--- |
-| Id | String | The ID of the component. It defaults to a random GUID. | false |
-| Drawer | Hashtable | A drawer that can be opened from this AppBar. Use New-UDDrawer to create a drawer to pass to this parameter. | false |
-| Children | ScriptBlock | Children of this AppBar. The children of an AppBar are commonly text and buttons. | false |
-| Position | String | The position of this AppBar. A fixed position will override the default AppBar. | false |
-| Footer | Switch | Creates an app bar pinned to the bottom of the page. | false |
-
+* [New-UDAppBar](../../../../cmdlets/New-UDAppBar.txt)
