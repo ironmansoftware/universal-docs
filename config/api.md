@@ -6,11 +6,12 @@ The Universal API can be used to manage the platform from any compatible REST cl
 
 To invoke the API, you can send an HTTP request with the Bearer token set for authorization.
 
-```text
+```powershell
 Invoke-RestMethod http://localhost:5000/api/v1/script -Headers @{ Authorization = "Bearer myAppToken" }
 ```
 
 ## API Documentation
 
-API documentation is provided as interactive Swagger documentation that you can access directly within your Universal instance. The URL for the Swagger documentation can be found at: `http://localhost:5000/swagger/index.html`
+You can access the API documentation by navigating to Security \ Tokens  and click the API Documentation button.&#x20;
 
+The URL for the API documentation can be found at the following location. You will need to be authenticated before accessing this URL: `http://localhost:5000/swagger/index.html`
