@@ -70,11 +70,11 @@ You can use the admin console to configure OpenID Connect. We recommend this met
 
 To add a new authentication method, navigate to Security \ Authentication and add the OpenID Connect provider.&#x20;
 
-![](<../../.gitbook/assets/image (302) (1).png>)
+![](<../../.gitbook/assets/image (302) (1) (1).png>)
 
 Once the provider has been added, you can click the details button to enter the settings you'll need to authenticate against your OIDC provider. After setting the OIDC options, set the provider to enabled and log out. When visiting the `/admin` page, you'll be prompted for OIDC login.&#x20;
 
-![](<../../.gitbook/assets/image (307).png>)
+![](<../../.gitbook/assets/image (307) (1).png>)
 
 ### Delegated Access Tokens
 

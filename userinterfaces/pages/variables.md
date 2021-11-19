@@ -16,11 +16,11 @@ Variables that are defined with Platform \ Variables will also be available to p
 
 Variables can be viewed when editing a page. To view variables, click Edit and then Variables.&#x20;
 
-![](<../../.gitbook/assets/image (298) (1) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (298) (1) (1) (1) (1) (1).png>)
 
 A drawer will appear with the variables for the current page.&#x20;
 
-![](<../../.gitbook/assets/image (301) (1) (1).png>)
+![](<../../.gitbook/assets/image (301) (1) (1) (1).png>)
 
 ## Using Variables
 
@@ -71,5 +71,5 @@ For example, this page defines a single route variable.&#x20;
 
 Within the page, the route variables will appear within the variable drawer.&#x20;
 
-![](<../../.gitbook/assets/image (300) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (300) (1) (1) (1) (1).png>)
 

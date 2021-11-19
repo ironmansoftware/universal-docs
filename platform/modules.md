@@ -38,9 +38,9 @@ To create a new module navigate to Platform \ Modules and click Create New Modul
 
 Once created, the module will be listed under Universal Modules with the option to edit properties and content as well as delete the module.&#x20;
 
-![](<../.gitbook/assets/image (301).png>)
+![](<../.gitbook/assets/image (301) (1).png>)
 
 When editing the module, it will open a code editor where you can define functions, variables and aliases to export.&#x20;
 
-![](<../.gitbook/assets/image (302) (1) (1).png>)
+![](<../.gitbook/assets/image (302) (1) (1) (1).png>)
 
