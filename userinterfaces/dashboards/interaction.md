@@ -136,19 +136,13 @@ You can receive the state of an element using `Get-UDElement` . The state will b
 $Value = (Get-UDElement -Id 'txtExample').value
 ```
 
-#### API
 
-**Get-UDElement**
-
-| **Name** | Type   | Description                         | Required |
-| -------- | ------ | ----------------------------------- | -------- |
-| Id       | string | The ID of the component to receive. | true     |
 
 ### Setting Component State
 
 Alternatively, you can set component state using `Set-UDElement` . You will need to specify an ID and a hashtable of properties to set on the component. All built in components support Set-UDElement.
 
-```
+```powershell
 New-UDTextbox -Id 'textbox'
 
 New-UDButton -Text 'Click' -OnClick {
@@ -158,38 +152,19 @@ New-UDButton -Text 'Click' -OnClick {
 }
 ```
 
-#### API
-
-**Set-UDElement**
-
-| Name       | Type        | Description                                      | Required |
-| ---------- | ----------- | ------------------------------------------------ | -------- |
-| Id         | string      | The ID of the component to set.                  | true     |
-| Properties | Hashtable   | Properties to set on the component               | false    |
-| Broadcast  | Switch      | Set the properties of a component for all users. | false    |
-| Content    | ScriptBlock | The content of the component to set.             | false    |
-
 ### Removing a Component
 
 You can remove components from the page using `Remove-UDElement` . The component will no longer appear on the page.
 
-```
+```powershell
 Remove-UDComponent -Id 'txtExample'
 ```
-
-#### API
-
-**Remove-UDElement**
-
-| Name | Type   | Description                        | Required |
-| ---- | ------ | ---------------------------------- | -------- |
-| Id   | string | The ID of the component to remove. | true     |
 
 ### Adding a component
 
 Add a child component to an existing parent component.
 
-```
+```powershell
 New-UDElement -Id 'myDiv' -Tag div
 
 New-UDButton -Text 'Click' -OnClick {
@@ -199,21 +174,11 @@ New-UDButton -Text 'Click' -OnClick {
 }
 ```
 
-#### API
-
-**Add-UDElement**
-
-| **Name**  | Type        | Description                                      | Required |
-| --------- | ----------- | ------------------------------------------------ | -------- |
-| ParentId  | string      | The ID of the component to add a child to.       | true     |
-| Content   | ScriptBlock | The child content to add.                        | true     |
-| Broadcast | Switch      | Whether to add the child component to all users. | false    |
-
-#### Clear a component
+### Clear a component
 
 You can remove all the children components from an component by using `Clear-UDElement`.
 
-```
+```powershell
 New-UDElement -Id 'myDiv' -Tag div
 
 New-UDButton -Text 'Click' -OnClick {
@@ -233,19 +198,11 @@ New-UDButton -Text 'Clear' -OnClick {
 }
 ```
 
-#### API
-
-**Clear-UDElement**
-
-| Name | Type   | Description                       | Required |
-| ---- | ------ | --------------------------------- | -------- |
-| Id   | string | The ID of the component to clear. | true     |
-
 ### Reloading a Component
 
 Some components support reloading. You can trigger a reload of a component using `Sync-UDElement`.
 
-```
+```powershell
 New-UDDynamic -Id 'reloadMe' -Content {
     Get-Date
 }
@@ -255,20 +212,11 @@ New-UDButton -Text 'Reload' -OnClick {
 }
 ```
 
-#### API
-
-**Sync-UDElement**
-
-| Name      | Type   | Description                                    | Required |
-| --------- | ------ | ---------------------------------------------- | -------- |
-| Id        | string | The ID of the component to reload.             | true     |
-| Broadcast | Switch | Whether to reload the component for all users. | false    |
-
 ### Select a component
 
 You can select a component with `Select-UDElement`.
 
-```
+```powershell
 New-UDElement -Id 'txt' -Tag input -Properties @{ type = text }
 
 New-UDButton -Text 'Select' -OnClick {
@@ -276,11 +224,11 @@ New-UDButton -Text 'Select' -OnClick {
 }
 ```
 
-#### API
+### API
 
-**Select-UDElement**
-
-| **Name**        | Type   | Description                                        | Required |
-| --------------- | ------ | -------------------------------------------------- | -------- |
-| Id              | string | The ID of the element to select                    | true     |
-| ScrollToElement | Switch | Whether to scroll the user's window to the element | false    |
+* [Get-UDElement](../../cmdlets/Get-UDElement.txt)
+* [Set-UDElement](../../cmdlets/Set-UDElement.txt)
+* [Clear-UDElement](../../cmdlets/Clear-UDElement.txt)
+* [Remove-UDElement](../../cmdlets/Remove-UDElement.txt)
+* [Sync-UDElement](../../cmdlets/Sync-UDElement.txt)
+* [Select-UDElement](../../cmdlets/Select-UDElement.txt)

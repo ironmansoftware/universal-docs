@@ -12,17 +12,17 @@ This feature requires a [license](../../licensing.md).
 
 When dashboard authentication is enabled, you can define the role that a user must be a part of in order to access the dashboard. Roles are configured on the Settings  Security page or from within the `roles.ps1` configuration file.
 
-![](../../.gitbook/assets/image%20%28138%29.png)
+![](<../../.gitbook/assets/image (138).png>)
 
 If a user attempts to visit a dashboard that they do not have access to, they will be presented with a Not Authorized page.
 
-![](../../.gitbook/assets/image%20%28139%29.png)
+![](<../../.gitbook/assets/image (139).png>)
 
 ## Pages Roles
 
 You can also show or hide pages based on roles. To define a role for a page, use the `-Role` parameter of `New-UDPage`. Only users of the specified role will have access to this page.
 
-```text
+```powershell
 New-UDPage -Role 'Administrators' -Content {
     New-UDTypography -Text 'Admins only'
 }
@@ -34,11 +34,10 @@ In addition to dashboard and page roles, you can also check with roles a user is
 
 For example, you could show the `Restart-Computer` button to only Administrators.
 
-```text
+```powershell
 if ($Roles -contains "Administrator") {
     New-UDButton -Text 'Restart Server' -OnClick {
         Restart-Computer
     }
 }
 ```
-

@@ -8,13 +8,19 @@ The autocomplete is a normal text input enhanced by a panel of suggested options
 
 ## Autocomplete with a static list of options
 
-```text
+Creates a basic autocomplete with a static list of options
+
+```powershell
 New-UDAutocomplete -Options @('Test', 'Test2', 'Test3', 'Test4')
 ```
 
 ## Autocomplete with a dynamic list of options
 
-```text
+When text is typed, it can be filtered with `OnLoadOptions`. `$Body` will contain the current text that is typed.&#x20;
+
+This example filters the array with `Where-Object`.&#x20;
+
+```powershell
 New-UDAutocomplete -OnLoadOptions { 
     @('Test', 'Test2', 'Test3', 'Test4') | Where-Object { $_ -match $Body } | ConvertTo-Json
 }
@@ -22,7 +28,9 @@ New-UDAutocomplete -OnLoadOptions {
 
 ## Autocomplete with an OnChange script block
 
-```text
+`$Body` contains the currently selected item.&#x20;
+
+```powershell
 New-UDAutocomplete -OnLoadOptions { 
     @('Test', 'Test2', 'Test3', 'Test4') | Where-Object { $_ -match $Body } | ConvertTo-Json
 } -OnChange {
@@ -30,3 +38,6 @@ New-UDAutocomplete -OnLoadOptions {
 }
 ```
 
+## API
+
+* [New-UDAutocomplete](../../../../cmdlets/New-UDAutocomplete.txt)

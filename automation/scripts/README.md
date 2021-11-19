@@ -48,7 +48,7 @@ The number of minutes before the script will timeout. The default value of 0 mea
 
 Defines the maximum concurrent jobs the script can be run. Defaults to 100.
 
-```
+```powershell
 New-PSUScript -Name Script.ps1 -Path Script.Ps1 -ConcurrentJobs 1
 ```
 
@@ -64,7 +64,7 @@ Universal Automation automatically determines the parameters as defined within y
 
 For example, you may have a script with the following parameters.
 
-```
+```powershell
 param(
     $Test,
     [DateTime]$Time, 
@@ -102,7 +102,7 @@ This feature is available in PowerShell Universal 2.5 or later.
 
 You can use comment-based to define the description, a synopsis, parameter based help, and links for your scripts. These will be displayed within the PowerShell Universal UI.&#x20;
 
-```
+```powershell
 <#
 .SYNOPSIS 
 
@@ -130,9 +130,10 @@ This above will yield the following user interface. The synopsis will be shown a
 
 
 
-## Related Cmdlets
+## API
 
-* [New-PSUScript](../../cmdlets/Universal/New-PSUScript.md)
-* [Get-UAScript](../../cmdlets/Universal/Get-UAScript.md)
-* [Remove-UAScript](../../cmdlets/Universal/Remove-UAScript.md)
-* [Set-UAScript](../../cmdlets/Universal/Set-UAScript.md)
+* [New-PSUScript](../../cmdlets/New-PSUScript.txt)
+* [Remove-PSUScript](../../cmdlets/Remove-PSUScript.txt)
+* [Set-PSUScript](../../cmdlets/Set-PSUScript.txt)
+* [Get-PSUScript](../../cmdlets/Get-PSUScript.txt)
+

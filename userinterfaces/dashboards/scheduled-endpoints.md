@@ -16,7 +16,7 @@ Scheduled endpoints are useful when loading and caching data that you will only 
 
 The below is an example of scheduling an endpoint that runs every 10 seconds and stores information in a cache variable. This type of configuration increases performance of the dashboard for end users since the cache data is returned rather than calling Get-Process with each load of the dashboard.
 
-```text
+```powershell
 $EndpointSchedule = New-UDEndpointSchedule -Every 10 -Second
 New-UDEndpoint -Schedule $EndpointSchedule -Endpoint {
     $Cache:Processes = Get-Process | Select-Object Name,ID
@@ -31,7 +31,7 @@ New-UDDashboard -Name 'Test' -Content {
 
 You can also use the[ server-wide data ](../../platform/cache.md)caching features in dashboards. This means that you will be able to access that data throughout PowerShell Universal scripts. In your dashboard, you can load the cache with the scheduled endpoint.
 
-```text
+```powershell
 $EndpointSchedule = New-UDEndpointSchedule -Every 10 -Second
 New-UDEndpoint -Schedule $EndpointSchedule -Endpoint {
    $Processes = Get-Process | Select-Object Name,ID
@@ -45,9 +45,13 @@ New-UDDashboard -Name 'Test' -Content {
 
 You can then use the cache data in your API.
 
-```text
+```powershell
 New-PSUEndpoint -Url '/process' -Method Get -Endpoint {
     Get-PSUCache -Name 'Processes'
 }
 ```
 
+## API
+
+* [New-UDEndpoint](../../cmdlets/New-UDEndpoint.txt)
+* [New-UDEndpointSchedule](../../cmdlets/New-UDEndpointSchedule.txt)

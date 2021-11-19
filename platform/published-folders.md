@@ -28,7 +28,7 @@ http://localhost:5000/src/test.txt
 
 You'll notice that unauthenticated requests will not be able to access the file.
 
-```
+```powershell
 PS C:\src\universal\src> invoke-webrequest http://localhost:5000/src/test.txt
 Invoke-WebRequest: Response status code does not indicate success: 401 (Unauthorized).
 ```
@@ -39,7 +39,7 @@ Default documents allow you to load files when a user specifies the folder and n
 
 To configure default documents, set the `-DefaultDocument` parameter on `New-PSUPublishedFolder`.
 
-```
+```powershell
 New-PSUPublishedFolder -Path C:\website -RequestPath /docs -DefaultDocument @("index.hml")
 ```
 
@@ -49,26 +49,13 @@ New-PSUPublishedFolder -Path C:\website -RequestPath /docs -DefaultDocument @("i
 Impersonation only works when using [Windows authentication](../api/security.md#authenticating-with-windows-authentication).
 {% endhint %}
 
-By default, when PSU accesses files when serving them to users, it will do so as the service account the process is running as. If you wish to access files as the user that is downloading the file, you can turn on impersonation. 
+By default, when PSU accesses files when serving them to users, it will do so as the service account the process is running as. If you wish to access files as the user that is downloading the file, you can turn on impersonation.&#x20;
 
-```
+```powershell
 New-PSUPublishedFolder -Path C:\website -RequestPath /docs -DefaultDocument @("index.hml") -Impersonation
 ```
 
-## API 
+## API&#x20;
 
-### New-PSUPublishedFolder
+* [New-PSUPublishedFolder](../cmdlets/New-PSUPublishedFolder.txt)
 
-Create a published folder. Can be used in the `publishedFolders.ps1` file or via the management REST API.
-
-| Name                  | Type      | Description                                                                                    | Required |
-| --------------------- | --------- | ---------------------------------------------------------------------------------------------- | -------- |
-| RequestPath           | string    | The relative path to server documents from.                                                    | true     |
-| Path                  | string    | The absolute file system path to server files from.                                            | true     |
-| Authentication        | Switch    | Whether authentication is required to access this folder.                                      | false    |
-| Role                  | string\[] | Roles that can access this folder. Leave blank for any role.                                   | false    |
-| DefaultDocument       | string\[] | Default documents to server with out specifying the file name.                                 | false    |
-| ComputerName          | string    | The URL to the PSU management API.                                                             | false    |
-| AppToken              | string    | The AppToken used to access the PSU management API                                             | false    |
-| UseDefaultCredentials | Switch    | Whether to use the current user's credentials to access the PSU management API                 | false    |
-| Impersonation         | Switch    | Access files as the user that is attempting to download them. Requires Windows authentication. | false    |

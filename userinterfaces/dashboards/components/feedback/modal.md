@@ -8,9 +8,9 @@ Modals inform users about a task and can contain critical information, require d
 
 ## Basic
 
-![](../../../../.gitbook/assets/image%20%2846%29.png)
+![](<../../../../.gitbook/assets/image (46).png>)
 
-```text
+```powershell
 New-UDButton -Text 'Basic' -OnClick {
     Show-UDModal -Content {
         New-UDTypography -Text "Hello"
@@ -20,9 +20,9 @@ New-UDButton -Text 'Basic' -OnClick {
 
 ## Full Screen
 
-![](../../../../.gitbook/assets/image%20%2879%29.png)
+![](<../../../../.gitbook/assets/image (79).png>)
 
-```text
+```powershell
 New-UDButton -Text 'Full Screen' -OnClick {
     Show-UDModal -Content {
         New-UDTypography -Text "Hello"
@@ -36,9 +36,9 @@ New-UDButton -Text 'Full Screen' -OnClick {
 
 Full width modals take up the full width as defined by the `-MaxWidth` parameter.
 
-![](../../../../.gitbook/assets/image%20%2863%29.png)
+![](<../../../../.gitbook/assets/image (63).png>)
 
-```text
+```powershell
 New-UDButton -Text 'Full Width' -OnClick {
     Show-UDModal -Content {
         New-UDTypography -Text "Hello"
@@ -50,9 +50,9 @@ New-UDButton -Text 'Full Width' -OnClick {
 
 Persistent modals do not close when you click off of them. You will have to close it with `Hide-UDModal`.
 
-![](../../../../.gitbook/assets/image%20%2845%29.png)
+![](<../../../../.gitbook/assets/image (45).png>)
 
-```text
+```powershell
 New-UDButton -Text 'Persistent' -OnClick {
     Show-UDModal -Content {
         New-UDTypography -Text "Hello"
@@ -66,7 +66,7 @@ New-UDButton -Text 'Persistent' -OnClick {
 
 You can use the `Hide-UDModal` button to hide a modal that is currently show.
 
-```text
+```powershell
 New-UDButton -Text 'Basic' -OnClick {
     Show-UDModal -Content {
         New-UDTypography -Text "Hello"
@@ -76,15 +76,7 @@ New-UDButton -Text 'Basic' -OnClick {
 }
 ```
 
-**Show-UDModal**
+## API
 
-| Name | Type | Description | Required |
-| :--- | :--- | :--- | :--- |
-| FullScreen | switch | Creates a full screen modal | false |
-| Footer | ScriptBlock | Sets the footer content for the modal. | false |
-| Header | ScriptBlock | Sets the header content for the modal. | false |
-| Content | ScriptBlock | Sets the main body content for the modal. | false |
-| Persistent | switch | Creates a persistent modal. | false |
-| FullWidth | switch | Creates a full width modal. | false |
-| MaxWidth | string | Defines the max width of a full width modal. | false |
-
+* [Show-UDModal](../../../../cmdlets/Show-UDModal.txt)
+* [Hide-UDModal](../../../../cmdlets/Hide-UDModal.txt)
