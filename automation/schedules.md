@@ -14,37 +14,37 @@ Schedules can be defined based on simple selections like Every Minute or Every H
 
 You can also define which user the scheduled job will run under as well as which PowerShell version to use.
 
-![](../.gitbook/assets/image%20%283%29.png)
+![](<../.gitbook/assets/image (3).png>)
 
 ### Simple Schedules
 
 Simple schedules are really just helpers for various standard CRON schedules. When you select one, it will define a CRON schedule for your.
 
-![](../.gitbook/assets/image%20%28143%29.png)
+![](<../.gitbook/assets/image (143).png>)
 
 ### CRON
 
-CRON schedules use CRON expressions to define schedules. You can use a tool like [Crontab guru](https://crontab.guru/) to help define the schedule.
+CRON schedules use CRON expressions to define schedules. You can use a tool like [Crontab guru](https://crontab.guru) to help define the schedule.
 
-![](../.gitbook/assets/image%20%28142%29.png)
+![](<../.gitbook/assets/image (142).png>)
 
 ### One Time
 
 One time schedules will run once in the future. You can select the time and day of when they will run.
 
-![](../.gitbook/assets/image%20%28140%29.png)
+![](<../.gitbook/assets/image (140).png>)
 
 ### Continuous
 
 Continuous schedules will run over and over again. You can define a delay between each scheduled job run.
 
-![](../.gitbook/assets/image%20%28141%29.png)
+![](<../.gitbook/assets/image (141).png>)
 
 ## Parameters
 
 Schedules support setting parameters for scripts. For example, if you have a script that accepts a parameter, you can choose to pass a value to the parameter during the schedule.
 
-```text
+```powershell
 param($UserName)
 
 $UserName
@@ -52,11 +52,11 @@ $UserName
 
 Within the modal for defining the schedule, you will have the option to set the parameter value.
 
-![](../.gitbook/assets/image%20%28180%29.png)
+![](<../.gitbook/assets/image (180).png>)
 
 When editing schedules from PowerShell, you can define the parameters on the `New-PSUSchedule` cmdlet. This cmdlet accepts dynamic parameters so that you can pass the values in for your schedule.
 
-```text
+```powershell
 New-PSUSchedule -Script "MyScript.ps1" -Cron '* * * * *' -UserName 'adam'
 ```
 
@@ -64,7 +64,7 @@ New-PSUSchedule -Script "MyScript.ps1" -Cron '* * * * *' -UserName 'adam'
 
 When creating a schedule, you have the option to specify the [environment ](../config/environments.md)for your job to run. By default, it will use the default environment. You can define an environment in the UI by using the Environment drop down. You can define an environment using the `-Environment` parameter in `New-PSUSchedule`.
 
-```text
+```powershell
 New-PSUSchedule -Script "MyScript.ps1" -Cron '* * * * *' -Environment '7.1'
 ```
 
@@ -74,7 +74,13 @@ You can define which user to run the schedule as by using the Run As selector in
 
 You can define a Run As user in a script by using the `-Credential` parameter. The value should be the name of the variable that contains your credential.
 
-```text
+```powershell
 New-PSUSchedule -Script "MyScript.ps1" -Cron '* * * * *' -Credential 'MyUser'
 ```
+
+## API
+
+* [New-PSUSchedule](../cmdlets/New-PSUSchedule.txt)
+* [Get-PSUSchedule](../cmdlets/Get-PSUSchedule.txt)
+* [Remove-PSUSchedule](../cmdlets/Remove-PSUSchedule.txt)
 

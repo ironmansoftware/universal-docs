@@ -26,12 +26,10 @@ Performance is relative to the hardware and network conditions that you are runn
 
 Variables are listed on the [variables page](../platform/variables.md#api).
 
-## API
+## Related Cmdlets
 
-* [New-PSUEndpoint](../cmdlets/New-PSUEndpoint.txt)
-* Get-S
+* [New-PSUEndpoint](../cmdlets/Universal/New-PSUEndpoint.md)
+* [Get-PSUEndpoint](../cmdlets/Universal/Get-PSUEndpoint.md)
 * [Remove-PSUEndpoint](../cmdlets/Universal/Remove-PSUEndpoint.md)
-
-
-
+* [New-PSUApiResponse](../cmdlets/Universal/New-PSUApiResponse.md)
 * [Set-UASetting](../cmdlets/Universal/Set-UASetting.md)
