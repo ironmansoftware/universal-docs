@@ -10,9 +10,9 @@ You'll need to install the PowerShell Universal server. [There are a lot of ways
 
 {% tabs %}
 {% tab title="Windows" %}
-You can install PowerShell Universal as a service. Ensure that PowerShell is running as administrator or the service won't install correctly. 
+You can install PowerShell Universal as a service. Ensure that PowerShell is running as administrator or the service won't install correctly.&#x20;
 
-```
+```powershell
 Install-Module Universal
 Install-PSUServer
 ```
@@ -56,21 +56,21 @@ By default, PowerShell Universal is running on port 5000 of localhost. You can a
 
 ## Create an API
 
-APIs allow you to call PowerShell scripts over HTTP. To create an API, click API \ Endpoints and click Create New Endpoint. Specify a URL. 
+APIs allow you to call PowerShell scripts over HTTP. To create an API, click API \ Endpoints and click Create New Endpoint. Specify a URL.&#x20;
 
 ![](<.gitbook/assets/image (260).png>)
 
-Next, click details on the API that was created an enter the following command into the editor. 
+Next, click details on the API that was created an enter the following command into the editor.&#x20;
 
 ```
 Get-ComputerInfo
 ```
 
-Save the script and then click the Execute button to test it out. 
+Save the script and then click the Execute button to test it out.&#x20;
 
 ![](<.gitbook/assets/image (291).png>)
 
-You can also execute the API via `Invoke-RestMethod`. 
+You can also execute the API via `Invoke-RestMethod`.&#x20;
 
 ```
 PS C:\Users\adamr> Invoke-RestMethod http://localhost:5000/hello-world
@@ -87,13 +87,13 @@ WindowsRegisteredOrganization                           :
 
 ## Create a Script
 
-To create a script, click Automation \ Scripts and then click Create New Script. 
+To create a script, click Automation \ Scripts and then click Create New Script.&#x20;
 
 ![](<.gitbook/assets/image (288).png>)
 
-Enter the following script into the editor and save. 
+Enter the following script into the editor and save.&#x20;
 
-```
+```powershell
 Read-Host "What should I say?"
 
 1..100 | ForEach-Object {
@@ -103,19 +103,19 @@ Read-Host "What should I say?"
 Get-Service
 ```
 
-Once the script is saved, click Run. 
+Once the script is saved, click Run.&#x20;
 
 ![](.gitbook/assets/runjob.gif)
 
 ## Create a Dashboard
 
-To create a new PowerShell-based user interface (dashboard), you can click User Interfaces \ Dashboard and then Create New Dashboard. 
+To create a new PowerShell-based user interface (dashboard), you can click User Interfaces \ Dashboard and then Create New Dashboard.&#x20;
 
 ![](<.gitbook/assets/image (270).png>)
 
 After clicking Ok, click the Details button to edit the PowerShell script. Add the following script to the editor.
 
-```
+```powershell
 New-UDDashboard -Title "Hello, World!" -Content {
     New-UDButton -Text "Click Me" -OnClick {
         Show-UDToast -Message 'Success!!'
@@ -123,7 +123,7 @@ New-UDDashboard -Title "Hello, World!" -Content {
 }
 ```
 
-Save the dashboard, click the Restart button and then click the View button. Click the Click Me button. 
+Save the dashboard, click the Restart button and then click the View button. Click the Click Me button.&#x20;
 
 ![](<.gitbook/assets/image (292).png>)
 
