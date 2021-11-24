@@ -4,7 +4,23 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
-##
+## 2.5.5 - 11/24/2021
+
+### Includes
+
+* UniversalDashboard - v3.8.0
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.2.0
+* UniversalDashboard.Editor - 1.0.0
+* UniversalDashboard.Style - 1.0.0
+
+### Changes
+
+#### API
+
+* Fixed an issue where Windows auth outside of IIS and client certificate authentication would cause 500 errors in REST APIs.
 
 ## 2.5.4 - 11/15/2021
 
