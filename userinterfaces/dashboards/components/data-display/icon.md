@@ -89,6 +89,10 @@ New-UDDynamic -Id 'icons' -Content {
 }
 ```
 
+## Complete Icon List
+
+[Click here to view the complete icon list. ](https://gist.github.com/adamdriscoll/8a5d12b0ac5641bc1083bebf921f56fe)
+
 ## API
 
 ****[**New-UDIcon**](../../../../cmdlets/New-UDIcon.txt)****
