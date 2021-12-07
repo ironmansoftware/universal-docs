@@ -93,6 +93,27 @@ If you are using PowerShell Universal 2.4 or later, you can use the `-Wait` para
 $Pipeline = Invoke-PSUScript -Script 'Script1.ps1' -RequiredParameter 'Hello' -Wait
 ```
 
+### Integrated Mode
+
+The integrated mode allows calling these cmdlets from within PowerShell Universal without an App Token or Computer Name. It uses the internal RPC channel to communicate.
+
+You can set the `-Integrated` parameter to switch to integrated mode. This parameter does not work outside of PowerShell Universal.&#x20;
+
+```powershell
+Invoke-PSUScript -Script 'Script.ps1' -Integrated
+```
+
+The following cmdlets support integrated mode.&#x20;
+
+* Get-PSUScript
+* Invoke-PSUScript
+* Get-PSUJob
+* Get-PSUJobOutput
+* Get-PSUJobPipelineOutput
+* Get-PSUJobFeedback
+* Set-PSUJobFeedback
+* Wait-PSUJob
+
 ## Invoking Jobs with REST
 
 You can call jobs over REST using the management API for PowerShell Universal. You will need a valid app token to invoke jobs.
