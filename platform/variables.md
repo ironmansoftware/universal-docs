@@ -16,14 +16,14 @@ Standard variables are just name \ value pairs of strings. They will be added to
 
 ## Creating a Secret Variable
 
-{% hint style="warning" %}
-Secret management is currently only supported on Windows.&#x20;
+{% hint style="info" %}
+Secret management is currently only supported on Windows before version 2.6 of PowerShell Universal. PowerShell Universal 2.6 and later support the Microsoft SecretStore module for cross-platform secret storage. 
 {% endhint %}
 
 Secret variables are stored within the selected vault. The value of those variables are never stored within Universal. To define a new secret variable, click Add Variable on the variables page and select the Secret tab.&#x20;
 
 {% hint style="warning" %}
-Values for secrets are stored within the Windows Credential Manager instance of the security principal that is running PSU. For example, the service account of the user running the Universal service. If you change users (such as running as a service account), the account will not have access to the previous user's secrets and you will need to add those secrets again.
+Values for secrets with the `BuiltInLocalVault` are stored within the Windows Credential Manager instance of the security principal that is running PSU. For example, the service account of the user running the Universal service. If you change users (such as running as a service account), the account will not have access to the previous user's secrets and you will need to add those secrets again.
 {% endhint %}
 
 From this dialog, you'll be able to define string and PSCredentials in the specified vault.&#x20;
@@ -51,6 +51,14 @@ See [Environments](../config/environments.md#variables) for more information.&#x
 PowerShell Universal uses the Microsoft Secret Management module. The built-in vault uses the Windows Credential Manager to store secrets. Due to the implementation of the `Get-Secret` cmdlet, it may cause performance issues when you have many secrets.&#x20;
 
 You may want to consider limiting the number of secrets that you include in each environment to improve performance.
+
+## Configuring the `PSUSecretStore` Password 
+
+{% hint style="info" %}
+PowerShell Universal 2.6 or later.
+{% endhint %}
+
+By default, the `PSUSecretStore` vault password is stored within `appsettings.json` in Secrets \ SecretStore \ Password. 
 
 ## Built-In Variables
 
