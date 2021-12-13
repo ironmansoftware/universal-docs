@@ -18,6 +18,10 @@ Install-PSUServer
 ```
 {% endtab %}
 
+{% tab title="Windows Desktop" %}
+You can learn more about [desktop mode here](platform/desktop-mode.md).
+{% endtab %}
+
 {% tab title="Linux" %}
 You can install PowerShell Universal using the following shell script.
 

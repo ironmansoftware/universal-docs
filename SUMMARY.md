@@ -122,6 +122,7 @@
 ## Platform
 
 * [Cache](platform/cache.md)
+* [Desktop Mode](platform/desktop-mode.md)
 * [Modules](platform/modules.md)
 * [Monitoring](platform/monitoring.md)
 * [Published Folders](platform/published-folders.md)
