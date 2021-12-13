@@ -57,6 +57,46 @@ New-UDSelect -Option {
 } -OnChange { Show-UDToast -Message $EventData }
 ```
 
+## Forms
+
+### Submit a Form
+
+{% hint style="info" %}
+PowerShell Universal 2.6 or later.
+{% endhint %}
+
+You can force a form to submit using the `Invoke-UDForm` cmdlet. You can optionally chose to enforce validation by including the `-Validate` parameter.
+
+```powershell
+New-UDForm -Id 'form' -Content {
+   New-UDTextbox -Id 'Text' -Label 'Submit Me'
+} -OnSubmit {
+   Show-UDToast "Hello!"
+}
+
+New-UDButton -Text "Submit Form" -OnClick {
+   Invoke-UDForm -Id 'form'
+}
+```
+
+### Validate a Form
+
+You can force a form to validate by using `Test-UDForm`.
+
+```powershell
+New-UDForm -Id 'form' -Content {
+   New-UDTextbox -Id 'Text' -Label 'Submit Me'
+} -OnSubmit {
+   Show-UDToast "Hello!"
+} -OnValidate {
+   New-UDValidationResult
+}
+
+New-UDButton -Text "Submit Form" -OnClick {
+   Test-UDForm -Id 'form'
+}
+```
+
 ## JavaScript
 
 You can invoke JavaScript from PowerShell by using the `Invoke-UDJavaScript` cmdlet.
