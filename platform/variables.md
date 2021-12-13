@@ -16,19 +16,25 @@ Standard variables are just name \ value pairs of strings. They will be added to
 
 ## Creating a Secret Variable
 
-{% hint style="info" %}
-Secret management is currently only supported on Windows before version 2.6 of PowerShell Universal. PowerShell Universal 2.6 and later support the Microsoft SecretStore module for cross-platform secret storage. 
-{% endhint %}
-
 Secret variables are stored within the selected vault. The value of those variables are never stored within Universal. To define a new secret variable, click Add Variable on the variables page and select the Secret tab.&#x20;
-
-{% hint style="warning" %}
-Values for secrets with the `BuiltInLocalVault` are stored within the Windows Credential Manager instance of the security principal that is running PSU. For example, the service account of the user running the Universal service. If you change users (such as running as a service account), the account will not have access to the previous user's secrets and you will need to add those secrets again.
-{% endhint %}
 
 From this dialog, you'll be able to define string and PSCredentials in the specified vault.&#x20;
 
 ![](<../.gitbook/assets/image (11).png>)
+
+## Vaults
+
+### BuiltInLocalVault
+
+Values for secrets with the `BuiltInLocalVault` are stored within the Windows Credential Manager instance of the security principal that is running PSU. For example, the service account of the user running the Universal service. If you change users (such as running as a service account), the account will not have access to the previous user's secrets and you will need to add those secrets again.
+
+### PSUSecretStore
+
+{% hint style="info" %}
+PowerShell Universal 2.6 or later.
+{% endhint %}
+
+The `PSUSecretStore` vault is integrated with the Microsoft `SecretStore` module to store secrets in a cross-platform file. Ths file is tied to the current user account running PowerShell Universal. The password for the vault is stored in `appsettings.json`. 
 
 ## Importing Secret Variables
 
