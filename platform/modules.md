@@ -34,7 +34,7 @@ These modules will be available in all environments.
 
 To create a new module navigate to Platform \ Modules and click Create New Module. Define the module name and version.&#x20;
 
-![](<../.gitbook/assets/image (303).png>)
+![](<../.gitbook/assets/image (303) (1).png>)
 
 Once created, the module will be listed under Universal Modules with the option to edit properties and content as well as delete the module.&#x20;
 

@@ -28,9 +28,10 @@
   * [Parameters](automation/scripts/parameters.md)
 * [Jobs](automation/jobs.md)
 * [Schedules](automation/schedules.md)
+* [Terminals](automation/terminals.md)
 * [Triggers](automation/triggers.md)
 
-## User Interfaces <a href="userinterfaces" id="userinterfaces"></a>
+## User Interfaces <a href="#userinterfaces" id="userinterfaces"></a>
 
 * [About](userinterfaces/about.md)
 * [Dashboards](userinterfaces/dashboards/README.md)
@@ -127,7 +128,7 @@
 * [Templates](platform/templates.md)
 * [Variables](platform/variables.md)
 
-## Configuration <a href="config" id="config"></a>
+## Configuration <a href="#config" id="config"></a>
 
 * [About](config/about.md)
 * [API](config/api.md)
