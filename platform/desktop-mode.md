@@ -12,11 +12,11 @@ Desktop mode runs PowerShell Universal as a desktop application. It installs to 
 
 ## Install Desktop Mode
 
-Learn more by reading out Desktop Mode installation documentation.&#x20;
+To install desktop mode, you can [download ](https://ironmansoftware.com/downloads)the desktop mode installer from our website. You will need the [WebView2 runtime](https://developer.microsoft.com/en-us/microsoft-edge/webview2/) to run desktop mode. This will eventually be included with our installer.
 
 ## Differences in Desktop Mode
 
-To install desktop mode, you can [download ](https://ironmansoftware.com/downloads)the desktop mode installer from our website. You will need the [WebView2 runtime](https://developer.microsoft.com/en-us/microsoft-edge/webview2/) to run desktop mode. This will eventually be included with our installer.
+Desktop mode runs slightly differently than PowerShell Universal as a service.
 
 ### Application Context
 
@@ -29,6 +29,10 @@ PowerShell Universal will not run when the user is not logged in so scheduled jo
 ### Configuration
 
 Configuration files are stored in `%AppData%\PowerShellUniversal` rather than the ProgramData folder. You can quickly access the configuration folder by using the PowerShell Universal tray icon.&#x20;
+
+### Dashboards
+
+Desktop mode does not support PowerShell Universal Dashboard v2 frameworks. It actually doesn't support anything except the latest framework version. It will not deploy copies of the framework.&#x20;
 
 ### Security&#x20;
 
