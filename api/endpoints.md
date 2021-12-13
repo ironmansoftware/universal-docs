@@ -99,6 +99,32 @@ Invoke-RestMethod http://localhost:5000/user -Method Post -Body @{
 }
 ```
 
+## JSON Data
+
+{% hint style="info" %}
+PowerShell Universal 2.6 or later required.
+{% endhint %}
+
+You can pass JSON data to an endpoint and it will automatically bind to a param block.&#x20;
+
+```powershell
+New-PSUEndpoint -Url '/user' -Method Post -Endpoint {
+    param([Parameter(Mandatory)]$userName, $FirstName, $LastName)
+     
+    New-User $UserName -FirstName $FirstName -LastName $LastName
+}
+```
+
+You can then send JSON data to the endpoint.&#x20;
+
+```powershell
+Invoke-RestMethod http://localhost:5000/user -Method Post -Body (@{ 
+    UserName = "adriscoll"
+    FirstName = "Adam"
+    LastName = "Driscoll"
+} | ConvertTo-Json) -ContentType 'application/json'
+```
+
 ## Param Block
 
 You can use a `param` block within your script to enforce mandatory parameters and provide default values for optional parameters such as query string parameters. Variables such as `$Body`, `$Headers` and `$User` are provided automatically.
