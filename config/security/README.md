@@ -206,6 +206,22 @@ For more information, you can follow the Microsoft documentation for configuring
 
 User authorization is accomplished with roles. Roles are either assigned based on the policy script you define or a role is assigned manually to the user.
 
+### Role to Claim Mapping
+
+{% hint style="info" %}
+PowerShell Universal 2.6 or later.
+{% endhint %}
+
+You can map roles to a claim (such as a group membership) by using the `-ClaimType` and `-ClaimValue` parameters of `New-PSURole`. Settings are also available in the role properties dialog within Security \ Roles. 
+
+For example, with Windows authentication, if you wanted to map a group to a role, you could configure it such that the group SID maps to the administrator role. 
+
+```powershell
+New-PSURole -Name Administrator -ClaimType 'http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid' -ClaimValue 'S-123-123-123'
+```
+
+Mapping roles to claims in this manner is faster than Policy Assignment because it does not require PowerShell to be run when the user is logging in. 
+
 ### Policy Assignment
 
 By default, roles are assigned by policies. Policies are run when the user logs in. You can change the policy scripts by visiting the Security / Roles tab. Click the Edit Policy button to configure the Policy script.
