@@ -20,6 +20,20 @@ New-UDButton -Text 'Clipboard' -OnClick {
 
 * [Set-UDClipboard](../../cmdlets/Set-UDClipboard.txt)
 
+## Downloads
+
+{% hint style="info" %}
+PowerShell Universal 2.6 or later.
+{% endhint %}
+
+You can start a download within the user's browser by using `Start-UDDownload`. Due to security of web browsers, the user will need to take an action (like click a button) to allow the download to take place. `Start-UDDownload` is not suited for large file downloads.
+
+```powershell
+New-UDButton -Text 'Download' -OnClick {
+    Start-UDDownload -StringData 'Hello, World!'
+}
+```
+
 ## Event Handlers
 
 Many components support event handlers in the form of script blocks. You may also see these referred to as endpoints as that is what they were called in Universal Dashboard v2. These event handlers allow you to invoke PowerShell scripts when certain actions take place on the page.&#x20;
