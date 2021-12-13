@@ -262,6 +262,16 @@ The Execute role grants the ability to run scripts and read access for everythin
 
 The Reader role provides read-only access to PowerShell Universal.
 
+### View Claim Information
+
+{% hint style="info" %}
+PowerShell Universal 2.6 or later.
+{% endhint %}
+
+To help develop policy scripts or assign roles to claims, you can view claim information by clicking View Claim Information in Security \ Roles.&#x20;
+
+![View Claim Information](<../../.gitbook/assets/image (308).png>)
+
 ### Users with Many Groups
 
 If your users are members of more than about 40 groups you may experience problems logging in. This is due to size limits of the HTTP headers in IIS and Kestrel. The more groups a user is a member of, the more authorization claims they have and the large the header.
