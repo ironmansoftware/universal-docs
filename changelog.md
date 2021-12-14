@@ -18,6 +18,10 @@ description: Changelog for PowerShell Universal.
 
 -----
 
+## Known Issues
+
+- The default web.config is set to InProcess hosting model rather than the previously set OutOfProcess hosting model. You will need to update the web.config if you would like to us OutOfProcess.
+
 ## Removed
 
 ### User Interfaces
