@@ -4,6 +4,110 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2.6.0 - 12/14/2021
+
+## Includes
+
+- UniversalDashboard - v3.9.0
+- UniversalDashboard - v2.9.9
+- UniversalDashboard.Charts - 1.3.2
+- UniversalDashboard.Map - 1.0
+- UniversalDashboard.CodeEditor - 1.2.0
+- UniversalDashboard.Editor - 1.0.0
+- UniversalDashboard.Style - 1.0.0
+
+-----
+
+## Removed
+
+### User Interfaces
+
+- Dashboards - Removed -*Offset parameters from New-UDColumn because they did not do anything
+
+## Added 
+
+### API 
+
+- Added $ClaimsPrincipal object to API requests
+- Added support for setting parameters via JSON properties
+
+### Automation
+
+- Added warning state to jobs
+- Added support for terminals
+
+### User Interface 
+
+- Dashboard: Add support for -FilterType 'date' in New-UDTable
+- Dashboard: Added -Subheader to New-UDCardHeader
+- Dashboard: Added Invoke-UDForm
+- Dashboard: Added -Leaf, -Icon and -ExpandedIcon to New-UDTreeItem
+- Dashboard: Added -Color to all compatible components
+- Dashboard: Added Start-UDDownload
+- Pages: Added support for Date and Time columns in tables.
+- Pages: Added support for searching in tables
+- Pages: Added support for showing scroll bars for tables.
+- Pages: Added support for an icon in table headers.
+- Pages: Added Size property to the table.
+
+### Platform 
+
+- Added --appsettings command line option to specify location of appsettings.json file
+- Added support for git sync push only 
+- The Git status table now lists the files that were changes and the change type
+- Added support to New-PSUVariable for creating PSCredentials. 
+- Added the ability to hide credentials from the Run As dialog
+- Added a dialog for viewing the current user's claims
+- Added support for setting -ClaimType and -ClaimValue on roles to assign claims directly to roles
+- Added PackageManagement 1.4.7 and PowerShellGet 2.2.5 to the standard install.
+- Added support for storing secrets in the Microsoft SecretStore
+- Added desktop mode
+
+## Changed
+
+### Automation
+
+- Fixed an issue where scripts deleted in PSU with absolute paths would be deleted in their source location. 
+- Fixed an issue where jobs marked as Cancelling would not be groomed 
+- Fixed an issue where a parameter named -tag would prevent scripts from executing in the admin console
+- Fixed an issue with creating folders on Linux and mac systems.
+- Fixed an issue where running jobs under alternate credentials could result in an Access Denied error
+- Fixed an issue where the -Credential parameter of New-PSUSchedule would not be persisted from the UI
+- Fixed an issue where New-PSUSchedule -Condition would not work properly
+- Fixed an issue where you should not call Get-PSUScript for scripts in a folder with -Integrated
+
+### User Interfaces
+
+- Dashboard - Fixed an issue where $EventData would be $null for Switches and Checkboxes
+- Dashboard - Fixed an issue where display $false or 0 in UDTable would not work
+- Dashboard - Fixed an issue where a user's theme preference would not be maintained
+- Dashboard - Fixed an issue where Start-PSUDashboard was not exported from the Universal module.
+- Dashboard - Enforce a ValidateRange parameter (0, 10) on -Spacing for New-UDGrid
+- Dashboard - Fixed an issue where -Align on New-UDTypography would not work
+- Dashboard - Fixed an issue where -TitleAlignment would not work on New-UDCard
+- Dashboard - Adjusted style of UDTable to promote headers and title. 
+- Dashboard - Fixed an issue where New-UDSwitch $EventData would be an array
+- Dashboard - UDUpload now supports uploads over 2 GB
+- Dashboard - Fixed an issue where UDAutocomplete -Multiple wouldn't behave correctly with OnLoadOptions.
+- Dashboard - Fixed an issue where the logout button would be shown for in dashboards when it should not be.
+- Dashboard - Fixed an issue where vertical tab content wouldn't take up 100% of it's container
+- Dashboard - Fixed an issue where Show-UDToast would not work with FontAwesome v5 icons
+- Pages - Tables will now scroll rather than exceed the bounds of their designer window
+- Pages - Fixed an issue where scripts in folders would not work as a data source
+- Pages - Fixed an issue where pages would not be listed in some environments with Windows authentication
+
+
+### Platform
+
+- Fixed an issue where an error in the authentication.ps1 file would cause the Universal server to stop functioning.
+- Hide some properties of scripts and dashboards when first creating a script or dashboard
+- Fixed an issue where the custom admin console title and logo would not work
+- Fixed an issue where -AdminConsoleLogo and -AdminConsoleTitle could not be set over the REST API via Set-PSUSetting
+- Settings.ps1 is now generated as a multi-line command to make it easier to read
+- Updated to Microsoft.PowerShell.SecretManagement version 1.1.1.
+- Fixed an issue where the PSModulePath would be appended repeatedly in the integrated environment 
+- Fixed an issue where restarting a web app in Azure would cause it to fail to start
+
 ## 2.5.5 - 11/24/2021
 
 ### Includes
