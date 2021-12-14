@@ -108,6 +108,13 @@ You can run dashboards in the integrated environment. Select the integrated envi
 
 ![](<../.gitbook/assets/image (225).png>)
 
+### Module Support
+
+The integrated environment works by creating multiple ruspaces within the PowerShell Universal service. Some modules do not work well when run within a single process. Below is a list of modules with known issues running within the integrated environment.&#x20;
+
+* VMware.PowerCLI
+* Az
+
 ## API
 
 * [New-PSUEnvironment](../cmdlets/New-PSUEnvironment.txt)
