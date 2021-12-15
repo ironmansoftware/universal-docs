@@ -135,6 +135,8 @@ When generating your access token, ensure that you select the Repo permissions.&
 
 ![](<../.gitbook/assets/image (282).png>)
 
+Note, that if you are using BitBucket, you will need to specify the user name in addition to the PAT in `appsettings.json`.
+
 ## User name and password
 
 You can also configure a git remote to authenticate with a user name and password. Set the user name and password either with the `appsettings.json` file or another configuration method.
