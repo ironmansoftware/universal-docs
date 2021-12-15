@@ -4,6 +4,33 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2.6.1 - 12/15/2021
+
+## Includes
+
+- UniversalDashboard - v3.9.0
+- UniversalDashboard - v2.9.9
+- UniversalDashboard.Charts - 1.3.2
+- UniversalDashboard.Map - 1.0
+- UniversalDashboard.CodeEditor - 1.2.0
+- UniversalDashboard.Editor - 1.0.0
+- UniversalDashboard.Style - 1.0.0
+
+-----
+
+## Changed
+
+### Automation 
+
+- Fixed an issue where PSCredential parameters would not be passed correctly to scripts
+
+### Platform 
+
+- Changed the default web.config setting back to OutOfProcess
+- Fixed an issue where InProcess hosting in IIS would not work
+- Fixed an issue where the service could hang during startup 
+- Fixed an issue where creating a secret could throw an error
+
 ## 2.6.0 - 12/14/2021
 
 ## Includes
