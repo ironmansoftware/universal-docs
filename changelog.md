@@ -4,6 +4,35 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2.6.2 - 12/17/2021
+
+## Includes
+
+- UniversalDashboard - v3.9.0
+- UniversalDashboard - v2.9.9
+- UniversalDashboard.Charts - 1.3.2
+- UniversalDashboard.Map - 1.0
+- UniversalDashboard.CodeEditor - 1.2.0
+- UniversalDashboard.Editor - 1.0.0
+- UniversalDashboard.Style - 1.0.0
+
+-----
+
+## Known Issues
+
+Some users are still experiencing a service crash related to the secret store. If you experience a crash while starting the service, we recommend installing version 2.5.5. We are continuing to investigate. 
+
+## Changed
+
+### User Interfaces
+
+- Dashboard - Fixed an issue where nested elements may not display
+
+### Platform 
+
+- Fixed an issue where using a non-standard secret vault would not work from the UI
+- Fixed an issue where a crash could occur when multiple jobs attempted to read from the secret store. 
+
 ## 2.6.1 - 12/15/2021
 
 ## Includes
