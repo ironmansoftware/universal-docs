@@ -59,6 +59,8 @@ To set the port, change the Kestrel endpoints section of the `appsettings.json`.
 
 To configure HTTPS, you can adjust the `appsettings.json` file to use a particular certificate and port. The below configuration uses the `testCert.pfx` file and `testPassword` and listens on port 5463.
 
+#### PFX Certificates
+
 ```javascript
 {
   "Kestrel": {
@@ -74,6 +76,8 @@ To configure HTTPS, you can adjust the `appsettings.json` file to use a particul
     }
 }
 ```
+
+#### Certificate Store
 
 To configure a certificate in a particular location and store, you can use a configuration such as this. When selecting the certificate by subject name, ensure you use the common name with out `CN=` prefix.&#x20;
 
@@ -95,6 +99,30 @@ To configure a certificate in a particular location and store, you can use a con
 ```
 
 Location can be either `CurrentUser` or `LocalMachine`.
+
+#### PEM And Key Certificates
+
+Some provides, like Let's Encrypt and GoDaddy, will issue certificates as PEM and key text files. You can use these types of certificates directly with the Kestrel web server. You will need to specify the `HttpsFromPem` section within the `Endpoints` for Kestrel.&#x20;
+
+```json
+{
+  "Kestrel": {
+    "Endpoints": {
+      "HTTP": {
+        "Url": "http://*:5000"
+      },
+      "HttpsFromPem": {
+        "Url": "https://*:5001",
+        "Certificate": {
+          "Path": "C:\\Users\\adamr\\Desktop\\cert.pem",
+          "KeyPath": "C:\\Users\\adamr\\Desktop\\key.pem"
+        }
+      }
+    },
+    "RedirectToHttps": "true"
+  },
+}
+```
 
 ### Protocol
 
