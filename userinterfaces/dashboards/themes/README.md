@@ -157,7 +157,7 @@ This will highlight the HTML elements that make up that component. In the image 
 * MuiButton-label
 * MuiTouchRipple-root
 
-![](<../../../.gitbook/assets/image (302).png>)
+![](<../../../.gitbook/assets/image (302) (1).png>)
 
 In order to override these various elements, you will need to add an `overrides` key to your theme.&#x20;
 
@@ -221,7 +221,7 @@ For more examples, look at the Onepirate and Paperbase themes below that include
 
 ### Sand
 
-![Sand Theme](<../../../.gitbook/assets/image (300).png>)
+![Sand Theme](<../../../.gitbook/assets/image (300) (1).png>)
 
 ```powershell
 $Theme = @{
@@ -284,7 +284,7 @@ $Theme = @{
 
 ### Onepirate
 
-![](<../../../.gitbook/assets/image (307).png>)
+![](<../../../.gitbook/assets/image (307) (1).png>)
 
 Based on the Material UI theme, [Onepirate](https://material-ui.com/store/previews/onepirate/).&#x20;
 

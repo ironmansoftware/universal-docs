@@ -4,15 +4,15 @@ WS-Federation supports both Active Directory Federation Services and Azure Activ
 
 You first need to configure ADFS or AzureAD to support Universal.
 
-## Configuring ADFS for Universal <a href="configuring-adfs-for-universal-dashboard" id="configuring-adfs-for-universal-dashboard"></a>
+## Configuring ADFS for Universal <a href="#configuring-adfs-for-universal-dashboard" id="configuring-adfs-for-universal-dashboard"></a>
 
-### Service Settings <a href="service-settings" id="service-settings"></a>
+### Service Settings <a href="#service-settings" id="service-settings"></a>
 
 These are the current Federation Service settings for our domain.
 
 ![](https://gblobscdn.gitbook.com/assets%2F-L9mVQO4zbOX7ZcHvIte%2F-Lob6ow15SQRLl3vo8ZV%2F-Lob7luBvuEGUTrLIors%2Fimage.png?alt=media\&token=64c3c00f-1d2c-4346-bcc1-dd89e7cf4c24)
 
-### Relying Parties <a href="relying-parties" id="relying-parties"></a>
+### Relying Parties <a href="#relying-parties" id="relying-parties"></a>
 
 You need to configure the following Relying Parties settings for Universal. On the Identifiers tab, provide the URL to the Universal website. HTTPS is required.
 
@@ -26,11 +26,11 @@ Finally, you'll need to configure a Claim Issuance Policy for the Relying Party 
 
 You can configure additional claims you'd like to use if you are using policies in Universal.
 
-## Configuring For Azure Active Directory <a href="configuring-for-azure-active-directory" id="configuring-for-azure-active-directory"></a>
+## Configuring For Azure Active Directory <a href="#configuring-for-azure-active-directory" id="configuring-for-azure-active-directory"></a>
 
 Follow the documentation for the Azure Active Directory configuration found on this [Microsoft Document](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/ws-federation?view=aspnetcore-2.2#azure-active-directory).
 
-## Configuring Universal <a href="configuring-universal-dashboard" id="configuring-universal-dashboard"></a>
+## Configuring Universal <a href="#configuring-universal-dashboard" id="configuring-universal-dashboard"></a>
 
 ### Use Appsettings.json
 
@@ -116,7 +116,7 @@ When running your server, you should now be prompted for your credentials either
 
 You can configure WS-Federation authentication in the admin console. To do so, navigate to Security \ Authentication. Add the WS-Federation provider by selecting it from the drop down in the top right.&#x20;
 
-![](<../../.gitbook/assets/image (302) (1) (1).png>)
+![](<../../.gitbook/assets/image (302) (1) (1) (1).png>)
 
 Next, edit the properties of the authentication provider and specify the configuration details for your ADFS setup.&#x20;
 

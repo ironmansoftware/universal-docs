@@ -24,7 +24,7 @@ New-UDEditor
 
 The editor will be available and you can add new blocks by clicking the plus button.&#x20;
 
-![](<../../../../.gitbook/assets/image (307) (1) (1).png>)
+![](<../../../../.gitbook/assets/image (307) (1) (1) (1).png>)
 
 ## Working with Data
 

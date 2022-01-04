@@ -30,13 +30,13 @@ In this example, we are selecting the name and service type from a call to `Get-
 
 The resulting table only has these two properties displayed.&#x20;
 
-![](<../../.gitbook/assets/image (302) (1) (1) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (302) (1) (1) (1) (1) (1) (1).png>)
 
 ### Buttons
 
 Buttons can be added to columns to provide functionality for each row. Clicking the button will provide the target with the row data via the `$InputObject` parameter.&#x20;
 
-![](<../../.gitbook/assets/image (300) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (300) (1) (1) (1) (1).png>)
 
 
 

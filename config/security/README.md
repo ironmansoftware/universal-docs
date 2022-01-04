@@ -12,9 +12,9 @@ By default, the forms authentication script is configured to accept the user Adm
 Authentication settings are also stored with `authentication.ps1`
 {% endhint %}
 
-To update forms authentication, you can click Settings  Security and then click the Settings button for the forms authentication.
+To update forms authentication, you can click Settings Security and then click the Settings button for the forms authentication.
 
-![](<../../.gitbook/assets/image (300) (1).png>)
+![](<../../.gitbook/assets/image (300) (1) (1).png>)
 
 You can update the PowerShell script found in settings to configure how the user is authenticated. You'll need to return a `New-PSUAuthenticationResult` from the script to indicate whether the user was successfully authenticated.
 
@@ -121,7 +121,7 @@ $Roles = $User.Claims | Where-Object Type -eq Role | Select-Object -ExpandProper
 $Roles -contains 'SOC_Admins'
 ```
 
-### Variables&#x20;
+### Variables
 
 These are the variables defined within the security scripts.
 
@@ -153,10 +153,10 @@ Windows Authentication provides single-sign on support for browsers and environm
 ### Authentication.ps1
 
 {% hint style="info" %}
-Available in PowerShell Universal 2.5 and later.&#x20;
+Available in PowerShell Universal 2.5 and later.
 {% endhint %}
 
-You can enable Windows authentication by adding a new authentication provider in Security \ Authentication. Select Windows and enable the authentication.&#x20;
+You can enable Windows authentication by adding a new authentication provider in Security \ Authentication. Select Windows and enable the authentication.
 
 ![](<../../.gitbook/assets/image (294).png>)
 
@@ -212,15 +212,15 @@ User authorization is accomplished with roles. Roles are either assigned based o
 PowerShell Universal 2.6 or later.
 {% endhint %}
 
-You can map roles to a claim (such as a group membership) by using the `-ClaimType` and `-ClaimValue` parameters of `New-PSURole`. Settings are also available in the role properties dialog within Security \ Roles. 
+You can map roles to a claim (such as a group membership) by using the `-ClaimType` and `-ClaimValue` parameters of `New-PSURole`. Settings are also available in the role properties dialog within Security \ Roles.
 
-For example, with Windows authentication, if you wanted to map a group to a role, you could configure it such that the group SID maps to the administrator role. 
+For example, with Windows authentication, if you wanted to map a group to a role, you could configure it such that the group SID maps to the administrator role.
 
 ```powershell
 New-PSURole -Name Administrator -ClaimType 'http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid' -ClaimValue 'S-123-123-123'
 ```
 
-Mapping roles to claims in this manner is faster than Policy Assignment because it does not require PowerShell to be run when the user is logging in. 
+Mapping roles to claims in this manner is faster than Policy Assignment because it does not require PowerShell to be run when the user is logging in.
 
 ### Policy Assignment
 
@@ -284,7 +284,7 @@ The Reader role provides read-only access to PowerShell Universal.
 PowerShell Universal 2.6 or later.
 {% endhint %}
 
-To help develop policy scripts or assign roles to claims, you can view claim information by clicking View Claim Information in Security \ Roles.&#x20;
+To help develop policy scripts or assign roles to claims, you can view claim information by clicking View Claim Information in Security \ Roles.
 
 ![View Claim Information](<../../.gitbook/assets/image (308).png>)
 
@@ -600,11 +600,11 @@ return $IsMember
 
 ## Example: Group membership based on Azure Active Directory
 
-This example takes advantage of [OpenID Connect and Azure Active Directory](openid-connect.md#configuring-azuread).&#x20;
+This example takes advantage of [OpenID Connect and Azure Active Directory](openid-connect.md#configuring-azuread).
 
 Once you have configured PowerShell Universal and Azure Active Directory, you can configure role scripts to verify whether users are members of groups found in Azure AD. You can take advantage of the `HasClaim` method of the `$User` variable to check membership.
 
-First, ensure that you have group membership claims enabled in the manifest for your application registration. This will include all group membership so it is accessible in PowerShell Universal.&#x20;
+First, ensure that you have group membership claims enabled in the manifest for your application registration. This will include all group membership so it is accessible in PowerShell Universal.
 
 ![](<../../.gitbook/assets/image (231).png>)
 
@@ -612,11 +612,11 @@ First, ensure that you have group membership claims enabled in the manifest for 
 "groupMembershipClaims": "All",
 ```
 
-Once configured, you can update your role script to check for a group membership. First make note of the object ID of the group you are looking to check within Azure AD.&#x20;
+Once configured, you can update your role script to check for a group membership. First make note of the object ID of the group you are looking to check within Azure AD.
 
 ![](<../../.gitbook/assets/image (232).png>)
 
-Next, within your `roles.ps1` script, you can validate a user has a particular role by using `HasClaim` and providing the object GUID.&#x20;
+Next, within your `roles.ps1` script, you can validate a user has a particular role by using `HasClaim` and providing the object GUID.
 
 ```powershell
 param(
