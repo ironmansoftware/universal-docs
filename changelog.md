@@ -4,6 +4,69 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2.7.0 - 1/11/2022
+
+---
+version: 2.7.0
+releaseDate: 
+winZipUrl: _ZIP_
+winMsiUrl: _MSI_
+---
+
+## Includes
+
+- UniversalDashboard - v3.9.1
+- UniversalDashboard - v2.9.9
+- UniversalDashboard.Charts - 1.3.2
+- UniversalDashboard.Map - 1.0
+- UniversalDashboard.CodeEditor - 1.2.0
+- UniversalDashboard.Editor - 1.0.0
+- UniversalDashboard.Style - 1.0.0
+
+-----
+
+## Added 
+
+### Automation 
+
+- Added support for randomly delaying a schedule from 0 to 60 seconds to prevent all schedules of the same time frame from running all at once
+
+### Platform 
+
+- Added an option to create app tokens that do not expire
+- Added -Integrated support to the *-PSUSchedule cmdlets
+
+## Changed
+
+### APIs
+
+- Fixed an issue where endpoints could be created without a leading /
+
+### Automation 
+
+- Fixed an issue where terminals would not display non-terminating errors
+
+### User Interfaces
+
+- Dashboard: Fixed an issue where New-UDSelectGroup would not work in New-UDForm
+- Dashboard: Fixed an issue where entering text in a masked UDTextbox would cause loss of focus 
+- Dashboard: Fixed an issue where New-UDChartJSMonitor would not use color arrays for background or borders
+- Dashboard: Improved logging for dashboard errors
+- Pages: Fixed an issue where custom roles could not view pages
+- Pages: Fixed an issue where identities authorized with app tokens could not view pages
+- Pages are now displayed to non-default roles in the admin console
+
+### Platform 
+
+- Updated to new version of Secret Management module
+- Fixed an issue where PowerShell Universal wouldn't start properly on Linux.
+- Fixed an issue where setting the default paths for automation wouldn't work in the admin console
+- Fixed an issue where the Credential Manager vault would attempt to be registered on non-Windows systems
+- Fixed an issue where the default secret store password was not set in appsettings.json on non-Windows systems
+- Fixed an issue where errors would not be logged from the secret management module in jobs
+- Fixed an issue where claim to role mapping would not work
+- Fixed an issue where installing a module would not work if the Modules folder did not exist
+
 ## 2.6.2 - 12/17/2021
 
 ## Includes
