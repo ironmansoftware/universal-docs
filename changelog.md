@@ -6,13 +6,6 @@ description: Changelog for PowerShell Universal.
 
 ## 2.7.0 - 1/11/2022
 
----
-version: 2.7.0
-releaseDate: 
-winZipUrl: _ZIP_
-winMsiUrl: _MSI_
----
-
 ## Includes
 
 - UniversalDashboard - v3.9.1
