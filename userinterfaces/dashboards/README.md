@@ -58,21 +58,23 @@ On the dashboard information page, click on the Console tab to view the UD conso
 
 ## Adding Custom Component Libraries
 
-Custom component libraries provide additional components to dashboards. There are three built in component libraries that are not automatically imported into your dashboards.
+Custom component libraries provide additional components to dashboards. There are five built in component libraries that are not automatically imported into your dashboards.
 
 * UniversalDashboard.Charts
 * UniversalDashboard.Map
 * UniversalDashboard.CodeEditor
+* UniversalDashboard.Style
+* UniversalDashboard.Editor
 
 To add these components to your dashboard, you can use the dashboard UI.
 
 Click the info button on the dashboard page.
 
-![](<../../.gitbook/assets/image (184).png>)
+![](<../../.gitbook/assets/image (308).png>)
 
 Next, click the components button in the top right of your dashboard.
 
-![](<../../.gitbook/assets/image (182).png>)
+![](<../../.gitbook/assets/image (299).png>)
 
 Finally, check the component library you'd like added to your dashboard.
 

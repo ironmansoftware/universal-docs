@@ -224,9 +224,9 @@ Mapping roles to claims in this manner is faster than Policy Assignment because 
 
 ### Example: Azure Active Directory
 
-You can map an Azure Active Directory group to a role by looking up the group Object ID in Azure. For example, within the Ironman Software domain, we have a group called Dashboard Administrators. This group has an object ID of `61849bf2-e44b-4057-b589-6cd1812d7545`. 
+You can map an Azure Active Directory group to a role by looking up the group Object ID in Azure. For example, within the Ironman Software domain, we have a group called Dashboard Administrators. This group has an object ID of `61849bf2-e44b-4057-b589-6cd1812d7545`.
 
-Within PowerShell Universal, I can assign users of this group to the Administrator group by setting up the claim mapping. The Claim Type will be `groups` and the Claim Value will be `61849bf2-e44b-4057-b589-6cd1812d7545`. Once I have mapped the claim, users of the Dashboard Administrators group will be part of the PowerShell Universal Administrators group. The resulting `roles.ps1` will look like this. 
+Within PowerShell Universal, I can assign users of this group to the Administrator group by setting up the claim mapping. The Claim Type will be `groups` and the Claim Value will be `61849bf2-e44b-4057-b589-6cd1812d7545`. Once I have mapped the claim, users of the Dashboard Administrators group will be part of the PowerShell Universal Administrators group. The resulting `roles.ps1` will look like this.
 
 ```powershell
 New-PSURole -Name Administrator -ClaimType 'groups' -ClaimValue '61849bf2-e44b-4057-b589-6cd1812d7545'
@@ -296,7 +296,7 @@ PowerShell Universal 2.6 or later.
 
 To help develop policy scripts or assign roles to claims, you can view claim information by clicking View Claim Information in Security \ Roles.
 
-![View Claim Information](<../../.gitbook/assets/image (308).png>)
+![View Claim Information](<../../.gitbook/assets/image (308) (1).png>)
 
 ### Users with Many Groups
 

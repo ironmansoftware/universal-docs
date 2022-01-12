@@ -56,7 +56,7 @@ Grouping pages will create nested navigation within the page section. Select a g
 
 &#x20;
 
-![](<../../.gitbook/assets/image (299) (1) (1).png>)
+![](<../../.gitbook/assets/image (299) (1) (1) (1).png>)
 
 ## Page URLs
 

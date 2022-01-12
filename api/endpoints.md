@@ -245,7 +245,7 @@ $Id
 
 The resulting Swagger page will show each of these descriptions.&#x20;
 
-![Swagger Documentation for an API](<../.gitbook/assets/image (299) (1).png>)
+![Swagger Documentation for an API](<../.gitbook/assets/image (299) (1) (1).png>)
 
 ## Persistent Runspaces
 
