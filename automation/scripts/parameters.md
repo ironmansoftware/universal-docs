@@ -97,6 +97,18 @@ param([System.DayOfWeek]$DayOfWeek)
 
 ![](<../../.gitbook/assets/image (192).png>)
 
+#### PSCredential
+
+When you specify a `PSCredential` , the user will be presented with a drop down of credentials available as [variables](../../platform/variables.md#creating-a-secret-variable).&#x20;
+
+```powershell
+param(
+    [PSCredential]$Credential
+)
+```
+
+![](<../../.gitbook/assets/image (303).png>)
+
 ### Display Name
 
 You can use the `DisplayNameAtrribute` to set a display name for the script parameter.&#x20;

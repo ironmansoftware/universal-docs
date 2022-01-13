@@ -80,7 +80,7 @@ After publishing the Web App, view your PowerShell Universal instance by navigat
 
 The default `appsettings.json` file will store the database and configuration files in a non-persistent location. You can add environment variables to move them to persistent storage within your web app. Note the `Data__ConnectionString` and `Data__RepositoryPath` environment variables.&#x20;
 
-![](<../../.gitbook/assets/image (309) (1) (1).png>)
+![](<../../.gitbook/assets/image (309) (1) (1) (1).png>)
 
 ## Updating your Web App
 

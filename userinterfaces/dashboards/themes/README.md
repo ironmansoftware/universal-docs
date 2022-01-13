@@ -284,7 +284,7 @@ $Theme = @{
 
 ### Onepirate
 
-![](<../../../.gitbook/assets/image (307) (1).png>)
+![](<../../../.gitbook/assets/image (307) (1) (1).png>)
 
 Based on the Material UI theme, [Onepirate](https://material-ui.com/store/previews/onepirate/).&#x20;
 
@@ -438,7 +438,7 @@ New-UDDashboard -Theme $theme -Title "Onepirate" -Content {
 
 ### Paperbase
 
-![Paperbase in Universal Dashboard](<../../../.gitbook/assets/image (301).png>)
+![Paperbase in Universal Dashboard](<../../../.gitbook/assets/image (301) (1).png>)
 
 Based on the Material UI theme, [Paperbase](https://material-ui.com/store/previews/paperbase/).&#x20;
 

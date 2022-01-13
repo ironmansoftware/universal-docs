@@ -26,7 +26,7 @@ Basic columns will select the properties defined and display the text.&#x20;
 
 In this example, we are selecting the name and service type from a call to `Get-Service`.
 
-![](<../../.gitbook/assets/image (301) (1) (1).png>)
+![](<../../.gitbook/assets/image (301) (1) (1) (1).png>)
 
 The resulting table only has these two properties displayed.&#x20;
 

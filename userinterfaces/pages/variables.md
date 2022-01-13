@@ -20,7 +20,7 @@ Variables can be viewed when editing a page. To view variables, click Edit and t
 
 A drawer will appear with the variables for the current page.&#x20;
 
-![](<../../.gitbook/assets/image (301) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (301) (1) (1) (1) (1).png>)
 
 ## Using Variables
 

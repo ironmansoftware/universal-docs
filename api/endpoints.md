@@ -24,7 +24,7 @@ When defining endpoints in the management API, you can skip the `New-PSUEndpoint
 
 The only contents that you need to provide in the editor will be the script you wish to call.&#x20;
 
-![](<../.gitbook/assets/image (303) (1) (1) (1).png>)
+![](<../.gitbook/assets/image (303) (1) (1) (1) (1).png>)
 
 ## Variable URL
 

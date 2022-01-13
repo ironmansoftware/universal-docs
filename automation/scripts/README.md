@@ -1,6 +1,10 @@
+---
+description: PowerShell scripts to execute within PowerShell Universal.
+---
+
 # Scripts
 
-Scripts are the basic entity within Universal Automation. Scripts are just PowerShell scripts. They are stored on disk and also persisted to a local or remote Git repository.
+PowerShell scripts can be created within PowerShell Universal to execute manually, on a scheudle or when events happen within the platform. They are stored on disk and also persisted to a local or remote Git repository.
 
 {% hint style="info" %}
 Script properties are stored in the `scripts.ps1` configuration file.
@@ -10,7 +14,7 @@ Script properties are stored in the `scripts.ps1` configuration file.
 
 To add a new script, you can click the New Script button within the Automation / Scripts page. There are various settings you can provide for the script.
 
-![](<../../.gitbook/assets/image (21).png>)
+![](<../../.gitbook/assets/image (307).png>)
 
 **Name**
 
@@ -56,11 +60,15 @@ New-PSUScript -Name Script.ps1 -Path Script.Ps1 -ConcurrentJobs 1
 
 You can run a script in the UI by click the Run button the Automation / Scripts page or by clicking View and then Run. In each case, you will be presented with the Run Dialog that allows you to select various settings for the job.
 
-![](<../../.gitbook/assets/image (23).png>)
+![](<../../.gitbook/assets/image (309).png>)
 
 ### Running a Script With Parameters
 
-Universal Automation automatically determines the parameters as defined within your scripts. It takes advantage of static code analysis to determine the type, default values and some validation that is then presented within the UI.
+{% hint style="info" %}
+Learn more about [parameters here](parameters.md).
+{% endhint %}
+
+PowerShell Universal automatically determines the parameters as defined within your scripts. It takes advantage of static code analysis to determine the type, default values and some validation that is then presented within the UI.
 
 For example, you may have a script with the following parameters.
 
@@ -76,7 +84,7 @@ param(
 
 The result is a set of input options that are based on the types of parameters.
 
-![](<../../.gitbook/assets/image (6).png>)
+![](<../../.gitbook/assets/image (310).png>)
 
 ### Running a Script as Another User
 
@@ -88,7 +96,7 @@ You can run scripts as another user by configuring [secret variables](../../plat
 
 To run as another user, simply add or import a PSCredential variable. From there, you can select the credential from within the run dialog.
 
-![](<../../.gitbook/assets/image (26).png>)
+![](<../../.gitbook/assets/image (301).png>)
 
 ## Remoting
 
