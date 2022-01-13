@@ -158,7 +158,7 @@ Available in PowerShell Universal 2.5 and later.
 
 You can enable Windows authentication by adding a new authentication provider in Security \ Authentication. Select Windows and enable the authentication.
 
-![](<../../.gitbook/assets/image (294).png>)
+![](<../../.gitbook/assets/image (294) (1).png>)
 
 Once Windows set to authenticated, Windows authentication can now be used against Universal. You will have to log out in order to use Windows authentication.
 

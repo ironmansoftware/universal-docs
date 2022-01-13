@@ -14,13 +14,13 @@ You can run [scripts ](scripts/)in PowerShell Universal. PowerShell Universal in
 
 You can schedule jobs to [run continuously](schedules.md#continuous), [at certain times ](schedules.md#cron)or even [when events happen](triggers.md) within the PowerShell Universal platform.&#x20;
 
-![](<../.gitbook/assets/image (293).png>)
+![](<../.gitbook/assets/image (294).png>)
 
 ### Ad-Hoc Commands
 
 Run ad-hoc commands in [terminals ](terminals.md)in any of your configured environments and, optionally, as alternate credentials.&#x20;
 
-![](<../.gitbook/assets/image (308).png>)
+![](<../.gitbook/assets/image (310).png>)
 
 
 

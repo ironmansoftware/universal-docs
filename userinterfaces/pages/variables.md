@@ -67,7 +67,7 @@ Route variables need to be defined when creating the URL for the page. Each sect
 
 For example, this page defines a single route variable.&#x20;
 
-![](<../../.gitbook/assets/image (294) (1).png>)
+![](<../../.gitbook/assets/image (294) (1) (1).png>)
 
 Within the page, the route variables will appear within the variable drawer.&#x20;
 

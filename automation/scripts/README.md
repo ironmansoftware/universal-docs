@@ -60,7 +60,7 @@ New-PSUScript -Name Script.ps1 -Path Script.Ps1 -ConcurrentJobs 1
 
 You can run a script in the UI by click the Run button the Automation / Scripts page or by clicking View and then Run. In each case, you will be presented with the Run Dialog that allows you to select various settings for the job.
 
-![](<../../.gitbook/assets/image (309).png>)
+![](<../../.gitbook/assets/image (311).png>)
 
 ### Running a Script With Parameters
 
@@ -84,7 +84,7 @@ param(
 
 The result is a set of input options that are based on the types of parameters.
 
-![](<../../.gitbook/assets/image (310).png>)
+![](<../../.gitbook/assets/image (312).png>)
 
 ### Running a Script as Another User
 
