@@ -78,6 +78,18 @@ You can define a Run As user in a script by using the `-Credential` parameter. T
 New-PSUSchedule -Script "MyScript.ps1" -Cron '* * * * *' -Credential 'MyUser'
 ```
 
+## Conditions
+
+Conditions can be defined that determine whether a schedule should be run. This is useful if you are using the same repository scripts for multiple environments. Currently, conditions cannot be defined within the admin console. Conditions are passed the current script and schedule as parameters. The condition scriptblock is run within the integrated environment.&#x20;
+
+The condition needs to return true or false. Below is an example of a condition where the schedule will only run if there is an environment variable named `Slot` that contains the value `production`.&#x20;
+
+```powershell
+New-PSUSchedule -Script "MyScript.ps1" -Cron '* * * * *' -Condition {
+  $ENV:Slot -eq 'production'
+}
+```
+
 ## API
 
 * [New-PSUSchedule](../cmdlets/New-PSUSchedule.txt)
