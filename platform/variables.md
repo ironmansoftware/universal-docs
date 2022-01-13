@@ -60,7 +60,7 @@ Finally, we will need to register the key vault and connect to Azure when the we
 
 After deploying your web-app, you will need to first install the Az.Account and Az.KeyVault modules. You can do so on the modules page. They will be installed to the local repository within the web app.
 
-![](<../.gitbook/assets/image (305).png>)
+![](<../.gitbook/assets/image (305) (1).png>)
 
 Next, create a script within PowerShell Universal to connect to Azure and register the vault. Run the script to verify it works properly.
 

@@ -1,16 +1,26 @@
 ---
-description: >-
-  Universal Automation is a lightweight and easy to use automation platform
-  built for PowerShell.
+description: Run and schedule scripts with automation
 ---
 
 # About Automation
 
-## Features
+### Run Scripts
 
-* **Simple Background Jobs** - Universal Automation provides the ability to run simple background jobs in Windows PowerShell, PowerShell 6 and PowerShell 7. Jobs can be scheduled to run with simple CRON expressions.
-* **Runs anywhere** - Built on .NET to support multi-platform, docker, raspberry pi, and just about anything!
-* **Persistence** - Universal Automation job status is automatically backed by database persistence to allow for easy reporting of job results and data.
-* **PowerShell First** - Build from the ground up for Administrators/Developers/DevOps professionals familiar with PowerShell. UA integrates with Write-Progress, the pipeline, and user input, like Read-Host, to allow users to interact with scripts via the UA dashboard.
-* **Triggers -** Trigger scripts based on events that happen within PowerShell Universal
+You can run [scripts ](scripts/)in PowerShell Universal. PowerShell Universal integrates deeply with the PowerShell host to provide a UI for param blocks, output rich objects, display progress and even allow the user to provide feedback.&#x20;
+
+![](<../.gitbook/assets/image (305).png>)
+
+### Schedule Jobs
+
+You can schedule jobs to [run continuously](schedules.md#continuous), [at certain times ](schedules.md#cron)or even [when events happen](triggers.md) within the PowerShell Universal platform.&#x20;
+
+![](<../.gitbook/assets/image (293).png>)
+
+### Ad-Hoc Commands
+
+Run ad-hoc commands in [terminals ](terminals.md)in any of your configured environments and, optionally, as alternate credentials.&#x20;
+
+![](<../.gitbook/assets/image (308).png>)
+
+
 
