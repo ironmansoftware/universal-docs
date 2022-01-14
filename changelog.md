@@ -4,6 +4,47 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2.7.1 - 1/14/2022
+
+## Includes
+
+- UniversalDashboard - v3.9.1
+- UniversalDashboard - v2.9.9
+- UniversalDashboard.Charts - 1.3.2
+- UniversalDashboard.Map - 1.0
+- UniversalDashboard.CodeEditor - 1.2.0
+- UniversalDashboard.Editor - 1.0.0
+- UniversalDashboard.Style - 1.0.0
+
+-----
+
+## Changed
+
+### Automation 
+
+- Fixed an issue where creating a schedule with a string array parameter would not work properly
+- Fixed an issue where New-PSUSchedule -Integrated would not work with parameters
+- Fixed an issue where you couldn't view jobs or scripts when using Windows Auth and FQDN server names
+- Fixed an issue where terminals wouldn't work when using Windows Auth and FQDN server names
+
+### User Interfaces
+
+- Pages: Fixed an issue where table columns "sortable" property would not be persisted.
+- Pages: Fixed an issue where pages would not be listed after creating a new page
+- Pages: Fixed an issue where you couldn't execute anonymous scripts from unauthenticated pages
+- Pages: Fixed an issue where you couldn't view pages when using Windows Auth and FQDN server names
+- Dashboards: Fixed an issue where the dashboard console would not work in Windows PowerShell
+- Dashboards: Fixed an issue where a $type property was added to $EventData in endpoints
+- Dashboards: Fixed an issue where New-UDAutocomplete would not display the selected value
+- Dashboards: Fixed an issue where New-UDTable margin did not match other elements.
+- Dashboards: Fixed an issue where Show\Hide-UDToast would allow an invalid ID
+- Dashboards: Fixed an issue where you could not clear the date filter on New-UDTable
+
+### Platform
+
+- Fixed an issue where setting claim type and claim value would not work from the UI
+- Fixed an issue where pressing Ctrl+S would not save within the editors
+
 ## 2.7.0 - 1/11/2022
 
 ## Includes
