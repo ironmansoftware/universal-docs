@@ -78,9 +78,23 @@ After publishing the Web App, view your PowerShell Universal instance by navigat
 
 ### Persistent Storage
 
-The default `appsettings.json` file will store the database and configuration files in a non-persistent location. You can add environment variables to move them to persistent storage within your web app. Note the `Data__ConnectionString` and `Data__RepositoryPath` environment variables.&#x20;
+The default `appsettings.json` file will store the database and configuration files in a non-persistent location. You can add environment variables to move them to persistent storage within your web app.&#x20;
 
-![](<../../.gitbook/assets/image (309) (1) (1) (1).png>)
+**Data\_\_ConnectionString**
+
+The `Data__ConnectionString` environment variable sets the location of the database. You will have to ensure that you enable a "shared" connection for LiteDB to function properly in Azure. Set the value to the following.&#x20;
+
+```
+filename=D:\home\Data\PowerShellUniversal\database.db;Connection=shared
+```
+
+**Data\_\_RepositoryPath**
+
+The `Data__RepositoryPath` environment variable sets the location of the configuration files for Universal. Set the value to the following.&#x20;
+
+```
+D:\home\Data\PowerShellUniversal\Repository
+```
 
 ## Updating your Web App
 
