@@ -4,6 +4,25 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 27.2 - 1/16/2022
+
+## Includes
+
+- UniversalDashboard - v3.9.2
+- UniversalDashboard - v2.9.9
+- UniversalDashboard.Charts - 1.3.2
+- UniversalDashboard.Map - 1.0
+- UniversalDashboard.CodeEditor - 1.2.0
+- UniversalDashboard.Editor - 1.0.0
+- UniversalDashboard.Style - 1.0.0
+
+## Changed
+
+### User Interaces 
+
+- Dashboards - Fixed an issue were Show-UDToast would show an error with the default parameters. 
+
+
 ## 2.7.1 - 1/14/2022
 
 ## Includes
