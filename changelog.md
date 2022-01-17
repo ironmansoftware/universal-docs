@@ -4,7 +4,7 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
-## 27.2 - 1/16/2022
+## 2.7.2 - 1/16/2022
 
 ## Includes
 
