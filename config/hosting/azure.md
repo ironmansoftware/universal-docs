@@ -10,7 +10,7 @@ PowerShell Universal is an ASP.NET Core web application and can be hosted in Win
 
 Within the the Azure Portal, you will need to create a new Web App resource. PowerShell Universal currently requires the .NET 5 runtime stack. You can use either Linux or Windows.
 
-![](<../../.gitbook/assets/image (304) (1) (1).png>)
+![](<../../.gitbook/assets/image (304) (1) (1) (1).png>)
 
 In this example, we'll use the Azure PowerShell module to deploy the Web App manually.&#x20;
 

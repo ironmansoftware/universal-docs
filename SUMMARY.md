@@ -147,6 +147,7 @@
   * [App Tokens](config/security/app-tokens.md)
   * [Client Certificate](config/security/client-certificate.md)
   * [OpenID Connect](config/security/openid-connect.md)
+  * [SAML2](config/security/saml2.md)
   * [WS-Federation](config/security/ws-federation.md)
 * [Repository](config/repository.md)
 * [Running as a Service Account](config/running-as-a-service-account.md)
