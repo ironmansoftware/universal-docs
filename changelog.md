@@ -4,6 +4,25 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2.7.3 - 1/21/2022
+
+## Includes
+
+- UniversalDashboard - v3.9.2
+- UniversalDashboard - v2.9.9
+- UniversalDashboard.Charts - 1.3.2
+- UniversalDashboard.Map - 1.0
+- UniversalDashboard.CodeEditor - 1.2.0
+- UniversalDashboard.Editor - 1.0.0
+- UniversalDashboard.Style - 1.0.0
+
+## Changed
+
+### Platform
+
+- Fixed an issue where the SAML2 integration would get stuck in a redirect loop
+- Fixed an issue with the UI for SAML2
+
 ## 2.7.2 - 1/16/2022
 
 ## Includes
