@@ -157,7 +157,7 @@ This will highlight the HTML elements that make up that component. In the image 
 * MuiButton-label
 * MuiTouchRipple-root
 
-![](<../../../.gitbook/assets/image (302) (1).png>)
+![](<../../../.gitbook/assets/image (302) (1) (1).png>)
 
 In order to override these various elements, you will need to add an `overrides` key to your theme.&#x20;
 

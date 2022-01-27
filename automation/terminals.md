@@ -24,7 +24,7 @@ You can configure a new terminal by navigating to Automation \ Terminals and cli
 
 To use a terminal, click the Open Terminal button for the terminal you wish to launch. Depending on your configuration, this may start a new PowerShell process based on the environment you selected.&#x20;
 
-![Open Terminal](<../.gitbook/assets/image (309) (1) (1).png>)
+![Open Terminal](<../.gitbook/assets/image (309) (1) (1) (1).png>)
 
 Once the terminal has launched, you'll be able to issue commands.&#x20;
 

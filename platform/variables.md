@@ -50,7 +50,7 @@ In Azure, we'll need to configure a managed identity for our web app. This step 
 
 Next, you'll need to allow your managed identity to access your key vault and read your subscription. You can add the managed identity to the builtin Reader group to allow access to the subscription.
 
-![](<../.gitbook/assets/image (302).png>)
+![](<../.gitbook/assets/image (302) (1).png>)
 
 Then, I provided all privileges to secret and key management for my managed identity in my Key Vault resource.
 
@@ -76,7 +76,7 @@ Register-SecretVault -ModuleName Az.KeyVault -Name AzureKeyVault -VaultParameter
 
 Now, when you are creating secrets, you will see the AzureKeyVault available.&#x20;
 
-![](<../.gitbook/assets/image (310) (1).png>)
+![](<../.gitbook/assets/image (310) (1) (1).png>)
 
 To ensure the application is connected to Azure and the key vault is registered, create a startup trigger to run the script when the web app starts. We recommend setting a delay when for the trigger to allow the app to warm up.&#x20;
 

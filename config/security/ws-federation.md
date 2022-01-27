@@ -116,7 +116,7 @@ When running your server, you should now be prompted for your credentials either
 
 You can configure WS-Federation authentication in the admin console. To do so, navigate to Security \ Authentication. Add the WS-Federation provider by selecting it from the drop down in the top right.&#x20;
 
-![](<../../.gitbook/assets/image (302) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (302) (1) (1) (1) (1).png>)
 
 Next, edit the properties of the authentication provider and specify the configuration details for your ADFS setup.&#x20;
 

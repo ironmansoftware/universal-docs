@@ -120,7 +120,7 @@ param(
 )
 ```
 
-![](<../../.gitbook/assets/image (302) (1) (1).png>)
+![](<../../.gitbook/assets/image (302) (1) (1) (1).png>)
 
 ### Help Messages
 

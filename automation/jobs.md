@@ -24,19 +24,19 @@ Pipeline output for jobs are also stored within PowerShell Universal. Any object
 
 You can expand the tree view to see the objects and properties from the pipeline.
 
-![Pipeline Output](<../.gitbook/assets/image (309).png>)
+![Pipeline Output](<../.gitbook/assets/image (309) (1).png>)
 
 ### Viewing Errors
 
 Any errors written to the error stream will be available on the Error tab within the job page.
 
-![Errors](<../.gitbook/assets/image (314).png>)
+![Errors](<../.gitbook/assets/image (314) (1).png>)
 
 ## Feedback
 
 Some jobs will require feedback. Any script that contains a `Read-Host` call will wait until there is user interaction with that job. The job will be in a Waiting for Feedback state, and you can respond to that feedback by click the Response to Feedback button on the job page.
 
-![Waiting for Feedback](<../.gitbook/assets/image (313).png>)
+![Waiting for Feedback](<../.gitbook/assets/image (313) (1).png>)
 
 ## Invoking Jobs from PowerShell
 

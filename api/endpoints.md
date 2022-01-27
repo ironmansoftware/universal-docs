@@ -20,7 +20,7 @@ Invoke-RestMethod http://localhost:5000/endpoint
 
 When defining endpoints in the management API, you can skip the `New-PSUEndpoint` call as it will be defined by the admin console.&#x20;
 
-![](<../.gitbook/assets/image (302) (1) (1) (1) (1) (1).png>)
+![](<../.gitbook/assets/image (302) (1) (1) (1) (1) (1) (1).png>)
 
 The only contents that you need to provide in the editor will be the script you wish to call.&#x20;
 
