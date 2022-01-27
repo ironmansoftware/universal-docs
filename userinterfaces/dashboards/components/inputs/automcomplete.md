@@ -22,7 +22,7 @@ This example filters the array with `Where-Object`.&#x20;
 
 ```powershell
 New-UDAutocomplete -OnLoadOptions { 
-    @('Test', 'Test2', 'Test3', 'Test4') | Where-Object { $_ -match $Body } | ConvertTo-Json
+    @('Test', 'Test2', 'Test3', 'Test4') | Where-Object { $_ -like "*$Body*" } | ConvertTo-Json
 }
 ```
 
@@ -32,7 +32,7 @@ New-UDAutocomplete -OnLoadOptions {
 
 ```powershell
 New-UDAutocomplete -OnLoadOptions { 
-    @('Test', 'Test2', 'Test3', 'Test4') | Where-Object { $_ -match $Body } | ConvertTo-Json
+    @('Test', 'Test2', 'Test3', 'Test4') | Where-Object { $_ -like "*$Body*" } | ConvertTo-Json
 } -OnChange {
     Show-UDToast $Body 
 }
