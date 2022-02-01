@@ -22,7 +22,7 @@ New-UDEndpoint -Schedule $EndpointSchedule -Endpoint {
     $Cache:Processes = Get-Process | Select-Object Name,ID
 } | Out-Null
 
-New-UDDashboard -Name 'Test' -Content {
+New-UDDashboard -Tiele 'Test' -Content {
     New-UDTable -Data $Cache:Processes
 }
 ```
@@ -38,7 +38,7 @@ New-UDEndpoint -Schedule $EndpointSchedule -Endpoint {
    Set-PSUCache -Name 'Processes' -Value $Processes
 } | Out-Null
 
-New-UDDashboard -Name 'Test' -Content {
+New-UDDashboard -Title 'Test' -Content {
 
 }
 ```
