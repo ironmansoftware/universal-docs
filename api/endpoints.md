@@ -265,6 +265,14 @@ You can then assign the API environment in the `settings.ps1` script.
 Set-PSUSetting -ApiEnvironment 'Env'
 ```
 
+## Timeout&#x20;
+
+{% hint style="info" %}
+Available in PowerShell Universal 2.8 or later.&#x20;
+{% endhint %}
+
+By default, endpoints will not time out. To set a timeout for your endpoints, you can use the `New-PSUEndpoint` `-Timeout` parameter. The timeout is set in the number of seconds.&#x20;
+
 ## API
 
 * [New-PSUEndpoint](../cmdlets/New-PSUEndpoint.txt)
