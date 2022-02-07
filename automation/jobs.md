@@ -16,7 +16,7 @@ Jobs can be viewed by clicking the Automation / Jobs page. Click the View button
 
 Standard PowerShell streams such as information, host, error, warning and verbose are shown within the output pane.&#x20;
 
-![Standard Output](<../.gitbook/assets/image (315).png>)
+![Standard Output](<../.gitbook/assets/image (315) (1).png>)
 
 ### View Job Pipeline Output
 
