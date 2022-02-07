@@ -14,14 +14,14 @@ Tables display information in a way that’s easy to scan, so that users can loo
 
 A simple example with no frills. Table columns are defined from the data.
 
-```
+```powershell
 $Data = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
-) 
+) power
 
 New-UDTable -Data $Data
 ```
@@ -32,7 +32,7 @@ New-UDTable -Data $Data
 
 Define custom columns for your table.
 
-```
+```powershell
 $Data = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -58,7 +58,7 @@ New-UDTable -Id 'customColumnsTable' -Data $Data -Columns $Columns
 
 Define column rendering. Sorting and exporting still work for the table.
 
-```
+```powershell
 $Data = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 1; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -84,7 +84,7 @@ New-UDTable -Data $Data -Columns $Columns -Sort -Export
 
 Column width can be defined using the `-Width` parameter. You can also decide to truncate columns that extend past that width.
 
-```
+```powershell
 $Data = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -110,7 +110,7 @@ New-UDTable -Data $Data -Columns $Columns -Sort
 
 You can configure custom filters per column. The table supports `text`, `select`, `fuzzy` , `slider`, `range`, `date` , `number`, and `autocomplete` filters.
 
-```
+```powershell
 $Data = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -140,7 +140,7 @@ For a full example of server-side processing, [see this blog post](https://blog.
 
 Process data on the server so you can perform paging, filtering, sorting and searching in systems like SQL.
 
-```
+```powershell
 $Columns = @(
     New-UDTableColumn -Property Dessert -Title "A Dessert"
     New-UDTableColumn -Property Calories -Title Calories 
@@ -177,7 +177,7 @@ New-UDTable -Columns $Columns -LoadData {
 
 By default, paging is disable and tables will grow based on how many rows of data you provide. You can enable paging by using the `-ShowPagination` cmdlet (alias `-Paging`). You can configure the page size using the `-PageSize` cmdlet.&#x20;
 
-```
+```powershell
 $Data = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -193,11 +193,21 @@ New-UDTable -Data $Data -Paging -PageSize 2
 
 By default, the page size selector provides an option to show all rows. If you want to prevent users from doing this, use the `-DisablePageSizeAll` cmdlet.&#x20;
 
+### Pagination Location
+
+{% hint style="info" %}
+Requires PowerShell Universal 2.8 or later.&#x20;
+{% endhint %}
+
+You can change the location of the pagination control by using the `-PaginationLocation` parameter. It accepts top, bottom and both.&#x20;
+
+![Pagination Location](<../../../../.gitbook/assets/image (317).png>)
+
 ## Sorting
 
 To enable sorting for a table, use the `-ShowSort` parameter. When you enable sorting, you will be able to click the table headers to sort the table by clicking the headers. By default, multi-sort is enabled. To multi-hold shift and click a column header.&#x20;
 
-```
+```powershell
 $Data = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -211,7 +221,7 @@ New-UDTable -Data $Data -ShowSort
 
 You can control which columns can be sorted by using `New-UDTableColumn` and `-ShowSort` parameter.&#x20;
 
-```
+```powershell
     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -232,7 +242,7 @@ New-UDTable -Id 'customColumnsTable' -Data $Data -Columns $Columns
 
 By default, the sorting of a table has 3 states. Unsorted, ascending and descending. If you would like to disable the unsorted state, use the `-DisableSortRemove` parameter of `New-UDTable`.
 
-```
+```powershell
 $Data = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -250,7 +260,7 @@ Tables support selection of rows. You can create an event handler for the `OnRow
 
 The following example creates a table with row selection enabled. A toast is show when clicking the row or when clicking the GET Rows button.
 
-```
+```powershell
 $Data = try { get-service -ea Stop | select Name,@{n = "Status";e={ $_.Status.ToString()}},@{n = "StartupType";e={ $_.StartupType.ToString()}},@{n = "StartType";e={ $_.StartType.ToString()}} } catch {}
 $Columns = @(
     New-UDTableColumn -Property Name -Title "Service Name" -ShowSort -IncludeInExport -IncludeInSearch -ShowFilter -FilterType text
@@ -274,7 +284,7 @@ The `$EventData` variable for the `-OnRowSelected` event will include all the co
 
 For example, the service table data would look like this.&#x20;
 
-```
+```powershell
 @{
    Id = 0
    Name = 'AESMService',
@@ -289,7 +299,7 @@ For example, the service table data would look like this.&#x20;
 
 Tables support exporting the data within the table. You can export as CSV, XLSX, JSON or PDF. You can define which columns to include in an export and choose to export just the current page or all the data within the table.
 
-```
+```powershell
 $Data = try { get-service -ea Stop | select Name,@{n = "Status";e={ $_.Status.ToString()}},@{n = "StartupType";e={ $_.StartupType.ToString()}},@{n = "StartType";e={ $_.StartType.ToString()}} } catch {}
 $Columns = @(
     New-UDTableColumn -Property Name -Title "Service Name" -IncludeInExport
@@ -308,7 +318,7 @@ Hidden columns allow you to include data that is not displayed in the table but 
 
 The following hides the StartType column from the user but includes it in the export.&#x20;
 
-```
+```powershell
 $Data = try { get-service -ea Stop | select Name,@{n = "Status";e={ $_.Status.ToString()}},@{n = "StartupType";e={ $_.StartupType.ToString()}},@{n = "StartType";e={ $_.StartType.ToString()}} } catch {}
 $Columns = @(
     New-UDTableColumn -Property Name -Title "Service Name" -IncludeInExport
@@ -325,7 +335,7 @@ You can control the export functionality with a PowerShell script block. This is
 
 In this example, I have a SQL table that contains podcasts. When exporting, you will receive information about the current state of the table to allow you to customize what data is exported.
 
-```
+```powershell
 New-UDDashboard -Title "Hello, World!" -Content {
     New-UDTable -Title 'Shows' -LoadData {
         $TableData = ConvertFrom-Json $Body
@@ -399,7 +409,7 @@ New-UDDashboard -Title "Hello, World!" -Content {
 
 You can decide which export options to present to your users using the `-ExportOption` cmdlet. The following example would only show the CSV export option.
 
-```
+```powershell
 $Data = try { get-service -ea Stop | select Name,@{n = "Status";e={ $_.Status.ToString()}},@{n = "StartupType";e={ $_.StartupType.ToString()}},@{n = "StartType";e={ $_.StartType.ToString()}} } catch {}
 $Columns = @(
     New-UDTableColumn -Property Name -Title "Service Name" -IncludeInExport
@@ -414,7 +424,7 @@ New-UDTable -Id 'service_table' -Data $Data -Columns $Columns -Title 'Services' 
 
 You can use the `-TextOption` parameter along with the `New-UDTableTextOption` cmdlet to set text fields within the table.
 
-```
+```powershell
 $Data = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -434,7 +444,7 @@ You can externally refresh a table by putting the table within a dynamic region 
 
 This example creates a button to refresh the table.
 
-```
+```powershell
 New-UDDynamic -Id 'table' -Content {
     $Data = Get-Service
     New-UDTable -Data $Data -Paging
