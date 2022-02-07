@@ -119,6 +119,7 @@ The following variables are available throughout all environments within PowerSh
 | Name            | Type   | Description                                                                |
 | --------------- | ------ | -------------------------------------------------------------------------- |
 | $PSUEnvironment | string | The name of the environment the script is running within (e.g. Integrated) |
+| $Repository     | string | The absolute path to the repository folder.                                |
 
 ### API
 
