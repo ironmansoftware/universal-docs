@@ -54,7 +54,7 @@ Next, you'll need to allow your managed identity to access your key vault and re
 
 Then, I provided all privileges to secret and key management for my managed identity in my Key Vault resource.
 
-![](<../.gitbook/assets/image (307) (1).png>)
+![](<../.gitbook/assets/image (307) (1) (1).png>)
 
 Finally, we will need to register the key vault and connect to Azure when the web app starts. This can be accomplished by using the Az.Account and Az.KeyVault modules.&#x20;
 

@@ -12,7 +12,7 @@ Environments are stored within the `environments.ps1` file.&#x20;
 
 To configure environments, you can use the Settings \ Environments page.&#x20;
 
-![](<../.gitbook/assets/image (136).png>)
+![Environments Page](<../.gitbook/assets/image (307).png>)
 
 Environments support setting the name, path, arguments, modules and variables.
 
@@ -42,7 +42,11 @@ You can also use wild cards (`*`) to bring in multiple variables that match a pa
 
 You can use the `-PSModulePath` parameter of `New-PSUEnvironment` to configure additional PSModulePaths to include within the environment.&#x20;
 
-### RunspaceRecycling
+### Runspace Recycling
+
+{% hint style="info" %}
+Available in PowerShell Universal 2.8 or later.
+{% endhint %}
 
 The `-RunspaceRecycling` parameter of `New-PSUEnvironment` will cause runspaces to be disposed and recreated periodically. This may increase CPU usage but reduce memory usage in some environments.&#x20;
 

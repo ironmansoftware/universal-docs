@@ -14,7 +14,7 @@ Script properties are stored in the `scripts.ps1` configuration file.
 
 To add a new script, you can click the New Script button within the Automation / Scripts page. There are various settings you can provide for the script.
 
-![](<../../.gitbook/assets/image (307).png>)
+![](<../../.gitbook/assets/image (307) (1).png>)
 
 **Name**
 
