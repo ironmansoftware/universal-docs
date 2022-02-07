@@ -16,41 +16,55 @@ To add a new script, you can click the New Script button within the Automation /
 
 ![](<../../.gitbook/assets/image (307) (1).png>)
 
-**Name**
+## Script Options
+
+### **Name**
 
 Name of the script as shown in Universal Automation. This will also be the name used to persist the script to disk. This setting needs to be unique within the current folder.
 
-**Description**
+### **Description**
 
 A description of the script. This is shown in various places within the UA UI and also returned by the Universal cmdlets.
 
-**Disable Manual Invocation**
+### **Disable Manual Invocation**
 
 Prevents a script from being run manually. This is enforced in the UI as well as the web server and cmdlets.
 
-**Manual Time**
+### **Manual Time**
 
 This setting is used to track the amount of time saved.
 
-**Max Job History**
+### **Max Job History**
 
 Defaults to 100. It defines the amount of jobs that are stored when running this script. Jobs are also cleaned up based on the server-wide job retention duration setting from within the Settings / General page.
 
-**Error Action**
+### **Error Action**
 
 Changes how the script reacts when there is an error within the script. By default, terminating and non-terminating errors are ignored and the script will always be successful. You can change this setting to stop to cause scripts to fail immediately when an error is encountered.
 
-**PowerShell Version**
+### **Environment**
 
-Allows you to define the required PowerShell version for the script. By default, it uses the server-wide default PowerShell version. PowerShell versions are automatically located the first the Universal Server starts up. You can also add PowerShell Versions on the Settings / General page.
+Allows you to define the required PowerShell environment for the script. By default, it uses the server-wide default PowerShell environment. PowerShell environments are automatically located the first the Universal Server starts up or read from the `environments.ps1` file. You can also add Environment on the Settings / Environments page.
 
-**Timeout**
+### **Timeout**
 
 The number of minutes before the script will timeout. The default value of 0 means the script will run forever. Once a script reaches it's time out, it will be cancelled.
 
-**Concurrent Jobs**
+### Anonymous
 
-Defines the maximum concurrent jobs the script can be run. Defaults to 100.
+The anonymous setting allows the script to be run when the user is not authenticated. This is useful when using scripts in Pages.
+
+### Discard Pipeline
+
+{% hint style="info" %}
+Available in PowerShell Universal 2.8 or later.&#x20;
+{% endhint %}
+
+When checked, this will disable the storage of pipeline output. This will greatly reduce the CPU and storage overhead of jobs.&#x20;
+
+### **Concurrent Jobs**
+
+Defines the maximum concurrent jobs the script can be run. Defaults to 1000. Unlicensed instances can only execute two jobs in parallel.
 
 ```powershell
 New-PSUScript -Name Script.ps1 -Path Script.Ps1 -ConcurrentJobs 1
