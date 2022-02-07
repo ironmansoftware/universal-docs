@@ -60,7 +60,7 @@ The anonymous setting allows the script to be run when the user is not authentic
 Available in PowerShell Universal 2.8 or later.&#x20;
 {% endhint %}
 
-When checked, this will disable the storage of pipeline output. This will greatly reduce the CPU and storage overhead of jobs.&#x20;
+When checked, this will disable the storage of pipeline output. This will greatly reduce the CPU and storage overhead of jobs. The script will still write to the information, warning, and error streams.&#x20;
 
 ### **Concurrent Jobs**
 
