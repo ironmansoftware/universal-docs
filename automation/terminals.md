@@ -28,13 +28,13 @@ To use a terminal, click the Open Terminal button for the terminal you wish to l
 
 Once the terminal has launched, you'll be able to issue commands.&#x20;
 
-![Run Commands in a Terminal](<../.gitbook/assets/image (304) (1) (1).png>)
+![Run Commands in a Terminal](<../.gitbook/assets/image (304) (1) (1) (1).png>)
 
 ### Stop a Terminal&#x20;
 
 To stop a terminal, you can navigate to the terminal instances tab on the Terminals page. Click the trash can to stop the terminal.&#x20;
 
-![Stop a Terminal](<../.gitbook/assets/image (295).png>)
+![Stop a Terminal](<../.gitbook/assets/image (295) (1).png>)
 
 ### Reconnect to a Terminal
 

@@ -2,6 +2,51 @@
 
 Scripts that run within Universal run within background processes or runspaces which may make it hard to debug what is happening within a script. You can use cmdlets like Write-Debug and Write-Verbose to provide more information in logs for dashboards and jobs.
 
+## Integrated Debugger
+
+{% hint style="info" %}
+Available in PowerShell Universal 2.8 or later. Requires a [license](https://ironmansoftware.com/pricing/powershell-universal).
+{% endhint %}
+
+PowerShell Universal integrates directly with the PowerShell debugger. You can include `Wait-Debugger` within your scripts to cause them to pause. Once paused, you will be able to access the runspace by navigating to Platform \ Debugging
+
+For example, assume you have a dashboard with a `Wait-Debugger` call included.&#x20;
+
+```powershell
+New-UDDashboard -Title "Dashboard" -Content {
+    Wait-Debugger
+    $Data = @(
+        @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+        @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+        @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+        @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+        @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    ) 
+
+    New-UDTable -Data $Data -Paging -PageSize 2 -PaginationLocation 'top'
+}
+```
+
+You'll notice that loading the page will result in the dashboard hanging. This is because the debugger is paused.&#x20;
+
+![Paused Dashboard](<../.gitbook/assets/image (311).png>)
+
+You can then view the paused scripts in the debugging table.&#x20;
+
+![Breakpoints](<../.gitbook/assets/image (296).png>)
+
+You can then click the Debug button to open a debug terminal.&#x20;
+
+![Debug Button](<../.gitbook/assets/image (297).png>)
+
+Once within the debug terminal, you can execute commands as well as continue, step into, step out of and step over lines in the script.&#x20;
+
+![Debug Terminal](<../.gitbook/assets/image (304).png>)
+
+Executing commands will execute them directly in the PowerShell Universal runspace. You can inspect variables or execute additional commands in the runspace's context.
+
+![Debug Terminal Commands](<../.gitbook/assets/image (295).png>)
+
 ## Logging Scripts
 
 Certain aspects of Universal will log their scripts automatically. Other features may require you log yourself.

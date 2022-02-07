@@ -36,13 +36,13 @@ When the page is rendered, the variable will be replaced.&#x20;
 
 You can also use variables within targets and data sources. This allows you to call URLs that will change based on the variable.&#x20;
 
-![](<../../.gitbook/assets/image (297) (1).png>)
+![](<../../.gitbook/assets/image (297) (1) (1).png>)
 
 You can also use variables to provide hidden input fields to APIs and scripts.&#x20;
 
 &#x20;
 
-![](<../../.gitbook/assets/image (296) (1) (1).png>)
+![](<../../.gitbook/assets/image (296) (1) (1) (1).png>)
 
 ## Page Variables
 

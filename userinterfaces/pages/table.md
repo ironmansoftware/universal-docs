@@ -10,11 +10,11 @@ Tables allow you to display the output of APIs and scripts in rows and columns. 
 
 Both APIs and Scripts are supported by tables. When selecting an API, the API will be executed each time the page is loaded. When selecting a script, the last job run of the script will provide the output.&#x20;
 
-![](<../../.gitbook/assets/image (295) (1).png>)
+![](<../../.gitbook/assets/image (295) (1) (1).png>)
 
 When columns are not defined, all the properties of the objects will be displayed.&#x20;
 
-![](<../../.gitbook/assets/image (296) (1).png>)
+![](<../../.gitbook/assets/image (296) (1) (1).png>)
 
 ## Customizing Columns
 
