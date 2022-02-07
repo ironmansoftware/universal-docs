@@ -270,6 +270,26 @@ The logo will display in the top left corner.
 
 To customize the style of your logo, you can use a [cascading style sheet](../themes/cascading-style-sheets.md) and target the `ud-logo` element ID.
 
+## Header Content
+
+{% hint style="info" %}
+Requires PowerShell Universal 2.8 or later.
+{% endhint %}
+
+You can define custom content to include in the header by using the `-HeaderContent` parameter.&#x20;
+
+```powershell
+$Page = New-UDPage -Name 'Home' -Content {
+
+} -HeaderContent {
+    New-UDButton -Icon (New-UDIcon -Icon Users) -Text 'User'
+}
+
+New-UDDashboard -Title "Dashboard" -Pages $Page
+```
+
+![Button in Header](<../../../.gitbook/assets/image (315).png>)
+
 ## API
 
 [New-UDPage](../../../cmdlets/New-UDPage.txt)
