@@ -38,6 +38,14 @@ The variables list allows you to define zero or more variables to load in the Po
 
 You can also use wild cards (`*`) to bring in multiple variables that match a pattern.
 
+### PSModulePath
+
+You can use the `-PSModulePath` parameter of `New-PSUEnvironment` to configure additional PSModulePaths to include within the environment.&#x20;
+
+### RunspaceRecycling
+
+The `-RunspaceRecycling` parameter of `New-PSUEnvironment` will cause runspaces to be disposed and recreated periodically. This may increase CPU usage but reduce memory usage in some environments.&#x20;
+
 ## Using Environments
 
 Environments can be used across the platform.&#x20;
