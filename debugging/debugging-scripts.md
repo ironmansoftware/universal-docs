@@ -5,7 +5,7 @@ Scripts that run within Universal run within background processes or runspaces w
 ## Integrated Debugger
 
 {% hint style="info" %}
-Available in PowerShell Universal 2.8 or later. Requires a [license](https://ironmansoftware.com/pricing/powershell-universal).
+Available in PowerShell Universal 2.8 or later. Requires a [license](https://ironmansoftware.com/pricing/powershell-universal). Debugging is not supported in Windows PowerShell.
 {% endhint %}
 
 PowerShell Universal integrates directly with the PowerShell debugger. You can include `Wait-Debugger` within your scripts to cause them to pause. Once paused, you will be able to access the runspace by navigating to Platform \ Debugging
