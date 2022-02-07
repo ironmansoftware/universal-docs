@@ -64,7 +64,7 @@ When checked, this will disable the storage of pipeline output. This will greatl
 
 ### **Concurrent Jobs**
 
-Defines the maximum concurrent jobs the script can be run. Defaults to 1000. Unlicensed instances can only execute two jobs in parallel.
+Defines the maximum concurrent jobs the script can be run. Defaults to 100.
 
 ```powershell
 New-PSUScript -Name Script.ps1 -Path Script.Ps1 -ConcurrentJobs 1
