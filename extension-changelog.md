@@ -4,6 +4,11 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 2.8.0 - 2/8/2022
+
+* Added support for multiple PowerShell Universal connections
+* Simplified extension initialization. 
+
 ## 2.5.0 - 11/10/2021
 
 * Added support for editing individual endpoints
