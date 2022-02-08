@@ -33,7 +33,7 @@ You'll notice that loading the page will result in the dashboard hanging. This i
 
 You can then view the paused scripts in the debugging table.&#x20;
 
-![Breakpoints](<../.gitbook/assets/image (296).png>)
+![Breakpoints](<../.gitbook/assets/image (296) (1).png>)
 
 You can then click the Debug button to open a debug terminal.&#x20;
 

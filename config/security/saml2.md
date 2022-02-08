@@ -26,7 +26,7 @@ Additional attributes can be mapped and will be available during [role evaluatio
 
 There are several basic settings you can configure in the PowerShell Universal admin console. To add SAML2 support, click Security \ Authentication. In the top right corner, you can select SAML2 from the drop down.&#x20;
 
-![](<../../.gitbook/assets/image (305).png>)
+![](<../../.gitbook/assets/image (305) (1).png>)
 
 Once the SAML2 integration has been added, you can configure the basic settings for communicating with your identity provider. You will need at least the Entity ID and Identity Provider Entity ID configured.&#x20;
 

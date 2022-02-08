@@ -28,7 +28,7 @@ Add a new IFrame component to the page and within the properties of the page, se
 
 When the page loads, it will load the dashboard and display it within the page.&#x20;
 
-![](<../../.gitbook/assets/image (296) (1).png>)
+![](<../../.gitbook/assets/image (296) (1) (1).png>)
 
 ### Limitations
 
