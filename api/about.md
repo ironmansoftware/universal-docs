@@ -29,9 +29,6 @@ Variables are listed on the [variables page](../platform/variables.md#api).
 ## API
 
 * [New-PSUEndpoint](../cmdlets/New-PSUEndpoint.txt)
-* Get-S
+* [Get-PSUEndpoint](../cmdlets/Get-PSUEndpoint.txt)
 * [Remove-PSUEndpoint](../cmdlets/Universal/Remove-PSUEndpoint.md)
-
-
-
 * [Set-UASetting](../cmdlets/Universal/Set-UASetting.md)
