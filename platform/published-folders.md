@@ -12,7 +12,7 @@ From the `Dashboard / Published Folders` page, you can click Add Published Folde
 
 You can choose to turn on authentication and authorization for the folder.
 
-![](https://github.com/ironmansoftware/universal-docs/tree/f9bbd5b16eec8502456cad78419a36af3172a317/.gitbook/assets/image%20\(99\)%20\(1\).png)
+![](<../.gitbook/assets/image (311).png>)
 
 Once the folder has been published, it will be listed in the published folders table.
 

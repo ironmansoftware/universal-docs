@@ -29,7 +29,7 @@ New-UDDashboard -Title "Dashboard" -Content {
 
 You'll notice that loading the page will result in the dashboard hanging. This is because the debugger is paused.&#x20;
 
-![Paused Dashboard](<../.gitbook/assets/image (311).png>)
+![Paused Dashboard](<../.gitbook/assets/image (311) (1).png>)
 
 You can then view the paused scripts in the debugging table.&#x20;
 
