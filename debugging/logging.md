@@ -4,9 +4,21 @@ description: Information about logging in PowerShell Universal.
 
 # Logging
 
+## Admin Console
+
+Logging levels can be changed within the Settings \ General \ Diagnostics page.&#x20;
+
+The Log Level setting configures PowerShell Universal logging settings. The Microsoft Log Level setting controls more low-level components within the web server. This is useful for debugging issues with authentication or authorization.&#x20;
+
+![](<../.gitbook/assets/image (308).png>)
+
+Clicking Download Logs will provide a zip archive of all the log files in the log directory on the server.&#x20;
+
+## appsettings.json
+
 Logging is controlled back the [application settings](../config/settings.md). By default, logging is enabled for the Information level and above. Also by default, logs are written to the `%ProgramData%\PowerShellUniversal` folder.
 
-## Changing the Logging Level
+### Changing the Logging Level
 
 To adjust the logging level, change the values in the `appsettings.json` file in the Logging  LogLevel section.
 
@@ -25,11 +37,11 @@ For example, to enable debug logging, set all the levels to debug.
 
 This setting can also be set using environment variables. These values need to be set before starting the Universal server.
 
-```text
+```
 $Env:Logging__LogLevel__Default = "Debug"
 ```
 
-## Changing the Logging Path
+### Changing the Logging Path
 
 To adjust the logging path, change the values in the `appsettings.json` file in the Logging  Path section.
 
@@ -46,7 +58,7 @@ To adjust the logging path, change the values in the `appsettings.json` file in 
 
 This setting can also be set using environment variables. These values need to be set before starting the Universal server.
 
-```text
+```
 $Env:Logging__Path = "C:\log.txt"
 ```
 
@@ -75,7 +87,7 @@ Universal will create event log entries for Warning and Error logs. These logs a
 
 These logs can be found by looking for Warning and Error level messages produced by the .NET Runtime source.
 
-![](../.gitbook/assets/image%20%28169%29.png)
+![](<../.gitbook/assets/image (169).png>)
 
 ## Common Logging Scenarios
 
@@ -90,4 +102,3 @@ It may also be helpful to run the Universal server outside of IIS to validate th
 Universal uses gRPC to communicate with external PowerShell processes that are started by the system. These processes run jobs, dashboards and the API server. This error indicates that the PowerShell process did not start correctly.
 
 To diagnosis this issue, [enable Debug logging](logging.md#changing-the-logging-level) for the Universal server. Debug logging will record the stdout from the PowerShell process to capture any startup errors that may be occurring in the process.
-
