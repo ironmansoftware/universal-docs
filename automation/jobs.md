@@ -10,7 +10,7 @@ Jobs are the result of running a script. Jobs are retained based on the script a
 
 Jobs can be viewed by clicking the Automation / Jobs page. Click the View button to navigate to the job. Jobs in progress can also been cancelled.
 
-![](<../.gitbook/assets/image (293).png>)
+![Job Output](<../.gitbook/assets/image (293).png>)
 
 ### View Job Output
 
@@ -20,7 +20,11 @@ Standard PowerShell streams such as information, host, error, warning and verbos
 
 ### View Job Pipeline Output
 
-Pipeline output for jobs are also stored within PowerShell Universal. Any object that is written to the pipeline is stored as CliXml and available for view within the Pipeline Output tab.
+{% hint style="info" %}
+Storing large amounts of pipeline output can negatively affect performance. You can discard pipeline output by setting the Discard Pipeline setting on scripts.&#x20;
+{% endhint %}
+
+Pipeline output for jobs is also stored within PowerShell Universal. Any object that is written to the pipeline is stored as CliXml and available for view within the Pipeline Output tab.
 
 You can expand the tree view to see the objects and properties from the pipeline.
 
