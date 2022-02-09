@@ -12,7 +12,7 @@ Environments are stored within the `environments.ps1` file.&#x20;
 
 To configure environments, you can use the Settings \ Environments page.&#x20;
 
-![Environments Page](<../.gitbook/assets/image (307).png>)
+![Environments Page](<../.gitbook/assets/image (307) (1).png>)
 
 Environments support setting the name, path, arguments, modules and variables.
 

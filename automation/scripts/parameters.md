@@ -107,7 +107,7 @@ param(
 )
 ```
 
-![](<../../.gitbook/assets/image (303).png>)
+![](<../../.gitbook/assets/image (303) (1).png>)
 
 ### Display Name
 

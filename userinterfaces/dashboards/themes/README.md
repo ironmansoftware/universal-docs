@@ -284,7 +284,7 @@ $Theme = @{
 
 ### Onepirate
 
-![](<../../../.gitbook/assets/image (307) (1) (1) (1).png>)
+![](<../../../.gitbook/assets/image (307) (1) (1) (1) (1).png>)
 
 Based on the Material UI theme, [Onepirate](https://material-ui.com/store/previews/onepirate/).&#x20;
 

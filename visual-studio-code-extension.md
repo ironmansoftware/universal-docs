@@ -46,7 +46,7 @@ The connections array can have zero to many connections. You can provide names f
 
 Once you have defined a connection, you can connect to that instance by clicking the Connect to Instance button within the Connections tree view.
 
-![Connect to Instance](<.gitbook/assets/image (306).png>)
+![Connect to Instance](<.gitbook/assets/image (307).png>)
 
 ## Features
 
