@@ -8,7 +8,7 @@ PowerShell Universal provides two ways of creating User Interfaces: Dashboards a
 
 ## Dashboards
 
-![Dashboard Editor](<../.gitbook/assets/image (303).png>)
+![Dashboard Editor](<../.gitbook/assets/image (304).png>)
 
 Dashboards offer a higher level of customization, interactivity and complexity. They are developed using the PowerShell Universal Dashboard module.&#x20;
 

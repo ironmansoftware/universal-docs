@@ -8,15 +8,15 @@ Variables are stored in the `variables.ps1` configuration file.
 
 ## Creating a Variable
 
-To create a variable, navigate to the Automation / Variables page. Click Add Variable to define a new variable.
+To create a variable, navigate to the Platform \ Variables page. Click Add Variable to define a new variable.
 
 Standard variables are just name \ value pairs of strings. They will be added to your scripts before they are run.
 
-!['](<../.gitbook/assets/image (14).png>)
+![](<../.gitbook/assets/image (303).png>)
 
 ## Creating a Secret Variable
 
-Secret variables are stored within the selected vault. The value of those variables are never stored within Universal. To define a new secret variable, click Add Variable on the variables page and select the Secret tab.
+Secret variables are stored within the selected vault. The value of those variables is never stored within Universal. To define a new secret variable, click Add Variable on the variables page and select the Secret tab.
 
 From this dialog, you'll be able to define string and PSCredentials in the specified vault.
 
@@ -80,7 +80,7 @@ Now, when you are creating secrets, you will see the AzureKeyVault available.&#x
 
 To ensure the application is connected to Azure and the key vault is registered, create a startup trigger to run the script when the web app starts. We recommend setting a delay when for the trigger to allow the app to warm up.&#x20;
 
-![](<../.gitbook/assets/image (304) (1) (1).png>)
+![](<../.gitbook/assets/image (304) (1) (1) (1).png>)
 
 ## Importing Secret Variables
 

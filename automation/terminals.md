@@ -28,7 +28,7 @@ To use a terminal, click the Open Terminal button for the terminal you wish to l
 
 Once the terminal has launched, you'll be able to issue commands.&#x20;
 
-![Run Commands in a Terminal](<../.gitbook/assets/image (304) (1) (1) (1).png>)
+![Run Commands in a Terminal](<../.gitbook/assets/image (304) (1) (1) (1) (1).png>)
 
 ### Stop a Terminal&#x20;
 
