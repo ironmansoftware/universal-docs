@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSUEnvironment [-AppToken <String>] [-Arguments <String>] [-ComputerName <String>] [-Modules <String[]>] -Name <String> [-PSModulePath <String[]>] -Path <String> [-PersistentRunspace] [-Variables <String[]>] [-UseDefaultCredentials] [-Integrated] [-StartupScript <String[]>] [-Version <String>] [<CommonParameters>]
+    New-PSUEnvironment [-AppToken <String>] [-Arguments <String>] [-ComputerName <String>] [-Modules <String[]>] -Name <String> [-PSModulePath <String[]>] -Path <String> [-PersistentRunspace] [-Variables <String[]>] [-UseDefaultCredentials] [-Integrated] [-StartupScript <String[]>] [-Version <String>] [-RunspaceRecycling] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -119,7 +119,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -StartupScript <String[]>
-        {{ Fill StartupScript Description }}
+        A script to run when creating the runspaces in this environment.
         
         Required?                    false
         Position?                    named
@@ -128,11 +128,20 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Version <String>
-        {{ Fill Version Description }}
+        A version number to display.
         
         Required?                    false
         Position?                    named
         Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -RunspaceRecycling [<SwitchParameter>]
+        Whether to recycle runspaces. Runspaces will be recycled (disposed and recreated) after an amount of time or a number of uses.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
@@ -186,6 +195,5 @@ NOTES
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
     New-PSUVariable 
-
 
 

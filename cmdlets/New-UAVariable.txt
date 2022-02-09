@@ -7,11 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UAVariable [-AppToken <String>] [-ComputerName <String>] [-InputObject <Object>] -Name <String> [-Type <String>] [-Value <String>] -Vault <String> [-UseDefaultCredentials] [-Description <String>] [-Integrated] [<CommonParameters>]
+    New-UAVariable [-AppToken <String>] [-ComputerName <String>] [-InputObject <Object>] -Name <String> [-Type <String>] [-Value <Object>] -Vault <String> [-UseDefaultCredentials] [-Description <String>] [-Integrated] [-DisableRunAsSupport] [<CommonParameters>]
     
-    New-UAVariable [-AppToken <String>] [-ComputerName <String>] [-InputObject <Object>] -Name <String> [-Type <String>] [-UseDefaultCredentials] [-Description <String>] [-Integrated] [<CommonParameters>]
+    New-UAVariable [-AppToken <String>] [-ComputerName <String>] [-InputObject <Object>] -Name <String> [-Type <String>] [-UseDefaultCredentials] [-Description <String>] [-Integrated] [-DisableRunAsSupport] [<CommonParameters>]
     
-    New-UAVariable [-AppToken <String>] [-ComputerName <String>] -Name <String> [-Type <String>] [-Value <String>] [-UseDefaultCredentials] [-Description <String>] [-Integrated] [<CommonParameters>]
+    New-UAVariable [-AppToken <String>] [-ComputerName <String>] -Name <String> [-Type <String>] [-Value <Object>] [-UseDefaultCredentials] [-Description <String>] [-Integrated] [-DisableRunAsSupport] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -38,7 +38,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -InputObject <Object>
-        {{ Fill InputObject Description }}
+        An input object to store as a variable.
         
         Required?                    false
         Position?                    named
@@ -64,7 +64,7 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Value <String>
+    -Value <Object>
         The value of the variable.
         
         Required?                    false
@@ -92,7 +92,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Description <String>
-        {{ Fill Description Description }}
+        A description for this variable.
         
         Required?                    false
         Position?                    named
@@ -102,6 +102,15 @@ PARAMETERS
         
     -Integrated [<SwitchParameter>]
         Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -DisableRunAsSupport [<SwitchParameter>]
+        Prevents a credential from being used for Run As support.
         
         Required?                    false
         Position?                    named
@@ -143,6 +152,5 @@ NOTES
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
-
 
 

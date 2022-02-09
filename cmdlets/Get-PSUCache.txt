@@ -27,7 +27,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -AppToken <String>
-        {{ Fill AppToken Description }}
+        Not used
         
         Required?                    false
         Position?                    named
@@ -36,7 +36,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        {{ Fill ComputerName Description }}
+        Not used
         
         Required?                    false
         Position?                    named
@@ -45,7 +45,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        Not used
         
         Required?                    false
         Position?                    named
@@ -54,7 +54,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
-        {{ Fill UseDefaultCredentials Description }}
+        Not used
         
         Required?                    false
         Position?                    named
@@ -92,6 +92,5 @@ NOTES
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
     Set-PSUCache 
-
 
 

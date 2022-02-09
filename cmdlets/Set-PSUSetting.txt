@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    Set-UASetting [-AppToken <String>] [-ComputerName <String>] [-ConcurrentJobLimit <Int32>] [-DisableAutoReload] [-GroomDays <Int32>] [-HideApi] [-HideAutomation] [-HideDashboard] [-LogLevel <String>] [-LoggingFilePath <String>] [-Telemetry] [-ApiEnvironment <String>] [-DefaultEnvironment <String>] [-DisableUpdateCheck] [-RateLimitClientAllowList <String[]>] [-RateLimitEndpointAllowList <String[]>] [-RateLimitIpAddressAllowList <String[]>] [-SecurityEnvironment <String>] [-ShowDevTools] [-DefaultPage <String>] [-UseDefaultCredentials] [-AdminConsoleLogo <String>] [-AdminConsoleTitle <String>] [-HideHomePage] [-Integrated] [-MicrosoftLogLevel <String>] [-ScriptBaseFolder <String>] [<CommonParameters>]
+    Set-UASetting [-AppToken <String>] [-ComputerName <String>] [-ConcurrentJobLimit <Int32>] [-DisableAutoReload] [-GroomDays <Int32>] [-HideApi] [-HideAutomation] [-HideDashboard] [-LogLevel <String>] [-LoggingFilePath <String>] [-Telemetry] [-ApiEnvironment <String>] [-DefaultEnvironment <String>] [-DisableUpdateCheck] [-RateLimitClientAllowList <String[]>] [-RateLimitEndpointAllowList <String[]>] [-RateLimitIpAddressAllowList <String[]>] [-SecurityEnvironment <String>] [-DefaultPage <String>] [-UseDefaultCredentials] [-AdminConsoleLogo <String>] [-AdminConsoleTitle <String>] [-HideHomePage] [-Integrated] [-MicrosoftLogLevel <String>] [-ScriptBaseFolder <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -34,7 +34,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ConcurrentJobLimit <Int32>
-        {{ Fill ConcurrentJobLimit Description }}
+        The maximum number of jobs to run at once.
         
         Required?                    false
         Position?                    named
@@ -43,7 +43,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -DisableAutoReload [<SwitchParameter>]
-        {{ Fill DisableAutoReload Description }}
+        Disables configuration auto-reload from disk.
         
         Required?                    false
         Position?                    named
@@ -52,7 +52,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -GroomDays <Int32>
-        {{ Fill GroomDays Description }}
+        The number of days to retain jobs for.
         
         Required?                    false
         Position?                    named
@@ -61,7 +61,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -HideApi [<SwitchParameter>]
-        {{ Fill HideApi Description }}
+        Hides the API node from the admin console.
         
         Required?                    false
         Position?                    named
@@ -70,7 +70,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -HideAutomation [<SwitchParameter>]
-        {{ Fill HideAutomation Description }}
+        Hides the automation node from the admin console.
         
         Required?                    false
         Position?                    named
@@ -79,7 +79,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -HideDashboard [<SwitchParameter>]
-        {{ Fill HideDashboard Description }}
+        Hides the dashboard node from the admin console.
         
         Required?                    false
         Position?                    named
@@ -88,7 +88,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -LogLevel <String>
-        {{ Fill LogLevel Description }}
+        The log level for PowerShell Universal. Valid values are Debug, Information, Warning and Error.
         
         Required?                    false
         Position?                    named
@@ -97,7 +97,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -LoggingFilePath <String>
-        {{ Fill LoggingFilePath Description }}
+        The file path to the log.
         
         Required?                    false
         Position?                    named
@@ -106,7 +106,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Telemetry [<SwitchParameter>]
-        {{ Fill Telemetry Description }}
+        Whether to allow PowerShell Universal to collect anonymous usage data.
         
         Required?                    false
         Position?                    named
@@ -115,7 +115,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ApiEnvironment <String>
-        {{ Fill ApiEnvironment Description }}
+        The environment to run API endpoints within.
         
         Required?                    false
         Position?                    named
@@ -124,7 +124,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -DefaultEnvironment <String>
-        {{ Fill DefaultEnvironment Description }}
+        The default environment to use throughout the product. Can be overridden for individual entities.
         
         Required?                    false
         Position?                    named
@@ -133,7 +133,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -DisableUpdateCheck [<SwitchParameter>]
-        {{ Fill DisableUpdateCheck Description }}
+        Disables the update check for PowerShell Universal.
         
         Required?                    false
         Position?                    named
@@ -142,7 +142,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -RateLimitClientAllowList <String[]>
-        {{ Fill RateLimitClientAllowList Description }}
+        A list of client names to bypass rate limiting.
         
         Required?                    false
         Position?                    named
@@ -151,7 +151,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -RateLimitEndpointAllowList <String[]>
-        {{ Fill RateLimitEndpointAllowList Description }}
+        A list of endpoints to bypass rate limiting.
         
         Required?                    false
         Position?                    named
@@ -160,7 +160,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -RateLimitIpAddressAllowList <String[]>
-        {{ Fill RateLimitIpAddressAllowList Description }}
+        A list of IP addresses to bypass rate limiting.
         
         Required?                    false
         Position?                    named
@@ -169,20 +169,11 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -SecurityEnvironment <String>
-        {{ Fill SecurityEnvironment Description }}
+        The environment used to run authentication and authorization scripts.
         
         Required?                    false
         Position?                    named
         Default value                None
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -ShowDevTools [<SwitchParameter>]
-        {{ Fill ShowDevTools Description }}
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
@@ -205,7 +196,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -AdminConsoleLogo <String>
-        {{ Fill AdminConsoleLogo Description }}
+        The admin console logo URL.
         
         Required?                    false
         Position?                    named
@@ -214,7 +205,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -AdminConsoleTitle <String>
-        {{ Fill AdminConsoleTitle Description }}
+        The admin console title.
         
         Required?                    false
         Position?                    named
@@ -223,7 +214,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -HideHomePage [<SwitchParameter>]
-        {{ Fill HideHomePage Description }}
+        Hides the PowerShell Universal home page.
         
         Required?                    false
         Position?                    named
@@ -241,7 +232,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -MicrosoftLogLevel <String>
-        {{ Fill MicrosoftLogLevel Description }}
+        The internal logging for Microsoft components, like the web server. Valid values are Debug, Information, Warning and Error.
         
         Required?                    false
         Position?                    named
@@ -250,7 +241,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ScriptBaseFolder <String>
-        {{ Fill ScriptBaseFolder Description }}
+        The base folder to store scripts within the repository.
         
         Required?                    false
         Position?                    named
@@ -289,6 +280,5 @@ NOTES
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
-
 
 

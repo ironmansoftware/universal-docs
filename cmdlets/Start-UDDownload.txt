@@ -1,31 +1,31 @@
 
 NAME
-    Add-UDElement
+    Start-UDDownload
     
 SYNOPSIS
-    Adds an element to a parent element.
+    Starts the download of a file within the dashboard.
     
     
 SYNTAX
-    Add-UDElement [-ParentId] <String> [-Content] <ScriptBlock> [-Broadcast] [<CommonParameters>]
+    Start-UDDownload [[-FileName] <String>] [-StringData] <String> [[-ContentType] <String>] [<CommonParameters>]
     
     
 DESCRIPTION
-    Adds an element to a parent element. This cmdlet may behave differently depending on the type of parent element.
+    Starts the download of a file within the dashboard. Only text files are supported
     
 
 PARAMETERS
-    -ParentId <String>
-        The parent element ID to add the item to.
+    -FileName <String>
+        The name of the file.
         
-        Required?                    true
+        Required?                    false
         Position?                    1
-        Default value                
+        Default value                text.txt
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -Content <ScriptBlock>
-        The content to add to the parent element.
+    -StringData <String>
+        The data to be written to the file.
         
         Required?                    true
         Position?                    2
@@ -33,12 +33,12 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -Broadcast [<SwitchParameter>]
-        Whether to update all connected dashboards (all users).
+    -ContentType <String>
+        The content type of the file.
         
         Required?                    false
-        Position?                    named
-        Default value                False
+        Position?                    3
+        Default value                text/plain
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -54,15 +54,11 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > New-UDElement -Tag 'div' -Id 'parent' -Content {
-    
+    PS > New-UDButton -Text 'Click Me' -OnClick {
+        Start-UDDownload -FileName 'myfile.txt' -StringData 'Hello World' -ContentType 'text/plain'
     }
     
-    New-UDButton -Text 'Click Me' -OnClick {
-        Add-UDElement -ParentId 'parent' -Content {
-            New-UDTypography -Text 'Hello World'
-        }
-    }
+    
     
     
     

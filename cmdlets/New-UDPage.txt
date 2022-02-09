@@ -7,11 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDPage [-Name] <String> [-Content] <Endpoint> [[-Url] <String>] [[-DefaultHomePage]] [[-Title] <String>] [-Id <String>] [-OnLoading <ScriptBlock>] [-Role <String[]>] [-NavigationLayout <String>] [-Navigation <Hashtable[]>] [-Logo <String>] [-HeaderPosition <String>] [-HeaderColor <DashboardColor>] [-HeaderBackgroundColor <DashboardColor>] [<CommonParameters>]
+    New-UDPage [-Name] <String> [-Content] <Endpoint> [[-Url] <String>] [[-DefaultHomePage]] [[-Title] <String>] [-Id <String>] [-OnLoading <ScriptBlock>] [-Role <String[]>] [-NavigationLayout <String>] [-Navigation <Hashtable[]>] [-Logo <String>] [-HeaderPosition <String>] [-HeaderColor <DashboardColor>] [-HeaderBackgroundColor <DashboardColor>] [-HeaderContent <ScriptBlock>] [<CommonParameters>]
     
     New-UDPage [-Name] <String> [-Content] <Endpoint> [[-Url] <String>] [[-DefaultHomePage]] [[-Title] <String>] [-Blank] [-Id <String>] [-OnLoading <ScriptBlock>] [-Role <String[]>] [-HeaderPosition <String>] [-HeaderColor <DashboardColor>] [-HeaderBackgroundColor <DashboardColor>] [<CommonParameters>]
     
-    New-UDPage [-Name] <String> [-Content] <Endpoint> [[-Url] <String>] [[-DefaultHomePage]] [[-Title] <String>] [-Id <String>] [-OnLoading <ScriptBlock>] [-Role <String[]>] [-NavigationLayout <String>] [-Logo <String>] [-LoadNavigation <Endpoint>] [-HeaderPosition <String>] [-HeaderColor <DashboardColor>] [-HeaderBackgroundColor <DashboardColor>] [<CommonParameters>]
+    New-UDPage [-Name] <String> [-Content] <Endpoint> [[-Url] <String>] [[-DefaultHomePage]] [[-Title] <String>] [-Id <String>] [-OnLoading <ScriptBlock>] [-Role <String[]>] [-NavigationLayout <String>] [-Logo <String>] [-LoadNavigation <Endpoint>] [-HeaderPosition <String>] [-HeaderColor <DashboardColor>] [-HeaderBackgroundColor <DashboardColor>] [-HeaderContent <ScriptBlock>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -161,6 +161,15 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
+    -HeaderContent <ScriptBlock>
+        Content of the header.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
@@ -184,6 +193,5 @@ OUTPUTS
     
     
 RELATED LINKS
-
 
 

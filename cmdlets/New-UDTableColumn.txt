@@ -83,7 +83,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    6
-        Default value                @{}
+        Default value                @{ }
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -180,6 +180,5 @@ OUTPUTS
     
     
 RELATED LINKS
-
 
 

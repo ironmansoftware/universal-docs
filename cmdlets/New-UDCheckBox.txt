@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDCheckBox [[-Label] <String>] [[-Icon] <Object>] [[-CheckedIcon] <Object>] [[-OnChange] <Endpoint>] [[-Style] <Hashtable>] [[-Disabled]] [[-Checked] <Boolean>] [[-ClassName] <String>] [[-LabelPlacement] <String>] [[-Id] <String>] [<CommonParameters>]
+    New-UDCheckBox [[-Label] <String>] [[-Icon] <Object>] [[-CheckedIcon] <Object>] [[-OnChange] <Endpoint>] [[-Style] <Hashtable>] [[-Disabled]] [[-Checked] <Boolean>] [[-ClassName] <String>] [[-LabelPlacement] <String>] [[-Id] <String>] [-Color <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -105,6 +105,15 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
+    -Color <String>
+        The theme color to apply to this component
+        
+        Required?                    false
+        Position?                    named
+        Default value                default
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
@@ -128,6 +137,5 @@ OUTPUTS
     
     
 RELATED LINKS
-
 
 

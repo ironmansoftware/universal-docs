@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDAppBar [[-Id] <String>] [[-Drawer] <Hashtable>] [[-Children] <ScriptBlock>] [[-Position] <String>] [-Footer] [-DisableThemeToggle] [[-ClassName] <String>] [<CommonParameters>]
+    New-UDAppBar [[-Id] <String>] [[-Drawer] <Hashtable>] [[-Children] <ScriptBlock>] [[-Position] <String>] [-Footer] [-DisableThemeToggle] [[-ClassName] <String>] [[-Color] <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -77,6 +77,15 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
+    -Color <String>
+        The theme color to use for the app bar.
+        
+        Required?                    false
+        Position?                    6
+        Default value                default
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
@@ -98,6 +107,5 @@ OUTPUTS
     
     
 RELATED LINKS
-
 
 

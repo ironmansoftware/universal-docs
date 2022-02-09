@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDRadio [[-Id] <String>] [[-Label] <String>] [-Disabled] [[-Value] <String>] [[-LabelPlacement] <String>] [<CommonParameters>]
+    New-UDRadio [[-Id] <String>] [[-Label] <String>] [-Disabled] [[-Value] <String>] [[-LabelPlacement] <String>] [[-Color] <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -60,6 +60,15 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
+    -Color <String>
+        The theme color to apply to this radio
+        
+        Required?                    false
+        Position?                    5
+        Default value                default
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
@@ -87,6 +96,5 @@ OUTPUTS
     
     
 RELATED LINKS
-
 
 

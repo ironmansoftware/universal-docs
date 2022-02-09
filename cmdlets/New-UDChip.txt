@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDChip [-Id <String>] [[-Label] <String>] [[-OnDelete] <Object>] [[-OnClick] <Object>] [[-Icon] <Object>] [[-Style] <Hashtable>] [[-Variant] <String>] [-ClassName <String>] [<CommonParameters>]
+    New-UDChip [-Id <String>] [[-Label] <String>] [[-OnDelete] <Object>] [[-OnClick] <Object>] [[-Icon] <Object>] [[-Style] <Hashtable>] [[-Variant] <String>] [-ClassName <String>] [-Color <String>] [<CommonParameters>]
     
-    New-UDChip [-Id <String>] [[-Label] <String>] [[-OnDelete] <Object>] [[-OnClick] <Object>] [[-Style] <Hashtable>] [[-Variant] <String>] [[-Avatar] <String>] [[-AvatarType] <String>] [-ClassName <String>] [<CommonParameters>]
+    New-UDChip [-Id <String>] [[-Label] <String>] [[-OnDelete] <Object>] [[-OnClick] <Object>] [[-Style] <Hashtable>] [[-Variant] <String>] [[-Avatar] <String>] [[-AvatarType] <String>] [-ClassName <String>] [-Color <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -106,6 +106,14 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
+    -Color <String>
+        
+        Required?                    false
+        Position?                    named
+        Default value                default
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
@@ -128,6 +136,5 @@ OUTPUTS
     
     
 RELATED LINKS
-
 
 

@@ -9,6 +9,8 @@ SYNOPSIS
 SYNTAX
     New-PSURole [-AppToken <String>] [-ComputerName <String>] [-Description <String>] -Name <String> -Policy <ScriptBlock> [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
+    New-PSURole [-AppToken <String>] [-ComputerName <String>] [-Description <String>] -Name <String> [-UseDefaultCredentials] [-Integrated] -ClaimType <String> -ClaimValue <String> [<CommonParameters>]
+    
     
 DESCRIPTION
     Defines a new role within PowerShell Universal. Roles are used to define authorization within the PowerShell Universal platform. Roles can be assigned statically to an Identity or can be assigned by the -Policy script block. The policy script block receives a $User parameter that contains the identity information and claims that an identity has been granted during authentication.
@@ -84,6 +86,24 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
+    -ClaimType <String>
+        The claim type to map for this role. See Role to Claim mapping in our documentation.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ClaimValue <String>
+        The claim value to map for this role. See Role to Claim mapping in our documentation.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
@@ -117,6 +137,5 @@ NOTES
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
-
 
 

@@ -49,7 +49,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -InputObject <Object>
-        {{ Fill InputObject Description }}
+        An input object to set as the variable's value.
         
         Required?                    false
         Position?                    named
@@ -94,7 +94,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Description <String>
-        {{ Fill Description Description }}
+        A description of this variable.
         
         Required?                    false
         Position?                    named
@@ -141,6 +141,5 @@ NOTES
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
-
 
 

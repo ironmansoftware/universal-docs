@@ -11,7 +11,7 @@ SYNTAX
     
     
 DESCRIPTION
-    {{ Fill in the Description }}
+    Removes an environment from PowerShell Universal.
     
 
 PARAMETERS
@@ -92,6 +92,5 @@ RELATED LINKS
     New-PSUEnvironment 
     Set-PSUEnvironment 
     Get-PSUEnvironment 
-
 
 

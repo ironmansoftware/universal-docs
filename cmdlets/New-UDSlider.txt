@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDSlider [[-Id] <String>] [[-Value] <Int32[]>] [[-Minimum] <Int32>] [[-Maximum] <Int32>] [-Disabled] [-Marks] [[-OnChange] <Endpoint>] [[-Orientation] <String>] [[-Step] <Int32>] [[-ValueLabelDisplay] <String>] [[-ClassName] <String>] [<CommonParameters>]
+    New-UDSlider [[-Id] <String>] [[-Value] <Int32[]>] [[-Minimum] <Int32>] [[-Maximum] <Int32>] [-Disabled] [-Marks] [[-OnChange] <Endpoint>] [[-Orientation] <String>] [[-Step] <Int32>] [[-ValueLabelDisplay] <String>] [[-ClassName] <String>] [[-Color] <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -113,6 +113,14 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
+    -Color <String>
+        
+        Required?                    false
+        Position?                    10
+        Default value                primary
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
@@ -139,6 +147,5 @@ NOTES
     
     
 RELATED LINKS
-
 
 

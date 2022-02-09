@@ -88,7 +88,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Impersonation [<SwitchParameter>]
-        {{ Fill Impersonation Description }}
+        Impersonates the connected account when accessing the files. This is only support with Windows Authentication.
         
         Required?                    false
         Position?                    named
@@ -139,6 +139,5 @@ NOTES
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
-
 
 

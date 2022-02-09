@@ -2,69 +2,71 @@
 NAME
     Invoke-PSUTerminalCommand
     
+SYNOPSIS
+    Invokes a command in a terminal instance.
+    
+    
 SYNTAX
-    Invoke-PSUTerminalCommand -TerminalInstance <TerminalInstance> -Command <string> [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Invoke-PSUTerminalCommand [-AppToken <String>] -Command <String> [-ComputerName <String>] [-Integrated] -TerminalInstance <TerminalInstance> [-UseDefaultCredentials] [<CommonParameters>]
     
     
+DESCRIPTION
+    Invokes a command in a terminal instance. You can start new terminal instances with Start-PSUTerminalInstance and return running instances with Get-PSUTerminalInstance.
+    
+
 PARAMETERS
-    -AppToken <string>
+    -AppToken <String>
+        An App Token for authenticating against the PowerShell Universal server.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Command <string>
+    -Command <String>
+        The command to invoke
         
         Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -ComputerName <string>
+    -ComputerName <String>
+        The name or URL of the PowerShell Universal server.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      Uri
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Integrated
+    -Integrated [<SwitchParameter>]
+        Not Supported
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -TerminalInstance <TerminalInstance>
+        The terminal instance within which to invoke the command. Use Get-PSUTerminalInstance to return running instances.
         
         Required?                    true
-        Position?                    Named
-        Accept pipeline input?       true (ByValue)
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       True (ByValue)
         Accept wildcard characters?  false
         
-    -UseDefaultCredentials
+    -UseDefaultCredentials [<SwitchParameter>]
+        The terminal configuration to start. Use Get-PSUTerminal to return terminal configurations.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -73,20 +75,31 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
     PowerShellUniversal.TerminalInstance
+        
     
     
 OUTPUTS
     System.Object
+        
     
-ALIASES
-    None
     
-
-REMARKS
-    None
-
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> $Terminal = Get-PSUTerminal | Where-Object Name -eq 'Terminal1'
+    PS C:\> Start-PSUTerminalInstance -Terminal $Terminal 
+    PS C:\> $Instance = Get-PSUTerminalInstance
+    PS C:\> Invoke-PSUTerminalCommand -TerminalInstance $Instance -Command 'Write-Host "Hello, World!"'
+    
+    Creates a new terminal instance of Terminal1 and then invokes a command within it.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
 
 

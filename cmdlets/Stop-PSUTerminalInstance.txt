@@ -2,59 +2,62 @@
 NAME
     Stop-PSUTerminalInstance
     
+SYNOPSIS
+    Stops a running terminal instance.
+    
+    
 SYNTAX
-    Stop-PSUTerminalInstance -TerminalInstance <TerminalInstance> [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Stop-PSUTerminalInstance [-AppToken <String>] [-ComputerName <String>] [-Integrated] -TerminalInstance <TerminalInstance> [-UseDefaultCredentials] [<CommonParameters>]
     
     
+DESCRIPTION
+    Stops a running terminal instance. You can retrieve terminal instances by using Get-PSUTerminalInstance.
+    
+
 PARAMETERS
-    -AppToken <string>
+    -AppToken <String>
+        An App Token for authenticating against the PowerShell Universal server.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -ComputerName <string>
+    -ComputerName <String>
+        The name or URL of the PowerShell Universal server.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      Uri
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Integrated
+    -Integrated [<SwitchParameter>]
+        Not Supported
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -TerminalInstance <TerminalInstance>
+        The terminal instance to stop. Use Get-PSUTerminalInstance to return running instances.
         
         Required?                    true
-        Position?                    Named
-        Accept pipeline input?       true (ByValue)
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       True (ByValue)
         Accept wildcard characters?  false
         
-    -UseDefaultCredentials
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use Windows Authentication.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -63,20 +66,30 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
     PowerShellUniversal.TerminalInstance
+        
     
     
 OUTPUTS
     System.Object
+        
     
-ALIASES
-    None
     
-
-REMARKS
-    None
-
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> $Terminal = Get-PSUTerminal | Where-Object Name -eq 'Terminal1'
+    PS C:\> Start-PSUTerminalInstance -Terminal $Terminal 
+    PS C:\> Get-PSUTerminalInstance | Stop-PSUTerminalInstance
+    
+    Starts a new terminal instance and then stops it.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
 
 

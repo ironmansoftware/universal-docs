@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDSwitch [[-Id] <String>] [-Disabled] [[-OnChange] <Endpoint>] [[-Checked] <Boolean>] [[-ClassName] <String>] [<CommonParameters>]
+    New-UDSwitch [[-Id] <String>] [-Disabled] [[-OnChange] <Endpoint>] [[-Checked] <Boolean>] [[-ClassName] <String>] [[-Color] <String>] [[-Label] <String>] [[-CheckedLabel] <String>] [[-UncheckedLabel] <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -59,6 +59,42 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
+    -Color <String>
+        The theme color to apply to this switch.
+        
+        Required?                    false
+        Position?                    5
+        Default value                default
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Label <String>
+        The label to display next to the switch
+        
+        Required?                    false
+        Position?                    6
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -CheckedLabel <String>
+        The label to display for when the switch is checked
+        
+        Required?                    false
+        Position?                    7
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -UncheckedLabel <String>
+        The label to display for when the switch is unchecked
+        
+        Required?                    false
+        Position?                    8
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
@@ -82,6 +118,5 @@ OUTPUTS
     
     
 RELATED LINKS
-
 
 

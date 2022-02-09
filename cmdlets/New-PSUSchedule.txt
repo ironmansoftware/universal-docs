@@ -7,11 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UASchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] -Continuous [-Credential <Variable>] [-Delay <TimeSpan>] [-DelayHour <Int32>] [-DelayMinute <Int32>] [-DelaySecond <Int32>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [<CommonParameters>]
+    New-UASchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] -Continuous [-Credential <Variable>] [-Delay <TimeSpan>] [-DelayHour <Int32>] [-DelayMinute <Int32>] [-DelaySecond <Int32>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [<CommonParameters>]
     
-    New-UASchedule [-Script] <Script> [-Cron] <String> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [<CommonParameters>]
+    New-UASchedule [-Script] <Script> [-Cron] <String> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [<CommonParameters>]
     
-    New-UASchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-OneTime <DateTime>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [<CommonParameters>]
+    New-UASchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-OneTime <DateTime>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -119,7 +119,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Environment <String>
-        {{ Fill Environment Description }}
+        The name of the environment to run the script within.
         
         Required?                    false
         Position?                    named
@@ -128,7 +128,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -OneTime <DateTime>
-        {{ Fill OneTime Description }}
+        Whether this is a one-time schedule.
         
         Required?                    false
         Position?                    named
@@ -164,7 +164,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Condition <ScriptBlock>
-        {{ Fill Condition Description }}
+        A script block that determines whether this schedule should execute. This script block should return $true or $false.
         
         Required?                    false
         Position?                    named
@@ -182,7 +182,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Paused [<SwitchParameter>]
-        {{ Fill Paused Description }}
+        Whether this schedule is paused.
         
         Required?                    false
         Position?                    named
@@ -191,11 +191,20 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Timeout <Int32>
-        {{ Fill Timeout Description }}
+        The timeout in minutes for this schedule.
         
         Required?                    false
         Position?                    named
         Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -RandomDelay [<SwitchParameter>]
+        A random delay will be applied to when this script is started. The random delay will be between 0 and 60 seconds.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
@@ -243,6 +252,5 @@ NOTES
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
-
 
 
