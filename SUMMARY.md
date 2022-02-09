@@ -95,7 +95,6 @@
       * [Paper](userinterfaces/dashboards/components/surfaces/paper.md)
       * [Expansion Panel](userinterfaces/dashboards/components/surfaces/expansion-panel.md)
   * [Interaction](userinterfaces/dashboards/interaction.md)
-  * [Frameworks](userinterfaces/dashboards/dashboard-frameworks.md)
   * [Marketplace](userinterfaces/dashboards/marketplace.md)
   * [Role Based Access](userinterfaces/dashboards/role-based-access.md)
   * [Scheduled Endpoints](userinterfaces/dashboards/scheduled-endpoints.md)
