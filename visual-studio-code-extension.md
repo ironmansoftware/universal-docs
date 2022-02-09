@@ -110,6 +110,10 @@ You can also automatically configure an App Token by click Edit with VS Code wit
 
 The extension will check the version of the Universal and UnviersalDashboard PowerShell modules found on the system. If they aren't installed or are not the latest version, new versions will be installed.&#x20;
 
+### Connections
+
+The Connections array allow for defining multiple PowerShell Universal instance connections.
+
 ### Local Editing
 
 Local editing causes files to be edited locally rather than via the management API. It will open files from the repository folder on disk and edit those files. PowerShell Universal will listen to file changes and reload those files accordingly.&#x20;
@@ -119,14 +123,6 @@ When local editing is disabled, the contents of the files will be sent to the ma
 ### Samples Directory
 
 This is the directory to store the PowerShell Universal samples.&#x20;
-
-### Start Server&#x20;
-
-This setting causes the extension to start an instance of PowerShell Universal when it is activated. If you already have PowerShell Universal in some other way, you should disable this setting.
-
-### Server Path
-
-This is the path to the executable that will be started by the Start Server setting. &#x20;
 
 ### Sync Samples
 
