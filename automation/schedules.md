@@ -14,11 +14,11 @@ Schedules can be defined based on simple selections like Every Minute or Every H
 
 You can also define which user the scheduled job will run under as well as which PowerShell version to use.
 
-![](<../.gitbook/assets/image (3).png>)
+![Create a Schedule](<../.gitbook/assets/image (317).png>)
 
 ### Simple Schedules
 
-Simple schedules are really just helpers for various standard CRON schedules. When you select one, it will define a CRON schedule for your.
+Simple schedules are really just helpers for various standard CRON schedules. When you select one, it will define a CRON schedule for your script.
 
 ![](<../.gitbook/assets/image (143).png>)
 
@@ -89,6 +89,18 @@ New-PSUSchedule -Script "MyScript.ps1" -Cron '* * * * *' -Condition {
   $ENV:Slot -eq 'production'
 }
 ```
+
+## Pausing Schedules
+
+You can pause a schedule by setting the Paused property. When a schedule is paused, it will not run. This is useful to stop a schedule from running but not delete it.&#x20;
+
+## Time Out
+
+You can set a time out for scheduled jobs. The time out is the number of minutes before the scheduled job is canceled.&#x20;
+
+## Random Delay
+
+The Random Delay property causes a schedule to start anywhere between 0 and 60 seconds from the scheduled time. This is useful when running many schedules at the same time. For example, if you had 10 schedules that start at midnight, you may want to set a random delay to limit resource contention on the PowerShell Universal service.&#x20;
 
 ## API
 
