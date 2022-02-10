@@ -4,10 +4,14 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 2.8.1 - 2/10/2022
+
+* Fixed an issue where endpoints would update multiple times when saved
+
 ## 2.8.0 - 2/8/2022
 
 * Added support for multiple PowerShell Universal connections
-* Simplified extension initialization. 
+* Simplified extension initialization.
 
 ## 2.5.0 - 11/10/2021
 
@@ -16,7 +20,7 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 ## 2.3.0 - 9/14/2021
 
-* Aligned PSU version with extension version&#x20;
+* Aligned PSU version with extension version
 * Fixed an issue where an error would be shown when loading the extension
 * Fixed an issue where the wrong URL was used for viewing scripts
 
@@ -41,11 +45,11 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 * Added support for dashboard components and frameworks
 * Added commands to install dashboard components and frameworks
 * Added a check during startup for the current version of the Universal and UniversalDashboard modules
-* Added a setting to disable the update module check (Check Modules)&#x20;
+* Added a setting to disable the update module check (Check Modules)
 * Improved the error message generated when the extension fails to connect to the server
 * Fixed an issue with the URL for viewing jobs
 * Fixed an issue with the URL for viewing the admin console page
-* Dropped support for Universal 1.5&#x20;
+* Dropped support for Universal 1.5
 
 ## 1.9.0 - 6/1/2021
 
@@ -62,13 +66,13 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 ## 1.8.0 - 3/1/2021
 
-* Added Local Editing Setting to edit files locally rather than via the REST API.&#x20;
+* Added Local Editing Setting to edit files locally rather than via the REST API.
 
 ## 1.7.5 - 2/25/2021
 
 * Scripts are now sorted by name alphabetically
-* An error is now shown when the extension cannot connect to PowerShell Universal&#x20;
-* Removed the auto-import of UD and PSU modules. We recommend you install these from the PowerShell Gallery&#x20;
+* An error is now shown when the extension cannot connect to PowerShell Universal
+* Removed the auto-import of UD and PSU modules. We recommend you install these from the PowerShell Gallery
 
 ```
 Install-Module Universal
@@ -77,13 +81,13 @@ Install-Module UniversalDashboard
 
 ## 1.7.4 - 1/21/2021
 
-* Fixed an issue where the extension would fail to initialize on non-internet connected machines.&#x20;
+* Fixed an issue where the extension would fail to initialize on non-internet connected machines.
 
 ## 1.7.3 - 12/31/2020
 
 **Changed**
 
-* Simplified first-time start up to attempt to connect with default settings to avoid having to do any configuration manually.&#x20;
+* Simplified first-time start up to attempt to connect with default settings to avoid having to do any configuration manually.
 
 ## 1.7.2 - 12/30/2020
 
@@ -93,7 +97,7 @@ Install-Module UniversalDashboard
 
 **Changed**
 
-* Improved the error message returned when attempting to automatically grant an app token and it fails.&#x20;
+* Improved the error message returned when attempting to automatically grant an app token and it fails.
 
 ## 1.7.1 - 12/29/2020
 
@@ -164,7 +168,7 @@ Breaking Change: This version of the extension only works with version 1.5.0 or 
 
 ## \[1.3.0]
 
-* Added support configuration files.&#x20;
+* Added support configuration files.
 
 ## \[1.2.0]
 
