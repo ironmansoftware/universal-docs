@@ -12,7 +12,7 @@ Container web apps allow for using Docker images as web apps in Azure. Within th
 
 Once you have selected a resource group, assigned a name and selected a compute plan, you will be able to create the web app.&#x20;
 
-![Container Web App](<../../.gitbook/assets/image (310).png>)
+![Container Web App](<../../.gitbook/assets/image (310) (1).png>)
 
 Next, you'll need to deploy the image to your web app. To do so, select the Deployment Center and  configure the image to pull. You can either pull a static tagged version (like 2.7.3) or pull the latest and your web app will automatically stay up to date with new PowerShell Universal releases.&#x20;
 

@@ -10,9 +10,9 @@ You can grant App Tokens to using the Admin Console or you can use the Managemen
 
 ## Admin Console
 
-To grant a token in the Admin Console, navigate to Settings  Security  AppTokens. Click the Grant App Token button to grant an App Token for the current user.
+To grant a token in the Admin Console, navigate to Security \ Tokens. Click the Add New App Token button to grant an App Token.
 
-![](<../../.gitbook/assets/image (83).png>)
+![](<../../.gitbook/assets/image (310).png>)
 
 When you click Grant App Token, you will be provided with a dialog that allows you to specify the Identity, Role and expiration time of the token.
 

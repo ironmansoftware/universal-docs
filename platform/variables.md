@@ -76,7 +76,7 @@ Register-SecretVault -ModuleName Az.KeyVault -Name AzureKeyVault -VaultParameter
 
 Now, when you are creating secrets, you will see the AzureKeyVault available.&#x20;
 
-![](<../.gitbook/assets/image (310) (1) (1).png>)
+![](<../.gitbook/assets/image (310) (1) (1) (1).png>)
 
 To ensure the application is connected to Azure and the key vault is registered, create a startup trigger to run the script when the web app starts. We recommend setting a delay when for the trigger to allow the app to warm up.&#x20;
 
