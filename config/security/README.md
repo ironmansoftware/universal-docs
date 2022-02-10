@@ -427,155 +427,19 @@ $Result
 This example requires an authentication method that will provide group information during the authentication process. Methods like Windows authentication and WS-Federation can provide this information. Forms authentication will not work with this type of policy.
 {% endhint %}
 
-This example takes advantage of the claims that are provided during authentication. You can check to see if the user has a groupsid (group membership) by using the `HasClaim` method of the `$User` object. This method will check the `Claims` array to see if they have a particular `groupsid` claim. Use the SID of the group to validate whether they are a group member.
+This example takes advantage of the claims that are provided during authentication. You can check to see if the user has a groupsid (group membership) by using claim mappings. Map the groupid claim type to the value you want to assign the role to.
 
 ```powershell
-New-PSURole -Name 'Administrators' -Policy {
-    param(
-        $User
-    )
-
-    $User.HasClaim("http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", 'S-1-5-21-22222222-111111-3333333-153')
+$Parameters = @{
+    Name = "Administrators"
+    ClaimType = 'http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid'
+    ClaimValue = 'S-1-5-21-22222222-111111-3333333-153'
 }
+
+New-PSURole @Parameters
 ```
 
-For debugging and development purposes, you can check to see what claims a user has been exporting the `$User` variable to a file.
 
-```powershell
-New-PSURole -Name 'Administrators' -Policy {
-    param(
-        $User
-    )
-
-    $User | ConvertTo-Json | Out-File .\myUser.json
-
-    $User.HasClaim("http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", 'S-1-5-21-22222222-111111-3333333-153')
-}
-```
-
-You should see a JSON file that contains the user's identity and claims array.
-
-```javascript
-{
-  "Claims": [
-    {
-      "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
-      "Value": "LAPTOP-496LAUK8\\adamr",
-      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
-      "Issuer": "AD AUTHORITY",
-      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
-    },
-    {
-      "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/primarysid",
-      "Value": "S-1-5-21-1001",
-      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
-      "Issuer": "AD AUTHORITY",
-      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
-    },
-    {
-      "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid",
-      "Value": "S-1-1-0",
-      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
-      "Issuer": "AD AUTHORITY",
-      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
-    },
-    {
-      "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/denyonlysid",
-      "Value": "S-1-5-114",
-      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
-      "Issuer": "AD AUTHORITY",
-      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
-    },
-    {
-      "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid",
-      "Value": "S-1-5-21-1002",
-      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
-      "Issuer": "AD AUTHORITY",
-      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
-    },
-    {
-      "Type": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/denyonlysid",
-      "Value": "S-1-5-32-544",
-      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
-      "Issuer": "AD AUTHORITY",
-      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
-    },
-    {
-      "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid",
-      "Value": "S-1-5-32-559",
-      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
-      "Issuer": "AD AUTHORITY",
-      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
-    },
-    {
-      "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid",
-      "Value": "S-1-5-32-545",
-      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
-      "Issuer": "AD AUTHORITY",
-      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
-    },
-    {
-      "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid",
-      "Value": "S-1-5-4",
-      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
-      "Issuer": "AD AUTHORITY",
-      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
-    },
-    {
-      "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid",
-      "Value": "S-1-2-1",
-      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
-      "Issuer": "AD AUTHORITY",
-      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
-    },
-    {
-      "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid",
-      "Value": "S-1-5-11",
-      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
-      "Issuer": "AD AUTHORITY",
-      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
-    },
-    {
-      "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid",
-      "Value": "S-1-5-15",
-      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
-      "Issuer": "AD AUTHORITY",
-      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
-    },
-    {
-      "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid",
-      "Value": "S-1-11-96-977963020-1793067495-765970767",
-      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
-      "Issuer": "AD AUTHORITY",
-      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
-    },
-    {
-      "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid",
-      "Value": "S-1-5-113",
-      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
-      "Issuer": "AD AUTHORITY",
-      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
-    },
-    {
-      "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid",
-      "Value": "S-1-2-0",
-      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
-      "Issuer": "AD AUTHORITY",
-      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
-    },
-    {
-      "Type": "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid",
-      "Value": "S-1-5-64-36",
-      "ValueType": "http://www.w3.org/2001/XMLSchema#string",
-      "Issuer": "AD AUTHORITY",
-      "Properties": "System.Collections.Generic.Dictionary`2[System.String,System.String]"
-    }
-  ],
-  "Identity": {
-    "Name": "LAPTOP-496LAUK8\\adamr"
-  }
-}
-```
 
 ## Example: Policy based on Active Directory Group Membership
 
@@ -616,9 +480,9 @@ return $IsMember
 
 This example takes advantage of [OpenID Connect and Azure Active Directory](openid-connect.md#configuring-azuread).
 
-Once you have configured PowerShell Universal and Azure Active Directory, you can configure role scripts to verify whether users are members of groups found in Azure AD. You can take advantage of the `HasClaim` method of the `$User` variable to check membership.
+Once you have configured PowerShell Universal and Azure Active Directory, you can configure role scripts to verify whether users are members of groups found in Azure AD. You can take advantage of claims mappings to map from the Azure AD Group ID to a PowerShell Universal role.&#x20;
 
-First, ensure that you have group membership claims enabled in the manifest for your application registration. This will include all group membership so it is accessible in PowerShell Universal.
+First, ensure that you have group membership claims enabled in the manifest for your application registration. This will include all group membership, so it is accessible in PowerShell Universal.
 
 ![](<../../.gitbook/assets/image (231).png>)
 
@@ -630,14 +494,10 @@ Once configured, you can update your role script to check for a group membership
 
 ![](<../../.gitbook/assets/image (232).png>)
 
-Next, within your `roles.ps1` script, you can validate a user has a particular role by using `HasClaim` and providing the object GUID.
+Next, within your `roles.ps1` script, you can validate a user has a particular role by using claims mapping.
 
 ```powershell
-param(
-$User
-)
-        
-$User.HasClaim("groups", "4acabc67-56cc-4590-9de6-164f3c4faf10") 
+New-PSURole -Name 'Administrators' -ClaimType 'groups' -ClaimValue '4acabc67-56cc-4590-9de6-164f3c4faf10'
 ```
 
 As users login, their group membership will be validated against their claims and a role will be assigned.
