@@ -222,6 +222,18 @@ New-PSURole -Name Administrator -ClaimType 'http://schemas.microsoft.com/ws/2008
 
 Mapping roles to claims in this manner is faster than Policy Assignment because it does not require PowerShell to be run when the user is logging in.
 
+
+### View Claim Information
+
+{% hint style="info" %}
+PowerShell Universal 2.6 or later.
+{% endhint %}
+
+To help develop policy scripts or assign roles to claims, you can view claim information by clicking View Claim Information in Security \ Roles.
+
+![View Claim Information](<../../.gitbook/assets/image (308) (1) (1) (1).png>)
+
+
 ### Example: Azure Active Directory
 
 You can map an Azure Active Directory group to a role by looking up the group Object ID in Azure. For example, within the Ironman Software domain, we have a group called Dashboard Administrators. This group has an object ID of `61849bf2-e44b-4057-b589-6cd1812d7545`.
@@ -287,16 +299,6 @@ The Execute role grants the ability to run scripts and read access for everythin
 #### Reader
 
 The Reader role provides read-only access to PowerShell Universal.
-
-### View Claim Information
-
-{% hint style="info" %}
-PowerShell Universal 2.6 or later.
-{% endhint %}
-
-To help develop policy scripts or assign roles to claims, you can view claim information by clicking View Claim Information in Security \ Roles.
-
-![View Claim Information](<../../.gitbook/assets/image (308) (1) (1) (1).png>)
 
 ### Users with Many Groups
 
