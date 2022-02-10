@@ -12,7 +12,7 @@ From the `Dashboard / Published Folders` page, you can click Add Published Folde
 
 You can choose to turn on authentication and authorization for the folder.
 
-![](<../.gitbook/assets/image (311).png>)
+![](<../.gitbook/assets/image (311) (1).png>)
 
 Once the folder has been published, it will be listed in the published folders table.
 

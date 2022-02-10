@@ -16,11 +16,11 @@ Within PowerShell Universal, you can access the Universal Dashboard Marketplace 
 
 Once installed, the component will be listed on the Dashboard Components page. You can access this by clicking Dashboards and then the Components button in the top right.
 
-![](<../../.gitbook/assets/image (293).png>)
+![](<../../.gitbook/assets/image (293) (1).png>)
 
 To add the component to a dashboard, navigate to the Dashboard Details and then click the Add Component button.&#x20;
 
-![](<../../.gitbook/assets/image (313).png>)
+![](<../../.gitbook/assets/image (313) (1).png>)
 
 The drawer will show which components are already added and which components can be added. Click the add button to activate the component for the dashboard.
 

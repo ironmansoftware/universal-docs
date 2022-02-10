@@ -202,7 +202,7 @@ For more information, you can follow the Microsoft documentation for configuring
 
 ## Authorization
 
-User authorization is accomplished with roles. Roles can either be assigned through claims mapping, a policy script or by assigning the role directly to the identity. 
+User authorization is accomplished with roles. Roles can either be assigned through claims mapping, a policy script or by assigning the role directly to the identity.
 
 ### Role to Claim Mapping
 
@@ -211,6 +211,8 @@ PowerShell Universal 2.6 or later.
 {% endhint %}
 
 You can map roles to a claim (such as a group membership) by using the `-ClaimType` and `-ClaimValue` parameters of `New-PSURole`. Settings are also available in the role properties dialog within Security \ Roles.
+
+![](<../../.gitbook/assets/image (293).png>)
 
 For example, with Windows authentication, if you wanted to map a group to a role, you could configure it such that the group SID maps to the administrator role.
 
@@ -230,7 +232,6 @@ To help develop policy scripts or assign roles to claims, you can view claim inf
 
 ![View Claim Information](<../../.gitbook/assets/image (308) (1) (1) (1).png>)
 
-
 ### Example: Azure Active Directory
 
 You can map an Azure Active Directory group to a role by looking up the group Object ID in Azure. For example, within the Ironman Software domain, we have a group called Dashboard Administrators. This group has an object ID of `61849bf2-e44b-4057-b589-6cd1812d7545`.
@@ -243,9 +244,9 @@ New-PSURole -Name Administrator -ClaimType 'groups' -ClaimValue '61849bf2-e44b-4
 
 ### Policy Assignment
 
-By default, roles are assigned by policies. Policies are run when the user logs in. You can change the policy scripts by visiting the Security / Roles tab. Click the Edit Policy button to configure the Policy script.
+By default, roles are assigned by policies. Policies are run when the user logs in. You can change the policy scripts by visiting the Security / Roles page. Click the Edit Policy button to configure the Policy script.
 
-![](<../../.gitbook/assets/image (8).png>)
+![](<../../.gitbook/assets/image (311).png>)
 
 Policy scripts will receive a `ClaimsPrincipal` object as a parameter and need to return true or false. Policies that throw errors will be assumed to be false. The `ClaimsPrincipal` object contains the user's identity and the claims that the user has received. These may include group assignments or other features of a user's account.
 
@@ -275,9 +276,13 @@ public class Claim
 
 ### Role Assignment
 
-To assign a role to a user, you can create their identity within Universal and then select the role in the drop down on the Identities page. By default, identities receive a role through policy.
+To assign a role to a user, you can create their identity within Universal and then select the role in the drop down on the Identities page.&#x20;
 
-![](<../../.gitbook/assets/image (18).png>)
+![](<../../.gitbook/assets/image (312).png>)
+
+By default, identities receive a role through claim mapping or policy.
+
+![](<../../.gitbook/assets/image (307).png>)
 
 ### Built in Roles
 
@@ -358,11 +363,11 @@ The token will have a expiration of one year and have the valid roles for your a
 
 You can use App Tokens with the Universal cmdlets or by using web requests directly using Bearer authorization.
 
-![](<../../.gitbook/assets/image (5).png>)
+![](<../../.gitbook/assets/image (314).png>)
 
 ## Environment
 
-By default, the forms authentication and policy assignment scripts run within the PowerShell Universal process. You can optional configure an external [Environment ](../environments.md)to run your authentication and authorization scripts. When you configure a security environment, an external PowerShell process will be started and configured use your Environment's settings.
+By default, the forms authentication and policy assignment scripts run within the PowerShell Universal process. You can optionally configure an external [Environment ](../environments.md)to run your authentication and authorization scripts. When you configure a security environment, an external PowerShell process will be started and configured use your Environment's settings.
 
 To adjust the environment used by the security process, set the `-SecurityEnvironment` in `settings.ps1`.
 

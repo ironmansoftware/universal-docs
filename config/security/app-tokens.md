@@ -12,11 +12,11 @@ You can grant App Tokens to using the Admin Console or you can use the Managemen
 
 To grant a token in the Admin Console, navigate to Security \ Tokens. Click the Add New App Token button to grant an App Token.
 
-![](<../../.gitbook/assets/image (310).png>)
+![](<../../.gitbook/assets/image (310) (1).png>)
 
 When you click Grant App Token, you will be provided with a dialog that allows you to specify the Identity, Role and expiration time of the token.
 
-![App Token options. ](<../../.gitbook/assets/image (175).png>)
+![App Token options.](<../../.gitbook/assets/image (175).png>)
 
 ## Management API
 
@@ -63,11 +63,11 @@ expiration  : 26/06/2021 17:26:00
 revokedDate : 01/01/0001 00:00:00
 ```
 
-## Migrating App Tokens&#x20;
+## Migrating App Tokens
 
-You can migrate app tokens between systems by using the management API. This is helpful when developing for high availability scenarios.&#x20;
+You can migrate app tokens between systems by using the management API. This is helpful when developing for high availability scenarios.
 
-The following is an example of the POST that is required to create an existing app token in any PSU instance. Note that the signing key must be the same between the instances. You need a valid app token in the target system to create the migrated tokens.&#x20;
+The following is an example of the POST that is required to create an existing app token in any PSU instance. Note that the signing key must be the same between the instances. You need a valid app token in the target system to create the migrated tokens.
 
 ```powershell
 Invoke-RestMethod http://localhost:5000/api/v1/apptoken -Method POST -Body (@{

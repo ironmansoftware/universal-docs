@@ -42,9 +42,9 @@ The `PSUSecretStore` vault is integrated with the Microsoft `SecretStore` module
 Requires PowerShell Universal 2.7 or later.
 {% endhint %}
 
-We do not include the Azure Key Vault extension directly in PowerShell Universal, but below you will find how to configure it. This example uses an Azure hosted web-app version of PowerShell Universal.&#x20;
+We do not include the Azure Key Vault extension directly in PowerShell Universal, but below you will find how to configure it. This example uses an Azure hosted web-app version of PowerShell Universal.
 
-In Azure, we'll need to configure a managed identity for our web app. This step isn't necessarily required if you are running outside of Azure. You can enable the managed identity under the Identity page for your web app.&#x20;
+In Azure, we'll need to configure a managed identity for our web app. This step isn't necessarily required if you are running outside of Azure. You can enable the managed identity under the Identity page for your web app.
 
 ![](<../.gitbook/assets/image (303) (1) (1).png>)
 
@@ -54,9 +54,9 @@ Next, you'll need to allow your managed identity to access your key vault and re
 
 Then, I provided all privileges to secret and key management for my managed identity in my Key Vault resource.
 
-![](<../.gitbook/assets/image (307) (1) (1) (1).png>)
+![](<../.gitbook/assets/image (307) (1) (1) (1) (1).png>)
 
-Finally, we will need to register the key vault and connect to Azure when the web app starts. This can be accomplished by using the Az.Account and Az.KeyVault modules.&#x20;
+Finally, we will need to register the key vault and connect to Azure when the web app starts. This can be accomplished by using the Az.Account and Az.KeyVault modules.
 
 After deploying your web-app, you will need to first install the Az.Account and Az.KeyVault modules. You can do so on the modules page. They will be installed to the local repository within the web app.
 
@@ -74,11 +74,11 @@ Register-SecretVault -ModuleName Az.KeyVault -Name AzureKeyVault -VaultParameter
 } -AllowClobber
 ```
 
-Now, when you are creating secrets, you will see the AzureKeyVault available.&#x20;
+Now, when you are creating secrets, you will see the AzureKeyVault available.
 
 ![](<../.gitbook/assets/image (310) (1) (1) (1).png>)
 
-To ensure the application is connected to Azure and the key vault is registered, create a startup trigger to run the script when the web app starts. We recommend setting a delay when for the trigger to allow the app to warm up.&#x20;
+To ensure the application is connected to Azure and the key vault is registered, create a startup trigger to run the script when the web app starts. We recommend setting a delay when for the trigger to allow the app to warm up.
 
 ![](<../.gitbook/assets/image (304) (1) (1) (1).png>)
 
