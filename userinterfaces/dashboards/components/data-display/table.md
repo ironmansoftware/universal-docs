@@ -201,7 +201,7 @@ Requires PowerShell Universal 2.8 or later.&#x20;
 
 You can change the location of the pagination control by using the `-PaginationLocation` parameter. It accepts top, bottom and both.&#x20;
 
-![Pagination Location](<../../../../.gitbook/assets/image (317) (1).png>)
+![Pagination Location](<../../../../.gitbook/assets/image (317) (1) (1).png>)
 
 ## Sorting
 

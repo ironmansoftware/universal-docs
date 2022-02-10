@@ -37,7 +37,7 @@ You can then view the paused scripts in the debugging table.&#x20;
 
 You can then click the Debug button to open a debug terminal.&#x20;
 
-![Debug Button](<../.gitbook/assets/image (297).png>)
+![Debug Button](<../.gitbook/assets/image (297) (1).png>)
 
 Once within the debug terminal, you can execute commands as well as continue, step into, step out of and step over lines in the script.&#x20;
 

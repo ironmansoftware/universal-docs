@@ -121,6 +121,7 @@
 ## Platform
 
 * [Cache](platform/cache.md)
+* [Editor](platform/editor.md)
 * [Desktop Mode](platform/desktop-mode.md)
   * [Hotkeys](platform/desktop-mode/hotkeys.md)
 * [Modules](platform/modules.md)

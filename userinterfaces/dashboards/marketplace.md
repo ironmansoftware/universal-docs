@@ -24,7 +24,7 @@ To add the component to a dashboard, navigate to the Dashboard Details and then 
 
 The drawer will show which components are already added and which components can be added. Click the add button to activate the component for the dashboard.
 
-![](<../../.gitbook/assets/image (318).png>)
+![](<../../.gitbook/assets/image (318) (1).png>)
 
 ### Manual Install from the PowerShell Gallery
 
