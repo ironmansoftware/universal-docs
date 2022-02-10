@@ -4,102 +4,132 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2.8.1 - 2/10/2022
+
+### Includes
+
+* UniversalDashboard - v3.10.0
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.2.0
+* UniversalDashboard.Editor - 1.0.0
+* UniversalDashboard.Style - 1.0.0
+
+***
+
+### Changed
+
+#### User Interfaces
+
+* Dashboards: Fixed an issue where dashboard components would not be loaded
+* Dashboards: Improved endpoint execution performance
+* Dashboards: Improved endpoint memory usage
+* Dashboards: Increased timeout for Get-UDElement
+* Pages: Fixed an issue with user name location
+* Pages: Fixed an issue where scripts that returned a warning would cause a form to reset
+
+#### Platform
+
+* Fixed an issue where the parse error request would happen too frequently
+* Fixed an issue where the claims cache would not be reset if roles changed
+
 ## 2.8.0 - 2/7/2022
 
 ## Includes
 
-- UniversalDashboard - v3.10.0
-- UniversalDashboard - v2.9.9
-- UniversalDashboard.Charts - 1.3.2
-- UniversalDashboard.Map - 1.0
-- UniversalDashboard.CodeEditor - 1.2.0
-- UniversalDashboard.Editor - 1.0.0
-- UniversalDashboard.Style - 1.0.0
+* UniversalDashboard - v3.10.0
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.2.0
+* UniversalDashboard.Editor - 1.0.0
+* UniversalDashboard.Style - 1.0.0
 
------
+***
 
 ## Removed
 
 ### User Interfaces
 
-- Dashboards: Removed the Start-UDDashboard cmdlet from the UniversalDashboard module manifest
+* Dashboards: Removed the Start-UDDashboard cmdlet from the UniversalDashboard module manifest
 
-## Added 
+## Added
 
 ### API
 
-- Added support for large file downloads from endpoints.
-- Added -Timeout to New-PSUEndpoint
+* Added support for large file downloads from endpoints.
+* Added -Timeout to New-PSUEndpoint
 
-### Automation 
+### Automation
 
-- Added support for Enter-PSSession and Exit-PSSession
-- Added -Integrated support to Get-PSUJob
-- Added support for parameter sets when executing scripts
-- Desktop Mode: Added support for executing scripts with global hotkeys
-- Added -DiscardPipeline to New-PSUScript
+* Added support for Enter-PSSession and Exit-PSSession
+* Added -Integrated support to Get-PSUJob
+* Added support for parameter sets when executing scripts
+* Desktop Mode: Added support for executing scripts with global hotkeys
+* Added -DiscardPipeline to New-PSUScript
 
 ### User Interfaces
 
-- Pages: Added default page size setting to table
-- Dashboards: Added -Label, -CheckedLabel, and -UncheckedLabel to New-UDSwitch
-- Dashboards: Added -HeaderContent to New-UDPage
-- Dashbaords: Added basic toggle to dashboard page
-- Dashboards: Added -PaginationLocation to New-UDTable
+* Pages: Added default page size setting to table
+* Dashboards: Added -Label, -CheckedLabel, and -UncheckedLabel to New-UDSwitch
+* Dashboards: Added -HeaderContent to New-UDPage
+* Dashbaords: Added basic toggle to dashboard page
+* Dashboards: Added -PaginationLocation to New-UDTable
 
-### Platform 
+### Platform
 
-- Added IntelliSense to editors. 
-- Added Format (F8) support to editors.
-- Added Debugging Tools
-- Added Runspace Recycling option to reduce memory usage 
-- Added a confirmation before enabling or disabling authentication methods
-- Added a link to create run as credentials when none are defined
-- NuGet Package Management provider will be installed if it does not exist
+* Added IntelliSense to editors.
+* Added Format (F8) support to editors.
+* Added Debugging Tools
+* Added Runspace Recycling option to reduce memory usage
+* Added a confirmation before enabling or disabling authentication methods
+* Added a link to create run as credentials when none are defined
+* NuGet Package Management provider will be installed if it does not exist
 
 ## Changed
 
-### Automation 
+### Automation
 
-- Fixed an issue where PowerShell 7.2 would include ANSI escape characters in job logs. 
-- Fixed an issue where renaming a script would not work
-- Fixed an issue where the documentation link for Terminals was incorrect
-- Fixed the ambiguity in the "cancel job" confirmation prompt
+* Fixed an issue where PowerShell 7.2 would include ANSI escape characters in job logs.
+* Fixed an issue where renaming a script would not work
+* Fixed an issue where the documentation link for Terminals was incorrect
+* Fixed the ambiguity in the "cancel job" confirmation prompt
 
 ### User Interfaces
 
-- Fixed an issue where the dashboard control buttons would be missing when One-Way git sync was enabled.
-- Pages: Fixed an issue where the form text output would not expand to the container height 
-- Pages: Fixed an issue where unauthenticated pages would reset while loading causing forms to restart.
-- Pages: Improved the editor tools layout.
-- Dashboards: Fixed an issue where the theme setting would not persist.
-- Dashboards: Updated the example dashboard
-- Dashboards: Fixed an issue where a column named "version" would not work in UDTable. 
-- Dashboards: Fixed an issue where New-UDDatePicker could not be cleared
-- Dashboards: Fixed an issue where typing the entire text of an item in New-UDAutocomplete would not perform a OnChange. You will still need to press enter to select the item. 
-- Dashboards: Improved memory usage
-- Dashboards: Fixed an issue where sessions and endpoints would not be reported for the integrated environment
-- Dashboards: Only the updated dashboard will auto-deploy when saved
-- Dashboards: Fixed an issue where New-UDTable would not fill the width of its container
-- Dashboards: Fixed an issue where param blocks would cause an error in dashboards
-- Dashboards: Fixed an issue where -Multiple on New-UDAutoComplete could cause a JavaScript error
-- Dashboards: Fixed an issue where -Multiple on New-UDAutoComplete with -OnLoadOptions wouldn't clear the typed text after selection
-- Dashboards: Fixed an issue where dynamic pages would appear in navigation
-- Dashboards: Built in components (Charts, Style, Map, CodeEditor, Editor) are now automatically added to dashboards
+* Fixed an issue where the dashboard control buttons would be missing when One-Way git sync was enabled.
+* Pages: Fixed an issue where the form text output would not expand to the container height
+* Pages: Fixed an issue where unauthenticated pages would reset while loading causing forms to restart.
+* Pages: Improved the editor tools layout.
+* Dashboards: Fixed an issue where the theme setting would not persist.
+* Dashboards: Updated the example dashboard
+* Dashboards: Fixed an issue where a column named "version" would not work in UDTable.
+* Dashboards: Fixed an issue where New-UDDatePicker could not be cleared
+* Dashboards: Fixed an issue where typing the entire text of an item in New-UDAutocomplete would not perform a OnChange. You will still need to press enter to select the item.
+* Dashboards: Improved memory usage
+* Dashboards: Fixed an issue where sessions and endpoints would not be reported for the integrated environment
+* Dashboards: Only the updated dashboard will auto-deploy when saved
+* Dashboards: Fixed an issue where New-UDTable would not fill the width of its container
+* Dashboards: Fixed an issue where param blocks would cause an error in dashboards
+* Dashboards: Fixed an issue where -Multiple on New-UDAutoComplete could cause a JavaScript error
+* Dashboards: Fixed an issue where -Multiple on New-UDAutoComplete with -OnLoadOptions wouldn't clear the typed text after selection
+* Dashboards: Fixed an issue where dynamic pages would appear in navigation
+* Dashboards: Built in components (Charts, Style, Map, CodeEditor, Editor) are now automatically added to dashboards
 
-### Platform 
+### Platform
 
-- Improved handling of invalid OIDC configurations. 
-- Fixed an issue where the Copy button would be missing from the app token page when One-Way git sync was enabled. 
-- Fixed an issue where Set-PSUSetting -ScriptBaseFolder would not take effect when using the REST API
-- Fixed an issue where Get-PSUFolder -Name would return a 404
-- The user name field now receives auto focus on the login page
-- Service will continue to attempt activation once per hour if it fails when the license is installed
-- Fixed an issue where LiteDB would not work properly in an Azure App Service. 
-- Reduced the memory usage of the PowerShell Universal server and integrated environment
-- Fixed an issue where more than the designated amount of runspaces could be allocated
-- Updated the version of Microsoft.Identity.Client that is referenced
-- Fixed an issue where Application Insights data would not be reported
+* Improved handling of invalid OIDC configurations.
+* Fixed an issue where the Copy button would be missing from the app token page when One-Way git sync was enabled.
+* Fixed an issue where Set-PSUSetting -ScriptBaseFolder would not take effect when using the REST API
+* Fixed an issue where Get-PSUFolder -Name would return a 404
+* The user name field now receives auto focus on the login page
+* Service will continue to attempt activation once per hour if it fails when the license is installed
+* Fixed an issue where LiteDB would not work properly in an Azure App Service.
+* Reduced the memory usage of the PowerShell Universal server and integrated environment
+* Fixed an issue where more than the designated amount of runspaces could be allocated
+* Updated the version of Microsoft.Identity.Client that is referenced
+* Fixed an issue where Application Insights data would not be reported
 
 ## 2.7.4 - 2/4/2022
 
