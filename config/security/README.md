@@ -202,9 +202,7 @@ For more information, you can follow the Microsoft documentation for configuring
 
 ## Authorization
 
-{% embed url="https://youtu.be/0lqyb-PdCxc" %}
-
-User authorization is accomplished with roles. Roles are either assigned based on the policy script you define or a role is assigned manually to the user.
+User authorization is accomplished with roles. Roles can either be assigned through claims mapping, a policy script or by assigning the role directly to the identity. 
 
 ### Role to Claim Mapping
 
@@ -220,8 +218,7 @@ For example, with Windows authentication, if you wanted to map a group to a role
 New-PSURole -Name Administrator -ClaimType 'http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid' -ClaimValue 'S-123-123-123'
 ```
 
-Mapping roles to claims in this manner is faster than Policy Assignment because it does not require PowerShell to be run when the user is logging in.
-
+Mapping roles to claims in this manner is faster than Policy scripts because it does not require PowerShell to be run when the user is logging in.
 
 ### View Claim Information
 
