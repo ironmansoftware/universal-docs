@@ -10,7 +10,7 @@ Logging levels can be changed within the Settings \ General \ Diagnostics page.&
 
 The Log Level setting configures PowerShell Universal logging settings. The Microsoft Log Level setting controls more low-level components within the web server. This is useful for debugging issues with authentication or authorization.&#x20;
 
-![](<../.gitbook/assets/image (308) (1).png>)
+![](<../.gitbook/assets/image (308) (1) (1).png>)
 
 Clicking Download Logs will provide a zip archive of all the log files in the log directory on the server.&#x20;
 

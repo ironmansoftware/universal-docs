@@ -70,7 +70,7 @@ To add these components to your dashboard, you can use the dashboard UI.
 
 Click the info button on the dashboard page.
 
-![](<../../.gitbook/assets/image (308) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (308) (1) (1) (1) (1).png>)
 
 Next, click the components button in the top right of your dashboard.
 

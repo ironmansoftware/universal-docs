@@ -230,7 +230,7 @@ PowerShell Universal 2.6 or later.
 
 To help develop policy scripts or assign roles to claims, you can view claim information by clicking View Claim Information in Security \ Roles.
 
-![View Claim Information](<../../.gitbook/assets/image (308) (1) (1) (1) (1).png>)
+![View Claim Information](<../../.gitbook/assets/image (308) (1) (1) (1) (1) (1).png>)
 
 ### Example: Azure Active Directory
 
@@ -246,7 +246,7 @@ New-PSURole -Name Administrator -ClaimType 'groups' -ClaimValue '61849bf2-e44b-4
 
 By default, roles are assigned by policies. Policies are run when the user logs in. You can change the policy scripts by visiting the Security / Roles page. Click the Edit Policy button to configure the Policy script.
 
-![](<../../.gitbook/assets/image (311).png>)
+![](<../../.gitbook/assets/image (311) (1).png>)
 
 Policy scripts will receive a `ClaimsPrincipal` object as a parameter and need to return true or false. Policies that throw errors will be assumed to be false. The `ClaimsPrincipal` object contains the user's identity and the claims that the user has received. These may include group assignments or other features of a user's account.
 

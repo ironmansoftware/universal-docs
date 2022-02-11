@@ -5,7 +5,7 @@ description: Performance profiler for PowerShell Universal.
 # Profiling
 
 {% hint style="info" %}
-Available in PowerShell Universal 2.8.2 or later
+Available in PowerShell Universal 2.8.2 or later. Profiling only works for the integrated environment.
 {% endhint %}
 
 PowerShell Universal provides a performance profiler for debugging issues where the platform may exhibit slow responses. This is primarily useful when building Dashboards.&#x20;
@@ -20,22 +20,44 @@ You will see a list of requests and their timings.&#x20;
 
 Clicking on the request will display a break-down of the timings.&#x20;
 
-![Timings](<../.gitbook/assets/image (309).png>)
+![Timings](<../.gitbook/assets/image (309) (1).png>)
+
+## Profiling an API Endpoint
+
+You can profile an API endpoint using `Measure-PSUBlock`. The API will be listed by URL in the result index.&#x20;
+
+For example, assume an API called `/process`.&#x20;
+
+```powershell
+New-PSUEndpoint -Url "/process" -Endpoint {
+    Measure-PSUBlock -Name 'Api' -ScriptBlock {
+        Get-Process | Select-Object name
+    }
+} -Authentication -Timeout 0 
+```
+
+The result of profiling this API would be listed by URL.
+
+
+
+Viewing the profile for this API would list the block we measured.&#x20;
+
+
 
 ## Profiling a Dashboard
 
 {% hint style="info" %}
-Profiling only works with the Integrated environment.&#x20;
+`Measure-UDBlock` is an alias for `Measure-PSUBlock`
 {% endhint %}
 
 You can use the built-in profiler with Dashboards. By default, certain internal action timings are recorded. You can also use the `Measure-PSUBlock` cmdlet to measure specific blocks within your dashboard.&#x20;
 
-For example, this dashboard uses `Measure-PSUBlock` to measure the performance of the `Start-Sleep` cmdlet. The result is the block will take one second to execute.&#x20;
+For example, this dashboard uses `Measure-UDBlock` to measure the performance of the `Start-Sleep` cmdlet. The result is the block will take one second to execute.&#x20;
 
 ```powershell
 New-UDDashboard -Title 'Dashboard' -Content {
     New-UDDynamic -Id 'MyElement' -Content {
-        Measure-PSUBlock -Name 'WithinDashboard' -ScriptBlock {
+        Measure-UDBlock -Name 'WithinDashboard' -ScriptBlock {
             Start-Sleep 1
         }
     }
@@ -50,4 +72,4 @@ Below is the example output from the dashboard shown above. Notice that the URL 
 
 Not all timing will be displayed by default. You can click `show trivial` to expand all timings.&#x20;
 
-![All Timings](<../.gitbook/assets/image (308).png>)
+![All Timings](<../.gitbook/assets/image (308) (1).png>)

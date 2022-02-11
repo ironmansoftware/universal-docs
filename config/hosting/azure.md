@@ -20,7 +20,7 @@ Next, you'll need to deploy the image to your web app. To do so, select the Depl
 
 Next, we'll need to configure an Azure Storage Account for file shares to store the data for this web app. Within your storage account, create a new File Share that is transaction optimized.
 
-![Storage Account File Shares](<../../.gitbook/assets/image (309) (1) (1).png>)
+![Storage Account File Shares](<../../.gitbook/assets/image (309) (1) (1) (1).png>)
 
 Back in your App Service, you can setup a Path mapping to the file share we just created. In my example, I've set the mount path to `/Data`. This is where the configuration and database will be stored.
 

@@ -242,7 +242,7 @@ $Theme = @{
 
 ### Compliment
 
-![](<../../../.gitbook/assets/image (308) (1) (1) (1) (1) (1).png>)
+![](<../../../.gitbook/assets/image (308) (1) (1) (1) (1) (1) (1).png>)
 
 ```powershell
 $Theme = @{
