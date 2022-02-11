@@ -24,7 +24,11 @@ Clicking on the request will display a break-down of the timings.&#x20;
 
 ## Profiling a Dashboard
 
-You can use the built-in profiler with Dashboards. By default, certain internal action timings are record. You can also use the `Measure-UDBlock` cmdlet to measure specific blocks within your dashboard.&#x20;
+{% hint style="info" %}
+Profiling only works with the Integrated environment.&#x20;
+{% endhint %}
+
+You can use the built-in profiler with Dashboards. By default, certain internal action timings are recorded. You can also use the `Measure-UDBlock` cmdlet to measure specific blocks within your dashboard.&#x20;
 
 For example, this dashboard uses `Measure-UDBlock` to measure the performance of the `Start-Sleep` cmdlet. The result is the block will take one second to execute.&#x20;
 
