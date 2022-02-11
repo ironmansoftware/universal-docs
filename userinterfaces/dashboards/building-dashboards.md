@@ -84,7 +84,7 @@ Built-in variables can be found on the [variables page](../../platform/variables
 ## Debugging
 
 {% hint style="info" %}
-You can also use the [Debugging Tools](../../debugging/debugging-scripts.md#integrated-debugger) with dashboards.
+You can also use the [Debugging Tools](../../development/debugging-scripts.md#integrated-debugger) with dashboards.
 {% endhint %}
 
 When building a dashboard, you will likely run into issues with cmdlet calls or syntax. Dashboards will auto reload as you make changes to the dashboard files. If a dashboard fails to start, you can navigate to the admin page, click Dashboards and click the Info button next to your dashboard.

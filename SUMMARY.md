@@ -11,7 +11,6 @@
 * [Supported Browsers](supported-browsers.md)
 * [Cmdlet Help](https://github.com/ironmansoftware/universal-docs/tree/master/cmdlets)
 * [Templates](https://ironmansoftware.com/powershell-universal/templates)
-* [Visual Studio Code Extension](visual-studio-code-extension.md)
 
 ## API
 
@@ -121,7 +120,6 @@
 ## Platform
 
 * [Cache](platform/cache.md)
-* [Editor](platform/editor.md)
 * [Desktop Mode](platform/desktop-mode.md)
   * [Hotkeys](platform/desktop-mode/hotkeys.md)
 * [Modules](platform/modules.md)
@@ -153,11 +151,13 @@
 * [Repository](config/repository.md)
 * [Running as a Service Account](config/running-as-a-service-account.md)
 
-## Debugging
+## Development
 
-* [Logging](debugging/logging.md)
-* [Debugging Scripts](debugging/debugging-scripts.md)
-* [Profiling](debugging/profiling.md)
+* [Debugging Scripts](development/debugging-scripts.md)
+* [Editor](development/editor.md)
+* [Logging](development/logging.md)
+* [Profiling](development/profiling.md)
+* [Visual Studio Code Extension](development/visual-studio-code-extension.md)
 
 ***
 

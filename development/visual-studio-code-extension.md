@@ -10,7 +10,7 @@ PowerShell Universal can be managed with the PowerShell Universal Visual Studio 
 
 You can download the extension from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal). You can also download the extension from within the Visual Studio Code extension pane. Search for PowerShell Universal and click Install. &#x20;
 
-![](<.gitbook/assets/image (117).png>)
+![](<../.gitbook/assets/image (117).png>)
 
 ## Configuration
 
@@ -20,17 +20,17 @@ The extension will prompt you for the URL and App Token used to connect to your 
 
 You can configure the extension by navigating to your PowerShell Universal admin console and then logging in. Navigate to Settings \ Configurations and click Edit with VS Code. A new app token will be generated, and the URL will be set automatically.&#x20;
 
-![Configure From the Admin Console](<.gitbook/assets/image (287).png>)
+![Configure From the Admin Console](<../.gitbook/assets/image (287).png>)
 
 ### Configure Multiple Connections
 
 You can configure multiple connections by using the Connections setting. Click the Add Connection button to open Settings.&#x20;
 
-![Add Connection](<.gitbook/assets/image (296).png>)
+![Add Connection](<../.gitbook/assets/image (296).png>)
 
 Next, click the Edit settings.json link underneath the Connections setting.&#x20;
 
-![Settings](<.gitbook/assets/image (305).png>)
+![Settings](<../.gitbook/assets/image (305).png>)
 
 The connections array can have zero to many connections. You can provide names for each connection.&#x20;
 
@@ -46,7 +46,7 @@ The connections array can have zero to many connections. You can provide names f
 
 Once you have defined a connection, you can connect to that instance by clicking the Connect to Instance button within the Connections tree view.
 
-![Connect to Instance](<.gitbook/assets/image (307) (1).png>)
+![Connect to Instance](<../.gitbook/assets/image (307) (1).png>)
 
 ## Features
 
@@ -56,13 +56,13 @@ The PowerShell Universal extension adds a new activity pane panel for PowerShell
 
 You can manage APIs with the extension. You will see a list of APIs. You can click the `Open endpoints.ps1` button to view the endpoints file and add new endpoints. Clicking the refresh button will reload any endpoints you add. You can click the `Insert Invoke-RestMethod to Console` to add a call to the endpoint to the PowerShell Integrated Console.&#x20;
 
-![](<.gitbook/assets/image (113).png>)
+![](<../.gitbook/assets/image (113).png>)
 
 ### Dashboards
 
 You can manage dashboards with the extension. You will see a list of dashboards underneath this section. You can open the dashboards.ps1 script, open the a single dashboard's script, restart a dashboard and view dashboards. When you open a dashboard script, the dashboard modules will automatically be loaded so that IntelliSense works in VS Code.&#x20;
 
-![](<.gitbook/assets/image (118).png>)
+![](<../.gitbook/assets/image (118).png>)
 
 #### Debug Dashboard Process
 
@@ -72,7 +72,7 @@ Debugging a dashboard process only works when running PowerShell Universal local
 
 You can connect the Visual Studio debugger to the dashboard process by right clicking on the dashboard and click Debug Dashboard Process. This requires the PowerShell extension for Visual Studio Code.&#x20;
 
-![](<.gitbook/assets/image (130).png>)
+![](<../.gitbook/assets/image (130).png>)
 
 After connecting the debugger, you can run commands such as `Get-Runspace` and `Debug-Runspace` to begin debugging aspects of your dashboard.&#x20;
 
@@ -80,13 +80,13 @@ After connecting the debugger, you can run commands such as `Get-Runspace` and `
 
 You can view dashboard logs by right clicking on the dashboard and clicking View Logs. They will open in a new tab.
 
-![](<.gitbook/assets/image (121).png>)
+![](<../.gitbook/assets/image (121).png>)
 
 ### Scripts
 
 You can manage scripts with the extension. You will see a list of available scripts underneath this section. You can edit the scripts.ps1, edit an individual script and run scripts. When running scripts, you will receive feedback about the status of the script. Scripts with parameters are not supported in VS Code. You can still run them in PowerShell Universal.&#x20;
 
-![](<.gitbook/assets/image (115).png>)
+![](<../.gitbook/assets/image (115).png>)
 
 ## Sample Browser
 
