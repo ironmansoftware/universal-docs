@@ -14,7 +14,7 @@ Authentication settings are also stored with `authentication.ps1`
 
 To update forms authentication, you can click Settings Security and then click the Settings button for the forms authentication.
 
-![](<../../.gitbook/assets/image (300) (1) (1).png>)
+![](<../../.gitbook/assets/image (300) (1) (1) (1).png>)
 
 You can update the PowerShell script found in settings to configure how the user is authenticated. You'll need to return a `New-PSUAuthenticationResult` from the script to indicate whether the user was successfully authenticated.
 
@@ -230,7 +230,7 @@ PowerShell Universal 2.6 or later.
 
 To help develop policy scripts or assign roles to claims, you can view claim information by clicking View Claim Information in Security \ Roles.
 
-![View Claim Information](<../../.gitbook/assets/image (308) (1) (1) (1).png>)
+![View Claim Information](<../../.gitbook/assets/image (308) (1) (1) (1) (1).png>)
 
 ### Example: Azure Active Directory
 

@@ -22,7 +22,7 @@ In PowerShell Universal 2.8 or later, the built-in components are included autom
 
 Some components are not included automatically. You can add component modules by clicking the Components button on the Dashboard page and then adding the components. This list will also include components downloaded from the Marketplace.
 
-![Add Components to a Dashboard](<../../../.gitbook/assets/image (319).png>)
+![Add Components to a Dashboard](<../../../.gitbook/assets/image (319) (1).png>)
 
 ## Component Storage
 

@@ -12,7 +12,7 @@ The [Universal Dashboard Marketplace](https://marketplace.universaldashboard.io)
 
 Within PowerShell Universal, you can access the Universal Dashboard Marketplace by navigating to the Dashboards page and clicking the Marketplace button in the top right.
 
-![](<../../.gitbook/assets/image (309).png>)
+![](<../../.gitbook/assets/image (309) (1).png>)
 
 Once installed, the component will be listed on the Dashboard Components page. You can access this by clicking Dashboards and then the Components button in the top right.
 
