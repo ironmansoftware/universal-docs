@@ -278,7 +278,7 @@ public class Claim
 
 To assign a role to a user, you can create their identity within Universal and then select the role in the drop down on the Identities page.&#x20;
 
-![](<../../.gitbook/assets/image (312).png>)
+![](<../../.gitbook/assets/image (312) (1).png>)
 
 By default, identities receive a role through claim mapping or policy.
 

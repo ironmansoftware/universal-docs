@@ -98,7 +98,7 @@ param(
 
 The result is a set of input options that are based on the types of parameters.
 
-![](<../../.gitbook/assets/image (312) (1) (1).png>)
+![](<../../.gitbook/assets/image (312) (1) (1) (1).png>)
 
 ### Running a Script as Another User
 
@@ -148,7 +148,7 @@ Test-NetConnection $HostName
 
 This above will yield the following user interface. The synopsis will be shown as the short description and a longer description can be shown in the description section. Links will appear under the description.&#x20;
 
-![](<../../.gitbook/assets/image (306) (1) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (306) (1) (1) (1) (1) (1).png>)
 
 
 

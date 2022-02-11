@@ -40,6 +40,6 @@ To stop a terminal, you can navigate to the terminal instances tab on the Termin
 
 If you navigate away from PowerShell Universal, the terminal will go idle. You can reconnect to a terminal by clicking the Open Terminal button for the idle terminal instance.&#x20;
 
-![Reconnect to a Terminal](<../.gitbook/assets/image (306) (1) (1) (1).png>)
+![Reconnect to a Terminal](<../.gitbook/assets/image (306) (1) (1) (1) (1).png>)
 
 Terminals will time out automatically after 5 minutes. You can customize the timeout by setting the `-IdleTimeout` parameter of `New-PSUTerminal`.

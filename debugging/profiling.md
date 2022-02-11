@@ -16,7 +16,7 @@ You can access profiling data by navigating to `/profiler/results-index` . You w
 
 You will see a list of requests and their timings.&#x20;
 
-![Result Index](<../.gitbook/assets/image (319).png>)
+![Result Index](<../.gitbook/assets/image (319) (1).png>)
 
 Clicking on the request will display a break-down of the timings.&#x20;
 
@@ -38,11 +38,11 @@ New-PSUEndpoint -Url "/process" -Endpoint {
 
 The result of profiling this API would be listed by URL.
 
-
+![](<../.gitbook/assets/image (309).png>)
 
 Viewing the profile for this API would list the block we measured.&#x20;
 
-
+![](<../.gitbook/assets/image (319).png>)
 
 ## Profiling a Dashboard
 
@@ -73,3 +73,23 @@ Below is the example output from the dashboard shown above. Notice that the URL 
 Not all timing will be displayed by default. You can click `show trivial` to expand all timings.&#x20;
 
 ![All Timings](<../.gitbook/assets/image (308) (1).png>)
+
+## Profiling a Job
+
+You can profile jobs by using `Measure-PSUBlock` within your script.&#x20;
+
+For example, assume we have a script that calls `Get-Service`.&#x20;
+
+```powershell
+Measure-PSUBlock -ScriptBlock {
+    Get-Service
+} -Name 'Get-Service'
+```
+
+Running a profile on this script will list the job as `JobProfiler/{id}`. The id will match the job ID shown in the admin console.&#x20;
+
+![](<../.gitbook/assets/image (311).png>)
+
+The profile will include the block that was measured.&#x20;
+
+![](<../.gitbook/assets/image (306).png>)
