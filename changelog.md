@@ -10,7 +10,7 @@ description: Changelog for PowerShell Universal.
 
 * UniversalDashboard - v3.10.0
 * UniversalDashboard - v2.9.9
-* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Charts - 1.3.3
 * UniversalDashboard.Map - 1.0
 * UniversalDashboard.CodeEditor - 1.2.0
 * UniversalDashboard.Editor - 1.0.0
@@ -40,7 +40,7 @@ description: Changelog for PowerShell Universal.
 
 * UniversalDashboard - v3.10.0
 * UniversalDashboard - v2.9.9
-* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Charts - 1.3.3
 * UniversalDashboard.Map - 1.0
 * UniversalDashboard.CodeEditor - 1.2.0
 * UniversalDashboard.Editor - 1.0.0
@@ -137,7 +137,7 @@ description: Changelog for PowerShell Universal.
 
 * UniversalDashboard - v3.9.2
 * UniversalDashboard - v2.9.9
-* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Charts - 1.3.3
 * UniversalDashboard.Map - 1.0
 * UniversalDashboard.CodeEditor - 1.2.0
 * UniversalDashboard.Editor - 1.0.0
@@ -155,7 +155,7 @@ description: Changelog for PowerShell Universal.
 
 * UniversalDashboard - v3.9.2
 * UniversalDashboard - v2.9.9
-* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Charts - 1.3.3
 * UniversalDashboard.Map - 1.0
 * UniversalDashboard.CodeEditor - 1.2.0
 * UniversalDashboard.Editor - 1.0.0
@@ -174,7 +174,7 @@ description: Changelog for PowerShell Universal.
 
 * UniversalDashboard - v3.9.2
 * UniversalDashboard - v2.9.9
-* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Charts - 1.3.3
 * UniversalDashboard.Map - 1.0
 * UniversalDashboard.CodeEditor - 1.2.0
 * UniversalDashboard.Editor - 1.0.0
@@ -192,7 +192,7 @@ description: Changelog for PowerShell Universal.
 
 * UniversalDashboard - v3.9.1
 * UniversalDashboard - v2.9.9
-* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Charts - 1.3.3
 * UniversalDashboard.Map - 1.0
 * UniversalDashboard.CodeEditor - 1.2.0
 * UniversalDashboard.Editor - 1.0.0
@@ -233,7 +233,7 @@ description: Changelog for PowerShell Universal.
 
 * UniversalDashboard - v3.9.1
 * UniversalDashboard - v2.9.9
-* UniversalDashboard.Charts - 1.3.2
+* UniversalDashboard.Charts - 1.3.3
 * UniversalDashboard.Map - 1.0
 * UniversalDashboard.CodeEditor - 1.2.0
 * UniversalDashboard.Editor - 1.0.0
