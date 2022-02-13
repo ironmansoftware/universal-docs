@@ -4,6 +4,10 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 2.8.2 - 2/13/2022
+
+* Fixed an issue where saving an endpoint would not work&#x20;
+
 ## 2.8.1 - 2/10/2022
 
 * Fixed an issue where endpoints would update multiple times when saved
