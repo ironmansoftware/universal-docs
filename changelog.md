@@ -8,7 +8,7 @@ description: Changelog for PowerShell Universal.
 
 ### Includes
 
-* UniversalDashboard - v3.10.0
+* UniversalDashboard - v3.10.1
 * UniversalDashboard - v2.9.9
 * UniversalDashboard.Charts - 1.3.4
 * UniversalDashboard.Map - 1.0
