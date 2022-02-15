@@ -4,6 +4,55 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2.8.2 - 2/15/2022
+
+### Includes
+
+* UniversalDashboard - v3.10.0
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.4
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.2.0
+* UniversalDashboard.Editor - 1.0.0
+* UniversalDashboard.Style - 1.0.0
+
+***
+
+### Added
+
+#### Platform
+
+* Added Measure-PSUBlock to help diagnosis slow endpoints.
+
+### Changed
+
+#### APIs
+
+* Fixed an issue where endpoint roles would not be displayed correctly
+
+#### Automation
+
+* Fixed an issue where a tooltip was not present on the stop job button
+* Fixed an issue where the Waiting on Feedback card on the home page wouldn't show the proper job count.
+* Added the ability to search within the Script dropdown of the Create New Schedule modal.
+* Fixed an issue where scripts would not display parameters in the default parameter set
+
+#### User Interfaces
+
+* Dashboards: Fixed an issue where updating the dashboard settings would not apply when auto deploy was enabled
+* Dashboards: Fixed an issue where some event types wouldn't send data with New-UDElement
+* Dashboards: Fixed an issue where New-UDChartJS would not update with Sync-UDElement
+* Dashboards: Fixed an issue where -HeaderContent of New-UDPage would not be dynamic
+
+#### Platform
+
+* Fixed an issue where swagger documentation would not be displayed.
+* Fixed an issue where templates would not be imported correctly
+* Fixed an issue where components would not be added to dashboards correctly during git sync
+* Fixed an issue where license status would be invalid on homepage when using a subscription license
+* Clicking the job cards on the page will now show a filtered job result
+* Fixed an issue where roles were duplicated
+
 ## 2.8.1 - 2/10/2022
 
 ### Includes
