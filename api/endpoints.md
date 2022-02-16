@@ -60,6 +60,43 @@ The resulting `Invoke-RestMethod` call must then include the query string parame
 Invoke-RestMethod http://localhost:5000/user?Id=123
 ```
 
+### Security Considerations
+
+When accepting input via Query String parameters you may be vulnerable to [CWE-914: Improper Control of Dynamically-Identified Variables](https://cwe.mitre.org/data/definitions/914.html). Consider using a `param` block to ensure that only valid parameters are provided to the endpoint.&#x20;
+
+Below is an example of CWE-914. A `$IsChallengePassed` query string parameter could be included to bypass the challenge.&#x20;
+
+```powershell
+New-PSUEndpoint -Url "/api/v1.0/CWE914Test" -Description "Vulnerable to CWE-914" -Endpoint {
+	if($ChallengeInputData -eq "AcceptableInput") {
+		$IsChallengePassed = $true
+	}
+	if($IsChallengePassed) {
+		"Challenge passed. Here is Sensitive Information"
+	} else {
+		"Challenge not passed"
+	}
+}
+```
+
+In order to avoid this particular issue, you can use a `param` block.&#x20;
+
+```powershell
+New-PSUEndpoint -Url "/api/v1.0/CWE914Test" -Description "Not Vulnerable to CWE-914" -Endpoint {
+	Param(
+		$ChallengeInputData
+	)
+	if($ChallengeInputData -eq "AcceptableInput") {
+		$IsChallengePassed = $true
+	}
+	if($IsChallengePassed) {
+		"Challenge passed. Here is Sensitive Information"
+	} else {
+		"Challenge not passed"
+	}
+}
+```
+
 ## Body
 
 To access a request body, you will simply access the `$Body` variable. Universal `$Body` variable will be a string. If you expect JSON, you should use `ConvertFrom-Json`.
