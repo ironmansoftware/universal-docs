@@ -10,6 +10,14 @@ Available in PowerShell Universal 2.8.2 or later. Profiling only works for the i
 
 PowerShell Universal provides a performance profiler for debugging issues where the platform may exhibit slow responses. This is primarily useful when building Dashboards.&#x20;
 
+## Enable Profiling
+
+Profiling will increase memory usage as profiling data is stored in memory. You can enable profiling by configuring the `Profiling` appsettings.json property. It is `false` by default. You will need to restart PowerShell Universal after enabling or disabling profiling.&#x20;
+
+```json
+"Profiling": true
+```
+
 ## Access Profiling Data
 
 You can access profiling data by navigating to `/profiler/results-index` . You will need to be logged in as administrator before being able to access this URL.&#x20;
