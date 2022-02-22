@@ -30,7 +30,7 @@ You can configure multiple connections by using the Connections setting. Click t
 
 Next, click the Edit settings.json link underneath the Connections setting.&#x20;
 
-![Settings](<../.gitbook/assets/image (305).png>)
+![Settings](<../.gitbook/assets/image (305) (1).png>)
 
 The connections array can have zero to many connections. You can provide names for each connection.&#x20;
 

@@ -155,6 +155,7 @@
 
 * [Debugging Scripts](development/debugging-scripts.md)
 * [Editor](development/editor.md)
+* [Hangfire](development/hangfire.md)
 * [Logging](development/logging.md)
 * [Profiling](development/profiling.md)
 * [Visual Studio Code Extension](development/visual-studio-code-extension.md)

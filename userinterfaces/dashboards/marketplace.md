@@ -20,7 +20,7 @@ Once installed, the component will be listed on the Dashboard Components page. Y
 
 To add the component to a dashboard, navigate to the Dashboard Details and then click the Add Component button.&#x20;
 
-![](<../../.gitbook/assets/image (313) (1).png>)
+![](<../../.gitbook/assets/image (313) (1) (1).png>)
 
 The drawer will show which components are already added and which components can be added. Click the add button to activate the component for the dashboard.
 

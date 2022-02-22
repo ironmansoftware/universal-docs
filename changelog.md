@@ -4,6 +4,35 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2.8.3 - 2/22/2022
+
+### Includes
+
+* UniversalDashboard - v3.10.1
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.4
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.2.0
+* UniversalDashboard.Editor - 1.0.0
+* UniversalDashboard.Style - 1.0.0
+
+### Changed
+
+#### Automation
+
+* Fixed an issue where .ps1 would be appended to scripts that end with .ps1
+* Fixed an issue where Invoke-Command would throw an exception in jobs
+* Fixed an issue where scripts ended with a warning or timed out would not be groomed
+* Fixed an issue where folders could not be created if git sync was enabled
+
+#### Platform
+
+* Fixed an issue where the platform may not retry failed license activation attempts
+* Improved execution performance of role policy scripts.
+* Fixed an issue where leaving the admin console would clear fields of modals
+* Fixed the documentation link for the Debugging page
+* Profiling is now optional and configured via appsettings.json
+
 ## 2.8.2 - 2/15/2022
 
 ### Includes

@@ -16,7 +16,7 @@ Jobs can be viewed by clicking the Automation / Jobs page. Click the View button
 
 Standard PowerShell streams such as information, host, error, warning and verbose are shown within the output pane.&#x20;
 
-![Standard Output](<../.gitbook/assets/image (315) (1).png>)
+![Standard Output](<../.gitbook/assets/image (315) (1) (1).png>)
 
 ### View Job Pipeline Output
 
@@ -40,7 +40,7 @@ Any errors written to the error stream will be available on the Error tab within
 
 Some jobs will require feedback. Any script that contains a `Read-Host` call will wait until there is user interaction with that job. The job will be in a Waiting for Feedback state, and you can respond to that feedback by click the Response to Feedback button on the job page.
 
-![Waiting for Feedback](<../.gitbook/assets/image (313) (1) (1) (1).png>)
+![Waiting for Feedback](<../.gitbook/assets/image (313) (1) (1) (1) (1).png>)
 
 ## Invoking Jobs from PowerShell
 

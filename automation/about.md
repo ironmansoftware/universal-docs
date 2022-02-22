@@ -8,7 +8,7 @@ description: Run and schedule scripts with automation
 
 You can run [scripts ](scripts/)in PowerShell Universal. PowerShell Universal integrates deeply with the PowerShell host to provide a UI for param blocks, output rich objects, display progress and even allow the user to provide feedback.
 
-![](<../.gitbook/assets/image (305) (1) (1).png>)
+![](<../.gitbook/assets/image (305) (1) (1) (1).png>)
 
 ### Schedule Jobs
 

@@ -24,7 +24,7 @@ Next, we'll need to configure an Azure Storage Account for file shares to store 
 
 Back in your App Service, you can setup a Path mapping to the file share we just created. In my example, I've set the mount path to `/Data`. This is where the configuration and database will be stored.
 
-![Path Mappings](<../../.gitbook/assets/image (313) (1) (1).png>)
+![Path Mappings](<../../.gitbook/assets/image (313) (1) (1) (1).png>)
 
 Finally, we need to configure PowerShell Universal to store data on our file share. On the Application settings tab, set the `Data__ConnectionString` and `Data__RepositoryPath` to store data on the file share.
 

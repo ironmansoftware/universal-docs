@@ -288,7 +288,7 @@ $Page = New-UDPage -Name 'Home' -Content {
 New-UDDashboard -Title "Dashboard" -Pages $Page
 ```
 
-![Button in Header](<../../../.gitbook/assets/image (315).png>)
+![Button in Header](<../../../.gitbook/assets/image (315) (1).png>)
 
 ## API
 
