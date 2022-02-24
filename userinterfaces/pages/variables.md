@@ -71,5 +71,5 @@ For example, this page defines a single route variable.&#x20;
 
 Within the page, the route variables will appear within the variable drawer.&#x20;
 
-![](<../../.gitbook/assets/image (300) (1) (1) (1) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (300) (1) (1) (1) (1) (1) (1) (1).png>)
 

@@ -76,7 +76,7 @@ When reviewing requests within the profiler, you will want to look for `UDCompon
 
 Below is the example output from the dashboard shown above. Notice that the URL includes the element's ID `MyElement`. You'll also notice that the `WithinDashboard` block takes about 1 second.&#x20;
 
-![Dashboard Timing](<../.gitbook/assets/image (300).png>)
+![Dashboard Timing](<../.gitbook/assets/image (300) (1).png>)
 
 Not all timing will be displayed by default. You can click `show trivial` to expand all timings.&#x20;
 

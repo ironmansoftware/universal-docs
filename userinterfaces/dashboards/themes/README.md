@@ -221,7 +221,7 @@ For more examples, look at the Onepirate and Paperbase themes below that include
 
 ### Sand
 
-![Sand Theme](<../../../.gitbook/assets/image (300) (1) (1).png>)
+![Sand Theme](<../../../.gitbook/assets/image (300) (1) (1) (1).png>)
 
 ```powershell
 $Theme = @{
