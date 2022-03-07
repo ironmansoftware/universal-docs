@@ -163,3 +163,27 @@ Allows the user to select a rating between 0 and 5. The value is passed as a flo
 You can customize the text of numerous features of a field including the success and failure text, waiting on feedback text and button text.&#x20;
 
 ![](<../../.gitbook/assets/image (265).png>)
+
+## Validation
+
+{% hint style="info" %}
+Available in PowerShell Universal 2.9 or later.&#x20;
+{% endhint %}
+
+![](<../../.gitbook/assets/image (306).png>)
+
+You can validate a form by selecting an API endpoint from the Validation API field. The validation endpoint must be a POST method. Use the `New-PSUValidationResult` parameter to return whether the validation is successful.&#x20;
+
+![Validation API](<../../.gitbook/assets/image (316).png>)
+
+```powershell
+$Fields = $Body | ConvertFrom-Json
+if ($Fields.Name -eq 'Adam')
+{
+     New-PSUValidationResult -Success
+}
+else 
+{
+     New-PSUValidationResult -ErrorMessage 'Incorrect name'
+}
+```

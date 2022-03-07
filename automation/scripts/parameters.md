@@ -187,4 +187,4 @@ param(
 )
 ```
 
-![Parameter Sets](<../../.gitbook/assets/image (316).png>)
+![Parameter Sets](<../../.gitbook/assets/image (316) (1).png>)
