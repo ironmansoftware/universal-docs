@@ -58,7 +58,7 @@ Available in PowerShell Universal 2.9 or later.
 
 High Performance Runspace Pools uses an alternate technique to pooling resources. They are much faster than pools traditionally used by PowerShell Universal. APIs and Dashboards support the use of these types of pools.&#x20;
 
-High performance pools do not support persistence or runspace recycling.&#x20;
+High performance pools do not support debugging, persistence or runspace recycling.&#x20;
 
 
 
