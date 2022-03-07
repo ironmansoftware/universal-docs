@@ -50,6 +50,18 @@ Available in PowerShell Universal 2.8 or later.
 
 The `-RunspaceRecycling` parameter of `New-PSUEnvironment` will cause runspaces to be disposed and recreated periodically. This may increase CPU usage but reduce memory usage in some environments.&#x20;
 
+### High Performance Runspace Pools
+
+{% hint style="info" %}
+Available in PowerShell Universal 2.9 or later.
+{% endhint %}
+
+High Performance Runspace Pools uses an alternate technique to pooling resources. They are much faster than pools traditionally used by PowerShell Universal. APIs and Dashboards support the use of these types of pools.&#x20;
+
+High performance pools do not support persistence or runspace recycling.&#x20;
+
+
+
 ## Using Environments
 
 Environments can be used across the platform.&#x20;
