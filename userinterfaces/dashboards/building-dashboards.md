@@ -36,7 +36,7 @@ To change the navigation layout, use the `-Navigation` and `-NavigationLayout` p
 
 ```powershell
 New-UDDashboard -Content {
-} -Navigation {
+} -Navigation (
     New-UDList -Children {
         New-UDListItem -Label "Home"
         New-UDListItem -Label "Getting Started" -Children {
@@ -47,7 +47,7 @@ New-UDDashboard -Content {
             New-UDListItem -Label "Purchasing" -OnClick {}
         }
     }
-} -NavigationLayout permanent
+) -NavigationLayout permanent
 ```
 
 ## Components
