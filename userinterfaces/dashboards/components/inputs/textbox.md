@@ -84,6 +84,24 @@ New-UDTextbox -Mask @('+', '1', ' ', '(', '/[1-9]/', '/\d/', '/\d/', ')', ' ', '
 
 ![](<../../../../.gitbook/assets/image (172).png>)
 
+## OnEnter
+
+{% hint style="info" %}
+Available in PowerShell Universal 2.9 or later.&#x20;
+{% endhint %}
+
+The `-OnEnter` event handler is executed when the user presses enter in the text field. It is useful for performing other actions, like clicking a button, on enter.&#x20;
+
+```powershell
+New-UDTextbox -OnEnter {
+    Invoke-UDEndpoint -Id 'submit'
+}
+
+New-UDButton -Id 'submit' -OnClick {
+    Show-UDToast -Message 'From Textbox'
+}
+```
+
 ## API
 
 [New-UDTextbox](../../../../cmdlets/New-UDTextbox.txt)
