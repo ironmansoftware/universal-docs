@@ -363,7 +363,7 @@ The token will have a expiration of one year and have the valid roles for your a
 
 You can use App Tokens with the Universal cmdlets or by using web requests directly using Bearer authorization.
 
-![](<../../.gitbook/assets/image (314).png>)
+![](<../../.gitbook/assets/image (314) (1).png>)
 
 ## Environment
 

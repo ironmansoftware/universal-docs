@@ -48,5 +48,5 @@ You can use the `Invoke-Formatter` command of `PSScriptAnalyzer` within your scr
 
 Syntax errors will be shown as red squiggles within the editor. Hovering over them will provide information about why the syntax error is present.&#x20;
 
-![Syntax Errors](<../.gitbook/assets/image (317).png>)
+![Syntax Errors](<../.gitbook/assets/image (317) (1).png>)
 

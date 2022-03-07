@@ -8,29 +8,31 @@ PowerShell Universal templates allow you to share your configurations with other
 
 ## Exporting a Template
 
-To export a template, you can navigate to Settings \ Configurations and click Export Configuration as Template.&#x20;
+To export a template, you can navigate to Platform \ Templates and click Export Configuration as Template.&#x20;
 
-![](<../.gitbook/assets/image (229).png>)
+![Templates](<../.gitbook/assets/image (316).png>)
 
-Once you click the button, you will be prompted for a name, description, author and version for the template.&#x20;
+Once you click the button, you will be prompted for a name, description, author and version for the template. The Readme value can contain markdown and is rendered on IronmanSoftware.com.
 
-![](<../.gitbook/assets/image (227).png>)
+![](<../.gitbook/assets/image (314).png>)
 
 When you export a configuration, any variables that you have defined will not be included. The user that imports the template will need to define the variables.&#x20;
 
-If you have a license defined, it will not be included but the user of the template will be notified that the template requires a license.&#x20;
-
-### Including a README.md
-
-If you want to provide additional information about your template in the for of a README.md file, you can create one in the repository before exporting it. The template library on IronmanSoftware.com will render the README.md and display it for your template.&#x20;
-
-See the [Docker Dashboard](https://ironmansoftware.com/powershell-universal/templates/template/Docker%20Dashboard/1.0.0) for an example.&#x20;
+If you have a license defined, it will not be included.
 
 ## Importing a Template
 
-To import a configuration navigate to Settings \ Configuration and click Import Template. Navigate to the local `psupkg` file. Template information will be presented before importing the template.
+To import a configuration, navigate to Platform \ Templates and click the template to Import.&#x20;
 
-![](<../.gitbook/assets/image (228).png>)
+![Templates](<../.gitbook/assets/image (315).png>)
+
+You will be prompted to before applying the template.
+
+![Import Template](<../.gitbook/assets/image (298).png>)
+
+## Import a PSUPKG
+
+Templates are stored as `psupkg` files. To import a template from a file, click Platform \ Templates and then Import Template. Navigate to the local `psupkg` file. Template information will be presented before importing the template.
 
 ## Publishing a Template
 

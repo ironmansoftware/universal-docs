@@ -174,7 +174,7 @@ Available in PowerShell Universal 2.9 or later.&#x20;
 
 You can validate a form by selecting an API endpoint from the Validation API field. The validation endpoint must be a POST method. Use the `New-PSUValidationResult` parameter to return whether the validation is successful.&#x20;
 
-![Validation API](<../../.gitbook/assets/image (316).png>)
+![Validation API](<../../.gitbook/assets/image (317).png>)
 
 ```powershell
 $Fields = $Body | ConvertFrom-Json

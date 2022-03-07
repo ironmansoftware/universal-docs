@@ -14,7 +14,7 @@ You can access the Job Details dashboard by clicking the Job Details button in S
 
 Scheduled jobs will display jobs that you have scheduled yourself. You will see other jobs scheduled for internal tasks within PowerShell Universal.&#x20;
 
-![Scheduled Jobs](<../.gitbook/assets/image (315).png>)
+![Scheduled Jobs](<../.gitbook/assets/image (315) (1).png>)
 
 ## Jobs
 

@@ -263,7 +263,7 @@ $Theme = @{
 
 ### Pastel
 
-![](<../../../.gitbook/assets/image (298).png>)
+![](<../../../.gitbook/assets/image (298) (1).png>)
 
 ```powershell
 $Theme = @{

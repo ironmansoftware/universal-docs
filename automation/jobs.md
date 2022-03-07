@@ -16,7 +16,7 @@ Jobs can be viewed by clicking the Automation / Jobs page. Click the View button
 
 Standard PowerShell streams such as information, host, error, warning and verbose are shown within the output pane.&#x20;
 
-![Standard Output](<../.gitbook/assets/image (315) (1) (1).png>)
+![Standard Output](<../.gitbook/assets/image (315) (1) (1) (1).png>)
 
 ### View Job Pipeline Output
 
@@ -34,7 +34,7 @@ You can expand the tree view to see the objects and properties from the pipeline
 
 Any errors written to the error stream will be available on the Error tab within the job page.
 
-![Errors](<../.gitbook/assets/image (314) (1) (1).png>)
+![Errors](<../.gitbook/assets/image (314) (1) (1) (1).png>)
 
 ## Feedback
 

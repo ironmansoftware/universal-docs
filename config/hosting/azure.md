@@ -16,7 +16,7 @@ Once you have selected a resource group, assigned a name and selected a compute 
 
 Next, you'll need to deploy the image to your web app. To do so, select the Deployment Center and configure the image to pull. You can either pull a static tagged version (like 2.7.3) or pull the latest and your web app will automatically stay up to date with new PowerShell Universal releases.
 
-![Deployment Center Settings](<../../.gitbook/assets/image (314) (1).png>)
+![Deployment Center Settings](<../../.gitbook/assets/image (314) (1) (1).png>)
 
 Next, we'll need to configure an Azure Storage Account for file shares to store the data for this web app. Within your storage account, create a new File Share that is transaction optimized.
 
