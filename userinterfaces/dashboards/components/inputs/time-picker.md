@@ -22,6 +22,14 @@ Specify the locale of the time picker.&#x20;
 New-UDTimePicker -Locale fr
 ```
 
+## 24-Hour Time
+
+You can use the `-DisableAmPm` parameter to use 24-hour time.&#x20;
+
+```powershell
+New-UDTimePicker -DisableAmPm
+```
+
 ## API
 
 [New-UDTimePicker](../../../../cmdlets/New-UDTimePicker.txt)
