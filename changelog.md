@@ -4,6 +4,92 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+# 2.9.0 - 3/8/2022
+
+## Includes
+
+- UniversalDashboard - v3.11.0
+- UniversalDashboard - v2.9.9
+- UniversalDashboard.Charts - 1.3.4
+- UniversalDashboard.Map - 1.0
+- UniversalDashboard.CodeEditor - 1.2.0
+- UniversalDashboard.Editor - 1.0.0
+- UniversalDashboard.Style - 1.0.0
+
+-----
+
+## Added
+
+### Automation
+
+- Added support for DefaultParameterSetName
+- Added Trigger event for the use of a revoked app token
+- Added Trigger event for user login
+- Added Process ID and average memory usage to jobs
+- Added the ability to filter jobs by tag
+
+### User Interfaces 
+
+- Dashboards: Added -ShowRefresh to New-UDTable
+- Dashboards: Added -OnEnter to New-UDTextbox
+- Dashboards: Added 1x to -Size on New-UDIcon
+- Dashboards: Added -DisableAmPm to New-UDTimePicker
+- Pages: Added Validation for Pages including New-PSUValidationResult
+
+
+### Platform
+
+- Added Sync-PSUConfiguration to refresh the PSU configuration manually
+- Added support for creating variables without a value
+- Added default User role
+- Added -AppBarLogo to New-PSULoginPage
+- Added feature information to template manifest
+- Added Import-PSUTemplate
+- Added Templates page with the ability to view and import templates directly in the admin console
+- Added Readme to templates 
+- Added feature information to templates
+- Added support for bool variables.
+- Added high performance runspace pools
+
+## Changed 
+
+### Automation 
+
+- Hidden folders are no longer displayed in the admin console
+- Fixed an issue where jobs could report that they were run 121 years ago
+
+### User Interfaces
+
+- Dashboards: Server-side New-UDTables will now report the filtered rows when using Get-UDElement
+- Dashboards: Fixed a alignment issue with New-UDSelect.
+- Dashboards: Fixed an issue where the user name would not be shown when using Windows Authentication
+- Dashboards: Fixed an issue where Get-UDElement would cause a delay of 5 seconds if the element didn't exist
+- Dashboards: Fixed an issue where New-UDStep -OnLoad would be called twice
+- Dashboards: Frameworks and components are no longer deployed during start up and loaded directly from the installation directory
+- Dashboards: Fixed an issue where variables would not be defined for the default environment when it was set to Integrated
+- Dashboards: Fixe an issue where git sync would not refresh dashboards when cases were mismatched
+
+### Platform 
+
+- Clicking the admin console title or logo will now go to the home page
+- Set Confirm Impact to high for Remove-* cmdlets
+- Added version to login page. 
+- Added an endpoint to remove items from the memory cache
+- The current directory for the PowerShell Universal process is now set to the repository directory
+- Fixed an issue with importing templates
+- Templates now perform a merge rather than overwriting existing files. 
+- Improved git sync logging
+- Fixed an issue where git sync would cause a lock on hangfire jobs
+- Fixed an issue where the admin console could throw a JavaScript error when loading license information
+- Fixed an issue where accessing the /hangfire URL using Windows authentication would return a 401
+- Fixed an issue where the WS-Federation dialog within the admin console had some invalid options
+- You can now add a license when OneWay sync is enabled.
+- Fixed an issue where roles would be duplicated when using Windows auth
+- Fixed an issue where if a modules failed to load from the repository, all would fail
+- Installer now updates the PSModulePath to include modules included with Universal
+- Fixed an issue where add OpenID Connect in the UI would not work.
+- Fixed an issue where the license cache would not be invalidated once a license was added
+
 ## 2.8.3 - 2/22/2022
 
 ### Includes
