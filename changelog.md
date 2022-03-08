@@ -67,7 +67,8 @@ description: Changelog for PowerShell Universal.
 - Dashboards: Fixed an issue where New-UDStep -OnLoad would be called twice
 - Dashboards: Frameworks and components are no longer deployed during start up and loaded directly from the installation directory
 - Dashboards: Fixed an issue where variables would not be defined for the default environment when it was set to Integrated
-- Dashboards: Fixe an issue where git sync would not refresh dashboards when cases were mismatched
+- Dashboards: Fixed an issue where git sync would not refresh dashboards when cases were mismatched
+- Dashboards: Dashboard components and modules have been moved to the Modules folder within the installation directory
 
 ### Platform 
 
