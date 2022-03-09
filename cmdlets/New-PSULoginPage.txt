@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSULoginPage [-AppToken <String>] [-ComputerName <String>] [-Copyright <String>] [-CssStylesheet <String[]>] [-HeaderColor <String>] [-HeaderFontColor <String>] [-Image <String>] [-PrimaryColor <String>] [-PrimaryFontColor <String>] [-SecondaryColor <String>] [-SecondaryFontColor <String>] [-Title <String>] [-Links <LoginPageLink[]>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    New-PSULoginPage [-AppToken <String>] [-ComputerName <String>] [-Copyright <String>] [-CssStylesheet <String[]>] [-HeaderColor <String>] [-HeaderFontColor <String>] [-Image <String>] [-PrimaryColor <String>] [-PrimaryFontColor <String>] [-SecondaryColor <String>] [-SecondaryFontColor <String>] [-Title <String>] [-Links <LoginPageLink[]>] [-UseDefaultCredentials] [-Integrated] [-AppBarLogo <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -151,6 +151,15 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -AppBarLogo <String>
+        The URL of an image to show in the app bar on the login page.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         

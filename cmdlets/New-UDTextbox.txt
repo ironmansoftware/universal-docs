@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTextbox [[-Id] <String>] [[-Label] <String>] [[-Placeholder] <String>] [[-Value] <Object>] [[-Type] <String>] [-Disabled] [[-Icon] <Object>] [-Autofocus] [-Multiline] [[-Rows] <Int32>] [[-RowsMax] <Int32>] [-FullWidth] [[-Mask] <String[]>] [[-Variant] <String>] [[-ClassName] <String>] [<CommonParameters>]
+    New-UDTextbox [[-Id] <String>] [[-Label] <String>] [[-Placeholder] <String>] [[-Value] <Object>] [[-Type] <String>] [-Disabled] [[-Icon] <Object>] [-Autofocus] [-Multiline] [[-Rows] <Int32>] [[-RowsMax] <Int32>] [-FullWidth] [[-Mask] <String[]>] [[-Variant] <String>] [[-ClassName] <String>] [[-OnEnter] <Endpoint>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -144,6 +144,14 @@ PARAMETERS
         
         Required?                    false
         Position?                    11
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnEnter <Endpoint>
+        
+        Required?                    false
+        Position?                    12
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false

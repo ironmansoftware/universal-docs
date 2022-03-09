@@ -1,0 +1,93 @@
+
+NAME
+    Import-PSUTemplate
+    
+SYNOPSIS
+    Imports a PowerShell Universal template.
+    
+    
+SYNTAX
+    Import-PSUTemplate [-AppToken <String>] [-ComputerName <String>] [-Integrated] -Path <String> [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Imports a PowerShell Universal template. PowerShell Universal templates can be downloaded from IronmanSoftware.com and will have a .psupkg extension.
+    
+
+PARAMETERS
+    -AppToken <String>
+        The app token used to connect to the PowerShell Universal instance.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The URL or computer name of the PowerShell Universal instance.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Not supported
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Path <String>
+        The path to the PowerShell Universal template file.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials for connecting to the PowerShell Universal instance.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Import-PSUTemplate -Path .\template.psupkg
+    
+    Imports the template.psupkg template.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

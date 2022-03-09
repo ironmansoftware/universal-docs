@@ -7,11 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDPage [-Name] <String> [-Content] <Endpoint> [[-Url] <String>] [[-DefaultHomePage]] [[-Title] <String>] [-Id <String>] [-OnLoading <ScriptBlock>] [-Role <String[]>] [-NavigationLayout <String>] [-Navigation <Hashtable[]>] [-Logo <String>] [-HeaderPosition <String>] [-HeaderColor <DashboardColor>] [-HeaderBackgroundColor <DashboardColor>] [-HeaderContent <ScriptBlock>] [<CommonParameters>]
+    New-UDPage [-Name] <String> [-Content] <Endpoint> [[-Url] <String>] [[-DefaultHomePage]] [[-Title] <String>] [-Id <String>] [-OnLoading <ScriptBlock>] [-Role <String[]>] [-NavigationLayout <String>] [-Navigation <Hashtable[]>] [-Logo <String>] [-HeaderPosition <String>] [-HeaderColor <DashboardColor>] [-HeaderBackgroundColor <DashboardColor>] [-HeaderContent <Endpoint>] [<CommonParameters>]
     
     New-UDPage [-Name] <String> [-Content] <Endpoint> [[-Url] <String>] [[-DefaultHomePage]] [[-Title] <String>] [-Blank] [-Id <String>] [-OnLoading <ScriptBlock>] [-Role <String[]>] [-HeaderPosition <String>] [-HeaderColor <DashboardColor>] [-HeaderBackgroundColor <DashboardColor>] [<CommonParameters>]
     
-    New-UDPage [-Name] <String> [-Content] <Endpoint> [[-Url] <String>] [[-DefaultHomePage]] [[-Title] <String>] [-Id <String>] [-OnLoading <ScriptBlock>] [-Role <String[]>] [-NavigationLayout <String>] [-Logo <String>] [-LoadNavigation <Endpoint>] [-HeaderPosition <String>] [-HeaderColor <DashboardColor>] [-HeaderBackgroundColor <DashboardColor>] [-HeaderContent <ScriptBlock>] [<CommonParameters>]
+    New-UDPage [-Name] <String> [-Content] <Endpoint> [[-Url] <String>] [[-DefaultHomePage]] [[-Title] <String>] [-Id <String>] [-OnLoading <ScriptBlock>] [-Role <String[]>] [-NavigationLayout <String>] [-Logo <String>] [-LoadNavigation <Endpoint>] [-HeaderPosition <String>] [-HeaderColor <DashboardColor>] [-HeaderBackgroundColor <DashboardColor>] [-HeaderContent <Endpoint>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -161,7 +161,7 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -HeaderContent <ScriptBlock>
+    -HeaderContent <Endpoint>
         Content of the header.
         
         Required?                    false

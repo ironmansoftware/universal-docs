@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSUEnvironment [-AppToken <String>] [-Arguments <String>] [-ComputerName <String>] [-Modules <String[]>] -Name <String> [-PSModulePath <String[]>] -Path <String> [-PersistentRunspace] [-Variables <String[]>] [-UseDefaultCredentials] [-Integrated] [-StartupScript <String[]>] [-Version <String>] [-RunspaceRecycling] [<CommonParameters>]
+    New-PSUEnvironment [-AppToken <String>] [-Arguments <String>] [-ComputerName <String>] [-Modules <String[]>] -Name <String> [-PSModulePath <String[]>] -Path <String> [-PersistentRunspace] [-Variables <String[]>] [-UseDefaultCredentials] [-Integrated] [-StartupScript <String[]>] [-Version <String>] [-RunspaceRecycling] [-HighPerformanceRunspacePool] [-MaxRunspaces <Int32>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -142,6 +142,24 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -HighPerformanceRunspacePool [<SwitchParameter>]
+        Uses a high performance runspace pool for this environment.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -MaxRunspaces <Int32>
+        The maximum number of runspaces to use in the runspace pool.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         

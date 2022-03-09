@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTable [-Id <String>] [-Title <String>] -Data <Object[]> [-Columns <Hashtable[]>] [-OnRowSelection <Endpoint>] [-ShowSort] [-ShowFilter] [-ShowSearch] [-Dense] [-ShowExport] [-StickyHeader] [-PageSize <Int32>] [-PageSizeOptions <Int32[]>] [-PaginationLocation <String>] [-ShowSelection] [-ShowPagination] [-Padding <String>] [-Size <String>] [-TextOption <Hashtable>] [-ExportOption <String[]>] [-OnExport <Endpoint>] [-DisablePageSizeAll] [-DefaultSortDirection <String>] [-HideToggleAllRowsSelected] [-DisableMultiSelect] [-DisableSortRemove] [-Icon <Hashtable>] [-ClassName <String>] [<CommonParameters>]
+    New-UDTable [-Id <String>] [-Title <String>] -Data <Object[]> [-Columns <Hashtable[]>] [-OnRowSelection <Endpoint>] [-ShowSort] [-ShowFilter] [-ShowSearch] [-Dense] [-ShowExport] [-StickyHeader] [-PageSize <Int32>] [-PageSizeOptions <Int32[]>] [-PaginationLocation <String>] [-ShowSelection] [-ShowPagination] [-Padding <String>] [-Size <String>] [-TextOption <Hashtable>] [-ExportOption <String[]>] [-OnExport <Endpoint>] [-DisablePageSizeAll] [-DefaultSortDirection <String>] [-HideToggleAllRowsSelected] [-DisableMultiSelect] [-DisableSortRemove] [-Icon <Hashtable>] [-ClassName <String>] [-ShowRefresh] [<CommonParameters>]
     
-    New-UDTable [-Id <String>] [-Title <String>] -LoadData <Endpoint> -Columns <Hashtable[]> [-OnRowSelection <Endpoint>] [-ShowSort] [-ShowFilter] [-ShowSearch] [-Dense] [-ShowExport] [-StickyHeader] [-PageSize <Int32>] [-PageSizeOptions <Int32[]>] [-PaginationLocation <String>] [-ShowSelection] [-ShowPagination] [-Padding <String>] [-Size <String>] [-TextOption <Hashtable>] [-ExportOption <String[]>] [-OnExport <Endpoint>] [-DisablePageSizeAll] [-DefaultSortDirection <String>] [-HideToggleAllRowsSelected] [-DisableMultiSelect] [-DisableSortRemove] [-Icon <Hashtable>] [-ClassName <String>] [<CommonParameters>]
+    New-UDTable [-Id <String>] [-Title <String>] -LoadData <Endpoint> -Columns <Hashtable[]> [-OnRowSelection <Endpoint>] [-ShowSort] [-ShowFilter] [-ShowSearch] [-Dense] [-ShowExport] [-StickyHeader] [-PageSize <Int32>] [-PageSizeOptions <Int32[]>] [-PaginationLocation <String>] [-ShowSelection] [-ShowPagination] [-Padding <String>] [-Size <String>] [-TextOption <Hashtable>] [-ExportOption <String[]>] [-OnExport <Endpoint>] [-DisablePageSizeAll] [-DefaultSortDirection <String>] [-HideToggleAllRowsSelected] [-DisableMultiSelect] [-DisableSortRemove] [-Icon <Hashtable>] [-ClassName <String>] [-ShowRefresh] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -286,6 +286,14 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ShowRefresh [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

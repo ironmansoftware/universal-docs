@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTimePicker [[-Id] <String>] [[-Label] <String>] [[-OnChange] <Endpoint>] [[-Value] <String>] [[-Locale] <String>] [[-ClassName] <String>] [<CommonParameters>]
+    New-UDTimePicker [[-Id] <String>] [[-Label] <String>] [[-OnChange] <Endpoint>] [[-Value] <String>] [[-Locale] <String>] [[-ClassName] <String>] [-DisableAmPm] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -65,6 +65,14 @@ PARAMETERS
         Required?                    false
         Position?                    6
         Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DisableAmPm [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

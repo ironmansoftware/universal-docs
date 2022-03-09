@@ -1,0 +1,66 @@
+
+NAME
+    New-PSUValidationResult
+    
+SYNOPSIS
+    Returns a validation result.
+    
+    
+SYNTAX
+    New-PSUValidationResult [-ErrorMessage <String>] [-Success] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Returns a validation result. This cmdlet should be used when validating forms on Pages.
+    
+
+PARAMETERS
+    -ErrorMessage <String>
+        The error message to display when validation fails.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Success [<SwitchParameter>]
+        Whether the result of validation was successful.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> New-PSUValidationResult -ErrorMessage 'Invalid Data'
+    
+    Creates a new validation result that is not successful.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+
