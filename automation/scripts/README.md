@@ -56,10 +56,6 @@ The anonymous setting allows the script to be run when the user is not authentic
 
 ### Discard Pipeline
 
-{% hint style="info" %}
-Available in PowerShell Universal 2.8 or later.&#x20;
-{% endhint %}
-
 When checked, this will disable the storage of pipeline output. This will greatly reduce the CPU and storage overhead of jobs. The script will still write to the information, warning, and error streams.&#x20;
 
 ### **Concurrent Jobs**
@@ -117,10 +113,6 @@ To run as another user, simply add or import a PSCredential variable. From there
 Note that you can use PowerShell remoting by taking advantage of `Invoke-Command` . We do not support the use of `Enter-PSSession` or `Import-PSSession`.
 
 ## Comment-Based Help
-
-{% hint style="info" %}
-This feature is available in PowerShell Universal 2.5 or later.
-{% endhint %}
 
 You can use comment-based to define the description, a synopsis, parameter based help, and links for your scripts. These will be displayed within the PowerShell Universal UI.&#x20;
 

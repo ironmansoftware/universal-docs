@@ -138,10 +138,6 @@ Invoke-RestMethod http://localhost:5000/user -Method Post -Body @{
 
 ## JSON Data
 
-{% hint style="info" %}
-PowerShell Universal 2.6 or later required.
-{% endhint %}
-
 You can pass JSON data to an endpoint and it will automatically bind to a param block.&#x20;
 
 ```powershell
@@ -303,10 +299,6 @@ Set-PSUSetting -ApiEnvironment 'Env'
 ```
 
 ## Timeout&#x20;
-
-{% hint style="info" %}
-Available in PowerShell Universal 2.8 or later.&#x20;
-{% endhint %}
 
 By default, endpoints will not time out. To set a timeout for your endpoints, you can use the `New-PSUEndpoint` `-Timeout` parameter. The timeout is set in the number of seconds.&#x20;
 

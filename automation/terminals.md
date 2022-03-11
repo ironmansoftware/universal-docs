@@ -5,7 +5,7 @@ description: In-browser PowerShell terminals.
 # Terminals
 
 {% hint style="info" %}
-PowerShell Universal 2.6 or later. Requires a [license](https://ironmansoftware.com/pricing/powershell-universal).&#x20;
+Requires a [license](https://ironmansoftware.com/pricing/powershell-universal).&#x20;
 {% endhint %}
 
 Terminals are in-browser PowerShell consoles that you can execute arbitrary commands within. Terminals are configured to target an environment that you select and can optionally us Run As credentials to run as other users. The history of terminals is maintained within the PowerShell Universal database. You can reconnect to disconnected terminals as long as they haven't timed out.&#x20;

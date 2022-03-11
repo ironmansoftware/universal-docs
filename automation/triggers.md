@@ -33,10 +33,6 @@ The following types of events can be assigned a trigger.
 
 ### User Login
 
-{% hint style="info" %}
-Available in PowerShell Universal 2.9 or later.
-{% endhint %}
-
 The user login event takes place when a user accesses PowerShell Universal. The script will receive a `$data` parameter with user information. The data structure is shown below.
 
 ```powershell
@@ -46,10 +42,6 @@ The user login event takes place when a user accesses PowerShell Universal. The 
 ```
 
 ### Use of a Revoked App Token
-
-{% hint style="info" %}
-Available in PowerShell Universal 2.9 or later.
-{% endhint %}
 
 The app token event takes place when a revoked app token is used. The script will receive a `$data` parameter that contains the contents of the app token as a string.
 

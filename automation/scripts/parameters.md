@@ -172,10 +172,6 @@ The result would be that Hello was output in the job log and pipeline.
 
 ## Parameter Sets
 
-{% hint style="info" %}
-Available in PowerShell Universal 2.8 or later.
-{% endhint %}
-
 PowerShell Universal supports parameter sets. When a parameter set is defined, a drop down is provided that allows for switching between the sets.&#x20;
 
 ```powershell

@@ -42,15 +42,17 @@ Most of the settings for PowerShell Universal are stored within the repository f
 
 If you are upgrading from 1.x, you will have a couple of breaking changes.&#x20;
 
-### Integrated Environment by Default
+### Secret Variables Not Directly Defined
 
-The integrated environment is now the default configuration. If you do not want to use the integrated environment by default, select a default environment in General settings.&#x20;
+For performance reasons, secret variables are no longer automatically included in environments. To use secret variables, use the new [secret scope](../platform/variables.md#secret-scope).
 
-![](<../.gitbook/assets/image (224).png>)
+### UD v2 Framework Removed
+
+The UDv2 framework has been removed and is no longer supported. If you wish to use this framework, you can install it from the PowerShell Gallery.&#x20;
 
 ### IIS Hosting Package
 
-If you are hosting in IIS, ensure that you install the [.NET 5.0 hosting bundle](https://dotnet.microsoft.com/download/dotnet/5.0).&#x20;
+If you are hosting in IIS, ensure that you install the [.NET 6.0 hosting bundle](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-6.0.3-windows-hosting-bundle-installer).&#x20;
 
 ## PowerShell Upgrade
 
