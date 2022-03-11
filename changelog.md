@@ -6,6 +6,51 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 2.9.2 - 3/11/2022
+
+### Includes
+
+* UniversalDashboard - v3.11.1
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.4
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.2.0
+* UniversalDashboard.Editor - 1.0.0
+* UniversalDashboard.Style - 1.0.0
+
+### Changed
+
+#### Platform
+
+* Rolled back a change to PSModulePath and Windows PowerShell modules
+* Fixed an issue where the Universal module may not be loaded automatically into environments.
+
+## 2.9.1 - 3/9/2022
+
+### Includes
+
+* UniversalDashboard - v3.11.1
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.4
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.2.0
+* UniversalDashboard.Editor - 1.0.0
+* UniversalDashboard.Style - 1.0.0
+
+### User Interfaces
+
+* Dashboards: Fixed an issue where download components would not work on machines that didn't have package management configured
+* Dashboards: Fixed the layout of -PaginationLocation Top for New-UDTable
+
+#### Platform
+
+* Fixed an issue where the Delete tooltip was not present on delete buttons
+* Fixed an issue where subscription based licenses would not activate properly
+* Increased the frequency at which retries of license activation will take place
+* Fixed an issue where installing modules would not work in Azure Web Apps or machines that didn't have package management configured
+* Fixed an issue where installing modules would not work in Azure Web Apps or machines that didn't have package management configured
+* Fixed an issue where templates would incorrectly be tagged to include modules
+
 ## 2.9.0 - 3/8/2022
 
 ### Includes
