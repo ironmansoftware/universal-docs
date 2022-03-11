@@ -20,4 +20,4 @@ You can schedule jobs to [run continuously](schedules.md#continuous), [at certai
 
 Run ad-hoc commands in [terminals ](terminals.md)in any of your configured environments and, optionally, as alternate credentials.
 
-![](<../.gitbook/assets/image (310) (1) (1) (2) (1) (1).png>)
+![](<../.gitbook/assets/image (310) (1) (1) (2) (1) (1) (1).png>)

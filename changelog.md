@@ -4,131 +4,15 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
-# 2.9.1 - 3/9/2022
-
-## Includes
-
-- UniversalDashboard - v3.11.1
-- UniversalDashboard - v2.9.9
-- UniversalDashboard.Charts - 1.3.4
-- UniversalDashboard.Map - 1.0
-- UniversalDashboard.CodeEditor - 1.2.0
-- UniversalDashboard.Editor - 1.0.0
-- UniversalDashboard.Style - 1.0.0
-
------
-
-## Changed
-
-### Automation 
-
-- Fixed an issue where a trigger wouldn't fire when a script was in a warning state
-
-### User Interfaces
-
-- Dashboards: Fixed an issue where download components would not work on machines that didn't have package management configured
-- Dashboards: Fixed the layout of -PaginationLocation Top for New-UDTable
-
-### Platform 
-
-- Fixed an issue where the Delete tooltip was not present on delete buttons
-- Fixed an issue where subscription based licenses would not activate properly
-- Increased the frequency at which retries of license activation will take place
-- Fixed an issue where installing modules would not work in Azure Web Apps or machines that didn't have package management configured
-- Fixed an issue where templates would incorrectly be tagged to include modules
-
-# 2.9.0 - 3/8/2022
-
-## Includes
-
-- UniversalDashboard - v3.11.0
-- UniversalDashboard - v2.9.9
-- UniversalDashboard.Charts - 1.3.4
-- UniversalDashboard.Map - 1.0
-- UniversalDashboard.CodeEditor - 1.2.0
-- UniversalDashboard.Editor - 1.0.0
-- UniversalDashboard.Style - 1.0.0
-
------
-
-## Added
-
-### Automation
-
-- Added support for DefaultParameterSetName
-- Added Trigger event for the use of a revoked app token
-- Added Trigger event for user login
-- Added Process ID and average memory usage to jobs
-- Added the ability to filter jobs by tag
-
-### User Interfaces 
-
-- Dashboards: Added -ShowRefresh to New-UDTable
-- Dashboards: Added -OnEnter to New-UDTextbox
-- Dashboards: Added 1x to -Size on New-UDIcon
-- Dashboards: Added -DisableAmPm to New-UDTimePicker
-- Pages: Added Validation for Pages including New-PSUValidationResult
+## Changelog
 
 
-### Platform
 
-- Added Sync-PSUConfiguration to refresh the PSU configuration manually
-- Added support for creating variables without a value
-- Added default User role
-- Added -AppBarLogo to New-PSULoginPage
-- Added feature information to template manifest
-- Added Import-PSUTemplate
-- Added Templates page with the ability to view and import templates directly in the admin console
-- Added Readme to templates 
-- Added feature information to templates
-- Added support for bool variables.
-- Added high performance runspace pools
-
-## Changed 
-
-### Automation 
-
-- Hidden folders are no longer displayed in the admin console
-- Fixed an issue where jobs could report that they were run 121 years ago
-
-### User Interfaces
-
-- Dashboards: Server-side New-UDTables will now report the filtered rows when using Get-UDElement
-- Dashboards: Fixed a alignment issue with New-UDSelect.
-- Dashboards: Fixed an issue where the user name would not be shown when using Windows Authentication
-- Dashboards: Fixed an issue where Get-UDElement would cause a delay of 5 seconds if the element didn't exist
-- Dashboards: Fixed an issue where New-UDStep -OnLoad would be called twice
-- Dashboards: Frameworks and components are no longer deployed during start up and loaded directly from the installation directory
-- Dashboards: Fixed an issue where variables would not be defined for the default environment when it was set to Integrated
-- Dashboards: Fixed an issue where git sync would not refresh dashboards when cases were mismatched
-- Dashboards: Dashboard components and modules have been moved to the Modules folder within the installation directory
-
-### Platform 
-
-- Clicking the admin console title or logo will now go to the home page
-- Set Confirm Impact to high for Remove-* cmdlets
-- Added version to login page. 
-- Added an endpoint to remove items from the memory cache
-- The current directory for the PowerShell Universal process is now set to the repository directory
-- Fixed an issue with importing templates
-- Templates now perform a merge rather than overwriting existing files. 
-- Improved git sync logging
-- Fixed an issue where git sync would cause a lock on hangfire jobs
-- Fixed an issue where the admin console could throw a JavaScript error when loading license information
-- Fixed an issue where accessing the /hangfire URL using Windows authentication would return a 401
-- Fixed an issue where the WS-Federation dialog within the admin console had some invalid options
-- You can now add a license when OneWay sync is enabled.
-- Fixed an issue where roles would be duplicated when using Windows auth
-- Fixed an issue where if a modules failed to load from the repository, all would fail
-- Installer now updates the PSModulePath to include modules included with Universal
-- Fixed an issue where add OpenID Connect in the UI would not work.
-- Fixed an issue where the license cache would not be invalidated once a license was added
-
-## 2.8.3 - 2/22/2022
+## 2.9.2 - 3/11/2022
 
 ### Includes
 
-* UniversalDashboard - v3.10.1
+* UniversalDashboard - v3.11.1
 * UniversalDashboard - v2.9.9
 * UniversalDashboard.Charts - 1.3.4
 * UniversalDashboard.Map - 1.0
@@ -138,26 +22,49 @@ description: Changelog for PowerShell Universal.
 
 ### Changed
 
-#### Automation
-
-* Fixed an issue where .ps1 would be appended to scripts that end with .ps1
-* Fixed an issue where Invoke-Command would throw an exception in jobs
-* Fixed an issue where scripts ended with a warning or timed out would not be groomed
-* Fixed an issue where folders could not be created if git sync was enabled
-
 #### Platform
 
-* Fixed an issue where the platform may not retry failed license activation attempts
-* Improved execution performance of role policy scripts.
-* Fixed an issue where leaving the admin console would clear fields of modals
-* Fixed the documentation link for the Debugging page
-* Profiling is now optional and configured via appsettings.json
+* Rolled back a change to PSModulePath and Windows PowerShell modules
+* Fixed an issue where the Universal module may not be loaded automatically into environments.
 
-## 2.8.2 - 2/15/2022
+## 2.9.1 - 3/9/2022
 
 ### Includes
 
-* UniversalDashboard - v3.10.1
+* UniversalDashboard - v3.11.1
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.4
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.2.0
+* UniversalDashboard.Editor - 1.0.0
+* UniversalDashboard.Style - 1.0.0
+
+***
+
+### Changed
+
+#### Automation
+
+* Fixed an issue where a trigger wouldn't fire when a script was in a warning state
+
+#### User Interfaces
+
+* Dashboards: Fixed an issue where download components would not work on machines that didn't have package management configured
+* Dashboards: Fixed the layout of -PaginationLocation Top for New-UDTable
+
+#### Platform
+
+* Fixed an issue where the Delete tooltip was not present on delete buttons
+* Fixed an issue where subscription based licenses would not activate properly
+* Increased the frequency at which retries of license activation will take place
+* Fixed an issue where installing modules would not work in Azure Web Apps or machines that didn't have package management configured
+* Fixed an issue where templates would incorrectly be tagged to include modules
+
+## 2.9.0 - 3/8/2022
+
+### Includes
+
+* UniversalDashboard - v3.11.0
 * UniversalDashboard - v2.9.9
 * UniversalDashboard.Charts - 1.3.4
 * UniversalDashboard.Map - 1.0
@@ -169,31 +76,146 @@ description: Changelog for PowerShell Universal.
 
 ### Added
 
+#### Automation
+
+* Added support for DefaultParameterSetName
+* Added Trigger event for the use of a revoked app token
+* Added Trigger event for user login
+* Added Process ID and average memory usage to jobs
+* Added the ability to filter jobs by tag
+
+#### User Interfaces
+
+* Dashboards: Added -ShowRefresh to New-UDTable
+* Dashboards: Added -OnEnter to New-UDTextbox
+* Dashboards: Added 1x to -Size on New-UDIcon
+* Dashboards: Added -DisableAmPm to New-UDTimePicker
+* Pages: Added Validation for Pages including New-PSUValidationResult
+
 #### Platform
 
-* Added Measure-PSUBlock to help diagnosis slow endpoints.
+* Added Sync-PSUConfiguration to refresh the PSU configuration manually
+* Added support for creating variables without a value
+* Added default User role
+* Added -AppBarLogo to New-PSULoginPage
+* Added feature information to template manifest
+* Added Import-PSUTemplate
+* Added Templates page with the ability to view and import templates directly in the admin console
+* Added Readme to templates
+* Added feature information to templates
+* Added support for bool variables.
+* Added high performance runspace pools
 
 ### Changed
 
-#### APIs
+#### Automation
+
+* Hidden folders are no longer displayed in the admin console
+* Fixed an issue where jobs could report that they were run 121 years ago
+
+#### User Interfaces
+
+* Dashboards: Server-side New-UDTables will now report the filtered rows when using Get-UDElement
+* Dashboards: Fixed a alignment issue with New-UDSelect.
+* Dashboards: Fixed an issue where the user name would not be shown when using Windows Authentication
+* Dashboards: Fixed an issue where Get-UDElement would cause a delay of 5 seconds if the element didn't exist
+* Dashboards: Fixed an issue where New-UDStep -OnLoad would be called twice
+* Dashboards: Frameworks and components are no longer deployed during start up and loaded directly from the installation directory
+* Dashboards: Fixed an issue where variables would not be defined for the default environment when it was set to Integrated
+* Dashboards: Fixed an issue where git sync would not refresh dashboards when cases were mismatched
+* Dashboards: Dashboard components and modules have been moved to the Modules folder within the installation directory
+
+#### Platform
+
+* Clicking the admin console title or logo will now go to the home page
+* Set Confirm Impact to high for Remove-\* cmdlets
+* Added version to login page.
+* Added an endpoint to remove items from the memory cache
+* The current directory for the PowerShell Universal process is now set to the repository directory
+* Fixed an issue with importing templates
+* Templates now perform a merge rather than overwriting existing files.
+* Improved git sync logging
+* Fixed an issue where git sync would cause a lock on hangfire jobs
+* Fixed an issue where the admin console could throw a JavaScript error when loading license information
+* Fixed an issue where accessing the /hangfire URL using Windows authentication would return a 401
+* Fixed an issue where the WS-Federation dialog within the admin console had some invalid options
+* You can now add a license when OneWay sync is enabled.
+* Fixed an issue where roles would be duplicated when using Windows auth
+* Fixed an issue where if a modules failed to load from the repository, all would fail
+* Installer now updates the PSModulePath to include modules included with Universal
+* Fixed an issue where add OpenID Connect in the UI would not work.
+* Fixed an issue where the license cache would not be invalidated once a license was added
+
+### 2.8.3 - 2/22/2022
+
+#### Includes
+
+* UniversalDashboard - v3.10.1
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.4
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.2.0
+* UniversalDashboard.Editor - 1.0.0
+* UniversalDashboard.Style - 1.0.0
+
+#### Changed
+
+**Automation**
+
+* Fixed an issue where .ps1 would be appended to scripts that end with .ps1
+* Fixed an issue where Invoke-Command would throw an exception in jobs
+* Fixed an issue where scripts ended with a warning or timed out would not be groomed
+* Fixed an issue where folders could not be created if git sync was enabled
+
+**Platform**
+
+* Fixed an issue where the platform may not retry failed license activation attempts
+* Improved execution performance of role policy scripts.
+* Fixed an issue where leaving the admin console would clear fields of modals
+* Fixed the documentation link for the Debugging page
+* Profiling is now optional and configured via appsettings.json
+
+### 2.8.2 - 2/15/2022
+
+#### Includes
+
+* UniversalDashboard - v3.10.1
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.4
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.2.0
+* UniversalDashboard.Editor - 1.0.0
+* UniversalDashboard.Style - 1.0.0
+
+***
+
+#### Added
+
+**Platform**
+
+* Added Measure-PSUBlock to help diagnosis slow endpoints.
+
+#### Changed
+
+**APIs**
 
 * Fixed an issue where endpoint roles would not be displayed correctly
 
-#### Automation
+**Automation**
 
 * Fixed an issue where a tooltip was not present on the stop job button
 * Fixed an issue where the Waiting on Feedback card on the home page wouldn't show the proper job count.
 * Added the ability to search within the Script dropdown of the Create New Schedule modal.
 * Fixed an issue where scripts would not display parameters in the default parameter set
 
-#### User Interfaces
+**User Interfaces**
 
 * Dashboards: Fixed an issue where updating the dashboard settings would not apply when auto deploy was enabled
 * Dashboards: Fixed an issue where some event types wouldn't send data with New-UDElement
 * Dashboards: Fixed an issue where New-UDChartJS would not update with Sync-UDElement
 * Dashboards: Fixed an issue where -HeaderContent of New-UDPage would not be dynamic
 
-#### Platform
+**Platform**
 
 * Fixed an issue where swagger documentation would not be displayed.
 * Fixed an issue where templates would not be imported correctly
@@ -202,7 +224,37 @@ description: Changelog for PowerShell Universal.
 * Clicking the job cards on the page will now show a filtered job result
 * Fixed an issue where roles were duplicated
 
-## 2.8.1 - 2/10/2022
+### 2.8.1 - 2/10/2022
+
+#### Includes
+
+* UniversalDashboard - v3.10.0
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.3
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.2.0
+* UniversalDashboard.Editor - 1.0.0
+* UniversalDashboard.Style - 1.0.0
+
+***
+
+#### Changed
+
+**User Interfaces**
+
+* Dashboards: Fixed an issue where dashboard components would not be loaded
+* Dashboards: Improved endpoint execution performance
+* Dashboards: Improved endpoint memory usage
+* Dashboards: Increased timeout for Get-UDElement
+* Pages: Fixed an issue with user name location
+* Pages: Fixed an issue where scripts that returned a warning would cause a form to reset
+
+**Platform**
+
+* Fixed an issue where the parse error request would happen too frequently
+* Fixed an issue where the claims cache would not be reset if roles changed
+
+### 2.8.0 - 2/7/2022
 
 ### Includes
 
@@ -216,50 +268,20 @@ description: Changelog for PowerShell Universal.
 
 ***
 
-### Changed
+### Removed
 
 #### User Interfaces
 
-* Dashboards: Fixed an issue where dashboard components would not be loaded
-* Dashboards: Improved endpoint execution performance
-* Dashboards: Improved endpoint memory usage
-* Dashboards: Increased timeout for Get-UDElement
-* Pages: Fixed an issue with user name location
-* Pages: Fixed an issue where scripts that returned a warning would cause a form to reset
-
-#### Platform
-
-* Fixed an issue where the parse error request would happen too frequently
-* Fixed an issue where the claims cache would not be reset if roles changed
-
-## 2.8.0 - 2/7/2022
-
-## Includes
-
-* UniversalDashboard - v3.10.0
-* UniversalDashboard - v2.9.9
-* UniversalDashboard.Charts - 1.3.3
-* UniversalDashboard.Map - 1.0
-* UniversalDashboard.CodeEditor - 1.2.0
-* UniversalDashboard.Editor - 1.0.0
-* UniversalDashboard.Style - 1.0.0
-
-***
-
-## Removed
-
-### User Interfaces
-
 * Dashboards: Removed the Start-UDDashboard cmdlet from the UniversalDashboard module manifest
 
-## Added
+### Added
 
-### API
+#### API
 
 * Added support for large file downloads from endpoints.
 * Added -Timeout to New-PSUEndpoint
 
-### Automation
+#### Automation
 
 * Added support for Enter-PSSession and Exit-PSSession
 * Added -Integrated support to Get-PSUJob
@@ -267,7 +289,7 @@ description: Changelog for PowerShell Universal.
 * Desktop Mode: Added support for executing scripts with global hotkeys
 * Added -DiscardPipeline to New-PSUScript
 
-### User Interfaces
+#### User Interfaces
 
 * Pages: Added default page size setting to table
 * Dashboards: Added -Label, -CheckedLabel, and -UncheckedLabel to New-UDSwitch
@@ -275,7 +297,7 @@ description: Changelog for PowerShell Universal.
 * Dashbaords: Added basic toggle to dashboard page
 * Dashboards: Added -PaginationLocation to New-UDTable
 
-### Platform
+#### Platform
 
 * Added IntelliSense to editors.
 * Added Format (F8) support to editors.
@@ -285,16 +307,16 @@ description: Changelog for PowerShell Universal.
 * Added a link to create run as credentials when none are defined
 * NuGet Package Management provider will be installed if it does not exist
 
-## Changed
+### Changed
 
-### Automation
+#### Automation
 
 * Fixed an issue where PowerShell 7.2 would include ANSI escape characters in job logs.
 * Fixed an issue where renaming a script would not work
 * Fixed an issue where the documentation link for Terminals was incorrect
 * Fixed the ambiguity in the "cancel job" confirmation prompt
 
-### User Interfaces
+#### User Interfaces
 
 * Fixed an issue where the dashboard control buttons would be missing when One-Way git sync was enabled.
 * Pages: Fixed an issue where the form text output would not expand to the container height
@@ -315,7 +337,7 @@ description: Changelog for PowerShell Universal.
 * Dashboards: Fixed an issue where dynamic pages would appear in navigation
 * Dashboards: Built in components (Charts, Style, Map, CodeEditor, Editor) are now automatically added to dashboards
 
-### Platform
+#### Platform
 
 * Improved handling of invalid OIDC configurations.
 * Fixed an issue where the Copy button would be missing from the app token page when One-Way git sync was enabled.
@@ -329,7 +351,25 @@ description: Changelog for PowerShell Universal.
 * Updated the version of Microsoft.Identity.Client that is referenced
 * Fixed an issue where Application Insights data would not be reported
 
-## 2.7.4 - 2/4/2022
+### 2.7.4 - 2/4/2022
+
+#### Includes
+
+* UniversalDashboard - v3.9.2
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.3
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.2.0
+* UniversalDashboard.Editor - 1.0.0
+* UniversalDashboard.Style - 1.0.0
+
+#### Changed
+
+**Platform**
+
+* Fixed an authorization bypass issue
+
+### 2.7.3 - 1/21/2022
 
 ### Includes
 
@@ -345,30 +385,12 @@ description: Changelog for PowerShell Universal.
 
 #### Platform
 
-* Fixed an authorization bypass issue
-
-## 2.7.3 - 1/21/2022
-
-## Includes
-
-* UniversalDashboard - v3.9.2
-* UniversalDashboard - v2.9.9
-* UniversalDashboard.Charts - 1.3.3
-* UniversalDashboard.Map - 1.0
-* UniversalDashboard.CodeEditor - 1.2.0
-* UniversalDashboard.Editor - 1.0.0
-* UniversalDashboard.Style - 1.0.0
-
-## Changed
-
-### Platform
-
 * Fixed an issue where the SAML2 integration would get stuck in a redirect loop
 * Fixed an issue with the UI for SAML2
 
-## 2.7.2 - 1/16/2022
+### 2.7.2 - 1/16/2022
 
-## Includes
+### Includes
 
 * UniversalDashboard - v3.9.2
 * UniversalDashboard - v2.9.9
@@ -378,15 +400,15 @@ description: Changelog for PowerShell Universal.
 * UniversalDashboard.Editor - 1.0.0
 * UniversalDashboard.Style - 1.0.0
 
-## Changed
+### Changed
 
-### User Interaces
+#### User Interaces
 
 * Dashboards - Fixed an issue were Show-UDToast would show an error with the default parameters.
 
-## 2.7.1 - 1/14/2022
+### 2.7.1 - 1/14/2022
 
-## Includes
+### Includes
 
 * UniversalDashboard - v3.9.1
 * UniversalDashboard - v2.9.9
@@ -398,16 +420,16 @@ description: Changelog for PowerShell Universal.
 
 ***
 
-## Changed
+### Changed
 
-### Automation
+#### Automation
 
 * Fixed an issue where creating a schedule with a string array parameter would not work properly
 * Fixed an issue where New-PSUSchedule -Integrated would not work with parameters
 * Fixed an issue where you couldn't view jobs or scripts when using Windows Auth and FQDN server names
 * Fixed an issue where terminals wouldn't work when using Windows Auth and FQDN server names
 
-### User Interfaces
+#### User Interfaces
 
 * Pages: Fixed an issue where table columns "sortable" property would not be persisted.
 * Pages: Fixed an issue where pages would not be listed after creating a new page
@@ -420,14 +442,14 @@ description: Changelog for PowerShell Universal.
 * Dashboards: Fixed an issue where Show\Hide-UDToast would allow an invalid ID
 * Dashboards: Fixed an issue where you could not clear the date filter on New-UDTable
 
-### Platform
+#### Platform
 
 * Fixed an issue where setting claim type and claim value would not work from the UI
 * Fixed an issue where pressing Ctrl+S would not save within the editors
 
-## 2.7.0 - 1/11/2022
+### 2.7.0 - 1/11/2022
 
-## Includes
+### Includes
 
 * UniversalDashboard - v3.9.1
 * UniversalDashboard - v2.9.9
@@ -439,28 +461,28 @@ description: Changelog for PowerShell Universal.
 
 ***
 
-## Added
+### Added
 
-### Automation
+#### Automation
 
 * Added support for randomly delaying a schedule from 0 to 60 seconds to prevent all schedules of the same time frame from running all at once
 
-### Platform
+#### Platform
 
 * Added an option to create app tokens that do not expire
 * Added -Integrated support to the \*-PSUSchedule cmdlets
 
-## Changed
+### Changed
 
-### APIs
+#### APIs
 
 * Fixed an issue where endpoints could be created without a leading /
 
-### Automation
+#### Automation
 
 * Fixed an issue where terminals would not display non-terminating errors
 
-### User Interfaces
+#### User Interfaces
 
 * Dashboard: Fixed an issue where New-UDSelectGroup would not work in New-UDForm
 * Dashboard: Fixed an issue where entering text in a masked UDTextbox would cause loss of focus
@@ -470,7 +492,7 @@ description: Changelog for PowerShell Universal.
 * Pages: Fixed an issue where identities authorized with app tokens could not view pages
 * Pages are now displayed to non-default roles in the admin console
 
-### Platform
+#### Platform
 
 * Updated to new version of Secret Management module
 * Fixed an issue where PowerShell Universal wouldn't start properly on Linux.
@@ -481,9 +503,9 @@ description: Changelog for PowerShell Universal.
 * Fixed an issue where claim to role mapping would not work
 * Fixed an issue where installing a module would not work if the Modules folder did not exist
 
-## 2.6.2 - 12/17/2021
+### 2.6.2 - 12/17/2021
 
-## Includes
+### Includes
 
 * UniversalDashboard - v3.9.0
 * UniversalDashboard - v2.9.9
@@ -495,24 +517,24 @@ description: Changelog for PowerShell Universal.
 
 ***
 
-## Known Issues
+### Known Issues
 
 Some users are still experiencing a service crash related to the secret store. If you experience a crash while starting the service, we recommend installing version 2.5.5. We are continuing to investigate.
 
-## Changed
+### Changed
 
-### User Interfaces
+#### User Interfaces
 
 * Dashboard - Fixed an issue where nested elements may not display
 
-### Platform
+#### Platform
 
 * Fixed an issue where using a non-standard secret vault would not work from the UI
 * Fixed an issue where a crash could occur when multiple jobs attempted to read from the secret store.
 
-## 2.6.1 - 12/15/2021
+### 2.6.1 - 12/15/2021
 
-## Includes
+### Includes
 
 * UniversalDashboard - v3.9.0
 * UniversalDashboard - v2.9.9
@@ -524,22 +546,22 @@ Some users are still experiencing a service crash related to the secret store. I
 
 ***
 
-## Changed
+### Changed
 
-### Automation
+#### Automation
 
 * Fixed an issue where PSCredential parameters would not be passed correctly to scripts
 
-### Platform
+#### Platform
 
 * Changed the default web.config setting back to OutOfProcess
 * Fixed an issue where InProcess hosting in IIS would not work
 * Fixed an issue where the service could hang during startup
 * Fixed an issue where creating a secret could throw an error
 
-## 2.6.0 - 12/14/2021
+### 2.6.0 - 12/14/2021
 
-## Includes
+### Includes
 
 * UniversalDashboard - v3.9.0
 * UniversalDashboard - v2.9.9
@@ -551,29 +573,29 @@ Some users are still experiencing a service crash related to the secret store. I
 
 ***
 
-## Known Issues
+### Known Issues
 
 * The default web.config is set to InProcess hosting model rather than the previously set OutOfProcess hosting model. You will need to update the web.config if you would like to us OutOfProcess.
 
-## Removed
+### Removed
 
-### User Interfaces
+#### User Interfaces
 
 * Dashboards - Removed -\*Offset parameters from New-UDColumn because they did not do anything
 
-## Added
+### Added
 
-### API
+#### API
 
 * Added $ClaimsPrincipal object to API requests
 * Added support for setting parameters via JSON properties
 
-### Automation
+#### Automation
 
 * Added warning state to jobs
 * Added support for terminals
 
-### User Interface
+#### User Interface
 
 * Dashboard: Add support for -FilterType 'date' in New-UDTable
 * Dashboard: Added -Subheader to New-UDCardHeader
@@ -587,7 +609,7 @@ Some users are still experiencing a service crash related to the secret store. I
 * Pages: Added support for an icon in table headers.
 * Pages: Added Size property to the table.
 
-### Platform
+#### Platform
 
 * Added --appsettings command line option to specify location of appsettings.json file
 * Added support for git sync push only
@@ -600,9 +622,9 @@ Some users are still experiencing a service crash related to the secret store. I
 * Added support for storing secrets in the Microsoft SecretStore
 * Added desktop mode
 
-## Changed
+### Changed
 
-### Automation
+#### Automation
 
 * Fixed an issue where scripts deleted in PSU with absolute paths would be deleted in their source location.
 * Fixed an issue where jobs marked as Cancelling would not be groomed
@@ -613,7 +635,7 @@ Some users are still experiencing a service crash related to the secret store. I
 * Fixed an issue where New-PSUSchedule -Condition would not work properly
 * Fixed an issue where you should not call Get-PSUScript for scripts in a folder with -Integrated
 
-### User Interfaces
+#### User Interfaces
 
 * Dashboard - Fixed an issue where $EventData would be $null for Switches and Checkboxes
 * Dashboard - Fixed an issue where display $false or 0 in UDTable would not work
@@ -633,7 +655,7 @@ Some users are still experiencing a service crash related to the secret store. I
 * Pages - Fixed an issue where scripts in folders would not work as a data source
 * Pages - Fixed an issue where pages would not be listed in some environments with Windows authentication
 
-### Platform
+#### Platform
 
 * Fixed an issue where an error in the authentication.ps1 file would cause the Universal server to stop functioning.
 * Hide some properties of scripts and dashboards when first creating a script or dashboard
@@ -644,9 +666,9 @@ Some users are still experiencing a service crash related to the secret store. I
 * Fixed an issue where the PSModulePath would be appended repeatedly in the integrated environment
 * Fixed an issue where restarting a web app in Azure would cause it to fail to start
 
-## 2.5.5 - 11/24/2021
+### 2.5.5 - 11/24/2021
 
-### Includes
+#### Includes
 
 * UniversalDashboard - v3.8.0
 * UniversalDashboard - v2.9.9
@@ -656,15 +678,15 @@ Some users are still experiencing a service crash related to the secret store. I
 * UniversalDashboard.Editor - 1.0.0
 * UniversalDashboard.Style - 1.0.0
 
-### Changes
+#### Changes
 
-#### API
+**API**
 
 * Fixed an issue where Windows auth outside of IIS and client certificate authentication would cause 500 errors in REST APIs.
 
-## 2.5.4 - 11/15/2021
+### 2.5.4 - 11/15/2021
 
-### Includes
+#### Includes
 
 * UniversalDashboard - v3.8.0
 * UniversalDashboard - v2.9.9
@@ -674,21 +696,21 @@ Some users are still experiencing a service crash related to the secret store. I
 * UniversalDashboard.Editor - 1.0.0
 * UniversalDashboard.Style - 1.0.0
 
-### 👍Changes
+#### 👍Changes
 
-#### Automation
+**Automation**
 
 * Fixed an issue where Invoke-PSUScript -Integrated would not work with parameters
 * Fixed an issue where using blocks in script block content could cause scripts to not load properly
 
-#### Platform
+**Platform**
 
 * Fixed an issue where invalid authenticationMethod.ps1 file could break authentication
 * Fixed an issue where enabling client certificate authentication would result in a 500 error
 
-## 2.5.3 - 11/12/2021
+### 2.5.3 - 11/12/2021
 
-### Includes
+#### Includes
 
 * UniversalDashboard - v3.8.0
 * UniversalDashboard - v2.9.9
@@ -698,17 +720,17 @@ Some users are still experiencing a service crash related to the secret store. I
 * UniversalDashboard.Editor - 1.0.0
 * UniversalDashboard.Style - 1.0.0
 
-### 👍Changed
+#### 👍Changed
 
-#### Platform
+**Platform**
 
 * Fixed an issue where an invalid authentication.ps1 file would be generated when editing authentication in the admin console.
 
 If you cannot login to your PowerShell Universal platform due to an invalid authentication.ps1, please refer to this [forum thread.](https://forums.ironmansoftware.com/t/2-4-0-to-2-5-2-upgrade-breaks-something/5975/8?u=adam)
 
-## 2.5.2 - 11/11/2021
+### 2.5.2 - 11/11/2021
 
-### Includes
+#### Includes
 
 * UniversalDashboard - v3.8.0
 * UniversalDashboard - v2.9.9
@@ -718,16 +740,16 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * UniversalDashboard.Editor - 1.0.0
 * UniversalDashboard.Style - 1.0.0
 
-### 👍Changed
+#### 👍Changed
 
-#### Platform
+**Platform**
 
 * Fixed an issue where InProcess IIS hosting would not work
 * Fixed an issue where using AppTokens with OIDC would not work.
 
-## 2.5.1 - 11/9/2021
+### 2.5.1 - 11/9/2021
 
-### Includes
+#### Includes
 
 * UniversalDashboard - v3.8.0
 * UniversalDashboard - v2.9.9
@@ -737,18 +759,18 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * UniversalDashboard.Editor - 1.0.0
 * UniversalDashboard.Style - 1.0.0
 
-### 👍Changed
+#### 👍Changed
 
-#### Platform
+**Platform**
 
 * Fixed an issue where hosting in IIS would not work
 * Fixed an issue where Start-PSUServer was not available
 * Fixed an issue where the wrong parameter types were generated for authentication methods
 * Fixed an issue where Swagger documentation was not available
 
-## 2.5.0 - 11/8/2021
+### 2.5.0 - 11/8/2021
 
-### Includes
+#### Includes
 
 * UniversalDashboard - v3.8.0
 * UniversalDashboard - v2.9.9
@@ -760,21 +782,21 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 
 ***
 
-### 🐛 Known Issues
+#### 🐛 Known Issues
 
 * Windows Authentication with IIS does not work properly.
 
-### 💔Breaking Changes
+#### 💔Breaking Changes
 
 * Grant-PSUAppToken no longer can generate app tokens locally and send them to the server
 
-### ✔️Added
+#### ✔️Added
 
-#### Automation
+**Automation**
 
 * Added support for displaying comment based help in the UI
 
-#### User Interfaces
+**User Interfaces**
 
 * Dashboard - Added -HeaderPosition to New-UDPage and New-UDDashboard
 * Dashboard - Added New-UDMenu and New-UDMenuItem
@@ -790,7 +812,7 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * Pages - Added Password field to forms
 * Pages - Added support for setting a page URL to /
 
-#### Platform
+**Platform**
 
 * Added page size drop down to tables in the admin console
 * Added server side configuration of authentication
@@ -807,13 +829,13 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * Added a link to the hangfire details page from the Settings \ General \ Diagnostics page
 * Added support for integrated cmdlet transport
 
-### 👍Changed
+#### 👍Changed
 
-#### API
+**API**
 
 * Fixed an issue where returning multiple API responses from an API endpoint would consume all CPU
 
-#### Automation
+**Automation**
 
 * Updated to the most recent version of Hangfire
 * Fixed an issue where setting the Time Out value for a schedule in the UI would not work
@@ -821,7 +843,7 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * Fixed an issue where Pnp.PowerShell would not work in Windows PowerShell jobs
 * Fixed an issue where New-PSUScript -ScriptBlock would not work against the REST API
 
-#### User Interfaces
+**User Interfaces**
 
 * Dashboard: Fixed an issue where New-UDTextbox -Multiline would not allow you to enter additional lines
 * Dashboard: Fixed an issue where New-UDTransferList would only show the first selected value in -OnChange $EventData
@@ -837,7 +859,7 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * Pages: Fixed an issue where specifying a URL for a page would prevent it from working in navigation
 * Pages: Fixed an issue where going directly to a page with a custom URL would not work
 
-#### Platform
+**Platform**
 
 * Fixed an issue where retrieving an app token by ID would not work if you were an administrator
 * The folder\list view setting in the Scripts page is now persistent
@@ -853,9 +875,9 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * Added a backdrop to the session expired notification so you can't navigate the admin console when not authenticated
 * Fixed an issue where Set-PSUCache -SlidingExpiration would not be honored.
 
-## 2.4.1 - 10/21/2021
+### 2.4.1 - 10/21/2021
 
-### Includes
+#### Includes
 
 * UniversalDashboard - v3.7.1
 * UniversalDashboard - v2.9.9
@@ -866,20 +888,20 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 
 ***
 
-### Changed
+#### Changed
 
-#### User Interfaces
+**User Interfaces**
 
 * Dashboard - Fixed render issue with New-UDIconButton
 * Dashboard - Fixed an issue where New-UDUpload -OnChange did not behave the same as the previous version
 
-#### Platform
+**Platform**
 
 * Fixed an issue where authorization policies would throw an exception and not log why it happened
 
-## 2.4.0 - 10/12/2021
+### 2.4.0 - 10/12/2021
 
-### Includes
+#### Includes
 
 * UniversalDashboard - v3.7.0
 * UniversalDashboard - v2.9.9
@@ -888,18 +910,18 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * UniversalDashboard.CodeEditor - 1.1.1
 * UniversalDashboard.Style - 1.0.0
 
-### Breaking Change
+#### Breaking Change
 
 * Due to an issue with roles for pages, you will need to reset roles for existing pages after upgrade
 
-### Added
+#### Added
 
-#### APIs
+**APIs**
 
 * Added support for tagging endpoints
 * Added the ability to filter endpoints by tags
 
-#### Automation
+**Automation**
 
 * Added the ability to pause a schedule
 * Added support for changing the base folder for storing scripts
@@ -911,7 +933,7 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * Added -Delay to triggers
 * Added -Condition to schedules
 
-#### User Interface
+**User Interface**
 
 * Dashboards - Added support for tagging dashboards
 * Dashboards - Added the ability to filter dashboards by tags
@@ -931,7 +953,7 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * Pages - Added support for URLs
 * Pages - Added Pie chart
 
-#### Platform
+**Platform**
 
 * Added Home page dashboard in admin console
 * Added Repository\Modules to PSModulePath
@@ -946,9 +968,9 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * Added a notification page to view all notifications
 * Added support for developer licenses.
 
-### Changed
+#### Changed
 
-#### API
+**API**
 
 * Fixed an issue where objects return by Select-Object wouldn't serialize correctly
 * Fixed an issue where the editor in the admin console would not show all the code without scrolling correctly
@@ -958,7 +980,7 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * Fixed an issue where saving on edit ErrorAction does not work in the admin console
 * \-Depth 100 and -Compress added to the automatic serialization in endpoints.
 
-#### Automation
+**Automation**
 
 * Catch an exception that could be thrown when attempting to parse pipeline output
 * Fixed an issue where parsing pipeline output could cause an exception
@@ -968,7 +990,7 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * Fixed an issue where missing scripts could cause all schedules to fail
 * Fixed an issue where scheduling a script with a Switch parameter would not work
 
-#### User Interface
+**User Interface**
 
 * Fixed an issue where roles with spaces would not work with pages
 * Dashboard components are now read from the repository on start up
@@ -986,7 +1008,7 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * Pages - Fixed an issue where renaming a page would create a new page
 * Moved links to frameworks, components and marketplace to the dashboards page
 
-#### Platform
+**Platform**
 
 * Fixed an issue where cache options would not be honored for Set-PSUCache
 * Reorganized the general settings page
@@ -1007,9 +1029,9 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * Fixed an issue where using a custom login page wouldn't redirect to the correct URL after login
 * Fixed incorrectly named Ubuntu docker images
 
-## 2.3.2 - 10/2/2021
+### 2.3.2 - 10/2/2021
 
-### Includes
+#### Includes
 
 * UniversalDashboard - v3.6.0
 * UniversalDashboard - v2.9.9
@@ -1018,15 +1040,15 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * UniversalDashboard.CodeEditor - 1.1.1
 * UniversalDashboard.Style - 1.0.0
 
-### Changed
+#### Changed
 
-#### Platform
+**Platform**
 
 * Fixed an issue where non-integrated environments would not work on Linux
 
-## 2.3.1 - 9/17/2021
+### 2.3.1 - 9/17/2021
 
-### Includes
+#### Includes
 
 * UniversalDashboard - v3.6.0
 * UniversalDashboard - v2.9.9
@@ -1035,19 +1057,19 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * UniversalDashboard.CodeEditor - 1.1.1
 * UniversalDashboard.Style - 1.0.0
 
-### Changes
+#### Changes
 
-#### Automation
+**Automation**
 
 * Fixed an issue where jobs could fail due to certain types of pipeline output
 
-#### Platform
+**Platform**
 
 * Fixed an issue where global cache cmdlets would not work in non-integrated environments
 
-## 2.3.0 - 9/14/2021
+### 2.3.0 - 9/14/2021
 
-### Includes
+#### Includes
 
 * UniversalDashboard - v3.6.0
 * UniversalDashboard - v2.9.9
@@ -1056,21 +1078,21 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * UniversalDashboard.CodeEditor - 1.1.1
 * UniversalDashboard.Style - 1.0.0
 
-### Added
+#### Added
 
-#### APIs
+**APIs**
 
 * Added support for PATCH HTTP method
 * Added $UrlDefinition, $RequestId, $ConnectionId and $SessionId as built in variables.
 * Added support for OpenAPI documentation for endpoints
 * Added ErrorAction to the endpoint properties modal
 
-#### Automation
+**Automation**
 
 * Added support for DisplayName attributes on script parameters
 * Added support for $AccessToken and $IdToken in scripts
 
-#### User Interfaces
+**User Interfaces**
 
 * UDv3 - Added New-UDTransferList and New-UDTransferListItem
 * UDv3 - Added -Variant, -ScrollButtons and -Centered to New-UDTabs
@@ -1084,7 +1106,7 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * Pages - Added support for handling feedback in scripts
 * UDv3 - Added support for -IdleTimeout on New-PSUDashboard
 
-#### Platform
+**Platform**
 
 * Added notification about default authentication and authorization.
 * Added support for -CssStylesheet on New-PSULoginPage
@@ -1098,14 +1120,14 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * Added support for accessing additional user information passed from OIDC providers in the $UserInfo variable.
 * Added Sync-PSUComponent to reload components on dashboards from APIs and Scripts
 
-### Changed
+#### Changed
 
-#### API
+**API**
 
 * Fixed an issue where variables would not show up when the API was using the integrated environment
 * Fixed an issue where authenticated APIs could fail if they had a param block without $Identity and $User
 
-#### Automation
+**Automation**
 
 * Fixed an issue where the job end time would by UTC rather than local in triggers
 * Fixed an issue where deleting a tag that was assigned to a script would cause the scripts page to fail to load
@@ -1118,7 +1140,7 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * Fixed an issue where error action would display the numeric value rather than the name of the error action
 * Fixed an issue where string\[] params would fail to work correctly
 
-#### User Interface
+**User Interface**
 
 * Fixed an issue where a base URL of / on a dashboard prevents pages from working
 * UDv3 - Fixed an issue where New-UDPage -Url was not honored in default navigation
@@ -1138,7 +1160,7 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * Pages - Fixed an issue where you could drag components when modals were open
 * Pages - Cleaned up the properties dialog and toolbox
 
-#### Platform
+**Platform**
 
 * Swagger documentation now requires authentication to view
 * MSI installer now verifies that .NET 4.7.2 or later is installed
@@ -1162,9 +1184,9 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * Fixed an issue where users without built in roles could view the admin console
 * Fixed an issue where identities, roles, settings, published folders and rate limits limits could be viewed without reader access
 
-## 2.2.1 - 8/10/2021
+### 2.2.1 - 8/10/2021
 
-### Includes
+#### Includes
 
 * UniversalDashboard - v3.5.2
 * UniversalDashboard - v2.9.9
@@ -1173,22 +1195,22 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * UniversalDashboard.CodeEditor - 1.1.1
 * UniversalDashboard.Style - 1.0.0
 
-### Changed
+#### Changed
 
-#### Automation
+**Automation**
 
 * Fixed an issue where a default value of \[DateTime]::Now would cause the run script modal to show an error
 * Increased the width of the run script modal to accommodate longer parameter names
 * Enforce authorization for the Hangfire dashboard
 * Fixed an issue where naming scripts with certain characters would cause them to fail to save.
 
-#### User Interfaces
+**User Interfaces**
 
 * Pages: Fixed an issue where the page table would not show that authentication was enabled
 * Pages: Fixed an issue where the page would flicker when a chart was on the page
 * Pages: Fixed an issue where a component wouldn't show up after adding it to the page
 
-#### Platform
+**Platform**
 
 * Fixed an issue where upgrading Windows PowerShell could cause PSU to fail to start, run jobs or start dashboards
 * Added display of execution environment PowerShell version
@@ -1198,9 +1220,9 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * Fixed an issue where you couldn't delete the last item (Endpoints, scripts, dashboards, etc)
 * Fixed an issue where the configurations page would show an empty file name
 
-## 2.2.0 - 8/2/2021
+### 2.2.0 - 8/2/2021
 
-### Includes
+#### Includes
 
 * UniversalDashboard - v3.5.2
 * UniversalDashboard - v2.9.9
@@ -1209,30 +1231,30 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * UniversalDashboard.CodeEditor - 1.1.1
 * UniversalDashboard.Style - 1.0.0
 
-### Added
+#### Added
 
-#### User Interfaces
+**User Interfaces**
 
 * Added pages feature with new page designer
 * Dashboards: Fixed an issue where dashboards wouldn't use the configured default environment
 * Dashboards: Fixed an issue where auto-deploy would refresh the browser before setting the new settings
 
-### Changed
+#### Changed
 
-#### Automation
+**Automation**
 
 * Fixed an issue where if a script PS1 file didn't exist but was configured in scripts.ps1, it would cause all configuration to fail
 * Fixed an issue where jobs could restart (retry) even after running successfully
 
-#### Platform
+**Platform**
 
 * Reorganized admin console menu
 * Fixed an issue where the admin console would display an error when trying to load pages when not logged in
 * Fixed an issue where the user name text color in the menu when using single sign on
 
-## 2.1.4 - 7/28/2021
+### 2.1.4 - 7/28/2021
 
-### Includes
+#### Includes
 
 * UniversalDashboard - v3.5.2
 * UniversalDashboard - v2.9.9
@@ -1241,15 +1263,15 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * UniversalDashboard.CodeEditor - 1.1.1
 * UniversalDashboard.Style - 1.0.0
 
-### Changed
+#### Changed
 
-#### Dashboard
+**Dashboard**
 
 * Fixed an issue where New-UDTable -Data would fail to show a table with a single record.
 
-## 2.1.3 - 7/26/2021
+### 2.1.3 - 7/26/2021
 
-### Includes
+#### Includes
 
 * UniversalDashboard - v3.5.1
 * UniversalDashboard - v2.9.9
@@ -1258,19 +1280,19 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * UniversalDashboard.CodeEditor - 1.1.1
 * UniversalDashboard.Style - 1.0.0
 
-### Changed
+#### Changed
 
-#### API
+**API**
 
 * Fixed an issue where returning a $null from an API would cause it to fail
 
-#### Automation
+**Automation**
 
 * Fixed an issue where the dashboard log would not update in real-time
 * Fixed a memory leak that would cause memory to grow over several days of running jobs
 * Fixed an issue where continuous jobs would show an invalid Next Execution time
 
-#### Dashboard
+**Dashboard**
 
 * Fixed an issue where the dashboard log didn't have scroll bars
 * Fixed an issue where multiple roles would not work with New-UDPage
@@ -1279,7 +1301,7 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * Fixed an issue where New-UDTimepicker -Label wouldn't work
 * Fixed an issue where pressing enter in a textbox would not submit a form
 
-### Platform
+#### Platform
 
 * Fixed an issue where app tokens would be created automatically
 * Fixed an issue where the swagger documentation was not generated correctly
@@ -1287,9 +1309,9 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * Fixed an issue where Start-PSUServer would only listen on localhost
 * Fixed an issue where the update check service would hold a copy of the database open and cause a memory leak
 
-## 2.1.2 - 7/7/2021
+### 2.1.2 - 7/7/2021
 
-### Includes
+#### Includes
 
 * UniversalDashboard - v3.5.0
 * UniversalDashboard - v2.9.9
@@ -1298,36 +1320,36 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * UniversalDashboard.CodeEditor - 1.1.1
 * UniversalDashboard.Style - 1.0.0
 
-### Changed
+#### Changed
 
-#### APIs
+**APIs**
 
 * Fixed an issue where endpoint content could fail to save.
 * Fixed an issue where editing the environment for the API would result in the API no longer functioning
 
-#### Automation
+**Automation**
 
 * Fixed an issue where the job parameter table was not visible on the job page
 * Fixed an issue where you were unable to select a credential for a PSCredential parameter
 * Fixed an issue where Next Execution would show an invalid date for Continuous schedules
 
-#### Dashboards
+**Dashboards**
 
 * Fixed an issue where dashboard content could fail to save.
 * Improved performance of dashboard auto-deploy
 * Added DisableErrorToast to disable error toast messages within the UI
 * Fixed an issue where dashboards would restart when adding\editing a variable even when DisableAutoStart was set
 
-#### Platform
+**Platform**
 
 * Updating .NET 5.0 runtime version to support Windows Update KB5003638 and to mitigate CVE-2021-26701
 * Changed template description input to textarea for more space
 * Fixed an issue where the Execute role couldn't login to the admin console
 * Fixed an issue where git sync would create a master branch on the remote if the directory wasn't empty
 
-## 2.1.1 - 7/1/2021
+### 2.1.1 - 7/1/2021
 
-### Includes
+#### Includes
 
 * UniversalDashboard - v3.5.0
 * UniversalDashboard - v2.9.9
@@ -1336,19 +1358,19 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * UniversalDashboard.CodeEditor - 1.1.1
 * UniversalDashboard.Style - 1.0.0
 
-### Changed
+#### Changed
 
-#### Automation
+**Automation**
 
 * Fixed an issue where the script was not displayed in the jobs table
 
-#### Platform
+**Platform**
 
 * Reverting a change made to status code pages (Unauthorized page) because it causes issues with SSO (Windows\WS-Fed\OIDC)
 
-## 2.1.0 - 6/29/2021
+### 2.1.0 - 6/29/2021
 
-### Includes
+#### Includes
 
 * UniversalDashboard - v3.5.0
 * UniversalDashboard - v2.9.9
@@ -1357,14 +1379,14 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * UniversalDashboard.CodeEditor - 1.1.1
 * UniversalDashboard.Style - 1.0.0
 
-### Added
+#### Added
 
-#### Automation
+**Automation**
 
 * Added Name to schedules
 * Added Description to variables
 
-#### Dashboard
+**Dashboard**
 
 * Added Run As support for dashboards
 * Added an error toast when an error happens in an endpoint
@@ -1376,25 +1398,25 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * UDv3 - Added -Icon to New-UDTable
 * Added $DashboardName, $DashboardFilePath, and $DashboardBaseUrl to endpoints
 
-#### Platform
+**Platform**
 
 * Added support for templates
 
-### Changed
+#### Changed
 
-#### API
+**API**
 
 * Fixed an issue where descriptions would not persist when set in the admin console
 * Fixed an issue where roles would not be populated when editing an endpoint
 
-#### Automation
+**Automation**
 
 * Fixed an issue where you could not create a schedule with an environment in the admin console
 * Fixed an issue where you could not create a schedule with a credential in the admin console
 * Increased the Set-PSUCache limit to 32GB
 * Fixed an issue with displaying nested scripts within the admin console
 
-#### Dashboard
+**Dashboard**
 
 * By default, dashboards are now created in their own folder in the repository folder
 * UDv3 - Fixed an issue where New-UDTable would fail to export a rendered column
@@ -1405,7 +1427,7 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * Fixed an issue where the Operator role could not save dashboards
 * Fixed an issue where users with no matching roles for a dashboard page would receive an error
 
-#### Platform
+**Platform**
 
 * Fixed an issue where scroll bars were missing from editors and logs in the admin console
 * Fixed an issue where you couldn't delete app tokens or schedules on the identity page
@@ -1419,9 +1441,9 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * Fixed an issue where you couldn't clear roles once they were set.
 * Fixed an issue where saving a role policy would not work
 
-## 2.0.3 - 6/10/2021
+### 2.0.3 - 6/10/2021
 
-### Includes
+#### Includes
 
 * UniversalDashboard - v3.4.3
 * UniversalDashboard - v2.9.9
@@ -1430,32 +1452,32 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * UniversalDashboard.CodeEditor - 1.1.1
 * UniversalDashboard.Style - 1.0.0
 
-### Added
+#### Added
 
-#### Dashboard
+**Dashboard**
 
 * Added a Remove button to the components drawer
 
-### Changed
+#### Changed
 
-#### API
+**API**
 
 * Fixed an issue where the $UserName would not be available in APIs
 
-#### Automation
+**Automation**
 
 * Fixed an issue where string\[] types could not be used with ValidateSet attributes
 * Fixed an issue where you could select an environment in the run dialog even though it was set on the script
 * Fixed an issue where you could select a credential in the run dialog even though it was set on the script
 * Fixed an issue where the credential selector was missing in the script properties dialog
 
-#### Dashboard
+**Dashboard**
 
 * Fixed a null reference exception that could happen when stopping a dashboard
 * Fixed an issue where the access denied page was missing
 * UDv3 - Fixed an issue where after logging out and logging back in the user wouldn't go back to the dashboard
 
-#### Platform
+**Platform**
 
 * Added loading button to modals in the admin console
 * Fixed an issue where the close icon wouldn't load correctly for modals in the admin console
@@ -1468,9 +1490,9 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * Fixed an issue where Windows PowerShell 5 would fail to start dashboards and APIs.
 * Fixed MSI upgrade from 1.5 to 2.0
 
-## 2.0.2 - 6/7/2021
+### 2.0.2 - 6/7/2021
 
-### Includes
+#### Includes
 
 * UniversalDashboard - v3.4.2
 * UniversalDashboard - v2.9.9
@@ -1479,21 +1501,21 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * UniversalDashboard.CodeEditor - 1.1.1
 * UniversalDashboard.Style - 1.0.0
 
-### Changed
+#### Changed
 
-#### Dashboard
+**Dashboard**
 
 * Fixed an issue where the integrated environment wouldn't log
 * UDv3 - Fixed an issue where Show-UDIcon would not work without an icon
 
-#### Platform
+**Platform**
 
 * Fixed an issue where the favicon was missing on the admin console
 * Rolling back a change to session time out for the admin console as it was causing problems with forms resetting
 
-## 2.0.1 - 6/4/2021
+### 2.0.1 - 6/4/2021
 
-### Includes
+#### Includes
 
 * UniversalDashboard - v3.4.1
 * UniversalDashboard - v2.9.9
@@ -1502,26 +1524,26 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * UniversalDashboard.CodeEditor - 1.1.1
 * UniversalDashboard.Style - 1.0.0
 
-### Added
+#### Added
 
-#### Platform
+**Platform**
 
 * Added $Headers, $Cookies, $RemoteIpAddress, $LocalIpAddress, $RemotePort, and $LocalPort to authentication.ps1
 
-### Changed
+#### Changed
 
-#### Automation
+**Automation**
 
 * Fixed an issue where Get-PSUScript would throw an exception when the script didn't exist
 
-#### Dashboard
+**Dashboard**
 
 * UDv3 - Fixed an issue where New-UDTableTextOption was not exported in the module manifest.
 * UDv3 - Fixed an issue where Show-UDTooltip -Icon didn't work.
 * UDv3 - Fixed an issue where New-UDAlert was not exported in the module manifest.
 * UDv3 - Fixed an issue where the New-UDCodeEditor didn't have a default parameter set provided
 
-#### Platform
+**Platform**
 
 * Fixed an issue where many app tokens could be created automatically
 * Hide Trial Info button if platform is licensed
@@ -1530,13 +1552,13 @@ If you cannot login to your PowerShell Universal platform due to an invalid auth
 * Fixed an issue where Policy Defined identities would have a blank role in the Identities table
 * Fixed an issue where the session timeout modal would not be shown in the admin console
 
-## 2.0.0 - 6/2/2021
+### 2.0.0 - 6/2/2021
 
 {% hint style="warning" %}
 Please see notes about [upgrading](getting-started/upgrading.md) from 1.x to 2.x
 {% endhint %}
 
-### Includes
+#### Includes
 
 * UniversalDashboard - v3.4.0
 * UniversalDashboard - v2.9.9
@@ -1545,39 +1567,39 @@ Please see notes about [upgrading](getting-started/upgrading.md) from 1.x to 2.x
 * UniversalDashboard.CodeEditor - 1.1.0
 * UniversalDashboard.Style - 1.0.0
 
-### Changed
+#### Changed
 
-#### API
+**API**
 
 * Fixed an issue api with space in the url
 * Fixed an issue where a large API request could lock the browser UI
 
-#### Automation
+**Automation**
 
 * Fixed an issue where a script would not be deleted from disk when deleted in PSU
 
-### Added
+#### Added
 
-#### API
+**API**
 
 * Integrated environment support
 * Added support for $Cache: scope
 
-#### Automation
+**Automation**
 
 * Tag Support
 * Access Controls for Scripts
 * Integrated environment support
 * Added support for $Cache: scope
 
-#### Dashboard
+**Dashboard**
 
 * Added support for syncing components via git
 * Added description to dashboard components.
 * Added description to dashboards
 * Integrated environment support
 
-#### Platform
+**Platform**
 
 * Plugin support
 * New Admin Console
@@ -1588,6 +1610,6 @@ Please see notes about [upgrading](getting-started/upgrading.md) from 1.x to 2.x
 * Integrated environment
 * Add Remove-Item support for $Cache: scope
 
-## 1.0 Changelog
+### 1.0 Changelog
 
 The 1.x changelog can be found [here](https://docs.powershelluniversal.com/v/v1/changelog).
