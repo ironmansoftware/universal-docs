@@ -30,17 +30,9 @@ Values for secrets with the `BuiltInLocalVault` are stored within the Windows Cr
 
 ### PSUSecretStore
 
-{% hint style="info" %}
-PowerShell Universal 2.6 or later.
-{% endhint %}
-
 The `PSUSecretStore` vault is integrated with the Microsoft `SecretStore` module to store secrets in a cross-platform file. Ths file is tied to the current user account running PowerShell Universal. The password for the vault is stored in `appsettings.json`.
 
 ### Az.KeyVault
-
-{% hint style="info" %}
-Requires PowerShell Universal 2.7 or later.
-{% endhint %}
 
 We do not include the Azure Key Vault extension directly in PowerShell Universal, but below you will find how to configure it. This example uses an Azure hosted web-app version of PowerShell Universal.
 
@@ -98,17 +90,17 @@ You can customize which variables are allowed in an environment by customizing t
 
 See [Environments](../config/environments.md#variables) for more information.
 
-## Performance of Secrets
+## Secret Scope
 
-PowerShell Universal uses the Microsoft Secret Management module. The built-in vault uses the Windows Credential Manager to store secrets. Due to the implementation of the `Get-Secret` cmdlet, it may cause performance issues when you have many secrets.
+Do access secrets that you have added to PowerShell Universal, you can use the `$Secret` scope. For example, if you defined a secret named `Credential`, you could access that secret anywhere with the secret scope. You cannot set secrets using the secret scope.&#x20;
 
-You may want to consider limiting the number of secrets that you include in each environment to improve performance.
+```powershell
+Invoke-Command -Credential $Secret:Credential { Write-Host "Hello" }
+```
 
 ## Configuring the `PSUSecretStore` Password
 
-{% hint style="info" %}
-PowerShell Universal 2.6 or later.
-{% endhint %}
+
 
 By default, the `PSUSecretStore` vault password is stored within `appsettings.json` in Secrets \ SecretStore \ Password.
 
