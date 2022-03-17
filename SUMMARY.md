@@ -86,6 +86,7 @@
       * [Grid Layout](userinterfaces/dashboards/components/layout/grid-layout.md)
       * [Grid](userinterfaces/dashboards/components/layout/grid.md)
       * [Hidden](userinterfaces/dashboards/components/layout/hidden.md)
+      * [Stack](userinterfaces/dashboards/components/layout/stack.md)
     * [Utilities](userinterfaces/dashboards/components/utilities/README.md)
       * [Transitions](userinterfaces/dashboards/components/utilities/transitions.md)
     * [Surfaces](userinterfaces/dashboards/components/surfaces/README.md)
