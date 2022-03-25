@@ -8,6 +8,25 @@ description: Changelog for PowerShell Universal.
 
 
 
+## 2.9.3 - 3/25/2022
+
+### Includes
+
+* UniversalDashboard - v3.11.1
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.4
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.2.0
+* UniversalDashboard.Editor - 1.0.0
+* UniversalDashboard.Style - 1.0.0
+
+### Changed
+
+#### Platform
+
+* Cache license activation status through the subscription period
+* Fixed an issue where PSU Desktop would not load
+
 ## 2.9.2 - 3/11/2022
 
 ### Includes
