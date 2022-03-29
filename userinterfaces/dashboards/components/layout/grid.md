@@ -85,6 +85,33 @@ New-UDRow -Columns {
 }
 ```
 
+## Adaptive Sizing
+
+`New-UDColumn` provides multiple sizing parameters for different screen sizes. This allows you to use the same components but different layouts when viewed from different screen sizes. The following parameters control the size of the column based on screen size:
+
+* \-ExtraLargeSize
+* \-LargeSize
+* \-MediumSize
+* \-SmallSize
+
+The following example creates a different layout for the different screen sizes.&#x20;
+
+```powershell
+New-UDRow -Columns {
+    New-UDColumn -SmallSize 12 -MediumSize 6 -LargeSize 4 -Content {
+        New-UDPaper -Content { "xs-12" } -Elevation 2
+    }
+    New-UDColumn -SmallSize 12 -MediumSize 6 -LargeSize 4 -Content {
+        New-UDPaper -Content { "xs-12" } -Elevation 2
+    }
+    New-UDColumn -SmallSize 12 -MediumSize 6 -LargeSize 4 -Content {
+        New-UDPaper -Content { "xs-12" } -Elevation 2
+    }
+}
+```
+
+If a screen size is not specified, the next one down would be used. For example, if only `-SmallSize` was specified, it would be used for all screen sizes.
+
 ## API
 
 * [New-UDGrid](../../../../cmdlets/New-UDGrid.txt)
