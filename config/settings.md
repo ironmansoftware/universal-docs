@@ -51,7 +51,7 @@ PowerShell Universal 2.6 or later
 You can specify the location of the `appsettings.json` file by using the `--appsettings` command line argument for `Universal.Server.exe` .
 
 ```powershell
-.\Universal.Server.exe --appsettings.json C:\appsettings.json
+.\Universal.Server.exe --appsettings C:\appsettings.json
 ```
 
 ## Setting Descriptions
