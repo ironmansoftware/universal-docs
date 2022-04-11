@@ -282,7 +282,7 @@ $Id
 
 The resulting Swagger page will show each of these descriptions.&#x20;
 
-![Swagger Documentation for an API](<../.gitbook/assets/image (299) (1) (1).png>)
+![Swagger Documentation for an API](<../.gitbook/assets/image (299) (1) (1) (1).png>)
 
 ## Persistent Runspaces
 
@@ -309,6 +309,22 @@ Available in PowerShell Universal 2.8 or later.&#x20;
 {% endhint %}
 
 By default, endpoints will not time out. To set a timeout for your endpoints, you can use the `New-PSUEndpoint` `-Timeout` parameter. The timeout is set in the number of seconds.&#x20;
+
+## External Endpoint Content
+
+{% hint style="info" %}
+Available in PowerShell Universal 2.10 or later.&#x20;
+{% endhint %}
+
+You can define the path to an external endpoint content file by using the `-Path` parameter of `New-PSUEndpoint`. The path is relative to the Repository directory. For example, the file layout would appear like this.&#x20;
+
+![](<../.gitbook/assets/image (299).png>)
+
+The content of the `endpoints.ps1` file is then this.&#x20;
+
+```powershell
+New-PSUEndpoint -Url "/path" -Path "endpoint-path.ps1"
+```
 
 ## API
 

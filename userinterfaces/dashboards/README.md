@@ -74,7 +74,7 @@ Click the info button on the dashboard page.
 
 Next, click the components button in the top right of your dashboard.
 
-![](<../../.gitbook/assets/image (299).png>)
+![](<../../.gitbook/assets/image (299) (1).png>)
 
 Finally, check the component library you'd like added to your dashboard.
 
