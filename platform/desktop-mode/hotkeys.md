@@ -5,7 +5,7 @@ description: Hotkey support for PowerShell Universal Desktop.
 # Hotkeys
 
 {% hint style="info" %}
-Requires a [license](https://ironmansoftware.com/pricing/powershell-universal).&#x20;
+Available in PowerShell Universal 2.8 or later. Requires a [license](https://ironmansoftware.com/pricing/powershell-universal).&#x20;
 {% endhint %}
 
 PowerShell Universal Desktop supports global hotkeys that can be used to invoke scripts with key chords.&#x20;

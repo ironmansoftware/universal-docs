@@ -134,7 +134,7 @@ New-UDTable -Id 'customColumnsTable' -Data $Data -Columns $Columns -ShowFilter
 
 ## Table with server-side processing
 
-Process data on the server so you can perform paging, filtering, sorting and searching in systems like SQL. To implement a server-side table, you will use the `-LoadData` parameter. This parameter accepts a `ScriptBlock`. The `$EventData` variable includes information about the state of the table. You can use cmdlets to process the data based on this information.
+Process data on the server so you can perform paging, filtering, sorting and searching in systems like SQL. To implement a server-side table, you will use the `-LoadData` parameter. This parameter accepts a `ScriptBlock`. The `$EventData` variable includes information about the state of the table. You can use cmdlets to process the data based on this information.&#x20;
 
 ### $EventData Structure
 
@@ -188,7 +188,7 @@ New-UDTable -Columns $Columns -LoadData {
 
 ### Retrieving Displayed Data
 
-You may want to allow the user to take action on the current set of displayed data. To do so, use `Get-UDElement` in the input object you want to retrieve the data from and get the table by Id. Once you have the element, you can use the `CurrentData` property of the element to get an array of currently displayed rows.
+You may want to allow the user to take action on the current set of displayed data. To do so, use `Get-UDElement` in the input object you want to retrieve the data from and get the table by Id. Once you have the element, you can use the `CurrentData` property of the element to get an array of currently displayed rows.&#x20;
 
 ```powershell
 $Columns = @(
@@ -234,7 +234,7 @@ New-UDTable -Id 'filteredTable' -Columns $Columns -LoadData {
 
 ## Paging
 
-By default, paging is disable and tables will grow based on how many rows of data you provide. You can enable paging by using the `-ShowPagination` cmdlet (alias `-Paging`). You can configure the page size using the `-PageSize` cmdlet.
+By default, paging is disable and tables will grow based on how many rows of data you provide. You can enable paging by using the `-ShowPagination` cmdlet (alias `-Paging`). You can configure the page size using the `-PageSize` cmdlet.&#x20;
 
 ```powershell
 $Data = @(
@@ -248,19 +248,23 @@ $Data = @(
 New-UDTable -Data $Data -Paging -PageSize 2
 ```
 
-### Disable Page Size All
+### Disable Page Size All&#x20;
 
-By default, the page size selector provides an option to show all rows. If you want to prevent users from doing this, use the `-DisablePageSizeAll` cmdlet.
+By default, the page size selector provides an option to show all rows. If you want to prevent users from doing this, use the `-DisablePageSizeAll` cmdlet.&#x20;
 
 ### Pagination Location
 
-You can change the location of the pagination control by using the `-PaginationLocation` parameter. It accepts top, bottom and both.
+{% hint style="info" %}
+Requires PowerShell Universal 2.8 or later.&#x20;
+{% endhint %}
+
+You can change the location of the pagination control by using the `-PaginationLocation` parameter. It accepts top, bottom and both.&#x20;
 
 ![Pagination Location](<../../../../.gitbook/assets/image (434).png>)
 
 ## Sorting
 
-To enable sorting for a table, use the `-ShowSort` parameter. When you enable sorting, you will be able to click the table headers to sort the table by clicking the headers. By default, multi-sort is enabled. To multi-hold shift and click a column header.
+To enable sorting for a table, use the `-ShowSort` parameter. When you enable sorting, you will be able to click the table headers to sort the table by clicking the headers. By default, multi-sort is enabled. To multi-hold shift and click a column header.&#x20;
 
 ```powershell
 $Data = @(
@@ -274,7 +278,7 @@ $Data = @(
 New-UDTable -Data $Data -ShowSort
 ```
 
-You can control which columns can be sorted by using `New-UDTableColumn` and `-ShowSort` parameter.
+You can control which columns can be sorted by using `New-UDTableColumn` and `-ShowSort` parameter.&#x20;
 
 ```powershell
     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -335,9 +339,9 @@ New-UDButton -Text "GET Rows" -OnClick {
 
 ![Row selection](../../../../.gitbook/assets/table.gif)
 
-The `$EventData` variable for the `-OnRowSelected` event will include all the columns as properties and a selected property as to whether the row was selected or unselected.
+The `$EventData` variable for the `-OnRowSelected` event will include all the columns as properties and a selected property as to whether the row was selected or unselected.&#x20;
 
-For example, the service table data would look like this.
+For example, the service table data would look like this.&#x20;
 
 ```powershell
 @{
@@ -369,9 +373,9 @@ New-UDTable -Id 'service_table' -Data $Data -Columns $Columns -Title 'Services' 
 
 ### Hidden Columns
 
-Hidden columns allow you to include data that is not displayed in the table but is included in the exported data.
+Hidden columns allow you to include data that is not displayed in the table but is included in the exported data.&#x20;
 
-The following hides the StartType column from the user but includes it in the export.
+The following hides the StartType column from the user but includes it in the export.&#x20;
 
 ```powershell
 $Data = try { get-service -ea Stop | select Name,@{n = "Status";e={ $_.Status.ToString()}},@{n = "StartupType";e={ $_.StartupType.ToString()}},@{n = "StartType";e={ $_.StartType.ToString()}} } catch {}
@@ -514,7 +518,11 @@ New-UDButton -Text 'Refresh Table' -OnClick {
 
 ## Show Refresh Button
 
-You can use the `-ShowRefresh` parameter to provide a refresh button for server-side tables.
+{% hint style="info" %}
+Available in PowerShell Universal 2.9 or later.
+{% endhint %}
+
+You can use the `-ShowRefresh` parameter to provide a refresh button for server-side tables.&#x20;
 
 ```powershell
 $Columns = @(

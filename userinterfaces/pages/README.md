@@ -48,7 +48,9 @@ This example invokes a script when a button is clicked.&#x20;
 
 ## Grouping Pages
 
-
+{% hint style="info" %}
+Available in PowerShell Universal 2.5 or later.
+{% endhint %}
 
 Grouping pages will create nested navigation within the page section. Select a group in the page properties. Matching pages will be displayed in that group.
 
@@ -63,6 +65,10 @@ By default, the page URL will be the Name of the page. So for example, if the pa
 You can customize the URL in the page properties.&#x20;
 
 ### Default URL
+
+{% hint style="info" %}
+Available in PowerShell Universal 2.5 or later.
+{% endhint %}
 
 You can change the default URL of the PowerShell Universal instance by setting the page URL to `/` . When users login or visit the server name directly, they will not be directed to `/admin` but rather the page defined with `/`.&#x20;
 
