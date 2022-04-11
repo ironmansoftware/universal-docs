@@ -160,6 +160,80 @@ New-UDForm -Content {
 New-UDElement -Id 'results' -Tag 'div'
 ```
 
+## Schema Forms
+
+Instead of defining all the layout and logic for forms using cmdlets, you can also define a form based on a hashtable of schema. This version of forms is based on [react-jsonschema-form](https://react-jsonschema-form.readthedocs.io/en/latest/).
+
+### Fields
+
+You define fields that accept string, number, integer, enum and boolean types. This changes the type of input shown.&#x20;
+
+```powershell
+New-UDForm -Schema @{
+   title = "Test Form"
+   type = "object"
+   properties = @{
+       name = @{
+           type = "string"
+       }
+       age = @{
+           type = "number"
+       }
+   }
+} -OnSubmit {
+   # $EventData.name
+   # $EventData.age
+}
+```
+
+### Required Properties
+
+You can use the `required` property to set a list of required properties.&#x20;
+
+```powershell
+New-UDForm -Schema @{
+   title = "Test Form"
+   type = "object"
+   properties = @{
+       name = @{
+           type = "string"
+       }
+       age = @{
+           type = "number"
+       }
+   }
+   required = @('name')
+} -OnSubmit {
+   # $EventData.name
+   # $EventData.age
+}
+```
+
+### Arrays
+
+You can create forms that accept 0 to many objects. The user will be able to add and remove objects to the form.&#x20;
+
+```powershell
+New-UDForm -Schema @{
+   title = "Test Form"
+   type = "array"
+   items = @{
+      type = "object" 
+       properties = @{
+           name = @{
+               type = "string"
+           }
+           age = @{
+               type = "number"
+           }
+       }
+   }
+} -OnSubmit {
+   # $EventData[0].name
+   # $EventData[0].age
+}
+```
+
 ## API
 
 * [New-UDForm](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDForm.txt)

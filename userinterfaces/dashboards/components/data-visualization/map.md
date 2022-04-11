@@ -4,12 +4,6 @@ description: Map component for Universal Dashboard.
 
 # Map
 
-{% hint style="info" %}
-To use maps within your dashboard, you will need to add the UniversalDashboard.Map component.
-
-[Learn more about adding custom component libraries](../../#adding-custom-component-libraries)
-{% endhint %}
-
 The UDMap component is a robust control that provides a huge set of features. You can select base layers, configure togglable layers, set markers, define vectors and interact with other Universal Dashboard components.
 
 ## Basic Map

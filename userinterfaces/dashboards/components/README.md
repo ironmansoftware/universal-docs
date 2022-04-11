@@ -16,11 +16,7 @@ New-UDDashboard -Title 'Dashboard' -Content {
 
 ## Adding Components to Dashboards
 
-{% hint style="info" %}
-In PowerShell Universal 2.8 or later, the built-in components are included automatically and do not need to be added.&#x20;
-{% endhint %}
-
-Some components are not included automatically. You can add component modules by clicking the Components button on the Dashboard page and then adding the components. This list will also include components downloaded from the Marketplace.
+You can add component modules by clicking the Components button on the Dashboard page and then adding the components. This list will also include components downloaded from the Marketplace.
 
 ![Add Components to a Dashboard](<../../../.gitbook/assets/image (435).png>)
 
