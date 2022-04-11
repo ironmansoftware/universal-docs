@@ -42,19 +42,7 @@ You can also use wild cards (`*`) to bring in multiple variables that match a pa
 
 You can use the `-PSModulePath` parameter of `New-PSUEnvironment` to configure additional PSModulePaths to include within the environment.&#x20;
 
-### Runspace Recycling
-
-{% hint style="info" %}
-Available in PowerShell Universal 2.8 or later.
-{% endhint %}
-
-The `-RunspaceRecycling` parameter of `New-PSUEnvironment` will cause runspaces to be disposed and recreated periodically. This may increase CPU usage but reduce memory usage in some environments.&#x20;
-
 ### High Performance Runspace Pools
-
-{% hint style="info" %}
-Available in PowerShell Universal 2.9 or later.
-{% endhint %}
 
 High Performance Runspace Pools uses an alternate technique to pooling resources. They are much faster than pools traditionally used by PowerShell Universal. APIs and Dashboards support the use of these types of pools.&#x20;
 
