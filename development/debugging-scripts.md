@@ -5,10 +5,16 @@ Scripts that run within Universal run within background processes or runspaces w
 ## Integrated Debugger
 
 {% hint style="info" %}
-Available in PowerShell Universal 2.8 or later. Requires a [license](https://ironmansoftware.com/pricing/powershell-universal). Debugging is not supported in Windows PowerShell.
+Requires a [license](https://ironmansoftware.com/pricing/powershell-universal). Debugging is not supported in Windows PowerShell.
 {% endhint %}
 
-PowerShell Universal integrates directly with the PowerShell debugger. You can include `Wait-Debugger` within your scripts to cause them to pause. Once paused, you will be able to access the runspace by navigating to Platform \ Debugging
+### Enable Debugger
+
+In order to use the debugger, you need to enable it in the environment to wish to use it within. Click Settings \ Environment and select Enable Debugger.&#x20;
+
+### Use the Debugger
+
+PowerShell Universal integrates directly with the PowerShell debugger. You can include `Wait-Debugger` within your scripts to cause them to pause. Once paused, you will be able to access the runspace by navigating to Platform \ Debugging&#x20;
 
 For example, assume you have a dashboard with a `Wait-Debugger` call included.&#x20;
 
@@ -53,7 +59,7 @@ Certain aspects of Universal will log their scripts automatically. Other feature
 
 ### APIs
 
-APIs do not store the console or pipeline output to ensure that they are as fast as possible. If you wish to log within an API, you can do so with something like `Out-File`. You can also follow the Debugging Scripts from a PowerShell Console section below for more information on how to attach to an API.
+You can use the Live Log view on the Log tab to view logs for the selected API.&#x20;
 
 ### Jobs
 
@@ -79,7 +85,7 @@ New-UDDashboard -Title 'Test' -Content {
 
 ### Authentication and Authorization
 
-Authentication and authorization currently do not log. You can use `Out-File` to log messages from these scripts.
+You can use the Live Log view on the authentication and role pages to see PowerShell stream output.&#x20;
 
 ## Debugging Scripts from a PowerShell Console
 

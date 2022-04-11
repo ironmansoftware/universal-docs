@@ -156,10 +156,6 @@ Windows Authentication provides single-sign on support for browsers and environm
 
 ### Authentication.ps1
 
-{% hint style="info" %}
-Available in PowerShell Universal 2.5 and later.
-{% endhint %}
-
 You can enable Windows authentication by adding a new authentication provider in Security \ Authentication. Select Windows and enable the authentication.
 
 ![](<../../.gitbook/assets/image (304).png>)
@@ -210,10 +206,6 @@ User authorization is accomplished with roles. Roles can either be assigned thro
 
 ### Role to Claim Mapping
 
-{% hint style="info" %}
-PowerShell Universal 2.6 or later.
-{% endhint %}
-
 You can map roles to a claim (such as a group membership) by using the `-ClaimType` and `-ClaimValue` parameters of `New-PSURole`. Settings are also available in the role properties dialog within Security \ Roles.
 
 ![](<../../.gitbook/assets/image (294).png>)
@@ -227,10 +219,6 @@ New-PSURole -Name Administrator -ClaimType 'http://schemas.microsoft.com/ws/2008
 Mapping roles to claims in this manner is faster than Policy scripts because it does not require PowerShell to be run when the user is logging in.
 
 ### View Claim Information
-
-{% hint style="info" %}
-PowerShell Universal 2.6 or later.
-{% endhint %}
 
 To help develop policy scripts or assign roles to claims, you can view claim information by clicking View Claim Information in Security \ Roles.
 
