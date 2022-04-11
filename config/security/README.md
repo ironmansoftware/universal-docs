@@ -134,6 +134,10 @@ These are the variables defined within the security scripts.
 | $RemoteIpAddress | The remote IP address of the request.          | string    |
 | $RemotePort      | The remote port of the request.                | string    |
 
+### Live Log
+
+You can use the live log view on the authentication page to view information about the script execution. The live log view will display PowerShell streams.
+
 ## OpenID Authentication
 
 You can configure OpenID authentication and authorization by adjusting the settings within the `OpenID` section of the `appsettings.json` file. Authorization policies that you configure within Universal will be run on the user's identity after authentication is successful.
