@@ -92,7 +92,7 @@ See [Environments](../config/environments.md#variables) for more information.
 
 ## Secret Scope
 
-To access secrets that you have added to PowerShell Universal, you can use the `$Secret` scope. For example, if you defined a secret named `Credential`, you could access that secret anywhere with the secret scope. You cannot set secrets using the secret scope.&#x20;
+Do access secrets that you have added to PowerShell Universal, you can use the `$Secret` scope. For example, if you defined a secret named `Credential`, you could access that secret anywhere with the secret scope. You cannot set secrets using the secret scope.&#x20;
 
 ```powershell
 Invoke-Command -Credential $Secret:Credential { Write-Host "Hello" }

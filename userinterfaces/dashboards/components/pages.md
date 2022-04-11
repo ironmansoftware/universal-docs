@@ -113,10 +113,6 @@ The following options are available for customizing the header.&#x20;
 
 ### Position
 
-{% hint style="info" %}
-Available in PowerShell Universal 2.5 or later.
-{% endhint %}
-
 Use the `-HeaderPosition` parameter to adjust the behavior of the header.&#x20;
 
 * absolute\fixed - Remains at the top of the page, even when scrolling
@@ -133,10 +129,6 @@ New-UDPage -HeaderPosition fixed -Content {
 ```
 
 ### Colors
-
-{% hint style="info" %}
-Available in PowerShell Universal 2.5 or later.
-{% endhint %}
 
 You can adjust the colors of the header by specifying the `-HeaderColor` and `-HeaderBackgroundColor` parameters. These colors will override the theme colors.&#x20;
 
@@ -271,10 +263,6 @@ The logo will display in the top left corner.
 To customize the style of your logo, you can use a [cascading style sheet](../themes/cascading-style-sheets.md) and target the `ud-logo` element ID.
 
 ## Header Content
-
-{% hint style="info" %}
-Requires PowerShell Universal 2.8 or later.
-{% endhint %}
 
 You can define custom content to include in the header by using the `-HeaderContent` parameter.&#x20;
 

@@ -14,19 +14,11 @@ You can view and search the modules accessible by PowerShell Universal by visiti
 
 ## Install Modules from the Gallery
 
-{% hint style="info" %}
-Available in PowerShell Universal 2.5 or later.
-{% endhint %}
-
 Modules can be installed from the PowerShell Gallery. To search for a module, you can change the drop down next to the search box from Local to PowerShell Gallery. Searches conducted will run against the Gallery rather than locally.&#x20;
 
 Once a module is found, you'll be able to click the Install button to save it locally. Modules installed in this method will be installed into the Repository directory under Modules.&#x20;
 
 ## Creating Modules&#x20;
-
-{% hint style="info" %}
-Available in PowerShell Universal 2.5 or later.
-{% endhint %}
 
 You can also create modules directly in PowerShell Universal. These modules will be created in the Repository directory under Modules.&#x20;
 

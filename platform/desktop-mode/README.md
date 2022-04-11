@@ -4,10 +4,6 @@ description: PowerShell Universal desktop mode.
 
 # Desktop Mode
 
-{% hint style="info" %}
-PowerShell Universal 2.6 or later. Desktop mode is currently in **Preview**.
-{% endhint %}
-
 Desktop mode runs PowerShell Universal as a desktop application. It installs to the current user's application data folders and does not require administrative access to run. It runs as the current user and with a tray icon to access the console and configuration files.&#x20;
 
 ## Install Desktop Mode
