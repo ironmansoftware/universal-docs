@@ -302,6 +302,18 @@ Set-PSUSetting -ApiEnvironment 'Env'
 
 By default, endpoints will not time out. To set a timeout for your endpoints, you can use the `New-PSUEndpoint` `-Timeout` parameter. The timeout is set in the number of seconds.&#x20;
 
+## External Endpoint Content
+
+You can define the path to an external endpoint content file by using the `-Path` parameter of `New-PSUEndpoint`. The path is relative to the Repository directory. For example, the file layout would appear like this.&#x20;
+
+![](<../.gitbook/assets/image (317).png>)
+
+The content of the `endpoints.ps1` file is then this.&#x20;
+
+```powershell
+New-PSUEndpoint -Url "/path" -Path "endpoint-path.ps1"
+```
+
 ## API
 
 * [New-PSUEndpoint](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSUEndpoint.txt)
