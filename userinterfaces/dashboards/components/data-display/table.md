@@ -134,43 +134,102 @@ New-UDTable -Id 'customColumnsTable' -Data $Data -Columns $Columns -ShowFilter
 
 ## Table with server-side processing
 
-For a full example of server-side processing, [see this blog post](https://blog.ironmansoftware.com/universal-dashboard-server-side-table/).
+Process data on the server so you can perform paging, filtering, sorting and searching in systems like SQL. To implement a server-side table, you will use the `-LoadData` parameter. This parameter accepts a `ScriptBlock`. The `$EventData` variable includes information about the state of the table. You can use cmdlets to process the data based on this information.&#x20;
 
-![](<../../../../.gitbook/assets/image (63).png>)
+### $EventData Structure
 
-Process data on the server so you can perform paging, filtering, sorting and searching in systems like SQL.
+The `$EventData` object contains the following properties.
+
+| Property Name  | Type         | Description                                                                 |
+| -------------- | ------------ | --------------------------------------------------------------------------- |
+| Filters        | Hashtable\[] | A list of filter values. Each hashtable has an `Id` and a `Value` property. |
+| OrderBy        | string       | Property name to sort by.                                                   |
+| OrderDirection | string       | `asc` or `desc` depending on the sort order.                                |
+| Page           | int          | The current page (starting with 0).                                         |
+| PageSize       | int          | The selected page size.                                                     |
+| Properties     | string\[]    | An array of properties being shown in the table.                            |
+| Search         | string       | A search string provided by the user.                                       |
+| TotalCount     | int          | The total number of records before filtering or paging.                     |
+
+### Example
 
 ```powershell
 $Columns = @(
-    New-UDTableColumn -Property Dessert -Title "A Dessert"
-    New-UDTableColumn -Property Calories -Title Calories 
-    New-UDTableColumn -Property Fat -Title Fat 
-    New-UDTableColumn -Property Carbs -Title Carbs 
-    New-UDTableColumn -Property Protein -Title Protein 
+    New-UDTableColumn -Property Name -Title "Name" -ShowFilter
+    New-UDTableColumn -Property Value -Title "Value" -ShowFilter
 )
 
-New-UDTable -Columns $Columns -LoadData {
-    $Query = $Body | ConvertFrom-Json
-
-    <# Query will contain
-        filters: []
-        orderBy: undefined
-        orderDirection: ""
-        page: 0
-        pageSize: 5
-        properties: (5) ["dessert", "calories", "fat", "carbs", "protein"]
-        search: ""
-        totalCount: 0
-    #>
-
-    @(
-        @{Dessert = 'Frozen yoghurt'; Calories = (Get-Random); Fat = 6.0; Carbs = 24; Protein = 4.0}
-        @{Dessert = 'Ice cream sandwich'; Calories = (Get-Random); Fat = 6.0; Carbs = 24; Protein = 4.0}
-        @{Dessert = 'Eclair'; Calories = (Get-Random); Fat = 6.0; Carbs = 24; Protein = 4.0}
-        @{Dessert = 'Cupcake'; Calories = (Get-Random); Fat = 6.0; Carbs = 24; Protein = 4.0}
-        @{Dessert = 'Gingerbread'; Calories = (Get-Random); Fat = 6.0; Carbs = 24; Protein = 4.0}
-    ) | Out-UDTableData -Page 0 -TotalCount 5 -Properties $Query.Properties 
+$Data = 1..1000 | ForEach-Object {
+  @{
+      Name = "Record-$_"
+      Value = $_ 
+  }
 }
+
+New-UDTable -Columns $Columns -LoadData {
+    foreach($Filter in $EventData.Filters)
+    {
+        $Data = $Data | Where-Object -Property $Filter.Id -Match -Value $Filter.Value
+    }
+
+    $TotalCount = $Data.Count 
+
+    if (-not [string]::IsNullOrEmpty($EventData.OrderBy))
+    {
+        $Descending = $EventData.OrderDirection -ne 'asc'
+        $Data = $Data | Sort-Object -Property $EventData.orderBy -Descending:$Descending
+    }
+    
+    $Data = $Data | Select-Object -First $EventData.PageSize -Skip ($EventData.Page * $EventData.PageSize)
+
+    $Data | Out-UDTableData -Page $EventData.Page -TotalCount $TotalCount -Properties $EventData.Properties 
+} -ShowFilter -ShowSort -ShowPagination
+```
+
+### Retrieving Displayed Data
+
+You may want to allow the user to take action on the current set of displayed data. To do so, use `Get-UDElement` in the input object you want to retrieve the data from and get the table by Id. Once you have the element, you can use the `CurrentData` property of the element to get an array of currently displayed rows.&#x20;
+
+```powershell
+$Columns = @(
+    New-UDTableColumn -Property Name -Title "Name" -ShowFilter
+    New-UDTableColumn -Property Value -Title "Value" -ShowFilter
+)
+
+$Data = 1..1000 | ForEach-Object {
+  @{
+      Name = "Record-$_"
+      Value = $_ 
+  }
+}
+
+New-UDButton -Text 'Get Filtered Data' -OnClick {
+    $Element = Get-UDElement -Id 'filteredTable'
+    Show-UDModal -Content {
+        New-UDElement -Tag 'pre' -Content {
+           $Element | ConvertTo-Json
+        }
+    }
+}
+
+New-UDTable -Id 'filteredTable' -Columns $Columns -LoadData {
+    foreach($Filter in $EventData.Filters)
+    {
+        $Data = $Data | Where-Object -Property $Filter.Id -Match -Value $Filter.Value
+    }
+
+    $TotalCount = $Data.Count 
+
+    if (-not [string]::IsNullOrEmpty($EventData.OrderBy))
+    {
+        $Descending = $EventData.OrderDirection -ne 'asc'
+        $Data = $Data | Sort-Object -Property $EventData.orderBy -Descending:$Descending
+    }
+    
+    $Data = $Data | Select-Object -First $EventData.PageSize -Skip ($EventData.Page * $EventData.PageSize)
+
+    $Data | Out-UDTableData -Page $EventData.Page -TotalCount $TotalCount -Properties $EventData.Properties 
+} -ShowFilter -ShowSort -ShowPagination
 ```
 
 ## Paging
