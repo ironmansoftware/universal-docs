@@ -10,7 +10,7 @@ The timeline control can be used to display a sequence of events over time.&#x20
 
 Create a basic timeline with information on both sides of the timeline.&#x20;
 
-![](<../../../../.gitbook/assets/image (348).png>)
+![](<../../../../.gitbook/assets/image (348) (1).png>)
 
 ```powershell
 New-UDTimeline -Children {

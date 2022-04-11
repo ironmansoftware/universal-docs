@@ -18,7 +18,7 @@ Terminal configurations are stored in `terminals.ps1`
 
 You can configure a new terminal by navigating to Automation \ Terminals and clicking Create New Terminal. You'll be able to select the environment and credential to run the terminal as.&#x20;
 
-![Terminals Page](<../.gitbook/assets/image (348) (1).png>)
+![Terminals Page](<../.gitbook/assets/image (348) (1) (1).png>)
 
 ## Use a Terminal
 
