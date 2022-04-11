@@ -44,6 +44,7 @@
     * [Building Custom Components](userinterfaces/dashboards/components/building-custom-components.md)
     * [Data Display](userinterfaces/dashboards/components/data-display/README.md)
       * [Alert](userinterfaces/dashboards/components/data-display/alert.md)
+      * [Badge](userinterfaces/dashboards/components/data-display/badge.md)
       * [Chip](userinterfaces/dashboards/components/data-display/chip.md)
       * [Date and Time](userinterfaces/dashboards/components/data-display/date-and-time.md)
       * [Icon](userinterfaces/dashboards/components/data-display/icon.md)
