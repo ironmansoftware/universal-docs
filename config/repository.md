@@ -38,6 +38,12 @@ These entities are stored within the PowerShell Universal database.&#x20;
 * Identities
 * Job History
 
+## Editing the Repository
+
+You can edit the repository files directly in the admin console by navigating to Settings \ Configurations. The editor allows you to create files and folders and edit any file within the repository directory.&#x20;
+
+![](<../.gitbook/assets/image (341).png>)
+
 ## Configuration Scripts
 
 ### Authentication.ps1
