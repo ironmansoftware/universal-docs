@@ -114,6 +114,12 @@ To call the above endpoint, you would have to specify the body of `Invoke-RestMe
 Invoke-RestMethod http://localhost:5000/user -Method Post -Body "{'username': 'adam'}"
 ```
 
+## Live Log
+
+You can view the live log information for any endpoint by clicking the log tab. Live logs include URL, HTTP method, source IP address, PowerShell streams, status code, return Content Type and HTTP content length.&#x20;
+
+![](<../.gitbook/assets/image (358).png>)
+
 ## Form Data
 
 You can pass data to an endpoint as form data. Form data will be passed into your endpoint as parameters.&#x20;
