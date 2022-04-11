@@ -115,6 +115,48 @@ Push-only git sync mode will not pull changes from the remote. Any changes made 
 },
 ```
 
+## Git Initialization Behavior
+
+Defines the git initialization behavior. If this parameter is not set, PowerShell Universal will attempt to select the proper method based on the state of the local file system.&#x20;
+
+### Clone
+
+Clones the remote to the local repository folder. The local folder must be empty.
+
+```json
+  "Data": {
+    "RepositoryPath": "%ProgramData%\\UniversalAutomation\\Repository",
+    "ConnectionString": "%ProgramData%\\UniversalAutomation\\database.db",
+    "DatabaseType": "LiteDB",
+    "GitRemote": "https://github.com/myorg/myrepo.git",
+    "GitUserName": "any",
+    "GitPassword": "MYPAT----------------"
+    "GitBranch": "dev",
+    "GitSyncBehavior": "OneWay",
+    "GitInitializationBehavior": "clone",
+    "ConfigurationScript": ""
+  },
+```
+
+### Init
+
+Initializes the local repository and pushes it to the remote. The remote must be bare.&#x20;
+
+```json
+  "Data": {
+    "RepositoryPath": "%ProgramData%\\UniversalAutomation\\Repository",
+    "ConnectionString": "%ProgramData%\\UniversalAutomation\\database.db",
+    "DatabaseType": "LiteDB",
+    "GitRemote": "https://github.com/myorg/myrepo.git",
+    "GitUserName": "any",
+    "GitPassword": "MYPAT----------------"
+    "GitBranch": "dev",
+    "GitSyncBehavior": "OneWay",
+    "GitInitializationBehavior": "init",
+    "ConfigurationScript": ""
+  },
+```
+
 ## Personal Access Token
 
 We recommend that you use a personal access token (PAT) over a user name and password. You can configure a personal access token by setting the password property in the `appsettings.json` or other configuration methods.
