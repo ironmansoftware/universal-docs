@@ -143,6 +143,7 @@
   * [Single-File](config/hosting/single-file.md)
 * [Login Page](config/login-page.md)
 * [Management API](config/management-api.md)
+* [Persistence](config/persistence.md)
 * [Settings](config/settings.md)
 * [Security](config/security/README.md)
   * [Access Controls](config/security/access-controls.md)
