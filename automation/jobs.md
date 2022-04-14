@@ -28,7 +28,7 @@ Pipeline output for jobs is also stored within PowerShell Universal. Any object 
 
 You can expand the tree view to see the objects and properties from the pipeline.
 
-![Pipeline Output](<../.gitbook/assets/image (308) (1) (1) (1).png>)
+![Pipeline Output](<../.gitbook/assets/image (309) (1) (1) (1) (1).png>)
 
 ### Viewing Errors
 

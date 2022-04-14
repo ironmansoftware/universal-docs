@@ -36,6 +36,7 @@
 * [Dashboards](userinterfaces/dashboards/README.md)
   * [Building Dashboards](userinterfaces/dashboards/building-dashboards.md)
   * [Components](userinterfaces/dashboards/components/README.md)
+    * [Dashboards](userinterfaces/dashboards/components/dashboards.md)
     * [Pages](userinterfaces/dashboards/components/pages.md)
     * [Dynamic Regions](userinterfaces/dashboards/components/dynamic-regions.md)
     * [Element](userinterfaces/dashboards/components/element.md)
