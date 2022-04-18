@@ -6,90 +6,122 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 2.10.1 - 4/18/2022
+
+### Includes
+
+* UniversalDashboard - v3.12.1
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.4
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.2.0
+* UniversalDashboard.Editor - 1.0.0
+* UniversalDashboard.Style - 1.0.0
+
+### Changed
+
+#### APIs
+
+* Fixed an issue where sending JSON to an API without specifying a proper content type would cause the API to fail
+
+#### Automation
+
+* Fixed an issue where script create access controls wouldn't show the script create button in the admin console
+* Fixed an issue where parameters that belong to all parameter sets would not be included in named parameter sets
+
+#### User Interfaces
+
+* Fixed an issue where New-UDDateTime wouldn't convert to local time properly
+
+#### Platform
+
+* Added WORKDIR to Linux-based dockerfiles to fix an issue where they wouldn't work on some systems.
+* Fuxed an issue where CPU would increase over time when running jobs using the integrated environment.
+
 ## 2.10.0 - 4/12/2022
 
 ## Includes
 
-- UniversalDashboard - v3.12.0
-- UniversalDashboard - v2.9.9
-- UniversalDashboard.Charts - 1.3.4
-- UniversalDashboard.Map - 1.0
-- UniversalDashboard.CodeEditor - 1.2.0
-- UniversalDashboard.Editor - 1.0.0
-- UniversalDashboard.Style - 1.0.0
+* UniversalDashboard - v3.12.0
+* UniversalDashboard - v2.9.9
+* UniversalDashboard.Charts - 1.3.4
+* UniversalDashboard.Map - 1.0
+* UniversalDashboard.CodeEditor - 1.2.0
+* UniversalDashboard.Editor - 1.0.0
+* UniversalDashboard.Style - 1.0.0
 
------
+***
 
 ## Added
 
 ### APIs
 
-- Added support for endpoints defined by path
+* Added support for endpoints defined by path
 
-### Automation 
+### Automation
 
-- Added a timezone selector to the schedule modal
-- Added -LoadProfile to New-PSUScript
+* Added a timezone selector to the schedule modal
+* Added -LoadProfile to New-PSUScript
 
 ### User Interfaces
 
-- Dashboards: Added New-UDGridLayout
-- Dashboards: Added -Open to New-UDListItem
-- Dashboards: Added -HeaderContent to New-UDDashboard
-- Dashboards: Added -LoadNavigation to New-UDDashboard
-- Dashboards: Added -Nested to New-UDListItem
-- Dashboards: Added -Icon to New-UDMenu and New-UDMenuItem
-- Dashboards: Added -NotAuthorized and -PageNotFound to New-UDDashboard
-- Dashboards: Added -Icon to New-UDPage
-- Pages: Added int and float columns to tables
-- Pages: Added the ability to sort int, float and datetime columns
+* Dashboards: Added New-UDGridLayout
+* Dashboards: Added -Open to New-UDListItem
+* Dashboards: Added -HeaderContent to New-UDDashboard
+* Dashboards: Added -LoadNavigation to New-UDDashboard
+* Dashboards: Added -Nested to New-UDListItem
+* Dashboards: Added -Icon to New-UDMenu and New-UDMenuItem
+* Dashboards: Added -NotAuthorized and -PageNotFound to New-UDDashboard
+* Dashboards: Added -Icon to New-UDPage
+* Pages: Added int and float columns to tables
+* Pages: Added the ability to sort int, float and datetime columns
 
 ### Platform
 
-- Added a toggle to show and hide revoked tokens
-- Added GitInitializeBehavior setting
-- Added returnurl support to /api/v1/signout
-- Added a button to clear cached claims 
-- Added -EnableDebugger to New-PSUEnvironment
+* Added a toggle to show and hide revoked tokens
+* Added GitInitializeBehavior setting
+* Added returnurl support to /api/v1/signout
+* Added a button to clear cached claims
+* Added -EnableDebugger to New-PSUEnvironment
 
 ## Changed
 
 ### APIs
 
-- Endpoints will now time out when attempting to serialize objects to JSON in order to prevent ConvertTo-Json from consuming all memory on the system.
+* Endpoints will now time out when attempting to serialize objects to JSON in order to prevent ConvertTo-Json from consuming all memory on the system.
 
 ### User Interfaces
 
-- Pages: Fixed an issue where the default icon would not be displayed when a page had a space in the name.
-- Dashboards: Fixed an issue where New-UDMenu would throw a React error when it had zero or one item
-- Dashboards: Auto deploy is now enabled by default
-- Dashboards: Fixed an issue where server-side table data wouldn't work with PSCustomObjects
-- Dashboards: Fixed an issue where saving a component from the marketplace wouldn't work
+* Pages: Fixed an issue where the default icon would not be displayed when a page had a space in the name.
+* Dashboards: Fixed an issue where New-UDMenu would throw a React error when it had zero or one item
+* Dashboards: Auto deploy is now enabled by default
+* Dashboards: Fixed an issue where server-side table data wouldn't work with PSCustomObjects
+* Dashboards: Fixed an issue where saving a component from the marketplace wouldn't work
 
 ### Automation
 
-- The home page now displays jobs run\failed in the last 24 hours
-- Fixed an issue where triggers would run twice.
+* The home page now displays jobs run\failed in the last 24 hours
+* Fixed an issue where triggers would run twice.
 
 ### Platform
 
-- The installer will no longer remove the service account configuration (starting with 2.10.0 to 2.x upgrades)
-- Git sync results are now returned by newest first
-- Fixed an issue where login page links would not display correctly
-- The .Azure folder is no longer shown in the UI
-- Notifications are now deleted if they are over 2 days old. 
-- Greatly increased the performance of standard environments (Non-High Performance Runspace Pool)
-- Fixed an issue where an environment could run out of runspaces
-- Improved memory reclamation during light load
-- Reduced memory growth during heavy load
-- Fixed a service crash that could happen under heavy load
-- Rolled back changes made to the Secret Management module (now uses the standard 1.1.1 version)
-- Fixed an issue where managing variables in the admin console would change the type of secret variables
-- Fixed an issue where published folders would not prompt Windows Authentication
-- Fixed an issue where using access controls would cause the admin console to fail to load
-- Fixed an issue where the PSModulePath was not set correctly on non-Windows systems.
-- Fixed an issue where Git sync would not work on Linux and Mac
-- PowerShell Debugger is now disabled by default to improve memory
+* The installer will no longer remove the service account configuration (starting with 2.10.0 to 2.x upgrades)
+* Git sync results are now returned by newest first
+* Fixed an issue where login page links would not display correctly
+* The .Azure folder is no longer shown in the UI
+* Notifications are now deleted if they are over 2 days old.
+* Greatly increased the performance of standard environments (Non-High Performance Runspace Pool)
+* Fixed an issue where an environment could run out of runspaces
+* Improved memory reclamation during light load
+* Reduced memory growth during heavy load
+* Fixed a service crash that could happen under heavy load
+* Rolled back changes made to the Secret Management module (now uses the standard 1.1.1 version)
+* Fixed an issue where managing variables in the admin console would change the type of secret variables
+* Fixed an issue where published folders would not prompt Windows Authentication
+* Fixed an issue where using access controls would cause the admin console to fail to load
+* Fixed an issue where the PSModulePath was not set correctly on non-Windows systems.
+* Fixed an issue where Git sync would not work on Linux and Mac
+* PowerShell Debugger is now disabled by default to improve memory
 
 ## 2.9.3 - 3/25/2022
 
