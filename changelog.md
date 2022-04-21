@@ -6,6 +6,36 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 2.10.2 - 4/21/2022
+
+### ⚠️ Security Issue
+
+* Fixed an issue where a user could access files outside of the published folder
+
+### Changed
+
+#### Automation
+
+* Fixed an issue where triggers for scripts and dashboards could execute on the wrong resource
+* Fixed an issue where you couldn't update Retry Limit on scripts through the API or admin console
+
+#### User Interfaces
+
+* Dashboards: Fixed an issue where New-UDMenu -Icon would not work
+* Dashboards: Fixed an issue where New-UDButton -OnClick would not report $Headers.Referer
+* Dashboards: Fixed an issue where -Content was not Mandatory on New-UDMenuItem
+* Dashboards: Fixed an issue where -GrantAppToken would not generate a new app token even if the roles of the user were different
+* Pages: Fixed an issue where route variables wouldn't expand correctly
+* Pages: Fixed an issue where a JavaScript error would be shown if a job hadn't run yet
+* Pages: Fixed an issue where a JavaScript error would be shown if an API didn't return correctly
+* Pages: Fixed an issue where button properties for a table column wouldn't be shown when editing
+
+#### Platform
+
+* Fixed an issue where Push Only git sync would cause a dashboard to reload multiple times.
+* Fixed an issue where local changes during a One Way git sync would cause it to fail.
+* Fixed an issue where clicking the Import Template button wouldn't do anything
+
 ## 2.10.1 - 4/18/2022
 
 ### Includes
