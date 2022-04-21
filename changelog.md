@@ -6,6 +6,27 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.0.0-beta4 - 4/21/2022
+
+### ⚠️ Security Issue
+
+* Fixed an issue where a user could access files outside of the published folder
+
+### Changed
+
+#### User Interfaces
+
+* Dashboards: Fixed an issue where some icons would not show properly.
+
+#### Automation
+
+* Fixed an issue where time would be incorrect for jobs when using SQL storage
+
+#### Platform
+
+* Fixed an issue where Windows PowerShell modules would not be included in PSModulePath.
+* Merged in latest v2.10 fixes
+
 ## 3.0.0-beta3 - 4/18/2022
 
 ### Changed
