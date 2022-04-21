@@ -4,6 +4,12 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 1.5.22 - 4/21/2022
+
+### ⚠️ Security Issue
+
+* Fixed an issue where a user could access files outside of the published folder
+
 ## 1.5.21 - 7/7/2021
 
 ### Includes
@@ -19,12 +25,12 @@ description: Changelog for PowerShell Universal.
 
 #### Dashboard
 
-* Fixed an issue where dashboards would restart when managing variables 
+* Fixed an issue where dashboards would restart when managing variables&#x20;
 
 #### Platform
 
 * Updated to PowerShell SDK version 7.0.6
-* Fixed an issue with git sync 
+* Fixed an issue with git sync&#x20;
 
 ## 1.5.20 - 6/4/2021
 
@@ -116,7 +122,7 @@ description: Changelog for PowerShell Universal.
 ## 1.5.17 - 5/6/2021
 
 {% hint style="warning" %}
-Known issue with authentication and authorization. You may experience problems logging in.  
+Known issue with authentication and authorization. You may experience problems logging in. &#x20;
 {% endhint %}
 
 ### Includes
@@ -141,18 +147,18 @@ Known issue with authentication and authorization. You may experience problems l
 
 #### API
 
-* Fixed an issue where requests over 2KB would return a 404 not found. 
+* Fixed an issue where requests over 2KB would return a 404 not found.&#x20;
 
 #### Automation
 
 * Fixed an issue when scheduling a script with boolean parameters
 * Fixed an issue when scheduling delayed schedules with different sets of credentials.
-* Reduce memory consumption when running many jobs a day 
+* Reduce memory consumption when running many jobs a day&#x20;
 
 #### Dashboard
 
 * UDv3 - Fixed an issue where selecting a multioption select group wouldn't select the items in the group.
-* UDv3 - Fixed an issue with putting a UDProgress bar within a UDCard. 
+* UDv3 - Fixed an issue with putting a UDProgress bar within a UDCard.&#x20;
 * Fixed an issue with published folder roles in the admin console
 * UDv3 - Fixed an issue where server-side export would not show a progress bar
 * UDv3 - Fixed an issue where return $null from -Render in New-UDTableColumn would cause the table to fail to load
@@ -184,7 +190,7 @@ Known issue with authentication and authorization. You may experience problems l
 #### Dashboard
 
 * UDv3 - Added ability to set active step and disable previous step in UDStepper.
-* UDv3 - Added avatar and logout button 
+* UDv3 - Added avatar and logout button&#x20;
 * UDv3 - Added -Variant to New-UDTextbox
 * UDv3 - Added Autocomplete to -FilterType on New-UDTable
 * UDv3 - Added -Variant to New-UDAutoComplete
@@ -234,7 +240,7 @@ Known issue with authentication and authorization. You may experience problems l
 
 #### Dashboard
 
-* UDv3 - Added -SortType to New-UDTableColumn to allow for selecting the type of sorting \(alphanumeric vs datetime\) - [\#9](https://github.com/ironmansoftware/issues/issues/9)
+* UDv3 - Added -SortType to New-UDTableColumn to allow for selecting the type of sorting (alphanumeric vs datetime) - [#9](https://github.com/ironmansoftware/issues/issues/9)
 * UDv3 - Added loading progress bar when server-side processing is performing a server-side function
 * UDv3 - Added -OnExport to New-UDTable to control what data is exported from PowerShell
 * UDv3 - Added -DisablePageSizeAll to New-UDTable
@@ -244,10 +250,10 @@ Known issue with authentication and authorization. You may experience problems l
 #### Dashboard
 
 * Dashboard startup now honors -PersistentRunspace
-* UDv3 - Fixed an issue with New-UDTable where the export would use an invalid file name - [\#76](https://github.com/ironmansoftware/issues/issues/76)
-* UDv3 - Fixed an issue where New-UDTable sort was case sensitive - [\#8](https://github.com/ironmansoftware/issues/issues/8)
+* UDv3 - Fixed an issue with New-UDTable where the export would use an invalid file name - [#76](https://github.com/ironmansoftware/issues/issues/76)
+* UDv3 - Fixed an issue where New-UDTable sort was case sensitive - [#8](https://github.com/ironmansoftware/issues/issues/8)
 * UDv3 - Fixed an issue where the counts in the search field would be incorrect when using server-side processing
-* UDv3 - Fixed an issue where the filter search text was not being honored for New-UDTextOption 
+* UDv3 - Fixed an issue where the filter search text was not being honored for New-UDTextOption&#x20;
 
 #### Platform
 
@@ -284,8 +290,8 @@ Known issue with authentication and authorization. You may experience problems l
 
 #### Automation
 
-* Help - Invoke-UAScript - Fixed an issue with one of the examples 
-* Fixed an issue where Get-PSUJobOutput would only return errors. 
+* Help - Invoke-UAScript - Fixed an issue with one of the examples&#x20;
+* Fixed an issue where Get-PSUJobOutput would only return errors.&#x20;
 * Fixed an issue where one-time schedules could be updated or deleted incorrectly
 
 #### Dashboard
@@ -334,13 +340,13 @@ Known issue with authentication and authorization. You may experience problems l
 
 #### Dashboard
 
-* UDv3 - Fixed an issue where table column max-width would be set to 0 by default. 
+* UDv3 - Fixed an issue where table column max-width would be set to 0 by default.&#x20;
 * UDv3 - Fixed an issue where -Multiple and New-UDSelectGroup would not work together
-* No longer statically assign a Reader role when -GrantAppToken is used with New-PSUDashboard. 
+* No longer statically assign a Reader role when -GrantAppToken is used with New-PSUDashboard.&#x20;
 
 #### Platform
 
-* Fixed an issue where the admin console would redirect to the login page when the session timed out even if forms auth wasn't being used. 
+* Fixed an issue where the admin console would redirect to the login page when the session timed out even if forms auth wasn't being used.&#x20;
 * Enabled the ability to disable forms authentication form the UI.
 
 ## 1.5.12 - 2/10/2021
@@ -358,7 +364,7 @@ Known issue with authentication and authorization. You may experience problems l
 
 #### Dashboard
 
-* Added $AccessToken and $IdToken variables for accessing OIDC and WS-Fed tokens within dashboards. 
+* Added $AccessToken and $IdToken variables for accessing OIDC and WS-Fed tokens within dashboards.&#x20;
 
 ### Changed
 
@@ -386,9 +392,9 @@ Known issue with authentication and authorization. You may experience problems l
 #### Dashboard
 
 * UDv3 - Added New-UDTableTextOption to allow for customizing table text like search and export labels.
-* The UDStyle component is now included with the Universal package 
+* The UDStyle component is now included with the Universal package&#x20;
 * Added Restart button to the dashboard page in the admin console
-* Added -ExportOption to New-UDTable to configure which options to allow for export 
+* Added -ExportOption to New-UDTable to configure which options to allow for export&#x20;
 * UDv3 - Added -Truncate to New-UDTableColumn to truncate and hide text that's long than the width of the column
 * UDv3 - Added -Footer to New-UDAppBar to allow for the creation of footers
 * UDv3 - Added -DisableThemeToggle to New-UDAppBar to hide the theme toggle switch
@@ -403,7 +409,7 @@ Known issue with authentication and authorization. You may experience problems l
 
 #### Platform
 
-* Added support for configuring the correlation cookie same site settings for OIDC. 
+* Added support for configuring the correlation cookie same site settings for OIDC.&#x20;
 * Added support for specifying Git Branch for Git Sync
 
 ### Changed
@@ -411,16 +417,16 @@ Known issue with authentication and authorization. You may experience problems l
 #### Automation
 
 * Fixed an issue where continuous schedules would cause the server to fail to execute jobs due to worker threads being exhausted
-* Fixed an issue where a schedule could run multiple times after service restart. 
+* Fixed an issue where a schedule could run multiple times after service restart.&#x20;
 * Fixed an issue where one-time schedules could run more than once
 * Improved New-PSUSchedule -Script so you can pass a string in as well as a Script object
-* Fixed an issue where parameters names would hang off the schedule modal in the admin console. 
+* Fixed an issue where parameters names would hang off the schedule modal in the admin console.&#x20;
 
 #### Dashboard
 
 * UDv3 - Fixed an issue where vertical tabs would have a static height.
 * UDv3 - Fixed an issue with New-UDTable -ShowPagination where it would automatically turn on pagination even when it wasn't used
-* UDv3 - Fixed an issue where New-UDTable would sort the first column ascending by default \(now uses the data as-is if no sort is specified\)
+* UDv3 - Fixed an issue where New-UDTable would sort the first column ascending by default (now uses the data as-is if no sort is specified)
 * UDv3 - Fixed an issue where sorting was enabled on New-UDTable by default. You now need to enable it with -ShowSort
 * UDv3 - Fixed an issue where -ArgumentList would not work on New-UDDynamic
 * UDv3 - Fixed an issue where New-UDSelect with no options defined would cause a React error
@@ -433,7 +439,7 @@ Known issue with authentication and authorization. You may experience problems l
 
 #### Platform
 
-* Fixed a problem where certain authentication providers wouldn't work with OIDC due to correlation cookie problems. 
+* Fixed a problem where certain authentication providers wouldn't work with OIDC due to correlation cookie problems.&#x20;
 * Fixed an issue where setting an identity from a specific role back to Policy Defined would result in the policy not executing correctly
 * Fixed an issue where authenticating against Okta with OIDC wouldn't set the user name properly
 * Fixed an issue where authenticating with a large number of claims would cause the web server to return a 431 error
@@ -479,7 +485,7 @@ Known issue: Some users may experience problems signing in with certain OIDC pro
 
 #### Dashboard
 
-* Honor Environment's Persistent Runspace setting in dashboards. 
+* Honor Environment's Persistent Runspace setting in dashboards.&#x20;
 * UDv3 - Disable fetch service when session times out
 * UDv3 - Session time out now checks for expired authorization cookies
 
@@ -492,7 +498,7 @@ Known issue: Some users may experience problems signing in with certain OIDC pro
 #### API
 
 * Added $Method variable to indicate the HTTP method of the endpoint called.
-* Added $Cookies variable with a hashtable of cookie values 
+* Added $Cookies variable with a hashtable of cookie values&#x20;
 * Added -Headers parameter to New-PSUApiResponse
 
 #### Automation
@@ -506,7 +512,7 @@ Known issue: Some users may experience problems signing in with certain OIDC pro
 
 #### Platform
 
-* Added UseTokenLifetime setting for WS-Federation and OIDC 
+* Added UseTokenLifetime setting for WS-Federation and OIDC&#x20;
 
 ## 1.5.9 - 1/14/2020
 
@@ -522,15 +528,15 @@ Known issue: Some users may experience problems signing in with certain OIDC pro
 
 #### Platform
 
-* Added -UseDefaultCredentials to all Management API cmdlets. 
+* Added -UseDefaultCredentials to all Management API cmdlets.&#x20;
 
 ### Changed
 
 #### API
 
 * Fixed an issue where updating APIs with the management API could duplicate the endpoint
-* Fixed an issue where API URLs and Methods wouldn't update 
-* BREAKING CHANGE: Errors thrown in APIs now return 400 \(bad request\) rather than 500 \(internal server error\)
+* Fixed an issue where API URLs and Methods wouldn't update&#x20;
+* BREAKING CHANGE: Errors thrown in APIs now return 400 (bad request) rather than 500 (internal server error)
 
 #### Automation
 
@@ -568,7 +574,7 @@ Known Issue: The Universal PowerShell module included with 1.5.8 is 1.5.7 and wi
 
 #### Dashboard
 
-* UDv3 - Fixed an issue with New-UDTable and PSCustomObject. 
+* UDv3 - Fixed an issue with New-UDTable and PSCustomObject.&#x20;
 * UniversalDashboard.Charts - Added MinValue and MaxValue to New-UDNivoChart -Calendar
 
 ## 1.5.7 - 12/18/2020
@@ -593,8 +599,8 @@ Note that although it is listed that the MSI upgrade will not reset the service 
 
 * Fixed an issue where you would have to delete a dashboard twice to get it to delete
 * Fixed an issue where adding a dashboard in the UI would enable auto-start even when it wasn't on
-* UDv3 - Fixed an issue with blank pages. 
-* UDv3 - Fixed an issue where New-UDTable would return an error when it only had 1 row. 
+* UDv3 - Fixed an issue with blank pages.&#x20;
+* UDv3 - Fixed an issue where New-UDTable would return an error when it only had 1 row.&#x20;
 
 #### Platform
 
@@ -641,7 +647,7 @@ Note that although it is listed that the MSI upgrade will not reset the service 
 #### Dashboard
 
 * UDv3 - Fixed an issue with New-UDButton and New-UDButtonIcon -Disabled not working properly
-* UDv3 - Fixed an issue where passing a $null value to -Data of New-UDTable would cause a React error. 
+* UDv3 - Fixed an issue where passing a $null value to -Data of New-UDTable would cause a React error.&#x20;
 * UDv3 - Fixed an issue where passing complex object properties to -Data of New-UDTable would result in a React error
 * UDv2 - Fixed an issue where Set-UDElement -Content would not work with New-UDElement
 
@@ -670,7 +676,7 @@ Note that although it is listed that the MSI upgrade will not reset the service 
 
 #### API
 
-* Fixed an issue where -UseDefaultCredentials would not work with an API running as a service with Windows Auth 
+* Fixed an issue where -UseDefaultCredentials would not work with an API running as a service with Windows Auth&#x20;
 
 #### Automation
 
@@ -689,7 +695,7 @@ Note that although it is listed that the MSI upgrade will not reset the service 
 #### Platform
 
 * Universal cmdlets will now show a warning if connecting to a mismatched server and module version
-* Fixed an issue where Install-PSUServer wouldn't work for Linux or Mac. 
+* Fixed an issue where Install-PSUServer wouldn't work for Linux or Mac.&#x20;
 
 ## 1.5.3 - 11/26/2020
 
@@ -709,7 +715,7 @@ Note that although it is listed that the MSI upgrade will not reset the service 
 * Fixed an issue where you couldn't create two schedules for one script
 * Fixed an issue where Run As credentials wouldn't be listed in the schedule table
 * Fixed an issue where One Time jobs could run more than once
-* Fixed an issue where scripts with absolute or nested paths would not be visible in the admin console 
+* Fixed an issue where scripts with absolute or nested paths would not be visible in the admin console&#x20;
 
 #### Platform
 
@@ -726,7 +732,7 @@ Note that although it is listed that the MSI upgrade will not reset the service 
 
 #### Platform
 
-* Removed the Never expiration lifetime for app tokens. 
+* Removed the Never expiration lifetime for app tokens.&#x20;
 
 ## 1.5.2 - 11/22/2020
 
@@ -821,18 +827,18 @@ Note that although it is listed that the MSI upgrade will not reset the service 
 
 #### Automation
 
-* Added timeout value to jobs 
+* Added timeout value to jobs&#x20;
 * Added execute only role
 * Added concurrent job limit for scripts
-* Added support for string\[\] parameters in the UI
+* Added support for string\[] parameters in the UI
 
 #### Dashboard
 
 * Added $RemoteIpAddress, $LocalIpAddress, $LocalPort and $RemotePort automatic variables
 * UDv3 - Added New-UDDateTime
 * UDv3 - Added -Logo to New-UDDashboard and New-UDPage
-* Added support for query string parameters 
-* Added support for setting the dashboard to use the latest UD version. 
+* Added support for query string parameters&#x20;
+* Added support for setting the dashboard to use the latest UD version.&#x20;
 * Added $ClaimsPrincipal variable
 * Added support for defining default documents for published folders
 * UDv3 - Added New-UDErrorBoundary
@@ -869,7 +875,7 @@ Note that although it is listed that the MSI upgrade will not reset the service 
 * Fixed an issue where boolean $EventData variables would be hashtables rather than bools
 * Fixed an issue where an error would be shown when a new runspace was created
 * Automatically reload client's browsers when dashboards change
-* Fixed an issue where the configuration reload would delete files 
+* Fixed an issue where the configuration reload would delete files&#x20;
 * Marketplace won't let you install already installed modules
 * Licensed dashboard modals will default to authenticated
 
@@ -881,7 +887,7 @@ Note that although it is listed that the MSI upgrade will not reset the service 
 
 * Fixed an issue with gRPC and Linux ARM
 * Fixed an issue where deploying dashboard assets could fail during startup
-* Fixed an issue where attempting to retrieve the highest dashboard version would fail 
+* Fixed an issue where attempting to retrieve the highest dashboard version would fail&#x20;
 * Optimized configuration loading behavior to only reload items that changed
 * Moving some configuration data to an in-memory database for better performance
 
@@ -942,7 +948,7 @@ Note that although it is listed that the MSI upgrade will not reset the service 
 
 #### Dashboard
 
-* UDv2 - Fixed an issue where the session timeout modal would use the existing header of a modal 
+* UDv2 - Fixed an issue where the session timeout modal would use the existing header of a modal&#x20;
 * UDv2 - Fixed an issue where New-UDSideNav -Endpoint would not work
 * Fixed an issue where dashboards could be marked as running when they actually were not
 * Fixed an issue where the alt text for the View button was Global.
@@ -964,7 +970,7 @@ Note that although it is listed that the MSI upgrade will not reset the service 
 #### Dashboard
 
 * UDv3 - Added Debug-PSUDashboard
-* UDv2 - Added session timeout modal 
+* UDv2 - Added session timeout modal&#x20;
 
 #### Platform
 
@@ -974,9 +980,9 @@ Note that although it is listed that the MSI upgrade will not reset the service 
 
 #### Dashboard
 
-* Improved error logging. 
+* Improved error logging.&#x20;
 * UDv3 - Fixed an issue with Set-UDElement not updating the form context for UDTextbox
-* UDv3 - Fixed an issue where PSCustomObjects wouldn't work after a table refresh 
+* UDv3 - Fixed an issue where PSCustomObjects wouldn't work after a table refresh&#x20;
 * UDv3 - Fixed an issue where server-side tables $EventData.properties field was not populated
 
 #### Platform
@@ -995,16 +1001,16 @@ Note that although it is listed that the MSI upgrade will not reset the service 
 
 #### API
 
-* Fixed issue where endpoint modal was not setting authentication setting correctly. 
+* Fixed issue where endpoint modal was not setting authentication setting correctly.&#x20;
 
 #### Automation
 
-* Fixed an issue where job logs would not update during job runs. 
+* Fixed an issue where job logs would not update during job runs.&#x20;
 
 #### Dashboard
 
 * Fixed issue where session timeout was only honored on the cookie
-* Fixed issue with dashboard modal not setting authentication setting correctly. 
+* Fixed issue with dashboard modal not setting authentication setting correctly.&#x20;
 * Fixed issue where the dashboard log may not be written and would throw an exception
 * UDv3 - Fixed an issue where PSCustomObjects would not work in New-UDTable
 
@@ -1024,7 +1030,7 @@ Note that although it is listed that the MSI upgrade will not reset the service 
 * UDv3 - Fixed an issue with UDTable custom rendering performance
 * Fixed an issue where if a dashboard was stopped, no statistics could be retrieved for any dashboards
 * Fixed an issue with icons not working
-* UDv2 Fixed issue an where Get-UDElement would not work. 
+* UDv2 Fixed issue an where Get-UDElement would not work.&#x20;
 * UDv2 Fixed an issue where Write-UDLog would not work.
 * UDv3 Fixed an issue where -Role was case sensitive for New-UDPage
 * UDv2 Fixed an issue where -Role was missing on New-UDPage
@@ -1040,7 +1046,7 @@ There was a breaking change made to `New-UDTableColumn` -Render. The `$Body` var
 
 Prior to 1.4.5, the syntax would have been like this.
 
-```text
+```
 $Data = @(
     @{ link = "http://www.google.com" }
 )
@@ -1057,7 +1063,7 @@ New-UDTable -Title 'Link' -Column $Column -Data $Data
 
 1.4.5 and later, the syntax will be like this. `$EventData` is a special variable that will be available in the `-Render` parameter and does not require converting from JSON.
 
-```text
+```
 $Data = @(
     @{ link = "http://www.google.com" }
 )
@@ -1090,7 +1096,7 @@ New-UDTable -Title 'Link' -Columns $Columns -Data $Data
 * UDv3 - Fixed an issue with UDTable not working within UDCard.
 * UDv3 - Fixed an issue where calling Set-UDElement on a UDTextbox would overlay the label.
 * UDv2 - Fixed an issue where OpenID Connect and WS-Federation authentication would fail
-* UDv2\UDv3 - Fixed an issue where client elements of UDElement would not rerender. 
+* UDv2\UDv3 - Fixed an issue where client elements of UDElement would not rerender.&#x20;
 * Fixed an issue where saving a component from the marketplace would return a 400 error
 
 #### Platform
@@ -1153,7 +1159,7 @@ New-UDTable -Title 'Link' -Columns $Columns -Data $Data
 
 #### Platform
 
-* Fixed an issue that would prevent forms based authentication form working. 
+* Fixed an issue that would prevent forms based authentication form working.&#x20;
 
 ## 1.4.0 - 10-01-2020
 
@@ -1178,12 +1184,12 @@ New-UDTable -Title 'Link' -Columns $Columns -Data $Data
 * UDv3 - Added -PageSizeOptions to New-UDTable
 * UDv3 - Added -Padding to New-UDTable
 * Role-based access for dashboards
-* UDv3 - Role-based access for dashboard pages. 
+* UDv3 - Role-based access for dashboard pages.&#x20;
 * UDv3 - Display page when dashboard isn't running
 * UDv2 - Fixed an issue where UDMonitor colors would not work
 * Added ChartJS charts to the charts component library
 * Added OnCancel to New-UDForm
-* Added $EventData hashtable to events that take data. 
+* Added $EventData hashtable to events that take data.&#x20;
 * UDv3 - Added -NavigationLayout and -Navigation to New-UDPage
 * UDv3 - Added -Multiline, -Rows, -RowsMax to New-UDTextbox
 
@@ -1206,15 +1212,15 @@ New-UDTable -Title 'Link' -Columns $Columns -Data $Data
 #### Automation
 
 * Fixed an issue where the job processes would inherit the parent process's PSModulePath
-* Fixed an issue where Switch parameters would not work correctly 
+* Fixed an issue where Switch parameters would not work correctly&#x20;
 * Fixed an issue where -ForegroundColor on Write-Host would add an extra line
 
 #### Dashboard
 
 * Redesigned dashboard page
-* Fixed an issue with UDCodeEditor were Get-UDElement would not work. 
+* Fixed an issue with UDCodeEditor were Get-UDElement would not work.&#x20;
 * Fixed an issue where New-UDTabs wouldn't work with one tab.
-* Fixed an issue that would prevent custom components from using additional assets \(like images in UDMap\)
+* Fixed an issue that would prevent custom components from using additional assets (like images in UDMap)
 * Fixed an issue with UDMap that prevented it from including default images
 * Fixed an issue where OpenID Connect and WS-Federation would not redirect correctly
 
@@ -1240,7 +1246,7 @@ New-UDTable -Title 'Link' -Columns $Columns -Data $Data
 
 * Fixed an issue where the broadcast parameter would not work on cmdlets
 * Fixed an issue where the theme background would not be applied
-* Fixed an issue where custom dark and light themes would not work 
+* Fixed an issue where custom dark and light themes would not work&#x20;
 
 ## 1.3.1 - 8-26-2020
 
@@ -1261,7 +1267,7 @@ New-UDTable -Title 'Link' -Columns $Columns -Data $Data
 * Added dashboard memory history
 * UDv2 - Fixed UDMonitor default values
 * UDv3 - Fixed UDTypography style parameter
-* UDv3 - Fixed an issue with the UDIcon parameter. 
+* UDv3 - Fixed an issue with the UDIcon parameter.&#x20;
 * UDv3 - Fixed an issue where -ReplaceToast on Show-UDToast would not work
 * Fixed an issue where the dashboard runspace would attempt to set readonly variables
 * Fixed an issue where dashboard files would not be deleted when deleting a dashboard
@@ -1270,7 +1276,7 @@ New-UDTable -Title 'Link' -Columns $Columns -Data $Data
 
 * All files are now written using UTF8 with BOM encoding
 * Fixed an issue where AppTokens were being deleted
-* Fixed swagger API docs. 
+* Fixed swagger API docs.&#x20;
 * Fixed an issue where the Admin Console would be blank after upgrades
 
 ## 1.3.0 - 7-30-2020
@@ -1282,7 +1288,7 @@ New-UDTable -Title 'Link' -Columns $Columns -Data $Data
 * Added support for Windows Authentication in APIs running under IIS
 * Added a $Headers variable in the API to provide the calling header values
 * Added a $URL variable in the API to provide the calling URL
-* Added a $Data variable in the API to provide byte\[\] of the content
+* Added a $Data variable in the API to provide byte\[] of the content
 * Added New-PSUApiResponse to support returning custom responses from APIs
 
 #### Automation
@@ -1301,21 +1307,21 @@ New-UDTable -Title 'Link' -Columns $Columns -Data $Data
 * UDv3 - Added support for validation in UDStepper
 * UDv3 - Added New-UDUpload for uploading files. Works with UDForm and UDStepper.
 * UDv2 - Fixed an issue with UDFooter where it wouldn't load successfully
-* Fixed an issue where errors with components would present a blank page. Now errors will be shown on the page. 
+* Fixed an issue where errors with components would present a blank page. Now errors will be shown on the page.&#x20;
 * UDv2 - Added NavBarLogo, NavBarColor and NavBarFontColor to New-UDDashboard
 * Dashboards now have access to the $Cache:Pages variable that will return a list of the pages for the dashboard
 
 #### Platform
 
 * Fixed an issue where granting an app token would grant roles twice
-* PowerShell host for API and Dashboard now implements the basics of Raw UI to avoid errors. 
+* PowerShell host for API and Dashboard now implements the basics of Raw UI to avoid errors.&#x20;
 * Added support for setting parameters for scheduled jobs
 
 #### Dashboard
 
 * Added Debug-PSUDashboard to run dashboards in a local PowerShell process
-* Added Get-PSUDashboardEndpointRunspace to find runspaces based on an endpoint ID 
-* Added a marketplace page to get new components directly from the marketplace 
+* Added Get-PSUDashboardEndpointRunspace to find runspaces based on an endpoint ID&#x20;
+* Added a marketplace page to get new components directly from the marketplace&#x20;
 * Added support for published folders
 * Added support for Nivo bubble charts
 
@@ -1328,7 +1334,7 @@ New-UDTable -Title 'Link' -Columns $Columns -Data $Data
 
 #### Platform
 
-* Added 404 page to the admin console 
+* Added 404 page to the admin console&#x20;
 * Various fixes to role access to particular sections of the admin console
 * Fixed an issue where Windows Auth would not evaluate roles correctly
 * Added HasClaim support to role policy ClaimsPrincipal class
@@ -1341,7 +1347,7 @@ New-UDTable -Title 'Link' -Columns $Columns -Data $Data
 
 #### Dashboard
 
-* Fixed an issue where the $Roles variable would not be populated in authenticated dashboards 
+* Fixed an issue where the $Roles variable would not be populated in authenticated dashboards&#x20;
 
 ## 1.2.9 - 7-15-2020
 
@@ -1349,13 +1355,13 @@ New-UDTable -Title 'Link' -Columns $Columns -Data $Data
 
 #### API
 
-* Added $Identity variable that will include the identity name if authentication is used 
+* Added $Identity variable that will include the identity name if authentication is used&#x20;
 
 ### Changed
 
 #### API
 
-* PowerShell host for API and Dashboard now implements the basics of Raw UI to avoid errors. 
+* PowerShell host for API and Dashboard now implements the basics of Raw UI to avoid errors.&#x20;
 
 #### Automation
 
@@ -1368,7 +1374,7 @@ New-UDTable -Title 'Link' -Columns $Columns -Data $Data
 * UDv2 - Fixed an issue where custom components wouldn't load correctly
 * Fixed an issue where saving the PowerShell Version wouldn't work from the UI
 * Fixed an issue where dashboards would fail to start because assets would deploy after attempting to start dashboards
-* PowerShell host for API and Dashboard now implements the basics of Raw UI to avoid errors. 
+* PowerShell host for API and Dashboard now implements the basics of Raw UI to avoid errors.&#x20;
 * Fixed an issue where the server could crash sometimes when dashboard were restarting
 
 #### Platform
@@ -1460,12 +1466,12 @@ New-UDTable -Title 'Link' -Columns $Columns -Data $Data
 
 #### Automation
 
-* The identity of the user that started the job is now show in the table and job page 
+* The identity of the user that started the job is now show in the table and job page&#x20;
 
 #### Dashboard
 
 * Added an Import Dashboard button
-* Added -DisableAutostart to New-PUSDashboard to prevent dashboards from starting on server startup. 
+* Added -DisableAutostart to New-PUSDashboard to prevent dashboards from starting on server startup.&#x20;
 
 #### Platform
 
@@ -1477,7 +1483,7 @@ New-UDTable -Title 'Link' -Columns $Columns -Data $Data
 
 * The API process will restart if it crashes for whatever reason.
 * Fixed an issue where the API process wouldnt always start
-* Fixed an issue where responses over a certain size wouldn't be returned. 
+* Fixed an issue where responses over a certain size wouldn't be returned.&#x20;
 
 #### Automation
 
@@ -1493,15 +1499,15 @@ New-UDTable -Title 'Link' -Columns $Columns -Data $Data
 * Fixed an issue where using the ZIP on Windows would fail to load the UD framework because it was blocked
 * Dashboards now start asynchronously when the server is starting so the server starts faster
 * Fixed an issue where dashboards wouldnt always start
-* When adding a dashboard, the frameworks are now sorted newest first. 
+* When adding a dashboard, the frameworks are now sorted newest first.&#x20;
 
 #### Platform
 
 * Fixed an issue where adding an invalid license would totally break everything
-* If HTTP\(S\) is not specified when using the ComputerName parameter of the cmdlets, HTTP will be added automatically
+* If HTTP(S) is not specified when using the ComputerName parameter of the cmdlets, HTTP will be added automatically
 * Fixed an issue where navigating to any URL that started with /admin would always go to the admin page
 * Fixed an issue where Git sync would not work with a bare remote repository
-* Redirect stdout to main process so you can see background process stdout. 
+* Redirect stdout to main process so you can see background process stdout.&#x20;
 
 ## 1.2.2 - 6-16-2020
 
@@ -1555,14 +1561,14 @@ New-UDTable -Title 'Link' -Columns $Columns -Data $Data
 
 * Run Authentication\Authorization in process by default
 * Fixed an issue where loading configuration files could result in a "Authorization Failed" exception
-* Fixed an issue where if loading a configuration file on start up failed the server wouldn't start\
-* Fixed an issue where hiding Automation would still default to the scripts page. 
-* Fixed an error when starting PSU on linux. 
-* Fixed an issue where settings wouldn't reload sometimes 
-* Fixed a bug where the login page would not display an error if the login failed. 
-* Log an error during startup if .NET Framework v4.7.2 or later is missing on Windows. 
-* Fixed an issue where saving or deleting PowerShell versions in the UI wouldn't persist. 
-* Fixed an issue where saving or deleting Dashboard Frameworks in the UI wouldn't persist. 
+* Fixed an issue where if loading a configuration file on start up failed the server wouldn't start\\
+* Fixed an issue where hiding Automation would still default to the scripts page.&#x20;
+* Fixed an error when starting PSU on linux.&#x20;
+* Fixed an issue where settings wouldn't reload sometimes&#x20;
+* Fixed a bug where the login page would not display an error if the login failed.&#x20;
+* Log an error during startup if .NET Framework v4.7.2 or later is missing on Windows.&#x20;
+* Fixed an issue where saving or deleting PowerShell versions in the UI wouldn't persist.&#x20;
+* Fixed an issue where saving or deleting Dashboard Frameworks in the UI wouldn't persist.&#x20;
 * Fixed an issue where the installer would not elevate correctly
 * Fixed an issue where you couldn't uninstall from Add\Remove programs
 * Fixed an issue where the installer would not upgrade successfully sometimes
@@ -1578,7 +1584,7 @@ New-UDTable -Title 'Link' -Columns $Columns -Data $Data
 
 #### Automation
 
-* Added configuration options for InformationPreference, VerbosePreference and DebugPreference for scripts 
+* Added configuration options for InformationPreference, VerbosePreference and DebugPreference for scripts&#x20;
 
 #### Dashboard
 
@@ -1606,15 +1612,15 @@ New-UDTable -Title 'Link' -Columns $Columns -Data $Data
 
 #### Dashboard
 
-* Remove file path from Add Dashboard modal. A default dashboard will be created. 
+* Remove file path from Add Dashboard modal. A default dashboard will be created.&#x20;
 * UDv3 - Fixed an issue with expansion panels not working if you had a single expansion panel in a group.
 * UDv2 - Fixed an issue where New-UDFooter was missing
-* UDv2 - Fixed an issue where New-UDFooter wouldn't remove the "Created with UD" text 
+* UDv2 - Fixed an issue where New-UDFooter wouldn't remove the "Created with UD" text&#x20;
 * UDv2 - Fixed an issue where New-UDRow would not set the ID
 * UDv2\UDv3 - Added error boundaries so controls in an error state do not prevent the dashboard from loading.
 * UDv3 - Fixed Show-UDToast styles
 * UDv2 - Fixed an issue where New-UDInput was missing
-* UDv2 - Fixed an issue where New-UDMonitor was missing 
+* UDv2 - Fixed an issue where New-UDMonitor was missing&#x20;
 * Fixed an issue where logging into the dashboard wouldn't redirect to the dashboard
 * Universal app tokens can now automatically be added to users' sessions to access the Universal API from dashboards
 
@@ -1653,4 +1659,3 @@ New-UDTable -Title 'Link' -Columns $Columns -Data $Data
 ### Added
 
 – Added -Version to Add-UDDashboardFramework – Added support for UD scheduled endpoints – Added memory usage and session count to dashboard page – Added theme support for UDv2 – Added custom log path appsettings.json – Added UD Admin Terminal – Roles are now sync’d to git – Auth Methods are now sync’d to git – Session diagnostics for UD – Endpoint diagnostics for UD – Dashboard frameworks are now persisted across installs
-
