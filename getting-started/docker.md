@@ -31,7 +31,7 @@ ENV Data__RepositoryPath ./data/Repository
 ENV Data__ConnectionString ./data/database.db
 ENV UniversalDashboard__AssetsFolder ./data/UniversalDashboard 
 ENV Logging__Path ./data/logs/log.txt
-ENTRYPOINT ["./home/Universal/Universal.Server"]
+ENTRYPOINT ["./Universal/Universal.Server"]
 ```
 
 ### Windows
