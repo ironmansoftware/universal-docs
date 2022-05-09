@@ -26,11 +26,11 @@ FROM ironmansoftware/universal:latest
 LABEL description="Universal - The ultimate platform for building web-based IT Tools" 
 
 EXPOSE 5000
-VOLUME ["/data"]
-ENV Data__RepositoryPath ./data/Repository
-ENV Data__ConnectionString ./data/database.db
-ENV UniversalDashboard__AssetsFolder ./data/UniversalDashboard 
-ENV Logging__Path ./data/logs/log.txt
+VOLUME ["/home/data"]
+ENV Data__RepositoryPath /home/data/Repository
+ENV Data__ConnectionString /home/data/database.db
+ENV UniversalDashboard__AssetsFolder /home/data/UniversalDashboard 
+ENV Logging__Path /home/data/logs/log.txt
 ENTRYPOINT ["./Universal/Universal.Server"]
 ```
 
@@ -58,7 +58,7 @@ docker build . --tag=universal-persistent
 You can start the docker container with the run command and make sure to specify the volume to mount.
 
 ```
-docker run --name powershelluniversal --mount source=psudata,target=/data --rm -d  -p 5000:5000/tcp universal-persistent:latest
+docker run -it --name powershelluniversal --mount source=psudata,target=/home/data --rm -d  -p 5000:5000/tcp universal-persistent:latest
 ```
 
 ## Time Zones
