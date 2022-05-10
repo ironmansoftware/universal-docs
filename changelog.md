@@ -6,6 +6,37 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.0.0-beta6 - 5/10/2022
+
+### Added
+
+#### APIs
+
+* Added support for multiple API environments
+
+#### User Interfaces
+
+* Dashboards: Added dashboard templates to the create dashboard dialog.
+* Dashboards: Added -Beat, -Fade, -BeatFade, and -Shake to New-UDIcon
+
+### Changed
+
+#### APIs
+
+* Serialization depth is now set to 5
+* ErrorAction now defaults to Stop
+
+#### User Interfaces
+
+* Dashboards: Fixed an issue where New-UDTransition would throw an error
+
+#### Platform
+
+* Fixed an issue where New-PSUScript wouldn't work within a dashboard
+* Fixed an issue where Get-PSUCache wouldn't return cached items
+* Fixed an issue where Get-PSUCache wouldn't unwind arrays
+* Connect-PSUServer now returns information about the session after connection
+
 ## 3.0.0-beta4 - 4/21/2022
 
 ### ⚠️ Security Issue
