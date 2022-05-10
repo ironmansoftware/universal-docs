@@ -6,6 +6,42 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 2.11.0 - 5/10/2022
+
+### Added
+
+#### User Interfaces
+
+* Dashboards: Added -Export to New-UDTableTextOption
+* Dashboards: $Roles are now available in non-authenticated dashboards if the user was previously authenticated
+
+#### Platform
+
+* Add a setting to adjust how frequently the groom job runs.
+* Added a description to app tokens
+
+### Changed
+
+### Automation
+
+* Fixed an issue where PSCredential parameters would not work on schedules
+* Script error action preference is now handled correctly (stop will stop the script execution on error)
+
+#### User Interfaces
+
+* Pages: Fixed an issue where routed-based pages would not work
+* Pages: Fixed an issue where forms with validation APIs wouldn't work with scripts
+* Pages: Fixed an issue where updates to a page from another tab would wipe out changes from the admin console tab
+* Dashboards: Fixed an issue where icon styles would not be honored in buttons
+* Dashboards: Improved performance of New-UDTableColumn -Render
+
+#### Platform
+
+* Fixed an issue with runspace recycling
+* Removed all telemetry collection
+* Fixed an issue where the PSU Desktop installer was not signed
+* Fixed an issue where stored-based PWSH installs would not be detected
+
 ## 2.10.2 - 4/21/2022
 
 ### ⚠️ Security Issue
