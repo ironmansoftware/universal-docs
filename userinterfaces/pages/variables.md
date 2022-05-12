@@ -42,7 +42,7 @@ You can also use variables to provide hidden input fields to APIs and scripts.&#
 
 &#x20;
 
-![](<../../.gitbook/assets/image (333).png>)
+![](<../../.gitbook/assets/image (333) (1).png>)
 
 ## Page Variables
 

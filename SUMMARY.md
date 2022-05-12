@@ -125,6 +125,7 @@
 * [About Desktop Mode](desktop/about-desktop-mode.md)
 * [File Associations](desktop/file-associations.md)
 * [Hotkeys](desktop/hotkeys.md)
+* [Pages](desktop/pages.md)
 * [Protocol Handlers](desktop/protocol-handlers.md)
 * [System Events](desktop/system-events.md)
 
