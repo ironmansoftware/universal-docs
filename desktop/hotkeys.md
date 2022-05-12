@@ -6,6 +6,8 @@ description: About PowerShell Universal desktop hotkeys.
 
 PowerShell Universal Desktop supports global hotkeys that can be used to invoke scripts with key chords.&#x20;
 
+![Hotkeys Page in the Admin Console](<../.gitbook/assets/image (314).png>)
+
 ## Define a Hotkey
 
 To define a hotkey, you will need to edit the `hotkeys.ps1` file in the `.universal` folder or through the Settings \ Configurations page within the Admin Console.&#x20;
