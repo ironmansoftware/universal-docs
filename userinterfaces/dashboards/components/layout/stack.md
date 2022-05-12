@@ -24,7 +24,7 @@ New-UDStack -Content {
 
 Vertically stacked items.&#x20;
 
-![](<../../../../.gitbook/assets/image (348).png>)
+![](<../../../../.gitbook/assets/image (348) (1).png>)
 
 ```powershell
 New-UDStack -Content {
