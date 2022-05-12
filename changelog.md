@@ -6,6 +6,19 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 2.11.1 - 5/12/2022
+
+### Changed
+
+#### User Interfaces
+
+* Dashboards: Fixed an issue where -AutoFocus wouldn't work on New-UDTextbox
+* Dashboards: Changed how we store endpoints specific to dashboards to reduce memory usage
+
+#### Platform
+
+* Fixed an issue where script block caching was disabled
+
 ## 2.11.0 - 5/10/2022
 
 ### Added
