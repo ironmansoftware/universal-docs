@@ -120,6 +120,11 @@
   * [Table](userinterfaces/pages/table.md)
   * [Variables](userinterfaces/pages/variables.md)
 
+## Desktop
+
+* [About Desktop Mode](desktop/about-desktop-mode.md)
+* [Hotkeys](desktop/hotkeys.md)
+
 ## Platform
 
 * [Cache](platform/cache.md)
