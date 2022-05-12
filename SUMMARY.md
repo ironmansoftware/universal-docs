@@ -124,6 +124,7 @@
 
 * [About Desktop Mode](desktop/about-desktop-mode.md)
 * [Hotkeys](desktop/hotkeys.md)
+* [Protocol Handlers](desktop/protocol-handlers.md)
 * [System Events](desktop/system-events.md)
 
 ## Platform
