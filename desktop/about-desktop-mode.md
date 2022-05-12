@@ -32,7 +32,7 @@ Desktop mode does not support PowerShell Universal Dashboard v2 frameworks. It a
 
 ### Security&#x20;
 
-Desktop mode runs as the current user as a regular desktop application. It starts the PowerShell Universal web server. The server only listens on localhost and enforces Windows authentication. You will not be able to change security settings for the server. You can still use app tokens to allow local applications rights to access the server.&#x20;
+Desktop mode runs as the current user as a regular desktop application. It starts the PowerShell Universal web server. The server only listens on localhost. You will not be able to change security settings for the server.&#x20;
 
 
 
