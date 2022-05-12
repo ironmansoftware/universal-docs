@@ -6,6 +6,30 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.0.0-beta7 - 5/12/2022
+
+### Added
+
+#### Desktop
+
+* Added support for triggering scripts on system events
+* Hot key scripts will now receive a $HotKey parameter
+* Added support for triggering scripts based on file associations
+* Added support for triggering scripts based on custom protocols
+* Added Show-PSUPage to display pages from the desktop client.
+
+### Changed
+
+#### Desktop
+
+* Fixed an issue where you couldn't create hotkeys within the admin console.
+* Fixed an issue where executing a hot key wouldn't work
+* Fixed an issue where PowerShellUniversal.Desktop.exe was not included in the installer
+
+#### Platform
+
+* Fixed an issue where calling New-PSUSchedule from a dashboard wouldn't set the NextExecution time for a OneTime schedule
+
 ## 3.0.0-beta6 - 5/10/2022
 
 ### Added
