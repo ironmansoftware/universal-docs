@@ -19,7 +19,7 @@ Install-PSUServer
 {% endtab %}
 
 {% tab title="Windows Desktop" %}
-You can learn more about [desktop mode here](platform/desktop-mode/).
+You can learn more about [desktop mode here](broken-reference).
 {% endtab %}
 
 {% tab title="Linux" %}

@@ -128,8 +128,6 @@
 ## Platform
 
 * [Cache](platform/cache.md)
-* [Desktop Mode](platform/desktop-mode/README.md)
-  * [Hotkeys](platform/desktop-mode/hotkeys.md)
 * [Modules](platform/modules.md)
 * [Monitoring](platform/monitoring.md)
 * [Published Folders](platform/published-folders.md)
