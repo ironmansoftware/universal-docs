@@ -50,7 +50,7 @@ description: Changelog for PowerShell Universal.
 
 #### Platform
 
-* Fixed an issue with runspace recycling
+* Fixed an issue where runspace recycling was always on
 * Removed all telemetry collection
 * Fixed an issue where the PSU Desktop installer was not signed
 * Fixed an issue where stored-based PWSH installs would not be detected
