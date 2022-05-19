@@ -8,7 +8,7 @@ Universal Dashboard provides several built-in charting solutions to help visuali
 
 ## ChartJS
 
-Universal Dashboard integrates with [ChartJS](https://www.chartjs.org).
+Universal Dashboard integrates with [ChartJS](https://www.chartjs.org/).
 
 ### Creating a Chart
 

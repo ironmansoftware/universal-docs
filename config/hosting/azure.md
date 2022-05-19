@@ -34,6 +34,14 @@ Restart the App Service and login to your new PowerShell Universal instance. You
 
 ![File Share Content](<../../.gitbook/assets/image (323).png>)
 
+### Forwarded Headers
+
+Containers are typically hosted behind a reverse proxy and will not be aware of the actual external URL without additional configuration. In order to ensure that systems that require the external URL, like OpenID Connect, receive the proper information, you will need to set the `ASPNETCORE_FORWARDEDHEADERS_ENABLED`  environment variable to `true`.
+
+![](<../../.gitbook/assets/image (402).png>)
+
+For more information, you can read this blog post from the [Microsoft](https://devblogs.microsoft.com/dotnet/forwarded-headers-middleware-updates-in-net-core-3-0-preview-6/).&#x20;
+
 ## Standard Web App
 
 ### Manually Creating a Web App

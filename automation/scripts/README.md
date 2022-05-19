@@ -94,7 +94,7 @@ param(
 
 The result is a set of input options that are based on the types of parameters.
 
-![](<../../.gitbook/assets/image (402).png>)
+![](<../../.gitbook/assets/image (402) (1).png>)
 
 ### Running a Script as Another User
 

@@ -24,7 +24,7 @@ Simple schedules are really just helpers for various standard CRON schedules. Wh
 
 ### CRON
 
-CRON schedules use CRON expressions to define schedules. You can use a tool like [Crontab guru](https://crontab.guru) to help define the schedule.
+CRON schedules use CRON expressions to define schedules. You can use a tool like [Crontab guru](https://crontab.guru/) to help define the schedule.
 
 ![](<../.gitbook/assets/image (138).png>)
 

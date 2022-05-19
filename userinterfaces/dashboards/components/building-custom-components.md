@@ -20,15 +20,15 @@ Below is a list of some of the technologies used when building Universal Dashboa
 
 ### React
 
-Universal Dashboard's client-side application is built using the [React framework](https://reactjs.org). React makes it easy to build components that update the DOM only when necessary and has a pretty robust ecosystem of users. It's one of the most popular JavaScript frameworks at the time of this writing.
+Universal Dashboard's client-side application is built using the [React framework](https://reactjs.org/). React makes it easy to build components that update the DOM only when necessary and has a pretty robust ecosystem of users. It's one of the most popular JavaScript frameworks at the time of this writing.
 
 ### Babel
 
-[Babel ](https://babeljs.io)is a transcompiler for JavaScript. It works well with React and allows you to use modern constructs while compiling for backwards compatibility of browsers. Universal Dashboard uses Babel for it's core component frameworks.
+[Babel ](https://babeljs.io/)is a transcompiler for JavaScript. It works well with React and allows you to use modern constructs while compiling for backwards compatibility of browsers. Universal Dashboard uses Babel for it's core component frameworks.
 
 ### Webpack
 
-[Webpack](https://webpack.js.org) is an asset bundler. It's extremely customizable and is responsible for turning your JSX files into a bundle that can then be distributed with Universal Dashboard components.
+[Webpack](https://webpack.js.org/) is an asset bundler. It's extremely customizable and is responsible for turning your JSX files into a bundle that can then be distributed with Universal Dashboard components.
 
 ## Structure
 
@@ -395,6 +395,6 @@ The `children` prop is a standard React prop. If your component supports child i
 
 ## Publishing to the Marketplace
 
-The [Universal Dashboard Marketplace](https://marketplace.universaldashboard.io) is an aggregator of the PowerShell Gallery that lists Universal Dashboard components. The UD Marketplace automatically hooks into PowerShell Universal v1.3 or later where you can easily install additional components.
+The [Universal Dashboard Marketplace](https://marketplace.universaldashboard.io/) is an aggregator of the PowerShell Gallery that lists Universal Dashboard components. The UD Marketplace automatically hooks into PowerShell Universal v1.3 or later where you can easily install additional components.
 
 To publish to the Marketplace, you simply need to publish to the PowerShell Gallery but include the `ud-component` tag in your module manifest. The marketplace syncs with the Gallery every hour and your component will be enabled for anyone to find after that.
