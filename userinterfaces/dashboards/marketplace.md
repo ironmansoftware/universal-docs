@@ -4,7 +4,7 @@ description: The page shows how to use the Universal Dashboard marketplace.
 
 # Marketplace
 
-The [Universal Dashboard Marketplace](https://marketplace.universaldashboard.io) is a PowerShell Gallery module aggregator. It synchronizes with the PowerShell Gallery on an hourly basis to find modules that can be used with Universal Dashboard.
+The [Universal Dashboard Marketplace](https://marketplace.universaldashboard.io/) is a PowerShell Gallery module aggregator. It synchronizes with the PowerShell Gallery on an hourly basis to find modules that can be used with Universal Dashboard.
 
 ## Installing Components from the Gallery
 
@@ -24,7 +24,7 @@ To add the component to a dashboard, navigate to the Dashboard Details and then 
 
 The drawer will show which components are already added and which components can be added. Click the add button to activate the component for the dashboard.
 
-![](<../../.gitbook/assets/image (318) (1).png>)
+![](<../../.gitbook/assets/image (318) (1) (1).png>)
 
 ### Manual Install from the PowerShell Gallery
 

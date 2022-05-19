@@ -14,13 +14,13 @@ To use charts within your dashboard, you will need to add the UniversalDashboard
 
 ## ChartJS
 
-Universal Dashboard integrates with [ChartJS](https://www.chartjs.org).
+Universal Dashboard integrates with [ChartJS](https://www.chartjs.org/).
 
 ### Creating a Chart
 
 To create a chart, use `New-UDChartJS` and `New-UDChartJSData`. The below chart shows the top ten CPU using processes.
 
-![](<../../../../.gitbook/assets/image (157) (1) (2) (2) (2) (2) (1).png>)
+![](<../../../../.gitbook/assets/image (157) (1) (2) (2) (2) (2) (1) (1).png>)
 
 ```
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
@@ -31,7 +31,7 @@ To create a chart, use `New-UDChartJS` and `New-UDChartJSData`. The below chart 
 
 #### Bar
 
-![](<../../../../.gitbook/assets/image (157) (1) (2) (2) (2) (2) (2).png>)
+![](<../../../../.gitbook/assets/image (157) (1) (2) (2) (2) (2) (1) (1) (1).png>)
 
 ```
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 

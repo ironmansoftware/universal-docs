@@ -2,7 +2,7 @@
 
 A Universal Dashboard website is composed of components. In addition to the core component, you can also extend Universal Dashboard with a large set of community created components.
 
-There are two non-framework components that are built into PSU. These include the Nivo charts library as well as the UDMap component. Additional components can be downloaded from the [UD Marketplace](https://marketplace.universaldashboard.io).
+There are two non-framework components that are built into PSU. These include the Nivo charts library as well as the UDMap component. Additional components can be downloaded from the [UD Marketplace](https://marketplace.universaldashboard.io/).
 
 External components are distributed as PowerShell modules and can be used in a dashboard by using `Import-Module`.
 

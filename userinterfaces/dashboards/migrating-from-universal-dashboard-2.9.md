@@ -3,7 +3,7 @@
 PowerShell Universal Dashboard v2.9 is a PowerShell module that allows you to create dashboard with PowerShell script. It is the predecessor to PowerShell Universal. The technology the enabled UD has been migrated into PowerShell Universal. You should be able to run the same PowerShell scripts in PowerShell Universal that you would in Universal Dashboard with some minor modifications.
 
 {% hint style="info" %}
-When looking at the [Universal Dashboard v2 documentation](https://docs.universaldashboard.io), you can click the link at the top of each page to take you to the corresponding documentation for PowerShell Universal.
+When looking at the [Universal Dashboard v2 documentation](https://docs.universaldashboard.io/), you can click the link at the top of each page to take you to the corresponding documentation for PowerShell Universal.
 {% endhint %}
 
 ## Migrating from Universal dashboard to PowerShell Universal
