@@ -4,6 +4,11 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 2.11.0 - 5/20/2022
+
+* Fixed an issue where editing dashboards that had an absolute path would fail
+* Added an error message popup when saving scripts failed.&#x20;
+
 ## 2.10.2 - 5/5/2022
 
 * Fixed an issue where user names over 6 characters couldn't use breakpoints in scripts.&#x20;
