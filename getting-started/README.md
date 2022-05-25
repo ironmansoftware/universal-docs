@@ -72,6 +72,21 @@ The MSI install will create a PowerShell Universal service. By default, PowerShe
 
 MSI downloads are available on our [download page](https://ironmansoftware.com/downloads).&#x20;
 
+### MSI Parameters
+
+The following table contains the parameters you can specify if running `msiexec` against our MSI install for automation purposes.&#x20;
+
+| Parameter              | Description                                                 | Default Value                                 |
+| ---------------------- | ----------------------------------------------------------- | --------------------------------------------- |
+| INSTALLFOLDER          | The installation folder for PowerShell Universal            | %ProgramFiles(x86)%\Universal                 |
+| TCPPORT                | The TCP port the HTTP server will be listening on.          | 5000                                          |
+| REPOFOLDER             | The repository folder to save the configuration files to.   | %ProgramData%\UniversalAutomation\Repository  |
+| CONNECTIONSTRING       | The LiteDB or SQL connection string.                        | %ProgramData%\UniversalAutomation\database.db |
+| DATABASETYPE           | LiteDB or SQL                                               | LiteDB                                        |
+| STARTSERVICE           | Whether to start the service after install (0 or 1)         | 1                                             |
+| SERVICEACCOUNT         | The service account to set for the Windows service          | None                                          |
+| SERVICEACCOUNTPASSWORD | The service account password to set for the Windows Service | None                                          |
+
 ## IIS Install
 
 Please visit the [IIS hosting documentation](../config/hosting/hosting-iis.md) for information on how to configure PowerShell Universal as an IIS website.&#x20;
