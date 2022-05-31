@@ -120,11 +120,11 @@ $Data = @(
 ) 
 
 $Columns = @(
-    New-UDTableColumn -Property Dessert -Title "A Dessert" -Filter -FilterType AutoComplete
-    New-UDTableColumn -Property Calories -Title Calories -Filter -FilterType Range
-    New-UDTableColumn -Property Fat -Title Fat -Filter -FilterType Range
-    New-UDTableColumn -Property Carbs -Title Carbs -Filter -FilterType Range
-    New-UDTableColumn -Property Protein -Title Protein -Filter -FilterType Range
+    New-UDTableColumn -Property Dessert -Title "A Dessert" -ShowFilter -FilterType AutoComplete
+    New-UDTableColumn -Property Calories -Title Calories -ShowFilter -FilterType Range
+    New-UDTableColumn -Property Fat -Title Fat -ShowFilter -FilterType Range
+    New-UDTableColumn -Property Carbs -Title Carbs -ShowFilter -FilterType Range
+    New-UDTableColumn -Property Protein -Title Protein -ShowFilter -FilterType Range
 )
 
 New-UDTable -Id 'customColumnsTable' -Data $Data -Columns $Columns -ShowFilter
