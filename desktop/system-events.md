@@ -4,7 +4,7 @@ description: Launch scripts when certain events happen in Windows.
 
 # System Events
 
-![System Events in the Admin Console](<../.gitbook/assets/image (314).png>)
+![System Events in the Admin Console](<../.gitbook/assets/image (314) (2).png>)
 
 System events subscribe to WMI events within Windows and run scripts. You can then take action by running scripts.&#x20;
 

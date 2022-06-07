@@ -10,7 +10,7 @@ The Stack component manages layout of immediate children along the vertical or h
 
 Horizontally stacked items.&#x20;
 
-![](<../../../../.gitbook/assets/image (314) (2).png>)
+![](<../../../../.gitbook/assets/image (314) (2) (1).png>)
 
 ```powershell
 New-UDStack -Content {

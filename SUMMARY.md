@@ -134,6 +134,7 @@
 * [Cache](platform/cache.md)
 * [Modules](platform/modules.md)
 * [Monitoring](platform/monitoring.md)
+* [Notifications](platform/notifications.md)
 * [Published Folders](platform/published-folders.md)
 * [Templates](platform/templates.md)
 * [Variables](platform/variables.md)
