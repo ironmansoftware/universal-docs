@@ -47,7 +47,7 @@ You can then click the Debug button to open a debug terminal.&#x20;
 
 Once within the debug terminal, you can execute commands as well as continue, step into, step out of and step over lines in the script.&#x20;
 
-![Debug Terminal](<../.gitbook/assets/image (334).png>)
+![Debug Terminal](<../.gitbook/assets/image (334) (1).png>)
 
 Executing commands will execute them directly in the PowerShell Universal runspace. You can inspect variables or execute additional commands in the runspace's context.
 

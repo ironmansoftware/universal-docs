@@ -350,6 +350,21 @@ For example, the service table data would look like this.
 }
 ```
 
+## Collapsible Rows
+
+You can include additional information within the table by using the `-OnRowExpand` parameter of `New-UDTable`. It accepts a ScriptBlock that you can use to return additional components.&#x20;
+
+```powershell
+New-UDTable -Data (Get-Service) -OnRowExpand {
+    New-UDAlert -Text $EventData.DisplayName
+} -Columns @(
+    New-UDTableColumn -Title 'Name' -Property 'Name'
+    New-UDTableColumn -Title 'Status' -Property 'Status'
+)
+```
+
+![](<../../../../.gitbook/assets/image (334).png>)
+
 ## Exporting
 
 Tables support exporting the data within the table. You can export as CSV, XLSX, JSON or PDF. You can define which columns to include in an export and choose to export just the current page or all the data within the table.
