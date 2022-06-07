@@ -68,7 +68,7 @@ New-UDTimeline -Children {
 
 ## Colors
 
-![](<../../../../.gitbook/assets/image (317) (1).png>)
+![](<../../../../.gitbook/assets/image (317) (1) (1).png>)
 
 ```powershell
 New-UDDashboard -Title 'PowerShell Universal' -Content {

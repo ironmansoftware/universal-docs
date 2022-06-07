@@ -312,7 +312,7 @@ By default, endpoints will not time out. To set a timeout for your endpoints, yo
 
 You can define the path to an external endpoint content file by using the `-Path` parameter of `New-PSUEndpoint`. The path is relative to the Repository directory. For example, the file layout would appear like this.&#x20;
 
-![](<../.gitbook/assets/image (317) (1) (1).png>)
+![](<../.gitbook/assets/image (317) (1) (1) (2).png>)
 
 The content of the `endpoints.ps1` file is then this.&#x20;
 

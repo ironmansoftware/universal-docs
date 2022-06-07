@@ -18,6 +18,12 @@ PowerShell Universal uses a least-privileged model and users have no access with
 
 Access controls are defined within the `accessControls.ps1` file within your PowerShell Universal configuration repository.&#x20;
 
+## Admin Console
+
+You can define access controls in the admin console under Security \ Access Controls.&#x20;
+
+![](<../../.gitbook/assets/image (317).png>)
+
 ## Access Control Types
 
 There are five different privileges that can be granted to users. These values are available on the `[PowerShellUniversal.AccessControlType]` enumeration.&#x20;

@@ -4,7 +4,7 @@
 
 Examples of badges containing text, using primary and secondary colors. The badge is applied to its children.
 
-![](<../../../../.gitbook/assets/image (317).png>)
+![](<../../../../.gitbook/assets/image (317) (1).png>)
 
 ```powershell
   New-UDBadge -BadgeContent { 4 } -Children {
