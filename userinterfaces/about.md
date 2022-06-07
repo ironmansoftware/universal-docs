@@ -21,7 +21,7 @@ Some examples of interfaces you can create:&#x20;
 
 ## Pages
 
-![Page Editor](<../.gitbook/assets/image (339).png>)
+![Page Editor](<../.gitbook/assets/image (339) (1).png>)
 
 Pages provide a basic method of creating user interfaces with a drag and drop designer. The controls are more limited, and the logic of your interface is limited to scripts or APIs that you have created with PowerShell Universal.&#x20;
 
