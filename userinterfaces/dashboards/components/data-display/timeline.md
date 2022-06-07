@@ -99,7 +99,7 @@ New-UDDashboard -Title 'PowerShell Universal' -Content {
 
 ## Icons
 
-![](<../../../../.gitbook/assets/image (310).png>)
+![](<../../../../.gitbook/assets/image (310) (1).png>)
 
 ```powershell
 New-UDTimeline -Children {

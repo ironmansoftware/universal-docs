@@ -38,6 +38,12 @@ Custom rules can be defined to match features of a script being run. For example
 
 ![](<../../.gitbook/assets/image (338).png>)
 
+### License
+
+PowerShell Protect requires a PowerShell Pro Tools license for each user that will have the client installed. You can include the license information on the license tab. It will be included as part of the configuration file.&#x20;
+
+![](<../../.gitbook/assets/image (310).png>)
+
 ## Installing a PowerShell Protect Config
 
 Once you have completed your configuration, you can navigate back to the Configurations page and download the XML.&#x20;
@@ -45,3 +51,29 @@ Once you have completed your configuration, you can navigate back to the Configu
 ![](<../../.gitbook/assets/image (302).png>)
 
 You can learn how to install PowerShell Protect configurations [here](https://docs.poshtools.com/powershell-pro-tools-documentation/powershell-protect/configuration).&#x20;
+
+## Events
+
+When you configure a rule to use the Universal action, events will be populated within the Events tab of PowerShell Universal.&#x20;
+
+![](<../../.gitbook/assets/image (344).png>)
+
+## Triggers
+
+When you configure a rule to use the Universal action, events can also trigger scripts. From the Automation \ Triggers page, create a new trigger and set the Event to PowerShell Protect Event. Then, you can choose to filter down which rule causes the trigger to fire.&#x20;
+
+![](<../../.gitbook/assets/image (300).png>)
+
+The `$ProtectEvent` parameter will be passed to your script. This object contains the following properties.&#x20;
+
+| Name            | Type     | Description                                                               |
+| --------------- | -------- | ------------------------------------------------------------------------- |
+| Rule            | String   | The name of the rule that trigger this script.                            |
+| Script          | String   | The content of the script executed.                                       |
+| ContentPath     | String   | The script path. If run from the command line, this will be null.         |
+| ApplicationName | String   | An application name identifier. This may include the application version. |
+| UserName        | String   | The user that ran the script.                                             |
+| ComputerName    | String   | The computer name of where the script ran.                                |
+| Administrator   | Boolean  | Whether or not the user had admin access while running the script.        |
+| DomainName      | String   | The domain name of where the script was run.                              |
+| Timestamp       | DateTime | When the script was run.                                                  |

@@ -26,7 +26,7 @@ A drawer will appear with the variables for the current page.&#x20;
 
 Variables can be used anywhere you can type a property value. For example, if you have an Alert, you could use the `$pagename` variable within the title property.&#x20;
 
-![](<../../.gitbook/assets/image (300).png>)
+![](<../../.gitbook/assets/image (300) (1).png>)
 
 When the page is rendered, the variable will be replaced.&#x20;
 

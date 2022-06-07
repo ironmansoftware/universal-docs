@@ -10,7 +10,7 @@ The Modules page provides information about the modules installed in the system.
 
 You can view and search the modules accessible by PowerShell Universal by visiting the Platform \ Modules page. Searching provides a wildcard result of the modules found in each of the environments defined within PowerShell Universal.&#x20;
 
-![](<../.gitbook/assets/image (310) (1).png>)
+![](<../.gitbook/assets/image (310) (1) (1).png>)
 
 ## Install Modules from the Gallery
 

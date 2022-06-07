@@ -24,7 +24,7 @@ New-UDDashboard -Title "Services" -Pages @(
 
 Add a new IFrame component to the page and within the properties of the page, set the URL to the base URL of the dashboard.&#x20;
 
-![](<../../.gitbook/assets/image (344).png>)
+![](<../../.gitbook/assets/image (344) (1).png>)
 
 When the page loads, it will load the dashboard and display it within the page.&#x20;
 
