@@ -18,6 +18,16 @@ You can define the [environment ](../config/environments.md)that runs the PowerS
 Set-PSUSetting -ApiEnvironment '7.1'
 ```
 
+### Per Endpoint Environment
+
+You can also define the environment used by specifying the Environment on the endpoint itself.&#x20;
+
+```powershell
+New-PSUEndpoint -Url /environment -Environment Integrated -Endpoint {
+    $PSUEnvironment
+}
+```
+
 ### Performance
 
 Performance is relative to the hardware and network conditions that you are running Universal on. That said, in ideal conditions you can expect the Universal APIs to service about 500 requests per second. This is with an entirely empty endpoint so any script that you add to that endpoint will reduce the throughput. The reduction of throughput will depend on the cmdlets and script executed within the API endpoint.
