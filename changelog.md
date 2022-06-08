@@ -6,6 +6,34 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.0.0-rmt1 - 6/8/2022
+
+### Added
+
+* Support for notification levels (Information, Warning, Error)
+* Added support for -OnRowExpand in New-UDTable
+* Added support for Sync-UDElement against new New-UDTable
+* Added support for any type in variable values
+* Display build ID in the admin console
+* Added PowerShell Protect integration
+* Added support for hosting PowerShell Universal in a nested URL
+* Added method selectors to the API endpoint page
+* Added Copy published folder button
+* Add Get-UDTheme and a default Ant Design theme
+
+### Changed
+
+* Settings and Login page scripts now use splatting when saving
+* Fixed an issue where copy and paste would not work in terminals
+* Fixed an issue where live logs would be blank
+* Cleaned up the MSI installer to have better UX
+* Identities now support assigning multiple roles
+* PSU now locates all registered module repositories on the modules page
+* Endpoints now check syntax before saving to endpoints.ps1
+* Merge all fixes from 2.x
+
+
+
 ## 3.0.0-beta7 - 5/12/2022
 
 ### Added
