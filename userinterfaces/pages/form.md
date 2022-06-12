@@ -187,3 +187,35 @@ else
      New-PSUValidationResult -ErrorMessage 'Incorrect name'
 }
 ```
+
+## Smart Properties
+
+Smart properties are hashtables included in the data returned from APIs and Scripts. Tables will automatically translate these hashtables to rendered components when displaying them.
+
+### Links
+
+You can include links by using a hashtable with the `link` type and providing a `url` and `text` property.&#x20;
+
+```powershell
+@{
+    column = @{
+       type = "link"
+       url = "https://ironmansoftware.com"
+       text = "Ironman Software"
+    }
+}
+```
+
+### Images
+
+You can include images by using a hashtable with the `image` type and specifying any valid `img` HTML attributes.&#x20;
+
+```powershell
+@{
+    column = @{
+       type = "image"
+       src = "https://ironmansoftware.com/logo.png"
+       height = "10px"
+    }
+}
+```
