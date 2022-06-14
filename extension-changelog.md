@@ -4,6 +4,11 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 3.0.0 - 6/14/2022
+
+* Added support for viewing all files in the repository
+* Added a notification if a script fails to save&#x20;
+
 ## 2.8.2 - 2/13/2022
 
 * Fixed an issue where saving an endpoint would not work&#x20;
