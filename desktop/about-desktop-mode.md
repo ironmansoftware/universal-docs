@@ -8,7 +8,7 @@ Desktop mode runs PowerShell Universal as a desktop application. It installs to 
 
 ## Install Desktop Mode
 
-To install desktop mode, you can [download ](https://ironmansoftware.com/downloads)the desktop mode installer from our website. You will need the [WebView2 runtime](https://developer.microsoft.com/en-us/microsoft-edge/webview2/) to run desktop mode. This will eventually be included with our installer.
+To install desktop mode, you can [download ](https://ironmansoftware.com/downloads)the desktop mode installer from our website.&#x20;
 
 ## Differences in Desktop Mode
 
