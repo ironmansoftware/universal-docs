@@ -6,6 +6,47 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 2.12.0 - 6/14/2022
+
+#### APIs
+
+* Fixed an issue where booleans would not work in param blocks.
+* Fixed an issue where syntax errors in one endpoint would cause all endpoints to disappear.
+* Fixed an issue where setting the API envrionment to integrated and the default environment to anything else woudl cause the API environment to fail to start
+* Added a better error message when the environment failed to start.
+* Added a warning to the top of the page when the endpoints.ps1 files to parse
+* Fixed an issue where parameters would not be sent to endpoints defined by -Path
+
+#### Automation
+
+* Fixed an issue where the user login trigger would continuously fire when using Windows authentication
+* Improved error reporting when an invalid CRON expression is defined.
+* Fixed an issue where error output would not be shown in the error tab.
+
+#### User Interfaces
+
+* Dashboards: Fixed an issue where UDTreeView leaves would have an expand icon
+* Dashboards: Added -Position to New-UDFloatingActionButton
+* Dashboards: Fixed an issue where -Variant on New-UDTabs was case sensitive
+* Dashboards: Fixed an issue where server-side tables would appear to load forever if no data was returned.
+* Dashboards: Fixed an issue where -GrantAppToken would keep generating app tokens when using Windows Auth
+* Dashboards: Added -DisableSubmitOnEnter to New-UDForm
+* Dashboards: Fixed an issue where form validation text would not use the theme color
+* Pages: Fixed an issue where renaming a page would leave the old page XML file behind.
+* Dashboards: Fixed an issue where -StickyHeader would not work (requires -MaxHeight)
+
+#### Platform
+
+* Fixed an issue where admins couldn't delete other users' app tokens
+* Fixed an issue where non-admins couldn't copy or delete either own app tokens
+* Fixed an issue where an expired online license would cause the service to fail to start
+* Added logoff and back button to the unauthorized page
+* Fixed an issue where creating a module with an invalid version wouldn't present a useful error message
+* Fixed an issue where the client secret would be cleared when setting up OIDC from the admin console
+* Fixed an issue where syntax errors in one role would cause the admin console to become inaccessible
+* Fixed an issue where you could create a published folder with an invalid request path
+* Fixed an issue where add\removing\changing variables would not affect security scripts until after a server restart
+
 ## 2.11.1 - 5/12/2022
 
 ### Changed
