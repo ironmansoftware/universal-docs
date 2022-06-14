@@ -6,6 +6,12 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 2.12.1 - 6/14/2022
+
+#### User Interfaces
+
+* Dashboards: Fixed an issue where New-UDTable would default to a max-height of 0
+
 ## 2.12.0 - 6/14/2022
 
 #### APIs
