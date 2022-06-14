@@ -6,6 +6,11 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.0.1 - 6/14/2022
+
+* Dashboards: Fixed an issue where New-UDTable would default to a max-height of 0
+* Fixed an issue where the v3 UniversalDashboard module was listed as pre-release&#x20;
+
 ## 3.0.0 - 6/14/2022
 
 
