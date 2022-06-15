@@ -61,6 +61,15 @@ You can start the docker container with the run command and make sure to specify
 docker run -it --name powershelluniversal --mount source=psudata,target=/home/data --rm -d  -p 5000:5000/tcp universal-persistent:latest
 ```
 
+### SQL
+
+To use SQL persistence, you can define the plugin and connection string as follows.&#x20;
+
+```
+ENV Data__ConnectionString=Data Source=ServerName; Initial Catalog=DatabaseName; Integrated Security=SSPI;
+ENV Plugins:0=SQL
+```
+
 ## Time Zones
 
 To properly support time zones on Linux when scheduling jobs, you will need to include the `tzdata` package in your dockerfile along with an environment variable that specifies the server time zone.&#x20;
