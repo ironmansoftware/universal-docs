@@ -110,6 +110,7 @@
   * [Alerts](userinterfaces/pages/alerts.md)
   * [Bar Chart](userinterfaces/pages/bar-chart.md)
   * [Button](userinterfaces/pages/button.md)
+  * [Card](userinterfaces/pages/card.md)
   * [Form](userinterfaces/pages/form.md)
   * [iFrame](userinterfaces/pages/iframe.md)
   * [Image](userinterfaces/pages/image.md)
