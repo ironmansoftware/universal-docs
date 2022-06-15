@@ -6,7 +6,7 @@ description: Autocomplete component for Universal Dashboard
 
 The autocomplete is a normal text input enhanced by a panel of suggested options.
 
-## Autocomplete with a static list of options
+## Static List of Options
 
 Creates a basic autocomplete with a static list of options
 
@@ -14,7 +14,7 @@ Creates a basic autocomplete with a static list of options
 New-UDAutocomplete -Options @('Test', 'Test2', 'Test3', 'Test4')
 ```
 
-## Autocomplete with a dynamic list of options
+## Dynamic List of Options
 
 When text is typed, it can be filtered with `OnLoadOptions`. `$Body` will contain the current text that is typed.&#x20;
 
@@ -26,9 +26,9 @@ New-UDAutocomplete -OnLoadOptions {
 }
 ```
 
-## Autocomplete with an OnChange script block
+## OnChange
 
-`$Body` contains the currently selected item.&#x20;
+`$Body` contains the currently selected item. The OnChange event will fire when the user selects one or more items.
 
 ```powershell
 New-UDAutocomplete -OnLoadOptions { 
@@ -36,6 +36,26 @@ New-UDAutocomplete -OnLoadOptions {
 } -OnChange {
     Show-UDToast $Body 
 }
+```
+
+## Icon&#x20;
+
+![](<../../../../.gitbook/assets/image (383).png>)
+
+You can place an icon before an autocomplete by using the `-Icon` parameter.
+
+```powershell
+New-UDAutocomplete -Options @("Test", "No", "Yes") -Icon (New-UDIcon -Icon 'Users') 
+```
+
+## OnEnter
+
+OnEnter is triggered when the user presses the enter key within the autocomplete.
+
+```powershell
+New-UDAutocomplete -Options @("Test", "No", "Yes") -onEnter {
+    Show-UDToast ((Get-UDElement -Id 'ac').value)
+} -Id 'ac'
 ```
 
 ## API
