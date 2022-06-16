@@ -20,7 +20,7 @@ PowerShell Protect is configured via XML. PowerShell Universal can be used to cr
 
 Default rules are configured that will block certain behaviors without additional configuration. You can choose to disable any rules you may not desire to enforce.&#x20;
 
-![](<../../.gitbook/assets/image (348).png>)
+![](<../../.gitbook/assets/image (348) (1).png>)
 
 ### Actions&#x20;
 

@@ -8,7 +8,7 @@ PowerShell Universal can generate notifications for numerous reasons. These can 
 
 Notifications are available by clicking the bell icon within the admin console.&#x20;
 
-![](<../.gitbook/assets/image (314).png>)
+![](<../.gitbook/assets/image (314) (2).png>)
 
 You can view all notifications by clicking the View All button.&#x20;
 

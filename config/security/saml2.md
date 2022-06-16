@@ -73,6 +73,47 @@ Set-PSUAuthenticationMethod `
 }
 ```
 
+## Example: Okta
+
+This example shows how to configure Okta SAML2 authentication for use with PowerShell Universal.&#x20;
+
+Within Okta, you will need to configure your application similar to the following. HTTPS is required by SAML2, and you will need to include the URL for your PSU instance in the Single Sign On URL, followed by `/Saml2/Acs`. The path is case sensitive.&#x20;
+
+The Audience Restriction should be the URL of your PowerShell Universal server.&#x20;
+
+![](<../../.gitbook/assets/image (348).png>)
+
+In order for your users to access PowerShell Universal, you will need to ensure they have been assigned to the Okta application.&#x20;
+
+![](<../../.gitbook/assets/image (416).png>)
+
+Within the Sign On tab of your application, click the View SAML setup instructions button.&#x20;
+
+![](<../../.gitbook/assets/image (314).png>)
+
+You will need to capture the two URLs and download the certificate for configuring PowerShell Universal. See the next step on how to use these URLs within the `authentication.ps1` file.&#x20;
+
+### authentication.ps1
+
+The authentication.ps1 file is used for configuring PowerShell Universal.&#x20;
+
+```powershell
+Set-PSUAuthenticationMethod -Type "Saml2" `
+-EntityId "https://localhost:5001" `
+-IdentityProviderEntityId "http://www.okta.com/exk5dvbyzgASPiOFp5d7" `
+-CallbackPath "https://localhost:5001" `
+-SigningKey "C:\Users\adamr\Downloads\okta.cert" `
+-SingleSignOnServiceUrl "https://dev-36706648.okta.com/app/dev-36706648_psusaml_1/exk5dvbyzgASPiOFp5d7/sso/saml"
+```
+
+| Parameter                | Description                                                                                | Type   |
+| ------------------------ | ------------------------------------------------------------------------------------------ | ------ |
+| EntityId                 | This value should match what you put in Audience Restriction within Okta.                  | string |
+| IdentityProviderEntityId | This is the value that was presented in the View SAML setup instructions page.             | string |
+| CallbackPath             | This is the path that the user will be redirected to if no redirect path was provided      | string |
+| SigningKey               | This is the certificate file that was downloaded on the View SAML setup instructions page. | string |
+| SingleSignOnServiceUrl   | This is the sign on URL that was provided on the View SAML setup instructions page.        | string |
+
 ## Example: Shibboleth
 
 This example shows how to configure Shibboleth for use with PowerShell Universal. It provides the very basic configuration and does not necessarily follow best practices.&#x20;
