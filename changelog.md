@@ -6,6 +6,20 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 2.12.2 - 6/16/2022
+
+#### Automation
+
+* Fixed an issue where Get-PSUJob would not honor -OrderBy or -OrderDirection
+
+#### Dashboard
+
+* Fixed an issue where Invoke-UDEndpoint couldn't use $Session variables
+
+#### Platform
+
+* Fixed an issue where SAML2 authentication would not work with Okta.
+
 ## 2.12.1 - 6/14/2022
 
 #### User Interfaces
