@@ -155,3 +155,36 @@ Some versions of Windows Server (like 2012R2), do not support HTTP2. To disable 
 ```
 
 For a full set of listening options, you can refer to the [ASP.NET Core Documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-3.1#listenoptionsusehttps).
+
+## Example: Self-Signed Certificate&#x20;
+
+In this example, we'll show how to create a self-signed certificated and use it with PowerShell Universal.&#x20;
+
+First, create a self-signed certificate and store it into your local machine store. You will need to run PowerShell as administrator. The local machine store is required because PowerShell Universal may be running as service and not as your account.&#x20;
+
+```powershell
+New-SelfSignedCertificate -DnsName localhost -CertStoreLocation cert:\LocalMachine\My
+```
+
+Next, you'll need to configure PowerShell Universal to use the certificate. This can be accomplished by editing or creating the `appsettings.json` file in `%ProgramData%\PowerShellUniversal`. This file should already exist if you installed with the MSI installer. The contents of the file should include the DNS name of your certificate and the location.&#x20;
+
+For self-signed certificates, you will need to include the `AllowInvalid` option.&#x20;
+
+```json
+{
+  "Kestrel": {
+    "Endpoints": {
+      "HTTPS": {
+         "Url": "https://*:443",
+           "Certificate": {
+             "Subject": "localhost",
+             "Store": "My",
+             "Location": "LocalMachine",
+             "AllowInvalid": "true"
+           }
+      }
+   }
+}
+```
+
+Once you have updated the `appsettings.json` file, restart the PowerShell Universal service. You should now be able to access your PowerShell Universal web site at `https://localhost`.
