@@ -97,6 +97,30 @@ New-PSUEndpoint -Url "/api/v1.0/CWE914Test" -Description "Not Vulnerable to CWE-
 }
 ```
 
+## Headers
+
+Request headers are available in APIs using the `$Headers` variable. The variable is a hashtable. To access a header, use the following syntax.&#x20;
+
+```powershell
+$Headers['Content-Type']
+```
+
+## Cookies
+
+Request cookies are availablein APIs using the `$Cookies` variable. The variable is a hashtable. To access a cookie, use the following syntax.&#x20;
+
+```powershell
+$Cookies['Request-Cookie']
+```
+
+Request cookies can be sent back using the `New-PSUApiResponse` cmdlet. Use the `-Cookies` parameter with a supplied hashtable.&#x20;
+
+```powershell
+New-PSUApiResponse -StatusCode 200 -Cookies @{
+    ResponseCookie = '123'
+}
+```
+
 ## Body
 
 To access a request body, you will simply access the `$Body` variable. Universal `$Body` variable will be a string. If you expect JSON, you should use `ConvertFrom-Json`.
