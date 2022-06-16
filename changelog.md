@@ -6,6 +6,35 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.0.2 - 6/16/2022
+
+#### APIs
+
+* Fixed display issue with Endpoint folder view
+
+#### User Interfaces
+
+* Dashboards: Fixed an issue where certain theme properties would not be set (for example, body1 typography)
+* Dashboards: Fixed an issue where New-UDIconButton -OnClick would not receive all variables
+* Dashboards: Fixed an issue where the session timeout modal had an error where the refresh button should be.
+* Dashboards: Fixed an issue where Invoke-UDEndpoint couldn't use $Session variables
+* Dashboards: Fixed an issue where component padding and margin was incorrect for UDPaper, UDCard, UDAppBar, UDBButton, UDChip, and UDIconButton
+* Pages: Fixed an issue where a card would show an error if data was not loaded correctly
+
+#### Automation
+
+* Fixed an issue where Get-PSUJob would not honor -OrderBy or -OrderDirection
+* Fixed an issue where navigating to a job from the failed jobs page would result in a blank page
+
+#### Platform
+
+* Fixed an issue where Okta SAML2 would not work with PSU.
+* Fixed an issue where the Universal module was not imported automatically and secrets would fail to load
+* Fixed an issue where the Universal module could be loaded from elsewhere on the system causing an assembly load error due to the wrong version being loaded.
+* Fixed an issue where Git status would be returned in ascending order
+* Fixed an issue where the MSI installer would prompt for configuration options during an upgrade.
+* Fixed an issue where online license keys would fail to activate when using SQL persistence
+
 ## 3.0.1 - 6/14/2022
 
 * Dashboards: Fixed an issue where New-UDTable would default to a max-height of 0
