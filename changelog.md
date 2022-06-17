@@ -6,6 +6,13 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.0.3 - 6/17/2022
+
+#### Platform
+
+* Fixed an issue where creating a string secret variable would not set the secret in the vault
+* Fixed an issue where updating environments would create corrupt environments.ps1 files
+
 ## 3.0.2 - 6/16/2022
 
 #### APIs
