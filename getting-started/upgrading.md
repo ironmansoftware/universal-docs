@@ -84,13 +84,9 @@ When upgrading an manual ZIP file installation, you will need to stop the applic
 
 ## MSI Upgrade
 
-To upgrade using the MSI, you can simply run the new version of the MSI. The MSI is setup to always perform a major upgrade. This means it will stop and remove the service, delete the entire installation directory, reinstall with the new files and then install and start the new service.
+To upgrade using the MSI, you can simply run the new version of the MSI.&#x20;
 
 You will want to follow the guide on data and configuration persistence above to ensure all your settings are saved.
-
-{% hint style="warning" %}
-If you have configured a service account for your MSI installation, you will need to set the service account after upgrading.
-{% endhint %}
 
 
 
