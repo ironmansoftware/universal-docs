@@ -84,7 +84,7 @@ When upgrading an manual ZIP file installation, you will need to stop the applic
 
 ## MSI Upgrade
 
-To upgrade using the MSI, you can simply run the new version of the MSI.&#x20;
+To upgrade using the MSI, you can simply run the new version of the MSI. If you are upgrading from PowerShell Universal v2, you will need to uninstall and then upgrade to the new version.&#x20;
 
 You will want to follow the guide on data and configuration persistence above to ensure all your settings are saved.
 
