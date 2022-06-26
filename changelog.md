@@ -6,6 +6,35 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.0.4 - 6/26/2022
+
+#### APIs
+
+* Fixed an issue where endpoints defined by path would not reload when the target file changed on disk
+* Fixed an issue where the endpoint test card would show a JavaScript error in the admin console
+
+#### Dashboards
+
+* Fixed an issue where New-Guid would not be found
+* Fixed an issue where the DateTime filter for New-UDTable would display a JavaScript error
+* Fixed an issue where -Title would not do anything when using New-UDPage
+* Fixed an issue where -ShowRefresh would not do anything when specified on New-UDTable
+* Fixed an issue where Invoke-UDEndpoint wouldn't properly setup the endpoint execution environment
+
+#### Pages
+
+* Fixed an issue where the validation API could not be cleared from a Form
+
+#### Automation
+
+* Fixed an issue with folder view for APIs not showing endpoints that were not part of a folder
+* Fixed an issue where scripts would default to SilentlyContinue
+
+#### Platform
+
+* Fixed an issue where the modules page could present a javaScript error
+* Fixed an issue with path autocompletion
+
 ## 3.0.3 - 6/17/2022
 
 #### Platform
