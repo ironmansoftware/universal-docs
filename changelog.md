@@ -6,6 +6,12 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.0.5 - 6/26/2022
+
+#### Platform
+
+* Rollback change to admin console due to issues with IntelliSense
+
 ## 3.0.4 - 6/26/2022
 
 #### APIs
