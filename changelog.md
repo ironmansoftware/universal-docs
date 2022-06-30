@@ -6,6 +6,12 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.0.6 - 6/30/2022
+
+#### Platform
+
+* Fixed an issue where PSModulePath was in an incorrect order causing modules to fail to load in Windows PowerShell
+
 ## 3.0.5 - 6/26/2022
 
 #### Platform
