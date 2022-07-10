@@ -94,3 +94,14 @@ You will want to follow the guide on data and configuration persistence above to
 
 When upgrading with IIS, you will need to first stop your application pool to ensure that the binaries used by IIS are no longer in use and then replace the binaries with the new ones. Ensure that you follow the configuration persistence recommendations above with regards to the `web.config` file.
 
+## Universal and UniversalDashboard Modules
+
+When upgrading versions of PowerShell Universal, it is recommended to uninstall any previous versions of the `Universal` or `UniversalDashboard` modules you may have installed on the system. Having previous versions can cause problems with the PowerShell Universal server.&#x20;
+
+To verify if you have previous versions installed, you can use the following command.&#x20;
+
+```
+Get-Module Universal -ListAvailable
+Get-Module UniversalDashboard -ListAvailable
+```
+
