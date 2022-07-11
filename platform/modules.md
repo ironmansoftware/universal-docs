@@ -36,3 +36,26 @@ When editing the module, it will open a code editor where you can define functio
 
 ![](<../.gitbook/assets/image (393).png>)
 
+## Module Information
+
+This section includes information about certain modules and their use within PowerShell Universal.
+
+### ActiveDirectory
+
+The `ActiveDirectory` module supports native PowerShell 7 support when using the 1.0.1.0 version. When using the 1.0.0.0 version, the Windows Compatibility layer is used when running the commands in PowerShell 7 and the Integrated environment. This can cause problems within PowerShell Universal. Our guidance for this module is as follows.&#x20;
+
+#### Windows Server 2019 and above
+
+Update the `ActiveDirectory` module to version 1.0.1.0 which has PowerShell Core support
+
+#### Windows Server 2016 and below
+
+Choose from 1 of 2 available workarounds:
+
+* Include the `-SkipEditionCheck` parameter with **Import-Module** when importing the ActiveDirectory module
+* Use the Windows PowerShell 5.1 environment instead of Integrated/PowerShell Core
+
+#### Further Reading
+
+[https://devblogs.microsoft.com/powershell/increased-windows-modules-coverage-with-powershell-core-6-1/](https://devblogs.microsoft.com/powershell/increased-windows-modules-coverage-with-powershell-core-6-1/)
+
