@@ -45,4 +45,5 @@ Universal can be used forever for free with the following limitations.
 ### Platform
 
 * No debugging tools
+* No SQL Server Support
 
