@@ -42,6 +42,14 @@ New-UDDatePicker -Locale fr
 
 ![](<../../../../.gitbook/assets/image (235).png>)
 
+## Minimum and Maximum
+
+By default, the user can select any date. To specify minimum and maximum dates, using the `-Minimum` and `-Maximum` parameters.&#x20;
+
+```powershell
+New-UDDatePicker -Minimum ((Get-Date).AddDays(-15)) -Maximum ((Get-Date).AddDays(15))
+```
+
 ## API
 
 * [New-UDDatePicker](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDDatePicker.txt)
