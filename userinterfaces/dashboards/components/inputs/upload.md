@@ -15,7 +15,7 @@ Uploads a file and shows the contents via a toast.
 ```powershell
 New-UDUpload -OnUpload {
     Show-UDToast $Body
-}
+} -Text 'Upload'
 ```
 
 The body of the `OnUpload` script block is a JSON string with the following format.
@@ -47,7 +47,7 @@ Uploads a file as part of a UDForm.
 
 ```powershell
 New-UDForm -Content {
-    New-UDUpload -Id 'myFile' 
+    New-UDUpload -Id 'myFile' -Text 'Upload File'
 } -OnSubmit {
     Show-UDToast $Body 
 }

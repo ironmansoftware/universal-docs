@@ -43,3 +43,17 @@ If you navigate away from PowerShell Universal, the terminal will go idle. You c
 ![Reconnect to a Terminal](<../.gitbook/assets/image (400).png>)
 
 Terminals will time out automatically after 5 minutes. You can customize the timeout by setting the `-IdleTimeout` parameter of `New-PSUTerminal`.
+
+## History
+
+Terminal history can be enabled per terminal configuration.&#x20;
+
+![](<../.gitbook/assets/image (348).png>)
+
+When terminal history is enabled, you will be able to view the history of all commands that were executed within the terminal. Click the View Command History button for the instance in question.
+
+![](<../.gitbook/assets/image (339).png>)
+
+You will be able to review what the command was that ran, when it was ran, who started the terminal and what the output of the command was.&#x20;
+
+![](<../.gitbook/assets/image (412).png>)

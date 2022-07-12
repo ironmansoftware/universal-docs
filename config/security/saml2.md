@@ -81,7 +81,7 @@ Within Okta, you will need to configure your application similar to the followin
 
 The Audience Restriction should be the URL of your PowerShell Universal server.&#x20;
 
-![](<../../.gitbook/assets/image (348).png>)
+![](<../../.gitbook/assets/image (348) (1).png>)
 
 In order for your users to access PowerShell Universal, you will need to ensure they have been assigned to the Okta application.&#x20;
 

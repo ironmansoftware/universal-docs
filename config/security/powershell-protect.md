@@ -20,7 +20,7 @@ PowerShell Protect is configured via XML. PowerShell Universal can be used to cr
 
 Default rules are configured that will block certain behaviors without additional configuration. You can choose to disable any rules you may not desire to enforce.&#x20;
 
-![](<../../.gitbook/assets/image (348) (1).png>)
+![](<../../.gitbook/assets/image (348) (1) (2).png>)
 
 ### Actions&#x20;
 
@@ -30,7 +30,7 @@ Actions are the result of custom rules triggering based on scripts being run. Yo
 
 Depending on the action selected, you will need to include additional settings. For example, to integrate with PowerShell Universal, you will need to define the HTTP address of the PSU server and an app token used to authenticate against PSU.&#x20;
 
-![](<../../.gitbook/assets/image (339).png>)
+![](<../../.gitbook/assets/image (339) (1).png>)
 
 ### Custom Rules&#x20;
 
