@@ -54,6 +54,19 @@ New-UDButton -Text 'Message Box' -OnClick {
 }
 ```
 
+## Loading Button
+
+![](<../../../../.gitbook/assets/image (371).png>)
+
+Loading buttons will display a loading icon while an event handler is running. This is useful for longer running events.&#x20;
+
+```powershell
+New-UDButton -Text 'Message Box' -OnClick {
+    Show-UDToast -Message 'Hello, world!'
+    Start-Sleep 10
+} -ShowLoading
+```
+
 ## API
 
 * [New-UDButton](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDButton.txt)
