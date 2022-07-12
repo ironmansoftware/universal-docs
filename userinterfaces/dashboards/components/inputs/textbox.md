@@ -74,21 +74,28 @@ New-UDTextbox -Id "ServerGroups" -Icon (New-UDIcon -Icon 'server') -Value "This 
 
 ## Mask
 
-You can define a text mask with a combination of strings and regular expressions. To specify a regular expression, use the JavaScript syntax in your string to start and finish the expression: `/\d/`.
+The textbox mask is accomplished using react-imask. You can specify RegEx and pattern matching.&#x20;
+
+* [Pattern Mask](https://imask.js.org/guide.html#masked-pattern)
+* [RegEx Mask](https://imask.js.org/guide.html#masked-base)
 
 This example creates a mask for US based phone numbers.
 
 ```powershell
-New-UDTextbox -Mask @('+', '1', ' ', '(', '/[1-9]/', '/\d/', '/\d/', ')', ' ', '/\d/', '/\d/', '/\d/', '-', '/\d/', '/\d/', '/\d/', '/\d/')
+New-UDTextbox -Mask "+1 (000) 000-0000"
 ```
 
 ![](<../../../../.gitbook/assets/image (165).png>)
 
-## OnEnter
+### Unmasking&#x20;
 
-{% hint style="info" %}
-Available in PowerShell Universal 2.9 or later.&#x20;
-{% endhint %}
+The default behavior of `-Mask` is to return the masked value in forms and `Get-UDElement`. You can return the unmasked value by specifying the `-Unmask` parameter.&#x20;
+
+```powershell
+New-UDTextbox -Mask "+1 (000) 000-0000" -Unmask
+```
+
+## OnEnter
 
 The `-OnEnter` event handler is executed when the user presses enter in the text field. It is useful for performing other actions, like clicking a button, on enter.&#x20;
 
