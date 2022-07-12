@@ -4,7 +4,21 @@ description: Git integration for PowerShell Universal.
 
 # Git
 
-PowerShell Universal is capable of synchronizing the configuration scripts with a remote git repository. You can use the [Configuration settings](settings.md) to setup git sync.
+PowerShell Universal is capable of synchronizing the configuration scripts with a remote git repository.&#x20;
+
+## Configuration
+
+### Database
+
+Git sync can be configured in the database. This is the preferred approach when using SQL persistence. The benefit is that when you connect new instances of PowerShell Universal to your SQL instance, you will not need to configure git sync again.&#x20;
+
+To configure git sync, navigate to Settings \ Git within the Admin Console. You will be able to click the Git Settings button.&#x20;
+
+![](<../.gitbook/assets/image (359).png>)
+
+### appsettings.json&#x20;
+
+You can also use the [Configuration settings](settings.md) to setup git sync. This is useful if you have a single instance of PSU and would like to back up your appsettings.json file.&#x20;
 
 ## Preparing for the first Git Sync
 
@@ -63,6 +77,18 @@ The git status page lists the synchronized repository, branch and the list of co
 
 ![](<../.gitbook/assets/image (273).png>)
 
+### Testing Git Sync
+
+The best way to ensure that your git sync is working properly is to click the Synchronize Now button. This will force a sync to run, and you can verify whether the settings entered worked properly.&#x20;
+
+![](<../.gitbook/assets/image (348).png>)
+
+### Viewing Changes
+
+You can view changes within the table of git syncs. Each sync includes the number of changes found since the last sync, the SHA of the commit and a list of changes between that SHA and the previous one. When files are in a modified state, you will be able to view the diffs using the file diff tool.&#x20;
+
+![](<../.gitbook/assets/image (435).png>)
+
 ## Git Synchronization Behavior
 
 ### Two-Way
@@ -94,10 +120,6 @@ You can adjust the git synchronization behavior by changing the `GitSyncBehavior
 ```
 
 ### Push-Only
-
-{% hint style="info" %}
-PowerShell Universal 2.6 or later.&#x20;
-{% endhint %}
 
 Push-only git sync mode will not pull changes from the remote. Any changes made locally will be pushed up to the remote. The console will not be read-only. This configuration is useful for scenarios where you have one machine that is used to for the source-of-truth configuration for a pool of servers that are read-only.&#x20;
 

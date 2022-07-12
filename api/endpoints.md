@@ -142,7 +142,7 @@ Invoke-RestMethod http://localhost:5000/user -Method Post -Body "{'username': 'a
 
 You can view the live log information for any endpoint by clicking the log tab. Live logs include URL, HTTP method, source IP address, PowerShell streams, status code, return Content Type and HTTP content length.&#x20;
 
-![](<../.gitbook/assets/image (358) (2).png>)
+![](<../.gitbook/assets/image (358) (2) (1).png>)
 
 ## Form Data
 

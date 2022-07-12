@@ -48,7 +48,7 @@ Terminals will time out automatically after 5 minutes. You can customize the tim
 
 Terminal history can be enabled per terminal configuration.&#x20;
 
-![](<../.gitbook/assets/image (348).png>)
+![](<../.gitbook/assets/image (358).png>)
 
 When terminal history is enabled, you will be able to view the history of all commands that were executed within the terminal. Click the View Command History button for the instance in question.
 
