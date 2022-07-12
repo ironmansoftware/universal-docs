@@ -76,6 +76,20 @@ New-UDButton -Text 'Basic' -OnClick {
 }
 ```
 
+## Styling
+
+You can style modules using the `-Style`, `-HeaderStyle`, `-ContentStyle` and `-FooterStyle` parameters. Style is applied to the entire modal itself and the individual section styles are only applied to those sections. The value for these parameters are hashtables of CSS values.&#x20;
+
+```powershell
+New-UDButton -Text 'Styling' -OnClick {
+    Show-UDModal -Content {
+        New-UDTypography -Text "Hello"
+    } -Style @{
+        backgroundColor = "red"
+    }
+}
+```
+
 ## API
 
 * [Show-UDModal](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Show-UDModal.txt)
