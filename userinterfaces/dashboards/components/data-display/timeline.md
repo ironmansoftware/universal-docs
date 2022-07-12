@@ -39,7 +39,7 @@ New-UDTimeline -Children {
 
 ## Alternating Timeline
 
-![](<../../../../.gitbook/assets/image (301).png>)
+![](<../../../../.gitbook/assets/image (301) (1).png>)
 
 ```powershell
 New-UDTimeline -Children {

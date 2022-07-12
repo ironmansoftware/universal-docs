@@ -438,7 +438,7 @@ New-UDDashboard -Theme $theme -Title "Onepirate" -Content {
 
 ### Paperbase
 
-![Paperbase in Universal Dashboard](<../../../.gitbook/assets/image (326) (1).png>)
+![Paperbase in Universal Dashboard](<../../../.gitbook/assets/image (326) (1) (1).png>)
 
 Based on the Material UI theme, [Paperbase](https://material-ui.com/store/previews/paperbase/).&#x20;
 

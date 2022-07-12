@@ -8,7 +8,7 @@ description: PowerShell Protect integration for PowerShell Universal.
 
 You can access PowerShell Protect tooling by navigating to Security \ Protect.&#x20;
 
-![](<../../.gitbook/assets/image (326).png>)
+![](<../../.gitbook/assets/image (326) (1).png>)
 
 ## Configuring PowerShell Protect
 

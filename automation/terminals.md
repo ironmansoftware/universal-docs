@@ -52,7 +52,7 @@ Terminal history can be enabled per terminal configuration.&#x20;
 
 When terminal history is enabled, you will be able to view the history of all commands that were executed within the terminal. Click the View Command History button for the instance in question.
 
-![](<../.gitbook/assets/image (339).png>)
+![](<../.gitbook/assets/image (340).png>)
 
 You will be able to review what the command was that ran, when it was ran, who started the terminal and what the output of the command was.&#x20;
 

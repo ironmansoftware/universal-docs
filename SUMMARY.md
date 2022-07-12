@@ -138,6 +138,7 @@
 * [Notifications](platform/notifications.md)
 * [Published Folders](platform/published-folders.md)
 * [Templates](platform/templates.md)
+* [Translations](platform/translations.md)
 * [Variables](platform/variables.md)
 
 ## Configuration <a href="#config" id="config"></a>

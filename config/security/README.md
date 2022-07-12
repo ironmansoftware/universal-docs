@@ -274,7 +274,7 @@ To assign a role to a user, you can create their identity within Universal and t
 
 By default, identities receive a role through claim mapping or policy.
 
-![](<../../.gitbook/assets/image (340).png>)
+![](<../../.gitbook/assets/image (340) (1).png>)
 
 ### Built in Roles
 
