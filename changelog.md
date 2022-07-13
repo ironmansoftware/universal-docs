@@ -6,6 +6,17 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.1.1 - 7/13/2022
+
+#### Dashboard
+
+* Fixed an issue where New-UDTextbox -Mask's label wasn't aligned correctly.
+* Fixed styling of the No Data cell in server-side UDTables
+
+#### Platform
+
+* Fixed issues editing translations in the admin console
+
 ## 3.1.0 - 7/11/2022
 
 #### APIs
