@@ -44,6 +44,16 @@ New-UDTabs -Tabs {
 } -RenderOnActive
 ```
 
+## Icons
+
+```powershell
+New-UDTabs -Tabs {
+    New-UDTab -Text 'Item One' -Content { New-UDTypography -Text 'Item One' -Variant 'h2' } -Icon (New-UDIcon -Icon Users)
+    New-UDTab -Text 'Item Two' -Content { New-UDTypography -Text 'Item Two' -Variant 'h2' } -Icon (New-UDIcon -Icon Desktop)
+    New-UDTab -Text 'Item Three' -Content { New-UDTypography -Text 'Item Three' -Variant 'h2' } -Icon (New-UDIcon -Icon Exclamation)
+}
+```
+
 ## API
 
 * [New-UDTabs](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDStepper.txt)
