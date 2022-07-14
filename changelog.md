@@ -6,6 +6,20 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.1.2 - 7/14/2022
+
+#### Automation
+
+* Disabled Hangfire automatic retry of jobs because it would cause problems with SQL persistence
+* Fixed an issue where terminal commands would not complete successfully when using SQL persistence
+* Fixed an issue where Invoke-PSUScript -Integrated wouldn't work when using SQL persistence
+
+#### Platform
+
+* Fixed an issue where the Name of the language was not displayed in the translations page
+* Fixed an issue where problems with the roles.ps1 file would prevent access to PSU. The platform will now fallback to the default roles if there are issues.
+* Fixed an issue where notifications would not be displayed when using SQL persistence
+
 ## 3.1.1 - 7/13/2022
 
 #### Dashboard
