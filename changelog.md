@@ -6,6 +6,28 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.1.3 - 7/15/2022
+
+#### Automation
+
+* Fixed an exception that could be thrown while cleaning up schedules jobs that could result in job failures
+* Fixed an issue where terminals would not start when using SQL persistence
+* Fixed an issue where jobs could be retried even after the script was deleted when using SQL persistence.
+
+#### Dashboards
+
+* Fixed an issue where New-UDAutoComplete wouldn't display the selected items
+
+#### Pages
+
+* Fixed an issue where certain buttons weren't visible in the dark theme
+* Fixed an issue where failures to load the page's data source would cause the page to fail to load completely
+
+#### Platform
+
+* Fixed an issue with persisting the git sync interval setting
+* Fixed an issue with ARM64
+
 ## 3.1.2 - 7/14/2022
 
 #### Automation
