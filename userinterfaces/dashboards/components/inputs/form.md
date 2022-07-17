@@ -209,6 +209,49 @@ New-UDForm -Schema @{
 }
 ```
 
+{% hint style="warning" %}
+Note that the properties need to be lower case! For example, you need to ensure the keys in your properties hashtable are lower case and the list of required properties are also lower case.&#x20;
+{% endhint %}
+
+```powershell
+New-UDForm -Schema @{
+	title = "Test"
+	type = "object"
+	properties = @{
+	  hostname = @{
+		  title = "Hostname"
+		  type = "string"
+	  }
+	  ipaddress= @{
+		  title = "IP Address"
+		  type = "string"
+		  format = "ipv4"
+	  }
+	  description = @{
+		  title = "Server Description"
+		  type = "string"
+	  }
+	  servertype = @{
+		  title = "Server Type"
+		  type = "string"                            
+		  enum = "App","DB"
+	  }
+	  environment = @{
+		  title = "Environment"
+		  type = "string"
+		  enum = "Prod", "Dev" , "QA"
+	  }
+	}
+	required = @('hostname','ipaddress','description','servertype','environment')                    
+	} -OnSubmit {
+	Show-UDModal -Content {                        
+	  New-UDTypography -Text $EventData.formData
+	} -Footer {
+	  New-UDButton -Text "Close" -OnClick {Hide-UDModal}
+	} -Persistent
+}
+```
+
 ### Arrays
 
 You can create forms that accept 0 to many objects. The user will be able to add and remove objects to the form.&#x20;
