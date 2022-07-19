@@ -200,6 +200,12 @@ For more information, you can follow the Microsoft documentation for configuring
 
 [Configuring a Linux or Mac OS machine for Windows Authentication](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/windowsauth?view=aspnetcore-3.1\&tabs=visual-studio#linux-and-macos-environment-configuration)
 
+### Cached Claims
+
+PowerShell Universal will cache group membership claims when using Windows Authentication. Claims are cached for the configured session timeout value (default is 25 minutes).&#x20;
+
+To clear the cache manually, navigate to Security \ Roles and click the Clear Cached Claims button.&#x20;
+
 ## Authorization
 
 User authorization is accomplished with roles. Roles can either be assigned through claims mapping, a policy script or by assigning the role directly to the identity.
