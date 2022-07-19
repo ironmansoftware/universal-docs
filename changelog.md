@@ -6,6 +6,24 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.1.4 - 7/19/2022
+
+#### Automation
+
+* Fixed an issue where Invoke-PSUScript could throw an object reference exception when using -Wait and -Integrated and no data was returned
+* Fixed an issue where Invoke-PSUScript would not return Information output
+
+#### Dashboards
+
+* Fixed an issue where New-UDAutocomplete would not display icon
+
+#### Platform
+
+* Fixed an issue where naming a variable Database would cause issues with PSU configuration
+* Fixed an issue where the Modules folder was returned in the script view.
+* Fixed an issue where the translation provider would conflict with local T drives (TL drive now available)
+* Fixed an issue where translation strings with single quotes would cause issues with the saved translation files
+
 ## 3.1.3 - 7/15/2022
 
 #### Automation
