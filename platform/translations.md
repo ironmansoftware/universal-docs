@@ -26,17 +26,21 @@ Once you have created the language, you can begin to add strings to it by click 
 
 ## Using Strings
 
-To use a string, you will take advantage of the new `$t:` provider. Using this provider in your scripts will automatically translate the key to the string for the user's language.&#x20;
+To use a string, you will take advantage of the new `$tl:` provider. Using this provider in your scripts will automatically translate the key to the string for the user's language.&#x20;
 
 For example, you would use the variable like this.&#x20;
 
 ```powershell
-$t:String1
+$tl:String1
 ```
 
 The returned value, when the user's locale is en, will be `USA`.&#x20;
 
 Strings are currently available in APIs and dashboards automatically and in scripts when setting the `LanguageID` variable.&#x20;
+
+{% hint style="warning" %}
+Note that the `$t:` provider is also available but due to conflicts with the FileSystem provider and mapped T: drives, we suggest using the `$tl:` provider instead. The `$t:` provider will be mapped on machines that do not already have a T: drive mapped.&#x20;
+{% endhint %}
 
 ## Selecting a Language
 
