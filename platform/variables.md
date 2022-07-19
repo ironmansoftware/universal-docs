@@ -98,6 +98,16 @@ To access secrets that you have added to PowerShell Universal, you can use the `
 Invoke-Command -Credential $Secret:Credential { Write-Host "Hello" }
 ```
 
+### ForEach-Object -Parallel
+
+In order to use secrets when using `ForEach-Object` with the `-Parallel` parameter, you will need to take advantage of the `$using` keyword.&#x20;
+
+```powershell
+1..5 | ForEach-Object -Parallel {
+  $using:Secret:MySecret
+}
+```
+
 ## Configuring the `PSUSecretStore` Password
 
 
