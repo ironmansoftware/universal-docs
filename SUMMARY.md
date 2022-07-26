@@ -165,6 +165,7 @@
   * [WS-Federation](config/security/ws-federation.md)
 * [Repository](config/repository.md)
 * [Running as a Service Account](config/running-as-a-service-account.md)
+* [Best Practices](config/best-practices.md)
 
 ## Development
 
