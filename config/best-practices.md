@@ -16,6 +16,13 @@ Complex PowerShell modules can cause problems with PowerShell Universal. Certain
 
 For example, dbatools may leak database connections when used directly within PowerShell Universal's integrated environment. To avoid this, you can start an external process by running a PowerShell Universal job in a non-integrated environment. The script will run, the process will terminate, and the database connection will be reclaimed automatically.&#x20;
 
+Below is a list of some modules we have experienced issues with.
+
+* dbatools - Memory usage and leaked database connections
+* PSFramework - Memory usage
+* VMware PowerCLI - Connection management is scoped to the process
+* Az - Connection management is scoped to the process
+
 ## Leverage Custom Modules
 
 Building custom modules ensures that you can use the same functionality throughout the PowerShell Universal platform without duplicating code. You can use the same functions in APIs, scripts and dashboards without having to duplicate the logic.&#x20;
@@ -23,3 +30,4 @@ Building custom modules ensures that you can use the same functionality througho
 Reducing the amount of script an any of these places can help you to better test and isolate issues that are caused by integrating with the platform or by the module itself.&#x20;
 
 Also consider building functions to wrap complex dashboard components. This reduces the overall complexity of the dashboard script and makes it easy to debug and read.&#x20;
+
