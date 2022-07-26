@@ -37,6 +37,12 @@ Also consider building functions to wrap complex dashboard components. This redu
 
 When using `Set-PSUCache`, ensure that you set some sort of lifetime to the cache. This is especially important if you have data that isn't being used all the time and is large in size. Data set into the cache without a lifetime is never returned to the system.&#x20;
 
+For example, you can use the sliding expiration to expire cache data if it isn't used for some time for one hour.&#x20;
+
+```powershell
+Set-PSUCache -Key 'Data' -Value (Get-Date) -SlidingExpiration (New-Timespan -Hours 1)
+```
+
 ## APIs
 
 ### Avoid Returning Highly Complex Objects
@@ -45,9 +51,35 @@ By default, API endpoints will serialize returned objects to JSON using `Convert
 
 Make sure you understand the complexity of the objects you are returning. If objects are too complex, consider using `Select-Object` to select a subset of the data returned. You can also call `ConvertTo-Json` yourself to control the `-Depth` parameter.&#x20;
 
+An example of this would be returning Process objects with `Get-Process` . Due to the complexity of the Process type, it causes problems during serialization. Instead, select only a subset of the properties that are required.&#x20;
+
+```powershell
+Get-Process | Select-Object Name,Id
+```
+
 ### Avoid Long Running Processes in APIs&#x20;
 
 The HTTP thread pool is limited in size. Long running processes in APIs can cause the pool to become exhausted which can cause problems for the entire PowerShell Universal server. If you plan to have an API that takes more than a few seconds, consider having the API start a job. You can then create a second API to check the state of jobs returned by the first API. This will ensure that the operation continues to process but the HTTP thread pool reclaims the available connection.&#x20;
+
+For example, you could have the following APIs. The first endpoint starts a job and returns the job ID. The second endpoint retrieves the pipeline output for the specified job.&#x20;
+
+```powershell
+New-PSUEndpoint -Url '/createReport' -Method POST -Endpoint {
+    (Invoke-PSUScript -Name CreateReport.ps1 -Integrated)
+}
+
+New-PSUEndpoint -Url '/createReport/:id' -Method GET -Endpoint {
+     Get-PSUJob -Id $Id -Integrated | Get-PSUJobPipelineOutput -Integrated
+}
+```
+
+To call these endpoints, we could do the following with `Invoke-RestMethod`.&#x20;
+
+```powershell
+$Id = Invoke-RestMethod http://localhost:5000/createReport -Method POST
+Start-Sleep 5
+Invoke-RestMethod http://localhost:5000/createReport/$Id -Method GET
+```
 
 ## Automation
 
@@ -81,11 +113,39 @@ When creating complex sections of a dashboard, it's advised to wrap it in a func
 
 We also recommend using modules to store your functions to further reduce the size and complexity of your core dashboard script. Additionally, modules can then be shared across dashboards.&#x20;
 
+An example would be to wrap the logic of a table within a function and then use the function within the dashboard.&#x20;
+
+```powershell
+function New-ProcessTable {
+    $Data = Get-Process
+    $Columns = @( 
+        New-UDTableColumn -Title 'Name' -Property 'Name'
+        New-UDTableColumn -Title 'Id' -Property 'Id'
+    )
+    New-UDTable -Data $Data -Columns $Columns -ShowSearch
+}
+
+New-UDDashboard -Content {
+    New-ProcessTable
+}
+```
+
 ### Consider Leveraging Jobs
 
 Jobs are useful because they start an external process and can be used to audit interactions with the dashboard. Since dashboards are long running, certain operations and modules can begin to cause memory or other resource problems if used under load. Starting jobs ensures that the environment is reclaimed after each execution.&#x20;
 
 Jobs make sense for operations that make changes (e.g. creating a VM or user), but their performance characteristics won't work for every scenario.&#x20;
+
+An example would be calling a job from a form.&#x20;
+
+```powershell
+New-UDForm -Content {
+   New-UDTextbox -Id 'UserName' -Label 'UserName'
+} -OnSubmit {
+   Invoke-PSUScript -Name 'CreateUser.ps1' -UserName $EventData.UserName -Environment PS7 -Integrated -Wait
+   Show-UDToast "User $($EventData.UserName) was created!"
+}
+```
 
 ### Schedule Dashboard Restarts
 
