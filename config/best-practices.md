@@ -45,6 +45,10 @@ By default, API endpoints will serialize returned objects to JSON using `Convert
 
 Make sure you understand the complexity of the objects you are returning. If objects are too complex, consider using `Select-Object` to select a subset of the data returned. You can also call `ConvertTo-Json` yourself to control the `-Depth` parameter.&#x20;
 
+### Avoid Long Running Processes in APIs&#x20;
+
+The HTTP thread pool is limited in size. Long running processes in APIs can cause the pool to become exhausted which can cause problems for the entire PowerShell Universal server. If you plan to have an API that takes more than a few seconds, consider having the API start a job. You can then create a second API to check the state of jobs returned by the first API. This will ensure that the operation continues to process but the HTTP thread pool reclaims the available connection.&#x20;
+
 ## Automation
 
 ### Reduce Unnecessary Job Output
@@ -65,6 +69,10 @@ For example, if you use `Write-Debug` throughout your script, you can disable th
 
 `Out-Null` can capture would-be pipeline output and discard it. If you don't want to discard all pipeline output, you can discard some of it by using `Out-Null`. This will improve performance and reduce the size of your job data.&#x20;
 
+### Aggressively Groom Unimportant Jobs&#x20;
+
+Some jobs, like a trigger that is used for notifications, may almost never been reviewed. Consider setting the job history very low in this case.&#x20;
+
 ## Dashboards
 
 ### Use Functions in Dashboards
@@ -78,3 +86,7 @@ We also recommend using modules to store your functions to further reduce the si
 Jobs are useful because they start an external process and can be used to audit interactions with the dashboard. Since dashboards are long running, certain operations and modules can begin to cause memory or other resource problems if used under load. Starting jobs ensures that the environment is reclaimed after each execution.&#x20;
 
 Jobs make sense for operations that make changes (e.g. creating a VM or user), but their performance characteristics won't work for every scenario.&#x20;
+
+### Schedule Dashboard Restarts
+
+If you are experience issues with dashboard resources, you can restart dashboards using a scheduled job that runs during non-business hours. You can use the `Get-PSUDashboard`, `Stop-PSUDashboard` and `Start-PSUDashboard` cmdlets to restart the individual dashboards. This technique is only valid when dashboards are running in non-integrated environments.&#x20;
