@@ -33,6 +33,14 @@ Reducing the amount of script an any of these places can help you to better test
 
 Also consider building functions to wrap complex dashboard components. This reduces the overall complexity of the dashboard script and makes it easy to debug and read.&#x20;
 
+## APIs
+
+### Avoid Returning Highly Complex Objects
+
+By default, API endpoints will serialize returned objects to JSON using `ConvertTo-Json`. Although the platform restricts the depth of the JSON, highly complex objects can cause the cmdlet to spin out of control and consume high amounts of CPU. PowerShell Universal will attempt to cancel this processing if it is detected but it will still cause issues with your API environment.&#x20;
+
+Make sure you understand the complexity of the objects you are returning. If objects are too complex, consider using `Select-Object` to select a subset of the data returned. You can also call `ConvertTo-Json` yourself to control the `-Depth` parameter.&#x20;
+
 ## Automation
 
 ### Reduce Unnecessary Job Output
