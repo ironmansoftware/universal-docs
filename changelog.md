@@ -6,6 +6,12 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.1.5 - 7/25/2022
+
+#### Platform
+
+* Fixed an issue where git sync would throw errors and prevent history from being saved.&#x20;
+
 ## 3.1.4 - 7/19/2022
 
 #### Automation
