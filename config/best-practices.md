@@ -33,6 +33,10 @@ Reducing the amount of script an any of these places can help you to better test
 
 Also consider building functions to wrap complex dashboard components. This reduces the overall complexity of the dashboard script and makes it easy to debug and read.&#x20;
 
+### Set a Cache Lifetime
+
+When using `Set-PSUCache`, ensure that you set some sort of lifetime to the cache. This is especially important if you have data that isn't being used all the time and is large in size. Data set into the cache without a lifetime is never returned to the system.&#x20;
+
 ## APIs
 
 ### Avoid Returning Highly Complex Objects
