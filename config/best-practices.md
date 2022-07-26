@@ -49,3 +49,9 @@ For example, if you use `Write-Debug` throughout your script, you can disable th
 
 `Out-Null` can capture would-be pipeline output and discard it. If you don't want to discard all pipeline output, you can discard some of it by using `Out-Null`. This will improve performance and reduce the size of your job data.&#x20;
 
+## Use Functions in Dashboards
+
+When creating complex sections of a dashboard, it's advised to wrap it in a function to better organize and isolate that complex section. Highly nested dashboards are hard to debug and make it easy to introduce syntax errors that will affect the entire dashboard.&#x20;
+
+We also recommend using modules to store your functions to further reduce the size and complexity of your core dashboard script. Additionally, modules can then be shared across dashboards.&#x20;
+
