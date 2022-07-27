@@ -6,6 +6,16 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.1.6 - 7/27/2022
+
+#### Dashboard
+
+* Fixed an issue where non-terminating errors could cause exceptions to be shown in dashboards.
+
+#### Platform
+
+* Fixed an issue where SQL persistence was using an outdated version of the MS SQL client.
+
 ## 3.1.5 - 7/25/2022
 
 #### Platform
