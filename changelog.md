@@ -8,6 +8,12 @@ description: Changelog for PowerShell Universal.
 
 ## 3.1.6 - 7/27/2022
 
+{% hint style="warning" %}
+Known issue: You may experience an issue when upgrading to this version due to encryption handling for SQL connections. As a work around, you may need to include `Trusted Connection = True` in your connection string. You can read more about this issue [here](https://forums.ironmansoftware.com/t/powershell-universal-3-1-6/7487/3?u=adam).
+{% endhint %}
+
+
+
 #### Dashboard
 
 * Fixed an issue where non-terminating errors could cause exceptions to be shown in dashboards.
