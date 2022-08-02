@@ -21,7 +21,7 @@ $Data = @(
     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
-) power
+)
 
 New-UDTable -Data $Data
 ```
@@ -131,6 +131,44 @@ New-UDTable -Id 'customColumnsTable' -Data $Data -Columns $Columns -ShowFilter
 ```
 
 ![](<../../../../.gitbook/assets/image (222).png>)
+
+## Search
+
+To enable search, use the `-ShowSearch` parameter on `New-UDTable`.
+
+```powershell
+$Data = @(
+    @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+)
+
+New-UDTable -Data $Data -ShowSearch
+```
+
+When using custom columns, you will need to add the `-IncludeInSearch` parameter to the columns you'd like to include in the search.
+
+```powershell
+$Data = @(
+    @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+) 
+
+$Columns = @(
+    New-UDTableColumn -Property Dessert -Title "A Dessert" -IncludeInSearch
+    New-UDTableColumn -Property Calories -Title Calories 
+    New-UDTableColumn -Property Fat -Title Fat 
+    New-UDTableColumn -Property Carbs -Title Carbs 
+    New-UDTableColumn -Property Protein -Title Protein 
+)
+
+New-UDTable -Id 'customColumnsTable' -Data $Data -Columns $Columns -ShowSearch
+```
 
 ## Table with server-side processing
 
