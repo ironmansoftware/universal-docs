@@ -4,6 +4,10 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 3.0.1 - 8/3/2022
+
+* Fixed an issue where the extension would fail to activate
+
 ## 3.0.0 - 6/14/2022
 
 * Added support for viewing all files in the repository
