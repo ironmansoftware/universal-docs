@@ -72,9 +72,9 @@ The `-LoadData` parameter is used to return data for the data grid. Table state 
 | Filter   | A filter object that you can use to construct filters against your data.  | Hashtable |
 | Page     | The current page. Starts at 0.                                            | Integer   |
 | PageSize | The number of records in a page.                                          | Integer   |
-|          |                                                                           |           |
+| Sort     | The sort options for the table                                            | Hashtable |
 
-### Filter Hashtable
+### Filtering
 
 The filter hashtable is included in the `$EventData` for the `-LoadData` event handler when a filter is defined. The hashtable has a structure as follows.&#x20;
 
@@ -105,3 +105,20 @@ The items property contains an array of columns, operators and values. You can u
 
 The link operator field is used to specify the link between the filters. This can be `and` or `or`.&#x20;
 
+### Sorting
+
+The `$EventData` object will contain a `Sort` property when the user sorts the data grid. It contains properties for each column that is sorted. The properties will start as 0 and increment as more columns are sorted.&#x20;
+
+For example, you can access the first sorted column as follows.&#x20;
+
+```powershell
+$EventData.Sort.'0'.field
+```
+
+You will also receive the sort direction for each column.&#x20;
+
+| Property | Description                      | Type      |
+| -------- | -------------------------------- | --------- |
+| Field    | The field to sort.               | String    |
+| Sort     | The direction to sort the field. | asc, desc |
+|          |                                  |           |
