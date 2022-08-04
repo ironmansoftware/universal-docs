@@ -8,7 +8,7 @@ description: Data grid component for Universal Dashboard.
 The data grid component is coming in PowerShell Universal 3.2.
 {% endhint %}
 
-The `UDDataGrid` component is an advanced version of the table that is useful for displaying large amounts of data. It supports many of the same features as the table but also provides complex filtering, row virtualization and more.&#x20;
+The `UDDataGrid` component is an advanced version of the table that is useful for displaying large amounts of data. It supports many of the same features as the table but also provides complex filtering, row virtualization, multi-column sort and more.&#x20;
 
 ## Simple Data Grid
 
@@ -58,10 +58,33 @@ Columns are customizable using hashtables. You can find the supported properties
 | MaxWidth          | The maximum width of the column                                      | integer                                          |
 | MinWidth          | The minimum width of the column                                      | integer                                          |
 | Pinnable          | Whether the column can be pinned.                                    | boolean                                          |
+| Render            | A script block to render components in the column                    | ScriptBlock                                      |
 | Resizable         | Whether the column can be resized                                    | boolean                                          |
 | Sortable          | Whether the column can be sorted.                                    | boolean                                          |
 | Type              | The type of data within the column                                   | string, number, date, dateTime, boolean, actions |
 | Width             | How wide the column should be in pixels.                             | Integer                                          |
+
+### Rendering Custom Columns
+
+You can render custom components in columns by specifying `render` within the column hashtable. You can access the current row's data by using the `$EventData` or `$Row` variable
+
+In this example, the number is shown in the name column with a `New-UDTypography` component.&#x20;
+
+```powershell
+New-UDDataGrid -LoadRows {  
+    $Rows = 1..100 | % {
+        @{ Name = 'Adam'; Number = Get-Random}
+    }
+    @{
+        rows = $Rows
+        rowCount = $Rows.Length
+    }
+    
+} -Columns @(
+    @{ field = "name"; render = { New-UDTypography $Row.number }}
+    @{ field = "number"}
+) -AutoHeight -Pagination
+```
 
 ## LoadData
 
