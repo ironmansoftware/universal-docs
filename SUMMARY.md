@@ -46,6 +46,7 @@
       * [Alert](userinterfaces/dashboards/components/data-display/alert.md)
       * [Badge](userinterfaces/dashboards/components/data-display/badge.md)
       * [Chip](userinterfaces/dashboards/components/data-display/chip.md)
+      * [Data Grid](userinterfaces/dashboards/components/data-display/data-grid.md)
       * [Date and Time](userinterfaces/dashboards/components/data-display/date-and-time.md)
       * [Icon](userinterfaces/dashboards/components/data-display/icon.md)
       * [List](userinterfaces/dashboards/components/data-display/list.md)
