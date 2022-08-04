@@ -22,7 +22,7 @@ New-UDEndpoint -Schedule $EndpointSchedule -Endpoint {
     $Cache:Processes = Get-Process | Select-Object Name,ID
 } | Out-Null
 
-New-UDDashboard -Tiele 'Test' -Content {
+New-UDDashboard -Title 'Test' -Content {
     New-UDTable -Data $Cache:Processes
 }
 ```
