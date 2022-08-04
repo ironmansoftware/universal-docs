@@ -42,14 +42,6 @@ You can also use wild cards (`*`) to bring in multiple variables that match a pa
 
 You can use the `-PSModulePath` parameter of `New-PSUEnvironment` to configure additional PSModulePaths to include within the environment.&#x20;
 
-### High Performance Runspace Pools
-
-High Performance Runspace Pools uses an alternate technique to pooling resources. They are much faster than pools traditionally used by PowerShell Universal. APIs and Dashboards support the use of these types of pools.&#x20;
-
-High performance pools do not support debugging, persistence or runspace recycling.&#x20;
-
-
-
 ## Using Environments
 
 Environments can be used across the platform.&#x20;
@@ -80,7 +72,9 @@ The integrated environment uses the PowerShell Universal server process directly
 
 The integrated environment is easier to configure and use than having multiple disparate environments. You will also see a performance improvement because there is no need to serialize and communicate via interprocess communication.&#x20;
 
-The downside is that you cannot elevate to alternate credentials or use alternate PowerShell versions. You will be using the current version of the PowerShell Universal server's PowerShell SDK.&#x20;
+The downside is that you cannot elevate to alternate credentials or use alternate PowerShell versions. You will be using the current version of the PowerShell Universal server's PowerShell SDK. Additionally, since all the PowerShell scripts are running within the service, you can affect the stability of the platform with your PowerShell scripts.&#x20;
+
+Please read[ Best Practices ](best-practices.md#favor-non-integrated-environments)for more information.&#x20;
 
 ### Configuring
 
