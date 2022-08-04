@@ -81,9 +81,9 @@ New-UDDataGrid -LoadRows {
     }
     
 } -Columns @(
-    @{ field = "name"; render = { New-UDTypography $Row.number }}
+    @{ field = "name"; render = { New-UDTypography $EventData.number }}
     @{ field = "number"}
-) -AutoHeight -Pagination
+) -AutoHeight
 ```
 
 ## LoadData
@@ -96,6 +96,26 @@ The `-LoadData` parameter is used to return data for the data grid. Table state 
 | Page     | The current page. Starts at 0.                                            | Integer   |
 | PageSize | The number of records in a page.                                          | Integer   |
 | Sort     | The sort options for the table                                            | Hashtable |
+
+### Paging
+
+To implement paging, you can access the `page` and `pageSize` properties of the `$EventData` variable.&#x20;
+
+```powershell
+New-UDDataGrid -LoadRows {  
+    $Rows = 1..100 | % {
+        @{ Name = 'Adam'; Number = Get-Random}
+    } 
+    @{
+        rows = $Rows | Select-Object -First $EventData.pageSize -Skip ($EventData.page * $EventData.pageSize)
+        rowCount = $Rows.Length
+    }
+    
+} -Columns @(
+    @{ field = "name"; 
+    @{ field = "number"}
+) -AutoHeight -Pagination
+```
 
 ### Filtering
 
