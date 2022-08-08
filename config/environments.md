@@ -42,6 +42,12 @@ You can also use wild cards (`*`) to bring in multiple variables that match a pa
 
 You can use the `-PSModulePath` parameter of `New-PSUEnvironment` to configure additional PSModulePaths to include within the environment.&#x20;
 
+### Startup Scripts
+
+Startup scripts are run once when the environment is first creates a runspace. For APIs, this happens whenever a runspace is created to service an HTTP request. This can happen for frequently if the server is busy. For dashboards, this will happen whenever a runspace is crated to service an endpoint being run while the user views a dashboard. Busy servers and dashboards with many dynamic components will do this more frequently. For jobs, this will happen once when the job is started.&#x20;
+
+Platform variables are not available in startup scripts.
+
 ## Using Environments
 
 Environments can be used across the platform.&#x20;
