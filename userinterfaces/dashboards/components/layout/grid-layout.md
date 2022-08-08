@@ -6,19 +6,11 @@ description: Drag and drop layout designer.
 
 ## Grid Layout
 
-{% hint style="info" %}
-This component is available on the Universal Dashboard Marketplace
-{% endhint %}
-
 The Grid Layout component is useful for defining layouts in a visual manner. You can drag and drop components using the web interface to automatically define the layout as JSON.
 
 ![](../../../../.gitbook/assets/demo.gif)
 
-## Installation
 
-```
-Install-Module UniversalDashboard.GridLayout
-```
 
 ## Designing Layouts
 
