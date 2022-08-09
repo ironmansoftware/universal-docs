@@ -108,3 +108,15 @@ One connection pool per PSU server. 1024 connections maximum per server.
 _What is the maximum number of concurrent user/device connections?_
 
 One connection pool per PSU server. 1024 connections maximum per server.
+
+## Data Migration
+
+PowerShell Universal includes a data migration tool for moving data from LiteDB to SQL. You can find `DataMigration.exe` in the installation folder.&#x20;
+
+You will need access to the LiteDB database and the SQL server in order to run the tool. You cannot have PowerShell Universal running while migrating the data.&#x20;
+
+Below is an example of how to run the data migration tool.&#x20;
+
+```
+DataMigration.exe -l C:\ProgramData\UniversalAutomation\database.db -s 'Server=(localdb)\mssqllocaldb;Database=PSU;Trusted_Connection=True;'
+```
