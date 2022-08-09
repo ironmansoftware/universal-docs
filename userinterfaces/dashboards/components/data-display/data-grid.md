@@ -148,7 +148,7 @@ The link operator field is used to specify the link between the filters. This ca
 
 ### Sorting
 
-![](<../../../../.gitbook/assets/image (2).png>)
+![](<../../../../.gitbook/assets/image (2) (1).png>)
 
 The `$EventData` object will contain a `Sort` property when the user sorts the data grid. It contains properties for each column that is sorted. The properties will start as 0 and increment as more columns are sorted.&#x20;
 
