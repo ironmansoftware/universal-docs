@@ -4,10 +4,6 @@ description: Data grid component for Universal Dashboard.
 
 # Data Grid
 
-{% hint style="info" %}
-The data grid component is coming in PowerShell Universal 3.2.
-{% endhint %}
-
 The `UDDataGrid` component is an advanced version of the table that is useful for displaying large amounts of data. It supports many of the same features as the table but also provides complex filtering, row virtualization, multi-column sort and more.&#x20;
 
 ## Simple Data Grid

@@ -6,6 +6,73 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.2.0 - 8/9/2022
+
+#### Breaking Change
+
+* SQL Server encryption is enabled by default.
+
+#### Automation
+
+* Grey out disabled schedules
+* Fixed an issue where setting a default value on a bool parameter would cause an issue with the admin console run script UI
+* Fixed an issue with the scrollbars on the scripts page
+* Added working directory support for scripts (integrated environment not supported)
+* Added support for Endpoint Error and Endpoint Authentication Failed triggers
+* View nested jobs as a tree view in the jobs table
+* Hide nested and triggered jobs in the job table
+* View nested jobs from a parent job
+* Improved the display of internal errors when running jobs
+* Fixed an issue where jobs that threw an internal error would have an incorrect start time.
+* Fixed an issue where string\[] parameters with a ValidateSet attribute wouldn't be displayed correctly when creating a schedule
+* Fixed an issue where creating a continous schedule with a delay of 0 would cause the schedule to fail during creation
+* Add indicies to the Job table to speed up job retrieval for SQL persistence.
+* Fixed issue where certain simple schedules had invalid CRON expressions
+
+#### Dashboard
+
+* Fixed an issue with UDTab -Icon spacing.
+* Fixed an issue where the whole page would flicker when using Sync-UDElement
+* Added Protect-UDSection
+* Added OnCancel and CancelButtonText to New-UDStepper
+* Added -UiSchema to New-UDForm
+* Removed New-UDTabContainer from the UniversalDashboard module manifest.
+* Fixed an issue where -Icon would cause an overlap in New-UDTextbox
+* Fixed an issue where an Object Reference exception would be thrown when using Invoke-Command
+* Added New-UDDataGrid
+* Fixed an issue where New-UDUpload wouldn't work when using SQL peristence.
+* Updated to the lastest version of the MUI Date and Time pickers
+* Fixed an issue where -Format on New-UDDatePicker would not have any effect
+* Added dark theme support for the Ant Design theme.
+* Fixed an issue where some of the cmdlet help was missing
+* Fixed an issue where click navigation links would cause the navigation to collapse.
+* Fixed an issue with New-UDTextbox where when a -Mask was specified an a string wasn't specified for -Value an error would be shown
+* Fixed an issue with New-UDSelect where when -Multiple was specified and the -DefaultValue was not an array, an error woul be shown
+* Added a beta version of the new advanced dashboard editor
+
+#### Platform
+
+* Added the ability to reset git settings.
+* Added support for OSX 12 ARM64
+* Added DataMigration tool for moving data from LiteDB to SQL
+* Fixed an issue where translations containing a single quote would break a translation file
+* Improved the contrast of the highlighted text in the admin console dark theme editors
+* Added support for Active Directory Default SQL authentication
+* Fixed an issue where git sync would stop reporting history when the git history was in an invalid state
+* Added process and runspace information.
+* Fixed an issue where the groom job would throw an exception when trimming jobs when using SQL persistence.
+* Implemented -Integrated for Sync-PSUConfiguration
+* Tables in the admin console will now persist the selected page size.
+* Enabled retry behavior for SQL persistence.
+* Grant-PSUAppToken now supports granting multiple roles.
+* Added HTTP endpoints to set cache data
+* The input box for updating secret strings is now masked
+* Added support for finding and installing prerelease modules
+* Fixed an issue with git sync when using SQL persistence and multiple nodes.
+* Fixed an issue where the groom job could fail and then would retry over and over again
+* Fixed the documentation link for the PowerShell Protect page
+* Fixed an issue where the git page would list the remote in place of the branch
+
 ## 3.1.6 - 7/27/2022
 
 {% hint style="warning" %}

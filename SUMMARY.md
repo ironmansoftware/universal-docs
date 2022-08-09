@@ -91,6 +91,7 @@
       * [Hidden](userinterfaces/dashboards/components/layout/hidden.md)
       * [Stack](userinterfaces/dashboards/components/layout/stack.md)
     * [Utilities](userinterfaces/dashboards/components/utilities/README.md)
+      * [Protect Section](userinterfaces/dashboards/components/utilities/protect-section.md)
       * [Transitions](userinterfaces/dashboards/components/utilities/transitions.md)
     * [Surfaces](userinterfaces/dashboards/components/surfaces/README.md)
       * [AppBar](userinterfaces/dashboards/components/surfaces/appbar.md)
