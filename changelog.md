@@ -12,6 +12,19 @@ description: Changelog for PowerShell Universal.
 
 * SQL Server encryption is enabled by default.
 
+{% hint style="warning" %}
+When upgrading to PowerShell Universal v3.2, you may need to update your connection string to accommodate this breaking change.&#x20;
+{% endhint %}
+
+#### Steps to Successfully Update SQL Connection String
+
+These steps are required if your SSL server has a certificate not trusted by the PowerShell Universal server.&#x20;
+
+1. Stop PowerShell Universal service.&#x20;
+2. Open `%ProgramData%\PowerShellUniversal\appsettings.json`
+3. Added `;TrustServerCertificate=True;` to your connection string.&#x20;
+4. Perform Upgrade&#x20;
+
 #### Automation
 
 * Grey out disabled schedules
