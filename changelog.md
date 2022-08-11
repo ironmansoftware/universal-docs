@@ -6,6 +6,28 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.2.1 - 8/11/2022
+
+#### Automation
+
+* Fixed the performance of the jobs table in the admin console
+* Set the jobs table to auto refresh when refocusing on it
+
+#### Dashboard
+
+* Fixed an issue where page loading skeletons would not be displayed properly
+* Fixed an issue where the icon would not be displayed for New-UDAutocomplete with -Multiple and -LoadOptions set.
+* Fixed an issue where New-UDDashboard -HideUserName would not work when specifying pages
+* Fixed an issue where the menu would be available as a blank drawer when a page was loading that had LoadNavigation
+* Fixed an issue where a temporary navigation menu would not close after navigating
+* Fixed an issue where -BackgroundColor did not support rgb colors on New-UDChartJS
+
+#### Platform
+
+* The MSI installer will now list the log file path if it fails
+
+
+
 ## 3.2.0 - 8/9/2022
 
 #### Breaking Change
