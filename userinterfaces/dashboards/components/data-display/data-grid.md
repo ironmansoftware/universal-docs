@@ -14,6 +14,10 @@ Data grids load their data via the `-LoadRows` event handler. You will need to r
 
 Columns are defined using hashtables.&#x20;
 
+{% hint style="warning" %}
+Column field names must be in camel case. For example, the property `Name` would need to be `name` while the property `FirstName` would need to be `firstName`.
+{% endhint %}
+
 ```powershell
 New-UDDataGrid -LoadRows {
     $Data = @(

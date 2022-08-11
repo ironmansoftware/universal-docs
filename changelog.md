@@ -22,7 +22,7 @@ These steps are required if your SSL server has a certificate not trusted by the
 
 1. Stop PowerShell Universal service.&#x20;
 2. Open `%ProgramData%\PowerShellUniversal\appsettings.json`
-3. Added `;TrustServerCertificate=True;` to your connection string.&#x20;
+3. Add `;TrustServerCertificate=True;` to your connection string.&#x20;
 4. Perform Upgrade&#x20;
 
 #### Automation
