@@ -10,6 +10,18 @@ description: Icon component for Universal Dashboard
 New-UDIcon -Icon 'NetworkWired'
 ```
 
+## Finding an Icon
+
+We include FontAwesome v6 with PowerShell Universal. You can use `Find-UDIcon` to search through the list of included icons.&#x20;
+
+```powershell
+Find-UDIcon User
+```
+
+{% hint style="warning" %}
+The `UniversalDashboard.FontAwesomeIcons` enum should not be used and is only included for backwards compatibility. Many of the icons are no longer a part of FontAwesome 6.
+{% endhint %}
+
 ## Icon
 
 Create icons by specifying their names. You can use the icon reference below to find icons.
