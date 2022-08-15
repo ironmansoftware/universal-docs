@@ -41,3 +41,15 @@ New-UDTooltip -Content {
     }
 }
 ```
+
+## Tooltip Type
+
+Tooltips can be over various types including: `"dark", "success", "warning", "error", "info", "light"`
+
+```powershell
+New-UDTooltip -Content {
+    New-UDIcon -Icon 'User'
+} -TooltipContent {
+    "User"
+} -Type 'success'
+```
