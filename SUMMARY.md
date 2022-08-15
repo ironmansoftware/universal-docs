@@ -53,6 +53,7 @@
       * [List](userinterfaces/dashboards/components/data-display/list.md)
       * [Table](userinterfaces/dashboards/components/data-display/table.md)
       * [Timeline](userinterfaces/dashboards/components/data-display/timeline.md)
+      * [Tooltip](userinterfaces/dashboards/components/data-display/tooltip.md)
       * [Tree View](userinterfaces/dashboards/components/data-display/tree-view.md)
       * [Typography](userinterfaces/dashboards/components/data-display/typography.md)
     * [Data Visualization](userinterfaces/dashboards/components/data-visualization/README.md)
