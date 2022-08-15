@@ -6,6 +6,24 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.2.2 - 8/15/2022
+
+#### APIs
+
+* Fixed an issue where updating API environments would not work in admin console.
+
+#### Automation
+
+* Fixed an issue where pipeline output for simple types would not display correctly in the admin console pipeline output tab
+* Fixed an issue where job parameter values would not be displayed in the admin console
+* Fixed an issue where Switch and bool parameters would not change from false in the admin console
+* Fixed an issue where $UAJob.Identity was $null
+
+#### Dashboards
+
+* Fixed an issue where content would be hidden when switching between light\dark theme when using a persistent navigation menu
+* Fixed an issue where variables defined out of -LoadRows in New-UDDataGrid were not available in the script block
+
 ## 3.2.1 - 8/11/2022
 
 #### Automation
