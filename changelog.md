@@ -6,6 +6,13 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.2.3 - 8/16/2022
+
+#### Dashboards
+
+* Fixed an issue where certain components would shrink in size when switching between dark and light theme when using persistent navigation.
+* Fixed an issue where New-UDDashboard would not honor the NavigationLayout parameter in certain configurations
+
 ## 3.2.2 - 8/15/2022
 
 #### APIs
