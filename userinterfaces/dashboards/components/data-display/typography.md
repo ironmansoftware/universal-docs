@@ -27,6 +27,17 @@ You can use the `-Style` parameter to define colors for your text.
 
 ```powershell
 New-UDTypography -Text 'My Text' -Style @{ color = 'blue' }
+
+```
+
+## Theme-based Styling
+
+You can use [theme-based](../../themes/#setting-the-default-theme) styling by using the `-Sx` parameter of `New-UDTypography`. For example, to apply the secondary text color, you can use the following syntax.&#x20;
+
+```powershell
+New-UDTypography -Text 'Secondar' -Sx @{
+    color = 'text.secondary'
+}
 ```
 
 ## API
