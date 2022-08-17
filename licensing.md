@@ -4,11 +4,23 @@ PowerShell Universal is licensed per server. We provide licenses for individuals
 
 You can purchase a license on [our website](https://store.ironmansoftware.com/pricing/powershell-universal).&#x20;
 
-### What's a server?&#x20;
+## What's a server?&#x20;
 
 A server is a single running instance of PowerShell Universal.&#x20;
 
-### Developer Licenses
+### What if I have multiple containers?&#x20;
+
+The license applies to each container instance and not the container host. For example, if you have 10 container instances running, you will need 10 licenses.&#x20;
+
+### What if I have multiple sites on a single IIS server?
+
+Each website running PowerShell Universal will need a license and not a single license for the entire IIS server.&#x20;
+
+## Install a License&#x20;
+
+To install a license, click Settings \ License. Click the Add License button to upload your license file.&#x20;
+
+## Developer Licenses
 
 When a server license is purchased, you will be able to generate developer licenses for users building solutions for your team. Developer licenses do not allow remote access and are intended to be used locally. Do not use developer licenses when hosting a server for remote access for testing or production.
 
