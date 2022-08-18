@@ -6,6 +6,12 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.2.4 - 8/18/2022
+
+#### Automation
+
+* Fixed an issue where jobs would fail to run when using SQL persistence.&#x20;
+
 ## 3.2.3 - 8/16/2022
 
 #### Dashboards
