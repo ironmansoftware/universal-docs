@@ -6,6 +6,16 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.2.5 - 8/19/2022
+
+#### Dashboard
+
+* Fixed an issue with New-UDForm -Schema where an error would be shown if -UiSchema was not used
+
+#### Platform
+
+* Improved profiling of configuration scripts to help identify slow changes in the admin console
+
 ## 3.2.4 - 8/18/2022
 
 #### Automation
