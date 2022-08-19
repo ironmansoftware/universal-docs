@@ -6,6 +6,12 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 2.12.4 - 8/19/2022
+
+#### Dashboard
+
+* Fixed an issue where New-UDChip wouldn't have $EventData defined when using it in a nested event handler.
+
 ## 2.12.3 - 8/17/2022
 
 #### Dashboard
