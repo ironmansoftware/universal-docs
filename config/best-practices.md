@@ -153,7 +153,7 @@ If you are experience issues with dashboard resources, you can restart dashboard
 
 ### Be Aware of -Render Performance with New-UDTable
 
-Using `New-UDTableColumn`, you can render columns to contain any component that you wish to display based on the row of data that you are displaying in the table. This is usually useful for customizing the look and feel or by providing actions for the row's data. Rendering can become a performance issue if used incorrectly. Rendering many rows at once or using the render ScriptBlock to run long running processes will cause problems.&#x20;
+One feature of `New-UDTable` and`New-UDTableColumn`, is the ability to render columns to contain any component that you wish to display based on the row of data that you are providing to the table. This is usually useful for customizing the look and feel or by providing actions for the row's data. Rendering can become a performance issue if used incorrectly. Rendering many rows at once or using the render ScriptBlock to run long running processes will cause problems.&#x20;
 
 #### Rendering Too Many Rows
 
@@ -163,7 +163,7 @@ Consider using `-LoadData` to load and display only a page of data at a time. Th
 
 #### Long Running Renders
 
-Due to the implementation details of `-Render`, it's not suggested to use long running render operations. If you expect your `-Render` to take more than a few milliseconds, consider using `New-UDDynamic` to off load the render back to the server and display a loading skeleton. The server can efficiently schedule the rendering operation.&#x20;
+Due to the implementation details of `-Render`, it's not suggested to use long running render operations. If you expect your `-Render` to take more than a few milliseconds, consider using `New-UDDynamic` to off load the render back to the server and display a loading skeleton. The server can efficiently schedule the rendering operation using the runspace pool in this case. &#x20;
 
 An example of this is shown below.&#x20;
 
