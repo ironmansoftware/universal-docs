@@ -150,3 +150,48 @@ New-UDForm -Content {
 ### Schedule Dashboard Restarts
 
 If you are experience issues with dashboard resources, you can restart dashboards using a scheduled job that runs during non-business hours. You can use the `Get-PSUDashboard`, `Stop-PSUDashboard` and `Start-PSUDashboard` cmdlets to restart the individual dashboards. This technique is only valid when dashboards are running in non-integrated environments.&#x20;
+
+### Be Aware of -Render Performance with New-UDTable
+
+Using `New-UDTableColumn`, you can render columns to contain any component that you wish to display based on the row of data that you are displaying in the table. This is usually useful for customizing the look and feel or by providing actions for the row's data. Rendering can become a performance issue if used incorrectly. Rendering many rows at once or using the render ScriptBlock to run long running processes will cause problems.&#x20;
+
+#### Rendering Too Many Rows
+
+If you are using the `-Data` parameter of `New-UDTable`, the `-Render` ScriptBlock will be called for each item you pass into the data parameter. If you have hundreds or thousands of items, this will cause page load times to increase.&#x20;
+
+Consider using `-LoadData` to load and display only a page of data at a time. This only calls `-Render` for the displayed items and not the entire data set.&#x20;
+
+#### Long Running Renders
+
+Due to the implementation details of `-Render`, it's not suggested to use long running render operations. If you expect your `-Render` to take more than a few milliseconds, consider using `New-UDDynamic` to off load the render back to the server and display a loading skeleton. The server can efficiently schedule the rendering operation.&#x20;
+
+An example of this is shown below.&#x20;
+
+```powershell
+$Data = @(
+    @{Dessert = 'Frozen yoghurt'; Calories = 1; Fat = 6.0; Carbs = 24; Protein = 4.0 }
+    @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0 }
+    @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0 }
+    @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0 }
+    @{Dessert = 'Gingerbread'; Calories = 200; Fat = 6.0; Carbs = 24; Protein = 4.0 }
+) 
+
+$Columns = @(
+    New-UDTableColumn -Property Dessert -Title Dessert -Render { 
+        New-UDDynamic -Content {
+            Start-Sleep (Get-Random -Min 1 -Max 5)
+            New-UDButton -Text "Click for Dessert!" -OnClick { Show-UDToast -Message $EventData.Dessert } -Variant 'text'
+        } -LoadingComponent {
+            New-UDSkeleton
+        }
+    }
+    New-UDTableColumn -Property Calories -Title Calories 
+    New-UDTableColumn -Property Fat -Title Fat 
+    New-UDTableColumn -Property Carbs -Title Carbs 
+    New-UDTableColumn -Property Protein -Title Protein 
+)
+```
+
+The result is a table that loads immediately but displays loading skeletons in the slow-to-render columns.&#x20;
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
