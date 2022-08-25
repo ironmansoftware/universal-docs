@@ -6,6 +6,14 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.2.6 - 8/24/2022
+
+#### Platform
+
+* Fixed an issue where the first time git sync was setup, the admin console could display a JavaScript error
+* Fixed an issue where the git sync interval setting would not be honored correctly when multiple nodes were connected
+* Fixed an issue where git sync would fail to load configuration properly when initializing using clone mode
+
 ## 3.2.5 - 8/19/2022
 
 #### Dashboard
