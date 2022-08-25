@@ -194,4 +194,4 @@ $Columns = @(
 
 The result is a table that loads immediately but displays loading skeletons in the slow-to-render columns.&#x20;
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
