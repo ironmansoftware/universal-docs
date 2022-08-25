@@ -60,7 +60,7 @@ Create a `Plugins__0` setting with the value `SQL`. Next, set the `Data__Connect
 
 <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-Once you have SQL configured, you can start your container. The database schema will be created as the container starts. Next, you'll need to configure git within PowerShell Universal by clicking Settings \ Git. Enter your remote, branch, username, password or personal access token, and synchronization mode. Push-only is not recommended in this configuration. Ensure that the initialization mode is set to Clone.&#x20;
+Once you have SQL configured, you can start your container. The database schema will be created as the container starts. Next, you'll need to configure git within PowerShell Universal by clicking Settings \ Git. Enter your remote, branch, username, password or personal access token, and synchronization mode. Push-only is not recommended in this configuration because container state is lost between restarts. Ensure that the initialization mode is set to Clone.&#x20;
 
 {% hint style="info" %}
 Git settings are stored in your SQL database and will be retrieved each time the container is started.&#x20;
