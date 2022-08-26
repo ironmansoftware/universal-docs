@@ -18,6 +18,18 @@ Modules can be installed from the PowerShell Gallery. To search for a module, yo
 
 Once a module is found, you'll be able to click the Install button to save it locally. Modules installed in this method will be installed into the Repository directory under Modules.&#x20;
 
+## Package Sources
+
+PowerShell Universal integrates with the `PackageManagement` module and will automatically pick up on registered package sources. For example, you can register a package source with the command below.&#x20;
+
+```powershell
+Register-PackageSource -Name MyNuGet -Location https://www.nuget.org/api/v2 -ProviderName NuGet
+```
+
+Once the source has been registered, it will be shown within the drop down on the modules page.&#x20;
+
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
 ## Creating Modules&#x20;
 
 You can also create modules directly in PowerShell Universal. These modules will be created in the Repository directory under Modules.&#x20;
