@@ -6,7 +6,7 @@ Universal Dashboard exposes two custom variable scopes using custom providers. T
 
 ### Cache Scope
 
-Cache scope is used to store a variable that will be available in any endpoint. Cache scope is useful for storing data that make be shown in more than one control or may be time consuming to look up. This could be helpful for querying machine performance counters, Active Directory or Azure.
+Cache scope is used to store a variable that will be available in any endpoint. Cache scope is useful for storing data that may be shown in more than one control or may be time consuming to look up. This could be helpful for querying machine performance counters (e.g. Active Directory, Azure).
 
 Just like any other scope, cache variables are defined with a prefix and a colon separator.
 

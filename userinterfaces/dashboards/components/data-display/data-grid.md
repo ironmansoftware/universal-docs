@@ -112,7 +112,7 @@ New-UDDataGrid -LoadRows {
     }
     
 } -Columns @(
-    @{ field = "name"; 
+    @{ field = "name"; }
     @{ field = "number"}
 ) -AutoHeight -Pagination
 ```
@@ -168,4 +168,76 @@ You will also receive the sort direction for each column.&#x20;
 | -------- | -------------------------------- | --------- |
 | Field    | The field to sort.               | String    |
 | Sort     | The direction to sort the field. | asc, desc |
-|          |                                  |           |
+
+## Example: Static Data
+
+In this example, we generate an array of 10,000 records. We will create a new function, `Out-UDDataGridData` to manage the paging, sorting and filtering.&#x20;
+
+```powershell
+function Out-UDDataGridData {
+    param(
+        [Parameter(Mandatory)]
+        $Context, 
+        [Parameter(Mandatory, ValueFromPipeline)]
+        [object]$Data, 
+        [Parameter()]
+        [int]$TotalRows = -1
+    )
+
+    Begin {
+        $Items = [System.Collections.ArrayList]::new()
+    }
+
+    Process {
+        $Items.Add($Data) | Out-Null
+    }
+
+    End {
+        if ($TotalRows  -eq -1)
+        {
+            $TotalRows = $Items.Count
+        }
+
+        $Filter = $Context.Filter 
+        foreach ($item in $Filter.Items) {
+            $Property = $item.columnField
+            $Value = $item.Value
+            switch ($item.operatorValue) {
+                "contains" { $Items = $Items | Where-Object {  $_[$Property].ToString().Contains($Value)}; } 
+                "equals" { $Items = $Items | Where-Object {  $_[$Property].ToString() -eq $Value } }  
+                "startsWith" { $Items = $Items | Where-Object { $_[$Property].ToString().StartsWith($Value)} }
+                "endsWith" { $Items = $Items | Where-Object { $_[$Property].ToString().EndsWiths($Value)} }
+                "isEmpty" { $Items = $Items | Where-Object { [string]::IsNullOrEmpty($_[$Property].ToString()) } }
+                "isNotEmpty" { $Items = $Items | Where-Object { -not [string]::IsNullOrEmpty($_[$Property].ToString()) } }
+                "isAnyOf" { $Items = $Items | Where-Object { $_[$Property].ToString() -in $Value } }
+            }
+        }
+
+        $Sort = $Context.Sort.'0'
+        $Items = $Items | Sort-Object -Property $Sort.field -Descending:$($Sort.Sort -eq 'desc')
+
+        $Items = $Items | Select-Object -Skip ($Context.Page * $Context.pageSize) -First $Context.PageSize
+
+        @{
+            rows     = [Array]$Items 
+            rowCount = $TotalRows
+        }
+    }    
+}
+
+New-UDDashboard -Title 'PowerShell Universal' -Content {
+     $Data =  1..10000 | % {
+        @{ Name = 'Adam'; Number = Get-Random }
+    } 
+    New-UDDataGrid -LoadRows {  
+      $Data | Out-UDDataGridData -Context $EventData
+    } -Columns @(
+        @{ field = "name"; render = { 
+            New-UDButton -Icon (New-UDIcon -Icon User) -OnClick { Show-UDToast $EventData.Name } } 
+        }
+        @{ field = "number" }
+    ) -AutoHeight -Pagination
+}
+```
+
+<figure><img src="../../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
