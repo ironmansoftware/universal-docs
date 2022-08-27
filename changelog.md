@@ -6,6 +6,13 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.2.7 - 8/27/2022
+
+#### Dashboards
+
+* Fixed an issue where New-UDDataGrid column rendering would not work properly
+* Fixed an issue where -HideUserName on New-UDDashboard did not work properly
+
 ## 3.2.6 - 8/24/2022
 
 #### Platform
