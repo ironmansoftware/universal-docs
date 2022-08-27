@@ -240,4 +240,91 @@ New-UDDashboard -Title 'PowerShell Universal' -Content {
 }
 ```
 
+<figure><img src="../../../../.gitbook/assets/image (6) (3).png" alt=""><figcaption></figcaption></figure>
+
+## Example: SQL Data
+
+In this example, we'll query the PowerShell Universal database with dbatools.&#x20;
+
+```powershell
+function Out-UDSQLDataGrid {
+    param(
+        [Parameter(Mandatory)]
+        $Context, 
+        [Parameter(Mandatory)]
+        [string]$Table, 
+        [Parameter(Mandatory)]
+        [string]$SqlInstance,
+        [Parameter(Mandatory)]
+        [string]$Database
+    )
+
+    End {
+
+        $SqlFilter = "WHERE "        
+        $SqlParameters = @{}
+        $Filter = $Context.Filter 
+        foreach ($item in $Filter.Items) {
+            $Property = $item.columnField
+            $Value = $item.Value
+
+            $Parameter = "Param" + $SqlParameters.Count
+            $SqlParameters.Add($Parameter, $Value) | Out-Null
+
+            switch ($item.operatorValue) {
+                "contains" { $SqlFilter += "$Property LIKE $Parameter AND " } 
+                "equals" { $SqlFilter += "$Property = $Parameter AND " }  
+                "isEmpty" { $SqlFilter += "$Property IS NULL "  }
+                "isNotEmpty" { $SqlFilter += "$Property IS NOT NULL "  }
+            }
+        }
+
+        $SQLFilter += " 1 = 1"
+
+        $TotalCount = (Invoke-DbaQuery -SqlInstance $SqlInstance -Database $Database -Query "SELECT COUNT(*) As Count FROM $Table $SqlFilter").Count 
+
+        $Sort = $Context.Sort.'0'
+        if ($Sort)
+        {
+            $SqlSort = "ORDER BY $($Sort.field) $($Sort.Sort) "
+        }
+        else 
+        {
+            $SqlSort = "ORDER BY 1 "
+        }
+
+        $SqlPage = "OFFSET $($Context.Page * $Context.PageSize) ROWS FETCH NEXT $($Context.PageSize) ROWS ONLY;"
+
+        $Query = "SELECT * FROM $Table $SqlFilter $SqlSort $SqlPage"
+
+        Show-UDToast $Query -Duration 50000
+
+        $Rows = Invoke-DbaQuery -SqlInstance $SqlInstance -Database $Database -Query $Query -As PSObject
+
+        @{
+            rows     = [Array]$Rows
+            rowCount = $TotalCount
+        }
+    }    
+}
+
+New-UDDashboard -Title 'PowerShell Universal' -Content {
+    New-UDDataGrid -LoadRows {  
+      Out-UDSqlDataGrid -Context $EventData -SqlInstance "(localdb)\MSSQLLocalDb" -Database "PSU" -Table "Job"
+    } -Columns @(
+        @{ field = "id"; }
+        @{ field = "startTime"; }
+        @{ field = "status"; render = {
+            if ($EventData.Status -eq 2) {
+                New-UDAlert -Severity 'Success' -Text 'Success'
+            }
+
+            if ($EventData.Status -eq 3) {
+                New-UDAlert -Severity 'Error' -Text 'Failed'
+            }
+        } }
+    ) -AutoHeight -Pagination
+}
+```
+
 <figure><img src="../../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
