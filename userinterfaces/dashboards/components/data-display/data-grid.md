@@ -269,8 +269,16 @@ function Out-UDSQLDataGrid {
             $Value = $item.Value
 
             $Parameter = "Param" + $SqlParameters.Count
-            $SqlParameters.Add($Parameter, $Value) | Out-Null
-
+            
+            if ($item.operatorValue -eq 'contains')
+            {
+                $SqlParameters.Add($Parameter, "%$Value%") | Out-Null
+            } 
+            else 
+            {
+                $SqlParameters.Add($Parameter, $Value) | Out-Null            
+            }
+            
             switch ($item.operatorValue) {
                 "contains" { $SqlFilter += "$Property LIKE $Parameter AND " } 
                 "equals" { $SqlFilter += "$Property = $Parameter AND " }  
