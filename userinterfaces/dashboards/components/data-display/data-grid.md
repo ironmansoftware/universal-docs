@@ -281,7 +281,7 @@ function Out-UDSQLDataGrid {
 
         $SQLFilter += " 1 = 1"
 
-        $TotalCount = (Invoke-DbaQuery -SqlInstance $SqlInstance -Database $Database -Query "SELECT COUNT(*) As Count FROM $Table $SqlFilter").Count 
+        $TotalCount = (Invoke-DbaQuery -SqlInstance $SqlInstance -Database $Database -Query "SELECT COUNT(*) As Count FROM $Table $SqlFilter" -SqlParameters $SqlParameters).Count 
 
         $Sort = $Context.Sort.'0'
         if ($Sort)
@@ -299,7 +299,7 @@ function Out-UDSQLDataGrid {
 
         Show-UDToast $Query -Duration 50000
 
-        $Rows = Invoke-DbaQuery -SqlInstance $SqlInstance -Database $Database -Query $Query -As PSObject
+        $Rows = Invoke-DbaQuery -SqlInstance $SqlInstance -Database $Database -Query $Query -As PSObject -SqlParameters $SqlParameters
 
         @{
             rows     = [Array]$Rows
