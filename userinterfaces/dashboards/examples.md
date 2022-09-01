@@ -18,7 +18,7 @@ New-UDDashboard -Title 'Processes' -Content {
 }
 ```
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 ## File System Browser
 
@@ -55,21 +55,21 @@ New-UDDashboard -Title 'New User' -Content {
 }
 ```
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (4).png" alt=""><figcaption></figcaption></figure>
 
-## Stopwatch
+## Clock
 
-This example shows how to create a stopwatch component in PowerShell Universal Dashboard.
+This example shows how to create a clock component in PowerShell Universal Dashboard.
 
 ```powershell
-New-UDDashboard -Title 'Stopwatch' -Content {
-    New-UDDynamic -Id 'stopwatch' -Content {
+New-UDDashboard -Title 'Clock' -Content {
+    New-UDDynamic -Id 'clock' -Content {
         (Get-Date).ToString('T')
     } -AutoRefresh -AutoRefreshInterval 1
     
-    New-UDButton -Text 'Toggle Stopwatch' -OnClick {
-        Set-UDElement -Id 'stopwatch' -Properties @{
-            autoRefresh = -not( (Get-UDElement -Id 'stopwatch').AutoRefresh)
+    New-UDButton -Text 'Toggle Clock' -OnClick {
+        Set-UDElement -Id 'clock' -Properties @{
+            autoRefresh = -not( (Get-UDElement -Id 'clock').AutoRefresh)
         }
     }
 }

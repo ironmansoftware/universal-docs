@@ -10,7 +10,7 @@ description: Tree view component for Universal Dashboard.
 
 Create a basic tree view by using the `New-UDTreeNode` cmdlet.
 
-```
+```powershell
 New-UDTreeView -Node {
     New-UDTreeNode -Name 'Level 1' -Children {
         New-UDTreeNode -Name 'Level 2 - Item 1' 
@@ -28,13 +28,19 @@ New-UDTreeView -Node {
 
 Dynamic tree views allow you to run PowerShell whenever a node is clicked. You can then return a list of nodes that should be rendered underneath the clicked node. You can also take other actions such as opening a modal or showing a toast.
 
-```
-New-UDTreeView -Node { New-UDTreeNode -Name root } -OnNodeClicked {
-    New-UDTreeNode -name "$($EventData.Name)child"
+```powershell
+New-UDDashboard -Title 'Processes' -Content {
+    Get-PSDrive -PSProvider 'FileSystem' | ForEach-Object {
+        New-UDTreeView -Node { New-UDTreeNode -Name $_.Name -Id "$($_.Name):\" } -OnNodeClicked {
+            Get-ChildItem $EventData.Id | ForEach-Object {
+                New-UDTreeNode -Name $_.Name -Id $_.FullName -Leaf:$(-not $_.PSIsContainer)
+            }
+        }
+    }
 }
 ```
 
-![Dynamic Tree View](<../../../../.gitbook/assets/image (155).png>)
+<figure><img src="../../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ## API
 
