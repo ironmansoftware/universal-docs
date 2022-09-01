@@ -56,13 +56,13 @@ You'll need an Azure SQL database to get started. Once you create the resource, 
 
 Ensure that you have allowed Azure services to access the database.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 To enable SQL support, you should set the plugins within PowerShell Universal to use the SQL plugin in the Application Configuration for your web app.&#x20;
 
 Create a `Plugins__0` setting with the value `SQL`. Next, set the `Data__ConnectionString` value to your SQL server database.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Once you have SQL configured, you can start your container. The database schema will be created as the container starts. Next, you'll need to configure git within PowerShell Universal by clicking Settings \ Git. Enter your remote, branch, username, password or personal access token, and synchronization mode. Push-only is not recommended in this configuration because container state is lost between restarts. Ensure that the initialization mode is set to Clone.&#x20;
 

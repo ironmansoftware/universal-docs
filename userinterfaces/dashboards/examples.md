@@ -4,6 +4,22 @@ description: Examples of things you can do with dashboards.
 
 # Examples
 
+## Display Processes
+
+This example displays processes in a table.&#x20;
+
+```powershell
+New-UDDashboard -Title 'Processes' -Content {
+    $Processes = Get-Process | Select-Object Id, Name
+    New-UDTable -Columns @(
+        New-UDTableColumn -Property 'Id' -Title 'Id'
+        New-UDTableColumn -Property 'Name' -Title 'Name'
+    ) -Data $Processes -ShowPagination
+}
+```
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
 ## Create User Form
 
 This example shows how to create a local user account.&#x20;
@@ -20,6 +36,8 @@ New-UDDashboard -Title 'New User' -Content {
     }
 }
 ```
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Stopwatch
 
@@ -39,4 +57,4 @@ New-UDDashboard -Title 'Stopwatch' -Content {
 }
 ```
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>

@@ -6,7 +6,7 @@ description: PowerShell Universal high availability configuration.
 
 PowerShell Universal can be configured for high availability by using a combination of SQL server persistence and a load balancer to ensure that both the front end tools, such as dashboards are accessible and back end tools, such as jobs, continue to run.&#x20;
 
-![](<../../.gitbook/assets/image (2) (2).png>)
+![](<../../.gitbook/assets/image (2) (2) (1).png>)
 
 ## Persistence Configuration
 
