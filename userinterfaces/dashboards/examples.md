@@ -20,6 +20,24 @@ New-UDDashboard -Title 'Processes' -Content {
 
 <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
+## File System Browser
+
+Create a file system browser with a dynamic tree view.&#x20;
+
+```powershell
+New-UDDashboard -Title 'Processes' -Content {
+    Get-PSDrive -PSProvider 'FileSystem' | ForEach-Object {
+        New-UDTreeView -Node { New-UDTreeNode -Name $_.Name -Id "$($_.Name):\" } -OnNodeClicked {
+            Get-ChildItem $EventData.Id | ForEach-Object {
+                New-UDTreeNode -Name $_.Name -Id $_.FullName -Leaf:$(-not $_.PSIsContainer)
+            }
+        }
+    }
+}
+```
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
 ## Create User Form
 
 This example shows how to create a local user account.&#x20;
@@ -37,7 +55,7 @@ New-UDDashboard -Title 'New User' -Content {
 }
 ```
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Stopwatch
 
