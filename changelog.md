@@ -6,6 +6,12 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.2.8 - 8/29/2022
+
+#### Dashboards
+
+* Fixed an issue where New-UDChip would not render properly
+
 ## 3.2.7 - 8/27/2022
 
 #### Dashboards
