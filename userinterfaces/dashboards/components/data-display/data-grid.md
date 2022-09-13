@@ -15,7 +15,7 @@ Data grids load their data via the `-LoadRows` event handler. You will need to r
 Columns are defined using hashtables.&#x20;
 
 {% hint style="warning" %}
-Column field names must be in camel case. For example, the property `Name` would need to be `name` while the property `FirstName` would need to be `firstName`.
+Prior to version 3.3., column field names must be in camel case. For example, the property `Name` would need to be `name` while the property `FirstName` would need to be `firstName`.
 {% endhint %}
 
 ```powershell
@@ -171,7 +171,7 @@ You will also receive the sort direction for each column.&#x20;
 
 ## Detailed Content&#x20;
 
-<figure><img src="../../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 You can use the `-LoadDetailedContent` event handler to display additional information about the row you are expanding. Information about the current row is available in `$EventData.row`.
 
@@ -195,7 +195,39 @@ New-UDDataGrid -LoadRows {
 }
 ```
 
+## Editing
 
+Tables provide editor support by specifying the `-OnEdit` event handler. The new row data will be provided as `$EventData`. You can chose to return updated row information (for example, adjusting something the user has entered) and return it from the event handler. If you do not return anything, the row will reflect what the user entered.&#x20;
+
+The `$EventData` has the following format.&#x20;
+
+```powershell
+@{
+    newRow = @{}
+    oldRow = @{}
+}
+```
+
+Ensure that you provide the `editable` property to each column you wish for the user to edit.&#x20;
+
+```powershell
+New-UDDataGrid -LoadRows {
+    $Data = @(
+        @{ Name = 'Adam'; number = Get-Random }
+        @{ Name = 'Tom'; number = Get-Random }
+        @{ Name = 'Sarah'; number = Get-Random }
+    )
+    @{
+        rows     = $Data 
+        rowCount = $Data.Length
+    }
+} -Columns @(
+    @{ field = "Name"; editable = $true }
+    @{ field = "number" ; editable = $true }
+) -AutoHeight -OnEdit {
+    Show-UDToast "Editing $Body" 
+}
+```
 
 ## Example: Static Data
 
