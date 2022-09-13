@@ -110,14 +110,6 @@ This script is responsible for configuring a custom [login page](login-page.md).
 
 You can use the [`New-PSULoginpage`](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSULoginPage.txt) and [`New-PSULoginPageLink` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSULoginPageLink.txt)in this file.&#x20;
 
-### Init.ps1
-
-{% hint style="info" %}
-Stored in `.universal\init.ps1`
-{% endhint %}
-
-This script runs before any configuration is done within PowerShell Universal. The server is running but none of the services have started. This is useful for install modules or configuring secret vaults before discovery of those resources are started.&#x20;
-
 ### Pages
 
 {% hint style="info" %}
@@ -215,23 +207,3 @@ Stored in `.universal\variables.ps1`
 This script is responsible for configuring [variables](../userinterfaces/pages/variables.md).
 
 You can use the [`New-PSUVariable`](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSUVariable.txt) cmdlet in this file.
-
-## Custom Configuration Script
-
-A custom configuration script can be executed within the configuration process. The path to the configuration script can be defined in `appsettings.json` or as an environment variable.&#x20;
-
-{% code title="appsettings.json" %}
-```json
-"Data": {
-    "ConfigurationScript": "customScript.ps1"
-}
-```
-{% endcode %}
-
-{% code title="Environment Variable" %}
-```powershell
-$Env:Data__ConfigurationScript = "customScript.ps1"
-```
-{% endcode %}
-
-You can chose to return items such as endpoints, scripts or dashboards from the script. Additionally, you can use this script to configure resources like modules and secret vaults before the system is started. The custom configuration script is run before any other configuration scripts.&#x20;

@@ -44,6 +44,18 @@ To use an external git client and pass a user name and PAT to authenticate with,
 https://username:PAT@github.com/ironmansoftware/universal
 ```
 
+#### Example: SSH and GitHub
+
+First, you will need to configure your local ssh-agent and GitHub account with SSH keys.&#x20;
+
+You can follow their [guide here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh).
+
+Next, you will provide a SSH URI for the git remote URL in PowerShell Universal. The configured SSH key will be used for the connection.
+
+```
+git@github.com:ironmansoftware/universal.git
+```
+
 ### Method One: Pushing Local Files to Remote
 
 {% hint style="info" %}
