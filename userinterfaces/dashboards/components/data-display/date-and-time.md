@@ -28,6 +28,16 @@ New-UDDateTime -InputObject (Get-Date) -Format 'DD/MM/YYYY'
 
 Resulting output: 25/01/2019
 
+## Locale
+
+You can specify the locale to display the date and time in.&#x20;
+
+```powershell
+New-UDDateTime -InputObject (Get-Date) -Locale 'es'
+```
+
+Resulting output: 13 de septiembre de 2022 7:30
+
 ## API
 
 ****[**New-UDDateTime**](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDDateTime.txt)****

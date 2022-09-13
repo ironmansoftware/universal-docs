@@ -152,7 +152,7 @@ The link operator field is used to specify the link between the filters. This ca
 
 ### Sorting
 
-![](<../../../../.gitbook/assets/image (2) (1).png>)
+![](<../../../../.gitbook/assets/image (2) (1) (2).png>)
 
 The `$EventData` object will contain a `Sort` property when the user sorts the data grid. It contains properties for each column that is sorted. The properties will start as 0 and increment as more columns are sorted.&#x20;
 
@@ -171,7 +171,7 @@ You will also receive the sort direction for each column.&#x20;
 
 ## Detailed Content&#x20;
 
-<figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 You can use the `-LoadDetailedContent` event handler to display additional information about the row you are expanding. Information about the current row is available in `$EventData.row`.
 
