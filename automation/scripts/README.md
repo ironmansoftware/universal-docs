@@ -42,8 +42,6 @@ Defaults to 100. It defines the amount of jobs that are stored when running this
 
 Changes how the script reacts when there is an error within the script. By default, terminating and non-terminating errors are ignored and the script will always be successful. You can change this setting to stop to cause scripts to fail immediately when an error is encountered.
 
-If you wish to write errors directly to the error pane without causing changes in how the script is handled (for example in an exception handler), you can use `Write-PSUError` to output the error record and it will appear in the error tab of the job.&#x20;
-
 ### **Environment**
 
 Allows you to define the required PowerShell environment for the script. By default, it uses the server-wide default PowerShell environment. PowerShell environments are automatically located the first the Universal Server starts up or read from the `environments.ps1` file. You can also add Environment on the Settings / Environments page.
@@ -109,10 +107,6 @@ You can run scripts as another user by configuring [secret variables](../../plat
 To run as another user, simply add or import a PSCredential variable. From there, you can select the credential from within the run dialog.
 
 ![](<../../.gitbook/assets/image (322).png>)
-
-### Running a Script on Another Machine&#x20;
-
-You can use the Computer drop down to select other machines to run a script on. The default value is to run on any computer that is available.
 
 ## Remoting
 

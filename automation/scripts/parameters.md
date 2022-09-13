@@ -20,9 +20,9 @@ $Test
 
 ![](<../../.gitbook/assets/image (82).png>)
 
-### Type Parameters
+### Parameters Types
 
-UA supports various types of parameters. You can use String, String\[], Int, DateTime, Boolean, Switch and Enum types.
+Universal supports various types of parameters. You can use String, String\[], Int, DateTime, Boolean, Switch and Enum types.
 
 #### String
 
@@ -108,6 +108,24 @@ param(
 ```
 
 ![](<../../.gitbook/assets/image (331).png>)
+
+#### File&#x20;
+
+You can allow users to upload files by using the `[File]` type.&#x20;
+
+```powershell
+param(
+    [File]$File
+)
+```
+
+Files will be available as a `PSUFile` object in your scripts. This object has a `byte[]` array that you can use to process the file.&#x20;
+
+For example, you can get the string content for the file by converting it using the Encoding classes.
+
+```powershell
+[Text.Encoding]::UTF8.GetString($File.Content)
+```
 
 ### Display Name
 
