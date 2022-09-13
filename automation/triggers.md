@@ -38,6 +38,9 @@ The user login event takes place when a user accesses PowerShell Universal. The 
 ```powershell
 @{
     UserName = 'username'
+    RemoteIpAddress = ''
+    LocalPort = ''
+    RemotePort = ''
 }
 ```
 

@@ -169,6 +169,34 @@ You will also receive the sort direction for each column.&#x20;
 | Field    | The field to sort.               | String    |
 | Sort     | The direction to sort the field. | asc, desc |
 
+## Detailed Content&#x20;
+
+<figure><img src="../../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+You can use the `-LoadDetailedContent` event handler to display additional information about the row you are expanding. Information about the current row is available in `$EventData.row`.
+
+```powershell
+New-UDDataGrid -LoadRows {
+    $Data = @(
+        @{ Name = 'Adam'; Number = Get-Random }
+        @{ Name = 'Tom'; Number = Get-Random }
+        @{ Name = 'Sarah'; Number = Get-Random }
+    )
+    @{
+        rows     = $Data 
+        rowCount = $Data.Length
+    }
+} -Columns @(
+    @{ field = "Name" }
+    @{ field = "number" }
+) -AutoHeight -LoadDetailContent {
+    Show-UDToast $Body
+    New-UDAlert -Text $EventData.row.Name
+}
+```
+
+
+
 ## Example: Static Data
 
 In this example, we generate an array of 10,000 records. We will create a new function, `Out-UDDataGridData` to manage the paging, sorting and filtering.&#x20;
