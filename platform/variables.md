@@ -160,6 +160,7 @@ Below are variables that are available in dashboards in addition to the global v
 | $Cookies         | The request cookies provided by the browser.                                                                      | hashtable                                                           |
 | $PSUAppToken     | The app token of the current user. Only available when -GrantAppToken is enabled.                                 | string                                                              |
 | $PSUComputerName | The URL of the PSU server. Only available when -GrantAppToken is enabled.                                         | string                                                              |
+| $DashboardName   | The name of the current dashboard                                                                                 | string                                                              |
 
 ### Scripts
 
