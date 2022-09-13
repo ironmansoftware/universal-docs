@@ -6,6 +6,106 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.3.0 - 9/13/2022
+
+#### Breaking Change
+
+* The UniversalDashboard module is no longer distributed as a separate module and all features are now in the Universal module.
+
+#### APIs
+
+* Endpoint URLs are now trimmed of white space during creation or update
+* Added support for editing endpoint paths in the UI
+* Added support for editing endpoints with paths in the UI
+
+#### Automation
+
+* Added LocalIpAddress, RemoteIpAddress, LocalPort and RemotePort to the event data sent to the User Logon trigger
+* Script right hand panel will now persist the last selected tab on the right hand side and use that as default
+* Fixed an issue where terminal instances could fail to start
+* Added support for executing a job on a specific computer in the cluster
+* Added Write-PSUError to output errors to the Errors tab without causing errors in the script
+* Errors in the Errors tab now include stack traces
+* Fixed an issue where an error would be shown multiple times in the Errors tab
+* Fixed an issue where string\[] parameters would not show the correct type of select control
+* Fixed an issue where job output wouldn't be completely visible
+* Added support for passing files as parameters to jobs
+* Increased the number of hangfire workers to 100
+* Fixed an issue where schedules wouldn't always register correctly with Hangfire
+* Fixed an issue where schedules would equate when they were not equal causing problems managing similar schedules
+* Added support for running schedules on demand
+* Fixed an issue where exit commands could be issued through a terminal
+* Fixed an issue where PSFramework logging output would be poorly displayed in PSU
+* Name is now a required property for schedules
+* Added support for scheduling scripts on a specific computer or all computers.
+* Fixed an issue where a misconfigured user login trigger could cause logins to fail
+* Fixed an issue where scripts would not be displayed on jobs when not logged in as administrator
+
+#### Dashboard
+
+* Added data-theme attribute to the HTML tag to allow for adaptive CSS styles
+* Added -Sx to New-UDTypography to be able to apply theme-based styles
+* Added Get-UDElement support to New-UDGridLayout.
+* Added -LoadDetailContent to New-UDDataGrid.
+* Fixed an issue where dashboard logging of Write-\* cmdlets would stop working when auto-deploy was enabled and a change was made
+* Added -BorderWidth to New-UDChartJS
+* Added -OnEdit to New-UDDataGrid
+* Added all colors to New-UDChip
+* Updated to ChartJS v3.9.1
+* Increased button size on dashboard page
+* Fixed an issue where OnRowExpand in New-UDTable was statically set to colspan 6
+* Fixed an issue where -DefaultValue would not be present in forms or steppers when using New-UDRadioGroup
+* Fixed an issue where New-UDTextbox with a mask wouldn't not accept enter to submit a form
+* Added -Href to New-UDListItem to support easier custom navigation
+* Fixed an issue where field names were case-sensitive for New-UDDataGrid
+* Added Wildcard support to Find-UDIcon
+* Fixed an issue where -HideUserName was always on when using New-UDDashboard and -Content
+* Fixed an issue where New-UDDataGrid would not properly render rows.
+* Added icon search to the dashboard editor
+* Added missing icons
+* Fixed an issue where New-UDAutoComplete would show a react error when removing the selected item
+* Added bubble chart support to New-UDChartJS
+* Fixed an issue where -RowsMax was not honored on New-UDTextbox
+* Added support for specifying any component in New-UDListItem -Label
+* Fixed an issue where dynamic UDTreeViews would stop working when collapsing them
+* Added -Expanded to New-UDTreeView and New-UDTreeNode
+* Fixed an issue where filters would be lost when changing pages in New-UDDataGrid
+* Fixed an issue where hidden columns would reappear when performing any action in the New-UDDataGrid
+* Fixed an issue where -Content of New-UDTypography would not do anything
+* Fixed an issue where -ClassName was not applied in New-UDTable and New-UDSelect
+* Fixed an issue where not all languages would work with New-UDDataGrid
+* Added -Locale to New-UDDateTime
+* Added the $DashboardName built-in variable
+* Fixed an issue where the default header would be shown before the page was loaded.
+
+#### Pages
+
+* Fixed an issue where words would not wrap in a card
+* Fixed an issue where tables would not scroll and would extend out of their container
+
+#### Automation
+
+* Navigating back to the scripts page will open the folder that you previously had open
+
+#### Platform
+
+* Added sorting to the tags page
+* Added Demo mode.
+* Fixed an issue where Get-PSUScript -Tag would throw an exception.
+* Added builds for Windows 10+ ARM64.
+* Fixed an issue where the groom service would throw exceptions while grooming jobs
+* Loading screen is now shown during service startup
+* Added support for Initialization script
+* Fixed an issue where the access control page could create access controls with invalid parameters for the parameter sets
+* Improved the UI to prevent queuing a git sync if one is already running
+* Improved the UI to display when a git sync is running
+* Manual git syncs now ignore the git sync interval setting
+* Fixed an issue where calling /api/v1/apptoken/:id as an administrator wouldn't all you to view all tokens
+* Fixed an issue where array variables could not be created in the admin console
+* Added Uptime to home page
+* Added header forwarding
+* Added support for using an external git client when using git sync
+
 ## 3.2.8 - 8/29/2022
 
 #### Dashboards
