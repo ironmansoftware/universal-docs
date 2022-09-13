@@ -36,6 +36,14 @@ You will need to configure authentication to your remote git repository. We reco
 
 You can choose to use an external git client rather than using the library built into PowerShell Universal. This allows you additional configuration options such as using SSH authentication. PowerShell Universal will not use configured username, passwords or PATs when enabling this method. You will need to have a git client installed.&#x20;
 
+#### Example: User Name and PAT
+
+To use an external git client and pass a user name and PAT to authenticate with, you can specify them in the git remote URL. For example:
+
+```
+https://username:PAT@github.com/ironmansoftware/universal
+```
+
 ### Method One: Pushing Local Files to Remote
 
 {% hint style="info" %}

@@ -234,4 +234,4 @@ $Env:Data__ConfigurationScript = "customScript.ps1"
 ```
 {% endcode %}
 
-You can chose to return items such as endpoints, scripts or dashboards from the script. Additionally, you can use this script to configure resources like modules and secret vaults before the system is started.&#x20;
+You can chose to return items such as endpoints, scripts or dashboards from the script. Additionally, you can use this script to configure resources like modules and secret vaults before the system is started. The custom configuration script is run before any other configuration scripts.&#x20;
