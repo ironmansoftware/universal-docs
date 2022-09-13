@@ -78,14 +78,6 @@ You can define a Run As user in a script by using the `-Credential` parameter. T
 New-PSUSchedule -Script "MyScript.ps1" -Cron '* * * * *' -Credential 'MyUser'
 ```
 
-## Computer
-
-You can select the computer or computers to run the schedule on. By default, schedules will run on any available computer. If you select All Computers, the schedule will run on all computers connect to the PSU cluster. If you select a specific computer, the schedule will run on only that computer.&#x20;
-
-```powershell
-New-PSUSchedule -Script "MyScript.ps1" -Cron '* * * * *' -Computer 'PSUNODE1'
-```
-
 ## Conditions
 
 Conditions can be defined that determine whether a schedule should be run. This is useful if you are using the same repository scripts for multiple environments. Currently, conditions cannot be defined within the admin console. Conditions are passed the current script and schedule as parameters. The condition scriptblock is run within the integrated environment.&#x20;
