@@ -32,6 +32,10 @@ By default, PowerShell Universal will sync with the `master` branch. If you wish
 
 You will need to configure authentication to your remote git repository. We recommend a personal access token.
 
+### External Git Client
+
+You can choose to use an external git client rather than using the library built into PowerShell Universal. This allows you additional configuration options such as using SSH authentication. PowerShell Universal will not use configured username, passwords or PATs when enabling this method. You will need to have a git client installed.&#x20;
+
 ### Method One: Pushing Local Files to Remote
 
 {% hint style="info" %}
