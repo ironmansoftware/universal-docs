@@ -158,22 +158,28 @@ You are are still experiencing issues with the basic IIS Configuration try check
 ## Configuration for Jobs
 
 {% hint style="warning" %}
-For an extensive walk through of settings to use, please see the [walkthrough here](https://docs.hangfire.io/en/latest/deployment-to-production/making-aspnet-app-always-running.html#making-asp-net-core-application-always-running-on-iis). Misconfigured app pool settings can cause jobs to fail to run.&#x20;
+Misconfigured app pool settings can cause jobs to fail to run. The primary cause is app pool recycling or a failure to start the web app when the server is started. This is not an issue for features like APIs or Dashboards but due to the background processing of jobs, you will need to ensure the server starts the website and keeps it running. You can [learn more here](https://docs.hangfire.io/en/latest/deployment-to-production/making-aspnet-app-always-running.html#making-asp-net-core-application-always-running-on-iis).
 {% endhint %}
 
 If you are going to be running scheduled jobs within your PowerShell Universal instance hosted in IIS, you must make sure to configure IIS appropriately. There are several settings to validate when configuring your application pool.
 
-### Idle Timeout
+### Application Initialization
 
-IIS will terminate your PSU process after a default of 20 minutes of idle time. This will cause jobs to fail to run since the process is not running. You can set the idle timeout to 0 to disable timeouts.
+Install the Application Initialization feature of the Web Server Role.
 
-![](<../../.gitbook/assets/image (209).png>)
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-### Start Mode
+### App Pool Settings&#x20;
 
-When the IIS server is restarted, the application pool will not start until the website is requested. You can avoid this by changing the start mode to Always Running for your application pool in Advanced Settings.
+You will want to change the .NET CLR version to v4.0, set the Idle Time-out setting to 0 (disabled), and change the start mode to Always On.&#x20;
 
-![](<../../.gitbook/assets/image (220).png>)
+<figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+
+### Website Settings
+
+Within the IIS Site that is hosting Universal, you will need to ensure that Preload is enabled.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
 ## Authentication
 
