@@ -18,7 +18,7 @@ Add the User or Group to the following Rights to ensure PowerShell Universal Fun
 * Adjust memory quotas for a process
 * replace a process level token
 
-![Local Security Policy User Rights Assignments for Service](<../.gitbook/assets/image (25).png>)
+![Local Security Policy User Rights Assignments for Service](<../.gitbook/assets/image (25) (1).png>)
 
 ### Script Run As Requirements
 

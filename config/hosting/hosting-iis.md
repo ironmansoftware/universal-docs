@@ -173,13 +173,19 @@ Install the Application Initialization feature of the Web Server Role.
 
 You will want to change the .NET CLR version to v4.0, set the Idle Time-out setting to 0 (disabled), and change the start mode to Always On.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
 ### Website Settings
 
 Within the IIS Site that is hosting Universal, you will need to ensure that Preload is enabled.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
+### Debugging Issues with IIS and Jobs
+
+If you are still having issues with IIS and jobs, you should consider turning on[ IIS recycle logging](https://blogs.iis.net/ganekar/iis-7-0-application-pool-recycles-log-a-event-in-windows-event-log) to ensure that IIS is keeping your site running.&#x20;
+
+As of PowerShell Universal 3.3, you can via the uptime of the system on the home page of the admin console to get a good indicator of the last time the service was started.&#x20;
 
 ## Authentication
 
