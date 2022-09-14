@@ -29,7 +29,7 @@ New-UDTreeView -Node {
 Dynamic tree views allow you to run PowerShell whenever a node is clicked. You can then return a list of nodes that should be rendered underneath the clicked node. You can also take other actions such as opening a modal or showing a toast.
 
 ```powershell
-New-UDDashboard -Title 'Processes' -Content {
+New-UDDashboard -Title 'File System' -Content {
     Get-PSDrive -PSProvider 'FileSystem' | ForEach-Object {
         New-UDTreeView -Node { New-UDTreeNode -Name $_.Name -Id "$($_.Name):\" } -OnNodeClicked {
             Get-ChildItem $EventData.Id | ForEach-Object {
