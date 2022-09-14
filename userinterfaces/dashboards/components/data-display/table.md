@@ -548,6 +548,8 @@ New-UDTable -Data $Data -TextOption $Option -ShowSearch
 
 ## Refresh with a button
 
+### Data Parameter
+
 You can externally refresh a table by putting the table within a dynamic region and using `Sync-UDElement`.
 
 This example creates a button to refresh the table.
@@ -563,6 +565,45 @@ New-UDDynamic -Id 'table' -Content {
 New-UDButton -Text 'Refresh Table' -OnClick {
     Sync-UDElement -Id 'table'
 }
+```
+
+### LoadData Parameter
+
+If you use the `-LoadData` parameter, you can sync the table directly. This has the benefit of maintaining the table state, such as the page and filtering, after the refresh.&#x20;
+
+```powershell
+New-UDButton -Text 'Table1' -OnClick { Sync-UDElement -Id 'Table1' }
+
+$Columns = @(
+    New-UDTableColumn -Property Name -Title "Name" -ShowFilter -Render { $EventData.Name }
+    New-UDTableColumn -Property Value -Title "Value" -ShowFilter
+)
+
+New-UDTable -Columns $Columns -LoadData {
+    $Data = 1..1000 | ForEach-Object {
+        @{
+            Name = "Record-$_"
+            Value = $_ 
+        }
+    }
+    
+    foreach($Filter in $EventData.Filters)
+    {
+        $Data = $Data | Where-Object -Property $Filter.Id -Match -Value $Filter.Value
+    }
+
+    $TotalCount = $Data.Count 
+
+    if (-not [string]::IsNullOrEmpty($EventData.OrderBy))
+    {
+        $Descending = $EventData.OrderDirection -ne 'asc'
+        $Data = $Data | Sort-Object -Property $EventData.orderBy -Descending:$Descending
+    }
+    
+    $Data = $Data | Select-Object -First $EventData.PageSize -Skip ($EventData.Page * $EventData.PageSize)
+
+    $Data | Out-UDTableData -Page $EventData.Page -TotalCount $TotalCount -Properties $EventData.Properties 
+} -ShowFilter -ShowSort -ShowPagination  -Id 'Table1'
 ```
 
 ## Show Refresh Button
