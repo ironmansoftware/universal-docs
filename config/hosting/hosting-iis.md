@@ -157,6 +157,10 @@ You are are still experiencing issues with the basic IIS Configuration try check
 
 ## Configuration for Jobs
 
+{% hint style="warning" %}
+For an extensive walk through of settings to use, please see the [walkthrough here](https://docs.hangfire.io/en/latest/deployment-to-production/making-aspnet-app-always-running.html#making-asp-net-core-application-always-running-on-iis). Misconfigured app pool settings can cause jobs to fail to run.&#x20;
+{% endhint %}
+
 If you are going to be running scheduled jobs within your PowerShell Universal instance hosted in IIS, you must make sure to configure IIS appropriately. There are several settings to validate when configuring your application pool.
 
 ### Idle Timeout
