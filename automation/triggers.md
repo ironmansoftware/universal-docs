@@ -30,6 +30,9 @@ The following types of events can be assigned a trigger.
 * Server Stopping
 * User Login
 * Use of a Revoked App Token
+* PowerShell Protect Event
+* API Authentication Failed
+* API Error
 
 ### User Login
 
