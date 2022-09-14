@@ -4,6 +4,10 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 3.1.0 - 9/14/2022
+
+* Extension no longer installs the UniversalDashboard module&#x20;
+
 ## 3.0.1 - 8/3/2022
 
 * Fixed an issue where the extension would fail to activate

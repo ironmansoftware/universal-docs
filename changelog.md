@@ -6,24 +6,6 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
-## 3.3.1 - 9/14/2022
-
-#### Dashboard
-
-* Fixed an issue where line charts with New-UDChartJS would throw an error
-* Fixed an issue where New-UDMonitor would not render
-* Fixed an issue where the page size wouldn't successfully change with New-UDDataGrid
-
-#### Automation
-
-* Fixed an issue where job output would be a single line
-
-#### Platform
-
-* Fixed an issue where the git settings modal would reset after 5 seconds
-* Fixed an issue where git sync configured for the first time through the admin console would state a sync was running but never finish
-* Fixed an issue where groom jobs could queue indefinitely if one was process for a long time
-
 ## 3.3.0 - 9/13/2022
 
 #### Breaking Change
