@@ -187,6 +187,8 @@ If you are still having issues with IIS and jobs, you should consider turning on
 
 As of PowerShell Universal 3.3, you can via the uptime of the system on the home page of the admin console to get a good indicator of the last time the service was started.&#x20;
 
+Prior to version 3.3, you can view the server uptime by visiting the [Hangfire](../../development/hangfire.md) dashboard and clicking the Servers tab.&#x20;
+
 ## Authentication
 
 PowerShell Universal can use anonymous authentication and Windows Authentication in IIS.
