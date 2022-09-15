@@ -181,6 +181,14 @@ Within the IIS Site that is hosting Universal, you will need to ensure that Prel
 
 <figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
+### Environment Variables&#x20;
+
+While we attempt to detect that PSU is running within IIS, you may run into problems with the negotiate authentication handler being enabled when it's not supported in IIS. To ensure this is not a problem, you can completed disabled it by setting the below environment variable on your IIS machine.&#x20;
+
+```powershell
+$Env:PSU_DISABLE_WIN_AUTH = true
+```
+
 ### Debugging Issues with IIS and Jobs
 
 If you are still having issues with IIS and jobs, you should consider turning on[ IIS recycle logging](https://blogs.iis.net/ganekar/iis-7-0-application-pool-recycles-log-a-event-in-windows-event-log) to ensure that IIS is keeping your site running.&#x20;
