@@ -16,7 +16,7 @@ To create a chart, use `New-UDChartJS` and `New-UDChartJSData`. The below chart 
 
 ![](<../../../../.gitbook/assets/image (157) (1) (2) (2) (2) (2) (1) (1).png>)
 
-```
+```powershell
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
  New-UDChartJS -Type 'bar' -Data $Data -DataProperty CPU -LabelProperty ProcessName
 ```
@@ -27,14 +27,14 @@ To create a chart, use `New-UDChartJS` and `New-UDChartJSData`. The below chart 
 
 ![](<../../../../.gitbook/assets/image (157) (1) (2) (2) (2) (2) (1) (1) (1).png>)
 
-```
+```powershell
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
  New-UDChartJS -Type 'bar' -Data $Data -DataProperty CPU -LabelProperty ProcessName
 ```
 
 #### Stacked Bar
 
-```
+```powershell
     $GraphPrep = @(
         @{ RAM = "Server1"; AvailableRam = 128; UsedRAM = 10 }
         @{ RAM = "Server2"; AvailableRam = 64; UsedRAM = 63 }
@@ -75,16 +75,39 @@ To create a chart, use `New-UDChartJS` and `New-UDChartJSData`. The below chart 
 
 ![](<../../../../.gitbook/assets/image (146).png>)
 
+```powershell
+    $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
+    New-UDChartJS -Type 'bar' -Data $Data -DataProperty CPU -LabelProperty ProcessName -Options @{
+        indexAxis = "y"
+        plugins = @{
+            legend = @{
+                position = "right"
+            }
+        }
+    }p
 ```
- $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
- New-UDChartJS -Type 'horizontalBar' -Data $Data -DataProperty CPU -LabelProperty ProcessName
+
+#### Bubble
+
+<figure><img src="../../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+A bubble chart consists of x and y coordinates and an r value for the radius of the circles.&#x20;
+
+```powershell
+$Data = @(
+    @{ x = 1; y = 10; r = 15 }
+    @{ x = 12; y = 25; r = 35 }
+    @{ x = 8; y = 10; r = 95 }
+    @{ x = 6; y = 95; r = 25 }
+)
+New-UDChartJS -Type 'bubble' -Data $Data 
 ```
 
 #### Line
 
 ![](<../../../../.gitbook/assets/image (147).png>)
 
-```
+```powershell
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
  New-UDChartJS -Type 'line' -Data $Data -DataProperty CPU -LabelProperty ProcessName
 ```
@@ -93,7 +116,7 @@ To create a chart, use `New-UDChartJS` and `New-UDChartJSData`. The below chart 
 
 ![](<../../../../.gitbook/assets/image (148).png>)
 
-```
+```powershell
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
  New-UDChartJS -Type 'doughnut' -Data $Data -DataProperty CPU -LabelProperty ProcessName
 ```
@@ -102,7 +125,7 @@ To create a chart, use `New-UDChartJS` and `New-UDChartJSData`. The below chart 
 
 ![](<../../../../.gitbook/assets/image (149).png>)
 
-```
+```powershell
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
  New-UDChartJS -Type 'pie' -Data $Data -DataProperty CPU -LabelProperty ProcessName
 ```
@@ -111,7 +134,7 @@ To create a chart, use `New-UDChartJS` and `New-UDChartJSData`. The below chart 
 
 ![](<../../../../.gitbook/assets/image (150).png>)
 
-```
+```powershell
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
  New-UDChartJS -Type 'radar' -Data $Data -DataProperty CPU -LabelProperty ProcessName
 ```
@@ -122,7 +145,7 @@ Colors can be defined using the various color parameters of `New-UDChartJS`.
 
 ![](<../../../../.gitbook/assets/image (151).png>)
 
-```
+```powershell
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
 
  $Options = @{
@@ -145,7 +168,7 @@ By default, you do not need to define data sets manually. A single data set is c
 
 ![](<../../../../.gitbook/assets/image (152).png>)
 
-```
+```powershell
 $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
 
  $CPUDataset = New-UDChartJSDataset -DataProperty CPU -Label CPU -BackgroundColor '#126f8c'
@@ -167,7 +190,7 @@ You can take action when a user clicks the chart. This example shows a toast wit
 
 ![](../../../../.gitbook/assets/z4AxJkkVyU.gif)
 
-```
+```powershell
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
 
   $Options = @{
@@ -176,7 +199,7 @@ You can take action when a user clicks the chart. This example shows a toast wit
    DataProperty = 'CPU'
    LabelProperty = "ProcessName"
    OnClick = { 
-      Show-UDToast -Message $Body
+      Show-UDToast -Message $Bodyr
    }
  }
 
@@ -190,7 +213,7 @@ You can use `New-UDDynamic` to create charts that refresh on an interval.
 
 ![](../../../../.gitbook/assets/CXEz8afan4.gif)
 
-```
+```powershell
 New-UDDynamic -Content {
     $Data = 1..10 | % { 
         [PSCustomObject]@{ Name = $_; value = get-random }
@@ -217,12 +240,30 @@ The `New-UDChartJS` cmdlet supports accepting advanced ChartJS options. You can 
 
 This example hides the legend.
 
-```
+```powershell
  $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
  New-UDChartJS -Type 'bar' -Data $Data -DataProperty CPU -LabelProperty ProcessName -Options @{  
  legend = @{  
      display = $false  
  }  
+}
+```
+
+#### Title
+
+You can include a title with the title option.
+
+```powershell
+$Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
+New-UDChartJS -Type 'bar' -Data $Data -DataProperty CPU -LabelProperty ProcessName -Options @{
+    plugins = @{
+        legend = @{
+            title = @{
+                display = $true
+                text    = 'Bar Chart'
+            }
+        }
+    }
 }
 ```
 
@@ -236,7 +277,7 @@ All the Nivo charts can be created with `New-UDNivoChart`. You will specify a sw
 
 ![](<../../../../.gitbook/assets/image (86).png>)
 
-```
+```powershell
 $Data = 1..10 | ForEach-Object { 
     $item = Get-Random -Max 1000 
     [PSCustomObject]@{
@@ -253,7 +294,7 @@ Nivo provides the ability to specify patterns to display over data sets. You can
 
 ![](<../../../../.gitbook/assets/image (85).png>)
 
-```
+```powershell
 $Data = @(
     @{
         country = 'USA'
@@ -293,7 +334,7 @@ Like many components in Universal Dashboard v3, Nivo charts do not define auto-r
 
 ![](../../../../.gitbook/assets/autorefresh.gif)
 
-```
+```powershell
 New-UDDynamic -Content {
     $Data = 1..10 | ForEach-Object { 
         $item = Get-Random -Max 1000 
@@ -312,7 +353,7 @@ Nivo charts support OnClick event handlers. You will be provided with informatio
 
 ![](../../../../.gitbook/assets/onclick.gif)
 
-```
+```powershell
 $Data = @(
     @{
         country = 'USA'
@@ -342,7 +383,7 @@ New-UDNivoChart -Bar -Data $Data -Height 400 -Width 900 -Keys @('burgers', 'frie
 
 #### Bar
 
-```
+```powershell
 New-Example -Title 'Bar' -Description '' -Example {
     $Data = 1..10 | ForEach-Object { 
         $item = Get-Random -Max 1000 
@@ -359,7 +400,7 @@ New-Example -Title 'Bar' -Description '' -Example {
 
 ![](<../../../../.gitbook/assets/image (97).png>)
 
-```
+```powershell
 $TreeData = @{
     Name     = "root"
     children = @(
@@ -390,7 +431,7 @@ New-UDNivoChart -Bubble -Data $TreeData -Value "count" -Identity "name" -Height 
 
 ![](<../../../../.gitbook/assets/image (87).png>)
 
-```
+```powershell
 $Data = @()
 for($i = 365; $i -gt 0; $i--) {
     $Data += @{
@@ -409,7 +450,7 @@ New-UDNivoChart -Calendar -Data $Data -From $From -To $To -Height 500 -Width 100
 
 ![](<../../../../.gitbook/assets/image (88).png>)
 
-```
+```powershell
 $Data = @(
     @{
         state = "idaho"
@@ -447,7 +488,7 @@ New-UDNivoChart -Heatmap -Data $Data -IndexBy 'state' -keys @('cats', 'dogs', 'm
 
 ![](<../../../../.gitbook/assets/image (218).png>)
 
-```
+```powershell
 [array]$Data = [PSCustomObject]@{
     id = "DataSet"
     data = (1..20 | ForEach-Object {
@@ -465,7 +506,7 @@ New-UDNivoChart -Line -Data $Data -Height 500 -Width 1000 -LineWidth 1
 
 ![](<../../../../.gitbook/assets/image (89).png>)
 
-```
+```powershell
 $Data = 1..10 | ForEach-Object { 
     @{
         "Adam" = Get-Random 
@@ -483,7 +524,7 @@ New-UDNivoChart -Stream -Data $Data -Height 500 -Width 1000 -Keys @("adam", "alo
 
 ![](<../../../../.gitbook/assets/image (90).png>)
 
-```
+```powershell
 $TreeData = @{
     Name     = "root"
     children = @(
