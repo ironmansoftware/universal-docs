@@ -6,6 +6,36 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.3.2 - 9/16/2022
+
+#### Automation
+
+* Fixed an issue where job run time would not be shown for jobs that didn't succeed
+* Fixed an issue where string\[] parameter values would not show on the jobs page
+* Increased Hangfire job timeout for LiteDB from 24 hours to 14 days.
+* Fixed an issue where calling Invoke-PSUScript in integrated mode wouldn't set the user name of the caller
+* Fixed an issue where job output may not immediately be shown once it completed. It would state that the job didn't have any output
+* Fixed an issue where Get-PSUJobPipelineOuput -Integrated would throw an exception on failed jobs
+* Fixed an issue where child and triggered jobs wouldn't show up in the Script \ Jobs tab
+
+#### Dashboard
+
+* Fixed an issue where New-UDTreeView wouldn't work properly when combining -Node with -OnNodeClicked
+* Added missing Title plugin for New-UDChartJS
+* Fixed an issue where 2 data grids on one page would cause rendering to fail
+* Fixed an issue where a runspace would leak when saving changes with AutoDeploy leading to high memory usage. Much worse when using VS Code, the PSU extension and file.autoSave = afterDelay
+* Fixed an issue where ScriptBlocks could be serialized from dashboards causing rendering issues
+
+#### Platform
+
+* Fixed an issue where git sync may not run due to the time zone and git sync interval
+* Fixed an issue where duplicate computers could be listed in Platform \ Computers
+* Fixed an issue where the heartbeat service would not run on each node properly
+* Fixed an issue where identites would be stored in demo mode
+* Fixed a display issue with the Settings \ General page
+* Fixed an issue where git sync with an external client in init mode would throw the error: Git Error: error: unknown switch \`M'
+* Fixed an issue where proxy settings would not work for proxies without credentials
+
 ## 3.3.1 - 9/14/2022
 
 #### Dashboard
