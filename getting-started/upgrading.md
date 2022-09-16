@@ -105,3 +105,35 @@ Get-Module Universal -ListAvailable
 Get-Module UniversalDashboard -ListAvailable
 ```
 
+## Migrating from LiteDB to SQL
+
+In the PowerShell Universal installation directory, there you will find the [DataMigrator.exe](../config/persistence.md#data-migration) tool for moving data from a local LiteDB database to a SQL server database. It takes care of creating the dashboard, creating the schema and transferring data.&#x20;
+
+{% hint style="info" %}
+Although we only read data from LiteDB, we recommend backing it up before running the tool.&#x20;
+{% endhint %}
+
+Once migrated, you will need to update the plugin setting within `appsettings.json`. Replace the `UniversalAutomation.LiteDBv5` value with the string `SQL`. You can also set an environment variable to use the SQL plugin.&#x20;
+
+```powershell
+$ENV:Plugins__0 = "SQL"
+```
+
+You'll also need to replace the connection string value with your SQL Data \ ConnectionString.&#x20;
+
+Similar to the plugin, you can use an environment variable instead of updating `appsetings.json`.
+
+```powershell
+$Env:Data__ConnectionString = "Data Source=ServerName; Initial Catalog=DatabaseName; User Id=UserName; Password=UserPassword;"
+```
+
+The step by step process is as follows:
+
+1. Stop the PowerShell Universal service
+2. Backup the database and repository
+3. Run the data migration tool&#x20;
+4. Update the appsettings.json or environment variable to enable the SQL plugin and set the connection string.&#x20;
+5. Start the PowerShell Universal service
+
+Once the service starts, it will be connected to SQL. Job data, identities, computers, and terminal instances will be stored in SQL.&#x20;
+
