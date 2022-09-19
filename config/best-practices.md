@@ -12,7 +12,7 @@ While the integrated environment is fast and easy to use, it runs all of your Po
 
 When using non-integrated environments, an external PowerShell process is started. For APIs and Dashboards, that process can be long running but can be restarted without affecting the rest of the system. With jobs and terminals, a new process is started for each instance of the job and terminal. As jobs and terminals are stopped, the process is terminated and any resources consumed by that process are reclaimed by the system.&#x20;
 
-Additionally, when loading modules into the integrated environment, the process space may become polluted with different versions of common DLLs that PSU may be using itself. This can cause assembly binding problems that may cause the imported modules to fail.&#x20;
+Additionally, when loading modules into the integrated environment, the process space may become polluted with different versions of common DLLs that PSU may be using itself. This can cause assembly binding problems that may cause the imported modules to fail to function as expected.&#x20;
 
 ### Isolate Problematic Modules
 

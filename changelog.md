@@ -6,6 +6,13 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.3.3 - 9/17/2022
+
+#### Platform
+
+* Fixed an issue where git sync would fail occasionally on multi-node installs using SQL
+* Fixed an issue where desktop mode would show a login page
+
 ## 3.3.2 - 9/16/2022
 
 #### Automation
