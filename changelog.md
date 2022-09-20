@@ -6,6 +6,26 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.3.4 - 9/20/2022
+
+#### Automation
+
+* Fixed an issue where the folder pane on the scripts page would not persist its size
+* Fixed an issue where the View Script button would not be visible when using One-Way git sync
+
+#### Dashboard
+
+* Fixed an issue where New-UDTextbox -Mask would not accept RegEx.
+
+#### Pages
+
+* Fixed an issue where the Forms fields page wouldn't navigate properly
+
+#### Platform
+
+* Fixed an issue where git sync in git init Initialize mode using an external client would fail to properly set the origin branch
+* Fixed an issue where git status would be marked as failed after service restart
+
 ## 3.3.3 - 9/17/2022
 
 #### Platform
