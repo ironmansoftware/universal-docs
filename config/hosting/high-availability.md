@@ -27,11 +27,7 @@ PowerShell Universal supports the use of load balancers such as F5 and nginx. Th
 
 ## Limitations&#x20;
 
-There currently are some limitations to highly available PowerShell Universal clusters.&#x20;
-
-### Single Job Queue
-
-The entire cluster uses a single job queue. This means that running a schedule on a specific set of nodes or a single node currently isn't support. A random node will be selected when running jobs.&#x20;
+There currently are some limitations to highly available PowerShell Universal clusters.
 
 ### Multi-Node Caching
 
