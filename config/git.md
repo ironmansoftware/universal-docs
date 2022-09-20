@@ -56,6 +56,22 @@ Next, you will provide a SSH URI for the git remote URL in PowerShell Universal.
 git@github.com:ironmansoftware/universal.git
 ```
 
+#### SSL Certificate Problem
+
+{% hint style="warning" %}
+SSL Certificate problem: unable to get local issuer certificate
+{% endhint %}
+
+If you are running on Windows and receive an SSL Certificate problem, you may need to ensure that you have [enabled schannel support](https://stackoverflow.com/questions/23885449/unable-to-resolve-unable-to-get-local-issuer-certificate-using-git-on-windows).
+
+#### Credential Persistence&#x20;
+
+{% hint style="warning" %}
+Unable to persist credentials with the 'wincredman' credential store.
+{% endhint %}
+
+If you are on Windows and receive an error about persisting credentials in wincredman, you may need to set the credential persistence to DAPI. You can [learn how to do that here](https://github.com/GitCredentialManager/git-credential-manager/issues/633).&#x20;
+
 ### Method One: Pushing Local Files to Remote
 
 {% hint style="info" %}
