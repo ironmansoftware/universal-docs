@@ -48,6 +48,10 @@ When editing the module, it will open a code editor where you can define functio
 
 ![](<../.gitbook/assets/image (393).png>)
 
+## Manually Install Modules
+
+PowerShell Universal will add the repository's `Modules` directory to the `$ENV:PSModulePath` for all environments. Adding modules to this directory will ensure the module is available to any PowerShell process running with PowerShell Universal.&#x20;
+
 ## Module Information
 
 This section includes information about certain modules and their use within PowerShell Universal.
