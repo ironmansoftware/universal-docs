@@ -6,6 +6,17 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.3.5 - 9/22/2022
+
+#### Automation
+
+* Fixed an issue where execution time would be incorrect for running jobs
+
+#### Platform
+
+* Fixed an issue where many Groom jobs could be queued when groom jobs took some time to run
+* Fixed an issue where git sync intervals over 59 seconds would cause the service to fail to start
+
 ## 3.3.4 - 9/20/2022
 
 #### Automation
