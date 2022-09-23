@@ -30,7 +30,11 @@ New-PSUEndpoint -Url /environment -Environment Integrated -Endpoint {
 
 ### Performance
 
-Performance is relative to the hardware and network conditions that you are running Universal on. That said, in ideal conditions you can expect the Universal APIs to service about 500 requests per second. This is with an entirely empty endpoint so any script that you add to that endpoint will reduce the throughput. The reduction of throughput will depend on the cmdlets and script executed within the API endpoint.
+Performance is relative to the hardware and network conditions that you are running Universal on. That said, in ideal conditions you can expect the Universal APIs to service about 500 requests per second. This is with an entirely empty endpoint so any script that you add to that endpoint will reduce the throughput. The reduction of throughput will depend on the cmdlets and script executed within the API endpoint. There is no hard limit.
+
+See [https://blog.ironmansoftware.com/webapp-benchmark-siege/](https://blog.ironmansoftware.com/webapp-benchmark-siege/) for detailed information about benchmark tests on Universal APIs.
+
+
 
 ### Variables
 
