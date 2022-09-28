@@ -4,9 +4,9 @@
 
 Download the latest version of PowerShell Universal.&#x20;
 
-## [Training](https://support.ironmansoftware.com/portal/en/kb/articles/kb1004-how-to-sign-up-for-powershell-universal-training)
+## [Training](https://ironmansoftware.com/training/powershell-universal)
 
-Enroll in the free PowerShell Universal training course.&#x20;
+Watch our free PowerShell Universal training course.&#x20;
 
 ## [Blog](https://blog.ironmansoftware.com/tags/powershelluniversal/)
 
