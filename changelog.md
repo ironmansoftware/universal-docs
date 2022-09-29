@@ -6,6 +6,18 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.3.6 - 9/27/2022
+
+#### Dashboard
+
+* Improved dashboard logging for when auto-deploy is enabled
+* Fixed an issue where dashboards could hang when saving with syntax errors and auto-deploy was enabled
+
+#### Platform
+
+* Fixed an issue where jobs would not be groomed properly when using LiteDB
+* Fixed an issue where identity detail tabs wouldn't change
+
 ## 3.3.5 - 9/22/2022
 
 #### Automation
