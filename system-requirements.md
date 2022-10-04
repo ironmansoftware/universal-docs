@@ -3,7 +3,7 @@
 ## Windows
 
 * Optional\*: [Windows PowerShell v5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616) or greater&#x20;
-* Optional\*: PowerShell v6.0 or greater
+* Optional\*: PowerShell v7.2 or greater
 * [.NET Framework v4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472) (only for Windows PowerShell)
 
 ## Linux

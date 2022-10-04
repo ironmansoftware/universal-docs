@@ -54,6 +54,10 @@ The UDv2 framework has been removed and is no longer supported. If you wish to u
 
 If you are hosting in IIS, ensure that you install the [.NET 6.0 hosting bundle](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-6.0.3-windows-hosting-bundle-installer).&#x20;
 
+### PowerShell Support
+
+PowerShell 7.2 or later is supported by PowerShell Universal v3.&#x20;
+
 ## PowerShell Upgrade
 
 If you installed the platform using `Install-PSUServer`, you can use the `Update-PSUServer` cmdlet to upgrade the system.&#x20;
