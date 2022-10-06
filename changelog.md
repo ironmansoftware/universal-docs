@@ -6,6 +6,13 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.3.7 - 10/6/2022
+
+#### Platform
+
+* Fixed an issue where git sync would not honor HTTP proxy settings
+* Fixed an issue where git sync could cause configuration issues on blank repositories.
+
 ## 3.3.6 - 9/27/2022
 
 #### Dashboard
