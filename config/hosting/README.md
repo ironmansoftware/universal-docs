@@ -102,7 +102,7 @@ Location can be either `CurrentUser` or `LocalMachine`.
 
 #### PEM And Key Certificates
 
-Some provides, like Let's Encrypt and GoDaddy, will issue certificates as PEM and key text files. You can use these types of certificates directly with the Kestrel web server. You will need to specify the `HttpsFromPem` section within the `Endpoints` for Kestrel.&#x20;
+Some providers, like Let's Encrypt and GoDaddy, will issue certificates as PEM and key text files. You can use these types of certificates directly with the Kestrel web server. You will need to specify the `HttpsFromPem` section within the `Endpoints` for Kestrel.&#x20;
 
 ```json
 {
