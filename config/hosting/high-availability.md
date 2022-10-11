@@ -25,12 +25,6 @@ PowerShell Universal supports the use of load balancers such as F5 and nginx. Th
 * Persistent (sticky) sessions are required by dashboards
 * Web socket support is required by the admin console and dashboards
 
-You aid with load balancing; you can use the `/api/v1/status` endpoint for your nodes. The endpoint will return status codes based on the current state of the node. `200` means the node is online and ready to receive requests. Servers running in maintenance mode will return `503`. Servers that failed to start due to a configuration error, will return `500`. Servers with dashboards that failed to start will also return `500`.&#x20;
-
-## Maintenance Mode
-
-You can set your nodes into Maintenance Mode by clicking Platform \ Computers and checking the maintenance mode option. Once maintenance mode is enabled, the `/api/v1/status` endpoint will begin returning `503`. This should be configured to disable traffic being routed to the node while maintenance is performed.&#x20;
-
 ## Limitations&#x20;
 
 There currently are some limitations to highly available PowerShell Universal clusters.

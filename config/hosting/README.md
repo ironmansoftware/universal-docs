@@ -100,6 +100,27 @@ To configure a certificate in a particular location and store, you can use a con
 
 Location can be either `CurrentUser` or `LocalMachine`.
 
+#### Certificate Store by Thumbprint
+
+You can use thumbprint rather than subject in version 3.4 and later.&#x20;
+
+```powershell
+{
+  "Kestrel": {
+    "Endpoints": {
+      "HTTPS": {
+         "Url": "https://*:443",
+           "Certificate": {
+             "Thumbprint": "SDFSDFSDFSDFSDFSDFSDFFSD",
+             "Store": "My",
+             "Location": "LocalMachine",
+             "AllowInvalid": "true"
+           }
+      }
+   }
+}
+```
+
 #### PEM And Key Certificates
 
 Some providers, like Let's Encrypt and GoDaddy, will issue certificates as PEM and key text files. You can use these types of certificates directly with the Kestrel web server. You will need to specify the `HttpsFromPem` section within the `Endpoints` for Kestrel.&#x20;
