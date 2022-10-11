@@ -51,6 +51,16 @@ In addition to being able to customize the login page via PowerShell, you can al
 
 ![](<../.gitbook/assets/image (274).png>)
 
+## Customizing the login page with a Dashboard
+
+You can override the login page with a dashboard by setting a dashboard's base URL to `/login`. You need to ensure that the dashboard does not require authentication.&#x20;
+
+```powershell
+New-PSUDashboard -Name 'Dashboard' -Path 'dashboard.ps1' -BaseUrl '/login'
+```
+
+You will then need to implement the login features manually.&#x20;
+
 ## API
 
 * [New-PSULoginPage](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSULoginPage.txt)

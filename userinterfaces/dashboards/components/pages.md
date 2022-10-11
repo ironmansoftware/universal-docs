@@ -278,14 +278,6 @@ New-UDDashboard -Title "Dashboard" -Pages $Page
 
 ![Button in Header](<../../../.gitbook/assets/image (414).png>)
 
-## Dynamic Page Title
-
-Page titles are static by default, but you can override this behavior by using `-LoadTitle`. It will be called when the page is loaded. This is useful when defining pages in multilingual dashboards.&#x20;
-
-```powershell
-New-UDPage -Name "Home" -LoadTitle { "Current Time" + (Get-Date) } -Content { } 
-```
-
 ## API
 
 [New-UDPage](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDPage.txt)
