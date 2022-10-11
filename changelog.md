@@ -6,6 +6,71 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.4.0 - 10/11/2022
+
+#### API
+
+* Fixed an issue where tags would not display in the admin console
+* Fixed an issue where external -Path scripts would not be reloaded automatically.
+* Added support for complex objects in param blocks within endpoints (PowerShell 7 only)
+* Added Restart APIs button for administrators to restart the API processes.
+* Fixed an issue where testing an endpoint in the admin console would not return when the endpoint returned an error
+
+#### Automation
+
+* Fixed an issue where old jobs could be left behind in SQL after a restart
+* Added support for PSCredential parameters in Invoke-PSUScript
+* Fixed an issue where long Read-Host messages would be cut off
+* Added Windows Performance counters for Active Endpoints, Average Execution Time and Calls per second
+* Fixed an issue where missing environments for APIs would cause all APIs to fail.
+* The /api/v1/job/:id endpoint will now return parameters that were used to call the job
+* Added schedule name to the job description
+* Fixed an issue where a thread could run after a job had finished.
+* Added support for dynamic default parameters for scripts
+* Added the ability to view schedule parameters
+* Added New User Login trigger
+* STDOUT and STDERR will now be shown in the job log when running a process outside of the integrated environment.
+
+#### Dashboard
+
+* Added -AutoRefresh and -AutoRefreshInterval to New-UDTable
+* Fixed an issue where the refresh button wouldn't be shown unless a title was specified in New-UDTable
+* Added -Locale to New-UDTable
+* Added -FilterDate to New-UDTableTextOption
+* Fixed an issue where date filters wouldn't work properly
+* Added -LoadTitle to New-UDPage
+* Fixed an issue where New-UDDateTime wouldn't format dates properly due to missing time zone information
+* Added Not Contains and Not Equals to New-UDDataGrid filters
+* Added Windows Performance Counters for Active Connections
+* Fixed an issue where -DefaultValue would not be returned with Get-UDElement and New-UDRadioGroup
+* Added the ability to define a login page by using the base URL /login
+* Added -Icon to New-UDSelect and New-UDSelectOption
+* Fixed an issue where the comfortable option was mispelled for -Density on New-UDDataGrid
+* Fixed an issue where New-UDDatePicker would switch between UTC and local time.
+* Added -Avatar to New-UDCard and New-UDCardHeader
+* Added -Action to New-UDCardHeader
+* Added -LabelPlacement to New-UDSwitch
+
+#### Pages
+
+* Fixed an issue where the Forms fields page wouldn't navigate properly
+
+#### Platform
+
+* Added manual git sync mode
+* Added maintenance mode for computers
+* Added /api/v1/status endpoint to help support load balancer status codes
+* Added support for detecting preview versions of PowerShell on Windows
+* Fixed an issue where the T: translation provider wouldn't work with Get-Item
+* Added support for accessing secret variables in configuration scripts
+* Configuration scripts are now more resilient to non-terminating errors
+* Fixed an issue where the DataMigrator tool could throw an Object Reference exception
+* Added validation to prevent app tokens longer than 16 years expiration date
+* Added a new option to the DataMigrator tool to delete the database before updating it.
+* Changed the method of add the schema in the DataMigrator tool
+* Added support for using a thumbprint for specifying a certificate.
+* Fixed an issue where proxy settings would not be honored when using OIDC authentication
+
 ## 3.3.7 - 10/6/2022
 
 #### Platform
