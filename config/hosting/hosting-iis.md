@@ -167,7 +167,7 @@ If you are going to be running scheduled jobs within your PowerShell Universal i
 
 Install the Application Initialization feature of the Web Server Role.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 ### App Pool Settings&#x20;
 

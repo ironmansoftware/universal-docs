@@ -33,6 +33,18 @@ The following types of events can be assigned a trigger.
 * PowerShell Protect Event
 * API Authentication Failed
 * API Error
+* New User Login
+
+### New User Login
+
+The user login event takes place when a user accesses PowerShell Universal. The script will receive a `$User`parameter with user information.&#x20;
+
+```powershell
+@{
+    Name = "username"
+    Roles = @()
+}
+```
 
 ### User Login
 

@@ -89,7 +89,7 @@ To create a chart, use `New-UDChartJS` and `New-UDChartJSData`. The below chart 
 
 #### Bubble
 
-<figure><img src="../../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 A bubble chart consists of x and y coordinates and an r value for the radius of the circles.&#x20;
 

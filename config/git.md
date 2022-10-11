@@ -14,7 +14,7 @@ Git sync can be configured in the database. This is the preferred approach when 
 
 To configure git sync, navigate to Settings \ Git within the Admin Console. You will be able to click the Git Settings button.&#x20;
 
-![](<../.gitbook/assets/image (359).png>)
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ### appsettings.json&#x20;
 
@@ -35,6 +35,16 @@ You will need to configure authentication to your remote git repository. We reco
 ### External Git Client
 
 You can choose to use an external git client rather than using the library built into PowerShell Universal. This allows you additional configuration options such as using SSH authentication. PowerShell Universal will not use configured username, passwords or PATs when enabling this method. You will need to have a git client installed.&#x20;
+
+### Manual Mode
+
+{% hint style="info" %}
+Manual mode is preferred and will be the default in the next major version.&#x20;
+{% endhint %}
+
+Manual mode requires users editing the PowerShell Universal instance to click Edit in order to make changes in the system. Once the changes are complete, the user can then click Save and enter a message about what changed. At this time a commit is made and pushed to the remote.&#x20;
+
+While editing the environment, the git sync process is paused.&#x20;
 
 #### Example: User Name and PAT
 
