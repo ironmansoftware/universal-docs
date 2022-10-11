@@ -168,6 +168,20 @@ $RequiredParameter
 
 ![](<../../.gitbook/assets/image (84).png>)
 
+### Default Value
+
+You can use both static and default values for parameters. The default value is calculated when the job is about to be run.&#x20;
+
+```powershell
+param(
+    $Parameter = "Hello, World",
+    [DateTime]$ExecutionTime = Get-Date
+)
+
+$Parameter
+$ExecutionTime
+```
+
 ## Passing Parameters from PowerShell
 
 You can pass parameters from PowerShell using the `Invoke-UAJob` cmdlet. This cmdlet supports dynamic parameters. If you have a `param` block on your script, these parameters will automatically be added to `Invoke-UAJob`.
