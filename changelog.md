@@ -6,6 +6,21 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.4.1 - 10/14/2022
+
+#### Dashboard
+
+* Fixed an issue where -OnClick of New-UDChartJS wouldn't work
+
+#### Platform
+
+* Fixed an issue where the Configurations page would not update when creating\deleting items
+* Fixed an issue where the service may fail to start if it doesn't have access to performance counter info (typically with IIS)
+* Fixed an issue where the git sync service could start before PSU ready when using SQL persistence
+* Fixed an issue with the SQL schema files
+* Added support for not updating the SQL schema when starting the PSU service
+* Added support for running the data migrator without install the schema
+
 ## 3.4.0 - 10/11/2022
 
 #### API

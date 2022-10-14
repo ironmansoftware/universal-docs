@@ -47,6 +47,20 @@ You can configure PowerShell Universal to store data within a Microsoft SQL Data
 
 The PowerShell Universal instances will share a single job queue and only one instance will run a job either on the schedule, as a trigger, or manually. All data about jobs will be stored in the centralized database.&#x20;
 
+### Manual Schema Install\Update
+
+In some environments, the PSU service may not have access to create schema in the database. In this scenario, you can manually install and update the schema by executing SQL files included with PowerShell Universal. Within the PowerShell Universal installation folder, you will find a `SQL` directory that includes two SQL files.&#x20;
+
+Run these files against your database prior to upgrading PowerShell Universal. You will need to stop PowerShell Universal while you are doing this. You can run them in any order. Both scripts are idempotent.&#x20;
+
+By default, PowerShell Universal will attempt to update the schema of the database. To completely disable this feature, you can set the `RunMigrations` setting to false in appsettings.json.&#x20;
+
+```json
+"Data": {
+   "RunMigrations": false
+}
+```
+
 ### Frequently Asked Questions
 
 #### Database Account Privileges&#x20;
@@ -120,3 +134,14 @@ Below is an example of how to run the data migration tool.&#x20;
 ```
 DataMigration.exe -l C:\ProgramData\UniversalAutomation\database.db -s 'Server=(localdb)\mssqllocaldb;Database=PSU;Trusted_Connection=True;'
 ```
+
+By default, the migration tool will install the schema for the database. You can use the `--noschema` parameter to prevent this from happening.&#x20;
+
+### Command Line Arguments
+
+| Argument     | Description                                       | Required |
+| ------------ | ------------------------------------------------- | -------- |
+| -l, --litedb | Path to the LiteDB database file.                 | yes      |
+| -s, --sql    | Connection string for the SQL database            | yes      |
+| -c, --clean  | Drop the database before migrating                | no       |
+| --noschema   | Skip schema migrations and only transfer the data | no       |
