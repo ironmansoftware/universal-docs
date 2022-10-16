@@ -20,6 +20,7 @@ description: Changelog for PowerShell Universal.
 * Fixed an issue with the SQL schema files
 * Added support for not updating the SQL schema when starting the PSU service
 * Added support for running the data migrator without install the schema
+* Added support for continue running the data migrator even when there are errors
 
 ## 3.4.0 - 10/11/2022
 

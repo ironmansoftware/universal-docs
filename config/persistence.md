@@ -139,9 +139,10 @@ By default, the migration tool will install the schema for the database. You can
 
 ### Command Line Arguments
 
-| Argument     | Description                                       | Required |
-| ------------ | ------------------------------------------------- | -------- |
-| -l, --litedb | Path to the LiteDB database file.                 | yes      |
-| -s, --sql    | Connection string for the SQL database            | yes      |
-| -c, --clean  | Drop the database before migrating                | no       |
-| --noschema   | Skip schema migrations and only transfer the data | no       |
+| Argument          | Description                                        | Required |
+| ----------------- | -------------------------------------------------- | -------- |
+| -l, --litedb      | Path to the LiteDB database file.                  | yes      |
+| -s, --sql         | Connection string for the SQL database             | yes      |
+| -c, --clean       | Drop the database before migrating                 | no       |
+| --noschema        | Skip schema migrations and only transfer the data  | no       |
+| --continueonerror | Continue migrating items even if there is an error | no       |
