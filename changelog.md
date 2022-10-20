@@ -6,7 +6,33 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
-## 3.4.1 - 10/14/2022
+## 3.4.2 - 10/19/2022
+
+#### Automation
+
+* Fixed an issue where jobs would timeout immediately
+
+#### Dashboard
+
+* Added -NavigationStyle to Get-UDTheme
+* Fixed an issue where the dashboard logo would not be shown when using new themes
+* Fixed an issue where UDCard with Avatar would have a small title text size
+* Fixed an issue where dashboard navigation would reset when clicking navigation
+* Fixed an issue where New-UDTimePicker would not return time in a consistent manner.
+
+#### Pages
+
+* Fixed an issue where invalid page files could cause other configuration files to fail to load
+* Fixed an issue where text output type would not return a value
+
+#### Platform
+
+* Fixed an issue where Set-PSUVariable couldn't update a variable
+* Fixed an issue where Get-PSUVariable -ValueOnly wouldn't return a deserialized value
+* Fixed an issue where invalid settings.ps1 files could cause the server to not start
+* Fixed an issue where Get-ChildItem would not return the value of a secret
+
+## 3.4.1 - 10/16/2022
 
 #### Dashboard
 
