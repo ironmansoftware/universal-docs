@@ -6,6 +6,17 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.4.3 - 10/20/2022
+
+#### Pages
+
+* Fixed an issue where forms couldn't display job output when using SQL persistence
+
+#### Platform
+
+* Added support for setting Git Manual Mode from appsettings.json (Data\GitManualMode = true)
+* Fixed an issue where Set-PSUVariable -Integrated would throw an exception
+
 ## 3.4.2 - 10/19/2022
 
 #### Automation
