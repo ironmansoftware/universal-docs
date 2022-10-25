@@ -6,6 +6,19 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.4.4 - 10/25/2022
+
+#### Automation
+
+* Fixed an issue where default bool values would not be applied correctly when creating schedules
+* Fixed an issue where schedules could be created with scripts that didn't exist
+
+#### Platform
+
+* Fixed an issue where user profiles for Run As credentials would not be loaded in some scenarios
+* Fixed an issue where database connections could be leaked causing memory and transaction logs to grow
+* Fixed an issue where invalid settings.ps1 files could cause the system to fail to load
+
 ## 3.4.3 - 10/20/2022
 
 #### Pages
