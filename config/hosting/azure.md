@@ -52,7 +52,7 @@ If you choose to use git integration in PowerShell Universal, we recommend setti
 
 You'll need an Azure SQL database to get started. Once you create the resource, you will need to copy the connection string from the database to provide to PowerShell Universal.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (2) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Ensure that you have allowed Azure services to access the database.&#x20;
 

@@ -8,7 +8,7 @@ The `UDDataGrid` component is an advanced version of the table that is useful fo
 
 ## Simple Data Grid
 
-![](<../../../../.gitbook/assets/image (5).png>)
+![](<../../../../.gitbook/assets/image (5) (2).png>)
 
 Data grids load their data via the `-LoadRows` event handler. You will need to return a hashtable that contains the row data and the total number of rows.&#x20;
 
@@ -119,7 +119,7 @@ New-UDDataGrid -LoadRows {
 
 ### Filtering
 
-![](<../../../../.gitbook/assets/image (4).png>)
+![](<../../../../.gitbook/assets/image (4) (1).png>)
 
 The filter hashtable is included in the `$EventData` for the `-LoadData` event handler when a filter is defined. The hashtable has a structure as follows.&#x20;
 

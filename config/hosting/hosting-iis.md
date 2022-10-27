@@ -155,6 +155,61 @@ At this point, all the required configurations should be in place, and the IIS w
 You are are still experiencing issues with the basic IIS Configuration try checking the "Logs" path specified in the web.config for common issues. If you are still experiencing issues reach out on the forums or support for assistance.
 {% endhint %}
 
+## Nested IIS Applications
+
+It is possible to nest multiple PowerShell Universal instances under a single application pool and website, but it does require some additional configuration.&#x20;
+
+You will need have two folders for your application files: one for each application. You will also need to setup two data folders: one for each application.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Web Site Root</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Application Files</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Data Files</p></figcaption></figure>
+
+Once you have setup your folder structure configured, you will need to create two appsettings.json files and update your web.config files for each application.&#x20;
+
+Within the appsettings.json files, you will need to set the proper paths to the data files for each instance. You will also need to configure the correct base URL for the nested site.&#x20;
+
+```json
+{
+  "Kestrel": {
+    "BasePath": "/psu1"
+  },
+  "Logging": {
+    "Path": "C:\\src\\psu\\data1\\log.txt",
+  },
+  "Data": {
+    "RepositoryPath": "C:\\src\\psu\\data1\\Repository",
+    "ConnectionString": "filename=C:\\src\\psu\\data1\\database.db;upgrade=true",
+  }
+}
+```
+
+Next, you'll need to update the web.config files for each site to use the proper appsettings.json file and use OutOfProcess hosting.&#x20;
+
+```markup
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <system.webServer>
+    <handlers>
+      <add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified" />
+    </handlers>
+    <aspNetCore processPath=".\Universal.Server.exe" arguments="--appsettings C:\src\psu\appsettings.psu1.json" forwardWindowsAuthToken="false" stdoutLogEnabled="true" stdoutLogFile=".\logs\log" hostingModel="OutOfProcess" />
+  </system.webServer>
+</configuration>
+<!--ProjectGuid: 588ACF2E-9AE5-4DF1-BC42-BCE16A4C4EDE-->
+```
+
+Now, within the IIS Manager, right click on the psu1 and psu2 folders to convert them to applications.&#x20;
+
+You should now be able to access the PowerShell Universal admin console at both of the following URLs.&#x20;
+
+```
+http://localhost/psu1/admin
+http://localhost/psu2/admin
+```
+
 ## Configuration for Jobs
 
 {% hint style="warning" %}
@@ -167,7 +222,7 @@ If you are going to be running scheduled jobs within your PowerShell Universal i
 
 Install the Application Initialization feature of the Web Server Role.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### App Pool Settings&#x20;
 

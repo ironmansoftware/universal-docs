@@ -84,7 +84,7 @@ New-UDMapMarker -Latitude "51.$RandomLat" -Longitude "-0.$Random" -Popup (
 
 Heatmaps can be defined by creating a heatmap layer. The intesity and location of the heatmap clusters can be defined by using the `New-UDMapHeatmapLayer` cmdlet.
 
-```
+```powershell
 New-UDMap -Endpoint {
     New-UDMapRasterLayer -TileServer 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' 
     New-UDMapHeatmapLayer -Points @(
@@ -111,7 +111,7 @@ New-UDMap -Endpoint {
 
 Marker clusters group together markers that are close to each other. As you zoom in or out, the clusters will either combine or explode.
 
-```
+```powershell
 New-UDMap -Endpoint {
     New-UDMapRasterLayer -TileServer 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' 
     New-UDMapMarkerClusterLayer -Id 'cluster-layer' -Markers @(
@@ -132,7 +132,7 @@ Maps provide a series of interactive capabilities for add components to and mani
 
 ![](../../../../.gitbook/assets/interactive.gif)
 
-```
+```powershell
 New-UDButton -Text 'Add Circle' -OnClick {
     Add-UDElement -ParentId 'Feature-Group' -Content {
         New-UDMapVectorLayer -Id 'Vectors' -Circle -Latitude 51.505 -Longitude -0.09 -Radius 500 -Color blue -FillColor blue -FillOpacity .5 
