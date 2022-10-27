@@ -10,7 +10,7 @@ The UDMap component is a robust control that provides a huge set of features. Yo
 
 This basic map defines a simple base layer using the wmflabs.org tile server. You can use your own custom tile server by specifying a URL. The map is position over Hailey, Idaho.
 
-```
+```powershell
 New-UDMap -Endpoint {
     New-UDMapRasterLayer -TileServer 'https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png' 
 } -Latitude 43.52107 -Longitude -114.31644 -Zoom 13 -Height '100vh'
@@ -22,7 +22,7 @@ New-UDMap -Endpoint {
 
 You can enable the layer control by using the `New-UDMapLayerControl` cmdlet. This map defines several layers with components that you can toggle on and off. You can only have one base layer selected as a time. Map overlay layers can toggle on and off.
 
-```
+```powershell
 New-UDMap -Endpoint {
     New-UDMapLayerControl -Content {
         New-UDMapBaseLayer -Name 'Black and White' -Content {
@@ -42,6 +42,43 @@ New-UDMap -Endpoint {
 ```
 
 ![](<../../../../.gitbook/assets/image (92).png>)
+
+## Markers
+
+Markers are used to highlight particular locations.&#x20;
+
+```powershell
+New-UDMap -Endpoint {
+    New-UDMapRasterLayer -TileServer 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' 
+    New-UDMapMarker -Latitude "51.100" -Longitude "-0.5"
+} -Latitude 51.505 -Longitude -0.09 -Zoom 13 -Height '100vh'
+```
+
+### Custom Icons
+
+You can specify custom icons for markers using the `-Icon` parameter.&#x20;
+
+{% code overflow="wrap" %}
+```powershell
+New-UDMap -Endpoint {
+    New-UDMapRasterLayer -TileServer 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' 
+    New-UDMapMarker -Latitude "51.100" -Longitude "-0.5"
+} -Latitude 51.505 -Longitude -0.09 -Zoom 13 -Height '100vh' -Icon (New-UDMapIcon -Url = "https://ironmansoftware.com/img/ps-logo.png")
+}
+```
+{% endcode %}
+
+### Popups&#x20;
+
+You can create a popup when clicking the marker by using the `-Popup` parameter and the `New-UDMapPopup` cmdlet.&#x20;
+
+```powershell
+New-UDMapMarker -Latitude "51.$RandomLat" -Longitude "-0.$Random" -Popup (
+    New-UDMapPopup -Content {
+        New-UDAlert -Text "Hello"
+    } -MinWidth 200
+)
+```
 
 ## Heatmaps
 
