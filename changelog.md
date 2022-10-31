@@ -6,6 +6,16 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.4.5 - 10/31/2022
+
+#### Automation
+
+* Fixed an issue where Verbose, Warning, and Error streams wouldn't produce a new line in the job log.
+
+#### Platform
+
+* Fixed an issue where running a process as a non-admin user in a domain environment could fail to start
+
 ## 3.4.4 - 10/25/2022
 
 #### Automation
