@@ -61,7 +61,7 @@ You can specify the location of the `appsettings.json` file by using the `--apps
 **Default Value**
 
 ```javascript
-    "Kestrel": {
+"Kestrel": {
   "Endpoints": {
     "HTTP": {
       "Url": "http://*:5000"
@@ -84,7 +84,7 @@ Kestrel is the web server implementation for ASP.NET Core that PowerShell Univer
 **Default value**
 
 ```javascript
-    "ApplicationInsights": {
+"ApplicationInsights": {
   "InstrumentationKey": ""
 },
 ```
@@ -98,7 +98,7 @@ Kestrel is the web server implementation for ASP.NET Core that PowerShell Univer
 **Default Value**
 
 ```javascript
-    "Logging": {
+"Logging": {
   "Path": "%PROGRAMDATA%/PowerShellUniversal/log.txt",
   "RetainedFileCountLimit": 31,
   "LogLevel": {
@@ -146,14 +146,15 @@ Configures the hosts that are allowed to make cross-origin resource sharing requ
 **Default Value**
 
 ```javascript
-    "Data": {
+"Data": {
   "RepositoryPath": "%ProgramData%\\UniversalAutomation\\Repository",
   "ConnectionString": "%ProgramData%\\UniversalAutomation\\database.db",
   "GitRemote": "",
   "GitUserName": "",
   "GitPassword": "", 
   "GitBranch": "",
-  "ConfigurationScript": ""
+  "ConfigurationScript": "",
+  "Mode": "automatic"
 },
 ```
 
@@ -166,6 +167,7 @@ Configures the hosts that are allowed to make cross-origin resource sharing requ
 | GitUserName         | Git user name used to sync to the GitRemote. When using a PAT, this can be any value.                                              |
 | GitPassword         | The Git user password or personal access token used to sync to the GitRemote.                                                      |
 | ConfigurationScript | Location of a custom configuration script to load. You can return objects like scripts, dashboards and endpoints from this script. |
+| Mode                | Sets the git mode. It can be either manual or automatic. Defaults to automatic.                                                    |
 
 ### **API**
 
