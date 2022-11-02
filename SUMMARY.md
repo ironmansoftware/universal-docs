@@ -60,6 +60,7 @@
       * [Typography](userinterfaces/dashboards/components/data-display/typography.md)
     * [Data Visualization](userinterfaces/dashboards/components/data-visualization/README.md)
       * [Charts](userinterfaces/dashboards/components/data-visualization/charts.md)
+      * [Image](userinterfaces/dashboards/components/data-visualization/image.md)
       * [Map](userinterfaces/dashboards/components/data-visualization/map.md)
     * [Feedback](userinterfaces/dashboards/components/feedback/README.md)
       * [Backdrop](userinterfaces/dashboards/components/feedback/backdrop.md)
