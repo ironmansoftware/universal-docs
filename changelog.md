@@ -6,6 +6,12 @@ description: Changelog for PowerShell Universal.
 
 ## Changelog
 
+## 3.4.6 - 11/2/2022
+
+#### Platform
+
+* Fixed an issue where online licenses could fail to activate
+
 ## 3.4.5 - 10/31/2022
 
 #### Automation
