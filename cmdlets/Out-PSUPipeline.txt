@@ -1,13 +1,13 @@
 
 NAME
-    Out-UAPipeline
+    Out-PSUPipeline
     
 SYNOPSIS
     Internal.
     
     
 SYNTAX
-    Out-UAPipeline -Collection <System.Collections.Generic.ICollection`1[System.String]> [-InputObject <PSObject>] [<CommonParameters>]
+    Out-PSUPipeline -Collection <System.Collections.Generic.ICollection`1[System.String]> [-InputObject <PSObject>] [<CommonParameters>]
     
     
 DESCRIPTION

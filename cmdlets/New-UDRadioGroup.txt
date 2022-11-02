@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDRadioGroup [[-Id] <String>] [[-Label] <String>] [[-Children] <ScriptBlock>] [[-OnChange] <Endpoint>] [[-Value] <String>] [[-ClassName] <String>] [<CommonParameters>]
+    New-UDRadioGroup [[-Id] <String>] [[-Label] <String>] [[-Children] <ScriptBlock>] [[-OnChange] <Endpoint>] [[-Value] <String>] [[-ClassName] <String>] [[-DefaultValue] <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -64,6 +64,14 @@ PARAMETERS
         
         Required?                    false
         Position?                    6
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DefaultValue <String>
+        
+        Required?                    false
+        Position?                    7
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false

@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDIcon [[-Id] <String>] [[-Icon] <String>] [-FixedWidth] [-Inverse] [[-Rotation] <Int32>] [[-ClassName] <String>] [[-Transform] <String>] [[-Flip] <String>] [[-Pull] <String>] [-ListItem] [-Spin] [-Border] [-Pulse] [[-Size] <String>] [[-Style] <Hashtable>] [[-Title] <String>] [-Regular] [[-Color] <DashboardColor>] [<CommonParameters>]
+    New-UDIcon [[-Id] <String>] [[-Icon] <String>] [-FixedWidth] [-Inverse] [[-Rotation] <Int32>] [[-ClassName] <String>] [[-Transform] <String>] [[-Flip] <String>] [[-Pull] <String>] [-ListItem] [-Spin] [-Border] [-Beat] [-Fade] [-Bounce] [-BeatFade] [-Shake] [[-Size] <String>] [[-Style] <Hashtable>] [[-Title] <String>] [-Regular] [[-Color] <DashboardColor>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -122,8 +122,39 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -Pulse [<SwitchParameter>]
-        Whether this icon should publse.
+    -Beat [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Fade [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Bounce [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -BeatFade [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Shake [<SwitchParameter>]
         
         Required?                    false
         Position?                    named

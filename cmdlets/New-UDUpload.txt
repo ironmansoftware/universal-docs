@@ -79,7 +79,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    6
-        Default value                default
+        Default value                inherit
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

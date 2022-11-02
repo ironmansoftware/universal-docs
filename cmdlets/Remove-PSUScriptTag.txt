@@ -1,13 +1,13 @@
 
 NAME
-    Remove-UAScriptTag
+    Remove-PSUScriptTag
     
 SYNOPSIS
     Removes a tag from a script.
     
     
 SYNTAX
-    Remove-UAScriptTag [-Script] <Script> [-Tag] <Tag> [-AppToken <String>] [-ComputerName <String>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Remove-PSUScriptTag [-Script] <Script> [-Tag] <Tag> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -33,6 +33,15 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
     -Script <Script>
         The script to remove the tag from. Use Get-UAScript to retrieve a Script object.
         
@@ -53,15 +62,6 @@ PARAMETERS
         
     -UseDefaultCredentials [<SwitchParameter>]
         Use default credentials when connecting to the management API
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
         
         Required?                    false
         Position?                    named

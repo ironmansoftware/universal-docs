@@ -1,15 +1,15 @@
 
 NAME
-    Get-UAScriptParameter
+    Get-PSUScriptParameter
     
 SYNOPSIS
     Returns parameters for a script.
     
     
 SYNTAX
-    Get-UAScriptParameter [-AppToken <String>] [-ComputerName <String>] -Script <Script> [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Get-PSUScriptParameter [-AppToken <String>] [-ComputerName <String>] [-Integrated] -Script <Script> [-UseDefaultCredentials] [<CommonParameters>]
     
-    Get-UAScriptParameter [-AppToken <String>] [-ComputerName <String>] -ScriptId <Int64> [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Get-PSUScriptParameter [-AppToken <String>] [-ComputerName <String>] [-Integrated] -ScriptId <Int64> [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -35,6 +35,15 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
     -Script <Script>
         The script to return parameters for. Use Get-UAScript to get a Script object.
         
@@ -55,15 +64,6 @@ PARAMETERS
         
     -UseDefaultCredentials [<SwitchParameter>]
         Use default credentials when connecting to the management API
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
         
         Required?                    false
         Position?                    named

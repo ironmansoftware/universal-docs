@@ -1,0 +1,49 @@
+
+NAME
+    Find-UDIcon
+    
+SYNOPSIS
+    Find an icon.
+    
+    
+SYNTAX
+    Find-UDIcon [-Name] <Object> [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Find an icon.
+    
+
+PARAMETERS
+    -Name <Object>
+        The name of the icon to find.
+        
+        Required?                    true
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Find-UDIcon -Name 'User'
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

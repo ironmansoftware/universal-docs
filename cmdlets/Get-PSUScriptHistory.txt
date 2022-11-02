@@ -1,15 +1,15 @@
 
 NAME
-    Get-UAScriptHistory
+    Get-PSUScriptHistory
     
 SYNOPSIS
     Returns the git history for a script.
     
     
 SYNTAX
-    Get-UAScriptHistory [-AppToken <String>] [-ComputerName <String>] -Script <Script> [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Get-PSUScriptHistory [-AppToken <String>] [-ComputerName <String>] [-Integrated] -Script <Script> [-UseDefaultCredentials] [<CommonParameters>]
     
-    Get-UAScriptHistory [-AppToken <String>] [-ComputerName <String>] -ScriptId <Int64> [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Get-PSUScriptHistory [-AppToken <String>] [-ComputerName <String>] [-Integrated] -ScriptId <Int64> [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -18,7 +18,7 @@ DESCRIPTION
 
 PARAMETERS
     -AppToken <String>
-        An app token to access the UA API.
+        App token to access the PowerShell Universal server.
         
         Required?                    false
         Position?                    named
@@ -27,7 +27,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The HTTP address of the UA REST API server.
+        The name or URL of the PowerShell Universal server.
         
         Required?                    false
         Position?                    named
@@ -35,8 +35,17 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
+    -Integrated [<SwitchParameter>]
+        Whether to use integrated transport
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
     -Script <Script>
-        The script to return history for. Use Get-UAScript to get a Script object.
+        The script for which to receive history.
         
         Required?                    true
         Position?                    named
@@ -45,7 +54,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ScriptId <Int64>
-        The ID of the script to return history for.
+        The script ID for which to receive history.
         
         Required?                    true
         Position?                    named
@@ -54,16 +63,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
-        Use default credentials when connecting to the management API
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        Use default Windows Credentials when connecting to PowerShell Universal.
         
         Required?                    false
         Position?                    named

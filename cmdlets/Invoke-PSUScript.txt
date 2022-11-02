@@ -1,17 +1,17 @@
 
 NAME
-    Invoke-UAScript
+    Invoke-PSUScript
     
 SYNOPSIS
     Invokes a script within UA.
     
     
 SYNTAX
-    Invoke-UAScript [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-Notes <String>] [-WaitForDebugger] [-Environment <String>] [-UseDefaultCredentials] [-Integrated] [-Wait] [<CommonParameters>]
+    Invoke-PSUScript [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-Environment <String>] [-Integrated] [-Notes <String>] [-UseDefaultCredentials] [-Wait] [-WaitForDebugger] [<CommonParameters>]
     
-    Invoke-UAScript [-Name] <String> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-Notes <String>] [-WaitForDebugger] [-Environment <String>] [-UseDefaultCredentials] [-Integrated] [-Wait] [<CommonParameters>]
+    Invoke-PSUScript [-Name] <String> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-Environment <String>] [-Integrated] [-Notes <String>] [-UseDefaultCredentials] [-Wait] [-WaitForDebugger] [<CommonParameters>]
     
-    Invoke-UAScript [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-Notes <String>] [-WaitForDebugger] [-Environment <String>] [-UseDefaultCredentials] [-Integrated] [-Wait] [<CommonParameters>]
+    Invoke-PSUScript [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-Environment <String>] [-Integrated] [-Notes <String>] [-UseDefaultCredentials] [-Wait] [-WaitForDebugger] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -46,6 +46,15 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
+    -Environment <String>
+        The environment to use when invoke this script. You can see available environments by using Get-PSUEnvironment.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
     -Id <Int64>
         The ID of the script to invoke.
         
@@ -53,6 +62,15 @@ PARAMETERS
         Position?                    0
         Default value                None
         Accept pipeline input?       True (ByValue)
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -Name <String>
@@ -82,24 +100,6 @@ PARAMETERS
         Accept pipeline input?       True (ByValue)
         Accept wildcard characters?  false
         
-    -WaitForDebugger [<SwitchParameter>]
-        Not used.
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Environment <String>
-        The environment to use when invoke this script. You can see available environments by using Get-PSUEnvironment.
-        
-        Required?                    false
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
     -UseDefaultCredentials [<SwitchParameter>]
         Use default credentials when connecting to the management API
         
@@ -109,8 +109,8 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+    -Wait [<SwitchParameter>]
+        {{ Fill Wait Description }}
         
         Required?                    false
         Position?                    named
@@ -118,8 +118,8 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Wait [<SwitchParameter>]
-        {{ Fill Wait Description }}
+    -WaitForDebugger [<SwitchParameter>]
+        Not used.
         
         Required?                    false
         Position?                    named

@@ -3,7 +3,7 @@ NAME
     New-PSUValidationResult
     
 SYNOPSIS
-    Returns a validation result.
+    {{ Fill in the Synopsis }}
     
     
 SYNTAX
@@ -11,12 +11,12 @@ SYNTAX
     
     
 DESCRIPTION
-    Returns a validation result. This cmdlet should be used when validating forms on Pages.
+    {{ Fill in the Description }}
     
 
 PARAMETERS
     -ErrorMessage <String>
-        The error message to display when validation fails.
+        {{ Fill ErrorMessage Description }}
         
         Required?                    false
         Position?                    named
@@ -25,7 +25,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Success [<SwitchParameter>]
-        Whether the result of validation was successful.
+        {{ Fill Success Description }}
         
         Required?                    false
         Position?                    named
@@ -56,9 +56,9 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> New-PSUValidationResult -ErrorMessage 'Invalid Data'
+    PS C:\> {{ Add example code here }}
     
-    Creates a new validation result that is not successful.
+    {{ Add example description here }}
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

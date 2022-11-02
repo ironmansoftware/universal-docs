@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDSelect [[-Id] <String>] [[-Option] <ScriptBlock>] [[-Label] <String>] [[-OnChange] <Endpoint>] [[-DefaultValue] <Object>] [-Disabled] [-Multiple] [[-MaxWidth] <String>] [[-ClassName] <String>] [-FullWidth] [<CommonParameters>]
+    New-UDSelect [[-Id] <String>] [[-Option] <ScriptBlock>] [[-Label] <String>] [[-OnChange] <Endpoint>] [[-DefaultValue] <Object>] [-Disabled] [-Multiple] [[-MaxWidth] <String>] [[-ClassName] <String>] [-FullWidth] [[-Variant] <String>] [[-Icon] <Object>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -100,6 +100,23 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Variant <String>
+        
+        Required?                    false
+        Position?                    8
+        Default value                standard
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Icon <Object>
+        The icon to show next to the textbox. Use New-UDIcon to create an icon.
+        
+        Required?                    false
+        Position?                    9
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

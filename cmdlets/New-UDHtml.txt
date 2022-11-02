@@ -3,7 +3,7 @@ NAME
     New-UDHtml
     
 SYNOPSIS
-    Display HTML in your dashboard.
+    Displays HTML on a dashboard.
     
     
 SYNTAX
@@ -11,7 +11,7 @@ SYNTAX
     
     
 DESCRIPTION
-    Display HTML in your dashboard.
+    Displays HTML on a dashboard.
     
 
 PARAMETERS
@@ -47,9 +47,9 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> New-UDHtml -Markup "<ul><li>First</li><li>Second</li><li>Third</li></ul>"
+    New-UDHTML -Markup "<blink>Hello!</blink>"
     
-    Displays a list.
+    Creates blinking text on a page.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

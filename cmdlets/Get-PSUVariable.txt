@@ -1,15 +1,15 @@
 
 NAME
-    Get-UAVariable
+    Get-PSUVariable
     
 SYNOPSIS
     Returns variables defined in UA.
     
     
 SYNTAX
-    Get-UAVariable [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-ValueOnly] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Get-PSUVariable [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-ValueOnly] [<CommonParameters>]
     
-    Get-UAVariable [-Name] <String> [-AppToken <String>] [-ComputerName <String>] [-ValueOnly] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Get-PSUVariable [-Name] <String> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-ValueOnly] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -44,21 +44,21 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
     -Name <String>
         The name of the variable.
         
         Required?                    true
         Position?                    0
         Default value                None
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -ValueOnly [<SwitchParameter>]
-        {{ Fill ValueOnly Description }}
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
@@ -71,8 +71,8 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+    -ValueOnly [<SwitchParameter>]
+        {{ Fill ValueOnly Description }}
         
         Required?                    false
         Position?                    named

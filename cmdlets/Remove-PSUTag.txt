@@ -1,13 +1,13 @@
 
 NAME
-    Remove-UATag
+    Remove-PSUTag
     
 SYNOPSIS
     Removes a tag.
     
     
 SYNTAX
-    Remove-UATag [-Tag] <Tag> [-AppToken <String>] [-ComputerName <String>] -Id <Int64> [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Remove-PSUTag [-Id] <Int64> [-Tag] <Tag> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -33,6 +33,24 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
+    -Id <Int64>
+        The Id of the tag to remove.
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
     -Tag <Tag>
         The tag to remove. Use Get-UATag to retrieve a tag object.
         
@@ -42,26 +60,8 @@ PARAMETERS
         Accept pipeline input?       True (ByValue)
         Accept wildcard characters?  false
         
-    -Id <Int64>
-        {{ Fill Id Description }}
-        
-        Required?                    true
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
     -UseDefaultCredentials [<SwitchParameter>]
         Use default credentials when connecting to the management API
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
         
         Required?                    false
         Position?                    named

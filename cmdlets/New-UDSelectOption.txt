@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDSelectOption [-Name] <String> [-Value] <String> [<CommonParameters>]
+    New-UDSelectOption [-Name] <String> [-Value] <String> [[-Icon] <Object>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -29,6 +29,15 @@ PARAMETERS
         
         Required?                    true
         Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Icon <Object>
+        The icon to show next to the textbox. Use New-UDIcon to create an icon.
+        
+        Required?                    false
+        Position?                    3
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false

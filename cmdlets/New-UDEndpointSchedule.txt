@@ -3,7 +3,7 @@ NAME
     New-UDEndpointSchedule
     
 SYNOPSIS
-    {{ Fill in the Synopsis }}
+    Creates a schedule for New-UDEndpoint.
     
     
 SYNTAX
@@ -19,12 +19,12 @@ SYNTAX
     
     
 DESCRIPTION
-    {{ Fill in the Description }}
+    Creates a schedule for New-UDEndpoint.
     
 
 PARAMETERS
     -Consecutive [<SwitchParameter>]
-        {{ Fill Consecutive Description }}
+        
         
         Required?                    false
         Position?                    named
@@ -33,7 +33,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Cron <String>
-        {{ Fill Cron Description }}
+        A CRON expression that defines the endpoint schedule.
         
         Required?                    false
         Position?                    named
@@ -42,7 +42,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Day [<SwitchParameter>]
-        {{ Fill Day Description }}
+        The Every parameter refers to days.
         
         Required?                    true
         Position?                    named
@@ -51,7 +51,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Every <Int32>
-        {{ Fill Every Description }}
+        The unit of time between scheduled runs.
         
         Required?                    true
         Position?                    named
@@ -60,7 +60,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Hour [<SwitchParameter>]
-        {{ Fill Hour Description }}
+        The Every parameter refers to hours.
         
         Required?                    true
         Position?                    named
@@ -69,7 +69,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Minute [<SwitchParameter>]
-        {{ Fill Minute Description }}
+        The Every parameter refers to minutes.
         
         Required?                    true
         Position?                    named
@@ -78,7 +78,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Repeat <Int32>
-        {{ Fill Repeat Description }}
+        
         
         Required?                    false
         Position?                    named
@@ -87,7 +87,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Second [<SwitchParameter>]
-        {{ Fill Second Description }}
+        The Every parameter refers to Seconds.
         
         Required?                    true
         Position?                    named
@@ -118,9 +118,12 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> {{ Add example code here }}
+    $Schedule = New-UDEndpointSchedule 10 -Second
+    New-UDEndpoint -Schedule $Schedule -Endpoint {
+        $Cache:Processes = Get-Process
+    }
     
-    {{ Add example description here }}
+    Caches processes every 10 seconds.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

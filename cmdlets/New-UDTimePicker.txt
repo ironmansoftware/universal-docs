@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTimePicker [[-Id] <String>] [[-Label] <String>] [[-OnChange] <Endpoint>] [[-Value] <String>] [[-Locale] <String>] [[-ClassName] <String>] [-DisableAmPm] [<CommonParameters>]
+    New-UDTimePicker [[-Id] <String>] [[-Label] <String>] [[-OnChange] <Endpoint>] [[-Value] <String>] [[-Locale] <String>] [[-ClassName] <String>] [-DisableAmPm] [[-TimeZone] <TimeZoneInfo>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -61,6 +61,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ClassName <String>
+        A CSS class to apply to the time picker.
         
         Required?                    false
         Position?                    6
@@ -69,10 +70,19 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -DisableAmPm [<SwitchParameter>]
+        Use 24-hour time instead of them AM/PM ante meridiem.
         
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -TimeZone <TimeZoneInfo>
+        
+        Required?                    false
+        Position?                    7
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

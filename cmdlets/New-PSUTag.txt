@@ -1,81 +1,80 @@
 
 NAME
-    New-UATag
-    
-SYNOPSIS
-    Creates a new tag in UA.
-    
+    New-PSUTag
     
 SYNTAX
-    New-UATag [-AppToken <String>] [-Color <String>] [-ComputerName <String>] [-Description <String>] -Name <String> [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    New-PSUTag -Name <string> [-Color <string>] [-Description <string>] [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
     
-DESCRIPTION
-    Creates a new tag in UA. Tags are used for identifying scripts.
-    
-
 PARAMETERS
-    -AppToken <String>
-        An app token to access the UA API.
+    -AppToken <string>
         
         Required?                    false
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Color <String>
-        Color to show in the UI.
+    -Color <string>
         
         Required?                    false
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -ComputerName <String>
-        The HTTP address of the UA REST API server.
+    -ComputerName <string>
         
         Required?                    false
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      Uri
+        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Description <String>
-        Description of this tag.
+    -Description <string>
         
         Required?                    false
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Name <String>
-        Name of the tag.
+    -Integrated
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Name <string>
         
         Required?                    true
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -UseDefaultCredentials [<SwitchParameter>]
-        Use default credentials when connecting to the management API
+    -UseDefaultCredentials
         
         Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -84,28 +83,19 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
+    
 INPUTS
     None
-        
     
     
 OUTPUTS
     System.Object
-        
     
+ALIASES
+    None
     
-NOTES
-    
-    
-        
-    
-    -------------------------- Example 1 --------------------------
-    
-    PS C:\> New-UATag -Name 'Release Pipeline' -Color 'red'
-    
-    Creates a new tag called Release Pipeline that will be red in the UI.
-    
-RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+REMARKS
+    None
 
 

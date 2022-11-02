@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTextbox [[-Id] <String>] [[-Label] <String>] [[-Placeholder] <String>] [[-Value] <Object>] [[-Type] <String>] [-Disabled] [[-Icon] <Object>] [-Autofocus] [-Multiline] [[-Rows] <Int32>] [[-RowsMax] <Int32>] [-FullWidth] [[-Mask] <String[]>] [[-Variant] <String>] [[-ClassName] <String>] [[-OnEnter] <Endpoint>] [<CommonParameters>]
+    New-UDTextbox [[-Id] <String>] [[-Label] <String>] [[-Placeholder] <String>] [[-Value] <String>] [[-Type] <String>] [-Disabled] [[-Icon] <Object>] [-Autofocus] [-Multiline] [[-Rows] <Int32>] [[-RowsMax] <Int32>] [-FullWidth] [[-Mask] <String>] [-Unmask] [[-Variant] <String>] [[-ClassName] <String>] [[-OnEnter] <Endpoint>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -42,7 +42,7 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -Value <Object>
+    -Value <String>
         The current value of the textbox.
         
         Required?                    false
@@ -88,6 +88,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Multiline [<SwitchParameter>]
+        Creates a multiline textbox
         
         Required?                    false
         Position?                    named
@@ -100,7 +101,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    7
-        Default value                1
+        Default value                -1
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -122,12 +123,20 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -Mask <String[]>
+    -Mask <String>
         The mask to apply over a textbox.
         
         Required?                    false
         Position?                    9
         Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Unmask [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -141,6 +150,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ClassName <String>
+        A CSS class to apply to the textbox.
         
         Required?                    false
         Position?                    11

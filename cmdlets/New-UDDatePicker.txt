@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDDatePicker [[-Id] <String>] [[-Label] <String>] [[-Variant] <String>] [-DisableToolbar] [[-OnChange] <Endpoint>] [[-Format] <String>] [[-Value] <DateTime>] [[-Locale] <String>] [[-ClassName] <String>] [<CommonParameters>]
+    New-UDDatePicker [[-Id] <String>] [[-Label] <String>] [[-Variant] <String>] [-DisableToolbar] [[-OnChange] <Endpoint>] [[-Format] <String>] [[-Value] <DateTime>] [[-Locale] <String>] [[-ClassName] <String>] [[-MinimumDate] <DateTime>] [[-MaximumDate] <DateTime>] [[-TimeZone] <TimeZoneInfo>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -88,9 +88,34 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ClassName <String>
+        A CSS class to apply to the date picker.
         
         Required?                    false
         Position?                    8
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -MinimumDate <DateTime>
+        
+        Required?                    false
+        Position?                    9
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -MaximumDate <DateTime>
+        
+        Required?                    false
+        Position?                    10
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -TimeZone <TimeZoneInfo>
+        
+        Required?                    false
+        Position?                    11
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false

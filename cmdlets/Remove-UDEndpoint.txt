@@ -3,7 +3,7 @@ NAME
     Remove-UDEndpoint
     
 SYNOPSIS
-    {{ Fill in the Synopsis }}
+    Removes a scheduled endpoint.
     
     
 SYNTAX
@@ -11,12 +11,12 @@ SYNTAX
     
     
 DESCRIPTION
-    {{ Fill in the Description }}
+    Removes a scheduled endpoint.
     
 
 PARAMETERS
     -Id <String>
-        {{ Fill Id Description }}
+        The Id of the endpoint to remove.
         
         Required?                    true
         Position?                    named
@@ -47,9 +47,14 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> {{ Add example code here }}
+    $Schedule = New-UDEndpointSchedule 10 -Second
+    New-UDEndpoint -Schedule $Schedule -Endpoint {
+        $Cache:Processes = Get-Process
+    } -Id 'MySchedule' 
     
-    {{ Add example description here }}
+    Remove-UDEndpoint -Id 'MySchedule'
+    
+    Removes the endpoint 'MySchedule'
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

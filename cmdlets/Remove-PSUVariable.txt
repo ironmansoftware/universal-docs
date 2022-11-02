@@ -1,13 +1,13 @@
 
 NAME
-    Remove-UAVariable
+    Remove-PSUVariable
     
 SYNOPSIS
     Removes a variable.
     
     
 SYNTAX
-    Remove-UAVariable [-Variable] <Variable> [-AppToken <String>] [-ComputerName <String>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Remove-PSUVariable [-Variable] <Variable> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-RemoveSecret] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -33,13 +33,13 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Variable <Variable>
-        The variable to remove. Use Get-UAVariable to retrieve a variable object.
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
         
-        Required?                    true
-        Position?                    0
-        Default value                None
-        Accept pipeline input?       True (ByValue)
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
@@ -51,8 +51,17 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+    -Variable <Variable>
+        The variable to remove. Use Get-UAVariable to retrieve a variable object.
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Accept wildcard characters?  false
+        
+    -RemoveSecret [<SwitchParameter>]
+        Removes the secret from the containing vault.
         
         Required?                    false
         Position?                    named

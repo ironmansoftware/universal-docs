@@ -1,17 +1,17 @@
 
 NAME
-    Get-UAFolder
+    Get-PSUFolder
     
 SYNOPSIS
     Returns folders defined within UA.
     
     
 SYNTAX
-    Get-UAFolder [-AppToken <String>] [-ComputerName <String>] [-Id <Int64>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Get-PSUFolder [-AppToken <String>] [-ComputerName <String>] [-Id <Int64>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
     
-    Get-UAFolder [-AppToken <String>] [-ComputerName <String>] [-Name <String>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Get-PSUFolder [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-Name <String>] [-UseDefaultCredentials] [<CommonParameters>]
     
-    Get-UAFolder [-AppToken <String>] [-ComputerName <String>] [-Parent <Folder>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Get-PSUFolder [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-Parent <Folder>] [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -46,6 +46,15 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
     -Name <String>
         The name of the folder to return.
         
@@ -66,15 +75,6 @@ PARAMETERS
         
     -UseDefaultCredentials [<SwitchParameter>]
         Use default credentials when connecting to the management API
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
         
         Required?                    false
         Position?                    named

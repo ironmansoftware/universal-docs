@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDHeading [-Id <String>] [-Content <ScriptBlock>] [-Size <Object>] [-Color <DashboardColor>] [-ClassName <String>] [<CommonParameters>]
+    New-UDHeading [-Id <String>] [-Content <ScriptBlock>] [-Size <String>] [-Color <DashboardColor>] [-ClassName <String>] [<CommonParameters>]
     
-    New-UDHeading [-Id <String>] [-Text <String>] [-Size <Object>] [-Color <DashboardColor>] [-ClassName <String>] [<CommonParameters>]
+    New-UDHeading [-Id <String>] [-Text <String>] [-Size <String>] [-Color <DashboardColor>] [-ClassName <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -44,7 +44,7 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -Size <Object>
+    -Size <String>
         This size of this heading. This can be 1,2,3,4,5 or 6.
         
         Required?                    false
@@ -63,6 +63,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ClassName <String>
+        A CSS class to apply to the heading.
         
         Required?                    false
         Position?                    named

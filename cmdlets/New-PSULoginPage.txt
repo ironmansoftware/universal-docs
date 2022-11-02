@@ -155,7 +155,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -AppBarLogo <String>
-        The URL of an image to show in the app bar on the login page.
+        {{ Fill AppBarLogo Description }}
         
         Required?                    false
         Position?                    named

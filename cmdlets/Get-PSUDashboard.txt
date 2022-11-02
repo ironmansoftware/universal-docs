@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    Get-PSUDashboard [-AppToken <String>] [-ComputerName <String>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Get-PSUDashboard [-AppToken <String>] [-ComputerName <String>] [-UseDefaultCredentials] [-Integrated] [-Name <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -48,6 +48,15 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        The name of the dashboard to return.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         

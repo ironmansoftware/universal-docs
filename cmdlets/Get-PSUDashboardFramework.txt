@@ -1,24 +1,22 @@
 
 NAME
-    Get-UDDashboardFramework
+    Get-PSUDashboardFramework
     
 SYNOPSIS
-    Returns Universal Dashboard frameworks currently installed on the system.
+    {{ Fill in the Synopsis }}
     
     
 SYNTAX
-    Get-UDDashboardFramework [-AppToken <String>] [-ComputerName <String>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Get-PSUDashboardFramework [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION
-    Returns Universal Dashboard frameworks currently installed on the system. Universal Dashboard frameworks are versions of the JavaScript and PowerShell modules used to define dashboards.
-    
-    You can install multiple versions of a framework in Universal Dashboard.
+    {{ Fill in the Description }}
     
 
 PARAMETERS
     -AppToken <String>
-        The app token used to call the PowerShell Universal Management API.
+        {{ Fill AppToken Description }}
         
         Required?                    false
         Position?                    named
@@ -27,7 +25,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The computer name or URL to the PowerShell Universal server.
+        {{ Fill ComputerName Description }}
         
         Required?                    false
         Position?                    named
@@ -35,8 +33,8 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -UseDefaultCredentials [<SwitchParameter>]
-        Use default credentials when connecting to the management API
+    -Integrated [<SwitchParameter>]
+        {{ Fill Integrated Description }}
         
         Required?                    false
         Position?                    named
@@ -44,8 +42,8 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+    -UseDefaultCredentials [<SwitchParameter>]
+        {{ Fill UseDefaultCredentials Description }}
         
         Required?                    false
         Position?                    named
@@ -76,9 +74,9 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> Get-UDDashboardFramework -ComputerName 'http://localhost:5000' -AppToken 'appToken'
+    PS C:\> {{ Add example code here }}
     
-    Returns all dashboard frameworks currently installed on the server.
+    {{ Add example description here }}
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

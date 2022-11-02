@@ -9,7 +9,7 @@ SYNOPSIS
 SYNTAX
     New-UDProgress [-Id <String>] [-BackgroundColor <DashboardColor>] [-ProgressColor <DashboardColor>] [<CommonParameters>]
     
-    New-UDProgress [-Id <String>] [-PercentComplete <Object>] [-BackgroundColor <DashboardColor>] [-ProgressColor <DashboardColor>] [<CommonParameters>]
+    New-UDProgress [-Id <String>] [-PercentComplete <Int32>] [-BackgroundColor <DashboardColor>] [-ProgressColor <DashboardColor>] [<CommonParameters>]
     
     New-UDProgress [-Id <String>] [-ProgressColor <DashboardColor>] [-Circular] [-Size <String>] [<CommonParameters>]
     
@@ -28,12 +28,12 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -PercentComplete <Object>
+    -PercentComplete <Int32>
         The percent complete for the progress.
         
         Required?                    false
         Position?                    named
-        Default value                
+        Default value                0
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

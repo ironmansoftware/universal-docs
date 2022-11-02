@@ -3,7 +3,7 @@ NAME
     Invoke-UDEndpoint
     
 SYNOPSIS
-    {{ Fill in the Synopsis }}
+    Invokes an endpoint directly.
     
     
 SYNTAX
@@ -11,12 +11,12 @@ SYNTAX
     
     
 DESCRIPTION
-    {{ Fill in the Description }}
+    Invokes an endpoint directly. For example, this can be used to execute button OnClick handlers.
     
 
 PARAMETERS
     -Id <String>
-        {{ Fill Id Description }}
+        The ID of the endpoint to invoke.
         
         Required?                    true
         Position?                    named
@@ -25,7 +25,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Session [<SwitchParameter>]
-        {{ Fill Session Description }}
+        Whether to include user session information when invoke the endpoint.
         
         Required?                    false
         Position?                    named
@@ -34,7 +34,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Wait [<SwitchParameter>]
-        {{ Fill Wait Description }}
+        Whether to wait for the endpoint to execute before continuing.
         
         Required?                    false
         Position?                    named
@@ -65,9 +65,15 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> {{ Add example code here }}
+    New-UDButton -Text "Click Me" -OnClick {
+        Show-UDToast "I was clicked!"
+    } -Id 'Button'
     
-    {{ Add example description here }}
+    New-UDButton -Text "Invoke Me" -OnClick {
+        Invoke-UDEndpoint -Id 'Button'
+    }
+    
+    Click one button with another one.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

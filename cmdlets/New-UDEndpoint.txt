@@ -3,7 +3,7 @@ NAME
     New-UDEndpoint
     
 SYNOPSIS
-    {{ Fill in the Synopsis }}
+    Creates a scheduled endpoint with a dashboard.
     
     
 SYNTAX
@@ -11,12 +11,12 @@ SYNTAX
     
     
 DESCRIPTION
-    {{ Fill in the Description }}
+    Creates a scheduled endpoint with a dashboard.
     
 
 PARAMETERS
     -ArgumentList <Object[]>
-        {{ Fill ArgumentList Description }}
+        Not required.
         
         Required?                    false
         Position?                    named
@@ -25,7 +25,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Endpoint <ScriptBlock>
-        {{ Fill Endpoint Description }}
+        The endpoint to run on the schedule.
         
         Required?                    true
         Position?                    named
@@ -34,7 +34,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Id <String>
-        {{ Fill Id Description }}
+        The ID of the endpoint.
         
         Required?                    false
         Position?                    named
@@ -43,7 +43,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Role <String[]>
-        {{ Fill Role Description }}
+        Not used.
         
         Required?                    false
         Position?                    named
@@ -52,7 +52,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Schedule <EndpointSchedule>
-        {{ Fill Schedule Description }}
+        The schedule to run for the endpoint. Use New-UDEndpointSchedule to create a schedule object.
         
         Required?                    true
         Position?                    named
@@ -83,9 +83,12 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> {{ Add example code here }}
+    $Schedule = New-UDEndpointSchedule 10 -Second
+    New-UDEndpoint -Schedule $Schedule -Endpoint {
+        $Cache:Processes = Get-Process
+    }
     
-    {{ Add example description here }}
+    Caches the local machines processes every 10 seconds.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

@@ -7,7 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDForm [[-Id] <String>] [-Children] <ScriptBlock> [-OnSubmit] <Endpoint> [[-OnValidate] <Endpoint>] [[-OnProcessing] <ScriptBlock>] [[-OnCancel] <Endpoint>] [[-SubmitText] <String>] [[-CancelText] <String>] [[-ButtonVariant] <String>] [[-ClassName] <String>] [<CommonParameters>]
+    New-UDForm [-Id <String>] -Children <ScriptBlock> -OnSubmit <Endpoint> [-OnValidate <Endpoint>] [-OnProcessing <ScriptBlock>] [-OnCancel <Endpoint>] [-SubmitText <String>] [-CancelText <String>] [-ButtonVariant <String>] [-ClassName <String>] [-DisableSubmitOnEnter] [<CommonParameters>]
+    
+    New-UDForm [-Id <String>] -OnSubmit <Endpoint> [-ButtonVariant <String>] -Schema <Hashtable> [-UiSchema <Hashtable>] [-DisableSubmitOnEnter] [<CommonParameters>]
+    
+    New-UDForm [-Id <String>] [-ButtonVariant <String>] [-DisableSubmitOnEnter] [-Script <String>] [-DisplayProgress] [-OutputType <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -19,7 +23,7 @@ PARAMETERS
         The ID of the component. It defaults to a random GUID.
         
         Required?                    false
-        Position?                    1
+        Position?                    named
         Default value                [Guid]::NewGuid().ToString()
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -28,7 +32,7 @@ PARAMETERS
         Controls that make up this form. This can be any combination of controls. Input controls will report their state to the form.
         
         Required?                    true
-        Position?                    2
+        Position?                    named
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -37,7 +41,7 @@ PARAMETERS
         A script block that is execute when the form is submitted. You can return controls from this script block and the form will be replaced by the script block. The $EventData variable will contain a hashtable of all the input fields and their values.
         
         Required?                    true
-        Position?                    3
+        Position?                    named
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -46,7 +50,7 @@ PARAMETERS
         A script block that validates the form. Return the result of a call to New-UDFormValidationResult.
         
         Required?                    false
-        Position?                    4
+        Position?                    named
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -55,7 +59,7 @@ PARAMETERS
         A script block that is called when the form begins processing. The return value of this script block should be a component that displays a loading dialog. The script block will receive the current form data.
         
         Required?                    false
-        Position?                    5
+        Position?                    named
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -64,7 +68,7 @@ PARAMETERS
         A script block that is called when a form is cancelled. Useful for closing forms in modals.
         
         Required?                    false
-        Position?                    6
+        Position?                    named
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -73,7 +77,7 @@ PARAMETERS
         Text to show within the submit button
         
         Required?                    false
-        Position?                    7
+        Position?                    named
         Default value                Submit
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -82,7 +86,7 @@ PARAMETERS
         Text to show within the cancel button.
         
         Required?                    false
-        Position?                    8
+        Position?                    named
         Default value                Cancel
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -91,7 +95,7 @@ PARAMETERS
         Type of button to display.
         
         Required?                    false
-        Position?                    9
+        Position?                    named
         Default value                text
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -99,8 +103,56 @@ PARAMETERS
     -ClassName <String>
         
         Required?                    false
-        Position?                    10
+        Position?                    named
         Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Schema <Hashtable>
+        
+        Required?                    true
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -UiSchema <Hashtable>
+        
+        Required?                    false
+        Position?                    named
+        Default value                @{}
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DisableSubmitOnEnter [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Script <String>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DisplayProgress [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OutputType <String>
+        
+        Required?                    false
+        Position?                    named
+        Default value                Text
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

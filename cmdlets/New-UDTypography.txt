@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTypography [-Id <String>] [-Variant <String>] [[-Text] <String>] [-Style <Hashtable>] [-ClassName <String>] [-Align <String>] [-IsEndPoint] [-GutterBottom] [-NoWrap] [-Paragraph] [-FontWeight <String>] [<CommonParameters>]
+    New-UDTypography [-Id <String>] [-Variant <String>] [[-Text] <String>] [-Style <Hashtable>] [-ClassName <String>] [-Align <String>] [-GutterBottom] [-NoWrap] [-FontWeight <String>] [-Sx <Hashtable>] [<CommonParameters>]
     
-    New-UDTypography [-Id <String>] [-Variant <String>] [-Content <ScriptBlock>] [-Style <Hashtable>] [-ClassName <String>] [-Align <String>] [-IsEndPoint] [-GutterBottom] [-NoWrap] [-Paragraph] [-FontWeight <String>] [<CommonParameters>]
+    New-UDTypography [-Id <String>] [-Variant <String>] [-Content <ScriptBlock>] [-Style <Hashtable>] [-ClassName <String>] [-Align <String>] [-GutterBottom] [-NoWrap] [-FontWeight <String>] [-Sx <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -80,14 +80,6 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -IsEndPoint [<SwitchParameter>]
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
     -GutterBottom [<SwitchParameter>]
         The gutter bottom.
         
@@ -106,16 +98,16 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -Paragraph [<SwitchParameter>]
-        Whether this typography is a paragraph.
+    -FontWeight <String>
         
         Required?                    false
         Position?                    named
-        Default value                False
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -FontWeight <String>
+    -Sx <Hashtable>
+        Theme-based styling hashtable.
         
         Required?                    false
         Position?                    named

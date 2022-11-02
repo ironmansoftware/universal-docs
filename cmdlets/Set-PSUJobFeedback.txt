@@ -1,13 +1,13 @@
 
 NAME
-    Set-UAJobFeedback
+    Set-PSUJobFeedback
     
 SYNOPSIS
     Sets the feedback for a job that has requested it.
     
     
 SYNTAX
-    Set-UAJobFeedback [-AppToken <String>] [-ComputerName <String>] -JobFeedback <JobFeedback> [-Response <String>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Set-PSUJobFeedback [-AppToken <String>] [-ComputerName <String>] [-Integrated] -JobFeedback <JobFeedback> [-Response <String>] [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -33,6 +33,15 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
     -JobFeedback <JobFeedback>
         The job feedback to respond to. Use Get-UAJobFeedback to retrieve a JobFeedback object.
         
@@ -53,15 +62,6 @@ PARAMETERS
         
     -UseDefaultCredentials [<SwitchParameter>]
         Use default credentials when connecting to the management API
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
         
         Required?                    false
         Position?                    named

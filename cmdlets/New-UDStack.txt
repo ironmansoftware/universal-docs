@@ -1,0 +1,97 @@
+
+NAME
+    New-UDStack
+    
+SYNOPSIS
+    The Stack component manages layout of immediate children along the vertical or horizontal axis with optional spacing and/or dividers between each child.
+    
+    
+SYNTAX
+    New-UDStack [[-Id] <String>] [-Children] <ScriptBlock> [[-Divider] <ScriptBlock>] [[-Spacing] <Int32>] [[-Direction] <String>] [-FullWidth] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Stack is concerned with one-dimensional layouts, while Grid handles two-dimensional layouts. The default direction is column which stacks children vertically.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of this component.
+        
+        Required?                    false
+        Position?                    1
+        Default value                ([Guid]::NewGuid())
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Children <ScriptBlock>
+        The children to stack.
+        
+        Required?                    true
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Divider <ScriptBlock>
+        An optional divider component.
+        
+        Required?                    false
+        Position?                    3
+        Default value                {}
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Spacing <Int32>
+        The spacing between the items.
+        
+        Required?                    false
+        Position?                    4
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Direction <String>
+        The stack direction.
+        
+        Required?                    false
+        Position?                    5
+        Default value                row
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -FullWidth [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > New-UDStack -Content {
+        New-UDPaper
+        New-UDPaper
+        New-UDPaper
+    } -Spacing 2
+    
+    Creates a stack of papers with 2 spacing.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

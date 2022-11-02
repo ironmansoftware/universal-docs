@@ -7,11 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDCard [-Id <String>] [-ClassName <String>] [-ShowToolBar] [-ToolBar <Object>] [-Header <Object>] [-Body <Object>] [-Expand <Object>] [-Footer <Object>] [-Media <Object>] [-Style <Hashtable>] [-Elevation <Int32>] [<CommonParameters>]
+    New-UDCard [-Id <String>] [-ClassName <String>] [-ShowToolBar] [-ToolBar <Object>] [-Header <Object>] [-Body <Object>] [-Expand <Object>] [-Footer <Object>] [-Media <Object>] [-Style <Hashtable>] [-Elevation <Int32>] [-Raised] [<CommonParameters>]
     
-    New-UDCard [-Id <String>] [-ClassName <String>] [-ShowToolBar] [-Style <Hashtable>] [-Elevation <Int32>] [-Title <String>] [-TitleAlignment <String>] [-Text <String>] [<CommonParameters>]
+    New-UDCard [-Id <String>] [-ClassName <String>] [-ShowToolBar] [-Style <Hashtable>] [-Elevation <Int32>] [-Title <String>] [-TitleAlignment <String>] [-Text <String>] [-Raised] [<CommonParameters>]
     
-    New-UDCard [-Id <String>] [-ClassName <String>] [-ShowToolBar] [-Style <Hashtable>] [-Elevation <Int32>] [-Title <String>] [-TitleAlignment <String>] [-Content <ScriptBlock>] [-Image <String>] [<CommonParameters>]
+    New-UDCard [-Id <String>] [-ClassName <String>] [-ShowToolBar] [-Style <Hashtable>] [-Elevation <Int32>] [-Title <String>] [-TitleAlignment <String>] [-Content <ScriptBlock>] [-Image <String>] [-Raised] [-Avatar <Object>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -154,6 +154,22 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Text <String>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Raised [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Avatar <Object>
         
         Required?                    false
         Position?                    named

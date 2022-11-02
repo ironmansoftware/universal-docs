@@ -3,7 +3,7 @@ NAME
     Measure-PSUBlock
     
 SYNOPSIS
-    Measures a code block within PowerShell Universal
+    {{ Fill in the Synopsis }}
     
     
 SYNTAX
@@ -11,12 +11,12 @@ SYNTAX
     
     
 DESCRIPTION
-    Measures a code block within PowerShell Universal. Requires profiling to be enabled to appsettings.json. This cmdlet is only supported in the integrated environment.
+    {{ Fill in the Description }}
     
 
 PARAMETERS
     -Name <String>
-        The block's name. This will appear in the profiling data.
+        {{ Fill Name Description }}
         
         Required?                    true
         Position?                    named
@@ -25,7 +25,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ScriptBlock <ScriptBlock>
-        The script block to measure.
+        {{ Fill ScriptBlock Description }}
         
         Required?                    true
         Position?                    named
@@ -56,9 +56,9 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> Measure-PSUBlock -Name 'Test' -ScriptBlock { Start-Sleep 1 }
+    PS C:\> {{ Add example code here }}
     
-    Measures the scriptblock with a name Test.
+    {{ Add example description here }}
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

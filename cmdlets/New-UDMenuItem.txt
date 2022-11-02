@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDMenuItem [-Text] <String> [[-Value] <String>] [<CommonParameters>]
+    New-UDMenuItem [-Text] <String> [[-Value] <String>] [[-Icon] <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -29,6 +29,14 @@ PARAMETERS
         
         Required?                    false
         Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Icon <Hashtable>
+        
+        Required?                    false
+        Position?                    3
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false

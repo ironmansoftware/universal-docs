@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    Grant-PSUAppToken [-AppToken <String>] [-ComputerName <String>] [-Expiry <DateTime>] -Identity <Identity> [-Role <String>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Grant-PSUAppToken [-AppToken <String>] [-ComputerName <String>] [-Expiry <DateTime>] -Identity <Identity> [-Role <String[]>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
-    Grant-PSUAppToken [-AppToken <String>] [-ComputerName <String>] [-Expiry <DateTime>] -IdentityName <String> [-Role <String>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Grant-PSUAppToken [-AppToken <String>] [-ComputerName <String>] [-Expiry <DateTime>] -IdentityName <String> [-Role <String[]>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -62,7 +62,7 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Role <String>
+    -Role <String[]>
         The role to grant to the identity of the app token.
         
         Required?                    false

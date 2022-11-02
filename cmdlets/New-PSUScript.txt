@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSUScript [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableManualInvocation] [-ManualTime <Int32>] [-MaxHistory <Int32>] -Name <String> [-Notes <String>] [-Parameter <ScriptParameter[]>] [-Path <String>] -ScriptBlock <ScriptBlock> [-Status {Draft | Pending_Review | Published | Disabled}] [-Tag <Tag[]>] [-ConcurrentJobs <Int32>] [-Environment <String>] [-TimeOut <Double>] [-Credential <Variable>] [-UseDefaultCredentials] [-Anonymous] [-Integrated] [-RetryLimit <Int32>] [-DiscardPipeline] [<CommonParameters>]
+    New-PSUScript [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableManualInvocation] [-ManualTime <Int32>] [-MaxHistory <Int32>] -Name <String> [-Notes <String>] [-Parameter <ScriptParameter[]>] [-Path <String>] -ScriptBlock <ScriptBlock> [-Status {Draft | Pending_Review | Published | Disabled}] [-Tag <Tag[]>] [-ConcurrentJobs <Int32>] [-Environment <String>] [-TimeOut <Double>] [-Credential <Variable>] [-UseDefaultCredentials] [-Anonymous] [-Integrated] [-RetryLimit <Int32>] [-DiscardPipeline] [-LoadProfile] [-WorkingDirectory <String>] [<CommonParameters>]
     
-    New-PSUScript [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableManualInvocation] [-ManualTime <Int32>] [-MaxHistory <Int32>] -Name <String> [-Notes <String>] [-Parameter <ScriptParameter[]>] -Path <String> [-Status {Draft | Pending_Review | Published | Disabled}] [-Tag <Tag[]>] [-ConcurrentJobs <Int32>] [-Environment <String>] [-TimeOut <Double>] [-Credential <Variable>] [-UseDefaultCredentials] [-Anonymous] [-Integrated] [-RetryLimit <Int32>] [-DiscardPipeline] [<CommonParameters>]
+    New-PSUScript [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableManualInvocation] [-ManualTime <Int32>] [-MaxHistory <Int32>] -Name <String> [-Notes <String>] [-Parameter <ScriptParameter[]>] -Path <String> [-Status {Draft | Pending_Review | Published | Disabled}] [-Tag <Tag[]>] [-ConcurrentJobs <Int32>] [-Environment <String>] [-TimeOut <Double>] [-Credential <Variable>] [-UseDefaultCredentials] [-Anonymous] [-Integrated] [-RetryLimit <Int32>] [-DiscardPipeline] [-LoadProfile] [-WorkingDirectory <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -216,6 +216,24 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -LoadProfile [<SwitchParameter>]
+        Loads the user profile when running this script as another user.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -WorkingDirectory <String>
+        The working directory of the script.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         

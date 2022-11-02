@@ -3,7 +3,7 @@ NAME
     New-UDElement
     
 SYNOPSIS
-    {{ Fill in the Synopsis }}
+    Creates a new React element.
     
     
 SYNTAX
@@ -11,12 +11,12 @@ SYNTAX
     
     
 DESCRIPTION
-    {{ Fill in the Description }}
+    Creates a new React element. This can also be used to create HTML tags.
     
 
 PARAMETERS
     -ArgumentList <Object[]>
-        {{ Fill ArgumentList Description }}
+        No required. For backwards compatibility.
         
         Required?                    false
         Position?                    named
@@ -25,7 +25,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Attributes <Hashtable>
-        {{ Fill Attributes Description }}
+        A hashtable of attributes to apply to the element.
         
         Required?                    false
         Position?                    named
@@ -34,7 +34,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -AutoRefresh [<SwitchParameter>]
-        {{ Fill AutoRefresh Description }}
+        Whether to autorefresh the element's endpoint.
         
         Required?                    false
         Position?                    named
@@ -43,7 +43,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Content <ScriptBlock>
-        {{ Fill Content Description }}
+        The content of the element.
         
         Required?                    false
         Position?                    named
@@ -52,7 +52,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Endpoint <ScriptBlock>
-        {{ Fill Endpoint Description }}
+        Dynamic content for the element.
         
         Required?                    false
         Position?                    named
@@ -61,7 +61,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Id <String>
-        {{ Fill Id Description }}
+        An ID for the element.
         
         Required?                    false
         Position?                    named
@@ -70,7 +70,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -OnMount <String>
-        {{ Fill OnMount Description }}
+        An event handler to call when the React element is mounted.
         
         Required?                    false
         Position?                    named
@@ -79,7 +79,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -RefreshInterval <Int32>
-        {{ Fill RefreshInterval Description }}
+        The number of seconds to wait between auto refreshes.
         
         Required?                    false
         Position?                    named
@@ -88,7 +88,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Tag <String>
-        {{ Fill Tag Description }}
+        The HTML tag.
         
         Required?                    true
         Position?                    named
@@ -119,9 +119,15 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> {{ Add example code here }}
+    New-UDElement -Tag 'div' -Attributes @{
+        style = @{
+            color = "red"
+        }
+    } -Content {
+        "Hello!"
+    }
     
-    {{ Add example description here }}
+    Creates a div with red text.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

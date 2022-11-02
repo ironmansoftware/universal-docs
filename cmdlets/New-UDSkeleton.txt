@@ -61,6 +61,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ClassName <String>
+        A CSS class to apply to the skeleton.
         
         Required?                    false
         Position?                    6

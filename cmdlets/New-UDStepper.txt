@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDStepper [[-Id] <String>] [[-ActiveStep] <Int32>] [-Children] <ScriptBlock> [-NonLinear] [-AlternativeLabel] [-OnFinish] <Endpoint> [[-OnValidateStep] <Endpoint>] [[-Orientation] <String>] [[-NextButtonText] <String>] [[-BackButtonText] <String>] [[-FinishButtonText] <String>] [[-ClassName] <String>] [<CommonParameters>]
+    New-UDStepper [[-Id] <String>] [[-ActiveStep] <Int32>] [-Children] <ScriptBlock> [-NonLinear] [-AlternativeLabel] [-OnFinish] <Endpoint> [[-OnCancel] <Endpoint>] [[-OnValidateStep] <Endpoint>] [[-Orientation] <String>] [[-NextButtonText] <String>] [[-BackButtonText] <String>] [[-FinishButtonText] <String>] [[-CancelButtonText] <String>] [[-ClassName] <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -69,12 +69,20 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
+    -OnCancel <Endpoint>
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
     -OnValidateStep <Endpoint>
         [Parameter()]
         [Endpoint]$OnCompleteStep,
         
         Required?                    false
-        Position?                    5
+        Position?                    6
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -83,7 +91,7 @@ PARAMETERS
         Sets the orientation of the stepper.
         
         Required?                    false
-        Position?                    6
+        Position?                    7
         Default value                horizontal
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -92,7 +100,7 @@ PARAMETERS
         The text to display in the next button.
         
         Required?                    false
-        Position?                    7
+        Position?                    8
         Default value                Next
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -101,7 +109,7 @@ PARAMETERS
         The text to display in the back button.
         
         Required?                    false
-        Position?                    8
+        Position?                    9
         Default value                Back
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -109,15 +117,23 @@ PARAMETERS
     -FinishButtonText <String>
         
         Required?                    false
-        Position?                    9
+        Position?                    10
         Default value                Finish
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -CancelButtonText <String>
+        
+        Required?                    false
+        Position?                    11
+        Default value                Cancel
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
     -ClassName <String>
         
         Required?                    false
-        Position?                    10
+        Position?                    12
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false

@@ -1,13 +1,13 @@
 
 NAME
-    Rename-UAScript
+    Rename-PSUScript
     
 SYNOPSIS
     Renames a script.
     
     
 SYNTAX
-    Rename-UAScript [-Script] <Script> [-Name] <String> [-AppToken <String>] [-ComputerName <String>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Rename-PSUScript [-Script] <Script> [-Name] <String> [-AppToken <String>] [-ComputerName <String>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
     
 DESCRIPTION

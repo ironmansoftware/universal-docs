@@ -1,13 +1,13 @@
 
 NAME
-    New-UAFolder
+    New-PSUFolder
     
 SYNOPSIS
     Creates a new folder within UA.
     
     
 SYNTAX
-    New-UAFolder [-AppToken <String>] [-ComputerName <String>] -Path <String> [-UseDefaultCredentials] [-Integrated] [-Type <FolderType>] [<CommonParameters>]
+    New-PSUFolder [-AppToken <String>] [-ComputerName <String>] [-Integrated] -Path <String> [-Type <FolderType>] [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -16,7 +16,7 @@ DESCRIPTION
 
 PARAMETERS
     -AppToken <String>
-        An app token to access the UA API.
+        {{ Fill AppToken Description }}
         
         Required?                    false
         Position?                    named
@@ -25,11 +25,20 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The HTTP address of the UA REST API server.
+        {{ Fill ComputerName Description }}
         
         Required?                    false
         Position?                    named
         Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        {{ Fill Integrated Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
@@ -42,30 +51,21 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -UseDefaultCredentials [<SwitchParameter>]
-        Use default credentials when connecting to the management API
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
     -Type <FolderType>
         {{ Fill Type Description }}
         
         Required?                    false
         Position?                    named
         Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        {{ Fill UseDefaultCredentials Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       False
         Accept wildcard characters?  false
         

@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDAutocomplete [-Id <String>] [-Label <String>] [-Value <String>] [-OnChange <Endpoint>] -OnLoadOptions <Endpoint> [-FullWidth] [-Variant <String>] [-Multiple] [-ClassName <String>] [<CommonParameters>]
+    New-UDAutocomplete [-Id <String>] [-Label <String>] [-Value <String>] [-OnChange <Endpoint>] -OnLoadOptions <Endpoint> [-FullWidth] [-Variant <String>] [-Multiple] [-ClassName <String>] [-Icon <Object>] [-OnEnter <Endpoint>] [<CommonParameters>]
     
-    New-UDAutocomplete [-Id <String>] [-Label <String>] [-Value <String>] [-OnChange <Endpoint>] -Options <Array> [-FullWidth] [-Variant <String>] [-Multiple] [-ClassName <String>] [<CommonParameters>]
+    New-UDAutocomplete [-Id <String>] [-Label <String>] [-Value <String>] [-OnChange <Endpoint>] -Options <Array> [-FullWidth] [-Variant <String>] [-Multiple] [-ClassName <String>] [-Icon <Object>] [-OnEnter <Endpoint>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -100,6 +100,24 @@ PARAMETERS
         
     -ClassName <String>
         A CSS class to apply to the component.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Icon <Object>
+        The icon to display before the text box. Use New-UDIcon to create the value for this parameter.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnEnter <Endpoint>
+        A script block to call when the user presses enter within the autocomplete textbox.
         
         Required?                    false
         Position?                    named

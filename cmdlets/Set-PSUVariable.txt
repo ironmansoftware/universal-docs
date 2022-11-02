@@ -1,19 +1,19 @@
 
 NAME
-    Set-UAVariable
+    Set-PSUVariable
     
 SYNOPSIS
     Sets the properties of a variable.
     
     
 SYNTAX
-    Set-UAVariable [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Name <String>] [-Value <String>] [-UseDefaultCredentials] [-Description <String>] [-Integrated] [<CommonParameters>]
+    Set-PSUVariable [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-Integrated] [-Name <String>] [-UseDefaultCredentials] [-Value <String>] [<CommonParameters>]
     
-    Set-UAVariable [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-InputObject <Object>] [-Name <String>] [-UseDefaultCredentials] [-Description <String>] [-Integrated] [<CommonParameters>]
+    Set-PSUVariable [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-InputObject <Object>] [-Integrated] [-Name <String>] [-UseDefaultCredentials] [<CommonParameters>]
     
-    Set-UAVariable [-Variable] <Variable> [-AppToken <String>] [-ComputerName <String>] [-InputObject <Object>] [-Name <String>] [-UseDefaultCredentials] [-Description <String>] [-Integrated] [<CommonParameters>]
+    Set-PSUVariable [-Variable] <Variable> [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-InputObject <Object>] [-Integrated] [-Name <String>] [-UseDefaultCredentials] [<CommonParameters>]
     
-    Set-UAVariable [-Variable] <Variable> [-AppToken <String>] [-ComputerName <String>] [-Name <String>] [-Value <String>] [-UseDefaultCredentials] [-Description <String>] [-Integrated] [<CommonParameters>]
+    Set-PSUVariable [-Variable] <Variable> [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-Integrated] [-Name <String>] [-UseDefaultCredentials] [-Value <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -39,6 +39,15 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
+    -Description <String>
+        A description of this variable.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
     -Id <Int64>
         The ID of the variable to set.
         
@@ -57,12 +66,30 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
     -Name <String>
         The name of the variable.
         
         Required?                    false
         Position?                    named
         Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
@@ -82,33 +109,6 @@ PARAMETERS
         Position?                    0
         Default value                None
         Accept pipeline input?       True (ByValue)
-        Accept wildcard characters?  false
-        
-    -UseDefaultCredentials [<SwitchParameter>]
-        Use default credentials when connecting to the management API
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Description <String>
-        A description of this variable.
-        
-        Required?                    false
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     <CommonParameters>

@@ -1,13 +1,13 @@
 
 NAME
-    Set-UALicense
+    Set-PSULicense
     
 SYNOPSIS
     Sets the license to use.
     
     
 SYNTAX
-    Set-UALicense [-AppToken <String>] [-ComputerName <String>] -Key <String> [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Set-PSULicense [-AppToken <String>] [-ComputerName <String>] [-Integrated] -Key <String> [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -33,6 +33,15 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
     -Key <String>
         The key to set.
         
@@ -44,15 +53,6 @@ PARAMETERS
         
     -UseDefaultCredentials [<SwitchParameter>]
         Use default credentials when connecting to the management API
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
         
         Required?                    false
         Position?                    named

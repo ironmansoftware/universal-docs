@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDSwitch [[-Id] <String>] [-Disabled] [[-OnChange] <Endpoint>] [[-Checked] <Boolean>] [[-ClassName] <String>] [[-Color] <String>] [[-Label] <String>] [[-CheckedLabel] <String>] [[-UncheckedLabel] <String>] [<CommonParameters>]
+    New-UDSwitch [[-Id] <String>] [-Disabled] [[-OnChange] <Endpoint>] [[-Checked] <Boolean>] [[-ClassName] <String>] [[-Color] <String>] [[-Label] <String>] [[-CheckedLabel] <String>] [[-UncheckedLabel] <String>] [[-Size] <String>] [[-LabelPlacement] <String>] [-CheckStyle] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -52,6 +52,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ClassName <String>
+        A CSS class to apply to the switch.
         
         Required?                    false
         Position?                    4
@@ -92,6 +93,32 @@ PARAMETERS
         Required?                    false
         Position?                    8
         Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Size <String>
+        The size of the switch.
+        
+        Required?                    false
+        Position?                    9
+        Default value                medium
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LabelPlacement <String>
+        
+        Required?                    false
+        Position?                    10
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -CheckStyle [<SwitchParameter>]
+        Style switch with check and unchecked icons for the colorblind.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

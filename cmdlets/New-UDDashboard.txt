@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDDashboard [-Title <String>] -Content <Endpoint> [-Theme <Hashtable>] [-Scripts <String[]>] [-Stylesheets <String[]>] [-Logo <String>] [-DefaultTheme <String>] [-DisableThemeToggle] [-HeaderPosition <String>] [-HeaderColor <DashboardColor>] [-HeaderBackgroundColor <DashboardColor>] [-NavigationLayout <String>] [-Navigation <Hashtable[]>] [<CommonParameters>]
+    New-UDDashboard [-Title <String>] -Content <Endpoint> [-Theme <Hashtable>] [-Scripts <String[]>] [-Stylesheets <String[]>] [-Logo <String>] [-DefaultTheme <String>] [-DisableThemeToggle] [-HeaderPosition <String>] [-HeaderColor <DashboardColor>] [-HeaderBackgroundColor <DashboardColor>] [-NavigationLayout <String>] [-Navigation <Hashtable[]>] [-HideUserName] [-HideNavigation] [-LoadNavigation <Endpoint>] [-HeaderContent <Endpoint>] [-PageNotFound <Endpoint>] [-NotAuthorized <Endpoint>] [-SessionTimeoutModal <ScriptBlock>] [<CommonParameters>]
     
-    New-UDDashboard [-Title <String>] -Pages <Hashtable[]> [-Theme <Hashtable>] [-Scripts <String[]>] [-Stylesheets <String[]>] [-Logo <String>] [-DefaultTheme <String>] [-DisableThemeToggle] [-HeaderPosition <String>] [-HeaderColor <DashboardColor>] [-HeaderBackgroundColor <DashboardColor>] [-NavigationLayout <String>] [-Navigation <Hashtable[]>] [<CommonParameters>]
+    New-UDDashboard [-Title <String>] -Pages <Hashtable[]> [-Theme <Hashtable>] [-Scripts <String[]>] [-Stylesheets <String[]>] [-Logo <String>] [-DefaultTheme <String>] [-DisableThemeToggle] [-HeaderPosition <String>] [-HeaderColor <DashboardColor>] [-HeaderBackgroundColor <DashboardColor>] [-NavigationLayout <String>] [-Navigation <Hashtable[]>] [-HideUserName] [-HideNavigation] [-LoadNavigation <Endpoint>] [-HeaderContent <Endpoint>] [-PageNotFound <Endpoint>] [-NotAuthorized <Endpoint>] [-SessionTimeoutModal <ScriptBlock>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -108,6 +108,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -HeaderColor <DashboardColor>
+        The color of the header. This will override the theme colors.
         
         Required?                    false
         Position?                    named
@@ -116,6 +117,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -HeaderBackgroundColor <DashboardColor>
+        The background color of the header. This will override the theme colors.
         
         Required?                    false
         Position?                    named
@@ -132,6 +134,64 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Navigation <Hashtable[]>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -HideUserName [<SwitchParameter>]
+        Obsolete. This parameter was intended for testing purposes.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -HideNavigation [<SwitchParameter>]
+        Obsolete. This parameter was intended for testing purposes.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LoadNavigation <Endpoint>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -HeaderContent <Endpoint>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -PageNotFound <Endpoint>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -NotAuthorized <Endpoint>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -SessionTimeoutModal <ScriptBlock>
         
         Required?                    false
         Position?                    named

@@ -1,21 +1,21 @@
 
 NAME
-    Get-UAScript
+    Get-PSUScript
     
 SYNOPSIS
     Returns scripts defined within UA.
     
     
 SYNTAX
-    Get-UAScript [-FolderId] <Int64> [-AppToken <String>] [-ComputerName <String>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Get-PSUScript [-Folder] <Folder> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
     
-    Get-UAScript [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Get-PSUScript [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
     
-    Get-UAScript [-Identity] <Identity> [-AppToken <String>] [-ComputerName <String>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Get-PSUScript [-Identity] <Identity> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
     
-    Get-UAScript [-Name] <String> [-AppToken <String>] [-ComputerName <String>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Get-PSUScript [-Name] <String> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
     
-    Get-UAScript [-AppToken <String>] [-ComputerName <String>] [-Tag <Tag>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Get-PSUScript [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-Tag <Tag>] [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -41,8 +41,8 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -FolderId <Int64>
-        The ID of the folder to return scripts from.
+    -Folder <Folder>
+        {{ Fill Folder Description }}
         
         Required?                    true
         Position?                    0
@@ -68,6 +68,15 @@ PARAMETERS
         Accept pipeline input?       True (ByValue)
         Accept wildcard characters?  false
         
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
     -Name <String>
         The name of the script to return.
         
@@ -88,15 +97,6 @@ PARAMETERS
         
     -UseDefaultCredentials [<SwitchParameter>]
         Use default credentials when connecting to the management API
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
         
         Required?                    false
         Position?                    named

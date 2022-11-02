@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDFloatingActionButton [[-Id] <String>] [[-Icon] <Object>] [[-Size] <Object>] [[-OnClick] <Object>] [[-ClassName] <String>] [[-Color] <String>] [<CommonParameters>]
+    New-UDFloatingActionButton [[-Id] <String>] [[-Icon] <Object>] [[-Size] <String>] [[-OnClick] <Object>] [[-ClassName] <String>] [[-Color] <String>] [[-Position] <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -33,7 +33,7 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -Size <Object>
+    -Size <String>
         The size of the button.
         
         Required?                    false
@@ -52,6 +52,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ClassName <String>
+        A CSS class to apply to the floating action button.
         
         Required?                    false
         Position?                    5
@@ -65,6 +66,14 @@ PARAMETERS
         Required?                    false
         Position?                    6
         Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Position <String>
+        
+        Required?                    false
+        Position?                    7
+        Default value                BottomRight
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

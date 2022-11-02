@@ -3,7 +3,7 @@ NAME
     Sync-PSUConfiguration
     
 SYNOPSIS
-    Forces the configuration files to be reevaluated.
+    {{ Fill in the Synopsis }}
     
     
 SYNTAX
@@ -11,12 +11,12 @@ SYNTAX
     
     
 DESCRIPTION
-    Forces the configuration files to be reevaluated.
+    {{ Fill in the Description }}
     
 
 PARAMETERS
     -AppToken <String>
-        The app token used to connect to the PowerShell Universal instance.
+        {{ Fill AppToken Description }}
         
         Required?                    false
         Position?                    named
@@ -25,7 +25,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The URL or computer name of the PowerShell Universal instance.
+        {{ Fill ComputerName Description }}
         
         Required?                    false
         Position?                    named
@@ -34,7 +34,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
-        Not supported.
+        {{ Fill Integrated Description }}
         
         Required?                    false
         Position?                    named
@@ -43,7 +43,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
-        Use default credentials for connecting to the PowerShell Universal instance.
+        {{ Fill UseDefaultCredentials Description }}
         
         Required?                    false
         Position?                    named
@@ -74,9 +74,9 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> Sync-PSUConfiguration
+    PS C:\> {{ Add example code here }}
     
-    Forces the configuration files to be reevaluated.
+    {{ Add example description here }}
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

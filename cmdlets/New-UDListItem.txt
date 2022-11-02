@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDListItem [[-Id] <String>] [[-AvatarType] <String>] [[-OnClick] <Endpoint>] [[-Label] <String>] [[-Children] <ScriptBlock>] [[-SubTitle] <String>] [[-Icon] <Object>] [[-Source] <String>] [[-SecondaryAction] <ScriptBlock>] [[-ClassName] <String>] [<CommonParameters>]
+    New-UDListItem [[-Id] <String>] [[-AvatarType] <String>] [[-OnClick] <Endpoint>] [[-Label] <Object>] [[-Children] <ScriptBlock>] [[-SubTitle] <String>] [[-Icon] <Object>] [[-Source] <String>] [[-SecondaryAction] <ScriptBlock>] [[-ClassName] <String>] [-Open] [-Nested] [[-Href] <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -42,7 +42,7 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -Label <String>
+    -Label <Object>
         The label to show within the list item.
         
         Required?                    false
@@ -100,6 +100,30 @@ PARAMETERS
         
         Required?                    false
         Position?                    10
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Open [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Nested [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Href <String>
+        
+        Required?                    false
+        Position?                    11
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false

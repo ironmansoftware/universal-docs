@@ -1,13 +1,13 @@
 
 NAME
-    New-UAIdentity
+    New-PSUIdentity
     
 SYNOPSIS
     Creates a new identity within UA.
     
     
 SYNTAX
-    New-UAIdentity [-AppToken <String>] [-ComputerName <String>] -Name <String> [-Role <Role>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    New-PSUIdentity [-AppToken <String>] [-ComputerName <String>] [-Integrated] -Name <String> [-Role <Role>] [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -33,6 +33,15 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
     -Name <String>
         The name of the identity.
         
@@ -53,15 +62,6 @@ PARAMETERS
         
     -UseDefaultCredentials [<SwitchParameter>]
         Use default credentials when connecting to the management API
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
         
         Required?                    false
         Position?                    named

@@ -1,0 +1,1135 @@
+
+NAME
+    New-UDNivoChart
+    
+SYNTAX
+    New-UDNivoChart -Data <Object> -Keys <string[]> [-Id <string>] [-Definitions <Object>] [-Fill <Object>] [-Theme <hashtable>] [-BorderWidth <int>] [-BorderColor <string>] [-IndexBy <string>] [-MinValue <int>] [-MaxValue <int>] [-Padding <float>] [-Responsive] [-Width <int>] [-Height <int>] [-Colors <Object>] [-ColorBy <Object>] [-UseDataColor] [-DisableInteractive] [-OnClick <Object>] [-MarginTop <int>] [-MarginBottom <int>] [-MarginLeft <int>] [-MarginRight <int>] [-LabelSkipWidth <int>] [-LabelSkipHeight <int>] [-LabelTextColor <string>] [-EnableGridX] [-GridXValues <Object[]>] [-EnableGridY] [-GridYValues <Object[]>] [-DisableAnimations] [-MotionStiffness <int>] [-MotionDamping <int>] [-Layers <string[]>] [-AxisTop <Object>] [-AxisBottom <Object>] [-AxisLeft <Object>] [-AxisRight <Object>] [-Bar] [-GroupMode {grouped | stacked}] [-Layout {vertical | horizontal}] [-Reverse] [-InnerPadding <float>] [-BorderRadius <int>] [-DisableLabel] [<CommonParameters>]
+    
+    New-UDNivoChart -Data <Object> -Pie [-Id <string>] [-Definitions <Object>] [-Fill <Object>] [-Theme <hashtable>] [-BorderWidth <int>] [-BorderColor <string>] [-Responsive] [-Width <int>] [-Height <int>] [-Colors <Object>] [-ColorBy <Object>] [-UseDataColor] [-DisableInteractive] [-OnClick <Object>] [-MarginTop <int>] [-MarginBottom <int>] [-MarginLeft <int>] [-MarginRight <int>] [-StartAngle <int>] [-EndAngle <int>] [-Fit <bool>] [-InnerRadius <float>] [-PadAngle <int>] [-CornerRadius <int>] [-SortByValue] [-DisableRadiusLabels] [-RadiusLabelSkipAngle <int>] [-RadiusLabelsLinkOffset <int>] [-RadialLabelsLinkDiagonalLength <int>] [-RadialLabelsLinkHorizontalLength <int>] [-RadialLabelsTextXOffset <int>] [-RadialLabelsLinkStrokeWidth <int>] [-DisableSliceLabels] [-SlicesLabelsSkipAngle <int>] [-SlicesLabelsTextColor <int>] [<CommonParameters>]
+    
+    New-UDNivoChart -Data <Object> -Stream [-Id <string>] [-Definitions <Object>] [-Fill <Object>] [-Theme <hashtable>] [-BorderWidth <int>] [-BorderColor <string>] [-Responsive] [-Width <int>] [-Height <int>] [-Colors <Object>] [-ColorBy <Object>] [-UseDataColor] [-DisableInteractive] [-OnClick <Object>] [-MarginTop <int>] [-MarginBottom <int>] [-MarginLeft <int>] [-MarginRight <int>] [-EnableGridX] [-GridXValues <Object[]>] [-EnableGridY] [-GridYValues <Object[]>] [-DisableAnimations] [-MotionStiffness <int>] [-MotionDamping <int>] [-Keys <string[]>] [-DotSize <int>] [-DotBorderWidth <int>] [-DisableStackTooltip] [-AxisTop <Object>] [-AxisBottom <Object>] [-AxisLeft <Object>] [-AxisRight <Object>] [-OffsetType <string>] [-Order <string>] [-Curve {basis | cardinal | catmullRom | linear | monotoneX | monotoneY | natural | step | stepAfter | stepBefore}] [-FillOpactiy <float>] [-DotColor <string>] [<CommonParameters>]
+    
+    New-UDNivoChart -Data <Object> [-Id <string>] [-Definitions <Object>] [-Fill <Object>] [-Theme <hashtable>] [-BorderWidth <int>] [-BorderColor <string>] [-Responsive] [-Width <int>] [-Height <int>] [-Colors <Object>] [-ColorBy <Object>] [-UseDataColor] [-DisableInteractive] [-OnClick <Object>] [-MarginTop <int>] [-MarginBottom <int>] [-MarginLeft <int>] [-MarginRight <int>] [-InnerPadding <float>] [-DisableLabel] [-Treemap] [-Identity <string>] [-Value <string>] [-Tile {squarify | slice | dice | slice-dice}] [-LeavesOnly] [-OuterPadding <int>] [<CommonParameters>]
+    
+    New-UDNivoChart -Data <Object> [-Id <string>] [-Definitions <Object>] [-Fill <Object>] [-Theme <hashtable>] [-BorderWidth <int>] [-BorderColor <string>] [-Responsive] [-Width <int>] [-Height <int>] [-Colors <Object>] [-ColorBy <Object>] [-UseDataColor] [-DisableInteractive] [-OnClick <Object>] [-MarginTop <int>] [-MarginBottom <int>] [-MarginLeft <int>] [-MarginRight <int>] [-DisableAnimations] [-MotionStiffness <int>] [-MotionDamping <int>] [-DisableLabel] [-Identity <string>] [-Value <string>] [-LeavesOnly] [-Bubble] [<CommonParameters>]
+    
+    New-UDNivoChart -Data <Object> [-Id <string>] [-Definitions <Object>] [-Fill <Object>] [-Theme <hashtable>] [-IndexBy <string>] [-MinValue <int>] [-MaxValue <int>] [-Padding <float>] [-Responsive] [-Width <int>] [-Height <int>] [-Colors <Object>] [-ColorBy <Object>] [-UseDataColor] [-DisableInteractive] [-OnClick <Object>] [-MarginTop <int>] [-MarginBottom <int>] [-MarginLeft <int>] [-MarginRight <int>] [-LabelSkipWidth <int>] [-LabelSkipHeight <int>] [-LabelTextColor <string>] [-EnableGridX] [-GridXValues <Object[]>] [-EnableGridY] [-GridYValues <Object[]>] [-DisableAnimations] [-MotionStiffness <int>] [-MotionDamping <int>] [-Keys <string[]>] [-CellOpacity <float>] [-CellBorderWidth <int>] [-Heatmap] [-ForceSquare] [-SizeVariation <int>] [-DisableLabels] [<CommonParameters>]
+    
+    New-UDNivoChart -Data <Object> -Calendar -From <datetime> -To <datetime> [-Id <string>] [-Definitions <Object>] [-Fill <Object>] [-Theme <hashtable>] [-MinValue <int>] [-MaxValue <int>] [-Responsive] [-Width <int>] [-Height <int>] [-Colors <Object>] [-ColorBy <Object>] [-UseDataColor] [-DisableInteractive] [-OnClick <Object>] [-MarginTop <int>] [-MarginBottom <int>] [-MarginLeft <int>] [-MarginRight <int>] [-Domain <Object>] [-EmptyColor <Object>] [-YearSpacing <int>] [-YearLegendOffset <int>] [-MonthSpacing <int>] [-MonthLegendOffset <int>] [-DaySpacing <int>] [-DayLegendOffset <int>] [<CommonParameters>]
+    
+    New-UDNivoChart -Data <Object> -Line [-Id <string>] [-Definitions <Object>] [-Fill <Object>] [-Theme <hashtable>] [-Responsive] [-Width <int>] [-Height <int>] [-Colors <Object>] [-ColorBy <Object>] [-UseDataColor] [-DisableInteractive] [-OnClick <Object>] [-MarginTop <int>] [-MarginBottom <int>] [-MarginLeft <int>] [-MarginRight <int>] [-EnableGridX] [-GridXValues <Object[]>] [-EnableGridY] [-GridYValues <Object[]>] [-Layers <string[]>] [-DotSize <int>] [-DotBorderWidth <int>] [-DisableStackTooltip] [-AxisTop <Object>] [-AxisBottom <Object>] [-AxisLeft <Object>] [-AxisRight <Object>] [-LineWidth <int>] [-EnableArea] [-AreaBaselineValue <string>] [-AreaOpacity <float>] [-AreaBlendMode <string>] [-DisableDots] [-EnableDotLabel] [-DotLabelYOffset <int>] [-YScaleStacked] [-YScaleMin <int>] [-YScaleMax <int>] [-Curve {basis | cardinal | catmullRom | linear | monotoneX | monotoneY | natural | step | stepAfter | stepBefore}] [<CommonParameters>]
+    
+    
+PARAMETERS
+    -AreaBaselineValue <string>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Line
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -AreaBlendMode <string>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Line
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -AreaOpacity <float>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Line
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -AxisBottom <Object>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar, Line, Stream
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -AxisLeft <Object>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar, Line, Stream
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -AxisRight <Object>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar, Line, Stream
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -AxisTop <Object>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar, Line, Stream
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Bar
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -BorderColor <string>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar, Pie, Stream, Treemap, Bubble
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -BorderRadius <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -BorderWidth <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar, Pie, Stream, Treemap, Bubble
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Bubble
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bubble
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Calendar
+        
+        Required?                    true
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Calendar
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -CellBorderWidth <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Heatmap
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -CellOpacity <float>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Heatmap
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -ColorBy <Object>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Colors <Object>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -CornerRadius <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Pie
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Curve <string>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Stream, Line
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Data <Object>
+        
+        Required?                    true
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -DayLegendOffset <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Calendar
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -DaySpacing <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Calendar
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Definitions <Object>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -DisableAnimations
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar, Heatmap, Stream, Bubble
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -DisableDots
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Line
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -DisableInteractive
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -DisableLabel
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar, Treemap, Bubble
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -DisableLabels
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Heatmap
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -DisableRadiusLabels
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Pie
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -DisableSliceLabels
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Pie
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -DisableStackTooltip
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Stream, Line
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Domain <Object>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Calendar
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -DotBorderWidth <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Stream, Line
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -DotColor <string>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Stream
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -DotLabelYOffset <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Line
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -DotSize <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Stream, Line
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -EmptyColor <Object>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Calendar
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -EnableArea
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Line
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -EnableDotLabel
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Line
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -EnableGridX
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar, Heatmap, Stream, Line
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -EnableGridY
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar, Heatmap, Stream, Line
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -EndAngle <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Pie
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Fill <Object>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -FillOpactiy <float>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Stream
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Fit <bool>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Pie
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -ForceSquare
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Heatmap
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -From <datetime>
+        
+        Required?                    true
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Calendar
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -GridXValues <Object[]>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar, Heatmap, Stream, Line
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -GridYValues <Object[]>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar, Heatmap, Stream, Line
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -GroupMode <string>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Heatmap
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Heatmap
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Height <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Id <string>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Identity <string>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Treemap, Bubble
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -IndexBy <string>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar, Heatmap
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -InnerPadding <float>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar, Treemap
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -InnerRadius <float>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Pie
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Keys <string[]>
+        
+        Required?                    true
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar, Heatmap, Stream
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -LabelSkipHeight <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar, Heatmap
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -LabelSkipWidth <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar, Heatmap
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -LabelTextColor <string>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar, Heatmap
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Layers <string[]>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar, Line
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Layout <string>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -LeavesOnly
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Treemap, Bubble
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Line
+        
+        Required?                    true
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Line
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -LineWidth <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Line
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -MarginBottom <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -MarginLeft <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -MarginRight <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -MarginTop <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -MaxValue <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar, Heatmap, Calendar
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -MinValue <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar, Heatmap, Calendar
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -MonthLegendOffset <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Calendar
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -MonthSpacing <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Calendar
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -MotionDamping <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar, Heatmap, Stream, Bubble
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -MotionStiffness <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar, Heatmap, Stream, Bubble
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -OffsetType <string>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Stream
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -OnClick <Object>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Order <string>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Stream
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -OuterPadding <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Treemap
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -PadAngle <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Pie
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Padding <float>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar, Heatmap
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Pie
+        
+        Required?                    true
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Pie
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -RadialLabelsLinkDiagonalLength <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Pie
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -RadialLabelsLinkHorizontalLength <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Pie
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -RadialLabelsLinkStrokeWidth <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Pie
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -RadialLabelsTextXOffset <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Pie
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -RadiusLabelSkipAngle <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Pie
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -RadiusLabelsLinkOffset <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Pie
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Responsive
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Reverse
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Bar
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -SizeVariation <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Heatmap
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -SlicesLabelsSkipAngle <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Pie
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -SlicesLabelsTextColor <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Pie
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -SortByValue
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Pie
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -StartAngle <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Pie
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Stream
+        
+        Required?                    true
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Stream
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Theme <hashtable>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Tile <string>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Treemap
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -To <datetime>
+        
+        Required?                    true
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Calendar
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Treemap
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Treemap
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -UseDataColor
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Value <string>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Treemap, Bubble
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Width <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -YScaleMax <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Line
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -YScaleMin <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Line
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -YScaleStacked
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Line
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -YearLegendOffset <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Calendar
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -YearSpacing <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           Calendar
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+    
+INPUTS
+    None
+    
+    
+OUTPUTS
+    System.Object
+    
+ALIASES
+    None
+    
+
+REMARKS
+    None
+
+

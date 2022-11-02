@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTable [-Id <String>] [-Title <String>] -Data <Object[]> [-Columns <Hashtable[]>] [-OnRowSelection <Endpoint>] [-ShowSort] [-ShowFilter] [-ShowSearch] [-Dense] [-ShowExport] [-StickyHeader] [-PageSize <Int32>] [-PageSizeOptions <Int32[]>] [-PaginationLocation <String>] [-ShowSelection] [-ShowPagination] [-Padding <String>] [-Size <String>] [-TextOption <Hashtable>] [-ExportOption <String[]>] [-OnExport <Endpoint>] [-DisablePageSizeAll] [-DefaultSortDirection <String>] [-HideToggleAllRowsSelected] [-DisableMultiSelect] [-DisableSortRemove] [-Icon <Hashtable>] [-ClassName <String>] [-ShowRefresh] [<CommonParameters>]
+    New-UDTable [-Id <String>] [-Title <String>] -Data <Object[]> [-Columns <Hashtable[]>] [-OnRowSelection <Endpoint>] [-ShowSort] [-ShowFilter] [-ShowSearch] [-Dense] [-ShowExport] [-StickyHeader] [-PageSize <Int32>] [-PageSizeOptions <Int32[]>] [-PaginationLocation <String>] [-ShowSelection] [-ShowPagination] [-Padding <String>] [-Size <String>] [-TextOption <Hashtable>] [-ExportOption <String[]>] [-OnExport <Endpoint>] [-DisablePageSizeAll] [-DefaultSortDirection <String>] [-HideToggleAllRowsSelected] [-DisableMultiSelect] [-DisableSortRemove] [-Icon <Hashtable>] [-ClassName <String>] [-ShowRefresh] [-ToolbarContent <ScriptBlock>] [-OnRowExpand <ScriptBlock>] [-MaxHeight <Int32>] [-Locale <String>] [<CommonParameters>]
     
-    New-UDTable [-Id <String>] [-Title <String>] -LoadData <Endpoint> -Columns <Hashtable[]> [-OnRowSelection <Endpoint>] [-ShowSort] [-ShowFilter] [-ShowSearch] [-Dense] [-ShowExport] [-StickyHeader] [-PageSize <Int32>] [-PageSizeOptions <Int32[]>] [-PaginationLocation <String>] [-ShowSelection] [-ShowPagination] [-Padding <String>] [-Size <String>] [-TextOption <Hashtable>] [-ExportOption <String[]>] [-OnExport <Endpoint>] [-DisablePageSizeAll] [-DefaultSortDirection <String>] [-HideToggleAllRowsSelected] [-DisableMultiSelect] [-DisableSortRemove] [-Icon <Hashtable>] [-ClassName <String>] [-ShowRefresh] [<CommonParameters>]
+    New-UDTable [-Id <String>] [-Title <String>] -LoadData <Endpoint> -Columns <Hashtable[]> [-OnRowSelection <Endpoint>] [-ShowSort] [-ShowFilter] [-ShowSearch] [-Dense] [-ShowExport] [-StickyHeader] [-PageSize <Int32>] [-PageSizeOptions <Int32[]>] [-PaginationLocation <String>] [-ShowSelection] [-ShowPagination] [-Padding <String>] [-Size <String>] [-TextOption <Hashtable>] [-ExportOption <String[]>] [-OnExport <Endpoint>] [-DisablePageSizeAll] [-DefaultSortDirection <String>] [-HideToggleAllRowsSelected] [-DisableMultiSelect] [-DisableSortRemove] [-Icon <Hashtable>] [-ClassName <String>] [-ShowRefresh] [-ToolbarContent <ScriptBlock>] [-OnRowExpand <ScriptBlock>] [-MaxHeight <Int32>] [-AutoRefresh] [-AutoRefreshInterval <Int32>] [-Locale <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -294,6 +294,57 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ToolbarContent <ScriptBlock>
+        
+        Required?                    false
+        Position?                    named
+        Default value                {}
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnRowExpand <ScriptBlock>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -MaxHeight <Int32>
+        
+        Required?                    false
+        Position?                    named
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -AutoRefresh [<SwitchParameter>]
+        Reloads the table on an interval when -LoadData is being used.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -AutoRefreshInterval <Int32>
+        The interval to reload data when AutoRefresh is specified.
+        
+        Required?                    false
+        Position?                    named
+        Default value                10
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Locale <String>
+        The locale. Primarily used for Date and Time filters.
+        
+        Required?                    false
+        Position?                    named
+        Default value                en
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

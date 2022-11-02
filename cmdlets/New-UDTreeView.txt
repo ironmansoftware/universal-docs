@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTreeView [[-Id] <String>] [-Node] <ScriptBlock> [[-OnNodeClicked] <Endpoint>] [[-Style] <Hashtable>] [[-ClassName] <String>] [<CommonParameters>]
+    New-UDTreeView [[-Id] <String>] [-Node] <ScriptBlock> [[-OnNodeClicked] <Endpoint>] [[-Style] <Hashtable>] [[-ClassName] <String>] [-Expanded] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -55,6 +55,14 @@ PARAMETERS
         Required?                    false
         Position?                    5
         Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Expanded [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

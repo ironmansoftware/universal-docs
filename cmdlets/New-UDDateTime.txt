@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDDateTime [-Id <String>] [-InputObject] <String> [-LocalizedFormat <String>] [<CommonParameters>]
+    New-UDDateTime [-Id <String>] [-InputObject] <DateTime> [-LocalizedFormat <String>] [-Locale <String>] [<CommonParameters>]
     
-    New-UDDateTime [-Id <String>] [-InputObject] <String> [-Format <String>] [<CommonParameters>]
+    New-UDDateTime [-Id <String>] [-InputObject] <DateTime> [-Format <String>] [-Locale <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -26,7 +26,7 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -InputObject <String>
+    -InputObject <DateTime>
         The date and time object to format.
         
         Required?                    true
@@ -50,6 +50,15 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                LLL
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Locale <String>
+        The locale to use when formatting the date time. Defaults to not set.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

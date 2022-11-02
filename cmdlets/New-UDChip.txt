@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDChip [-Id <String>] [[-Label] <String>] [[-OnDelete] <Object>] [[-OnClick] <Object>] [[-Icon] <Object>] [[-Style] <Hashtable>] [[-Variant] <String>] [-ClassName <String>] [-Color <String>] [<CommonParameters>]
+    New-UDChip [-Id <String>] [[-Label] <String>] [[-OnDelete] <Endpoint>] [[-OnClick] <Endpoint>] [[-Icon] <Object>] [[-Style] <Hashtable>] [[-Variant] <String>] [-ClassName <String>] [-Color <String>] [<CommonParameters>]
     
-    New-UDChip [-Id <String>] [[-Label] <String>] [[-OnDelete] <Object>] [[-OnClick] <Object>] [[-Style] <Hashtable>] [[-Variant] <String>] [[-Avatar] <String>] [[-AvatarType] <String>] [-ClassName <String>] [-Color <String>] [<CommonParameters>]
+    New-UDChip [-Id <String>] [[-Label] <String>] [[-OnDelete] <Endpoint>] [[-OnClick] <Endpoint>] [[-Style] <Hashtable>] [[-Variant] <String>] [[-Avatar] <String>] [[-AvatarType] <String>] [-ClassName <String>] [-Color <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -35,7 +35,7 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -OnDelete <Object>
+    -OnDelete <Endpoint>
         A script block to call when the chip is deleted.
         
         Required?                    false
@@ -44,7 +44,7 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -OnClick <Object>
+    -OnClick <Endpoint>
         A script block to call when the chip is clicked.
         
         Required?                    false
@@ -99,6 +99,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ClassName <String>
+        A CSS class to apply to the chip.
         
         Required?                    false
         Position?                    named
@@ -107,6 +108,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Color <String>
+        The color of the chip. Defaults to 'default'. Valid values: "default", "primary", "secondary"
         
         Required?                    false
         Position?                    named

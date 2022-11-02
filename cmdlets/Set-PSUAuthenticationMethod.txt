@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    Set-PSUAuthenticationMethod [-AppToken <String>] [-ComputerName <String>] [-ScriptBlock <ScriptBlock>] [-Disabled] [-UseDefaultCredentials] [-Authority <String>] -CallbackPath <String> -ClientId <String> [-ClientSecret <String>] [-Configure <ScriptBlock>] [-CorrelationCookieSameSite <String>] [-GetClaimsFromUserInfoEndpoint <Boolean>] [-Integrated] [-Resource <String>] [-ResponseType <String>] [-SaveTokens <Boolean>] [-Scopes <String>] [-Type <AuthenticationMethodType>] [-UseTokenLifetime <Boolean>] [<CommonParameters>]
+    Set-PSUAuthenticationMethod [-AppToken <String>] [-ComputerName <String>] [-ScriptBlock <ScriptBlock>] [-Disabled] [-UseDefaultCredentials] [-Authority <String>] -CallbackPath <String> -ClientId <String> [-ClientSecret <String>] [-Configure <ScriptBlock>] [-CorrelationCookieSameSite <String>] [-GetClaimsFromUserInfoEndpoint <Boolean>] [-Integrated] [-Resource <String>] [-ResponseType <String>] [-SaveTokens <Boolean>] [-Scopes <String>] [-Type <AuthenticationMethodType>] [-UseTokenLifetime <Boolean>] [-RequireMfa] [<CommonParameters>]
     
-    Set-PSUAuthenticationMethod [-AppToken <String>] [-ComputerName <String>] [-ScriptBlock <ScriptBlock>] [-Disabled] [-UseDefaultCredentials] -CallbackPath <String> [-Configure <ScriptBlock>] -EntityId <String> [-IdentityProviderEntityId <String>] [-Integrated] [-MetadataAddress <String>] [-ServiceCertificate <String>] [-Type <AuthenticationMethodType>] [<CommonParameters>]
+    Set-PSUAuthenticationMethod [-AppToken <String>] [-ComputerName <String>] [-ScriptBlock <ScriptBlock>] [-Disabled] [-UseDefaultCredentials] -CallbackPath <String> [-Configure <ScriptBlock>] -EntityId <String> [-IdentityProviderEntityId <String>] [-Integrated] [-MetadataAddress <String>] [-ServiceCertificate <String>] [-Type <AuthenticationMethodType>] [-SigningKey <String>] [-SingleSignOnServiceUrl <String>] [<CommonParameters>]
     
     Set-PSUAuthenticationMethod [-AppToken <String>] [-ComputerName <String>] [-ScriptBlock <ScriptBlock>] [-Disabled] [-UseDefaultCredentials] -CallbackPath <String> [-Configure <ScriptBlock>] [-CorrelationCookieSameSite <String>] [-Integrated] -MetadataAddress <String> [-Type <AuthenticationMethodType>] [-UseTokenLifetime <Boolean>] -Wreply <String> -Wtrealm <String> [<CommonParameters>]
     
@@ -243,6 +243,33 @@ PARAMETERS
         The WS-Federation Wrealm setting.
         
         Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -RequireMfa [<SwitchParameter>]
+        Enforce the MFA requirement for OpenID Connect.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -SigningKey <String>
+        A certificate signing key to use with SAML2.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -SingleSignOnServiceUrl <String>
+        The single signon service URL for SAML2.
+        
+        Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False

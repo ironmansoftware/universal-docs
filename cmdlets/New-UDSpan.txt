@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDSpan [[-Id] <String>] [[-Content] <Object>] [<CommonParameters>]
+    New-UDSpan [[-Id] <String>] [[-Content] <ScriptBlock>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -24,7 +24,7 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -Content <Object>
+    -Content <ScriptBlock>
         The content of the span.
         
         Required?                    false

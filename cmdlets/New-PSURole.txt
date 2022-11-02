@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSURole [-AppToken <String>] [-ComputerName <String>] [-Description <String>] -Name <String> -Policy <ScriptBlock> [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    New-PSURole [-AppToken <String>] [-ComputerName <String>] [-Description <String>] -Name <String> -Policy <ScriptBlock> [-UseDefaultCredentials] [-Integrated] [-Disabled] [<CommonParameters>]
     
-    New-PSURole [-AppToken <String>] [-ComputerName <String>] [-Description <String>] -Name <String> [-UseDefaultCredentials] [-Integrated] -ClaimType <String> -ClaimValue <String> [<CommonParameters>]
+    New-PSURole [-AppToken <String>] [-ComputerName <String>] [-Description <String>] -Name <String> [-UseDefaultCredentials] [-Integrated] -ClaimType <String> -ClaimValue <String> [-Disabled] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -101,6 +101,15 @@ PARAMETERS
         Required?                    true
         Position?                    named
         Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Disabled [<SwitchParameter>]
+        Whether the role is disabled.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       False
         Accept wildcard characters?  false
         

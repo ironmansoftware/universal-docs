@@ -70,6 +70,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ClassName <String>
+        A CSS class to apply to the app bar.
         
         Required?                    false
         Position?                    5

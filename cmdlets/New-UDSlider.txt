@@ -106,6 +106,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ClassName <String>
+        A CSS class to apply to the slider.
         
         Required?                    false
         Position?                    9
@@ -114,6 +115,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Color <String>
+        The color of the slider. Defaults to 'primary'. Valid values: "primary", "secondary"
         
         Required?                    false
         Position?                    10

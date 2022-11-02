@@ -1,15 +1,15 @@
 
 NAME
-    Wait-UAJob
+    Wait-PSUJob
     
 SYNOPSIS
     Waits for a job to finish.
     
     
 SYNTAX
-    Wait-UAJob [-AppToken <String>] [-ComputerName <String>] -Job <Job> [-Timeout <Int32>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Wait-PSUJob [-AppToken <String>] [-ComputerName <String>] [-Integrated] -Job <Job> [-Timeout <Int32>] [-UseDefaultCredentials] [<CommonParameters>]
     
-    Wait-UAJob [-AppToken <String>] [-ComputerName <String>] -JobId <Int64> [-Timeout <Int32>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Wait-PSUJob [-AppToken <String>] [-ComputerName <String>] [-Integrated] -JobId <Int64> [-Timeout <Int32>] [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -32,6 +32,15 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
@@ -64,15 +73,6 @@ PARAMETERS
         
     -UseDefaultCredentials [<SwitchParameter>]
         Use default credentials when connecting to the management API
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
         
         Required?                    false
         Position?                    named
