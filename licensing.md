@@ -41,7 +41,6 @@ Universal can be used forever for free with the following limitations.
 
 ### Automation
 
-* 25 jobs per day
 * 2 concurrent jobs
 * No Triggers
 * No Terminals

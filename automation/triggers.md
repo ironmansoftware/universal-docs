@@ -34,7 +34,6 @@ The following types of events can be assigned a trigger.
 * API Authentication Failed
 * API Error
 * New User Login
-* Git Sync
 
 ### New User Login
 
