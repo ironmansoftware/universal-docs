@@ -330,70 +330,82 @@ In this example, we'll query the PowerShell Universal database with dbatools.&#x
 function Out-UDSQLDataGrid {
     param(
         [Parameter(Mandatory)]
-        $Context, 
+        $Context,
         [Parameter(Mandatory)]
-        [string]$Table, 
+        [string]$Table,
         [Parameter(Mandatory)]
         [string]$SqlInstance,
         [Parameter(Mandatory)]
         [string]$Database
     )
-
     End {
-
-        $SqlFilter = "WHERE "        
-        $SqlParameters = @{}
-        $Filter = $Context.Filter 
-        foreach ($item in $Filter.Items) {
-            $Property = $item.columnField
-            $Value = $item.Value
-
-            $Parameter = "Param" + $SqlParameters.Count
-            
-            if ($item.operatorValue -eq 'contains')
-            {
-                $SqlParameters.Add($Parameter, "%$Value%") | Out-Null
-            } 
-            else 
-            {
-                $SqlParameters.Add($Parameter, $Value) | Out-Null            
-            }
-            
-            switch ($item.operatorValue) {
-                "contains" { $SqlFilter += "$Property LIKE $Parameter AND " } 
-                "equals" { $SqlFilter += "$Property = $Parameter AND " }  
-                "isEmpty" { $SqlFilter += "$Property IS NULL "  }
-                "isNotEmpty" { $SqlFilter += "$Property IS NOT NULL "  }
+        $simpleFilter = @()
+        if($null -ne $Context.Filter.Items -and $Context.Filter.Items.Count -gt 0) {
+            $linkOperator = $Context.Filter.linkOperator #The link operator is 'AND' or 'OR'. It will always be one or the other for all properties
+            foreach ($item in $Context.Filter.Items) {         
+                $simpleFilter += [PSCustomObject]@{
+                    Property    = $item.columnField
+                    Value       = $item.Value
+                    Operator    = $item.operatorValue
+                }
             }
         }
 
-        $SQLFilter += " 1 = 1"
-
-        $TotalCount = (Invoke-DbaQuery -SqlInstance $SqlInstance -Database $Database -Query "SELECT COUNT(*) As Count FROM $Table $SqlFilter" -SqlParameters $SqlParameters).Count 
-
-        $Sort = $Context.Sort.'0'
-        if ($Sort)
-        {
-            $SqlSort = "ORDER BY $($Sort.field) $($Sort.Sort) "
+        if($null -ne $simpleFilter -and $simpleFilter.Count -gt 0) {
+            $count = 1
+            foreach($filter in $simpleFilter) {
+                if ($count -gt 1) {
+                    $SqlFilter += " $($linkOperator) "
+                } else {
+                    $SqlFilter += " WHERE "
+                }
+                switch ($filter.Operator) {
+                    "contains" { $SqlFilter += " $($filter.Property) LIKE '%$($filter.Value)%' " }
+                    "equals" { $SqlFilter += " $($filter.Property) = '$($filter.Value)' " }
+                    "startsWith" { $SqlFilter += " $($filter.Property) LIKE '$($filter.Value)%' " }
+                    "endsWith" { $SqlFilter += " $($filter.Property) LIKE '%$($filter.Value)' " }
+                    "isAnyOf" {
+                        $count = 1
+                        foreach($val in $filter.Value){
+                            if($count -gt 1) {
+                                $list += ", '$val'"
+                            } else {
+                                $list += "'$val'"
+                            }  
+                            $count += 1
+                        }
+                        $SqlFilter += " $($filter.Property) IN ($($list)) "
+                    }
+                    "isempty" { $SqlFilter += " TRIM ($($filter.Property)) IS NULL " }
+                    "isnotempty" { $SqlFilter += " TRIM ($($filter.Property)) IS NOT NULL " }
+                    "notequals" { $SqlFilter += " $($filter.Property) != '$($filter.Value)' " }
+                    "notcontains" { $SqlFilter += " $($filter.Property) NOT LIKE '%$($filter.Value)%' " }
+                }
+                $count += 1
+            }
+        } else {
+            $SqlFilter = $null
         }
-        else 
+        $totalCount = (Invoke-DbaQuery -SqlInstance $SqlInstance -Database $Database -Query "SELECT COUNT(*) As Count FROM $Table $SqlFilter" -SqlParameters $SqlParameters).Count
+        $sort = $Context.Sort.'0'
+        if ($sort)
         {
-            $SqlSort = "ORDER BY 1 "
+            $sqlSort = "ORDER BY $($sort.field) $($sort.Sort) "
+        } else {
+            $sqlSort = "ORDER BY (SELECT NULL)"
         }
-
-        $SqlPage = "OFFSET $($Context.Page * $Context.PageSize) ROWS FETCH NEXT $($Context.PageSize) ROWS ONLY;"
-
-        $Query = "SELECT * FROM $Table $SqlFilter $SqlSort $SqlPage"
-
-        Show-UDToast $Query -Duration 50000
-
+        $sqlPage = "OFFSET $($Context.Page * $Context.PageSize) ROWS FETCH NEXT $($Context.PageSize) ROWS ONLY;"
+        if($null -ne $SqlFilter) {
+            $Query = "SELECT * FROM $Table $sqlFilter $sqlSort $sqlPage"
+        } else {
+            $Query = "SELECT * FROM $Table $sqlSort $sqlPage"
+        }
         $Rows = Invoke-DbaQuery -SqlInstance $SqlInstance -Database $Database -Query $Query -As PSObject -SqlParameters $SqlParameters
-
         @{
             rows     = [Array]$Rows
             rowCount = $TotalCount
         }
-    }    
+    }   
 }
 
 New-UDDashboard -Title 'PowerShell Universal' -Content {
