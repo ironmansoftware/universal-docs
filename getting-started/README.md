@@ -87,6 +87,16 @@ The following table contains the parameters you can specify if running `msiexec`
 | SERVICEACCOUNT         | The service account to set for the Windows service          | None                                          |
 | SERVICEACCOUNTPASSWORD | The service account password to set for the Windows Service | None                                          |
 
+### Example
+
+Below is an example of how to run `msiexec.exe` to install PowerShell Universal and provide parameters to the installer.&#x20;
+
+{% code overflow="wrap" %}
+```powershell
+ Start-Process msiexec.exe -ArgumentList "/I C:\Users\adamr\Downloads\PowerShellUniversal.3.5.1.msi /q /norestart /L*V `"C:\users\adamr\desktop\msi.log.txt`" STARTSERVICE=0" -Wait -NoNewWindow
+```
+{% endcode %}
+
 ## IIS Install
 
 Please visit the [IIS hosting documentation](../config/hosting/hosting-iis.md) for information on how to configure PowerShell Universal as an IIS website.&#x20;
