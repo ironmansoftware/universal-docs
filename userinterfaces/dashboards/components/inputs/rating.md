@@ -46,7 +46,7 @@ New-UDRating -Precision .5
 
 Change the size of the rating icons.&#x20;
 
-![](../../../../.gitbook/assets/image.png)
+![](<../../../../.gitbook/assets/image (3).png>)
 
 ```powershell
 New-UDRating -Size large

@@ -270,7 +270,65 @@ New-UDButton -Text 'Select' -OnClick {
 }
 ```
 
-### API
+## PowerShell Host Integration
+
+Dashboards integrate directly with the PowerShell host to provide features based on standard cmdlets.&#x20;
+
+### Read-Host
+
+Using the `Read-Host` cmdlet will cause a dialog to show on the user's dashboard. The text entered will be returned by the cmdlet.&#x20;
+
+```powershell
+$Text = Read-Host 'Enter Some Text'
+Show-UDToast $Text
+```
+
+<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+
+### Get-Credential
+
+Using `Get-Credential` will cause a dialog to show that accepts a username and password. A `PSCredential` object will be returned from the cmdlet.&#x20;
+
+```powershell
+Get-Credential -UserName "adam"
+```
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+### Write-Progress
+
+Cmdlets that use the progress stream or the use of the `Write-Progress` cmdlet will result in a progress dialog being shown. The popup will show the activity, percent completed and current operation.
+
+```powershell
+1..100 | ForEach-Object {
+    Write-Progress -PercentComplete $_ -Activity 'Processing...' -CurrentOperation "User $_"
+    Start-Sleep -Milliseconds 500
+}
+```
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+### Prompt For Choice
+
+You can use the `$Host.UI.PromptForChoice` function to display a multi-select dialog.&#x20;
+
+```powershell
+$Title = "Welcome"
+$Info = "Just to Demo Prompt for Choice"
+
+$options = [System.Management.Automation.Host.ChoiceDescription[]] @("Power", "Shell", "Quit")
+[int]$defaultchoice = 2
+$opt = $host.UI.PromptForChoice($Title , $Info , $Options, $defaultchoice)
+switch ($opt) {
+    0 { Show-UDToast "Power" }
+    1 { Show-UDToast "Shell" }
+    2 { Show-UDToast "Good Bye!!!" }
+}
+```
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+## API
 
 * [Get-UDElement](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Get-UDElement.txt)
 * [Set-UDElement](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Set-UDElement.txt)
