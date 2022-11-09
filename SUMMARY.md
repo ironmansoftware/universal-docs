@@ -154,6 +154,7 @@
 * [About](config/about.md)
 * [API](config/api.md)
 * [Environments](config/environments.md)
+* [Feature Flags](config/feature-flags.md)
 * [Git](config/git.md)
 * [Hosting](config/hosting/README.md)
   * [Azure](config/hosting/azure.md)
