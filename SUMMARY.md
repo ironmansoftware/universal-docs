@@ -77,6 +77,7 @@
       * [Floating Action Button](userinterfaces/dashboards/components/inputs/floating-action-button.md)
       * [Form](userinterfaces/dashboards/components/inputs/form.md)
       * [Radio](userinterfaces/dashboards/components/inputs/radio.md)
+      * [Rating](userinterfaces/dashboards/components/inputs/rating.md)
       * [Select](userinterfaces/dashboards/components/inputs/select.md)
       * [Slider](userinterfaces/dashboards/components/inputs/slider.md)
       * [Switch](userinterfaces/dashboards/components/inputs/switch.md)
