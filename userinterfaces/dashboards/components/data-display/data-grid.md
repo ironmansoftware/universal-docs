@@ -229,6 +229,30 @@ New-UDDataGrid -LoadRows {
 }
 ```
 
+## Custom Export
+
+To override the default export functionality, use the `-OnExport` event handler. `$EventData` will be an array of rows with their values. You should use `Out-UDDataGridExport` to return the data from `-OnExport`.&#x20;
+
+```powershell
+New-UDDataGrid -LoadRows {
+    $Data = @(
+        @{ Name = 'Adam'; Number = Get-Random}
+        @{ Name = 'Tom'; Number = Get-Random}
+        @{ Name = 'Sarah'; Number = Get-Random}
+    )
+    @{
+        rows = $Data 
+        rowCount = $Data.Length
+    }
+} -Columns @(
+    @{ field = "name"}
+    @{ field = "number"}
+) -AutoHeight -OnExport {
+    $Data = $EventData | Select-Object -Expand name 
+    Out-UDDataGridExport -Data $Data -FileName 'export.txt' | Out-String
+}
+```
+
 ## Example: Static Data
 
 In this example, we generate an array of 10,000 records. We will create a new function, `Out-UDDataGridData` to manage the paging, sorting and filtering.&#x20;

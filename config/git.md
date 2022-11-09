@@ -14,7 +14,7 @@ Git sync can be configured in the database. This is the preferred approach when 
 
 To configure git sync, navigate to Settings \ Git within the Admin Console. You will be able to click the Git Settings button.&#x20;
 
-<figure><img src="../.gitbook/assets/image (4) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 ### appsettings.json&#x20;
 
