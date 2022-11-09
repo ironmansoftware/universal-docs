@@ -109,16 +109,6 @@ New-UDButton -Id 'submit' -OnClick {
 }
 ```
 
-## OnBlur
-
-The `-OnBlur` event handler is executed when the textbox loses focus.&#x20;
-
-```powershell
-New-UDTextbox -OnBlur {
-    Show-UDToast "Blurred"
-}
-```
-
 ## API
 
 [New-UDTextbox](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDTextbox.txt)

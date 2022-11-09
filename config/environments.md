@@ -131,12 +131,6 @@ The integrated environment works by creating multiple ruspaces within the PowerS
 * VMware.PowerCLI
 * Az
 
-## Agent Environment
-
-PowerShell Universal includes an agent process that can be executed outside of the PowerShell Universal service. Similar to the Integrated environment, it uses the current version of PowerShell that PowerShell Universal includes. Unlike the integrated environment, it spawns an external process and doesn't require PowerShell 7 be installed on the target machine.&#x20;
-
-The Agent environment also supports run as credentials.&#x20;
-
 ## API
 
 * [New-PSUEnvironment](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSUEnvironment.txt)
