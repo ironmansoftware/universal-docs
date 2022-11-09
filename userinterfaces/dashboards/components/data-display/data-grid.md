@@ -267,48 +267,53 @@ function Out-UDDataGridData {
         [Parameter()]
         [int]$TotalRows = -1
     )
-
     Begin {
         $Items = [System.Collections.ArrayList]::new()
     }
-
     Process {
         $Items.Add($Data) | Out-Null
     }
 
     End {
-        if ($TotalRows  -eq -1)
-        {
-            $TotalRows = $Items.Count
-        }
-
-        $Filter = $Context.Filter
-        foreach ($item in $Filter.Items) {
-            $Property = $item.columnField
-
-            if (!($null -eq $Property -or [string]::IsNullOrWhiteSpace($Property))) {
-                $Value = $item.Value
-                if (!($null -eq $Value -or [string]::IsNullOrWhiteSpace($Value))) {
-                    Show-UDToast -Message "Prop: $Property Value:$Value"
-                    switch ($item.operatorValue) {
-                        "contains" { $Items = $Items | Where-Object -Property $Property -like "*$Value*"; $TotalRows = $Items.Count }
-                        "equals" { $Items = $Items | Where-Object -Property $Property  -eq $Value; $TotalRows = $Items.Count } 
-                        "startsWith" { $Items = $Items | Where-Object -Property $Property -like "$Value*"; $TotalRows = $Items.Count }
-                        "endsWith" { $Items = $Items | Where-Object -Property $Property -like "*$Value"; $TotalRows = $Items.Count }
-                        "isAnyOf" { $Items = $Items | Where-Object -Property $Property -in $Value; $TotalRows = $Items.Count }
-                        "notequals" { $Items = $Items | Where-Object -Property $Property  -ne $Value; $TotalRows = $Items.Count }
-                        "notcontains" { $Items = $Items | Where-Object -Property $Property -notlike "*$Value*"; $TotalRows = $Items.Count }
-                    }
-                } else {
-                    switch ($item.operatorValue) {
-                        "isEmpty" { $Items = $Items | Where-Object { (($null -eq $_.$Property -or [string]::IsNullOrWhitespace($_.$Property))) }; $TotalRows = $Items.Count }
-                        "isNotEmpty" { $Items = $Items | Where-Object { ($null -ne $_.$Property) -or  !([string]::IsNullOrWhitespace($_.$Property)) }; $TotalRows = $Items.Count }
-                    }
+        $simpleFilter = @()
+        if($null -ne $Context.Filter.Items -and $Context.Filter.Items.Count -gt 0) {
+            $linkOperator = $Context.Filter.linkOperator
+            $count = 1
+            $filterTextArray = @()
+            foreach($filter in $Context.Filter.Items) {
+                $property = $Filter.columnField
+                $val = $filter.Value
+                switch ($filter.operatorValue) {
+                    "contains" { $filterTextArray += "obj.$property -like ""*$val*""" }
+                    "equals" { $filterTextArray += "obj.$property -eq ""*$val*""" }
+                    "startsWith" { $filterTextArray += "obj.$property -like ""$val*""" }
+                    "endsWith" { $filterTextArray += "obj.$property -like ""*$val""" }
+                    "isAnyOf" { $filterTextArray += "obj.$property -in ""$val""" }
+                    "notequals" {$filterTextArray += "obj.$property -ne ""$val""" }
+                    "notcontains" { $filterTextArray += "obj.$property -notlike ""*$val*""" }
+                    "isEmpty" { $filterTextArray += "obj.$property -eq null" }
+                    "isNotEmpty" { $filterTextArray += "obj.$property -ne null" }
                 }
             }
+            if ($linkOperator -eq 'and') {
+                [string]$filterTextLine = $filterTextArray -join " -and "
+            } else {
+                [string]$filterTextLine = $filterTextArray -join " -or "
+            }
+
+            $filterTextLine = $filterTextLine.Replace('obj','$_')
+            $filterTextLine = $filterTextLine.Replace('null','$null')
+            $filterScriptBlock = [Scriptblock]::Create($filterTextLine)
+            $Items = $Items | Where-Object -FilterScript $filterScriptBlock
         }
 
-        $Sort = $Context.Sort.'0'
+        if ($null -ne $Items) {
+            $TotalRows = $Items.Count
+        } else {
+            $TotalRows = 0
+        }
+
+        $Sort = $Context.Sort[0]
         $Items = $Items | Sort-Object -Property $Sort.field -Descending:$($Sort.Sort -eq 'desc')
         $Items = $Items | Select-Object -Skip ($Context.Page * $Context.pageSize) -First $Context.PageSize
 
@@ -316,6 +321,21 @@ function Out-UDDataGridData {
             rows     = [Array]$Items
             rowCount = $TotalRows
         }
+    }   
+}
+
+New-UDDashboard -Title 'PowerShell Universal' -Content {
+     $Data =  1..10000 | % {
+        @{ Name = 'Adam'; Number = Get-Random }
+    } 
+    New-UDDataGrid -LoadRows {  
+      $Data | Out-UDDataGridData -Context $EventData
+    } -Columns @(
+        @{ field = "name"; render = { 
+            New-UDButton -Icon (New-UDIcon -Icon User) -OnClick { Show-UDToast $EventData.Name } } 
+        }
+        @{ field = "number" }
+    ) -AutoHeight -Pagination
     }   
 }
 ```
