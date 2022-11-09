@@ -342,6 +342,63 @@ The content of the `endpoints.ps1` file is then this.&#x20;
 New-PSUEndpoint -Url "/path" -Path "endpoint-path.ps1"
 ```
 
+## Experimental Feature: C# APIs
+
+As for PowerShell Universal 3.5, you can now enable C# APIs as an experimental feature. To learn more about enabling experimental features, [click here](../config/feature-flags.md). C# APIs are significantly faster than PowerShell APIs (5 - 20 times faster).
+
+There is no UI for creating a C# API and you will need to do so using configuration files. First, you will need to create a `.cs` file that will run your API.&#x20;
+
+You will have access to a `request` parameter that includes all the data about the API request.&#x20;
+
+```csharp
+public class ApiRequest
+{
+    public long Id;
+    public ICollection<KeyValue> Variables;
+    public IEnumerable<ApiFile> Files { get; set; };
+    public string Url;
+    public ICollection<KeyValue> Headers;
+    public byte[] Data;
+    public int ErrorAction;
+    public ICollection<KeyValue> Parameters;
+    public string Method;
+    public ICollection<KeyValue> Cookies;
+    public string ClaimsPrincipal;
+    public string ContentType;
+}
+```
+
+You will also have access to a `ServiceProvider` property that will allow you to access services within PowerShell Universal. These are currently not well documented but below is an example of restarting a dashboard.&#x20;
+
+```csharp
+var dm = ServiceProvider.GetService(typeof(IDashboardManager));
+var dashboard = dm.GetDashboard(1);
+dm.Restart(dashboard);
+```
+
+Some other useful services may include:
+
+* IDatabase
+* IApiService
+* IConfigurationService
+* IJobService
+
+You can choose to return an `ApiResponse` from your endpoint.&#x20;
+
+```powershell
+return new ApiResponse {
+    StatusCode = 404
+};
+```
+
+Once you have defined your C# endpoint file, you can add it by editing `endpoints.ps1`.&#x20;
+
+```powershell
+New-PSUEndpoint -Url /csharp -Path endpoint.cs -Environment 'C#'
+```
+
+C# endpoints are compiled and run directly in the PowerShell Universal service.&#x20;
+
 ## API
 
 * [New-PSUEndpoint](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSUEndpoint.txt)
