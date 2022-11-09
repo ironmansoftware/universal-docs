@@ -8,7 +8,7 @@ The `UDDataGrid` component is an advanced version of the table that is useful fo
 
 ## Simple Data Grid
 
-![](<../../../../.gitbook/assets/image (5) (2).png>)
+![](<../../../../.gitbook/assets/image (5) (2) (1).png>)
 
 Data grids load their data via the `-LoadRows` event handler. You will need to return a hashtable that contains the row data and the total number of rows.&#x20;
 
@@ -226,6 +226,30 @@ New-UDDataGrid -LoadRows {
     @{ field = "number" ; editable = $true }
 ) -AutoHeight -OnEdit {
     Show-UDToast "Editing $Body" 
+}
+```
+
+## Custom Export
+
+To override the default export functionality, use the `-OnExport` event handler. `$EventData` will be an array of rows with their values. You should use `Out-UDDataGridExport` to return the data from `-OnExport`.&#x20;
+
+```powershell
+New-UDDataGrid -LoadRows {
+    $Data = @(
+        @{ Name = 'Adam'; Number = Get-Random}
+        @{ Name = 'Tom'; Number = Get-Random}
+        @{ Name = 'Sarah'; Number = Get-Random}
+    )
+    @{
+        rows = $Data 
+        rowCount = $Data.Length
+    }
+} -Columns @(
+    @{ field = "name"}
+    @{ field = "number"}
+) -AutoHeight -OnExport {
+    $Data = $EventData | Select-Object -Expand name 
+    Out-UDDataGridExport -Data $Data -FileName 'export.txt' | Out-String
 }
 ```
 

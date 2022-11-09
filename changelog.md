@@ -4,7 +4,73 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
-## Changelog
+## 3.5.0 - 11/8/2022
+
+#### APIs
+
+* Added the ability to view API info when One-Way git sync was enabled
+* Added experimental feature for C#-based APIs
+* Fixed an issue where data uploaded as files would be UTF8 encoded.
+* Fixed an issue where folder view would not correctly create folders when over 3 parts
+* Fixed an issue where changing an APIs URL would cause a 404
+* Fixed an issue where testing an API with variables wouldn't return the specified values
+* Added persistent API logging
+* Fixed an issue where editing endpoint roles could result in the endpoint becoming inaccessible.
+
+#### Automation
+
+* Added the ability to view script info when One-Way git sync was enabled
+* Added Git Sync trigger
+* Fixed an issue where you could not view terminal instances
+* Fixed an issue where terminal output could overwrite the prompt
+* Fixed an issue where Warnings would overwrite the Failed error state of jobs
+* Fixed an issue where terminating errors would cause job failures when Error Action was set to Continue
+* Fixed an issue where jobs would not time out properly
+* Fixed an issue where the Server Started trigger would run on the default job queue
+* Fixed an issue where $UAJob.Parameters would be null
+* User Profiles are now loaded by default when using run as credentials
+* Added -DontLoadProfile to New-PSUSetting to disable loading of profiles for run as credentials
+* Removed the limit on 25 jobs a day for the free version
+
+#### Dashboard
+
+* Added support for Read-Host
+* Added support for Get-Credential
+* Added support for $Host.UI.PromptForChoice
+* Added support for Write-Progress
+* Added Back button to advanced editor
+* Added -TimeZone to New-UDDatePicker and New-UDTimePicker
+* Fixed an issue where web socket JSON serialization would throw an error when referential loops were detected.
+* Fixed an issue where New-UDDataGrid filters wouldn't render correctly when using a custom theme
+* Fixed an issue where New-UDDataGrid row height would expand to its contents
+* Fixed an issue where -PageSize wouldn't be honored on New-UDDataGrid
+* Added -OnBlur to New-UDTextbox
+* Added New-UDRating
+* Fixed an issue where New-UDDatePicker\New-UDTimePicker would throw an error when invalid dates were typed
+* Fixed an issue with the default color for New-UDButton
+* Added -OnExport to New-UDDataGrid
+* Fixed an issue where -LoadData on New-UDTable could cause errors when multiple tables were on a page
+
+#### Platform
+
+* Added support for specifying a custom favicon.ico
+* Added Agent environment
+* Added experimental feature support
+* Licenses are now stored in the database
+* Git manual mode is now the default
+* Updated internal PowerShell Environment to 7.2.7
+* Fixed an issue where links in the notification drop down would not work when hosted as a nested IIS site
+* Admin Console Title now updates the brower's tab title
+* Added the ability to limit users that can login to the admin console
+* Fixed an issue where the app bar would be an incorrect color in dark mode on a custom login page
+* Added scheduled and memory based environment recycling
+* Improved the layout of modals in the admin console
+* Git proxy type is set to auto instead of none by default to support git environment variables
+* Fixed an issue where the MSI wouldn't correctly detect an existing appsettings.json file
+* Fixed an issue where invalid git sync settings could cause heartbeats to retry continuously
+* Improved validation on the git sync settings dialog
+* Fixed an issue where changing a git remote with an external git client wouldn't update the local repo's remote
+* Git sync now throws an exception if it cannot finish running a command in 60 seconds when using an external git client
 
 ## 3.4.6 - 11/2/2022
 

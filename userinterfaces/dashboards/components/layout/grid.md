@@ -10,7 +10,7 @@ The grid creates visual consistency between layouts while allowing flexibility a
 
 ## Basic Layout
 
-![](<../../../../.gitbook/assets/image (32) (1).png>)
+![](<../../../../.gitbook/assets/image (32).png>)
 
 ```powershell
 New-UDGrid -Container -Content {
