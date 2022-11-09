@@ -10,7 +10,7 @@ description: Rating input component.
 New-UDRating 
 ```
 
-![](<../../../../.gitbook/assets/image (1).png>)
+![](<../../../../.gitbook/assets/image (7).png>)
 
 ## OnChange
 
@@ -36,7 +36,7 @@ New-UDRating -Max 10
 
 Change the precision for ratings.&#x20;
 
-![](<../../../../.gitbook/assets/image (2).png>)
+![](<../../../../.gitbook/assets/image (9).png>)
 
 ```powershell
 New-UDRating -Precision .5
@@ -46,7 +46,7 @@ New-UDRating -Precision .5
 
 Change the size of the rating icons.&#x20;
 
-![](<../../../../.gitbook/assets/image (7).png>)
+![](../../../../.gitbook/assets/image.png)
 
 ```powershell
 New-UDRating -Size large

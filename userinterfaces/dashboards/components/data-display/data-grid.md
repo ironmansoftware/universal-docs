@@ -8,7 +8,7 @@ The `UDDataGrid` component is an advanced version of the table that is useful fo
 
 ## Simple Data Grid
 
-![](<../../../../.gitbook/assets/image (5) (2).png>)
+![](<../../../../.gitbook/assets/image (5) (2) (1).png>)
 
 Data grids load their data via the `-LoadRows` event handler. You will need to return a hashtable that contains the row data and the total number of rows.&#x20;
 

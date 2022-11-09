@@ -161,11 +161,11 @@ It is possible to nest multiple PowerShell Universal instances under a single ap
 
 You will need have two folders for your application files: one for each application. You will also need to setup two data folders: one for each application.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Web Site Root</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (2).png" alt=""><figcaption><p>Web Site Root</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Application Files</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Application Files</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (2) (5).png" alt=""><figcaption><p>Data Files</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Data Files</p></figcaption></figure>
 
 Once you have setup your folder structure configured, you will need to create two appsettings.json files and update your web.config files for each application.&#x20;
 
