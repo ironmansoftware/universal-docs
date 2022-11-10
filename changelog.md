@@ -4,6 +4,39 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.5.2 - 11/10/2022
+
+#### APIs
+
+* Fixed an issue where viewing the API page could result in a JavaScript error
+* Fixed an issue where the bottom of API endpoint scripts could not be viewed.
+* Fixed an issue where streams (warning, error, verbose, information) would cause APIs to throw an object reference exception.
+
+#### Automation
+
+* Add some more logging about job timeouts to help identify an issue with them.
+* Fixed an issue where Get-PSUJobFeedback and Get-PSUJobParameter would not return data when using -Integrated
+* Fixed an issue where parameter sets were not always correctly defined
+* Fixed an UI issue with the schedule properties dialog
+
+#### Dashboards
+
+* Fixed an issue where -HideUserName didn't work on New-UDPage or New-UDDashboard when using Windows Authentication
+
+#### Platforms
+
+* Fixed an issue where the Agent environment wouldn't have a version.
+
+## 3.5.1 - 11/9/2022
+
+#### Dashboard
+
+* Fixed an issue where certain -BaseURL would not render a dashboard
+
+#### Platform <a href="#platform-4" id="platform-4"></a>
+
+* Fixed an issue where online license keys would only partially install
+
 ## 3.5.0 - 11/8/2022
 
 #### APIs
