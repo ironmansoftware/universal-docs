@@ -10,7 +10,8 @@ description: Changelog for PowerShell Universal.
 
 #### Platform
 
-* Fixed an issue where calling /api/v1/apptoken/:id as an administrator wouldn't all you to view all tokens
+* Fixed an issue where calling /api/v1/apptoken/:id as an administrator wouldn't allow you to view all tokens
+* Fixed an issue where calling /api/v1/apptoken/:id as a non-administrator could access other app tokens
 
 ## 2.12.4 - 8/19/2022
 
