@@ -451,7 +451,8 @@ description: Changelog for PowerShell Universal.
 * Improved the UI to prevent queuing a git sync if one is already running
 * Improved the UI to display when a git sync is running
 * Manual git syncs now ignore the git sync interval setting
-* Fixed an issue where calling /api/v1/apptoken/:id as an administrator wouldn't all you to view all tokens
+* Fixed an issue where calling /api/v1/apptoken/:id as an administrator wouldn't allow you to view all tokens
+* Fixed an issue where calling /api/v1/apptoken/:id as a non-administrator could access other app tokens
 * Fixed an issue where array variables could not be created in the admin console
 * Added Uptime to home page
 * Added header forwarding
