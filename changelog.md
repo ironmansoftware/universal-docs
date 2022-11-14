@@ -4,7 +4,7 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
-## 3.5.3 - 10/13/2022
+## 3.5.3 - 11/13/2022
 
 #### Platform
 
