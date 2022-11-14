@@ -18,6 +18,7 @@ description: Changelog for PowerShell Universal.
 #### Platform
 
 * Added additional validation for repository directory paths
+* Fixed an issue where enabling splatting for configuration files would fail to correctly format the files
 
 ## 3.5.3 - 11/13/2022
 
