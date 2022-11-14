@@ -4,6 +4,13 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.5.3 - 10/13/2022
+
+#### Platform
+
+* CVE-2022-45183: Fixed an issue where app tokens could access tokens outside their role
+* CVE-2022-45184: Fixed an issue where administrators could create files outside of the repository directory via the admin console
+
 ## 3.5.2 - 11/10/2022
 
 #### APIs
