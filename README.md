@@ -61,7 +61,7 @@ You can run as many APIs are you want for free. You will need to purchase a lice
 
 ### Automation&#x20;
 
-With the free version of Automation you can run up to 25 jobs a day with 2 jobs running concurrently. You will need a license to use [triggers](automation/triggers.md).
+You will need a license to use [triggers ](automation/triggers.md)and [terminals](automation/terminals.md).
 
 ### Dashboard&#x20;
 
