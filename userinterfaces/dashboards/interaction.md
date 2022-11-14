@@ -308,6 +308,12 @@ Cmdlets that use the progress stream or the use of the `Write-Progress` cmdlet w
 
 <figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
+You can disable the Write-Progress integration by setting the `$ProgressPreference` to `SilentlyContinue`.
+
+```powershell
+$ProgressPreference = 'SilentlyContinue'
+```
+
 ### Prompt For Choice
 
 You can use the `$Host.UI.PromptForChoice` function to display a multi-select dialog.&#x20;
