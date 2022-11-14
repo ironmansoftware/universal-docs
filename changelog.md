@@ -4,6 +4,21 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.5.4 - 11/14/2022
+
+#### Automation
+
+* Fixed an issue where $UAJob.Identity.Name was $null in jobs
+* Fixed an issue where a serialization error could happen when running jobs when using SQL peristence
+
+#### Dashboard
+
+* Fixed an issue where New-UDDatePicker and New-UDTimePicker would not update the UI when settings -TimeZone
+
+#### Platform
+
+* Added additional validation for repository directory paths
+
 ## 3.5.3 - 11/13/2022
 
 #### Platform
