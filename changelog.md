@@ -112,11 +112,22 @@ description: Changelog for PowerShell Universal.
 * Fixed an issue where changing a git remote with an external git client wouldn't update the local repo's remote
 * Git sync now throws an exception if it cannot finish running a command in 60 seconds when using an external git client
 
+
+
+## 3.4.7 - 11/13/2022
+
+#### Platform
+
+* CVE-2022-45183: Fixed an issue where app tokens could access tokens outside their role
+* CVE-2022-45184: Fixed an issue where administrators could create files outside of the repository directory via the admin console
+
 ## 3.4.6 - 11/2/2022
 
 #### Platform
 
 * Fixed an issue where online licenses could fail to activate
+
+
 
 ## 3.4.5 - 10/31/2022
 
