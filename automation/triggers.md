@@ -64,6 +64,28 @@ The user login event takes place when a user accesses PowerShell Universal. The 
 
 The app token event takes place when a revoked app token is used. The script will receive a `$data` parameter that contains the contents of the app token as a string.
 
+### Git Sync
+
+This trigger occurs when a git sync is run. This trigger will fire for both successful and unsuccessful git syncs.&#x20;
+
+You will receive the following object in the `$data` parameter.&#x20;
+
+```csharp
+public class GitStatus 
+{
+    public long Id { get; set; }
+    public string CommitId { get; set; }
+    public DateTime Timestamp { get; set; }
+    public TimeSpan SyncTime { get; set; }
+    public int Changes { get; set; }
+    public string Location { get; set; }
+    public string Remote { get; set; }
+    public GitStatusResult Result { get; set; }
+    public string ResultMessage { get; set; }
+    public string ComputerName { get; set; }
+}
+```
+
 ## Global Triggers
 
 Global triggers will start the assigned script whenever the event type is invoked.
