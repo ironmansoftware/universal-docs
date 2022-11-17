@@ -4,6 +4,23 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.5.5 - 11/17/2022
+
+#### Dashboards
+
+* Fixed an issue where dashboards would hang on startup if something requested input from a user
+
+#### Automation
+
+* Fixed an issue where runas credentials would not work with non-admins
+* Fixed an issue where runas credentials would not work in desktop mode
+* Fixed an issue where stderr would not be redirected to job output
+* Improved job debugging to output to the console
+
+#### Platform
+
+* Fixed an issue with the agent environment where it wouldn't properly load the PowerShell SDK
+
 ## 3.5.4 - 11/14/2022
 
 #### Automation
