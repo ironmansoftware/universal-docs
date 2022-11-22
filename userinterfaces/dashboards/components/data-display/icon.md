@@ -88,15 +88,19 @@ New-UDButton -Text 'Search' -OnClick {
 New-UDElement -tag 'p' -Content {}
 
 New-UDDynamic -Id 'icons' -Content {
-        $Icons = [Enum]::GetNames([UniversalDashboard.Models.FontAwesomeIcons])
-        $IconSearch = (Get-UDElement -Id 'txtIconSearch').value
-        if ($null -ne $IconSearch -and $IconSearch -ne '')
-        {
-        $Icons = $Icons.where({ $_ -match $IconSearch})
+    $IconSearch = (Get-UDElement -Id 'txtIconSearch').value
+    if ($null -ne $IconSearch -and $IconSearch -ne '')
+    {
+        $Icons =$Icons = Find-UDIcon -Name $IconSearch
     }
 
     foreach($icon in $icons) {
-        New-UDChip -Label $icon -Icon (New-UDIcon -Icon $icon)
+        try{
+            New-UDChip -Label $icon -Icon (New-UDIcon -Icon $icon)
+        }
+        catch{
+            New-UDChip -Label "$icon Unknown" 
+        }
     }
 }
 ```
