@@ -98,6 +98,19 @@ To access secrets that you have added to PowerShell Universal, you can use the `
 Invoke-Command -Credential $Secret:Credential { Write-Host "Hello" }
 ```
 
+### Access Values Dynamically
+
+You can access the secret scope dynamically by using `Get-Item`. The secret scope is implemented as a provider. This is helpful if you don't have static variable names.
+
+```powershell
+# PSCredential
+(Get-ChildItem "Secret:MyNewSecret").UserName
+(Get-ChildItem "Secret:MyNewSecret").Password
+
+# String
+(Get-ChildItem "Secret:DashboardSecret")
+```
+
 ### ForEach-Object -Parallel
 
 In order to use secrets when using `ForEach-Object` with the `-Parallel` parameter, you will need to take advantage of the `$using` keyword.&#x20;
