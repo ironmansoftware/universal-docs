@@ -86,9 +86,9 @@ New-UDDataGrid -LoadRows {
 ) -AutoHeight
 ```
 
-## LoadData
+## LoadRows
 
-The `-LoadData` parameter is used to return data for the data grid. Table state will be provided to the event handler as `$EventData`. You will find the following properties within the `$EventData` object.&#x20;
+The `-LoadRows` parameter is used to return data for the data grid. Table state will be provided to the event handler as `$EventData`. You will find the following properties within the `$EventData` object.&#x20;
 
 | Property | Description                                                               | Type      |
 | -------- | ------------------------------------------------------------------------- | --------- |
@@ -121,7 +121,7 @@ New-UDDataGrid -LoadRows {
 
 ![](<../../../../.gitbook/assets/image (4) (1).png>)
 
-The filter hashtable is included in the `$EventData` for the `-LoadData` event handler when a filter is defined. The hashtable has a structure as follows.&#x20;
+The filter hashtable is included in the `$EventData` for the `-LoadRows` event handler when a filter is defined. The hashtable has a structure as follows.&#x20;
 
 ```powershell
 @{
@@ -336,8 +336,7 @@ New-UDDashboard -Title 'PowerShell Universal' -Content {
         }
         @{ field = "number" }
     ) -AutoHeight -Pagination
-    }   
-}
+}   
 ```
 
 <figure><img src="../../../../.gitbook/assets/image (6) (3).png" alt=""><figcaption></figcaption></figure>
