@@ -19,7 +19,7 @@ Install-PSUServer
 {% endtab %}
 
 {% tab title="Windows Desktop" %}
-You can learn more about [desktop mode here](desktop/about-desktop-mode.md).
+You can learn more about [desktop mode here](https://docs.powershelluniversal.com/desktop/about-desktop-mode).
 {% endtab %}
 
 {% tab title="Linux" %}

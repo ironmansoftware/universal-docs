@@ -198,7 +198,7 @@ $Columns = @(
 )
 
 $Data = 1..1000 | ForEach-Object {
-  @{
+  [PSCustomObject]@{
       Name = "Record-$_"
       Value = $_ 
   }
@@ -212,10 +212,10 @@ New-UDTable -Columns $Columns -LoadData {
 
     $TotalCount = $Data.Count 
 
-    if (-not [string]::IsNullOrEmpty($EventData.OrderBy))
+    if (-not [string]::IsNullOrEmpty($EventData.OrderBy.Field))
     {
         $Descending = $EventData.OrderDirection -ne 'asc'
-        $Data = $Data | Sort-Object -Property $EventData.orderBy -Descending:$Descending
+        $Data = $Data | Sort-Object -Property ($EventData.orderBy.Field) -Descending:$Descending
     }
     
     $Data = $Data | Select-Object -First $EventData.PageSize -Skip ($EventData.Page * $EventData.PageSize)
