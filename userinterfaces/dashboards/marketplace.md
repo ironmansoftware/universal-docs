@@ -42,4 +42,4 @@ import-Module UniversalDashboard.Helmet
 
 ## Publishing to the Universal Dashboard Marketplace
 
-You can follow the directions on the [Building Custom Components](components/building-custom-components.md#publishing-to-the-marketplace) page on how to publish components to the Universal Dashboard Marketplace.
+You can follow the directions on the [Building Custom Components](components/custom-components/building-custom-components.md#publishing-to-the-marketplace) page on how to publish components to the Universal Dashboard Marketplace.

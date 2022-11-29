@@ -306,7 +306,7 @@ Cmdlets that use the progress stream or the use of the `Write-Progress` cmdlet w
 }
 ```
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 You can disable the Write-Progress integration by setting the `$ProgressPreference` to `SilentlyContinue`.
 
