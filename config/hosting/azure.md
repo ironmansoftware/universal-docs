@@ -56,7 +56,7 @@ You'll need an Azure SQL database to get started. Once you create the resource, 
 
 Ensure that you have allowed Azure services to access the database.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 To enable SQL support, you should set the plugins within PowerShell Universal to use the SQL plugin in the Application Configuration for your web app.&#x20;
 

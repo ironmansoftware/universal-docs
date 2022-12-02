@@ -45,7 +45,7 @@
     * [Error Boundary](userinterfaces/dashboards/components/error-boundary.md)
     * [HTML](userinterfaces/dashboards/components/html.md)
     * [Custom Components](userinterfaces/dashboards/components/custom-components/README.md)
-      * [Building JavaScript Custom Components](userinterfaces/dashboards/components/custom-components/building-custom-components.md)
+      * [Building Custom JavaScript  Components](userinterfaces/dashboards/components/custom-components/building-custom-components.md)
     * [Data Display](userinterfaces/dashboards/components/data-display/README.md)
       * [Alert](userinterfaces/dashboards/components/data-display/alert.md)
       * [Badge](userinterfaces/dashboards/components/data-display/badge.md)

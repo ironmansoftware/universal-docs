@@ -2,7 +2,7 @@
 description: This document outlines how to build custom Universal Dashboard components.
 ---
 
-# Building Custom Components
+# Building Custom JavaScript  Components
 
 Universal Dashboard is extensible and you can build custom JavaScript components and frameworks. This document will cover how to build custom components that integrate with the Universal Dashboard platform.
 

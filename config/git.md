@@ -38,13 +38,28 @@ You can choose to use an external git client rather than using the library built
 
 ### Manual Mode
 
-{% hint style="info" %}
-Manual mode is preferred and will be the default in the next major version.&#x20;
-{% endhint %}
-
 Manual mode requires users editing the PowerShell Universal instance to click Edit in order to make changes in the system. Once the changes are complete, the user can then click Save and enter a message about what changed. At this time a commit is made and pushed to the remote.&#x20;
 
 While editing the environment, the git sync process is paused.&#x20;
+
+Manual mode can be set in the git settings within the admin console or within `appsettings.json`.
+
+```json
+"Data": {
+  "RepositoryPath": "%ProgramData%\\UniversalAutomation\\Repository",
+  "ConnectionString": "filename=%ProgramData%\\UniversalAutomation\\database.db;upgrade=true",
+  "RunMigrations": true,
+  "GitRemote": "",
+  "GitUserName": "",
+  "GitPassword": "",
+  "GitBranch": "",
+  "GitSyncBehavior": "TwoWay",
+  "GitInitializeBehavior": "",
+  "GitSyncInterval": "1",
+  "ConfigurationScript": "",
+  "Mode": "Manual" // Or Automatic
+},
+```
 
 #### Example: User Name and PAT
 
