@@ -4,68 +4,6 @@ description: Installation instructions for PowerShell Universal.
 
 # Installation
 
-## PowerShell Module
-
-You can use the PowerShell Universal PowerShell module to install the Universal server. To install the module, use `Install-Module`.
-
-```
-Install-Module Universal
-```
-
-To install the Universal server, you can use `Install-PSUServer`.
-
-```
-Install-PSUServer -LatestVersion
-```
-
-If you run this command on Windows, a Windows service will be created and started on your machine. If you run this command on Linux, a systemd service will be created and started. If you run this command on Mac OS, the PowerShell Universal server will be downloaded and extracted.&#x20;
-
-## Chocolatey Package (Windows)
-
-{% hint style="warning" %}
-Chocolatey packages for PowerShell Universal are usually available within a week of release but will not be available the day of a release.&#x20;
-{% endhint %}
-
-You can install PowerShell Universal using the [Chocolatey package](https://chocolatey.org/packages/powershelluniversal). The package runs the MSI install. It will install Universal as a service and open a web browser after the install.
-
-You can login with the "admin" user and any password.
-
-```
-choco install powershelluniversal
-```
-
-
-
-## ZIP Install
-
-You can also download the ZIP from our [Downloads page](https://ironmansoftware.com/downloads/) if you would like to xcopy deploy the files on Windows or Linux.
-
-### Windows
-
-You can start Universal by unzipping the contents, unblocking the files and then executing `Universal.Server.exe`.
-
-```
-Expand-Archive -Path .\Universal.zip -DestinationPath .\Universal
-Get-ChildItem .\Universal -Recurse | Unblock-File
-Start-Process .\Universal\Universal.Server.exe
-```
-
-### Linux
-
-You can use the following command line on Linux to install and start PowerShell Universal.&#x20;
-
-```
- wget https://imsreleases.blob.core.windows.net/universal/production/2.0.0/Universal.linux-x64.2.0.0.zip
- sudo apt install unzip 
- unzip Universal.linux-x64.2.0.0.zip -d PSU
- chmod +x ./PSU/Universal.Server
- ./PSU/Universal.Server
-```
-
-### Docker
-
-See the [Docker page](docker.md#installation).
-
 ## MSI Install (Windows)
 
 The MSI install will create a PowerShell Universal service. By default, PowerShell Universal will be listening on port 5000. You will be able to navigate to `http://localhost:5000` and login with `admin` and any password.
@@ -96,6 +34,66 @@ Below is an example of how to run `msiexec.exe` to install PowerShell Universal 
  Start-Process msiexec.exe -ArgumentList "/I C:\Users\adamr\Downloads\PowerShellUniversal.3.5.1.msi /q /norestart /L*V `"C:\users\adamr\desktop\msi.log.txt`" STARTSERVICE=0" -Wait -NoNewWindow
 ```
 {% endcode %}
+
+## ZIP Install
+
+You can also download the ZIP from our [Downloads page](https://ironmansoftware.com/downloads/) if you would like to xcopy deploy the files on Windows or Linux.
+
+### Windows
+
+You can start Universal by unzipping the contents, unblocking the files and then executing `Universal.Server.exe`.
+
+```
+Expand-Archive -Path .\Universal.zip -DestinationPath .\Universal
+Get-ChildItem .\Universal -Recurse | Unblock-File
+Start-Process .\Universal\Universal.Server.exe
+```
+
+### Linux
+
+You can use the following command line on Linux to install and start PowerShell Universal.&#x20;
+
+```
+ wget https://imsreleases.blob.core.windows.net/universal/production/2.0.0/Universal.linux-x64.2.0.0.zip
+ sudo apt install unzip 
+ unzip Universal.linux-x64.2.0.0.zip -d PSU
+ chmod +x ./PSU/Universal.Server
+ ./PSU/Universal.Server
+```
+
+## PowerShell Module
+
+You can use the PowerShell Universal PowerShell module to install the Universal server. To install the module, use `Install-Module`.
+
+```
+Install-Module Universal
+```
+
+To install the Universal server, you can use `Install-PSUServer`.
+
+```
+Install-PSUServer -LatestVersion
+```
+
+If you run this command on Windows, a Windows service will be created and started on your machine. If you run this command on Linux, a systemd service will be created and started. If you run this command on Mac OS, the PowerShell Universal server will be downloaded and extracted.&#x20;
+
+## Chocolatey Package (Windows)
+
+{% hint style="warning" %}
+Chocolatey packages for PowerShell Universal are usually available within a week of release but will not be available the day of a release.&#x20;
+{% endhint %}
+
+You can install PowerShell Universal using the [Chocolatey package](https://chocolatey.org/packages/powershelluniversal). The package runs the MSI install. It will install Universal as a service and open a web browser after the install.
+
+You can login with the "admin" user and any password.
+
+```
+choco install powershelluniversal
+```
+
+### Docker
+
+See the [Docker page](docker.md#installation).
 
 ## IIS Install
 
