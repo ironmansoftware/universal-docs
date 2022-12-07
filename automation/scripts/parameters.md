@@ -184,7 +184,7 @@ $ExecutionTime
 
 ## Passing Parameters from PowerShell
 
-You can pass parameters from PowerShell using the `Invoke-UAJob` cmdlet. This cmdlet supports dynamic parameters. If you have a `param` block on your script, these parameters will automatically be added to `Invoke-UAJob`.
+You can pass parameters from PowerShell using the `Invoke-PSUScript` cmdlet. This cmdlet supports dynamic parameters. If you have a `param` block on your script, these parameters will automatically be added to `Invoke-PSUScript`.
 
 For example, I had a script named Script1.ps1 and the contents were are follows.
 
