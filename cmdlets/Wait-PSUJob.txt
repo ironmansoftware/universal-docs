@@ -103,8 +103,8 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> $Job = Get-UAJob -Id 12
-    PS C:\> Wait-UAJob -Job $Job
+    PS C:\> $Job = Get-PSUJob -Id 12
+    PS C:\> Wait-PSUJob -Job $Job
     
     Waits for job 12 to finish.
     
