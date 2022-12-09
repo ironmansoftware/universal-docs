@@ -22,6 +22,23 @@ New-UDDashboard -Title "Hello, World!" -Content {
 
 ![Reload on button click](../../../.gitbook/assets/NzJtyYOL54.gif)
 
+## Arguments List
+
+An array of arguments may be passed to the dynamic region.
+
+{% hint style="info" %}
+Note that the arguments are static and do not change when Sync-UDElement is invoked.
+{% endhint %}
+
+```powershell
+New-UDDynamic -Id 'dynamic_01' -Content {
+                New-UDTypography -Text "This is an $($ArgumentList[0])
+                 an $($ArgumentList[1]) in a UDDynamic"
+                 } -ArgumentList @('example of', 'arguments list') 
+```
+
+<figure><img src="../../../.gitbook/assets/20221208a.png" alt=""><figcaption><p>utilizing the arguments list</p></figcaption></figure>
+
 ## Auto Refresh
 
 Dynamic regions enable the ability to auto refresh components after a certain amount of time. The entire region's script block will be run when autorefreshing.
