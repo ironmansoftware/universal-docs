@@ -92,7 +92,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Script <Script>
-        The script to invoke. Use Get-UAScript to retrieve existing scripts.
+        The script to invoke. Use Get-PSUScript to retrieve existing scripts.
         
         Required?                    true
         Position?                    0
@@ -153,22 +153,22 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> $Script = Get-UAScript -Name 'Script1.ps1'
-    PS C:\> Invoke-UAScript -Script $Script
+    PS C:\> $Script = Get-PSUScript -Name 'Script1.ps1'
+    PS C:\> Invoke-PSUScript -Script $Script
     
     Invokes 'Script1.ps1'
     -------------------------- Example 2 --------------------------
     
-    PS C:\> $Script = Get-UAScript -Name 'Script1.ps1'
-    PS C:\> Invoke-UAScript -Script $Script -Parameter1 123 -Parameter2 "Test"
+    PS C:\> $Script = Get-PSUScript -Name 'Script1.ps1'
+    PS C:\> Invoke-PSUScript -Script $Script -Parameter1 123 -Parameter2 "Test"
     
     Invokes 'Script1.ps1' with the parameters Parameter1 and Parameter2. These parameters will be passed to the script. Invoke-UAScript supports any number of dynamic parameters.
     -------------------------- Example 3 --------------------------
     
-    PS C:\> $Script = Get-UAScript -Name 'Script1.ps1'
+    PS C:\> $Script = Get-PSUScript -Name 'Script1.ps1'
     PS C:\> $Password = Get-UAVariable -Name 'UserPassword'
     PS C:\> $Credential = New-UDCredential -UserName 'adam' -Password $Password
-    PS C:\> Invoke-UAScript -Script $Script -Credential $Credential
+    PS C:\> Invoke-PSUScript -Script $Script -Credential $Credential
     
     Invokes 'Script1.ps1' as the user 'adam'. Passwords are retrieved from secret managers and cannot be passed in as strings.
     
