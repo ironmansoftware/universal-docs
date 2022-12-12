@@ -6,11 +6,25 @@ description: Learn how to best configure PowerShell Universal.
 
 ## General
 
+### Avoiding Writing to the Repository Directory
+
+{% hint style="info" %}
+The repository directory defaults to `C:\ProgramData\UniversalAutomation\Repository`
+{% endhint %}
+
+Writing files directly to the repository directory in your scripts can have adverse side effects on performance of the system. PowerShell Universal employs a file system watcher to check for changes to files made on disk. Any changes made within the directory trigger the watcher and configuration file reload verification.&#x20;
+
+In some instances, writing files can result in configuration reloads that may restart dashboards or cause internal caches to be cleared.&#x20;
+
+It's recommended to avoid writing to this directory directly in a default configuration. If you would like to write to the directory, consider disabling the server-wide Auto Reload setting. This will disable the file system watcher and you will no longer risk impacting the configuration of the system.&#x20;
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
 ### Favor Non-Integrated Environments
 
 While the integrated environment is fast and easy to use, it runs all of your PowerShell operations within the PowerShell Universal service. Issues with a single script or endpoint can affect the stability of the system.&#x20;
 
-When using non-integrated environments, an external PowerShell process is started. For APIs and Dashboards, that process can be long running but can be restarted without affecting the rest of the system. With jobs and terminals, a new process is started for each instance of the job and terminal. As jobs and terminals are stopped, the process is terminated and any resources consumed by that process are reclaimed by the system.&#x20;
+When using non-integrated environments, an external PowerShell process is started. For APIs and Dashboards, that process can be long running but can be restarted without affecting the rest of the system. With jobs and terminals, a new process is started for each instance of the job and terminal. As jobs and terminals are stopped, the process is terminated, and any resources consumed by that process are reclaimed by the system.&#x20;
 
 Additionally, when loading modules into the integrated environment, the process space may become polluted with different versions of common DLLs that PSU may be using itself. This can cause assembly binding problems that may cause the imported modules to fail to function as expected.&#x20;
 
