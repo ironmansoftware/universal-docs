@@ -20,9 +20,17 @@ To configure git sync, navigate to Settings \ Git within the Admin Console. You 
 
 You can also use the [Configuration settings](settings.md) to setup git sync. This is useful if you have a single instance of PSU and would like to back up your appsettings.json file.&#x20;
 
-## Preparing for the first Git Sync
+## Git Sync Settings
 
 PSU Git sync does not handle merge conflicts automatically and you should ensure that you prepare for the first sync before configuring it.&#x20;
+
+### Use Database
+
+{% hint style="info" %}
+This feature requires a git client installed on each PowerShell Universal server.&#x20;
+{% endhint %}
+
+To avoid having to use an external git service like GitHub or Gitlab, you can use the PowerShell Universal database. Git synchronization will produce a git bundle and upload it to the SQL database. Other nodes within your cluster will pull the git bundle and update their configuration based on the bundle rather than a remote git fork.&#x20;
 
 ### Branch
 
