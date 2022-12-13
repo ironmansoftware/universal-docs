@@ -82,3 +82,7 @@ Invoke-RestMethod http://localhost:5000/api/v1/apptoken -Method POST -Body (@{
     "Authorization" = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9oYXNoIjoiMjVjMzFlZTAtMGM4Mi00NzBiLWJkZGYtOGFmOTgxZGI2ZDdmIiwic3ViIjoiUG93ZXJTaGVsbFVuaXZlcnNhbCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE2MzM2NDY5OTgsImV4cCI6MTYzNjIzODk0MCwiaXNzIjoiSXJvbm1hblNvZnR3YXJlIiwiYXVkIjoiUG93ZXJTaGVsbFVuaXZlcnNhbCJ9.jw2VCvtpOWpgnpIUlO8sTdK9Z5RMoWLmvYn0MDmzkNM"   
 }
 ```
+
+## Enhanced App Token Security
+
+When enhanced app token security is enabled, token values are only accessible once they are created. They are hashed and the hash value is stored in the database rather than the token. You will use the token the same way as any other token.&#x20;
