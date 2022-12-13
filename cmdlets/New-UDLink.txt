@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDLink [-Id <String>] [-url <String>] [-Underline <String>] [-Style <Hashtable>] [-Variant <String>] [-ClassName <String>] [-OpenInNewWindow] [-Children <ScriptBlock>] [-OnClick <Endpoint>] [<CommonParameters>]
+    New-UDLink [-Id <String>] [-url <String>] [-Underline <String>] [-Style <Hashtable>] [-Variant <String>] [-ClassName <String>] [-OpenInNewWindow] [-Children <ScriptBlock>] [-OnClick <Endpoint>] [-Download] [<CommonParameters>]
     
-    New-UDLink [-Id <String>] [-url <String>] [-Underline <String>] [-Style <Hashtable>] [-Variant <String>] [-ClassName <String>] [-OpenInNewWindow] [-Text <String>] [-OnClick <Endpoint>] [<CommonParameters>]
+    New-UDLink [-Id <String>] [-url <String>] [-Underline <String>] [-Style <Hashtable>] [-Variant <String>] [-ClassName <String>] [-OpenInNewWindow] [-Text <String>] [-OnClick <Endpoint>] [-Download] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -104,6 +104,15 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Download [<SwitchParameter>]
+        Adds the download attribute to this link.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

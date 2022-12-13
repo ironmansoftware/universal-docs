@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDChip [-Id <String>] [[-Label] <String>] [[-OnDelete] <Endpoint>] [[-OnClick] <Endpoint>] [[-Icon] <Object>] [[-Style] <Hashtable>] [[-Variant] <String>] [-ClassName <String>] [-Color <String>] [<CommonParameters>]
+    New-UDChip [-Id <String>] [[-Label] <String>] [[-OnDelete] <Endpoint>] [[-OnClick] <Endpoint>] [[-Icon] <Object>] [[-Style] <Hashtable>] [[-Variant] <String>] [[-Size] <String>] [-ClassName <String>] [-Color <String>] [<CommonParameters>]
     
-    New-UDChip [-Id <String>] [[-Label] <String>] [[-OnDelete] <Endpoint>] [[-OnClick] <Endpoint>] [[-Style] <Hashtable>] [[-Variant] <String>] [[-Avatar] <String>] [[-AvatarType] <String>] [-ClassName <String>] [-Color <String>] [<CommonParameters>]
+    New-UDChip [-Id <String>] [[-Label] <String>] [[-OnDelete] <Endpoint>] [[-OnClick] <Endpoint>] [[-Style] <Hashtable>] [[-Variant] <String>] [[-Avatar] <String>] [[-AvatarType] <String>] [[-Size] <String>] [-ClassName <String>] [-Color <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -95,6 +95,15 @@ PARAMETERS
         Required?                    false
         Position?                    6
         Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Size <String>
+        The size of the chip.
+        
+        Required?                    false
+        Position?                    10
+        Default value                medium
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

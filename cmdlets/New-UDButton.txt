@@ -110,7 +110,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    named
-        Default value                inherit
+        Default value                primary
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

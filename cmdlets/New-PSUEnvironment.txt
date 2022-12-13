@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSUEnvironment [-AppToken <String>] [-Arguments <String>] [-ComputerName <String>] [-Modules <String[]>] -Name <String> [-PSModulePath <String[]>] -Path <String> [-PersistentRunspace] [-Variables <String[]>] [-UseDefaultCredentials] [-Integrated] [-StartupScript <String[]>] [-Version <String>] [-RunspaceRecycling] [-HighPerformanceRunspacePool] [-MaxRunspaces <Int32>] [-EnableDebugger] [<CommonParameters>]
+    New-PSUEnvironment [-AppToken <String>] [-Arguments <String>] [-ComputerName <String>] [-Modules <String[]>] -Name <String> [-PSModulePath <String[]>] -Path <String> [-PersistentRunspace] [-Variables <String[]>] [-UseDefaultCredentials] [-Integrated] [-StartupScript <String[]>] [-Version <String>] [-RunspaceRecycling] [-HighPerformanceRunspacePool] [-MaxRunspaces <Int32>] [-EnableDebugger] [-Credential <Variable>] [-MaxVirtualMemory <Int64>] [-RecycleSchedule <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -169,6 +169,33 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Credential <Variable>
+        The credential to use with this environment
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -MaxVirtualMemory <Int64>
+        The maximum virtual memory in bytes. When the threshold is reached, the process is restarted. Ignored for the integrated environment.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -RecycleSchedule <String>
+        A CRON schedule to restart this environment. Ignored for the integrated environment.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         

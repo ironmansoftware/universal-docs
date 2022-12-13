@@ -7,7 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    Remove-PSUEnvironment [-Id] <Int64> [-Environment] <ExecutionEnvironment> [-AppToken <String>] [-ComputerName <String>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Remove-PSUEnvironment [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    
+    Remove-PSUEnvironment [-Environment] <ExecutionEnvironment> [-AppToken <String>] [-ComputerName <String>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
     
 DESCRIPTION

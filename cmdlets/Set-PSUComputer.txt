@@ -2,81 +2,82 @@
 NAME
     Set-PSUComputer
     
+SYNOPSIS
+    Updates a computer.
+    
+    
 SYNTAX
-    Set-PSUComputer [-Id] <long> [-Maintenance <bool>] [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Set-PSUComputer [-Computer] <Computer> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-Maintenance <Boolean>] [-UseDefaultCredentials] [<CommonParameters>]
     
-    Set-PSUComputer [-Computer] <Computer> [-Maintenance <bool>] [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Set-PSUComputer [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-Maintenance <Boolean>] [-UseDefaultCredentials] [<CommonParameters>]
     
     
+DESCRIPTION
+    Updates a computer.
+    
+
 PARAMETERS
-    -AppToken <string>
+    -AppToken <String>
+        The app token used to connect to the PowerShell Universal server.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -Computer <Computer>
+        The computer name or URL of the PowerShell Universal server.
         
         Required?                    true
         Position?                    0
-        Accept pipeline input?       true (ByValue)
-        Parameter set name           Computer
-        Aliases                      None
-        Dynamic?                     false
+        Default value                None
+        Accept pipeline input?       True (ByValue)
         Accept wildcard characters?  false
         
-    -ComputerName <string>
+    -ComputerName <String>
+        The name of the computer to update.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      Uri
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Id <long>
+    -Id <Int64>
+        The ID of the computer to update.
         
         Required?                    true
         Position?                    0
-        Accept pipeline input?       false
-        Parameter set name           Id
-        Aliases                      None
-        Dynamic?                     false
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Integrated
+    -Integrated [<SwitchParameter>]
+        Whether to use the integrated environemnt.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Maintenance <bool>
+    -Maintenance <Boolean>
+        Whether to enable or disable maintenance mode for this computer.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -UseDefaultCredentials
+    -UseDefaultCredentials [<SwitchParameter>]
+        Whether to use Windows Authentication for this call.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -85,19 +86,28 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
     PowerShellUniversal.Computer
+        
     
     
 OUTPUTS
     System.Object
+        
     
-ALIASES
-    None
     
-
-REMARKS
-    None
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Set-PSUComputer -ComputerName computer1 -Maintenance $true
+    
+    Enables maintenance mode for a computer.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
 
 

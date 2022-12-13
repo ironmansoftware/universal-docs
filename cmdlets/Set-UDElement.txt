@@ -64,7 +64,7 @@ OUTPUTS
     -------------------------- EXAMPLE 1 --------------------------
     
     PS > New-UDButton -Id 'button' -Text 'Disable Me' -OnClick {
-        Set-UDElement -Id 'button -Properties @{
+        Set-UDElement -Id 'button' -Properties @{
             'disabled' = $true
         }
     }

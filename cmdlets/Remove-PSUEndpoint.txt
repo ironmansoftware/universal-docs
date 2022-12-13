@@ -7,7 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    Remove-PSUEndpoint [-Id] <Int64> [-Endpoint] <Endpoint> [-AppToken <String>] [-ComputerName <String>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Remove-PSUEndpoint [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    
+    Remove-PSUEndpoint [-Endpoint] <Endpoint> [-AppToken <String>] [-ComputerName <String>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
     
 DESCRIPTION

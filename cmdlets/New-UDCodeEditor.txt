@@ -40,7 +40,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    named
-        Default value                
+        Default value                500
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -49,12 +49,12 @@ PARAMETERS
         
         Required?                    false
         Position?                    named
-        Default value                
+        Default value                100%
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
     -HideCodeLens [<SwitchParameter>]
-        Hides code lens within th editor.
+        Hides code lens within the editor.
         
         Required?                    false
         Position?                    named

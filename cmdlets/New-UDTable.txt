@@ -240,7 +240,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    named
-        Default value                
+        Default value                ascending
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

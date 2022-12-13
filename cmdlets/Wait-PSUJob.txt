@@ -45,7 +45,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Job <Job>
-        The job to wait for. Use Get-UAJob to retrieve a Job object.
+        The job to wait for. Use Get-PSUJob to retrieve a Job object.
         
         Required?                    true
         Position?                    named

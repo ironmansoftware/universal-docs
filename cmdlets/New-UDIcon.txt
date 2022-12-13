@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDIcon [[-Id] <String>] [[-Icon] <String>] [-FixedWidth] [-Inverse] [[-Rotation] <Int32>] [[-ClassName] <String>] [[-Transform] <String>] [[-Flip] <String>] [[-Pull] <String>] [-ListItem] [-Spin] [-Border] [-Beat] [-Fade] [-Bounce] [-BeatFade] [-Shake] [[-Size] <String>] [[-Style] <Hashtable>] [[-Title] <String>] [-Regular] [[-Color] <DashboardColor>] [<CommonParameters>]
+    New-UDIcon [[-Id] <String>] [[-Icon] <String>] [-FixedWidth] [-Inverse] [[-Rotation] <Int32>] [[-ClassName] <String>] [[-Transform] <String>] [[-Flip] <String>] [[-Pull] <String>] [-ListItem] [-Spin] [-Border] [-Beat] [-Fade] [-Bounce] [-BeatFade] [-Shake] [[-Size] <String>] [[-Style] <Hashtable>] [[-Title] <String>] [-Solid] [[-Color] <DashboardColor>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -188,7 +188,8 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -Regular [<SwitchParameter>]
+    -Solid [<SwitchParameter>]
+        Uses the solid icon style.
         
         Required?                    false
         Position?                    named

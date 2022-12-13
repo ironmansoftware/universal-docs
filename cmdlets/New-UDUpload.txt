@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDUpload [[-Id] <String>] [[-Accept] <String>] [[-OnUpload] <Endpoint>] [[-Text] <String>] [[-Variant] <String>] [[-Color] <String>] [[-ClassName] <String>] [<CommonParameters>]
+    New-UDUpload [[-Id] <String>] [[-Accept] <String>] [[-OnUpload] <Endpoint>] [[-Text] <String>] [[-Variant] <String>] [[-Color] <String>] [[-ClassName] <String>] [-HideUploadedFileName] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -89,6 +89,15 @@ PARAMETERS
         Required?                    false
         Position?                    7
         Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -HideUploadedFileName [<SwitchParameter>]
+        Hides the file name text that is shown after upload
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

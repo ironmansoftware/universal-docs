@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDAlert [-Id <String>] [-Severity <String>] [-Children <ScriptBlock>] [-Title <String>] [-ClassName <String>] [<CommonParameters>]
+    New-UDAlert [-Id <String>] [-Severity <String>] [-Children <ScriptBlock>] [-Title <String>] [-ClassName <String>] [-Style <Hashtable>] [<CommonParameters>]
     
-    New-UDAlert [-Id <String>] [-Severity <String>] [-Text <String>] [-Title <String>] [-ClassName <String>] [<CommonParameters>]
+    New-UDAlert [-Id <String>] [-Severity <String>] [-Text <String>] [-Title <String>] [-ClassName <String>] [-Style <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -64,6 +64,15 @@ PARAMETERS
         
     -ClassName <String>
         A CSS class to apply to the alert.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        An hashtable of styles to apply to this component.
         
         Required?                    false
         Position?                    named

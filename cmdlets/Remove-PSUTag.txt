@@ -7,7 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    Remove-PSUTag [-Id] <Int64> [-Tag] <Tag> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    Remove-PSUTag [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Remove-PSUTag [-Tag] <Tag> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION

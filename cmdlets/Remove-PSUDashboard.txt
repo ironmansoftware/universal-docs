@@ -7,7 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    Remove-PSUDashboard [-Id] <Int64> [-Dashboard] <Dashboard> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    Remove-PSUDashboard [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Remove-PSUDashboard [-Dashboard] <Dashboard> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION

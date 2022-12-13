@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDCheckBox [[-Label] <String>] [[-Icon] <Object>] [[-CheckedIcon] <Object>] [[-OnChange] <Endpoint>] [[-Style] <Hashtable>] [[-Disabled]] [[-Checked] <Boolean>] [[-ClassName] <String>] [[-LabelPlacement] <String>] [[-Id] <String>] [-Color <String>] [<CommonParameters>]
+    New-UDCheckBox [[-Label] <String>] [[-Icon] <Object>] [[-CheckedIcon] <Object>] [[-OnChange] <Endpoint>] [[-Style] <Hashtable>] [[-Disabled]] [[-Checked] <Boolean>] [[-ClassName] <String>] [[-LabelPlacement] <String>] [[-Id] <String>] [[-Size] <String>] [-Color <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -102,6 +102,15 @@ PARAMETERS
         Required?                    false
         Position?                    9
         Default value                ([Guid]::NewGuid()).ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Size <String>
+        The size of the checkbox.
+        
+        Required?                    false
+        Position?                    10
+        Default value                medium
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

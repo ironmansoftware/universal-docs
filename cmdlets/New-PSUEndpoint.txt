@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSUEndpoint [-AppToken <String>] [-Authentication] [-ComputerName <String>] -Endpoint <ScriptBlock> [-Method {GET | POST | PUT | DELETE | OPTIONS}] [-RegEx] [-Role <String[]>] -Url <String> [-Description <String>] [-UseDefaultCredentials] [-Integrated] [-Tag <Tag[]>] [-Timeout <Int32>] [-Environment <String>] [<CommonParameters>]
+    New-PSUEndpoint [-AppToken <String>] [-Authentication] [-ComputerName <String>] -Endpoint <ScriptBlock> [-Method {GET | POST | PUT | DELETE | OPTIONS}] [-RegEx] [-Role <String[]>] -Url <String> [-Description <String>] [-UseDefaultCredentials] [-Integrated] [-Tag <Tag[]>] [-Timeout <Int32>] [-Environment <String>] [-PersistentLog] [<CommonParameters>]
     
-    New-PSUEndpoint [-AppToken <String>] [-Authentication] [-ComputerName <String>] [-Method {GET | POST | PUT | DELETE | OPTIONS}] [-RegEx] [-Role <String[]>] -Url <String> [-Description <String>] [-UseDefaultCredentials] [-Integrated] [-Tag <Tag[]>] [-Timeout <Int32>] -Path <String> [-Environment <String>] [<CommonParameters>]
+    New-PSUEndpoint [-AppToken <String>] [-Authentication] [-ComputerName <String>] [-Method {GET | POST | PUT | DELETE | OPTIONS}] [-RegEx] [-Role <String[]>] -Url <String> [-Description <String>] [-UseDefaultCredentials] [-Integrated] [-Tag <Tag[]>] [-Timeout <Int32>] -Path <String> [-Environment <String>] [-PersistentLog] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -151,6 +151,15 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -PersistentLog [<SwitchParameter>]
+        Whether to store the log for this endpoint in the database.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       False
         Accept wildcard characters?  false
         

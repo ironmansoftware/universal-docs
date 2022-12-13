@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDMenu [[-Id] <String>] [-Text] <String> [[-OnChange] <Endpoint>] [-Children] <ScriptBlock> [[-ClassName] <ParameterAttribute>] [[-Variant] <String>] [[-Icon] <Hashtable>] [<CommonParameters>]
+    New-UDMenu [[-Id] <String>] [-Text] <String> [[-OnChange] <Endpoint>] [-Children] <ScriptBlock> [[-ClassName] <ParameterAttribute>] [[-Variant] <String>] [[-Icon] <Hashtable>] [[-Size] <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -74,6 +74,15 @@ PARAMETERS
         Required?                    false
         Position?                    7
         Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Size <String>
+        The size of the menu button.
+        
+        Required?                    false
+        Position?                    8
+        Default value                medium
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

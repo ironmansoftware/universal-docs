@@ -7,7 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    Remove-PSUIdentity [-Id] <Int64> [-Identity] <Identity> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    Remove-PSUIdentity [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Remove-PSUIdentity [-Identity] <Identity> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION

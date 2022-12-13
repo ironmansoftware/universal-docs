@@ -3,207 +3,218 @@ NAME
     New-UDPage
     
 SYNOPSIS
-    Defines a new page.
+    Creates a page within a dashboard.
     
     
 SYNTAX
-    New-UDPage [-Name] <String> [-Content] <Endpoint> [[-Url] <String>] [[-DefaultHomePage]] [[-Title] <String>] [-Id <String>] [-OnLoading <ScriptBlock>] [-Role <String[]>] [-NavigationLayout <String>] [-Navigation <Hashtable[]>] [-Logo <String>] [-HeaderPosition <String>] [-HeaderColor <DashboardColor>] [-HeaderBackgroundColor <DashboardColor>] [-HeaderContent <Endpoint>] [-HideUserName] [-HideNavigation] [-Icon <Hashtable>] [-LoadTitle <Endpoint>] [<CommonParameters>]
+    New-UDPage [[-DefaultHomePage]] [[-Title] <String>] [-Blank] [-Content <Endpoint>] [-Description <String>] [-HeaderBackgroundColor <DashboardColor>] [-HeaderColor <DashboardColor>] [-HeaderPosition {absolute | fixed | relative | static | sticky}] [-HideNavigation] [-HideUserName] [-Icon <Hashtable>] [-Id <String>] -Name <String> [-OnLoading <ScriptBlock>] [-Role <String[]>] [-Url <String>] [<CommonParameters>]
     
-    New-UDPage [-Name] <String> [-Content] <Endpoint> [[-Url] <String>] [[-DefaultHomePage]] [[-Title] <String>] [-Blank] [-Id <String>] [-OnLoading <ScriptBlock>] [-Role <String[]>] [-HeaderPosition <String>] [-HeaderColor <DashboardColor>] [-HeaderBackgroundColor <DashboardColor>] [-HideUserName] [-HideNavigation] [-Icon <Hashtable>] [<CommonParameters>]
+    New-UDPage [[-DefaultHomePage]] [[-Title] <String>] [-Content <Endpoint>] [-Description <String>] [-HeaderBackgroundColor <DashboardColor>] [-HeaderColor <DashboardColor>] [-HeaderContent <Endpoint>] [-HeaderPosition {absolute | fixed | relative | static | sticky}] [-HideNavigation] [-HideUserName] [-Icon <Hashtable>] [-Id <String>] [-LoadTitle <Endpoint>] [-Logo <String>] -Name <String> [-Navigation <Hashtable[]>] [-NavigationLayout {Temporary | Permanent}] [-OnLoading <ScriptBlock>] [-Role <String[]>] [-Url <String>] [<CommonParameters>]
     
-    New-UDPage [-Name] <String> [-Content] <Endpoint> [[-Url] <String>] [[-DefaultHomePage]] [[-Title] <String>] [-Id <String>] [-OnLoading <ScriptBlock>] [-Role <String[]>] [-NavigationLayout <String>] [-Logo <String>] [-LoadNavigation <Endpoint>] [-HeaderPosition <String>] [-HeaderColor <DashboardColor>] [-HeaderBackgroundColor <DashboardColor>] [-HeaderContent <Endpoint>] [-HideUserName] [-HideNavigation] [-Icon <Hashtable>] [-LoadTitle <Endpoint>] [<CommonParameters>]
+    New-UDPage [[-DefaultHomePage]] [[-Title] <String>] [-Content <Endpoint>] [-Description <String>] [-HeaderBackgroundColor <DashboardColor>] [-HeaderColor <DashboardColor>] [-HeaderContent <Endpoint>] [-HeaderPosition {absolute | fixed | relative | static | sticky}] [-HideNavigation] [-HideUserName] [-Icon <Hashtable>] [-Id <String>] [-LoadNavigation <Endpoint>] [-LoadTitle <Endpoint>] [-Logo <String>] -Name <String> [-NavigationLayout {Temporary | Permanent}] [-OnLoading <ScriptBlock>] [-Role <String[]>] [-Url <String>] [<CommonParameters>]
     
     
 DESCRIPTION
-    Defines a new page. Dashboards can contain multiple pages that each contain different components.
+    Creates a page within a dashboard.
     
 
 PARAMETERS
-    -Name <String>
-        The name of the page.
+    -Blank [<SwitchParameter>]
+        Creates a page without a header.
         
-        Required?                    true
-        Position?                    1
-        Default value                
-        Accept pipeline input?       false
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -Content <Endpoint>
-        The content of the page.
-        
-        Required?                    true
-        Position?                    3
-        Default value                
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -Url <String>
-        The URL for the page.
+        The content of this page.
         
         Required?                    false
-        Position?                    1
-        Default value                
-        Accept pipeline input?       false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -DefaultHomePage [<SwitchParameter>]
-        Whether this page is the default home page. Only one page can be the default home page.
+        Whether this page is the default home page. Only one page can be a default home page.
         
         Required?                    false
-        Position?                    4
+        Position?                    3
         Default value                False
-        Accept pipeline input?       false
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Title <String>
-        The title of the page.
-        
-        Required?                    false
-        Position?                    5
-        Default value                
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -Blank [<SwitchParameter>]
-        Whether to define a blank page. Blank pages won't have a navigation bar.
+    -Description <String>
+        The description of this page.
         
         Required?                    false
         Position?                    named
-        Default value                False
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -Id <String>
-        The ID of this component.
-        
-        Required?                    false
-        Position?                    named
-        Default value                [Guid]::NewGuid()
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -OnLoading <ScriptBlock>
-        A component to return while this page is loading.
-        
-        Required?                    false
-        Position?                    named
-        Default value                
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -Role <String[]>
-        The role of the user that is allowed to access this page.
-        
-        Required?                    false
-        Position?                    named
-        Default value                
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -NavigationLayout <String>
-        How the navigation is layed out on the page.
-        
-        Required?                    false
-        Position?                    named
-        Default value                
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -Navigation <Hashtable[]>
-        Custom navigation to show for this page. You can use New-UDList and New-UDListItem to define custom navigation links.
-        
-        Required?                    false
-        Position?                    named
-        Default value                
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -Logo <String>
-        The logo to display on this page.
-        
-        Required?                    false
-        Position?                    named
-        Default value                
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -LoadNavigation <Endpoint>
-        An endpoint that is called when loading the navigation for the page.
-        
-        Required?                    false
-        Position?                    named
-        Default value                
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -HeaderPosition <String>
-        Position of the header within the dashboard.
-        
-        Required?                    false
-        Position?                    named
-        Default value                
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -HeaderColor <DashboardColor>
-        The color of the header. This will override the theme colors.
-        
-        Required?                    false
-        Position?                    named
-        Default value                
-        Accept pipeline input?       false
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -HeaderBackgroundColor <DashboardColor>
-        The background color of the header. This will override the theme colors.
+        The header background color.
         
         Required?                    false
         Position?                    named
-        Default value                
-        Accept pipeline input?       false
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -HeaderColor <DashboardColor>
+        The header foreground color.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -HeaderContent <Endpoint>
-        Content of the header.
+        Additional header content to include.
         
         Required?                    false
         Position?                    named
-        Default value                
-        Accept pipeline input?       false
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -HideUserName [<SwitchParameter>]
-        Obsolete. This parameter was intended for testing purposes.
+    -HeaderPosition <String>
+        How to position the header.
         
         Required?                    false
         Position?                    named
-        Default value                False
-        Accept pipeline input?       false
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -HideNavigation [<SwitchParameter>]
-        Allows you to hide the navigation. Intended for testing purposes.
+        Whether to hide the navigation.
         
         Required?                    false
         Position?                    named
         Default value                False
-        Accept pipeline input?       false
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -HideUserName [<SwitchParameter>]
+        Whether to hide the user name when using an authenticated dashboard.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -Icon <Hashtable>
+        The icon to display in the navigation for this page.
         
         Required?                    false
         Position?                    named
-        Default value                
-        Accept pipeline input?       false
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Id <String>
+        The ID of this page.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -LoadNavigation <Endpoint>
+        Custom navigation to load dynamically.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -LoadTitle <Endpoint>
+        Loads the title of this page dynamically.
         
         Required?                    false
         Position?                    named
-        Default value                
-        Accept pipeline input?       false
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Logo <String>
+        The URL of the logo to display in the header.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        The name of this page.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Navigation <Hashtable[]>
+        The static navigation to display on this page.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -NavigationLayout <String>
+        How to display the navigation.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -OnLoading <ScriptBlock>
+        Content to display when the page is loading.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Role <String[]>
+        The role required to view this page.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Title <String>
+        The title to display in the header and title bar of this page.
+        
+        Required?                    false
+        Position?                    4
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Url <String>
+        The URL of this page.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -213,21 +224,22 @@ PARAMETERS
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
 INPUTS
+    None
+        
+    
     
 OUTPUTS
-    
-    -------------------------- EXAMPLE 1 --------------------------
-    
-    PS > Creates a basic page.
-    
-    New-UDPage -Name 'Test' -Content {
-        New-UDTypography -Text 'Page'
-    }
+    System.Object
+        
     
     
+NOTES
     
+    
+        
     
     
 RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
 
 

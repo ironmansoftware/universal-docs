@@ -3,11 +3,11 @@ NAME
     Set-PSUSetting
     
 SYNOPSIS
-    Sets a UA setting.
+    Sets a PSU setting.
     
     
 SYNTAX
-    Set-PSUSetting [-AdminConsoleLogo <String>] [-AdminConsoleTitle <String>] [-ApiEnvironment <String>] [-AppToken <String>] [-ComputerName <String>] [-ConcurrentJobLimit <Int32>] [-DefaultEnvironment <String>] [-DefaultPage <String>] [-DisableAutoReload] [-DisableUpdateCheck] [-GroomDays <Int32>] [-HideApi] [-HideAutomation] [-HideDashboard] [-HideHomePage] [-Integrated] [-LogLevel <String>] [-LoggingFilePath <String>] [-MicrosoftLogLevel <String>] [-RateLimitClientAllowList <String[]>] [-RateLimitEndpointAllowList <String[]>] [-RateLimitIpAddressAllowList <String[]>] [-ScriptBaseFolder <String>] [-SecurityEnvironment <String>] [-Telemetry] [-UseDefaultCredentials] [-GroomInterval <Int32>] [-NotificationLevel <NotificationLevel>] [-FallbackLanguageId <String>] [-HideRunAs] [-JobHandshakeTimeout <Int32>] [-ProxyCredential <Variable>] [-ProxyUri <String>] [-Splatting] [<CommonParameters>]
+    Set-PSUSetting [-AdminConsoleLogo <String>] [-AdminConsoleTitle <String>] [-ApiEnvironment <String>] [-AppToken <String>] [-ComputerName <String>] [-ConcurrentJobLimit <Int32>] [-DefaultEnvironment <String>] [-DefaultPage <String>] [-DisableAutoReload] [-DisableUpdateCheck] [-GroomDays <Int32>] [-HideApi] [-HideAutomation] [-HideDashboard] [-HideHomePage] [-Integrated] [-LogLevel <String>] [-LoggingFilePath <String>] [-MicrosoftLogLevel <String>] [-RateLimitClientAllowList <String[]>] [-RateLimitEndpointAllowList <String[]>] [-RateLimitIpAddressAllowList <String[]>] [-ScriptBaseFolder <String>] [-SecurityEnvironment <String>] [-UseDefaultCredentials] [-GroomInterval <Int32>] [-NotificationLevel <NotificationLevel>] [-FallbackLanguageId <String>] [-HideRunAs] [-JobHandshakeTimeout <Int32>] [-ProxyCredential <Variable>] [-ProxyUri <String>] [-Splatting] [-DisabledFeatures <Features>] [-DontLoadProfile] [-EnhancedAppTokenSecurity] [-ExperimentalFeatures <ExperimentalFeatures>] [-FavIcon <String>] [-LimitIdentities] [-Telemetry] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -231,15 +231,6 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Telemetry [<SwitchParameter>]
-        Whether to allow PowerShell Universal to collect anonymous usage data.
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
     -UseDefaultCredentials [<SwitchParameter>]
         Use default credentials when connecting to the management API
         
@@ -314,6 +305,69 @@ PARAMETERS
         
     -Splatting [<SwitchParameter>]
         Whether splatting is enabled for all configuration files.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -DisabledFeatures <Features>
+        Features to disable within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -DontLoadProfile [<SwitchParameter>]
+        Prevents loading use profiles for Run As environments.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -EnhancedAppTokenSecurity [<SwitchParameter>]
+        Enables enhanced token security for the platform.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ExperimentalFeatures <ExperimentalFeatures>
+        Experimental features to enable.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -FavIcon <String>
+        The FavIcon to display in the admin console and dashboards.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -LimitIdentities [<SwitchParameter>]
+        Prevents identities that are not defined from logging into PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Telemetry [<SwitchParameter>]
+        Not used. Telemetry is no longer collected.
         
         Required?                    false
         Position?                    named

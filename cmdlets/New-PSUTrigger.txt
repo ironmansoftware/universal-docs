@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSUTrigger [-AppToken <String>] [-ComputerName <String>] [-Dashboard <Dashboard>] [-Environment <String>] -EventType {JobCanceled | JobFailed | JobCompleted | JobStarted | JobFeedbackRequested | ServerStarted | ServerStopped | DashboardStarted | DashboardStopped} -Name <String> [-Script <Script>] -TriggerScript <Script> [-UseDefaultCredentials] [-Delay <Int32>] [-Integrated] [-ProtectRule <String>] [<CommonParameters>]
+    New-PSUTrigger [-AppToken <String>] [-ComputerName <String>] [-Dashboard <Dashboard>] [-Environment <String>] -EventType {JobCanceled | JobFailed | JobCompleted | JobStarted | JobFeedbackRequested | ServerStarted | ServerStopped | DashboardStarted | DashboardStopped} -Name <String> [-Script <Script>] -TriggerScript <Script> [-UseDefaultCredentials] [-Delay <Int32>] [-Integrated] [-ProtectRule <String>] [-Computer <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -120,6 +120,15 @@ PARAMETERS
         
     -ProtectRule <String>
         The name of the PowerShell Protect rule that executes this trigger.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Computer <String>
+        The computer or queue to run this trigger on.
         
         Required?                    false
         Position?                    named
