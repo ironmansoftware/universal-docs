@@ -30,7 +30,7 @@ Expose scripts as RESTful HTTP APIs for integration from any platform.
 
 Execute, schedule, secure and audit scripts in an easy-to-use, web-interface.
 
-<figure><img src=".gitbook/assets/image (5).png" alt=""><figcaption><p>Run PowerShell Scripts</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (5) (3).png" alt=""><figcaption><p>Run PowerShell Scripts</p></figcaption></figure>
 
 * [Scheduling](https://docs.powershelluniversal.com/automation/schedules)
 * [Run As Support](https://docs.powershelluniversal.com/automation/scripts#running-a-script-as-another-user)
@@ -133,7 +133,7 @@ Configure the platform to meet the needs of your environment.
 
 Join the growing community of users managing their automation environments with PowerShell Universal.
 
-<figure><img src=".gitbook/assets/image (3).png" alt=""><figcaption><p>Community Forums</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (3) (2).png" alt=""><figcaption><p>Community Forums</p></figcaption></figure>
 
 * [Forums](https://forums.ironmansoftware.com/)
 * [Discord](https://discord.gg/tQMEYwbGVn)

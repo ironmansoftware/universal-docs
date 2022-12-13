@@ -28,7 +28,7 @@ Register-PackageSource -Name MyNuGet -Location https://www.nuget.org/api/v2 -Pro
 
 Once the source has been registered, it will be shown within the drop down on the modules page.&#x20;
 
-<figure><img src="../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Creating Modules&#x20;
 

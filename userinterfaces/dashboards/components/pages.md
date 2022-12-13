@@ -6,6 +6,20 @@ description: Information about Universal Dashboard pages.
 
 A dashboard can consist of one or more pages. A page can have a particular name and URL. You can define a URL that accepts one or more variables in the URL to define a dynamic page.
 
+## Creating a new page
+
+Within the dashboard editor, expand the Pages navigation menu and click New Page.&#x20;
+
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption><p>New Page Button</p></figcaption></figure>
+
+You can edit a page by clicking the link in the menu. The code editor will switch to the page's content.&#x20;
+
+<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption><p>A page editor</p></figcaption></figure>
+
+To reference the page in your dashboard, use `Get-UDPage`.&#x20;
+
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Using a page in a dashboard</p></figcaption></figure>
+
 ## Basic Page
 
 A basic page can be defined using the `New-UDPage` cmdlet. You could navigate to this page by visiting the `/dashboard` URL of your dashboard.
