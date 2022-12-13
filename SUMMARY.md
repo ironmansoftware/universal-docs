@@ -31,6 +31,7 @@
 * [Schedules](automation/schedules.md)
 * [Terminals](automation/terminals.md)
 * [Triggers](automation/triggers.md)
+* [Queues](automation/queues.md)
 
 ## User Interfaces <a href="#userinterfaces" id="userinterfaces"></a>
 

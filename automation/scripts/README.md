@@ -110,13 +110,9 @@ To run as another user, simply add or import a PSCredential variable. From there
 
 ![](<../../.gitbook/assets/image (322).png>)
 
-### Running a Script on Another Computer
+### Running a Script on Another Machine&#x20;
 
 You can use the Computer drop down to select other machines to run a script on. The default value is to run on any computer that is available.
-
-### Running a Script on All Computers
-
-You can run a script on all computers by selecting the All Computers option from the Computer drop down.&#x20;
 
 ## Remoting
 
