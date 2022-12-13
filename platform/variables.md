@@ -24,6 +24,30 @@ From this dialog, you'll be able to define string and PSCredentials in the speci
 
 ## Vaults
 
+### Database
+
+The database vault stores secrets within the PowerShell Universal database. These secrets are encrypted using AES encryption using a customizable key. You can customize the key by specifying the Secrets \ Database \ EncryptionKey.&#x20;
+
+#### appsettings.json
+
+You can configure this setting in appsettings.json.
+
+```json
+"Secrets": {
+  "Database": {
+    "EncryptionKey": "=b0ywQA@VOSdr&R7an5g&XK6NVO%s4Tf"
+  }
+}
+```
+
+#### Environment Variable&#x20;
+
+You can configure this setting with an environment variable.&#x20;
+
+```powershell
+$Env:Secrets__Database__EncryptionKey = "=b0ywQA@VOSdr&R7an5g&XK6NVO%s4Tf"
+```
+
 ### BuiltInLocalVault
 
 Values for secrets with the `BuiltInLocalVault` are stored within the Windows Credential Manager instance of the security principal that is running PSU. For example, the service account of the user running the Universal service. If you change users (such as running as a service account), the account will not have access to the previous user's secrets and you will need to add those secrets again.
