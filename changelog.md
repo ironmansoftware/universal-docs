@@ -4,6 +4,72 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.6.0 - 12/13/2022
+
+#### APIs
+
+* Fixed an issue where the API test would not work in a nested configuration
+* Added support for OpenAPI Schemas, inputs and return values.
+* Fixed an issue where binding bools to APIs via JSON wouldn't work in Windows PowerShell.
+* Fixed an issue where navigating directly to the endpoint page could result in a JavaScript error in the admin console
+* Fixed an issue where the expand right option wasn't available in the API endpoint page.
+* Added a Clear Log button to the API log
+
+#### Automation
+
+* Fixed an issue where the Archived switch would not remain checked on the jobs page
+* Added support for running on all computers
+* Fixed an issue where default values would not be shown when run a script
+* Fixed an issue where output would not be colorized when using Hide Time
+* Added support for custom queues
+* Fixed an issue where the job archive buttons wouldn't be available when using One-Way git sync
+* Added support for selecting computer and queues for triggers
+* Fixed a memory leak when storing job data in SQL
+* Fixed an issue where creating a job with the Any Computer (or null) would cause a SQL error
+* Added support for moving scripts between directories.
+* Fixed an issue where setting Working Directory in the admin console would not save.
+* Added support for Read-Host -AsSecureString
+
+#### Dashboard
+
+* Added -Style to New-UDAlert
+* Fixed an issue with incorrectly formatted date strings when using -TimeZone with New-UDDatePicker\New-UDTimePicker
+* Added -Size to New-UDChip
+* Fixed an issue where -OnRowExpand didn't work with -LoadData in New-UDTable
+* View dashboard logs and power buttons when One Way git sync is enabled.
+* Fixed an issue where groups in New-UDSelect were selectable
+* Updated to FontAwesome 6.2
+* Added -Download to New-UDLink
+* Added -Solid to New-UDIcon
+* Fixed an issue where New-UDListItem -SecondaryAction wouldn't display
+* Fixed an issue where New-UDMapMarker would not be in the correct position if a custom icon wasn't specified.
+* Fixed an issue with the dashboard advanced editor in a nested IIS site.
+* Added Page editor
+* Added -HideUploadedFileName to New-UDUpload
+* Added -ShowQuickFilter to New-UDDataGrid
+* Fixed the Auto Complete filter styling in New-UDTable
+* Added -Size to New-UDMenu
+
+#### Platform
+
+* Added detection of Windows PowerShell Compatibility and suggest turning it off
+* Added support for storing secrets in the database.
+* Added HSTS Max-Age configuration.
+* Added support for cloning repositories with submodules
+* Fixed an issue where clicking the admin console logo wouldn't go to the correct URL in a nested site
+* Fixed an issue where a link to edit a module wouldn't work in a nested site
+* Fixed an issue where swagger docs didn't work with nested sites.
+* Added soft-delete for notifications
+* Fixed an issue where clicking the license badge wouldn't go to the correct URL in a nested site
+* Added support for app tokens within the query string parameters.
+* Added support for enhanced app token security
+* Fixed an issue where the Git Sync Now button would return an error when hosting PSU in a nested site
+* Improved error messages in the admin console
+* Added support for storing git history in the database
+* Fixed an issue where new updates would not be shown in the admin console.
+* Added NodeName to appsettings to allow changing the nodes name from the machine's name.
+* Fixed an issue where changes to a users AD groups when using Windows authentication, wouldn't immediately be reflected in PSU
+
 ## 3.5.5 - 11/17/2022
 
 #### Dashboards
