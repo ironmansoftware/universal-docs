@@ -42,6 +42,8 @@ Some jobs will require feedback. Any script that contains a `Read-Host` call wil
 
 ![Waiting for Feedback](<../.gitbook/assets/image (418) (1).png>)
 
+To accept a `SecureString` with a password input field, you can use the `-AsSecureString` parameter of `Read-Host`.
+
 ## Invoking Jobs from PowerShell
 
 You can use `Invoke-PSUScript` to invoke jobs from the command line. You will need a valid [App Token](../config/security/#app-tokens) to do so. Parameters are defined using dynamic parameters on the `Invoke-PSUScript` cmdlet.
