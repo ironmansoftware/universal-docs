@@ -4,6 +4,16 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.6.1 - 12/13/2022
+
+#### Dashboard
+
+* Fixed an issue where -HeaderContent, -LoadNavigation, and -LoadTitle would not work properly on New-UDPage
+
+#### Platform
+
+* Fixed an issue where certain appsettings.json files could cause the service to fail to start
+
 ## 3.6.0 - 12/13/2022
 
 #### APIs
