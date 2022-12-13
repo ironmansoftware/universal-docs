@@ -171,7 +171,7 @@ You will also receive the sort direction for each column.&#x20;
 
 ## Detailed Content&#x20;
 
-<figure><img src="../../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 You can use the `-LoadDetailedContent` event handler to display additional information about the row you are expanding. Information about the current row is available in `$EventData.row`.
 

@@ -163,7 +163,7 @@ You will need have two folders for your application files: one for each applicat
 
 <figure><img src="../../.gitbook/assets/image (5) (2).png" alt=""><figcaption><p>Web Site Root</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Application Files</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1).png" alt=""><figcaption><p>Application Files</p></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (2) (5).png" alt=""><figcaption><p>Data Files</p></figcaption></figure>
 

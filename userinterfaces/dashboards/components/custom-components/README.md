@@ -8,7 +8,7 @@ Components in PowerShell Universal Dashboard are exposed as functions. You can c
 
 ## Example: People Picker
 
-<figure><img src="../../../../.gitbook/assets/image (3).png" alt=""><figcaption><p>People Picker</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>People Picker</p></figcaption></figure>
 
 The below example creates a `New-UDPeoplePicker` component from existing UD components. You can use the `New-UDPeoplePicker` component in your dashboards. This function can either be defined within your dashboard directly or within a [Module](../../../../platform/modules.md).
 

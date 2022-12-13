@@ -8,7 +8,7 @@ Buttons allow users to take actions, and make choices, with a single tap.
 
 ## Contained Button
 
-![](<../../../../.gitbook/assets/image (33).png>)
+![](<../../../../.gitbook/assets/image (33) (1).png>)
 
 Contained buttons are high-emphasis, distinguished by their use of elevation and fill. They contain actions that are primary to your app.
 

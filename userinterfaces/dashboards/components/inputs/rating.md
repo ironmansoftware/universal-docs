@@ -10,7 +10,7 @@ description: Rating input component.
 New-UDRating 
 ```
 
-![](<../../../../.gitbook/assets/image (7).png>)
+![](<../../../../.gitbook/assets/image (7) (2).png>)
 
 ## OnChange
 
@@ -26,7 +26,7 @@ New-UDRating -OnChange {
 
 Change the maximum rating.&#x20;
 
-![](<../../../../.gitbook/assets/image (8).png>)
+![](<../../../../.gitbook/assets/image (8) (2).png>)
 
 ```powershell
 New-UDRating -Max 10

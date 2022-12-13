@@ -18,7 +18,7 @@ In some instances, writing files can result in configuration reloads that may re
 
 It's recommended to avoid writing to this directory directly in a default configuration. If you would like to write to the directory, consider disabling the server-wide Auto Reload setting. This will disable the file system watcher and you will no longer risk impacting the configuration of the system.&#x20;
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
 
 ### Favor Non-Integrated Environments
 
@@ -210,4 +210,4 @@ $Columns = @(
 
 The result is a table that loads immediately but displays loading skeletons in the slow-to-render columns.&#x20;
 
-<figure><img src="../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (22) (2).png" alt=""><figcaption></figcaption></figure>
