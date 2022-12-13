@@ -31,3 +31,7 @@ Assign a machine to a queue using an environment variable.&#x20;
 ```powershell
 $ENV:UniversalAutomation__Queues = "windows7"
 ```
+
+## Using a Custom Queue
+
+Custom queues will be available within the Computer drop down in the script Run dialog, and trigger, script and schedule properties.
