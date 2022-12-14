@@ -2,7 +2,7 @@
 description: Describes how to set application settings and a definition of the settings.
 ---
 
-# Settings
+# App Settings
 
 Application settings can be found within the `appsettings.json` file within the installation directory. This file defines various settings you can apply to Universal. Although you can edit this file directly, it's recommended that you use one of the following methods to persist settings as the `appsettings.json` file in the installation directory will be overridden on upgrades.
 
@@ -43,10 +43,6 @@ $Env:Jwt__SigningKey = "mySigningKey"
 ```
 
 ## Command Line&#x20;
-
-{% hint style="info" %}
-PowerShell Universal 2.6 or later
-{% endhint %}
 
 You can specify the location of the `appsettings.json` file by using the `--appsettings` command line argument for `Universal.Server.exe` .
 
@@ -167,14 +163,14 @@ Configures the hosts that are allowed to make cross-origin resource sharing requ
 | GitUserName         | Git user name used to sync to the GitRemote. When using a PAT, this can be any value.                                              |
 | GitPassword         | The Git user password or personal access token used to sync to the GitRemote.                                                      |
 | ConfigurationScript | Location of a custom configuration script to load. You can return objects like scripts, dashboards and endpoints from this script. |
-| Mode                | Sets the git mode. It can be either manual or automatic. Defaults to automatic.                                                    |
+| Mode                | Sets the git mode. It can be either manual or automatic. Defaults to manual.                                                       |
 
 ### **API**
 
 **Default Value**
 
 ```javascript
-    "Api": {
+"Api": {
   "Url": ""
 },
 ```
@@ -280,7 +276,7 @@ JSON Web Token configuration settings
 **Default Value**
 
 ```javascript
-    "UniversalDashboard": {
+"UniversalDashboard": {
   "AssetsFolder": "%ProgramData%\\PowerShellUniversal\\Dashboard"
 },
 ```
@@ -292,3 +288,9 @@ JSON Web Token configuration settings
 ### **HideAdminConsole**
 
 Prevents the service from serving the admin console. This will prevent the admin console from being used by any user, including administrators.
+
+## NodeName
+
+The node name option is used to change the name of the PowerShell Universal instance. By default, this is the local computer's name. When using PowerShell Universal in a container, this can become probematic because the name can change whenever the container is restarted.&#x20;
+
+To set a static node name, change this parameter.&#x20;

@@ -165,7 +165,7 @@
 * [Login Page](config/login-page.md)
 * [Management API](config/management-api.md)
 * [Persistence](config/persistence.md)
-* [Settings](config/settings.md)
+* [App Settings](config/settings.md)
 * [Security](config/security/README.md)
   * [Access Controls](config/security/access-controls.md)
   * [App Tokens](config/security/app-tokens.md)
