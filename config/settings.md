@@ -71,9 +71,11 @@ The Kestrel endpoints section allows you to configure the web server. This setti
 
 Kestrel is the web server implementation for ASP.NET Core that PowerShell Universal uses. For more information on the configuration options for Kestrel, visit this [Microsoft Documentation page](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-3.1#listenoptionsusehttps).
 
-| Key             | Description                                                    |
-| --------------- | -------------------------------------------------------------- |
-| RedirectToHttps | When true, the web server will redirect HTTP requests to HTTPS |
+| Key               | Description                                                                                                                          |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| RedirectToHttps   | When true, the web server will redirect HTTP requests to HTTPS                                                                       |
+| BasePath          | Required when configuring PowerShell Universal as a nested site within IIS. This should contain the nested IIS route. Such as `/psu` |
+| Hsts \ MaxAgeDays | Sets the max age in days for [HTTP Strict Transport Security](https://https.cio.gov/hsts/).                                          |
 
 ### Application Insights
 
