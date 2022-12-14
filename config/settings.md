@@ -289,8 +289,12 @@ JSON Web Token configuration settings
 
 Prevents the service from serving the admin console. This will prevent the admin console from being used by any user, including administrators.
 
-## NodeName
+### NodeName
 
 The node name option is used to change the name of the PowerShell Universal instance. By default, this is the local computer's name. When using PowerShell Universal in a container, this can become probematic because the name can change whenever the container is restarted.&#x20;
 
 To set a static node name, change this parameter.&#x20;
+
+### Profiling
+
+Enables [profiling](../development/profiling.md) of scripts within PowerShell Universal. This is disabled by default as there is a memory impact when enabling profiling.&#x20;
