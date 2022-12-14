@@ -271,6 +271,29 @@ JSON Web Token configuration settings
 | Issuer     | The issuer that will be included in the token.   |
 | Audience   | The audience that will be included in the token. |
 
+### Secrets
+
+Options for configuring the default secret vaults.&#x20;
+
+**Default Value**
+
+```json
+"Secrets": {
+  "SecretStore": {
+    "Password": "PSUSecretStore"
+  },
+  "Database": {
+    "EncryptionKey": "=b0ywQA@VOSdr&R7an5g&XK6NVO%s4Tf"
+  }
+}
+```
+
+| Key                      | Description                                                                            |
+| ------------------------ | -------------------------------------------------------------------------------------- |
+| SecretStore \ Password   | The password for the PSUSecretStore vault. This uses the Microsoft SecretStore module. |
+| Database \ EncryptionKey | The AES 256 encryption key used to encrypt secrets stored in the database.             |
+|                          |                                                                                        |
+
 ### UniversalAutomation
 
 Settings for automation specific features.&#x20;
