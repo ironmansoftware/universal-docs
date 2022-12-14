@@ -258,7 +258,7 @@ JSON Web Token configuration settings
 **Default Value**
 
 ```javascript
-    "Jwt": {  
+"Jwt": {  
   "SigningKey": "PleaseUseYourOwnSigningKeyHere",  
   "Issuer": "IronmanSoftware",
   "Audience": "PowerShellUniversal"
@@ -270,6 +270,28 @@ JSON Web Token configuration settings
 | SigningKey | The signing key for the JWT tokens.              |
 | Issuer     | The issuer that will be included in the token.   |
 | Audience   | The audience that will be included in the token. |
+
+### UniversalAutomation
+
+Settings for automation specific features.&#x20;
+
+**Default Value**
+
+```json
+"UniversalAutomation": {
+    "Queues": [],
+    "JobHandshakeTimeout": 5,
+    "JobDebugging": false,
+    "ContinueJobOnServerStop": false
+  }
+```
+
+| Key                     | Description                                                                                                                                                    |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Queues                  | Custom queues that this PSU instance is a part of.                                                                                                             |
+| JobHandshakeTimeout     | The number of seconds to wait before failing a job after starting the PowerShell process to execute it if the process does not communicate back to the server. |
+| JobDebugging            | Whether to generate files in the temporary directory when starting job. This is useful for debugging if jobs are timing out before starting.                   |
+| ContinueJobOnServerStop | Whether to continue running a job after the service has stopped. Job progress will fail to be reported but the script will continue to run.                    |
 
 ### UniversalDashboard
 
