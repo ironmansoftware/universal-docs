@@ -4,6 +4,19 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.6.2 - 12/14/2022
+
+#### Dashboard
+
+* Fixed an issue with the dashboard editor height
+* Fixed an issue where error line numbers were incorrect
+
+#### Platform
+
+* Fixed an issue with nested IIS sites not displaying the admin console properly
+* Fixed a 404 error in the admin console when git manual edit mode is disabled
+* Fixed the order of operations when loading authentication methods to prevent startup issues
+
 ## 3.6.1 - 12/13/2022
 
 #### Dashboard
