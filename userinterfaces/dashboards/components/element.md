@@ -36,6 +36,19 @@ New-UDElement -Tag 'div' -Content { 'Hello' } -Attributes @{
 }
 ```
 
+You can wrap any component with New-UDElement and add an event handler.
+
+```powershell
+New-UDElement -Tag div -Content {
+    New-UDIcon -Icon "user"
+} -Attributes @{
+    onClick = {
+        Show-UDToast "Nice!"
+    }
+}
+```
+
+
 ## Auto Refreshing Elements
 
 You can define the `-AutoRefresh`, `-RefreshInterval` and `-Endpoint` parameters to create an element the refreshes on a certain interval. The below example creates an element that refreshes every second and displays the current time.
