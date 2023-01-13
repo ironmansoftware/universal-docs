@@ -305,7 +305,7 @@ Using `Get-Credential` will cause a dialog to show that accepts a username and p
 Get-Credential -UserName "adam"
 ```
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 ### Write-Progress
 

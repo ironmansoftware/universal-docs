@@ -73,6 +73,58 @@ Set-PSUAuthenticationMethod `
 }
 ```
 
+## Example: Azure AD
+
+You will need the following information from Azure AD.&#x20;
+
+Application (client) ID - Found on the Overview page.&#x20;
+
+Federation metadata document - Click Endpoints on the Overview page.&#x20;
+
+SAML-P sign-on endpoint - Click Endpoints on the Overview page.&#x20;
+
+### Step by Step
+
+Click Security \ Authentication.&#x20;
+
+Add SAML2 authentication provider.&#x20;
+
+Click the Edit Properties button.&#x20;
+
+For Entity ID, you will need to put the Azure AD application ID prefixed with `spn:`&#x20;
+
+For example: `spn:2cf33625-e312-4659-a7bd-66ade51a0ea2`
+
+For Identity Provider Entity ID, you will need to retrieve the entity ID from the Federation metadata document. Open the document in a web browser.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Entity ID Property</p></figcaption></figure>
+
+For Metadata Address, insert the Federation metadata document URL.
+
+For the Return URL, insert the URL of your PowerShell Universal server with the `/Saml/Acs` path.
+
+```
+https://localhost/Saml2/Acs
+```
+
+For Single Sign-On Service URL, insert the SAML-P sign-on endpoint from Azure.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption><p>SAML2 Properties</p></figcaption></figure>
+
+
+
+Once complete, save the settings and enable the SAML provider. Click sign out and navigate to your admin console URL.&#x20;
+
+```
+https://localhost/admin
+```
+
+You will be forwarded to Azure for login and redirected back to PowerShell Universal after authentication.&#x20;
+
+Any errors that occur will be listed in the PowerShell Universal log. If you fail to login, you can navigate to `/login` to login with a local account.
+
+### Ad
+
 ## Example: Okta
 
 This example shows how to configure Okta SAML2 authentication for use with PowerShell Universal.&#x20;

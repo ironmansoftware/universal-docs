@@ -90,7 +90,7 @@ Within the Azure Portal, you will need to create a new Web App resource. PowerSh
 If you choose a Windows hosting plan rather than a Linux hosting plan in Azure when configuring your WebApp then you need to choose a Basic Plan (B1) or higher to be able to use 64-bit apps. You also have to go to Settings > Configuration > General setting > Platform and select 64-bit before you run the `Publish-AzWebApp` command, or it will fail to install.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 **Startup Command (Linux Only)**
 
