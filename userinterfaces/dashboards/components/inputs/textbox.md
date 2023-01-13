@@ -119,6 +119,19 @@ New-UDTextbox -OnBlur {
 }
 ```
 
+## OnValidate
+
+Use the `-OnValidate` event handler to validate input typed in the textbox.
+
+```powershell
+New-UDTextbox -OnValidate {
+    if ($EventData.Length -lt 10)
+    {
+        New-UDValidationResult -Error 'String needs to be longer than 10'
+    }
+}
+```
+
 ## API
 
 [New-UDTextbox](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDTextbox.txt)

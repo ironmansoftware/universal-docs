@@ -160,6 +160,18 @@ You can redirect users to different pages using the `Invoke-UDRedirect` cmdlet. 
 Invoke-UDRedirect http://www.ironmansoftware.com
 ```
 
+`Invoke-UDRedirect` will automatically redirect to pages in the dashboard when using a relative path.&#x20;
+
+```powershell
+Invoke-UDRedirect '/page1' 
+```
+
+If you'd like to redirect to a local path outside of the dashboard, you can use the `-Native` parameter.&#x20;
+
+```powershell
+Invoke-UDRedirect '/publishedFolder/test.txt' -Native
+```
+
 #### API
 
 * [Invoke-UDRedirect](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Invoke-UDRedirect.txt)

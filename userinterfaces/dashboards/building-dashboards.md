@@ -1,4 +1,8 @@
-# Building Dashboards
+---
+description: Dashboards are the root component for your web page.
+---
+
+# Dashboards
 
 Dashboards can contain one or more pages. The simplest dashboard will contain a single page with some content. You can call any PowerShell cmdlet that is available on your machine to populate your dashboard.
 
@@ -91,4 +95,20 @@ You can use `Write-Debug` to add additional log messages to your dashboard. To e
 
 ```powershell
 $DebugPreference = 'Continue'
+```
+
+## Menu
+
+You can customize the dashboard menu by using the `-Menu` parameter.&#x20;
+
+```powershell
+New-UDDashboard -Title 'Dashboard' -Content {
+
+} -Menu {
+    New-UDMenuItem -Text 'Profile' -OnClick {
+        Show-UDModal -Content {
+            New-UDTypography -Text 'Welcome to your profile!'
+        }
+    }
+}
 ```

@@ -1,4 +1,18 @@
+---
+description: Security features of PowerShell Universal.
+---
+
 # Security
+
+## Local Accounts
+
+Local accounts are created and stored in the PowerShell Universal database. By default, credentials are stored in the local database vault.&#x20;
+
+To create a local account, you can navigate to Security \ Identities and create a new identity. Ensure that the Local Account switch is enabled and set a password.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+
+If you have a licensed instance of PowerShell Universal, you can use a different credential vault.&#x20;
 
 ## Forms Authentication
 
@@ -206,9 +220,22 @@ PowerShell Universal will cache group membership claims when using Windows Authe
 
 To clear the cache manually, navigate to Security \ Roles and click the Clear Cached Claims button.&#x20;
 
+## Browser Configuration
+
+Depending on your local environment, you may need to configure your browser to properly pass credentials to PowerShell Universal.&#x20;
+
+* [Google Chrome](https://chromeenterprise.google/policies/#HTTPAuthentication)
+* [Microsoft Edge](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies#http-authentication-policies)
+
 ## Authorization
 
 User authorization is accomplished with roles. Roles can either be assigned through claims mapping, a policy script or by assigning the role directly to the identity.
+
+{% hint style="info" %}
+By default, users will receive all roles when logging in. Multiple role assignments are valid in PowerShell Universal. While you configure roles, you can choose to disable roles you are not yet or do not plan to use.&#x20;
+
+Disabling the Administrators role will prevent you from making changes to roles within the Admin Console.&#x20;
+{% endhint %}
 
 ### Role to Claim Mapping
 
@@ -236,8 +263,14 @@ You can map an Azure Active Directory group to a role by looking up the group Ob
 
 Within PowerShell Universal, I can assign users of this group to the Administrator group by setting up the claim mapping. The Claim Type will be `groups` and the Claim Value will be `61849bf2-e44b-4057-b589-6cd1812d7545`. Once I have mapped the claim, users of the Dashboard Administrators group will be part of the PowerShell Universal Administrators group. The resulting `roles.ps1` will look like this.
 
+All other roles are disabled.&#x20;
+
 ```powershell
 New-PSURole -Name Administrator -ClaimType 'groups' -ClaimValue '61849bf2-e44b-4057-b589-6cd1812d7545'
+New-PSURole -Name "Operator" -Description "Operators have access to manage and execute scripts, create other entities within PowerShell Universal but cannot manage PowerShell Universal itself." -Policy {} -Disabled
+New-PSURole -Name "Reader" -Description "Readers have read-only access to PowerShell Universal. They cannot make changes to any entity within the system." -Policy { } -Disabled 
+New-PSURole -Name "Execute" -Description "Execute scripts within PowerShell Universal." -Policy { } -Disabled
+New-PSURole -Name "User" -Description "Does not have access to the admin console but can be assigned resources like APIs, scripts, dashboards and pages." -Policy { } -Disabled
 ```
 
 ### Policy Assignment

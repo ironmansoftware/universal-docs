@@ -29,6 +29,7 @@
   * [Parameters](automation/scripts/parameters.md)
 * [Jobs](automation/jobs.md)
 * [Schedules](automation/schedules.md)
+* [System Events](automation/system-events.md)
 * [Terminals](automation/terminals.md)
 * [Triggers](automation/triggers.md)
 * [Queues](automation/queues.md)
@@ -37,7 +38,7 @@
 
 * [About](userinterfaces/about.md)
 * [Dashboards](userinterfaces/dashboards/README.md)
-  * [Building Dashboards](userinterfaces/dashboards/building-dashboards.md)
+  * [Dashboards](userinterfaces/dashboards/building-dashboards.md)
   * [Examples](userinterfaces/dashboards/examples.md)
   * [Components](userinterfaces/dashboards/components/README.md)
     * [Pages](userinterfaces/dashboards/components/pages.md)
@@ -46,7 +47,7 @@
     * [Error Boundary](userinterfaces/dashboards/components/error-boundary.md)
     * [HTML](userinterfaces/dashboards/components/html.md)
     * [Custom Components](userinterfaces/dashboards/components/custom-components/README.md)
-      * [Building Custom JavaScript  Components](userinterfaces/dashboards/components/custom-components/building-custom-components.md)
+      * [Building Custom JavaScript Components](userinterfaces/dashboards/components/custom-components/building-custom-components.md)
     * [Data Display](userinterfaces/dashboards/components/data-display/README.md)
       * [Alert](userinterfaces/dashboards/components/data-display/alert.md)
       * [Badge](userinterfaces/dashboards/components/data-display/badge.md)
@@ -138,7 +139,6 @@
 * [Hotkeys](desktop/hotkeys.md)
 * [Pages](desktop/pages.md)
 * [Protocol Handlers](desktop/protocol-handlers.md)
-* [System Events](desktop/system-events.md)
 
 ## Platform
 
@@ -155,6 +155,7 @@
 
 * [About](config/about.md)
 * [API](config/api.md)
+* [Command Line Options](config/command-line-options.md)
 * [Environments](config/environments.md)
 * [Feature Flags](config/feature-flags.md)
 * [Git](config/git.md)

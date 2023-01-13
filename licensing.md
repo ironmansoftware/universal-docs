@@ -1,8 +1,12 @@
+---
+description: Licensing options for PowerShell Universal
+---
+
 # Licensing
 
 PowerShell Universal is licensed per server. We provide licenses for individuals and organizations.
 
-You can purchase a license on [our website](https://store.ironmansoftware.com/pricing/powershell-universal).&#x20;
+You can purchase a license on [our website](https://ironmansoftware.com/pricing/powershell-universal).&#x20;
 
 ## What's a server?&#x20;
 
@@ -30,33 +34,24 @@ You can generate a developer license on the Settings \ License page by clicking 
 
 ![Generate Developer License](<.gitbook/assets/image (316).png>)
 
-## Free Use Restrictions
+## Licensed Features
 
-Universal can be used forever for free with the following limitations.
+The following features of PowerShell Universal require a license.&#x20;
 
-### API
-
-* No authentication
-* No Rate Limiting
-
-### Automation
-
-* 2 concurrent jobs
-* No Triggers
-* No Terminals
-
-### Dashboards
-
-* No authentication
-* No access to diagnostic tools
-
-### Pages
-
-* No authentication
-* No variables
-
-### Platform
-
-* No debugging tools
-* No SQL Server Support
+* Debugging Tools
+* Enterprise Authentication
+  * OpenID Connect
+  * SAML2
+  * WS-Federation
+  * Windows Authentication
+  * Custom Authentication Scripts
+* Enterprise Authorization
+  * Access Controls
+  * Custom Authorization Scripts
+* Git Support
+* Module Management
+* Non-Database Credential Vaults
+* SQL Support
+* Triggers
+* Terminals
 

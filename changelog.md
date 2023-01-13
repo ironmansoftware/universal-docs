@@ -4,6 +4,216 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.7.4 - 1/13/2023
+
+#### APIs
+
+* Fixed a concurrency issue that could cause APIs to fail to load on startup
+* Fixed an issue where swagger documentation would not be generated if endpoints were missing tags
+
+#### Dashboards
+
+* Fixed an issue where focus text labels were hard to see in dark mode in Ant Design theme
+* Fixed an issue where scrollbar thumbs were not visible unless hoverd in Ant Design theme
+* Fixed issue where vertical tabs would not be visible in dark mode with Ant Design theme
+
+#### Platform
+
+* Fixed an issue where rate limits couldn't be created in the admin console
+* Added --reset-admin-account command line parameter
+
+## 3.7.3 - 1/12/2023
+
+#### API
+
+* Fixed an issue where the default tag would always show in swagger docs
+
+#### Platform
+
+* Fixed an issue where the git commit dialog would reset after 5 seconds (manual git mode)
+* Fixed an issue where nested IIS sites could not import templates
+* Fixed an issue where the default authentication warning was shown even if the local admin password was changed
+
+## 3.7.2 - 1/11/2023
+
+{% hint style="info" %}
+This release contains a security patch for [CVE-2023-21538](https://blog.ironmansoftware.com/cve-2023-21538/).
+{% endhint %}
+
+#### Automation
+
+* Fixed an issue where system events would be visible for users with access controls
+* Fixed an issue where users with access controls could see all folders
+* Sort folders alphabetically
+* Fixed an issue where users with access controls wouldn't have a nested folders view
+* Fixed an issue where the jobs table would always return the same values when using SQL
+
+#### Dashboards
+
+* Fixed a link in the demo dashboard
+* Fixed an issue with the Textbox page on the demo dashboard
+* Fixed an issue where disabled text fields were hard to read in Ant Design
+
+#### Platform
+
+* Fixed the documentation link in the translations page
+* Updated .NET Runtime to account for CVE-2023-21538
+* Fixed an issue where an account lock out could occur after an upgrade
+* Fixed an issue where updating a local account with setting a password would clear the password
+* Fixed an issue where published folders wouldn't return file names that match the public folder request path
+* Reverted a change that defaulted administrator role policy to false
+
+## 3.6.5 - 1/11/2023&#x20;
+
+* Updated .NET Runtime to account for CVE-2023-21538
+
+## 3.7.1 - 1/10/2023
+
+{% hint style="warning" %}
+There is a known issue with account lockout with this version. [Learn more](https://support.ironmansoftware.com/portal/en/kb/articles/kb0022-unable-to-login-after-upgrading-to-powershell-universal-3-7-1).
+{% endhint %}
+
+#### API
+
+* Fixed an issue with API schemas.
+
+#### Platform
+
+* Fixed an issue where the Demo mode dashboard would not work on Unix
+* Fixed an issue with the MSI installer
+
+## 3.7.0 - 1/10/2023
+
+#### APIs
+
+* Fixe an issue where swagger documentation wouldn't work when endpoints used the -Path parameter
+* Fixed an issue where scripts with only comments in them could cause Swagger documentation to fail to generate
+* Fixed an issue where tags were not sorted properly in swagger documentation
+
+#### Automation
+
+* Add support for System Events in server mode
+* Fixed issue with trigger schedule button and hangfire link in nested IIS sites
+* Added support for Read-Host and Write-Progress in Invoke-PSUScript
+* Fixed an issue where PSCredential secrets would not work outside the integrated environment
+* Fixed an issue where terminals would not output properly on Unix machines
+
+#### Dashboards
+
+* Added support for New-UDAutocompleteOption
+* Added $Page scope for variables
+* AntDesign is now the default theme for dashboards.
+* Added component dashboard template
+* Fixed an issue where HTML would be returned when sessions timed out.
+* OnRowSelection for New-UDTable now returns all rows when selecting all and using -Data
+* Added -MinWidth to New-UDTableColumn
+* Added -RemoveCard to New-UDTable
+* Added -Switch to New-UDListItem
+* Added -Icon to New-UDUpload
+* Fixed an issue where $EventData wasn't populated in attributes event handlers in New-UDElement
+* Added Clear Log button to admin console
+* Added Italian to -Locale for New-UDDatePicker and New-UDTimePicker
+* Added -OnValidate to New-UDTextbox
+* Fixed an issue where creating a page with roles in the admin console would not work
+* Added -Script and -OutputType to New-UDForm
+* Improved error location information
+* Fixed icon animations in New-UDIcon
+* Fixed an issue where -RenderOnActive would not work in New-UDDynamic
+* Added -Url to Start-UDDownload
+* Fixed an issue where a permanent nav bar would collapse when clicking in the dashboard
+* Fixed an issue where a temporary nav bar wouldn't collapse when clicking in the dashboard
+* Added styling to the currently active nav bar list item
+* Added -Native to Invoke-UDRedirect
+* Removed New-UDCardToolbar
+* Added -Sx, -Variant and -Content to New-UDAvatar
+* Added -Sx to New-UDCard
+* Added New-UDAvatarGroup
+* Added support for 'number', 'time', 'datetime-local', 'date', 'color', 'month', 'week' to -Type on New-UDTextbox
+* Added -OnClick to New-UDMenuItem
+* Added -Menu to New-UDDashboard
+* Fixed an issue where -ToolbarContent would show anything if it was the only thing specified on New-UDTable
+* Fixed an issue where themes could cause a double scrollbar.
+* Fixed an issue where pages would not load properly on restart
+* UDModal now defaults to medium size
+* Fixed an issue with UDForm formatting
+
+#### Platform
+
+* Added support for deleting computers
+* Added support for local accounts.
+* Added logout support for non-Form based logins
+* Removed license requirement for authentication
+* Added license requirement to configure roles
+* Added license requirement to use non-local accounts
+* Added support for PSUHeader and PSUFooter regions in configuration scripts.
+* universal:latest docker image is now Ubuntu 20.04 and PowerShell 7.3
+* Fixed an issue where --appsettings would not override the ProgramData app settings file.
+* Added Fullscreen button to editors in the admin console
+* Improved IntelliSense in editors in the admin console
+* Fixed an issue where options intended to be hidden during creation of resources were visible.
+* Improved the manual git sync Discard Changes button.
+* Improved performance of git sync status pruning
+* Added support for Azure AD Managed Identity auth for Azure SQL
+* Fixed an issue where -Integrated would not work with New-PSUVariable or New-PSUIdentity
+* Improved usability of the Authentication page in the admin console
+* Prevented the disabling of forms authentication to provide a fallback in case of misconfiguration
+* Fixed an issue where mixing appsettings.json and authentication.ps1 methods of the same type could result in invalid auth configuration
+* Editors in admin console now check syntax before saving.
+* Updated the Demo dashboard
+* Custom vaults now require a license.
+
+## 3.6.4 - 12/30/2022
+
+#### Dashboards
+
+* Fixed an issue where $IdToken wouldn't be set in dashboards when using OpenID Connect
+* Fixed an issue where New-UDElement endpoints would not be registered correctly.
+* Fixed an issue where endpoints wouldn't be cleaned up properly and would leak memory
+
+## 3.6.3 - 12/23/2022
+
+#### APIs
+
+* Fixed an issue with the API editor's height
+* Fixed an issue where $ClaimPrincipal would not be populated when using app tokens.
+
+#### Automation
+
+* Fixed an issue where triggered scripts couldn't run when DisableManualInvocation was enabled
+* Fixed an issue where Computer was not set to Any in the schedule edit dialog
+* Fixed an issue where custom roles with access controls could not run scripts
+
+#### Dashboard
+
+* Fixed an issue where adding a new page wouldn't show that page in the admin console
+* Fixed an issue where the dashboard terminal would not work on a nested site
+* Fixed an issue where -OnExport in New-UDDataGrid received data rather than the query options.
+* Fixed an issue where hiding columns would not work in New-UDDataGrid
+* Fixed an issue where form state would not be saved when using -OnProcessing
+* Fixed an issue where elements would stop responding when having multiple tabs of the same dashboard open
+* Fixed an issue where events would be broadcast across pages when using a query string parameter
+
+#### Pages
+
+* Fixed an issue where you couldn't search for icons
+* Fixed an issue where you couldn't clear icons
+
+#### Platform
+
+* Fixed an issue where the git settings modal would always display Use Database as enabled
+* Fixed an issue where an error would be show when attempting to create a configuration file in a nested IIS site
+* Fixed an issue where enablind maintenance mode for a computer wouldn't do anything
+* Fixed an issue where saving configuration files to directly would not always update the resource
+* Fixed an issue where breakpoints weren't removed when a process was stopped
+* Fixed an issue where modules in the Repository\Modules folder would not be shown after restart in the modules page
+* Updated to PowerShellGet 3.0.17
+* Fixed an issue where git sync could throw a SQL error and fail to record the sync
+* Fixed an issue where the Run As link would not work in a nested IIS
+* Improved git sync error handling for when local and remote git repos have changes
+* Fixed an issue where git sync would fail to load changes on linux
+* Fixed an issue where git sync would fail if there were no local changes but the node had previously sync'd (primarily with docker containers)
+* Fixed an issue where git manual mode would not resync after discarding changes
+
 ## 3.6.2 - 12/14/2022
 
 #### Dashboard

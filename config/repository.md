@@ -235,3 +235,29 @@ $Env:Data__ConfigurationScript = "customScript.ps1"
 {% endcode %}
 
 You can chose to return items such as endpoints, scripts or dashboards from the script. Additionally, you can use this script to configure resources like modules and secret vaults before the system is started. The custom configuration script is run before any other configuration scripts.&#x20;
+
+## Read-Only Configuration Sections
+
+Read-Only sections allow you to include script in your configuration files that will not be touched by changes in the admin console. This allows you to run additional logic, generate resources dynamically and create classes for use in OpenAPI schemas.&#x20;
+
+The `PSUHeader` region is placed at the top of your script. `PSUFooter` is placed at the bottom.
+
+```powershell
+#region PSUHeader 
+
+1..100 | ForEach-Object {
+    New-PSUEndpoint -Url "/endpoint/$_" -Endpoint {
+
+    }
+}
+
+#endregion
+
+New-PSUEndpoint -Url "/user" -Endpoint {
+
+}
+
+#region PSUFooter
+#endregion
+```
+

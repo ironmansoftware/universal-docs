@@ -4,12 +4,6 @@ description: Code editor component for Universal Dashboard.
 
 # Code Editor
 
-{% hint style="info" %}
-To use a code editor within your dashboard, you will need to add the UniversalDashboard.CodeEditor component.
-
-[Learn more about adding custom component libraries](../../#adding-custom-component-libraries)
-{% endhint %}
-
 The code editor component allows you to host the [Microsoft Monaco ](https://microsoft.github.io/monaco-editor/)editor within your dashboards.
 
 ## Creating a Code Editor

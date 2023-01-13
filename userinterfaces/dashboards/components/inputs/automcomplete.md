@@ -58,6 +58,18 @@ New-UDAutocomplete -Options @("Test", "No", "Yes") -onEnter {
 } -Id 'ac'
 ```
 
+## Options
+
+You can use `New-UDAutoCompleteOption` to specify name and values.&#x20;
+
+```powershell
+New-UDAutocomplete -Options @(
+    New-UDAutoCompleteOption -Name 'Adam D' -Value '1'
+    New-UDAutoCompleteOption -Name 'Sarah F' -Value '2'
+    New-UDAutoCompleteOption -Name 'Tom S' -Value '3'
+)
+```
+
 ## API
 
 * [New-UDAutocomplete](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDAutocomplete.txt)

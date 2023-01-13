@@ -12,7 +12,7 @@ This document will outline the steps necessary to configure AzureAD OpenID Conne
 
 Within the Azure Portal, navigate to your Azure Active Directory blade. Next, click the App registrations node and then click New registration.
 
-![](<../../.gitbook/assets/image (31) (1).png>)
+![](<../../.gitbook/assets/image (31).png>)
 
 In the New registration page, enter the name of your application and the reply URL. The URL can be configured in the `appsettings.json` for Universal but the default value is shown below.
 
@@ -28,7 +28,7 @@ Now, you will need to take note of your Application (client) ID GUID. This will 
 
 Finally, you will have to click the Endpoints button to open the Endpoints drawer. This contains a list of the endpoints. Make note of the OAuth 2.0 authorization endpoint URL. You will need this for the `appsettings.json`. Note that you will not input the entire endpoint URL. You will need to include the portion of the URL through the GUID but without the path after oauth2 in the Authority setting below (e.g. [https://login.microsoftonline.com/fffffff-4b76-4470-a736-8481d7a2ed87](https://login.microsoftonline.com/fffffff-4b76-4470-a736-8481d7a2ed87)).
 
-![](<../../.gitbook/assets/image (29).png>)
+![](<../../.gitbook/assets/image (29) (1).png>)
 
 
 

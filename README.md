@@ -6,7 +6,7 @@ description: >-
 
 # About
 
-<figure><img src=".gitbook/assets/image (23).png" alt=""><figcaption><p>PowerShell Universal Admin Console</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>PowerShell Universal Admin Console</p></figcaption></figure>
 
 A single pane of glass for managing and delegating access to your automation environment.
 
@@ -16,7 +16,7 @@ Universal provides an Administrator console, management REST API, PowerShell cmd
 
 Expose scripts as RESTful HTTP APIs for integration from any platform.
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>Execute PowerShell with HTTP</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (23).png" alt=""><figcaption><p>Execute PowerShell with HTTP</p></figcaption></figure>
 
 * [HTTP Endpoints](https://docs.powershelluniversal.com/api/endpoints)
 * [Custom Responses](https://docs.powershelluniversal.com/api/endpoints#returning-custom-responses)
@@ -30,7 +30,7 @@ Expose scripts as RESTful HTTP APIs for integration from any platform.
 
 Execute, schedule, secure and audit scripts in an easy-to-use, web-interface.
 
-<figure><img src=".gitbook/assets/image (5) (3).png" alt=""><figcaption><p>Run PowerShell Scripts</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (20).png" alt=""><figcaption><p>Run PowerShell Scripts</p></figcaption></figure>
 
 * [Scheduling](https://docs.powershelluniversal.com/automation/schedules)
 * [Run As Support](https://docs.powershelluniversal.com/automation/scripts#running-a-script-as-another-user)
@@ -76,7 +76,7 @@ PowerShell Universal is cross-platform and can be hosted on-premise, in the clou
 
 Grant role-based access to different aspects of your automation environment with your choice of authentication and authorization integrations.
 
-<figure><img src=".gitbook/assets/image (8).png" alt=""><figcaption><p>Security Settings</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (8) (3).png" alt=""><figcaption><p>Security Settings</p></figcaption></figure>
 
 * [OpenID Connect](https://docs.powershelluniversal.com/config/security/openid-connect)
 * [WS-Federation](https://docs.powershelluniversal.com/config/security/ws-federation)
@@ -103,7 +103,7 @@ Create desktop automation and user interfaces that integrate with features of Wi
 
 Take advantage of rich development tools such as IntelliSense, code formatting, error checking and debugger integration without leaving your browser.
 
-<figure><img src=".gitbook/assets/image (7).png" alt=""><figcaption><p>Development Tools in PowerShell Universal</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (417).png" alt=""><figcaption><p>Development Tools in PowerShell Universal</p></figcaption></figure>
 
 * [Rich Editing Experience](https://docs.powershelluniversal.com/platform/editor)
 * [Code-First Configuration](https://docs.powershelluniversal.com/config/repository)
@@ -142,24 +142,7 @@ Join the growing community of users managing their automation environments with 
 
 ## Licensing&#x20;
 
-Universal is licensed per feature and per server. You do not need to buy the entire platform if you would like to use a single piece of functionality. Visit our [website for more information ](https://ironmansoftware.com/powershell-universal/)on pricing.&#x20;
+Universal is licensed per server. Visit our [website for more information ](https://ironmansoftware.com/powershell-universal/)on pricing.&#x20;
 
-## Free to Use
+Many features of PowerShell Universal are [free](licensing.md#licensed-features).&#x20;
 
-Universal offers a lot of functionality for free. Below is a list of the features that require a paid license.&#x20;
-
-### API
-
-You can run as many APIs are you want for free. You will need to purchase a license if you would like to enable authentication, authorization and rate limiting.&#x20;
-
-### Automation&#x20;
-
-You will need a license to use [triggers ](automation/triggers.md)and [terminals](automation/terminals.md).
-
-### Dashboard&#x20;
-
-You will need a license to enable authentication and role-based access, utilize debugging tools and diagnostics.&#x20;
-
-### Platform
-
-You will need a license to take advantage of SQL server persistence and git synchronization.&#x20;

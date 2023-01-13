@@ -277,6 +277,16 @@ New-UDForm -Schema @{
 }
 ```
 
+## Script Forms
+
+You can automatically generate forms based on scripts in your PowerShell Universal environment. Script forms will generate input components based on the `param` block. Script forms automatically support progress and feedback.&#x20;
+
+Script forms also support displaying the output as text or a table.&#x20;
+
+```powershell
+New-UDForm -Script "Script.ps1" -OutputType 'text'
+```
+
 ## API
 
 * [New-UDForm](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDForm.txt)

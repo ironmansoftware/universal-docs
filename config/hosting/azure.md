@@ -84,11 +84,23 @@ For more information, you can read this blog post from the [Microsoft](https://d
 
 ### Manually Creating a Web App
 
-Within the the Azure Portal, you will need to create a new Web App resource. PowerShell Universal currently requires the .NET 5 runtime stack. You can use either Linux or Windows.
+Within the Azure Portal, you will need to create a new Web App resource. PowerShell Universal currently requires the .NET 6 runtime stack. You can use either Linux or Windows.
 
-![](<../../.gitbook/assets/image (398).png>)
+{% hint style="info" %}
+If you choose a Windows hosting plan rather than a Linux hosting plan in Azure when configuring your WebApp then you need to choose a Basic Plan (B1) or higher to be able to use 64-bit apps. You also have to go to Settings > Configuration > General setting > Platform and select 64-bit before you run the `Publish-AzWebApp` command, or it will fail to install.
+{% endhint %}
 
-In this example, we'll use the Azure PowerShell module to deploy the Web App manually.
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+**Startup Command (Linux Only)**
+
+When hosting in a Linux environment, you will need to set the startup command under Settings \ Configuration \ General Settings \ Startup Command to the following.&#x20;
+
+```
+dotnet Universal.Server.dll
+```
+
+In the below example, we'll use the Azure PowerShell module to deploy the Web App manually.
 
 You'll first need to install Azure PowerShell.
 
@@ -102,11 +114,22 @@ Once installed, you'll need to connect to your subscription.
 Connect-AzAccount
 ```
 
-Now, you can download the latest version of PowerShell Universal. In this example, we'll download the latest Windows version.
+### Deploy Windows Files
+
+If you are using Windows, you will need to download the Windows ZIP file. This will download the latest version of PowerShell Universal.
 
 ```powershell
-$LatestVersion = Invoke-RestMethod https://imsreleases.blob.core.windows.net/universal/production/version.txt
+$LatestVersion = Invoke-RestMethod https://imsreleases.blob.core.windows.net/universal/production/v3-version.txt
 Invoke-WebRequest "https://imsreleases.blob.core.windows.net/universal/production/$LatestVersion/Universal.win7-x64.$LatestVersion.zip" -OutFile .\Universal.zip
+```
+
+### Deploy Linux Files
+
+If you are using Linux, you will need to download the Linux ZIP file. This will download the latest version fo PowerShell Universal.&#x20;
+
+```powershell
+$LatestVersion = Invoke-RestMethod https://imsreleases.blob.core.windows.net/universal/production/v3-version.txt
+Invoke-WebRequest "https://imsreleases.blob.core.windows.net/universal/production/$LatestVersion/Universal.linux-x64.$LatestVersion.zip" -OutFile .\Universal.zip
 ```
 
 Now that we have the Az module configured and the Universal ZIP downloaded, we can deploy the Web App.
@@ -114,59 +137,22 @@ Now that we have the Az module configured and the Universal ZIP downloaded, we c
 ```powershell
 $Parameters = @{
     Force = $true
-    ResourceGroupName = 'psu-demo'
-    Name = 'psudemo'
+    ResourceGroupName = 'psudemo2_group'
+    Name = 'psudemo2'
     ArchivePath = '.\Universal.zip'
 }
 Publish-AzWebApp @Parameters
 ```
 
-After publishing the Web App, view your PowerShell Universal instance by navigating to the Web App's URL.
-
-#### Persistent Storage
-
-The default `appsettings.json` file will store the database and configuration files in a non-persistent location. You can add environment variables to move them to persistent storage within your web app.
-
-**Data\_\_ConnectionString**
-
-The `Data__ConnectionString` environment variable sets the location of the database. You will have to ensure that you enable a "shared" connection for LiteDB to function properly in Azure. Set the value to the following.
-
-```
-filename=D:\home\Data\PowerShellUniversal\database.db;Connection=shared
-```
-
-**Data\_\_RepositoryPath**
-
-The `Data__RepositoryPath` environment variable sets the location of the configuration files for Universal. Set the value to the following.
-
-```
-D:\home\Data\PowerShellUniversal\Repository
-```
-
-### Updating your Web App
-
-When a new version of PowerShell Universal is released, you will need to update the application files for your Web App. We recommend removing the application directory and redeploying the files. The database and configuration files are not stored in the application directory.
-
-You can delete the files for your Web App by using the Kudu command API. Your Kudu credentials use Basic authentication and are the same as your [deployment credentials](https://github.com/projectkudu/kudu/wiki/Deployment-credentials).
-
-To delete all the files in your Web App, issue the following command.
-
-```powershell
-$Parameters = @{
-   Uri = "https://psudemo.scm.azurewebsites.net/api/command"
-   Credential = (Get-Credential)
-   Body = (@{
-      command = "rd /s /q D:\home\site\wwwroot"
-      dir = "D:\home\site\wwwroot"
-   } | ConvertTo-Json)
-}
-
-Invoke-RestMethod @Parameters
-```
-
-Once you've delete the application files, you can redeploy them by running the manual creation steps again.
+{% hint style="info" %}
+You can check in Azure under Deployment Center > Logs for Status Success (Active) to ensure files deployed / installed successfully.
+{% endhint %}
 
 ### Setting Adjustments Required
+
+These settings can be set within the Configuration tab within the Application settings.
+
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 #### JWT Signing Key
 
@@ -207,3 +193,62 @@ The API URL should be the external HTTP address of your Web App. You can update 
 ```
 $Env:Api__Url = "https://psudemo.azurewebsites.net"
 ```
+
+#### NodeName
+
+You can set the name of the PowerShell Universal instance by specifying the NodeName. This will ensure that restarts will not affect the PowerShell Universal database.  This is not required for LiteDB installations.&#x20;
+
+```
+$Env:NodeName = "psuazure"
+```
+
+#### PORT and WEBSITES\_PORT (Linux Only)
+
+To override the default port in a Linux web app, you need to set the PORT and WEBSITES\_PORT setting to 5000.&#x20;
+
+After publishing the Web App, view your PowerShell Universal instance by navigating to the Web App's URL.
+
+#### Persistent Storage
+
+The default `appsettings.json` file will store the database and configuration files in a non-persistent location. You can add environment variables to move them to persistent storage within your web app.
+
+**Data\_\_ConnectionString**
+
+The `Data__ConnectionString` environment variable sets the location of the database. You will have to ensure that you enable a "shared" connection for LiteDB to function properly in Azure. Set the value to the following.
+
+```
+filename=D:\home\Data\PowerShellUniversal\database.db;Connection=shared
+```
+
+**Data\_\_RepositoryPath**
+
+The `Data__RepositoryPath` environment variable sets the location of the configuration files for Universal. Set the value to the following.
+
+```
+D:\home\Data\PowerShellUniversal\Repository
+```
+
+### Updating your Web App
+
+When a new version of PowerShell Universal is released, you will need to update the application files for your Web App. We recommend removing the application directory and redeploying the files. The database and configuration files are not stored in the application directory.
+
+You can delete the files for your Web App by using the Kudu command API. Your Kudu credentials use Basic authentication and are the same as your [deployment credentials](https://github.com/projectkudu/kudu/wiki/Deployment-credentials).
+
+To delete all the files in your Web App, issue the following command.
+
+```powershell
+$Parameters = @{
+   Uri = "https://psudemo2.scm.azurewebsites.net/api/command"
+   Credential = (Get-Credential)
+   Body = (@{
+      command = "rd /s /q D:\home\site\wwwroot"
+      dir = "D:\home\site\wwwroot"
+   } | ConvertTo-Json)
+}
+
+Invoke-RestMethod @Parameters
+```
+
+Once you've delete the application files, you can redeploy them by running the manual creation steps again.
+
+###

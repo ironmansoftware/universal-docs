@@ -22,6 +22,23 @@ New-UDMonitor -Title Computers -Endpoint {
 }
 ```
 
+### Page Scope&#x20;
+
+Page scope stores variables in per browser tab or window. If a new tab is opened or the current one is closed, the state will be removed.
+
+```powershell
+New-UDForm -Content {
+    New-UDTextbox -Id 'Name'
+} -OnSubmit {
+    $Page:Name = $EventData.Name
+    Sync-UDElement -Id 'Name'
+}
+
+New-UDDynamic -Content {
+    New-UDTypography $Page:Name
+}
+```
+
 ### Session Scope
 
 Session scope is used to store a variable per session. A session is established when a user's browser first visit a dashboard. A cookie is stored in the user's browser that dictates that it is part of the session. Sessions have an idle timeout of 25 minutes.

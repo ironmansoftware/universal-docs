@@ -54,7 +54,7 @@ chmod +x ./PSU/Universal.Server
 
 ## Open PowerShell Universal
 
-By default, PowerShell Universal is running on port 5000 of localhost. You can access the admin console with the user name `admin` and any password.
+By default, PowerShell Universal is running on port 5000 of localhost. You can access the admin console with the username `admin` and `admin`.
 
 ![](<.gitbook/assets/image (288).png>)
 

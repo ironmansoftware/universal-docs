@@ -25,49 +25,35 @@ New-UDCard -Title 'Simple Card' -Content {
 You can use the body, header, footer and expand cmdlets to create advanced cards. The below example creates a card with various features based on a Hyper-V VM.
 
 ```powershell
-$VM = Get-VM -Name $VMName @ConnectionInfo
-
-$Header = New-UDCardHeader -Title $VM.Name
-
-$Footer = New-UDCardFooter -Content {
-    if ($VM.State -eq 'Running')
-    {
-        New-UDButton -Variant text -Text 'Stop' -OnClick {
-            Show-UDToast -Message 'Stopping VM...' -Duration 5000
-            Stop-VM -VMName $VM.name @ConnectionInfo 
-            Sync-UDElement -Id "$($VMName)_card"
-        }
-    } else {
-        New-UDButton -Variant text -Text 'Start' -OnClick {
-            Show-UDToast -Message 'Starting VM...' -Duration 5000
-            Start-VM -VMName $VM.name @ConnectionInfo 
-            Sync-UDElement -Id "$($VMName)_card"
-        }
-    }
-
-}
-
+$Header = New-UDCardHeader -Avatar (New-UDAvatar -Content { "R" } -Sx @{ backgroundColor = "#f44336" }) -Action (New-UDIconButton -Icon (New-UDIcon -Icon 'EllipsisVertical')) -Title 'Shrimp and Chorizo Paella' -SubHeader 'September 14, 2016';
+$Media = New-UDCardMedia -Image 'https://mui.com/static/images/cards/paella.jpg'
 $Body = New-UDCardBody -Content {
-    New-UDTable -Data ($VM | Select-Object Name, State, CPUUsage, MemoryAssigned, Uptime)  -Dense 
+    New-UDTypography -Text ' This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.' -Sx @{
+        color = 'text.secondary'
+    } -Variant body2
 }
-
+$Footer = New-UDCardFooter -Content {
+    New-UDIconButton -Icon (New-UDIcon -Icon 'Heart')
+    New-UDIconButton -Icon (New-UDIcon -Icon 'ShareAlt')
+}
 $Expand = New-UDCardExpand -Content {
-    New-UDElement -Tag 'div' -Content {
-        New-UDTable -Data ($VM.DvdDrives | Select-Object Name, DvdMediaType, Path) -Title 'DVD Drives' -Dense
-    } 
-
-    $Drives = Get-VMHardDiskDrive -VMName $VM.Name @ConnectionInfo | Select-Object Name, Path
-    New-UDTable -Data $Drives -Title 'Hard Disk Drives' -Dense
-
-    New-UDTable -Data ($VM.NetworkAdapters | Select-Object 'SwitchName', 'MacAddress' ) -Dense -Title 'Network Adapters' 
+    $Description = @"
+    Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over
+    medium-high heat. Add chicken, shrimp and chorizo, and cook, stirring
+    occasionally until lightly browned, 6 to 8 minutes. Transfer shrimp to a
+    large plate and set aside, leaving chicken and chorizo in the pan. Add
+    pimentón, bay leaves, garlic, tomatoes, onion, salt and pepper, and cook,
+    stirring often until thickened and fragrant, about 10 minutes. Add
+    saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
+    New-UDTypography -Text $Description
 }
-
-New-UDStyle -Style '.ud-mu-cardexpand { display: block !important }' -Content {
-    New-UDCard -Body $Body -Header $Header -Footer $Footer -Expand $Expand
+New-UDCard -Header $Header -Media $Media -Body $Body -Footer $Footer -Expand $Expand -Sx @{
+    maxWidth = 345
+    border   = '2px solid #f0f2f5'
 }
 ```
 
-![Expandable Card](<../../../../.gitbook/assets/image (221).png>)
+<figure><img src="../../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
 
 ## API
 
@@ -77,4 +63,3 @@ New-UDStyle -Style '.ud-mu-cardexpand { display: block !important }' -Content {
 * [New-UDCardFooter](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDCardFooter.txt)
 * [New-UDCardHeader](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDCardHeader.txt)
 * [New-UDCardMedia](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDCardMedia.txt)
-* [New-UDCardToolbar](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDCardToolbar.txt)
