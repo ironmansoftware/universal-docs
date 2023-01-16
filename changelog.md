@@ -4,6 +4,23 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.7.5 - 1/16/2023
+
+#### Dashboard
+
+* Fixed an issue where checkboxes in UDTables in dark mode would disappear when checked
+* Fixed an issue where pages created in the admin console would have empty navigation
+* Fixed an issue with the data grid filter dropdown
+* Fixed an issue where authenticated dashboards wouldn't redirect to the login page
+* Fixed an issue where UDDataGrid did not match the admin console
+* Fixed an issue where UDListItem would appear clickable when it wasn't
+
+#### Platform
+
+* Fixed an issue where the local admin password would reset during service restart in certain circumstances
+* Fixed an issue with --reset-admin-acount
+* Fixed an issue where the swagger page wouldn't redirect to the login page
+
 ## 3.7.4 - 1/13/2023
 
 #### APIs
