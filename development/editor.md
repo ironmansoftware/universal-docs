@@ -23,12 +23,6 @@ It does not rely on a configured environment to function. It runs within the Pow
 Modules provided with PowerShell Universal are automatically included. You will see IntelliSense for the following modules.&#x20;
 
 * Universal
-* UniversalDashboard
-* UniversalDashboard.Charts
-* UniversalDashboard.CodeEditor
-* UniversalDashboard.Editor
-* UniversalDashboard.Map
-* UniversalDashboard.Style
 
 **Modules included in PSModulePath are Available**
 

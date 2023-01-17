@@ -293,8 +293,21 @@ Options for configuring the default secret vaults.&#x20;
 | Key                      | Description                                                                            |
 | ------------------------ | -------------------------------------------------------------------------------------- |
 | SecretStore \ Password   | The password for the PSUSecretStore vault. This uses the Microsoft SecretStore module. |
-| Database \ EncryptionKey | The AES 256 encryption key used to encrypt secrets stored in the database.             |
+| Database \ EncryptionKey | The AES 128 encryption key used to encrypt secrets stored in the database.             |
 |                          |                                                                                        |
+
+#### Generating an Encryption Key
+
+Encryption keys are 128-bit and require the proper length. They are encoded as a base64 string and converted to bytes on startup.
+
+You can use the following code to generate a secret key of the proper length.&#x20;
+
+```powershell
+$random = [System.Security.Cryptography.RandomNumberGenerator]::Create();
+$buffer = New-Object byte[] 16;
+$random.GetBytes($buffer);
+[Convert]::ToBase64String($buffer)
+```
 
 ### UniversalAutomation
 
