@@ -4,6 +4,10 @@ description: Git integration for PowerShell Universal.
 
 # Git
 
+{% hint style="info" %}
+Git integration requires a [license](https://ironmansoftware.com/pricing/powershell-universal).
+{% endhint %}
+
 PowerShell Universal is capable of synchronizing the configuration scripts with a remote git repository.&#x20;
 
 ## Configuration

@@ -4,6 +4,10 @@ description: Configure OpenID Connect with Universal.
 
 # OpenID Connect
 
+{% hint style="info" %}
+OpenID Connect requires a [license](https://ironmansoftware.com/pricing/powershell-universal).
+{% endhint %}
+
 OpenID Connect is an authentication layer on top of OAuth 2.0, an authorization framework. It is supported by many vendors and provides the ability to authenticate against systems like AzureAD.
 
 This document will outline the steps necessary to configure AzureAD OpenID Connect and use it with Universal.

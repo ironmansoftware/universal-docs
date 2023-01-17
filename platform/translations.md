@@ -5,7 +5,7 @@ description: Translate strings between languages.
 # Translations
 
 {% hint style="info" %}
-This functionality requires a [license](https://ironmansoftware.com/powershell-universal/).&#x20;
+Translations require a [license](https://ironmansoftware.com/pricing/powershell-universal).
 {% endhint %}
 
 Translation support provides the ability to use a special provider to return strings based on the language of the user accessing the API or dashboard.&#x20;

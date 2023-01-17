@@ -23,7 +23,7 @@ LiteDB does not support multiple instances of PowerShell Universal connecting to
 ## SQL&#x20;
 
 {% hint style="info" %}
-This feature requires a [license](../licensing.md).
+SQL support requires a [license](https://ironmansoftware.com/pricing/powershell-universal).
 {% endhint %}
 
 You can configure PowerShell Universal to store data within a Microsoft SQL Database. This allows you to scale out your database and PowerShell Universal instances. PowerShell Universal will automatically run jobs across the pool of agents. You can update the `appsettings.json` file for PowerShell Universal as follows to connect to a central SQL server.&#x20;

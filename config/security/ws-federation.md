@@ -1,5 +1,9 @@
 # WS-Federation
 
+{% hint style="info" %}
+WS-Federation requires a [license](https://ironmansoftware.com/pricing/powershell-universal).
+{% endhint %}
+
 WS-Federation supports both Active Directory Federation Services and Azure Active Directory.
 
 You first need to configure ADFS or AzureAD to support Universal.

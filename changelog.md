@@ -4,6 +4,23 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.7.6 - 1/17/2023
+
+#### Automation
+
+* Fixed an issue where schedule parameters wouldn't show up after selecting a script in the New Schedule dialog.
+
+#### Dashboard
+
+* Remove verbose error messages in toasts
+* Fixed issue with elevation for New-UDPaper
+
+#### Platform
+
+* Fixed an issue where the local admin password would reset during service restart in certain circumstances
+* Fixed an issue where rate limits couldn't be created with certain time periods
+* Fixed an issue where rate limits wouldn't update properly in the admin console.
+
 ## 3.7.5 - 1/16/2023
 
 #### Dashboard

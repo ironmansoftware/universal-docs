@@ -4,6 +4,10 @@ description: Module management for PowerShell Universal.
 
 # Modules
 
+{% hint style="info" %}
+Module management requires a [license](https://ironmansoftware.com/pricing/powershell-universal).
+{% endhint %}
+
 The Modules page provides information about the modules installed in the system.&#x20;
 
 ## Viewing Modules

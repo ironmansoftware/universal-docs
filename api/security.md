@@ -4,10 +4,6 @@ description: Authentication and authorization for REST APIs.
 
 # Security
 
-{% hint style="info" %}
-This feature requires a [license](../licensing.md).
-{% endhint %}
-
 REST API authentication requires a Universal API license. Once enabled, you will be able to enforce authentication and authorization on your endpoints.
 
 ## Defining Secure Endpoints

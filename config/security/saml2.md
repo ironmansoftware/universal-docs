@@ -4,6 +4,10 @@ description: SAML2 authentication for PowerShell Universal.
 
 # SAML2
 
+{% hint style="info" %}
+SAML2 requires a [license](https://ironmansoftware.com/pricing/powershell-universal).
+{% endhint %}
+
 PowerShell Universal can be configured to integrate with a SAML2 identity provider. This documentation provides the details for configuring PSU with such a system.
 
 ## Identity Provider Settings

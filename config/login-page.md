@@ -5,7 +5,7 @@ description: Documentation on how to customize the login page.
 # Login Page
 
 {% hint style="info" %}
-This feature requires any type of [PowerShell Universal license](../licensing.md).
+Login page customization requires a [license](https://ironmansoftware.com/pricing/powershell-universal).
 {% endhint %}
 
 The login page colors, image, copyright and title can be customized by editing the `.universal/loginPage.ps1` file.

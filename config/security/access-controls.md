@@ -4,6 +4,10 @@ description: Access controls for PowerShell Universal.
 
 # Access Controls
 
+{% hint style="info" %}
+Access controls requires a [license](https://ironmansoftware.com/pricing/powershell-universal).
+{% endhint %}
+
 ## About
 
 Access controls allow you to define who has access to particular resources inside PowerShell Universal. Currently, access controls only apply to scripts.&#x20;
