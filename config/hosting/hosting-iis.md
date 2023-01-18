@@ -226,15 +226,20 @@ Install the Application Initialization feature of the Web Server Role.
 
 ### App Pool Settings&#x20;
 
-You will want to change the .NET CLR version to v4.0, set the Idle Time-out setting to 0 (disabled), and change the start mode to Always On.&#x20;
+You will want to configure the following settings:
+- **General**: .NET CLR version = [No Managed Code](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/advanced?view=aspnetcore-6.0#sub-applications).
+- **General**: Start Mode = AlwaysRunning
+- **Process Model**: Idle Time-out setting = 0 (disabled)
+- **Recycling**: Regular Time Interval = 0.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/AppPoolPage1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/AppPoolPage2.png" alt=""><figcaption></figcaption></figure>
 
 ### Website Settings
 
 Within the IIS Site that is hosting Universal, you will need to ensure that Preload is enabled.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/AppPoolPage3.png" alt=""><figcaption></figcaption></figure>
 
 ### Environment Variables&#x20;
 
