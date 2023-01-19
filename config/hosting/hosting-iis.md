@@ -18,10 +18,10 @@ The following components are required in order to host PowerShell Universal on I
 
 The following Windows Server IIS features are also required to be enabled on the IIS Host:
 
-| Feature Display Name   | Requirement                               | Installation Script                        |
-| ---------------------- | ----------------------------------------- | ------------------------------------------ |
-| WebSocket Protocol     | Required to run PowerShell Universal      | `Install-WindowsFeature Web-WebSockets`    |
-| Windows Authentication | Required for using Windows Authentication | `Install-WindowsFeature  Web-Windows-Auth` |
+| Feature Display Name   | Requirement                               | Installation Script                       |
+| ---------------------- | ----------------------------------------- | ----------------------------------------- |
+| WebSocket Protocol     | Required to run PowerShell Universal      | `Install-WindowsFeature Web-WebSockets`   |
+| Windows Authentication | Required for using Windows Authentication | `Install-WindowsFeature Web-Windows-Auth` |
 
 First make sure to enable the IIS feature on Windows Server and then install the ASP.NET Core hosting bundle.
 
@@ -66,8 +66,8 @@ Due to limitations in IIS, the Application Pool Identity settings have **MAJOR**
 {% hint style="danger" %}
 **IIS Limitations with Universal Automation**
 
-* **App Service configured as Local System** -  Scripts will execute as the System Account by default and a _Run as Accounts **CAN**_ be specified when executing a Script in Universal Automation
-* **App Service configured as a Service Account** - Scripts can **ONLY** be executed with the Service Account and a **\*\***_**Run as Account**_ _\*\*_CANNOT\*\* be specified when executing scripts.
+* **App Service configured as Local System** - Scripts will execute as the System Account by default and a _Run as Accounts **CAN**_ be specified when executing a Script in Universal Automation
+* **App Service configured as a Service Account** - Scripts can **ONLY** be executed with the Service Account and a **\*\***_**Run as Account**_ \_\*\*\_CANNOT\*\* be specified when executing scripts.
 {% endhint %}
 
 **Service Account Identity Requirements**
@@ -86,7 +86,7 @@ Once we have selected a valid identity we are ready to create the Application Po
 
 Now that we have chosen an App Pool identity that has read/write access to the PowerShell Universal Application and Database folders we can create the Application Pool in IIS.
 
-* In IIs Manager, Choose the option to **Add Application Pool...** &#x20;
+* In IIs Manager, Choose the option to **Add Application Pool...**
   * **Name:** Use any Name you would like for the Application Pool
   * **.NET CLR Version**: No managed code
   * ![Application Pool Basic Settings](<../../.gitbook/assets/image (21).png>)
@@ -98,7 +98,7 @@ Now that the Application Pool has been created, we will need to configure the **
 
 * Open the "**Advanced Settings"** for the Application Pool and apply the following Configurations:
   * **General / Enable 32-Bit Applications**: False
-  * **Process Model / Identity**: Use the Identity we selected for our Application Pool in the "Choosing an App Pool Identity" section above.&#x20;
+  * **Process Model / Identity**: Use the Identity we selected for our Application Pool in the "Choosing an App Pool Identity" section above.
   * **Process Model / Load User Profile**: True
 
 Once the Advanced Settings have been applied, our Application Pool is ready, our next step will be to configure the IIS Web Site that will utilize this Application Pool.
@@ -140,7 +140,7 @@ Now that an Application Pool has been created for PowerShell Universal with a va
 2. Configure the new website options :
    * **Site Name**: Use any name you would like, ex: `PowerShell Universal.`
    * **Application Pool**: **DO NOT** use the _DefaultAppPool_ - **Select** the Application Pool we created in our previous step.
-   * **Physical Path**: This must be the physical path to the PowerShell Universal Content we extracted from our download .zip file.  **NOTE**: The AppPool identity must have access to the location.
+   * **Physical Path**: This must be the physical path to the PowerShell Universal Content we extracted from our download .zip file. **NOTE**: The AppPool identity must have access to the location.
    * **Binding Settings**: Note, for initial configuration is suggested to use the base defaults, we'll update these later in our advanced configuration
      * Type http - For Initial Configuration
      * IP Address: All Unassigned
@@ -157,9 +157,9 @@ You are are still experiencing issues with the basic IIS Configuration try check
 
 ## Nested IIS Applications
 
-It is possible to nest multiple PowerShell Universal instances under a single application pool and website, but it does require some additional configuration.&#x20;
+It is possible to nest multiple PowerShell Universal instances under a single application pool and website, but it does require some additional configuration.
 
-You will need have two folders for your application files: one for each application. You will also need to setup two data folders: one for each application.&#x20;
+You will need have two folders for your application files: one for each application. You will also need to setup two data folders: one for each application.
 
 <figure><img src="../../.gitbook/assets/image (5) (2).png" alt=""><figcaption><p>Web Site Root</p></figcaption></figure>
 
@@ -167,9 +167,9 @@ You will need have two folders for your application files: one for each applicat
 
 <figure><img src="../../.gitbook/assets/image (2) (5).png" alt=""><figcaption><p>Data Files</p></figcaption></figure>
 
-Once you have setup your folder structure configured, you will need to create two appsettings.json files and update your web.config files for each application.&#x20;
+Once you have setup your folder structure configured, you will need to create two appsettings.json files and update your web.config files for each application.
 
-Within the appsettings.json files, you will need to set the proper paths to the data files for each instance. You will also need to configure the correct base URL for the nested site.&#x20;
+Within the appsettings.json files, you will need to set the proper paths to the data files for each instance. You will also need to configure the correct base URL for the nested site.
 
 ```json
 {
@@ -186,7 +186,7 @@ Within the appsettings.json files, you will need to set the proper paths to the 
 }
 ```
 
-Next, you'll need to update the web.config files for each site to use the proper appsettings.json file and use OutOfProcess hosting.&#x20;
+Next, you'll need to update the web.config files for each site to use the proper appsettings.json file and use OutOfProcess hosting.
 
 ```markup
 <?xml version="1.0" encoding="utf-8"?>
@@ -201,9 +201,9 @@ Next, you'll need to update the web.config files for each site to use the proper
 <!--ProjectGuid: 588ACF2E-9AE5-4DF1-BC42-BCE16A4C4EDE-->
 ```
 
-Now, within the IIS Manager, right click on the psu1 and psu2 folders to convert them to applications.&#x20;
+Now, within the IIS Manager, right click on the psu1 and psu2 folders to convert them to applications.
 
-You should now be able to access the PowerShell Universal admin console at both of the following URLs.&#x20;
+You should now be able to access the PowerShell Universal admin console at both of the following URLs.
 
 ```
 http://localhost/psu1/admin
@@ -222,28 +222,30 @@ If you are going to be running scheduled jobs within your PowerShell Universal i
 
 Install the Application Initialization feature of the Web Server Role.
 
-<figure><img src="../../.gitbook/assets/image (2) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (3) (2).png" alt=""><figcaption></figcaption></figure>
 
-### App Pool Settings&#x20;
+### App Pool Settings
 
 You will want to configure the following settings:
-- **General**: .NET CLR version = [No Managed Code](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/advanced?view=aspnetcore-6.0#sub-applications).
-- **General**: Start Mode = AlwaysRunning
-- **Process Model**: Idle Time-out setting = 0 (disabled)
-- **Recycling**: Regular Time Interval = 0.&#x20;
+
+* **General**: .NET CLR version = [No Managed Code](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/advanced?view=aspnetcore-6.0#sub-applications).
+* **General**: Start Mode = AlwaysRunning
+* **Process Model**: Idle Time-out setting = 0 (disabled)
+* **Recycling**: Regular Time Interval = 0.
 
 <figure><img src="../../.gitbook/assets/AppPoolPage1.png" alt=""><figcaption></figcaption></figure>
+
 <figure><img src="../../.gitbook/assets/AppPoolPage2.png" alt=""><figcaption></figcaption></figure>
 
 ### Website Settings
 
-Within the IIS Site that is hosting Universal, you will need to ensure that Preload is enabled.&#x20;
+Within the IIS Site that is hosting Universal, you will need to ensure that Preload is enabled.
 
 <figure><img src="../../.gitbook/assets/AppPoolPage3.png" alt=""><figcaption></figcaption></figure>
 
-### Environment Variables&#x20;
+### Environment Variables
 
-While we attempt to detect that PSU is running within IIS, you may run into problems with the negotiate authentication handler being enabled when it's not supported in IIS. To ensure this is not a problem, you can completed disabled it by setting the below environment variable on your IIS machine.&#x20;
+While we attempt to detect that PSU is running within IIS, you may run into problems with the negotiate authentication handler being enabled when it's not supported in IIS. To ensure this is not a problem, you can completed disabled it by setting the below environment variable on your IIS machine.
 
 ```powershell
 $Env:PSU_DISABLE_WIN_AUTH = true
@@ -251,11 +253,11 @@ $Env:PSU_DISABLE_WIN_AUTH = true
 
 ### Debugging Issues with IIS and Jobs
 
-If you are still having issues with IIS and jobs, you should consider turning on[ IIS recycle logging](https://blogs.iis.net/ganekar/iis-7-0-application-pool-recycles-log-a-event-in-windows-event-log) to ensure that IIS is keeping your site running.&#x20;
+If you are still having issues with IIS and jobs, you should consider turning on[ IIS recycle logging](https://blogs.iis.net/ganekar/iis-7-0-application-pool-recycles-log-a-event-in-windows-event-log) to ensure that IIS is keeping your site running.
 
-As of PowerShell Universal 3.3, you can via the uptime of the system on the home page of the admin console to get a good indicator of the last time the service was started.&#x20;
+As of PowerShell Universal 3.3, you can via the uptime of the system on the home page of the admin console to get a good indicator of the last time the service was started.
 
-Prior to version 3.3, you can view the server uptime by visiting the [Hangfire](../../development/hangfire.md) dashboard and clicking the Servers tab.&#x20;
+Prior to version 3.3, you can view the server uptime by visiting the [Hangfire](../../development/hangfire.md) dashboard and clicking the Servers tab.
 
 ## Authentication
 
@@ -326,4 +328,4 @@ The hosting model sets how the Universal server will run. When set to InProcess,
 
 ## Upgrading
 
-When upgrading, ensure that you do not copy files over the top of your existing install. Instead, delete the current application files and copy the new ones into the directory. Copying over the top of the files can result in binaries being present in the installation directory that are not expected and can issues with the system.&#x20;
+When upgrading, ensure that you do not copy files over the top of your existing install. Instead, delete the current application files and copy the new ones into the directory. Copying over the top of the files can result in binaries being present in the installation directory that are not expected and can issues with the system.

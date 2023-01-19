@@ -101,7 +101,7 @@ For example: `spn:2cf33625-e312-4659-a7bd-66ade51a0ea2`
 
 For Identity Provider Entity ID, you will need to retrieve the entity ID from the Federation metadata document. Open the document in a web browser.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Entity ID Property</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (3).png" alt=""><figcaption><p>Entity ID Property</p></figcaption></figure>
 
 For Metadata Address, insert the Federation metadata document URL.
 

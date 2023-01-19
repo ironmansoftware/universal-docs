@@ -6,7 +6,7 @@ description: >-
 
 # About
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>PowerShell Universal Admin Console</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption><p>PowerShell Universal Admin Console</p></figcaption></figure>
 
 A single pane of glass for managing and delegating access to your automation environment.
 

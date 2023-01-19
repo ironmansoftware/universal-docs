@@ -8,7 +8,7 @@ Universal Dashboard maintains sessions for users within each dashboard. There ar
 
 ## Dashboard Session Setting
 
-Session settings for a dashboard are use the web server session setting by default. You can set the dashboard session timeout for an individual dashboard by using the `-SessionTimeout` on `New-PSUDashboard`. The timeout value is in minutes.&#x20;
+Session settings for a dashboard are using the web server session setting by default. You can set the dashboard session timeout for an individual dashboard by using the `-SessionTimeout` of `New-PSUDashboard`. The timeout value is in minutes.&#x20;
 
 ```powershell
 New-PSUDashboard -Name 'dashboard' -BaseUrl / -Framework UniversalDashboard:Latest -SessionTimeout 30
@@ -44,4 +44,4 @@ IIS can cause timeouts of sessions in numerous ways. You will need to configure 
 
 Within the advanced settings dialog for the application pool, you can set the recycling settings accordingly.&#x20;
 
-![](<../../.gitbook/assets/image (280).png>)
+![Figure shows the recommended recycling settings for IIS](<../../.gitbook/assets/image (280).png>)
