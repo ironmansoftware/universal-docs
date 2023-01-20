@@ -178,16 +178,16 @@ Process data on the server so you can perform paging, filtering, sorting and sea
 
 The `$EventData` object contains the following properties.
 
-| Property Name  | Type         | Description                                                                 |
-| -------------- | ------------ | --------------------------------------------------------------------------- |
-| Filters        | Hashtable\[] | A list of filter values. Each hashtable has an `Id` and a `Value` property. |
-| OrderBy        | string       | Property name to sort by.                                                   |
-| OrderDirection | string       | `asc` or `desc` depending on the sort order.                                |
-| Page           | int          | The current page (starting with 0).                                         |
-| PageSize       | int          | The selected page size.                                                     |
-| Properties     | string\[]    | An array of properties being shown in the table.                            |
-| Search         | string       | A search string provided by the user.                                       |
-| TotalCount     | int          | The total number of records before filtering or paging.                     |
+| Property Name  | Type                                                                                         | Description                                                                 |
+| -------------- | -------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| Filters        | <p>Hashtable[]<br><br>@{ <br>    id = 'fieldName'</p><p>    value = 'filterValue'<br> } </p> | A list of filter values. Each hashtable has an `Id` and a `Value` property. |
+| OrderBy        | <p>Hashtable<br><br>@{ field = "fieldName" }</p>                                             | Property name to sort by.                                                   |
+| OrderDirection | string                                                                                       | `asc` or `desc` depending on the sort order.                                |
+| Page           | int                                                                                          | The current page (starting with 0).                                         |
+| PageSize       | int                                                                                          | The selected page size.                                                     |
+| Properties     | string\[]                                                                                    | An array of properties being shown in the table.                            |
+| Search         | string                                                                                       | A search string provided by the user.                                       |
+| TotalCount     | int                                                                                          | The total number of records before filtering or paging.                     |
 
 ### Example
 
