@@ -11,6 +11,8 @@ description: Changelog for PowerShell Universal.
 * Fixed an issue where setting a Switch parameter on a schedule caused the schedule to fail to create or update
 * Fixed an issue where hangfire jobs would be retried indefinitely
 * Fixed an issue where git sync could throw exceptions and retry indefinitely
+* Fixed an issue where updating triggers would not work in the admin console
+* Fixed an issue where the metadata for triggers was only serialized to a depth of 1
 
 #### Dashboards
 
@@ -21,14 +23,14 @@ description: Changelog for PowerShell Universal.
 * Fixed an issue where Write-Progress could show a percent value of -1
 * Fixed an issue where tables with no data would show an error
 * Fixed an issue where the dashboard power buttons wouldn't work on an IIS nested site
-* Fixed an issue where specifying a logo would cause issues with certain themes.
+* Fixed an issue where specifying a logo would cause issues with certain themes
 
 #### Platform
 
-* Fixed an issue where the data migration tool could not move a job in certain circumstances.
+* Fixed an issue where the data migration tool could not move a job in certain circumstances
 * Fixed a concurrency issue with Windows Authentication claims and roles
 * Fixed an issue where OpenID Connect signout did not properly clear the local session cookie
-* Fixed a performance issue with SQL where an extra DB query was made every request.
+* Fixed a performance issue with SQL where an extra DB query was made every request
 
 ## 3.7.6 - 1/17/2023
 
