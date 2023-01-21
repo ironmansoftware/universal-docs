@@ -27,4 +27,4 @@ New-UDBadge -BadgeContent { 4 } -Children {
 
 ## API&#x20;
 
-* New-UDBadge
+* [New-UDBadge](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDBadge.txt)
