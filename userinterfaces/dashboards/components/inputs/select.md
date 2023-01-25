@@ -43,14 +43,28 @@ New-UDSelect -Option {
 
 ## OnChange
 
-Execute a PowerShell event handler when the value of the select is changed.
+Execute a PowerShell event handler when the value of the select is changed. $EventData[0] for the single item that was selected.
 
 ```powershell
 New-UDSelect -Option {
     New-UDSelectOption -Name 'One' -Value 1
     New-UDSelectOption -Name 'Two' -Value 2
     New-UDSelectOption -Name 'Three' -Value 3
-} -OnChange { Show-UDToast -Message $EventData }
+} -OnChange { Show-UDToast -Message $EventData[0] }
+```
+
+## Multiple Select
+
+Execute a PowerShell event handler when the more than one value of the select is changed. $EventData is an array of the selected items.
+
+```powershell
+New-UDSelect -Multiple -Option {
+    New-UDSelectOption -Name 'One' -Value 1
+    New-UDSelectOption -Name 'Two' -Value 2
+    New-UDSelectOption -Name 'Three' -Value 3
+} -OnChange { 
+    Show-UDToast -Message (ConvertTo-json -InputObject $EventData) 
+}
 ```
 
 ## Get-UDElement
