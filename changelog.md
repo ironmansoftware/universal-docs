@@ -4,6 +4,43 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.7.8 - 1/26/2023
+
+#### APIs
+
+* Fixed an issue where the Restart APIs button didn't work on a nested IIS site.
+* Fixed an issue where creating an API endpoint in a nested folder path wouldn't work if the folder did not already exist.
+
+### Automation
+
+* Fixed an issue where editing a trigger that had a selected script would not show the selected script in the modal
+* Fixed an issue where string array script parameters could not be entered for schedules (#1737)
+* Improved time zone info display for schedules (cannot reproduce #1690)
+* Fixed an issue where job stats on the homepage would include archived jobs (#1991)
+
+#### Dashboards
+
+* Fixed an issue where UDAutocomplete wouldn't clear when clicking the X
+* Fixed an issue where UDAutocomplete didn't work with -Multiple and static options
+* Fixed an issue where you could change the text of UDAutocomplete to a value that wasn't actually selected
+* Fixed an issue where -Placeholder wouldn't display on New-UDTextbox in certain circumstances
+* Fixed an issue where -OnEnter and -OnValidate could not be used together with New-UDTextbox (#1976)
+* Fixed an issue where Write-Progress could be stuck open (#1970)
+* Fixed an issue where saving pages could overwrite the wrong page (#1982)
+
+#### Pages
+
+* Fixed an issue where Execute and Reader roles could view pages that didn't have access to.
+* Fixed an issue with the selector displaying empty selection
+
+#### Platform
+
+* Fixed an issue where you could not edit array variables (#1593)
+* Fixed an issue where saving configuration files could overwrite the wrong file (#1992)
+* Fixed an issue where git sync with an external client could throw an exception during the initial sync
+* Fixed an inefficient SQL query in the git sync job
+* Fixed an issue running as alternate credentials in IIS
+
 ## 3.7.7 - 1/20/2023
 
 #### Automation
