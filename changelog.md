@@ -4,6 +4,26 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.7.9 - 1/29/2023
+
+#### Dashboards
+
+* Fixed an issue where -Render variable scope was broken for New-UDTable (#2014)
+* Fixed an issue where the components drawer wouldn't close and wouldn't navigate to the marketplace in nested IIS sites (#2009)
+* Fixed an issue where New-UDFloatingActionButton -OnClick didn't work (#2010)
+* Fixed a JavaScript error with New-UDAutocomplete -Multiple
+* Fixed an issue where New-UDAppBar -Footer would cover content on the page (#637)
+* Fixed an issue where New-UDDatePicker couldn't be cleared of its date (#2013)
+* Fixed an issue where New-UDDatePicker -Variant static didn't work (#2000)
+
+#### Automation
+
+* Fixed an issue where jobs scheduled on the All Computers queue would not run (#1999)
+
+#### Platform
+
+* Fixed an issue where tab complete would double complete scoped variables (#1998)
+
 ## 3.7.8 - 1/26/2023
 
 #### APIs
