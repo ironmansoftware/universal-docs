@@ -643,6 +643,36 @@ New-UDTable -ShowRefresh -Columns $Columns -LoadData {
 }
 ```
 
+## Alternating Row Colors
+
+You can use a theme to create a table with alternating row colors.&#x20;
+
+<figure><img src="../../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+```powershell
+$Theme = @{
+    overrides = @{
+        MuiTableRow = @{
+            root = @{
+                '&:nth-of-type(odd)' = @{
+                    backgroundColor = "rgba(0,0,0,0.04)"
+                }
+            }
+            head = @{
+                backgroundColor = "rgb(255,255,255) !important"
+            }
+        }
+    }
+}
+
+New-UDDashboard -Content {
+$data = 1..10 | % { [PSCustomObject]@{ Item = $_}}
+  New-UDTable -ShowPagination -PageSize 10 -PageSizeOptions @(10, 10) -DisablePageSizeAll -Columns @(
+        New-UDTableColumn -Property 'Item' -Title 'Item' -Width 180 -Truncate
+    ) -Data $Data -Dense -ShowSearch
+} -Theme $Theme
+```
+
 ## API
 
 * [New-UDTable](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDTable.txt)
