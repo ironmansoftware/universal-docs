@@ -4,6 +4,27 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.7.10 - 2/4/2023
+
+#### API
+
+* Fixed an issue where API Authentication triggers would fire twice (#2025)
+
+#### Dashboard
+
+* Fixed an issue where content would overflow New-UDExpansionPanel (#2029)
+* Fixed an encoding issue when saving Unicode characters in Dashboard pages
+* Fixed an issue where updating a dashboard page would drop the -Icon parameter
+* Fixed an issue where dashboards would reload too many times (#1736)
+
+#### Platform
+
+* Fixed an issue where configuration editor did not work in a nested IIS site (#2022)
+* Fixed an issue where the configuration editor wouldn't allow changes of non-PowerShell files (#2032)
+* Fixed an issue where the ScriptBasePath setting would cause issues with other folders during an initial git sync (#1977)
+* Fixed an issue where files changes on disk would not be detected
+* Fixed an issue where New-PSUVariable wouldn't set a string secret properly
+
 ## 3.7.9 - 1/29/2023
 
 #### Dashboards
