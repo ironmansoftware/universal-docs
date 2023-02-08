@@ -4,7 +4,7 @@ description: PowerShell Universal high availability configuration.
 
 # High Availability
 
-PowerShell Universal can be configured for high availability by using a combination of SQL server persistence and a load balancer to ensure that both the front end tools, such as dashboards are accessible and back end tools, such as jobs, continue to run.&#x20;
+PowerShell Universal can be configured for high availability ("HA") by using a combination of SQL server persistence and a load balancer to ensure that both the front end tools, such as dashboards are accessible and back-end tools, such as jobs, continue to run.&#x20;
 
 ![](<../../.gitbook/assets/image (2) (2) (1) (1).png>)
 
@@ -25,7 +25,7 @@ PowerShell Universal supports the use of load balancers such as F5 and nginx. Th
 * Persistent (sticky) sessions are required by dashboards
 * Web socket support is required by the admin console and dashboards
 
-You aid with load balancing; you can use the `/api/v1/status` endpoint for your nodes. The endpoint will return status codes based on the current state of the node. `200` means the node is online and ready to receive requests. Servers running in maintenance mode will return `503`. Servers that failed to start due to a configuration error, will return `500`. Servers with dashboards that failed to start will also return `500`.&#x20;
+To aid with load balancing; you can use the `/api/v1/status` endpoint for your nodes. The endpoint will return status codes based on the current state of the node. `200` means the node is online and ready to receive requests. Servers running in maintenance mode will return `503`. Servers that failed to start due to a configuration error, will return `500`. Servers with dashboards that failed to start will also return `500`.&#x20;
 
 ## Maintenance Mode
 
@@ -41,5 +41,5 @@ Caching performed using `$Cache` or `Set-PSUCache` is currently limited to the s
 
 ### Multi-Node Dashboard Broadcast
 
-Multi-Node dashboard broadcast messages are currently not supported. Using cmdlets like `Show-UDToast -Broadcast` will cause a toast to be shown on all connected users to the current node but will not broadcast to the dashboards across all nodes.&#x20;
+Multi-Node dashboard broadcast messages are currently not supported. Using cmdlets like `Show-UDToast -Broadcast` will cause a toast modal to be shown to all connected users of the current node but will not be broadcast to the dashboards across all nodes.&#x20;
 
