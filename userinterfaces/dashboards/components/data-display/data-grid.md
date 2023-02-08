@@ -39,30 +39,31 @@ New-UDDataGrid -LoadRows {
 
 Columns are customizable using hashtables. You can find the supported properties below.&#x20;
 
-| Property          | Description                                                          | Type\Value                                       |
-| ----------------- | -------------------------------------------------------------------- | ------------------------------------------------ |
-| Align             | How to align the data within the column.                             | Left, Center, Right                              |
-| CellClassName     | A CSS class to apply to cells in this column                         | string                                           |
-| ColSpan           | The number of columns this column should span.                       | Integer                                          |
-| Description       | A tooltip description of the column                                  | string                                           |
-| DisableColumnMenu | Disable the column menu for this column                              | boolean                                          |
-| DisableExport     | Disable exporting of the data in this column                         | boolean                                          |
-| Editable          | Whether or not this column can be edited                             | boolean                                          |
-| Field             | The field (property) to use when displaying the value in the column. | String                                           |
-| Filterable        | Whether this column can be used in filters.                          | boolean                                          |
-| HeaderAlign       | How to align header text.                                            | left, center, right                              |
-| HeaderName        | The title to display in the header.                                  | String                                           |
-| Hide              | Whether to hide the column                                           | boolean                                          |
-| Hideable          | Whether a column can be hidden by the user.                          | boolean                                          |
-| HideSortIcon      | Whether to hide the sort icon for the column                         | boolean                                          |
-| MaxWidth          | The maximum width of the column                                      | integer                                          |
-| MinWidth          | The minimum width of the column                                      | integer                                          |
-| Pinnable          | Whether the column can be pinned.                                    | boolean                                          |
-| Render            | A script block to render components in the column                    | ScriptBlock                                      |
-| Resizable         | Whether the column can be resized                                    | boolean                                          |
-| Sortable          | Whether the column can be sorted.                                    | boolean                                          |
-| Type              | The type of data within the column                                   | string, number, date, dateTime, boolean, actions |
-| Width             | How wide the column should be in pixels.                             | Integer                                          |
+| Property          | Description                                                                                                                                                           | Type\Value                                       |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
+| Align             | How to align the data within the column.                                                                                                                              | Left, Center, Right                              |
+| CellClassName     | A CSS class to apply to cells in this column                                                                                                                          | string                                           |
+| ColSpan           | The number of columns this column should span.                                                                                                                        | Integer                                          |
+| Description       | A tooltip description of the column                                                                                                                                   | string                                           |
+| DisableColumnMenu | Disable the column menu for this column                                                                                                                               | boolean                                          |
+| DisableExport     | Disable exporting of the data in this column                                                                                                                          | boolean                                          |
+| Editable          | Whether or not this column can be edited                                                                                                                              | boolean                                          |
+| Field             | The field (property) to use when displaying the value in the column.                                                                                                  | String                                           |
+| Filterable        | Whether this column can be used in filters.                                                                                                                           | boolean                                          |
+| Flex              | The `flex` property accepts a value between 0 and ∞. It works by dividing the remaining space in the grid among all flex columns in proportion to their `flex` value. | float                                            |
+| HeaderAlign       | How to align header text.                                                                                                                                             | left, center, right                              |
+| HeaderName        | The title to display in the header.                                                                                                                                   | String                                           |
+| Hide              | Whether to hide the column                                                                                                                                            | boolean                                          |
+| Hideable          | Whether a column can be hidden by the user.                                                                                                                           | boolean                                          |
+| HideSortIcon      | Whether to hide the sort icon for the column                                                                                                                          | boolean                                          |
+| MaxWidth          | The maximum width of the column                                                                                                                                       | integer                                          |
+| MinWidth          | The minimum width of the column                                                                                                                                       | integer                                          |
+| Pinnable          | Whether the column can be pinned.                                                                                                                                     | boolean                                          |
+| Render            | A script block to render components in the column                                                                                                                     | ScriptBlock                                      |
+| Resizable         | Whether the column can be resized                                                                                                                                     | boolean                                          |
+| Sortable          | Whether the column can be sorted.                                                                                                                                     | boolean                                          |
+| Type              | The type of data within the column                                                                                                                                    | string, number, date, dateTime, boolean, actions |
+| Width             | How wide the column should be in pixels.                                                                                                                              | Integer                                          |
 
 ### Rendering Custom Columns
 
