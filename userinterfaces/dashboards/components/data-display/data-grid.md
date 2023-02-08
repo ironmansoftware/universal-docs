@@ -87,6 +87,32 @@ New-UDDataGrid -LoadRows {
 ) -AutoHeight
 ```
 
+### Flexible Width Columns
+
+Column fluidity or responsiveness can be achieved by setting the `flex` property of a column.
+
+The `flex` property accepts a value between 0 and ∞. It works by dividing the remaining space in the grid among all flex columns in proportion to their `flex` value.
+
+For example, consider a grid with a total width of 500px that has three columns: the first with `width: 200`; the second with `flex: 1`; and the third with `flex: 0.5`. The first column will be 200px wide, leaving 300px remaining. The column with `flex: 1` is twice the size of `flex: 0.5`, which means that final sizes will be: 200px, 200px, 100px.
+
+To set a minimum and maximum width for a `flex` column set the `minWidth` and the `maxWidth` property on the column.
+
+```powershell
+New-UDDataGrid -LoadRows {  
+    $Rows = 1..100 | % {
+        @{ Name = 'Adam'; Number = "This column is a very long string. This column is a very long string. This column is a very long string. This column is a very long string. This column is a very long string. This column is a very long string."}
+    }
+    @{
+        rows = $Rows
+        rowCount = $Rows.Length
+    }
+    
+} -Columns @(
+    @{ field = "name"; render = { New-UDTypography $EventData.number }}
+    @{ field = "number"; flex = 1.0}
+) -AutoHeight
+```
+
 ## LoadRows
 
 The `-LoadRows` parameter is used to return data for the data grid. Table state will be provided to the event handler as `$EventData`. You will find the following properties within the `$EventData` object.&#x20;
