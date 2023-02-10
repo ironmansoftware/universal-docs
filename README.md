@@ -12,6 +12,19 @@ A single pane of glass for managing and delegating access to your automation env
 
 Universal provides an Administrator console, management REST API, PowerShell cmdlets and an idempotent configuration system using PowerShell scripts. &#x20;
 
+## Featured Template: Active Directory
+
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>Active Directory Dashboard</p></figcaption></figure>
+
+Curious what you can do with PowerShell Universal? [Check out our featured Active Directory template. ](https://ironmansoftware.com/powershell-universal/templates/template/Active%20Directory%20Dashboard)It includes features such as:
+
+* Object Search
+* User Management and Reports
+* Group Management
+* Infrastructure Reports
+
+
+
 ## **APIs**
 
 Expose scripts as RESTful HTTP APIs for integration from any platform.
