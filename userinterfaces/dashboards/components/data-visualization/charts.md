@@ -52,16 +52,14 @@ To create a chart, use `New-UDChartJS` and `New-UDChartJSData`. The below chart 
         LabelProperty = "RAM"
         Options = @{
             scales = @{
-                xAxes = @(
+                xAxes = 
                 @{
                     stacked = $true
-                }
-            )
-            yAxes = @(
+                }            
+            yAxes = 
                 @{
                     stacked = $true
-                }
-            )
+                }            
             }
         }
     } 

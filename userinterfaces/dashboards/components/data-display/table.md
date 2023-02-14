@@ -647,7 +647,7 @@ New-UDTable -ShowRefresh -Columns $Columns -LoadData {
 
 You can use a theme to create a table with alternating row colors.&#x20;
 
-<figure><img src="../../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ```powershell
 $Theme = @{

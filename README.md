@@ -14,9 +14,11 @@ Universal provides an Administrator console, management REST API, PowerShell cmd
 
 ## Featured Template: Active Directory
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>Active Directory Dashboard</p></figcaption></figure>
+Curious what you can do with PowerShell Universal? [Check out our featured Active Directory template. ](https://ironmansoftware.com/powershell-universal/templates/template/Active%20Directory%20Dashboard)
 
-Curious what you can do with PowerShell Universal? [Check out our featured Active Directory template. ](https://ironmansoftware.com/powershell-universal/templates/template/Active%20Directory%20Dashboard)It includes features such as:
+<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption><p>Active Directory Dashboard</p></figcaption></figure>
+
+This template includes features such as:
 
 * Object Search
 * User Management and Reports
