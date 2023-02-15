@@ -67,31 +67,6 @@ You can also store credentials directly in the URL provided to PowerShell Univer
 https://adam:APP_TOKEN@github.com/myOrg/myRepo.git
 ```
 
-### Manual Mode
-
-Manual mode requires users editing the PowerShell Universal instance to click Edit in order to make changes in the system. Once the changes are complete, the user can then click Save and enter a message about what changed. At this time a commit is made and pushed to the remote.&#x20;
-
-While editing the environment, the git sync process is paused.&#x20;
-
-Manual mode can be set in the git settings within the admin console or within `appsettings.json`.
-
-```json
-"Data": {
-  "RepositoryPath": "%ProgramData%\\UniversalAutomation\\Repository",
-  "ConnectionString": "filename=%ProgramData%\\UniversalAutomation\\database.db;upgrade=true",
-  "RunMigrations": true,
-  "GitRemote": "",
-  "GitUserName": "",
-  "GitPassword": "",
-  "GitBranch": "",
-  "GitSyncBehavior": "TwoWay",
-  "GitInitializeBehavior": "",
-  "GitSyncInterval": "1",
-  "ConfigurationScript": "",
-  "Mode": "Manual" // Or Automatic
-},
-```
-
 #### Example: User Name and PAT
 
 To use an external git client and pass a user name and PAT to authenticate with, you can specify them in the git remote URL. For example:
@@ -127,6 +102,33 @@ Unable to persist credentials with the 'wincredman' credential store.
 {% endhint %}
 
 If you are on Windows and receive an error about persisting credentials in wincredman, you may need to set the credential persistence to DAPI. You can [learn how to do that here](https://github.com/GitCredentialManager/git-credential-manager/issues/633).&#x20;
+
+### Manual Mode
+
+Manual mode requires users editing the PowerShell Universal instance to click Edit in order to make changes in the system. Once the changes are complete, the user can then click Save and enter a message about what changed. At this time a commit is made and pushed to the remote.&#x20;
+
+While editing the environment, the git sync process is paused.&#x20;
+
+Manual mode can be set in the git settings within the admin console or within `appsettings.json`.
+
+```json
+"Data": {
+  "RepositoryPath": "%ProgramData%\\UniversalAutomation\\Repository",
+  "ConnectionString": "filename=%ProgramData%\\UniversalAutomation\\database.db;upgrade=true",
+  "RunMigrations": true,
+  "GitRemote": "",
+  "GitUserName": "",
+  "GitPassword": "",
+  "GitBranch": "",
+  "GitSyncBehavior": "TwoWay",
+  "GitInitializeBehavior": "",
+  "GitSyncInterval": "1",
+  "ConfigurationScript": "",
+  "Mode": "Manual" // Or Automatic
+},
+```
+
+
 
 ### Method One: Pushing Local Files to Remote
 
