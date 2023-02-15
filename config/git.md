@@ -48,6 +48,25 @@ You will need to configure authentication to your remote git repository. We reco
 
 You can choose to use an external git client rather than using the library built into PowerShell Universal. This allows you additional configuration options such as using SSH authentication. PowerShell Universal will not use configured username, passwords or PATs when enabling this method. You will need to have a git client installed.&#x20;
 
+#### Setting Credentials&#x20;
+
+When using the external git client, you are responsible for configuring credentials before performing a synchronization.&#x20;
+
+You can configure credentials via git configuration or the URL passed to PowerShell Universal.&#x20;
+
+The following command will store the credentials in plaintext on the PowerShell Universal server. You will need to run this command as the service account user so that they have access to the credentials. This will create a `.git-credentials` file that will be used when authenticating against the target URL. You may need to change the URL depending on your git remote.&#x20;
+
+```batch
+git config --global credential.helper store
+echo "https://${username}:${password_or_access_token}@github.com" > ~/.git-credentials
+```
+
+You can also store credentials directly in the URL provided to PowerShell Universal.&#x20;
+
+```
+https://adam:APP_TOKEN@github.com/myOrg/myRepo.git
+```
+
 ### Manual Mode
 
 Manual mode requires users editing the PowerShell Universal instance to click Edit in order to make changes in the system. Once the changes are complete, the user can then click Save and enter a message about what changed. At this time a commit is made and pushed to the remote.&#x20;
