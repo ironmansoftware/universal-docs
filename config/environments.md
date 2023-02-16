@@ -165,6 +165,16 @@ For example, `C:\Program Filxes (x86)\Universal`.
 
 It's also possible to provide the `--SettingsFile` parameter to `pwsh.exe` in order to load a `powershell.config.json` file from another location.
 
+### Cleanly Using Windows PowerShell Compatibility
+
+If required, you can remove the Windows Compatibility runspace after executing a command using the feature. This will remove the Windows PowerShell process. Each time this endpoint is run, it will need to re-establish the session.
+
+```powershell
+Import-Module PSScheduledJob -UseWindowsPowerShell
+Get-ScheduledJob | Out-Null
+Get-PSSession -Name 'WinPSCompatSession' | Remove-PSSession
+```
+
 You can learn more about [Windows PowerShell Compatibility here](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about\_windows\_powershell\_compatibility?view=powershell-7.2).
 
 ## API
