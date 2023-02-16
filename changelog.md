@@ -4,6 +4,37 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.7.11 - 2/15/2023
+
+#### Automation
+
+* Fixed an issue where DateTime parameters would cause errors when trying to create a schedule (#2063)
+* Fixed an issue where job triggers would not include the full $Job.Identity object (#2048)
+* Fixed an issue where scheduling a script for a specific computer would not work
+* Fixed an issue where the Run On drop down was not always populated in the schedule modal
+
+#### Dashboards
+
+* Reverted a change made to expansion panels that caused scroll bars to always appear (#2029)
+* Added Mandatory to -Content for New-UDPage (#2062)
+* Fixed an issue where New-UDMenu's button didn't have an ID (#2078)
+
+#### Pages
+
+* Fixed an issue where the stream name was included in text output. (#2058)
+* Fixed an issue where the page would display Loading... and not load (#2097)
+
+#### Platform
+
+* Fixed an issue where git username\password settings wouldn't appear correctly in the dialog (#2065)
+* Fatal startup errors are now captured in the PSU log file (#2068)
+* Fixed an issue where toggling maintenance mode for a computer wouldn't be visible until refresh (#2052)
+* Fixed an issue where the app token cache would not refresh after updating an app token
+* Fixed an issue where Set-PSUIdentity would throw an exception (#2085)
+* Fixed an issue where Sync-PSUComponent would throw an exception (#2088)
+* Fixed an issue where saving a hidden file wouldn't work (#2076)
+* Fixed an issue where saving unicode characters in modules would not work
+
 ## 3.7.10 - 2/4/2023
 
 #### API
@@ -52,7 +83,7 @@ description: Changelog for PowerShell Universal.
 * Fixed an issue where the Restart APIs button didn't work on a nested IIS site.
 * Fixed an issue where creating an API endpoint in a nested folder path wouldn't work if the folder did not already exist.
 
-### Automation
+#### Automation
 
 * Fixed an issue where editing a trigger that had a selected script would not show the selected script in the modal
 * Fixed an issue where string array script parameters could not be entered for schedules (#1737)
