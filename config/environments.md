@@ -163,6 +163,8 @@ You can disable implicit Windows PowerShell Compatibility by modifying the `powe
 
 For example, `C:\Program Filxes (x86)\Universal`.
 
+It's also possible to provide the `--SettingsFile` parameter to `pwsh.exe` in order to load a `powershell.config.json` file from another location.
+
 You can learn more about [Windows PowerShell Compatibility here](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about\_windows\_powershell\_compatibility?view=powershell-7.2).
 
 ## API
