@@ -159,6 +159,10 @@ You can disable implicit Windows PowerShell Compatibility by modifying the `powe
 @{ DisableImplicitWinCompat = $true } | ConvertTo-Json | Out-File "$PSHome\powershell.config.json"
 ```
 
+`$PSHome` differs per PowerShell host. Running the above command line will disable WinPSCompat for the PowerShell 7 environment when run within a PowerShell 7 process. To disable it for the PowerShell Universal Integrated environment, you will need to create the `powershell.config.json` file within the PSU installation folder.&#x20;
+
+For example, `C:\Program Filxes (x86)\Universal`.
+
 You can learn more about [Windows PowerShell Compatibility here](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about\_windows\_powershell\_compatibility?view=powershell-7.2).
 
 ## API
