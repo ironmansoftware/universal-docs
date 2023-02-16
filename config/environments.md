@@ -137,6 +137,30 @@ PowerShell Universal includes an agent process that can be executed outside of t
 
 The Agent environment also supports run as credentials.&#x20;
 
+## Windows PowerShell Compatiblity
+
+Windows PowerShell Compatibility is a feature of PowerShell 7. When commands and modules are not available in PowerShell 7, the platform will automatically start a Windows PowerShell process in the background and perform local remoting from the PowerShell 7 process. This achieves backwards compatibility with Windows PowerShell modules.&#x20;
+
+You may see a warning in the environments page when this feature of PowerShell is enabled due to the implications on the PowerShell Universal platform.&#x20;
+
+### Problems with WinPS Compatiblity in PowerShell Universal&#x20;
+
+For each runspace opened by PowerShell Universal in which Windows PowerShell Compatibility is used, a new Windows PowerShell process will be started. These processes will only stop once the runspace is recycled.&#x20;
+
+This greatly reduces perform due to an excessive number of processes running and memory and CPU usage attributed to serialization and remote runspace management.&#x20;
+
+The most common cause of this is using the Active Directory 1.0.0.0 module from PowerShell 7.&#x20;
+
+### Disabling Implicit Windows PowerShell Compatibility
+
+You can disable implicit Windows PowerShell Compatibility by modifying the `powershell.config.json` file in `$PSHome`. You can still use Windows PowerShell Compatibility but will need to import modules using `-UseWindowsPowerShell`.
+
+```powershell
+@{ DisableImplicitWinCompat = $true } | ConvertTo-Json | Out-File "$PSHome\powershell.config.json"
+```
+
+You can learn more about [Windows PowerShell Compatibility here](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about\_windows\_powershell\_compatibility?view=powershell-7.2).
+
 ## API
 
 * [New-PSUEnvironment](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSUEnvironment.txt)
