@@ -147,7 +147,7 @@ You may see a warning in the environments page when this feature of PowerShell i
 
 For each runspace opened by PowerShell Universal in which Windows PowerShell Compatibility is used, a new Windows PowerShell process will be started. These processes will only stop once the runspace is recycled.&#x20;
 
-This greatly reduces perform due to an excessive number of processes running and memory and CPU usage attributed to serialization and remote runspace management.&#x20;
+This greatly reduces performance due to an excessive number of processes running and memory and CPU usage attributed to serialization and remote runspace management.&#x20;
 
 The most common cause of this is using the Active Directory 1.0.0.0 module from PowerShell 7.&#x20;
 
