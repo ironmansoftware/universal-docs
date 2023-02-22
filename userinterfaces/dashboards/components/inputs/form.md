@@ -181,8 +181,8 @@ New-UDForm -Schema @{
        }
    }
 } -OnSubmit {
-   # $EventData.name
-   # $EventData.age
+   # $EventData.formData.name
+   # $EventData.formData.age
 }
 ```
 
@@ -204,52 +204,57 @@ New-UDForm -Schema @{
    }
    required = @('name')
 } -OnSubmit {
-   # $EventData.name
-   # $EventData.age
+   # $EventData.formData.name
+   # $EventData.formData.age
 }
 ```
 
 {% hint style="warning" %}
 Note that the properties need to be lower case! For example, you need to ensure the keys in your properties hashtable are lower case and the list of required properties are also lower case.&#x20;
 {% endhint %}
+### Ordering
+
+You can use the `schemaUI` property to modify the ordering of the fields.
 
 ```powershell
 New-UDForm -Schema @{
-	title = "Test"
-	type = "object"
-	properties = @{
-	  hostname = @{
-		  title = "Hostname"
-		  type = "string"
-	  }
-	  ipaddress= @{
-		  title = "IP Address"
-		  type = "string"
-		  format = "ipv4"
-	  }
-	  description = @{
-		  title = "Server Description"
-		  type = "string"
-	  }
-	  servertype = @{
-		  title = "Server Type"
-		  type = "string"                            
-		  enum = "App","DB"
-	  }
-	  environment = @{
-		  title = "Environment"
-		  type = "string"
-		  enum = "Prod", "Dev" , "QA"
-	  }
-	}
-	required = @('hostname','ipaddress','description','servertype','environment')                    
+        title = "Test"
+        type = "object"
+        properties = @{
+            hostname = @{
+                title = "Hostname"
+                type = "string"
+                }
+            ipaddress= @{
+                title = "IP Address"
+                type = "string"
+                format = "ipv4"
+                }
+            description = @{
+                title = "Server Description"
+                type = "string"
+                }
+            servertype = @{
+                title = "Server Type"
+                type = "string"                            
+                enum = "App","DB"
+                }
+            environment = @{
+                title = "Environment"
+                type = "string"
+                enum = "Prod", "Dev" , "QA"
+                }
+            }
+		required = @('hostname','ipaddress','description','servertype','environment')                    
+	} -uiSchema @{
+		"ui:order" = @('environment','hostname','ipaddress','description')
 	} -OnSubmit {
-	Show-UDModal -Content {                        
-	  New-UDTypography -Text $EventData.formData
-	} -Footer {
-	  New-UDButton -Text "Close" -OnClick {Hide-UDModal}
-	} -Persistent
-}
+		Show-UDModal -Content {                        
+			New-UDTypography -Text $EventData.formData
+		} -Footer {
+			New-UDButton -Text "Close" -OnClick {Hide-UDModal}
+		} -Persistent
+	}
 ```
 
 ### Arrays
@@ -272,8 +277,8 @@ New-UDForm -Schema @{
        }
    }
 } -OnSubmit {
-   # $EventData[0].name
-   # $EventData[0].age
+   # $EventData[0].formData.name
+   # $EventData[0].formData.age
 }
 ```
 
