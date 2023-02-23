@@ -6,7 +6,7 @@ description: >-
 
 # About
 
-<figure><img src=".gitbook/assets/image (23).png" alt=""><figcaption><p>PowerShell Universal Admin Console</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption><p>PowerShell Universal Admin Console</p></figcaption></figure>
 
 A single pane of glass for managing and delegating access to your automation environment.
 
@@ -31,7 +31,7 @@ This template includes features such as:
 
 Expose scripts as RESTful HTTP APIs for integration from any platform.
 
-<figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption><p>Execute PowerShell with HTTP</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (23).png" alt=""><figcaption><p>Execute PowerShell with HTTP</p></figcaption></figure>
 
 * [HTTP Endpoints](https://docs.powershelluniversal.com/api/endpoints)
 * [Custom Responses](https://docs.powershelluniversal.com/api/endpoints#returning-custom-responses)
@@ -45,7 +45,7 @@ Expose scripts as RESTful HTTP APIs for integration from any platform.
 
 Execute, schedule, secure and audit scripts in an easy-to-use, web-interface.
 
-<figure><img src=".gitbook/assets/image (5) (3).png" alt=""><figcaption><p>Run PowerShell Scripts</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (20).png" alt=""><figcaption><p>Run PowerShell Scripts</p></figcaption></figure>
 
 * [Scheduling](https://docs.powershelluniversal.com/automation/schedules)
 * [Run As Support](https://docs.powershelluniversal.com/automation/scripts#running-a-script-as-another-user)
@@ -118,7 +118,7 @@ Create desktop automation and user interfaces that integrate with features of Wi
 
 Take advantage of rich development tools such as IntelliSense, code formatting, error checking and debugger integration without leaving your browser.
 
-<figure><img src=".gitbook/assets/image (7).png" alt=""><figcaption><p>Development Tools in PowerShell Universal</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (417).png" alt=""><figcaption><p>Development Tools in PowerShell Universal</p></figcaption></figure>
 
 * [Rich Editing Experience](https://docs.powershelluniversal.com/platform/editor)
 * [Code-First Configuration](https://docs.powershelluniversal.com/config/repository)

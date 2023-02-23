@@ -4,6 +4,20 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.7.12 - 2/22/2023
+
+#### Dashboard
+
+* Fixed an issue where -LoadNavigation on New-UDDashboard would cause the navigation to collapse when the page was changed (#2101)
+* Fixed an issue where New-UDPage -Description wasn't saved properly (#2111)
+
+#### Platform
+
+* Fixed an issue where selected item and expand configuration paths were not remembered (#2103)
+* Fixed an issue where the X-Forwarded-Host header was not properly processed by middleware
+* Fixed an issue where starting processes as alternate users in IIS would fail to properly load the user profile
+* Fixed a memory leak due to misconfigured internal services
+
 ## 3.7.11 - 2/15/2023
 
 #### Automation

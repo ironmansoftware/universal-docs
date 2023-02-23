@@ -22,7 +22,7 @@ New-UDTreeView -Node {
 }
 ```
 
-![Basic Tree View](<../../../../.gitbook/assets/image (163) (1).png>)
+![Basic Tree View](<../../../../.gitbook/assets/image (163).png>)
 
 ## Dynamic Tree View
 
