@@ -4,6 +4,16 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.7.13 - 2/24/2023
+
+#### Automation
+
+* Fixed an issue where schedules would fail to run on machines with special characters (hyphen, etc) in their name.
+
+#### Dashboard
+
+* Fixed an issue where -LoadNavigation on New-UDDashboard could fail to load properly and default navigation would be shown.
+
 ## 3.7.12 - 2/22/2023
 
 #### Dashboard
