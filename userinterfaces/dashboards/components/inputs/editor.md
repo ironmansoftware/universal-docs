@@ -4,12 +4,6 @@ description: A text editor component for Universal Dashboard.
 
 # Editor
 
-{% hint style="info" %}
-Available in PowerShell Universal 2.5 or later.
-{% endhint %}
-
-The editor component is available in the `UniversalDashboard.Editor` component library. You will have to add it to your dashboard to be able to use the editor component.&#x20;
-
 The editor component is based on [Editor.js](https://editorjs.io/). It's a block editor that accepts text, links, lists, code and images.&#x20;
 
 When working with the editor, you can receive data about the current document via the `OnChange` parameter. By default, data is returned in the Editor.js [JSON format](https://editorjs.io/saving-data).
