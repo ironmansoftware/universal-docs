@@ -197,7 +197,7 @@ You can take action when a user clicks the chart. This example shows a toast wit
    DataProperty = 'CPU'
    LabelProperty = "ProcessName"
    OnClick = { 
-      Show-UDToast -Message $Bodyr
+      Show-UDToast -Message $Body
    }
  }
 
