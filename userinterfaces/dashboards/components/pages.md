@@ -163,8 +163,8 @@ Custom navigation can be defined with a list. List items can include children to
 $Navigation = @(
     New-UDListItem -Label "Home"
     New-UDListItem -Label "Getting Started" -Children {
-        New-UDListItem -Label "Installation" -Href '/installation' 
-        New-UDListItem -Label "Usage" -Href '/usage' 
+        New-UDListItem -Label "Installation" -Href '/Installation' 
+        New-UDListItem -Label "Usage" -Href '/Usage' 
         New-UDListItem -Label "FAQs" -Href '/faqs' 
         New-UDListItem -Label "System Requirements" -Href'/requirements' 
         New-UDListItem -Label "Purchasing" -Href '/purchasing' 
@@ -172,16 +172,15 @@ $Navigation = @(
 )
 
 $Pages = @()
-$Pages += New-UDPage -Name 'Test' -Content {
- New-UDTypography -Text "Hello"
-} -NavigationLayout permanent -Navigation $Navigation
+$Pages += New-UDPage -Name 'Installation' -Content {
+ New-UDTypography -Text "Installation"
+}
 
-$Pages += New-UDPage -Name 'Test2' -Content {
-    New-UDTypography -Text "Hello"
-} -NavigationLayout permanent -Navigation $Navigation
+$Pages += New-UDPage -Name 'Usage' -Content {
+    New-UDTypography -Text "Usage"
+} 
 
-
-New-UDDashboard -Title "Hello, World!" -Pages $Pages
+New-UDDashboard -Title "Hello, World!" -Pages $Pages -NavigationLayout permanent -Navigation $Navigation
 ```
 
 ![Custom navigation](<../../../.gitbook/assets/image (153).png>)
