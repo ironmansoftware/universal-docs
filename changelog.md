@@ -4,6 +4,27 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.7.14 - 3/2/2023
+
+#### Dashboards
+
+* Fixed an issue where Set-UDTheme would not persist refreshes (#2133)
+* Fixed an issue where certain themes would throw an error when using Get-UDTheme (#2132)
+* Fixed an issue where navigation would not expand by default when a child route was the active route (#2135)
+* Enabled horizontal line break for PDF exports in UDTable (#2114)
+* Fixed an issue where the AntDesign theme UDButton outlined variant didn't have a border (#2137)
+* Fixed an issue where autodeploy may display a blank page (#2115)
+
+#### Pages
+
+* Fixed an issue where mismatched hashtable properties would cause tables to throw a JavaScript error (#2060)
+
+#### Platform
+
+* Fixed an issue where templates would thrown an error when installed (#2119)
+* Fixed an issue where Invoke-PSUScript could throw the error Cannot process the argument because the value of statusDescription cannot be null or empty.
+* Fixed an issue where New-PSUVariable would double-serialize string secret values
+
 ## 3.7.13 - 2/24/2023
 
 #### Automation
