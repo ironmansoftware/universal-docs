@@ -153,17 +153,9 @@ The most common cause of this is using the Active Directory 1.0.0.0 module from 
 
 ### Disabling Implicit Windows PowerShell Compatibility
 
-You can disable implicit Windows PowerShell Compatibility by modifying the `powershell.config.json` file in `$PSHome`. You can still use Windows PowerShell Compatibility but will need to import modules using `-UseWindowsPowerShell`.
+You can disabled Windows PowerShell Compatibility via the settings within the environment's properties.&#x20;
 
-```powershell
-@{ DisableImplicitWinCompat = $true } | ConvertTo-Json | Out-File "$PSHome\powershell.config.json"
-```
-
-`$PSHome` differs per PowerShell host. Running the above command line will disable WinPSCompat for the PowerShell 7 environment when run within a PowerShell 7 process. To disable it for the PowerShell Universal Integrated environment, you will need to create the `powershell.config.json` file within the PSU installation folder.&#x20;
-
-For example, `C:\Program Filxes (x86)\Universal`.
-
-It's also possible to provide the `--SettingsFile` parameter to `pwsh.exe` in order to load a `powershell.config.json` file from another location.
+Windows PowerShell Compatibility is disabled for the Integrated environment by default and cannot be enabled.&#x20;
 
 ### Cleanly Using Windows PowerShell Compatibility
 

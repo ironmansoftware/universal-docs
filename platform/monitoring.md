@@ -44,3 +44,19 @@ Performance counters are installed when running the MSI installer. Once this occ
 * PowerShell Universal \ API Execution Time \ Endpoint
 * PowerShell Universal \ Active Dashboard Connections \ \_Total
 * PowerShell Universal \ Active Dashboard Connections \ Dashboard
+
+## Processes
+
+Processes started directly from PowerShell Universal will be displayed in the processes page. You can access this page by click Home and then the Processes card.&#x20;
+
+Information includes the process ID, purpose, file name, and memory usage. You can also view the state of runspaces within the process.&#x20;
+
+<figure><img src="../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+
+Note that processes started by your scripts will not be listed here.&#x20;
+
+## User Sessions&#x20;
+
+You can view user sessions for dashboards and the admin console by click the User Sessions card on the Home page. Session information includes the connection time, source, user name, user agent string and remote IP Address.&#x20;
+
+<figure><img src="../.gitbook/assets/image (446).png" alt=""><figcaption></figcaption></figure>

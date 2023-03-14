@@ -4,6 +4,94 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.8.0 - 3/14/2023
+
+#### API
+
+* Added support for renaming and setting the description, URL and version for the Endpoints swagger document
+* Added a button to view the swagger documentation from the APIs page
+* Added -Condition to New-PSUTrigger
+* Added settings to API page
+* Added Endpoint documentation
+* Added New-PSUEndpointDocumentation, Get-PSUEndpointDocumentation and Remove-PSUEndpointDocumentation
+* Fixed an issue where setting Content-Type to application/json and not specifying a body would fail when running an API under Windows PowerShell
+
+#### Automation
+
+* Add new run script button and script editor button
+* Hide Run As drop down when Integrated environment is selected
+* Added Guid ID for jobs to improve security
+* Changed the default job handshake timeout to 30 seconds
+* Added Licensing Expiring and License Expired triggers
+
+#### Dashboards
+
+* Add -Switch to New-UDListItem and -SwitchAlignment, -CheckBoxAlignment
+* Add link to git repo for quick access
+* Added -Static to New-UDPage
+* Added New-UDMarkdown
+* Added -DefaultDashboardTheme to Set-PSUSettings
+* Added -VerboseErrorMessages to New-PSUDashboard
+* Added Logout button to user menu when using non-forms login.
+* Added -Property to Get-UDElement (#1994)
+* CodeEditor now honors light\dark theme (#2016)
+* Autocomplete now doesn't error on clear (#2073)
+* Added -LightTheme-DarkTheme to New-UDCodeEditor
+* Added -DisableInteractiveHost to New-UDDashboard
+* Added support for -Title in the Dashboard page editor (#2004)
+* Added -DisablePrevious to New-UDStep
+* Adding all Pro icons and new mappings
+* Removed endpoints card (#2105)
+* Add -PublishedFolder to New-UDEditor (#1822)
+* Fixed an issue where the -Title would not be displayed in the browser tab until the page loaded (#2095)
+* Fixed an issue where -LoadingComponent of New-UDDynamic would not use variables (#2109)
+* Adding md for New-UDIcon (#2127)
+* Adding Icon and RemoveIconStyle to New-UDStep
+* Adding -ExtraSmallSize and -ExtraLargeSize to New-UDColimn (#2138)
+* Fixed an issue where New-UDChartJS background fill would not work (#2145)
+* Added -AlignItems to New-UDStack (#2158)
+* Autocomplete now auto-highlights the first item in the list (#2154)
+* Fixed an issue where UDAutomcomplete OnEnter could not access the selected value (#2165)
+* Added New-UDDivider (#2164)
+* Adding -Disabled to both New-UDTransferList and New-UDTransferListItem (#1948)
+* Adding -Disabled to New-UDRadioGroup (#2140)
+* Fixed an issue with UDSelect theming and groups (#2092)
+* Matching params between table and grid (#2072)
+
+#### Pages
+
+* Added Content Type to Text, Paragraph and Title
+* Added allow-downloads to the iframe component (#2074)
+* Fixe an issue where script's weren't displayed as full paths (#1988)
+* Enabled edit button for Operators (#1953)
+
+#### Platform
+
+* Added PowerShell Protect deprecation notification
+* Added support for external app token validation
+* Moved Don't Load Profile setting to Environments tab
+* Fixed an issue where saving configuration files could overwrite the wrong file
+* Editor now prompts when navigating away from a page that isn't saved (#1916)
+* Added -CredentialVault and -Password to Set-PSUIdentity and New-PSUIdentity
+* Internal schedules jobs are now removed on server shutdown
+* Implicit Windows Compatibility is now disabled by default in the integrated environment
+* Added description property to environments.
+* Added Reload Resources property to environments.
+* Added -UseLogoSize to Set-PSUSettings
+* Added -DisableImplicitWinCompat to New-PSUEnvironment
+* Improved git commit page\modal
+* Added full git history, improved how git sync status is stored
+* Added Remove-PSULicense
+* Added Expiring Soon warning and expired license buffer
+* Added -Name to New-PSUPublished folder
+* Added User Sessions page (#2104)
+* Added -DefaultRoute to New-PSURole (#47)
+* Login page now checks for a valid session and will redirect if another tab in the same session authenticates (#1194)
+* Fixed an issue where git sync would get stuck if an edit was in progress and the mode was changed to automatic (#2167)
+* Fixed an issue where the file system watcher would trigger when a .git file changed causing a log message (#2168)
+* APIs and Dashboards will now reload modules changed in PSU (#1920)
+* Added support for PSScriptAnalyzer in editors within the admin console (#1987)
+
 ## 3.7.14 - 3/2/2023
 
 #### Dashboards

@@ -44,3 +44,8 @@ Syntax errors will be shown as red squiggles within the editor. Hovering over th
 
 ![Syntax Errors](<../.gitbook/assets/image (416) (1).png>)
 
+## PSScriptAnalyzer Integration
+
+The PowerShell Universal editor automatically integrates with PSScriptAnalyzer when it is installed on the PSU server. PSScriptAnalyzer will run against PowerShell scripts while you author them in the admin console. Warnings will be presented inline as well as an alert at the top of the editor.&#x20;
+
+Click the alert to be navigated to the first error or warning.&#x20;

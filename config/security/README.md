@@ -333,6 +333,10 @@ The Execute role grants the ability to run scripts and read access for everythin
 
 The Reader role provides read-only access to PowerShell Universal.
 
+### Default Route per Role
+
+You can change which page the user sees when logging in by setting the `Default Route` property for the role. For example, you may want HR users to go to the Human Resources dashboard while you want IT users to go to the IT Dashboard.&#x20;
+
 ### Users with Many Groups
 
 If your users are members of more than about 40 groups you may experience problems logging in. This is due to size limits of the HTTP headers in IIS and Kestrel. The more groups a user is a member of, the more authorization claims they have and the large the header.

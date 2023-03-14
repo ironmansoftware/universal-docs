@@ -44,6 +44,14 @@ To specify the default data for the editor, use the `-Data` parameter. You need 
 New-UDEditor -Data $Data
 ```
 
+## Image Support
+
+In order to support images, you will need to provide a [published folder](../../../../platform/published-folders.md) in which to upload the images. Once a published folder is defined, images can be uploaded directly in the editor. They will be placed within the directory and then served through the request path.&#x20;
+
+```powershell
+New-UDEditor -PublishedFolder 'MyImages'
+```
+
 ## API
 
 ### New-UDEditor

@@ -26,8 +26,6 @@ You can also use the [Configuration settings](settings.md) to setup git sync. Th
 
 ## Git Sync Settings
 
-PSU Git sync does not handle merge conflicts automatically and you should ensure that you prepare for the first sync before configuring it.&#x20;
-
 ### Use Database
 
 {% hint style="info" %}
@@ -105,9 +103,19 @@ If you are on Windows and receive an error about persisting credentials in wincr
 
 ### Manual Mode
 
-Manual mode requires users editing the PowerShell Universal instance to click Edit in order to make changes in the system. Once the changes are complete, the user can then click Save and enter a message about what changed. At this time a commit is made and pushed to the remote.&#x20;
+Manual mode requires users editing the PowerShell Universal instance to click Edit in order to make changes in the system.&#x20;
 
-While editing the environment, the git sync process is paused.&#x20;
+<figure><img src="../.gitbook/assets/image (448).png" alt=""><figcaption></figcaption></figure>
+
+Once the changes are complete, the user can then click Save Changes to begin a commit
+
+<figure><img src="../.gitbook/assets/image (447).png" alt=""><figcaption></figcaption></figure>
+
+On the git commit page, you can view the changed files and enter a commit message.&#x20;
+
+<figure><img src="../.gitbook/assets/image (442).png" alt=""><figcaption></figcaption></figure>
+
+Once changes have been committed, they will be pushed to the remote and the service will start to synchronize with git again. There is also a chance that a git merge conflict can take place at this time. See [Dealing with Conflicts](git.md#dealing-with-conflicts) for more information.&#x20;
 
 Manual mode can be set in the git settings within the admin console or within `appsettings.json`.
 
@@ -169,11 +177,15 @@ The following are not included:&#x20;
 * web.config
 * PowerShell Universal Application Binaries
 
-## Git Status Page
+## Git History and Status Page
 
-The git status page lists the synchronized repository, branch and the list of commits that have occurred.&#x20;
+The history tab displays all the git commit history for the current repository.&#x20;
 
-![](<../.gitbook/assets/image (273).png>)
+<figure><img src="../.gitbook/assets/image (445).png" alt=""><figcaption></figcaption></figure>
+
+The sync status tab displays the current status of nodes within the PSU cluster.&#x20;
+
+<figure><img src="../.gitbook/assets/image (437).png" alt=""><figcaption></figcaption></figure>
 
 ### Testing Git Sync
 
@@ -186,6 +198,30 @@ The best way to ensure that your git sync is working properly is to click the Sy
 You can view changes within the table of git syncs. Each sync includes the number of changes found since the last sync, the SHA of the commit and a list of changes between that SHA and the previous one. When files are in a modified state, you will be able to view the diffs using the file diff tool.&#x20;
 
 ![](<../.gitbook/assets/image (435).png>)
+
+### Dealing with Conflicts
+
+{% hint style="info" %}
+Conflict resolution is only available in manual git sync mode.
+{% endhint %}
+
+When multiple users are editing the PowerShell Universal configuration files, there may be conflicts. PowerShell Universal will display that a particular node is in a conflicted state when attempting to commit changes. You will see a list of changes that are conflicted on the git commit page. Click the Resolve Conflict button to view the conflict in an editor.&#x20;
+
+<figure><img src="../.gitbook/assets/image (439).png" alt=""><figcaption></figcaption></figure>
+
+In this example, the string for this endpoint was edited on both the remote and the local repository.&#x20;
+
+<figure><img src="../.gitbook/assets/image (443).png" alt=""><figcaption></figcaption></figure>
+
+Edit the text to remove the conflict.&#x20;
+
+<figure><img src="../.gitbook/assets/image (375).png" alt=""><figcaption></figcaption></figure>
+
+Save the changes and navigate back to the git commit page. Enter a new commit message for the merge conflict and click Commit Changes.&#x20;
+
+<figure><img src="../.gitbook/assets/image (441).png" alt=""><figcaption></figcaption></figure>
+
+This will resolve the merge conflict and push to the remote.&#x20;
 
 ## Git Synchronization Behavior
 

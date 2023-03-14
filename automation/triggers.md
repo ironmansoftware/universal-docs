@@ -35,6 +35,8 @@ The following types of events can be assigned a trigger.
 * API Error
 * New User Login
 * Git Sync
+* License Expired
+* License Expiring
 
 ### New User Login
 
@@ -127,6 +129,18 @@ $Dashboard
 ```
 
 Triggers related to the server status will not receive a parameter.
+
+## Conditions
+
+Using the `-Condition` parameter of `New-PSUTrigger`, you can determine whether or not a trigger should be run based on local conditions on the server. Return `$true` or `$false` from the condition.
+
+For example, you can disable a trigger if the `Environment` environment variable is not set to `production`.&#x20;
+
+```powershell
+New-PSUTrigger -Condition {
+   $Env:Environment -eq 'production'
+}
+```
 
 ## API
 

@@ -180,6 +180,18 @@ Invoke-RestMethod http://localhost:5000/api/v1/script/7 -Method POST -Body $JobC
 
 Variables defined in jobs can be found on the [variables page](../platform/variables.md#scripts).
 
+## Experimental Feature: Job Run ID
+
+The default behavior for PowerShell Universal is to track jobs based on an autoincrementing int64-based ID. Every time a new job is run, the job is one higher in ID than the last. Because of this behavior, it is easy to guess other job IDs and can potentially lead to a security risk.&#x20;
+
+In order to avoid this issue, you can enable the `JobRunID` experimental feature. Although internally the system still creates jobs with ascending numeric IDs, you cannot access jobs based on those IDs. Instead, a new field called `RunID` is used. `RunID` utilizes a `GUID` rather than an ID for look ups. This greatly reduces the ability for an attacker to guess a job ID.&#x20;
+
+You will need to enable this feature to use it.&#x20;
+
+```powershell
+Set-PSUSetting -ExperimentalFeature ([PowerShellUnviersal.ExperimentalFeatures]::JobRunId)
+```
+
 ## API
 
 * [Invoke-PSUScript](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Invoke-PSUScript.txt)

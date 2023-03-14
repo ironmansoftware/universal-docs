@@ -56,6 +56,7 @@
       * [Date and Time](userinterfaces/dashboards/components/data-display/date-and-time.md)
       * [Icon](userinterfaces/dashboards/components/data-display/icon.md)
       * [List](userinterfaces/dashboards/components/data-display/list.md)
+      * [Markdown](userinterfaces/dashboards/components/data-display/markdown.md)
       * [Table](userinterfaces/dashboards/components/data-display/table.md)
       * [Timeline](userinterfaces/dashboards/components/data-display/timeline.md)
       * [Tooltip](userinterfaces/dashboards/components/data-display/tooltip.md)

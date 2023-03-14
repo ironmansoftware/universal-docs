@@ -299,6 +299,31 @@ Page titles are static by default, but you can override this behavior by using `
 New-UDPage -Name "Home" -LoadTitle { "Current Time" + (Get-Date) } -Content { } 
 ```
 
+## Static Pages
+
+Static pages allow for better performance by not executing PowerShell to load the content of the page. This can be useful when displaying data that does not require dynamic PowerShell execution. The page content is constructed when the dashboard is started.&#x20;
+
+<pre class="language-powershell"><code class="lang-powershell"><strong>New-UDPage -Name 'Static Page' -Content {
+</strong>    New-UDTypography (Get-Date)
+} -Static
+</code></pre>
+
+Static pages do not have access to user specific data. This includes variables such as:&#x20;
+
+* $Headers
+* $User
+* $Roles
+
+You can still include dynamic regions within pages. These dynamic regions will have access to user data. Reloading the below example will update the date and time listed in the page.&#x20;
+
+```powershell
+New-UDPage -Name 'Static Page' -Content {
+   New-UDDynamic -Content {
+       New-UDTypography (Get-Date)
+   }
+} -Static
+```
+
 ## API
 
 [New-UDPage](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDPage.txt)
