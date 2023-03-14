@@ -34,6 +34,45 @@ ENV Logging__Path /home/data/logs/log.txt
 ENTRYPOINT ["./Universal/Universal.Server"]
 ```
 
+### Linux with docker-compose
+```
+version: "3.7"
+services:
+  psh-universal:
+    container_name: psh-universal
+    image: ironmansoftware/universal:latest
+    ports:
+      - 5000:5000
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/Amsterdam
+      - Data__RepositoryPath=/home/data/Repository
+      - Data__ConnectionString=/home/data/database.db
+      - UniversalDashboard__AssetsFolder=/home/data/UniversalDashboard
+      - Logging__Path=/home/data/logs/log.txt
+    volumes:
+      - /path/to/data:/home/data
+    #optional healthcheck.
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:5000" ]
+      interval: 2m
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+```
+don't forget to update the path under volumes to a local path.
+
+save as docker-compose.yml, to validate config type:
+
+```
+docker-compose config
+```
+To bring container up, type:
+```
+docker-compose up -d
+```
+
 ### Windows
 
 ```
