@@ -4,10 +4,21 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.8.2 - 3/15/2023
+
+#### Platform
+
+* Fixed an issue where a the UserSessions SQL table was not created properly during upgrade (#2186)
+* Fixed an issue where ignored files would show up in the git commit page and incorrectly state there were merge conflicts (#2188)
+
+#### Desktop
+
+* Fixed an issue where desktop mode would not start properly. (#2187)
+
 ## 3.8.1 - 3/14/2023
 
 {% hint style="warning" %}
-There is a known issue with SQL server integration with this version that will be fixed in build 3.8.2. Please consider waiting to upgrade if you are using SQL integration.&#x20;
+There is a known issue with SQL server integration with this version that was fixed in build 3.8.2.&#x20;
 {% endhint %}
 
 #### Dashboards
