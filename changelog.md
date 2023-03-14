@@ -6,6 +6,10 @@ description: Changelog for PowerShell Universal.
 
 ## 3.8.1 - 3/14/2023
 
+{% hint style="warning" %}
+There is a known issue with SQL server integration with this version that will be fixed in build 3.8.2. Please consider waiting to upgrade if you are using SQL integration.&#x20;
+{% endhint %}
+
 #### Dashboards
 
 * Fixed an issue where New-UDNivoChart was missing an alias for the renamed parameter -CirclePacking (-Bubble)
