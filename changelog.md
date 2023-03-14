@@ -4,6 +4,18 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.8.1 - 3/14/2023
+
+#### Dashboards
+
+* Fixed an issue where New-UDNivoChart was missing an alias for the renamed parameter -CirclePacking (-Bubble)
+* Fixed an issue where New-UDNivoChart -OnClick did not work
+
+#### Platform
+
+* Fixed an issue where licensing would not work for online licenses (#2183)
+* Fixed an issue where resources, like dashboards, would reload with each git sync (#2184)
+
 ## 3.8.0 - 3/14/2023
 
 #### API
