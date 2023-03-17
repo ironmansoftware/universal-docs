@@ -8,7 +8,7 @@ The editor controls within the PowerShell Universal admin console provide a rich
 
 ## IntelliSense
 
-![IntelliSense](<../.gitbook/assets/image (7).png>)
+![IntelliSense](<../.gitbook/assets/image (417).png>)
 
 All editors within PowerShell Universal will provide IntelliSense. You should be able to complete commands, parameters, built-in variables, and paths.&#x20;
 

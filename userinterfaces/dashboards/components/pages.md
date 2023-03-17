@@ -254,6 +254,39 @@ New-UDDashboard -Title "Hello, World!" -Pages $Pages
 
 ![Temporary navigation drawer](../../../.gitbook/assets/temporary.gif)
 
+### Horizontal Navigation
+
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Horizontal Navigation</p></figcaption></figure>
+
+You can use `New-UDAppBar` with a blank page to create horizontal navigation.&#x20;
+
+```powershell
+New-UDDashboard -Title 'PowerShell Universal' -Pages @(
+    New-UDPage -Name 'Page' -Content {
+        New-UDAppBar -Children {
+            New-UDTypography -Text "Title" -Variant h4 -Style @{
+                marginRight = "50px"
+            }
+            New-UDMenu -Variant text -Text "Settings" -Children {
+                New-UDMenuItem -Text 'Item 1' -OnClick { Invoke-UDRedirect "/item1" }
+                New-UDMenuItem -Text 'Item 2' -OnClick { Invoke-UDRedirect "/item1" }
+                New-UDMenuItem -Text 'Item 3' -OnClick { Invoke-UDRedirect "/item1" }
+            }
+            New-UDMenu -Variant text -Text "Options" -Children {
+                New-UDMenuItem -Text 'Item 1' -OnClick { Invoke-UDRedirect "/item1" }
+                New-UDMenuItem -Text 'Item 2' -OnClick { Invoke-UDRedirect "/item1" }
+                New-UDMenuItem -Text 'Item 3' -OnClick { Invoke-UDRedirect "/item1" }
+            }
+            New-UDMenu -Variant text -Text "Tools" -Children {
+                New-UDMenuItem -Text 'Item 1' -OnClick { Invoke-UDRedirect "/item1" }
+                New-UDMenuItem -Text 'Item 2' -OnClick { Invoke-UDRedirect "/item1" }
+                New-UDMenuItem -Text 'Item 3' -OnClick { Invoke-UDRedirect "/item1" }
+            }
+        } -DisableThemeToggle
+    } -Blank
+) 
+```
+
 ## Logo
 
 You can display a logo in the navigation bar by using the `-Logo` parameter.
