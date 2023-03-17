@@ -4,6 +4,27 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.8.3 - 3/17/2023
+
+#### APIs
+
+* Fixed an issue where API documentation property would not be updated when editing endpoints (#2195)
+* Fixed an issue where API documentation properties would not save properly (#2197)
+* Added view documentation button on API docs
+* Fixed an issue where API Try Out button would not work on nested sites (#2196)
+* Fixed an issue where API Documentation button didn't work on nested sites (#2198)
+
+#### Dashboards
+
+* Fixed an issue where New-UDColumn had -ExtraLargeSize set to 12 by default
+* Fixed an issue where New-UDAutoComplete -OnEnter would not fire when using -LoadOptions (#2190)
+* Added missing large size to New-UDMenu (#2211)
+* Fixed a performance issue with New-UDIcon (#2213)
+
+#### Platform
+
+* Fixed an issue where commit message was not be required for git commits (#2210)
+
 ## 3.8.2 - 3/15/2023
 
 #### Platform
