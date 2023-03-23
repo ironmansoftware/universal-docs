@@ -150,6 +150,7 @@
 * [Published Folders](platform/published-folders.md)
 * [Templates](platform/templates.md)
 * [Translations](platform/translations.md)
+* [User Sessions](platform/user-sessions.md)
 * [Variables](platform/variables.md)
 
 ## Configuration <a href="#config" id="config"></a>
