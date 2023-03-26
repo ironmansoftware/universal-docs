@@ -4,6 +4,33 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.8.4 - 3/26/2023
+
+#### APIs
+
+* Fixed an issue where viewing an endpoint ID that didn't exist would show an error page (#2227)
+
+#### Automation
+
+* Fixed an issue where schedule parameters would not be populated when editing a schedule (#2023)
+
+#### Dashboards
+
+* Fixed an issue where New-UDMap would not render properly
+* Rolled back a change to UDDynamic that caused it to fail to load properly
+* Fixed an issue where reopening a mobile web browser would cause the dashboard to stop working
+* Fixed an issue where New-UDTextbox -OnValidate would never return as valid
+* Fixed an issue where New-UDUpload was not aligned with other buttons (#2216)
+* Fixed an issue where New-UDatePicker could not be disabled (#2141)
+
+#### Platform
+
+* Fixed an issue where submenus would not collapse in the admin console (#1838)
+* Fixed an issue where the license notification would not show in git manual mode (#2220)
+* Fixed an issue where initialize.ps1 would not be run during the first git sync (#2225)
+* Fixed an issue where user names would not be shown for user sessions established with Windows authentication (#2224)
+* Fixed an issue where MSI would fail if the installation directory was changed between installs (#2207)
+
 ## 3.8.3 - 3/17/2023
 
 #### APIs
