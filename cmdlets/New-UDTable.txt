@@ -1,0 +1,468 @@
+
+NAME
+    New-UDTable
+    
+SYNOPSIS
+    Creates a table.
+    
+    
+SYNTAX
+    New-UDTable [-Id <String>] [-Title <String>] -Data <Object[]> [-Columns <Hashtable[]>] [-OnRowSelection <Endpoint>] [-ShowSort] [-ShowFilter] [-ShowSearch] [-Dense] [-ShowExport] [-StickyHeader] [-PageSize <Int32>] [-PageSizeOptions <Int32[]>] [-PaginationLocation <String>] [-ShowSelection] [-ShowPagination] [-Padding <String>] [-Size <String>] [-TextOption <Hashtable>] [-ExportOption <String[]>] [-OnExport <Endpoint>] [-DisablePageSizeAll] [-DefaultSortDirection <String>] [-HideToggleAllRowsSelected] [-DisableMultiSelect] [-DisableSortRemove] [-Icon <Hashtable>] [-ClassName <String>] [-ShowRefresh] [-ToolbarContent <ScriptBlock>] [-OnRowExpand <ScriptBlock>] [-MaxHeight <Int32>] [-Language <String>] [-RemoveCard] [<CommonParameters>]
+    
+    New-UDTable [-Id <String>] [-Title <String>] -LoadRows <Endpoint> -Columns <Hashtable[]> [-OnRowSelection <Endpoint>] [-ShowSort] [-ShowFilter] [-ShowSearch] [-Dense] [-ShowExport] [-StickyHeader] [-PageSize <Int32>] [-PageSizeOptions <Int32[]>] [-PaginationLocation <String>] [-ShowSelection] [-ShowPagination] [-Padding <String>] [-Size <String>] [-TextOption <Hashtable>] [-ExportOption <String[]>] [-OnExport <Endpoint>] [-DisablePageSizeAll] [-DefaultSortDirection <String>] [-HideToggleAllRowsSelected] [-DisableMultiSelect] [-DisableSortRemove] [-Icon <Hashtable>] [-ClassName <String>] [-ShowRefresh] [-ToolbarContent <ScriptBlock>] [-OnRowExpand <ScriptBlock>] [-MaxHeight <Int32>] [-AutoRefresh] [-AutoRefreshInterval <Int32>] [-Language <String>] [-RemoveCard] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a table. Tables are used to show both static and dynamic data. You can define columns and data to show within the table. The columns can be used to render custom components based on row data. You can also enable paging, filtering, sorting and even server-side processing.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    named
+        Default value                [Guid]::NewGuid().ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Title <String>
+        The title to show at the top of the table's card.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Data <Object[]>
+        The data to put into the table.
+        
+        Required?                    true
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LoadRows <Endpoint>
+        When using dynamic tables, this script block is called. The $Body parameter will contain a hashtable the following options: 
+        
+        filters: @()
+        orderBy: string
+        orderDirection: string
+        page: int
+        pageSize: int
+        properties: @()
+        search: string
+        totalCount: int
+        
+        You can use these values to perform server-side processing, like SQL queries, to improve the performance of large grids. 
+        
+        After processing the data with these values, output the data via Out-UDTableData.
+        
+        Required?                    true
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Columns <Hashtable[]>
+        Defines the columns to show within the table. Use New-UDTableColumn to define these columns. If this parameter isn't specified, the properties of the data that you pass in will become the columns.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnRowSelection <Endpoint>
+        A script block to call when a row is selected. $EventData will contain the selected rows.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ShowSort [<SwitchParameter>]
+        Whether to show sort controls on columns
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ShowFilter [<SwitchParameter>]
+        Whether to show filter controls on columns
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ShowSearch [<SwitchParameter>]
+        Whether to show full table search
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Dense [<SwitchParameter>]
+        Reduces the white-space used within the table.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ShowExport [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -StickyHeader [<SwitchParameter>]
+        Makes the header sticky.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -PageSize <Int32>
+        The default page size.
+        
+        Required?                    false
+        Position?                    named
+        Default value                5
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -PageSizeOptions <Int32[]>
+        An array of available page size options.
+        
+        Required?                    false
+        Position?                    named
+        Default value                @()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -PaginationLocation <String>
+        Where to show the pagination controls. Valid values are top, bottom, or both. Defaults to bottom.
+        
+        Required?                    false
+        Position?                    named
+        Default value                bottom
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ShowSelection [<SwitchParameter>]
+        Whether to allow selection within the table.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ShowPagination [<SwitchParameter>]
+        Whether to show pagination controls.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Padding <String>
+        
+        Required?                    false
+        Position?                    named
+        Default value                default
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Size <String>
+        The size of the table. Defaults to medium. Valid values are medium and small.
+        
+        Required?                    false
+        Position?                    named
+        Default value                medium
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -TextOption <Hashtable>
+        Customizations to standard text within the table. Use New-UDTextOption to create the text options.
+        
+        Required?                    false
+        Position?                    named
+        Default value                (New-UDTableTextOption)
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ExportOption <String[]>
+        An array of export options.
+        
+        Required?                    false
+        Position?                    named
+        Default value                @("XLSX", "PDF", "JSON", "CSV")
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnExport <Endpoint>
+        A script block used to customize how the export is performed.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DisablePageSizeAll [<SwitchParameter>]
+        Removes the All option from page size options.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DefaultSortDirection <String>
+        The default sort direction.
+        
+        Required?                    false
+        Position?                    named
+        Default value                ascending
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -HideToggleAllRowsSelected [<SwitchParameter>]
+        Hides the toggle all rows selected button.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DisableMultiSelect [<SwitchParameter>]
+        Disables multi-select.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DisableSortRemove [<SwitchParameter>]
+        Removes the sort option for unsorted columns. Columns will always be ascending or descending.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Icon <Hashtable>
+        Sets an icon next to the title. Use New-UDIcon to create the icon.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        A CSS class to apply to the table.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ShowRefresh [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ToolbarContent <ScriptBlock>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnRowExpand <ScriptBlock>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -MaxHeight <Int32>
+        
+        Required?                    false
+        Position?                    named
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -AutoRefresh [<SwitchParameter>]
+        Reloads the table on an interval when -LoadRows is being used.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -AutoRefreshInterval <Int32>
+        The interval to reload data when AutoRefresh is specified.
+        
+        Required?                    false
+        Position?                    named
+        Default value                10
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Language <String>
+        The language. Primarily used for Date and Time filters.
+        
+        Required?                    false
+        Position?                    named
+        Default value                en
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -RemoveCard [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+NOTES
+    
+    
+        General notes
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Creates a static table whether the columns of the table are the properties of the data specified.
+    
+    $Data = @(
+        @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+        @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+        @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+        @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+        @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    ) 
+    
+    New-UDTable -Id 'defaultTable' -Data $Data
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS > Creates a table where there are custom columns defined for that table.
+    
+    $Columns = @(
+        New-UDTableColumn -Property Dessert -Title "A Dessert"
+        New-UDTableColumn -Property Calories -Title Calories 
+        New-UDTableColumn -Property Fat -Title Fat 
+        New-UDTableColumn -Property Carbs -Title Carbs 
+        New-UDTableColumn -Property Protein -Title Protein 
+    )
+    
+    New-UDTable -Id 'customColumnsTable' -Data $Data -Columns $Columns
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS > Creates a table where the table has custom rendering for one of the columns and an export button.
+    
+    $Columns = @(
+        New-UDTableColumn -Property Dessert -Title Dessert -Render { 
+            $Item = $Body | ConvertFrom-Json 
+            New-UDButton -Id "btn$($Item.Dessert)" -Text "Click for Dessert!" -OnClick { Show-UDToast -Message $Item.Dessert } 
+        }
+        New-UDTableColumn -Property Calories -Title Calories 
+        New-UDTableColumn -Property Fat -Title Fat 
+        New-UDTableColumn -Property Carbs -Title Carbs 
+        New-UDTableColumn -Property Protein -Title Protein 
+    )
+    
+    New-UDTable -Id 'customColumnsTableRender' -Data $Data -Columns $Columns -Sort -Export
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS > Creates a table within a New-UDDynamic that refreshes automatically on an interval.
+    
+    New-UDDynamic -Content {
+        $DynamicData = @(
+            @{Dessert = 'Frozen yoghurt'; Calories = (Get-Random); Fat = 6.0; Carbs = 24; Protein = 4.0}
+            @{Dessert = 'Ice cream sandwich'; Calories = (Get-Random); Fat = 6.0; Carbs = 24; Protein = 4.0}
+            @{Dessert = 'Eclair'; Calories = (Get-Random); Fat = 6.0; Carbs = 24; Protein = 4.0}
+            @{Dessert = 'Cupcake'; Calories = (Get-Random); Fat = 6.0; Carbs = 24; Protein = 4.0}
+            @{Dessert = 'Gingerbread'; Calories = (Get-Random); Fat = 6.0; Carbs = 24; Protein = 4.0}
+        ) 
+    
+        New-UDTable -Id 'dynamicTable' -Data $DynamicData
+    } -AutoRefresh -AutoRefreshInterval 2
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS > Creates a table that uses the LoadRows script block to load data dynamically.
+    
+    New-UDTable -Id 'loadDataTable' -Columns $Columns -LoadRows {
+    $Query = $Body | ConvertFrom-Json
+    
+    @(
+        @{Dessert = 'Frozen yoghurt'; Calories = (Get-Random); Fat = 6.0; Carbs = 24; Protein = 4.0}
+        @{Dessert = 'Ice cream sandwich'; Calories = (Get-Random); Fat = 6.0; Carbs = 24; Protein = 4.0}
+        @{Dessert = 'Eclair'; Calories = (Get-Random); Fat = 6.0; Carbs = 24; Protein = 4.0}
+        @{Dessert = 'Cupcake'; Calories = (Get-Random); Fat = 6.0; Carbs = 24; Protein = 4.0}
+        @{Dessert = 'Gingerbread'; Calories = (Get-Random); Fat = 6.0; Carbs = 24; Protein = 4.0}
+    ) | Out-UDTableData -Page 0 -TotalCount 5 -Properties $Query.Properties
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

@@ -1,0 +1,98 @@
+
+NAME
+    New-UDTooltip
+    
+SYNOPSIS
+    A tooltip component.
+    
+    
+SYNTAX
+    New-UDTooltip [[-Id] <String>] [[-Place] <String>] [[-Type] <String>] [[-Effect] <String>] [-TooltipContent] <ScriptBlock> [-Content] <ScriptBlock> [<CommonParameters>]
+    
+    
+DESCRIPTION
+    A tooltip component. Tooltips can be placed over an other component to display a popup when the user hovers over the nested component.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of this component.
+        
+        Required?                    false
+        Position?                    1
+        Default value                [Guid]::NewGuid()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Place <String>
+        Where to place the tooltip.
+        
+        Required?                    false
+        Position?                    2
+        Default value                top
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Type <String>
+        The type of tooltip.
+        
+        Required?                    false
+        Position?                    3
+        Default value                dark
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Effect <String>
+        An effect to apply to the tooltip.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -TooltipContent <ScriptBlock>
+        Content to display within the tooltip.
+        
+        Required?                    true
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Content <ScriptBlock>
+        Content that activates the tooltip when hovered.
+        
+        Required?                    true
+        Position?                    6
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > A simple tooltip.
+    
+    New-UDTooltip -Content {
+        New-UDTypography -Text 'Hover me'
+    } -TooltipContent {
+        New-UDTypography -Text 'I'm a tooltip'
+    }
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

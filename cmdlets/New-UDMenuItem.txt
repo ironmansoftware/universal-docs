@@ -1,0 +1,88 @@
+
+NAME
+    New-UDMenuItem
+    
+SYNOPSIS
+    Creates a menu item.
+    
+    
+SYNTAX
+    New-UDMenuItem [[-Id] <String>] [-Text] <String> [[-Value] <String>] [[-Icon] <Hashtable>] [[-OnClick] <Endpoint>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a menu item.
+    
+
+PARAMETERS
+    -Id <String>
+        
+        Required?                    false
+        Position?                    1
+        Default value                [Guid]::NewGuid()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Text <String>
+        The text to display in the menu item.
+        
+        Required?                    true
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Value <String>
+        The value of the menu item. If not specified, the text will be used.
+        
+        Required?                    false
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Icon <Hashtable>
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnClick <Endpoint>
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > New-UDMenu -Text 'Click Me' -OnChange {
+        Show-UDToast $EventData
+    } -Children {
+        New-UDMenuItem -Text 'Test'
+        New-UDMenuItem -Text 'Test2'
+        New-UDMenuItem -Text 'Test3'
+    }
+    
+    Creates a simple menu.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

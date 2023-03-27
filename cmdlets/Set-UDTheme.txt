@@ -1,0 +1,59 @@
+
+NAME
+    Set-UDTheme
+    
+SYNOPSIS
+    Sets the current theme of the dashboard.
+    
+    
+SYNTAX
+    Set-UDTheme [-Name <String>] [-Variant <String>] [<CommonParameters>]
+    
+    Set-UDTheme [-Theme <Hashtable>] [-Variant <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Sets the current theme of the dashboard.
+    
+
+PARAMETERS
+    -Name <String>
+        A named theme to apply.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Theme <Hashtable>
+        A custom theme to apply.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Variant <String>
+        
+        Required?                    false
+        Position?                    named
+        Default value                light
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    
+RELATED LINKS
+
+

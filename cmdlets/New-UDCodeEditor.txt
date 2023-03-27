@@ -1,0 +1,262 @@
+
+NAME
+    New-UDCodeEditor
+    
+SYNOPSIS
+    Creates a new Monaco code editor control.
+    
+    
+SYNTAX
+    New-UDCodeEditor [-Id <String>] [-Language <String>] [-Height <String>] [-Width <String>] [-HideCodeLens] [-DisableCodeFolding] [-FormatOnPaste] [-GlyphMargin] [-DisableLineNumbers] [-DisableLinks] [-DisableBracketMatching] [-MouseWheelScrollSensitivity <Int32>] [-MouseWheelZoom] [-ReadOnly] [-RenderControlCharacters] [-ShowFoldingControls <String>] [-SmoothScrolling] [-LightTheme <String>] [-DarkTheme <String>] [-Code <String>] [-Original <String>] [-Autosize] [-CanSave] [-Extension <String>] [<CommonParameters>]
+    
+    New-UDCodeEditor [-Id <String>] [-Language <String>] [-Height <String>] [-Width <String>] [-Code <String>] [-Original <String>] [-Options <Hashtable>] [-CanSave] [-Extension <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new Monaco code editor control.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of this editor
+        
+        Required?                    false
+        Position?                    named
+        Default value                ([Guid]::NewGuid())
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Language <String>
+        The language to use for syntax highlighting.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Height <String>
+        The height of the editor.
+        
+        Required?                    false
+        Position?                    named
+        Default value                500
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Width <String>
+        The width of the editor.
+        
+        Required?                    false
+        Position?                    named
+        Default value                100%
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -HideCodeLens [<SwitchParameter>]
+        Hides code lens within the editor.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DisableCodeFolding [<SwitchParameter>]
+        Disables code folding.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -FormatOnPaste [<SwitchParameter>]
+        Formats on paste.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -GlyphMargin [<SwitchParameter>]
+        Seconds the size of the glyph margin
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DisableLineNumbers [<SwitchParameter>]
+        Disables line numbers
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DisableLinks [<SwitchParameter>]
+        Disables automatically highlighting links.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DisableBracketMatching [<SwitchParameter>]
+        Disables bracket matching.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -MouseWheelScrollSensitivity <Int32>
+        Sets the mouse wheel scroll sensitivity.
+        
+        Required?                    false
+        Position?                    named
+        Default value                1
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -MouseWheelZoom [<SwitchParameter>]
+        Enables Ctrl+Scroll zooming.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ReadOnly [<SwitchParameter>]
+        Sets the editor to readonly.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -RenderControlCharacters [<SwitchParameter>]
+        Enables rendering of control characters.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ShowFoldingControls <String>
+        Controls how to show the folding controls.
+        
+        Required?                    false
+        Position?                    named
+        Default value                mouseover
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -SmoothScrolling [<SwitchParameter>]
+        Enables smooth scrolling.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LightTheme <String>
+        The light theme for the editor.
+        
+        Required?                    false
+        Position?                    named
+        Default value                vs
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DarkTheme <String>
+        The dark theme for the editor.
+        
+        Required?                    false
+        Position?                    named
+        Default value                vs-dark
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Code <String>
+        The code to show in the editor.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Original <String>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Autosize [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Options <Hashtable>
+        
+        Required?                    false
+        Position?                    named
+        Default value                @{}
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -CanSave [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Extension <String>
+        
+        Required?                    false
+        Position?                    named
+        Default value                txt
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > New-UDCodeEditor -Code 'Get-Process' -Theme 'vs-dark' -Language 'powershell' -Readonly
+    
+    Creates a readonly code editor with PowerShell script.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

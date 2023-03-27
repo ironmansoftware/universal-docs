@@ -1,0 +1,96 @@
+
+NAME
+    New-UDAlert
+    
+SYNOPSIS
+    Creates an alert.
+    
+    
+SYNTAX
+    New-UDAlert [-Id <String>] [-Severity <String>] [-Children <ScriptBlock>] [-Title <String>] [-ClassName <String>] [-Style <Hashtable>] [<CommonParameters>]
+    
+    New-UDAlert [-Id <String>] [-Severity <String>] [-Text <String>] [-Title <String>] [-ClassName <String>] [-Style <Hashtable>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates an alert.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of this component.
+        
+        Required?                    false
+        Position?                    named
+        Default value                [Guid]::NewGuid()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Severity <String>
+        The severity of this alert.
+        
+        Required?                    false
+        Position?                    named
+        Default value                success
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Children <ScriptBlock>
+        Content of the alert.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Text <String>
+        Text for the body of the alert.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Title <String>
+        A title for this alert.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        A CSS class to apply to the alert.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        An hashtable of styles to apply to this component.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    
+RELATED LINKS
+
+

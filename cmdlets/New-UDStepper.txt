@@ -1,0 +1,181 @@
+
+NAME
+    New-UDStepper
+    
+SYNOPSIS
+    Creates a new stepper component.
+    
+    
+SYNTAX
+    New-UDStepper [[-Id] <String>] [[-ActiveStep] <Int32>] [-Children] <ScriptBlock> [-NonLinear] [-AlternativeLabel] [-OnFinish] <Endpoint> [[-OnCancel] <Endpoint>] [[-OnValidateStep] <Endpoint>] [[-Orientation] <String>] [[-NextButtonText] <String>] [[-BackButtonText] <String>] [[-FinishButtonText] <String>] [[-CancelButtonText] <String>] [[-ClassName] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new stepper component. Steppers can be used as multi-step forms or to display information in a stepped manner.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    1
+        Default value                ([Guid]::NewGuid())
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ActiveStep <Int32>
+        Sets the active step. This should be the index of the step.
+        
+        Required?                    false
+        Position?                    2
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Children <ScriptBlock>
+        The steps for this stepper. Use New-UDStep to create new steps.
+        
+        Required?                    true
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -NonLinear [<SwitchParameter>]
+        Allows the user to progress to steps out of order.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -AlternativeLabel [<SwitchParameter>]
+        Places the step label under the step number.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnFinish <Endpoint>
+        A script block that is executed when the stepper is finished.
+        
+        Required?                    true
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnCancel <Endpoint>
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnValidateStep <Endpoint>
+        [Parameter()]
+        [Endpoint]$OnCompleteStep,
+        
+        Required?                    false
+        Position?                    6
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Orientation <String>
+        Sets the orientation of the stepper.
+        
+        Required?                    false
+        Position?                    7
+        Default value                horizontal
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -NextButtonText <String>
+        The text to display in the next button.
+        
+        Required?                    false
+        Position?                    8
+        Default value                Next
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -BackButtonText <String>
+        The text to display in the back button.
+        
+        Required?                    false
+        Position?                    9
+        Default value                Back
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -FinishButtonText <String>
+        
+        Required?                    false
+        Position?                    10
+        Default value                Finish
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -CancelButtonText <String>
+        
+        Required?                    false
+        Position?                    11
+        Default value                Cancel
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        
+        Required?                    false
+        Position?                    12
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Creates a stepper that reports the stepper context with each step.
+    
+    New-UDStepper -Id 'stepper' -Steps {
+        New-UDStep -OnLoad {
+            New-UDElement -tag 'div' -Content { "Step 1" }
+            New-UDTextbox -Id 'txtStep1' 
+        } -Label "Step 1"
+        New-UDStep -OnLoad {
+            New-UDElement -tag 'div' -Content { "Step 2" }
+            New-UDElement -tag 'div' -Content { "Previous data: $Body" }
+            New-UDTextbox -Id 'txtStep2' 
+        } -Label "Step 2"
+        New-UDStep -OnLoad {
+            New-UDElement -tag 'div' -Content { "Step 3" }
+            New-UDElement -tag 'div' -Content { "Previous data: $Body" }
+            New-UDTextbox -Id 'txtStep3' 
+        } -Label "Step 3"
+    } -OnFinish {
+        New-UDTypography -Text 'Nice! You did it!' -Variant h3
+        New-UDElement -Tag 'div' -Id 'result' -Content {$Body}
+    }
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

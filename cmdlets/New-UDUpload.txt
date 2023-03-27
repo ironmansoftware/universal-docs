@@ -1,0 +1,163 @@
+
+NAME
+    New-UDUpload
+    
+SYNOPSIS
+    Upload files
+    
+    
+SYNTAX
+    New-UDUpload [[-Id] <String>] [[-Accept] <String>] [[-OnUpload] <Endpoint>] [[-Text] <String>] [[-Variant] <String>] [[-Color] <String>] [[-ClassName] <String>] [-HideUploadedFileName] [[-Icon] <Object>] [[-IconAlignment] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Upload files. This component works with UDForm and UDStepper.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the uploader.
+        
+        Required?                    false
+        Position?                    1
+        Default value                [Guid]::NewGuid()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Accept <String>
+        The type of files to accept. By default, this component accepts all files.
+        
+        Required?                    false
+        Position?                    2
+        Default value                *
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnUpload <Endpoint>
+        A script block to execute when a file is uploaded. This $body parameter will contain JSON in the following format: 
+        
+        {
+            data: 'base64 encoded string of file data',
+            name: 'filename',
+            type: 'type of file, if known'
+        }
+        
+        $EventData will contain a class with the following properties:
+        
+        public string Name { get; set; }
+        public string FileName { get; set; }
+        public DateTime TimeStamp { get; set; }
+        public string ContentType { get; set; }
+        public string Type => ContentType;
+        
+        Required?                    false
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Text <String>
+        The text to display on the upload button.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Variant <String>
+        The variant of button. Defaults to contained. Valid values: "text", "outlined", "contained"
+        
+        Required?                    false
+        Position?                    5
+        Default value                contained
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Color <String>
+        The color of the button. Defaults to 'default'. Valid values: "default", "primary", "secondary", "inherit"
+        
+        Required?                    false
+        Position?                    6
+        Default value                inherit
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        A CSS class to apply to the button.
+        
+        Required?                    false
+        Position?                    7
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -HideUploadedFileName [<SwitchParameter>]
+        Hides the file name text that is shown after upload
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Icon <Object>
+        The icon to show instead of the default icon. Use New-UDIcon to create an icon.
+        
+        Required?                    false
+        Position?                    8
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -IconAlignment <String>
+        How to align the icon within the button. Valid values are: "left", "right"
+        
+        Required?                    false
+        Position?                    9
+        Default value                left
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > A file uploader
+    
+    New-UDDashboard -Title "Hello, World!" -Content {
+        New-UDUpload -Text "Upload" -OnUpload {
+            Show-UDToast $Body
+        }
+    }
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS > A file uploader in a form
+    
+    New-UDDashboard -Title "Hello, World!" -Content {
+        New-UDForm -Content {
+            New-UDUpload -Text "Upload" 
+        } -OnSubmit {
+            Show-UDToast $Body
+        }
+    }
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

@@ -1,0 +1,51 @@
+
+NAME
+    New-UDErrorBoundary
+    
+SYNOPSIS
+    Defines a new error boundary around a section of code.
+    
+    
+SYNTAX
+    New-UDErrorBoundary [-Content] <ScriptBlock> [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Defines a new error boundary around a section of code. Error boundaries are used to trap errors and display them on the page.
+    
+
+PARAMETERS
+    -Content <ScriptBlock>
+        The content to trap in an error boundary.
+        
+        Required?                    true
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Defines an error boundary that traps the exception that is thrown and displays it on the page.
+    
+    New-UDErrorBoundary -Content {
+        throw 'This is an error'
+    }
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

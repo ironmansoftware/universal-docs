@@ -1,0 +1,192 @@
+
+NAME
+    New-PSUTrigger
+    
+SYNOPSIS
+    Creates a new Automation trigger in PowerShell Universal.
+    
+    
+SYNTAX
+    New-PSUTrigger [-AppToken <String>] [-ComputerName <String>] [-Dashboard <Dashboard>] [-Environment <String>] -EventType {JobCanceled | JobFailed | JobCompleted | JobStarted | JobFeedbackRequested | ServerStarted | ServerStopped | DashboardStarted | DashboardStopped} -Name <String> [-Script <Script>] -TriggerScript <Script> [-UseDefaultCredentials] [-Delay <Int32>] [-Integrated] [-ProtectRule <String>] [-Computer <String>] [-Condition <ScriptBlock>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new Automation trigger in PowerShell Universal. Powershell Universal Automation triggers allow you to execute scripts based on events within PowerShell Universal. You can run scripts when other scripts fail, dashboards stop or when the server is starting up.
+    
+    Triggers are stored within the ./universal/triggers.ps1 file.
+    
+    You can also use this cmdlet to create triggers through the REST API.
+    
+
+PARAMETERS
+    -AppToken <String>
+        The app token for accessing the PowerShell Universal Management API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The computer name or URL of the Powershell Universal server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Dashboard <Dashboard>
+        Triggers for a specific dashboard.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Environment <String>
+        The environment to run the triggered script in.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -EventType <EventType>
+        The event that causes this trigger.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        The name of this trigger. This needs to be unique.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Script <Script>
+        The script that causes this trigger.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -TriggerScript <Script>
+        The script to trigger when this trigger is triggered.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Delay <Int32>
+        {{ Fill Delay Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ProtectRule <String>
+        The name of the PowerShell Protect rule that executes this trigger.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Computer <String>
+        The computer or queue to run this trigger on.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Condition <ScriptBlock>
+        A condition script block to determine whether or not to run this trigger.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    New-PSUTrigger -Name 'Script Failed' -EventType JobFailed -TriggerScript 'ScriptFailed.ps1'
+    
+    Creates a new trigger that calls the ScriptFailed.ps1 file when any job within PowerShell Universal fails.
+    -------------------------- Example 2 --------------------------
+    
+    New-PSUTrigger -Name 'Dashboard Stopped' -Dashboard 'MyDashboard' -EventType DashboardStopped -TriggerScript 'DashboardStopped.ps1'
+    
+    Creates a new trigger that calls the DashboardStopped.ps1 file when the dashboard MyDashboard stops.
+    -------------------------- Example 3 --------------------------
+    
+    New-PSUTrigger -Name 'Server Started' -EventType ServerStarted -TriggerScript 'LogServerStart.ps1'
+    
+    Creates a new trigger that calls the LogServerStart.ps1 file when the PowerShell Universal server is started.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    New-PSUScript 
+    New-PSUDashboard 
+    Get-PSUDashboard 
+    Get-PSUScript 
+
+

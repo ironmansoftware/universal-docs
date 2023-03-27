@@ -1,0 +1,158 @@
+
+NAME
+    New-UDTabs
+    
+SYNOPSIS
+    Creates a new set of tabs.
+    
+    
+SYNTAX
+    New-UDTabs [-Tabs] <ScriptBlock> [[-Id] <String>] [-RenderOnActive] [[-Orientation] <String>] [[-Variant] <String>] [[-ScrollButtons] <String>] [-Centered] [[-ClassName] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new set of tabs. Tabs can be used to show lots of content on a single page.
+    
+
+PARAMETERS
+    -Tabs <ScriptBlock>
+        The tabs to put within this container.
+        
+        Required?                    true
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    2
+        Default value                ([Guid]::NewGuid()).ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -RenderOnActive [<SwitchParameter>]
+        Deprecated
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Orientation <String>
+        The orientation of the tabs. Valid values are horizontal and vertical.
+        
+        Required?                    false
+        Position?                    3
+        Default value                horizontal
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Variant <String>
+        The variantion of tabs. Valid values are standard, fullWidth and scrollable.
+        
+        Required?                    false
+        Position?                    4
+        Default value                standard
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ScrollButtons <String>
+        The behavior of the scrollbuttons. Valid values are on, off, auto and desktop. On will enable scroll buttons no matter what. off will disable all scroll buttons. Auto will show scrollbuttons when necessary. Desktop will show scrollbuttons on medium and large screens.
+        
+        Required?                    false
+        Position?                    5
+        Default value                auto
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Centered [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        
+        Required?                    false
+        Position?                    6
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Creates a basic set of tabs.
+    
+    New-UDTabs -Tabs {
+        New-UDTab -Text "Tab1" -Id 'Tab1' -Content {
+            New-UDElement -Tag div -Id 'tab1Content' -Content { "Tab1Content"}
+        }
+        New-UDTab -Text "Tab2" -Id 'Tab2' -Content {
+            New-UDElement -Tag div -Id 'tab2Content' -Content { "Tab2Content"}
+        }
+        New-UDTab -Text "Tab3" -Id 'Tab3' -Content {
+            New-UDElement -Tag div -Id 'tab3Content' -Content { "Tab3Content"}
+        }
+    }
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS > Creates a set of tabs that only render when they are clicked.
+    
+    New-UDTabs -Id 'DynamicTabs' -Tabs {
+        New-UDTab -Text "Tab1" -Id 'DynamicTab1' -Dynamic -Content {
+            New-UDElement -Tag div -Id 'DynamicTab1Content' -Content { Get-Date } 
+        }
+        New-UDTab -Text "Tab2" -Id 'DynamicTab2' -Dynamic -Content {
+            New-UDElement -Tag div -Id 'DynamicTab2Content' -Content { Get-Date }
+        }
+        New-UDTab -Text "Tab3" -Id 'DynamicTab2' -Dynamic -Content {
+            New-UDElement -Tag div -Id 'DynamicTab3Content' -Content { Get-Date }
+        }
+    }
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS > Creates a vertical set of tabs.
+    
+    New-UDTabs -Id 'verticalTabs' -Orientation 'vertical' -Tabs {
+        New-UDTab -Text "Tab1" -Content {
+            New-UDElement -Tag div -Content { Get-Date } 
+        }
+        New-UDTab -Text "Tab2" -Content {
+            New-UDElement -Tag div -Content { Get-Date } 
+        }
+        New-UDTab -Text "Tab3" -Content {
+            New-UDElement -Tag div -Content { Get-Date } 
+        }
+    }
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

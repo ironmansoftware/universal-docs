@@ -1,0 +1,61 @@
+
+NAME
+    Write-PSUError
+    
+SYNOPSIS
+    Writes an error to the error stream in PSU jobs.
+    
+    
+SYNTAX
+    Write-PSUError -ErrorRecord <ErrorRecord> [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Writes an error to the error stream in PSU jobs.
+    
+
+PARAMETERS
+    -ErrorRecord <ErrorRecord>
+        The error record to display in the log.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    System.Management.Automation.ErrorRecord
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    try {
+        throw "Error"
+    } catch {
+        Write-PSUError $_
+    }
+    
+    Throws an exception but does not fail the job. The error will be displayed in the PSU error log.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

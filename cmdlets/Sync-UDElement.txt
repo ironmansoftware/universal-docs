@@ -1,0 +1,62 @@
+
+NAME
+    Sync-UDElement
+    
+SYNOPSIS
+    Causes an element to update.
+    
+    
+SYNTAX
+    Sync-UDElement [-Id] <String[]> [-Broadcast] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Causes an element to update. Not all elements can be updated. For elements that cannot be updated, wrap them in New-UDDynamic and update that.
+    
+
+PARAMETERS
+    -Id <String[]>
+        The ID of the element to update.
+        
+        Required?                    true
+        Position?                    1
+        Default value                
+        Accept pipeline input?       true (ByValue)
+        Accept wildcard characters?  false
+        
+    -Broadcast [<SwitchParameter>]
+        Whether to broadcast the update to all clients.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > New-UDDyanmic -Id 'dateTime' -Content {
+        Get-Date
+    }
+    
+    New-UDButton -Text 'Refresh' -Content {
+        Sync-UDElement 'dateTime'
+    }
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

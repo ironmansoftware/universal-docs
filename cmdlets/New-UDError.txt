@@ -1,0 +1,58 @@
+
+NAME
+    New-UDError
+    
+SYNOPSIS
+    Creates a new error card.
+    
+    
+SYNTAX
+    New-UDError [-Message] <String> [[-Title] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new error card.
+    
+
+PARAMETERS
+    -Message <String>
+        The message to display.
+        
+        Required?                    true
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Title <String>
+        A title for the card.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Displays the error 'Invalid data' on the page.
+    
+    New-UDError -Message 'Invalid data'
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

@@ -1,0 +1,73 @@
+
+NAME
+    Add-UDElement
+    
+SYNOPSIS
+    Adds an element to a parent element.
+    
+    
+SYNTAX
+    Add-UDElement [-ParentId] <String> [-Content] <ScriptBlock> [-Broadcast] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Adds an element to a parent element. This cmdlet may behave differently depending on the type of parent element.
+    
+
+PARAMETERS
+    -ParentId <String>
+        The parent element ID to add the item to.
+        
+        Required?                    true
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Content <ScriptBlock>
+        The content to add to the parent element.
+        
+        Required?                    true
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Broadcast [<SwitchParameter>]
+        Whether to update all connected dashboards (all users).
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > New-UDElement -Tag 'div' -Id 'parent' -Content {
+    
+    }
+    
+    New-UDButton -Text 'Click Me' -OnClick {
+        Add-UDElement -ParentId 'parent' -Content {
+            New-UDTypography -Text 'Hello World'
+        }
+    }
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

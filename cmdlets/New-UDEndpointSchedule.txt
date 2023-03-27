@@ -1,0 +1,131 @@
+
+NAME
+    New-UDEndpointSchedule
+    
+SYNOPSIS
+    Creates a schedule for New-UDEndpoint.
+    
+    
+SYNTAX
+    New-UDEndpointSchedule [-Consecutive] [-Cron <String>] [<CommonParameters>]
+    
+    New-UDEndpointSchedule [-Consecutive] -Day -Every <Int32> [-Repeat <Int32>] [<CommonParameters>]
+    
+    New-UDEndpointSchedule [-Consecutive] -Every <Int32> [-Repeat <Int32>] -Second [<CommonParameters>]
+    
+    New-UDEndpointSchedule [-Consecutive] -Every <Int32> -Minute [-Repeat <Int32>] [<CommonParameters>]
+    
+    New-UDEndpointSchedule [-Consecutive] -Every <Int32> -Hour [-Repeat <Int32>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a schedule for New-UDEndpoint.
+    
+
+PARAMETERS
+    -Consecutive [<SwitchParameter>]
+        
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Cron <String>
+        A CRON expression that defines the endpoint schedule.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Day [<SwitchParameter>]
+        The Every parameter refers to days.
+        
+        Required?                    true
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Every <Int32>
+        The unit of time between scheduled runs.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Hour [<SwitchParameter>]
+        The Every parameter refers to hours.
+        
+        Required?                    true
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Minute [<SwitchParameter>]
+        The Every parameter refers to minutes.
+        
+        Required?                    true
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Repeat <Int32>
+        
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Second [<SwitchParameter>]
+        The Every parameter refers to Seconds.
+        
+        Required?                    true
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    $Schedule = New-UDEndpointSchedule 10 -Second
+    New-UDEndpoint -Schedule $Schedule -Endpoint {
+        $Cache:Processes = Get-Process
+    }
+    
+    Caches processes every 10 seconds.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

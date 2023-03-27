@@ -1,0 +1,149 @@
+
+NAME
+    Show-UDModal
+    
+SYNOPSIS
+    Show a modal.
+    
+    
+SYNTAX
+    Show-UDModal [-FullScreen] [[-Footer] <ScriptBlock>] [[-Header] <ScriptBlock>] [[-Content] <ScriptBlock>] [-Persistent] [-FullWidth] [[-MaxWidth] <String>] [[-Style] <Hashtable>] [[-HeaderStyle] <Hashtable>] [[-ContentStyle] <Hashtable>] [[-FooterStyle] <Hashtable>] [-Dividers] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Show a modal.
+    
+
+PARAMETERS
+    -FullScreen [<SwitchParameter>]
+        Create a full screen modal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Footer <ScriptBlock>
+        The footer components for the modal.
+        
+        Required?                    false
+        Position?                    1
+        Default value                {}
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Header <ScriptBlock>
+        The header components for the modal.
+        
+        Required?                    false
+        Position?                    2
+        Default value                {}
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Content <ScriptBlock>
+        The content of the modal.
+        
+        Required?                    false
+        Position?                    3
+        Default value                {}
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Persistent [<SwitchParameter>]
+        Whether the modal can be closed by clicking outside of it.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -FullWidth [<SwitchParameter>]
+        Whether the modal is full width.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -MaxWidth <String>
+        The max width of the modal.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -HeaderStyle <Hashtable>
+        The CSS style for the header portion of the modal.
+        
+        Required?                    false
+        Position?                    6
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ContentStyle <Hashtable>
+        
+        Required?                    false
+        Position?                    7
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -FooterStyle <Hashtable>
+        
+        Required?                    false
+        Position?                    8
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Dividers [<SwitchParameter>]
+        Places a divider between header and footer content
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > New-UDButton -Text 'Click Me' -OnClick {
+        Show-UDModal -Content {
+            New-UDTypography -Text "Hello World"
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

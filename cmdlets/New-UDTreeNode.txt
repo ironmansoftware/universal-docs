@@ -1,0 +1,102 @@
+
+NAME
+    New-UDTreeNode
+    
+SYNOPSIS
+    Creates a tree node.
+    
+    
+SYNTAX
+    New-UDTreeNode [-Name] <String> [-Id <String>] [-Children <ScriptBlock>] [-Leaf] [-Icon <Object>] [-ExpandedIcon <Object>] [-Expanded] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a tree node. This cmdlet should be used with New-UDTreeView.
+    
+
+PARAMETERS
+    -Name <String>
+        The name of the node. This is displayed within the UI.
+        
+        Required?                    true
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Id <String>
+        The ID of the node. This is passed to the $EventData property when the OnNodeClicked script block is set.
+        
+        Required?                    false
+        Position?                    named
+        Default value                [Guid]::NewGuid()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Children <ScriptBlock>
+        The children of this node. This should be a collection of New-UDTreeNodes.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Leaf [<SwitchParameter>]
+        This is a leaf node and should not display children. Added in PSU 2.6.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Icon <Object>
+        The icon to display for this node. Use New-UDIcon to create this icon. Added in PSU 2.6.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ExpandedIcon <Object>
+        The icon to display for this node when it is expanded. Use New-UDIcon to create this icon. Added in PSU 2.6.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Expanded [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > See New-UDTreeView for examples.
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

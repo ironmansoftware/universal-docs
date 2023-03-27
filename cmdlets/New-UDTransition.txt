@@ -1,0 +1,138 @@
+
+NAME
+    New-UDTransition
+    
+SYNOPSIS
+    Creates a transition effect.
+    
+    
+SYNTAX
+    New-UDTransition [-Id <String>] [-Collapse] [-CollapseHeight <Int32>] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [<CommonParameters>]
+    
+    New-UDTransition [-Id <String>] [-Fade] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [<CommonParameters>]
+    
+    New-UDTransition [-Id <String>] [-Grow] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [<CommonParameters>]
+    
+    New-UDTransition [-Id <String>] [-Slide] [-SlideDirection <String>] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [<CommonParameters>]
+    
+    New-UDTransition [-Id <String>] [-Zoom] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a transition effect.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of this component.
+        
+        Required?                    false
+        Position?                    named
+        Default value                [Guid]::NewGuid().ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Collapse [<SwitchParameter>]
+        Creates a collapse transition.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -CollapseHeight <Int32>
+        The height of the content when collapsed.
+        
+        Required?                    false
+        Position?                    named
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Fade [<SwitchParameter>]
+        Creates a fade transition.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Grow [<SwitchParameter>]
+        Creates a grow transition.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Slide [<SwitchParameter>]
+        Creates a slide transition.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -SlideDirection <String>
+        The direction of the slide transition.
+        
+        Required?                    false
+        Position?                    named
+        Default value                Down
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Zoom [<SwitchParameter>]
+        Creates a zoom transition.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Children <ScriptBlock>
+        The content or children to transition.
+        
+        Required?                    true
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -In [<SwitchParameter>]
+        Whether the content is transitioned in. You can use Set-UDElement to trigger a transition.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Timeout <Int32>
+        The number of milliseconds it takes to transition.
+        
+        Required?                    false
+        Position?                    named
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    
+RELATED LINKS
+
+
