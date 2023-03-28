@@ -444,52 +444,37 @@ You can control the export functionality with a PowerShell script block. This is
 In this example, I have a SQL table that contains podcasts. When exporting, you will receive information about the current state of the table to allow you to customize what data is exported.
 
 ```powershell
-New-UDDashboard -Title "Hello, World!" -Content {
-    New-UDTable -Title 'Shows' -LoadData {
-        $TableData = ConvertFrom-Json $Body
+$Columns = @(
+    New-UDTableColumn -Property Name -Title "Name" -ShowFilter -IncludeInExport
+    New-UDTableColumn -Property Value -Title "Value" -ShowFilter -IncludeInExport
+)
 
-        $OrderBy = $TableData.orderBy.field
-        if ($OrderBy -eq $null)
-        {
-            $OrderBy = "name"
-        }
+$Data = 1..1000 | ForEach-Object {
+  [PSCustomObject]@{
+      Name = "Record-$_"
+      Value = $_ 
+  }
+}
 
-        $OrderDirection = $TableData.OrderDirection
-        if ($OrderDirection -eq $null)
-        {
-            $OrderDirection = 'asc'
-        }
+New-UDTable -Columns $Columns -LoadData {
+    foreach($Filter in $EventData.Filters)
+    {
+        $Data = $Data | Where-Object -Property $Filter.Id -Match -Value $Filter.Value
+    }
 
-        $Where = ""
-        if ($TableData.Filters) 
-        {
-            $Where = "WHERE "
+    $TotalCount = $Data.Count 
 
-            foreach($filter in $TableData.Filters)
-            {
-                $Where += $filter.column.field + " LIKE '%" + $filter.value + "%' AND "
-            }
+    if (-not [string]::IsNullOrEmpty($EventData.OrderBy.Field))
+    {
+        $Descending = $EventData.OrderDirection -ne 'asc'
+        $Data = $Data | Sort-Object -Property ($EventData.orderBy.Field) -Descending:$Descending
+    }
+    
+    $Data = $Data | Select-Object -First $EventData.PageSize -Skip ($EventData.Page * $EventData.PageSize)
 
-            $Where += " 1 = 1"
-        }
-
-        $PageSize = $TableData.PageSize 
-        # Calculate the number of rows to skip
-        $Offset = $TableData.Page * $PageSize
-        $Count = Invoke-DbaQuery -SqlInstance localhost\MSSQLSERVER -Database 'podcasts' -Query "SELECT COUNT(*) as count FROM shows $Where"
-
-        $Data = Invoke-DbaQuery -SqlInstance localhost\MSSQLSERVER -Database 'podcasts' -Query "SELECT * FROM shows $Where ORDER BY $orderBy $orderdirection OFFSET $Offset ROWS FETCH NEXT $PageSize ROWS ONLY" | ForEach-Object {
-            @{ 
-                name = $_.name 
-                host = $_.host
-            }
-        } 
-        $Data | Out-UDTableData -Page $TableData.page -TotalCount $Count.Count -Properties $TableData.properties
-    } -Columns @(
-        New-UDTableColumn -Property 'name' -Sort -Filter -Export
-        New-UDTableColumn -Property 'host' -Sort -Filter -Export
-    ) -Sort -Filter -Export -OnExport {
-        $Query = $Body | ConvertFrom-Json
+    $Data | Out-UDTableData -Page $EventData.Page -TotalCount $TotalCount -Properties $EventData.Properties 
+} -ShowFilter -ShowSort -ShowPagination  -Export -OnExport {
+   $Query = $Body | ConvertFrom-Json
 
         <# Query will contain
             filters: []
@@ -503,13 +488,7 @@ New-UDDashboard -Title "Hello, World!" -Content {
             allRows: true
         #>
 
-        Invoke-DbaQuery -SqlInstance localhost\MSSQLSERVER -Database 'podcasts' -Query "SELECT * FROM shows" | ForEach-Object {
-            @{ 
-                name = $_.name 
-                host = $_.host
-            }
-        } 
-    }
+    $Data | ConvertTo-Json
 }
 ```
 
