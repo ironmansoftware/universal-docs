@@ -1,0 +1,134 @@
+
+NAME
+    New-UDTransferList
+    
+SYNOPSIS
+    Creates a transfer list component.
+    
+    
+SYNTAX
+    New-UDTransferList [[-Id] <String>] [[-Item] <ScriptBlock>] [[-SelectedItem] <String[]>] [[-OnChange] <Endpoint>] [[-ClassName] <String>] [-Disabled] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    A transfer list (or "shuttle") enables the user to move one or more list items between lists.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of this component.
+        
+        Required?                    false
+        Position?                    1
+        Default value                [Guid]::NewGuid()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Item <ScriptBlock>
+        A list of items that can be transferred between lists. Use New-UDTransferListItem to create an item.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -SelectedItem <String[]>
+        A list of selected items. Use the value of item to transfer items between lists.
+        
+        Required?                    false
+        Position?                    3
+        Default value                @()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnChange <Endpoint>
+        A script block that is executed when the user changes the selected items.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Disabled [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > New-UDTransferList -Item {
+        New-UDTransferListItem -Name 'test1' -Value 1
+        New-UDTransferListItem -Name 'test2' -Value 2
+        New-UDTransferListItem -Name 'test3' -Value 3
+        New-UDTransferListItem -Name 'test4' -Value 4
+        New-UDTransferListItem -Name 'test5' -Value 5
+    }
+    
+    Creates a basic transfer list.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS > New-UDTransferList -Item {
+        New-UDTransferListItem -Name 'test1' -Value 1
+        New-UDTransferListItem -Name 'test2' -Value 2
+        New-UDTransferListItem -Name 'test3' -Value 3
+        New-UDTransferListItem -Name 'test4' -Value 4
+        New-UDTransferListItem -Name 'test5' -Value 5
+    } -OnChange {
+        Show-UDToast ($EventData | ConvertTo-Json)
+    }
+    
+    Creates a basic transfer list that shows a toast when the values are changed.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS > New-UDForm -Content {
+        New-UDTransferList -Item {
+            New-UDTransferListItem -Name 'test1' -Value 1
+            New-UDTransferListItem -Name 'test2' -Value 2
+            New-UDTransferListItem -Name 'test3' -Value 3
+            New-UDTransferListItem -Name 'test4' -Value 4
+            New-UDTransferListItem -Name 'test5' -Value 5
+        }
+    } -OnSubmit {
+        Show-UDToast ($EventData | ConvertTo-Json)
+    }
+    
+    Creates a transfer list that is part of a form.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

@@ -1,0 +1,96 @@
+
+NAME
+    Get-PSUCache
+    
+SYNOPSIS
+    Returns data from the server-wide cache.
+    
+    
+SYNTAX
+    Get-PSUCache -Key <String> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Returns data from the server-wide cache. The server-wide cache is used to store data that is used between APIs, dashboards and scripts.
+    
+    This cmdlet can only be called within APIs, dashboards and scripts. You cannot access the server-wide cache through the PowerShell Universal Management API.
+    
+
+PARAMETERS
+    -Key <String>
+        The cache key of the data to return.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -AppToken <String>
+        Not used
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        Not used
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Not used
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Not used
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Get-PSUCache -Key 'DataTable'
+    
+    Returns the DataTable cache data. Server-wide cache data is stored as CLIXML and deserialized before being returned to the pipeline.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    Set-PSUCache 
+
+

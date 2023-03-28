@@ -1,0 +1,210 @@
+
+NAME
+    New-UDDataGrid
+    
+SYNOPSIS
+    Displays data in a table-style grid.
+    
+    
+SYNTAX
+    New-UDDataGrid [[-Id] <String>] [[-Columns] <Hashtable[]>] [[-LoadRows] <Endpoint>] [[-Height] <String>] [-AutoHeight] [-AutoPageSize] [-CheckboxSelection] [-CheckboxSelectionVisibleOnly] [[-ColumnBuffer] <Int32>] [[-ColumnThreshold] <Int32>] [[-Density] <String>] [[-PageSize] <Int32>] [[-RowsPerPageOptions] <Int32[]>] [-ShowPagination] [[-Language] <String>] [[-LoadDetailContent] <Endpoint>] [[-DetailHeight] <String>] [[-OnEdit] <Endpoint>] [[-OnExport] <Endpoint>] [-ShowQuickFilter] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Displays data in a table-style grid. Provides support for sorting, paging, and filtering of large data sets.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of this data grid.
+        
+        Required?                    false
+        Position?                    1
+        Default value                [Guid]::NewGuid()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Columns <Hashtable[]>
+        An array of column to display in this table.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LoadRows <Endpoint>
+        The script block that loads the data for this grid.
+        
+        Required?                    false
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Height <String>
+        The static height for this data grid.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -AutoHeight [<SwitchParameter>]
+        Whether to calculate the height of this data grid.
+        
+        Required?                    false
+        Position?                    named
+        Default value                True
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -AutoPageSize [<SwitchParameter>]
+        Automatically determines the page size.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -CheckboxSelection [<SwitchParameter>]
+        Checkbox selection for rows.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -CheckboxSelectionVisibleOnly [<SwitchParameter>]
+        Parameter description
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ColumnBuffer <Int32>
+        Parameter description
+        
+        Required?                    false
+        Position?                    5
+        Default value                3
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ColumnThreshold <Int32>
+        
+        Required?                    false
+        Position?                    6
+        Default value                3
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Density <String>
+        The visible density of the table.
+        
+        Required?                    false
+        Position?                    7
+        Default value                standard
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -PageSize <Int32>
+        The default page size.
+        
+        Required?                    false
+        Position?                    8
+        Default value                5
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -RowsPerPageOptions <Int32[]>
+        An array of page sizes.
+        
+        Required?                    false
+        Position?                    9
+        Default value                @(5, 10, 25)
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ShowPagination [<SwitchParameter>]
+        Whether to show Pagination.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Language <String>
+        The language to use for text in the data grid.
+        
+        Required?                    false
+        Position?                    10
+        Default value                en-US
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LoadDetailContent <Endpoint>
+        A script block that is called when rows are expanded. $EventData will contain the row's data.
+        
+        Required?                    false
+        Position?                    11
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DetailHeight <String>
+        The static height of the detail pane.
+        
+        Required?                    false
+        Position?                    12
+        Default value                auto
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnEdit <Endpoint>
+        A script block that is called when the row is edited. $EventData will include the edited data. Return an object to update the data grid row.
+        
+        Required?                    false
+        Position?                    13
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnExport <Endpoint>
+        A script block that is called when data is exported.
+        
+        Required?                    false
+        Position?                    14
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ShowQuickFilter [<SwitchParameter>]
+        Shows a quick filter (search) box.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    
+RELATED LINKS
+
+

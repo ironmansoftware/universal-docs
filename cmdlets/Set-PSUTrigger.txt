@@ -1,0 +1,158 @@
+
+NAME
+    Set-PSUTrigger
+    
+SYNOPSIS
+    Updates an existing PowerShell Universal Automation trigger.
+    
+    
+SYNTAX
+    Set-PSUTrigger [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Dashboard <String>] [-Environment <String>] [-EventType {JobCanceled | JobFailed | JobCompleted | JobStarted | JobFeedbackRequested | ServerStarted | ServerStopped | DashboardStarted | DashboardStopped}] [-Name <String>] [-Script <String>] [-TriggerScript <String>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    
+    Set-PSUTrigger [-Trigger] <Trigger> [-AppToken <String>] [-ComputerName <String>] [-Dashboard <String>] [-Environment <String>] [-EventType {JobCanceled | JobFailed | JobCompleted | JobStarted | JobFeedbackRequested | ServerStarted | ServerStopped | DashboardStarted | DashboardStopped}] [-Name <String>] [-Script <String>] [-TriggerScript <String>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    {{ Fill in the Description }}
+    
+
+PARAMETERS
+    -AppToken <String>
+        {{ Fill AppToken Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        {{ Fill ComputerName Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Dashboard <String>
+        {{ Fill Dashboard Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Environment <String>
+        {{ Fill Environment Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -EventType <EventType>
+        {{ Fill EventType Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Id <Int64>
+        {{ Fill Id Description }}
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        {{ Fill Name Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Script <String>
+        {{ Fill Script Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Trigger <Trigger>
+        {{ Fill Trigger Description }}
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Accept wildcard characters?  false
+        
+    -TriggerScript <String>
+        {{ Fill TriggerScript Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    UniversalAutomation.Trigger
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> {{ Add example code here }}
+    
+    {{ Add example description here }}
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

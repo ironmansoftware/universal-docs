@@ -1,0 +1,113 @@
+
+NAME
+    Set-PSUComputer
+    
+SYNOPSIS
+    Updates a computer.
+    
+    
+SYNTAX
+    Set-PSUComputer [-Computer] <Computer> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-Maintenance <Boolean>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Set-PSUComputer [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-Maintenance <Boolean>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Updates a computer.
+    
+
+PARAMETERS
+    -AppToken <String>
+        The app token used to connect to the PowerShell Universal server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Computer <Computer>
+        The computer name or URL of the PowerShell Universal server.
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The name of the computer to update.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Id <Int64>
+        The ID of the computer to update.
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Whether to use the integrated environemnt.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Maintenance <Boolean>
+        Whether to enable or disable maintenance mode for this computer.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Whether to use Windows Authentication for this call.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    PowerShellUniversal.Computer
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Set-PSUComputer -ComputerName computer1 -Maintenance $true
+    
+    Enables maintenance mode for a computer.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

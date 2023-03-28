@@ -4,6 +4,12 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.8.5 - 3/27/2023
+
+#### Dashboards
+
+* Fixed an issue where using the same ID for elements on multiple pages would not work
+
 ## 3.8.4 - 3/26/2023
 
 #### APIs

@@ -189,7 +189,7 @@ In order to avoid this issue, you can enable the `JobRunID` experimental feature
 You will need to enable this feature to use it.&#x20;
 
 ```powershell
-Set-PSUSetting -ExperimentalFeature ([PowerShellUnviersal.ExperimentalFeatures]::JobRunId)
+Set-PSUSetting -ExperimentalFeature ([PowerShellUniversal.ExperimentalFeatures]::JobRunId)
 ```
 
 ## API

@@ -1,0 +1,115 @@
+
+NAME
+    Get-PSUJobFeedback
+    
+SYNOPSIS
+    Returns feedback requested by jobs.
+    
+    
+SYNTAX
+    Get-PSUJobFeedback [-AppToken <String>] [-ComputerName <String>] [-Integrated] -Job <Job> [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Get-PSUJobFeedback [-AppToken <String>] [-ComputerName <String>] [-Integrated] -JobId <Int64> [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Get-PSUJobFeedback [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] -RunId <Guid> [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Returns feedback requested by jobs.
+    
+
+PARAMETERS
+    -AppToken <String>
+        An app token to access the UA API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The HTTP address of the UA REST API server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Job <Job>
+        The job to return feedback for.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Accept wildcard characters?  false
+        
+    -JobId <Int64>
+        The job ID to return feedback for.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -RunId <Guid>
+        The run ID (GUID) for this job. Requires JobRunId experimental feature.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    UniversalAutomation.Job
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Get-UAJobFeedback -JobId 10
+    
+    Returns the feedback requested by job 10.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

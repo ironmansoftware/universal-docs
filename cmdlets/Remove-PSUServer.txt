@@ -1,0 +1,57 @@
+
+NAME
+    Remove-PSUServer
+    
+SYNOPSIS
+    Removes the PowerShell Universal server.
+    
+    
+SYNTAX
+    Remove-PSUServer [[-Path] <String>] [[-IISWebsite] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Removes the PowerShell Universal server. This is a convenience function that will remove the server for your platform.
+    
+
+PARAMETERS
+    -Path <String>
+        The path to the PowerShell Universal binaries. If not specified, the path will attempt to be resolved.
+        
+        Required?                    false
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -IISWebsite <String>
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Remove-PSUServer
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

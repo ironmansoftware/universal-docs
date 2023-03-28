@@ -1,0 +1,197 @@
+
+NAME
+    New-UDListItem
+    
+SYNOPSIS
+    Creates a new list item.
+    
+    
+SYNTAX
+    New-UDListItem [[-Id] <String>] [[-AvatarType] <String>] [[-OnClick] <Endpoint>] [[-Label] <Object>] [[-Children] <ScriptBlock>] [[-SubTitle] <String>] [[-Icon] <Object>] [[-Source] <String>] [[-SecondaryAction] <ScriptBlock>] [[-ClassName] <String>] [-Open] [-Nested] [[-Href] <String>] [[-Switch] <Object>] [[-SwitchAlignment] <String>] [[-CheckBox] <Object>] [[-CheckBoxAlignment] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new list item. List items are used with New-UDList.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    1
+        Default value                ([Guid]::NewGuid()).ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -AvatarType <String>
+        The type of avatar to show within the list item.
+        
+        Required?                    false
+        Position?                    2
+        Default value                Icon
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnClick <Endpoint>
+        A script block to execute when the list item is clicked.
+        
+        Required?                    false
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Label <Object>
+        The label to show within the list item.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Children <ScriptBlock>
+        Nested list items to show underneath this list item.
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -SubTitle <String>
+        The subtitle to show within the list item.
+        
+        Required?                    false
+        Position?                    6
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Icon <Object>
+        The icon to show within the list item.
+        
+        Required?                    false
+        Position?                    7
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Source <String>
+        Parameter description
+        
+        Required?                    false
+        Position?                    8
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -SecondaryAction <ScriptBlock>
+        The secondary action to issue with this list item.
+        
+        Required?                    false
+        Position?                    9
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        
+        Required?                    false
+        Position?                    10
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Open [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Nested [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Href <String>
+        
+        Required?                    false
+        Position?                    11
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Switch <Object>
+        The switch to show within the list item.
+        
+        Required?                    false
+        Position?                    12
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -SwitchAlignment <String>
+        How to align the sqitch within the listitem. Valid values are: "left", "right"
+        
+        Required?                    false
+        Position?                    13
+        Default value                right
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -CheckBox <Object>
+        The checkbox to show within the list item.
+        
+        Required?                    false
+        Position?                    14
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -CheckBoxAlignment <String>
+        How to align the checkbox within the listitem. Valid values are: "left", "right"
+        
+        Required?                    false
+        Position?                    15
+        Default value                right
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Creates a new list with two items and nested list items.
+    
+    New-UDList -Id 'listContent' -Content {
+    
+        New-UDListItem -Id 'listContentItem' -AvatarType Avatar -Source 'https://pbs.twimg.com/profile_images/1065243723217416193/tg3XGcVR_400x400.jpg' -Label 'Adam Driscoll' -Content {
+    
+            New-UDListItem -Id 'list-item-security' -Label 'username and passwords'
+            New-UDListItem -Id 'list-item-api' -Label 'api keys'
+    
+        } 
+    }
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

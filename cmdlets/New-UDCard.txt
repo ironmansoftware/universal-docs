@@ -1,0 +1,203 @@
+
+NAME
+    New-UDCard
+    
+SYNOPSIS
+    Creates a new card.
+    
+    
+SYNTAX
+    New-UDCard [-Id <String>] [-ClassName <String>] [-Header <Object>] [-Body <Object>] [-Expand <Object>] [-Footer <Object>] [-Media <Object>] [-Style <Hashtable>] [-Elevation <Int32>] [-Raised] [-Sx <Object>] [-Variant <String>] [<CommonParameters>]
+    
+    New-UDCard [-Id <String>] [-ClassName <String>] [-Style <Hashtable>] [-Elevation <Int32>] [-Title <String>] [-TitleAlignment <String>] [-Text <String>] [-Raised] [-Sx <Object>] [-Variant <String>] [<CommonParameters>]
+    
+    New-UDCard [-Id <String>] [-ClassName <String>] [-Style <Hashtable>] [-Elevation <Int32>] [-Title <String>] [-TitleAlignment <String>] [-Content <ScriptBlock>] [-Image <String>] [-Raised] [-Avatar <Object>] [-Sx <Object>] [-Variant <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new card. Cards are used to display related content.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    named
+        Default value                ([Guid]::NewGuid()).ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        A CSS class to assign to this card.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Header <Object>
+        The header for this card. The header typically contains a title for the card. Use New-UDCardHeader to create a header.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Body <Object>
+        The body for this card. This is the main content for the card. Use New-UDCardHeader to create a body.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Expand <Object>
+        Th expand content for this card. Expand content is show when the user clicks the expansion button. Use New-UDCardExpand to create an expand.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Footer <Object>
+        The footer for this card. Footer contents typically contain actions that are relavent to the card. Use New-UDCardFooter to create a footer.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Media <Object>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        Styles to apply to the card.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Elevation <Int32>
+        The amount of elevation to provide the card. The more elevation, the more it will appear the card is floating off the page.
+        
+        Required?                    false
+        Position?                    named
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Title <String>
+        A title for the card.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -TitleAlignment <String>
+        The alignment for the title.
+        
+        Required?                    false
+        Position?                    named
+        Default value                left
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Content <ScriptBlock>
+        The content of the card.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Image <String>
+        An image to show in the card.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Text <String>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Raised [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Avatar <Object>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Sx <Object>
+        Theme-based style to apply to the card.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Variant <String>
+        
+        Required?                    false
+        Position?                    named
+        Default value                elevation
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Shows a card with a title, image and content.
+    
+    New-UDCard -Id 'SimpleCard' -Title "Alon" -Content { 
+        "Content" 
+    } -Image 'https://avatars2.githubusercontent.com/u/34351424?s=460&v=4'
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

@@ -1,0 +1,151 @@
+
+NAME
+    New-UDChartJSDataset
+    
+SYNTAX
+    New-UDChartJSDataset [[-Data] <Object>] [[-DataProperty] <string>] [[-Label] <string>] [[-BackgroundColor] <DashboardColor[]>] [[-BorderColor] <DashboardColor[]>] [[-BorderWidth] <int>] [[-HoverBackgroundColor] <DashboardColor[]>] [[-HoverBorderColor] <DashboardColor[]>] [[-HoverBorderWidth] <int>] [[-XAxisId] <string>] [[-YAxisId] <string>] [[-AdditionalOptions] <hashtable>] [<CommonParameters>]
+    
+    
+PARAMETERS
+    -AdditionalOptions <hashtable>
+        
+        Required?                    false
+        Position?                    11
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -BackgroundColor <DashboardColor[]>
+        
+        Required?                    false
+        Position?                    3
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -BorderColor <DashboardColor[]>
+        
+        Required?                    false
+        Position?                    4
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -BorderWidth <int>
+        
+        Required?                    false
+        Position?                    5
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Data <Object>
+        
+        Required?                    false
+        Position?                    0
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -DataProperty <string>
+        
+        Required?                    false
+        Position?                    1
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -HoverBackgroundColor <DashboardColor[]>
+        
+        Required?                    false
+        Position?                    6
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -HoverBorderColor <DashboardColor[]>
+        
+        Required?                    false
+        Position?                    7
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -HoverBorderWidth <int>
+        
+        Required?                    false
+        Position?                    8
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Label <string>
+        
+        Required?                    false
+        Position?                    2
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -XAxisId <string>
+        
+        Required?                    false
+        Position?                    9
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -YAxisId <string>
+        
+        Required?                    false
+        Position?                    10
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+    
+INPUTS
+    None
+    
+    
+OUTPUTS
+    System.Object
+    
+ALIASES
+    None
+    
+
+REMARKS
+    None
+
+

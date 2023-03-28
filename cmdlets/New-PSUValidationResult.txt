@@ -1,0 +1,66 @@
+
+NAME
+    New-PSUValidationResult
+    
+SYNOPSIS
+    {{ Fill in the Synopsis }}
+    
+    
+SYNTAX
+    New-PSUValidationResult [-ErrorMessage <String>] [-Success] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    {{ Fill in the Description }}
+    
+
+PARAMETERS
+    -ErrorMessage <String>
+        {{ Fill ErrorMessage Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Success [<SwitchParameter>]
+        {{ Fill Success Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> {{ Add example code here }}
+    
+    {{ Add example description here }}
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

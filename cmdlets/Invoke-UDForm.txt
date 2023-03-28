@@ -1,0 +1,58 @@
+
+NAME
+    Invoke-UDForm
+    
+SYNOPSIS
+    Invokes a form.
+    
+    
+SYNTAX
+    Invoke-UDForm [-Id] <String> [-Validate] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Invokes a form and optionally validates it.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the form to invoke.
+        
+        Required?                    true
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Validate [<SwitchParameter>]
+        Whether to run form validation.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Invoke-UDForm -Id "MyForm" -Validate
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

@@ -1,0 +1,63 @@
+
+NAME
+    Get-UDTheme
+    
+SYNOPSIS
+    Returns predefined themes.
+    
+    
+SYNTAX
+    Get-UDTheme [[-Name] <Object>] [[-NavigationStyle] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Returns predefined themes.
+    
+
+PARAMETERS
+    -Name <Object>
+        The name of the theme.
+        
+        Required?                    false
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -NavigationStyle <String>
+        The style of the navigation.
+        
+        Required?                    false
+        Position?                    2
+        Default value                theme
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+NOTES
+    
+    
+        General notes
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > $Theme = Get-UDTheme -Name 'AntDesign'
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

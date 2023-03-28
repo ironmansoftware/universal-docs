@@ -1,0 +1,321 @@
+
+NAME
+    Set-PSUAuthenticationMethod
+    
+SYNOPSIS
+    Sets the authentication method settings.
+    
+    
+SYNTAX
+    Set-PSUAuthenticationMethod [-AppToken <String>] [-ComputerName <String>] [-ScriptBlock <ScriptBlock>] [-Disabled] [-UseDefaultCredentials] [-Authority <String>] -CallbackPath <String> -ClientId <String> [-ClientSecret <String>] [-Configure <ScriptBlock>] [-CorrelationCookieSameSite <String>] [-GetClaimsFromUserInfoEndpoint <Boolean>] [-Integrated] [-Resource <String>] [-ResponseType <String>] [-SaveTokens <Boolean>] [-Scopes <String>] [-Type <AuthenticationMethodType>] [-UseTokenLifetime <Boolean>] [-RequireMfa] [<CommonParameters>]
+    
+    Set-PSUAuthenticationMethod [-AppToken <String>] [-ComputerName <String>] [-ScriptBlock <ScriptBlock>] [-Disabled] [-UseDefaultCredentials] -CallbackPath <String> [-Configure <ScriptBlock>] -EntityId <String> [-IdentityProviderEntityId <String>] [-Integrated] [-MetadataAddress <String>] [-ServiceCertificate <String>] [-Type <AuthenticationMethodType>] [-SigningKey <String>] [-SingleSignOnServiceUrl <String>] [<CommonParameters>]
+    
+    Set-PSUAuthenticationMethod [-AppToken <String>] [-ComputerName <String>] [-ScriptBlock <ScriptBlock>] [-Disabled] [-UseDefaultCredentials] -CallbackPath <String> [-Configure <ScriptBlock>] [-CorrelationCookieSameSite <String>] [-Integrated] -MetadataAddress <String> [-Type <AuthenticationMethodType>] [-UseTokenLifetime <Boolean>] -Wreply <String> -Wtrealm <String> [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Sets the authentication method settings.
+    
+    Authentication settings are stored in .universal/authentication.ps1
+    
+    You can also use this cmdlet with the PowerShell Universal Management API.
+    
+
+PARAMETERS
+    -AppToken <String>
+        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ScriptBlock <ScriptBlock>
+        The script block to execute when a user is logging in.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Disabled [<SwitchParameter>]
+        Whether forms authentication is disabled.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Authority <String>
+        The OpenID Connect authority URL.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -CallbackPath <String>
+        The callback path the authority will call after authentication.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ClientId <String>
+        The OpenID Connect Client ID to supply the authority with.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ClientSecret <String>
+        The OpenID Connect Client Secret to supply the authority with.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Configure <ScriptBlock>
+        Additional configuration script that can be run to update the authentication provider settings. See our online documentation for more information.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -CorrelationCookieSameSite <String>
+        The CorrelationCookieSameSite setting to use for OpenID Conenct or WS-Federation authentication.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -EntityId <String>
+        The entity ID for SAML2 authentication.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -GetClaimsFromUserInfoEndpoint <Boolean>
+        Whether to return additional claims information from the OpenID Connect authority. This setting is not supported by all authorities.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -IdentityProviderEntityId <String>
+        The Idetity Provider Entity ID for SAML2 authentication. This is usually the URL to call for authentication.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -MetadataAddress <String>
+        The SAML2 or WS-Federation metadata address. For SAML2, this should be specified if it is different than the Identity Provider Entity ID.  For WS-Federation, this setting is required.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Resource <String>
+        A resource to grant a token for when authenticating with OpenID Connect.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ResponseType <String>
+        The OpenID Connect response type. This can be token or code.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -SaveTokens <Boolean>
+        Whether to save the tokens within the OpenID Connect cookie.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Scopes <String>
+        Scopes to request during OpenID Connect authentication.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ServiceCertificate <String>
+        The service certificate to use when authenticating against the SAML2 Identity Provider.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Type <AuthenticationMethodType>
+        The Authentication Method Type.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseTokenLifetime <Boolean>
+        Whether to use the token lifetime as the cookie lifetime.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Wreply <String>
+        The WS-Federation Wreply setting.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Wtrealm <String>
+        The WS-Federation Wrealm setting.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -RequireMfa [<SwitchParameter>]
+        Enforce the MFA requirement for OpenID Connect.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -SigningKey <String>
+        A certificate signing key to use with SAML2.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -SingleSignOnServiceUrl <String>
+        The single signon service URL for SAML2.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Set-PSUAuthenticationMethod -ScriptBlock {
+        param($Credential) 
+    
+        if ($Credential.UserName -eq 'Adam')
+        {
+            New-PSUAuthenticationResult -Success -UserName 'Adam'
+        }
+        else 
+        {
+            New-PSUAuthenticationResult -ErrorMessage 'Not Adam!'
+        }
+    
+    }
+    
+    Forms authentication script blocks receive a single $Credential parameter that contains a PSCredential object. You need to return a New-PSUAuthenticationResult from the script block to grant and deny access.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    New-PSUAuthenticationResult 
+
+

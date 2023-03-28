@@ -1,0 +1,120 @@
+
+NAME
+    New-PSUFileAssociation
+    
+SYNOPSIS
+    Creates a new file association within Windows to a script. Only supported by PSU Desktop.
+    
+    
+SYNTAX
+    New-PSUFileAssociation [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-Environment <String>] [-Extension <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new file association within Windows to a script. Only supported by PSU Desktop.
+    
+
+PARAMETERS
+    -AppToken <String>
+        Not used
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        Not used
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Credential <Variable>
+        The credential to use when running the script.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Environment <String>
+        The environment to use when running the script.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Extension <String>
+        The file extension to use.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Not used
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Script <Script>
+        The script to run when the associated file is opened.
+        
+        Required?                    true
+        Position?                    1
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Not used
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    PowerShellUniversal.Script
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> New-PSUFileAssociation -Script FileAssociation.ps1 -Extension .ps3
+    
+    creates a file association to the *.ps3 file type and runs the FileAssocation.ps1 file when it's opened.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

@@ -1,0 +1,102 @@
+
+NAME
+    Sync-PSUComponent
+    
+SYNOPSIS
+    Causes a dashboard component to reload.
+    
+    
+SYNTAX
+    Sync-PSUComponent [-AppToken <String>] [-ComputerName <String>] -Id <String> [-Integrated] [-UseDefaultCredentials] [-Broadcast] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Causes a dashboard component to reload. This cmdlet can be used in APIs and scripts to reload components in dashboards.
+    
+
+PARAMETERS
+    -AppToken <String>
+        The app token used to connect to the PSU management API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The computer name or URL of the PSU management API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Id <String>
+        The ID of the component to reload.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Whether to use default credentials when connecting to the PSU management API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Broadcast [<SwitchParameter>]
+        Broadcast the sync across all nodes.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    System.String
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Sync-UDComponent -Id 'myDynamic'
+    
+    Reloads the 'myDynamic' component.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

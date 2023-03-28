@@ -1,0 +1,57 @@
+
+NAME
+    New-UDHtml
+    
+SYNOPSIS
+    Displays HTML on a dashboard.
+    
+    
+SYNTAX
+    New-UDHtml [-Markup] <String> [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Displays HTML on a dashboard.
+    
+
+PARAMETERS
+    -Markup <String>
+        The HTML markup to display.
+        
+        Required?                    true
+        Position?                    1
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    New-UDHTML -Markup "<blink>Hello!</blink>"
+    
+    Creates blinking text on a page.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

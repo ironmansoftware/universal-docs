@@ -1,0 +1,60 @@
+
+NAME
+    Select-UDElement
+    
+SYNOPSIS
+    Selects the specified element.
+    
+    
+SYNTAX
+    Select-UDElement -Id <String> [-ScrollToElement] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Selects the specified element. This cmdlet is useful for selecting input fields.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the element to select.
+        
+        Required?                    true
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ScrollToElement [<SwitchParameter>]
+        Whether to scroll to the element.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > New-UDTextbox -Id 'txtName' -Label 'Name'
+    
+    New-UDButton -Text 'Click Me' -OnClick {
+        Select-UDElement -Id 'txtName'
+    }
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

@@ -1,0 +1,58 @@
+
+NAME
+    New-UDIFrame
+    
+SYNOPSIS
+    An HTML IFrame component.
+    
+    
+SYNTAX
+    New-UDIFrame [[-Id] <String>] [[-Uri] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    An HTML IFrame component.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of this component.
+        
+        Required?                    false
+        Position?                    1
+        Default value                ([Guid]::NewGuid())
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Uri <String>
+        The URI for the iframe.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Defines an IFrame for Google.
+    
+    New-UDIFrame -Uri https://www.google.com
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

@@ -1,0 +1,80 @@
+
+NAME
+    Set-UDElement
+    
+SYNOPSIS
+    Set properties of an element.
+    
+    
+SYNTAX
+    Set-UDElement [-Id] <String> [[-Properties] <Hashtable>] [-Broadcast] [[-Content] <ScriptBlock>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Set the properties of an element.
+    
+
+PARAMETERS
+    -Id <String>
+        The element to set properites on.
+        
+        Required?                    true
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Properties <Hashtable>
+        The properties to set in the form of a hashtable.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Broadcast [<SwitchParameter>]
+        Whether to update this element on all connected clients.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Content <ScriptBlock>
+        Content to set within the element.
+        
+        Required?                    false
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > New-UDButton -Id 'button' -Text 'Disable Me' -OnClick {
+        Set-UDElement -Id 'button' -Properties @{
+            'disabled' = $true
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

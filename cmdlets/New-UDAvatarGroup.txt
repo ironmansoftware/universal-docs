@@ -1,0 +1,89 @@
+
+NAME
+    New-UDAvatarGroup
+    
+SYNOPSIS
+    A group of avatars.
+    
+    
+SYNTAX
+    New-UDAvatarGroup [[-Id] <String>] [[-Total] <Int32>] [[-Maximum] <Int32>] [-Children] <ScriptBlock> [[-Sx] <Object>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    A group of avatars.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID for this component.
+        
+        Required?                    false
+        Position?                    1
+        Default value                ([Guid]::NewGuid()).ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Total <Int32>
+        If you need to control the total number of avatars not shown, you can use the total prop.
+        
+        Required?                    false
+        Position?                    2
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Maximum <Int32>
+        AvatarGroup renders its children as a stack. Use the max prop to limit the number of avatars.
+        
+        Required?                    false
+        Position?                    3
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Children <ScriptBlock>
+        Avatars for the group.
+        
+        Required?                    true
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Sx <Object>
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+NOTES
+    
+    
+        General notes
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > An example
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

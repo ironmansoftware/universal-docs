@@ -1,0 +1,94 @@
+
+NAME
+    Start-PSUDashboard
+    
+SYNOPSIS
+    Starts a PowerShell Universal dashboard.
+    
+    
+SYNTAX
+    Start-PSUDashboard [-AppToken <String>] [-ComputerName <String>] -Dashboard <Dashboard> [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Starts a PowerShell Universal dashboard.
+    
+
+PARAMETERS
+    -AppToken <String>
+        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Dashboard <Dashboard>
+        The dashboard to start.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        {{ Fill Integrated Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        {{ Fill UseDefaultCredentials Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    UniversalAutomation.Dashboard
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Get-PSUDashboard | Start-PSUDashboard
+    
+    Starts all the dashboards on the PowerShell Universal server.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    Get-PSUDashboard 
+
+

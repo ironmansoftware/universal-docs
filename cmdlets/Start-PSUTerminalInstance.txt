@@ -1,0 +1,94 @@
+
+NAME
+    Start-PSUTerminalInstance
+    
+SYNOPSIS
+    Starts a terminal instance.
+    
+    
+SYNTAX
+    Start-PSUTerminalInstance [-AppToken <String>] [-ComputerName <String>] [-Integrated] -Terminal <Terminal> [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Starts a terminal instance. Use Get-PSUTerminal to return terminal configurations.
+    
+
+PARAMETERS
+    -AppToken <String>
+        An App Token for authenticating against the PowerShell Universal server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The name or URL of the PowerShell Universal server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Not supported
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Terminal <Terminal>
+        The terminal configuration to start. Use Get-PSUTerminal to return terminal configurations.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Whether to use Windows Authentication against the PowerShell Universal server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    PowerShellUniversal.Terminal
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> $Terminal = Get-PSUTerminal | Where-Object Name -eq 'Terminal1'
+    PS C:\> Start-PSUTerminalInstance -Terminal $Terminal
+    
+    Starts a new instance of Terminal1
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

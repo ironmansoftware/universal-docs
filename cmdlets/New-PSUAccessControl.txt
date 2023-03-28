@@ -1,0 +1,144 @@
+
+NAME
+    New-PSUAccessControl
+    
+SYNOPSIS
+    Defines advanced access controls for scripts.
+    
+    
+SYNTAX
+    New-PSUAccessControl [-AppToken <String>] [-ComputerName <String>] [-ObjectId <String>] -ObjectType {Script} -Role <String> -Type {None | View | Edit | Create | Delete | Execute | All} [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    
+    New-PSUAccessControl [-AppToken <String>] [-ComputerName <String>] -Role <String> -Tag <String> -Type {None | View | Edit | Create | Delete | Execute | All} [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Defines advanced access controls for scripts.
+    
+
+PARAMETERS
+    -AppToken <String>
+        An app token used for accessing the management API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The URI of the management API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ObjectId <String>
+        The ID of the object to set access controls for.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ObjectType <AccessControlObjectType>
+        The type of object to set access controls for.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Role <String>
+        The role that is granted access with this access control.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Tag <String>
+        The tag to assign access controls to.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Type <AccessControlType>
+        The access control type to provide to the role.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    $Type = ([PowerShellUniversal.AccessControlType]::Create -bor [PowerShellUniversal.AccessControlType]::View)
+    New-PSUAccessControl -Role 'ScriptBuilder' -ObjectType 'Script' -Type $Type
+    
+    Global access controls allow you to define an access for a role for all resources of the chosen type.  For example, to allow any user with the ScriptBuilder role to create a script, you can define an access control using the following command. You'll also want to grant the View privilege so that the user can also view scripts.
+    -------------------------- Example 2 --------------------------
+    
+    $Type = ([PowerShellUniversal.AccessControlType]::Execute -bor [PowerShellUniversal.AccessControlType]::View)
+    New-PSUAccessControl -Role 'ScriptRunner' -ObjectId 'OnBoarding.ps1' -ObjectType 'Script' -Type $Type
+    
+    Resource access controls allow you to specify access controls directly on a resource.  This example defines the execute privilege on the OnBoarding.ps1 script to the ScriptRunner role.
+    -------------------------- Example 3 --------------------------
+    
+    $Type = ([PowerShellUniversal.AccessControlType]::Edit -bor [PowerShellUniversal.AccessControlType]::View)
+    New-PSUAccessControl -Role 'ScriptEditor' -Tag 'HR' -Type $Type
+    
+    $Type = ([PowerShellUniversal.AccessControlType]::Edit -bor [PowerShellUniversal.AccessControlType]::View) New-PSUAccessControl -Role 'ScriptEditor' -Tag 'HR' -Type $Type
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

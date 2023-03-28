@@ -1,0 +1,135 @@
+
+NAME
+    New-UDElement
+    
+SYNOPSIS
+    Creates a new React element.
+    
+    
+SYNTAX
+    New-UDElement [-ArgumentList <Object[]>] [-Attributes <Hashtable>] [-AutoRefresh] [-Content <ScriptBlock>] [-Endpoint <ScriptBlock>] [-Id <String>] [-OnMount <String>] [-RefreshInterval <Int32>] -Tag <String> [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new React element. This can also be used to create HTML tags.
+    
+
+PARAMETERS
+    -ArgumentList <Object[]>
+        No required. For backwards compatibility.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Attributes <Hashtable>
+        A hashtable of attributes to apply to the element.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -AutoRefresh [<SwitchParameter>]
+        Whether to autorefresh the element's endpoint.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Content <ScriptBlock>
+        The content of the element.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Endpoint <ScriptBlock>
+        Dynamic content for the element.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Id <String>
+        An ID for the element.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -OnMount <String>
+        An event handler to call when the React element is mounted.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -RefreshInterval <Int32>
+        The number of seconds to wait between auto refreshes.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Tag <String>
+        The HTML tag.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    New-UDElement -Tag 'div' -Attributes @{
+        style = @{
+            color = "red"
+        }
+    } -Content {
+        "Hello!"
+    }
+    
+    Creates a div with red text.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

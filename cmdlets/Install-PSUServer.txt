@@ -1,0 +1,103 @@
+
+NAME
+    Install-PSUServer
+    
+SYNOPSIS
+    Install the PowerShell Universal server.
+    
+    
+SYNTAX
+    Install-PSUServer [-Path <String>] [-Version <String>] [-AddToPath] [-IISWebsite <String>] [-IISAppPool <String>] [-IISPort <Int32>] [<CommonParameters>]
+    
+    Install-PSUServer [-Path <String>] [-LatestVersion] [-AddToPath] [-IISWebsite <String>] [-IISAppPool <String>] [-IISPort <Int32>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Install the PowerShell Universal server. This is a convenience function that will install the server for your platform. On Windows, it will install the 
+    server as a Windows service. On Linux, it will install the server as a systemd service. On Mac, it will install the server as a launchd service.
+    
+
+PARAMETERS
+    -Path <String>
+        The path to store the PowerShell Universal binaries. If not specified, the default installation path will be used.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Version <String>
+        The version of PowerShell Universal to install.
+        
+        Required?                    false
+        Position?                    named
+        Default value                (Get-Module Universal).Version
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LatestVersion [<SwitchParameter>]
+        Install the most recent version.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -AddToPath [<SwitchParameter>]
+        Whether to add the path to the PATH environment variable.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -IISWebsite <String>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -IISAppPool <String>
+        
+        Required?                    false
+        Position?                    named
+        Default value                PowerShellUniversal
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -IISPort <Int32>
+        
+        Required?                    false
+        Position?                    named
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Install-PSUServer
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

@@ -1,0 +1,93 @@
+
+NAME
+    Get-PSUTerminal
+    
+SYNOPSIS
+    Returns terminal configurations.
+    
+    
+SYNTAX
+    Get-PSUTerminal [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Returns terminal configurations.
+    
+
+PARAMETERS
+    -AppToken <String>
+        An App Token for authenticating against the PowerShell Universal server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The name or URL of the PowerShell Universal server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Id <Int64>
+        The ID of the terminal configuration to return.
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Not Supported
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use Windows Authentication.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> $Terminal = Get-PSUTerminal | Where-Object Name -eq 'Terminal1'
+    
+    Returns the Terminal1 terminal configuration.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

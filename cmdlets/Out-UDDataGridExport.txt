@@ -1,0 +1,58 @@
+
+NAME
+    Out-UDDataGridExport
+    
+SYNOPSIS
+    Exports data from the data grid.
+    
+    
+SYNTAX
+    Out-UDDataGridExport [-Data] <String> [[-MimeType] <String>] [[-FileName] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Exports data from the data grid.
+    
+
+PARAMETERS
+    -Data <String>
+        The data to export.
+        
+        Required?                    true
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -MimeType <String>
+        The mime type to export.
+        
+        Required?                    false
+        Position?                    2
+        Default value                text/plain
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -FileName <String>
+        The file name to export.
+        
+        Required?                    false
+        Position?                    3
+        Default value                export.txt
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    
+RELATED LINKS
+
+

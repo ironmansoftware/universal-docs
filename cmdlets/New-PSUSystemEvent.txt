@@ -1,0 +1,138 @@
+
+NAME
+    New-PSUSystemEvent
+    
+SYNOPSIS
+    Registers a system event handler with PSU Desktop.
+    
+    
+SYNTAX
+    New-PSUSystemEvent [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] -Condition <String> [-Credential <Variable>] [-Environment <String>] [-Integrated] [-Name <String>] [-Type {Create | Delete | Modify}] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Registers a system event handler with PSU Desktop.
+    
+
+PARAMETERS
+    -AppToken <String>
+        {{ Fill AppToken Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        {{ Fill ComputerName Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Condition <String>
+        {{ Fill Condition Description }}
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Credential <Variable>
+        {{ Fill Credential Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Environment <String>
+        {{ Fill Environment Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        {{ Fill Integrated Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        {{ Fill Name Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Script <Script>
+        {{ Fill Script Description }}
+        
+        Required?                    true
+        Position?                    1
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Accept wildcard characters?  false
+        
+    -Type <SystemEventType>
+        {{ Fill Type Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        {{ Fill UseDefaultCredentials Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    PowerShellUniversal.Script
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> {{ Add example code here }}
+    
+    {{ Add example description here }}
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

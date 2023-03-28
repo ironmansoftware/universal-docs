@@ -1,0 +1,93 @@
+
+NAME
+    Show-PSUPage
+    
+SYNOPSIS
+    Shows a page or URL within PSU Desktop.
+    
+    
+SYNTAX
+    Show-PSUPage [-AppToken <String>] [-ComputerName <String>] [-Integrated] -Url <String> [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Shows a page or URL within PSU Desktop. This can be run within scripts, APIs and dashboards.
+    
+
+PARAMETERS
+    -AppToken <String>
+        Not used
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        Not used
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Not used
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Url <String>
+        The URL or page name.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Not used
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Show-PSUPage -Url MyPage
+    
+    Shows MyPage in a new window within PSU Desktop.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

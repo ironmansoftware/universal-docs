@@ -1,0 +1,121 @@
+
+NAME
+    Get-PSUJobOutput
+    
+SYNOPSIS
+    Returns stream output for a job.
+    
+    
+SYNTAX
+    Get-PSUJobOutput [-AppToken <String>] [-ComputerName <String>] [-Integrated] -Job <Job> [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Get-PSUJobOutput [-AppToken <String>] [-ComputerName <String>] [-Integrated] -JobId <Int64> [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Get-PSUJobOutput [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] -RunId <Guid> [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Returns stream output for a job. This includes error, warning, information, debug and verbose. Use Get-UAJobPipelineOutput to receive pipeline output.
+    
+
+PARAMETERS
+    -AppToken <String>
+        An app token to access the UA API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The HTTP address of the UA REST API server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Job <Job>
+        The job to return output for.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Accept wildcard characters?  false
+        
+    -JobId <Int64>
+        The ID of the job to return output for.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -RunId <Guid>
+        The run ID (GUID) for this job. Requires JobRunId experimental feature.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    UniversalAutomation.Job
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Get-UAJobOutput -JobId 10
+    
+    Returns output for job 10.
+    -------------------------- Example 2 --------------------------
+    
+    PS C:\> $Job = Get-UAJob -Id 12
+    PS C:\> Get-UAJobOutput -Job $Job
+    
+    Returns output for job 12.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

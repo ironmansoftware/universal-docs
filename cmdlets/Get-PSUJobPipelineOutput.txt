@@ -1,0 +1,122 @@
+
+NAME
+    Get-PSUJobPipelineOutput
+    
+SYNOPSIS
+    Gets the pipeline output written by a job.
+    
+    
+SYNTAX
+    Get-PSUJobPipelineOutput [-AppToken <String>] [-ComputerName <String>] [-Integrated] -Job <Job> [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Get-PSUJobPipelineOutput [-AppToken <String>] [-ComputerName <String>] [-Integrated] -JobId <Int64> [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Get-PSUJobPipelineOutput [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] -RunId <Guid> [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Gets the pipeline output written by a job. Pipeline output that is written to a job is stored as CLIXML and can be retrieved by this cmdlet.
+    
+
+PARAMETERS
+    -AppToken <String>
+        App token to access the PowerShell Universal server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The name or URL of the PowerShell Universal server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Whether to use integrated transport
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Job <Job>
+        The job for which to receive the pipeline input for.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Accept wildcard characters?  false
+        
+    -JobId <Int64>
+        The job ID for which to receive the pipeline input for.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default Windows Credentials when connecting to PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -RunId <Guid>
+        The run ID (GUID) for this job. Requires JobRunId experimental feature.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    UniversalAutomation.Job
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Get-UAJobPipelineOutput -JobId 10
+    
+    Returns pipeline output for job 10.
+    -------------------------- Example 2 --------------------------
+    
+    PS C:\> $Job = Get-UAJob -Id 12
+    PS C:\> Get-UAJobPipelineOutput -Job $Job
+    
+    Returns pipeline output for job 12.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    Get-PSUJob 
+
+

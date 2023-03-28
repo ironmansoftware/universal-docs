@@ -1,0 +1,151 @@
+
+NAME
+    New-UDChip
+    
+SYNOPSIS
+    Creates a new chip.
+    
+    
+SYNTAX
+    New-UDChip [-Id <String>] [[-Label] <String>] [[-OnDelete] <Endpoint>] [[-OnClick] <Endpoint>] [[-Icon] <Object>] [[-Style] <Hashtable>] [[-Variant] <String>] [[-Size] <String>] [-ClassName <String>] [-Color <String>] [<CommonParameters>]
+    
+    New-UDChip [-Id <String>] [[-Label] <String>] [[-OnDelete] <Endpoint>] [[-OnClick] <Endpoint>] [[-Style] <Hashtable>] [[-Variant] <String>] [[-Avatar] <String>] [[-AvatarType] <String>] [[-Size] <String>] [-ClassName <String>] [-Color <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new chip. Chips can be used to display tags or little bits of data.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    named
+        Default value                ([Guid]::NewGuid()).ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Label <String>
+        The label for the chip.
+        
+        Required?                    false
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnDelete <Endpoint>
+        A script block to call when the chip is deleted.
+        
+        Required?                    false
+        Position?                    9
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnClick <Endpoint>
+        A script block to call when the chip is clicked.
+        
+        Required?                    false
+        Position?                    8
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Icon <Object>
+        An icon to show within the chip.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        CSS styles to apply to the chip.
+        
+        Required?                    false
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Variant <String>
+        The theme variant to apply to the chip.
+        
+        Required?                    false
+        Position?                    4
+        Default value                default
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Avatar <String>
+        An avatar to show within the chip.
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -AvatarType <String>
+        The type of avatar to show in the chip.
+        
+        Required?                    false
+        Position?                    6
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Size <String>
+        The size of the chip. Valid values are: "small", "medium"
+        
+        Required?                    false
+        Position?                    10
+        Default value                medium
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        A CSS class to apply to the chip.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Color <String>
+        The color of the chip. Defaults to 'default'. Valid values: "default", "primary", "secondary"
+        
+        Required?                    false
+        Position?                    named
+        Default value                default
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Creates a clickable chip with a custom style and icon.
+    
+    $Icon = New-UDIcon -Icon 'user' -Size sm -Style @{color = '#fff'}
+    New-UDChip -Label "Demo User" -Id "chipIcon" -Icon $Icon -OnClick {Show-UDToast -Message 'test'} -Clickable -Style @{backgroundColor = '#00838f'}
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

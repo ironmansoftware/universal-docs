@@ -1,0 +1,80 @@
+
+NAME
+    Start-UDDownload
+    
+SYNOPSIS
+    Starts the download of a file within the dashboard.
+    
+    
+SYNTAX
+    Start-UDDownload [-FileName <String>] -StringData <String> [-ContentType <String>] [<CommonParameters>]
+    
+    Start-UDDownload [-FileName <String>] [-ContentType <String>] -Url <String> [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Starts the download of a file within the dashboard. Only text files are supported
+    
+
+PARAMETERS
+    -FileName <String>
+        The name of the file.
+        
+        Required?                    false
+        Position?                    named
+        Default value                text.txt
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -StringData <String>
+        The data to be written to the file.
+        
+        Required?                    true
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ContentType <String>
+        The content type of the file.
+        
+        Required?                    false
+        Position?                    named
+        Default value                text/plain
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Url <String>
+        A URL to download as string data and send to the user.
+        
+        Required?                    true
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > New-UDButton -Text 'Click Me' -OnClick {
+        Start-UDDownload -FileName 'myfile.txt' -StringData 'Hello World' -ContentType 'text/plain'
+    }
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
+
+
