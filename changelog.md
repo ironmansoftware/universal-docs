@@ -4,6 +4,23 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.8.6 - 3/28/2023
+
+#### Automation
+
+* Fixed an issue where Invoke-PSUScript would not work when JobRunId experimental feature was enabled (#2236)
+
+#### Dashboards
+
+* Fixed an issue where scheduled endpoints would not run
+* Fixed an issue where pages with the same name could not be created in separate dashboards (#2244)
+
+#### Platform
+
+* Fixed an issue where the update check would not run for 1 hour after the start of the service (#2237)
+* Fixed an issue where the server could fail to startup if the license was expiring within 1 month (#2243)
+* Fixed an issue where the license end date would not be shown properly in the admin console
+
 ## 3.8.5 - 3/27/2023
 
 #### Dashboards
