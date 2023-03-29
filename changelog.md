@@ -4,6 +4,24 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.8.7 - 3/29/2023
+
+#### Dashboards
+
+* Fixed an issue where New-UDForm -OnValidate would not trigger (#2249)
+* Fixed an issue where OnNodeClicked would trigger on leaf nodes in New-UDTreeView (#2246)
+* Fixed an issue where -Expanded would not work properly when OnNodeClicked was defined on New-UDTreeView (#2246)
+* Fixed an issue where -StickHeader would not have an affect on New-UDTable (#2223)
+* Fixed an issue where server-side -OnExport would export empty columns in New-UDTable (#2239)
+* Fixed an issue where Set-UDElement would not work with New-UDTreeNode (#2246)
+* Fixed an issue where the theme toggle was in the incorrect state when the default theme was dark (#2250)
+
+#### Platform
+
+* Fixed an issue with editors would sometime be listed as unsaved when nothing had changed (#2248)
+* Fixed an issue where Invoke-PSUScript did not work with RunId (#2236)
+* Fixed an issue where new translation files would not be generated.
+
 ## 3.8.6 - 3/28/2023
 
 #### Automation

@@ -14,21 +14,21 @@ Jobs can be viewed by clicking the Automation / Jobs page. Click the View button
 
 ### View Job Output
 
-Standard PowerShell streams such as information, host, error, warning and verbose are shown within the output pane.&#x20;
+Standard PowerShell streams such as information, host, error, warning and verbose are shown within the output pane.
 
 ![Standard Output](<../.gitbook/assets/image (436).png>)
 
 ### View Job Pipeline Output
 
 {% hint style="info" %}
-Storing large amounts of pipeline output can negatively affect performance. You can discard pipeline output by setting the Discard Pipeline setting on scripts.&#x20;
+Storing large amounts of pipeline output can negatively affect performance. You can discard pipeline output by setting the Discard Pipeline setting on scripts.
 {% endhint %}
 
 Pipeline output for jobs is also stored within PowerShell Universal. Any object that is written to the pipeline is stored as CliXml and available for view within the Pipeline Output tab.
 
 You can expand the tree view to see the objects and properties from the pipeline.
 
-![Pipeline Output](<../.gitbook/assets/image (382).png>)
+![Pipeline Output](<../.gitbook/assets/image (366).png>)
 
 ### Viewing Errors
 
@@ -97,7 +97,7 @@ $HostOutput = Get-PSUJobOutput -Job $Job
 $HostOutput.Data
 ```
 
-If you are using PowerShell Universal 2.4 or later, you can use the `-Wait` parameter of `Invoke-PSUScript` to achieve this.&#x20;
+If you are using PowerShell Universal 2.4 or later, you can use the `-Wait` parameter of `Invoke-PSUScript` to achieve this.
 
 ```powershell
 $Pipeline = Invoke-PSUScript -Script 'Script1.ps1' -RequiredParameter 'Hello' -Wait
@@ -107,13 +107,13 @@ $Pipeline = Invoke-PSUScript -Script 'Script1.ps1' -RequiredParameter 'Hello' -W
 
 The integrated mode allows calling these cmdlets from within PowerShell Universal without an App Token or Computer Name. It uses the internal RPC channel to communicate.
 
-You can set the `-Integrated` parameter to switch to integrated mode. This parameter does not work outside of PowerShell Universal.&#x20;
+You can set the `-Integrated` parameter to switch to integrated mode. This parameter does not work outside of PowerShell Universal.
 
 ```powershell
 Invoke-PSUScript -Script 'Script.ps1' -Integrated
 ```
 
-The following cmdlets support integrated mode.&#x20;
+The following cmdlets support integrated mode.
 
 * Get-PSUScript
 * Invoke-PSUScript
@@ -138,7 +138,7 @@ Invoke-RestMethod http://localhost:5000/api/v1/script/7 -Method POST -Body "" -H
 
 ### Providing Parameters
 
-You can provide parameters to the job via a query string. Parameters will be provided to your script as strings.&#x20;
+You can provide parameters to the job via a query string. Parameters will be provided to your script as strings.
 
 ```powershell
 $Parameters = @{
@@ -182,11 +182,11 @@ Variables defined in jobs can be found on the [variables page](../platform/varia
 
 ## Experimental Feature: Job Run ID
 
-The default behavior for PowerShell Universal is to track jobs based on an autoincrementing int64-based ID. Every time a new job is run, the job is one higher in ID than the last. Because of this behavior, it is easy to guess other job IDs and can potentially lead to a security risk.&#x20;
+The default behavior for PowerShell Universal is to track jobs based on an autoincrementing int64-based ID. Every time a new job is run, the job is one higher in ID than the last. Because of this behavior, it is easy to guess other job IDs and can potentially lead to a security risk.
 
-In order to avoid this issue, you can enable the `JobRunID` experimental feature. Although internally the system still creates jobs with ascending numeric IDs, you cannot access jobs based on those IDs. Instead, a new field called `RunID` is used. `RunID` utilizes a `GUID` rather than an ID for look ups. This greatly reduces the ability for an attacker to guess a job ID.&#x20;
+In order to avoid this issue, you can enable the `JobRunID` experimental feature. Although internally the system still creates jobs with ascending numeric IDs, you cannot access jobs based on those IDs. Instead, a new field called `RunID` is used. `RunID` utilizes a `GUID` rather than an ID for look ups. This greatly reduces the ability for an attacker to guess a job ID.
 
-You will need to enable this feature to use it.&#x20;
+You will need to enable this feature to use it.
 
 ```powershell
 Set-PSUSetting -ExperimentalFeature ([PowerShellUniversal.ExperimentalFeatures]::JobRunId)
