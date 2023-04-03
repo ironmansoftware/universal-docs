@@ -105,7 +105,7 @@ New-UDForm -Content {
 
 ## Validating a Form
 
-Form validation can be accomplished by using the OnValidate script block parameter
+Form validation can be accomplished by using the OnValidate script block parameter.
 
 ```powershell
 New-UDForm -Content {
@@ -162,11 +162,11 @@ New-UDElement -Id 'results' -Tag 'div'
 
 ## Schema Forms
 
-Instead of defining all the layout and logic for forms using cmdlets, you can also define a form based on a hashtable of schema. This version of forms is based on [react-jsonschema-form](https://react-jsonschema-form.readthedocs.io/en/latest/).
+Instead of defining all the layout and logic for forms using cmdlets, you can also define a form based on a hashtable of schema. This version of forms is based on [react-jsonschema-form](https://rjsf-team.github.io/react-jsonschema-form/docs/).
 
 ### Fields
 
-You define fields that accept string, number, integer, enum and boolean types. This changes the type of input shown.&#x20;
+You define fields that accept string, number, integer, enum and boolean types. This changes the type of input shown.
 
 ```powershell
 New-UDForm -Schema @{
@@ -188,7 +188,7 @@ New-UDForm -Schema @{
 
 ### Required Properties
 
-You can use the `required` property to set a list of required properties.&#x20;
+You can use the `required` property to set a list of required properties.
 
 ```powershell
 New-UDForm -Schema @{
@@ -210,8 +210,9 @@ New-UDForm -Schema @{
 ```
 
 {% hint style="warning" %}
-Note that the properties need to be lower case! For example, you need to ensure the keys in your properties hashtable are lower case and the list of required properties are also lower case.&#x20;
+Note that the properties need to be lower case! For example, you need to ensure the keys in your properties hashtable are lower case and the list of required properties are also lower case.
 {% endhint %}
+
 ### Ordering
 
 You can use the `schemaUI` property to modify the ordering of the fields.
@@ -259,7 +260,7 @@ New-UDForm -Schema @{
 
 ### Arrays
 
-You can create forms that accept 0 to many objects. The user will be able to add and remove objects to the form.&#x20;
+You can create forms that accept 0 to many objects. The user will be able to add and remove objects to the form.
 
 ```powershell
 New-UDForm -Schema @{
@@ -284,9 +285,9 @@ New-UDForm -Schema @{
 
 ## Script Forms
 
-You can automatically generate forms based on scripts in your PowerShell Universal environment. Script forms will generate input components based on the `param` block. Script forms automatically support progress and feedback.&#x20;
+You can automatically generate forms based on scripts in your PowerShell Universal environment. Script forms will generate input components based on the `param` block. Script forms automatically support progress and feedback.
 
-Script forms also support displaying the output as text or a table.&#x20;
+Script forms also support displaying the output as text or a table.
 
 ```powershell
 New-UDForm -Script "Script.ps1" -OutputType 'text'
