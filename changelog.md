@@ -4,6 +4,16 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.8.8 - 4/3/2023
+
+#### Automation
+
+* Fixed an issue where creating a schedule without parameters in the admin console would not save (#2268)
+
+#### Platform
+
+* Fixed an issue where user session disconnected time was not listed (#2256)
+
 ## 3.8.7 - 3/29/2023
 
 #### Dashboards

@@ -127,7 +127,7 @@ Use the `-OnValidate` event handler to validate input typed in the textbox.
 New-UDTextbox -OnValidate {
     if ($EventData.Length -lt 10)
     {
-        New-UDValidationResult -Error 'String needs to be longer than 10'
+        New-UDValidationResult -ValidationError 'String needs to be longer than 10'
     }
 }
 ```
