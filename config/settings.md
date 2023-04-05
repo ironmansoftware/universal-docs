@@ -331,20 +331,6 @@ Settings for automation specific features.&#x20;
 | JobDebugging            | Whether to generate files in the temporary directory when starting job. This is useful for debugging if jobs are timing out before starting.                   |
 | ContinueJobOnServerStop | Whether to continue running a job after the service has stopped. Job progress will fail to be reported but the script will continue to run.                    |
 
-### UniversalDashboard
-
-**Default Value**
-
-```javascript
-"UniversalDashboard": {
-  "AssetsFolder": "%ProgramData%\\PowerShellUniversal\\Dashboard"
-},
-```
-
-| Key          | Description                                      |
-| ------------ | ------------------------------------------------ |
-| AssetsFolder | The location to store components and frameworks. |
-
 ### **HideAdminConsole**
 
 Prevents the service from serving the admin console. This will prevent the admin console from being used by any user, including administrators.
