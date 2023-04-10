@@ -4,6 +4,29 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.8.9 - 4/10/2023
+
+#### Automation
+
+* Fixed an issue where the scripts page could occasionally show a JavaScript error
+* Fixed an issue where editing a continuous schedule in the admin console would fail (#2277)
+* Fixed an issue where the timespan in job logs didn't match the client browser (#2295)
+
+#### Dashboard
+
+* Fixed an issue where -Role did not work on New-UDPage when dashboard authentication was disabled (#2278)
+* Fixed an issue where New-UDTreeView -OnNodeClicked would sometimes return the wrong ID (#2289)
+* Fixed an issue where -Expanded on New-UDTreeView would not properly expand the nodes
+* Fixed an issue where dashboard terminal would not work (#2284)
+* Fixed an issue where numbers in a -Render of New-UDTableColumn would not display (#2267)
+* Fixed an issue where forms with many textboxes would take some time to report their state via Get-UDElement (#2260)
+
+#### Platform
+
+* Fixed an issue where cloning a non-default branch would not work with git sync (#2291)
+* Fixed an issue where the editor would think changes were unsaved when they were not (#2248)
+* Fixed an issue where external git clients error wouldn't show in the admin console (#2297)
+
 ## 3.8.8 - 4/3/2023
 
 #### Automation
