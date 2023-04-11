@@ -170,6 +170,7 @@
 * [Persistence](config/persistence.md)
 * [App Settings](config/settings.md)
 * [Security](config/security/README.md)
+  * [Best Practices](config/security/best-practices.md)
   * [Access Controls](config/security/access-controls.md)
   * [App Tokens](config/security/app-tokens.md)
   * [Client Certificate](config/security/client-certificate.md)
