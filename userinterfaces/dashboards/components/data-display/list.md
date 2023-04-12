@@ -38,5 +38,5 @@ New-UDList -Content {
 
 ## API
 
-* [**New-UDList**](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDList.txt)****
-* ****[**New-UDListItem**](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDListItem.txt)****
+* [**New-UDList**](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDList.txt)
+* [**New-UDListItem**](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDListItem.txt)

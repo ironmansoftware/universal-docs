@@ -69,4 +69,3 @@ New-UDSlider -OnChange {
 
 * [New-UDSlider](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDSlider.txt)
 
-****

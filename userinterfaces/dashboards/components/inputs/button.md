@@ -71,4 +71,3 @@ New-UDButton -Text 'Message Box' -OnClick {
 
 * [New-UDButton](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDButton.txt)
 
-****

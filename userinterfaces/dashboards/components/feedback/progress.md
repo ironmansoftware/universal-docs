@@ -32,4 +32,3 @@ New-UDProgress -PercentComplete 75
 
 * [New-UDProgress](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDProgress.txt)
 
-****

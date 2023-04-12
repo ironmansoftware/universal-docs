@@ -89,4 +89,3 @@ New-UDRow -Columns {
 
 * [New-UDGrid](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDGrid.txt)
 
-****

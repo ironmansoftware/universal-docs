@@ -59,4 +59,3 @@ New-UDTabs -Tabs {
 * [New-UDTabs](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDStepper.txt)
 * [New-UDTab](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDTab.txt)
 
-****

@@ -40,4 +40,6 @@ Please consider that some of these settings may already be managed by Group Poli
 
 Once you have configured the service account to use with PowerShell Universal, you will need to configure the PowerShell Universal Service to use that account.&#x20;
 
-Open the Services snapin by executing `services.msc` . Find the `PowerShell Universal` service and right click it and then click Properties. Click the Log On tab and enter the credentials for the service account.&#x20;
+Open the Services snapin by executing `services.msc` . Find the `PowerShell Universal` service and right click it and then click Properties. Click the Log On tab and enter the credentials for the service account.
+
+<figure><img src="../.gitbook/assets/psu_modify_service_add_service_account.gif" alt=""><figcaption><p>Configuring the PowerShell Universal service to run under a specified account</p></figcaption></figure>

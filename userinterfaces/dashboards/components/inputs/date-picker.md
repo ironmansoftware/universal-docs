@@ -54,4 +54,3 @@ New-UDDatePicker -Minimum ((Get-Date).AddDays(-15)) -Maximum ((Get-Date).AddDays
 
 * [New-UDDatePicker](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDDatePicker.txt)
 
-****
