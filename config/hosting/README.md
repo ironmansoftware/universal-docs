@@ -79,7 +79,11 @@ To configure HTTPS, you can adjust the `appsettings.json` file to use a particul
 
 #### Certificate Store
 
-To configure a certificate in a particular location and store, you can use a configuration such as this. When selecting the certificate by subject name, ensure you use the common name with out `CN=` prefix.&#x20;
+To configure a certificate in a particular location and store, you can use a configuration such as this.&#x20;
+
+{% hint style="warning" %}
+When selecting the certificate by subject name, ensure you use the common name with out `CN=` prefix.&#x20;
+{% endhint %}
 
 ```javascript
 {
