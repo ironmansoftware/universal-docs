@@ -4,6 +4,32 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.8.10 - 4/18/2023
+
+#### API
+
+* Fixed an issue where endpoint documentation role authorization did not work (#2312)
+
+#### Automation
+
+* Fixed an issue where schedules without a -Cron defined could cause schedules to fail to be created
+* Fixed an issue where IANA time zones would not render timestamps properly in job logs.
+
+#### Dashboard
+
+* Fixed an issue where New-UDTextbox could miss the last character when used in forms (#2303)
+* Fixed an issue where New-UDTextbox value would not be updated by Set-UDElement when used in forms (#2304)
+* Fixed an issue where -StickyHeaders didn't work when filters where used in New-UDTable (#2259)
+* Fixed an issue where saving dashboards could take a lot of time when auto-deploy was enabled (#2276)
+
+#### Platform
+
+* Fixed an issue where groom job could fail when deleting notifications (#2279)
+* Fixed an issue where git sync would report detected dubious ownership in repository (#2298)
+* Fixed an issue where an object reference exception could be throw while the server was starting up
+* Fixed an issue where Bearer was case-sensitive in the authorization header in some circumstances (#2321)
+* Fixed an issue where Remove-PSUIdentity -Integrated would not work
+
 ## 3.8.9 - 4/10/2023
 
 #### Automation
