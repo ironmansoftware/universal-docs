@@ -122,9 +122,22 @@ To access secrets that you have added to PowerShell Universal, you can use the `
 Invoke-Command -Credential $Secret:Credential { Write-Host "Hello" }
 ```
 
+### Access Variables by Name
+
+You can access variables by name using the `$Secret:` prefix.&#x20;
+
+```powershell
+# PSCredential
+$Secret:MyNewSecret.UserName
+$Secret:MyNewSecret.Password
+
+# String
+$Secret:DashboardSecret
+```
+
 ### Access Values Dynamically
 
-You can access the secret scope dynamically by using `Get-Item`. The secret scope is implemented as a provider. This is helpful if you don't have static variable names.
+You can access the secret scope dynamically by using `Get-ChildItem`. The secret scope is implemented as a provider. This is helpful if you don't have static variable names.
 
 ```powershell
 # PSCredential
