@@ -4,18 +4,22 @@ description: This page provides installation and configuration information for D
 
 # Docker
 
-## Confirming Docker is installed correctly
+## Docker
 
-> **_NOTE:_** Note: Apple M1 devices:
-At the time of writing there are some issues on Apple M1 devices and, some ARM64/ARMv8 devices. Please review [this forum thread](https://forums.ironmansoftware.com/t/docker-image-not-working/8781/15) before proceeding.
+### Confirming Docker is installed correctly
 
-### Docker
+> _**NOTE:**_ Note: Apple M1 devices: At the time of writing there are some issues on Apple M1 devices and, some ARM64/ARMv8 devices. Please review [this forum thread](https://forums.ironmansoftware.com/t/docker-image-not-working/8781/15) before proceeding.
+
+#### Docker
+
 Run the following command to confirm Docker is installed:
+
 ```
 docker version
 ```
 
 Example Output:
+
 ```
 Client: Docker Engine - Community
  Version:           23.0.1
@@ -46,34 +50,45 @@ Server: Docker Engine - Community
   GitCommit:        de40ad0
 
 ```
-### Docker Compose
+
+#### Docker Compose
+
 Docker Compose v1 uses the command `docker-compose`. As of June 2023 support ends for Docker Compose v1.
 
-Docker Compose v2 uses the command `docker compose`. 
+Docker Compose v2 uses the command `docker compose`.
 
 If you are using Docker Compose v1 please adjust the commands accoridingly. More infromation on Docker Compose can be found [here](https://docs.docker.com/compose/).
 
 Run one of the following commands to check Docker Compose is installed:
 
 Docker Compose v1:
+
 ```
 docker-compose version
 ```
+
 Docker Compose v2:
+
 ```
 docker compose version
 ```
+
 Example Output:
+
 ```
 Docker Compose version v2.16.0
 ```
 
-### A Docker Hello-World
+#### A Docker Hello-World
+
 To ensure that Docker has the ability to pull and run container images run the following command:
+
 ```
 docker run hello-world
 ```
+
 Example Output:
+
 ```
 Unable to find image 'hello-world:latest' locally
 latest: Pulling from library/hello-world
@@ -103,9 +118,9 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 ```
 
-## Installation
+### Installation
 
-## Using the pre-built Container
+### Using the pre-built Container
 
 In order to run PowerShell Universal, you can use the provided container image. The docker image is available on [Docker Hub](https://hub.docker.com/r/ironmansoftware/universal) .
 
@@ -113,71 +128,79 @@ The prebuilt version allows you to run all free and paid features of PowerShell 
 
 You can start the container by pulling the image and then running a container with the default port bound.
 
-### Running a basic image
+#### Running a basic image
 
 ```
 docker pull ironmansoftware/universal
 docker run --name 'PSU' -it -p 5000:5000 ironmansoftware/universal
 ```
 
-### Present an image to a different port
+#### Present an image to a different port
 
 If port 5000 is unavailable on your host, this can be switched to another port.
 
 e.g. Present on port 80
 
-``` 
+```
 docker pull ironmansoftware/universal
 docker run --name 'PSU' -it -p 80:5000 ironmansoftware/universal
 ```
 
-### Mount a volume
+#### Mount a volume
 
 The `docker run` command will allow you to mount a volume for persistent storage. This needs to be mounted to the /root folder.
 
-#### Mount a volume on container in  Windows 
+**Mount a volume on container in Windows**
 
 The following command mounts the folder `C:\docker\volumes\PSU` to `/root` on your container
 
 ```
 docker pull ironmansoftware/universal
-docker run --name 'PSU' -it -p 5000:5000 ironmansoftware/universal -v C:\docker\volumes\PSU:/root
+docker run --name 'PSU' -it -p 5000:5000 -v C:\docker\volumes\PSU:/root ironmansoftware/universal 
 ```
 
-#### Mount a volume on Container on Mac and Linux
+**Mount a volume on Container on Mac and Linux**
+
 The following command mounts the folder `/docker/volumes/PSU` to `/root` on your container
 
 ```
 docker pull ironmansoftware/universal
-docker run --name 'PSU' -it -p 5000:5000 ironmansoftware/universal -v /docker/volumes/PSU:/root
+docker run --name 'PSU' -it -p 5000:5000 -v /docker/volumes/PSU:/root ironmansoftware/universal 
 ```
 
-### Stopping a Container
+#### Stopping a Container
+
 The following command removes a stopped container named `PSU`
+
 ```
 docker stop PSU
 ```
 
-### Removing a Container
+#### Removing a Container
+
 The following command stops a container named `PSU`
+
 ```
 docker rm PSU
 ```
 
 The `--force` flag can be used to remove a running container
+
 ```
 docker rm --force PSU
 ```
 
-## Docker Compose
+### Docker Compose
+
 Docker Compose allows you to use a yaml text file to standardize your build and script the deployment (or build) or multiple containers.
 
 The default name for any compose file is `docker-compose.yml` it is recommended you use this as your compose filename.
 
-### Creating a Compose Script for Windows
+#### Creating a Compose Script for Windows
+
 The following compose file will run a Powershell Universal container in Windows
 
-``` yml
+```yml
 version: "3.7"
 services:
   PSU:
@@ -192,10 +215,11 @@ services:
       - C:\docker\volumes\PSU:/root
 ```
 
-### Creating a Compose Script for Mac / Linux
+#### Creating a Compose Script for Mac / Linux
+
 The following compose file will run a Powershell Universal container on Mac's and Linux
 
-``` yml
+```yml
 version: "3.7"
 services:
   PSU:
@@ -210,14 +234,18 @@ services:
       - /docker/volumes/PSU:/root
 ```
 
-### Starting  Containers using Compose Scripts
+#### Starting Containers using Compose Scripts
+
 Using a Terminal shell, or PowerShell for Windows. cd to the directory with your `docker-compose.yml` script.
 
 Run the following command
+
 ```
 docker compose up -d
 ```
+
 Example Output:
+
 ```
 Creating network "PSU_default" with the default driver
 Pulling PSU (ironmansoftware/universal:latest)...
@@ -232,28 +260,33 @@ Status: Downloaded newer image for ironmansoftware/universal:latest
 Creating PSU ... done
 ```
 
-### Stopping Containers using Compose Scripts
+#### Stopping Containers using Compose Scripts
 
 Using a Terminal shell, or PowerShell for Windows. cd to the directory with your `docker-compose.yml` script.
 
 Run the following command
+
 ```
 docker compose down
 ```
+
 Example Output:
+
 ```
 [+] Running 2/2
  ⠿ Container PSU         Removed                                           0.5s
  ⠿ Network PSU_default   Removed                                           0.4s
 ```
-### Using Environment Variables and SQL Persistance
-You can add Environment variables into your Compose Scripts.
-Below is an example of:
-- Setting a node name
-- Adding SQL persistance
-- Adding a SQL Connection String
 
-``` yaml
+#### Using Environment Variables and SQL Persistance
+
+You can add Environment variables into your Compose Scripts. Below is an example of:
+
+* Setting a node name
+* Adding SQL persistance
+* Adding a SQL Connection String
+
+```yaml
 version: "3.7"
 services:
   PSU:
@@ -271,19 +304,20 @@ services:
       - /docker/volumes/PSU:/root
 ```
 
-## Building a Custom Container
+### Building a Custom Container
 
 In some cases, you may wish to build more features, modify, or hardcode Environment Variables into your container.
 
 For that, you will need to Create a `Dockerfile`
 
-> **_NOTE:_** Dockerfiles' are case-sensitive and must start with a capital 'D'.
+> _**NOTE:**_ Dockerfiles' are case-sensitive and must start with a capital 'D'.
 
 To create a Docker image that can persist the Universal data, you can create a dockerfile like the one below.
 
 This Dockerfile exposes port 5000, creates a /data volume, sets configuration environment variables to store the Universal repository and database in the volume and then sets the Universal.Server as the entry point to the container.
 
-### Writing a Dockerfile script for Linux
+#### Writing a Dockerfile script for Linux
+
 ```
 FROM ironmansoftware/universal:latest
 LABEL description="Universal - The ultimate platform for building web-based IT Tools" 
@@ -296,7 +330,8 @@ ENV UniversalDashboard__AssetsFolder /home/data/UniversalDashboard
 ENV Logging__Path /home/data/logs/log.txt
 ENTRYPOINT ["./Universal/Universal.Server"]
 ```
-### Building a container
+
+#### Building a container
 
 From the path your Dockerfile is hosted in run the following command:
 
@@ -304,7 +339,7 @@ From the path your Dockerfile is hosted in run the following command:
 docker build . --tag=universal-persistent
 ```
 
-### Windows
+#### Windows
 
 ```
 FROM ironmansoftware/universal:1.3.1-windowsservercore-1809
@@ -331,30 +366,32 @@ You can start the docker container with the run command and make sure to specify
 docker run -it --name powershelluniversal --mount source=psudata,target=/home/data --rm -d  -p 5000:5000/tcp universal-persistent:latest
 ```
 
-### SQL
+#### SQL
 
-To use SQL persistence, you can define the plugin and connection string as follows.&#x20;
+To use SQL persistence, you can define the plugin and connection string as follows.
 
 ```
 ENV Data__ConnectionString=Data Source=ServerName; Initial Catalog=DatabaseName; Integrated Security=SSPI;
 ENV Plugins:0=SQL
 ```
 
-## Time Zones
+### Time Zones
 
-To properly support time zones on Linux when scheduling jobs, you will need to include the `tzdata` package in your dockerfile along with an environment variable that specifies the server time zone.&#x20;
+To properly support time zones on Linux when scheduling jobs, you will need to include the `tzdata` package in your dockerfile along with an environment variable that specifies the server time zone.
 
 ```
 ENV TZ Europe/Amsterdam
 RUN apt-get install -y tzdata
 ```
 
-# Summary
+## Summary
 
 This has been a very basic "How get get started" which allows you to get started running or building PSU Containers. All souces for commands have been linked in the referances session.
 
-# References
-## Running Containers
+## References
+
+### Running Containers
+
 https://docs.docker.com/engine/reference/commandline/run/
 
 https://docs.docker.com/engine/reference/commandline/stop/
@@ -363,5 +400,6 @@ https://docs.docker.com/engine/reference/commandline/rm/
 
 https://docs.docker.com/compose/
 
-## Building Containers
+### Building Containers
+
 https://docs.docker.com/engine/reference/commandline/build/

@@ -4,6 +4,24 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.8.11 - 4/23/2023
+
+#### Automation
+
+* Fixed an issue where using statements in scripts would cause slow saves and prevent comment-based help from loading
+* Fixed an issue where Invoke-PSUScript -Wait could throw an error when there was high database latency
+* Fixed an issue where New-PSUSchedule would fail to create -OneTime schedules via the management API
+
+#### Dashboards
+
+* BREAKING: Due to a licensing issue, FontAwesome Pro icons have been removed.
+* Fixed an issue where the USB icon would not work (#2327)
+* Fixed an issue where going back in a stepper would not reset validation errors
+
+#### Platform
+
+* Fixed an issue where Desktop mode would not load (#2328)
+
 ## 3.8.10 - 4/18/2023
 
 #### API
