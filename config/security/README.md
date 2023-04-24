@@ -20,13 +20,13 @@ If you have a licensed instance of PowerShell Universal, you can use a different
 The forms authentication script is only called when users login through the login page. If you use any other authentication method, this script is not called. Role policy scripts are called for all authentication types.
 {% endhint %}
 
-By default, the forms authentication script is configured to accept the user Admin and any password. You can configure this authentication policy to interact with whatever system you like. The script will receive a `PSCredential` object that contains the user name and password entered by the user at the login page.
+By default, the forms authentication script is configured to accept the user _Admin_ and a password of _Admin_. You can configure this authentication policy to interact with whatever system you like. The script will receive a `PSCredential` object that contains the user name and password entered by the user at the login page.
 
 {% hint style="info" %}
 Authentication settings are also stored with `authentication.ps1`
 {% endhint %}
 
-To update forms authentication, you can click Settings Security and then click the Settings button for the forms authentication.
+To update forms authentication, click Security (below Settings) then Authentication. Click the 'Edit Details' button from there to review (or update) the forms authentication code.
 
 ![](<../../.gitbook/assets/image (355).png>)
 
