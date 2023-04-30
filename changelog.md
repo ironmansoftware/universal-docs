@@ -4,6 +4,31 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.8.12 - 4/30/2023
+
+#### APIs
+
+* Fixed an issue where endpoints that use the -Path parameter would not update context after git sync (#2335)
+
+#### Dashboards
+
+* Fixed an issue where radio groups could not be disabled dynamically (#2341)
+* Fixed an issue where editing a single dashboard page would cause all pages to refresh (#2342)
+* Fixed issue with New-UDAppBar -Footer (#2176)
+* Fixed an issue where Transfer List allowed disabled Transfer List Item to be transferred "to the right" (#2311)
+* Fixed an issue where New-UDAlert with quotes wouldn't render properly (#2240)
+* Fixed an issue where New-UDUpload would have invalid colors by default (#2326)
+* Fixed an issue where New-UDDatePicker\New-UDTimePicker -TimeZone didn't work with daylight savings
+* Fixed an issue where New-UDMenu had an extra div that didn't align for horizontal layout
+* Fixed an issue where New-UDMenu -Icon didn't have any padding around the icon
+
+#### Platform
+
+* Fixed an issue where -ExperimentalFeatures would get removed when changing settings in the UI (#2255)
+* Fixed an issue where the file system watcher and\or git sync could fail to pick up changes (#2335/#1984)
+* Fixed an issue where discard changes would show an error in the admin console (#2316)
+* Fixed an issue where PSCredential secrets would not work across nodes in the database vault (#2339)
+
 ## 3.8.11 - 4/23/2023
 
 #### Automation
