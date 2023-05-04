@@ -99,6 +99,34 @@ See the [Docker page](docker.md#installation).
 
 Please visit the [IIS hosting documentation](../config/hosting/hosting-iis.md) for information on how to configure PowerShell Universal as an IIS website.&#x20;
 
+## Antivirus Configuration
+
+PowerShell Universal takes full advantage of PowerShell and the PowerShell SDK. It includes PowerShell scripts directly in the product. You will want to consider configuring antivirus to allow for execution of PowerShell scripts in PowerShell Universal.&#x20;
+
+### Directories
+
+The following directories will contain scripts and executable files that may need to be excluded from antivirus checks.&#x20;
+
+The following are examples from a standard Windows system. Changing paths within appsettings.json or within the installer will require changing which directories are execluded.
+
+| Path                              | Description                                                                                                  |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| %ProgramData%\PowerShellUniversal | Contains log files and appsettings.json                                                                      |
+| %ProgramData%\UniversalAutomation | Contains PowerShell scripts and artifacts. Contains the single file database when not using SQL integration. |
+| %ProgramFiles(x86)\Universal      | Contains PowerShell Universal application executables, libraries and modules.                                |
+
+### Executables
+
+It may be necessary to exclude certain executables that will run PowerShell scripts. The below is a list of executables that will run PowerShell from PowerShell Universal.&#x20;
+
+| Name                 | Description                                            |
+| -------------------- | ------------------------------------------------------ |
+| Universal.Server.exe | The PowerShell Universal core service.                 |
+| Universal.Agent.exe  | The PowerShell Universal agent environment executable. |
+| pwsh.exe             | PowerShell 7.x                                         |
+| PowerShell.exe       | PowerShell 5.x                                         |
+
 ## Next Steps
 
 At this point, Universal is up and running. You can navigate to the admin console by visiting `http://localhost:5000` by default. The default user name is admin with any password.&#x20;
+

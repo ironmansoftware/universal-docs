@@ -12,7 +12,7 @@
 * [System Requirements](system-requirements.md)
 * [Supported Browsers](supported-browsers.md)
 * [Cmdlet Help](https://github.com/ironmansoftware/universal-docs/tree/master/cmdlets)
-* [Templates](https://ironmansoftware.com/powershell-universal/templates)
+* [Modules](https://ironmansoftware.com/powershell-universal/modules)
 
 ## API
 
