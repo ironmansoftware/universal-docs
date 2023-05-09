@@ -107,9 +107,25 @@ New-UDDynamic -Id 'icons' -Content {
 
 ## Complete Icon List
 
-[Click here to view the complete icon list. ](https://gist.github.com/adamdriscoll/8a5d12b0ac5641bc1083bebf921f56fe)
+```powershell
+ https://github.com/FortAwesome/Font-Awesome/blob/6.x/metadata/icons.json
+```
+
+## Custom Icons
+
+You can use custom icon sets available on the [PowerShell Universal Modules](https://ironmansoftware.com/powershell-universal/modules) page. First, install the module and then use the icon with other components.&#x20;
+
+```powershell
+Install-Module Universal.Icons.Tabler
+```
+
+Within your dashboard, call the icon cmdlet.&#x20;
+
+```powershell
+New-UDButton -Icon (New-UDTablerIcon -Icon "Tb3DRotate")
+```
 
 ## API
 
-****[**New-UDIcon**](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDIcon.txt)****
+[**New-UDIcon**](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDIcon.txt)
 
