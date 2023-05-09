@@ -4,6 +4,30 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.9.0 - 5/9/2023
+
+#### Automation
+
+* Added support for scheduling a one-time job when One-Way git sync is enabled (#1702)
+* Added a Rerun Job button on the jobs page (#1898)
+* Fixed an issue where Switch and string\[] parameters would have strange defaults in the new schedule dialog (#2282)
+* Fixed an issue where the Server Stopped trigger would not fire (#2324)
+* Added Get-PSUSystemEvent and Remove-PSUSystemEvent (#2375)
+* Added -Namespace to New-PSUSystemEvent (#2381)
+* Added -ClassName to New-PSUElement (#2371)
+
+#### Dashboards
+
+* Added support for alternative icons (#2343)
+* Components are now saved and loaded from the modules directory (#2359)
+
+#### Platform
+
+* Allowed for changing of the default admin name (#2037)
+* Added retry when reading files triggered by the file system watcher because of file locking issues with text editors (#1984)
+* Fixed an issue where git commits listed the committer as the author (#2380)
+* Added support for storing variable values in the database (#2385)
+
 ## 3.8.12 - 4/30/2023
 
 #### APIs
