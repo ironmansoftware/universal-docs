@@ -4,6 +4,18 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.9.1 - 5/10/2023
+
+#### Dashboards
+
+* Fixed an issue where icon names with underscores or alternate icon names would no longer work with New-UDIcon (#2388)
+* Removed some styling that was causing issues with alternate themes (#2376)
+
+#### Platform
+
+* Fixed an issue where the service could fail to start when using SQL persistence if the local admin already existed.
+* Fixed a case-sensitivity issue with identities that would cause duplicates
+
 ## 3.9.0 - 5/9/2023
 
 #### Automation
