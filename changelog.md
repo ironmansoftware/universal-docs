@@ -4,6 +4,25 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.9.2 - 5/14/2023
+
+#### Automation
+
+* Fixed an issue where loading run as profiles would cause job time outs when a server was under load (#2283)
+* Fixed an issue where the Rerun Job button wouldn't be shown for cancelled jobs (#2391)
+* Fixed an issue where One-Time schedules in One-Way git sync mode would be overwritten if the schedules changed in the repository (#2387)
+
+#### Dashboard
+
+* Fixed an issue where New-UDExpansionPanelGroup would throw an error when it had a single expansion panel
+
+#### Platform
+
+* Fixed an issue where storing variables in the database when using SQL could fail if the variable already exists (#2392)
+* Fixed an issue where the variable value would not be displayed properly in the admin console when using database variables.
+* Fixed an issue where removing the claim type and value from a role would make it disappear from the UI (#2393)
+* Fixed an issue where attempting to delete a computer when associated jobs still exist in SQL would fail (#2378)
+
 ## 3.9.1 - 5/10/2023
 
 #### Dashboards
