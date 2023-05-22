@@ -107,7 +107,7 @@ $Headers['Content-Type']
 
 ## Cookies
 
-Request cookies are availablein APIs using the `$Cookies` variable. The variable is a hashtable. To access a cookie, use the following syntax.&#x20;
+Request cookies are available in APIs using the `$Cookies` variable. The variable is a hashtable. To access a cookie, use the following syntax.&#x20;
 
 ```powershell
 $Cookies['Request-Cookie']
@@ -297,7 +297,7 @@ All your custom endpoints will be listed.
 
 ### Help Text
 
-You can specify help text for your APIs using comment-based help. Including a synopsis, description and parameter descriptions will result in each of those pieces being documented in the OpenAPI documentation and Swagger age.&#x20;
+You can specify help text for your APIs using comment-based help. Including a synopsis, description and parameter descriptions will result in each of those pieces being documented in the OpenAPI documentation and Swagger page.&#x20;
 
 For example, with a simple `/get/:id` endpoint, we could have comment-based help such as this.&#x20;
 
@@ -408,7 +408,7 @@ New-PSUEndpoint -Url "/path" -Path "endpoint-path.ps1"
 
 ## Experimental Feature: C# APIs
 
-As for PowerShell Universal 3.5, you can now enable C# APIs as an experimental feature. To learn more about enabling experimental features, [click here](../config/feature-flags.md). C# APIs are significantly faster than PowerShell APIs (5 - 20 times faster).
+As of PowerShell Universal 3.5.0, you can now enable C# APIs as an experimental feature. To learn more about enabling experimental features, [click here](../config/feature-flags.md). C# APIs are significantly faster than PowerShell APIs (5 - 20 times faster).
 
 There is no UI for creating a C# API and you will need to do so using configuration files. First, you will need to create a `.cs` file that will run your API.&#x20;
 

@@ -24,10 +24,10 @@ Once a module is found, you'll be able to click the Install button to save it lo
 
 ## Package Sources
 
-PowerShell Universal integrates with the `PackageManagement` module and will automatically pick up on registered package sources. For example, you can register a package source with the command below.&#x20;
+PowerShell Universal integrates with the `PackageManagement v3` module and will automatically pick up on registered package sources. For example, you can register a package source with the command below.&#x20;
 
 ```powershell
-Register-PackageSource -Name MyNuGet -Location https://www.nuget.org/api/v2 -ProviderName NuGet
+Register-PSResourceRepository -Name MyNuGet -Uri https://www.nuget.org/api/v2
 ```
 
 Once the source has been registered, it will be shown within the drop down on the modules page.&#x20;
