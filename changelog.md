@@ -4,6 +4,21 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.9.3 - 5/22/2023
+
+```
+### Automation
+
+- Fixed an issue where rerun job parameters would populate with the RunID experimental feature (#2402)
+- Fixed an issue where One Time schedules created in One Way git sync would not be removed once they ran
+- Fixed an issue where One Time schedules in One Way git sync would not properly set parameters (#2401)
+
+### Platform 
+
+- Fixed an issue where relative paths with .. would not work with published folders (#2374)
+- Fixed an issue where the git status page wouldn't update when clicking sync now or refresh
+```
+
 ## 3.9.2 - 5/14/2023
 
 #### Automation
