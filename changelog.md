@@ -4,6 +4,18 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.9.4 - 5/24/2023
+
+#### Automation
+
+* Fixed an issue where -Notes would not be saved on jobs created with Invoke-PSUScript
+
+#### Platform
+
+* Fixed an issue where the appsettings.linux.json file included an invalid value for JobHandshakeTimeout
+* Fixed an issue where HideAdminConsole would not take effect (#2172)
+* Fixed an issue where changing roles within the console could result in roles disappearing.
+
 ## 3.9.3 - 5/22/2023
 
 ```
