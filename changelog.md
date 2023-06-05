@@ -4,6 +4,24 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.9.5 - 6/5/2023
+
+#### APIs
+
+* Fixed an issue where enums and default values couldn't be documented
+
+#### Dashboards
+
+* Fixed an issue with -DefaultValue and New-UDRating (#2431)
+* Fixed an issue where Hive icon would not work (#2417)
+* Improved performance of Universal module load by caching icon set
+
+#### Platform
+
+* Improved module search so that when you change scopes it resets the query (#2412)
+* Fixed an issue where the admin console would accept invalid values for translation string keys (#2426)
+* Fixed an issue where PSU would incorrect parse the Accept-Language header and display the wrong translation (#2427)
+
 ## 3.9.4 - 5/24/2023
 
 #### Automation
