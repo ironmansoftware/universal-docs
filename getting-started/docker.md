@@ -298,7 +298,7 @@ services:
     environment:
       - TZ=Europe/London
       - Plugins:0=SQL
-      - Data__ConnectionString = "Data Source=ServerName; Initial Catalog=DatabaseName; User Id=UserName; Password=UserPassword;"
+      - Data__ConnectionString=Server=ServerName; Database=DatabaseName; User Id=UserName; Password=UserPassword;Encrypt=False
       - NodeName=mynodename
     volumes:
       - /docker/volumes/PSU:/root
