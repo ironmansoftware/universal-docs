@@ -4,6 +4,25 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.9.6 - 6/11/2023
+
+#### Automation
+
+* Fixed an issue with empty parameters in schedules (#2416)
+* Fixed a display issue with schedule parameters
+
+#### Dashboards
+
+* Fixed an issue where the service could crash when using New-UDColumn -Endpoint (#2439)
+* Fixed an issue where -Value on New-UDAutocomplete would not be displayed by default (#2413)
+* Fixed an issue with -OnClick for pie charters in New-UDChartJS (#2452)
+
+#### Platform
+
+* Fixed an issue that prevented PSU from working in an iframe (#2451)
+* Fixed an issue where -GrantAppToken did work with enhanced token security
+* Reduced the expiration date for auto-granted tokens
+
 ## 3.9.5 - 6/5/2023
 
 #### APIs
