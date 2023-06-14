@@ -76,6 +76,7 @@ Kestrel is the web server implementation for ASP.NET Core that PowerShell Univer
 | RedirectToHttps   | When true, the web server will redirect HTTP requests to HTTPS                                                                       |
 | BasePath          | Required when configuring PowerShell Universal as a nested site within IIS. This should contain the nested IIS route. Such as `/psu` |
 | Hsts \ MaxAgeDays | Sets the max age in days for [HTTP Strict Transport Security](https://https.cio.gov/hsts/).                                          |
+| CookiePolicy      | When set to SameSiteNone, the SameSite=None value will be set on cookies in PSU. This is useful for when hosting PSU in iframes.     |
 
 ### Application Insights
 
