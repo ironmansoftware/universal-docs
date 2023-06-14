@@ -4,6 +4,18 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.9.7 - 6/14/2023
+
+#### Platform
+
+* Fixed an issue where licenses that expire soon could cause the service to not start. (#2459)
+* Fix small size for switch (#2354)
+
+#### Platform
+
+* SameSite=None cookies are now optional
+* Fixed an issue where accessing PSU remotely would not work with some browsers.
+
 ## 3.9.6 - 6/11/2023
 
 #### Automation
