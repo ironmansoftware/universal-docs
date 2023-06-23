@@ -1,0 +1,488 @@
+
+NAME
+    Show-UDToast
+    
+SYNOPSIS
+    Displays a toast message to the user.
+    
+    
+SYNTAX
+    Show-UDToast [-Message] <String> [-MessageColor <DashboardColor>] [-MessageSize <String>] [-Duration <Int32>] [-Title <String>] [-TitleColor <DashboardColor>] [-TitleSize <String>] [-Id <String>] [-BackgroundColor <DashboardColor>] [-Theme <String>] [-Icon <Object>] [-IconColor <DashboardColor>] [-Position <String>] [-HideCloseButton] [-CloseOnClick] [-CloseOnEscape] [-ReplaceToast] [-RightToLeft] [-Balloon] [-Overlay] [-OverlayClose] [-OverlayColor <DashboardColor>] [-TransitionIn <String>] [-TransitionOut <String>] [-Broadcast] [-Persistent] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Displays a toast message to the user.
+    
+
+PARAMETERS
+    -Message <String>
+        The message to display.
+        
+        Required?                    true
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -MessageColor <DashboardColor>
+        The text color of the message.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -MessageSize <String>
+        The size of the message.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Duration <Int32>
+        The duration in milleseconds before the message disappears.
+        
+        Required?                    false
+        Position?                    named
+        Default value                1000
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Title <String>
+        The title to display.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -TitleColor <DashboardColor>
+        The text color of the title.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -TitleSize <String>
+        The size of the title.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Id <String>
+        The ID of the toast. For use with Hide-UDToast.
+        
+        Required?                    false
+        Position?                    named
+        Default value                [Guid]::NewGuid()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -BackgroundColor <DashboardColor>
+        The background color of the toast.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Theme <String>
+        Light or dark theme.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Icon <Object>
+        The icon to display in the toast.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -IconColor <DashboardColor>
+        The color of the icon.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Position <String>
+        Where to display the toast.
+        
+        Required?                    false
+        Position?                    named
+        Default value                topRight
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -HideCloseButton [<SwitchParameter>]
+        Hides the close button.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -CloseOnClick [<SwitchParameter>]
+        Closes the toast when clicked.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -CloseOnEscape [<SwitchParameter>]
+        Closes the toast when esc is pressed.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ReplaceToast [<SwitchParameter>]
+        Replaces an existing toast if one is already showing.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -RightToLeft [<SwitchParameter>]
+        Right to left text.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Balloon [<SwitchParameter>]
+        Creates a balloon toast.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Overlay [<SwitchParameter>]
+        Displays an overlay behind the toast.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OverlayClose [<SwitchParameter>]
+        Allow the user to close the overlay.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OverlayColor <DashboardColor>
+        The color of the overlay.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -TransitionIn <String>
+        The transition in effect.
+        
+        Required?                    false
+        Position?                    named
+        Default value                fadeInUp
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -TransitionOut <String>
+        The transition out effect.
+        
+        Required?                    false
+        Position?                    named
+        Default value                fadeOut
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Broadcast [<SwitchParameter>]
+        Broadcasts the toast to all connected users.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Persistent [<SwitchParameter>]
+        Prevents the toast from closing due to the duration.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDButton -Text 'Show Toast' -OnClick {
+    PS >    Show-UDToast -Message 'Hello, World!'
+    PS > } -Id 'toast1'
+    
+    Basic Toast Shows a toast message.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDButton -Text 'Show Toast' -OnClick {
+    PS >    Show-UDToast -Message 'Hello, World!' -Duration 5000
+    PS > } -Id 'toast2'
+    
+    Duration|Shows a toast message with a longer duration.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDButton -Text 'Show Toast' -OnClick {
+    PS >    Show-UDToast -Message 'Hello, World!' -Title 'Toast Title'
+    PS > } -Id 'toast3'
+    
+    Title|Shows a toast message with a title.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDButton -Text 'Show Toast' -OnClick {
+    PS >    Show-UDToast -Message 'Hello, World!' -Title 'Toast Title' -TitleColor 'red'
+    PS > } -Id 'toast4'
+    
+    Title Color|Shows a toast message with a title and a red title color.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDButton -Text 'Show Toast' -OnClick {
+    PS >    Show-UDToast -Message 'Hello, World!' -Title 'Toast Title' -TitleColor 'red' -TitleSize 'large'
+    PS > } -Id 'toast5'
+    
+    Title Size|Shows a toast message with a title, a red title color, and a large title size.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS >New-UDButton -Text 'Show Toast' -OnClick {
+    PS >    Show-UDToast -Message 'Hello, World!' -MessageColor 'blue'
+    PS > } -Id 'toast6'
+    
+    Message Color|Shows a toast message with a blue message color.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 7 --------------------------
+    
+    PS >New-UDButton -Text 'Show Toast' -OnClick {
+    PS >    Show-UDToast -Message 'Hello, World!' -MessageSize 'large'
+    PS > } -Id 'toast7'
+    
+    Message Size|Shows a toast message with a large message size.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 8 --------------------------
+    
+    PS >New-UDButton -Text 'Show Toast' -OnClick {
+    PS >    Show-UDToast -Message 'Hello, World!' -Icon 'check'
+    PS > } -Id 'toast8'
+    
+    Icon|Shows a toast message with a check icon.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 9 --------------------------
+    
+    PS >New-UDButton -Text 'Show Toast' -OnClick {
+    PS >    Show-UDToast -Message 'Hello, World!' -Persistent -Id 'MyToast'
+    PS > } -Id 'toast9'
+    PS > New-UDButton -Text 'Hide Toast' -OnClick {
+    PS >    Hide-UDToast -Id 'MyToast'
+    PS > } -Id 'toast10'
+    
+    Persistent|Shows a toast message that will not close. The Hide-UDToast command can be used to close the toast.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 10 --------------------------
+    
+    PS >New-UDButton -Text 'Show Toast' -OnClick {
+    PS >    Show-UDToast -Message 'Hello, World!' -Position 'bottomRight'
+    PS > } -Id 'toast11'
+    
+    Position|Shows a toast message at the bottom right of the screen.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 11 --------------------------
+    
+    PS >New-UDButton -Text 'Show Toast' -OnClick {
+    PS >    Show-UDToast -Message 'Hello, World!' -HideCloseButton
+    PS > } -Id 'toast12'
+    
+    Hide Close Button|Shows a toast message without a close button.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 12 --------------------------
+    
+    PS >New-UDButton -Text 'Show Toast' -OnClick {
+    PS >    Show-UDToast -Message 'Hello, World!' -CloseOnClick
+    PS > } -Id 'toast13'
+    
+    Close On Click|Shows a toast message that will close when clicked.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 13 --------------------------
+    
+    PS >New-UDButton -Text 'Show Toast' -OnClick {
+    PS >    Show-UDToast -Message 'Hello, World!' -CloseOnEscape
+    PS > } -Id 'toast14'
+    
+    Close On Escape|Shows a toast message that will close when the escape key is pressed.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 14 --------------------------
+    
+    PS >New-UDButton -Text 'Show Toast' -OnClick {
+    PS >    Show-UDToast -Message 'Hello, World!' -ReplaceToast
+    PS > } -Id 'toast15'
+    
+    Replace Toast|Shows a toast message that will replace an existing toast.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 15 --------------------------
+    
+    PS >New-UDButton -Text 'Show Toast' -OnClick {
+    PS >    Show-UDToast -Message 'Hello, World!' -RightToLeft
+    PS > } -Id 'toast16'
+    
+    Right To Left|Shows a toast message with right to left text.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 16 --------------------------
+    
+    PS >New-UDButton -Text 'Show Toast' -OnClick {
+    PS >    Show-UDToast -Message 'Hello, World!' -Balloon
+    PS > } -Id 'toast17'
+    
+    Balloon|Shows a toast message as a balloon.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 17 --------------------------
+    
+    PS >New-UDButton -Text 'Show Toast' -OnClick {
+    PS >    Show-UDToast -Message 'Hello, World!' -Overlay
+    PS > } -Id 'toast18'
+    
+    Overlay|Shows a toast message as an overlay.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 18 --------------------------
+    
+    PS >New-UDButton -Text 'Show Toast' -OnClick {
+    PS >    Show-UDToast -Message 'Hello, World!' -Theme 'dark'
+    PS > } -Id 'toast19'
+    
+    Theme|Shows a toast message with a dark theme.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 19 --------------------------
+    
+    PS >New-UDButton -Text 'Show Toast' -OnClick {
+    PS >    Show-UDToast -Message 'Hello, World!' -BackgroundColor 'red'
+    PS > } -Id 'toast20'
+    
+    Background Color|Shows a toast message with a red background color.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 20 --------------------------
+    
+    PS >New-UDButton -Text 'Show Toast' -OnClick {
+    PS >    Show-UDToast -Message 'Hello, World!' -TransitionIn 'bounceInLeft' -TransitionOut 'bounceOutRight'
+    PS > } -Id 'toast21'
+    
+    Transition|Shows a toast message with a bounce in left transition and a bounce out right transition.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

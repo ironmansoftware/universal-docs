@@ -1,0 +1,232 @@
+
+NAME
+    New-UDGridLayout
+    
+SYNOPSIS
+    Creates a new grid layout. Grid layout allows you to drag and drop components into a grid.
+    
+    
+SYNTAX
+    New-UDGridLayout [[-Id] <String>] [[-RowHeight] <Int32>] [-Content] <ScriptBlock> [[-Layout] <String>] [[-LargeColumns] <Int32>] [[-MediumColumns] <Int32>] [[-SmallColumns] <Int32>] [[-ExtraSmallColumns] <Int32>] [[-ExtraExtraSmallColumns] <Int32>] [[-LargeBreakpoint] <Int32>] [[-MediumBreakpoint] <Int32>] [[-SmallBreakpoint] <Int32>] [[-ExtraSmallBreakpoint] <Int32>] [[-ExtraExtraSmallBreakpoint] <Int32>] [-Draggable] [-Resizable] [-Persist] [-Design] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new grid layout. Grid layout allows you to drag and drop components into a grid.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of this component. The default value is a random GUID.
+        
+        Required?                    false
+        Position?                    1
+        Default value                ([Guid]::NewGuid()).ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -RowHeight <Int32>
+        The height of each row in pixels. The default value is 30.
+        
+        Required?                    false
+        Position?                    2
+        Default value                30
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Content <ScriptBlock>
+        The content of the grid layout. This is a scriptblock that returns a list of components. Components are required to have static IDs.
+        
+        Required?                    true
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Layout <String>
+        The layout of the grid. This should be a JSON string.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LargeColumns <Int32>
+        The number of columns in the large breakpoint. The default value is 12.
+        
+        Required?                    false
+        Position?                    5
+        Default value                12
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -MediumColumns <Int32>
+        The number of columns in the medium breakpoint. The default value is 10.
+        
+        Required?                    false
+        Position?                    6
+        Default value                10
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -SmallColumns <Int32>
+        The number of columns in the small breakpoint. The default value is 6.
+        
+        Required?                    false
+        Position?                    7
+        Default value                6
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ExtraSmallColumns <Int32>
+        The number of columns in the extra small breakpoint. The default value is 4.
+        
+        Required?                    false
+        Position?                    8
+        Default value                4
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ExtraExtraSmallColumns <Int32>
+        The number of columns in the extra extra small breakpoint. The default value is 2.
+        
+        Required?                    false
+        Position?                    9
+        Default value                2
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LargeBreakpoint <Int32>
+        The width of the large breakpoint in pixels. The default value is 1200.
+        
+        Required?                    false
+        Position?                    10
+        Default value                1200
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -MediumBreakpoint <Int32>
+        The width of the medium breakpoint in pixels. The default value is 996.
+        
+        Required?                    false
+        Position?                    11
+        Default value                996
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -SmallBreakpoint <Int32>
+        The width of the small breakpoint in pixels. The default value is 768.
+        
+        Required?                    false
+        Position?                    12
+        Default value                768
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ExtraSmallBreakpoint <Int32>
+        The width of the extra small breakpoint in pixels. The default value is 480.
+        
+        Required?                    false
+        Position?                    13
+        Default value                480
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ExtraExtraSmallBreakpoint <Int32>
+        The width of the extra extra small breakpoint in pixels. The default value is 0.
+        
+        Required?                    false
+        Position?                    14
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Draggable [<SwitchParameter>]
+        Whether or not the components can be dragged.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Resizable [<SwitchParameter>]
+        Whether or not the components can be resized.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Persist [<SwitchParameter>]
+        Whether or not the layout should be persisted in the current browser session.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Design [<SwitchParameter>]
+        Whether or not the grid layout is in design mode. Design mode allows for copying of the current JSON layout.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDGridLayout -Content {
+    PS >     New-UDCard -Text "Card 1" -Id "card1"
+    PS >     New-UDCard -Text "Card 2" -Id "card2"
+    PS > } -Id 'gridLayout1' -Draggable -Resizable -Layout '{"lg":[{"w":2,"h":3,"x":0,"y":0,"i":"grid-element-card1","moved":false,"static":false},{"w":2,"h":3,"x":2,"y":0,"i":"grid-element-card2","moved":false,"static":false}]}'
+    
+    Basic Grid Layout|Create a basic grid layout with two cards.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDGridLayout -Content {
+    PS >     New-UDCard -Text "Card 3" -Id "card3"
+    PS >     New-UDCard -Text "Card 4" -Id "card4"
+    PS > } -Id 'gridLayout2' -Design -Draggable -Resizable -Layout '{"lg":[{"w":2,"h":3,"x":0,"y":0,"i":"grid-element-card3","moved":false,"static":false},{"w":2,"h":3,"x":2,"y":0,"i":"grid-element-card4","moved":false,"static":false}]}'
+    
+    Draggable and Resizable|Create a grid layout with two cards that can be dragged and resized. This layout is also in design mode which allows you to copy the current layout as JSON.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDGridLayout -Content {
+    PS >     New-UDCard -Text "Card 5" -Id "card5"
+    PS >     New-UDCard -Text "Card 6" -Id "card6"
+    PS > } -Id 'gridLayout3' -Design -Draggable -Resizable -Persist -Layout '{"lg":[{"w":2,"h":3,"x":0,"y":0,"i":"grid-element-card5","moved":false,"static":false},{"w":2,"h":3,"x":2,"y":0,"i":"grid-element-card6","moved":false,"static":false}]}'
+    
+    Persisted Layout|This layout is also persisted in the current browser session. Refresh the page to see the persisted layout.
+    
+    
+    [Component("Grid Layout", "TableLayout", "Creates a new card.")]
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

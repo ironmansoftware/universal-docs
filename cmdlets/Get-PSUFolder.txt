@@ -1,0 +1,126 @@
+
+NAME
+    Get-PSUFolder
+    
+SYNOPSIS
+    Returns folders defined within PSU.
+    
+    
+SYNTAX
+    Get-PSUFolder [-AppToken <String>] [-ComputerName <String>] [-Id <Int64>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Get-PSUFolder [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-Name <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Get-PSUFolder [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-Parent <Folder>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Returns folders defined within PSU. Folders will be based on the internal and\or remote git repo.
+    
+
+PARAMETERS
+    -AppToken <String>
+        An app token to access the PSU API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The HTTP address of the PSU REST API server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Id <Int64>
+        The ID of the folder to return.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        The name of the folder to return.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Parent <Folder>
+        The parent folder to return children for.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Get-UAFolder
+    
+    Returns all folders within PSU.
+    -------------------------- Example 2 --------------------------
+    
+    PS C:\> Get-UAFolder -Name 'Folder 1'
+    
+    Returns the folder with the name 'Folder 1'
+    -------------------------- Example 3 --------------------------
+    
+    PS C:\> $Parent = Get-UAFolder -Name 'Parent'
+    PS C:\> Get-UAFolder -Parent $Parent
+    
+    Returns all the children folders for the specified folder.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

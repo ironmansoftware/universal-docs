@@ -1,0 +1,236 @@
+
+NAME
+    New-UDDatePicker
+    
+SYNOPSIS
+    Creates a new date picker.
+    
+    
+SYNTAX
+    New-UDDatePicker [[-Id] <String>] [[-Label] <String>] [[-Variant] <String>] [-DisableToolbar] [[-OnChange] <Endpoint>] [[-Format] <String>] [[-Value] <DateTime>] [[-Locale] <String>] [[-ClassName] <String>] [[-MinimumDate] <DateTime>] [[-MaximumDate] <DateTime>] [[-TimeZone] <TimeZoneInfo>] [-Disabled] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new date picker. Date pickers can be used stand alone or within New-UDForm.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    1
+        Default value                [Guid]::NewGuid().ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Label <String>
+        The label to show next to the date picker.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Variant <String>
+        The theme variant to apply to the date picker.
+        
+        Required?                    false
+        Position?                    3
+        Default value                inline
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DisableToolbar [<SwitchParameter>]
+        Disables the date picker toolbar.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnChange <Endpoint>
+        A script block to call with the selected date. The $EventData variable will be the date selected.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Format <String>
+        The format of the date when it is selected.
+        
+        Required?                    false
+        Position?                    5
+        Default value                MM/DD/YYYY
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Value <DateTime>
+        The current value of the date picker.
+        
+        Required?                    false
+        Position?                    6
+        Default value                ([DateTime]::Now)
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Locale <String>
+        Change the language of the date picker.
+        
+        Required?                    false
+        Position?                    7
+        Default value                en
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        A CSS class to apply to the date picker.
+        
+        Required?                    false
+        Position?                    8
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -MinimumDate <DateTime>
+        
+        Required?                    false
+        Position?                    9
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -MaximumDate <DateTime>
+        
+        Required?                    false
+        Position?                    10
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -TimeZone <TimeZoneInfo>
+        
+        Required?                    false
+        Position?                    11
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Disabled [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDDatePicker -Id 'datepicker1' -Value '1-2-2020'
+    
+    Basic date picker|Creates a new date picker with the default date value.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDDatePicker -Id 'datepicker2' -Value '1-2-2020' -OnChange {
+    PS >    Show-UDToast -Message "Date selected: $EventData"
+    PS > }
+    
+    Date picker with OnChange|Creates a new date picker with the default date value and an OnChange script block.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDDatePicker -Id 'datepicker3' -Value '1-2-2020' -Variant static
+    
+    Static date picker|Creates a new date picker with the default date value and the static variant.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDDatePicker -Id 'datepicker4' -Value '1-2-2020' -Format 'dd/MM/yyyy'
+    
+    Date picker with custom format|Creates a new date picker with the default date value and a custom format.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDDatePicker -Id 'datepicker5' -Value '1-2-2020' -Locale 'de'
+    
+    Date picker with German locale|Creates a new date picker with the default date value and a German locale.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS >New-UDDatePicker -Id 'datepicker6' -Value '1-2-2020' -DisableToolbar
+    
+    Date picker with disabled toolbar|Creates a new date picker with the default date value and a disabled toolbar.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 7 --------------------------
+    
+    PS >New-UDDatePicker -Id 'datepicker7' -Value '1-2-2020' -MinimumDate '1-1-2020'
+    
+    Date picker with minimum date|Creates a new date picker with the default date value and a minimum date.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 8 --------------------------
+    
+    PS >New-UDDatePicker -Id 'datepicker8' -Value '1-2-2020' -MaximumDate '1-1-2021'
+    
+    Date picker with maximum date|Creates a new date picker with the default date value and a maximum date.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 9 --------------------------
+    
+    PS >New-UDDatePicker -Id 'datepicker9' -Value '1-2-2020' -TimeZone 'Eastern Standard Time'
+    
+    Date picker with time zone|Creates a new date picker with the default date value and a time zone.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 10 --------------------------
+    
+    PS >New-UDDatePicker -Id 'datepicker10' -Value '1-2-2020' -Disabled
+    
+    Disabled date picker|Creates a new date picker with the default date value and disabled.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

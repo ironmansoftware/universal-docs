@@ -1,0 +1,85 @@
+
+NAME
+    New-UDMapPopup
+    
+SYNOPSIS
+    Creates a map popup.
+    
+    
+SYNTAX
+    New-UDMapPopup [[-Id] <String>] [[-Content] <ScriptBlock>] [[-Longitude] <Single>] [[-Latitude] <Single>] [[-MaxWidth] <Int32>] [[-MinWidth] <Int32>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a map popup.
+    
+
+PARAMETERS
+    -Id <String>
+        The id of the map popup. This defaults to a new GUID.
+        
+        Required?                    false
+        Position?                    1
+        Default value                ([Guid]::NewGuid())
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Content <ScriptBlock>
+        The content of the map popup.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Longitude <Single>
+        The longitude of the map popup.
+        
+        Required?                    false
+        Position?                    3
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Latitude <Single>
+        The latitude of the map popup.
+        
+        Required?                    false
+        Position?                    4
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -MaxWidth <Int32>
+        The max width of the map popup.
+        
+        Required?                    false
+        Position?                    5
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -MinWidth <Int32>
+        The min width of the map popup.
+        
+        Required?                    false
+        Position?                    6
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    
+RELATED LINKS
+
+

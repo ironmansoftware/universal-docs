@@ -1,0 +1,105 @@
+
+NAME
+    New-UDEditor
+    
+SYNOPSIS
+    Creates an Editor.JS editor.
+    
+    
+SYNTAX
+    New-UDEditor [[-Id] <String>] [[-Data] <Hashtable>] [[-OnChange] <Endpoint>] [[-Format] <String>] [[-PublishedFolder] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates an Editor.JS editor.
+    
+
+PARAMETERS
+    -Id <String>
+        The id of the editor. This defaults to a new GUID.
+        
+        Required?                    false
+        Position?                    1
+        Default value                ([Guid]::NewGuid())
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Data <Hashtable>
+        The data to use for the editor.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnChange <Endpoint>
+        The endpoint to call when the editor changes.
+        
+        Required?                    false
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Format <String>
+        The format of the data. This can be json or html.
+        
+        Required?                    false
+        Position?                    4
+        Default value                json
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -PublishedFolder <String>
+        A published folder to upload files to. This is required for the image upload plugin.
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDEditor -Id 'editor1'
+    
+    Basic Editor|A basic editor.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDEditor -Id 'editor2' -Format 'html'
+    
+    HTML Editor|An editor that uses HTML.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDEditor -Id 'editor3' -OnChange {
+    PS >     Show-UDToast ($EventData | ConvertTo-Json)
+    PS > }
+    
+    OnChange|An editor with an OnChange script block.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

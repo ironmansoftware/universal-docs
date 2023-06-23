@@ -1,0 +1,96 @@
+
+NAME
+    New-UDHeading
+    
+SYNOPSIS
+    Defines a new heading
+    
+    
+SYNTAX
+    New-UDHeading [-Id <String>] [-Content <ScriptBlock>] [-Size <String>] [-Color <DashboardColor>] [-ClassName <String>] [<CommonParameters>]
+    
+    New-UDHeading [-Id <String>] [-Text <String>] [-Size <String>] [-Color <DashboardColor>] [-ClassName <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Defines a new heading. This generates a new H tag.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of this component.
+        
+        Required?                    false
+        Position?                    named
+        Default value                ([Guid]::NewGuid())
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Content <ScriptBlock>
+        The content of the heading.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Text <String>
+        The text of the heading.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Size <String>
+        This size of this heading. This can be 1,2,3,4,5 or 6.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Color <DashboardColor>
+        The text color.
+        
+        Required?                    false
+        Position?                    named
+        Default value                black
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        A CSS class to apply to the heading.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDHeading -Text 'Hello World' -Size 1 -Color 'red'
+    
+    Basic Heading|Creates a basic heading.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

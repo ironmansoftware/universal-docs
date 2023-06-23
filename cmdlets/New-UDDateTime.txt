@@ -1,0 +1,105 @@
+
+NAME
+    New-UDDateTime
+    
+SYNOPSIS
+    This date and time component is used for formatting dates and times using the user's browser settings.
+    
+    
+SYNTAX
+    New-UDDateTime [-Id <String>] [[-InputObject] <DateTime>] [-LocalizedFormat <String>] [-Locale <String>] [<CommonParameters>]
+    
+    New-UDDateTime [-Id <String>] [[-InputObject] <DateTime>] [-Format <String>] [-Locale <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    This date and time component is used for formatting dates and times using the user's browser settings. Since Universal Dashboard PowerShell scripts run within the server, the date and time settings of the user's system are not taken into account. This component formats date and time within the client's browser to take into account their locale and time zone.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of this component.
+        
+        Required?                    false
+        Position?                    named
+        Default value                [Guid]::NewGuid()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -InputObject <DateTime>
+        The date and time object to format.
+        
+        Required?                    false
+        Position?                    1
+        Default value                (Get-Date)
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Format <String>
+        The format of the date and time.  This component uses Day.JS. You can learn more about formatting options on their documentation: https://day.js.org/docs/en/display/format
+        
+        Required?                    false
+        Position?                    named
+        Default value                DD/MM/YYYY
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LocalizedFormat <String>
+        The localized format for the date and time. Use this format if you would like to take the user's browser locale and time zone settings into account.
+        
+        Required?                    false
+        Position?                    named
+        Default value                LLL
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Locale <String>
+        The locale to use when formatting the date time. Defaults to not set.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDDateTime -InputObject (Get-Date) -Format 'DD/MM/YYYY' -Id 'dateTime1'
+    
+    Formats a date and time using the format 'DD/MM/YYYY'
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDDateTime -InputObject (Get-Date) -LocalizedFormat 'LLL' -Id 'dateTime2'
+    
+    Localized Format|Formats a date and time using the localized format 'LLL'
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDDateTime -InputObject (Get-Date) -Locale 'es' -Id 'dateTime3'
+    
+    Locale|Formats a date and time using the locale 'es'
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

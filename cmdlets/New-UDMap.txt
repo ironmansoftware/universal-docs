@@ -1,0 +1,181 @@
+
+NAME
+    New-UDMap
+    
+SYNOPSIS
+    Interactive maps for displaying markers, lines, and polygons.
+    
+    
+SYNTAX
+    New-UDMap [[-Id] <String>] [[-Longitude] <Single>] [[-Latitude] <Single>] [[-Zoom] <Int32>] [[-Height] <String>] [[-Width] <String>] [-Content] <Endpoint> [[-ZoomControlPosition] <String>] [[-ScaleControlPosition] <String>] [-Animate] [[-MaxZoom] <Int32>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Interactive maps for displaying markers, lines, and polygons.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    1
+        Default value                ([Guid]::NewGuid())
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Longitude <Single>
+        The default longitude of the map.
+        
+        Required?                    false
+        Position?                    2
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Latitude <Single>
+        The default latitude of the map.
+        
+        Required?                    false
+        Position?                    3
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Zoom <Int32>
+        The default zoom level of the map.
+        
+        Required?                    false
+        Position?                    4
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Height <String>
+        The height of the map.
+        
+        Required?                    false
+        Position?                    5
+        Default value                500px
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Width <String>
+        The width of the map.
+        
+        Required?                    false
+        Position?                    6
+        Default value                100%
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Content <Endpoint>
+        The script block to call to get the map data.
+        
+        Required?                    true
+        Position?                    7
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ZoomControlPosition <String>
+        The zoom control position. Valid values are topright, topleft, bottomright, bottomleft.
+        
+        Required?                    false
+        Position?                    8
+        Default value                topright
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ScaleControlPosition <String>
+        The scale control position. Valid values are topright, topleft, bottomright, bottomleft, hide.
+        
+        Required?                    false
+        Position?                    9
+        Default value                bottomleft
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Animate [<SwitchParameter>]
+        Animate the map when it is loaded.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -MaxZoom <Int32>
+        The maximum zoom level of the map.
+        
+        Required?                    false
+        Position?                    10
+        Default value                18
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDMap -Content {
+    PS >     New-UDMapRasterLayer -TileServer 'https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png' 
+    PS > } -Latitude 43.52107 -Longitude -114.31644 -Zoom 13 -Height '100vh' -Id 'map1'
+    
+    Basic map|This basic map defines a simple base layer using the wmflabs.org tile server. You can use your own custom tile server by specifying a URL. The map is position over Hailey, Idaho.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDMap -Content {
+    PS >    New-UDMapLayerControl -Content {
+    PS >         New-UDMapBaseLayer -Name 'Black and White' -Content {
+    PS >             New-UDMapRasterLayer -TileServer 'https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png' 
+    PS >         } -Checked
+    PS >         New-UDMapBaseLayer -Name 'Color' -Content {
+    PS >             New-UDMapRasterLayer -TileServer 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' 
+    PS >         }
+    PS >         New-UDMapOverlay -Name 'Marker' -Content {
+    PS >             New-UDMapMarker -Latitude 51.505 -Longitude -0.09 
+    PS >         } -Checked
+    PS >         New-UDMapOverlay -Name 'Marker 2' -Content {
+    PS >             New-UDMapMarker -Latitude 51.555 -Longitude -0.00 
+    PS >         } -Checked
+    PS >     }
+    PS > } -Latitude 51.505 -Longitude -0.09 -Zoom 13 -Height '100vh'
+    
+    Lay Control|You can enable the layer control by using the New-UDMapLayerControl cmdlet. This map defines several layers with components that you can toggle on and off. You can only have one base layer selected as a time. Map overlay layers can toggle on and off.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDMap -Content {
+    PS >    New-UDMapRasterLayer -TileServer 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' 
+    PS >    New-UDMapMarker -Latitude "51.100" -Longitude "-0.5" -Popup (
+    PS >       New-UDMapPopup -Content {
+    PS >          New-UDAlert -Text "Hello"
+    PS >       } -MinWidth 200
+    PS >    )
+    PS > } -Latitude 51.505 -Longitude -0.09 -Zoom 13 -Height '100vh'
+    
+    Markers|You can add markers to the map by using the New-UDMapMarker cmdlet.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

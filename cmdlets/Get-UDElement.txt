@@ -1,0 +1,72 @@
+
+NAME
+    Get-UDElement
+    
+SYNOPSIS
+    Get the state of the specified element.
+    
+    
+SYNTAX
+    Get-UDElement [-Id] <String> [[-Property] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Get the state of the specified element. This cmdlet may behave differently depending on the type of parent element.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the element to retreive the state of.
+        
+        Required?                    true
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Property <String>
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDTextbox -Id 'getElement1' -Placeholder 'Enter your name'
+    PS > New-UDButton -Text 'Get Value' -OnClick {
+    PS >    Show-UDToast (Get-UDElement -Id 'getElement1').Value
+    PS > }
+    
+    Get Element|Gets the state of an element.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDTextbox -Id 'getElement2' -Placeholder 'Enter your name'
+    PS > New-UDButton -Text 'Get Value' -OnClick {
+    PS >    Show-UDToast (Get-UDElement -Id 'getElement2' -Property 'Value')
+    PS > }
+    
+    Get Property|Gets a specific property of an element.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

@@ -1,0 +1,145 @@
+
+NAME
+    Set-PSUVariable
+    
+SYNOPSIS
+    Sets the properties of a variable.
+    
+    
+SYNTAX
+    Set-PSUVariable [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-Integrated] [-Name <String>] [-UseDefaultCredentials] [-Value <String>] [<CommonParameters>]
+    
+    Set-PSUVariable [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-InputObject <Object>] [-Integrated] [-Name <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Set-PSUVariable [-Variable] <Variable> [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-InputObject <Object>] [-Integrated] [-Name <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Set-PSUVariable [-Variable] <Variable> [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-Integrated] [-Name <String>] [-UseDefaultCredentials] [-Value <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Sets the properties of a variable.
+    
+
+PARAMETERS
+    -AppToken <String>
+        An app token to access the PSU API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The HTTP address of the PSU REST API server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Description <String>
+        A description of this variable.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Id <Int64>
+        The ID of the variable to set.
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -InputObject <Object>
+        An input object to set as the variable's value.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        The name of the variable.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Value <String>
+        The value of the variable.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Variable <Variable>
+        The variable to set. Use Get-UAVariable to retrieve a Variable object.
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    UniversalAutomation.Variable
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> $Variable = Get-UAVariable -Name 'username'
+    PS C:\> Set-UAVariable -Variable $Variable -Value 'lee'
+    
+    Sets the value of the username variable to lee.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

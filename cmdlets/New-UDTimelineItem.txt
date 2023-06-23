@@ -1,0 +1,76 @@
+
+NAME
+    New-UDTimelineItem
+    
+SYNOPSIS
+    A timeline item.
+    
+    
+SYNTAX
+    New-UDTimelineItem [[-Content] <ScriptBlock>] [[-OppositeContent] <ScriptBlock>] [[-Icon] <Hashtable>] [[-Color] <String>] [[-Variant] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    A timeline item.
+    
+
+PARAMETERS
+    -Content <ScriptBlock>
+        Content for this timeline item.
+        
+        Required?                    false
+        Position?                    1
+        Default value                {}
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OppositeContent <ScriptBlock>
+        Opposite content for this timeline item.
+        
+        Required?                    false
+        Position?                    2
+        Default value                {}
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Icon <Hashtable>
+        An icon for this timeline item. Use the New-UDIcon cmdlet to create an icon.
+        
+        Required?                    false
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Color <String>
+        The color of this timeline item. Valid values are error, grey, info, inherit, primary, secondary, success, and warning.
+        
+        Required?                    false
+        Position?                    4
+        Default value                grey
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Variant <String>
+        The variant of this timeline item. Valid values are filled and outlined.
+        
+        Required?                    false
+        Position?                    5
+        Default value                filled
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    
+RELATED LINKS
+
+

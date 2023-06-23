@@ -1,0 +1,81 @@
+
+NAME
+    Invoke-UDEndpoint
+    
+SYNOPSIS
+    Invokes an endpoint directly.
+    
+    
+SYNTAX
+    Invoke-UDEndpoint -Id <String> [-Session] [-Wait] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Invokes an endpoint directly. For example, this can be used to execute button OnClick handlers.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the endpoint to invoke.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Session [<SwitchParameter>]
+        Whether to include user session information when invoke the endpoint.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Wait [<SwitchParameter>]
+        Whether to wait for the endpoint to execute before continuing.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    New-UDButton -Text "Click Me" -OnClick {
+        Show-UDToast "I was clicked!"
+    } -Id 'Button'
+    
+    New-UDButton -Text "Invoke Me" -OnClick {
+        Invoke-UDEndpoint -Id 'Button'
+    }
+    
+    Click one button with another one.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

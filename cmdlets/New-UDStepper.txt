@@ -1,0 +1,379 @@
+
+NAME
+    New-UDStepper
+    
+SYNOPSIS
+    Creates a new stepper component.
+    
+    
+SYNTAX
+    New-UDStepper [[-Id] <String>] [[-ActiveStep] <Int32>] [-Children] <ScriptBlock> [-NonLinear] [-AlternativeLabel] [-OnFinish] <Endpoint> [[-OnCancel] <Endpoint>] [[-OnValidateStep] <Endpoint>] [[-Orientation] <String>] [[-NextButtonText] <String>] [[-BackButtonText] <String>] [[-FinishButtonText] <String>] [[-CancelButtonText] <String>] [[-ClassName] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new stepper component. Steppers can be used as multi-step forms or to display information in a stepped manner.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    1
+        Default value                ([Guid]::NewGuid())
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ActiveStep <Int32>
+        Sets the active step. This should be the index of the step.
+        
+        Required?                    false
+        Position?                    2
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Children <ScriptBlock>
+        The steps for this stepper. Use New-UDStep to create new steps.
+        
+        Required?                    true
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -NonLinear [<SwitchParameter>]
+        Allows the user to progress to steps out of order.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -AlternativeLabel [<SwitchParameter>]
+        Places the step label under the step number.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnFinish <Endpoint>
+        A script block that is executed when the stepper is finished.
+        
+        Required?                    true
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnCancel <Endpoint>
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnValidateStep <Endpoint>
+        [Parameter()]
+        [Endpoint]$OnCompleteStep,
+        
+        Required?                    false
+        Position?                    6
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Orientation <String>
+        Sets the orientation of the stepper.
+        
+        Required?                    false
+        Position?                    7
+        Default value                horizontal
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -NextButtonText <String>
+        The text to display in the next button.
+        
+        Required?                    false
+        Position?                    8
+        Default value                Next
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -BackButtonText <String>
+        The text to display in the back button.
+        
+        Required?                    false
+        Position?                    9
+        Default value                Back
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -FinishButtonText <String>
+        
+        Required?                    false
+        Position?                    10
+        Default value                Finish
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -CancelButtonText <String>
+        
+        Required?                    false
+        Position?                    11
+        Default value                Cancel
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        
+        Required?                    false
+        Position?                    12
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDStepper -Id 'stepper1' -Steps {
+    PS >     New-UDStep -OnLoad {
+    PS >         New-UDElement -tag 'div' -Content { "Step 1" }
+    PS >         New-UDTextbox -Id 'txtStep1' 
+    PS >     } -Label "Step 1"
+    PS >     New-UDStep -OnLoad {
+    PS >         New-UDElement -tag 'div' -Content { "Step 2" }
+    PS >         New-UDElement -tag 'div' -Content { "Previous data: $Body" }
+    PS >         New-UDTextbox -Id 'txtStep2' 
+    PS >     } -Label "Step 2"
+    PS >     New-UDStep -OnLoad {
+    PS >         New-UDElement -tag 'div' -Content { "Step 3" }
+    PS >         New-UDElement -tag 'div' -Content { "Previous data: $Body" }
+    PS >         New-UDTextbox -Id 'txtStep3' 
+    PS >     } -Label "Step 3"
+    PS > } -OnFinish {
+    PS >     New-UDTypography -Text 'Nice! You did it!' -Variant h3
+    PS >     New-UDElement -Tag 'div' -Id 'result' -Content {$Body}
+    PS > }
+    
+    Basic stepper|Creates a new stepper with three steps.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDStepper -Id 'stepper2' -Steps {
+    PS >     New-UDStep -OnLoad {
+    PS >         New-UDElement -tag 'div' -Content { "Step 1" }
+    PS >         New-UDTextbox -Id 'txtStep23'
+    PS >     } -Label "Step 1"
+    PS >     New-UDStep -OnLoad {
+    PS >         New-UDElement -tag 'div' -Content { "Step 2" }
+    PS >         New-UDElement -tag 'div' -Content { "Previous data: $Body" }
+    PS >         New-UDTextbox -Id 'txtStep24'
+    PS >     } -Label "Step 2"
+    PS >     New-UDStep -OnLoad {
+    PS >         New-UDElement -tag 'div' -Content { "Step 3" }
+    PS >         New-UDElement -tag 'div' -Content { "Previous data: $Body" }
+    PS >         New-UDTextbox -Id 'txtStep25'
+    PS >     } -Label "Step 3"
+    PS > } -OnFinish {
+    PS >     New-UDTypography -Text 'Nice! You did it!' -Variant h3
+    PS >     New-UDElement -Tag 'div' -Id 'result' -Content {$Body}
+    PS > } -NonLinear -AlternativeLabel
+    
+    NonLinear and AlternativeLabel|Creates a new stepper with three steps and non-linear and alternative label options.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDStepper -Id 'stepper3' -Steps {
+    PS >     New-UDStep -OnLoad {
+    PS >         New-UDElement -tag 'div' -Content { "Step 1" }
+    PS >         New-UDTextbox -Id 'txtStep5'
+    PS >     } -Label "Step 1"
+    PS >     New-UDStep -OnLoad {
+    PS >         New-UDElement -tag 'div' -Content { "Step 2" }
+    PS >         New-UDElement -tag 'div' -Content { "Previous data: $Body" }
+    PS >         New-UDTextbox -Id 'txtStep6'
+    PS >     } -Label "Step 2"
+    PS >     New-UDStep -OnLoad {
+    PS >         New-UDElement -tag 'div' -Content { "Step 3" }
+    PS >         New-UDElement -tag 'div' -Content { "Previous data: $Body" }
+    PS >         New-UDTextbox -Id 'txtStep7'
+    PS >     } -Label "Step 3"
+    PS > } -OnFinish {
+    PS >     New-UDTypography -Text 'Nice! You did it!' -Variant h3
+    PS >     New-UDElement -Tag 'div' -Id 'result' -Content {$Body}
+    PS > } -Orientation 'vertical'
+    
+    Vertical orientation|Creates a new stepper with three steps and vertical orientation.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDStepper -Id 'stepper4' -Steps {
+    PS >     New-UDStep -OnLoad {
+    PS >         New-UDElement -tag 'div' -Content { "Step 1" }
+    PS >         New-UDTextbox -Id 'txtStep8'
+    PS >     } -Label "Step 1"
+    PS >     New-UDStep -OnLoad {
+    PS >         New-UDElement -tag 'div' -Content { "Step 2" }
+    PS >         New-UDElement -tag 'div' -Content { "Previous data: $Body" }
+    PS >         New-UDTextbox -Id 'txtStep9'
+    PS >     } -Label "Step 2"
+    PS >     New-UDStep -OnLoad {
+    PS >         New-UDElement -tag 'div' -Content { "Step 3" }
+    PS >         New-UDElement -tag 'div' -Content { "Previous data: $Body" }
+    PS >         New-UDTextbox -Id 'txtStep10'
+    PS >     } -Label "Step 3"
+    PS > } -OnFinish {
+    PS >     New-UDTypography -Text 'Nice! You did it!' -Variant h3
+    PS >     New-UDElement -Tag 'div' -Id 'result' -Content {$Body}
+    PS > } -NextButtonText 'Forward' -BackButtonText 'Reverse'
+    
+    Custom button text|Creates a new stepper with three steps and custom button text.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDStepper -Id 'stepper5' -Steps {
+    PS >     New-UDStep -OnLoad {
+    PS >         New-UDElement -tag 'div' -Content { "Step 1" }
+    PS >         New-UDTextbox -Id 'txtStep11'
+    PS >     } -Label "Step 1"
+    PS >     New-UDStep -OnLoad {
+    PS >         New-UDElement -tag 'div' -Content { "Step 2" }
+    PS >         New-UDElement -tag 'div' -Content { "Previous data: $Body" }
+    PS >         New-UDTextbox -Id 'txtStep12'
+    PS >     } -Label "Step 2" -Optional
+    PS >     New-UDStep -OnLoad {
+    PS >         New-UDElement -tag 'div' -Content { "Step 3" }
+    PS >         New-UDElement -tag 'div' -Content { "Previous data: $Body" }
+    PS >         New-UDTextbox -Id 'txtStep13'
+    PS >     } -Label "Step 3"
+    PS > } -OnFinish {
+    PS >     New-UDTypography -Text 'Nice! You did it!' -Variant h3
+    PS >     New-UDElement -Tag 'div' -Id 'result' -Content {$Body}
+    PS > }
+    
+    Optional step|Creates a new stepper with three steps and an optional step.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS >New-UDStepper -Id 'stepper6' -Steps {
+    PS >     New-UDStep -OnLoad {
+    PS >         New-UDElement -tag 'div' -Content { "Step 1" }
+    PS >         New-UDTextbox -Id 'txtStep14'
+    PS >     } -Label "Step 1" -Icon (New-UDIcon -Icon 'Check')
+    PS >     New-UDStep -OnLoad {
+    PS >         New-UDElement -tag 'div' -Content { "Step 2" }
+    PS >         New-UDElement -tag 'div' -Content { "Previous data: $Body" }
+    PS >         New-UDTextbox -Id 'txtStep15'
+    PS >     } -Label "Step 2" -Icon (New-UDIcon -Icon 'Check')
+    PS >     New-UDStep -OnLoad {
+    PS >         New-UDElement -tag 'div' -Content { "Step 3" }
+    PS >         New-UDElement -tag 'div' -Content { "Previous data: $Body" }
+    PS >         New-UDTextbox -Id 'txtStep16'
+    PS >     } -Label "Step 3" -Icon (New-UDIcon -Icon 'Check')
+    PS > } -OnFinish {
+    PS >     New-UDTypography -Text 'Nice! You did it!' -Variant h3
+    PS >     New-UDElement -Tag 'div' -Id 'result' -Content {$Body}
+    PS > }
+    
+    Custom icons|Creates a new stepper with three steps and custom icons.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 7 --------------------------
+    
+    PS >New-UDStepper -Id 'stepper7' -Steps {
+    PS >     New-UDStep -OnLoad {
+    PS >         New-UDElement -tag 'div' -Content { "Step 1" }
+    PS >         New-UDTextbox -Id 'txtStep17'
+    PS >     } -Label "Step 1" 
+    PS >     New-UDStep -OnLoad {
+    PS >         New-UDElement -tag 'div' -Content { "Step 2" }
+    PS >         New-UDElement -tag 'div' -Content { "Previous data: $Body" }
+    PS >         New-UDTextbox -Id 'txtStep18'
+    PS >     } -Label "Step 2" 
+    PS >     New-UDStep -OnLoad {
+    PS >         New-UDElement -tag 'div' -Content { "Step 3" }
+    PS >         New-UDElement -tag 'div' -Content { "Previous data: $Body" }
+    PS >         New-UDTextbox -Id 'txtStep19'
+    PS >     } -Label "Step 3" 
+    PS > } -OnFinish {
+    PS >     New-UDTypography -Text 'Nice! You did it!' -Variant h3
+    PS >     New-UDElement -Tag 'div' -Id 'result' -Content {$Body}
+    PS > } -OnValidateStep { 
+    PS >     if ($EventData.Step -eq 1 -and $EventData.txtStep17 -eq '') {
+    PS >         New-UDValidationResult -ValidationError 'Step 1 is required'
+    PS >     }
+    PS >     else {
+    PS >         New-UDValidationResult -Valid
+    PS >     }
+    PS > }
+    
+    Validation|Creates a new stepper with three steps and custom icons.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 8 --------------------------
+    
+    PS >New-UDStepper -Id 'stepper8' -Steps {
+    PS >     New-UDStep -OnLoad {
+    PS >         New-UDElement -tag 'div' -Content { "Step 1" }
+    PS >         New-UDTextbox -Id 'txtStep20'
+    PS >     } -Label "Step 1"
+    PS >     New-UDStep -OnLoad {
+    PS >         New-UDElement -tag 'div' -Content { "Step 2" }
+    PS >         New-UDElement -tag 'div' -Content { "Previous data: $Body" }
+    PS >         New-UDTextbox -Id 'txtStep21'
+    PS >     } -Label "Step 2" -DisablePrevious
+    PS >     New-UDStep -OnLoad {
+    PS >         New-UDElement -tag 'div' -Content { "Step 3" }
+    PS >         New-UDElement -tag 'div' -Content { "Previous data: $Body" }
+    PS >         New-UDTextbox -Id 'txtStep22'
+    PS >     } -Label "Step 3"
+    PS > } -OnFinish {
+    PS >     New-UDTypography -Text 'Nice! You did it!' -Variant h3
+    PS >     New-UDElement -Tag 'div' -Id 'result' -Content {$Body}
+    PS > }
+    
+    Disable previous|Creates a new stepper with three steps and custom icons.
+    
+    [Component("Stepper", "WandMagicSparkles", "Creates a new card.")]
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

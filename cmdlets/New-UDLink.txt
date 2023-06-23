@@ -1,0 +1,208 @@
+
+NAME
+    New-UDLink
+    
+SYNOPSIS
+    The Link component allows you to easily customize anchor elements with your theme colors and typography styles.
+    
+    
+SYNTAX
+    New-UDLink [-Id <String>] [-url <String>] [-Underline <String>] [-Style <Hashtable>] [-Variant <String>] [-ClassName <String>] [-OpenInNewWindow] [-Text <String>] [-OnClick <Endpoint>] [-Download] [<CommonParameters>]
+    
+    New-UDLink [-Id <String>] [-url <String>] [-Underline <String>] [-Style <Hashtable>] [-Variant <String>] [-ClassName <String>] [-OpenInNewWindow] [-Children <ScriptBlock>] [-OnClick <Endpoint>] [-Download] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    The Link component allows you to easily customize anchor elements with your theme colors and typography styles.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    named
+        Default value                ([Guid]::NewGuid()).ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -url <String>
+        The URL of the link.
+        
+        Required?                    false
+        Position?                    named
+        Default value                https://www.ironmansoftware.com
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Underline <String>
+        Whether to underline the link.
+        
+        Required?                    false
+        Position?                    named
+        Default value                none
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        A custom style to apply to the link.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Variant <String>
+        The theme variant to apply to the link.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        The CSS class to apply to the link.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OpenInNewWindow [<SwitchParameter>]
+        Opens the link in a new window.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Children <ScriptBlock>
+        The components to link.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Text <String>
+        Text to include in the link.
+        
+        Required?                    false
+        Position?                    named
+        Default value                Ironman Software
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnClick <Endpoint>
+        A script block to invoke when clicked.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Download [<SwitchParameter>]
+        Adds the download attribute to this link.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDLink -Url "https://www.google.com" -Text "Google" -Id 'link1'
+    
+    Basic link|A basic link to Google.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDLink -Url "https://www.google.com" -Text "Google" -OpenInNewWindow -Id 'link2'
+    
+    Link in new window|A link to Google that opens in a new window.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDLink -Url "https://www.ironmansoftware.com/img/ps-logo.png" -Text "Download" -OpenInNewWindow -Download -Id 'link3'
+    
+    Download link|A link that downloads a file.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDLink -Url "https://www.google.com" -Text "Google" -Style @{ 'color' = 'red' } -Id 'link4'
+    
+    Style|A link with a custom style.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDLink -Url "https://www.google.com" -Text "Google" -Variant "h1" -Id 'link5'
+    
+    Variant|A link with a variant header of 1.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS >New-UDLink -Url "https://www.google.com" -Text "Google" -Underline "hover" -Id 'link6'
+    
+    Underline|A link with an underline on hover.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 7 --------------------------
+    
+    PS >New-UDLink -Url "https://www.google.com" -Content {
+        New-UDImage -Url "https://www.ironmansoftware.com/img/ps-logo.png" -Height 20 -Width 20 
+    } -Id 'link7'
+    
+    Content|A link with an image as content.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 8 --------------------------
+    
+    PS >New-UDLink -Text "Click" -OnClick {
+        Show-UDToast -Message "Clicked!"
+    } -Id 'link8'
+    
+    OnClick|A link with an onclick event.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

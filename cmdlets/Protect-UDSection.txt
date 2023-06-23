@@ -1,0 +1,60 @@
+
+NAME
+    Protect-UDSection
+    
+SYNOPSIS
+    Hides a section of a dashboard if the user is not part of the specified role.
+    
+    
+SYNTAX
+    Protect-UDSection [-Children] <ScriptBlock> [-Role] <String[]> [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Hides a section of a dashboard if the user is not part of the specified role.
+    
+
+PARAMETERS
+    -Children <ScriptBlock>
+        The content to hide.
+        
+        Required?                    true
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Role <String[]>
+        The role the user must be a part of.
+        
+        Required?                    true
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >Protect-UDSection -Content {
+    PS >    New-UDTypography 'Admins Only'
+    PS > } -Role @("Administrator")
+    
+    Protect Section|Hides the section of the dashboard if the user is not an administrator.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

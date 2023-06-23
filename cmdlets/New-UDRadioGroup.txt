@@ -1,0 +1,170 @@
+
+NAME
+    New-UDRadioGroup
+    
+SYNOPSIS
+    Creates a group of radio buttons.
+    
+    
+SYNTAX
+    New-UDRadioGroup [[-Id] <String>] [[-Label] <String>] [[-Children] <ScriptBlock>] [[-OnChange] <Endpoint>] [[-Value] <String>] [[-ClassName] <String>] [[-DefaultValue] <String>] [-Disabled] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a group of radio buttons. Within a group, only a single radio will be able to be selected.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    1
+        Default value                ([Guid]::NewGuid())
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Label <String>
+        The label to show for this radio group.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Children <ScriptBlock>
+        The radio buttons to include within this group.
+        
+        Required?                    false
+        Position?                    3
+        Default value                { 
+                    New-UDRadio -Label "Option 1" -Value 1
+                    New-UDRadio -Label "Option 2" -Value 2
+                }
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnChange <Endpoint>
+        A script block to call when the radio group selection changes. The $EventData variable will include the value of the radio that is selected.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Value <String>
+        The selected value for this radio group.
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        
+        Required?                    false
+        Position?                    6
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DefaultValue <String>
+        
+        Required?                    false
+        Position?                    7
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Disabled [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDRadioGroup -Label 'group' -Id 'radio1' -Children {
+    PS >    New-UDRadio -Value 'Adam' -Label 'Adam'  -Id 'adam'
+    PS >    New-UDRadio -Value 'Sarah' -Label 'Sarah' -Id 'sarah'
+    PS >    New-UDRadio -Value 'Austin' -Label 'Austin' -Id 'austin'
+    PS > }
+    
+    Basic radio group|Creates a basic radio group with three radio buttons.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDRadioGroup -Label 'group' -Id 'radio2' -Children {
+    PS >    New-UDRadio -Value 'Adam' -Label 'Adam'  -Id 'adam'
+    PS >    New-UDRadio -Value 'Sarah' -Label 'Sarah' -Id 'sarah'
+    PS >    New-UDRadio -Value 'Austin' -Label 'Austin' -Id 'austin'
+    PS > } -OnChange {
+    PS >    Show-UDToast -Message "Radio selected: $EventData"
+    PS > }
+    
+    OnChange|Creates a basic radio group with three radio buttons and an OnChange script block.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDRadioGroup -Label 'group' -Id 'radio3' -Children {
+    PS >    New-UDRadio -Value 'Adam' -Label 'Adam'  -Id 'adam'
+    PS >    New-UDRadio -Value 'Sarah' -Label 'Sarah' -Id 'sarah'
+    PS >    New-UDRadio -Value 'Austin' -Label 'Austin' -Id 'austin'
+    PS > } -Disabled
+    
+    Disabled|Creates a basic radio group with three radio buttons and disables the group.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDRadioGroup -Label 'group' -Id 'radio4' -Children {
+    PS >    New-UDRadio -Value 'Adam' -Label 'Adam'  -Id 'adam'
+    PS >    New-UDRadio -Value 'Sarah' -Label 'Sarah' -Id 'sarah'
+    PS >    New-UDRadio -Value 'Austin' -Label 'Austin' -Id 'austin'
+    PS > } -DefaultValue 'Sarah'
+    
+    Default Value|Creates a basic radio group with three radio buttons and sets the default value to 'Sarah'.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDRadioGroup -Label 'group' -Id 'radio4' -Children {
+    PS >    New-UDRadio -Value 'Adam' -Label 'Adam'  -Id 'adam' -LabelPlacement 'start'
+    PS >    New-UDRadio -Value 'Sarah' -Label 'Sarah' -Id 'sarah' -LabelPlacement 'start'
+    PS >    New-UDRadio -Value 'Austin' -Label 'Austin' -Id 'austin' -LabelPlacement 'start'
+    PS > } -DefaultValue 'Sarah'
+    
+    Label Placement|Creates a basic radio group with three radio buttons and sets the label placement to 'start'.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

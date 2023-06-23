@@ -1,0 +1,151 @@
+
+NAME
+    New-UDSparkline
+    
+SYNOPSIS
+    Small charts for displaying data.
+    
+    
+SYNTAX
+    New-UDSparkline [[-Id] <String>] [-Data] <Int32[]> [[-Limit] <Int32>] [[-Width] <Int32>] [[-Height] <Int32>] [[-Margin] <Int32>] [[-Color] <DashboardColor>] [[-Type] <Object>] [[-Min] <Int32>] [[-Max] <Int32>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Small charts for displaying data.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of this component. The default value is a random GUID.
+        
+        Required?                    false
+        Position?                    1
+        Default value                [Guid]::NewGuid().ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Data <Int32[]>
+        The data to display in the sparkline. Usually, a list of numbers.
+        
+        Required?                    true
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Limit <Int32>
+        The number of data points to display.
+        
+        Required?                    false
+        Position?                    3
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Width <Int32>
+        The width of the sparkline.
+        
+        Required?                    false
+        Position?                    4
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Height <Int32>
+        The height of the sparkline.
+        
+        Required?                    false
+        Position?                    5
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Margin <Int32>
+        The margin of the sparkline.
+        
+        Required?                    false
+        Position?                    6
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Color <DashboardColor>
+        The color of the sparkline.
+        
+        Required?                    false
+        Position?                    7
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Type <Object>
+        The type of sparkline to display. Valid values are bars, lines, and both.
+        
+        Required?                    false
+        Position?                    8
+        Default value                bars
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Min <Int32>
+        The minimum value.
+        
+        Required?                    false
+        Position?                    9
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Max <Int32>
+        The maximum value.
+        
+        Required?                    false
+        Position?                    10
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >$Data = 1..10 | ForEach-Object { Get-Random -Max 1000 }
+    PS > New-UDSparkline -Data $Data -Max 1000 -Height 100 -Width 500
+    
+    Basic sparkline|A basic sparkline.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >$Data = 1..10 | ForEach-Object { Get-Random -Max 1000 }
+    PS > New-UDSparkline -Data $Data -Type 'bars' -Max 1000 -Height 100 -Width 500
+    
+    Lines|A sparkline with lines.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >$Data = 1..10 | ForEach-Object { Get-Random -Max 1000 }
+    PS > New-UDSparkline -Data $Data -Type 'both' -Max 1000 -Height 100 -Width 500
+    
+    Both|A sparkline with both lines and bars.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

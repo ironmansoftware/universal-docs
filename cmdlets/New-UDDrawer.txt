@@ -1,0 +1,110 @@
+
+NAME
+    New-UDDrawer
+    
+SYNOPSIS
+    Creates a new drawer.
+    
+    
+SYNTAX
+    New-UDDrawer [[-Id] <String>] [[-Children] <ScriptBlock>] [[-Variant] <String>] [[-Anchor] <String>] [[-ClassName] <String>] [-ShowCollapse] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new drawer. A drawer is a navigational component that is typically used for navigating between pages. It can be used with New-UDAppBar to provide a custom nav bar.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    1
+        Default value                [Guid]::NewGuid()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Children <ScriptBlock>
+        Navgiation controls to show within the drawer. Use New-UDList and New-UDListItem to generate links within the drawer.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Variant <String>
+        The type of drawer. Valid values include "persistent", "permanent", "temporary"
+        
+        Required?                    false
+        Position?                    3
+        Default value                temporary
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Anchor <String>
+        Where to anchor the drawer. Valid values incldue "left", "right", "top", "bottom"
+        
+        Required?                    false
+        Position?                    4
+        Default value                left
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        A CSS class to apply to the drawer.
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ShowCollapse [<SwitchParameter>]
+        Show the collapse button
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Creates a custom navbar using New-UDDrawer
+    
+    $Drawer = New-UDDrawer -Id 'drawer' -Children {
+        New-UDList -Content {
+            New-UDListItem -Id 'lstHome' -Label 'Home' -OnClick { 
+                Set-TestData 'Home'
+                } -Content {
+                    New-UDListItem -Id 'lstNested' -Label 'Nested' -OnClick {
+                    Set-TestData 'Nested'
+                    }
+                } 
+        }
+    }
+    
+    New-UDElement -Tag 'main' -Content {
+        New-UDAppBar -Children { New-UDTypography -Text 'Hello' -Paragraph } -Position relative -Drawer $Drawer
+    }
+    
+    [Component("Drawer", "WindowMaximize", "Creates a new card.")]
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

@@ -1,0 +1,109 @@
+
+NAME
+    Set-UDElement
+    
+SYNOPSIS
+    Set properties of an element.
+    
+    
+SYNTAX
+    Set-UDElement [-Id] <String> [[-Properties] <Hashtable>] [-Broadcast] [[-Content] <ScriptBlock>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Set the properties of an element.
+    
+
+PARAMETERS
+    -Id <String>
+        The element to set properites on.
+        
+        Required?                    true
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Properties <Hashtable>
+        The properties to set in the form of a hashtable.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Broadcast [<SwitchParameter>]
+        Whether to update this element on all connected clients.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Content <ScriptBlock>
+        Content to set within the element.
+        
+        Required?                    false
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDButton -Id 'setElement1' -Text 'Disable Me' -OnClick {
+    PS >    Set-UDElement -Id 'setElement1' -Properties @{
+    PS >        'disabled' = $true
+    PS >    }
+    PS > }
+    
+    Properties|Disables a button.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDButton -Id 'setElement2' -Text 'Disable Me' -OnClick {
+    PS >    Set-UDElement -Id 'setElement2' -Properties @{
+    PS >        'disabled' = $true
+    PS >    } -Broadcast
+    PS > }
+    
+    Broadcast|Disables a button and broadcasts it to all connected dashboards.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDElement -Tag 'div' -Id 'setElement3' -Content {
+    PS >     New-UDTypography -Text 'Hello World'
+    PS > }
+    PS > New-UDButton -Text 'Click Me' -OnClick {
+    PS >     Set-UDElement -Id 'setElement3' -Content {
+    PS >         New-UDTypography -Text 'Goodbye World'
+    PS >     }
+    PS > }
+    
+    Content|Sets the content of an element.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

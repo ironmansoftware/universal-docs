@@ -1,0 +1,141 @@
+
+NAME
+    New-UDIconButton
+    
+SYNOPSIS
+    Creates a button with an icon.
+    
+    
+SYNTAX
+    New-UDIconButton [[-Id] <String>] [[-Icon] <Object>] [[-OnClick] <Endpoint>] [-Disabled] [[-Href] <String>] [[-Style] <Hashtable>] [[-ClassName] <String>] [[-Size] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a button with an icon.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    1
+        Default value                ([Guid]::NewGuid()).ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Icon <Object>
+        The icon to display within the button.
+        
+        Required?                    false
+        Position?                    2
+        Default value                User
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnClick <Endpoint>
+        A script block to execute when the button is clicked.
+        
+        Required?                    false
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Disabled [<SwitchParameter>]
+        Whether the button is disabled.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Href <String>
+        A link to navigate to when the button is clicked.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        The CSS sytle to apply to the icon.
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        A CSS class to apply to the icon.
+        
+        Required?                    false
+        Position?                    6
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Size <String>
+        The size of the icon button. Valid values are: "small", "medium", "large"
+        
+        Required?                    false
+        Position?                    7
+        Default value                medium
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDIconButton -Icon (New-UDIcon -Icon user -Size sm)  -Id 'iconButton1'
+    
+    Basic Icon Button|Creates a basic icon button.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDIconButton -Icon (New-UDIcon -Icon user -Size sm) -OnClick {
+    PS >    Show-UDToast -Message 'Icon Button Clicked'
+    PS > } -Id 'iconButton2'
+    
+    Icon Button with OnClick|Creates an icon button with an OnClick script block.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDIconButton -Icon (New-UDIcon -Icon user -Size sm) -Href 'https://www.google.com' -Id 'iconButton3'
+    
+    Icon Button with Href|Creates an icon button that navigates to a URL.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDIconButton -Icon (New-UDIcon -Icon user -Size sm) -Disabled -Id 'iconButton4'
+    
+    Disabled Icon Button|Creates a disabled icon button.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

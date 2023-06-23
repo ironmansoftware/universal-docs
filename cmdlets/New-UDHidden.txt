@@ -1,0 +1,115 @@
+
+NAME
+    New-UDHidden
+    
+SYNOPSIS
+    Creates a new hidden element.
+    
+    
+SYNTAX
+    New-UDHidden [-Id <String>] [-Down <String>] [-Children <ScriptBlock>] [<CommonParameters>]
+    
+    New-UDHidden [-Id <String>] [-Up <String>] [-Children <ScriptBlock>] [<CommonParameters>]
+    
+    New-UDHidden [-Id <String>] [-Only <String[]>] [-Children <ScriptBlock>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new hidden element.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of this component. Defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    named
+        Default value                [Guid]::NewGuid()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Down <String>
+        Content will be hidden at or below the specified breakpoint.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Up <String>
+        Content will be hidden at or above the specified breakpoint.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Only <String[]>
+        Content will be hidden at the specified breakpoint.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Children <ScriptBlock>
+        The content to be hidden.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDHidden -Up md -Content {
+    PS >     New-UDTypography 'md'
+    PS > }
+    
+    Up|Content is hidden above the md breakpoint.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDHidden -Down md -Content {
+    PS >     New-UDTypography 'md'
+    PS > }
+    
+    Down|Content is hidden below the md breakpoint.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDHidden -Only md -Content {
+    PS >     New-UDTypography 'md'
+    PS > }
+    
+    Only|Content is hidden at the md breakpoint.
+    
+    [Component("Hidden", "Ghost", "Creates a new hidden element.")]
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

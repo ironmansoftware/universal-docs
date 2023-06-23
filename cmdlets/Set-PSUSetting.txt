@@ -1,0 +1,428 @@
+
+NAME
+    Set-PSUSetting
+    
+SYNOPSIS
+    Sets a PSU setting.
+    
+    
+SYNTAX
+    Set-PSUSetting [-AdminConsoleLogo <String>] [-AdminConsoleTitle <String>] [-ApiEnvironment <String>] [-AppToken <String>] [-ComputerName <String>] [-ConcurrentJobLimit <Int32>] [-DefaultEnvironment <String>] [-DefaultPage <String>] [-DisableAutoReload] [-DisableUpdateCheck] [-GroomDays <Int32>] [-HideApi] [-HideAutomation] [-HideDashboard] [-HideHomePage] [-Integrated] [-LogLevel <String>] [-LoggingFilePath <String>] [-MicrosoftLogLevel <String>] [-RateLimitClientAllowList <String[]>] [-RateLimitEndpointAllowList <String[]>] [-RateLimitIpAddressAllowList <String[]>] [-ScriptBaseFolder <String>] [-SecurityEnvironment <String>] [-UseDefaultCredentials] [-GroomInterval <Int32>] [-NotificationLevel <NotificationLevel>] [-FallbackLanguageId <String>] [-HideRunAs] [-JobHandshakeTimeout <Int32>] [-ProxyCredential <Variable>] [-ProxyUri <String>] [-Splatting] [-DisabledFeatures <Features>] [-DontLoadProfile] [-EnhancedAppTokenSecurity] [-ExperimentalFeatures <ExperimentalFeatures>] [-FavIcon <String>] [-LimitIdentities] [-Telemetry] [-DefaultDashboardTheme <String>] [-UseLogoSize] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Sets a PSU setting.
+    
+
+PARAMETERS
+    -AdminConsoleLogo <String>
+        The admin console logo URL.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -AdminConsoleTitle <String>
+        The admin console title.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ApiEnvironment <String>
+        The environment to run API endpoints within.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -AppToken <String>
+        An app token to access the PSU API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The HTTP address of the PSU REST API server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ConcurrentJobLimit <Int32>
+        The maximum number of jobs to run at once.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -DefaultEnvironment <String>
+        The default environment to use throughout the product. Can be overridden for individual entities.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -DefaultPage <String>
+        Sets the default page for the admin console.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -DisableAutoReload [<SwitchParameter>]
+        Disables configuration auto-reload from disk.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -DisableUpdateCheck [<SwitchParameter>]
+        Disables the update check for PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -GroomDays <Int32>
+        The number of days to retain jobs for.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -HideApi [<SwitchParameter>]
+        Hides the API node from the admin console.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -HideAutomation [<SwitchParameter>]
+        Hides the automation node from the admin console.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -HideDashboard [<SwitchParameter>]
+        Hides the dashboard node from the admin console.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -HideHomePage [<SwitchParameter>]
+        Hides the PowerShell Universal home page.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -LogLevel <String>
+        The log level for PowerShell Universal. Valid values are Debug, Information, Warning and Error.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -LoggingFilePath <String>
+        The file path to the log.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -MicrosoftLogLevel <String>
+        The internal logging for Microsoft components, like the web server. Valid values are Debug, Information, Warning and Error.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -RateLimitClientAllowList <String[]>
+        A list of client names to bypass rate limiting.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -RateLimitEndpointAllowList <String[]>
+        A list of endpoints to bypass rate limiting.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -RateLimitIpAddressAllowList <String[]>
+        A list of IP addresses to bypass rate limiting.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ScriptBaseFolder <String>
+        The base folder to store scripts within the repository.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -SecurityEnvironment <String>
+        The environment used to run authentication and authorization scripts.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -GroomInterval <Int32>
+        How frequently in seconds to run the groom job.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -NotificationLevel <NotificationLevel>
+        The lowest notification level to generate. For example, if NotificationLevel is set to Warning, only Warning and Error notifications will be shown.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -FallbackLanguageId <String>
+        The fallback language ID when a string isn't found in the target language.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -HideRunAs [<SwitchParameter>]
+        Hide run as support throughout the admin console.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -JobHandshakeTimeout <Int32>
+        The number of seconds to wait for a job to communicate that it has started running.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ProxyCredential <Variable>
+        Proxy server credentials.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ProxyUri <String>
+        Proxy server URI.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Splatting [<SwitchParameter>]
+        Whether splatting is enabled for all configuration files.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -DisabledFeatures <Features>
+        Features to disable within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -DontLoadProfile [<SwitchParameter>]
+        Prevents loading use profiles for Run As environments.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -EnhancedAppTokenSecurity [<SwitchParameter>]
+        Enables enhanced token security for the platform.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ExperimentalFeatures <ExperimentalFeatures>
+        Experimental features to enable.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -FavIcon <String>
+        The FavIcon to display in the admin console and dashboards.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -LimitIdentities [<SwitchParameter>]
+        Prevents identities that are not defined from logging into PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Telemetry [<SwitchParameter>]
+        Not used. Telemetry is no longer collected.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -DefaultDashboardTheme <String>
+        The default dashboard theme to use when none is specified. By default, this value is AntDesign.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseLogoSize [<SwitchParameter>]
+        Does not adjust the size of the logo used in the admin console.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> $Settings = Get-UASetting
+    PS C:\> $Settings.LogLevel = 'Debug'
+    PS C:\> Set-UASetting -Setting $Settings
+    
+    Sets the log level to 'Debug'
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

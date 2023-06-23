@@ -1,0 +1,9 @@
+
+Name          : Remove-PSUDashboard
+Category      : Alias
+Synopsis      : Remove-PSUApp
+Component     : 
+Role          : 
+Functionality : 
+
+

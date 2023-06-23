@@ -1,0 +1,103 @@
+
+NAME
+    Rename-PSUScript
+    
+SYNOPSIS
+    Renames a script.
+    
+    
+SYNTAX
+    Rename-PSUScript [-Script] <Script> [-Name] <String> [-AppToken <String>] [-ComputerName <String>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Renames a script. This also renames the script in the git repo.
+    
+
+PARAMETERS
+    -AppToken <String>
+        An app token to access the PSU API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The HTTP address of the PSU REST API server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        The new name for the script.
+        
+        Required?                    true
+        Position?                    1
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Script <Script>
+        The script to rename. Use Get-UAScript to retrieve a Script object.
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    UniversalAutomation.Script
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> $Script = Get-UAScript -name 'Script1.ps1'
+    PS C:\> Rename-UAScript -Script $Script -Name 'Script2.ps1'
+    
+    Renames the script Script1.ps1 to Script2.ps1.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

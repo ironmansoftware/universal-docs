@@ -1,0 +1,110 @@
+
+NAME
+    Get-PSUScriptHistory
+    
+SYNOPSIS
+    Returns the git history for a script.
+    
+    
+SYNTAX
+    Get-PSUScriptHistory [-AppToken <String>] [-ComputerName <String>] [-Integrated] -Script <Script> [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Get-PSUScriptHistory [-AppToken <String>] [-ComputerName <String>] [-Integrated] -ScriptId <Int64> [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Returns the git history for a script.
+    
+
+PARAMETERS
+    -AppToken <String>
+        App token to access the PowerShell Universal server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The name or URL of the PowerShell Universal server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Whether to use integrated transport
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Script <Script>
+        The script for which to receive history.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Accept wildcard characters?  false
+        
+    -ScriptId <Int64>
+        The script ID for which to receive history.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default Windows Credentials when connecting to PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    UniversalAutomation.Script
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Get-UAScriptHistory -ScriptId 12
+    
+    Returns the script history for script with ID 12.
+    -------------------------- Example 2 --------------------------
+    
+    PS C:\> $Script = Get-UAScript -Name 'Script1.ps1'
+    PS C:\> Get-UAScriptHistory -Script $Script
+    
+    Returns the history for script 'Script1.ps1'
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

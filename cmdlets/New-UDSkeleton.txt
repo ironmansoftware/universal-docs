@@ -1,0 +1,121 @@
+
+NAME
+    New-UDSkeleton
+    
+SYNOPSIS
+    Display a placeholder preview of your content before the data gets loaded to reduce load-time frustration.
+    
+    
+SYNTAX
+    New-UDSkeleton [[-Id] <String>] [[-Variant] <String>] [[-Height] <Int32>] [[-Width] <Int32>] [[-Animation] <String>] [[-ClassName] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a loading skeleton
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of this component.
+        
+        Required?                    false
+        Position?                    1
+        Default value                ([Guid]::NewGuid())
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Variant <String>
+        The type of skeleton to display. Valid values are "text", "rect", "circle"
+        
+        Required?                    false
+        Position?                    2
+        Default value                text
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Height <Int32>
+        The static height of the skeleton.
+        
+        Required?                    false
+        Position?                    3
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Width <Int32>
+        The static width of the skeleton.
+        
+        Required?                    false
+        Position?                    4
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Animation <String>
+        The type of animation to use for the skeleton. Valid values are: "wave", "disabled", "pulsate"
+        
+        Required?                    false
+        Position?                    5
+        Default value                pulsate
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        A CSS class to apply to the skeleton.
+        
+        Required?                    false
+        Position?                    6
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDSkeleton -Id 'skeleton1' -Variant text -Animation wave -Width 210
+    
+    Text skeleton|Creates a new text skeleton with a wave animation.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDSkeleton -Id 'skeleton2' -Variant rect -Width 210 -Height 118
+    
+    Rect skeleton|Creates a new rect skeleton with a width of 210 and a height of 118.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDSkeleton -Id 'skeleton3' -Variant circle -Width 40 -Height 40
+    
+    Circle skeleton|Creates a new circle skeleton with a width of 40 and a height of 40.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDSkeleton -Id 'skeleton4' -Animation disabled -Width 210 -Height 118
+    
+    Disabled animation|Creates a new skeleton with a disabled animation.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

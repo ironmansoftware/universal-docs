@@ -1,0 +1,182 @@
+
+NAME
+    New-UDList
+    
+SYNOPSIS
+    Lists are continuous, vertical indexes of text or images.
+    
+    
+SYNTAX
+    New-UDList [[-Id] <String>] [[-Children] <ScriptBlock>] [[-SubHeader] <String>] [[-ClassName] <String>] [-Dense] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a list. Use New-UDListItem to add new items to the list. Lists are good for links in UDDrawers.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    1
+        Default value                ([Guid]::NewGuid()).ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Children <ScriptBlock>
+        The items in the list.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -SubHeader <String>
+        Text to show within the sub header.
+        
+        Required?                    false
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Dense [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDList -Content {
+    PS >    New-UDListItem -Label 'Inbox' -Icon (New-UDIcon -Icon envelope -Size 3x) -SubTitle 'New Stuff'
+    PS >    New-UDListItem -Label 'Drafts' -Icon (New-UDIcon -Icon edit -Size 3x) -SubTitle "Stuff I'm working on "
+    PS >    New-UDListItem -Label 'Trash' -Icon (New-UDIcon -Icon trash -Size 3x) -SubTitle 'Stuff I deleted'
+    PS >    New-UDListItem -Label 'Spam' -Icon (New-UDIcon -Icon bug -Size 3x) -SubTitle "Stuff I didn't want"
+    PS > } -Id 'list1'
+    
+    Basic list|A basic list of items with icons and a subtitle.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDList -Content {
+    PS >    New-UDListItem -Label 'Inbox'
+    PS >    New-UDListItem -Label 'Drafts'
+    PS >    New-UDListItem -Label 'Trash' 
+    PS >    New-UDListItem -Label 'Spam'
+    PS > } -Id 'list2' -Dense
+    
+    Dense list|A dense list.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDList -Content {
+    PS >    New-UDListItem -Label 'Inbox' -Icon (New-UDIcon -Icon envelope -Size 3x) -SubTitle 'New Stuff' -OnClick {
+    PS >        Show-UDToast -Message 'Inbox Clicked'
+    PS >    }
+    PS >    New-UDListItem -Label 'Drafts' -Icon (New-UDIcon -Icon edit -Size 3x) -SubTitle "Stuff I'm working on " -OnClick {
+    PS >        Show-UDToast -Message 'Drafts Clicked'
+    PS >    }
+    PS > } -Id 'list3'
+    
+    OnClick|Respond to clicks on list items.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDList -Content {
+    PS >    New-UDListItem -Label 'Inbox' -Icon (New-UDIcon -Icon envelope -Size 3x) -SubTitle 'New Stuff' -SecondaryAction {
+    PS >        New-UDButton -Text 'Secondary Action'
+    PS >    }
+    PS >    New-UDListItem -Label 'Drafts' -Icon (New-UDIcon -Icon edit -Size 3x) -SubTitle "Stuff I'm working on " -SecondaryAction {
+    PS >        New-UDButton -Text 'Secondary Action'
+    PS >    }
+    PS > } -Id 'list4'
+    
+    Secondary Action|Respond to secondary actions on list items.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDList -Content {
+    PS >    New-UDListItem -Label 'Inbox' -Icon (New-UDIcon -Icon envelope -Size 3x) -SubTitle 'New Stuff' -Children {
+    PS >        New-UDListItem -Label 'Inbox Item 1' -Nested
+    PS >        New-UDListItem -Label 'Inbox Item 2' -Nested
+    PS >        New-UDListItem -Label 'Inbox Item 3' -Nested
+    PS >    }
+    PS >    New-UDListItem -Label 'Drafts' -Icon (New-UDIcon -Icon edit -Size 3x) -SubTitle "Stuff I'm working on " -Children {
+    PS >        New-UDListItem -Label 'Drafts Item 1' -Nested
+    PS >        New-UDListItem -Label 'Drafts Item 2' -Nested
+    PS >        New-UDListItem -Label 'Drafts Item 3' -Nested
+    PS >    }
+    PS > } -Id 'list5'
+    
+    Nested List Items|Create nested list items.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS >New-UDList -Content {
+    PS >    New-UDListItem -Label 'Inbox' -Icon (New-UDIcon -Icon envelope -Size 3x) -SubTitle 'New Stuff' -Switch (New-UDSwitch) -SwitchAlignment 'right'
+    PS >    New-UDListItem -Label 'Drafts' -Icon (New-UDIcon -Icon edit -Size 3x) -SubTitle "Stuff I'm working on " -Switch (New-UDSwitch) -SwitchAlignment 'right'
+    PS >    New-UDListItem -Label 'Trash' -Icon (New-UDIcon -Icon trash -Size 3x) -SubTitle 'Stuff I deleted' -Switch (New-UDSwitch) -SwitchAlignment 'right'
+    PS >    New-UDListItem -Label 'Spam' -Icon (New-UDIcon -Icon bug -Size 3x) -SubTitle "Stuff I didn't want" -Switch (New-UDSwitch) -SwitchAlignment 'right'
+    PS > } -Id 'list6'
+    
+    Switch|Create a list item with a switch.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 7 --------------------------
+    
+    PS >New-UDList -Content {
+    PS >    New-UDListItem -Label 'Inbox' -SubTitle 'New Stuff' -CheckBox (New-UDCheckbox) -CheckBoxAlignment 'left'
+    PS >    New-UDListItem -Label 'Drafts' -SubTitle "Stuff I'm working on " -CheckBox (New-UDCheckbox) -CheckBoxAlignment 'left'
+    PS >    New-UDListItem -Label 'Trash' -SubTitle 'Stuff I deleted' -CheckBox (New-UDCheckbox) -CheckBoxAlignment 'left'
+    PS >    New-UDListItem -Label 'Spam' -SubTitle "Stuff I didn't want" -CheckBox (New-UDCheckbox) -CheckBoxAlignment 'left'
+    PS > } -Id 'list7'
+    
+    CheckBox|Create a list item with a checkbox.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

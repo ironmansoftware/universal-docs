@@ -1,0 +1,161 @@
+
+NAME
+    New-UDPaper
+    
+SYNOPSIS
+    Paper is used to highlight content within a page.
+    
+    
+SYNTAX
+    New-UDPaper [[-Id] <String>] [[-Children] <ScriptBlock>] [[-Width] <String>] [[-Height] <String>] [-Square] [[-Style] <Hashtable>] [[-Elevation] <Int32>] [[-ClassName] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a paper. Paper is used to highlight content within a page.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    1
+        Default value                ([Guid]::NewGuid()).ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Children <ScriptBlock>
+        The content of this paper element.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Width <String>
+        The width of this paper.
+        
+        Required?                    false
+        Position?                    3
+        Default value                500
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Height <String>
+        The height of this paper.
+        
+        Required?                    false
+        Position?                    4
+        Default value                500
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Square [<SwitchParameter>]
+        Whether this paper is square.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        The CSS style to apply to this paper.
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Elevation <Int32>
+        The elevation of this paper.
+        
+        Required?                    false
+        Position?                    6
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        A CSS class to apply to the paper.
+        
+        Required?                    false
+        Position?                    7
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDPaper -Id 'paper1' -Children {
+    PS >    New-UDButton -Text 'Click Me'
+    PS > }
+    
+    Basic paper|Creates a new paper with a button inside of it.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDPaper -Id 'paper2' -Children {
+    PS >    New-UDButton -Text 'Click Me'
+    PS > } -Elevation 5
+    
+    Paper with elevation|Creates a new paper with a button inside of it and an elevation of 5.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDPaper -Id 'paper3' -Children {
+    PS >    New-UDButton -Text 'Click Me'
+    PS > } -Width 1000 -Height 1000 -Elevation 5
+    
+    Width and height|Creates a new paper with a button inside of it and a width and height of 1000.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDPaper -Id 'paper4' -Children {
+    PS >    New-UDButton -Text 'Click Me'
+    PS > } -Square -Elevation 5
+    
+    Square paper|Creates a new paper with a button inside of it and a square shape.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDPaper -Id 'paper5' -Children {
+    PS >    New-UDButton -Text 'Click Me'
+    PS > } -Style @{ backgroundColor = 'red' }
+    
+    Style|Creates a new paper with a button inside of it and a red background color.
+    
+    
+    [Component("Paper", "File", "Creates a paper component.")]
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

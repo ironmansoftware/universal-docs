@@ -1,0 +1,137 @@
+
+NAME
+    New-UDImage
+    
+SYNOPSIS
+    An image component.
+    
+    
+SYNTAX
+    New-UDImage [-Id <String>] [-Url <String>] [-Height <Int32>] [-Width <Int32>] [-Attributes <Hashtable>] [-ClassName <String>] [<CommonParameters>]
+    
+    New-UDImage [-Id <String>] [-Path <String>] [-Height <Int32>] [-Width <Int32>] [-Attributes <Hashtable>] [-ClassName <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    An image component.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of this component.
+        
+        Required?                    false
+        Position?                    named
+        Default value                ([Guid]::NewGuid())
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Url <String>
+        The URL to the image.
+        
+        Required?                    false
+        Position?                    named
+        Default value                https://ironmansoftware.com/img/ps-logo.png
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Path <String>
+        The path to a local image.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Height <Int32>
+        The height in pixels.
+        
+        Required?                    false
+        Position?                    named
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Width <Int32>
+        The width in pixels.
+        
+        Required?                    false
+        Position?                    named
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Attributes <Hashtable>
+        Additional attributes to apply to the img tag.
+        
+        Required?                    false
+        Position?                    named
+        Default value                @{}
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        A CSS class to apply to the image.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDImage -Url "https://ironmansoftware.com/img/ps-logo.png"
+    
+    Basic image|Displays an image.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >$Image = Get-ChildItem "$PSScriptRoot\*.png" | Select-Object -First 1
+    PS > New-UDImage -Path ($Image.FullName)
+    
+    Local image|Displays a local image.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDImage -Url "https://ironmansoftware.com/img/ps-logo.png" -Height 100 -Width 100
+    
+    Image with height and width|Displays an image with a height and width.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDImage -Url "https://ironmansoftware.com/img/ps-logo.png" -Attributes @{ 
+    PS >    style = @{ 
+    PS >        borderRadius = '50%'
+    PS >    }
+    PS > }
+    
+    Image with style|Displays an image with a style attribute.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

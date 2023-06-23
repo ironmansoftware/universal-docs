@@ -1,0 +1,77 @@
+
+NAME
+    Update-PSUServer
+    
+SYNOPSIS
+    Update the PowerShell Universal server.
+    
+    
+SYNTAX
+    Update-PSUServer [-Path <String>] [-Version <String>] [-IISWebsite <String>] [<CommonParameters>]
+    
+    Update-PSUServer [-Path <String>] [-LatestVersion] [-IISWebsite <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Update the PowerShell Universal server. This is a convenience function that will update the server for your platform.
+    
+
+PARAMETERS
+    -Path <String>
+        The path for the PowerShell Universal binaries. If not specified, the path will attempt to be resolved.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Version <String>
+        The version to upgrade to.
+        
+        Required?                    false
+        Position?                    named
+        Default value                (Get-Module Universal).Version
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LatestVersion [<SwitchParameter>]
+        Upgrade to the latest version.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -IISWebsite <String>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Update-PSUServer
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

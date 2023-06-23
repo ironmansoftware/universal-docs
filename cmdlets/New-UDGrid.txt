@@ -1,0 +1,236 @@
+
+NAME
+    New-UDGrid
+    
+SYNOPSIS
+    The grid is a 12-point grid system that can adapt based on the size of the screen that is showing the controls.
+    
+    
+SYNTAX
+    New-UDGrid [-Id <String>] [-ExtraSmallSize <Int32>] [-SmallSize <Int32>] [-MediumSize <Int32>] [-LargeSize <Int32>] [-ExtraLargeSize <Int32>] [-Item] [-Children <ScriptBlock>] [-ClassName <String>] [<CommonParameters>]
+    
+    New-UDGrid [-Id <String>] [-Container] [-Spacing <Int32>] [-Children <ScriptBlock>] [-ClassName <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a grid to layout components. The grid is a 12-point grid system that can adapt based on the size of the screen that is showing the controls.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    named
+        Default value                [Guid]::NewGuid().ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ExtraSmallSize <Int32>
+        The size (1-12) for extra small devices.
+        
+        Required?                    false
+        Position?                    named
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -SmallSize <Int32>
+        The size (1-12) for small devices.
+        
+        Required?                    false
+        Position?                    named
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -MediumSize <Int32>
+        The size (1-12) for medium devices.
+        
+        Required?                    false
+        Position?                    named
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LargeSize <Int32>
+        The size (1-12) for large devices.
+        
+        Required?                    false
+        Position?                    named
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ExtraLargeSize <Int32>
+        The size (1-12) for extra large devices.
+        
+        Required?                    false
+        Position?                    named
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Container [<SwitchParameter>]
+        Whether this is a container. A container can be best described as a row.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Spacing <Int32>
+        Spacing between the items.
+        
+        Required?                    false
+        Position?                    named
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Item [<SwitchParameter>]
+        Whether this is an item in a container.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Children <ScriptBlock>
+        Components included in this grid item.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        A CSS class to apply to the grid.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDGrid -Container -Children {
+    PS >     New-UDGrid -Item -ExtraSmallSize 4 -Children {
+    PS >        New-UDCard -Title "Card 1" -Content {
+    PS >            New-UDButton -Text "Button 1"
+    PS >        }
+    PS >    }
+    PS >     New-UDGrid -Item -ExtraSmallSize 4 -Children {
+    PS >        New-UDCard -Title "Card 1" -Content {
+    PS >            New-UDButton -Text "Button 2"
+    PS >        }
+    PS >    }
+    PS >     New-UDGrid -Item -ExtraSmallSize 4 -Children {
+    PS >        New-UDCard -Title "Card 1" -Content {
+    PS >            New-UDButton -Text "Button 3"
+    PS >        }
+    PS >    }
+    PS > } -Id "grid1"
+    
+    Basic grid|A basic grid with 3 cards in a row.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDGrid -Container -Children {
+    PS >     New-UDGrid -Item -ExtraSmallSize 12 -LargeSize 4 -Children {
+    PS >        New-UDCard -Title "Card 1" -Content {
+    PS >            New-UDButton -Text "Button 1"
+    PS >        }
+    PS >    }
+    PS >     New-UDGrid -Item -ExtraSmallSize 12 -LargeSize 4  -Children {
+    PS >        New-UDCard -Title "Card 1" -Content {
+    PS >            New-UDButton -Text "Button 2"
+    PS >        }
+    PS >    }
+    PS >     New-UDGrid -Item -ExtraSmallSize 12 -LargeSize 4 -Children {
+    PS >        New-UDCard -Title "Card 1" -Content {
+    PS >            New-UDButton -Text "Button 3"
+    PS >        }
+    PS >    }
+    PS > } -Id "grid2"
+    
+    Responsive Grid|A responsive grid with 3 cards in a row. The cards will stack on small device screens.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDDynamic -Id 'grid4' -Content {
+    PS >    $Spacing = (Get-UDElement -Id 'gridSpacingSelect').value
+    PS >    New-UDGrid -Container -Children {
+    PS >      New-UDGrid -Item -ExtraSmallSize 12 -LargeSize 4 -Children {
+    PS >        New-UDCard -Title "Card 1" -Content {
+    PS >            New-UDButton -Text "Button 1"
+    PS >        }
+    PS >    }
+    PS >     New-UDGrid -Item -ExtraSmallSize 12 -LargeSize 4  -Children {
+    PS >        New-UDCard -Title "Card 1" -Content {
+    PS >            New-UDButton -Text "Button 2"
+    PS >        }
+    PS >    }
+    PS >    New-UDGrid -Item -ExtraSmallSize 12 -LargeSize 4 -Children {
+    PS >        New-UDCard -Title "Card 1" -Content {
+    PS >            New-UDButton -Text "Button 3"
+    PS >        }
+    PS >    }
+    PS >   } -Spacing $Spacing
+    PS > }
+    PS > New-UDSelect -Id 'gridSpacingSelect' -Label Spacing -Option {
+    PS >   for ($i = 0; $i -lt 10; $i++) {
+    PS >       New-UDSelectOption -Name $i -Value $i
+    PS >   }
+    PS >} -OnChange { Sync-UDElement -Id 'grid4' } -DefaultValue 3
+    
+    Grid Spacing|A responsive grid with 3 cards in a row. The spacing between the cards can be changed with the select box.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDRow -Columns {
+    PS >     New-UDColumn -Size 4 -Content {
+    PS >         New-UDCard -Title "Card 1" -Content {}
+    PS >     }    
+    PS >     New-UDColumn -Size 4 -Content {
+    PS >         New-UDCard -Title "Card 2" -Content {}
+    PS >     }  
+    PS >     New-UDColumn -Size 4 -Content {
+    PS >         New-UDCard -Title "Card 3" -Content {}
+    PS >     }  
+    PS > } -Id 'grid5'
+    
+    Row and Columns|The row and column aliases can be used to create a grid.
+    
+    [Component("Grid", "Grid", "Creates a new card.")]
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

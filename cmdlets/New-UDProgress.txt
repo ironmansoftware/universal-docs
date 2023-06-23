@@ -1,0 +1,125 @@
+
+NAME
+    New-UDProgress
+    
+SYNOPSIS
+    Progress dialogs can show both determinate and indeterminate progress. They can also be circular or linear.
+    
+    
+SYNTAX
+    New-UDProgress [-Id <String>] [-BackgroundColor <DashboardColor>] [-ProgressColor <DashboardColor>] [<CommonParameters>]
+    
+    New-UDProgress [-Id <String>] [-PercentComplete <Int32>] [-BackgroundColor <DashboardColor>] [-ProgressColor <DashboardColor>] [<CommonParameters>]
+    
+    New-UDProgress [-Id <String>] [-ProgressColor <DashboardColor>] [-Circular] [-Size <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a progress dialog. Progress dialogs can show both determinate and indeterminate progress. They can also be circular or linear.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    named
+        Default value                [Guid]::NewGuid().ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -PercentComplete <Int32>
+        The percent complete for the progress.
+        
+        Required?                    false
+        Position?                    named
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -BackgroundColor <DashboardColor>
+        The background color.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ProgressColor <DashboardColor>
+        The progress bar color.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Circular [<SwitchParameter>]
+        Whether the progress is circular.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Size <String>
+        The size of the progress. Valid values are: "small", "medium", "large"
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDProgress -PercentComplete 75 -Id 'progress1'
+    
+    Determinate|A determinate progress bar.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDProgress -Circular -Size large -Id 'progress2'
+    
+    Circular|A circular progress bar.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDProgress -BackgroundColor 'red' -ProgressColor 'blue' -Id 'progress3'
+    
+    Color|Define the background and progress colors.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDProgress -Circular -Size large -Id 'progress4'
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

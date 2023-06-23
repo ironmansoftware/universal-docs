@@ -1,0 +1,272 @@
+
+NAME
+    New-UDTabs
+    
+SYNOPSIS
+    Creates a new set of tabs.
+    
+    
+SYNTAX
+    New-UDTabs [-Tabs] <ScriptBlock> [[-Id] <String>] [-RenderOnActive] [[-Orientation] <String>] [[-Variant] <String>] [[-ScrollButtons] <String>] [-Centered] [[-ClassName] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new set of tabs. Tabs can be used to show lots of content on a single page.
+    
+
+PARAMETERS
+    -Tabs <ScriptBlock>
+        The tabs to put within this container.
+        
+        Required?                    true
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    2
+        Default value                ([Guid]::NewGuid()).ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -RenderOnActive [<SwitchParameter>]
+        Deprecated
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Orientation <String>
+        The orientation of the tabs. Valid values are horizontal and vertical.
+        
+        Required?                    false
+        Position?                    3
+        Default value                horizontal
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Variant <String>
+        The variantion of tabs. Valid values are standard, fullWidth and scrollable.
+        
+        Required?                    false
+        Position?                    4
+        Default value                standard
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ScrollButtons <String>
+        The behavior of the scrollbuttons. Valid values are on, off, auto and desktop. On will enable scroll buttons no matter what. off will disable all scroll buttons. Auto will show scrollbuttons when necessary. Desktop will show scrollbuttons on medium and large screens.
+        
+        Required?                    false
+        Position?                    5
+        Default value                auto
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Centered [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        
+        Required?                    false
+        Position?                    6
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDTabs -Tabs {
+    PS >     New-UDTab -Text "Tab1" -Id 'Tab1' -Content {
+    PS >         New-UDElement -Tag div -Id 'tab1Content' -Content { "Tab1Content"}
+    PS >     }
+    PS >     New-UDTab -Text "Tab2" -Id 'Tab2' -Content {
+    PS >         New-UDElement -Tag div -Id 'tab2Content' -Content { "Tab2Content"}
+    PS >     }
+    PS >     New-UDTab -Text "Tab3" -Id 'Tab3' -Content {
+    PS >         New-UDElement -Tag div -Id 'tab3Content' -Content { "Tab3Content"}
+    PS >     }
+    PS >  } -Id 'tabs1'
+    
+    Basic Tabs|A basic set of tabs.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDTabs -Id 'tabs2' -Tabs {
+    PS >     New-UDTab -Text "Tab1" -Id 'DynamicTab1' -Dynamic -Content {
+    PS >         New-UDElement -Tag div -Id 'DynamicTab1Content' -Content { Get-Date } 
+    PS >     }
+    PS >     New-UDTab -Text "Tab2" -Id 'DynamicTab2' -Dynamic -Content {
+    PS >         New-UDElement -Tag div -Id 'DynamicTab2Content' -Content { Get-Date }
+    PS >     }
+    PS >     New-UDTab -Text "Tab3" -Id 'DynamicTab3' -Dynamic -Content {
+    PS >         New-UDElement -Tag div -Id 'DynamicTab3Content' -Content { Get-Date }
+    PS >     }
+    PS >  }
+    
+    Dynamic Tabs|A set of dynamic tabs.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDTabs -Id 'tabs3' -Orientation 'vertical' -Tabs {
+    PS >     New-UDTab -Text "Tab1" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date } 
+    PS >     }
+    PS >     New-UDTab -Text "Tab2" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date } 
+    PS >     }
+    PS >     New-UDTab -Text "Tab3" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date } 
+    PS >     }
+    PS > }
+    
+    Vertical Tabs|A set of vertical tabs.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDTabs -Id 'tabs4' -Variant 'fullWidth' -Tabs {
+    PS >     New-UDTab -Text "Tab1" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS >     New-UDTab -Text "Tab2" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS >     New-UDTab -Text "Tab3" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS > }
+    
+    Full Width Tabs|A set of full width tabs.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDTabs -Id 'tabs5' -Variant 'scrollable' -Tabs {
+    PS >     New-UDTab -Text "Tab1" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS >     New-UDTab -Text "Tab2" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS >     New-UDTab -Text "Tab3" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS > }
+    
+    Scrollable Tabs|A set of scrollable tabs.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS >New-UDTabs -Id 'tabs6' -ScrollButtons 'on' -Tabs {
+    PS >     New-UDTab -Text "Tab1" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS >     New-UDTab -Text "Tab2" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS >     New-UDTab -Text "Tab3" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS > }
+    
+    Scroll Buttons On|A set of tabs with scroll buttons always on.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 7 --------------------------
+    
+    PS >New-UDTabs -Id 'tabs7' -Centered -Tabs {
+    PS >     New-UDTab -Text "Tab1" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS >     New-UDTab -Text "Tab2" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS >     New-UDTab -Text "Tab3" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS > }
+    
+    Centered Tabs|A set of centered tabs.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 8 --------------------------
+    
+    PS >New-UDTabs -Id 'tabs8' -Tabs {
+    PS >     New-UDTab -Text "Tab1" -Icon (New-UDIcon -Icon Eye) -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS >     New-UDTab -Text "Tab2" -Icon (New-UDIcon -Icon Home) -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS >     New-UDTab -Text "Tab3" -Icon (New-UDIcon -Icon User) -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS > }
+    
+    Tabs with Icons|A set of tabs with icons.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 9 --------------------------
+    
+    PS >New-UDTabs -Id 'tabs7' -Tabs {
+    PS >     New-UDTab -Text "Tab1" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS >     New-UDTab -Text "Tab2" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS >     New-UDTab -Text "Tab3" -Disabled -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS > }
+    
+    Disabled Tab|A set of tabs with a disabled tab.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

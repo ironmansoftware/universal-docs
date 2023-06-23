@@ -1,0 +1,95 @@
+
+NAME
+    New-UDExpansionPanel
+    
+SYNOPSIS
+    Creates an expansion panel.
+    
+    
+SYNTAX
+    New-UDExpansionPanel [[-Id] <String>] [[-Title] <String>] [[-Icon] <Object>] [[-Children] <ScriptBlock>] [-Active] [[-ClassName] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates an expansion panel. An expansion panel can hide content that isn't necessary to view when a page is loaded.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    1
+        Default value                ([Guid]::NewGuid())
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Title <String>
+        The title show within the header of the expansion panel.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Icon <Object>
+        An icon to show within the header of the expansion panel.
+        
+        Required?                    false
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Children <ScriptBlock>
+        Children components to put within the expansion panel.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Active [<SwitchParameter>]
+        Whether the expansion panel is currently active (open).
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Creates an expansion panel with some content.
+    
+    New-UDExpansionPanel -Title "Hello" -Id 'expContent' -Content {
+        New-UDElement -Tag 'div' -id 'expContentDiv' -Content { "Hello" }
+    }
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

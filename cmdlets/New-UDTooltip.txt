@@ -1,0 +1,125 @@
+
+NAME
+    New-UDTooltip
+    
+SYNOPSIS
+    A tooltip component.
+    
+    
+SYNTAX
+    New-UDTooltip [[-Id] <String>] [[-Placement] <String>] [-TooltipContent] <ScriptBlock> [-Content] <ScriptBlock> [[-Sx] <Hashtable>] [-Arrow] [-FollowCursor] [[-EnterDelay] <Int32>] [[-LeaveDelay] <Int32>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    A tooltip component. Tooltips can be placed over an other component to display a popup when the user hovers over the nested component.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of this component.
+        
+        Required?                    false
+        Position?                    1
+        Default value                [Guid]::NewGuid()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Placement <String>
+        
+        Required?                    false
+        Position?                    2
+        Default value                top
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -TooltipContent <ScriptBlock>
+        Content to display within the tooltip.
+        
+        Required?                    true
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Content <ScriptBlock>
+        Content that activates the tooltip when hovered.
+        
+        Required?                    true
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Sx <Hashtable>
+        Theme-based styling hashtable.
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Arrow [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -FollowCursor [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -EnterDelay <Int32>
+        
+        Required?                    false
+        Position?                    6
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LeaveDelay <Int32>
+        
+        Required?                    false
+        Position?                    7
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDTooltip -TooltipContent { New-UDTypography -Text "Hello World" -Variant "h1" } -Content { New-UDTypography -Text "Hover over me" -Variant "h1" } -Id "tooltip1"
+    
+    Basic Tooltip|A basic tooltip component that displays a header when hovered over.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDTooltip -TooltipContent { New-UDTypography -Text "Hello World" -Variant "h1" } -Content { New-UDTypography -Text "Hover over me" -Variant "h1" } -Id "tooltip3" -Place "right"
+    
+    Placement|A tooltip component that displays a header when hovered over with a right placement.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

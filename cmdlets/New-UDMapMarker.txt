@@ -1,0 +1,114 @@
+
+NAME
+    New-UDMapMarker
+    
+SYNOPSIS
+    Creates a map marker.
+    
+    
+SYNTAX
+    New-UDMapMarker [-Id <String>] -Longitude <Single> -Latitude <Single> [-Attribution <String>] [-Opacity <Int32>] [-ZIndex <Int32>] [-Popup <Hashtable>] [-Icon <Hashtable>] [<CommonParameters>]
+    
+    New-UDMapMarker [-Id <String>] [-Attribution <String>] [-Opacity <Int32>] [-ZIndex <Int32>] [-Popup <Hashtable>] [-Icon <Hashtable>] -GeoJSON <String> [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a map marker.
+    
+
+PARAMETERS
+    -Id <String>
+        The id of the map marker. This defaults to a new GUID.
+        
+        Required?                    false
+        Position?                    named
+        Default value                ([Guid]::NewGuid())
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Longitude <Single>
+        The longitude of the map marker.
+        
+        Required?                    true
+        Position?                    named
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Latitude <Single>
+        The latitude of the map marker.
+        
+        Required?                    true
+        Position?                    named
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Attribution <String>
+        The attribution of the map marker.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Opacity <Int32>
+        The opacity of the map marker.
+        
+        Required?                    false
+        Position?                    named
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ZIndex <Int32>
+        The z-index of the map marker.
+        
+        Required?                    false
+        Position?                    named
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Popup <Hashtable>
+        The popup of the map marker. Use New-UDMapPopup to create a popup.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Icon <Hashtable>
+        The icon of the map marker. Use New-UDMapIcon to create an icon.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -GeoJSON <String>
+        The GeoJSON of the map marker. This is an alternative to specifying the longitude and latitude.
+        
+        Required?                    true
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    
+RELATED LINKS
+
+

@@ -1,0 +1,159 @@
+
+NAME
+    New-PSURole
+    
+SYNOPSIS
+    Defines a new role within PowerShell Universal.
+    
+    
+SYNTAX
+    New-PSURole [-AppToken <String>] [-ComputerName <String>] [-Description <String>] -Name <String> -Policy <ScriptBlock> [-UseDefaultCredentials] [-Integrated] [-Disabled] [-DefaultRoute <String>] [<CommonParameters>]
+    
+    New-PSURole [-AppToken <String>] [-ComputerName <String>] [-Description <String>] -Name <String> [-UseDefaultCredentials] [-Integrated] -ClaimType <String> -ClaimValue <String> [-Disabled] [-DefaultRoute <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Defines a new role within PowerShell Universal. Roles are used to define authorization within the PowerShell Universal platform. Roles can be assigned statically to an Identity or can be assigned by the -Policy script block. The policy script block receives a $User parameter that contains the identity information and claims that an identity has been granted during authentication.
+    
+    Policy script blocks need to return either $true or $false to determine whether this particular identity should be provided the role.
+    
+    Roles configurations are stored in .universal/roles.ps1
+    
+    You can also use this cmdlet to create roles through the REST API.
+    
+
+PARAMETERS
+    -AppToken <String>
+        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Description <String>
+        The description of this role to show within the Admin Console.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        The name of this role. The name is used for both display and for assigning resources like APIs and dashboards.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Policy <ScriptBlock>
+        The policy script block to execute when determining whether to assign this role.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ClaimType <String>
+        The claim type to map for this role. See Role to Claim mapping in our documentation.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ClaimValue <String>
+        The claim value to map for this role. See Role to Claim mapping in our documentation.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Disabled [<SwitchParameter>]
+        Whether the role is disabled.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -DefaultRoute <String>
+        The default URL to forward users in this role to.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    New-PSURole -Name 'Developers' -Policy {
+        param($User)
+    
+        $User.Claims.HasClaim('myGroup')
+    }
+    
+    Creates a new role with a policy defined that checks to see if the user's claim contains the 'myGroup' claim.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

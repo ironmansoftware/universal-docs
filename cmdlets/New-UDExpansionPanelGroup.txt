@@ -1,0 +1,109 @@
+
+NAME
+    New-UDExpansionPanelGroup
+    
+SYNOPSIS
+    The expansion panel component allows the user to show and hide sections of related content on a page.
+    
+    
+SYNTAX
+    New-UDExpansionPanelGroup [-Id <String>] [[-Children] <ScriptBlock>] [-Type <String>] [-ClassName <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a group of expansion panels. Use New-UDExpansionPanel to create children for a group.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    named
+        Default value                ([Guid]::NewGuid())
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Children <ScriptBlock>
+        Expansion panels to include in this group.
+        
+        Required?                    false
+        Position?                    1
+        Default value                {}
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Type <String>
+        The type of expansion panel group.
+        
+        Required?                    false
+        Position?                    named
+        Default value                Expandable
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDExpansionPanelGroup -Id 'expandsionPanelGroup1' -Children {
+    PS >     New-UDExpansionPanel -Title "Hello" -Content {} -Active -Id 'expansionPanel1'
+    PS >     New-UDExpansionPanel -Title "Hello" -Content {
+    PS >         New-UDElement -Tag 'div' -Content { "Hello" }
+    PS >     } -Id 'expansionPanel2'
+    PS >     New-UDExpansionPanel -Title "Hello" -Content {
+    PS >        New-UDElement -Tag 'div' -id 'expEndpointDiv' -Content { "Hello" }
+    PS >     } -Id 'expansionPanel3'
+    PS > }
+    
+    Expansion Panel|Creates an expansion panel group.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDExpansionPanelGroup -Id 'expandsionPanelGroup3' -Children {
+    PS >     New-UDExpansionPanel -Title "Hello" -Content {} -Id 'expansionPanel6'
+    PS >     New-UDExpansionPanel -Title "Hello" -Content {} -Id 'expansionPanel7'
+    PS > } -Type 'Accordion'
+    
+    Accordion|Creates an accordion style expansion panel group.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDExpansionPanelGroup -Id 'expandsionPanelGroup4' -Children {
+    PS >     New-UDExpansionPanel -Title "Hello" -Content {} -Icon (New-UDIcon -Icon 'Users') -Id 'expansionPanel8'
+    PS >     New-UDExpansionPanel -Title "Hello" -Content {} -Icon (New-UDIcon -Icon 'User') -Id 'expansionPanel9'
+    PS > }
+    
+    Icons|Creates an expansion panel group with icons.
+    
+    [Component("Expansion Panel", "Expand", "Creates a new card.")]
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

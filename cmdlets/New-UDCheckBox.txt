@@ -1,0 +1,204 @@
+
+NAME
+    New-UDCheckBox
+    
+SYNOPSIS
+    Creates a checkbox.
+    
+    
+SYNTAX
+    New-UDCheckBox [[-Label] <String>] [[-Icon] <Object>] [[-CheckedIcon] <Object>] [[-OnChange] <Endpoint>] [[-Style] <Hashtable>] [[-Disabled]] [[-Checked] <Boolean>] [[-ClassName] <String>] [[-LabelPlacement] <String>] [[-Id] <String>] [[-Size] <String>] [-Color <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a checkbox. Checkboxes can be used in forms or by themselves.
+    
+
+PARAMETERS
+    -Label <String>
+        The label to show next to the checkbox.
+        
+        Required?                    false
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Icon <Object>
+        The icon to show instead of the default icon. Use New-UDIcon to create an icon.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -CheckedIcon <Object>
+        The icon to show instead of the default checked icon. Use New-UDIcon to create an icon.
+        
+        Required?                    false
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnChange <Endpoint>
+        Called when the value of the checkbox changes. The $EventData variable will have the current value of the checkbox.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        A hashtable of styles to apply to the checkbox.
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Disabled [<SwitchParameter>]
+        Whether the checkbox is disabled.
+        
+        Required?                    false
+        Position?                    6
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Checked <Boolean>
+        Whether the checkbox is checked.
+        
+        Required?                    false
+        Position?                    7
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        A CSS class to assign to the checkbox.
+        
+        Required?                    false
+        Position?                    8
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LabelPlacement <String>
+        Where to place the label. Valid values are: "top","start","bottom","end"
+        
+        Required?                    false
+        Position?                    8
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    9
+        Default value                ([Guid]::NewGuid()).ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Size <String>
+        The size of the checkbox. Valid values are: "small", "medium"
+        
+        Required?                    false
+        Position?                    10
+        Default value                medium
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Color <String>
+        The theme color to apply to this component
+        
+        Required?                    false
+        Position?                    named
+        Default value                default
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDCheckbox -Label 'Demo' -Id 'checkbox1'
+    
+    Basic checkbox|A basic checkbox.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDCheckbox -Label 'Demo' -Disabled -Id 'checkbox2'
+    
+    Disabled checkbox|A disabled checkbox.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDCheckbox -Label 'Demo' -Checked $true -Id 'checkbox3'
+    
+    Checked checkbox|A checked checkbox.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDCheckbox -Label 'Demo' -Icon (New-UDIcon -Icon 'user') -CheckedIcon (New-UDIcon -Icon 'check') -Id 'checkbox4'
+    
+    Checkbox with custom icons|A checkbox with custom icons.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDCheckbox -Label 'Demo' -OnChange {
+    PS >     Show-UDToast -Title 'Checkbox' -Message $Body
+    PS > } -Id 'checkbox5'
+    
+    Checkbox with OnChange|A checkbox with an OnChange event.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS >New-UDCheckbox -Label 'Demo' -LabelPlacement 'top' -Id 'checkbox6'
+    
+    Checkbox with label on top|A checkbox with the label on top.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 7 --------------------------
+    
+    PS >New-UDCheckbox -Label 'Demo' -Color 'secondary' -Id 'checkbox7'
+    
+    Checkbox with secondary color|A checkbox with the secondary color.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

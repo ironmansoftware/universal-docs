@@ -1,0 +1,243 @@
+
+NAME
+    New-UDButton
+    
+SYNOPSIS
+    Buttons allow users to take actions, and make choices, with a single tap..
+    
+    
+SYNTAX
+    New-UDButton [[-Text] <String>] [[-Icon] <Object>] [[-Variant] <String>] [[-IconAlignment] <String>] [[-FullWidth]] [[-OnClick] <Endpoint>] [[-Size] <String>] [[-Style] <Hashtable>] [[-Href] <String>] [-Id <String>] [-Color <String>] [-Disabled] [-ClassName <String>] [-ShowLoading] [-LoadingIndicator <Object>] [-LoadingPosition <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new button. Buttons allow users to take actions, and make choices, with a single tap.
+    
+
+PARAMETERS
+    -Text <String>
+        The text to show within the button.
+        
+        Required?                    false
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Icon <Object>
+        An icon to show within the button. Use New-UDIcon to create an icon for this parameter.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Variant <String>
+        The variant type for this button. Valid values are: "text", "outlined", "contained"
+        
+        Required?                    false
+        Position?                    3
+        Default value                contained
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -IconAlignment <String>
+        How to align the icon within the button. Valid values are: "left", "right"
+        
+        Required?                    false
+        Position?                    4
+        Default value                left
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -FullWidth [<SwitchParameter>]
+        Whether the button takes the full width of the it's container.
+        
+        Required?                    false
+        Position?                    7
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnClick <Endpoint>
+        The action to take when the button is clicked.
+        
+        Required?                    false
+        Position?                    8
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Size <String>
+        The size of the button. Valid values are: "small", "medium", "large"
+        
+        Required?                    false
+        Position?                    9
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        Styles to apply to the button.
+        
+        Required?                    false
+        Position?                    10
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Href <String>
+        A URL that the user should be redirected to when clicking the button.
+        
+        Required?                    false
+        Position?                    11
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    named
+        Default value                ([Guid]::NewGuid()).ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Color <String>
+        The color of the component. Valid values are: 'default', 'inherit', 'primary', 'secondary'
+        
+        Required?                    false
+        Position?                    named
+        Default value                primary
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Disabled [<SwitchParameter>]
+        Whether the button is disabled.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        The CSS Class to apply to the button.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ShowLoading [<SwitchParameter>]
+        Displays a loading spinner while the OnClick event handler is running.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LoadingIndicator <Object>
+        A custom element to display instead of the built in spinner for -ShowLoading
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LoadingPosition <String>
+        The position of the loading indicator. Valid values are: 'start', 'end', 'center'
+        
+        Required?                    false
+        Position?                    named
+        Default value                center
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDButton -Variant 'text' -Text 'Text' -Id 'button1'
+    PS > New-UDButton -Variant 'contained' -Text 'Contained'  -Id 'button2'
+    PS > New-UDButton -Variant 'outlined' -Text 'Outlined' -Id 'button3'
+    
+    Basic buttons|UDButton comes with three variants: text, contained, and outlined.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDButton -Text 'Click me' -OnClick {
+    PS >   Show-UDToast -Message 'Hello, world!'
+    PS > } -Id 'button4'
+    
+    Handling clicks|PowerShell that is executed when the button is clicked.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDButton -Text 'Secondary' -Color secondary -Id 'button5'
+    PS > New-UDButton -Text 'Success' -Color success -Id 'button6'
+    PS > New-UDButton -Text 'Error' -Color error -Id 'button7'
+    
+    Color|Adjust the button color with -Color
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDButton -Variant 'text' -Text 'small' -Id 'button8' -Size small
+    PS > New-UDButton -Variant 'text' -Text 'medium'  -Id 'button9' -Size medium
+    PS > New-UDButton -Variant 'text' -Text 'large' -Id 'button10' -Size large
+    PS > New-UDButton -Variant 'contained' -Text 'small' -Id 'button11'  -Size small
+    PS > New-UDButton -Variant 'contained' -Text 'medium'  -Id 'button12'  -Size medium
+    PS > New-UDButton -Variant 'contained' -Text 'large' -Id 'button13'  -Size large
+    PS > New-UDButton -Variant 'outlined' -Text 'small' -Id 'button14'  -Size small
+    PS > New-UDButton -Variant 'outlined' -Text 'medium'  -Id 'button15'  -Size medium
+    PS > New-UDButton -Variant 'outlined' -Text 'large' -Id 'button16'  -Size large
+    
+    Sizes|For larger or smaller buttons, use the -Size parameter.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDButton -Icon (New-UDIcon -Icon 'User') -Text 'View User' -Id 'button17'
+    
+    Icon|Display an icon within the button
+    
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS >New-UDButton -OnClick { Start-Sleep 3 } -ShowLoading -Text 'Load Data' -Id 'button18'
+    
+    Loading|Show a loading indicator while the OnClick event handler is running.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

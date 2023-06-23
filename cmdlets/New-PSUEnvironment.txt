@@ -1,0 +1,271 @@
+
+NAME
+    New-PSUEnvironment
+    
+SYNOPSIS
+    Creates a new PowerShell Universal environment.
+    
+    
+SYNTAX
+    New-PSUEnvironment [-AppToken <String>] [-Arguments <String>] [-ComputerName <String>] [-Modules <String[]>] -Name <String> [-PSModulePath <String[]>] -Path <String> [-PersistentRunspace] [-Variables <String[]>] [-UseDefaultCredentials] [-Integrated] [-StartupScript <String[]>] [-Version <String>] [-RunspaceRecycling] [-HighPerformanceRunspacePool] [-MaxRunspaces <Int32>] [-EnableDebugger] [-Credential <Variable>] [-MaxVirtualMemory <Int64>] [-RecycleSchedule <String>] [-Description <String>] [-DisableImplicitWinCompat] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Environments define PowerShell execution environments within PowerShell Universal. You can use them when executing APIs, Scripts, Dashboards and the security processes for authentication and authorization.
+    
+    Environments are stored within the ./universal/environments.ps1 file.
+    
+    You can also use this cmdlet to create environments through the REST API.
+    
+
+PARAMETERS
+    -AppToken <String>
+        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Arguments <String>
+        Arguments to pass to the PowerShell process when starting the environment.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Modules <String[]>
+        Modules to automatically load when creating new runspaces in the environment.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        The name of the environment.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -PSModulePath <String[]>
+        Additional paths to add to the PSModulePath for the environment.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Path <String>
+        The path to the PowerShell executable.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -PersistentRunspace [<SwitchParameter>]
+        Whether to enable persistent runspaces. This is only used for APIs.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Variables <String[]>
+        Variables to import into the runspace. These are variables defined by New-PSUVariable.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -StartupScript <String[]>
+        A script to run when creating the runspaces in this environment.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Version <String>
+        A version number to display.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -RunspaceRecycling [<SwitchParameter>]
+        Whether to recycle runspaces. Runspaces will be recycled (disposed and recreated) after an amount of time or a number of uses.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -HighPerformanceRunspacePool [<SwitchParameter>]
+        {{ Fill HighPerformanceRunspacePool Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -MaxRunspaces <Int32>
+        {{ Fill MaxRunspaces Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -EnableDebugger [<SwitchParameter>]
+        Enables the PowerShell debugging feature for this environment.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Credential <Variable>
+        The credential to use with this environment
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -MaxVirtualMemory <Int64>
+        The maximum virtual memory in bytes. When the threshold is reached, the process is restarted. Ignored for the integrated environment.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -RecycleSchedule <String>
+        A CRON schedule to restart this environment. Ignored for the integrated environment.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Description <String>
+        A description for this environment.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -DisableImplicitWinCompat [<SwitchParameter>]
+        Disables Windows PowerShell Implicit Compatibility mode.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> New-PSUEnvironment -Name '7.1' -Path 'pwsh.exe'
+    
+    Creates a new environment called 7.1 that uses the pwsh.exe for running APIs, scripts or dashboards.
+    -------------------------- Example 2 --------------------------
+    
+    PS C:\> New-PSUEnvironment -Name '7.1' -Path 'pwsh.exe' -ArgumentList "-ExecutionPolicy Bypass"
+    
+    Creates a new environment called 7.1 that uses the pwsh.exe executable and sets the execution policy to ByPass.
+    -------------------------- Example 3 --------------------------
+    
+    PS C:\> New-PSUEnvironment -Name '7.1' -Path 'pwsh.exe' -ArgumentList "-ExecutionPolicy Bypass" -Variables @("*")
+    
+    Creates a new environment that uses all the variables defined with New-PSUVariable.
+    -------------------------- Example 4 --------------------------
+    
+    PS C:\> New-PSUEnvironment -Name '7.1' -Path 'pwsh.exe' -ArgumentList "-ExecutionPolicy Bypass" -Modules @("ActiveDirectory")
+    
+    Creates a new environment that automatically loads the ActiveDirectory module.
+    -------------------------- Example 5 --------------------------
+    
+    PS C:\> New-PSUEnvironment -Name '7.1' -Path 'pwsh.exe' -ArgumentList "-ExecutionPolicy Bypass" -PersistentRunspace
+    
+    Creates a new environment that uses persistent runspaces. Persistent runspaces are used for APIs and do not reset between each execution.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    New-PSUVariable 
+
+

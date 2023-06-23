@@ -1,0 +1,167 @@
+
+NAME
+    Get-PSUScript
+    
+SYNOPSIS
+    Returns scripts defined within PSU.
+    
+    
+SYNTAX
+    Get-PSUScript [-Folder] <Folder> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Get-PSUScript [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Get-PSUScript [-Identity] <Identity> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Get-PSUScript [-Name] <String> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Get-PSUScript [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-Tag <Tag>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Returns scripts defined within PSU.
+    
+
+PARAMETERS
+    -AppToken <String>
+        An app token to access the PSU API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The HTTP address of the PSU REST API server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Folder <Folder>
+        {{ Fill Folder Description }}
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Accept wildcard characters?  false
+        
+    -Id <Int64>
+        The ID of the script to return.
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Identity <Identity>
+        Returns scripts based created or edited by this Identity.
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        The name of the script to return.
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Tag <Tag>
+        Returns scripts based on this tag. Use Get-UATag to retrieve tags.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    UniversalAutomation.Identity
+        
+    
+    System.Int64
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Get-UAScript
+    
+    Returns all scripts defined within PSU.
+    -------------------------- Example 2 --------------------------
+    
+    PS C:\> Get-UAScript -Id 12
+    
+    Returns the script with ID 12.
+    -------------------------- Example 3 --------------------------
+    
+    PS C:\> $Identity = Get-UAIdentity -Name 'Adam'
+    PS C:\> Get-UAScript -Identity $Identity
+    
+    Returns all scripts created or modified by the identity 'Adam'.
+    -------------------------- Example 4 --------------------------
+    
+    PS C:\> Get-UAScript -FolderId 12
+    
+    Returns all scripts with the folder with ID 12.
+    -------------------------- Example 4 --------------------------
+    
+    PS C:\> Get-UAScript -Name 'Script1.ps1'
+    
+    Returns script 'Script1.ps1'
+    -------------------------- Example 5 --------------------------
+    
+    PS C:\> $Tag = Get-UATag -Name 'Release'
+    PS C:\> Get-UAScript -Tag $Tag
+    
+    Returns all scripts with the 'Release' tag.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

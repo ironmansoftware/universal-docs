@@ -1,0 +1,214 @@
+
+NAME
+    New-UDAutocomplete
+    
+SYNOPSIS
+    The autocomplete is a normal text input enhanced by a panel of suggested options.
+    
+    
+SYNTAX
+    New-UDAutocomplete [-Id <String>] [-Label <String>] [-Value <String>] [-OnChange <Endpoint>] [-Options <Object>] [-FullWidth] [-AutoSelect] [-Variant <String>] [-Multiple] [-ClassName <String>] [-Icon <Object>] [-OnEnter <Endpoint>] [<CommonParameters>]
+    
+    New-UDAutocomplete [-Id <String>] [-Label <String>] [-Value <String>] [-OnChange <Endpoint>] -OnLoadOptions <Endpoint> [-FullWidth] [-AutoSelect] [-Variant <String>] [-Multiple] [-ClassName <String>] [-Icon <Object>] [-OnEnter <Endpoint>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Autocomplete text boxes can be used to allow the user to select from a large list of static or dynamic items. Typing in the textbox will filter the list.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    named
+        Default value                ([Guid]::NewGuid())
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Label <String>
+        The label to show for the textbox.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Value <String>
+        The value of the textbox.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnChange <Endpoint>
+        A script block that is invoked when the selection changes.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnLoadOptions <Endpoint>
+        A script block that is called when the user starts typing in the text box. The $Body variable will contain the typed text. You should return a JSON array of values that are a result of what the user has typed.
+        
+        Required?                    true
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Options <Object>
+        Static options to display in the selection drop down. When the user types, these options will be filtered.
+        
+        Required?                    false
+        Position?                    named
+        Default value                @()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -FullWidth [<SwitchParameter>]
+        Whether the component should take up the full width of its parent.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -AutoSelect [<SwitchParameter>]
+        Whether the component should automatically be selected if there was only one total option with the options array.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Variant <String>
+        The variant of the text box. Valid values are: "filled", "outlined", "standard"
+        
+        Required?                    false
+        Position?                    named
+        Default value                standard
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Multiple [<SwitchParameter>]
+        Whether multiple items can be selected.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        A CSS class to apply to the component.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Icon <Object>
+        The icon to display before the text box. Use New-UDIcon to create the value for this parameter.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnEnter <Endpoint>
+        A script block to call when the user presses enter within the autocomplete textbox.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDAutocomplete -Options @('Test', 'Test2', 'Test3', 'Test4') -Id 'autocomplete1' -FullWidth
+    
+    Basic autocomplete|The value must be chosen from a predefined set of allowed values.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDAutocomplete -Options @("Test", "No", "Yes") -Multiple  -Id 'autocomplete2' -FullWidth
+    
+    Multi-Select|Allow the user to select multiple values.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDStack -Content {
+    PS >    New-UDAutocomplete -Options @("Test", "No", "Yes") -Variant 'filled'  -Id 'autocomplete3' -FullWidth
+    PS >    New-UDAutocomplete -Options @("Test", "No", "Yes") -Variant 'outlined'  -Id 'autocomplete4' -FullWidth
+    PS >    New-UDAutocomplete -Options @("Test", "No", "Yes") -Variant 'standard'  -Id 'autocomplete5' -FullWidth
+    PS > } -Direction 'column' -FullWidth
+    
+    Variants|Change the the style of the autocomplete textbox.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDAutocomplete -Options @("Test", "No", "Yes") -OnChange {
+    PS >    Show-UDToast $EventData
+    PS > }  -Id 'autocomplete6' -FullWidth
+    
+    Handling changes|Execute PowerShell when the autocomplete changes.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDAutocomplete -Options @("Test", "No", "Yes") -OnEnter {
+    PS >    Show-UDToast $EventData
+    PS > } -Id 'autocomplete7' -FullWidth
+    
+    OnEnter|Execute PowerShell when the user presses enter.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS >New-UDAutocomplete -OnLoadOptions { 
+    PS >   @('Test', 'Test2', 'Test3', 'Test4') | Where-Object { $_ -match $Body } | ConvertTo-Json
+    PS > } -Id 'autocomplete8' -FullWidth
+    
+    Asynchronous options|Creates an autocomplete with a dynamically filtered set of options
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

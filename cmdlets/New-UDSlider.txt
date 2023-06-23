@@ -1,0 +1,203 @@
+
+NAME
+    New-UDSlider
+    
+SYNOPSIS
+    A slider component.
+    
+    
+SYNTAX
+    New-UDSlider [[-Id] <String>] [[-Value] <Int32[]>] [[-Minimum] <Int32>] [[-Maximum] <Int32>] [-Disabled] [-Marks] [[-OnChange] <Endpoint>] [[-Orientation] <String>] [[-Step] <Int32>] [[-ValueLabelDisplay] <String>] [[-ClassName] <String>] [[-Color] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    A slider component. Sliders can be used to define values within a range or selecting a range of values. You can use this component with New-UDForm.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of this component.
+        
+        Required?                    false
+        Position?                    1
+        Default value                ([Guid]::NewGuid())
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Value <Int32[]>
+        The value of the slider.
+        
+        Required?                    false
+        Position?                    2
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Minimum <Int32>
+        The minimum value of the slider.
+        
+        Required?                    false
+        Position?                    3
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Maximum <Int32>
+        The maximum value of the slider.
+        
+        Required?                    false
+        Position?                    4
+        Default value                100
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Disabled [<SwitchParameter>]
+        Whether the slider is disabled.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Marks [<SwitchParameter>]
+        Whether to display marks on the slider.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnChange <Endpoint>
+        A script block that is invoked when the slider value changes. You can access the slider value within the script block by referencing the $EventData variable.
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Orientation <String>
+        The orientation of the slider.
+        
+        Required?                    false
+        Position?                    6
+        Default value                horizontal
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Step <Int32>
+        Step size of the slider.
+        
+        Required?                    false
+        Position?                    7
+        Default value                1
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ValueLabelDisplay <String>
+        Whether to display value labels.
+        
+        Required?                    false
+        Position?                    8
+        Default value                auto
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        A CSS class to apply to the slider.
+        
+        Required?                    false
+        Position?                    9
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Color <String>
+        The color of the slider. Defaults to 'primary'. Valid values: "primary", "secondary"
+        
+        Required?                    false
+        Position?                    10
+        Default value                primary
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDSlider -Value 50 -Minimum 0 -Maximum 100 -OnChange {
+    PS >    Show-UDToast -Message "Slider value changed to $($EventData.value)"
+    PS > } -Id 'slider1'
+    
+    Basic Slider|Creates a basic slider.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDSlider -Value 50 -Minimum 0 -Maximum 100 -Marks -OnChange {
+    PS >    Show-UDToast -Message "Slider value changed to $($EventData.value)"
+    PS > } -Id 'slider2'
+    
+    Slider with Marks|Creates a slider with marks.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDElement -Tag 'div' -Content {
+    PS >    New-UDSlider -Orientation vertical -Id 'slider3'
+    PS > } -Attributes @{
+    PS >    style = @{
+    PS >        height = '200px'
+    PS >    }
+    PS > }
+    
+    Vertical Slider|Creates a vertical slider.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDSlider -Value 50 -Minimum 0 -Maximum 100 -Disabled -Id 'slider4'
+    
+    Disabled Slider|Creates a disabled slider.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDSlider -Value 50 -Minimum 0 -Maximum 100 -ValueLabelDisplay on -Id 'slider5'
+    
+    Slider with Value Labels|Creates a slider with value labels.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS >New-UDSlider -Value 50 -Minimum 0 -Maximum 100 -Step 10 -Id 'slider6'
+    
+    Slider with Step|Creates a slider with a step size of 10.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+
