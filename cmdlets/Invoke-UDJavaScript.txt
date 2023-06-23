@@ -3,7 +3,7 @@ NAME
     Invoke-UDJavaScript
     
 SYNOPSIS
-    Invokes JavaScript within the browser.
+    Invokes JavaScript within the browser. JavaScript is executed with eval()
     
     
 SYNTAX
@@ -36,11 +36,11 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > New-UDButton -Text 'Click Me' -OnClick {
-        Invoke-UDJavaScript 'alert("Hello World!")'
-    }
+    PS >New-UDButton -Text 'Click Me' -OnClick {
+    PS >    Invoke-UDJavaScript 'alert("Hello World!")'
+    PS > }
     
-    
+    Invoke JavaScript|Invokes JavaScript within the browser.
     
     
     

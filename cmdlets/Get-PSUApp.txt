@@ -1,46 +1,56 @@
 
 NAME
-    New-UDTheme
+    Get-PSUApp
     
 SYNTAX
-    New-UDTheme [[-name] <string>] [[-Colors] <ThemeColors>] [[-ColorModes] <ThemeColorModes>] [[-Variants] <hashtable>] [<CommonParameters>]
+    Get-PSUApp [-Name <string>] [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
     
 PARAMETERS
-    -ColorModes <ThemeColorModes>
+    -AppToken <string>
         
         Required?                    false
-        Position?                    2
+        Position?                    Named
         Accept pipeline input?       false
         Parameter set name           (All)
         Aliases                      None
         Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Colors <ThemeColors>
+    -ComputerName <string>
         
         Required?                    false
-        Position?                    1
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      Uri
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Integrated
+        
+        Required?                    false
+        Position?                    Named
         Accept pipeline input?       false
         Parameter set name           (All)
         Aliases                      None
         Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Variants <hashtable>
+    -Name <string>
         
         Required?                    false
-        Position?                    3
+        Position?                    Named
         Accept pipeline input?       false
         Parameter set name           (All)
         Aliases                      None
         Dynamic?                     false
         Accept wildcard characters?  false
         
-    -name <string>
+    -UseDefaultCredentials
         
         Required?                    false
-        Position?                    0
+        Position?                    Named
         Accept pipeline input?       false
         Parameter set name           (All)
         Aliases                      None
@@ -62,7 +72,7 @@ OUTPUTS
     System.Object
     
 ALIASES
-    None
+    Get-PSUDashboard
     
 
 REMARKS

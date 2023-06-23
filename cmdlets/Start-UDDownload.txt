@@ -7,7 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    Start-UDDownload [[-FileName] <String>] [-StringData] <String> [[-ContentType] <String>] [<CommonParameters>]
+    Start-UDDownload [-FileName <String>] -StringData <String> [-ContentType <String>] [<CommonParameters>]
+    
+    Start-UDDownload [-FileName <String>] [-ContentType <String>] -Url <String> [<CommonParameters>]
     
     
 DESCRIPTION
@@ -19,7 +21,7 @@ PARAMETERS
         The name of the file.
         
         Required?                    false
-        Position?                    1
+        Position?                    named
         Default value                text.txt
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -28,7 +30,7 @@ PARAMETERS
         The data to be written to the file.
         
         Required?                    true
-        Position?                    2
+        Position?                    named
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -37,8 +39,17 @@ PARAMETERS
         The content type of the file.
         
         Required?                    false
-        Position?                    3
+        Position?                    named
         Default value                text/plain
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Url <String>
+        A URL to download as string data and send to the user.
+        
+        Required?                    true
+        Position?                    named
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -54,11 +65,11 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > New-UDButton -Text 'Click Me' -OnClick {
-        Start-UDDownload -FileName 'myfile.txt' -StringData 'Hello World' -ContentType 'text/plain'
-    }
+    PS >New-UDButton -Text 'Click Me' -OnClick {
+    PS >    Start-UDDownload -FileName 'myfile.txt' -StringData 'Hello World' -ContentType 'text/plain'
+    PS > }
     
-    
+    Download File|Starts the download of a file within the dashboard.
     
     
     

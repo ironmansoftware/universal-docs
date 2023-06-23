@@ -1,63 +1,60 @@
 
 NAME
-    Get-PSUDashboard
-    
-SYNOPSIS
-    Returns all the dashboards defined in a PowerShell Universal server.
-    
+    Get-PSUApp
     
 SYNTAX
-    Get-PSUDashboard [-AppToken <String>] [-ComputerName <String>] [-UseDefaultCredentials] [-Integrated] [-Name <String>] [<CommonParameters>]
+    Get-PSUApp [-Name <string>] [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
     
-DESCRIPTION
-    Returns all the dashboards defined in a PowerShell Universal server.
-    
-
 PARAMETERS
-    -AppToken <String>
-        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
+    -AppToken <string>
         
         Required?                    false
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -ComputerName <String>
-        Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session.
+    -ComputerName <string>
         
         Required?                    false
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      Uri
+        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -UseDefaultCredentials [<SwitchParameter>]
-        Use default credentials when connecting to the management API
+    -Integrated
         
         Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+    -Name <string>
         
         Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Name <String>
-        The name of the dashboard to return.
+    -UseDefaultCredentials
         
         Required?                    false
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -66,28 +63,19 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
+    
 INPUTS
     None
-        
     
     
 OUTPUTS
     System.Object
-        
     
+ALIASES
+    Get-PSUDashboard
     
-NOTES
-    
-    
-        
-    
-    -------------------------- Example 1 --------------------------
-    
-    PS C:\> Get-PSUDashboard
-    
-    Returns all the dashboards defined.
-    
-RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+REMARKS
+    None
 
 

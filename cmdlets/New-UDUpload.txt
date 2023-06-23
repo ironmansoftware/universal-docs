@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDUpload [[-Id] <String>] [[-Accept] <String>] [[-OnUpload] <Endpoint>] [[-Text] <String>] [[-Variant] <String>] [[-Color] <String>] [[-ClassName] <String>] [-HideUploadedFileName] [<CommonParameters>]
+    New-UDUpload [[-Id] <String>] [[-Accept] <String>] [[-OnUpload] <Endpoint>] [[-Text] <String>] [[-Variant] <String>] [[-Color] <String>] [[-ClassName] <String>] [-HideUploadedFileName] [[-Icon] <Object>] [[-IconAlignment] <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -61,7 +61,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    4
-        Default value                
+        Default value                Upload
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -79,7 +79,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    6
-        Default value                inherit
+        Default value                primary
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -101,6 +101,24 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
+    -Icon <Object>
+        The icon to show instead of the default icon. Use New-UDIcon to create an icon.
+        
+        Required?                    false
+        Position?                    8
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -IconAlignment <String>
+        How to align the icon within the button. Valid values are: "left", "right"
+        
+        Required?                    false
+        Position?                    9
+        Default value                left
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
@@ -113,28 +131,66 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > A file uploader
+    PS >New-UDUpload -Text "Upload" -OnUpload {
+    PS >     Show-UDToast $Body
+    PS > } -Id 'upload1'
     
-    New-UDDashboard -Title "Hello, World!" -Content {
-        New-UDUpload -Text "Upload" -OnUpload {
-            Show-UDToast $Body
-        }
-    }
+    Basic Upload|A basic upload component that shows a toast when a file is uploaded.
     
     
     
     
     -------------------------- EXAMPLE 2 --------------------------
     
-    PS > A file uploader in a form
+    PS >New-UDUpload -Text "Upload" -OnUpload {
+    PS >     Show-UDToast $Body
+    PS > } -Id 'upload2' -HideUploadedFileName
     
-    New-UDDashboard -Title "Hello, World!" -Content {
-        New-UDForm -Content {
-            New-UDUpload -Text "Upload" 
-        } -OnSubmit {
-            Show-UDToast $Body
-        }
-    }
+    Hide File Name|Hides the file name text that is shown after upload.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDUpload -Text "Upload" -OnUpload {
+    PS >     Show-UDToast $Body
+    PS > } -Id 'upload3' -Icon (New-UDIcon -Icon 'Upload')
+    
+    Icon|Upload component with an icon instead of the default icon.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDUpload -Text "Upload" -OnUpload {
+    PS >     Show-UDToast $Body
+    PS > } -Id 'upload4' -IconAlignment 'right' -Icon (New-UDIcon -Icon 'Upload')
+    
+    Icon Alignment|Upload component with an icon on the right side of the button.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDUpload -Text "Upload" -OnUpload {
+    PS >     Show-UDToast $Body
+    PS > } -Id 'upload5' -Variant 'text'
+    
+    Variant|Upload component with a text variant.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS >New-UDUpload -Text "Upload" -OnUpload {
+    PS >     Show-UDToast $Body
+    PS > } -Id 'upload6' -Accept ".jpg"
+    
+    Accept|Upload component that only accepts .jpg files.
     
     
     

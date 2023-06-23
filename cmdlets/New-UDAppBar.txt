@@ -47,7 +47,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    4
-        Default value                fixed
+        Default value                sticky
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -99,9 +99,38 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > Creates a new AppBar that is relative to other components.
+    PS >New-UDAppBar -Children { New-UDTypography -Text 'Hello' } -Position relative
     
-    New-UDAppBar -Children { New-UDTypography -Text 'Hello' -Paragraph } -Position relative
+    Basic App Bar|Creates a new AppBar that is relative to other components.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDAppBar -Children { New-UDTypography -Text 'Hello' } -Position relative -Drawer (New-UDDrawer -Content { New-UDTypography -Text 'Drawer' })
+    
+    App Bar with Drawer|Creates a new AppBar with a drawer.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDAppBar -Children { New-UDTypography -Text 'Hello' } -Position relative -DisableThemeToggle
+    
+    App Bar with no theme toggle|Creates a new AppBar with no theme toggle switch.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDAppBar -Children { New-UDTypography -Text 'Hello' } -Position relative -Color secondary
+    
+    App Bar with secondary color|Creates a new AppBar with a secondary color.
+    
+    [Component("AppBar", "Creates an AppBar.")]
     
     
     

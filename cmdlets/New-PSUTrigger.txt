@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSUTrigger [-AppToken <String>] [-ComputerName <String>] [-Dashboard <Dashboard>] [-Environment <String>] -EventType {JobCanceled | JobFailed | JobCompleted | JobStarted | JobFeedbackRequested | ServerStarted | ServerStopped | DashboardStarted | DashboardStopped} -Name <String> [-Script <Script>] -TriggerScript <Script> [-UseDefaultCredentials] [-Delay <Int32>] [-Integrated] [-ProtectRule <String>] [-Computer <String>] [<CommonParameters>]
+    New-PSUTrigger [-AppToken <String>] [-ComputerName <String>] [-Dashboard <Dashboard>] [-Environment <String>] -EventType {JobCanceled | JobFailed | JobCompleted | JobStarted | JobFeedbackRequested | ServerStarted | ServerStopped | DashboardStarted | DashboardStopped} -Name <String> [-Script <Script>] -TriggerScript <Script> [-UseDefaultCredentials] [-Delay <Int32>] [-Integrated] [-ProtectRule <String>] [-Computer <String>] [-Condition <ScriptBlock>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -129,6 +129,15 @@ PARAMETERS
         
     -Computer <String>
         The computer or queue to run this trigger on.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Condition <ScriptBlock>
+        A condition script block to determine whether or not to run this trigger.
         
         Required?                    false
         Position?                    named

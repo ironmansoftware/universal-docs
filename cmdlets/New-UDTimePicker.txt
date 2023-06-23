@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTimePicker [[-Id] <String>] [[-Label] <String>] [[-OnChange] <Endpoint>] [[-Value] <String>] [[-Locale] <String>] [[-ClassName] <String>] [-DisableAmPm] [[-TimeZone] <TimeZoneInfo>] [<CommonParameters>]
+    New-UDTimePicker [[-Id] <String>] [[-Label] <String>] [[-OnChange] <Endpoint>] [[-Value] <DateTime>] [[-Locale] <String>] [[-ClassName] <String>] [-DisableAmPm] [[-TimeZone] <TimeZoneInfo>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -42,12 +42,12 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -Value <String>
+    -Value <DateTime>
         The current value of the time picker.
         
         Required?                    false
         Position?                    4
-        Default value                
+        Default value                ([DateTime]::Now)
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -98,9 +98,56 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > Creates a new time picker
+    PS >New-UDTimePicker -Id 'timepicker1'
     
-    New-UDTimePicker -Id 'timePicker'
+    Basic Time Picker|Creates a basic time picker.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDTimePicker -Id 'timepicker2' -OnChange {
+    PS >     Show-UDToast -Message "Time changed to $($EventData)"
+    PS > }
+    
+    OnChange|Creates a time picker with an OnChange script block.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDTimePicker -Id 'timepicker3' -Value "12:00"
+    
+    Value|Creates a time picker with a value.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDTimePicker -Id 'timepicker4' -Locale "de"
+    
+    Locale|Creates a time picker with a German locale.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDTimePicker -Id 'timepicker5' -DisableAmPm
+    
+    DisableAmPm|Creates a time picker with 24-hour time.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS >New-UDTimePicker -Id 'timepicker6' -TimeZone (Get-TimeZone -Id "Central Standard Time")
+    
+    TimeZone|Creates a time picker with a specific time zone.
     
     
     

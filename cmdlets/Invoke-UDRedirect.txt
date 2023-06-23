@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    Invoke-UDRedirect [-Url] <String> [-OpenInNewWindow] [<CommonParameters>]
+    Invoke-UDRedirect [-Url] <String> [-OpenInNewWindow] [-Native] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -33,6 +33,15 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
+    -Native [<SwitchParameter>]
+        Performs a native redirect. This is useful when using relative paths that aren't part of the dashboard.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
@@ -45,11 +54,33 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > New-UDButton -Text 'Click Me' -OnClick {
-        Invoke-UDRedirect 'https://www.google.com'
-    }
+    PS >New-UDButton -Text 'Click Me' -OnClick {
+    PS >    Invoke-UDRedirect 'https://www.google.com'
+    PS > }
+    
+    Redirect|Redirects the user to another page.
     
     
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDButton -Text 'Click Me' -OnClick {
+    PS >    Invoke-UDRedirect 'https://www.google.com' -OpenInNewWindow
+    PS > }
+    
+    Redirect in New Window|Redirects the user to another page in a new window.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDButton -Text 'Click Me' -OnClick {
+    PS >    Invoke-UDRedirect '/relative/path' -Native
+    PS > }
+    
+    Native Redirect|Performs a native redirect.
     
     
     

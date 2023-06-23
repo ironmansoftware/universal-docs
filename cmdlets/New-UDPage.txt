@@ -7,11 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDPage [[-DefaultHomePage]] [[-Title] <String>] [-Blank] [-Content <Endpoint>] [-Description <String>] [-HeaderBackgroundColor <DashboardColor>] [-HeaderColor <DashboardColor>] [-HeaderPosition {absolute | fixed | relative | static | sticky}] [-HideNavigation] [-HideUserName] [-Icon <Hashtable>] [-Id <String>] -Name <String> [-OnLoading <ScriptBlock>] [-Role <String[]>] [-Url <String>] [<CommonParameters>]
+    New-UDPage [[-DefaultHomePage]] [[-Title] <String>] [-Blank] -Content <Endpoint> [-Description <String>] [-HeaderBackgroundColor <DashboardColor>] [-HeaderColor <DashboardColor>] [-HeaderPosition {absolute | fixed | relative | static | sticky}] [-HideNavigation] [-HideUserName] [-Icon <Object>] [-Id <String>] -Name <String> [-OnLoading <ScriptBlock>] [-Role <String[]>] [-Url <String>] [-Static] [<CommonParameters>]
     
-    New-UDPage [[-DefaultHomePage]] [[-Title] <String>] [-Content <Endpoint>] [-Description <String>] [-HeaderBackgroundColor <DashboardColor>] [-HeaderColor <DashboardColor>] [-HeaderContent <Endpoint>] [-HeaderPosition {absolute | fixed | relative | static | sticky}] [-HideNavigation] [-HideUserName] [-Icon <Hashtable>] [-Id <String>] [-LoadTitle <Endpoint>] [-Logo <String>] -Name <String> [-Navigation <Hashtable[]>] [-NavigationLayout {Temporary | Permanent}] [-OnLoading <ScriptBlock>] [-Role <String[]>] [-Url <String>] [<CommonParameters>]
+    New-UDPage [[-DefaultHomePage]] [[-Title] <String>] -Content <Endpoint> [-Description <String>] [-HeaderBackgroundColor <DashboardColor>] [-HeaderColor <DashboardColor>] [-HeaderContent <Endpoint>] [-HeaderPosition {absolute | fixed | relative | static | sticky}] [-HideNavigation] [-HideUserName] [-Icon <Object>] [-Id <String>] [-LoadTitle <Endpoint>] [-Logo <String>] -Name <String> [-Navigation <Hashtable[]>] [-NavigationLayout {Temporary | Permanent}] [-OnLoading <ScriptBlock>] [-Role <String[]>] [-Url <String>] [-Static] [<CommonParameters>]
     
-    New-UDPage [[-DefaultHomePage]] [[-Title] <String>] [-Content <Endpoint>] [-Description <String>] [-HeaderBackgroundColor <DashboardColor>] [-HeaderColor <DashboardColor>] [-HeaderContent <Endpoint>] [-HeaderPosition {absolute | fixed | relative | static | sticky}] [-HideNavigation] [-HideUserName] [-Icon <Hashtable>] [-Id <String>] [-LoadNavigation <Endpoint>] [-LoadTitle <Endpoint>] [-Logo <String>] -Name <String> [-NavigationLayout {Temporary | Permanent}] [-OnLoading <ScriptBlock>] [-Role <String[]>] [-Url <String>] [<CommonParameters>]
+    New-UDPage [[-DefaultHomePage]] [[-Title] <String>] -Content <Endpoint> [-Description <String>] [-HeaderBackgroundColor <DashboardColor>] [-HeaderColor <DashboardColor>] [-HeaderContent <Endpoint>] [-HeaderPosition {absolute | fixed | relative | static | sticky}] [-HideNavigation] [-HideUserName] [-Icon <Object>] [-Id <String>] [-LoadNavigation <Endpoint>] [-LoadTitle <Endpoint>] [-Logo <String>] -Name <String> [-NavigationLayout {Temporary | Permanent}] [-OnLoading <ScriptBlock>] [-Role <String[]>] [-Url <String>] [-Static] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -31,7 +31,7 @@ PARAMETERS
     -Content <Endpoint>
         The content of this page.
         
-        Required?                    false
+        Required?                    true
         Position?                    named
         Default value                None
         Accept pipeline input?       False
@@ -109,7 +109,7 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Icon <Hashtable>
+    -Icon <Object>
         The icon to display in the navigation for this page.
         
         Required?                    false
@@ -214,6 +214,15 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Static [<SwitchParameter>]
+        A static page's content is not load dynamically when a user visits it and instead is constructed when the dashboard is started.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       False
         Accept wildcard characters?  false
         

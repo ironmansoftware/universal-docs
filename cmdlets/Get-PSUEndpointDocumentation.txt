@@ -1,22 +1,22 @@
 
 NAME
-    New-PSUDashboardFramework
+    Get-PSUEndpointDocumentation
     
 SYNOPSIS
-    {{ Fill in the Synopsis }}
+    Returns endpoint help documentation definitions.
     
     
 SYNTAX
-    New-PSUDashboardFramework [-AppToken <String>] [-ComputerName <String>] [-Integrated] -Name <String> -Path <String> [-UseDefaultCredentials] -Version <String> [<CommonParameters>]
+    Get-PSUEndpointDocumentation [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION
-    {{ Fill in the Description }}
+    Returns endpoint help documentation definitions.
     
 
 PARAMETERS
     -AppToken <String>
-        {{ Fill AppToken Description }}
+        An app token to access the UA API.
         
         Required?                    false
         Position?                    named
@@ -25,7 +25,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        {{ Fill ComputerName Description }}
+        The HTTP address of the UA REST API server.
         
         Required?                    false
         Position?                    named
@@ -34,47 +34,20 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
-        {{ Fill Integrated Description }}
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
         
         Required?                    false
         Position?                    named
         Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Name <String>
-        {{ Fill Name Description }}
-        
-        Required?                    true
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Path <String>
-        {{ Fill Path Description }}
-        
-        Required?                    true
-        Position?                    named
-        Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
-        {{ Fill UseDefaultCredentials Description }}
+        Use default credentials when connecting to the management API
         
         Required?                    false
         Position?                    named
         Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Version <String>
-        {{ Fill Version Description }}
-        
-        Required?                    true
-        Position?                    named
-        Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
@@ -101,9 +74,9 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> {{ Add example code here }}
+    PS C:\> Get-PSUEndpointDocumentation
     
-    {{ Add example description here }}
+    Returns all help documentation definitions.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

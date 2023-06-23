@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    Set-PSUIdentity [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-Name <String>] [-Role <Role>] [-UseDefaultCredentials] [<CommonParameters>]
+    Set-PSUIdentity [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-Name <String>] [-Role <Role>] [-UseDefaultCredentials] [-CredentialVault <String>] [-Password <SecureString>] [<CommonParameters>]
     
-    Set-PSUIdentity [-Identity] <Identity> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-Name <String>] [-Role <Role>] [-UseDefaultCredentials] [<CommonParameters>]
+    Set-PSUIdentity [-Identity] <Identity> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-Name <String>] [-Role <Role>] [-UseDefaultCredentials] [-CredentialVault <String>] [-Password <SecureString>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -18,7 +18,7 @@ DESCRIPTION
 
 PARAMETERS
     -AppToken <String>
-        An app token to access the UA API.
+        An app token to access the PSU API.
         
         Required?                    false
         Position?                    named
@@ -27,7 +27,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The HTTP address of the UA REST API server.
+        The HTTP address of the PSU REST API server.
         
         Required?                    false
         Position?                    named
@@ -86,6 +86,24 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -CredentialVault <String>
+        A credential vault to set this identity's password into.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Password <SecureString>
+        A password for the local account.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         

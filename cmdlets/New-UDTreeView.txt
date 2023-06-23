@@ -43,6 +43,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Style <Hashtable>
+        A set of CSS styles to apply to the tree view.
         
         Required?                    false
         Position?                    4
@@ -51,6 +52,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ClassName <String>
+        A CSS className to apply to the tree view.
         
         Required?                    false
         Position?                    5
@@ -59,6 +61,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Expanded [<SwitchParameter>]
+        Whether the tree view should be expanded by default.
         
         Required?                    false
         Position?                    named
@@ -78,22 +81,89 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > Creates a basic tree view.
+    PS >New-UDTreeView -Node {
+    PS >     New-UDTreeNode -Name "Root Node" -Id "root1" -Children {
+    PS >         New-UDTreeNode -Name "Child Node" -Id "child1" -Children {
+    PS >             New-UDTreeNode -Name "Grandchild Node" -Id "grandchild1" -Leaf
+    PS >         }
+    PS >         New-UDTreeNode -Name "Child Node 2" -Id "child2" -Children {
+    PS >             New-UDTreeNode -Name "Grandchild Node 2" -Id "grandchild2" -Leaf
+    PS >         }
+    PS >     }
+    PS > } -Id "treeview1"
     
-    New-UDTreeView -Node {
-        New-UDTreeNode -Id 'Root' -Name 'Root' -Children {
-            New-UDTreeNode -Id 'Level1' -Name 'Level 1' -Children {
-                New-UDTreeNode -Id 'Level2' -Name 'Level 2'
-            }
-            New-UDTreeNode -Name 'Level 1' -Children {
-                New-UDTreeNode -Name 'Level 2'
-            }
-            New-UDTreeNode -Name 'Level 1' -Children {
-                New-UDTreeNode -Name 'Level 2'
-            }   
-        }
-        New-UDTreeNode -Id 'Root2' -Name 'Root 2'
-    }
+    Tree View|A basic tree view component.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDTreeView -Node {
+    PS >     New-UDTreeNode -Name "Root Node" -Id "root2" -Children {
+    PS >         New-UDTreeNode -Name "Child Node" -Id "child3" -Children {
+    PS >             New-UDTreeNode -Name "Grandchild Node" -Id "grandchild3" -Leaf
+    PS >         }
+    PS >         New-UDTreeNode -Name "Child Node 2" -Id "child4" -Children {
+    PS >             New-UDTreeNode -Name "Grandchild Node 2" -Id "grandchild4"
+    PS >         }
+    PS >     }
+    PS > } -Id "treeview2" -OnNodeClicked {
+    PS >     Show-UDToast -Message "You clicked $($EventData.Id)"
+    PS > }
+    
+    OnNodeClicked|A tree view with an OnNodeClicked script block that shows a toast when a node is clicked.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDTreeView -Node {
+    PS >     New-UDTreeNode -Name "Root Node" -Id "root3" -Children {
+    PS >         New-UDTreeNode -Name "Child Node" -Id "child5" -Children {
+    PS >             New-UDTreeNode -Name "Grandchild Node" -Id "grandchild5"  -Leaf
+    PS >         }
+    PS >         New-UDTreeNode -Name "Child Node 2" -Id "child6" -Children {
+    PS >             New-UDTreeNode -Name "Grandchild Node 2" -Id "grandchild6"  -Leaf
+    PS >         }
+    PS >     }
+    PS > } -Id "treeview3" -Expanded
+    
+    Expanded|A tree view that is expanded by default.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDTreeView -Node {
+    PS >     New-UDTreeNode -Name "Root Node" -Id "root4" 
+    PS > } -Id "treeview4" -OnNodeClicked {
+    PS >     New-UDTreeNode -Name "Child Node" 
+    PS > }
+    
+    OnNodeClicked|A tree view with an OnNodeClicked script block that adds a child node when a node is clicked.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDTreeView -Node {
+    PS >     New-UDTreeNode -Name "Root Node" -Id "root5" -Children {
+    PS >         New-UDTreeNode -Name "Child Node" -Id "child7" -Children {
+    PS >             New-UDTreeNode -Name "Grandchild Node" -Id "grandchild7" -Leaf -Icon (New-UDIcon -Icon "File") 
+    PS >         } -Leaf -Icon (New-UDIcon -Icon "Folder") -ExpandedIcon (New-UDIcon -Icon "FolderOpen")
+    PS >         New-UDTreeNode -Name "Child Node 2" -Id "child8" -Children {
+    PS >             New-UDTreeNode -Name "Grandchild Node 2" -Id "grandchild8" -Leaf -Icon (New-UDIcon -Icon "File") 
+    PS >         } -Leaf -Icon (New-UDIcon -Icon "Folder") -ExpandedIcon (New-UDIcon -Icon "FolderOpen")
+    PS >     }
+    PS > } -Id "treeview5" -Expanded
+    
+    Icons|A tree view with icons for nodes.
+    
+    [Component("Tree View", "ListTree", "Creates a new card.")]
     
     
     

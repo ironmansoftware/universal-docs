@@ -2,101 +2,100 @@
 NAME
     New-UDMapMarker
     
+SYNOPSIS
+    Creates a map marker.
+    
+    
 SYNTAX
-    New-UDMapMarker -Longitude <float> -Latitude <float> [-Id <string>] [-Attribution <string>] [-Opacity <int>] [-ZIndex <int>] [-Popup <hashtable>] [-Icon <hashtable>] [<CommonParameters>]
+    New-UDMapMarker [-Id <String>] -Longitude <Single> -Latitude <Single> [-Attribution <String>] [-Opacity <Int32>] [-ZIndex <Int32>] [-Popup <Hashtable>] [-Icon <Hashtable>] [<CommonParameters>]
     
-    New-UDMapMarker -GeoJSON <string> [-Id <string>] [-Attribution <string>] [-Opacity <int>] [-ZIndex <int>] [-Popup <hashtable>] [-Icon <hashtable>] [<CommonParameters>]
+    New-UDMapMarker [-Id <String>] [-Attribution <String>] [-Opacity <Int32>] [-ZIndex <Int32>] [-Popup <Hashtable>] [-Icon <Hashtable>] -GeoJSON <String> [<CommonParameters>]
     
     
+DESCRIPTION
+    Creates a map marker.
+    
+
 PARAMETERS
-    -Attribution <string>
+    -Id <String>
+        The id of the map marker. This defaults to a new GUID.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                ([Guid]::NewGuid())
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -GeoJSON <string>
+    -Longitude <Single>
+        The longitude of the map marker.
         
         Required?                    true
-        Position?                    Named
+        Position?                    named
+        Default value                0
         Accept pipeline input?       false
-        Parameter set name           GeoJSON
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Icon <hashtable>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Id <string>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Latitude <float>
+    -Latitude <Single>
+        The latitude of the map marker.
         
         Required?                    true
-        Position?                    Named
+        Position?                    named
+        Default value                0
         Accept pipeline input?       false
-        Parameter set name           LatLng
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Longitude <float>
+    -Attribution <String>
+        The attribution of the map marker.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Opacity <Int32>
+        The opacity of the map marker.
+        
+        Required?                    false
+        Position?                    named
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ZIndex <Int32>
+        The z-index of the map marker.
+        
+        Required?                    false
+        Position?                    named
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Popup <Hashtable>
+        The popup of the map marker. Use New-UDMapPopup to create a popup.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Icon <Hashtable>
+        The icon of the map marker. Use New-UDMapIcon to create an icon.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -GeoJSON <String>
+        The GeoJSON of the map marker. This is an alternative to specifying the longitude and latitude.
         
         Required?                    true
-        Position?                    Named
+        Position?                    named
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           LatLng
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Opacity <int>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Popup <hashtable>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -ZIndex <int>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -105,19 +104,11 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
     
-
-REMARKS
-    None
+RELATED LINKS
 
 

@@ -3,11 +3,11 @@ NAME
     New-UDExpansionPanelGroup
     
 SYNOPSIS
-    Creates a group of expansion panels.
+    The expansion panel component allows the user to show and hide sections of related content on a page.
     
     
 SYNTAX
-    New-UDExpansionPanelGroup [-Id <String>] [-Children] <ScriptBlock> [-Popout] [-Type <String>] [-ClassName <String>] [<CommonParameters>]
+    New-UDExpansionPanelGroup [-Id <String>] [[-Children] <ScriptBlock>] [-Type <String>] [-ClassName <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -27,18 +27,9 @@ PARAMETERS
     -Children <ScriptBlock>
         Expansion panels to include in this group.
         
-        Required?                    true
-        Position?                    1
-        Default value                
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -Popout [<SwitchParameter>]
-        Creates a popout style expansion panel group.
-        
         Required?                    false
-        Position?                    named
-        Default value                False
+        Position?                    1
+        Default value                {}
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -71,19 +62,43 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > Creates an expansion panel group.
+    PS >New-UDExpansionPanelGroup -Id 'expandsionPanelGroup1' -Children {
+    PS >     New-UDExpansionPanel -Title "Hello" -Content {} -Active -Id 'expansionPanel1'
+    PS >     New-UDExpansionPanel -Title "Hello" -Content {
+    PS >         New-UDElement -Tag 'div' -Content { "Hello" }
+    PS >     } -Id 'expansionPanel2'
+    PS >     New-UDExpansionPanel -Title "Hello" -Content {
+    PS >        New-UDElement -Tag 'div' -id 'expEndpointDiv' -Content { "Hello" }
+    PS >     } -Id 'expansionPanel3'
+    PS > }
     
-    New-UDExpansionPanelGroup -Items {
-        New-UDExpansionPanel -Title "Hello" -Id 'expTitle' -Content {}
+    Expansion Panel|Creates an expansion panel group.
     
-        New-UDExpansionPanel -Title "Hello" -Id 'expContent' -Content {
-            New-UDElement -Tag 'div' -id 'expContentDiv' -Content { "Hello" }
-        }
     
-        New-UDExpansionPanel -Title "Hello" -Id 'expEndpoint' -Endpoint {
-            New-UDElement -Tag 'div' -id 'expEndpointDiv' -Content { "Hello" }
-        }
-    }
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDExpansionPanelGroup -Id 'expandsionPanelGroup3' -Children {
+    PS >     New-UDExpansionPanel -Title "Hello" -Content {} -Id 'expansionPanel6'
+    PS >     New-UDExpansionPanel -Title "Hello" -Content {} -Id 'expansionPanel7'
+    PS > } -Type 'Accordion'
+    
+    Accordion|Creates an accordion style expansion panel group.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDExpansionPanelGroup -Id 'expandsionPanelGroup4' -Children {
+    PS >     New-UDExpansionPanel -Title "Hello" -Content {} -Icon (New-UDIcon -Icon 'Users') -Id 'expansionPanel8'
+    PS >     New-UDExpansionPanel -Title "Hello" -Content {} -Icon (New-UDIcon -Icon 'User') -Id 'expansionPanel9'
+    PS > }
+    
+    Icons|Creates an expansion panel group with icons.
+    
+    [Component("Expansion Panel", "Expand", "Creates a new card.")]
     
     
     

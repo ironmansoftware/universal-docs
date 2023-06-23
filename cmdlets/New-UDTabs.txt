@@ -34,7 +34,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -RenderOnActive [<SwitchParameter>]
-        Whether to render the tabs when they are clicked. Is this value isn't present, all the tabs are rendered, even if they are not shown.
+        Deprecated
         
         Required?                    false
         Position?                    named
@@ -97,57 +97,171 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > Creates a basic set of tabs.
+    PS >New-UDTabs -Tabs {
+    PS >     New-UDTab -Text "Tab1" -Id 'Tab1' -Content {
+    PS >         New-UDElement -Tag div -Id 'tab1Content' -Content { "Tab1Content"}
+    PS >     }
+    PS >     New-UDTab -Text "Tab2" -Id 'Tab2' -Content {
+    PS >         New-UDElement -Tag div -Id 'tab2Content' -Content { "Tab2Content"}
+    PS >     }
+    PS >     New-UDTab -Text "Tab3" -Id 'Tab3' -Content {
+    PS >         New-UDElement -Tag div -Id 'tab3Content' -Content { "Tab3Content"}
+    PS >     }
+    PS >  } -Id 'tabs1'
     
-    New-UDTabs -Tabs {
-        New-UDTab -Text "Tab1" -Id 'Tab1' -Content {
-            New-UDElement -Tag div -Id 'tab1Content' -Content { "Tab1Content"}
-        }
-        New-UDTab -Text "Tab2" -Id 'Tab2' -Content {
-            New-UDElement -Tag div -Id 'tab2Content' -Content { "Tab2Content"}
-        }
-        New-UDTab -Text "Tab3" -Id 'Tab3' -Content {
-            New-UDElement -Tag div -Id 'tab3Content' -Content { "Tab3Content"}
-        }
-    }
+    Basic Tabs|A basic set of tabs.
     
     
     
     
     -------------------------- EXAMPLE 2 --------------------------
     
-    PS > Creates a set of tabs that only render when they are clicked.
+    PS >New-UDTabs -Id 'tabs2' -Tabs {
+    PS >     New-UDTab -Text "Tab1" -Id 'DynamicTab1' -Dynamic -Content {
+    PS >         New-UDElement -Tag div -Id 'DynamicTab1Content' -Content { Get-Date } 
+    PS >     }
+    PS >     New-UDTab -Text "Tab2" -Id 'DynamicTab2' -Dynamic -Content {
+    PS >         New-UDElement -Tag div -Id 'DynamicTab2Content' -Content { Get-Date }
+    PS >     }
+    PS >     New-UDTab -Text "Tab3" -Id 'DynamicTab3' -Dynamic -Content {
+    PS >         New-UDElement -Tag div -Id 'DynamicTab3Content' -Content { Get-Date }
+    PS >     }
+    PS >  }
     
-    New-UDTabs -RenderOnActive -Id 'DynamicTabs' -Tabs {
-        New-UDTab -Text "Tab1" -Id 'DynamicTab1' -Dynamic -Content {
-            New-UDElement -Tag div -Id 'DynamicTab1Content' -Content { Get-Date } 
-        }
-        New-UDTab -Text "Tab2" -Id 'DynamicTab2' -Dynamic -Content {
-            New-UDElement -Tag div -Id 'DynamicTab2Content' -Content { Get-Date }
-        }
-        New-UDTab -Text "Tab3" -Id 'DynamicTab2' -Dynamic -Content {
-            New-UDElement -Tag div -Id 'DynamicTab3Content' -Content { Get-Date }
-        }
-    }
+    Dynamic Tabs|A set of dynamic tabs.
     
     
     
     
     -------------------------- EXAMPLE 3 --------------------------
     
-    PS > Creates a vertical set of tabs.
+    PS >New-UDTabs -Id 'tabs3' -Orientation 'vertical' -Tabs {
+    PS >     New-UDTab -Text "Tab1" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date } 
+    PS >     }
+    PS >     New-UDTab -Text "Tab2" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date } 
+    PS >     }
+    PS >     New-UDTab -Text "Tab3" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date } 
+    PS >     }
+    PS > }
     
-    New-UDTabs -Id 'verticalTabs' -Orientation 'vertical' -Tabs {
-        New-UDTab -Text "Tab1" -Content {
-            New-UDElement -Tag div -Content { Get-Date } 
-        }
-        New-UDTab -Text "Tab2" -Content {
-            New-UDElement -Tag div -Content { Get-Date } 
-        }
-        New-UDTab -Text "Tab3" -Content {
-            New-UDElement -Tag div -Content { Get-Date } 
-        }
-    }
+    Vertical Tabs|A set of vertical tabs.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDTabs -Id 'tabs4' -Variant 'fullWidth' -Tabs {
+    PS >     New-UDTab -Text "Tab1" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS >     New-UDTab -Text "Tab2" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS >     New-UDTab -Text "Tab3" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS > }
+    
+    Full Width Tabs|A set of full width tabs.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDTabs -Id 'tabs5' -Variant 'scrollable' -Tabs {
+    PS >     New-UDTab -Text "Tab1" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS >     New-UDTab -Text "Tab2" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS >     New-UDTab -Text "Tab3" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS > }
+    
+    Scrollable Tabs|A set of scrollable tabs.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS >New-UDTabs -Id 'tabs6' -ScrollButtons 'on' -Tabs {
+    PS >     New-UDTab -Text "Tab1" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS >     New-UDTab -Text "Tab2" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS >     New-UDTab -Text "Tab3" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS > }
+    
+    Scroll Buttons On|A set of tabs with scroll buttons always on.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 7 --------------------------
+    
+    PS >New-UDTabs -Id 'tabs7' -Centered -Tabs {
+    PS >     New-UDTab -Text "Tab1" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS >     New-UDTab -Text "Tab2" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS >     New-UDTab -Text "Tab3" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS > }
+    
+    Centered Tabs|A set of centered tabs.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 8 --------------------------
+    
+    PS >New-UDTabs -Id 'tabs8' -Tabs {
+    PS >     New-UDTab -Text "Tab1" -Icon (New-UDIcon -Icon Eye) -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS >     New-UDTab -Text "Tab2" -Icon (New-UDIcon -Icon Home) -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS >     New-UDTab -Text "Tab3" -Icon (New-UDIcon -Icon User) -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS > }
+    
+    Tabs with Icons|A set of tabs with icons.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 9 --------------------------
+    
+    PS >New-UDTabs -Id 'tabs7' -Tabs {
+    PS >     New-UDTab -Text "Tab1" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS >     New-UDTab -Text "Tab2" -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS >     New-UDTab -Text "Tab3" -Disabled -Content {
+    PS >         New-UDElement -Tag div -Content { Get-Date }
+    PS >     }
+    PS > }
+    
+    Disabled Tab|A set of tabs with a disabled tab.
     
     
     

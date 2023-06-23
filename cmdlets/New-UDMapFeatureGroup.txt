@@ -2,39 +2,44 @@
 NAME
     New-UDMapFeatureGroup
     
+SYNOPSIS
+    Creates a map feature group.
+    
+    
 SYNTAX
-    New-UDMapFeatureGroup [[-Id] <string>] [[-Popup] <hashtable>] [-Content] <scriptblock> [<CommonParameters>]
+    New-UDMapFeatureGroup [[-Id] <String>] [[-Popup] <Hashtable>] [-Content] <ScriptBlock> [<CommonParameters>]
     
     
+DESCRIPTION
+    Creates a map feature group.
+    
+
 PARAMETERS
-    -Content <scriptblock>
-        
-        Required?                    true
-        Position?                    2
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Id <string>
-        
-        Required?                    false
-        Position?                    0
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Popup <hashtable>
+    -Id <String>
+        The id of the map feature group. This defaults to a new GUID.
         
         Required?                    false
         Position?                    1
+        Default value                ([Guid]::NewGuid())
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Popup <Hashtable>
+        The popup for the map feature group.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Content <ScriptBlock>
+        The content of the map feature group. This should be a script block that returns a map feature.
+        
+        Required?                    true
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -43,19 +48,11 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
     
-
-REMARKS
-    None
+RELATED LINKS
 
 

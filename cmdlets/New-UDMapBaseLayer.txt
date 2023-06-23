@@ -2,49 +2,53 @@
 NAME
     New-UDMapBaseLayer
     
+SYNOPSIS
+    Creates a map base layer.
+    
+    
 SYNTAX
-    New-UDMapBaseLayer [[-Id] <string>] [-Name] <string> [-Content] <scriptblock> [-Checked] [<CommonParameters>]
+    New-UDMapBaseLayer [[-Id] <String>] [-Name] <String> [-Content] <ScriptBlock> [-Checked] [<CommonParameters>]
     
     
+DESCRIPTION
+    Creates a map base layer.
+    
+
 PARAMETERS
-    -Checked
+    -Id <String>
+        The id of the map base layer. This defaults to a new GUID.
         
         Required?                    false
-        Position?                    Named
+        Position?                    1
+        Default value                ([Guid]::NewGuid())
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Content <scriptblock>
+    -Name <String>
+        The name of the map base layer.
         
         Required?                    true
         Position?                    2
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Id <string>
-        
-        Required?                    false
-        Position?                    0
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Name <string>
+    -Content <ScriptBlock>
+        The content of the map base layer. This should be a script block that returns a raster tile layer.
         
         Required?                    true
-        Position?                    1
+        Position?                    3
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Checked [<SwitchParameter>]
+        Whether or not the map base layer is checked.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -53,19 +57,11 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
     
-
-REMARKS
-    None
+RELATED LINKS
 
 

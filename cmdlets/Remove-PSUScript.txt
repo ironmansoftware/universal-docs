@@ -13,7 +13,7 @@ SYNTAX
     
     
 DESCRIPTION
-    Removes a script. This also deletes the script from the UA internal git repo as well as an optionally configured remote.
+    Removes a script. This also deletes the script from the PSU internal git repo as well as an optionally configured remote.
     
 
 PARAMETERS

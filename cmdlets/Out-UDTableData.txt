@@ -3,7 +3,7 @@ NAME
     Out-UDTableData
     
 SYNOPSIS
-    Formats data to be output from New-UDTable's -LoadData script block.
+    Formats data to be output from New-UDTable's -LoadRows script block.
     
     
 SYNTAX
@@ -11,12 +11,12 @@ SYNTAX
     
     
 DESCRIPTION
-    Formats data to be output from New-UDTable's -LoadData script block.
+    Formats data to be output from New-UDTable's -LoadRows script block.
     
 
 PARAMETERS
     -Data <Object>
-        The data to return from LoadData.
+        The data to return from LoadRows.
         
         Required?                    true
         Position?                    1

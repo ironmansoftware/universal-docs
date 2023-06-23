@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTableColumn [[-Id] <String>] [-Property] <String> [[-Title] <String>] [[-Render] <ScriptBlock>] [-ShowSort] [-ShowFilter] [[-FilterType] <String>] [[-Style] <Hashtable>] [[-Width] <Int32>] [-IncludeInSearch] [-IncludeInExport] [-DefaultSortColumn] [[-Align] <String>] [-Truncate] [[-SortType] <String>] [-Hidden] [<CommonParameters>]
+    New-UDTableColumn [[-Id] <String>] [-Property] <String> [[-Title] <String>] [[-Render] <ScriptBlock>] [-ShowSort] [-ShowFilter] [[-FilterType] <String>] [[-Style] <Hashtable>] [[-Width] <Int32>] [[-MinWidth] <Int32>] [-IncludeInSearch] [-IncludeInExport] [-DefaultSortColumn] [[-Align] <String>] [-Truncate] [[-SortType] <String>] [-Hidden] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -96,6 +96,14 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
+    -MinWidth <Int32>
+        
+        Required?                    false
+        Position?                    8
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
     -IncludeInSearch [<SwitchParameter>]
         Whether to include this column in the search.
         
@@ -127,7 +135,7 @@ PARAMETERS
         The alignment of the column. Supported values are 'center', 'inherit', 'justify', 'left', 'right'.
         
         Required?                    false
-        Position?                    8
+        Position?                    9
         Default value                inherit
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -145,7 +153,7 @@ PARAMETERS
         Whether to sort this column as a string or datetime.
         
         Required?                    false
-        Position?                    9
+        Position?                    10
         Default value                alphanumeric
         Accept pipeline input?       false
         Accept wildcard characters?  false

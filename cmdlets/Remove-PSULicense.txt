@@ -1,17 +1,17 @@
 
 NAME
-    Get-PSUDashboardFramework
+    Remove-PSULicense
     
 SYNOPSIS
-    {{ Fill in the Synopsis }}
+    Remove a license from PowerShell Universal.
     
     
 SYNTAX
-    Get-PSUDashboardFramework [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    Remove-PSULicense [-AppToken <String>] [-ComputerName <String>] [-Integrated] -License <License> [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION
-    {{ Fill in the Description }}
+    Remove a license from PowerShell Universal.
     
 
 PARAMETERS
@@ -42,6 +42,15 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
+    -License <License>
+        {{ Fill License Description }}
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Accept wildcard characters?  false
+        
     -UseDefaultCredentials [<SwitchParameter>]
         {{ Fill UseDefaultCredentials Description }}
         
@@ -58,7 +67,7 @@ PARAMETERS
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
 INPUTS
-    None
+    PowerShellUniversal.License
         
     
     

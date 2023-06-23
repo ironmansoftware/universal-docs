@@ -132,6 +132,110 @@ INPUTS
     
 OUTPUTS
     
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDTransition -Fade -In -Children {
+    PS >    New-UDButton -Text 'Click Me'  -Id 'button1'
+    PS > } -Id 'transition1' -Timeout 1000
+    
+    Fade|A fade transition.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDTransition -Slide -In -Children {
+    PS >    New-UDButton -Text 'Click Me' -Id 'button2'
+    PS > } -Id 'transition2'  -Timeout 1000
+    
+    Slide|A slide transition.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDTransition -Zoom -In -Children {
+    PS >    New-UDButton -Text 'Click Me' -Id 'button3'
+    PS > } -Id 'transition3'  -Timeout 1000
+    
+    Zoom|A zoom transition.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDTransition -Grow -In -Children {
+    PS >    New-UDButton -Text 'Click Me' -Id 'button4'
+    PS > } -Id 'transition4'  -Timeout 1000
+    
+    Grow|A grow transition.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDTransition -Collapse -In -Children {
+    PS >    New-UDButton -Text 'Click Me' -Id 'button5'
+    PS > } -Id 'transition5'  -Timeout 1000
+    
+    Collapse|A collapse transition.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS >New-UDTransition -Collapse -In -Children {
+    PS >    New-UDButton -Text 'Click Me' -Id 'button6'
+    PS > } -Id 'transition6' -CollapseHeight 100  -Timeout 1000
+    
+    Collapse Height|A collapse transition with 100 height.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 7 --------------------------
+    
+    PS >New-UDTransition -Slide -In -Children {
+    PS >    New-UDButton -Text 'Click Me' -Id 'button7'
+    PS > } -Id 'transition7' -SlideDirection 'Left'  -Timeout 1000
+    
+    Slide Direction|A slide transition with left direction.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 8 --------------------------
+    
+    PS >New-UDTransition -Fade -In -Children {
+    PS >    New-UDButton -Text 'Click Me' -Id 'button8'
+    PS > } -Id 'transition8' -Timeout 1000
+    
+    Timeout|A fade transition with 1000 timeout.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 9 --------------------------
+    
+    PS >New-UDTransition -Fade -Children {
+    PS >    New-UDButton -Text 'Click Me' -Id 'button9'
+    PS > } -Id 'transition9' -Timeout 1000
+    PS > New-UDButton -Text 'Click Me' -OnClick {
+    PS >    Set-UDElement -Id 'transition9' -Properties @{
+    PS >        In = $true
+    PS >    }
+    PS > }
+    
+    Interaction|A button that causes the transition to happen.
+    
+    
+    
+    
     
 RELATED LINKS
 

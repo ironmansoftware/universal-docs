@@ -7,11 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDCard [-Id <String>] [-ClassName <String>] [-ShowToolBar] [-ToolBar <Object>] [-Header <Object>] [-Body <Object>] [-Expand <Object>] [-Footer <Object>] [-Media <Object>] [-Style <Hashtable>] [-Elevation <Int32>] [-Raised] [<CommonParameters>]
+    New-UDCard [-Id <String>] [-ClassName <String>] [-Style <Hashtable>] [-Elevation <Int32>] [-Title <String>] [-TitleAlignment <String>] [-Text <String>] [-Raised] [-Sx <Object>] [-Variant <String>] [<CommonParameters>]
     
-    New-UDCard [-Id <String>] [-ClassName <String>] [-ShowToolBar] [-Style <Hashtable>] [-Elevation <Int32>] [-Title <String>] [-TitleAlignment <String>] [-Text <String>] [-Raised] [<CommonParameters>]
+    New-UDCard [-Id <String>] [-ClassName <String>] [-Header <Object>] [-Body <Object>] [-Expand <Object>] [-Footer <Object>] [-Media <Object>] [-Style <Hashtable>] [-Elevation <Int32>] [-Raised] [-Sx <Object>] [-Variant <String>] [<CommonParameters>]
     
-    New-UDCard [-Id <String>] [-ClassName <String>] [-ShowToolBar] [-Style <Hashtable>] [-Elevation <Int32>] [-Title <String>] [-TitleAlignment <String>] [-Content <ScriptBlock>] [-Image <String>] [-Raised] [-Avatar <Object>] [<CommonParameters>]
+    New-UDCard [-Id <String>] [-ClassName <String>] [-Style <Hashtable>] [-Elevation <Int32>] [-Title <String>] [-TitleAlignment <String>] [-Content <ScriptBlock>] [-Image <String>] [-Raised] [-Avatar <Object>] [-Sx <Object>] [-Variant <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -30,24 +30,6 @@ PARAMETERS
         
     -ClassName <String>
         A CSS class to assign to this card.
-        
-        Required?                    false
-        Position?                    named
-        Default value                
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -ShowToolBar [<SwitchParameter>]
-        Whether to show the toolbar for this card.
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -ToolBar <Object>
-        The toolbar for this card. Use New-UDCardToolbar to create a toolbar.
         
         Required?                    false
         Position?                    named
@@ -122,7 +104,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    named
-        Default value                
+        Default value                Card
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -157,7 +139,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    named
-        Default value                
+        Default value                This is a card
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -177,6 +159,23 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
+    -Sx <Object>
+        Theme-based style to apply to the card.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Variant <String>
+        
+        Required?                    false
+        Position?                    named
+        Default value                elevation
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
@@ -189,11 +188,63 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > Shows a card with a title, image and content.
+    PS >New-UDCard -Title 'My Card' -Text 'This is my card' -Id 'card1'
     
-    New-UDCard -Id 'SimpleCard' -Title "Alon" -Content { 
-        "Content" 
-    } -Image 'https://avatars2.githubusercontent.com/u/34351424?s=460&v=4'
+    Basic card|A basic card with a title and text.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDCard -Title 'My Card' -Text 'This is my card' -Id 'card2' -Image 'https://picsum.photos/200/300'
+    
+    Card with image|A card with an image.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDCard -Title 'My Card' -Text 'This is my card' -Id 'card3' -Elevation 10
+    
+    Card with elevation|A card with a higher elevation.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDCard -Title 'My Card' -Text 'This is my card' -Id 'card4' -TitleAlignment center
+    
+    Title Alignment|A card with a centered title.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >$Header = New-UDCardHeader -Avatar (New-UDAvatar -Content { "R" } -Sx @{ backgroundColor = "#f44336" }) -Action (New-UDIconButton -Icon (New-UDIcon -Icon 'EllipsisVertical')) -Title 'Shrimp and Chorizo Paella' -SubHeader 'September 14, 2016';
+    PS >     $Media = New-UDCardMedia -Image 'https://mui.com/static/images/cards/paella.jpg'
+    PS >     $Body = New-UDCardBody -Content {
+    PS >         New-UDTypography -Text ' This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.' -Sx @{
+    PS >             color = 'text.secondary'
+    PS >         } -Variant body2
+    PS >     }
+    PS >     $Footer = New-UDCardFooter -Content {
+    PS >         New-UDIconButton -Icon (New-UDIcon -Icon 'Heart')
+    PS >         New-UDIconButton -Icon (New-UDIcon -Icon 'ShareAlt')
+    PS >     }
+    PS >     $Expand = New-UDCardExpand -Content {
+    PS >         $Description = "Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly browned, 6 to 8 minutes. Transfer shrimp to a large plate and set aside, leaving chicken and chorizo in the pan. Add pimentón, bay leaves, garlic, tomatoes, onion, salt and pepper, and cook, stirring often until thickened and fragrant, about 10 minutes. Add saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil."
+    PS >         New-UDTypography -Text $Description
+    PS >     }
+    PS >     New-UDCard -Header $Header -Media $Media -Body $Body -Footer $Footer -Expand $Expand -Sx @{
+    PS >         maxWidth = 345
+    PS >         border   = '2px solid #f0f2f5'
+    PS >     } -Id 'card5'
+    
+    Complex Card|A card with all the features.
     
     
     

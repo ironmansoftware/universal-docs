@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDDateTime [-Id <String>] [-InputObject] <DateTime> [-LocalizedFormat <String>] [-Locale <String>] [<CommonParameters>]
+    New-UDDateTime [-Id <String>] [[-InputObject] <DateTime>] [-LocalizedFormat <String>] [-Locale <String>] [<CommonParameters>]
     
-    New-UDDateTime [-Id <String>] [-InputObject] <DateTime> [-Format <String>] [-Locale <String>] [<CommonParameters>]
+    New-UDDateTime [-Id <String>] [[-InputObject] <DateTime>] [-Format <String>] [-Locale <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -29,9 +29,9 @@ PARAMETERS
     -InputObject <DateTime>
         The date and time object to format.
         
-        Required?                    true
+        Required?                    false
         Position?                    1
-        Default value                
+        Default value                (Get-Date)
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -74,9 +74,27 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > Formats a date and time using the format 'DD/MM/YYYY'
+    PS >New-UDDateTime -InputObject (Get-Date) -Format 'DD/MM/YYYY' -Id 'dateTime1'
     
-    New-UDDateTime -InputObject (Get-Date) -Format 'DD/MM/YYYY'
+    Formats a date and time using the format 'DD/MM/YYYY'
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDDateTime -InputObject (Get-Date) -LocalizedFormat 'LLL' -Id 'dateTime2'
+    
+    Localized Format|Formats a date and time using the localized format 'LLL'
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDDateTime -InputObject (Get-Date) -Locale 'es' -Id 'dateTime3'
+    
+    Locale|Formats a date and time using the locale 'es'
     
     
     

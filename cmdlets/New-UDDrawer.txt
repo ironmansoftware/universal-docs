@@ -99,6 +99,8 @@ OUTPUTS
         New-UDAppBar -Children { New-UDTypography -Text 'Hello' -Paragraph } -Position relative -Drawer $Drawer
     }
     
+    [Component("Drawer", "WindowMaximize", "Creates a new card.")]
+    
     
     
     

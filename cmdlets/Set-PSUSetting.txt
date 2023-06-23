@@ -7,11 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    Set-PSUSetting [-AdminConsoleLogo <String>] [-AdminConsoleTitle <String>] [-ApiEnvironment <String>] [-AppToken <String>] [-ComputerName <String>] [-ConcurrentJobLimit <Int32>] [-DefaultEnvironment <String>] [-DefaultPage <String>] [-DisableAutoReload] [-DisableUpdateCheck] [-GroomDays <Int32>] [-HideApi] [-HideAutomation] [-HideDashboard] [-HideHomePage] [-Integrated] [-LogLevel <String>] [-LoggingFilePath <String>] [-MicrosoftLogLevel <String>] [-RateLimitClientAllowList <String[]>] [-RateLimitEndpointAllowList <String[]>] [-RateLimitIpAddressAllowList <String[]>] [-ScriptBaseFolder <String>] [-SecurityEnvironment <String>] [-UseDefaultCredentials] [-GroomInterval <Int32>] [-NotificationLevel <NotificationLevel>] [-FallbackLanguageId <String>] [-HideRunAs] [-JobHandshakeTimeout <Int32>] [-ProxyCredential <Variable>] [-ProxyUri <String>] [-Splatting] [-DisabledFeatures <Features>] [-DontLoadProfile] [-EnhancedAppTokenSecurity] [-ExperimentalFeatures <ExperimentalFeatures>] [-FavIcon <String>] [-LimitIdentities] [-Telemetry] [<CommonParameters>]
+    Set-PSUSetting [-AdminConsoleLogo <String>] [-AdminConsoleTitle <String>] [-ApiEnvironment <String>] [-AppToken <String>] [-ComputerName <String>] [-ConcurrentJobLimit <Int32>] [-DefaultEnvironment <String>] [-DefaultPage <String>] [-DisableAutoReload] [-DisableUpdateCheck] [-GroomDays <Int32>] [-HideApi] [-HideAutomation] [-HideDashboard] [-HideHomePage] [-Integrated] [-LogLevel <String>] [-LoggingFilePath <String>] [-MicrosoftLogLevel <String>] [-RateLimitClientAllowList <String[]>] [-RateLimitEndpointAllowList <String[]>] [-RateLimitIpAddressAllowList <String[]>] [-ScriptBaseFolder <String>] [-SecurityEnvironment <String>] [-UseDefaultCredentials] [-GroomInterval <Int32>] [-NotificationLevel <NotificationLevel>] [-FallbackLanguageId <String>] [-HideRunAs] [-JobHandshakeTimeout <Int32>] [-ProxyCredential <Variable>] [-ProxyUri <String>] [-Splatting] [-DisabledFeatures <Features>] [-DontLoadProfile] [-EnhancedAppTokenSecurity] [-ExperimentalFeatures <ExperimentalFeatures>] [-FavIcon <String>] [-LimitIdentities] [-Telemetry] [-DefaultDashboardTheme <String>] [-UseLogoSize] [<CommonParameters>]
     
     
 DESCRIPTION
-    Sets a UA setting.
+    Sets a PSU setting.
     
 
 PARAMETERS
@@ -43,7 +43,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -AppToken <String>
-        An app token to access the UA API.
+        An app token to access the PSU API.
         
         Required?                    false
         Position?                    named
@@ -52,7 +52,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The HTTP address of the UA REST API server.
+        The HTTP address of the PSU REST API server.
         
         Required?                    false
         Position?                    named
@@ -368,6 +368,24 @@ PARAMETERS
         
     -Telemetry [<SwitchParameter>]
         Not used. Telemetry is no longer collected.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -DefaultDashboardTheme <String>
+        The default dashboard theme to use when none is specified. By default, this value is AntDesign.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseLogoSize [<SwitchParameter>]
+        Does not adjust the size of the logo used in the admin console.
         
         Required?                    false
         Position?                    named

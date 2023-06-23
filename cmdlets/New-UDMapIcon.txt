@@ -2,79 +2,80 @@
 NAME
     New-UDMapIcon
     
+SYNOPSIS
+    Creates a map icon.
+    
+    
 SYNTAX
-    New-UDMapIcon [-Url] <string> [[-Height] <int>] [[-Width] <int>] [[-AnchorX] <int>] [[-AnchorY] <int>] [[-PopupAnchorX] <int>] [[-PopupAnchorY] <int>] [<CommonParameters>]
+    New-UDMapIcon [-Url] <String> [[-Height] <Int32>] [[-Width] <Int32>] [[-AnchorX] <Int32>] [[-AnchorY] <Int32>] [[-PopupAnchorX] <Int32>] [[-PopupAnchorY] <Int32>] [<CommonParameters>]
     
     
+DESCRIPTION
+    Creates a map icon.
+    
+
 PARAMETERS
-    -AnchorX <int>
-        
-        Required?                    false
-        Position?                    3
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -AnchorY <int>
-        
-        Required?                    false
-        Position?                    4
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Height <int>
-        
-        Required?                    false
-        Position?                    1
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -PopupAnchorX <int>
-        
-        Required?                    false
-        Position?                    5
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -PopupAnchorY <int>
-        
-        Required?                    false
-        Position?                    6
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Url <string>
+    -Url <String>
+        The URL of the icon.
         
         Required?                    true
-        Position?                    0
+        Position?                    1
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Width <int>
+    -Height <Int32>
+        The height of the icon.
         
         Required?                    false
         Position?                    2
+        Default value                0
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Width <Int32>
+        The width of the icon.
+        
+        Required?                    false
+        Position?                    3
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -AnchorX <Int32>
+        The anchor X of the icon.
+        
+        Required?                    false
+        Position?                    4
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -AnchorY <Int32>
+        The anchor Y of the icon.
+        
+        Required?                    false
+        Position?                    5
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -PopupAnchorX <Int32>
+        The popup anchor X of the icon.
+        
+        Required?                    false
+        Position?                    6
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -PopupAnchorY <Int32>
+        The popup anchor Y of the icon.
+        
+        Required?                    false
+        Position?                    7
+        Default value                0
+        Accept pipeline input?       false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -83,19 +84,11 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
     
-
-REMARKS
-    None
+RELATED LINKS
 
 

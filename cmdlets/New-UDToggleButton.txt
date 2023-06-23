@@ -1,0 +1,112 @@
+
+NAME
+    New-UDToggleButton
+    
+SYNOPSIS
+    A Toggle Button can be used to group related options.
+    
+    
+SYNTAX
+    New-UDToggleButton [[-Id] <String>] [[-Color] <String>] [-Disabled] [-FullWidth] [-DisableFocusRipple] [-DisableRipple] [[-Size] <String>] [[-Sx] <Hashtable>] [[-Children] <ScriptBlock>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    A Toggle Button can be used to group related options.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. If not specified, a random GUID will be assigned.
+        
+        Required?                    false
+        Position?                    1
+        Default value                [Guid]::NewGuid().ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Color <String>
+        The color of the component. Valid values are 'standard', 'primary', 'secondary', 'error', 'info', 'success', 'warning'.
+        
+        Required?                    false
+        Position?                    2
+        Default value                standard
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Disabled [<SwitchParameter>]
+        If specified, the component will be disabled.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -FullWidth [<SwitchParameter>]
+        If specified, the component will take up the full width of its container.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DisableFocusRipple [<SwitchParameter>]
+        If specified, the component will not show a focus ripple.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DisableRipple [<SwitchParameter>]
+        If specified, the component will not show a ripple.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Size <String>
+        The size of the component. Valid values are 'small', 'medium', 'large'.
+        
+        Required?                    false
+        Position?                    3
+        Default value                medium
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Sx <Hashtable>
+        The style of the component.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Children <ScriptBlock>
+        The content of the component.
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    
+RELATED LINKS
+
+

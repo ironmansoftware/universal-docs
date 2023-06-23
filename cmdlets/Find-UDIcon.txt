@@ -16,7 +16,7 @@ DESCRIPTION
 
 PARAMETERS
     -Name <Object>
-        The name of the icon to find.
+        The name of the icon to find.  Wild cards are supported.
         
         Required?                    true
         Position?                    1

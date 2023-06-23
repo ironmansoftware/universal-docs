@@ -1,0 +1,51 @@
+
+NAME
+    Wait-UDDebugger
+    
+SYNOPSIS
+    Displays a debugging window for dashboards.
+    
+    
+SYNTAX
+    Wait-UDDebugger [[-Variable] <Object>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Displays a debugging window for dashboards.
+    
+
+PARAMETERS
+    -Variable <Object>
+        The variable to display in the debugger. Defaults to all variables.
+        
+        Required?                    false
+        Position?                    1
+        Default value                *
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDButton -Text 'Click Me' -OnClick {
+    PS >    Wait-UDDebugger
+    PS > } -Id 'debugger1'
+    
+    Debugger|Displays a debugging window for dashboards.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

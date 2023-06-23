@@ -45,14 +45,16 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > New-UDLayout -Columns 2 -Content {
-        New-UDTypography "Row 1, Col 1"
-        New-UDTypography "Row 1, Col 2"
-        New-UDTypography "Row 2, Col 1"
-        New-UDTypography "Row 2, Col 2"
-    }
+    PS >New-UDContainer -Content {
+    PS >    New-UDLayout -Columns 2 -Content {
+    PS >        New-UDTypography "Row 1, Col 1"
+    PS >        New-UDTypography "Row 1, Col 2"
+    PS >        New-UDTypography "Row 2, Col 1"
+    PS >        New-UDTypography "Row 2, Col 2"
+    PS >    }
+    PS > }
     
-    
+    Layout|Creates a layout with 2 columns.
     
     
     

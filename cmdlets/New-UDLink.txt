@@ -3,17 +3,17 @@ NAME
     New-UDLink
     
 SYNOPSIS
-    Short description
+    The Link component allows you to easily customize anchor elements with your theme colors and typography styles.
     
     
 SYNTAX
-    New-UDLink [-Id <String>] [-url <String>] [-Underline <String>] [-Style <Hashtable>] [-Variant <String>] [-ClassName <String>] [-OpenInNewWindow] [-Children <ScriptBlock>] [-OnClick <Endpoint>] [-Download] [<CommonParameters>]
-    
     New-UDLink [-Id <String>] [-url <String>] [-Underline <String>] [-Style <Hashtable>] [-Variant <String>] [-ClassName <String>] [-OpenInNewWindow] [-Text <String>] [-OnClick <Endpoint>] [-Download] [<CommonParameters>]
+    
+    New-UDLink [-Id <String>] [-url <String>] [-Underline <String>] [-Style <Hashtable>] [-Variant <String>] [-ClassName <String>] [-OpenInNewWindow] [-Children <ScriptBlock>] [-OnClick <Endpoint>] [-Download] [<CommonParameters>]
     
     
 DESCRIPTION
-    Long description
+    The Link component allows you to easily customize anchor elements with your theme colors and typography styles.
     
 
 PARAMETERS
@@ -31,7 +31,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    named
-        Default value                
+        Default value                https://www.ironmansoftware.com
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -94,7 +94,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    named
-        Default value                
+        Default value                Ironman Software
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -126,16 +126,78 @@ INPUTS
     
 OUTPUTS
     
-NOTES
-    
-    
-        General notes
-    
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > An example
+    PS >New-UDLink -Url "https://www.google.com" -Text "Google" -Id 'link1'
+    
+    Basic link|A basic link to Google.
     
     
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDLink -Url "https://www.google.com" -Text "Google" -OpenInNewWindow -Id 'link2'
+    
+    Link in new window|A link to Google that opens in a new window.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDLink -Url "https://www.ironmansoftware.com/img/ps-logo.png" -Text "Download" -OpenInNewWindow -Download -Id 'link3'
+    
+    Download link|A link that downloads a file.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDLink -Url "https://www.google.com" -Text "Google" -Style @{ 'color' = 'red' } -Id 'link4'
+    
+    Style|A link with a custom style.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDLink -Url "https://www.google.com" -Text "Google" -Variant "h1" -Id 'link5'
+    
+    Variant|A link with a variant header of 1.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS >New-UDLink -Url "https://www.google.com" -Text "Google" -Underline "hover" -Id 'link6'
+    
+    Underline|A link with an underline on hover.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 7 --------------------------
+    
+    PS >New-UDLink -Url "https://www.google.com" -Content {
+        New-UDImage -Url "https://www.ironmansoftware.com/img/ps-logo.png" -Height 20 -Width 20 
+    } -Id 'link7'
+    
+    Content|A link with an image as content.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 8 --------------------------
+    
+    PS >New-UDLink -Text "Click" -OnClick {
+        Show-UDToast -Message "Clicked!"
+    } -Id 'link8'
+    
+    OnClick|A link with an onclick event.
     
     
     

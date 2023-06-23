@@ -1,53 +1,13 @@
 
 NAME
-    New-UDCardToolbar
+    New-PSUMiddleware
     
 SYNTAX
-    New-UDCardToolbar [[-Id] <string>] [[-ClassName] <string>] [-Content] <scriptblock> [[-Icon] <Icon>] [[-Title] <Object>] [[-Style] <hashtable>] [-ShowButtons] [<CommonParameters>]
+    New-PSUMiddleware -Name <string> -ScriptBlock <scriptblock> [-Order <int>] [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
     
 PARAMETERS
-    -ClassName <string>
-        
-        Required?                    false
-        Position?                    1
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Content <scriptblock>
-        
-        Required?                    true
-        Position?                    2
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Icon <Icon>
-        
-        Required?                    false
-        Position?                    3
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Id <string>
-        
-        Required?                    false
-        Position?                    0
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -ShowButtons
+    -AppToken <string>
         
         Required?                    false
         Position?                    Named
@@ -57,20 +17,60 @@ PARAMETERS
         Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Style <hashtable>
+    -ComputerName <string>
         
         Required?                    false
-        Position?                    5
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      Uri
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Integrated
+        
+        Required?                    false
+        Position?                    Named
         Accept pipeline input?       false
         Parameter set name           (All)
         Aliases                      None
         Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Title <Object>
+    -Name <string>
+        
+        Required?                    true
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Order <int>
         
         Required?                    false
-        Position?                    4
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -ScriptBlock <scriptblock>
+        
+        Required?                    true
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials
+        
+        Required?                    false
+        Position?                    Named
         Accept pipeline input?       false
         Parameter set name           (All)
         Aliases                      None

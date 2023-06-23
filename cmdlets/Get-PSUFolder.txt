@@ -3,7 +3,7 @@ NAME
     Get-PSUFolder
     
 SYNOPSIS
-    Returns folders defined within UA.
+    Returns folders defined within PSU.
     
     
 SYNTAX
@@ -15,12 +15,12 @@ SYNTAX
     
     
 DESCRIPTION
-    Returns folders defined within UA. Folders will be based on the internal and\or remote git repo.
+    Returns folders defined within PSU. Folders will be based on the internal and\or remote git repo.
     
 
 PARAMETERS
     -AppToken <String>
-        An app token to access the UA API.
+        An app token to access the PSU API.
         
         Required?                    false
         Position?                    named
@@ -29,7 +29,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The HTTP address of the UA REST API server.
+        The HTTP address of the PSU REST API server.
         
         Required?                    false
         Position?                    named
@@ -107,7 +107,7 @@ NOTES
     
     PS C:\> Get-UAFolder
     
-    Returns all folders within UA.
+    Returns all folders within PSU.
     -------------------------- Example 2 --------------------------
     
     PS C:\> Get-UAFolder -Name 'Folder 1'

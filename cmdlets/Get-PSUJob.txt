@@ -3,7 +3,7 @@ NAME
     Get-PSUJob
     
 SYNOPSIS
-    Returns jobs run within UA.
+    Returns jobs run within PSU.
     
     
 SYNTAX
@@ -13,14 +13,16 @@ SYNTAX
     
     Get-PSUJob [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-First <UInt64>] [-IncludeTotalCount] [-Integrated] [-OrderBy {Id | StartTime | EndTime}] [-OrderDirection {Descending | Ascending}] [-Skip <UInt64>] [-Status {Queued | Running | Completed | Failed | WaitingOnFeedback | Canceled | Canceling | Historical | Active | TimedOut | Warning}] [-UseDefaultCredentials] [<CommonParameters>]
     
+    Get-PSUJob [-AppToken <String>] [-ComputerName <String>] [-First <UInt64>] [-IncludeTotalCount] [-Integrated] [-OrderBy {Id | StartTime | EndTime}] [-OrderDirection {Descending | Ascending}] [-Skip <UInt64>] [-Status {Queued | Running | Completed | Failed | WaitingOnFeedback | Canceled | Canceling | Historical | Active | TimedOut | Warning}] [-UseDefaultCredentials] -RunId <Guid> [<CommonParameters>]
+    
     
 DESCRIPTION
-    Returns jobs run within UA.
+    Returns jobs run within PSU.
     
 
 PARAMETERS
     -AppToken <String>
-        An app token to access the UA API.
+        An app token to access the PSU API.
         
         Required?                    false
         Position?                    named
@@ -29,7 +31,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The HTTP address of the UA REST API server.
+        The HTTP address of the PSU REST API server.
         
         Required?                    false
         Position?                    named
@@ -136,6 +138,15 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
+    -RunId <Guid>
+        The run ID (GUID) for this job. Requires JobRunId experimental feature.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
@@ -164,12 +175,12 @@ NOTES
     
     PS C:\> Get-UAJob
     
-    Returns all jobs run in UA.
+    Returns all jobs run in PSU.
     -------------------------- Example 2 --------------------------
     
     PS C:\> Get-UAJob -Id 10
     
-    Returns job 10 from UA.
+    Returns job 10 from PSU.
     -------------------------- Example 3 --------------------------
     
     PS C:\> $Script = Get-UAScript -Id 4

@@ -2,217 +2,205 @@
 NAME
     New-UDMapVectorLayer
     
+SYNOPSIS
+    Creates a map vector layer.
+    
+    
 SYNTAX
-    New-UDMapVectorLayer -Circle -Latitude <double> -Longitude <double> -Radius <int> [-Id <string>] [-Color <DashboardColor>] [-FillColor <DashboardColor>] [-FillOpacity <double>] [-Weight <int>] [-Opacity <double>] [-Popup <Object>] [<CommonParameters>]
+    New-UDMapVectorLayer [-Id <String>] [-Color <DashboardColor>] [-FillColor <DashboardColor>] [-FillOpacity <Double>] [-Weight <Int32>] [-Opacity <Double>] -Circle -Latitude <Double> -Longitude <Double> -Radius <Int32> [-Popup <Object>] [<CommonParameters>]
     
-    New-UDMapVectorLayer -Polyline -Positions <Object> [-Id <string>] [-Color <DashboardColor>] [-FillColor <DashboardColor>] [-FillOpacity <double>] [-Weight <int>] [-Opacity <double>] [<CommonParameters>]
+    New-UDMapVectorLayer [-Id <String>] [-Color <DashboardColor>] [-FillColor <DashboardColor>] [-FillOpacity <Double>] [-Weight <Int32>] [-Opacity <Double>] -Polyline -Positions <Object> [<CommonParameters>]
     
-    New-UDMapVectorLayer -Polygon -Positions <Object> [-Id <string>] [-Color <DashboardColor>] [-FillColor <DashboardColor>] [-FillOpacity <double>] [-Weight <int>] [-Opacity <double>] [<CommonParameters>]
+    New-UDMapVectorLayer [-Id <String>] [-Color <DashboardColor>] [-FillColor <DashboardColor>] [-FillOpacity <Double>] [-Weight <Int32>] [-Opacity <Double>] -Polygon -Positions <Object> [<CommonParameters>]
     
-    New-UDMapVectorLayer -Rectangle -LatitudeTopLeft <double> -LongitudeTopLeft <double> -LatitudeBottomRight <double> -LongitudeBottomRight <double> [-Id <string>] [-Color <DashboardColor>] [-FillColor <DashboardColor>] [-FillOpacity <double>] [-Weight <int>] [-Opacity <double>] [<CommonParameters>]
+    New-UDMapVectorLayer [-Id <String>] [-Color <DashboardColor>] [-FillColor <DashboardColor>] [-FillOpacity <Double>] [-Weight <Int32>] [-Opacity <Double>] -Rectangle -LatitudeTopLeft <Double> -LongitudeTopLeft <Double> -LatitudeBottomRight <Double> -LongitudeBottomRight <Double> [<CommonParameters>]
     
-    New-UDMapVectorLayer -GeoJSON <string> [-Id <string>] [-Color <DashboardColor>] [-FillColor <DashboardColor>] [-FillOpacity <double>] [-Weight <int>] [-Opacity <double>] [<CommonParameters>]
+    New-UDMapVectorLayer [-Id <String>] [-Color <DashboardColor>] [-FillColor <DashboardColor>] [-FillOpacity <Double>] [-Weight <Int32>] [-Opacity <Double>] -GeoJSON <String> [<CommonParameters>]
     
     
+DESCRIPTION
+    Creates a map vector layer.
+    
+
 PARAMETERS
-    -Circle
+    -Id <String>
+        The id of the map vector layer. This defaults to a new GUID.
         
-        Required?                    true
-        Position?                    Named
+        Required?                    false
+        Position?                    named
+        Default value                ([Guid]::NewGuid())
         Accept pipeline input?       false
-        Parameter set name           Circle
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
     -Color <DashboardColor>
+        The color of the vector layer.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                black
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
     -FillColor <DashboardColor>
+        The fill color of the vector layer.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                black
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -FillOpacity <double>
+    -FillOpacity <Double>
+        The fill opacity of the vector layer.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                0.5
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -GeoJSON <string>
-        
-        Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           GeoJSON
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Id <string>
+    -Weight <Int32>
+        The weight of the vector layer.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                3
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Latitude <double>
-        
-        Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Circle
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -LatitudeBottomRight <double>
-        
-        Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Rectangle
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -LatitudeTopLeft <double>
-        
-        Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Rectangle
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Longitude <double>
-        
-        Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Circle
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -LongitudeBottomRight <double>
-        
-        Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Rectangle
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -LongitudeTopLeft <double>
-        
-        Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Rectangle
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Opacity <double>
+    -Opacity <Double>
+        The opacity of the vector layer.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                1
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Polygon
+    -Circle [<SwitchParameter>]
+        Creates a circle.
         
         Required?                    true
-        Position?                    Named
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
-        Parameter set name           Polygon
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Polyline
+    -Latitude <Double>
+        The latitude of the circle.
         
         Required?                    true
-        Position?                    Named
+        Position?                    named
+        Default value                0
         Accept pipeline input?       false
-        Parameter set name           Polyline
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Popup <Object>
+    -Longitude <Double>
+        The longitude of the circle.
         
-        Required?                    false
-        Position?                    Named
+        Required?                    true
+        Position?                    named
+        Default value                0
         Accept pipeline input?       false
-        Parameter set name           Circle
-        Aliases                      None
-        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Radius <Int32>
+        The radius of the circle.
+        
+        Required?                    true
+        Position?                    named
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Polyline [<SwitchParameter>]
+        Creates a polyline.
+        
+        Required?                    true
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Polygon [<SwitchParameter>]
+        Creates a polygon.
+        
+        Required?                    true
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
         Accept wildcard characters?  false
         
     -Positions <Object>
+        The positions of the polyline or polygon.
         
         Required?                    true
-        Position?                    Named
+        Position?                    named
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           Polygon, Polyline
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Radius <int>
+    -Rectangle [<SwitchParameter>]
+        Creates a rectangle.
         
         Required?                    true
-        Position?                    Named
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
-        Parameter set name           Circle
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Rectangle
+    -LatitudeTopLeft <Double>
+        The latitude of the top left corner of the rectangle.
         
         Required?                    true
-        Position?                    Named
+        Position?                    named
+        Default value                0
         Accept pipeline input?       false
-        Parameter set name           Rectangle
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Weight <int>
+    -LongitudeTopLeft <Double>
+        The longitude of the top left corner of the rectangle.
+        
+        Required?                    true
+        Position?                    named
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LatitudeBottomRight <Double>
+        The latitude of the bottom right corner of the rectangle.
+        
+        Required?                    true
+        Position?                    named
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LongitudeBottomRight <Double>
+        The longitude of the bottom right corner of the rectangle.
+        
+        Required?                    true
+        Position?                    named
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Popup <Object>
+        The popup of the vector layer. Use New-UDMapPopup to create a popup.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -GeoJSON <String>
+        The GeoJSON of the vector layer. This is an alternative to specifying the longitude and latitude.
+        
+        Required?                    true
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -221,19 +209,11 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
     
-
-REMARKS
-    None
+RELATED LINKS
 
 

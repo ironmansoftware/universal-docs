@@ -54,15 +54,28 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > New-UDElement -Tag 'div' -Id 'parent' -Content {
+    PS >New-UDElement -Tag 'div' -Id 'addElement1' -Content {}
+    PS > New-UDButton -Text 'Click Me' -OnClick {
+    PS >     Add-UDElement -ParentId 'addElement1' -Content {
+    PS >         New-UDTypography -Text 'Hello World'
+    PS >     }
+    PS > }
     
-    }
+    Add Element|Adds an element to a parent element.
     
-    New-UDButton -Text 'Click Me' -OnClick {
-        Add-UDElement -ParentId 'parent' -Content {
-            New-UDTypography -Text 'Hello World'
-        }
-    }
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDElement -Tag 'div' -Id 'addElement2' -Content {}
+    PS > New-UDButton -Text 'Click Me' -OnClick {
+    PS >     Add-UDElement -ParentId 'addElement2' -Content {
+    PS >         New-UDTypography -Text 'Hello World'
+    PS >     } -Broadcast
+    PS > }
+    
+    Broadcast|Adds an element to a parent element and broadcasts it to all connected dashboards.
     
     
     

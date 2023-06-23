@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDRadioGroup [[-Id] <String>] [[-Label] <String>] [[-Children] <ScriptBlock>] [[-OnChange] <Endpoint>] [[-Value] <String>] [[-ClassName] <String>] [[-DefaultValue] <String>] [<CommonParameters>]
+    New-UDRadioGroup [[-Id] <String>] [[-Label] <String>] [[-Children] <ScriptBlock>] [[-OnChange] <Endpoint>] [[-Value] <String>] [[-ClassName] <String>] [[-DefaultValue] <String>] [-Disabled] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -38,7 +38,10 @@ PARAMETERS
         
         Required?                    false
         Position?                    3
-        Default value                
+        Default value                { 
+                    New-UDRadio -Label "Option 1" -Value 1
+                    New-UDRadio -Label "Option 2" -Value 2
+                }
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -76,6 +79,14 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
+    -Disabled [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
@@ -88,15 +99,67 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > Creates a radio group that shows a toast message when a radio is selected.
+    PS >New-UDRadioGroup -Label 'group' -Id 'radio1' -Children {
+    PS >    New-UDRadio -Value 'Adam' -Label 'Adam'  -Id 'adam'
+    PS >    New-UDRadio -Value 'Sarah' -Label 'Sarah' -Id 'sarah'
+    PS >    New-UDRadio -Value 'Austin' -Label 'Austin' -Id 'austin'
+    PS > }
     
-    New-UDRadioGroup -Label 'group' -Id 'onChangeRadio' -Children {
-        New-UDRadio -Value 'Adam' -Label 'Adam'  -Id 'adamOnChange'
-        New-UDRadio -Value 'Alon' -Label 'Alon' -Id 'alonOnChange'
-        New-UDRadio -Value 'Lee' -Label 'Lee' -Id 'leeOnChange'
-    } -OnChange { 
-        Show-UDToast $EventData 
-    }
+    Basic radio group|Creates a basic radio group with three radio buttons.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDRadioGroup -Label 'group' -Id 'radio2' -Children {
+    PS >    New-UDRadio -Value 'Adam' -Label 'Adam'  -Id 'adam'
+    PS >    New-UDRadio -Value 'Sarah' -Label 'Sarah' -Id 'sarah'
+    PS >    New-UDRadio -Value 'Austin' -Label 'Austin' -Id 'austin'
+    PS > } -OnChange {
+    PS >    Show-UDToast -Message "Radio selected: $EventData"
+    PS > }
+    
+    OnChange|Creates a basic radio group with three radio buttons and an OnChange script block.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDRadioGroup -Label 'group' -Id 'radio3' -Children {
+    PS >    New-UDRadio -Value 'Adam' -Label 'Adam'  -Id 'adam'
+    PS >    New-UDRadio -Value 'Sarah' -Label 'Sarah' -Id 'sarah'
+    PS >    New-UDRadio -Value 'Austin' -Label 'Austin' -Id 'austin'
+    PS > } -Disabled
+    
+    Disabled|Creates a basic radio group with three radio buttons and disables the group.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDRadioGroup -Label 'group' -Id 'radio4' -Children {
+    PS >    New-UDRadio -Value 'Adam' -Label 'Adam'  -Id 'adam'
+    PS >    New-UDRadio -Value 'Sarah' -Label 'Sarah' -Id 'sarah'
+    PS >    New-UDRadio -Value 'Austin' -Label 'Austin' -Id 'austin'
+    PS > } -DefaultValue 'Sarah'
+    
+    Default Value|Creates a basic radio group with three radio buttons and sets the default value to 'Sarah'.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDRadioGroup -Label 'group' -Id 'radio4' -Children {
+    PS >    New-UDRadio -Value 'Adam' -Label 'Adam'  -Id 'adam' -LabelPlacement 'start'
+    PS >    New-UDRadio -Value 'Sarah' -Label 'Sarah' -Id 'sarah' -LabelPlacement 'start'
+    PS >    New-UDRadio -Value 'Austin' -Label 'Austin' -Id 'austin' -LabelPlacement 'start'
+    PS > } -DefaultValue 'Sarah'
+    
+    Label Placement|Creates a basic radio group with three radio buttons and sets the label placement to 'start'.
     
     
     

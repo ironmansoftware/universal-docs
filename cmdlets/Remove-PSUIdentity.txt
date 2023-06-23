@@ -3,7 +3,7 @@ NAME
     Remove-PSUIdentity
     
 SYNOPSIS
-    {{ Fill in the Synopsis }}
+    Removes an identity within PSU.
     
     
 SYNTAX
@@ -13,12 +13,12 @@ SYNTAX
     
     
 DESCRIPTION
-    {{ Fill in the Description }}
+    Removes an identity defined within PSU. Identities are apps or users accessing PSU.
     
 
 PARAMETERS
     -AppToken <String>
-        {{ Fill AppToken Description }}
+        An app token to access the PSU API.
         
         Required?                    false
         Position?                    named
@@ -27,7 +27,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        {{ Fill ComputerName Description }}
+        The HTTP address of the PSU REST API server.
         
         Required?                    false
         Position?                    named
