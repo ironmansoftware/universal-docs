@@ -2,19 +2,26 @@
 NAME
     Hide-UDToast
     
+SYNOPSIS
+    Hides a toast message.
+    
+    
 SYNTAX
-    Hide-UDToast [-Id] <string> [<CommonParameters>]
+    Hide-UDToast [-Id] <String> [<CommonParameters>]
     
     
+DESCRIPTION
+    Hides a toast message.
+    
+
 PARAMETERS
-    -Id <string>
+    -Id <String>
+        The ID of the toast to hide.
         
         Required?                    true
-        Position?                    0
+        Position?                    1
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -23,19 +30,11 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
     
-
-REMARKS
-    None
+RELATED LINKS
 
 

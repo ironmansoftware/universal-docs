@@ -1,0 +1,69 @@
+
+NAME
+    New-UDButtonGroup
+    
+SYNOPSIS
+    Creates a new button group.
+    
+    
+SYNTAX
+    New-UDButtonGroup [[-Id] <String>] [[-Children] <ScriptBlock>] [[-ClassName] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a button group. Use New-UDButtonGroupItem to add new items to the group.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    1
+        Default value                ([Guid]::NewGuid()).ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Children <ScriptBlock>
+        The items in the group.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        
+        Required?                    false
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > Creates a new button group with two items.
+    
+    New-UDButtonGroup -Content {
+        New-UDButtonGroupItem -Text 'Delete'
+        New-UDButtonGroupItem -Text 'Copy'
+    }
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

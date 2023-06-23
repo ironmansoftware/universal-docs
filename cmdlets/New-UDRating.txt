@@ -2,109 +2,107 @@
 NAME
     New-UDRating
     
+SYNOPSIS
+    Ratings provide insight regarding others' opinions and experiences, and can allow the user to submit a rating of their own.
+    
+    
 SYNTAX
-    New-UDRating [[-Id] <string>] [[-DefaultValue] <double>] [[-EmptyLabelText] <string>] [[-Max] <double>] [[-OnChange] <Endpoint>] [[-Precision] <double>] [[-Size] {small | medium | large}] [[-Value] <double>] [-Disabled] [-HighlightSelectedOnly] [<CommonParameters>]
+    New-UDRating [[-Id] <String>] [[-DefaultValue] <Double>] [-Disabled] [[-EmptyLabelText] <String>] [-HighlightSelectedOnly] [[-Max] <Double>] [[-OnChange] <Endpoint>] [[-Precision] <Double>] [[-Size] <String>] [[-Value] <Double>] [<CommonParameters>]
     
     
+DESCRIPTION
+    Ratings provide insight regarding others' opinions and experiences, and can allow the user to submit a rating of their own.
+    
+
 PARAMETERS
-    -DefaultValue <double>
+    -Id <String>
+        An ID for this component. If not specified, a random GUID will be used.
         
         Required?                    false
         Position?                    1
+        Default value                [Guid]::NewGuid().ToString()
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Disabled
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -EmptyLabelText <string>
+    -DefaultValue <Double>
+        The default value for this rating.
         
         Required?                    false
         Position?                    2
+        Default value                0
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -HighlightSelectedOnly
+    -Disabled [<SwitchParameter>]
+        Whether this rating is disabled.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Id <string>
-        
-        Required?                    false
-        Position?                    0
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Max <double>
+    -EmptyLabelText <String>
+        The text to show when the rating is empty.
         
         Required?                    false
         Position?                    3
+        Default value                Empty
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -OnChange <Endpoint>
+    -HighlightSelectedOnly [<SwitchParameter>]
+        Whether to highlight the selected rating only.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Max <Double>
+        The maximum value for this rating.
         
         Required?                    false
         Position?                    4
+        Default value                5
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Precision <double>
+    -OnChange <Endpoint>
+        A script block to call when the rating is changed. The $EventData variable will be the new value.
         
         Required?                    false
         Position?                    5
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Size <string>
+    -Precision <Double>
+        The precision of the rating. Defaults to 1.
         
         Required?                    false
         Position?                    6
+        Default value                1
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Value <double>
+    -Size <String>
+        The size of the rating. Can be small, medium, or large.
         
         Required?                    false
         Position?                    7
+        Default value                medium
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Value <Double>
+        The current value of the rating.
+        
+        Required?                    false
+        Position?                    8
+        Default value                0
+        Accept pipeline input?       false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -113,19 +111,58 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
+    -------------------------- EXAMPLE 1 --------------------------
     
-
-REMARKS
-    None
+    PS >New-UDRating -Value 3 -Id 'rating1'
+    
+    Basic Rating|Creates a basic rating component.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDRating -Value 3 -OnChange {
+    PS >    Show-UDToast -Message "Rating changed to $EventData"
+    PS > } -Id 'rating2'
+    
+    OnChange|Creates a rating component with an OnChange script block.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDRating -Value 3 -Size large -Id 'rating3'
+    
+    Size|Creates a large rating component.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDRating -Value 3 -Disabled -Id 'rating4'
+    
+    Disabled|Creates a disabled rating component.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDRating -Value 3 -HighlightSelectedOnly -Id 'rating5'
+    
+    Highlight Selected Only|Creates a rating component that only highlights the selected rating.
+    
+    
+    
+    
+    
+RELATED LINKS
 
 

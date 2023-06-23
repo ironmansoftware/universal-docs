@@ -2,101 +2,100 @@
 NAME
     New-UDMapRasterLayer
     
+SYNOPSIS
+    Creates a map raster layer.
+    
+    
 SYNTAX
-    New-UDMapRasterLayer [-Id <string>] [-TileServer <string>] [-Attribution <string>] [-Opacity <int>] [-ZIndex <int>] [-Name <string>] [<CommonParameters>]
+    New-UDMapRasterLayer [-Id <String>] [-TileServer <String>] [-Attribution <String>] [-Opacity <Int32>] [-ZIndex <Int32>] [-Name <String>] [<CommonParameters>]
     
-    New-UDMapRasterLayer -ApiKey <string> -Bing [-Id <string>] [-Type {Aerial | AerialWithLabels | AerialWithLabelsOnDemand | CanvasDark | CanvasLight | CanvasGray | Road}] [-Attribution <string>] [-Opacity <int>] [-ZIndex <int>] [-Name <string>] [<CommonParameters>]
+    New-UDMapRasterLayer [-Id <String>] -ApiKey <String> [-Type <String>] -Bing [-Attribution <String>] [-Opacity <Int32>] [-ZIndex <Int32>] [-Name <String>] [<CommonParameters>]
     
     
+DESCRIPTION
+    Creates a map raster layer.
+    
+
 PARAMETERS
-    -ApiKey <string>
+    -Id <String>
+        The id of the map raster layer. This defaults to a new GUID.
+        
+        Required?                    false
+        Position?                    named
+        Default value                ([Guid]::NewGuid())
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -TileServer <String>
+        The tile server to use. This defaults to OpenStreetMap.
+        
+        Required?                    false
+        Position?                    named
+        Default value                https://a.tile.openstreetmap.org/{z}/{x}/{y}.png
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ApiKey <String>
+        The API key to use for the tile server.
         
         Required?                    true
-        Position?                    Named
+        Position?                    named
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           Bing
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Attribution <string>
+    -Type <String>
+        The type of Bing map to use. This defaults to Aerial.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                Aerial
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Bing
+    -Bing [<SwitchParameter>]
+        Whether or not to use Bing maps.
         
         Required?                    true
-        Position?                    Named
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
-        Parameter set name           Bing
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Id <string>
+    -Attribution <String>
+        Attribution text to display on the map.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Name <string>
+    -Opacity <Int32>
+        The opacity of the map.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                0
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Opacity <int>
+    -ZIndex <Int32>
+        The z-index of the map.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                0
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -TileServer <string>
+    -Name <String>
+        The name of the raster layer.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           Generic
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Type <string>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bing
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -ZIndex <int>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -105,19 +104,11 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
     
-
-REMARKS
-    None
+RELATED LINKS
 
 

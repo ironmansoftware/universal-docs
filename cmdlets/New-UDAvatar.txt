@@ -52,7 +52,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Variant <String>
-        The variant type of the avatar.
+        The variant type of the avatar. Valid values are: "square", "rounded"
         
         Required?                    false
         Position?                    5
@@ -61,6 +61,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Sx <Object>
+        The sx property allows you to define custom CSS styles that will be applied to the component.
         
         Required?                    false
         Position?                    6
@@ -69,10 +70,11 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Children <ScriptBlock>
+        The content to display within the avatar.
         
         Required?                    false
         Position?                    7
-        Default value                
+        Default value                { "A" }
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -88,9 +90,51 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > A small avatar using Alon's image.
+    PS >New-UDAvatar -Alt "Remy Sharp" -Image "/admin/logo.png"
     
-    New-UDAvatar -Image 'https://avatars2.githubusercontent.com/u/34351424?s=460&v=4' -Alt 'alon gvili avatar' -Id 'avatarContent' -Variant small
+    Basic avatar|Displays a basic avatar with an image.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDAvatar -Alt "Remy Sharp" -Content { "B" } -Variant square
+    
+    Square avatar|Displays a square avatar with an image.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDAvatar -Alt "Remy Sharp" -Content {
+    PS >   "A"
+    PS > } -Sx @{
+    PS >   borderRadius = '50%'
+    PS > }
+    
+    Avatar with text|Displays an avatar with text and custom CSS styles.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDAvatarGroup -Content {
+    PS >   1..10 | ForEach-Object { 
+    PS >     New-UDAvatar -Alt "Remy Sharp" -Content {
+    PS >         "A"
+    PS >     } -Sx @{
+    PS >         borderRadius    = '50%'
+    PS >         backgroundColor = 'error.dark'
+    PS >     }
+    PS >   }
+    PS > } -Sx @{
+    PS >    width = "20%"
+    PS > }
+    
+    Avatar group|Displays a group of avatars.
     
     
     

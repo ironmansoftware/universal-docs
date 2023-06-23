@@ -45,13 +45,28 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > New-UDDyanmic -Id 'dateTime' -Content {
-        Get-Date
-    }
+    PS >New-UDDynamic -Id 'sync1' -Content {
+    PS >    Get-Date
+    PS > }
+    PS > New-UDButton -Text 'Refresh' -OnClick {
+    PS >    Sync-UDElement 'sync1'
+    PS > } -Id 'syncButton1'
     
-    New-UDButton -Text 'Refresh' -Content {
-        Sync-UDElement 'dateTime'
-    }
+    Sync Element|Syncs an element.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDDynamic -Id 'sync2' -Content {
+    PS >    Get-Date
+    PS > }
+    PS > New-UDButton -Text 'Refresh' -OnClick {
+    PS >    Sync-UDElement 'sync2' -Broadcast
+    PS > } -Id 'syncButton2'
+    
+    Broadcast|Syncs an element and broadcasts it to all connected dashboards.
     
     
     

@@ -45,11 +45,11 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > An example
+    PS >New-UDSpan -Content {
+    PS >    New-UDTypography -Text 'Text'
+    PS > }
     
-    New-UDSpan -Content {
-        New-UDTypography -Text 'Text'
-    }
+    Basic Span|A basic span.
     
     
     

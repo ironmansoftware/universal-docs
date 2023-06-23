@@ -2,39 +2,44 @@
 NAME
     New-UDTimeline
     
+SYNOPSIS
+    The timeline displays a list of events in chronological order.
+    
+    
 SYNTAX
-    New-UDTimeline [[-Id] <string>] [[-Children] <scriptblock>] [[-Position] {right | left | alternate}] [<CommonParameters>]
+    New-UDTimeline [[-Id] <String>] [[-Children] <ScriptBlock>] [[-Position] <String>] [<CommonParameters>]
     
     
+DESCRIPTION
+    The timeline displays a list of events in chronological order.
+    
+
 PARAMETERS
-    -Children <scriptblock>
+    -Id <String>
+        The ID of this component. The default value is a random GUID.
         
         Required?                    false
         Position?                    1
+        Default value                ([Guid]::NewGuid()).ToString()
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      Content
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Id <string>
-        
-        Required?                    false
-        Position?                    0
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Position <string>
+    -Children <ScriptBlock>
+        The content of this timeline.
         
         Required?                    false
         Position?                    2
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Position <String>
+        The position of the timeline. Valid values are right, left, and alternate.
+        
+        Required?                    false
+        Position?                    3
+        Default value                right
+        Accept pipeline input?       false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -43,19 +48,103 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
+    -------------------------- EXAMPLE 1 --------------------------
     
-
-REMARKS
-    None
+    PS >New-UDTimeline -Children {
+    PS >     New-UDTimelineItem -Content {
+    PS >         'Breakfast'
+    PS >     } -OppositeContent {
+    PS >         '7:45 AM'
+    PS >     } 
+    PS >     New-UDTimelineItem -Content {
+    PS >         'Welcome Message'
+    PS >     } -OppositeContent {
+    PS >         '9:00 AM'
+    PS >     }
+    PS >     New-UDTimelineItem -Content {
+    PS >         'State of the Shell'
+    PS >     } -OppositeContent {
+    PS >         '9:30 AM'
+    PS >    }
+    PS >     New-UDTimelineItem -Content {
+    PS >         'General Session'
+    PS >     } -OppositeContent {
+    PS >         '11:00 AM'
+    PS >     }
+    PS > } -Id 'timeline1'
+    
+    Basic Timeline|A basic timeline.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDTimeline -Children {
+    PS >     New-UDTimelineItem -Content {
+    PS >         'Breakfast'
+    PS >     } -OppositeContent {
+    PS >         '7:45 AM'
+    PS >     }
+    PS >     New-UDTimelineItem -Content {
+    PS >         'Welcome Message'
+    PS >     } -OppositeContent {
+    PS >         '9:00 AM'
+    PS >     }
+    PS >     New-UDTimelineItem -Content {
+    PS >         'State of the Shell'
+    PS >     } -OppositeContent {
+    PS >         '9:30 AM'
+    PS >     }
+    PS >     New-UDTimelineItem -Content {
+    PS >         'General Session'
+    PS >     } -OppositeContent {
+    PS >         '11:00 AM'
+    PS >     }
+    PS > } -Position alternate -Id 'timeline2'
+    
+    Alternate Timeline|An alternating timeline.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDTimeline -Children {
+    PS >     New-UDTimelineItem -Content {
+    PS >         'Breakfast'
+    PS >     } -OppositeContent {
+    PS >         '7:45 AM'
+    PS >     } -Icon (New-UDIcon -Icon 'CheckCircle' -Color 'success')
+    PS >     New-UDTimelineItem -Content {
+    PS >         'Welcome Message'
+    PS >     } -OppositeContent {
+    PS >         '9:00 AM'
+    PS >     } -Icon (New-UDIcon -Icon 'CheckCircle' -Color 'success')
+    PS >     New-UDTimelineItem -Content {
+    PS >         'State of the Shell'
+    PS >     } -OppositeContent {
+    PS >         '9:30 AM'
+    PS >     } -Icon (New-UDIcon -Icon 'CheckCircle' -Color 'success')
+    PS >     New-UDTimelineItem -Content {
+    PS >         'General Session'
+    PS >     } -OppositeContent {
+    PS >         '11:00 AM'
+    PS >     } -Icon (New-UDIcon -Icon 'CheckCircle' -Color 'success')
+    PS > } -Id 'timeline3'
+    
+    Timeline with Icons|A timeline with icons.
+    
+    [Component("Timeline", "Timeline", "Creates a new card.")]
+    
+    
+    
+    
+    
+RELATED LINKS
 
 

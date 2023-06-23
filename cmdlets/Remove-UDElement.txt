@@ -54,13 +54,28 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > New-UDElement -Id 'myElement' -Tag 'div' -Content {
-        New-UDTypography -Text 'Hello World'
-    }
+    PS >New-UDElement -Id 'removeElement1' -Tag 'div' -Content {
+    PS >     New-UDTypography -Text 'Hello World'
+    PS > }
+    PS > New-UDButton -Text 'Click Me' -OnClick {
+    PS >     Remove-UDElement -Id 'removeElement1'
+    PS > }
     
-    New-UDButton -Text 'Click Me' -OnClick {
-        Remove-UDElement -Id 'myElement'
-    }
+    Remove Element|Removes an element from the page.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDElement -Id 'removeElement2' -Tag 'div' -Content {
+    PS >     New-UDTypography -Text 'Hello World'
+    PS > }
+    PS > New-UDButton -Text 'Click Me' -OnClick {
+    PS >     Remove-UDElement -Id 'removeElement2' -Broadcast
+    PS > }
+    
+    Broadcast|Removes an element from the page and broadcasts it to all connected dashboards.
     
     
     

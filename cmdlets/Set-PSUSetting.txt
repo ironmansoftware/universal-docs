@@ -11,7 +11,7 @@ SYNTAX
     
     
 DESCRIPTION
-    Sets a UA setting.
+    Sets a PSU setting.
     
 
 PARAMETERS
@@ -43,7 +43,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -AppToken <String>
-        An app token to access the UA API.
+        An app token to access the PSU API.
         
         Required?                    false
         Position?                    named
@@ -52,7 +52,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The HTTP address of the UA REST API server.
+        The HTTP address of the PSU REST API server.
         
         Required?                    false
         Position?                    named

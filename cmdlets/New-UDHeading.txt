@@ -83,9 +83,9 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > A heading
+    PS >New-UDHeading -Text 'Hello World' -Size 1 -Color 'red'
     
-    New-UDHeading -Text 'Heading 1' -Size 1 -Color Blue
+    Basic Heading|Creates a basic heading.
     
     
     

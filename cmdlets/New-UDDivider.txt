@@ -106,6 +106,65 @@ INPUTS
     
 OUTPUTS
     
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDDivider -Id 'divider1'
+    
+    Basic Divider|Creates a basic divider.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDDivider -Id 'divider2' -Variant 'inset'
+    PS > New-UDDivider -Id 'divider3' -Variant 'middle'
+    
+    Variants|Creates a divider with the inset and middle variants.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDDivider -Id 'divider4' -Orientation 'vertical'
+    
+    Vertical Divider|Creates a vertical divider.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDDivider -Id 'divider5' -Light
+    
+    Light Divider|Creates a light divider.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDDivider -Id 'divider6' -Children {
+    PS >    New-UDTypography -Text 'Examples'
+    PS > }
+    
+    Divider with Text|Creates a divider with text.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS >New-UDDivider -Id 'divider6' -Children {
+    PS >    New-UDTypography -Text 'Examples'
+    PS > } -TextAlign left
+    
+    Algin Text|Creates a divider with text aligned to the left.
+    
+    
+    
+    
     
 RELATED LINKS
 

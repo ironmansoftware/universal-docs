@@ -5,20 +5,8 @@ NAME
 SYNTAX
     New-UDRow [[-Columns] <scriptblock>] [-Id <string>] [<CommonParameters>]
     
-    New-UDRow [-Id <string>] [-Endpoint <Object>] [-AutoRefresh] [-RefreshInterval <int>] [<CommonParameters>]
-    
     
 PARAMETERS
-    -AutoRefresh
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           dynamic
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
     -Columns <scriptblock>
         
         Required?                    false
@@ -29,32 +17,12 @@ PARAMETERS
         Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Endpoint <Object>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           dynamic
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
     -Id <string>
         
         Required?                    false
         Position?                    Named
         Accept pipeline input?       false
         Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -RefreshInterval <int>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           dynamic
         Aliases                      None
         Dynamic?                     false
         Accept wildcard characters?  false

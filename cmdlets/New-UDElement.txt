@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDElement [-ArgumentList <Object[]>] [-Attributes <Hashtable>] [-AutoRefresh] [-Content <ScriptBlock>] [-Endpoint <ScriptBlock>] [-Id <String>] [-OnMount <String>] [-RefreshInterval <Int32>] -Tag <String> [<CommonParameters>]
+    New-UDElement [-ArgumentList <Object[]>] [-Attributes <Hashtable>] [-AutoRefresh] [-Content <ScriptBlock>] [-Endpoint <ScriptBlock>] [-Id <String>] [-RefreshInterval <Int32>] -Tag <String> [<CommonParameters>]
     
     
 DESCRIPTION
@@ -16,7 +16,7 @@ DESCRIPTION
 
 PARAMETERS
     -ArgumentList <Object[]>
-        No required. For backwards compatibility.
+        Not required. For backwards compatibility.
         
         Required?                    false
         Position?                    named
@@ -62,15 +62,6 @@ PARAMETERS
         
     -Id <String>
         An ID for the element.
-        
-        Required?                    false
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -OnMount <String>
-        An event handler to call when the React element is mounted.
         
         Required?                    false
         Position?                    named
@@ -127,7 +118,18 @@ NOTES
         "Hello!"
     }
     
-    Creates a div with red text.
+    Basic Element|Creates a div with red text.
+    -------------------------- Example 2 --------------------------
+    
+    New-UDElement -Tag 'div' -Attributes @{
+        onClick = {
+            Show-UDToast "Clicked!"
+        }
+    } -Content {
+        "Hello!"
+    }
+    
+    Event Handler|An element with an event handler.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

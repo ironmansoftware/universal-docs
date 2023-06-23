@@ -2,69 +2,71 @@
 NAME
     New-UDMapPopup
     
+SYNOPSIS
+    Creates a map popup.
+    
+    
 SYNTAX
-    New-UDMapPopup [[-Id] <string>] [[-Content] <scriptblock>] [[-Longitude] <float>] [[-Latitude] <float>] [[-MaxWidth] <int>] [[-MinWidth] <int>] [<CommonParameters>]
+    New-UDMapPopup [[-Id] <String>] [[-Content] <ScriptBlock>] [[-Longitude] <Single>] [[-Latitude] <Single>] [[-MaxWidth] <Int32>] [[-MinWidth] <Int32>] [<CommonParameters>]
     
     
+DESCRIPTION
+    Creates a map popup.
+    
+
 PARAMETERS
-    -Content <scriptblock>
+    -Id <String>
+        The id of the map popup. This defaults to a new GUID.
         
         Required?                    false
         Position?                    1
+        Default value                ([Guid]::NewGuid())
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Id <string>
-        
-        Required?                    false
-        Position?                    0
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Latitude <float>
-        
-        Required?                    false
-        Position?                    3
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Longitude <float>
+    -Content <ScriptBlock>
+        The content of the map popup.
         
         Required?                    false
         Position?                    2
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -MaxWidth <int>
+    -Longitude <Single>
+        The longitude of the map popup.
+        
+        Required?                    false
+        Position?                    3
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Latitude <Single>
+        The latitude of the map popup.
         
         Required?                    false
         Position?                    4
+        Default value                0
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -MinWidth <int>
+    -MaxWidth <Int32>
+        The max width of the map popup.
         
         Required?                    false
         Position?                    5
+        Default value                0
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -MinWidth <Int32>
+        The min width of the map popup.
+        
+        Required?                    false
+        Position?                    6
+        Default value                0
+        Accept pipeline input?       false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -73,19 +75,11 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
     
-
-REMARKS
-    None
+RELATED LINKS
 
 

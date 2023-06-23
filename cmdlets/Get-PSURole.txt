@@ -3,7 +3,7 @@ NAME
     Get-PSURole
     
 SYNOPSIS
-    Returns the roles defined within UA.
+    Returns the roles defined within PSU.
     
     
 SYNTAX
@@ -13,12 +13,12 @@ SYNTAX
     
     
 DESCRIPTION
-    Returns the roles defined within UA. Roles specify what identities are capable of in UA.
+    Returns the roles defined within PSU. Roles specify what identities are capable of in PSU.
     
 
 PARAMETERS
     -AppToken <String>
-        An app token to access the UA API.
+        An app token to access the PSU API.
         
         Required?                    false
         Position?                    named
@@ -27,7 +27,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The HTTP address of the UA REST API server.
+        The HTTP address of the PSU REST API server.
         
         Required?                    false
         Position?                    named
@@ -96,7 +96,7 @@ NOTES
     
     PS C:\> Get-UARole
     
-    Returns all roles defined within UA.
+    Returns all roles defined within PSU.
     -------------------------- Example 2 --------------------------
     
     PS C:\> Get-UARole -Name 'Administrator'

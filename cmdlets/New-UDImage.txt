@@ -31,7 +31,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    named
-        Default value                
+        Default value                https://ironmansoftware.com/img/ps-logo.png
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -92,9 +92,41 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > Displays an image.
+    PS >New-UDImage -Url "https://ironmansoftware.com/img/ps-logo.png"
     
-    New-UDImage -Url 'https://ironmansoftware.com/logo.png'
+    Basic image|Displays an image.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >$Image = Get-ChildItem "$PSScriptRoot\*.png" | Select-Object -First 1
+    PS > New-UDImage -Path ($Image.FullName)
+    
+    Local image|Displays a local image.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDImage -Url "https://ironmansoftware.com/img/ps-logo.png" -Height 100 -Width 100
+    
+    Image with height and width|Displays an image with a height and width.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDImage -Url "https://ironmansoftware.com/img/ps-logo.png" -Attributes @{ 
+    PS >    style = @{ 
+    PS >        borderRadius = '50%'
+    PS >    }
+    PS > }
+    
+    Image with style|Displays an image with a style attribute.
     
     
     

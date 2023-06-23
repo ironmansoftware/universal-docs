@@ -3,7 +3,7 @@ NAME
     Get-PSUVariable
     
 SYNOPSIS
-    Returns variables defined in UA.
+    Returns variables defined in PSU.
     
     
 SYNTAX
@@ -13,12 +13,12 @@ SYNTAX
     
     
 DESCRIPTION
-    Returns variables defined in UA.
+    Returns variables defined in PSU.
     
 
 PARAMETERS
     -AppToken <String>
-        An app token to access the UA API.
+        An app token to access the PSU API.
         
         Required?                    false
         Position?                    named
@@ -27,7 +27,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The HTTP address of the UA REST API server.
+        The HTTP address of the PSU REST API server.
         
         Required?                    false
         Position?                    named

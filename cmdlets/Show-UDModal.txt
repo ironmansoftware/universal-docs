@@ -3,7 +3,7 @@ NAME
     Show-UDModal
     
 SYNOPSIS
-    Show a modal.
+    The modal component provides a solid foundation for creating dialogs, popovers, lightboxes, or whatever else.
     
     
 SYNTAX
@@ -79,6 +79,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Style <Hashtable>
+        The CSS style for the modal.
         
         Required?                    false
         Position?                    5
@@ -96,6 +97,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ContentStyle <Hashtable>
+        The CSS style for the content portion of the modal.
         
         Required?                    false
         Position?                    7
@@ -104,6 +106,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -FooterStyle <Hashtable>
+        The CSS style for the footer portion of the modal.
         
         Required?                    false
         Position?                    8
@@ -132,13 +135,73 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > New-UDButton -Text 'Click Me' -OnClick {
-        Show-UDModal -Content {
-            New-UDTypography -Text "Hello World"
-        }
-    }
+    PS >New-UDButton -Text 'Basic' -OnClick {
+    PS >    Show-UDModal -Content {
+    PS >        New-UDTypography -Text "Hello" -Id 'typography1'
+    PS >    }
+    PS > } -Id 'button1'
+    
+    Basic Modal|A basic modal.
     
     
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDButton -Text 'Full Screen' -OnClick {
+    PS >    Show-UDModal -Content {
+    PS >        New-UDTypography -Text "Hello"
+    PS >    } -FullScreen -Footer {
+    PS >        New-UDButton -Text "Close" -OnClick { Hide-UDModal } 
+    PS >    }
+    PS > } -Id 'button2'
+    
+    Full Screen Modal|A full screen modal.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDButton -Text 'Full Width' -OnClick {
+    PS >    Show-UDModal -Content {
+    PS >        New-UDTypography -Text "Hello"
+    PS >    } -FullWidth -MaxWidth 'md'
+    PS > } -Id 'button3'
+    
+    Full Width Modal|A full width modal.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDButton -Text 'Persistent' -OnClick {
+    PS >    Show-UDModal -Content {
+    PS >        New-UDTypography -Text "Hello"
+    PS >    } -Persistent -Footer {
+    PS >        New-UDButton -Text "Close" -OnClick { Hide-UDModal } -Id 'button5'
+    PS >    }
+    PS > } -Id 'button4'
+    
+    Persistent Modal|A persistent modal.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDButton -Text 'Header And Footer' -OnClick {
+    PS >    Show-UDModal -Content {
+    PS >        New-UDTypography -Text "Hello"
+    PS >    } -Header {
+    PS >        New-UDTypography -Text "Header" -Id 'header'
+    PS >    } -Footer {
+    PS >        New-UDButton -Text "Close" -OnClick { Hide-UDModal } -Id 'button6'
+    PS >    } -Dividers
+    PS > } -Id 'button5'
+    
+    Header And Footer Modal|A modal with a header and footer.
     
     
     

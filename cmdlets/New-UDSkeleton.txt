@@ -3,7 +3,7 @@ NAME
     New-UDSkeleton
     
 SYNOPSIS
-    Creates a loading skeleton
+    Display a placeholder preview of your content before the data gets loaded to reduce load-time frustration.
     
     
 SYNTAX
@@ -78,6 +78,42 @@ PARAMETERS
 INPUTS
     
 OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDSkeleton -Id 'skeleton1' -Variant text -Animation wave -Width 210
+    
+    Text skeleton|Creates a new text skeleton with a wave animation.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDSkeleton -Id 'skeleton2' -Variant rect -Width 210 -Height 118
+    
+    Rect skeleton|Creates a new rect skeleton with a width of 210 and a height of 118.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDSkeleton -Id 'skeleton3' -Variant circle -Width 40 -Height 40
+    
+    Circle skeleton|Creates a new circle skeleton with a width of 40 and a height of 40.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDSkeleton -Id 'skeleton4' -Animation disabled -Width 210 -Height 118
+    
+    Disabled animation|Creates a new skeleton with a disabled animation.
+    
+    
+    
     
     
 RELATED LINKS

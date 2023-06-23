@@ -79,21 +79,6 @@ INPUTS
     
 OUTPUTS
     
-    -------------------------- EXAMPLE 1 --------------------------
-    
-    PS > Creates a radio group that shows a toast message when a radio is selected.
-    
-    New-UDRadioGroup -Label 'group' -Id 'onChangeRadio' -Children {
-        New-UDRadio -Value 'Adam' -Label 'Adam'  -Id 'adamOnChange'
-        New-UDRadio -Value 'Alon' -Label 'Alon' -Id 'alonOnChange'
-        New-UDRadio -Value 'Lee' -Label 'Lee' -Id 'leeOnChange'
-    } -OnChange { 
-        Show-UDToast $EventData 
-    }
-    
-    
-    
-    
     
 RELATED LINKS
 

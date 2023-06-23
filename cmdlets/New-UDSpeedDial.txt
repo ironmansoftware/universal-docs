@@ -1,0 +1,123 @@
+
+NAME
+    New-UDSpeedDial
+    
+SYNOPSIS
+    When pressed, a floating action button can display three to six related actions in the form of a Speed Dial.
+    
+    
+SYNTAX
+    New-UDSpeedDial [[-Id] <String>] [[-Children] <ScriptBlock>] [[-Direction] <String>] [[-Icon] <Hashtable>] [[-OnClose] <Endpoint>] [[-OnOpen] <Endpoint>] [[-OnActionClick] <Endpoint>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    When pressed, a floating action button can display three to six related actions in the form of a Speed Dial.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of this component. It defaults to a random GUID.
+        
+        Required?                    false
+        Position?                    1
+        Default value                ([Guid]::NewGuid().ToString())
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Children <ScriptBlock>
+        Actions for this speed dial. Use New-UDSpeedDialAction to create actions.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Direction <String>
+        The direction the speed dial opens. Valid values are up, down, left, and right.
+        
+        Required?                    false
+        Position?                    3
+        Default value                up
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Icon <Hashtable>
+        The icon for the speed dial. Use New-UDIcon to create an Icon.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnClose <Endpoint>
+        A scriptblock to call when the speed dial closes.
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnOpen <Endpoint>
+        A scriptblock to call when the speed dial opens.
+        
+        Required?                    false
+        Position?                    6
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnActionClick <Endpoint>
+        
+        Required?                    false
+        Position?                    7
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDSpeedDial -Content {
+    PS >    New-UDSpeedDialAction -Icon (New-UDIcon -Icon 'User') -TooltipTitle 'My Account'
+    PS >    New-UDSpeedDialAction -Icon (New-UDIcon -Icon 'Users') -TooltipTitle 'Groups'
+    PS >    New-UDSpeedDialAction -Icon (New-UDIcon -Icon 'Save') -TooltipTitle 'Save'
+    PS >    New-UDSpeedDialAction -Icon (New-UDIcon -Icon 'File') -TooltipTitle 'Open'
+    PS > } -Icon (New-UDIcon -Icon 'Plus') -Id 'speedDial1'
+    
+    Basic Speed Dial|Creates a basic speed dial.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDSpeedDial -Content {
+    PS >    New-UDSpeedDialAction -Icon (New-UDIcon -Icon 'User') -TooltipTitle 'My Account' -Id 'myAccount'
+    PS >    New-UDSpeedDialAction -Icon (New-UDIcon -Icon 'Users') -TooltipTitle 'Groups'
+    PS >    New-UDSpeedDialAction -Icon (New-UDIcon -Icon 'Save') -TooltipTitle 'Save'
+    PS >    New-UDSpeedDialAction -Icon (New-UDIcon -Icon 'File') -TooltipTitle 'Open'
+    PS > } -Icon (New-UDIcon -Icon 'Plus') -Id 'speedDial2' -OnActionClick {
+    PS >    Show-UDToast "Ouch! You clicked $EventData"
+    PS > }
+    
+    OnClick|Creates a speed dial with an OnClick action.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

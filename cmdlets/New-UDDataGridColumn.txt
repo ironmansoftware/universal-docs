@@ -1,0 +1,256 @@
+
+NAME
+    New-UDDataGridColumn
+    
+SYNOPSIS
+    Creates a new data grid column.
+    
+    
+SYNTAX
+    New-UDDataGridColumn [[-Align] <String>] [[-CellClassName] <String>] [[-ColumnSpan] <Int32>] [[-Description] <String>] [-DisableColumnMenu] [-DisableExport] [-DisableReorder] [-Editable] [[-Field] <String>] [[-Filterable] <String>] [[-Flex] <Single>] [-Groupable] [[-HeaderAlign] <String>] [[-HeaderName] <String>] [[-Hideable] <String>] [[-HideSortIcons] <String>] [[-MaxWidth] <Int32>] [[-MinWidth] <Int32>] [-Pinnable] [-Resizable] [-Sortable] [[-SortingOrder] <String[]>] [[-Type] <String>] [[-Width] <Int32>] [[-Render] <ScriptBlock>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new data grid column.
+    
+
+PARAMETERS
+    -Align <String>
+        The alignment of the cell data. Possible values are 'left', 'center' and 'right'.
+        
+        Required?                    false
+        Position?                    1
+        Default value                left
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -CellClassName <String>
+        CSS class name to be applied on cell element.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ColumnSpan <Int32>
+        The number of columns that the column should span.
+        
+        Required?                    false
+        Position?                    3
+        Default value                1
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Description <String>
+        The description of the column that appears when hovering the header cell.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DisableColumnMenu [<SwitchParameter>]
+        If true, the column menu is disabled.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DisableExport [<SwitchParameter>]
+        If true, the column is not exported.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DisableReorder [<SwitchParameter>]
+        If true, the column cannot be reordered.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Editable [<SwitchParameter>]
+        If true, the column is editable.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Field <String>
+        The field of the row data that the column represents.
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Filterable <String>
+        If true, the column is filterable.
+        
+        Required?                    false
+        Position?                    6
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Flex <Single>
+        The flex value used to set the column width.
+        
+        Required?                    false
+        Position?                    7
+        Default value                1
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Groupable [<SwitchParameter>]
+        If true, the column is groupable.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -HeaderAlign <String>
+        The alignment of the column header cell. Possible values are 'left', 'center' and 'right'.
+        
+        Required?                    false
+        Position?                    8
+        Default value                left
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -HeaderName <String>
+        The name of the column header.
+        
+        Required?                    false
+        Position?                    9
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Hideable <String>
+        If true, the column is hideable.
+        
+        Required?                    false
+        Position?                    10
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -HideSortIcons <String>
+        If true, the sort icons are hidden.
+        
+        Required?                    false
+        Position?                    11
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -MaxWidth <Int32>
+        The maximum width of the column.
+        
+        Required?                    false
+        Position?                    12
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -MinWidth <Int32>
+        The minimum width of the column.
+        
+        Required?                    false
+        Position?                    13
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Pinnable [<SwitchParameter>]
+        If true, the column is pinnable.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Resizable [<SwitchParameter>]
+        If true, the column is resizable.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Sortable [<SwitchParameter>]
+        If true, the column is sortable.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -SortingOrder <String[]>
+        The sorting order of the column. Possible values are 'asc', 'desc' and null.
+        
+        Required?                    false
+        Position?                    14
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Type <String>
+        The type of the column. Possible values are 'string' | 'number' | 'date' | 'dateTime' | 'boolean' | 'singleSelect';
+        
+        Required?                    false
+        Position?                    15
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Width <Int32>
+        The width of the column.
+        
+        Required?                    false
+        Position?                    16
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Render <ScriptBlock>
+        A script block that is used to render the column. The script block is passed the row data as $EventData.
+        
+        Required?                    false
+        Position?                    17
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    
+RELATED LINKS
+
+

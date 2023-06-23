@@ -2,151 +2,165 @@
 NAME
     New-UDChartJS
     
+SYNOPSIS
+    Creates a new ChartJS chart.
+    
+    
 SYNTAX
-    New-UDChartJS -Data <Object> [-Id <string>] [-DatasetLabel <string>] [-Type {bar | line | area | doughnut | radar | pie | bubble}] [-Options <hashtable>] [-OnClick <Endpoint>] [-DataProperty <string>] [-LabelProperty <string>] [-BackgroundColor <DashboardColor[]>] [-BorderColor <DashboardColor[]>] [-HoverBackgroundColor <DashboardColor[]>] [-HoverBorderColor <DashboardColor[]>] [-BorderWidth <int>] [<CommonParameters>]
+    New-UDChartJS [-Id <String>] [-Type <String>] [-Options <Hashtable>] [-OnClick <Endpoint>] [-LoadData <Endpoint>] [-LabelProperty <String>] [<CommonParameters>]
     
-    New-UDChartJS -Data <Object> -Dataset <hashtable[]> [-Id <string>] [-Type {bar | line | area | doughnut | radar | pie | bubble}] [-Options <hashtable>] [-OnClick <Endpoint>] [-LabelProperty <string>] [<CommonParameters>]
+    New-UDChartJS [-Id <String>] [-DatasetLabel <String>] [-Type <String>] [-Options <Hashtable>] [-OnClick <Endpoint>] -Data <Object> [-DataProperty <String>] [-LabelProperty <String>] [-BackgroundColor <DashboardColor[]>] [-BorderColor <DashboardColor[]>] [-HoverBackgroundColor <DashboardColor[]>] [-HoverBorderColor <DashboardColor[]>] [-BorderWidth <Int32>] [<CommonParameters>]
+    
+    New-UDChartJS [-Id <String>] [-Type <String>] [-Options <Hashtable>] [-OnClick <Endpoint>] -Data <Object> -Dataset <Hashtable[]> [-LabelProperty <String>] [<CommonParameters>]
     
     
+DESCRIPTION
+    Creates a new ChartJS chart.
+    
+
 PARAMETERS
-    -BackgroundColor <DashboardColor[]>
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                [Guid]::NewGuid()
         Accept pipeline input?       false
-        Parameter set name           Simple
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -BorderColor <DashboardColor[]>
+    -DatasetLabel <String>
+        The label for the dataset. This is only used when the chart has a single dataset.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           Simple
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -BorderWidth <int>
+    -Type <String>
+        The type of chart to create. Valid values are bar, line, area, doughnut, radar, pie, and bubble.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                bar
         Accept pipeline input?       false
-        Parameter set name           Simple
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Data <Object>
-        
-        Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -DataProperty <string>
+    -Options <Hashtable>
+        A hashtable of options to pass to the chart.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           Simple
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Dataset <hashtable[]>
-        
-        Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Datasets
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -DatasetLabel <string>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Simple
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -HoverBackgroundColor <DashboardColor[]>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Simple
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -HoverBorderColor <DashboardColor[]>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Simple
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Id <string>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -LabelProperty <string>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
     -OnClick <Endpoint>
+        A script block to execute when the chart is clicked. $EventData will include the element that was clicked.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Options <hashtable>
+    -Data <Object>
+        The data to use for the chart. This is an array of objects or hashtables.
         
-        Required?                    false
-        Position?                    Named
+        Required?                    true
+        Position?                    named
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Type <string>
+    -LoadData <Endpoint>
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                {
+                    $Data = @(
+                        @{ Server = "Server1"; AvailableRam = 128; UsedRAM = 10 }
+                        @{ Server = "Server2"; AvailableRam = 64; UsedRAM = 63 }
+                        @{ Server = "Server3"; AvailableRam = 48; UsedRAM = 40 }
+                        @{ Server = "Server4"; AvailableRam = 64; ; UsedRAM = 26 }
+                        @{ Server = "Server5"; AvailableRam = 128; UsedRAM = 120 }
+                    )
+                    
+                    New-UDChartJSDataset -Data ($Data | Select-Object -Expand AvailableRam) -DataProperty AvailableRam -Label 'Available RAM' -BackgroundColor '#126f8c' -BorderWidth 1
+                }
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Dataset <Hashtable[]>
+        Used when defining multiple datasets. This is an array of hashtables. Use the New-UDChartJSDataset cmdlet to create the dataset.
+        
+        Required?                    true
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DataProperty <String>
+        The property to use for the data. This is only used when the chart has a single dataset.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LabelProperty <String>
+        The property to use for the label. This is only used when the chart has a single dataset.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -BackgroundColor <DashboardColor[]>
+        The background color of the chart. This is only used when the chart has a single dataset.
+        
+        Required?                    false
+        Position?                    named
+        Default value                @("#808978FF")
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -BorderColor <DashboardColor[]>
+        The border color of the chart. This is only used when the chart has a single dataset.
+        
+        Required?                    false
+        Position?                    named
+        Default value                @("#FF8978FF")
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -HoverBackgroundColor <DashboardColor[]>
+        The hover background color of the chart. This is only used when the chart has a single dataset.
+        
+        Required?                    false
+        Position?                    named
+        Default value                @("#807B210C")
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -HoverBorderColor <DashboardColor[]>
+        The hover border color of the chart. This is only used when the chart has a single dataset.
+        
+        Required?                    false
+        Position?                    named
+        Default value                @("#FF7B210C")
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -BorderWidth <Int32>
+        The border width of the chart. This is only used when the chart has a single dataset.
+        
+        Required?                    false
+        Position?                    named
+        Default value                1
+        Accept pipeline input?       false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -155,19 +169,221 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
+    -------------------------- EXAMPLE 1 --------------------------
     
-
-REMARKS
-    None
+    PS >$Data = @(
+    PS >     @{ Server = "Server1"; AvailableRam = 128; UsedRAM = 10 }
+    PS >     @{ Server = "Server2"; AvailableRam = 64; UsedRAM = 63 }
+    PS >     @{ Server = "Server3"; AvailableRam = 48; UsedRAM = 40 }
+    PS >     @{ Server = "Server4"; AvailableRam = 64;; UsedRAM = 26 }
+    PS >     @{ Server = "Server5"; AvailableRam = 128; UsedRAM = 120 }
+    PS > )
+    PS > New-UDElement -Tag 'div' -Attributes @{ style = @{ height = '20vh'; width = "20vw"; } } -Content {
+    PS >    New-UDChartJS -Data $Data -DataProperty UsedRAM -LabelProperty Server -Type 'bar' -Id 'chart1'
+    PS > }
+    
+    Bar Chart|A bar chart with a data and label property.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >$Data = @(
+    PS >     @{ x = 1; y = 10; r = 15 }
+    PS >     @{ x = 12; y = 25; r = 35 }
+    PS >     @{ x = 8; y = 10; r = 95 }
+    PS >     @{ x = 6; y = 95; r = 25 }
+    PS > )
+    PS > New-UDElement -Tag 'div' -Attributes @{ style = @{ height = '20vh'; width = "20vw"; } } -Content {
+    PS >    New-UDChartJS -Type 'bubble' -Data $Data  -Id 'chart2'
+    PS > }
+    
+    Bubble Chart|A bubble chart with a data property.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >$Data = @(
+    PS >     @{ Server = "Server1"; AvailableRam = 128; UsedRAM = 10 }
+    PS >     @{ Server = "Server2"; AvailableRam = 64; UsedRAM = 63 }
+    PS >     @{ Server = "Server3"; AvailableRam = 48; UsedRAM = 40 }
+    PS >     @{ Server = "Server4"; AvailableRam = 64;; UsedRAM = 26 }
+    PS >     @{ Server = "Server5"; AvailableRam = 128; UsedRAM = 120 }
+    PS > )
+    PS > New-UDElement -Tag 'div' -Attributes @{ style = @{ height = '20vh'; width = "20vw"; } } -Content {
+    PS >    New-UDChartJS -Data $Data -DataProperty UsedRAM -LabelProperty Server -Type 'line' -BorderWidth 1 -Id 'chart3'
+    PS > }
+    
+    Line Chart|A line chart with a data and label property.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >$Data = @(
+    PS >     @{ Server = "Server1"; AvailableRam = 128; UsedRAM = 10 }
+    PS >     @{ Server = "Server2"; AvailableRam = 64; UsedRAM = 63 }
+    PS >     @{ Server = "Server3"; AvailableRam = 48; UsedRAM = 40 }
+    PS >     @{ Server = "Server4"; AvailableRam = 64;; UsedRAM = 26 }
+    PS >     @{ Server = "Server5"; AvailableRam = 128; UsedRAM = 120 }
+    PS > )
+    PS > New-UDElement -Tag 'div' -Attributes @{ style = @{ height = '20vh'; width = "10vw"; } } -Content {
+    PS >    New-UDChartJS -Data $Data -DataProperty UsedRAM -LabelProperty Server -Type 'doughnut' -Id 'chart4'
+    PS > }
+    
+    Doughnut Chart|A doughnut chart with a data and label property.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >$Data = @(
+    PS >     @{ Server = "Server1"; AvailableRam = 128; UsedRAM = 10 }
+    PS >     @{ Server = "Server2"; AvailableRam = 64; UsedRAM = 63 }
+    PS >     @{ Server = "Server3"; AvailableRam = 48; UsedRAM = 40 }
+    PS >     @{ Server = "Server4"; AvailableRam = 64;; UsedRAM = 26 }
+    PS >     @{ Server = "Server5"; AvailableRam = 128; UsedRAM = 120 }
+    PS > )
+    PS > New-UDElement -Tag 'div' -Attributes @{ style = @{ height = '20vh'; width = "10vw"; } } -Content {
+    PS >    New-UDChartJS -Data $Data -DataProperty UsedRAM -LabelProperty Server -Type 'pie' -Id 'chart5'
+    PS > }
+    
+    Pie Chart|A pie chart with a data and label property.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS >$Data = @(
+    PS >     @{ Server = "Server1"; AvailableRam = 128; UsedRAM = 10 }
+    PS >     @{ Server = "Server2"; AvailableRam = 64; UsedRAM = 63 }
+    PS >     @{ Server = "Server3"; AvailableRam = 48; UsedRAM = 40 }
+    PS >     @{ Server = "Server4"; AvailableRam = 64;; UsedRAM = 26 }
+    PS >     @{ Server = "Server5"; AvailableRam = 128; UsedRAM = 120 }
+    PS > )
+    PS > New-UDElement -Tag 'div' -Attributes @{ style = @{ height = '20vh'; width = "10vw"; } } -Content {
+    PS >    New-UDChartJS -Data $Data -DataProperty UsedRAM -LabelProperty Server -Type 'radar' -Id 'chart6'
+    PS > }
+    
+    Radar Chart|A radar chart with a data and label property.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 7 --------------------------
+    
+    PS >$Data = @(
+    PS >     @{ Server = "Server1"; AvailableRam = 128; UsedRAM = 10 }
+    PS >     @{ Server = "Server2"; AvailableRam = 64; UsedRAM = 63 }
+    PS >     @{ Server = "Server3"; AvailableRam = 48; UsedRAM = 40 }
+    PS >     @{ Server = "Server4"; AvailableRam = 64;; UsedRAM = 26 }
+    PS >     @{ Server = "Server5"; AvailableRam = 128; UsedRAM = 120 }
+    PS > )
+    PS > New-UDElement -Tag 'div' -Attributes @{ style = @{ height = '10vh'; width = "10vw"; } } -Content {
+    PS >    New-UDChartJS -Data $Data -DataProperty UsedRAM -LabelProperty Server -Type 'bar' -BackgroundColor '#808978FF' -HoverBackgroundColor '#808978FF' -HoverBorderColor '#808978FF' -BorderColor '#808978FF'     -Id 'chart7'
+    PS > }
+    
+    Color|A bar chart with a data and label property and some configured colors.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 8 --------------------------
+    
+    PS >$Data = @(
+    PS >     @{ Server = "Server1"; AvailableRam = 128; UsedRAM = 10 }
+    PS >     @{ Server = "Server2"; AvailableRam = 64; UsedRAM = 63 }
+    PS >     @{ Server = "Server3"; AvailableRam = 48; UsedRAM = 40 }
+    PS >     @{ Server = "Server4"; AvailableRam = 64;; UsedRAM = 26 }
+    PS >     @{ Server = "Server5"; AvailableRam = 128; UsedRAM = 120 }
+    PS > )
+    PS > New-UDElement -Tag 'div' -Attributes @{ style = @{ height = '20vh'; width = "20vw"; } } -Content {
+    PS >    New-UDChartJS -Data $Data -DataProperty UsedRAM -LabelProperty Server -Type 'bar' -OnClick {
+    PS >        Show-UDToast -Message "Clicked: $Body"
+    PS >    } -Id 'chart8'
+    PS > }
+    
+    Click|A bar chart with a data and label property and a click event.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 9 --------------------------
+    
+    PS >$Data = @(
+    PS >     @{ Server = "Server1"; AvailableRam = 128; UsedRAM = 10 }
+    PS >     @{ Server = "Server2"; AvailableRam = 64; UsedRAM = 63 }
+    PS >     @{ Server = "Server3"; AvailableRam = 48; UsedRAM = 40 }
+    PS >     @{ Server = "Server4"; AvailableRam = 64;; UsedRAM = 26 }
+    PS >     @{ Server = "Server5"; AvailableRam = 128; UsedRAM = 120 }
+    PS > )
+    PS > $Dataset1 = New-UDChartJSDataset -DataProperty AvailableRam -Label 'Available RAM' -BackgroundColor '#126f8c' -BorderWidth 1
+    PS > $Dataset2 = New-UDChartJSDataset -DataProperty UsedRAM -Label 'Used RAM' -BackgroundColor '#8da322' -BorderWidth 1
+    PS > New-UDElement -Tag 'div' -Attributes @{ style = @{ height = '10vh'; width = "10vw"; } } -Content {
+    PS >    New-UDChartJS -Data $Data -Dataset @($Dataset1, $Dataset2) -LabelProperty Server -Type 'line' -Id 'chart9'
+    PS > }
+    
+    Multiple Data Sets|A line chart with multiple data sets.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 10 --------------------------
+    
+    PS >New-UDElement -Tag 'div' -Attributes @{ style = @{ height = '20vh'; width = "20vw"; } } -Content {
+    PS >    New-UDDynamic -Content {
+    PS >        $Data = 1..10 | % { 
+    PS >         [PSCustomObject]@{ Name = $_; value = get-random }
+    PS >        }
+    PS >        New-UDChartJS -Type 'bar' -Data $Data -DataProperty Value -Id 'chart10' -LabelProperty Name -BackgroundColor Blue 
+    PS >     } -AutoRefresh -AutoRefreshInterval 1
+    PS > }
+    
+    Auto Refresh|A bar chart that auto refreshes every second.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 11 --------------------------
+    
+    PS >$Data = @(
+    PS >     @{ Server = "Server1"; AvailableRam = 128; UsedRAM = 10 }
+    PS >     @{ Server = "Server2"; AvailableRam = 64; UsedRAM = 63 }
+    PS >     @{ Server = "Server3"; AvailableRam = 48; UsedRAM = 40 }
+    PS >     @{ Server = "Server4"; AvailableRam = 64;; UsedRAM = 26 }
+    PS >     @{ Server = "Server5"; AvailableRam = 128; UsedRAM = 120 }
+    PS > )
+    PS > New-UDElement -Tag 'div' -Attributes @{ style = @{ height = '20vh'; width = "20vw"; } } -Content {
+    PS >    New-UDChartJS -Data $Data -DataProperty UsedRAM -LabelProperty Server -Type 'bar' -OnClick {
+    PS >        Show-UDToast -Message "Clicked: $Body"
+    PS >    }  -Options @{
+    PS >        plugins = @{
+    PS >            legend = @{
+    PS >                title = @{
+    PS >                    display = $true
+    PS >                    text    = 'Bar Chart'
+    PS >                }
+    PS >            }
+    PS >        }
+    PS >    } -Id 'chart11'
+    PS > }
+    
+    Options|You can use ChartJS options defined as a hashtable to further configure the chart. For more information, see https://www.chartjs.org/docs/3.9.1/.
+    
+    
+    
+    
+    
+RELATED LINKS
 
 

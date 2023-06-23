@@ -85,10 +85,13 @@ NOTES
     
     $Schedule = New-UDEndpointSchedule 10 -Second
     New-UDEndpoint -Schedule $Schedule -Endpoint {
-        $Cache:Processes = Get-Process
+        $Cache:Random = Get-Random
+    }
+    New-UDButton -Text "Get Random" -OnClick {
+        Show-UDToast $Cache:Random
     }
     
-    Caches the local machines processes every 10 seconds.
+    Scheduled Endpoints|Caches a random value every ten seconds
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

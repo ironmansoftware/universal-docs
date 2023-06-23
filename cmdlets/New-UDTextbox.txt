@@ -3,11 +3,11 @@ NAME
     New-UDTextbox
     
 SYNOPSIS
-    Creates a textbox.
+    Textboxes let users enter and edit text.
     
     
 SYNTAX
-    New-UDTextbox [[-Id] <String>] [[-Label] <String>] [[-Placeholder] <String>] [[-Value] <String>] [[-Type] <String>] [-Disabled] [[-Icon] <Object>] [-Autofocus] [-Multiline] [[-Rows] <Int32>] [[-RowsMax] <Int32>] [-FullWidth] [[-Mask] <String>] [-Unmask] [[-Variant] <String>] [[-ClassName] <String>] [[-OnEnter] <Endpoint>] [[-OnBlur] <Endpoint>] [-Shrink] [[-OnValidate] <Endpoint>] [<CommonParameters>]
+    New-UDTextbox [[-Id] <String>] [[-Label] <String>] [[-Placeholder] <String>] [[-Value] <String>] [[-Type] <String>] [-Disabled] [[-Icon] <Object>] [-Autofocus] [-Multiline] [[-Rows] <Int32>] [[-RowsMax] <Int32>] [-FullWidth] [[-Mask] <String>] [-Unmask] [[-Variant] <String>] [[-ClassName] <String>] [[-OnEnter] <Endpoint>] [[-OnBlur] <Endpoint>] [-Shrink] [[-OnValidate] <Endpoint>] [[-HelperText] <String>] [[-OnChange] <Endpoint>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -159,6 +159,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -OnEnter <Endpoint>
+        A script block that is called when the user presses the enter key. The $EventData variable will contain the current value of the textbox.
         
         Required?                    false
         Position?                    12
@@ -167,6 +168,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -OnBlur <Endpoint>
+        A script block that is called when the user leaves the textbox. The $EventData variable will contain the current value of the textbox.
         
         Required?                    false
         Position?                    13
@@ -184,9 +186,28 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -OnValidate <Endpoint>
+        A script block that is called when the user leaves the textbox. The $EventData variable will contain the current value of the textbox. If the script block returns an validation result that is invalid, it will be displayed below the textbox.
         
         Required?                    false
         Position?                    14
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -HelperText <String>
+        A helper text to show below the textbox.
+        
+        Required?                    false
+        Position?                    15
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnChange <Endpoint>
+        A script block that is called when the user changes the value of the textbox. The $EventData variable will contain the current value of the textbox.
+        
+        Required?                    false
+        Position?                    16
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -203,18 +224,139 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > Creates a standard textbox.
+    PS >New-UDTextbox -Id 'textbox1' -Label 'Name' -Placeholder 'Enter your name' -Value 'John Doe'
     
-    New-UDTextbox -Label 'text' -Id 'txtLabel'
+    Basic textbox|Creates a basic textbox.
     
     
     
     
     -------------------------- EXAMPLE 2 --------------------------
     
-    PS > Creates a password textbox.
+    PS >New-UDTextbox -Id 'textbox2' -Label 'Password' -Placeholder 'Enter your password' -Type 'password'
     
-    New-UDTextbox -Label 'password' -Id 'txtPassword' -Type 'password'
+    Password textbox|Creates a password textbox.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox3' -Label 'Email' -Placeholder 'Enter your email' -Type 'email'
+    
+    Email textbox|Creates an email textbox.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox4' -Disabled -Label 'Disabled' -Placeholder 'Enter your name' -Value 'John Doe'
+    
+    Disabled textbox|Creates a disabled textbox.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox5' -Label 'Name' -Placeholder 'Enter your name' -Value 'John Doe' -Icon (New-UDIcon -Icon 'User')
+    
+    Textbox with icon|Creates a textbox with an icon.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox6' -Label 'Name' -Placeholder 'Enter your name' -Value 'John Doe' -Autofocus
+    
+    Autofocus textbox|Creates a textbox that will autofocus when the page loads.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 7 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox7' -Label 'Name' -Placeholder 'Enter your name' -Value 'John Doe' -Multiline
+    
+    Multiline textbox|Creates a multiline textbox.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 8 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox8' -Label 'Name' -Placeholder 'Enter your name' -Value 'John Doe' -Multiline -Rows 5 -RowsMax 10
+    
+    Multiline textbox with 5 rows|Creates a multiline textbox with 5 rows.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 9 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox9' -Variant 'filled' -Label 'Name' -Placeholder 'Enter your name' -Value 'John Doe'
+    
+    Variant|Creates a filled textbox.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 10 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox10' -OnEnter {
+    PS >    Show-UDToast -Message "You pressed enter!"
+    PS > } -Label 'Name' -Placeholder 'Enter your name' -Value 'John Doe'
+    
+    OnEnter|Creates a textbox with an OnEnter event.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 11 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox11' -OnBlur {
+    PS >    Show-UDToast -Message "You left the textbox!"
+    PS > } -Label 'Name' -Placeholder 'Enter your name' -Value 'John Doe'
+    
+    OnBlur|Creates a textbox with an OnBlur event.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 12 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox12' -OnValidate {
+    PS >    if ($EventData -eq 'John Doe') {
+    PS >        return New-UDValidationResult -Valid
+    PS >    }
+    PS >    else {
+    PS >        return New-UDValidationResult -ValidationError "You must enter John Doe"
+    PS >    }
+    PS > } -Label 'Name' -Placeholder 'Enter your name' -Value 'John Doe'
+    
+    OnValidate|Creates a textbox with an OnValidate event.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 13 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox13' -HelperText 'This is a helper text' -Label 'Name' -Placeholder 'Enter your name' -Value 'John Doe'
+    
+    Helper Text|Creates a textbox with helper text.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 14 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox14' -OnChange {
+    PS >    Show-UDToast -Message $EventData
+    PS > } -Label 'Name' -Placeholder 'Enter your name' -Value 'John Doe'
+    
+    OnChange|Creates a textbox with an OnChange event.
     
     
     
