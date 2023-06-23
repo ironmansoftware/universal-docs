@@ -3,7 +3,7 @@ NAME
     New-UDChip
     
 SYNOPSIS
-    Chips are compact elements that represent an input, attribute, or action.
+    Creates a new chip.
     
     
 SYNTAX
@@ -13,7 +13,7 @@ SYNTAX
     
     
 DESCRIPTION
-    Chips are compact elements that represent an input, attribute, or action.
+    Creates a new chip. Chips can be used to display tags or little bits of data.
     
 
 PARAMETERS
@@ -99,7 +99,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Size <String>
-        The size of the chip. Valid values are: "small", "medium"
+        The size of the chip.
         
         Required?                    false
         Position?                    10
@@ -137,89 +137,10 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS >New-UDChip -Label 'Basic' -Icon (New-UDIcon -Icon 'user') -Id 'chip1'
+    PS > Creates a clickable chip with a custom style and icon.
     
-    Basic chip|A basic chip with an icon.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 2 --------------------------
-    
-    PS >New-UDChip -Variant outlined -Label 'Outlined' -Icon (New-UDIcon -Icon 'user') -Id 'chip2'
-    
-    Outlined chip|An outlined chip with an icon.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 3 --------------------------
-    
-    PS >New-UDChip -Label 'Clickable' -Icon (New-UDIcon -Icon 'user') -OnClick {
-    PS >    Show-UDToast -Message 'Hello!'
-    PS > } -Id 'chip3'
-    
-    Clickable chip|A clickable chip with an icon.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 4 --------------------------
-    
-    PS >New-UDChip -Label 'Deletable' -Icon (New-UDIcon -Icon 'user') -OnDelete {
-    PS >    Show-UDToast -Message 'Deleted!'
-    PS > } -Id 'chip4'
-    
-    Deletable chip|A deletable chip with an icon.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 5 --------------------------
-    
-    PS >New-UDChip -Label 'Clickable and deletable' -Icon (New-UDIcon -Icon 'user') -OnClick {
-    PS >    Show-UDToast -Message 'Hello!'
-    PS > } -OnDelete {
-    PS >    Show-UDToast -Message 'Deleted!'
-    PS > } -Id 'chip5'
-    
-    Clickable and deletable chip|A clickable and deletable chip with an icon.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 6 --------------------------
-    
-    PS >New-UDChip -Avatar "A" -AvatarType letter -Label 'Avatar' -Id 'chip6'
-    
-    Avatar chip|A chip with an avatar.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 7 --------------------------
-    
-    PS >New-UDChip -Avatar "https://picsum.photos/200/300" -AvatarType image -Label 'Avatar' -Id 'chip7'
-    
-    Image chip|A chip with an avatar image.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 8 --------------------------
-    
-    PS >New-UDChip -Label 'Small' -Icon (New-UDIcon -Icon 'user') -Size small -Id 'chip8'
-    
-    Small chip|A small chip with an icon.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 9 --------------------------
-    
-    PS >New-UDChip -Style @{background = 'red'; color = 'white'} -Label 'Styled' -Icon (New-UDIcon -Icon 'user') -Id 'chip9'
-    
-    
+    $Icon = New-UDIcon -Icon 'user' -Size sm -Style @{color = '#fff'}
+    New-UDChip -Label "Demo User" -Id "chipIcon" -Icon $Icon -OnClick {Show-UDToast -Message 'test'} -Clickable -Style @{backgroundColor = '#00838f'}
     
     
     

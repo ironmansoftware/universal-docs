@@ -1,53 +1,53 @@
 
 NAME
-    New-PSUMiddleware
+    New-UDCardToolbar
     
 SYNTAX
-    New-PSUMiddleware -Name <string> -ScriptBlock <scriptblock> [-Order <int>] [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    New-UDCardToolbar [[-Id] <string>] [[-ClassName] <string>] [-Content] <scriptblock> [[-Icon] <Icon>] [[-Title] <Object>] [[-Style] <hashtable>] [-ShowButtons] [<CommonParameters>]
     
     
 PARAMETERS
-    -AppToken <string>
+    -ClassName <string>
         
         Required?                    false
-        Position?                    Named
+        Position?                    1
         Accept pipeline input?       false
         Parameter set name           (All)
         Aliases                      None
         Dynamic?                     false
         Accept wildcard characters?  false
         
-    -ComputerName <string>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      Uri
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Integrated
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Name <string>
+    -Content <scriptblock>
         
         Required?                    true
-        Position?                    Named
+        Position?                    2
         Accept pipeline input?       false
         Parameter set name           (All)
         Aliases                      None
         Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Order <int>
+    -Icon <Icon>
+        
+        Required?                    false
+        Position?                    3
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Id <string>
+        
+        Required?                    false
+        Position?                    0
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -ShowButtons
         
         Required?                    false
         Position?                    Named
@@ -57,20 +57,20 @@ PARAMETERS
         Dynamic?                     false
         Accept wildcard characters?  false
         
-    -ScriptBlock <scriptblock>
+    -Style <hashtable>
         
-        Required?                    true
-        Position?                    Named
+        Required?                    false
+        Position?                    5
         Accept pipeline input?       false
         Parameter set name           (All)
         Aliases                      None
         Dynamic?                     false
         Accept wildcard characters?  false
         
-    -UseDefaultCredentials
+    -Title <Object>
         
         Required?                    false
-        Position?                    Named
+        Position?                    4
         Accept pipeline input?       false
         Parameter set name           (All)
         Aliases                      None

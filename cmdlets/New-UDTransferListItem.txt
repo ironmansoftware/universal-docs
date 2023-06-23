@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTransferListItem [-Name] <String> [-Value] <String> [-Disabled] [<CommonParameters>]
+    New-UDTransferListItem [-Name] <String> [-Value] <String> [<CommonParameters>]
     
     
 DESCRIPTION
@@ -30,15 +30,6 @@ PARAMETERS
         Required?                    true
         Position?                    2
         Default value                
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -Disabled [<SwitchParameter>]
-        Disables the item.
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

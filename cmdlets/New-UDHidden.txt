@@ -2,66 +2,63 @@
 NAME
     New-UDHidden
     
-SYNOPSIS
-    Creates a new hidden element.
-    
-    
 SYNTAX
-    New-UDHidden [-Id <String>] [-Down <String>] [-Children <ScriptBlock>] [<CommonParameters>]
+    New-UDHidden [-Id <string>] [-Down {xs | sm | md | lg | xl}] [-Content <scriptblock>] [<CommonParameters>]
     
-    New-UDHidden [-Id <String>] [-Up <String>] [-Children <ScriptBlock>] [<CommonParameters>]
+    New-UDHidden [-Id <string>] [-Up {xs | sm | md | lg | xl}] [-Content <scriptblock>] [<CommonParameters>]
     
-    New-UDHidden [-Id <String>] [-Only <String[]>] [-Children <ScriptBlock>] [<CommonParameters>]
+    New-UDHidden [-Id <string>] [-Only {xs | sm | md | lg | xl}] [-Content <scriptblock>] [<CommonParameters>]
     
     
-DESCRIPTION
-    Creates a new hidden element.
-    
-
 PARAMETERS
-    -Id <String>
-        The ID of this component. Defaults to a random GUID.
+    -Content <scriptblock>
         
         Required?                    false
-        Position?                    named
-        Default value                [Guid]::NewGuid()
+        Position?                    Named
         Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Down <String>
-        Content will be hidden at or below the specified breakpoint.
+    -Down <string>
         
         Required?                    false
-        Position?                    named
-        Default value                
+        Position?                    Named
         Accept pipeline input?       false
+        Parameter set name           Down
+        Aliases                      None
+        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Up <String>
-        Content will be hidden at or above the specified breakpoint.
+    -Id <string>
         
         Required?                    false
-        Position?                    named
-        Default value                
+        Position?                    Named
         Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Only <String[]>
-        Content will be hidden at the specified breakpoint.
+    -Only <string[]>
         
         Required?                    false
-        Position?                    named
-        Default value                
+        Position?                    Named
         Accept pipeline input?       false
+        Parameter set name           Only
+        Aliases                      None
+        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Children <ScriptBlock>
-        The content to be hidden.
+    -Up <string>
         
         Required?                    false
-        Position?                    named
-        Default value                
+        Position?                    Named
         Accept pipeline input?       false
+        Parameter set name           Up
+        Aliases                      None
+        Dynamic?                     false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -70,46 +67,19 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
+    
 INPUTS
+    None
+    
     
 OUTPUTS
+    System.Object
     
-    -------------------------- EXAMPLE 1 --------------------------
+ALIASES
+    None
     
-    PS >New-UDHidden -Up md -Content {
-    PS >     New-UDTypography 'md'
-    PS > }
-    
-    Up|Content is hidden above the md breakpoint.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 2 --------------------------
-    
-    PS >New-UDHidden -Down md -Content {
-    PS >     New-UDTypography 'md'
-    PS > }
-    
-    Down|Content is hidden below the md breakpoint.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 3 --------------------------
-    
-    PS >New-UDHidden -Only md -Content {
-    PS >     New-UDTypography 'md'
-    PS > }
-    
-    Only|Content is hidden at the md breakpoint.
-    
-    [Component("Hidden", "Ghost", "Creates a new hidden element.")]
-    
-    
-    
-    
-    
-RELATED LINKS
+
+REMARKS
+    None
 
 

@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDStack [[-Id] <String>] [-Children] <ScriptBlock> [[-Divider] <ScriptBlock>] [[-Spacing] <Int32>] [[-Direction] <String>] [-FullWidth] [[-AlignItems] <String>] [[-JustifyContent] <String>] [<CommonParameters>]
+    New-UDStack [[-Id] <String>] [-Children] <ScriptBlock> [[-Divider] <ScriptBlock>] [[-Spacing] <Int32>] [[-Direction] <String>] [-FullWidth] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -52,7 +52,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Direction <String>
-        The stack direction. The default direction is column which stacks children vertically. Valid values are row, column, row-reverse, and column-reverse.
+        The stack direction.
         
         Required?                    false
         Position?                    5
@@ -61,28 +61,10 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -FullWidth [<SwitchParameter>]
-        If set, the stack will take up the full width of its container.
         
         Required?                    false
         Position?                    named
         Default value                False
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -AlignItems <String>
-        Defines the align-items style property. It's applied for all screen sizes. Valid values are flex-start, flex-end, center, stretch, and baseline.
-        
-        Required?                    false
-        Position?                    6
-        Default value                
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -JustifyContent <String>
-        
-        Required?                    false
-        Position?                    7
-        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -98,80 +80,13 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS >New-UDStack -Content {
-    PS >    New-UDCard -Text "Card 1"
-    PS >    New-UDCard -Text "Card 2"
-    PS >    New-UDCard -Text "Card 3"
-    PS > } -Spacing 2 -Id 'stack1'
+    PS > New-UDStack -Content {
+        New-UDPaper
+        New-UDPaper
+        New-UDPaper
+    } -Spacing 2
     
-    Basic Stack|A basic stack.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 2 --------------------------
-    
-    PS >New-UDStack -Content {
-    PS >    New-UDCard -Text "Card 1"
-    PS >    New-UDCard -Text "Card 2"
-    PS >    New-UDCard -Text "Card 3"
-    PS > } -Spacing 2 -Id 'stack2' -Direction 'column'
-    
-    Direction|A stack in a column direction.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 3 --------------------------
-    
-    PS >New-UDStack -Content {
-    PS >    New-UDCard -Text "Card 1"
-    PS >    New-UDCard -Text "Card 2"
-    PS >    New-UDCard -Text "Card 3"
-    PS > } -Spacing 2 -Id 'stack3' -Direction 'row-reverse'
-    
-    Row Reverse|A row reverse stack.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 4 --------------------------
-    
-    PS >New-UDStack -Content {
-    PS >    New-UDCard -Text "Card 1"
-    PS >    New-UDCard -Text "Card 2"
-    PS >    New-UDCard -Text "Card 3"
-    PS > } -Spacing 2 -Id 'stack4' -AlignItems 'center'
-    
-    Alignment|A center stack.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 5 --------------------------
-    
-    PS >New-UDStack -Content {
-    PS >    New-UDCard -Text "Card 1"
-    PS >    New-UDCard -Text "Card 2"
-    PS >    New-UDCard -Text "Card 3"
-    PS > } -Spacing 2 -Id 'stack5' -Divider {
-    PS >    New-UDDivider
-    PS > }
-    
-    Divider|A stack with a divider.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 6 --------------------------
-    
-    PS >New-UDStack -Content {
-    PS >    New-UDCard -Text "Card 1"
-    PS >    New-UDCard -Text "Card 2"
-    PS >    New-UDCard -Text "Card 3"
-    PS > } -Spacing 2 -Id 'stack6' -AlignItems 'center' -JustifyContent 'space-between'
-    
-    Justify Content|A stack with justify content.
+    Creates a stack of papers with 2 spacing.
     
     
     

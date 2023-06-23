@@ -2,53 +2,49 @@
 NAME
     New-UDMapMarkerClusterLayer
     
-SYNOPSIS
-    Creates a map marker cluster layer.
-    
-    
 SYNTAX
-    New-UDMapMarkerClusterLayer [[-Id] <String>] [[-Markers] <Hashtable[]>] [[-MinimumClusterSize] <Int32>] [[-GridSize] <Int32>] [<CommonParameters>]
+    New-UDMapMarkerClusterLayer [[-Id] <string>] [[-Markers] <hashtable[]>] [[-MinimumClusterSize] <int>] [[-GridSize] <int>] [<CommonParameters>]
     
     
-DESCRIPTION
-    Creates a map marker cluster layer.
-    
-
 PARAMETERS
-    -Id <String>
-        The id of the map marker cluster layer. This defaults to a new GUID.
-        
-        Required?                    false
-        Position?                    1
-        Default value                ([Guid]::NewGuid())
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -Markers <Hashtable[]>
-        The markers to cluster.
-        
-        Required?                    false
-        Position?                    2
-        Default value                
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -MinimumClusterSize <Int32>
-        The minimum number of markers to cluster.
+    -GridSize <int>
         
         Required?                    false
         Position?                    3
-        Default value                2
         Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -GridSize <Int32>
-        The grid size.
+    -Id <string>
         
         Required?                    false
-        Position?                    4
-        Default value                60
+        Position?                    0
         Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Markers <hashtable[]>
+        
+        Required?                    false
+        Position?                    1
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -MinimumClusterSize <int>
+        
+        Required?                    false
+        Position?                    2
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -57,11 +53,19 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
+    
 INPUTS
+    None
+    
     
 OUTPUTS
+    System.Object
     
+ALIASES
+    None
     
-RELATED LINKS
+
+REMARKS
+    None
 
 

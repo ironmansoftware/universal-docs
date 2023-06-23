@@ -45,12 +45,11 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS >New-UDTextbox -Id 'selectElement1' -Label 'Name'
-    PS > New-UDButton -Text 'Click Me' -OnClick {
-    PS >     Select-UDElement -Id 'txtName'
-    PS > }
+    PS > New-UDTextbox -Id 'txtName' -Label 'Name'
     
-    Select Element|Selects the specified element.
+    New-UDButton -Text 'Click Me' -OnClick {
+        Select-UDElement -Id 'txtName'
+    }
     
     
     

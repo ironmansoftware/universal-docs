@@ -3,15 +3,15 @@ NAME
     New-UDForm
     
 SYNOPSIS
-    Forms can contain any set of input controls. Each of the controls will report its value back up to the form when the submit button is clicked.
+    Creates a new form.
     
     
 SYNTAX
-    New-UDForm [-Id <String>] [-OnValidate <Endpoint>] [-SubmitText <String>] [-CancelText <String>] [-ButtonVariant <String>] [-ClassName <String>] [-DisableSubmitOnEnter] [-Script <String>] [-OutputType <String>] [-ShowBackButton] [<CommonParameters>]
-    
     New-UDForm [-Id <String>] -Children <ScriptBlock> -OnSubmit <Endpoint> [-OnValidate <Endpoint>] [-OnProcessing <ScriptBlock>] [-OnCancel <Endpoint>] [-SubmitText <String>] [-CancelText <String>] [-ButtonVariant <String>] [-ClassName <String>] [-DisableSubmitOnEnter] [<CommonParameters>]
     
-    New-UDForm [-Id <String>] -OnSubmit <Endpoint> [-ButtonVariant <String>] [-ClassName <String>] -Schema <Hashtable> [-UiSchema <Hashtable>] [-DisableSubmitOnEnter] [<CommonParameters>]
+    New-UDForm [-Id <String>] -OnSubmit <Endpoint> [-ButtonVariant <String>] -Schema <Hashtable> [-UiSchema <Hashtable>] [-DisableSubmitOnEnter] [<CommonParameters>]
+    
+    New-UDForm [-Id <String>] [-ButtonVariant <String>] [-DisableSubmitOnEnter] [-Script <String>] [-DisplayProgress] [-OutputType <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -74,7 +74,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -SubmitText <String>
-        Text to show within the submit button. Defaults to 'Submit'.
+        Text to show within the submit button
         
         Required?                    false
         Position?                    named
@@ -83,7 +83,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -CancelText <String>
-        Text to show within the cancel button. Defaults to 'Cancel'.
+        Text to show within the cancel button.
         
         Required?                    false
         Position?                    named
@@ -92,7 +92,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ButtonVariant <String>
-        Type of button to display. Defaults to text. Valid values are contained, outlined, text.
+        Type of button to display.
         
         Required?                    false
         Position?                    named
@@ -101,7 +101,6 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ClassName <String>
-        A CSS class to apply to the form.
         
         Required?                    false
         Position?                    named
@@ -110,7 +109,6 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Schema <Hashtable>
-        Defines a form based on a hashtable of schema. This version of forms is based on react-jsonschema-form.
         
         Required?                    true
         Position?                    named
@@ -119,7 +117,6 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -UiSchema <Hashtable>
-        Used to modify the ordering of the fields (see documentation)
         
         Required?                    false
         Position?                    named
@@ -128,7 +125,6 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -DisableSubmitOnEnter [<SwitchParameter>]
-        Disables the functionality where pressing enter in a textbox submits the form it is a part of.
         
         Required?                    false
         Position?                    named
@@ -137,28 +133,26 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Script <String>
-        Used to automatically generate forms based on scripts in your PowerShell Universal environment. Script forms will generate input components based on the param block. Script forms automatically support progress and feedback.
         
         Required?                    false
         Position?                    named
-        Default value                None
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -OutputType <String>
-        The type of output to return from the script. Valid values are: "Text", "Table"
-        
-        Required?                    false
-        Position?                    named
-        Default value                Text
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -ShowBackButton [<SwitchParameter>]
+    -DisplayProgress [<SwitchParameter>]
         
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OutputType <String>
+        
+        Required?                    false
+        Position?                    named
+        Default value                Text
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -174,202 +168,33 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS >New-UDForm -Id 'form1' -Content {
-    PS >     New-UDTextbox -Id 'form1Textbox' -Label 'Name'
-    PS > } -OnSubmit {
-    PS >     Show-UDToast -Message ($EventData.form1Textbox)
-    PS > }
-    
-    Basic|Creates a basic form.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 2 --------------------------
-    
-    PS >New-UDForm -Id 'form2' -Content {
-    PS >     New-UDTextbox -Id 'form2Textbox' -Label 'Name'
-    PS > } -OnSubmit {
-    PS >     Show-UDToast -Message ($EventData.form2Textbox)
-    PS > } -OnValidate {
-    PS >     if ($EventData.form2Textbox -eq 'Bob') {
-    PS >         New-UDValidationResult -ValidationError 'Bob is not allowed'
-    PS >     }
-    PS >     else {
-    PS >         New-UDValidationResult -Valid
-    PS >     }
-    PS > }
-    
-    Validation|Creates a form with validation.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 3 --------------------------
-    
-    PS >New-UDForm -Id 'form3' -Content {
-    PS >     New-UDTextbox -Id 'form3Textbox' -Label 'Name'
-    PS > } -OnSubmit {
-    PS >     Start-Sleep -Seconds 5        
-    PS >     Show-UDToast -Message ($EventData.form3Textbox)
-    PS > } -OnProcessing {
-    PS >     New-UDCard -Title 'Processing' -Content {
-    PS >         New-UDProgress
-    PS >     }
-    PS > }
-    
-    Processing|Creates a form with a processing dialog.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 4 --------------------------
-    
-    PS >New-UDForm -Id 'form4' -Content {
-    PS >     New-UDTextbox -Id 'form4Textbox' -Label 'Name'
-    PS > } -OnSubmit {
-    PS >     Show-UDToast -Message ($EventData.form4Textbox)
-    PS > } -OnCancel {
-    PS >     Show-UDToast -Message 'Form was cancelled'
-    PS > }
-    
-    Cancel|Creates a form with a cancel button.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 5 --------------------------
-    
-    PS >New-UDForm -Id 'form5' -Content {
-    PS >     New-UDTextbox -Id 'form5Textbox' -Label 'Name'
-    PS > } -OnSubmit {
-    PS >     Show-UDToast -Message ($EventData.form5Textbox)
-    PS > } -SubmitText 'Save' -CancelText 'Close' -OnCancel {
-    PS >     Show-UDToast -Message 'Form was cancelled'
-    PS > }
-    
-    Submit and Cancel Text|Creates a form with custom submit and cancel text.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 6 --------------------------
-    
-    PS >New-UDForm -Id 'form6' -Content {
-    PS >     New-UDTextbox -Id 'form6Textbox' -Label 'Name'
-    PS > } -OnSubmit {
-    PS >     Show-UDToast -Message ($EventData.form6Textbox)
-    PS > } -ButtonVariant 'contained'
-    
-    Button Variant|Creates a form with a contained button variant.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 7 --------------------------
-    
-    PS >New-UDForm -Id 'form7' -Content {
-    PS >     New-UDTextbox -Id 'form7Textbox' -Label 'Name'
-    PS > } -OnSubmit {
-    PS >     Show-UDToast -Message ($EventData.form7Textbox)
-    PS > } -ClassName 'my-form'
-    
-    Class Name|Creates a form with a custom CSS class name.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 8 --------------------------
-    
-    PS >New-UDForm -Id 'form8' -Schema @{
-    PS >     title = "Test Form"
-    PS >     type = "object"
-    PS >     properties = @{
-    PS >        name = @{
-    PS >            type = "string"
-    PS >        }
-    PS >        age = @{
-    PS >            type = "number"
-    PS >        }
-    PS >     }
-    PS > } -OnSubmit {
-    PS >     Show-UDToast -Message ($EventData.formData.name)
-    PS >     Show-UDToast -Message ($EventData.formData.age)
-    PS > }
-    
-    Schema|Creates a form with a schema. You can find out more about JSON Schema here: https://rjsf-team.github.io/react-jsonschema-form/docs/
-    
-    
-    
-    
-    -------------------------- EXAMPLE 9 --------------------------
-    
-    PS >New-UDForm -Id 'form9' -Schema @{
-    PS >     title = "Test Form"
-    PS >     type = "object"
-    PS >     properties = @{
-    PS >        name = @{
-    PS >            type = "string"
-    PS >        }
-    PS >        age = @{
-    PS >            type = "number"
-    PS >        }
-    PS >     }
-    PS > } -uiSchema @{
-    PS >	"ui:order" = @('age','name')
-    PS > } -OnSubmit {
-    PS >     Show-UDToast -Message ($EventData.formData.name)
-    PS > }
-    
-    UI Schema|Creates a form with a schema and a UI schema. You can find out more about JSON Schema here: https://rjsf-team.github.io/react-jsonschema-form/docs/
-    
-    
-    
-    
-    -------------------------- EXAMPLE 10 --------------------------
-    
-    PS >New-UDForm -Id 'form10' -Script "Script1.ps1" -OutputType "Table"
-    
-    Script|Creates a form from a script. Parameters of the script will define the form. Output from the script will be displayed in a table.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 11 --------------------------
-    
-    PS >New-UDForm -Id 'form11' -Content {
-    PS >    New-UDTextbox -Id 'form11Textbox' -Label 'Name'
-    PS > } -OnSubmit {
-    PS >     Show-UDToast -Message ($EventData.form11Textbox)
-    PS > }
-    PS > New-UDButton -Text "A submit button outside the form" -OnClick {
-    PS >     Invoke-UDForm -Id "form11"
-    PS > }
-    
-    Invoke-UDForm|Creates a form with a submit button outside the form.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 12 --------------------------
-    
-    PS >New-UDForm -Id 'form12' -Content {
-    PS >    New-UDTextbox -Id 'form12Textbox' -Label 'Name'
-    PS > } -OnSubmit {
-    PS >     Show-UDToast -Message ($EventData.form12Textbox)
-    PS > } -OnValidate {
-    PS >     if ($EventData.form12Textbox -eq 'Hello') {
-    PS >         New-UDValidationResult -Valid
-    PS >     }
-    PS >     else {
-    PS >         New-UDValidationResult -ValidationError "Name must be 'Hello'"
-    PS >     }
-    PS > }
-    PS > New-UDButton -Text "Validate form" -OnClick {
-    PS >     Test-UDForm -Id "form12"
-    PS > }
-    
-    Test-UDForm|Creates a form with a validate button outside the form.
+    PS > Creates a form that contains many input controls and displays the $eventdata hashtable as a toast.
+    
+    New-UDForm -Id 'defaultForm' -Content {
+        New-UDTextbox -Id 'txtNameDefault' -Value 'Name'
+        New-UDTextbox -Id 'txtLastNameDefault' -Value 'LastName'
+        New-UDCheckbox -Id 'chkYesDefault' -Label YesOrNo -Checked $true
+    
+        New-UDSelect -Label '1-3' -Id 'selectDefault' -Option {
+            New-UDSelectOption -Name "OneDefault" -Value 1
+            New-UDSelectOption -Name "TwoDefault" -Value 2
+            New-UDSelectOption -Name "ThreeDefault" -Value 3
+        } -DefaultValue '1'
+    
+        New-UDSwitch -Id 'switchYesDefault' -Checked $true
+    
+        New-UDDatePicker -Id 'dateDateDefault' -Value '1-2-2020'
+    
+        New-UDTimePicker -Id 'timePickerDefault' -Value '10:30 AM'
+    
+        New-UDRadioGroup -Label 'group' -Id 'simpleRadioDefault' -Children {
+            New-UDRadio -Value 'Adam' -Label 'Adam'  -Id 'adamDefault'
+            New-UDRadio -Value 'Alon' -Label 'Alon' -Id 'alonDefault'
+            New-UDRadio -Value 'Lee' -Label 'Lee' -Id 'leeDefault'
+        } -Value 'Adam'
+    } -OnSubmit {
+        Show-UDToast -Message $Body
+    }
     
     
     

@@ -3,7 +3,7 @@ NAME
     New-UDGrid
     
 SYNOPSIS
-    The grid is a 12-point grid system that can adapt based on the size of the screen that is showing the controls.
+    Creates a grid to layout components.
     
     
 SYNTAX
@@ -13,7 +13,7 @@ SYNTAX
     
     
 DESCRIPTION
-    Creates a grid to layout components. The grid is a 12-point grid system that can adapt based on the size of the screen that is showing the controls.
+    Creates a grid to layout components. The grid is a 24-point grid system that can adapt based on the size of the screen that is showing the controls.
     
 
 PARAMETERS
@@ -27,7 +27,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ExtraSmallSize <Int32>
-        The size (1-12) for extra small devices.
+        The size (1-24) for extra small devices.
         
         Required?                    false
         Position?                    named
@@ -36,7 +36,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -SmallSize <Int32>
-        The size (1-12) for small devices.
+        The size (1-24) for small devices.
         
         Required?                    false
         Position?                    named
@@ -45,7 +45,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -MediumSize <Int32>
-        The size (1-12) for medium devices.
+        The size (1-24) for medium devices.
         
         Required?                    false
         Position?                    named
@@ -54,7 +54,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -LargeSize <Int32>
-        The size (1-12) for large devices.
+        The size (1-24) for large devices.
         
         Required?                    false
         Position?                    named
@@ -63,7 +63,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ExtraLargeSize <Int32>
-        The size (1-12) for extra large devices.
+        The size (1-24) for extra large devices.
         
         Required?                    false
         Position?                    named
@@ -126,106 +126,16 @@ INPUTS
     
 OUTPUTS
     
+NOTES
+    
+    
+        General notes
+    
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS >New-UDGrid -Container -Children {
-    PS >     New-UDGrid -Item -ExtraSmallSize 4 -Children {
-    PS >        New-UDCard -Title "Card 1" -Content {
-    PS >            New-UDButton -Text "Button 1"
-    PS >        }
-    PS >    }
-    PS >     New-UDGrid -Item -ExtraSmallSize 4 -Children {
-    PS >        New-UDCard -Title "Card 1" -Content {
-    PS >            New-UDButton -Text "Button 2"
-    PS >        }
-    PS >    }
-    PS >     New-UDGrid -Item -ExtraSmallSize 4 -Children {
-    PS >        New-UDCard -Title "Card 1" -Content {
-    PS >            New-UDButton -Text "Button 3"
-    PS >        }
-    PS >    }
-    PS > } -Id "grid1"
-    
-    Basic grid|A basic grid with 3 cards in a row.
+    PS > An example
     
     
-    
-    
-    -------------------------- EXAMPLE 2 --------------------------
-    
-    PS >New-UDGrid -Container -Children {
-    PS >     New-UDGrid -Item -ExtraSmallSize 12 -LargeSize 4 -Children {
-    PS >        New-UDCard -Title "Card 1" -Content {
-    PS >            New-UDButton -Text "Button 1"
-    PS >        }
-    PS >    }
-    PS >     New-UDGrid -Item -ExtraSmallSize 12 -LargeSize 4  -Children {
-    PS >        New-UDCard -Title "Card 1" -Content {
-    PS >            New-UDButton -Text "Button 2"
-    PS >        }
-    PS >    }
-    PS >     New-UDGrid -Item -ExtraSmallSize 12 -LargeSize 4 -Children {
-    PS >        New-UDCard -Title "Card 1" -Content {
-    PS >            New-UDButton -Text "Button 3"
-    PS >        }
-    PS >    }
-    PS > } -Id "grid2"
-    
-    Responsive Grid|A responsive grid with 3 cards in a row. The cards will stack on small device screens.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 3 --------------------------
-    
-    PS >New-UDDynamic -Id 'grid4' -Content {
-    PS >    $Spacing = (Get-UDElement -Id 'gridSpacingSelect').value
-    PS >    New-UDGrid -Container -Children {
-    PS >      New-UDGrid -Item -ExtraSmallSize 12 -LargeSize 4 -Children {
-    PS >        New-UDCard -Title "Card 1" -Content {
-    PS >            New-UDButton -Text "Button 1"
-    PS >        }
-    PS >    }
-    PS >     New-UDGrid -Item -ExtraSmallSize 12 -LargeSize 4  -Children {
-    PS >        New-UDCard -Title "Card 1" -Content {
-    PS >            New-UDButton -Text "Button 2"
-    PS >        }
-    PS >    }
-    PS >    New-UDGrid -Item -ExtraSmallSize 12 -LargeSize 4 -Children {
-    PS >        New-UDCard -Title "Card 1" -Content {
-    PS >            New-UDButton -Text "Button 3"
-    PS >        }
-    PS >    }
-    PS >   } -Spacing $Spacing
-    PS > }
-    PS > New-UDSelect -Id 'gridSpacingSelect' -Label Spacing -Option {
-    PS >   for ($i = 0; $i -lt 10; $i++) {
-    PS >       New-UDSelectOption -Name $i -Value $i
-    PS >   }
-    PS >} -OnChange { Sync-UDElement -Id 'grid4' } -DefaultValue 3
-    
-    Grid Spacing|A responsive grid with 3 cards in a row. The spacing between the cards can be changed with the select box.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 4 --------------------------
-    
-    PS >New-UDRow -Columns {
-    PS >     New-UDColumn -Size 4 -Content {
-    PS >         New-UDCard -Title "Card 1" -Content {}
-    PS >     }    
-    PS >     New-UDColumn -Size 4 -Content {
-    PS >         New-UDCard -Title "Card 2" -Content {}
-    PS >     }  
-    PS >     New-UDColumn -Size 4 -Content {
-    PS >         New-UDCard -Title "Card 3" -Content {}
-    PS >     }  
-    PS > } -Id 'grid5'
-    
-    Row and Columns|The row and column aliases can be used to create a grid.
-    
-    [Component("Grid", "Grid", "Creates a new card.")]
     
     
     

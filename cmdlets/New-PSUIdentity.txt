@@ -3,20 +3,20 @@ NAME
     New-PSUIdentity
     
 SYNOPSIS
-    Creates a new identity within PSU.
+    Creates a new identity within UA.
     
     
 SYNTAX
-    New-PSUIdentity [-AppToken <String>] [-ComputerName <String>] [-Integrated] -Name <String> [-Role <Role>] [-UseDefaultCredentials] [-CredentialVault <String>] [-Password <SecureString>] [<CommonParameters>]
+    New-PSUIdentity [-AppToken <String>] [-ComputerName <String>] [-Integrated] -Name <String> [-Role <Role>] [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION
-    Creates a new identity within PSU. An identity is either a user or an application that needs to interact with PSU. Identities are created automatically from git commits. You should create a new identity for users accessing PSU if you wish to audit the system or provide authentication and authorization.
+    Creates a new identity within UA. An identity is either a user or an application that needs to interact with UA. Identities are created automatically from git commits. You should create a new identity for users accessing UA if you wish to audit the system or provide authentication and authorization.
     
 
 PARAMETERS
     -AppToken <String>
-        An app token to access the PSU API.
+        An app token to access the UA API.
         
         Required?                    false
         Position?                    named
@@ -25,7 +25,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The HTTP address of the PSU REST API server.
+        The HTTP address of the UA REST API server.
         
         Required?                    false
         Position?                    named
@@ -52,7 +52,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Role <Role>
-        The role of the identity. Use Get-PSURole to receive a Role object.
+        The role of the identity. Use Get-UARole to receive a Role object.
         
         Required?                    false
         Position?                    named
@@ -66,24 +66,6 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -CredentialVault <String>
-        A credential vault to store the local user's credentials.
-        
-        Required?                    false
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Password <SecureString>
-        A password for a local account.
-        
-        Required?                    false
-        Position?                    named
-        Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         

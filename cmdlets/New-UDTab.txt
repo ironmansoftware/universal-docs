@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTab [[-Text] <String>] [-Content] <Endpoint> [[-Id] <String>] [-Dynamic] [[-Icon] <Object>] [-Disabled] [<CommonParameters>]
+    New-UDTab [[-Text] <String>] [-Content] <ScriptBlock> [[-Id] <String>] [-Dynamic] [[-Icon] <Object>] [-Disabled] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -24,7 +24,7 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -Content <Endpoint>
+    -Content <ScriptBlock>
         The content to display when the tab is selected.
         
         Required?                    true

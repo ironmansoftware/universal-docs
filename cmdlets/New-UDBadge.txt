@@ -2,107 +2,109 @@
 NAME
     New-UDBadge
     
-SYNOPSIS
-    Badge generates a small badge to the top-right of its child(ren).
-    
-    
 SYNTAX
-    New-UDBadge [[-Id] <String>] [[-Color] <String>] [[-Children] <ScriptBlock>] [[-BadgeContent] <ScriptBlock>] [-Invisible] [[-Max] <Int32>] [[-Overlap] <String>] [-ShowZero] [[-Variant] <String>] [[-Location] <String>] [<CommonParameters>]
+    New-UDBadge [[-Id] <string>] [[-Color] {defeault | primary | secondary | error | info | success | warning}] [-Children] <scriptblock> [[-BadgeContent] <scriptblock>] [[-Max] <int>] [[-Overlap] {circular | rectangular}] [[-Variant] {standard | dot}] [[-Location] {topright | topleft | bottomright | bottomleft}] [-Invisible] [-ShowZero] [<CommonParameters>]
     
     
-DESCRIPTION
-    Badge generates a small badge to the top-right of its child(ren).
-    
-
 PARAMETERS
-    -Id <String>
-        The ID of the component. It defaults to a random GUID.
-        
-        Required?                    false
-        Position?                    1
-        Default value                ([Guid]::NewGuid()).ToString()
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -Color <String>
-        The color of the badge. Valid values are: "default", "primary", "secondary", "error", "info", "success", "warning"
-        
-        Required?                    false
-        Position?                    2
-        Default value                primary
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -Children <ScriptBlock>
-        The content that the badge is attached to.
+    -BadgeContent <scriptblock>
         
         Required?                    false
         Position?                    3
-        Default value                {}
         Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -BadgeContent <ScriptBlock>
-        The content to display within the badge.
+    -Children <scriptblock>
+        
+        Required?                    true
+        Position?                    2
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      Content
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Color <string>
         
         Required?                    false
-        Position?                    4
-        Default value                {}
+        Position?                    1
         Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Invisible [<SwitchParameter>]
-        Whether the badge is invisible.
+    -Id <string>
         
         Required?                    false
-        Position?                    named
-        Default value                False
+        Position?                    0
         Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Max <Int32>
-        The maximum number to display. If the number is greater than this, it will display as "99+". Default is 99.
+    -Invisible
         
         Required?                    false
-        Position?                    5
-        Default value                99
+        Position?                    Named
         Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Overlap <String>
-        The overlap of the badge. Valid values are: "circular", "rectangular"
-        
-        Required?                    false
-        Position?                    6
-        Default value                rectangular
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -ShowZero [<SwitchParameter>]
-        Whether to show the badge when the badgeContent is 0.
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -Variant <String>
-        The variant of the badge. Valid values are: "standard", "dot"
+    -Location <string>
         
         Required?                    false
         Position?                    7
-        Default value                standard
         Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Location <String>
-        The location of the badge. Valid values are: "topright", "topleft", "bottomright", "bottomleft"
+    -Max <int>
         
         Required?                    false
-        Position?                    8
-        Default value                topright
+        Position?                    4
         Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Overlap <string>
+        
+        Required?                    false
+        Position?                    5
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -ShowZero
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Variant <string>
+        
+        Required?                    false
+        Position?                    6
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -111,87 +113,19 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
+    
 INPUTS
+    None
+    
     
 OUTPUTS
+    System.Object
     
-NOTES
+ALIASES
+    None
     
-    
-        General notes
-        
-        [Component("Badge", "Badge", "Creates a new badge.")]
-    
-    -------------------------- EXAMPLE 1 --------------------------
-    
-    PS >New-UDBadge -Color primary -BadgeContent { 4 } -Children {
-    PS >   New-UDButton -Text "Primary"
-    PS > } -Id 'badge1'
-    
-    Primary badge|Displays a badge with the text "4" on a primary button.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 2 --------------------------
-    
-    PS >New-UDBadge -Color secondary -BadgeContent { 4 } -Children {
-    PS >   New-UDIcon -Icon Envelope -Size 2x
-    PS > } -Id 'badge2'
-    PS > New-UDBadge -Color error -BadgeContent { 4 } -Children {
-    PS >   New-UDIcon -Icon Envelope -Size 2x
-    PS > } -Id 'badge3'
-    
-    Color|Changes the color of the badge.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 3 --------------------------
-    
-    PS >New-UDBadge -ShowZero -BadgeContent { 0 } -Children {
-    PS >   New-UDIcon -Icon Envelope -Size 2x
-    PS > } -Id 'badge4'
-    
-    ShowZero|Shows the badge when the badgeContent is 0.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 4 --------------------------
-    
-    PS >New-UDBadge -Max 10 -BadgeContent { 11 } -Children {
-    PS >   New-UDIcon -Icon Envelope -Size 2x
-    PS > } -Id 'badge5'
-    
-    Max|The maximum number to display. If the number is greater than this, it will display as "99+". Default is 99.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 5 --------------------------
-    
-    PS >New-UDBadge -Overlap circular -BadgeContent { 4 } -Children {
-    PS >   New-UDIcon -Icon Envelope -Size 2x
-    PS > } -Id 'badge6'
-    
-    Overlap|The overlap of the badge.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 6 --------------------------
-    
-    PS >New-UDBadge -Variant dot -BadgeContent { 4 } -Children {
-    PS >   New-UDIcon -Icon Envelope -Size 2x
-    PS > } -Id 'badge7'
-    
-    Dot|Display a dot badge.
-    
-    
-    
-    
-    
-RELATED LINKS
+
+REMARKS
+    None
 
 

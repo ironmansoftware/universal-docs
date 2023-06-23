@@ -11,8 +11,6 @@ SYNTAX
     
     Get-PSUJobPipelineOutput [-AppToken <String>] [-ComputerName <String>] [-Integrated] -JobId <Int64> [-UseDefaultCredentials] [<CommonParameters>]
     
-    Get-PSUJobPipelineOutput [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] -RunId <Guid> [<CommonParameters>]
-    
     
 DESCRIPTION
     Gets the pipeline output written by a job. Pipeline output that is written to a job is stored as CLIXML and can be retrieved by this cmdlet.
@@ -70,15 +68,6 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -RunId <Guid>
-        The run ID (GUID) for this job. Requires JobRunId experimental feature.
-        
-        Required?                    true
-        Position?                    named
-        Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         

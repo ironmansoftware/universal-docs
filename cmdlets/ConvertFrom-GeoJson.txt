@@ -2,35 +2,29 @@
 NAME
     ConvertFrom-GeoJson
     
-SYNOPSIS
-    Converts GeoJSON to a map feature.
-    
-    
 SYNTAX
-    ConvertFrom-GeoJson [-GeoJson] <PSObject[]> [[-Icons] <PSObject[]>] [<CommonParameters>]
+    ConvertFrom-GeoJson [-GeoJson] <psobject[]> [[-Icons] <psobject[]>] [<CommonParameters>]
     
     
-DESCRIPTION
-    Converts GeoJSON to a map feature.
-    
-
 PARAMETERS
-    -GeoJson <PSObject[]>
-        The GeoJSON to convert.
+    -GeoJson <psobject[]>
         
         Required?                    true
-        Position?                    1
-        Default value                
+        Position?                    0
         Accept pipeline input?       true (ByValue)
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Icons <PSObject[]>
-        The icons to use for the map markers.
+    -Icons <psobject[]>
         
         Required?                    false
-        Position?                    2
-        Default value                
+        Position?                    1
         Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -39,11 +33,19 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
+    
 INPUTS
+    System.Management.Automation.PSObject[]
+    
     
 OUTPUTS
+    System.Object
     
+ALIASES
+    None
     
-RELATED LINKS
+
+REMARKS
+    None
 
 

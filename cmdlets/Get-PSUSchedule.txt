@@ -3,7 +3,7 @@ NAME
     Get-PSUSchedule
     
 SYNOPSIS
-    Returns schedules defined in PSU.
+    Returns schedules defined in UA.
     
     
 SYNTAX
@@ -15,12 +15,12 @@ SYNTAX
     
     
 DESCRIPTION
-    Returns schedules defined in PSU. Schedules define when scripts will be run.
+    Returns schedules defined in UA. Schedules define when scripts will be run.
     
 
 PARAMETERS
     -AppToken <String>
-        An app token to access the PSU API.
+        An app token to access the UA API.
         
         Required?                    false
         Position?                    named
@@ -29,7 +29,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The HTTP address of the PSU REST API server.
+        The HTTP address of the UA REST API server.
         
         Required?                    false
         Position?                    named
@@ -110,7 +110,7 @@ NOTES
     
     PS C:\> Get-UASchedule
     
-    Returns all schedules defined in PSU.
+    Returns all schedules defined in UA.
     -------------------------- Example 2 --------------------------
     
     PS C:\> $Identity = Get-UAIdentity -Name 'Adam'

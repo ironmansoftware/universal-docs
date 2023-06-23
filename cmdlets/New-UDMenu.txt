@@ -3,7 +3,7 @@ NAME
     New-UDMenu
     
 SYNOPSIS
-    Menus display a list of choices on temporary surfaces.
+    Creates a pop up menu.
     
     
 SYNTAX
@@ -78,7 +78,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Size <String>
-        The size of the menu button. Valid values are: "small", "medium"
+        The size of the menu button.
         
         Required?                    false
         Position?                    8
@@ -98,70 +98,15 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS >New-UDMenu -Text 'Click Me'  -Children {
-    PS >    New-UDMenuItem -Text 'Test'
-    PS >    New-UDMenuItem -Text 'Test2'
-    PS >    New-UDMenuItem -Text 'Test3'
-    PS > } -Id 'menu1'
+    PS > New-UDMenu -Text 'Click Me' -OnChange {
+        Show-UDToast $EventData
+    } -Children {
+        New-UDMenuItem -Text 'Test'
+        New-UDMenuItem -Text 'Test2'
+        New-UDMenuItem -Text 'Test3'
+    }
     
-    Basic menu|Creates a simple menu.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 2 --------------------------
-    
-    PS >New-UDMenu -Text 'Click Me' -OnChange {
-    PS >    Show-UDToast -Message $EventData
-    PS > } -Children {
-    PS >    New-UDMenuItem -Text 'Test'
-    PS >    New-UDMenuItem -Text 'Test2'
-    PS >    New-UDMenuItem -Text 'Test3'
-    PS > } -Id 'menu2'
-    
-    Menu with event handler|Creates a menu with an event handler.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 3 --------------------------
-    
-    PS >New-UDMenu -Text 'Click Me' -Children {
-    PS >       New-UDMenuItem -Text 'Test'
-    PS >       New-UDMenuItem -Text 'Test2'
-    PS >       New-UDMenuItem -Text 'Test3'
-    PS > } -Variant text -Id 'menu3'
-    
-    Text variant|Creates a menu with a text variant.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 4 --------------------------
-    
-    PS >New-UDMenu -Text 'Click Me' -Children {
-    PS >       New-UDMenuItem -Text 'Test'
-    PS >       New-UDMenuItem -Text 'Test2'
-    PS >       New-UDMenuItem -Text 'Test3'
-    PS > } -Size small -Id 'menu4'
-    
-    Small menu|Creates a small menu.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 5 --------------------------
-    
-    PS >New-UDMenu -Text 'Click Me' -Children {
-    PS >       New-UDMenuItem -Text 'Test' -Value 1
-    PS >       New-UDMenuItem -Text 'Test2' -Value 2
-    PS >       New-UDMenuItem -Text 'Test3' -Value 3
-    PS > }  -Id 'menu5'
-    
-    Menu with values|Creates a menu with values.
-    
-    
-    [Component("Menu", "Bars", "Creates a new card.")]
+    Creates a simple menu.
     
     
     

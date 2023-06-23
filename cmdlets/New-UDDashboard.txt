@@ -1,15 +1,15 @@
 
 NAME
-    New-UDApp
+    New-UDDashboard
     
 SYNOPSIS
     Creates a new dashboard.
     
     
 SYNTAX
-    New-UDApp [-Title <String>] -Content <Endpoint> [-Theme <Hashtable>] [-Scripts <String[]>] [-Stylesheets <String[]>] [-Logo <String>] [-DefaultTheme <String>] [-DisableThemeToggle] [-HeaderPosition <String>] [-HeaderColor <DashboardColor>] [-HeaderBackgroundColor <DashboardColor>] [-NavigationLayout <String>] [-Navigation <Hashtable[]>] [-HideUserName] [-HideNavigation] [-LoadNavigation <Endpoint>] [-HeaderContent <Endpoint>] [-PageNotFound <Endpoint>] [-NotAuthorized <Endpoint>] [-SessionTimeoutModal <ScriptBlock>] [-Menu <Endpoint>] [<CommonParameters>]
+    New-UDDashboard [-Title <String>] -Content <Endpoint> [-Theme <Hashtable>] [-Scripts <String[]>] [-Stylesheets <String[]>] [-Logo <String>] [-DefaultTheme <String>] [-DisableThemeToggle] [-HeaderPosition <String>] [-HeaderColor <DashboardColor>] [-HeaderBackgroundColor <DashboardColor>] [-NavigationLayout <String>] [-Navigation <Hashtable[]>] [-HideUserName] [-HideNavigation] [-LoadNavigation <Endpoint>] [-HeaderContent <Endpoint>] [-PageNotFound <Endpoint>] [-NotAuthorized <Endpoint>] [-SessionTimeoutModal <ScriptBlock>] [<CommonParameters>]
     
-    New-UDApp [-Title <String>] -Pages <DashboardPage[]> [-Theme <Hashtable>] [-Scripts <String[]>] [-Stylesheets <String[]>] [-Logo <String>] [-DefaultTheme <String>] [-DisableThemeToggle] [-HeaderPosition <String>] [-HeaderColor <DashboardColor>] [-HeaderBackgroundColor <DashboardColor>] [-NavigationLayout <String>] [-Navigation <Hashtable[]>] [-HideUserName] [-HideNavigation] [-LoadNavigation <Endpoint>] [-HeaderContent <Endpoint>] [-PageNotFound <Endpoint>] [-NotAuthorized <Endpoint>] [-SessionTimeoutModal <ScriptBlock>] [-Menu <Endpoint>] [<CommonParameters>]
+    New-UDDashboard [-Title <String>] -Pages <DashboardPage[]> [-Theme <Hashtable>] [-Scripts <String[]>] [-Stylesheets <String[]>] [-Logo <String>] [-DefaultTheme <String>] [-DisableThemeToggle] [-HeaderPosition <String>] [-HeaderColor <DashboardColor>] [-HeaderBackgroundColor <DashboardColor>] [-NavigationLayout <String>] [-Navigation <Hashtable[]>] [-HideUserName] [-HideNavigation] [-LoadNavigation <Endpoint>] [-HeaderContent <Endpoint>] [-PageNotFound <Endpoint>] [-NotAuthorized <Endpoint>] [-SessionTimeoutModal <ScriptBlock>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -22,7 +22,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    named
-        Default value                PowerShell Universal
+        Default value                PowerShell Universal Dashboard
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -49,7 +49,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    named
-        Default value                (Get-UDTheme -Name $UDDefaultTheme)
+        Default value                @{}
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -192,14 +192,6 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -SessionTimeoutModal <ScriptBlock>
-        
-        Required?                    false
-        Position?                    named
-        Default value                
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -Menu <Endpoint>
         
         Required?                    false
         Position?                    named

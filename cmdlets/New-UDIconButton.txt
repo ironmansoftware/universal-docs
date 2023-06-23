@@ -29,7 +29,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    2
-        Default value                User
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -79,7 +79,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Size <String>
-        The size of the icon button. Valid values are: "small", "medium", "large"
+        The size of the icon button.
         
         Required?                    false
         Position?                    7
@@ -99,38 +99,9 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS >New-UDIconButton -Icon (New-UDIcon -Icon user -Size sm)  -Id 'iconButton1'
+    PS > Creates an icon button with a user icon with a custom style.
     
-    Basic Icon Button|Creates a basic icon button.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 2 --------------------------
-    
-    PS >New-UDIconButton -Icon (New-UDIcon -Icon user -Size sm) -OnClick {
-    PS >    Show-UDToast -Message 'Icon Button Clicked'
-    PS > } -Id 'iconButton2'
-    
-    Icon Button with OnClick|Creates an icon button with an OnClick script block.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 3 --------------------------
-    
-    PS >New-UDIconButton -Icon (New-UDIcon -Icon user -Size sm) -Href 'https://www.google.com' -Id 'iconButton3'
-    
-    Icon Button with Href|Creates an icon button that navigates to a URL.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 4 --------------------------
-    
-    PS >New-UDIconButton -Icon (New-UDIcon -Icon user -Size sm) -Disabled -Id 'iconButton4'
-    
-    Disabled Icon Button|Creates a disabled icon button.
+    New-UDIconButton -Icon (New-UDIcon -Icon user -Size sm -Style @{color = '#000'})  -Id 'iconButtonContent'
     
     
     

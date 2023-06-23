@@ -3,7 +3,7 @@ NAME
     New-UDButton
     
 SYNOPSIS
-    Buttons allow users to take actions, and make choices, with a single tap..
+    Creates a new button.
     
     
 SYNTAX
@@ -11,7 +11,7 @@ SYNTAX
     
     
 DESCRIPTION
-    Creates a new button. Buttons allow users to take actions, and make choices, with a single tap.
+    Creates a new button. Buttons are used to allow the user to take action.
     
 
 PARAMETERS
@@ -70,7 +70,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Size <String>
-        The size of the button. Valid values are: "small", "medium", "large"
+        The size of the button.
         
         Required?                    false
         Position?                    9
@@ -133,7 +133,6 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ShowLoading [<SwitchParameter>]
-        Displays a loading spinner while the OnClick event handler is running.
         
         Required?                    false
         Position?                    named
@@ -142,7 +141,6 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -LoadingIndicator <Object>
-        A custom element to display instead of the built in spinner for -ShowLoading
         
         Required?                    false
         Position?                    named
@@ -151,7 +149,6 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -LoadingPosition <String>
-        The position of the loading indicator. Valid values are: 'start', 'end', 'center'
         
         Required?                    false
         Position?                    named
@@ -171,68 +168,23 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS >New-UDButton -Variant 'text' -Text 'Text' -Id 'button1'
-    PS > New-UDButton -Variant 'contained' -Text 'Contained'  -Id 'button2'
-    PS > New-UDButton -Variant 'outlined' -Text 'Outlined' -Id 'button3'
+    PS > Creates a button with the GitHub logo and redirects the user to GitHub when clicked.
     
-    Basic buttons|UDButton comes with three variants: text, contained, and outlined.
+    $Icon = New-UDIcon -Icon 'github'
+    New-UDButton -Text "Submit" -Id "btnClick" -Icon $Icon -OnClick {
+        Invoke-UDRedirect https://github.com
+    }
     
     
     
     
     -------------------------- EXAMPLE 2 --------------------------
     
-    PS >New-UDButton -Text 'Click me' -OnClick {
-    PS >   Show-UDToast -Message 'Hello, world!'
-    PS > } -Id 'button4'
+    PS > Creates a button with a blue background.
     
-    Handling clicks|PowerShell that is executed when the button is clicked.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 3 --------------------------
-    
-    PS >New-UDButton -Text 'Secondary' -Color secondary -Id 'button5'
-    PS > New-UDButton -Text 'Success' -Color success -Id 'button6'
-    PS > New-UDButton -Text 'Error' -Color error -Id 'button7'
-    
-    Color|Adjust the button color with -Color
-    
-    
-    
-    
-    -------------------------- EXAMPLE 4 --------------------------
-    
-    PS >New-UDButton -Variant 'text' -Text 'small' -Id 'button8' -Size small
-    PS > New-UDButton -Variant 'text' -Text 'medium'  -Id 'button9' -Size medium
-    PS > New-UDButton -Variant 'text' -Text 'large' -Id 'button10' -Size large
-    PS > New-UDButton -Variant 'contained' -Text 'small' -Id 'button11'  -Size small
-    PS > New-UDButton -Variant 'contained' -Text 'medium'  -Id 'button12'  -Size medium
-    PS > New-UDButton -Variant 'contained' -Text 'large' -Id 'button13'  -Size large
-    PS > New-UDButton -Variant 'outlined' -Text 'small' -Id 'button14'  -Size small
-    PS > New-UDButton -Variant 'outlined' -Text 'medium'  -Id 'button15'  -Size medium
-    PS > New-UDButton -Variant 'outlined' -Text 'large' -Id 'button16'  -Size large
-    
-    Sizes|For larger or smaller buttons, use the -Size parameter.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 5 --------------------------
-    
-    PS >New-UDButton -Icon (New-UDIcon -Icon 'User') -Text 'View User' -Id 'button17'
-    
-    Icon|Display an icon within the button
-    
-    
-    
-    
-    -------------------------- EXAMPLE 6 --------------------------
-    
-    PS >New-UDButton -OnClick { Start-Sleep 3 } -ShowLoading -Text 'Load Data' -Id 'button18'
-    
-    Loading|Show a loading indicator while the OnClick event handler is running.
+    New-UDButton -Text "Submit" -Style @{ backgroundColor = "blue"}  -OnClick {
+        Invoke-UDRedirect https://github.com
+    }
     
     
     

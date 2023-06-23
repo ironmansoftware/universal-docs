@@ -3,34 +3,25 @@ NAME
     New-UDHtml
     
 SYNOPSIS
-    Display HTML on an app.
+    Displays HTML on a dashboard.
     
     
 SYNTAX
-    New-UDHtml [-Id <String>] [-Markup] <String> [<CommonParameters>]
+    New-UDHtml [-Markup] <String> [<CommonParameters>]
     
     
 DESCRIPTION
-    Display HTML on an app.
+    Displays HTML on a dashboard.
     
 
 PARAMETERS
-    -Id <String>
-        The ID of this component. The default value is a random GUID.
-        
-        Required?                    false
-        Position?                    named
-        Default value                ([Guid]::NewGuid()).ToString()
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
     -Markup <String>
         The HTML markup to display.
         
         Required?                    true
-        Position?                    2
-        Default value                
-        Accept pipeline input?       false
+        Position?                    1
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -40,19 +31,27 @@ PARAMETERS
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
 INPUTS
+    None
+        
+    
     
 OUTPUTS
-    
-    -------------------------- EXAMPLE 1 --------------------------
-    
-    PS >New-UDHtml -Markup '<h1>Hello World</h1>'
-    
-    HTML|Display HTML on an app.
+    System.Object
+        
     
     
+NOTES
     
     
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    New-UDHTML -Markup "<blink>Hello!</blink>"
+    
+    Creates blinking text on a page.
     
 RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
 
 

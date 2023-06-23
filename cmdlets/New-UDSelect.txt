@@ -29,10 +29,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    2
-        Default value                {
-                    New-UDSelectOption -Name 'Option 1' -Value 1
-                    New-UDSelectOption -Name 'Option 2' -Value 2
-                }
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -135,100 +132,15 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS >New-UDSelect -Label 'Select' -Id 'select1' -Option {
-    PS >    New-UDSelectOption -Name "One" -Value 1
-    PS >    New-UDSelectOption -Name "Two" -Value 2
-    PS >    New-UDSelectOption -Name "Three" -Value 3
-    PS > } -FullWidth
+    PS > Creates a new select with 3 options and shows a toast when one is selected.
     
-    Basic Select|A basic select with three options
-    
-    
-    
-    
-    -------------------------- EXAMPLE 2 --------------------------
-    
-    PS >New-UDSelect -Label 'Select' -Id 'select2' -Option {
-    PS >    New-UDSelectOption -Name "One" -Value 1
-    PS >    New-UDSelectOption -Name "Two" -Value 2
-    PS >    New-UDSelectOption -Name "Three" -Value 3
-    PS > } -DefaultValue 2 -OnChange {
-    PS >    Show-UDToast -Message $EventData
-    PS > } -FullWidth
-    
-    OnChange|A select with an OnChange script block that shows a toast when the value changes.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 3 --------------------------
-    
-    PS >New-UDSelect -Label 'Select' -Id 'select3' -Option {
-    PS >    New-UDSelectOption -Name "One" -Value 1
-    PS >    New-UDSelectOption -Name "Two" -Value 2
-    PS >    New-UDSelectOption -Name "Three" -Value 3
-    PS > } -Disabled -FullWidth
-    
-    Disabled|A disabled select.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 4 --------------------------
-    
-    PS >New-UDSelect -Label 'Select' -Id 'select4' -Option {
-    PS >    New-UDSelectOption -Name "One" -Value 1
-    PS >    New-UDSelectOption -Name "Two" -Value 2
-    PS >    New-UDSelectOption -Name "Three" -Value 3
-    PS > } -Multiple -FullWidth
-    
-    Multiple|A select that allows multiple selections.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 5 --------------------------
-    
-    PS >New-UDSelect -Label 'Select' -Id 'select5' -Option {
-    PS >    New-UDSelectOption -Name "One" -Value 1
-    PS >    New-UDSelectOption -Name "Two" -Value 2
-    PS >    New-UDSelectOption -Name "Three" -Value 3
-    PS > } -Variant outlined -FullWidth
-    
-    Outlined|A select with an outlined variant.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 6 --------------------------
-    
-    PS >New-UDSelect -Label 'Select' -Id 'select6' -Option {
-    PS >    New-UDSelectOption -Name "One" -Value 1
-    PS >    New-UDSelectOption -Name "Two" -Value 2
-    PS >    New-UDSelectOption -Name "Three" -Value 3
-    PS > } -FullWidth -Icon (New-UDIcon -Icon Home)
-    
-    Icon|A select with an icon.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 7 --------------------------
-    
-    PS >New-UDSelect -Label 'Select' -Id 'select7' -Option {
-    PS >    New-UDSelectGroup -Name "Category 1" -Option {
-    PS >        New-UDSelectOption -Name "One" -Value 1
-    PS >        New-UDSelectOption -Name "Two" -Value 2
-    PS >    }
-    PS >    New-UDSelectGroup -Name "Category 2" -Option {
-    PS >        New-UDSelectOption -Name "Three" -Value 3
-    PS >        New-UDSelectOption -Name "Four" -Value 4
-    PS >    }
-    PS > } -FullWidth
-    
-    Grouped|A select with option groups.
-    
-    [Component("Select", "ListDropdown", "Creates a new card.")]
+    New-UDSelect -Label '1-3' -Id 'select' -Option {
+        New-UDSelectOption -Name "One" -Value 1
+        New-UDSelectOption -Name "Two" -Value 2
+        New-UDSelectOption -Name "Three" -Value 3
+    } -DefaultValue 2 -OnChange { 
+        Show-UDToast -Mesage $EventData 
+    }
     
     
     

@@ -3,7 +3,7 @@ NAME
     New-UDProgress
     
 SYNOPSIS
-    Progress dialogs can show both determinate and indeterminate progress. They can also be circular or linear.
+    Creates a progress dialog.
     
     
 SYNTAX
@@ -65,7 +65,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Size <String>
-        The size of the progress. Valid values are: "small", "medium", "large"
+        The size of the progress.
         
         Required?                    false
         Position?                    named
@@ -85,36 +85,9 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS >New-UDProgress -PercentComplete 75 -Id 'progress1'
+    PS > Creates a progress bar at 75%.
     
-    Determinate|A determinate progress bar.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 2 --------------------------
-    
-    PS >New-UDProgress -Circular -Size large -Id 'progress2'
-    
-    Circular|A circular progress bar.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 3 --------------------------
-    
-    PS >New-UDProgress -BackgroundColor 'red' -ProgressColor 'blue' -Id 'progress3'
-    
-    Color|Define the background and progress colors.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 4 --------------------------
-    
-    PS >New-UDProgress -Circular -Size large -Id 'progress4'
-    
-    
+    New-UDProgress -PercentComplete 75
     
     
     

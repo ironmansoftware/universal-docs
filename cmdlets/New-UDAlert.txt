@@ -3,17 +3,17 @@ NAME
     New-UDAlert
     
 SYNOPSIS
-    An alert displays a short, important message in a way that attracts the user's attention without interrupting the user's task.
+    Creates an alert.
     
     
 SYNTAX
-    New-UDAlert [-Id <String>] [-Severity <String>] [-Text <String>] [-Title <String>] [-ClassName <String>] [-Style <Hashtable>] [-Dense] [<CommonParameters>]
+    New-UDAlert [-Id <String>] [-Severity <String>] [-Children <ScriptBlock>] [-Title <String>] [-ClassName <String>] [-Style <Hashtable>] [<CommonParameters>]
     
-    New-UDAlert [-Id <String>] [-Severity <String>] [-Children <ScriptBlock>] [-Title <String>] [-ClassName <String>] [-Style <Hashtable>] [-Dense] [<CommonParameters>]
+    New-UDAlert [-Id <String>] [-Severity <String>] [-Text <String>] [-Title <String>] [-ClassName <String>] [-Style <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
-    An alert displays a short, important message in a way that attracts the user's attention without interrupting the user's task.
+    Creates an alert.
     
 
 PARAMETERS
@@ -27,7 +27,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Severity <String>
-        The severity of this alert. Valid values are: "success", "error", "warning", "info"
+        The severity of this alert.
         
         Required?                    false
         Position?                    named
@@ -80,14 +80,6 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -Dense [<SwitchParameter>]
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
@@ -97,48 +89,6 @@ PARAMETERS
 INPUTS
     
 OUTPUTS
-    
-    -------------------------- EXAMPLE 1 --------------------------
-    
-    PS >New-UDStack -Content {
-    PS >    New-UDAlert -Severity 'error'  -Title "Error" -Id 'alert1'
-    PS >    New-UDAlert -Severity 'warning' -Title "Warning" -Id 'alert2'
-    PS >    New-UDAlert -Severity 'info'  -Title "Info" -Id 'alert3'
-    PS >    New-UDAlert -Severity 'success' -Title "Success" -Id 'alert4'
-    PS > } -Direction 'column'
-    
-    Basic alert|The alert offers four severity levels that set a distinctive icon and color.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 2 --------------------------
-    
-    PS >New-UDStack -Content {
-    PS >    New-UDAlert -Severity 'error' -Title 'Error' -Text 'This is an error alert' -Id 'alert5'
-    PS >    New-UDAlert -Severity 'warning'  -Title 'Warning' -Text 'This is an warning alert' -Id 'alert6'
-    PS >    New-UDAlert -Severity 'info' -Title 'Info' -Text 'This is an error info' -Id 'alert7'
-    PS >    New-UDAlert -Severity 'success' -Title 'Success' -Text 'This is an success alert' -Id 'alert8'
-    PS > } -Direction 'column'
-    
-    Text and Title|You can use the -Title parameter to display a formatted title above the content.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 3 --------------------------
-    
-    PS >New-UDStack -Content {
-    PS >    New-UDAlert -Severity 'error'  -Title "Error" -Id 'alert9' -Dense
-    PS >    New-UDAlert -Severity 'warning' -Title "Warning" -Id 'alert10' -Dense
-    PS >    New-UDAlert -Severity 'info'  -Title "Info" -Id 'alert11' -Dense
-    PS >    New-UDAlert -Severity 'success' -Title "Success" -Id 'alert12' -Dense
-    PS > } -Direction 'column'
-    
-    Dense|You can use the -Dense parameter to reduce the vertical padding of the alert.
-    
-    
-    
     
     
 RELATED LINKS

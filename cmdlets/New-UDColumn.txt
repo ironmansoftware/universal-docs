@@ -3,36 +3,38 @@ NAME
     New-UDColumn
     
 SYNTAX
-    New-UDColumn [[-Content] <scriptblock>] [-Id <string>] [-SmallSize <int>] [-LargeSize <int>] [-MediumSize <int>] [-ExtraLargeSize <int>] [-ExtraSmallSize <int>] [<CommonParameters>]
+    New-UDColumn [[-Content] <scriptblock>] [-Id <string>] [-SmallSize <int>] [-LargeSize <int>] [-MediumSize <int>] [<CommonParameters>]
+    
+    New-UDColumn [-Id <string>] [-SmallSize <int>] [-LargeSize <int>] [-MediumSize <int>] [-Endpoint <Endpoint>] [-AutoRefresh] [-RefreshInterval <int>] [<CommonParameters>]
     
     
 PARAMETERS
+    -AutoRefresh
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           endpoint
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
     -Content <scriptblock>
         
         Required?                    false
         Position?                    1
         Accept pipeline input?       false
-        Parameter set name           (All)
+        Parameter set name           content
         Aliases                      None
         Dynamic?                     false
         Accept wildcard characters?  false
         
-    -ExtraLargeSize <int>
+    -Endpoint <Endpoint>
         
         Required?                    false
         Position?                    Named
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -ExtraSmallSize <int>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
+        Parameter set name           endpoint
         Aliases                      None
         Dynamic?                     false
         Accept wildcard characters?  false
@@ -63,6 +65,16 @@ PARAMETERS
         Position?                    Named
         Accept pipeline input?       false
         Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -RefreshInterval <int>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           endpoint
         Aliases                      None
         Dynamic?                     false
         Accept wildcard characters?  false

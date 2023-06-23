@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDMenuItem [[-Id] <String>] [-Text] <String> [[-Value] <String>] [[-Icon] <Hashtable>] [[-OnClick] <Endpoint>] [<CommonParameters>]
+    New-UDMenuItem [-Text] <String> [[-Value] <String>] [[-Icon] <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -15,19 +15,11 @@ DESCRIPTION
     
 
 PARAMETERS
-    -Id <String>
-        
-        Required?                    false
-        Position?                    1
-        Default value                [Guid]::NewGuid()
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
     -Text <String>
         The text to display in the menu item.
         
         Required?                    true
-        Position?                    2
+        Position?                    1
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -36,7 +28,7 @@ PARAMETERS
         The value of the menu item. If not specified, the text will be used.
         
         Required?                    false
-        Position?                    3
+        Position?                    2
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -44,15 +36,7 @@ PARAMETERS
     -Icon <Hashtable>
         
         Required?                    false
-        Position?                    4
-        Default value                
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -OnClick <Endpoint>
-        
-        Required?                    false
-        Position?                    5
+        Position?                    3
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false

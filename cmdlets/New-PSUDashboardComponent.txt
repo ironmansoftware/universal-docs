@@ -1,17 +1,17 @@
 
 NAME
-    Remove-PSUEndpointDocumentation
+    New-PSUDashboardComponent
     
 SYNOPSIS
-    Remove endpoint documentation.
+    {{ Fill in the Synopsis }}
     
     
 SYNTAX
-    Remove-PSUEndpointDocumentation [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    New-PSUDashboardComponent [-AppToken <String>] [-ComputerName <String>] [-Integrated] -Name <String> -Path <String> [-UseDefaultCredentials] -Version <String> [<CommonParameters>]
     
     
 DESCRIPTION
-    Remove endpoint documentation.
+    {{ Fill in the Description }}
     
 
 PARAMETERS
@@ -33,15 +33,6 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Id <Int64>
-        {{ Fill Id Description }}
-        
-        Required?                    true
-        Position?                    0
-        Default value                None
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
     -Integrated [<SwitchParameter>]
         {{ Fill Integrated Description }}
         
@@ -51,12 +42,39 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
+    -Name <String>
+        {{ Fill Name Description }}
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Path <String>
+        {{ Fill Path Description }}
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
     -UseDefaultCredentials [<SwitchParameter>]
         {{ Fill UseDefaultCredentials Description }}
         
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Version <String>
+        {{ Fill Version Description }}
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
@@ -83,9 +101,9 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> Remove-PSUEndpointDocumentation -Id 1
+    PS C:\> {{ Add example code here }}
     
-    
+    {{ Add example description here }}
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

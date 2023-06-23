@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDStep [[-Id] <String>] [-OnLoad] <Endpoint> [[-Label] <String>] [-Optional] [-DisablePrevious] [[-Icon] <Object>] [-RemoveIconStyle] [<CommonParameters>]
+    New-UDStep [[-Id] <String>] [-OnLoad] <Endpoint> [[-Label] <String>] [-Optional] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -44,33 +44,6 @@ PARAMETERS
         
     -Optional [<SwitchParameter>]
         Whether this step is optional.
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -DisablePrevious [<SwitchParameter>]
-        Disables the back button on the step
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -Icon <Object>
-        The icon to put with the step
-        
-        Required?                    false
-        Position?                    4
-        Default value                
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -RemoveIconStyle [<SwitchParameter>]
-        Removes circle style around icon
         
         Required?                    false
         Position?                    named
