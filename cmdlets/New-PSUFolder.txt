@@ -3,7 +3,7 @@ NAME
     New-PSUFolder
     
 SYNOPSIS
-    Creates a new folder within PSU.
+    Creates a new folder within UA.
     
     
 SYNTAX
@@ -11,7 +11,7 @@ SYNTAX
     
     
 DESCRIPTION
-    Creates a new folder within PSU. This will create a new folder within the internal git repository and additionally a configured remote.
+    Creates a new folder within UA. This will create a new folder within the internal git repository and additionally a configured remote.
     
 
 PARAMETERS
@@ -94,13 +94,13 @@ NOTES
     
     PS C:\> New-UAFolder -Name 'Scripts'
     
-    Creates a new Scripts folder in the root of the PSU folder structure.
+    Creates a new Scripts folder in the root of the UA folder structure.
     -------------------------- Example 2 --------------------------
     
     PS C:\> $Parent = Get-UAFolder -Name 'Scripts'
     PS C:\> New-UAFolder -Name 'Private' -Parent $Parent
     
-    Creates a new Private folder in the Scripts folder of the PSU folder structure.
+    Creates a new Private folder in the Scripts folder of the UA folder structure.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

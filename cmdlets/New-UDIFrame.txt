@@ -29,7 +29,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    2
-        Default value                https://ironmansoftware.com
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

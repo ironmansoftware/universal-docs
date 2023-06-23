@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTransferList [[-Id] <String>] [[-Item] <ScriptBlock>] [[-SelectedItem] <String[]>] [[-OnChange] <Endpoint>] [[-ClassName] <String>] [-Disabled] [[-Height] <String>] [[-Width] <String>] [-ShowSearch] [[-Alignment] <String>] [<CommonParameters>]
+    New-UDTransferList [[-Id] <String>] [[-Item] <ScriptBlock>] [[-SelectedItem] <String[]>] [[-OnChange] <Endpoint>] [[-ClassName] <String>] [-Disabled] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -67,39 +67,6 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -Height <String>
-        
-        Required?                    false
-        Position?                    6
-        Default value                
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -Width <String>
-        
-        Required?                    false
-        Position?                    7
-        Default value                100%
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -ShowSearch [<SwitchParameter>]
-        Shows search box for left hand items
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -Alignment <String>
-        
-        Required?                    false
-        Position?                    8
-        Default value                center
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
@@ -112,94 +79,51 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS >New-UDTransferList -Item {
-    PS >     New-UDTransferListItem -Name 'test1' -Value 1
-    PS >     New-UDTransferListItem -Name 'test2' -Value 2
-    PS >     New-UDTransferListItem -Name 'test3' -Value 3
-    PS >     New-UDTransferListItem -Name 'test4' -Value 4
-    PS >     New-UDTransferListItem -Name 'test5' -Value 5
-    PS > } -Id 'transferlist1'
+    PS > New-UDTransferList -Item {
+        New-UDTransferListItem -Name 'test1' -Value 1
+        New-UDTransferListItem -Name 'test2' -Value 2
+        New-UDTransferListItem -Name 'test3' -Value 3
+        New-UDTransferListItem -Name 'test4' -Value 4
+        New-UDTransferListItem -Name 'test5' -Value 5
+    }
     
-    Basic Transfer List|Creates a basic transfer list.
+    Creates a basic transfer list.
     
     
     
     
     -------------------------- EXAMPLE 2 --------------------------
     
-    PS >New-UDTransferList -Item {
-    PS >     New-UDTransferListItem -Name 'test1' -Value 1
-    PS >     New-UDTransferListItem -Name 'test2' -Value 2
-    PS >     New-UDTransferListItem -Name 'test3' -Value 3
-    PS >     New-UDTransferListItem -Name 'test4' -Value 4
-    PS >     New-UDTransferListItem -Name 'test5' -Value 5
-    PS > } -OnChange {
-    PS >     Show-UDToast ($EventData | ConvertTo-Json)
-    PS > } -Id 'transferlist2'
+    PS > New-UDTransferList -Item {
+        New-UDTransferListItem -Name 'test1' -Value 1
+        New-UDTransferListItem -Name 'test2' -Value 2
+        New-UDTransferListItem -Name 'test3' -Value 3
+        New-UDTransferListItem -Name 'test4' -Value 4
+        New-UDTransferListItem -Name 'test5' -Value 5
+    } -OnChange {
+        Show-UDToast ($EventData | ConvertTo-Json)
+    }
     
-    OnChange|Creates a transfer list with an OnChange script block.
+    Creates a basic transfer list that shows a toast when the values are changed.
     
     
     
     
     -------------------------- EXAMPLE 3 --------------------------
     
-    PS >New-UDTransferList -Item {
-    PS >     New-UDTransferListItem -Name 'test1' -Value 1
-    PS >     New-UDTransferListItem -Name 'test2' -Value 2
-    PS >     New-UDTransferListItem -Name 'test3' -Value 3
-    PS >     New-UDTransferListItem -Name 'test4' -Value 4
-    PS >     New-UDTransferListItem -Name 'test5' -Value 5
-    PS > } -SelectedItem @('test1', 'test2') -Id 'transferlist3'
+    PS > New-UDForm -Content {
+        New-UDTransferList -Item {
+            New-UDTransferListItem -Name 'test1' -Value 1
+            New-UDTransferListItem -Name 'test2' -Value 2
+            New-UDTransferListItem -Name 'test3' -Value 3
+            New-UDTransferListItem -Name 'test4' -Value 4
+            New-UDTransferListItem -Name 'test5' -Value 5
+        }
+    } -OnSubmit {
+        Show-UDToast ($EventData | ConvertTo-Json)
+    }
     
-    Selected Items|Creates a transfer list with selected items.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 4 --------------------------
-    
-    PS >New-UDTransferList -Item {
-    PS >     New-UDTransferListItem -Name 'test1' -Value 1
-    PS >     New-UDTransferListItem -Name 'test2' -Value 2
-    PS >     New-UDTransferListItem -Name 'test3' -Value 3
-    PS >     New-UDTransferListItem -Name 'test4' -Value 4
-    PS >     New-UDTransferListItem -Name 'test5' -Value 5
-    PS > } -Disabled -Id 'transferlist4'
-    
-    Disabled|Creates a disabled transfer list.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 5 --------------------------
-    
-    PS >New-UDTransferList -Item {
-    PS >     New-UDTransferListItem -Name 'test1' -Value 1
-    PS >     New-UDTransferListItem -Name 'test2' -Value 2
-    PS >     New-UDTransferListItem -Name 'test3' -Value 3
-    PS >     New-UDTransferListItem -Name 'test4' -Value 4
-    PS >     New-UDTransferListItem -Name 'test5' -Value 5 -Disabled
-    PS > } -Id 'transferlist5'
-    
-    Disabled Item|Creates a transfer list with a disabled item.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 6 --------------------------
-    
-    PS >New-UDTransferList -Item {
-    PS >     New-UDTransferListItem -Name 'test1' -Value 1
-    PS >     New-UDTransferListItem -Name 'test2' -Value 2
-    PS >     New-UDTransferListItem -Name 'test3' -Value 3
-    PS >     New-UDTransferListItem -Name 'test4' -Value 4
-    PS >     New-UDTransferListItem -Name 'test5' -Value 5 
-    PS > } -Id 'transferlist6' -Width "50%" -Height '200'
-    
-    Width and Height|Creates a transfer list with a width and height.
-    
-    [Component("Transfer List", "ListCheck", "Creates a new card.")]
+    Creates a transfer list that is part of a form.
     
     
     

@@ -3,7 +3,7 @@ NAME
     Invoke-PSUScript
     
 SYNOPSIS
-    Invokes a script within PSU.
+    Invokes a script within UA.
     
     
 SYNTAX
@@ -15,12 +15,12 @@ SYNTAX
     
     
 DESCRIPTION
-    Invokes a script within PSU. Invoking a script starts a new job that you can then track the progress of.
+    Invokes a script within UA. Invoking a script starts a new job that you can then track the progress of.
     
 
 PARAMETERS
     -AppToken <String>
-        An app token to access the PSU API.
+        An app token to access the UA API.
         
         Required?                    false
         Position?                    named
@@ -29,7 +29,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The HTTP address of the PSU REST API server.
+        The HTTP address of the UA REST API server.
         
         Required?                    false
         Position?                    named

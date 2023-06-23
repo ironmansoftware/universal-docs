@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTableTextOption [[-ExportAllCsv] <String>] [[-ExportCurrentViewCsv] <String>] [[-ExportAllXLSX] <String>] [[-ExportCurrentViewXLSX] <String>] [[-ExportAllPDF] <String>] [[-ExportCurrentViewPDF] <String>] [[-ExportAllJson] <String>] [[-ExportCurrentViewJson] <String>] [[-ExportFileName] <String>] [[-Search] <String>] [[-FilterSearch] <String>] [[-Export] <String>] [[-FilterDate] <String>] [[-NoData] <String>] [[-Loading] <String>] [<CommonParameters>]
+    New-UDTableTextOption [[-ExportAllCsv] <String>] [[-ExportCurrentViewCsv] <String>] [[-ExportAllXLSX] <String>] [[-ExportCurrentViewXLSX] <String>] [[-ExportAllPDF] <String>] [[-ExportCurrentViewPDF] <String>] [[-ExportAllJson] <String>] [[-ExportCurrentViewJson] <String>] [[-ExportFileName] <String>] [[-Search] <String>] [[-FilterSearch] <String>] [[-Export] <String>] [[-FilterDate] <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -126,23 +126,6 @@ PARAMETERS
         Required?                    false
         Position?                    13
         Default value                Filter Date
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -NoData <String>
-        Overrides the No Data text.
-        
-        Required?                    false
-        Position?                    14
-        Default value                No Data
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -Loading <String>
-        
-        Required?                    false
-        Position?                    15
-        Default value                Loading...
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

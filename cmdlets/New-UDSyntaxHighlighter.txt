@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDSyntaxHighlighter [[-Id] <String>] [[-Code] <String>] [[-Language] <String>] [[-Style] <String>] [-ShowLineNumbers] [<CommonParameters>]
+    New-UDSyntaxHighlighter [[-Id] <String>] [-Code] <String> [[-Language] <String>] [[-Style] <String>] [-ShowLineNumbers] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -27,7 +27,7 @@ PARAMETERS
     -Code <String>
         The code to syntax highlight.
         
-        Required?                    false
+        Required?                    true
         Position?                    2
         Default value                
         Accept pipeline input?       false
@@ -69,33 +69,6 @@ PARAMETERS
 INPUTS
     
 OUTPUTS
-    
-    -------------------------- EXAMPLE 1 --------------------------
-    
-    PS >New-UDSyntaxHighlighter -Code 'Write-Host "Hello World"' -Language powershell
-    
-    Basic Syntax Highlighter|A basic syntax highlighter.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 2 --------------------------
-    
-    PS >New-UDSyntaxHighlighter -Code 'Write-Host "Hello World"' -Language powershell -Style 'vs'
-    
-    Style|A syntax highlighter with a style.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 3 --------------------------
-    
-    PS >New-UDSyntaxHighlighter -Code 'Write-Host "Hello World"' -Language powershell -ShowLineNumbers
-    
-    Line Numbers|A syntax highlighter with line numbers.
-    
-    
-    
     
     
 RELATED LINKS

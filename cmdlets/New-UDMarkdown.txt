@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDMarkdown [[-Id] <String>] [[-Children] <String>] [<CommonParameters>]
+    New-UDMarkdown [[-Id] <String>] [-Children] <String> [<CommonParameters>]
     
     
 DESCRIPTION
@@ -26,9 +26,9 @@ PARAMETERS
         
     -Children <String>
         
-        Required?                    false
+        Required?                    true
         Position?                    2
-        Default value                # Header
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -41,15 +41,6 @@ PARAMETERS
 INPUTS
     
 OUTPUTS
-    
-    -------------------------- EXAMPLE 1 --------------------------
-    
-    PS >New-UDMarkdown -Markdown '# Heading'
-    
-    Basic Markdown|Creates a heading based on markdown.
-    
-    
-    
     
     
 RELATED LINKS

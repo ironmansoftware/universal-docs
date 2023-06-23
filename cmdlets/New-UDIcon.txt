@@ -3,13 +3,11 @@ NAME
     New-UDIcon
     
 SYNOPSIS
-    FontAwesome 6 icons.
+    Creates a new icon.
     
     
 SYNTAX
-    New-UDIcon [-Id <String>] [-Icon <String>] [-FixedWidth] [-Inverse] [-Rotation <Int32>] [-ClassName <String>] [-Transform <String>] [-Flip <String>] [-Pull <String>] [-ListItem] [-Spin] [-Border] [-Beat] [-Fade] [-Bounce] [-BeatFade] [-Shake] [-Size <String>] [-Style <Hashtable>] [-Title <String>] [-Color <DashboardColor>] [-Solid] [<CommonParameters>]
-    
-    New-UDIcon [-Id <String>] [-Children <ScriptBlock>] [-ClassName <String>] [-Style <Hashtable>] [<CommonParameters>]
+    New-UDIcon [[-Id] <String>] [[-Icon] <String>] [-FixedWidth] [-Inverse] [[-Rotation] <Int32>] [[-ClassName] <String>] [[-Transform] <String>] [[-Flip] <String>] [[-Pull] <String>] [-ListItem] [-Spin] [-Border] [-Beat] [-Fade] [-Bounce] [-BeatFade] [-Shake] [[-Size] <String>] [[-Style] <Hashtable>] [[-Title] <String>] [-Solid] [[-Color] <DashboardColor>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -21,24 +19,16 @@ PARAMETERS
         The ID of this component.
         
         Required?                    false
-        Position?                    named
+        Position?                    1
         Default value                ([Guid]::NewGuid()).ToString()
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
     -Icon <String>
-        The Icon to display. This is a FontAwesome 6 icon name.
+        The Icon to display. This is a FontAwesome 5 icon name.
         
         Required?                    false
-        Position?                    named
-        Default value                User
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -Children <ScriptBlock>
-        
-        Required?                    false
-        Position?                    named
+        Position?                    2
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -65,7 +55,7 @@ PARAMETERS
         The amount of degrees to rotate the icon.
         
         Required?                    false
-        Position?                    named
+        Position?                    3
         Default value                0
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -74,7 +64,7 @@ PARAMETERS
         Custom CSS class names to apply to the icon.
         
         Required?                    false
-        Position?                    named
+        Position?                    4
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -83,7 +73,7 @@ PARAMETERS
         A CSS transform to apply to the icon.
         
         Required?                    false
-        Position?                    named
+        Position?                    5
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -92,7 +82,7 @@ PARAMETERS
         Whether to flip the icon.
         
         Required?                    false
-        Position?                    named
+        Position?                    6
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -101,7 +91,7 @@ PARAMETERS
         Whether to flip the icon.
         
         Required?                    false
-        Position?                    named
+        Position?                    7
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -176,7 +166,7 @@ PARAMETERS
         The size of the icon. Valid values are: "xs", "sm", "lg", "1x", "2x", "3x", "4x", "5x", "6x", "7x", "8x", "9x", "10x"
         
         Required?                    false
-        Position?                    named
+        Position?                    8
         Default value                sm
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -185,24 +175,15 @@ PARAMETERS
         A CSS style to apply to the icon.
         
         Required?                    false
-        Position?                    named
-        Default value                @{}
+        Position?                    9
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
     -Title <String>
         
         Required?                    false
-        Position?                    named
-        Default value                
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -Color <DashboardColor>
-        The color of this icon.
-        
-        Required?                    false
-        Position?                    named
+        Position?                    10
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -213,6 +194,15 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Color <DashboardColor>
+        The color of this icon.
+        
+        Required?                    false
+        Position?                    11
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -228,93 +218,9 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS >New-UDIcon -Icon User -Id 'icon1'
+    PS > Displays a user icon.
     
-    Basic Icon|Displays a user icon.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 2 --------------------------
-    
-    PS >New-UDStack -Direction 'row' -Content {
-    PS >    New-UDIcon -Icon 'AddressBook' -Size 'sm' -Id 'icon2'
-    PS >    New-UDIcon -Icon 'AddressBook' -Size 'lg' -Id 'icon3'
-    PS >    New-UDIcon -Icon 'AddressBook' -Size '5x' -Id 'icon4'
-    PS >    New-UDIcon -Icon 'AddressBook' -Size '10x' -Id 'icon5'
-    PS > }
-    
-    Icon Size|Displays icons in different sizes.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 3 --------------------------
-    
-    PS >New-UDIcon -Icon 'AddressBook' -Size '5x' -Rotation 90 -Id 'icon6'
-    
-    Rotated Icon|Rotates an icon 90 degrees.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 4 --------------------------
-    
-    PS >New-UDIcon -Icon 'AddressBook' -Size '5x' -Border -Id 'icon7'
-    
-    Border Icon|Adds a border to an icon.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 5 --------------------------
-    
-    PS >New-UDIcon -Icon 'AddressBook' -Size '5x' -Color 'red' -Id 'icon8'
-    
-    Color|Adds a color to an icon
-    
-    
-    
-    
-    -------------------------- EXAMPLE 6 --------------------------
-    
-    PS >New-UDIcon -Icon 'AddressBook' -Flip 'horizontal' -Size '5x' -Id 'icon9'
-    
-    Flip|Flips an icon horizontally.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 7 --------------------------
-    
-    PS >New-UDIcon -Icon 'Spinner' -Spin -Size '5x' -Id 'icon10'
-    
-    Spin|Spins an icon.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 8 --------------------------
-    
-    PS >New-UDIcon -Icon 'Spinner' -Pulse -Size '5x' -Id 'icon11'
-    
-    Pulse|Pulses an icon.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 9 --------------------------
-    
-    PS >New-UDHelmet -Tag 'link' -Attributes @{
-    PS >         href = 'https://css.gg/css' 
-    PS >         rel = 'stylesheet'
-    PS >     }
-    PS > 
-    PS >     New-UDIcon -Children {
-    PS >         New-UDHtml '<i class="gg-adidas"></i>'
-    PS >     }
-    
-    Custom Icon Set|Uses the css.gg icon set.
+    New-UDIcon -Icon User
     
     
     

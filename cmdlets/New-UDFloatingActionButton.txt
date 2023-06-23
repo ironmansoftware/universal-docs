@@ -3,7 +3,7 @@ NAME
     New-UDFloatingActionButton
     
 SYNOPSIS
-    A Floating Action Button (FAB) performs the primary, or most common, action on a screen.
+    Creates a new floating action button.
     
     
 SYNTAX
@@ -61,7 +61,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Color <String>
-        The theme color to apply to the button. Valid values are: "Default", "Primary", "Secondary"
+        The theme color to apply to the button.
         
         Required?                    false
         Position?                    6
@@ -70,7 +70,6 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Position <String>
-        The position of the floating action button. Valid values are: "Relative", "BottomLeft", "BottomRight"
         
         Required?                    false
         Position?                    7
@@ -90,33 +89,11 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS >New-UDFloatingActionButton -Icon (New-UDIcon -Icon 'user') -OnClick {
-    PS >    Show-UDToast -Message 'Hello'
-    PS > } -Id 'fab1' -Position Relative
+    PS > Creates a floating action button with a user icon and shows a toast when clicked.
     
-    Basic floating action button|Creates a floating action button with a user icon and shows a toast when clicked.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 2 --------------------------
-    
-    PS >New-UDFloatingActionButton -Icon (New-UDIcon -Icon 'user') -Size Small -OnClick {
-    PS >    Show-UDToast -Message 'Hello'
-    PS > } -Id 'fab2' -Position Relative
-    
-    Small floating action button|Creates a small floating action button with a user icon and shows a toast when clicked.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 3 --------------------------
-    
-    PS >New-UDFloatingActionButton -Icon (New-UDIcon -Icon 'user') -Position BottomRight -OnClick {
-    PS >    Show-UDToast -Message 'Hello'
-    PS > } -Id 'fab3'
-    
-    Position|Creates a floating action button with a user icon and shows a toast when clicked. The button is positioned in the bottom right of the page.
+    New-UDFloatingActionButton -Icon user -OnClick {
+        Show-UDToast -Message 'Hello'
+    }
     
     
     

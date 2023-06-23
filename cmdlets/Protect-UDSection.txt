@@ -43,13 +43,18 @@ INPUTS
     
 OUTPUTS
     
+NOTES
+    
+    
+        General notes
+    
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS >Protect-UDSection -Content {
-    PS >    New-UDTypography 'Admins Only'
-    PS > } -Role @("Administrator")
+    PS > Protect-UDSection -Content {
+        New-UDTypography 'Admins Only'
+    } -Role @("Administrator")
     
-    Protect Section|Hides the section of the dashboard if the user is not an administrator.
+    
     
     
     

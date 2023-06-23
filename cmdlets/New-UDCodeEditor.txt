@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDCodeEditor [-Id <String>] [-Language <String>] [-Height <String>] [-Width <String>] [-HideCodeLens] [-DisableCodeFolding] [-FormatOnPaste] [-GlyphMargin] [-DisableLineNumbers] [-DisableLinks] [-DisableBracketMatching] [-MouseWheelScrollSensitivity <Int32>] [-MouseWheelZoom] [-ReadOnly] [-RenderControlCharacters] [-ShowFoldingControls <String>] [-SmoothScrolling] [-LightTheme <String>] [-DarkTheme <String>] [-Code <String>] [-Original <String>] [-CanSave] [-Extension <String>] [<CommonParameters>]
+    New-UDCodeEditor [-Id <String>] [-Language <String>] [-Height <String>] [-Width <String>] [-HideCodeLens] [-DisableCodeFolding] [-FormatOnPaste] [-GlyphMargin] [-DisableLineNumbers] [-DisableLinks] [-DisableBracketMatching] [-MouseWheelScrollSensitivity <Int32>] [-MouseWheelZoom] [-ReadOnly] [-RenderControlCharacters] [-ShowFoldingControls <String>] [-SmoothScrolling] [-LightTheme <String>] [-DarkTheme <String>] [-Code <String>] [-Original <String>] [-Autosize] [-CanSave] [-Extension <String>] [<CommonParameters>]
     
     New-UDCodeEditor [-Id <String>] [-Language <String>] [-Height <String>] [-Width <String>] [-Code <String>] [-Original <String>] [-Options <Hashtable>] [-CanSave] [-Extension <String>] [<CommonParameters>]
     
@@ -40,7 +40,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    named
-        Default value                100ch
+        Default value                500
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -198,11 +198,18 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Original <String>
-        The original code to compare against.
         
         Required?                    false
         Position?                    named
         Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Autosize [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -242,27 +249,9 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS >New-UDCodeEditor -Code 'Get-Process' -Theme 'vs-dark' -Language 'powershell' -Id 'codeEditor1'
+    PS > New-UDCodeEditor -Code 'Get-Process' -Theme 'vs-dark' -Language 'powershell' -Readonly
     
-    Basic code editor|Creates a PowerShell code editor
-    
-    
-    
-    
-    -------------------------- EXAMPLE 2 --------------------------
-    
-    PS >New-UDCodeEditor -Code 'Get-Process' -Theme 'vs-dark' -Language 'powershell' -Height '200' -Width '100%' -ReadOnly -Id 'codeEditor2'
-    
-    Read only code editor|Creates a read only PowerShell code editor
-    
-    
-    
-    
-    -------------------------- EXAMPLE 3 --------------------------
-    
-    PS >New-UDCodeEditor -Code "Get-Process notepad" -Original "Get-Process code" -Theme 'vs-dark' -Language 'powershell' -Height '200' -Width '100%' -ReadOnly -Id 'codeEditor3'
-    
-    Diff code editor|Creates a read only PowerShell code editor with diff enabled
+    Creates a readonly code editor with PowerShell script.
     
     
     

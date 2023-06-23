@@ -79,45 +79,6 @@ INPUTS
     
 OUTPUTS
     
-    -------------------------- EXAMPLE 1 --------------------------
-    
-    PS >New-UDBackdrop -Color '#fff' -Children {
-    PS >    New-UDTypography -Text 'Hello World'
-    PS > } -Open -OnClick {
-    PS >    Show-UDToast -Message 'Backdrop clicked'
-    PS >    Set-UDElement -Id 'backdrop1' -Properties @{
-    PS >        open = $false
-    PS >    }
-    PS > } -Id 'backdrop1'
-    
-    Basic Backdrop|Creates a basic backdrop.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 2 --------------------------
-    
-    PS >New-UDBackdrop -Children {
-    PS >    New-UDTypography -Text 'Hello World'
-    PS > }  -OnClick {
-    PS >    Set-UDElement -Id 'backdrop2' -Properties @{
-    PS >        open = $false
-    PS >    }
-    PS > } -Id 'backdrop2'
-    PS > New-UDButton -Text 'Open Backdrop' -OnClick {
-    PS >    Set-UDElement -Id 'backdrop2' -Properties @{
-    PS >        open = $true
-    PS >    }
-    PS > }
-    
-    Dynamically Open Backdrop|Creates a backdrop that can be opened with a button.
-    
-    
-    [Component("Backdrop", "BoothCurtain", "Creates a new backdrop.")]
-    
-    
-    
-    
     
 RELATED LINKS
 

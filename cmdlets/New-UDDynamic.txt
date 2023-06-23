@@ -81,56 +81,37 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS >New-UDDynamic -Content {
-    PS >    New-UDTypography -Text (Get-Date) -Id 'text1'
-    PS > } -Id 'dynamic1'
+    PS > A simple dynamic region that executes when the user loads the page.
     
-    Basic dynamic region|A simple dynamic region that executes when the user loads the page.
+    New-UDDynamic -Content {
+        New-UDTypography -Text (Get-Date)
+    }
     
     
     
     
     -------------------------- EXAMPLE 2 --------------------------
     
-    PS >New-UDDynamic -Content {
-    PS >    New-UDTypography -Text (Get-Date) -Id 'text2'
-    PS > } -AutoRefresh -AutoRefreshInterval 3 -Id 'dynamic2'
+    PS > A dynamic region that refreshes every 3 seconds
     
-    Auto refresh|A dynamic region that refreshes every 3 seconds
+    New-UDDynamic -Content {
+        New-UDTypography -Text (Get-Date)
+    } -AutoRefresh -AutoRefreshInterval 3
     
     
     
     
     -------------------------- EXAMPLE 3 --------------------------
     
-    PS >New-UDDynamic -Content {
-    PS >    New-UDTypography -Text (Get-Date) -Id 'text3'
-    PS > } -Id 'dynamic3'
-    PS > New-UDButton -Text 'Refresh' -OnClick {
-    PS >    Sync-UDElement -Id 'dynamic3'
-    PS > }
+    PS > A dynamic region that is updated when a button is clicked.
     
-    Sync-UDElement|A dynamic region that is updated when a button is clicked.
+    New-UDDynamic -Content {
+        New-UDTypography -Text (Get-Date)
+    } -Id 'dynamic'
     
-    
-    
-    
-    -------------------------- EXAMPLE 4 --------------------------
-    
-    PS >New-UDDynamic -Content {
-    PS >    Start-Sleep 5
-    PS >    New-UDTypography -Text (Get-Date) -Id 'text5'
-    PS > } -Id 'dynamic4' -LoadingComponent {
-    PS >    New-UDTypography -Text 'Loading...' -Id 'text4'
-    PS > }
-    PS > New-UDButton -Text 'Refresh' -OnClick {
-    PS >    Sync-UDElement -Id 'dynamic4'
-    PS > }
-    
-    Loading component|A dynamic region that displays a loading component while the dynamic region is loading.
-    
-    
-    [Component("Dynamic Region", "BoltLightning", "Creates a dynamic region.")]
+    New-UDButton -Text 'Refresh' -OnClick {
+        Sync-UDElement -Id 'dynamic'
+    }
     
     
     

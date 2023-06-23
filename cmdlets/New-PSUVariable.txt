@@ -3,7 +3,7 @@ NAME
     New-PSUVariable
     
 SYNOPSIS
-    Creates a new variable in PSU.
+    Creates a new variable in UA.
     
     
 SYNTAX
@@ -15,12 +15,12 @@ SYNTAX
     
     
 DESCRIPTION
-    Creates a new variable in PSU. Variables are available in all scripts that run within PSU.
+    Creates a new variable in UA. Variables are available in all scripts that run within UA.
     
 
 PARAMETERS
     -AppToken <String>
-        An app token to access the PSU API.
+        An app token to access the UA API.
         
         Required?                    false
         Position?                    named
@@ -29,7 +29,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The HTTP address of the PSU REST API server.
+        The HTTP address of the UA REST API server.
         
         Required?                    false
         Position?                    named
@@ -143,12 +143,12 @@ NOTES
     
     PS C:\> New-UAVariable -Name 'UserName' -Value 'Adam'
     
-    Creates a new variable in PSU named `UserName`. You can use the $UserName variable in all your scripts.
+    Creates a new variable in UA named `UserName`. You can use the $UserName variable in all your scripts.
     -------------------------- Example 2 --------------------------
     
     PS C:\> New-UAVariable -Name 'UserName' -Value 'Adam' -Vault "Vault"
     
-    Creates a new variable in the vault named `Vault`. The variable's value is not stored in PSU and will only be retrieved when running scripts.
+    Creates a new variable in the vault named `Vault`. The variable's value is not stored in UA and will only be retrieved when running scripts.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

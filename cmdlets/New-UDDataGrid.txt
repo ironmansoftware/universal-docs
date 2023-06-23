@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDDataGrid [[-Id] <String>] [[-Columns] <Hashtable[]>] [[-LoadRows] <Endpoint>] [[-Height] <String>] [[-AutoHeight] <Boolean>] [-AutoPageSize] [-CheckboxSelection] [-CheckboxSelectionVisibleOnly] [[-ColumnBuffer] <Int32>] [[-ColumnThreshold] <Int32>] [[-Density] <String>] [[-PageSize] <Int32>] [[-RowsPerPageOptions] <Int32[]>] [-ShowPagination] [[-Language] <String>] [[-LoadDetailContent] <Endpoint>] [[-DetailHeight] <String>] [[-OnEdit] <Endpoint>] [[-OnExport] <Endpoint>] [-ShowQuickFilter] [<CommonParameters>]
+    New-UDDataGrid [[-Id] <String>] [[-Columns] <Hashtable[]>] [[-LoadRows] <Endpoint>] [[-Height] <String>] [-AutoHeight] [-AutoPageSize] [-CheckboxSelection] [-CheckboxSelectionVisibleOnly] [[-ColumnBuffer] <Int32>] [[-ColumnThreshold] <Int32>] [[-Density] <String>] [[-PageSize] <Int32>] [[-RowsPerPageOptions] <Int32[]>] [-ShowPagination] [[-Language] <String>] [[-LoadDetailContent] <Endpoint>] [[-DetailHeight] <String>] [[-OnEdit] <Endpoint>] [[-OnExport] <Endpoint>] [-ShowQuickFilter] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -51,11 +51,11 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -AutoHeight <Boolean>
+    -AutoHeight [<SwitchParameter>]
         Whether to calculate the height of this data grid.
         
         Required?                    false
-        Position?                    5
+        Position?                    named
         Default value                True
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -91,7 +91,7 @@ PARAMETERS
         Parameter description
         
         Required?                    false
-        Position?                    6
+        Position?                    5
         Default value                3
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -99,7 +99,7 @@ PARAMETERS
     -ColumnThreshold <Int32>
         
         Required?                    false
-        Position?                    7
+        Position?                    6
         Default value                3
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -108,7 +108,7 @@ PARAMETERS
         The visible density of the table.
         
         Required?                    false
-        Position?                    8
+        Position?                    7
         Default value                standard
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -117,7 +117,7 @@ PARAMETERS
         The default page size.
         
         Required?                    false
-        Position?                    9
+        Position?                    8
         Default value                5
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -126,7 +126,7 @@ PARAMETERS
         An array of page sizes.
         
         Required?                    false
-        Position?                    10
+        Position?                    9
         Default value                @(5, 10, 25)
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -144,7 +144,7 @@ PARAMETERS
         The language to use for text in the data grid.
         
         Required?                    false
-        Position?                    11
+        Position?                    10
         Default value                en-US
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -153,7 +153,7 @@ PARAMETERS
         A script block that is called when rows are expanded. $EventData will contain the row's data.
         
         Required?                    false
-        Position?                    12
+        Position?                    11
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -162,7 +162,7 @@ PARAMETERS
         The static height of the detail pane.
         
         Required?                    false
-        Position?                    13
+        Position?                    12
         Default value                auto
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -171,7 +171,7 @@ PARAMETERS
         A script block that is called when the row is edited. $EventData will include the edited data. Return an object to update the data grid row.
         
         Required?                    false
-        Position?                    14
+        Position?                    13
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -180,7 +180,7 @@ PARAMETERS
         A script block that is called when data is exported.
         
         Required?                    false
-        Position?                    15
+        Position?                    14
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -203,118 +203,6 @@ PARAMETERS
 INPUTS
     
 OUTPUTS
-    
-    -------------------------- EXAMPLE 1 --------------------------
-    
-    PS >New-UDDataGrid -LoadRows {
-    PS >     $Data = @(
-    PS >         @{ Name = 'Adam'; Number = Get-Random}
-    PS >         @{ Name = 'Tom'; Number = Get-Random}
-    PS >         @{ Name = 'Sarah'; Number = Get-Random}
-    PS >     )
-    PS >     @{
-    PS >         rows = $Data 
-    PS >         rowCount = $Data.Length
-    PS >     }
-    PS > } -Columns @(
-    PS >     New-UDDataGridColumn -Field 'Name'
-    PS >     New-UDDataGridColumn -Field 'Number'
-    PS > ) -Id 'dataGrid1'
-    
-    Basic data grid|Creates a basic data grid with columns.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 2 --------------------------
-    
-    PS >New-UDDataGrid -LoadRows {
-    PS >     $Data = 1..1000 | ForEach-Object {
-    PS >         @{ Name = "User$($_)"; Number = Get-Random }
-    PS >     }  
-    PS >     Out-UDDataGridData -Data $Data -Total $Data.Length -Context $EventData
-    PS > } -Columns @(
-    PS >     New-UDDataGridColumn -Field 'Name'
-    PS >     New-UDDataGridColumn -Field 'Number'
-    PS > ) -Pagination -Id 'dataGrid2'
-    
-    Out-UDDataGridData|Adds support for filtering, sorting, and paging.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 3 --------------------------
-    
-    PS >New-UDDataGrid -LoadRows {  
-    PS >     $Rows = 1..100 | % {
-    PS >         @{ Name = 'Adam'; Number = Get-Random}
-    PS >     }
-    PS >     @{
-    PS >         rows = $Rows
-    PS >         rowCount = $Rows.Length
-    PS >     }
-    PS >     
-    PS > } -Columns @(
-    PS >     New-UDDataGridColumn -Field 'Name' -Render {
-    PS >         New-UDAlert -Text $EventData.Name 
-    PS >     }
-    PS >     New-UDDataGridColumn -Field 'Number'
-    PS > ) -Pagination -Id 'dataGrid3'
-    
-    Render|Adds support for custom rendering of columns.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 4 --------------------------
-    
-    PS >New-UDDataGrid -LoadRows {
-    PS >     $Data = @(
-    PS >         @{ Name = 'Adam'; Number = Get-Random }
-    PS >         @{ Name = 'Tom'; Number = Get-Random }
-    PS >         @{ Name = 'Sarah'; Number = Get-Random }
-    PS >     )
-    PS >     @{
-    PS >         rows     = $Data 
-    PS >         rowCount = $Data.Length
-    PS >     }
-    PS > } -Columns @(
-    PS >     New-UDDataGridColumn -Field 'Name'
-    PS >     New-UDDataGridColumn -Field 'Number'
-    PS > ) -LoadDetailContent {
-    PS >     New-UDAlert -Text $EventData.row.Name
-    PS > } -Id 'dataGrid4'
-    
-    Detailed Content|Adds support for detailed content.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 5 --------------------------
-    
-    PS >New-UDDataGrid -LoadRows {
-    PS >     $Data = @(
-    PS >         @{ Name = 'Adam'; number = Get-Random }
-    PS >         @{ Name = 'Tom'; number = Get-Random }
-    PS >         @{ Name = 'Sarah'; number = Get-Random }
-    PS >     )
-    PS >     @{
-    PS >         rows     = $Data 
-    PS >         rowCount = $Data.Length
-    PS >     }
-    PS > } -Columns @(
-    PS >     @{ field = "Name"; editable = $true }
-    PS >     @{ field = "number" ; editable = $true }
-    PS > ) -OnEdit {
-    PS >     Show-UDToast "Editing $Body" 
-    PS > } -Id 'dataGrid5'
-    
-    Editing|Adds support for editing rows.
-    
-    [Component("Data Grid", "Table", "Creates a new card.")]
-    
-    
-    
     
     
 RELATED LINKS

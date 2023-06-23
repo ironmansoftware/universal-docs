@@ -106,7 +106,6 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -LabelPlacement <String>
-        The placement of the label. Valid values are: "top", "left", "right", "bottom"
         
         Required?                    false
         Position?                    10
@@ -135,56 +134,11 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS >New-UDSwitch -Id 'switch1' -Checked $true
+    PS > Creates a switch that shows a toast when changed.
     
-    Basic switch|Creates a basic switch.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 2 --------------------------
-    
-    PS >New-UDSwitch -Id 'switch2' -Checked $true -OnChange {
-    PS >     Show-UDToast -Message "Switch changed to $($EventData)"
-    PS > }
-    
-    OnChange|Creates a switch with an OnChange script block.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 3 --------------------------
-    
-    PS >New-UDSwitch -Id 'switch3' -Disabled
-    
-    Disabled|Creates a disabled switch.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 4 --------------------------
-    
-    PS >New-UDSwitch -Id 'switch4' -Checked $true -Label 'On' -UncheckedLabel 'Off'
-    
-    Label|Creates a switch with a label.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 5 --------------------------
-    
-    PS >New-UDSwitch -Id 'switch5' -Checked $true -Label 'On' -UncheckedLabel 'Off' -LabelPlacement 'bottom'
-    
-    Label Placement|Creates a switch with a label and a label placement.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 6 --------------------------
-    
-    PS >New-UDSwitch -Id 'switch6' -Checked $true -Label 'On' -UncheckedLabel 'Off' -LabelPlacement 'bottom' -CheckStyle
-    
-    Check Style|Creates a switch with a label, a label placement, and a check style.
+    New-UDSwitch -Id 'switchOnChange' -OnChange { 
+        Show-UDToast -Message $EventData
+    }
     
     
     

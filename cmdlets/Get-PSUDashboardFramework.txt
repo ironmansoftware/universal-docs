@@ -1,22 +1,22 @@
 
 NAME
-    Remove-PSUVariable
+    Get-PSUDashboardFramework
     
 SYNOPSIS
-    Removes a variable.
+    {{ Fill in the Synopsis }}
     
     
 SYNTAX
-    Remove-PSUVariable [-Variable] <Variable> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-RemoveSecret] [<CommonParameters>]
+    Get-PSUDashboardFramework [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION
-    Removes a variable. This also deletes the variable from the variables.psd1 file in the git repo.
+    {{ Fill in the Description }}
     
 
 PARAMETERS
     -AppToken <String>
-        An app token to access the UA API.
+        {{ Fill AppToken Description }}
         
         Required?                    false
         Position?                    named
@@ -25,7 +25,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The HTTP address of the UA REST API server.
+        {{ Fill ComputerName Description }}
         
         Required?                    false
         Position?                    named
@@ -34,7 +34,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        {{ Fill Integrated Description }}
         
         Required?                    false
         Position?                    named
@@ -43,25 +43,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
-        Use default credentials when connecting to the management API
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Variable <Variable>
-        The variable to remove. Use Get-UAVariable to retrieve a variable object.
-        
-        Required?                    true
-        Position?                    0
-        Default value                None
-        Accept pipeline input?       True (ByValue)
-        Accept wildcard characters?  false
-        
-    -RemoveSecret [<SwitchParameter>]
-        Removes the secret from the containing vault.
+        {{ Fill UseDefaultCredentials Description }}
         
         Required?                    false
         Position?                    named
@@ -76,7 +58,7 @@ PARAMETERS
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
 INPUTS
-    UniversalAutomation.Variable
+    None
         
     
     
@@ -92,10 +74,9 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> $Var = Get-UAVariable -Name 'username'
-    PS C:\> Remove-UAVariable -Variable $Var
+    PS C:\> {{ Add example code here }}
     
-    Removes the username variable.
+    {{ Add example description here }}
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

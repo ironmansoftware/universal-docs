@@ -3,7 +3,7 @@ NAME
     New-UDPaper
     
 SYNOPSIS
-    Paper is used to highlight content within a page.
+    Creates a paper.
     
     
 SYNTAX
@@ -97,60 +97,20 @@ INPUTS
     
 OUTPUTS
     
+NOTES
+    
+    
+        General notes
+    
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS >New-UDPaper -Id 'paper1' -Children {
-    PS >    New-UDButton -Text 'Click Me'
-    PS > }
+    PS > Creates paper with a heading, custom style and an elevation of 4.
     
-    Basic paper|Creates a new paper with a button inside of it.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 2 --------------------------
-    
-    PS >New-UDPaper -Id 'paper2' -Children {
-    PS >    New-UDButton -Text 'Click Me'
-    PS > } -Elevation 5
-    
-    Paper with elevation|Creates a new paper with a button inside of it and an elevation of 5.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 3 --------------------------
-    
-    PS >New-UDPaper -Id 'paper3' -Children {
-    PS >    New-UDButton -Text 'Click Me'
-    PS > } -Width 1000 -Height 1000 -Elevation 5
-    
-    Width and height|Creates a new paper with a button inside of it and a width and height of 1000.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 4 --------------------------
-    
-    PS >New-UDPaper -Id 'paper4' -Children {
-    PS >    New-UDButton -Text 'Click Me'
-    PS > } -Square -Elevation 5
-    
-    Square paper|Creates a new paper with a button inside of it and a square shape.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 5 --------------------------
-    
-    PS >New-UDPaper -Id 'paper5' -Children {
-    PS >    New-UDButton -Text 'Click Me'
-    PS > } -Style @{ backgroundColor = 'red' }
-    
-    Style|Creates a new paper with a button inside of it and a red background color.
-    
-    
-    [Component("Paper", "File", "Creates a paper component.")]
+    New-UDPaper -Children {
+        New-UDHeading -Text "hi" -Id 'hi'
+    } -Style @{
+        backgroundColor = '#90caf9'
+    } -Id 'paperElevation' -Elevation 4
     
     
     

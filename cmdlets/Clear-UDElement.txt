@@ -45,28 +45,13 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS >New-UDElement -Tag 'div' -Id 'clearElement1' -Content {
-    PS >     New-UDTypography -Text 'Hello World'
-    PS > }
-    PS > New-UDButton -Text 'Click Me' -OnClick {
-    PS >     Clear-UDElement -Id 'clearElement1'
-    PS > }
+    PS > New-UDElement -Tag 'div' -Id 'parent' -Content {
+        New-UDTypography -Text 'Hello World'
+    }
     
-    Clear Element|Clears an element.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 2 --------------------------
-    
-    PS >New-UDElement -Tag 'div' -Id 'clearElement2' -Content {
-    PS >     New-UDTypography -Text 'Hello World'
-    PS > }
-    PS > New-UDButton -Text 'Click Me' -OnClick {
-    PS >     Clear-UDElement -Id 'clearElement2' -Broadcast
-    PS > }
-    
-    Broadcast|Clears an element and broadcasts it to all connected dashboards.
+    New-UDButton -Text 'Click Me' -OnClick {
+        Clear-UDElement -Id 'parent'
+    }
     
     
     

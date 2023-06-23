@@ -34,7 +34,6 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Disabled [<SwitchParameter>]
-        Disables the item.
         
         Required?                    false
         Position?                    named

@@ -1,304 +1,254 @@
 
 NAME
-    New-PSUApp
+    New-PSUDashboard
+    
+SYNOPSIS
+    Creates a new dashboard.
+    
     
 SYNTAX
-    New-PSUApp -Name <string> [-FilePath <string>] [-BaseUrl <string>] [-Framework <DashboardFramework>] [-Environment <string>] [-GrantAppToken] [-Maintenance] [-Authenticated] [-Role <string[]>] [-DisableAutoStart] [-Component <DashboardComponent[]>] [-SessionTimeout <int>] [-IdleTimeout <int>] [-AutoDeploy] [-Description <string>] [-Credential <string>] [-DisableErrorToast] [-DisableStartupLog] [-VerboseErrorMessages] [-Tag <Tag[]>] [-DisableInteractiveHost] [-FavIcon <string>] [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    New-PSUDashboard [-AppToken <String>] [-Authenticated] [-AutoDeploy] [-BaseUrl <String>] [-Component <DashboardComponent[]>] [-ComputerName <String>] -Content <ScriptBlock> [-Credential <String>] [-Description <String>] [-DisableAutoStart] [-Environment <String>] [-Framework <DashboardFramework>] [-GrantAppToken] -Name <String> [-Role <String[]>] [-SessionTimeout <Int32>] [-UseDefaultCredentials] [-DisableErrorToast] [-DisableStartupLog] [-IdleTimeout <Int32>] [-Integrated] [-Maintenance] [-Tag <Tag[]>] [-DisableInteractiveHost] [-VerboseErrorMessages] [<CommonParameters>]
     
-    New-PSUApp -Content <scriptblock> -Name <string> [-BaseUrl <string>] [-Framework <DashboardFramework>] [-Environment <string>] [-GrantAppToken] [-Maintenance] [-Authenticated] [-Role <string[]>] [-DisableAutoStart] [-Component <DashboardComponent[]>] [-SessionTimeout <int>] [-IdleTimeout <int>] [-AutoDeploy] [-Description <string>] [-Credential <string>] [-DisableErrorToast] [-DisableStartupLog] [-VerboseErrorMessages] [-Tag <Tag[]>] [-DisableInteractiveHost] [-FavIcon <string>] [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
-    
-    New-PSUApp -Name <string> [-BaseUrl <string>] [-Framework <DashboardFramework>] [-Environment <string>] [-GrantAppToken] [-Maintenance] [-Authenticated] [-Role <string[]>] [-DisableAutoStart] [-Component <DashboardComponent[]>] [-SessionTimeout <int>] [-IdleTimeout <int>] [-AutoDeploy] [-Description <string>] [-Credential <string>] [-DisableErrorToast] [-DisableStartupLog] [-VerboseErrorMessages] [-Tag <Tag[]>] [-DisableInteractiveHost] [-Module <string>] [-Command <string>] [-FavIcon <string>] [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    New-PSUDashboard [-AppToken <String>] [-Authenticated] [-AutoDeploy] [-BaseUrl <String>] [-Component <DashboardComponent[]>] [-ComputerName <String>] [-Credential <String>] [-Description <String>] [-DisableAutoStart] [-Environment <String>] [-FilePath <String>] [-Framework <DashboardFramework>] [-GrantAppToken] -Name <String> [-Role <String[]>] [-SessionTimeout <Int32>] [-UseDefaultCredentials] [-DisableErrorToast] [-DisableStartupLog] [-IdleTimeout <Int32>] [-Integrated] [-Maintenance] [-Tag <Tag[]>] [-DisableInteractiveHost] [-VerboseErrorMessages] [<CommonParameters>]
     
     
+DESCRIPTION
+    Creates a new dashboard. Dashboards allow you to create websites with PowerShell.
+    
+
 PARAMETERS
-    -AppToken <string>
+    -AppToken <String>
+        An app token used to connect to the management console.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Authenticated
+    -Authenticated [<SwitchParameter>]
+        Whether authentication is required for this dashboard.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -AutoDeploy
+    -AutoDeploy [<SwitchParameter>]
+        Whether to automatically deploy the dashboard when it changes.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -BaseUrl <string>
+    -BaseUrl <String>
+        The base URL to serve the dashboard on.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Command <string>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Module
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -Component <DashboardComponent[]>
+        A list of component modules to import.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -ComputerName <string>
+    -ComputerName <String>
+        The URI of the management API.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      Uri
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Content <scriptblock>
+    -Content <ScriptBlock>
+        A script block containing dashboard content.
         
         Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Content
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Credential <string>
+    -Credential <String>
+        The user credential variable to use when starting the dashboard.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Description <string>
+    -Description <String>
+        A description of the dashboard.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -DisableAutoStart
+    -DisableAutoStart [<SwitchParameter>]
+        Whether to disable starting the dashboard when PSU starts.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -DisableErrorToast
+    -Environment <String>
+        The environment to use with the dashboard.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -DisableInteractiveHost
+    -FilePath <String>
+        The file path of the dashboard PowerShell script that defines this dashboard.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -DisableStartupLog
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Environment <string>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -FavIcon <string>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -FilePath <string>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           FilePath
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -Framework <DashboardFramework>
+        The Universal Dashboard framework to use for this dashboard.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -GrantAppToken
+    -GrantAppToken [<SwitchParameter>]
+        Whether to automatically grant an app token to users accessing the dashboard. This is used if your dashboard requires access to the management API.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -IdleTimeout <int>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Integrated
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Maintenance
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Module <string>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Module
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Name <string>
+    -Name <String>
+        The name of the dashboard.
         
         Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Role <string[]>
+    -Role <String[]>
+        An array of roles that can access the dashboard.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -SessionTimeout <int>
+    -SessionTimeout <Int32>
+        The number of minutes before a session will time out in the dashboard.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -DisableErrorToast [<SwitchParameter>]
+        {{ Fill DisableErrorToast Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -DisableStartupLog [<SwitchParameter>]
+        {{ Fill DisableStartupLog Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -IdleTimeout <Int32>
+        {{ Fill IdleTimeout Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Maintenance [<SwitchParameter>]
+        {{ Fill Maintenance Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -Tag <Tag[]>
+        {{ Fill Tag Description }}
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -UseDefaultCredentials
+    -DisableInteractiveHost [<SwitchParameter>]
+        Disables Read-Host, Get-Credential, and Write-Progress support.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -VerboseErrorMessages
+    -VerboseErrorMessages [<SwitchParameter>]
+        Displays call stacks for errors in error toasts.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -307,19 +257,28 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
     None
+        
     
     
 OUTPUTS
     System.Object
+        
     
-ALIASES
-    New-PSUDashboard
     
-
-REMARKS
-    None
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    New-PSUDashboard -Name 'Dashboard' -BaseUrl '/dashboard' -FilePath "dashboard.ps1"
+    
+    Creates a dashboard using the dashboard.ps1 file in the repository directory and serves it at the base URL of /dashboard.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
 
 

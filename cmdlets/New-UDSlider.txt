@@ -133,66 +133,16 @@ INPUTS
     
 OUTPUTS
     
+NOTES
+    
+    
+        General notes
+    
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS >New-UDSlider -Value 50 -Minimum 0 -Maximum 100 -OnChange {
-    PS >    Show-UDToast -Message "Slider value changed to $($EventData.value)"
-    PS > } -Id 'slider1'
+    PS > An example
     
-    Basic Slider|Creates a basic slider.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 2 --------------------------
-    
-    PS >New-UDSlider -Value 50 -Minimum 0 -Maximum 100 -Marks -OnChange {
-    PS >    Show-UDToast -Message "Slider value changed to $($EventData.value)"
-    PS > } -Id 'slider2'
-    
-    Slider with Marks|Creates a slider with marks.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 3 --------------------------
-    
-    PS >New-UDElement -Tag 'div' -Content {
-    PS >    New-UDSlider -Orientation vertical -Id 'slider3'
-    PS > } -Attributes @{
-    PS >    style = @{
-    PS >        height = '200px'
-    PS >    }
-    PS > }
-    
-    Vertical Slider|Creates a vertical slider.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 4 --------------------------
-    
-    PS >New-UDSlider -Value 50 -Minimum 0 -Maximum 100 -Disabled -Id 'slider4'
-    
-    Disabled Slider|Creates a disabled slider.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 5 --------------------------
-    
-    PS >New-UDSlider -Value 50 -Minimum 0 -Maximum 100 -ValueLabelDisplay on -Id 'slider5'
-    
-    Slider with Value Labels|Creates a slider with value labels.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 6 --------------------------
-    
-    PS >New-UDSlider -Value 50 -Minimum 0 -Maximum 100 -Step 10 -Id 'slider6'
-    
-    Slider with Step|Creates a slider with a step size of 10.
+    New-UDSlider
     
     
     

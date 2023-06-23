@@ -54,33 +54,11 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS >New-UDButton -Text 'Click Me' -OnClick {
-    PS >    Invoke-UDRedirect 'https://www.google.com'
-    PS > }
-    
-    Redirect|Redirects the user to another page.
+    PS > New-UDButton -Text 'Click Me' -OnClick {
+        Invoke-UDRedirect 'https://www.google.com'
+    }
     
     
-    
-    
-    -------------------------- EXAMPLE 2 --------------------------
-    
-    PS >New-UDButton -Text 'Click Me' -OnClick {
-    PS >    Invoke-UDRedirect 'https://www.google.com' -OpenInNewWindow
-    PS > }
-    
-    Redirect in New Window|Redirects the user to another page in a new window.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 3 --------------------------
-    
-    PS >New-UDButton -Text 'Click Me' -OnClick {
-    PS >    Invoke-UDRedirect '/relative/path' -Native
-    PS > }
-    
-    Native Redirect|Performs a native redirect.
     
     
     

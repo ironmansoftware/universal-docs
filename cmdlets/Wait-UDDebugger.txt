@@ -2,26 +2,19 @@
 NAME
     Wait-UDDebugger
     
-SYNOPSIS
-    Displays a debugging window for dashboards.
-    
-    
 SYNTAX
     Wait-UDDebugger [[-Variable] <Object>] [<CommonParameters>]
     
     
-DESCRIPTION
-    Displays a debugging window for dashboards.
-    
-
 PARAMETERS
     -Variable <Object>
-        The variable to display in the debugger. Defaults to all variables.
         
         Required?                    false
-        Position?                    1
-        Default value                *
+        Position?                    0
         Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -30,22 +23,19 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
+    
 INPUTS
+    None
+    
     
 OUTPUTS
+    System.Object
     
-    -------------------------- EXAMPLE 1 --------------------------
+ALIASES
+    None
     
-    PS >New-UDButton -Text 'Click Me' -OnClick {
-    PS >    Wait-UDDebugger
-    PS > } -Id 'debugger1'
-    
-    Debugger|Displays a debugging window for dashboards.
-    
-    
-    
-    
-    
-RELATED LINKS
+
+REMARKS
+    None
 
 

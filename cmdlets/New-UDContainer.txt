@@ -3,7 +3,7 @@ NAME
     New-UDContainer
     
 SYNOPSIS
-    Containers pad the left and right side of the contained content to center it on larger resolution screens.
+    Creates a Material UI container.
     
     
 SYNTAX
@@ -54,11 +54,11 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS >New-UDContainer -Content {
-    PS >     New-UDPaper -Content { } -Elevation 3
-    PS > }
+    PS > Creates a container with some text.
     
-    Basic Container|Creates a basic container with a typography component inside of it.
+    New-UDContainer -Content {
+        New-UDTypography -Text 'Nice'
+    }
     
     
     

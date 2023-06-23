@@ -1,22 +1,22 @@
 
 NAME
-    Remove-PSUVariable
+    New-PSUDashboardFramework
     
 SYNOPSIS
-    Removes a variable.
+    {{ Fill in the Synopsis }}
     
     
 SYNTAX
-    Remove-PSUVariable [-Variable] <Variable> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-RemoveSecret] [<CommonParameters>]
+    New-PSUDashboardFramework [-AppToken <String>] [-ComputerName <String>] [-Integrated] -Name <String> -Path <String> [-UseDefaultCredentials] -Version <String> [<CommonParameters>]
     
     
 DESCRIPTION
-    Removes a variable. This also deletes the variable from the variables.psd1 file in the git repo.
+    {{ Fill in the Description }}
     
 
 PARAMETERS
     -AppToken <String>
-        An app token to access the UA API.
+        {{ Fill AppToken Description }}
         
         Required?                    false
         Position?                    named
@@ -25,7 +25,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The HTTP address of the UA REST API server.
+        {{ Fill ComputerName Description }}
         
         Required?                    false
         Position?                    named
@@ -34,16 +34,34 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        {{ Fill Integrated Description }}
         
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        {{ Fill Name Description }}
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Path <String>
+        {{ Fill Path Description }}
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
-        Use default credentials when connecting to the management API
+        {{ Fill UseDefaultCredentials Description }}
         
         Required?                    false
         Position?                    named
@@ -51,21 +69,12 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Variable <Variable>
-        The variable to remove. Use Get-UAVariable to retrieve a variable object.
+    -Version <String>
+        {{ Fill Version Description }}
         
         Required?                    true
-        Position?                    0
-        Default value                None
-        Accept pipeline input?       True (ByValue)
-        Accept wildcard characters?  false
-        
-    -RemoveSecret [<SwitchParameter>]
-        Removes the secret from the containing vault.
-        
-        Required?                    false
         Position?                    named
-        Default value                False
+        Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
@@ -76,7 +85,7 @@ PARAMETERS
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
 INPUTS
-    UniversalAutomation.Variable
+    None
         
     
     
@@ -92,10 +101,9 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> $Var = Get-UAVariable -Name 'username'
-    PS C:\> Remove-UAVariable -Variable $Var
+    PS C:\> {{ Add example code here }}
     
-    Removes the username variable.
+    {{ Add example description here }}
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
