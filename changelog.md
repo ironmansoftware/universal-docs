@@ -4,6 +4,30 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.9.8 - 6/25/2023
+
+#### APIs
+
+* Fixed concurrency issues when adding or removing APIs
+* Fixed an issue where API docs would not load if authentication was enabled but no role was provided
+
+#### Automation
+
+* Fixed an issue where Job Handshake Timeout was not being set properly (#2476)
+
+#### Dashboards
+
+* Fixed an issue where the code editor would switch to light theme when updated (#2477)
+* Fixed an issue where the code editor wouldn't resize when the window resized (#2478)
+* Fixed an issue where autocomplete would break once a value was selected and navigated away when using name\value in New-UDAutoCompleteOption
+
+#### Platform
+
+* Fixed an issue where Set-PSUVariable would not update secret values (#2475)
+* Rolled back a change that set the PSModulePath on startup that was causing unexpected behavior
+* Fixed an issue where git mode would always be Manual if configured from appsettings.json
+* Fixed an issue where the heartbeat job would retry indefinitely in the event of a failure and fill up the hangfire job queue
+
 ## 3.9.7 - 6/14/2023
 
 #### Platform
