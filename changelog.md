@@ -4,6 +4,49 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.0.2 - 6/25/2023
+
+#### APIs
+
+* Fixed concurrency issues when adding or removing APIs
+* Fixed an issue where API docs would not work if authentication was enabled but no roles were defined.
+
+#### Automation
+
+* Fixed an issue where Job Handshake Timeout was not being set properly (#2476)
+* Fixed an issue with editing scripts with tags (#2489)
+
+#### Apps
+
+* Button shouldn't default text to button (#2468)
+* Fixed an issue where the code editor would switch to light theme when updated (#2477)
+* Fixed an issue where the code editor wouldn't resize when the window resized (#2478)
+* Fixed an issue where autocomplete would break once a value was selected and navigated away when using name\value in New-UDAutoCompleteOption
+* Fixed an issue where the default ChartJS line chart wasn't filled or have any tension applied to the line
+* Fixed an issue where New-UDLink -Children would not render properly (#2490)
+* Removed default card title and text
+* Designer: Fixed an issue where the code view wouldn't display anything
+* Designer: Fixed an issue where editing an icon would throw a JavaScript error
+* Designer: Fixed an issue where the component resize handles were not visible in dark mode
+* Designer: Added fields for component positioning.
+* Designer: General fixes and improvements to the property and layout editor
+
+#### Pages
+
+* Fixed an issue where pages would not display correctly.
+
+#### Platform
+
+* Fixed an issue where external app token validation did not work.
+* Fixed an issue where Set-PSUVariable would not update secret values (#2475)
+* Rolled back a change that set the PSModulePath on startup that was causing unexpected behavior
+* Fixed an issue where git mode would always be Manual if configured from appsettings.json
+* Fixed an issue where the heartbeat job would retry indefinitely in the event of a failure and fill up the hangfire job queue
+* Fixed an issue where the roles drop down was empty (#2483)
+* Fixed an issue where searching for modules would throw an exception in the admin console
+* Fixed an issue where the module action buttons were obscured by the module name
+* Added support for specifying a license via environment variable
+
 ## 4.0.1 - 6/14/2023
 
 #### Apps
