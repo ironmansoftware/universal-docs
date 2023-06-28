@@ -20,6 +20,11 @@ Add the User or Group to the following Rights to ensure PowerShell Universal Fun
 
 ![Local Security Policy User Rights Assignments for Service](<../.gitbook/assets/image (194).png>)
 
+Health Checks require the following group membership in order to collect information about the PSU system. 
+
+* Performance Monitor Users
+* Performance Log Users
+
 ### Script Run As Requirements
 
 By using Secret Variables, you can save PSCredentials that can be used to execute scripts as a service account. These service accounts require a specific set of Windows permissions in order to execute jobs properly.
