@@ -4,6 +4,31 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.0.3 - 7/2/2023
+
+#### Apps
+
+* Fixed an issue where New-UDChartJS would not fill a line chart when a dataset was used by default
+* Fixed an issue where the page editor would jump to the top on save (#2502)
+* Fixed an issue where custom FavIcon would not load from URLs
+
+#### Automation
+
+* Fixed an issue where Invoke-PSUScript did not work with SecureStrings.
+* Fixed an issue where the System Default time zone would cause One-Time schedules to display the wrong time in the admin console (#2495)
+* Fixed an issue where unauthenticated event hubs would not connect properly
+* Fixed an issue where terminals could not be started when One-Way git sync was enabled (#2504)
+* Fixed an issue where schedules could not be deleted
+* Fixed an issue where One-Time schedules created with New-PSUSchedule would have parameters double serialized (#2500)
+* Fixed an issue where the Job Diagnostics button wouldn't redirect to the correct page in a nested site (#2506)
+
+#### Platform
+
+* Fixed an issue where navigating to the PowerShell Universal Modules list would throw a JavaScript error on the modules page.
+* Cookies are now prefixed with the base URL to allow for different sessions to the same host running multiple PSU instances
+* Fixed an issue with creating logging targets in the admin console
+* Fixed an issue where loading multiple apps from a module would fail and only load the first app (#2511)
+
 ## 4.0.2 - 6/25/2023
 
 #### APIs
