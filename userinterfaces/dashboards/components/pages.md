@@ -256,7 +256,7 @@ New-UDDashboard -Title "Hello, World!" -Pages $Pages
 
 ### Horizontal Navigation
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Horizontal Navigation</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption><p>Horizontal Navigation</p></figcaption></figure>
 
 You can use `New-UDAppBar` with a blank page to create horizontal navigation.&#x20;
 

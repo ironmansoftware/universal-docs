@@ -26,7 +26,7 @@ You can create an appsettings.json file within the `$Env:ProgramData\PowerShellU
 
 ## Environment Variables
 
-You can also set environment variables for your settings. Environment variables should have an underscore between each subset of the `appsettings.json` file. For example, if you want to change the JWT signing key via environment variable, you would set the variable `$Env:Jwt__SigningKey`. If you wanted to set the external API URL, you would set `$Env:Api__Url`.
+You can also set environment variables for your settings. Environment variables should have an underscore between each subset of the `appsettings.json` file\*. For example, if you want to change the JWT signing key via environment variable, you would set the variable `$Env:Jwt__SigningKey`. If you wanted to set the external API URL, you would set `$Env:Api__Url`.
 
 ### Examples
 
@@ -41,6 +41,10 @@ Using an environment variable for JWT signing key.
 ```
 $Env:Jwt__SigningKey = "mySigningKey"
 ```
+
+\* It is possible to set the License by assigning the environment variable PSULICENSE to the entire content of your license file.
+
+<figure><img src="../.gitbook/assets/license-env-variable.png" alt=""><figcaption><p>figure shows setting the License by way of environment variables</p></figcaption></figure>
 
 ## Command Line&#x20;
 

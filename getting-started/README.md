@@ -93,7 +93,7 @@ choco install powershelluniversal
 
 ### Docker
 
-See the [Docker page](docker.md#installation).
+See the [Docker page](broken-reference).
 
 ## IIS Install
 
