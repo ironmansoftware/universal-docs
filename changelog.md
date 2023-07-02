@@ -4,6 +4,17 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.9.9 - 7/2/2023
+
+#### Apps
+
+* Fixed an issue where the page editor would jump to the top on save (#2502)
+
+#### Automation
+
+* Fixed an issue where terminals could not be started when One-Way git sync was enabled (#2504)
+* Fixed an issue where the Job Diagnostics button wouldn't redirect to the correct page in a nested site (#2506)
+
 ## 3.9.8 - 6/25/2023
 
 #### APIs
