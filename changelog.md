@@ -14,6 +14,7 @@ description: Changelog for PowerShell Universal.
 
 * Fixed an issue where terminals could not be started when One-Way git sync was enabled (#2504)
 * Fixed an issue where the Job Diagnostics button wouldn't redirect to the correct page in a nested site (#2506)
+* Fixed an issue where schedules could not be deleted.
 
 ## 3.9.8 - 6/25/2023
 
