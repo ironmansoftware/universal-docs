@@ -4,6 +4,17 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.9.10 - 7/4/2023
+
+#### Automation
+
+* Fixed an issue where parameters would not be set properly through the admin console (#2520)
+* Fixed an issue where running scripts as alternate users could result in an error about Out-PSUPipeline not being found.
+
+#### Platform
+
+* Fixed an issue where running processes as alternate users would require the SeTcbPrivilege in some environments (#2521)
+
 ## 3.9.9 - 7/2/2023
 
 #### Apps
