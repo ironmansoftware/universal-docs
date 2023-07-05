@@ -4,6 +4,17 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.9.11 - 7/6/2023
+
+#### Automation
+
+* Fixed an issue with One Time schedules and boolean parameters
+
+#### Platform
+
+* Fixed an issue with PSModulePath in external PowerShell hosts.
+* Fixed an issue starting external PowerShell processes when running as Local System and no alternate credentials are specified.
+
 ## 3.9.10 - 7/4/2023
 
 #### Automation
