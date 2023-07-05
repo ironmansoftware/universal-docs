@@ -14,7 +14,7 @@ description: Changelog for PowerShell Universal.
 
 * Fixed an issue where running scripts as alternate users could result in an error about Out-PSUPipeline not being found.
 
-## Platform
+#### Platform
 
 * Fixed an issue where the logging system would fail to initialize if the SystemLogPath value was not set.
 * Fixed an issue where running processes as alternate users would require the SeTcbPrivilege in some environments (#2521)
