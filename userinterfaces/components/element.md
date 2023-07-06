@@ -150,4 +150,3 @@ New-UDButton -Text 'Click Me' -OnClick {
 * [**Sync-UDElement**](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Sync-UDElement.txt)
 * \*\*\*\*[**Select-UDElement**](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Select-UDElement.txt)
 
-***

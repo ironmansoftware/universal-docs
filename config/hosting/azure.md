@@ -251,4 +251,32 @@ Invoke-RestMethod @Parameters
 
 Once you've delete the application files, you can redeploy them by running the manual creation steps again.
 
-###
+## Application Gateway
+
+You can configure PowerShell Universal to run behind an Application Gateway within Azure. This is helpful for providing load balancing and high availability to multiple PowerShell Universal instances.&#x20;
+
+First, configure a backend pool that targets one or more Azure Web Apps running PowerShell Universal.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Backend Pool</p></figcaption></figure>
+
+For the backend settings, you will want to ensure you are using HTTPS with a well known CA certificate. Cookie-based affinity is required to ensure that sessions are sticky to a individual node.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption><p>Backend Pool Settings</p></figcaption></figure>
+
+In order to allow Azure to serve the proper web app, you will need to ensure that the Override with new host name setting is configured. Use the host name for the backend target.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Backend Settings Host Name</p></figcaption></figure>
+
+Ensure that the backend pool rule is configured as the target and not redirection.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption><p>Application Gateway Rule</p></figcaption></figure>
+
+Configure a header rewrite rule to pass along the public facing host name as the `X-Forwarded-Host` header. PowerShell Universal will use this to internally construct URLs.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption><p>Rewrite Rule</p></figcaption></figure>
+
+The above rewrite rule is a requirement of OpenID Connect and SAML2 authentication methods.&#x20;
+
+Finally, you can configure your Application Gateway public IP using a DNS provide to a custom host name. Create an A record in your DNS management.&#x20;
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>DNS Record</p></figcaption></figure>

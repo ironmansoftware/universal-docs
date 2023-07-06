@@ -38,7 +38,7 @@ Defines the role that is required to access the app.
 
 Determines whether the app should start (or restart) when the server starts or changes are made to the app files.
 
-![](<../.gitbook/assets/image (2).png>)
+![](<../.gitbook/assets/image (2) (1).png>)
 
 ## Starting and Stopping Apps
 

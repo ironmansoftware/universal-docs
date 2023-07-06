@@ -44,4 +44,4 @@ New-UDStyle -Style '.MuiAlert-standardSuccess { background-color: red !important
 
 The resulting alert will be red instead of the default green.
 
-![Alert with Red Background](<../../.gitbook/assets/image (4).png>)
+![Alert with Red Background](<../../.gitbook/assets/image (4) (2).png>)

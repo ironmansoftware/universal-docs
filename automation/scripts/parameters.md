@@ -65,7 +65,7 @@ You can use a `[Bool]` type selector to create a switch.
 param([Bool]$Switch)
 ```
 
-![](<../../.gitbook/assets/image (8).png>)
+![](<../../.gitbook/assets/image (8) (1).png>)
 
 #### Integer
 
