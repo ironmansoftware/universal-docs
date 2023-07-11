@@ -4,6 +4,23 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.0.6 - 7/11/2023
+
+#### Platform
+
+* Fixed an issue where X-Forwarded headers were not processed correctly by the Kestrel server when a remote reverse proxy was used.
+* Added -LogGroomDays to Set-PSUSetting
+* Fixed an issue where log messages would not be groomed properly
+* Fixed an issue where the LiteDB database could become corrupt after some time when running in Azure using Azure File Shares.
+
+#### Apps
+
+* Fixed an issue where -Height on New-UDCodeEditor wouldn't have an affect (#2525)
+* Adding md to Size to New-UDIcon (#2528)
+* Fixed an issue with -Options in New-UDChartJS wouldn't apply properly
+* Fixed an issue where saving an app page would return a 500 error (#2531)
+* Fixed an issue that was causing the App Live Docs to display an error toast on some pages.
+
 ## 4.0.5 - 7/6/2023
 
 #### Automation
