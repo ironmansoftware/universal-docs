@@ -4,6 +4,12 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.9.12 - 7/11/2023
+
+#### Platform
+
+* Fixed an issue where X-Forwarded headers were not processed correctly by the Kestrel server when a remote reverse proxy was used.
+
 ## 3.9.11 - 7/6/2023
 
 #### Automation
