@@ -4,6 +4,24 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.9.13 - 7/17/2023
+
+#### Dashboards
+
+* Fixed an issue where saving a dashboard page could result in a 500 error (#2531)
+* Fixed an issue where -Height for New-UDCodeEditor would not be honored
+
+#### Automation
+
+* Fixed an issue where the Run Script button could throw a JavaScript error in the admin console
+
+#### Platform
+
+* Fixed an issue where environments would disappear if clicking cancel in manual git sync when no environments.ps1 file was defined.
+* Fixed an issue where read only items (PSUHeader) would be recreated when adding new items to the same config file (#2454)
+* Fixed an issue where read only items would have edit and delete buttons in the admin console
+* Updated to Microsoft.Identity.Client 4.54.1 to support Pnp.PowerShell 2.2.0
+
 ## 3.9.12 - 7/11/2023
 
 #### Platform
