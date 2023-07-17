@@ -4,6 +4,20 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.0.7 - 7/17/2023
+
+#### Automation
+
+* Fixed an issue where the Run Script button could throw a JavaScript error in the admin console
+
+#### Platform
+
+* Fixed an issue where the role selector would not populate in some circumstances in the admin console (#2545)
+* Fixed an issue where environments would disappear if clicking cancel in manual git sync when no environments.ps1 file was defined.
+* Fixed an issue where read only items (PSUHeader) would be recreated when adding new items to the same config file (#2454)
+* Fixed an issue where read only items would have edit and delete buttons in the admin console
+* Updated to Microsoft.Identity.Client 4.54.1 to support Pnp.PowerShell 2.2.0
+
 ## 4.0.6 - 7/11/2023
 
 #### Platform
