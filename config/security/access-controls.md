@@ -10,7 +10,12 @@ Access controls requires a [license](https://ironmansoftware.com/pricing/powersh
 
 ## About
 
-Access controls allow you to define who has access to particular resources inside PowerShell Universal. Currently, access controls only apply to scripts.&#x20;
+Access controls allow you to define who has access to particular resources inside PowerShell Universal.&#x20;
+
+Access controls are supported by the following resources:
+
+* Apps
+* Scripts
 
 There are three types of access controls.&#x20;
 
