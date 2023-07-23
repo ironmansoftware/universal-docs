@@ -4,6 +4,24 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.9.14 - 7/23/2023
+
+#### Automation
+
+* Fixed an issue where rerun job would not populate string array parameters correctly. (#2434)
+* Fixed an issue where rerun job would not select the correct parameter set
+
+#### Apps
+
+* Fixed an issue where New-UDAutoComplete would display the value rather than the name of New-UDAutoComplete option when using -OnLoadOptions
+* Fixed an issue where Get-UDElement would return an invalid value from New-UDAutoComplete
+* Fixed visual issues with textbox and autocomplete (#2419)
+
+#### Platform
+
+* Published folders now set the Cache-Control and Last-Modified headers
+* Fixed a concurrency issue with $Cache scope (#2564)
+
 ## 3.9.13 - 7/17/2023
 
 #### Dashboards
