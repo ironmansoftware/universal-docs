@@ -4,6 +4,35 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.0.8 - 7/23/2023
+
+#### Automation
+
+* Fixed an issue where rerun job would not populate string array parameters correctly. (#2434)
+* Fixed an issue where rerun job would not select the correct parameter set
+
+#### Apps
+
+* Fixed an issue where New-UDTickPicker didn't display the picker component (#2551)
+* Fixed an issue where New-UDToolTip didn't have a -Type parameter
+* Fixed an issue where New-UDAutoComplete would display the value rather than the name of New-UDAutoComplete option when using -OnLoadOptions
+* Fixed an issue where the export and delete logging buttons would not work for nested IIS sites (#2554)
+* Fixed an issue where -Scrollable on didn't work on New-UDTabs (#2557)
+* Fixed an issue where -Size for New-UDButton didn't display properly on the live docs (#2462)
+* Fixed an issue where Get-UDElement would return an invalid value from New-UDAutoComplete
+* Fixing issues with Show-UDToast -MessageSize (#1000)
+* Fixing issues with Show-UDToast -Icon (#1913)
+* Fixed a JavaScript error in the App Designer
+* Fixed an issue where boolean parameters would not be serialized properly by the app designer (#2562)
+* Fixed an issue where templates wouldn't work on Linux due to case sensitivity
+* Fixed visual issues with textbox and autocomplete (#2419)
+
+#### Platform
+
+* Published folders now set the Cache-Control and Last-Modified headers
+* Fixed an issue with creating and edit roles in the admin console (#2563)
+* Fixed a concurrency issue with $Cache scope (#2564)
+
 ## 4.0.7 - 7/17/2023
 
 #### Automation
