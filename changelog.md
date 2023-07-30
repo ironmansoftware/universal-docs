@@ -4,6 +4,30 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.0.9 - 7/30/2023
+
+#### APIs
+
+* Fixed an issue where the event hub edit modal would be empty
+* Fixed an issue with connecting to event hubs that had authentication but did not specify roles
+
+#### Apps
+
+* Fixed an issue adding images to the app designer
+* Fixing issue with New-UDDataGrid pagination (#2546)
+* Fixed an issue where row selection in New-UDDataGrid wasn't available in Get-UDElement (#2573)
+* Added -OnSelectionChanged to New-UDDataGrid
+* Fixed an issue where schema forms -OnSubmit would not run
+
+#### Automation
+
+* Job output is now set at verbose for the log level to avoid duplicating the output in the database by default to avoid performance issues. Job output is still logged to the job output tables.
+
+#### Platform
+
+* Fixed an issue where the access control and app token dialog would not allow edits (#2576)
+* Fixed an issue where the home page of the admin console could show a JavaScript error if the health checks failed to return a value (#2575)
+
 ## 4.0.8 - 7/23/2023
 
 #### Automation
