@@ -4,6 +4,12 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.9.15 - 7/30/2023
+
+#### Dashboards
+
+* Fixed an issue where -OnLoadOptions wouldn't render properly in New-UDAutoComplete
+
 ## 3.9.14 - 7/23/2023
 
 #### Automation
