@@ -174,6 +174,8 @@
 * [Profiling](development/profiling.md)
 * [Visual Studio Code Extension](development/visual-studio-code-extension.md)
 
+## Samples
+
 ***
 
 * [Changelog](changelog.md)
