@@ -6,7 +6,7 @@ description: This sample uses UDStyle to change the font size of the tree view c
 
 In this example, we use UDStyle to change the font size of the tree item labels. You can view a full list of CSS classes for the [tree view here](https://mui.com/material-ui/api/tree-item/#css).
 
-<figure><img src="../../.gitbook/assets/image (573).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (574).png" alt=""><figcaption></figcaption></figure>
 
 ```powershell
 New-UDStyle -Content {
