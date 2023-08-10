@@ -176,6 +176,7 @@
 
 ## Samples
 
+* [APIs](samples/apis.md)
 * [Apps](samples/apps/README.md)
   * [Dynamic Select Dropdown](samples/apps/dynamic-select-dropdown.md)
 
