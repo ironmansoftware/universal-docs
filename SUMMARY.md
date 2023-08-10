@@ -179,6 +179,7 @@
 * [APIs](samples/apis.md)
 * [Apps](samples/apps/README.md)
   * [Dynamic Select Dropdown](samples/apps/dynamic-select-dropdown.md)
+  * [Tree View Font Size](samples/apps/tree-view-font-size.md)
 
 ## Changelogs
 
