@@ -176,7 +176,6 @@
 
 ## Samples
 
-***
-
+* [Apps](samples/apps.md)
 * [Changelog](changelog.md)
 * [Extension Changelog](extension-changelog.md)
