@@ -136,7 +136,6 @@ Join the growing community of users managing their automation environments with 
 
 * [Forums](https://forums.ironmansoftware.com/)
 * [Discord](https://discord.gg/tQMEYwbGVn)
-* [Templates](https://ironmansoftware.com/powershell-universal/templates)
 * [Issue Tracker](https://github.com/ironmansoftware/issues)
 
 ## Licensing&#x20;

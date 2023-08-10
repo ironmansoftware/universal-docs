@@ -176,7 +176,8 @@
 
 ## Samples
 
-* [Apps](samples/apps.md)
+* [Apps](samples/apps/README.md)
+  * [Dynamic Select Dropdown](samples/apps/dynamic-select-dropdown.md)
 
 ## Changelogs
 
