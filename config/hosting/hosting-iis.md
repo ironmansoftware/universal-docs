@@ -16,6 +16,8 @@ The following components are required in order to host PowerShell Universal on I
   * Including: WebSocket Protocol
 * [ASP.NET Core Hosting Bundle 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
 
+<figure><img src="../../.gitbook/assets/image (577).png" alt=""><figcaption><p>Figure highlights the download link for the ASP.NET Core Hosting Bundle</p></figcaption></figure>
+
 The following Windows Server IIS features are also required to be enabled on the IIS Host:
 
 | Feature Display Name   | Requirement                               | Installation Script                       |
@@ -51,11 +53,11 @@ This location is very important and will be referenced throughout this document.
 
 Now that our Host is ready and we have downloaded PowerShell Universal, we can begin configuring IIS.
 
-The First step in the IIS configuration process is to create a new Application Pool in IIS. Before we begin the configuration we should ensure that we select a valid identity for the IIS Application Pool.
+The first step in the IIS configuration process is to create a new Application Pool in IIS. Before we begin the configuration we should ensure that we select a valid identity for the IIS Application Pool.
 
 ### 3.1 : Choosing an App Pool Identity
 
-The Application Pool Identity is crucial for PowerShell Universal as this will be the "default user" that jobs and dashboards will run as. It will also be the user that will perform read/write operations to the Universal Automation database and will be used by IIS to read the web content directory and execute the application.
+The Application Pool Identity is crucial for PowerShell Universal as this will be the "default user" that jobs and apps (formerly known as dashboards) will run as. It will also be the user that will perform read/write operations to the Universal Automation database and will be used by IIS to read the web content directory and execute the application.
 
 ![Application Pool Identity Configuration](<../../.gitbook/assets/image (518).png>)
 
@@ -113,7 +115,7 @@ Most Importantly we will need to update "**processPath**" argument value of this
 
 * Open the web.config file in the PowerShell Universal Application Folder
   * Locate the **\<aspNetCore** **processPath** section of the configuration file
-  * Update the arguments=**"PATH"** value to be the exact location of the Universal.Server.exe path.
+  * Change the processPath argument from ".\Universal.Server.exe" to be the exact location of the Universal.Server.exe path (see figure below for example)
   * Save the file to apply the configuration
 
 ```markup
@@ -152,7 +154,7 @@ Now that an Application Pool has been created for PowerShell Universal with a va
 At this point, all the required configurations should be in place, and the IIS website hosting PowerShell Universal should be up and running. With a web browser - browse to the configured website location to validate that PowerShell Universal has started. From here you can follow the "Getting Started" guide to validate base functionality. Once you are sure that the Application is working properly with a Basic IIS configuration you can proceed to the "Advanced Configuration" to secure and finalize your desired IIS Configuration.
 
 {% hint style="info" %}
-You are are still experiencing issues with the basic IIS Configuration try checking the "Logs" path specified in the web.config for common issues. If you are still experiencing issues reach out on the forums or support for assistance.
+If you are are still experiencing issues with the basic IIS Configuration try checking the "Logs" path specified in the web.config for common issues. If you are still experiencing issues reach out on the forums or support for assistance.
 {% endhint %}
 
 ## Nested IIS Applications
@@ -213,7 +215,7 @@ http://localhost/psu2/admin
 ## Configuration for Jobs
 
 {% hint style="warning" %}
-Misconfigured app pool settings can cause jobs to fail to run. The primary cause is app pool recycling or a failure to start the web app when the server is started. This is not an issue for features like APIs or Dashboards but due to the background processing of jobs, you will need to ensure the server starts the website and keeps it running. You can [learn more here](https://docs.hangfire.io/en/latest/deployment-to-production/making-aspnet-app-always-running.html#making-asp-net-core-application-always-running-on-iis).
+Misconfigured app pool settings can cause jobs to fail to run. The primary cause is app pool recycling or a failure to start the web app when the server is started. This is not an issue for features like APIs or Apps (formerly known as Dashboards) but due to the background processing of jobs, you will need to ensure the server starts the website and keeps it running. You can [learn more here](https://docs.hangfire.io/en/latest/deployment-to-production/making-aspnet-app-always-running.html#making-asp-net-core-application-always-running-on-iis).
 {% endhint %}
 
 If you are going to be running scheduled jobs within your PowerShell Universal instance hosted in IIS, you must make sure to configure IIS appropriately. There are several settings to validate when configuring your application pool.
@@ -228,7 +230,7 @@ Install the Application Initialization feature of the Web Server Role.
 
 You will want to configure the following settings:
 
-* **General**: .NET CLR version = [No Managed Code](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/advanced?view=aspnetcore-6.0#sub-applications).
+* **General**: .NET CLR version = [No Managed Code](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/advanced?view=aspnetcore-7.0#sub-applications).
 * **General**: Start Mode = AlwaysRunning
 * **Process Model**: Idle Time-out setting = 0 (disabled)
 * **Recycling**: Regular Time Interval = 0.
@@ -245,7 +247,7 @@ Within the IIS Site that is hosting Universal, you will need to ensure that Prel
 
 ### Environment Variables
 
-While we attempt to detect that PSU is running within IIS, you may run into problems with the negotiate authentication handler being enabled when it's not supported in IIS. To ensure this is not a problem, you can completed disabled it by setting the below environment variable on your IIS machine.
+While we attempt to detect that PSU is running within IIS, you may run into problems with the negotiate authentication handler being enabled when it's not supported in IIS. To ensure this is not a problem, you can completely disable it by creating the below environment variable on your IIS machine.
 
 ```powershell
 $Env:PSU_DISABLE_WIN_AUTH = true
@@ -255,7 +257,7 @@ $Env:PSU_DISABLE_WIN_AUTH = true
 
 If you are still having issues with IIS and jobs, you should consider turning on[ IIS recycle logging](https://blogs.iis.net/ganekar/iis-7-0-application-pool-recycles-log-a-event-in-windows-event-log) to ensure that IIS is keeping your site running.
 
-As of PowerShell Universal 3.3, you can via the uptime of the system on the home page of the admin console to get a good indicator of the last time the service was started.
+As of PowerShell Universal 3.3, you can (via the uptime of the system on the home page of the admin console) get a good indicator of the last time the service was started.
 
 Prior to version 3.3, you can view the server uptime by visiting the [Hangfire](../../development/hangfire.md) dashboard and clicking the Servers tab.
 
@@ -328,4 +330,6 @@ The hosting model sets how the Universal server will run. When set to InProcess,
 
 ## Upgrading
 
-When upgrading, ensure that you do not copy files over the top of your existing install. Instead, delete the current application files and copy the new ones into the directory. Copying over the top of the files can result in binaries being present in the installation directory that are not expected and can issues with the system.
+When upgrading, ensure that you do not copy (overwrite) files over the top of your existing install. Instead, (with the exception of web.config and \*.json files) delete all of the current application files and copy the new ones into the directory. **Copying over the top of the application files can result in binaries being present in the installation directory that are not expected and can cause issues with PowerShell Universal.**
+
+<figure><img src="../../.gitbook/assets/image (576).png" alt=""><figcaption><p>figure shows a prompt that you should not see when upgrading your IIS PSU</p></figcaption></figure>
