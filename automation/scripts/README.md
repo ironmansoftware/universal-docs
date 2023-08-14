@@ -160,6 +160,10 @@ This above will yield the following user interface. The synopsis will be shown a
 
 Commands and cmdlets found in modules can be used at the target for scripts rather than authoring the script directly. The `-Module` and `-Command` parameters are not displayed in the admin console but can be included in `scripts.ps1`.&#x20;
 
+{% hint style="info" %}
+This feature does not support binary cmdlets.
+{% endhint %}
+
 Let's assume that we have a module called `PSUModule` that contains the following function.&#x20;
 
 ```powershell
