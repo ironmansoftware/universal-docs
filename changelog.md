@@ -4,6 +4,35 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.0.10 - 8/14/2023
+
+#### APIs
+
+* Fixed an issue where specifying an invalid environment could cause multiple API to fail to load. Now falls back to integrated and shows a warning (#2591)
+
+#### Apps
+
+* Fix issue with min\max on New-UDDatePicker (#2580)
+* Fixed an issue where the MUI X license key was expired
+* Fixed an issue with New-UDSwitch -LabelPlacement should be start not left (#2601)
+* Breaking: Query string values are now passed in via a $Query dictionary rather than as variables to avoid potential injection issues
+
+#### Automation
+
+* Added -PreformattedJobOutput to Set-PSUSettings to improve performance of large job output
+
+#### Pages
+
+* Fixed an issue where default values for form textboxes didn't work (#2592)
+
+#### Platform
+
+* Fixed an issue where deleted computers could be displayed in the Run As dropdown (#2593)
+* Fixed an issue where 1 day rate limits would actually define a 24 day rate limit (#2594)
+* Fixed an issue where canceling a git edit with a missing repo directory would fail (#2599)
+* Fixed an issue where TCP and UDP logging targets would not configure properly through the admin console (#2600)
+* Fixed an issue where app tokens set to never expire would not authenticate properly (#2598)
+
 ## 4.0.9 - 7/30/2023
 
 #### APIs
