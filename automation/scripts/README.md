@@ -24,7 +24,7 @@ Name of the script as shown in Universal Automation. This will also be the name 
 
 ### Module and Command
 
-The default behavior for scripts is to create a ps1 file based on the name and\or path. When you specify the Module and Command properties, you will instead run a function or cmdlet from the specified module.&#x20;
+See [Modules and Commands](./#modules-and-commands) below.
 
 ### **Description**
 
@@ -156,7 +156,28 @@ This above will yield the following user interface. The synopsis will be shown a
 
 ![](<../../.gitbook/assets/image (431).png>)
 
+## Modules and Commands
 
+Commands and cmdlets found in modules can be used at the target for scripts rather than authoring the script directly. The `-Module` and `-Command` parameters are not displayed in the admin console but can be included in `scripts.ps1`.&#x20;
+
+Let's assume that we have a module called `PSUModule` that contains the following function.&#x20;
+
+```powershell
+function Show-HelloWorld {
+    param($Name)
+    "Hello, $Name!"
+}
+```
+
+It's possible to expose this function as a script by using the following syntax in `scripts.ps1`.&#x20;
+
+```powershell
+New-PSUScript -Module 'PSUModule' -Command 'Show-HelloWorld'
+```
+
+The function will be surfaced just as other scripts within the admin console. Parameters, help text and other PSU features will work the same as with scripts.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (578).png" alt=""><figcaption><p>Parameter for a function<br></p></figcaption></figure>
 
 ## API
 
