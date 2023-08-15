@@ -6,7 +6,7 @@ description: >-
 
 # Reverse Proxy
 
-Reverse proxies allow for configuration of features such as TLS, header rewriting, caching and load balancing. Some popular reverse proxies include IIS, Apache and IIS.&#x20;
+Reverse proxies allow for configuration of features such as TLS, header rewriting, caching and load balancing. Some popular reverse proxies include IIS, Apache and NGINX.&#x20;
 
 Each of these systems capture HTTP traffic and forward it to a backend web server, like PowerShell Universal. There are some considerations that should be made when configuring a reserve proxy in front of PowerShell Universal.&#x20;
 
