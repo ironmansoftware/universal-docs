@@ -28,7 +28,7 @@ New-UDDataGrid -LoadRows {
 } -Columns @(
     @{ field = "name"}
     @{ field = "number"}
-) -AutoHeight
+) -AutoHeight $true
 ```
 
 ## Columns
