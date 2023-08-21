@@ -22,6 +22,10 @@ From this dialog, you'll be able to define string and PSCredentials in the speci
 
 ![](<../.gitbook/assets/image (277).png>)
 
+### Credential Format
+
+In some environments, it may be necessary to specify the domain name in the user name field. You can specify in either the `domain\user` or `user@domain` format. If you do not do so, you will receive errors when attempting to start processes, like scripts or dashboards, as that user account.
+
 ## Vaults
 
 ### Database
