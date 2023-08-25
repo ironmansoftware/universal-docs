@@ -90,7 +90,7 @@ Resources cannot use paths and must use the module and command name to associate
 For example, the above `scripts.ps1` file would have to be written such as this.&#x20;
 
 ```powershell
-New-PSUScript -Name 'Script.ps1' -Module 'PSUModule' -Command 'Start-MyScript'
+New-PSUScript -Module 'PSUModule' -Command 'Start-MyScript'
 ```
 
 Within `PSUModule.psm1`, you would need to define the `Start-MyScript` function. This is the function that will be called when running the script.
