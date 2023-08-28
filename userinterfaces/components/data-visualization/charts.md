@@ -548,3 +548,25 @@ $TreeData = @{
 
 New-UDNivoChart -Treemap -Data $TreeData -Value "count" -Identity "name" -Height 500 -Width 800
 ```
+
+### Color Based on Data
+
+You can use the following format to use colors based on your data.
+
+```powershell
+$Data =
+$([PSCustomObject]@{
+        value = 30
+        color = '#BF5290'
+    }
+    [PSCustomObject]@{
+        value = 100
+        color = '#52BE80'
+
+    }
+)
+
+New-UDNivoChart -Pie -Data ($Data | Where-Object { $_.Value -ne 0 }) -InnerRadius 0.7 -CornerRadius 5 -PadAngle 1 -Colors @{datum = 'data.color' }` -MarginLeft "150" -MarginTop 1 -Height 370 -Responsive
+```
+
+<figure><img src="../../../.gitbook/assets/image (579).png" alt=""><figcaption><p>Color based on data</p></figcaption></figure>
