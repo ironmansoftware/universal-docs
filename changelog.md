@@ -4,6 +4,24 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.9.17 - 8/28/2023
+
+#### APIs
+
+* Endpoints will now attempt to read form data even if the HTTP client doesn't specify a Content-Type header (#2612)
+
+#### Dashboards
+
+* Fixed an issue where recursive object paths could cause a dashboard crash (#2627)
+* Fixed an issue where -OnLoadOptions and -Multiple wouldn't show selections in New-UDAutocomplete (#2604)
+* Added -Options to New-UDTableColumn (#1097)
+
+#### Platform
+
+* Fixed an issue where no error was shown when there was a failure to save a translation file (#2618)
+* Fixed an issue where database git sync could run into an OutOfMemory exception (#2620)
+* Implemented a database recovery feature if the LiteDB database is corrupted
+
 ## 3.9.16 - 8/14/2023
 
 #### APIs
