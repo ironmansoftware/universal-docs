@@ -37,6 +37,8 @@ description: Changelog for PowerShell Universal.
 * Implemented a database recovery feature if the LiteDB database is corrupted
 * Resources are now marked readonly in the admin console (#2587)
 * Fixed an issue where variables with a role wouldn't show up for admins unless it had the Administrator role
+* Fixed an issue with the log viewer not retaining filters when sorting or paging.
+* Fixed an issue with the documentation links in the admin console
 
 ## 4.0.10 - 8/14/2023
 
