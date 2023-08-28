@@ -4,6 +4,40 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.0.11 - 8/28/2023
+
+#### APIs
+
+* Endpoints will now attempt to read form data even if the HTTP client doesn't specify a Content-Type header (#2612)
+* Fixed an issue where authenticated event hub clients would not receive events.
+
+#### Apps
+
+* Fixed an issue where the app designer would add 2 IDs when the ID of a component was changed (#2589)
+* Fixed an issue where the default choice for PromptForChoice would throw an exception (#2607)
+* Fixed an issue where Get-UDPage would throw an exception if the page was not found causing the entire app to fail to load (#2610)
+* Fixed an issue where UDTreeView selected items were not visible in the default dark theme (#2613)
+* Fixed an issue where expired tokens would cause -GrantAppToken to fail to generate a new token
+* Fixed an issue where recursive object paths could cause an app crash (#2627)
+* Fixed an issue where -OnLoadOptions and -Multiple wouldn't show selections in New-UDAutocomplete (#2604)
+* Added -Options to New-UDTableColumn (#1097)
+* Fix New-UDAutocomplete to look at options for defaults (#2583)
+
+#### Pages
+
+* Fixed an issue where unauthenticated pages would clear out the form data after 3 seconds (#2611)
+
+#### Platform
+
+* Fixed an issue where no error was shown when there was a failure to save a translation file (#2618)
+* Fixed an issue where database git sync could run into an OutOfMemory exception (#2620)
+* Fixed an issue where an exception was thrown while attempting to groom an expired apptoken that was used by a job (#2621)
+* Added universal-modules docker image tag (#2624)
+* Added Download System Logs button
+* Implemented a database recovery feature if the LiteDB database is corrupted
+* Resources are now marked readonly in the admin console (#2587)
+* Fixed an issue where variables with a role wouldn't show up for admins unless it had the Administrator role
+
 ## 4.0.10 - 8/14/2023
 
 #### APIs
