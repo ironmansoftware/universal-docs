@@ -80,7 +80,7 @@ New-UDDataGrid -LoadRows {
 } -Columns @(
     @{ field = "name"; render = { New-UDTypography $EventData.number }}
     @{ field = "number"}
-) -AutoHeight
+) -AutoHeight $true
 ```
 
 ### Flexible Width Columns
@@ -106,7 +106,7 @@ New-UDDataGrid -LoadRows {
 } -Columns @(
     @{ field = "name"; render = { New-UDTypography $EventData.number }}
     @{ field = "number"; flex = 1.0}
-) -AutoHeight
+) -AutoHeight $true
 ```
 
 ## LoadRows
@@ -137,7 +137,7 @@ New-UDDataGrid -LoadRows {
 } -Columns @(
     @{ field = "name"; }
     @{ field = "number"}
-) -AutoHeight -Pagination
+) -AutoHeight $true -Pagination
 ```
 
 ### Filtering
@@ -212,7 +212,7 @@ New-UDDataGrid -LoadRows {
 } -Columns @(
     @{ field = "Name" }
     @{ field = "number" }
-) -AutoHeight -LoadDetailContent {
+) -AutoHeight $true -LoadDetailContent {
     Show-UDToast $Body
     New-UDAlert -Text $EventData.row.Name
 }
@@ -247,7 +247,7 @@ New-UDDataGrid -LoadRows {
 } -Columns @(
     @{ field = "Name"; editable = $true }
     @{ field = "number" ; editable = $true }
-) -AutoHeight -OnEdit {
+) -AutoHeight $true -OnEdit {
     Show-UDToast "Editing $Body" 
 }
 ```
@@ -270,7 +270,7 @@ New-UDDataGrid -LoadRows {
 } -Columns @(
     @{ field = "name"}
     @{ field = "number"}
-) -AutoHeight -OnExport {
+) -AutoHeight $true -OnExport {
     $Data = $EventData | Select-Object -Expand name 
     Out-UDDataGridExport -Data $Data -FileName 'export.txt' | Out-String
 }
@@ -358,7 +358,7 @@ New-UDDashboard -Title 'PowerShell Universal' -Content {
             New-UDButton -Icon (New-UDIcon -Icon User) -OnClick { Show-UDToast $EventData.Name } } 
         }
         @{ field = "number" }
-    ) -AutoHeight -Pagination
+    ) -AutoHeight $true -Pagination
 }   
 ```
 
@@ -465,7 +465,7 @@ New-UDDashboard -Title 'PowerShell Universal' -Content {
                 New-UDAlert -Severity 'Error' -Text 'Failed'
             }
         } }
-    ) -AutoHeight -Pagination
+    ) -AutoHeight $true -Pagination
 }
 ```
 
