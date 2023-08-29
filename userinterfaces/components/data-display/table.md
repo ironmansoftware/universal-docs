@@ -294,7 +294,24 @@ By default, the page size selector provides an option to show all rows. If you w
 
 You can change the location of the pagination control by using the `-PaginationLocation` parameter. It accepts top, bottom and both.
 
-![Pagination Location](<../../../.gitbook/assets/image (77).png>)
+![Pagination Location
+](<../../../.gitbook/assets/image (77).png>)
+
+### Page Sizes
+
+The page size, by default, is set to 5. Users can adjust the number of rows per page by using the Rows per page drop down. You can adjust the default page size by using the `-PageSize` parameter. To adjust the values available within the Rows per page drop down, you can use an array of integers pass to the `-PageSizeOptions` parameter.&#x20;
+
+```powershell
+$Data = @(
+    @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+) 
+
+New-UDTable -Data $Data -Paging -PageSize 2 -PageSizeOptions @(2, 4, 6)
+```
 
 ## Sorting
 
