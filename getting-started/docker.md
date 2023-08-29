@@ -384,6 +384,28 @@ ENV TZ Europe/Amsterdam
 RUN apt-get install -y tzdata
 ```
 
+## Tags
+
+We publish the following tags to Docker Hub.&#x20;
+
+* latest - Current version using Ubuntu LTS
+* 4.x-preview-modules - Nightly build of version 4 using Ubuntu LTS and select AZ modules&#x20;
+* 4.x-preview-\<OS>-\<PS> - Nightly build of version 4 with the specified OS and PS version&#x20;
+* 3.x-preview-\<OS>-\<PS> - Nightly build of version 3 with the specified OS and PS version&#x20;
+* 4.x-\<OS>-\<PS> - Production version 4 with the specified OS and PS version&#x20;
+* 4.x-modules - Current production version on Ubuntu LTS with select AZ modules installed
+* 3.x-\<OS>-\<PS> - Current production version 3 with the specified OS and PS versions
+
+### Included Modules
+
+The module container images include the following modules.&#x20;
+
+* Az.Accounts
+* Az.Compute
+* Az.KeyVault
+* Az.Resources
+* Invoke-SqlCmd2
+
 ## Summary
 
 This has been a very basic "How get get started" which allows you to get started running or building PSU Containers. All souces for commands have been linked in the referances session.
