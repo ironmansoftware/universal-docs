@@ -115,7 +115,8 @@ You can use thumbprint rather than subject in version 3.4 and later.&#x20;
              "Store": "My",
              "Location": "LocalMachine",
              "AllowInvalid": "true"
-           }
+            }
+         }
       }
    }
 }
