@@ -63,7 +63,7 @@ The `PSUSecretStore` vault is integrated with the Microsoft `SecretStore` module
 ### Az.KeyVault
 
 By default, we do not include the Azure Key Vault extension directly in PowerShell Universal
-As of Powershell Universal a container including the required Az.Accounts and Az.KeyVault modules is avilable to allow you use KeyVault out of the box. This can be found on [Docker Hub](https://hub.docker.com/r/ironmansoftware/universal/tags?page=1&name=modules).
+As of Powershell Universal v4.0.11, a container including the required Az.Accounts and Az.KeyVault modules is avilable to allow you use KeyVault out of the box. This can be found on [Docker Hub](https://hub.docker.com/r/ironmansoftware/universal/tags?page=1&name=modules).
 
 Below you will find how to configure it. This example uses an Azure hosted web-app version of PowerShell Universal.
 
