@@ -257,7 +257,7 @@ You can configure PowerShell Universal to run behind an Application Gateway with
 
 First, configure a backend pool that targets one or more Azure Web Apps running PowerShell Universal.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Backend Pool</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Backend Pool</p></figcaption></figure>
 
 For the backend settings, you will want to ensure you are using HTTPS with a well known CA certificate. Cookie-based affinity is required to ensure that sessions are sticky to a individual node.&#x20;
 
@@ -265,7 +265,7 @@ For the backend settings, you will want to ensure you are using HTTPS with a wel
 
 In order to allow Azure to serve the proper web app, you will need to ensure that the Override with new host name setting is configured. Use the host name for the backend target.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Backend Settings Host Name</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (2).png" alt=""><figcaption><p>Backend Settings Host Name</p></figcaption></figure>
 
 Ensure that the backend pool rule is configured as the target and not redirection.&#x20;
 
@@ -279,4 +279,4 @@ The above rewrite rule is a requirement of OpenID Connect and SAML2 authenticati
 
 Finally, you can configure your Application Gateway public IP using a DNS provide to a custom host name. Create an A record in your DNS management.&#x20;
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>DNS Record</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption><p>DNS Record</p></figcaption></figure>

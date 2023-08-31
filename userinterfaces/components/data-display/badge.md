@@ -18,7 +18,7 @@ Examples of badges containing text, using primary and secondary colors. The badg
 
 ## Color&#x20;
 
-![](<../../../.gitbook/assets/image (10).png>)
+![](<../../../.gitbook/assets/image (10) (1).png>)
 
 ```powershell
 New-UDBadge -BadgeContent { 4 } -Children {

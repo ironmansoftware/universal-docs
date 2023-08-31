@@ -67,6 +67,26 @@ New-UDButton -Text 'Message Box' -OnClick {
 } -ShowLoading
 ```
 
+## Button Group
+
+A button group produces a button with a drop down menu. This is also referred to a split button.
+
+```powershell
+New-UDButtonGroup -Children {
+    New-UDButtonGroupItem -Text "Button 1" -OnClick {
+        Show-UDToast "Button 1"
+    }
+    New-UDButtonGroupItem -Text "Button 2" -OnClick {
+        Show-UDToast "Button 2"
+    }
+    New-UDButtonGroupItem -Text "Button 3" -OnClick {
+        Show-UDToast "Button 3"
+    }
+}
+```
+
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Button Group</p></figcaption></figure>
+
 ## API
 
 * [New-UDButton](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDButton.txt)
