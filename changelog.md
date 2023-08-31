@@ -4,6 +4,13 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.0.12 - 8/31/2023
+
+#### Automation
+
+* Fixed an issue where scripts provided by modules would not be visible in folder view
+* Fixed an issue where job output could be malformed when storing in SQL causing an error in the admin console (#2644)
+
 ## 4.0.11 - 8/28/2023
 
 #### APIs
