@@ -37,6 +37,39 @@ To create an app bar that is pinned to the bottom of the page, you can use the `
 New-UDAppBar -Children { "Hello" } -Footer
 ```
 
+## Relative Footer
+
+A relative footer always stays at the bottom of the document. If the contents of the page do not take up 100% of the screen height, the footer will be positioned at the bottom of the view. If the content is greater than 100% of the screen height, the footer will only be visible when scrolled to th bottom of the correct.&#x20;
+
+```powershell
+New-UDApp -Title 'PowerShell Universal' -Pages @(
+    New-UDPage -Title home -Name home -Blank -HideNavigation -Content {
+        New-UDHelmet -Tag 'style' -Content '
+            #Footer {
+                position: relative;
+            }
+            #Footer + div {
+                display: none
+            }
+            #content {
+                min-height: calc(100vh - 128px);
+            }
+        '
+        New-UDAppBar -Position sticky -ClassName header -DisableThemeToggle -Children {
+            New-UDParagraph -Text "Header"
+        }
+        New-UDElement -Tag 'div' -Content {
+            1..100 | % {
+                New-UDTypography -Text 'Hello' -Variant h1
+            }
+        } -Id 'content'
+        New-UDAppBar -Id Footer -Footer -Children {
+            New-UDParagraph -Text "Footer"
+        }
+    }
+)
+```
+
 ## Fixed AppBar
 
 A fixed AppBar will show even when the screen is scrolled. It will remain stuck to the top. This example creates an AppBar that is fixed with a div that is 10000 pixels high.
