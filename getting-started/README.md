@@ -6,7 +6,7 @@ description: Installation instructions for PowerShell Universal.
 
 ## MSI Install (Windows)
 
-The MSI install will create a PowerShell Universal service. By default, PowerShell Universal will be listening on port 5000. You will be able to navigate to `http://localhost:5000` and login with `admin` and any password.
+The MSI install will create a PowerShell Universal service. By default, PowerShell Universal will be listening on port 5000. You will be able to navigate to `http://localhost:5000` and login with `admin` and password `admin`.
 
 MSI downloads are available on our [download page](https://ironmansoftware.com/downloads).&#x20;
 
@@ -128,5 +128,5 @@ It may be necessary to exclude certain executables that will run PowerShell scri
 
 ## Next Steps
 
-At this point, Universal is up and running. You can navigate to the admin console by visiting `http://localhost:5000` by default. The default user name is admin with any password.&#x20;
+At this point, Universal is up and running. You can navigate to the admin console by visiting `http://localhost:5000` by default. The default username is `admin` with a password of `admin`.
 
