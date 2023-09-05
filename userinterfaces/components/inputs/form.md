@@ -181,8 +181,8 @@ New-UDForm -Schema @{
        }
    }
 } -OnSubmit {
-   # $EventData.formData.name
-   # $EventData.formData.age
+   # $EventData.name
+   # $EventData.age
 }
 ```
 
@@ -204,8 +204,8 @@ New-UDForm -Schema @{
    }
    required = @('name')
 } -OnSubmit {
-   # $EventData.formData.name
-   # $EventData.formData.age
+   # $EventData.name
+   # $EventData.age
 }
 ```
 
@@ -251,7 +251,7 @@ New-UDForm -Schema @{
 		"ui:order" = @('environment','hostname','ipaddress','description')
 	} -OnSubmit {
 		Show-UDModal -Content {                        
-			New-UDTypography -Text $EventData.formData
+			New-UDTypography -Text $EventData
 		} -Footer {
 			New-UDButton -Text "Close" -OnClick {Hide-UDModal}
 		} -Persistent
@@ -278,8 +278,8 @@ New-UDForm -Schema @{
        }
    }
 } -OnSubmit {
-   # $EventData[0].formData.name
-   # $EventData[0].formData.age
+   # $EventData[0].name
+   # $EventData[0].age
 }
 ```
 
