@@ -2,6 +2,10 @@
 
 ### Application Service Account
 
+{% hint style="warning" %}
+The following permissions are not required if you are running PowerShell Universal 3.9.10 or 4.0.4 or later.&#x20;
+{% endhint %}
+
 The PowerShell Universal application can be run as a Service Account. This means that the application will run all of its functions as the service account, including local application tasks, jobs (by default), and dashboards. This is a suggested configuration and is **REQUIRED** to execute jobs as other PSCredentials defined in Secret Variables.
 
 To run Universal Automation as a Service Account, and not the local system account, an additional set of permissions are required for the Service Account. **Windows requires a distinct set of permissions for the Service Account if it is not in the local Administrators group on the host.**
