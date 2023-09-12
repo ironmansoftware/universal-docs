@@ -4,6 +4,14 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 4.1.0 - 9/12/2023
+
+* Added support for creating and editing app pages
+* Added support for app terminals&#x20;
+* Added support for viewing app sessions and tabs
+* Added support viewing modules&#x20;
+* Added support for creating and editing custom modules&#x20;
+
 ## 4.0.2 - 6/20/2023
 
 * Fixed an issue working with multiple connections
