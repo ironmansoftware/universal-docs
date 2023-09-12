@@ -4,6 +4,86 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.1.0 - 9/12/2023
+
+#### APIs
+
+* Added Get-PSUEventHubConnection
+* Added -ConnectionId to Send-PSUEvent
+* Send-PSUEvent can now return data when using -ConnectionId
+
+#### Apps
+
+* Adding BackgroundImage and BackgroundRepeat to New-UDPage (#2325)
+* Adding Disabled to New-UDSelectOption (#2491)
+* Adding md to Size to New-UDIcon (#2528)
+* Added -Label to New-UDProgress (#2553)
+* Added -OpenInNewWindow to New-UDListItem (#2540)
+* Added -Minimum and -Maximum to New-UDTextbox (#2455)
+* Fixing issues with Show-UDToast -MessageSize (#1000)
+* Fixing issues with Show-UDToast -Icon (#1913)
+* Added additional configuration options to apps in the admin console
+* Added Show-UDSnackbar\Hide-UDSnackbar (#2561)
+* Fixing issue with New-UDDataGrid pagination (#2546)
+* Fixed an issue where row selection in New-UDDataGrid wasn't available in Get-UDElement (#2573)
+* Added -OnSelectionChanged to New-UDDataGrid
+* Fixed an issue where schema forms -OnSubmit would not run
+* Added -DefaultSortColumn and -DefaultSortDirection to New-UDDataGrid (#2011)
+* Fix issue with min\max on New-UDDatePicker (#2580)
+* Fixed an issue with New-UDSwitch -LabelPlacement should be start not left (#2601)
+* Added Restart and Admin Console links to dashboards of admins (#2362)
+* Added Get-UDTheme -Current (#2508)
+* Fix New-UDAutocomplete to look at options for defaults (#2583)
+* Added -ArgumentList to Sync-UDElement (#1815)
+* Clear autocomplete with Set-UDElement (#2631)
+* Fixed an issue where row selection wouldn't always work when filtering with New-UDTable (#2630)
+* Added -Disabled to New-UDAutocomplete (#2639)
+* Fixed an issue where links in New-UDMarkdown didn't follow the theme (#2296)
+* Added $TimeZone variable to apps (#2646)
+* Added missing New-UDAutoCompleteOption to live docs (#2640)
+* Power Managing a dashboard will now do so on all nodes when using SQL Server (#1360)
+* Fixed an issue where the nivo chart docs were not present on the live docs (#2640)
+* Fixed an issue with -CirclePacking and -TreeMap in New-UDNivoChart
+* Fixed an issue with -Heatmap in New-UDNivoChart
+* Added New-UDTheme (#2653)
+* Fixed an issue where several components (tables, pickers, charts) would not update when using within a UDDynamic (#2661)
+* Improved the behavior of New-UDButtonGroup (#2651)
+* Fixing issue with New-UDAvatar -Variant not supporting default round (#2633)
+* Fixed an issue where New-UDUpload did not work in a nested IIS site (#2657)
+* Fixed an issue where autocomplete would fail to render if it was pass a single value that wasn't an array (#2668)
+
+#### Automation
+
+* Added Error status for jobs that succeed but have errors
+* Added a Create Scheduled button to the Scripts \ Schedules tab. (#2541)
+* Added support for cmdlets in -Command in New-PSUScript (#2605)
+* Fixed an issue with editing schedules in the admin console (#2659)
+
+#### Platform
+
+* Add configurable git sync timeout (#2466)
+* Added git to the linux docker container (#2472)
+* Updated the integrated and agent environments to 7.3.6 (#2494)
+* Administrator role now defaults to $false (#2492)
+* Added a Run Module Discovery button to the module page (#2486)
+* Added $RefreshToken to access the OIDC refresh token
+* Added support for SQLite
+* Updated to Microsoft.Data.SqlClient version 5.1.1
+* Added loaded Assemblies to the process view
+* Added additional branding settings
+* Added Remove-PSUCache
+* Added ModuleDiscoveryFrequency to Set-PSUSettings (#2595)
+* Added Get-PSUPublishedFolder (#2622)
+* Added SystemLogLevel to appsettings.json
+* Fixed an issue where the default theme setting would not take effect (#2292)
+* The secret variable credential dialog now suggests including the domain in the user name (#2625)
+* Fixed an issue where Grant-PSUAppToken would generate tokens with invalid roles besides the first role specified.
+* Fixed an issue where modules in the Modules directory were imported into the PSU server during startup
+* Fixed an issue with editing modules when a Universal extension module was installed
+* Fixed an issue where readonly resources could show up in configuration files
+* Added support for PSScriptAnalyzer settings files (#2658)
+* Fixed an issue where the module REST API did not work with app tokens.
+
 ## 4.0.12 - 8/31/2023
 
 #### Automation
