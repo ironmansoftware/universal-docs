@@ -38,6 +38,25 @@ Send-PSUEvent -Hub 'MyHub' -Data "Hello!"
 
 The `-Data` parameter accepts an object and will be serialized using CLIXML and send to the client. The data will be deserialized before passing to the script block.&#x20;
 
+## Receive Data from Clients
+
+As of 4.1, you can now receive data back from clients. This feature is only available when sending data to an individual client, rather than all clients connected to a hub.&#x20;
+
+```powershell
+$Connection = Get-PSUEventHubConnection | Where-Object UserName -eq 'Admin'
+$Result = Send-PSUEvent -Hub 'Hub' -Data 'Say Hello!' -Connectionid $Connection.ConnectionId
+Show-UDToast $Result
+```
+
+From the client side, you would return the data from the script block.&#x20;
+
+```powershell
+Connect-PSUEventHub -Hub 'Hub' -ScriptBlock {
+    Write-Host $EventData 
+    "Hello!"
+}
+```
+
 ## View Connected Clients
 
 Within the PowerShell Universal server, you can view connected clients by clicking APIs \ Event Hubs and then clicking the Connections tab.&#x20;
