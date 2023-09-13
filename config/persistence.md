@@ -10,8 +10,6 @@ PowerShell Universal stores job output and input, identities and app tokens with
 
 When using SQLite, PowerShell Universal stores all data within a single file database local to the PowerShell Universal application. We recommend SQLite over LiteDB for new installations as it is more widely used and supported.&#x20;
 
-### Configuration SQLite
-
 You can configure SQLite by updating the `appsettings.json` file.&#x20;
 
 ```json
@@ -26,8 +24,6 @@ You can configure SQLite by updating the `appsettings.json` file.&#x20;
 ## LiteDB
 
 Using LiteDB, PowerShell Universal stores all data within a single file database local to the PowerShell Universal application.&#x20;
-
-### Configuring LiteDB
 
 To configure the database location for LiteDB you can edit the `appsettings.json` file or set the file path during installation if using the MSI. By default, the database is stored in the ProgramData directory. Update this setting to change the database location.&#x20;
 
