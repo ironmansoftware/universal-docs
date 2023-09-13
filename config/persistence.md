@@ -6,9 +6,26 @@ description: Persistence for PowerShell Universal.
 
 PowerShell Universal stores job output and input, identities and app tokens within the database.&#x20;
 
+## SQLite
+
+When using SQLite, PowerShell Universal stores all data within a single file database local to the PowerShell Universal application. We recommend SQLite over LiteDB for new installations as it is more widely used and supported.&#x20;
+
+### Configuration SQLite
+
+You can configure SQLite by updating the `appsettings.json` file.&#x20;
+
+```json
+ "Plugins": [
+    "SQLite"
+  ],
+  "Data": {
+    "ConnectionString": "Data Source=%ProgramData%\\UniversalAutomation\\psu.db",
+  },
+```
+
 ## LiteDB
 
-By default, PowerShell Universal stores all data within a single file database local to the PowerShell Universal application.&#x20;
+Using LiteDB, PowerShell Universal stores all data within a single file database local to the PowerShell Universal application.&#x20;
 
 ### Configuring LiteDB
 
