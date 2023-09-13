@@ -49,3 +49,5 @@ Syntax errors will be shown as red squiggles within the editor. Hovering over th
 The PowerShell Universal editor automatically integrates with PSScriptAnalyzer when it is installed on the PSU server. PSScriptAnalyzer will run against PowerShell scripts while you author them in the admin console. Warnings will be presented inline as well as an alert at the top of the editor.&#x20;
 
 Click the alert to be navigated to the first error or warning.&#x20;
+
+As for version 4.1, you can now specify a [PSScriptAnalyzerSettings.psd1](https://learn.microsoft.com/en-us/powershell/utility-modules/psscriptanalyzer/using-scriptanalyzer?view=ps-modules) in the root of your repository to allow for configuration of the analysis within PowerShell Universal.&#x20;
