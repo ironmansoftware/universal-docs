@@ -30,7 +30,7 @@ In some environments, it may be necessary to specify the domain name in the user
 
 ### Database
 
-The database vault stores secrets within the PowerShell Universal database. These secrets are encrypted using AES encryption using a customizable key. You can customize the key by specifying the Secrets \ Database \ EncryptionKey.&#x20;
+The database vault stores secrets within the PowerShell Universal database. These secrets are encrypted using AES encryption using a customizable key. You can customize the key by specifying the Secrets \ Database \ EncryptionKey.
 
 #### appsettings.json
 
@@ -44,9 +44,9 @@ You can configure this setting in appsettings.json.
 }
 ```
 
-#### Environment Variable&#x20;
+#### Environment Variable
 
-You can configure this setting with an environment variable.&#x20;
+You can configure this setting with an environment variable.
 
 ```powershell
 $Env:Secrets__Database__EncryptionKey = "=b0ywQA@VOSdr&R7an5g&XK6NVO%s4Tf"
@@ -62,8 +62,7 @@ The `PSUSecretStore` vault is integrated with the Microsoft `SecretStore` module
 
 ### Az.KeyVault
 
-By default, we do not include the Azure Key Vault extension directly in PowerShell Universal
-As of Powershell Universal v4.0.11, a container including the required Az.Accounts and Az.KeyVault modules is avilable to allow you use KeyVault out of the box. This can be found on [Docker Hub](https://hub.docker.com/r/ironmansoftware/universal/tags?page=1&name=modules).
+By default, we do not include the Azure Key Vault extension directly in PowerShell Universal As of Powershell Universal v4.0.11, a container including the required Az.Accounts and Az.KeyVault modules is avilable to allow you use KeyVault out of the box. This can be found on [Docker Hub](https://hub.docker.com/r/ironmansoftware/universal/tags?page=1\&name=modules).
 
 Below you will find how to configure it. This example uses an Azure hosted web-app version of PowerShell Universal.
 
@@ -123,7 +122,7 @@ See [Environments](../config/environments.md#variables) for more information.
 
 ## Secret Scope
 
-To access secrets that you have added to PowerShell Universal, you can use the `$Secret` scope. For example, if you defined a secret named `Credential`, you could access that secret anywhere with the secret scope. You cannot set secrets using the secret scope.&#x20;
+To access secrets that you have added to PowerShell Universal, you can use the `$Secret` scope. For example, if you defined a secret named `Credential`, you could access that secret anywhere with the secret scope. You cannot set secrets using the secret scope.
 
 ```powershell
 Invoke-Command -Credential $Secret:Credential { Write-Host "Hello" }
@@ -131,7 +130,7 @@ Invoke-Command -Credential $Secret:Credential { Write-Host "Hello" }
 
 ### Access Variables by Name
 
-You can access variables by name using the `$Secret:` prefix.&#x20;
+You can access variables by name using the `$Secret:` prefix.
 
 ```powershell
 # PSCredential
@@ -157,7 +156,7 @@ You can access the secret scope dynamically by using `Get-Item`. The secret scop
 
 ### ForEach-Object -Parallel
 
-In order to use secrets when using `ForEach-Object` with the `-Parallel` parameter, you will need to take advantage of the `$using` keyword.&#x20;
+In order to use secrets when using `ForEach-Object` with the `-Parallel` parameter, you will need to take advantage of the `$using` keyword.
 
 ```powershell
 1..5 | ForEach-Object -Parallel {
@@ -166,8 +165,6 @@ In order to use secrets when using `ForEach-Object` with the `-Parallel` paramet
 ```
 
 ## Configuring the `PSUSecretStore` Password
-
-
 
 By default, the `PSUSecretStore` vault password is stored within `appsettings.json` in Secrets \ SecretStore \ Password.
 
@@ -218,6 +215,9 @@ Below are variables that are available in apps in addition to the global variabl
 | $PSUAppToken     | The app token of the current user. Only available when -GrantAppToken is enabled.                                 | string                                                   |
 | $PSUComputerName | The URL of the PSU server. Only available when -GrantAppToken is enabled.                                         | string                                                   |
 | $DashboardName   | The name of the current app                                                                                       | string                                                   |
+| $Query           | The query string parameters from the URL of the app                                                               | Hashtable                                                |
+| $RefreshToken    | The refresh token when using OpenID Connect                                                                       | string                                                   |
+| $AccessToken     | The app token when using OpenID Connect                                                                           | string                                                   |
 
 ### Scripts
 
