@@ -94,11 +94,16 @@ New-UDApp -Title 'Pages' -Pages $Pages
 
 ### Query string parameters
 
-Query string parameters are passed to pages and other endpoints as variables.
+Query string parameters are passed to pages and other endpoints as a hashtable variable called `$Query`.&#x20;
 
 For example, if you visited a page with the following query string parameter: `http://localhost:5000/dashboard/Page1?test=123`
 
-You would then have access to a `$Test` variable that contained the value `123`.
+You would have access to this value using the following syntax:&#x20;
+
+```powershell
+$Query.test
+$Query['test']
+```
 
 ## Role-Based Access
 
