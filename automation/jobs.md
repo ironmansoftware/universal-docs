@@ -36,6 +36,26 @@ Any errors written to the error stream will be available on the Error tab within
 
 ![Errors](<../.gitbook/assets/image (1) (1) (1).png>)
 
+## Status
+
+Jobs will return various statuses depending on configuration and the result of the execution. Settings that can affect job status include:&#x20;
+
+* ErrorActionPreference
+* WarningActionPreference&#x20;
+
+The following table describes how PowerShell Universal treats statuses.&#x20;
+
+
+
+| Status              | Description                                          | Suppress                                        |
+| ------------------- | ---------------------------------------------------- | ----------------------------------------------- |
+| Error               | A script had a non-terminating error.                | Set ErrorActionPreference to SilentlyContinue   |
+| Warning             | A script had a warning.                              | Set WarningActionPreference to SilentlyContinue |
+| Failed              | A script had a terminating error.                    | Handle the terminating error or catch it.       |
+| Waiting on Feedback | A script is waiting on feedback, such as Read-Host.  | Avoid user callbacks such as read-host.         |
+| Running             | The script is currently running.                     | N\A                                             |
+| Queued              | The script is currently queued to run.               | N\A                                             |
+
 ## Feedback
 
 Some jobs will require feedback. Any script that contains a `Read-Host` call will wait until there is user interaction with that job. The job will be in a Waiting for Feedback state, and you can respond to that feedback by click the Response to Feedback button on the job page.
