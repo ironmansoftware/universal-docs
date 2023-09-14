@@ -72,3 +72,34 @@ The search bar will search for log messages containing the search string.
 
 <figure><img src="../.gitbook/assets/image (115).png" alt=""><figcaption><p>Log VIewer</p></figcaption></figure>
 
+## Example: ELK Stack
+
+You can use the TCP logging target to store and parse log messages in ELK stack. For the purpose of this example, we will use the [docker-elk repository](https://github.com/deviantony/docker-elk).&#x20;
+
+Clone the docker-elk repository and run the following commands in the repository.
+
+```
+docker-compose up setup
+docker-compose up
+```
+
+Once run, you will have ELK stack running. You can visit the web console by navigating to `http://localhost:5601`.
+
+The default username is elastic and the password is changeme.&#x20;
+
+In PowerShell Universal, you will want to create a logging target and send TCP events to `tcp://localhost:50000`.
+
+```powershell
+New-PSULoggingTarget -Type "TCP" -Level "Verbose" -Properties @{
+    hostName = 'tcp://localhost'
+    port     = '50000'
+} -Scope "User"
+```
+
+The above configuration will send all User scope log messages to Logstack with the TCP connection. Underneath the Observability section in the console, navigate to the Logs \ Stream page.&#x20;
+
+<figure><img src="../.gitbook/assets/image (580).png" alt=""><figcaption></figcaption></figure>
+
+From here you will be able to search and view log messages from Universal.&#x20;
+
+<figure><img src="../.gitbook/assets/image (581).png" alt=""><figcaption></figcaption></figure>
