@@ -4,6 +4,23 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.1.1 - 9/18/2023
+
+#### Apps
+
+* Fixed an issue where the admin link would not work properly in a nested IIS site (#2672)
+* Fixed an issue where Get-UDElement would display errors when a property did not exist instead of returning $null
+* Fixed an issue where the date picker would not be visible in dark themes (#2669)
+* Fixed an issue where PromptForChoice wouldn't behavior properly when run twice on the same page
+
+#### APIs
+
+* Fixed aan issue where Send-PSUEvent hub did not work out of the integrated environment (#2674)
+
+#### Platform
+
+* Fixed an issue where certain roles would forward to a missing page rather than the admin console
+
 ## 4.1.0 - 9/12/2023
 
 #### APIs
