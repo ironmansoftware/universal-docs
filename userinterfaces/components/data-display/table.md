@@ -226,7 +226,7 @@ New-UDTable -Columns $Columns -LoadData {
 
 ### Retrieving Displayed Data
 
-You may want to allow the user to take action on the current set of displayed data. To do so, use `Get-UDElement` in the input object you want to retrieve the data from and get the table by Id. Once you have the element, you can use the `CurrentData` property of the element to get an array of currently displayed rows.
+You may want to allow the user to take action on the current set of displayed data. To do so, use `Get-UDElement` in the input object you want to retrieve the data from and get the table by Id. Once you have the element, you can use the `Data` property of the element to get an array of currently displayed rows.
 
 ```powershell
 $Columns = @(
