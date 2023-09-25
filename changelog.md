@@ -4,6 +4,16 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.9.18 - 9/25/2023
+
+#### Automation
+
+* Fixed an issue where saving scripts would be slow if there were many scripts defined
+
+#### Dashboards
+
+* Fixed an issue where New-UDElement would leak event handlers (#2692)
+
 ## 3.9.17 - 8/28/2023
 
 #### APIs
