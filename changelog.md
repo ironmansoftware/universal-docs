@@ -4,6 +4,22 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.1.2 - 9/25/2023
+
+#### Apps
+
+* Fixed an issue where -OnLoading of New-UDPage would not have an affect
+* Fixed an issue where New-UDElement would leak event handlers (#2692)
+
+#### Automation
+
+* Fixed an issue where saving scripts would be slow if there were many scripts defined
+
+#### Platform
+
+* Fixed the default connection string in the MSI to work with SQLite.
+* Fixed an issue with viewing log entries in the admin console when using SQLite.
+
 ## 4.1.1 - 9/18/2023
 
 #### Apps
