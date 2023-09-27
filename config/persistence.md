@@ -60,6 +60,16 @@ You can configure PowerShell Universal to store data within a Microsoft SQL Data
 
 The PowerShell Universal instances will share a single job queue and only one instance will run a job either on the schedule, as a trigger, or manually. All data about jobs will be stored in the centralized database.&#x20;
 
+### Azure SQL
+
+We recommend using Azure Managed Identities when working with Azure SQL. An example connection string is shown below.&#x20;
+
+```
+Server=tcp:psudb.database.windows.net,1433;Initial Catalog=psu;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;Authentication=Active Directory Managed Identity;
+```
+
+A walkthrough on how to use [Managed Identity for Azure SQL can be found here](https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-sql).
+
 ### Manual Schema Install\Update
 
 In some environments, the PSU service may not have access to create schema in the database. In this scenario, you can manually install and update the schema by executing SQL files included with PowerShell Universal. Within the PowerShell Universal installation folder, you will find a `SQL` directory that includes two SQL files.&#x20;
