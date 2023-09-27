@@ -5,7 +5,7 @@ description: Performance profiler for PowerShell Universal.
 # Profiling
 
 {% hint style="info" %}
-Available in PowerShell Universal 2.8.2 or later. Profiling only works for the integrated environment.
+Profiling only works for the integrated environment.
 {% endhint %}
 
 PowerShell Universal provides a performance profiler for debugging issues where the platform may exhibit slow responses. This is primarily useful when building Dashboards.&#x20;
@@ -52,18 +52,18 @@ Viewing the profile for this API would list the block we measured.&#x20;
 
 ![](<../.gitbook/assets/image (556).png>)
 
-## Profiling a Dashboard
+## Profiling an App
 
 {% hint style="info" %}
 `Measure-UDBlock` is an alias for `Measure-PSUBlock`
 {% endhint %}
 
-You can use the built-in profiler with Dashboards. By default, certain internal action timings are recorded. You can also use the `Measure-PSUBlock` cmdlet to measure specific blocks within your dashboard.&#x20;
+You can use the built-in profiler with Apps. By default, certain internal action timings are recorded. You can also use the `Measure-PSUBlock` cmdlet to measure specific blocks within your dashboard.&#x20;
 
-For example, this dashboard uses `Measure-UDBlock` to measure the performance of the `Start-Sleep` cmdlet. The result is the block will take one second to execute.&#x20;
+For example, this app uses `Measure-UDBlock` to measure the performance of the `Start-Sleep` cmdlet. The result is the block will take one second to execute.&#x20;
 
 ```powershell
-New-UDDashboard -Title 'Dashboard' -Content {
+New-UDApp -Title 'App' -Content {
     New-UDDynamic -Id 'MyElement' -Content {
         Measure-UDBlock -Name 'WithinDashboard' -ScriptBlock {
             Start-Sleep 1
@@ -72,9 +72,9 @@ New-UDDashboard -Title 'Dashboard' -Content {
 }
 ```
 
-When reviewing requests within the profiler, you will want to look for `UDComponent\ElementPost` and `UDComponent\Element`. These are requests for elements within Dashboards.&#x20;
+When reviewing requests within the profiler, you will want to look for `UDComponent\ElementPost` and `UDComponent\Element`. These are requests for elements within Apps.&#x20;
 
-Below is the example output from the dashboard shown above. Notice that the URL includes the element's ID `MyElement`. You'll also notice that the `WithinDashboard` block takes about 1 second.&#x20;
+Below is the example output from the app shown above. Notice that the URL includes the element's ID `MyElement`. You'll also notice that the `WithinDashboard` block takes about 1 second.&#x20;
 
 ![Dashboard Timing](<../.gitbook/assets/image (264).png>)
 
