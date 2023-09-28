@@ -12,7 +12,7 @@ OpenID Connect is an authentication layer on top of OAuth 2.0, an authorization 
 
 This document will outline the steps necessary to configure AzureAD OpenID Connect and use it with Universal.
 
-## Configuring Azure Active Directory
+## Configuring Azure Active Directory (Entra ID)
 
 Within the Azure Portal, navigate to your Azure Active Directory blade. Next, click the App registrations node and then click New registration.
 
@@ -131,6 +131,33 @@ Connect-AzureAD
        [-Confirm]
        [<CommonParameters>]
 ```
+
+### Refresh Tokens
+
+You can configure Azure Active Directory and PowerShell Universal to provide refresh tokens for requesting new tokens if the access token expires. To do so, you will need to enable offline\_access in your app registration.&#x20;
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>offline_access</p></figcaption></figure>
+
+When configuring PowerShell Universal, you need to request the `offline_access` scope and set SaveTokens to true and use the id\_token response type.&#x20;
+
+```json
+"OIDC": {
+    "Enabled": "true",
+    "CallbackPath": "/auth/signin-oidc",
+    "ClientID": "----",
+    "ClientSecret": "---",
+    "Resource": "https://graph.microsoft.com",
+    "Authority": "https://login.microsoftonline.com/----",
+    "ResponseType": "code id_token",
+    "SaveTokens": "true",
+    "CorrelationCookieSameSite": "",
+    "UseTokenLifetime": true,
+    "Scope": "openid profile groups offline_access",
+    "GetUserInfo": false
+},
+```
+
+Once configured, you can access the `$RefreshToken` variable in your scripts and apps.&#x20;
 
 ## Configuring Okta
 
