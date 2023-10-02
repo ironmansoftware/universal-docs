@@ -4,6 +4,12 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.1.4 - 10/2/2023
+
+#### Platform
+
+* Rolling back a change made to support Az.Accounts in the integrated environment as it was causing problems with OIDC and JWT authentication (#2718)
+
 ## 4.1.3 - 10/2/2023
 
 #### Automation
