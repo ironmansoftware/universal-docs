@@ -4,6 +4,26 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.1.3 - 10/2/2023
+
+#### Automation
+
+* Fixed an issue where viewing script properties with tags assigned would show a JavaScript error.
+* Fixed an issue where the rerun job button wasn't present for jobs with a warning status (#2708)
+* Fixed an issue where scripts edited in the admin console wouldn't reload parameters
+* Fixed an issue where retrying jobs wouldn't work when using SQL persistence (#2706)
+* Fixed an issue where parameter sets would not be available in the create schedule dialog (#2712)
+
+#### Apps
+
+* Fixed an issue where the View Code button would not work in the App Designer.
+* Fixed an issue where extra lines were added to event handlers in the App Designer.
+
+#### Platform
+
+* Fixed an issue where the ModuleRefreshInterval setting would not work after a restart of the service.
+* Fixed an issue where Az.Accounts could not be loaded into the integrated environment (#2681)
+
 ## 4.1.2 - 9/25/2023
 
 #### Apps
