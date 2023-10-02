@@ -4,6 +4,14 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.9.19 - 10/2/2023
+
+#### Automation
+
+* Fixed an issue where the rerun job button wasn't present for jobs with a warning status (#2708)
+* Fixed an issue where scripts edited in the admin console wouldn't reload parameters
+* Fixed an issue where retrying jobs wouldn't work when using SQL persistence (#2706)
+
 ## 3.9.18 - 9/25/2023
 
 #### Automation
