@@ -60,12 +60,12 @@ Viewing the profile for this API would list the block we measured.&#x20;
 
 You can use the built-in profiler with Apps. By default, certain internal action timings are recorded. You can also use the `Measure-PSUBlock` cmdlet to measure specific blocks within your dashboard.&#x20;
 
-For example, this app uses `Measure-UDBlock` to measure the performance of the `Start-Sleep` cmdlet. The result is the block will take one second to execute.&#x20;
+For example, this app uses `Measure-PSUBlock` to measure the performance of the `Start-Sleep` cmdlet. The result is the block will take one second to execute.&#x20;
 
 ```powershell
 New-UDApp -Title 'App' -Content {
     New-UDDynamic -Id 'MyElement' -Content {
-        Measure-UDBlock -Name 'WithinDashboard' -ScriptBlock {
+        Measure-PSUBlock -Name 'WithinDashboard' -ScriptBlock {
             Start-Sleep 1
         }
     }
