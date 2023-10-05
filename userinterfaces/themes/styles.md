@@ -19,7 +19,10 @@ New-UDStyle -Style '
     &:hover {
       color: white;
     }
-    .card {
+    .MuiCardHeader-root {
+        background-color: green !important;   
+    }
+    .MuiCardContent-root {
         background-color: green !important;   
     }' -Content {
         New-UDCard -Title 'Test' -Content {
