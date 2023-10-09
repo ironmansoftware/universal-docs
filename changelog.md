@@ -4,6 +4,23 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.1.5 - 10/9/2023
+
+#### APIs
+
+* Improved API performance
+
+#### Apps
+
+* Push -Dense down to children on New-UDList (#2677)
+
+#### Platform
+
+* Fixed a concurrency issue during authentication when using SQL persistence that could result in SQL exceptions
+* Fixed an issue where SQLite persistence would create an errant file and folder in the repository directory
+* Fixed an issue where SQLite persistence did not properly support environment variables.
+* Remote access is now supported for developer licenses.
+
 ## 4.1.4 - 10/2/2023
 
 #### Platform
