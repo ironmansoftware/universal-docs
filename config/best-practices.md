@@ -59,6 +59,29 @@ For example, you can use the sliding expiration to expire cache data if it isn't
 Set-PSUCache -Key 'Data' -Value (Get-Date) -SlidingExpiration (New-Timespan -Hours 1)
 ```
 
+### Reduce Log Level in Production
+
+The default log levels for PowerShell Universal are verbose. To improve the performance of the system, you can reduce log levels. This needs to be accomplished in two places.&#x20;
+
+First, you will want to reduce the System Log Level setting. This can be found in `appsettings.json`. Consider changing the level from Verbose to Warning or Error.&#x20;
+
+```json
+{
+    "SystemLogLevel": "Error"
+}
+```
+
+Second, you can adjust the logging targets to adjust levels or reduce the features that are logged.&#x20;
+
+```powershell
+New-PSULoggingTarget -Type "File" -Properties @{
+    path = "C:\ProgramData\PowerShellUniversal\log.txt"
+} -Level 'Error'
+
+New-PSULoggingTarget -Type "Database" -Properties @{
+} -Level 'Error'
+```
+
 ## APIs
 
 ### Avoid Returning Highly Complex Objects
