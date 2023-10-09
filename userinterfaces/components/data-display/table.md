@@ -209,6 +209,11 @@ New-UDTable -Columns $Columns -LoadData {
     {
         $Data = $Data | Where-Object -Property $Filter.Id -Match -Value $Filter.Value
     }
+    
+    if ($EventData.Search)
+    {
+        $Data = $Data | Where-Object { $_.Name -match $EventData.Search -or $_.Value -match $EventData.Search }
+    }
 
     $TotalCount = $Data.Count 
 
