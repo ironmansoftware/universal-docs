@@ -4,6 +4,36 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.1.6 - 10/16/2023
+
+#### APIs
+
+* Fixed an issue where the $Data variable was not populated.
+
+#### Apps
+
+* Fixed an issue where Windows authentication would display as anonymous in User Sessions for apps.
+* Fixed an issue where Sync-UDElement + New-UDElement cause event handlers to fail. (#2747)
+* Fixed an issue where New-UDDatePicker would return the current day rather than $null when no date was selected. (#2734)
+* Fixed an issue where New-UDDatePicker would return a string rather than a DateTime object (#2716)
+* Fixed vertical alignment of New-UDAlert -Dense (#2724)
+* Fixed an issue where Read-Host would return the previous value if Cancel was clicked the second time
+* Fixed an issue where Ok and Cancel would both return an empty string from Read-Host. Now cancel returns $null and Ok returns an empty string.
+* Make New-UDTransferList search case-insensitive (#2729)
+* $Query is now case-insensitive (#2752)
+* Fixed an issue where -Variant fullWidth didn't work on New-UDTabs
+* Add a delete pages button and tab to the admin console (#2755)
+
+#### Automation
+
+* Fixed an issue where Get-PSUJob -Id-RunId would behave differently depending on where you were running it (#2750)
+
+#### Platform
+
+* Adjusted the admin console build to avoid inline JavaScript
+* Removed Policy Defined from the App Token Role selector since it is not a valid value for tokens (#2739)
+* Fixed an issue where updating git settings would clear out the username and password (#2742)
+
 ## 4.1.5 - 10/9/2023
 
 #### APIs
