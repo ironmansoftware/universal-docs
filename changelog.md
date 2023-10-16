@@ -4,6 +4,17 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.9.20 - 10/16/2023
+
+#### Dashboards
+
+* Fixed an issue where dashboards could return a blank page.
+* Fixed an issue where -Variant fullWidth didn't work on New-UDTabs
+
+#### Platform
+
+* Fixed an issue where updating git settings would clear out the username and password (#2742)
+
 ## 3.9.19 - 10/2/2023
 
 #### Automation
