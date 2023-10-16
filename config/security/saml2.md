@@ -105,7 +105,7 @@ For Identity Provider Entity ID, you will need to retrieve the entity ID from th
 
 For Metadata Address, insert the Federation metadata document URL.
 
-For the Return URL, insert the URL of your PowerShell Universal server with the `/Saml/Acs` path.
+For the Return URL, insert the URL of your PowerShell Universal server with the `/Saml2/Acs` path.
 
 ```
 https://localhost/Saml2/Acs
@@ -127,7 +127,7 @@ You will be forwarded to Azure for login and redirected back to PowerShell Unive
 
 Any errors that occur will be listed in the PowerShell Universal log. If you fail to login, you can navigate to `/login` to login with a local account.
 
-### Ad
+
 
 ## Example: Okta
 
