@@ -4,6 +4,30 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.1.7 - 10/23/2023
+
+#### Apps
+
+* Fixed an issue where Read-Host Cancel would return an error when clicking the cancel button (#2769)
+* Fixed an issue where dashboards would fail to start or stop with a 500 error
+* Fixed an issue with variable scoping in rendered table rows (#2776)
+* Fixed an issue where New-UDAutocomplete -Value wouldn't work when -Multiple was specified (#2698)
+* Fixed an issue where certain formats of $EventData would return a DateTime rather than the expected string
+
+#### Automation
+
+* Fixed an issue where credential variables with roles could throw an exception when starting a job (#2762)
+* Fixed an issue where Invoke-PSUScript -Wait would throw an error (#2777)
+
+#### Platform
+
+* Fixed an issue where the secret provider did not honor environment variables (#2753)
+* Fixed an issue where logging for roles was not displaying properly (#2766)
+* SystemLogLevel now defaults to Information
+* Added error handling around PSScriptAnalyzer formatting
+* Enabled gRPC logging
+* Fixed a file locking issue with configuration files
+
 ## 4.1.6 - 10/16/2023
 
 #### APIs
