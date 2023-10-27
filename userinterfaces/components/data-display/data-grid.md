@@ -21,13 +21,10 @@ New-UDDataGrid -LoadRows {
         @{ Name = 'Tom'; Number = Get-Random}
         @{ Name = 'Sarah'; Number = Get-Random}
     )
-    @{
-        rows = $Data 
-        rowCount = $Data.Length
-    }
+    $Rows| Out-UDDataGridData -Context $EventData -TotalRows $Rows.Length
 } -Columns @(
-    @{ field = "name"}
-    @{ field = "number"}
+    New-UDDataGridColumn -Field name
+    New-UDDataGridColumn -Field number
 ) -AutoHeight $true
 ```
 
@@ -72,14 +69,12 @@ New-UDDataGrid -LoadRows {
     $Rows = 1..100 | % {
         @{ Name = 'Adam'; Number = Get-Random}
     }
-    @{
-        rows = $Rows
-        rowCount = $Rows.Length
-    }
-    
+    $Rows| Out-UDDataGridData -Context $EventData -TotalRows $Rows.Length
 } -Columns @(
-    @{ field = "name"; render = { New-UDTypography $EventData.number }}
-    @{ field = "number"}
+    New-UDDataGridColumn -Field name -Render {
+         New-UDTypography $EventData.number 
+    }
+    New-UDDataGridColumn -Field number
 ) -AutoHeight $true
 ```
 
@@ -97,15 +92,13 @@ To set a minimum and maximum width for a `flex` column set the `minWidth` and th
 New-UDDataGrid -LoadRows {  
     $Rows = 1..100 | % {
         @{ Name = 'Adam'; Number = "This column is a very long string. This column is a very long string. This column is a very long string. This column is a very long string. This column is a very long string. This column is a very long string."}
-    }
-    @{
-        rows = $Rows
-        rowCount = $Rows.Length
-    }
-    
+    }        
+    $Rows| Out-UDDataGridData -Context $EventData -TotalRows $Rows.Length
 } -Columns @(
-    @{ field = "name"; render = { New-UDTypography $EventData.number }}
-    @{ field = "number"; flex = 1.0}
+    New-UDDataGridColumn -Field name -Render {
+         New-UDTypography $EventData.number 
+    }
+    New-UDDataGridColumn -Field number -Flex 1.0
 ) -AutoHeight $true
 ```
 
@@ -122,21 +115,17 @@ The `-LoadRows` parameter is used to return data for the data grid. Table state 
 
 ### Paging
 
-To implement paging, you can access the `page` and `pageSize` properties of the `$EventData` variable.&#x20;
+To implement paging, you can access the `page` and `pageSize` properties of the `$EventData` variable. Out-UDDataGridData automatically implements paging.
 
 ```powershell
 New-UDDataGrid -LoadRows {  
     $Rows = 1..100 | % {
         @{ Name = 'Adam'; Number = Get-Random}
     } 
-    @{
-        rows = $Rows | Select-Object -First $EventData.pageSize -Skip ($EventData.page * $EventData.pageSize)
-        rowCount = $Rows.Length
-    }
-    
+    $Rows| Out-UDDataGridData -Context $EventData -TotalRows $Rows.Length
 } -Columns @(
-    @{ field = "name"; }
-    @{ field = "number"}
+    New-UDDataGridColumn -Field name
+    New-UDDataGridColumn -Field number
 ) -AutoHeight $true -Pagination
 ```
 
@@ -205,13 +194,10 @@ New-UDDataGrid -LoadRows {
         @{ Name = 'Tom'; Number = Get-Random }
         @{ Name = 'Sarah'; Number = Get-Random }
     )
-    @{
-        rows     = $Data 
-        rowCount = $Data.Length
-    }
+    $Data| Out-UDDataGridData -Context $EventData -TotalRows $Data.Length
 } -Columns @(
-    @{ field = "Name" }
-    @{ field = "number" }
+    New-UDDataGridColumn -Field name
+    New-UDDataGridColumn -Field number
 ) -AutoHeight $true -LoadDetailContent {
     Show-UDToast $Body
     New-UDAlert -Text $EventData.row.Name
@@ -240,13 +226,10 @@ New-UDDataGrid -LoadRows {
         @{ Name = 'Tom'; number = Get-Random }
         @{ Name = 'Sarah'; number = Get-Random }
     )
-    @{
-        rows     = $Data 
-        rowCount = $Data.Length
-    }
+    $Data| Out-UDDataGridData -Context $EventData -TotalRows $Data.Length
 } -Columns @(
-    @{ field = "Name"; editable = $true }
-    @{ field = "number" ; editable = $true }
+    New-UDDataGridColumn -Field name -Editable
+    New-UDDataGridColumn -Field number -Editable
 ) -AutoHeight $true -OnEdit {
     Show-UDToast "Editing $Body" 
 }
@@ -263,13 +246,10 @@ New-UDDataGrid -LoadRows {
         @{ Name = 'Tom'; Number = Get-Random}
         @{ Name = 'Sarah'; Number = Get-Random}
     )
-    @{
-        rows = $Data 
-        rowCount = $Data.Length
-    }
+    $Data| Out-UDDataGridData -Context $EventData -TotalRows $Data.Length
 } -Columns @(
-    @{ field = "name"}
-    @{ field = "number"}
+    New-UDDataGridColumn -Field name
+    New-UDDataGridColumn -Field number
 ) -AutoHeight $true -OnExport {
     $Data = $EventData | Select-Object -Expand name 
     Out-UDDataGridExport -Data $Data -FileName 'export.txt' | Out-String
@@ -278,7 +258,7 @@ New-UDDataGrid -LoadRows {
 
 ## Example: Static Data
 
-In this example, we generate an array of 10,000 records. We will create a new function, `Out-UDDataGridData` to manage the paging, sorting and filtering.&#x20;
+In this example, we generate an array of 10,000 records. We will create a new function, `Out-UDDataGridData` to manage the paging, sorting and filtering. This function is already included in the Universal module.&#x20;
 
 ```powershell
 function Out-UDDataGridData {
