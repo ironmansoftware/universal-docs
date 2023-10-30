@@ -4,6 +4,18 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.10.0 - 10/30/2023
+
+#### Dashboard
+
+* Merged New-UDDataGrid fixes from v4
+* Added New-UDDataGridColumn and Out-UDDataGridData
+* Fixed an issue where Get-PSUJob -Id-RunId would behave differently depending on where you were running it (#2750)
+
+#### Platform
+
+* Added -File to Sync-PSUConfiguration
+
 ## 3.9.20 - 10/16/2023
 
 #### Dashboards
