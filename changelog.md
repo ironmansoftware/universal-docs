@@ -11,6 +11,7 @@ description: Changelog for PowerShell Universal.
 * Fixed an issue where clicking off the Read-Host dialog would not be treated as a cancel
 * Fixed an issue where clicking cancel in PromptForChoice would result in an exception (#2806)
 * Fix issue with single char issue on New-UDTextbox (#2800)
+* Added $ENV:PSU\_APP\_PAGE\_MAX to allow for customizing the max number of page (tab) states are stored in memory per session, per dashboard.
 
 #### Automation
 
