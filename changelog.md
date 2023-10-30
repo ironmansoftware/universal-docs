@@ -4,6 +4,22 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.1.8 - 10/30/2023
+
+#### Apps
+
+* Fixed an issue where clicking off the Read-Host dialog would not be treated as a cancel
+* Fixed an issue where clicking cancel in PromptForChoice would result in an exception (#2806)
+* Fix issue with single char issue on New-UDTextbox (#2800)
+
+#### Automation
+
+* Fixed an issue where Invoke-PSUScript could throw an exception when -Wait is specified in a non-integrated environment while using SQL persistence
+
+#### Platform
+
+* Added -File to Sync-PSUConfiguration
+
 ## 4.1.7 - 10/23/2023
 
 #### Apps
