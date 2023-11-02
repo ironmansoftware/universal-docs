@@ -51,15 +51,92 @@ In addition to being able to customize the login page via PowerShell, you can al
 
 ![](<../.gitbook/assets/image (515).png>)
 
-## Customizing the login page with a Dashboard
+## Customizing the login page with an App
 
-You can override the login page with a dashboard by setting a dashboard's base URL to `/login`. You need to ensure that the dashboard does not require authentication.&#x20;
+You can override the login page with an app by setting an app's base URL to `/login`. You need to ensure that the app does not require authentication.&#x20;
 
 ```powershell
-New-PSUDashboard -Name 'Dashboard' -Path 'dashboard.ps1' -BaseUrl '/login'
+New-PSUApp -Name 'App' -Path 'app.ps1' -BaseUrl '/login'
 ```
 
 You will then need to implement the login features manually.&#x20;
+
+### Implementing an app-based login page
+
+This is an example of implementing an app-based login page using email addresses and passcodes. The user would enter their email address, the app would send a passcode to the account and cache it locally. Once the user redirects back to the app, they will be logged in.&#x20;
+
+The app used for login has two different modes. The first is when no query string parameters are specified. The second is when the user is redirected back to the app with the passcode.&#x20;
+
+```powershell
+New-UDApp -Content {
+    if ($Query["passcode"]) {
+        New-UDDynamic -Content {
+            $JavaScript = "fetch('http://localhost:5000/api/v1/signin', {
+            method: 'POST',
+            body: JSON.stringify({
+                username: '$($Query['email'])',
+                password: '$($Query['passcode'])'
+            }),
+            credentials: 'include',
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8'
+            }
+        })
+        .then((response) => response.json()).
+        then(() => {
+            window.location.href = 'http://localhost:5000/app2'
+        });"
+            Invoke-UDJavaScript -JavaScript $JavaScript
+        }
+    }
+    else {
+        New-UDForm -Content {
+            New-UDTextbox -Placeholder "Email" -Id 'email' -Type email
+        } -OnSubmit {
+            $Password = (New-Guid).ToString()
+            # Send Email Here with a link like: http://localhost:5000/app?email=email&passcode=$Password
+
+            # For Testing 
+            Set-UDClipboard -Data "http://localhost:5000/app/Home?email=$($EventData.email)&passcode=$Password" -ToastOnSuccess
+
+            # Set cache with email + passcode. User has 5 minutes to click link in email before it expires
+            Set-PSUCache -Key $EventData.email -Value $Password -AbsoluteExpirationFromNow ([TimeSpan]::FromMinutes(5))
+            New-UDAlert -Text "Please check your email!"
+
+        } -SubmitText "Send Login Email"
+    }
+}
+```
+
+The resulting app will look like this when loaded.&#x20;
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+After submitting the form, the following will be shown. Additionally, the passcode is cached into the server cache with `Set-PSUCache`.
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+A URL will be generated and, in this example, copied to the clipboard.&#x20;
+
+Within the admin console, navigate to the forms authentication method and add the following logic. This logic checks the cache to see if the passcode and email address combination is valid. When the user logs in, the JavaScript on the app will run and force a login. Once complete, the user will be redirected to another page. &#x20;
+
+```powershell
+param(
+        [PSCredential]$Credential
+    )
+
+
+    # Check the cache to see if this email + passcode combination is valid
+    $Passcode = Get-PSUCache -Key $Credential.UserName
+    if ($Passcode -eq $Credential.GetNetworkCredential().Password) {
+        New-PSUAuthenticationResult -Claims {
+            New-PSUAuthorizationClaim -Type ([System.Security.Claims.ClaimTypes]::Role) -Value 'Administrator'
+        } -UserName $Credential.UserName -Success
+    }
+
+    # Do standard form login here
+    New-PSUAuthenticationResult -ErrorMessage 'Bad username or password'
+```
 
 ## API
 

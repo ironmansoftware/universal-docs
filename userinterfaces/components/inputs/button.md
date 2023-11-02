@@ -85,7 +85,7 @@ New-UDButtonGroup -Children {
 }
 ```
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Button Group</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Button Group</p></figcaption></figure>
 
 ## API
 

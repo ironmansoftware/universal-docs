@@ -136,7 +136,7 @@ Connect-AzureAD
 
 You can configure Azure Active Directory and PowerShell Universal to provide refresh tokens for requesting new tokens if the access token expires. To do so, you will need to enable offline\_access in your app registration.&#x20;
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>offline_access</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>offline_access</p></figcaption></figure>
 
 When configuring PowerShell Universal, you need to request the `offline_access` scope and set SaveTokens to true and use the id\_token response type.&#x20;
 
