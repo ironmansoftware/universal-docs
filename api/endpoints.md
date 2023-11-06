@@ -224,6 +224,10 @@ Content           : [137,80,78,71,13,10,26,10,0,0,0,13,73,72,68,82,0,0,2,17,0,0,
                     0,…
 ```
 
+{% hint style="warning" %}
+`The multipart/form-data`content type is not supported for uploading files to APIs.&#x20;
+{% endhint %}
+
 You could also save the file into a directory.
 
 ```powershell
