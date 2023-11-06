@@ -4,6 +4,16 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.10.1 - 11/6/2023
+
+#### Apps
+
+* Fixed an issue with interactive cmdlets (\*-UDElement) not working and throwing a JavaScript error
+
+#### Platform
+
+* Fixed an issue where the secret provider did not honor environment variables (#2753)
+
 ## 3.10.0 - 10/30/2023
 
 #### Dashboard
