@@ -28,7 +28,7 @@ Proxy configuration can be done by clicking Settings \ General and configuring t
 
 ## Developer Licenses
 
-When a server license is purchased, you will be able to generate developer licenses for users building solutions for your team. Developer licenses do not allow remote access and are intended to be used locally. Do not use developer licenses when hosting a server for remote access for testing or production.
+When a server license is purchased, you will be able to generate developer licenses for users building solutions for your team. Their intent is to be used by individual developers in their local environments. Do not use developer licenses when hosting a server for remote access for testing or production. Instances of PowerShell Universal running with a Developer License will display a water mark in the admin console and any apps stating they are intended only for development purposes.&#x20;
 
 You can generate a developer license on the Settings \ License page by clicking the Generate Developer License button.&#x20;
 
