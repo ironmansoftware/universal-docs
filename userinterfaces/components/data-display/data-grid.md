@@ -21,7 +21,7 @@ New-UDDataGrid -LoadRows {
         @{ Name = 'Tom'; Number = Get-Random}
         @{ Name = 'Sarah'; Number = Get-Random}
     )
-    $Rows| Out-UDDataGridData -Context $EventData -TotalRows $Rows.Length
+    $Data | Out-UDDataGridData -Context $EventData -TotalRows $Rows.Length
 } -Columns @(
     New-UDDataGridColumn -Field name
     New-UDDataGridColumn -Field number
