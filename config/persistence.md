@@ -108,7 +108,7 @@ None
 
 _Which versions of Windows Server are supported?_
 
-Currently Supported versions by Microsoft - Windows Server 2012 R2 and onwards. Currently, the extended end date for support for 2012 R2 from Microsoft is October 10, 2023, at which time we will drop support for the operating system.
+Currently Supported versions by Microsoft - Windows Server 2016 and onwards. Currently, the extended end date for support for 2012 R2 from Microsoft is October 10, 2023, at which time we will drop support for the operating system.
 
 #### Database Maintenance & Backup
 
