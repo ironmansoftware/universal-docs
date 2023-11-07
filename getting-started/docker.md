@@ -53,13 +53,13 @@ Server: Docker Engine - Community
 
 #### Docker Compose
 
-Docker Compose v1 uses the command `docker-compose`. As of June 2023 support ends for Docker Compose v1.
+Docker Compose v1 uses the command `docker-compose`. As of June 2023, support ends for Docker Compose v1.
 
 Docker Compose v2 uses the command `docker compose`.
 
-If you are using Docker Compose v1 please adjust the commands accoridingly. More infromation on Docker Compose can be found [here](https://docs.docker.com/compose/).
+If you are using Docker Compose v1 please adjust the commands accordingly. More information on Docker Compose can be found [here](https://docs.docker.com/compose/).
 
-Run one of the following commands to check Docker Compose is installed:
+Run one of the following commands to confirm that Docker Compose is installed:
 
 Docker Compose v1:
 
@@ -122,9 +122,9 @@ For more examples and ideas, visit:
 
 ### Using the pre-built Container
 
-In order to run PowerShell Universal, you can use the provided container image. The docker image is available on [Docker Hub](https://hub.docker.com/r/ironmansoftware/universal) .
+In order to run PowerShell Universal, you can use the provided container image. The docker image is available on [Docker Hub](https://hub.docker.com/r/ironmansoftware/universal).
 
-The prebuilt version allows you to run all free and paid features of PowerShell Universal.
+The prebuilt version supports both free & paid features of PowerShell Universal.
 
 You can start the container by pulling the image and then running a container with the default port bound.
 
@@ -408,7 +408,7 @@ The module container images include the following modules.&#x20;
 
 ## Summary
 
-This has been a very basic "How get get started" which allows you to get started running or building PSU Containers. All souces for commands have been linked in the referances session.
+This has been a very basic "How to Get Started" which will enable you to get started running or building PSU Containers. All sources for commands have been linked in the references section below.
 
 ## References
 
