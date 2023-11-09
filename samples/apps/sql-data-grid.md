@@ -27,7 +27,7 @@ New-UDDynamic -Id "DynamicTable" {
       New-UDDataGrid -ShowPagination -PageSize 10 -RowsPerPageOptions @(10, 25, 50, 100, 200) -CheckboxSelection -LoadRows {
 ```
 
-The `-LoadRows` event handler is where the bulk of the work is done. It's broken down into the following steps.&#x20;
+The `-LoadRows` event handler does much of the work but custom columns also provide an avenue for updating the database. We'll break down this example below.
 
 ### Columns
 
