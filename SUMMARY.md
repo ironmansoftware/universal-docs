@@ -185,6 +185,7 @@
   * [Dynamic Select Dropdown](samples/apps/dynamic-select-dropdown.md)
   * [Textbox Length Validation](samples/apps/textbox-length-validation.md)
   * [Tree View Font Size](samples/apps/tree-view-font-size.md)
+  * [SQL Data Grid](samples/apps/sql-data-grid.md)
 
 ## Changelogs
 
