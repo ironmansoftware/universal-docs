@@ -557,14 +557,26 @@ This example creates a button to refresh the table.
 
 ```powershell
 New-UDDynamic -Id 'table' -Content {
-    $Data = Get-Service
-    New-UDTable -Data $Data -Paging
-} -LoadingComponent {
-    "Loading"
-}
+    $Data = @(
+        @{ Random = Get-Random }
+        @{ Random = Get-Random }
+        @{ Random = Get-Random }
+        @{ Random = Get-Random }
+        @{ Random = Get-Random }
+    )
+    
+    # Store in the page so we can get the current ID. 
+    # Using the same ID fails to update when the dynamic reloads.
+    $Page:Table = New-UDTable -Data $Data -Paging -ShowSelection
+    $Page:Table
+} 
 
 New-UDButton -Text 'Refresh Table' -OnClick {
     Sync-UDElement -Id 'table'
+}
+
+New-UDButton -Text 'Get Data' -OnClick {
+    Show-UDToast (Get-UDElement -Id $Page:Table.Id | ConvertTo-Json)
 }
 ```
 
