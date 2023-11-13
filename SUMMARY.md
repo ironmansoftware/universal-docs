@@ -131,6 +131,7 @@
 * [Modules](platform/modules.md)
 * [Monitoring](platform/monitoring.md)
 * [Notifications](platform/notifications.md)
+* [Plugins](platform/plugins.md)
 * [Published Folders](platform/published-folders.md)
 * [Templates](platform/templates.md)
 * [Translations](platform/translations.md)
