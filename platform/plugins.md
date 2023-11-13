@@ -8,7 +8,16 @@ Plugins are functionality that are not enabled by default. A publicly available 
 
 ## Enabling Plugins
 
-Plugins are enabled in `appsettings.json` or through environment variables. See [App Settings  ](../config/settings.md)for information on where to configure these options.&#x20;
+Plugins are enabled in `appsettings.json` or through environment variables. See [App Settings  ](../config/settings.md)for information on where to configure these options. Any changes made to the configuration will require a restart of the PowerShell Universal service.&#x20;
+
+```json
+{
+    "Plugins": [
+        "SQL",
+        "PowerShell.Language.CSharp"
+    }
+}
+```
 
 ## C# API Environment
 
@@ -81,6 +90,24 @@ You can access the PowerShell Universal service container within your endpoint b
 
 ```csharp
 var database = ServiceProvider.GetService(typeof(IDatabase));
+```
+
+## OpenTelemetry&#x20;
+
+**Identifier:** `PowerShellUniversal.Plugins.OpenTelemetry`
+
+OpenTelemetry is a collection of APIs, SDKs, and tools. Use it to instrument, generate, collect, and export telemetry data (metrics, logs, and traces) to help you analyze your software’s performance and behavior.
+
+The plugin enables integration with the technology. You can use [App Settings](../config/settings.md) to configure where to send data. PowerShell Universal currently only exposes a single OTLP endpoint configuration. The below configuration would work with Prometheus.
+
+```json
+{    
+    "OpenTelemetry": {
+        "Otlp": {
+            "Endpoint": "http://localhost:9090/api/v1/otlp/v1/metrics"
+        }
+    }
+}
 ```
 
 ## YARP&#x20;
