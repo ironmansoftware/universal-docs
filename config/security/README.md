@@ -148,6 +148,17 @@ These are the variables defined within the security scripts.
 | $RemoteIpAddress | The remote IP address of the request.          | string    |
 | $RemotePort      | The remote port of the request.                | string    |
 
+### Basic Authentication
+
+When calling API endpoints or the PowerShell Management API, you can use Basic authentication to pass in a user name and password. This will invoke the forms authentication and authorization scripts to valid the login. The username and password should be encoded as Base64 in the `username:password` format and sent in the Authorization header with a `Basic` prefix.&#x20;
+
+```powershell
+$credentials = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes("admin:admin"))
+Invoke-RestMethod $Env:UniversalUrl/api/v1/accessible -Headers @{
+    Authorization = "Basic $credentials"
+} 
+```
+
 ### Live Log
 
 You can use the live log view on the authentication page to view information about the script execution. The live log view will display PowerShell streams.
