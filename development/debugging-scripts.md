@@ -2,7 +2,15 @@
 
 Scripts that run within Universal run within background processes or runspaces which may make it hard to debug what is happening within a script. You can use cmdlets like Write-Debug and Write-Verbose to provide more information in logs for dashboards and jobs.
 
+## Visual Studio Remote Debugger
+
+Using the PowerShell [Universal Visual Studio Code Extension](visual-studio-code-extension.md), you can connect directly to your PowerShell scripts running PowerShell Universal.&#x20;
+
 ## Integrated Debugger
+
+{% hint style="danger" %}
+The integrated debugger is deprecated and will be removed in version 5. It has been replaced with the Visual Studio Code extension for PowerShell Universal.
+{% endhint %}
 
 {% hint style="info" %}
 Requires a [license](https://ironmansoftware.com/pricing/powershell-universal). Debugging is not supported in Windows PowerShell.

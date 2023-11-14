@@ -58,23 +58,11 @@ You can manage APIs with the extension. You will see a list of APIs. You can cli
 
 ![](<../.gitbook/assets/image (392).png>)
 
-### Dashboards
+### Apps
 
-You can manage dashboards with the extension. You will see a list of dashboards underneath this section. You can open the dashboards.ps1 script, open the a single dashboard's script, restart a dashboard and view dashboards. When you open a dashboard script, the dashboard modules will automatically be loaded so that IntelliSense works in VS Code.&#x20;
+You can manage apps with the extension. You will see a list of apps underneath this section. You can open the dashboards.ps1 script, open a single app's script, restart an app and view apps.&#x20;
 
 ![](<../.gitbook/assets/image (492).png>)
-
-#### Debug Dashboard Process
-
-{% hint style="info" %}
-Debugging a dashboard process only works when running PowerShell Universal locally and as the same user you are logged in as.&#x20;
-{% endhint %}
-
-You can connect the Visual Studio debugger to the dashboard process by right clicking on the dashboard and click Debug Dashboard Process. This requires the PowerShell extension for Visual Studio Code.&#x20;
-
-![](<../.gitbook/assets/image (545).png>)
-
-After connecting the debugger, you can run commands such as `Get-Runspace` and `Debug-Runspace` to begin debugging aspects of your dashboard.&#x20;
 
 #### View Dashboard Logs
 
@@ -87,6 +75,22 @@ You can view dashboard logs by right clicking on the dashboard and clicking View
 You can manage scripts with the extension. You will see a list of available scripts underneath this section. You can edit the scripts.ps1, edit an individual script and run scripts. When running scripts, you will receive feedback about the status of the script. Scripts with parameters are not supported in VS Code. You can still run them in PowerShell Universal.&#x20;
 
 ![](<../.gitbook/assets/image (346).png>)
+
+## Debugging
+
+{% hint style="info" %}
+The Administrator role is required for debugging scripts remotely.
+{% endhint %}
+
+As of PowerShell Universal v4.2, you can debug scripts remotely with the PowerShell Universal extension. To enable remote debugging, you will need to set the debugger environment in the settings. This is the process that will be started and will load PowerShell Editor Services.&#x20;
+
+```powershell
+Set-PSUSetting -DebuggerEnvironment 'pwsh'
+```
+
+When connected to your PowerShell Universal instance, you can expand Platform \ Processes and then locate the process you wish to debug. If you use the `Wait-Debugger` cmdlet in your scripts, they will be displayed within the process and runspace drop down. Click the Attach Runspace command to begin debugging your script.&#x20;
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ## Sample Browser
 

@@ -97,6 +97,6 @@ Retrieve the value of the select from another component.
 * [New-UDSelectOption](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDSelectOption.txt)
 * [New-UDSelectGroup](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDSelectGroup.txt)
 
-***
+
 
 ###
