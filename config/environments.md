@@ -137,7 +137,35 @@ PowerShell Universal includes an agent process that can be executed outside of t
 
 The Agent environment also supports run as credentials.&#x20;
 
-## Windows PowerShell Compatiblity
+## Minimal Environments
+
+Minimal environments allow for running scripts in command line applications that do not integrate with the PowerShell Universal hosting environment. PowerShell Universal captures `STDOUT` and `STDERR` and displays it within the job log. Some use cases for minimal environments include:&#x20;
+
+* Python Scripts
+* PowerShell Scripts with Problematic Modules
+
+Minimal environments do not support the following:
+
+* Feedback
+* Progress
+* Secrets
+* Universal Integrated Cmdlets
+
+Minimal environments will receive variable values as environment variables. When defining a minimal environment, you can use the `{scriptPath}` replacement string to setup the arguments for the environment to set the proper path when running the script.&#x20;
+
+For example, the following creates PowerShell 7 environment that does not load the PowerShell Universal hosting libraries.&#x20;
+
+```powershell
+New-PSUEnvironment -Name 'Minimal' -Path 'pwsh' -Arguments "-File {scriptPath}" -Variables @('*') -Minimal
+```
+
+To create a Python environment, you could do the following.&#x20;
+
+```powershell
+New-PSUEnvironment -Name 'Python' -Path 'python' -Arguments "{scriptPath}" -Variables @('*') -Minimal
+```
+
+## Windows PowerShell Compatibility
 
 Windows PowerShell Compatibility is a feature of PowerShell 7. When commands and modules are not available in PowerShell 7, the platform will automatically start a Windows PowerShell process in the background and perform local remoting from the PowerShell 7 process. This achieves backwards compatibility with Windows PowerShell modules.&#x20;
 
