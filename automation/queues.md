@@ -7,7 +7,7 @@ description: Custom job queues for scripts.
 
 
 {% hint style="danger" %}
-Queues are deprecated and will be removed in version 5. They have been replaced by Computer Groups.
+Queues are deprecated and will be removed in version 5. They have been replaced by [Computer Groups](../platform/computers.md#computer-groups).
 {% endhint %}
 
 You can assign computers to queues by using application settings. By default, every computer is assigned to the default queue and a queue specific to the computer itself. When you assign a computer to a custom queue, that queue will be available in the admin console and you can use the queue for ad-hoc script execution and schedules.&#x20;
