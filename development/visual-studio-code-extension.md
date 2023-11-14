@@ -118,12 +118,6 @@ The extension will check the version of the Universal and UnviersalDashboard Pow
 
 The Connections array allow for defining multiple PowerShell Universal instance connections.
 
-### Local Editing
-
-Local editing causes files to be edited locally rather than via the management API. It will open files from the repository folder on disk and edit those files. PowerShell Universal will listen to file changes and reload those files accordingly.&#x20;
-
-When local editing is disabled, the contents of the files will be sent to the management API. This is required for remote systems or on systems where PowerShell Universal is not running as the same user as the on you are logged in as.&#x20;
-
 ### Samples Directory
 
 This is the directory to store the PowerShell Universal samples.&#x20;
