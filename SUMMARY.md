@@ -127,6 +127,7 @@
 ## Platform
 
 * [Cache](platform/cache.md)
+* [Computers](platform/computers.md)
 * [Middleware](platform/middleware.md)
 * [Modules](platform/modules.md)
 * [Monitoring](platform/monitoring.md)
