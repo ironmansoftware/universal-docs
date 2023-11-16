@@ -8,7 +8,7 @@ description: Changelog for PowerShell Universal.
 
 #### Critical
 
-* Security Vulnerability Remote code execution in PowerShell Universal APIs (CVE-TBD)
+* Security Vulnerability Remote code execution in PowerShell Universal APIs (CVE-TBD) - [More Information](https://blog.ironmansoftware.com/powershell-universal-apis-cve/)
 
 #### Apps
 
