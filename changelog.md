@@ -4,6 +4,16 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.2.1 - 11/16/2023
+
+#### Critical
+
+* Security Vulnerability Remote code execution in PowerShell Universal APIs (CVE-TBD)
+
+#### Apps
+
+* Disabled service worker registration for apps to prevent caching of the index.html file (#2855)
+
 ## 4.2.0 - 11/14/2023
 
 #### APIs
@@ -100,6 +110,12 @@ description: Changelog for PowerShell Universal.
 
 * Queues configured in appsettings.json - Replaced with computer groups
 * Browser based debugging tools - Replaced with VS Code extension
+
+## 4.1.10 - 11/16/2023
+
+#### Critical
+
+* Security Vulnerability Remote code execution in PowerShell Universal APIs (CVE-TBD)
 
 ## 4.1.8 - 10/30/2023
 
