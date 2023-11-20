@@ -4,6 +4,18 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.2.2 - 11/20/2023
+
+#### Apps
+
+* Increased max websocket size to fix an issue with Get-UDElement failing on large objects like tables
+
+#### Platform
+
+* Fixed an issue where SAML2 logins would not work with the admin console (#2853)
+* Added Kestrel:CookiePrefix setting to allow for multiple instances of PSU to run on the same server without sharing cookies (#2846)
+* Fixed an issue where the git commit page would reload every second
+
 ## 4.2.1 - 11/16/2023
 
 #### Critical
