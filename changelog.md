@@ -18,6 +18,14 @@ description: Changelog for PowerShell Universal.
 
 * Fixed an issue where Windows Auth logins would not work with the admin console
 
+#### Desktop
+
+* Fixed an issue where Desktop mode would not start properly.
+
+#### Desktop
+
+* Fixed an issue where Desktop mode would not start properly.
+
 ## 4.2.2 - 11/20/2023
 
 #### Apps
