@@ -4,6 +4,20 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.2.3 - 11/21/2023
+
+#### Automation
+
+* Fixed an issue where Get-PSUJob would not return scheduled jobs (#2867)
+
+#### Apps
+
+* Fixed an issue where nested files changes would not cause an autodeploy (#2863)
+
+#### Platform
+
+* Fixed an issue where Windows Auth logins would not work with the admin console
+
 ## 4.2.2 - 11/20/2023
 
 #### Apps
