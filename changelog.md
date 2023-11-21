@@ -22,9 +22,9 @@ description: Changelog for PowerShell Universal.
 
 * Fixed an issue where Desktop mode would not start properly.
 
-#### Desktop
+#### Known Issues
 
-* Fixed an issue where Desktop mode would not start properly.
+* There is a known issue with Windows Auth and IIS that will be resolved in 4.2.4.&#x20;
 
 ## 4.2.2 - 11/20/2023
 
