@@ -4,6 +4,27 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.2.4 - 11/24/2023
+
+#### Apps
+
+* Fixed an issue where Get-UDPage could return pages from the wrong app.
+
+#### Automation
+
+* Fixed an issue with the PowerShell serializer when saving schedules with splatting enabled (#2866)
+
+#### Pages
+
+* Fixed an issue with submitting forms on Pages
+
+#### Platform
+
+* Fixed an issue with Windows authentication in IIS when attempting to access the admin console.
+* Fixed an issue where creating a new module in the admin console would return the error "Value Cannot Be Null (Parameter ‘s’)"
+* Fixed an issue where using the certificate thumb print for a certificate with a subject that didn't start with "CN=" would fail to load the certificate.
+* Fixed an issue where New-PSULoggingTarget could not be called remotely.
+
 ## 4.2.3 - 11/21/2023
 
 #### Automation
