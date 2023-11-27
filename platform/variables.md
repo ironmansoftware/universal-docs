@@ -100,9 +100,7 @@ Now, when you are creating secrets, you will see the AzureKeyVault available.
 
 ![](<../.gitbook/assets/image (310) (1) (1) (1).png>)
 
-To ensure the application is connected to Azure and the key vault is registered, create a startup trigger to run the script when the web app starts. We recommend setting a delay when for the trigger to allow the app to warm up.
-
-![](<../.gitbook/assets/image (45).png>)
+To ensure the application is connected to Azure and the key vault is registered, run the script within `initialize.ps1`. This script runs before variables are registered and vaults are located. You can create this file directly in the Repository\\.universal directory. It will be run during system startup before other configuration scripts are run.
 
 ## Importing Secret Variables
 
