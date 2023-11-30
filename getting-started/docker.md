@@ -297,7 +297,7 @@ services:
     restart: unless-stopped
     environment:
       - TZ=Europe/London
-      - Plugins:0=SQL
+      - Plugins__0=SQL
       - Data__ConnectionString = "Data Source=ServerName; Initial Catalog=DatabaseName; User Id=UserName; Password=UserPassword;"
       - NodeName=mynodename
     volumes:
