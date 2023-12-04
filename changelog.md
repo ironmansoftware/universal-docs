@@ -4,6 +4,41 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.2.5 - 12/4/2023
+
+#### APIs
+
+* Fixed an issue where endpoint docs would not show the required tag on required parameters
+* Fixed an issue where endpoint docs would not show array parameters properly
+* Fixed an issue where Connect-PSUEventHub would not work in Windows PowerShell
+* Fixed an issue with using basic authentication with endpoints
+
+#### Apps
+
+* Fixed an issue where Write-Progress wouldn't work properly with multiple connected clients (#2881)
+* Fixed an issue where apps would not remain running on multi-node systems (#2854)
+* Fixed an issue where New-UDUpload data would not be available in New-UDStepper (#2865)
+* Fixed an issue where dashboards would not start if they had ps1 files in the pages folder that did not return New-UDPage
+* Fixed an issue were the date filter type did not work in New-UDTable (#2898)
+* Fixed an issue where New-UDDatePicker and New-UDTimePicker could not be cleared (#2892)
+* Fixed an issue where New-UDDatePicker and New-UDTimePicker -TimeZone would have no effect. -TimeZone requires an IANA time zone ID. See https://mui.com/x/react-date-pickers/timezone/#supported-timezones for a list of valid time zones. (#2891)
+* Fixed an issue with UDMap not rendering properly (#2535)
+* Fixed an issue where New-UDSelect would fail when only a single item was present (#2916)
+
+#### Automation
+
+* Fixed an issue where certain views would not show scheduled jobs
+
+#### Platform
+
+* Fixed an issue where old git statuses would not be removed when resetting the git settings (#2884)
+* Fixed an issue where /api/v1/cache/keys returned keys with a PSUCache prefix.
+* Fixed an issue where logging targets would not honor the minimum level
+* Disabled progressive web app for management console
+* Fixed an issue where the -Minimal parameter couldn't be specified for environments in the Admin Console (#2908)
+* Fixed an issue with the git commit file selector (#2877)
+* Fixed an issue with published folders that started with a slash in the path (#2655)
+
 ## 4.2.4 - 11/24/2023
 
 #### Apps
