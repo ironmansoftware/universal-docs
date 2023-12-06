@@ -6,6 +6,11 @@ description: Changelog for PowerShell Universal.
 
 ## 4.2.5 - 12/4/2023
 
+**Known Issues**
+
+* [KB0054 - Git Sync: There is no tracking information for the current branch](https://support.ironmansoftware.com/portal/en/kb/articles/git-sync-there-is-no-tracking-information-for-the-current-branch)
+* [KB0055 - Blank Admin Console or No Updates After Upgrade](https://support.ironmansoftware.com/portal/en/kb/articles/kb0055-blank-admin-console-or-no-updates-after-upgrade)
+
 #### APIs
 
 * Fixed an issue where endpoint docs would not show the required tag on required parameters
