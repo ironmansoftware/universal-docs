@@ -4,6 +4,10 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 4.2.1 - 12/8/2023
+
+* Fixed an issue where updating dashboard or pages would cause issues if the service was restarted while the extension was activated.&#x20;
+
 ## 4.2.0 - 12/6/2023
 
 * Added remote debugger support (requires PSU 4.2.6 or later)
