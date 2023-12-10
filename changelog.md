@@ -4,6 +4,41 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.2.6 - 12/11/2023
+
+#### APIs
+
+* Fixed an issue where $Body was not available if param was specified (#2923)
+* Fixed an issue where the Roles property didn't populate properly when editing an endpoint in the Admin Console (#2920)
+* Fixed an issue where API Docs wouldn't handle basic types property for .INPUT and .OUTPUT (#2935)
+
+#### Apps
+
+* Fixed an issue where the live docs page logo wouldn't load properly in a nested site (#2919)
+* Fixed an issue where the live docs page would not render properly when a user had many roles (#2919)
+* Improved uncached client-side load time (#2926)
+* Fixed an issue where apps memory would usage was miscalculated (#2941)
+* Fixed an issue where pages would disappear if a PSU module with pages was installed (#2942)
+* Fixed an issue where the PSU service could crash when attempting to serialize the results of Get-Service (#2940)
+* Added support for custom app and page templates (#2927)
+
+#### Automation
+
+* Fixed an issue where the groom job could delete one time schedules before they ran (#2912)
+* Removed Suspend from Error Action script property (#2924)
+
+#### Platform
+
+* Fixed an issue where not all cookies would be prefixed by the Kestrel \ CookiePrefix setting (#2846)
+* Fixed an issue where git sync could lose its remote tracking branch
+* Authentication and Role pages now use the log viewer (#2929)
+* Log viewer defaults to text. Setting is now sticky (#2930)
+* Fixed an issue where JWT, Cookies and Basic auth would not work against APIs when Windows Auth was enabled (#2254)
+* Fixed an issue where PSEditorServices module was missing files
+* Fixed an issue where adding Computer Groups wouldn't update in the Admin Console until refreshing the page (#2938)
+* Fixed an issue where published folders would not work on Unix systems (#2947)
+* Added View Repository and Status buttons on the git commit page (#2917)
+
 ## 4.2.5 - 12/4/2023
 
 **Known Issues**
