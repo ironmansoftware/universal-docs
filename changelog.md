@@ -4,6 +4,27 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.10.3 - 12/13/2023
+
+```
+### Dashboards
+
+- Fixed an issue where the select filter for New-UDTable was imprecise. (#107)
+
+### Automation 
+
+- Fixed an issue where the groom job could delete one time schedules before they ran (#2912)
+- Fixed an issue where rerunning jobs with date\time parameters would not populate correctly (#2944)
+- Fixed an issue where Get-PSUJob -Id would not return the identity of the user that ran the script (#2945)
+- Fixed an issue where Reader roles couldn't see script names on the Scripts page. (#2847)
+```
+
+## 3.10.2 - 11/16/2023
+
+#### Critical
+
+* Security Vulnerability Remote code execution in PowerShell Universal APIs (CVE-TBD)
+
 ## 3.10.1 - 11/6/2023
 
 #### Apps
