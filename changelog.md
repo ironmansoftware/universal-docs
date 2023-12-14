@@ -38,6 +38,7 @@ description: Changelog for PowerShell Universal.
 * Fixed an issue where adding Computer Groups wouldn't update in the Admin Console until refreshing the page (#2938)
 * Fixed an issue where published folders would not work on Unix systems (#2947)
 * Added View Repository and Status buttons on the git commit page (#2917)
+* Verified PowerShell 7.4 support (#2860)
 
 ## 4.2.5 - 12/4/2023
 
