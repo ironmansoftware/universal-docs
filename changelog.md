@@ -4,6 +4,36 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.2.7 - 12/18/2023
+
+#### Apps
+
+* Fixed an issue with -Schema parameter of New-UDForm's example in cmdlet help (#2896)
+* Added Start Time and Deploy Time to app information (#2950)
+* Added $AppRoot and $AppFullUrl variables (#2928)
+* Fixed an issue where integrated apps didn't report memory usage (#2969)
+* Value must be unique for New-UDTransferList (#2952)
+* Fixed an issue where New-UDMap did not work with Get-UDElement (#2971)
+* Fixed an issue where New-UDMap did not work with Add-UDElement (#2973)
+* Fix issue with value on date type New-UDTextbox (#2961)
+* Fixed an issue where where the PSU icon would not show up in in the app live docs in a nested IIS site (#2953)
+
+#### Automation
+
+* Fixed an issue where scheduled jobs run using schedules without a name would not behave properly when filtering scheduled jobs (#2955)
+* Fixed an issue where rerunning jobs with date\time parameters would not populate correctly (#2944)
+* Fixed an issue where Get-PSUJob -Id would not return the identity of the user that ran the script (#2945)
+* Fixed an issue where the Job Completed trigger would not run on failed jobs (#2967)
+* Fixed an issue concurrency issue that could occur when starting jobs using SQL persistence (#2964)
+
+#### Platform
+
+* Fixed an issue with SQL errors while grooming jobs with child jobs (#2894)
+* Fixed an issue grooming idle terminals instances when the terminal was deleted (#2960)
+* Added Delete All Notifications button (#2959)
+* Fixed an issue where SQLite logging wouldn't work when using environment variables in the connection string (#2966)
+* Added CertificateTypes configuration option for Certificate Authentication (#2985)
+
 ## 4.2.6 - 12/11/2023
 
 #### APIs
