@@ -4,7 +4,7 @@ description: Describes how to set application settings and a definition of the s
 
 # App Settings
 
-Application settings can be found within the `appsettings.json` file within the installation directory. This file defines various settings you can apply to Universal. Although you can edit this file directly, it's recommended that you use one of the following methods to persist settings as the `appsettings.json` file in the installation directory will be overridden on upgrades.
+Application settings can be found within the `appsettings.json` file within the installation directory. This file defines various settings you can apply to PowerShell Universal. Although you can edit this file directly, it's recommended that you use one of the following methods to persist settings as the `appsettings.json` file in the installation directory will be overridden on upgrades.
 
 {% hint style="info" %}
 When installed from the MSI, the installation directory for PowerShell Universal is `${env:ProgramFiles(x86)}\Universal`.
@@ -67,7 +67,7 @@ You can specify the location of the `appsettings.json` file by using the `--apps
 },
 ```
 
-The Kestrel endpoints section allows you to configure the web server. This settings are not used when hosting in IIS. In this section you can configure options like HTTPS and the port that Universal is listening on.
+The Kestrel endpoints section allows you to configure the web server. This settings are not used when hosting in IIS. In this section you can configure options like HTTPS and the port that PowerShell Universal will listen on.
 
 Kestrel is the web server implementation for ASP.NET Core that PowerShell Universal uses. For more information on the configuration options for Kestrel, visit this [Microsoft Documentation page](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-3.1#listenoptionsusehttps).
 
@@ -253,6 +253,16 @@ WS-Federation authentication settings.
 | CallbackPath              | The path that the OIDC provider will call back to.                                                                       |
 | UseTokenLifetime          | If set to true, the cookie life time will be set to the token life time. This overrides the session time out value.      |
 | CorrelationCookieSameSite | [Correlation cookie same settings. ](https://docs.microsoft.com/en-us/aspnet/core/security/samesite?view=aspnetcore-5.0) |
+
+
+
+**Session timeout threshold (minutes)**
+
+| Key            | Description                                                             |
+| -------------- | ----------------------------------------------------------------------- |
+| SessionTimeout | Number of minutes before a logged in session times out (defaults to 25) |
+
+
 
 ### **JWT**
 
