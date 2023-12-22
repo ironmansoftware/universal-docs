@@ -20,7 +20,7 @@ Environments support setting the name, path, arguments, modules and variables.
 
 ### Name&#x20;
 
-The name of the environment. This name will be shown through out the rest of the platform when running scripts, configuring the API host environment and hosting dashboards.&#x20;
+The name of the environment. This name will be shown throughout the rest of the platform when running scripts, configuring the API host environment and hosting dashboards.&#x20;
 
 ### Path and Arguments
 
@@ -36,7 +36,7 @@ The modules list allows you to define zero or more modules to load in the PowerS
 
 The variables list allows you to define zero or more variables to load in the PowerShell runspaces for the environment. This list can consist of variable names from the [variable configuration](../platform/variables.md).&#x20;
 
-You can also use wild cards (`*`) to bring in multiple variables that match a pattern.
+You can also use wildcards (`*`) to bring in multiple variables that match a pattern.
 
 ### PSModulePath
 
@@ -46,9 +46,9 @@ You can use the `-PSModulePath` parameter of `New-PSUEnvironment` to configure a
 
 ![](<../.gitbook/assets/image (196).png>)
 
-Startup scripts are run once when the environment is first creates a runspace. For APIs, this happens whenever a runspace is created to service an HTTP request. This can happen for frequently if the server is busy. For dashboards, this will happen whenever a runspace is crated to service an endpoint being run while the user views a dashboard. Busy servers and dashboards with many dynamic components will do this more frequently. For jobs, this will happen once when the job is started.&#x20;
+Startup scripts are run once when the environment first creates a runspace. For APIs, this happens whenever a runspace is created to service an HTTP request. This can happen frequently if the server is busy. For apps (formerly known as dashboards), this will happen whenever a runspace is created to service an endpoint being run while the user views an app (dashboard). Busy servers and apps with many dynamic components will do this more frequently. For jobs, this will happen once when the job is started.&#x20;
 
-Startup scripts are relative to the Repository folder. For example, if you had a script in your repository named `startup.ps1`, you would just list the file name in the configuration. If you had a script in a directory, you would need to include that as well.&#x20;
+Startup scripts are relative to the Repository folder. For example, if you had a script in your repository folder named `startup.ps1`, you would just list the file name in the configuration. If you had a script in a directory, you would need to include that as well.&#x20;
 
 Platform variables are not available in startup scripts.
 
@@ -64,13 +64,13 @@ To select the environment to use, modify the `settings.ps1` file and include the
 
 Each script, job and schedule can use an environment. You can define environments for scripts by modifying the `scripts.ps1` and setting the `-Environment` parameter of `New-PSUScript`. To set the environment of a schedule, set the `-Environment` parameter of `New-PSUSchedule` in `schedules.ps1`. When invoking a script, you can also choose an environment to use.&#x20;
 
-### Dashboards
+### Apps (Dashboards)
 
-To use a particular environment for a dashboard, set the `-Environment` parameter of `New-PSUDashboard` in `dashboards.ps1`.
+To use a particular environment for an app (dashboard), set the `-Environment` parameter of `New-PSUApp` in `dashboards.ps1`.
 
 ### Security
 
-By default, authentication and authorization happen within the `Universal.Server.exe` process. To run these out of process, you can select an environment by setting the `-SecurityEnvironment` parameter of `Set-PSUSetting` in `settings.ps1`.&#x20;
+By default, authentication and authorization happen within the `Universal.Server.exe` process. To run these from a different process, you can select an environment by setting the `-SecurityEnvironment` parameter of `Set-PSUSetting` in `settings.ps1`. See [Security](https://docs.powershelluniversal.com/config/security#environment) for more information on this.
 
 ## Integrated Environment
 
@@ -88,7 +88,7 @@ Please read[ Best Practices ](best-practices.md#favor-non-integrated-environment
 
 ### Configuring
 
-The integrated environment is always available and you do not need to configured it directly. If you do want to import modules or set up persistent runspaces, you can set settings for the integrated environment in `environments.ps1`.&#x20;
+The integrated environment is always available and you do not need to configure it directly. If you do want to import modules or set up persistent runspaces, you can set settings for the integrated environment in `environments.ps1`.&#x20;
 
 {% code title=".universal\environments.ps1" %}
 ```powershell
@@ -126,7 +126,7 @@ You can run dashboards in the integrated environment. Select the integrated envi
 
 ### Module Support
 
-The integrated environment works by creating multiple ruspaces within the PowerShell Universal service. Some modules do not work well when run within a single process. Below is a list of modules with known issues running within the integrated environment.&#x20;
+The integrated environment works by creating multiple runspaces within the PowerShell Universal service. Some modules do not work well when run within a single process. Below is a list of modules with known issues running within the integrated environment.&#x20;
 
 * VMware.PowerCLI
 * Az
@@ -135,7 +135,7 @@ The integrated environment works by creating multiple ruspaces within the PowerS
 
 PowerShell Universal includes an agent process that can be executed outside of the PowerShell Universal service. Similar to the Integrated environment, it uses the current version of PowerShell that PowerShell Universal includes. Unlike the integrated environment, it spawns an external process and doesn't require PowerShell 7 be installed on the target machine.&#x20;
 
-The Agent environment also supports run as credentials.&#x20;
+The Agent environment also supports 'Run As' credentials.&#x20;
 
 ## Minimal Environments
 
@@ -153,7 +153,7 @@ Minimal environments do not support the following:
 
 Minimal environments will receive variable values as environment variables. When defining a minimal environment, you can use the `{scriptPath}` replacement string to setup the arguments for the environment to set the proper path when running the script.&#x20;
 
-For example, the following creates PowerShell 7 environment that does not load the PowerShell Universal hosting libraries.&#x20;
+For example, the following creates a PowerShell 7 environment that does not load the PowerShell Universal hosting libraries.&#x20;
 
 ```powershell
 New-PSUEnvironment -Name 'Minimal' -Path 'pwsh' -Arguments "-File {scriptPath}" -Variables @('*') -Minimal
@@ -181,7 +181,7 @@ The most common cause of this is using the Active Directory 1.0.0.0 module from 
 
 ### Disabling Implicit Windows PowerShell Compatibility
 
-You can disabled Windows PowerShell Compatibility via the settings within the environment's properties.&#x20;
+You can disable Windows PowerShell Compatibility via the settings within the environment's properties.&#x20;
 
 Windows PowerShell Compatibility is disabled for the Integrated environment by default and cannot be enabled.&#x20;
 
