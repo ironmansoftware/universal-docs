@@ -14,16 +14,16 @@ MSI downloads are available on our [download page](https://ironmansoftware.com/d
 
 The following table contains the parameters you can specify if running `msiexec` against our MSI install for automation purposes.&#x20;
 
-| Parameter              | Description                                                 | Default Value                                 |
-| ---------------------- | ----------------------------------------------------------- | --------------------------------------------- |
-| INSTALLFOLDER          | The installation folder for PowerShell Universal            | %ProgramFiles(x86)%\Universal                 |
-| TCPPORT                | The TCP port the HTTP server will be listening on.          | 5000                                          |
-| REPOFOLDER             | The repository folder to save the configuration files to.   | %ProgramData%\UniversalAutomation\Repository  |
-| CONNECTIONSTRING       | The LiteDB or SQL connection string.                        | %ProgramData%\UniversalAutomation\database.db |
-| DATABASETYPE           | LiteDB or SQL                                               | LiteDB                                        |
-| STARTSERVICE           | Whether to start the service after install (0 or 1)         | 1                                             |
-| SERVICEACCOUNT         | The service account to set for the Windows service          | None                                          |
-| SERVICEACCOUNTPASSWORD | The service account password to set for the Windows Service | None                                          |
+| Parameter              | Description                                                                                                                  | Default Value                                 |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| INSTALLFOLDER          | The installation folder for PowerShell Universal                                                                             | %ProgramFiles(x86)%\Universal                 |
+| TCPPORT                | The TCP port the HTTP server will be listening on.                                                                           | 5000                                          |
+| REPOFOLDER             | The repository folder to save the configuration files to.                                                                    | %ProgramData%\UniversalAutomation\Repository  |
+| CONNECTIONSTRING       | The LiteDB or SQL connection string.                                                                                         | %ProgramData%\UniversalAutomation\database.db |
+| DATABASETYPE           | LiteDB or SQL                                                                                                                | LiteDB                                        |
+| STARTSERVICE           | Whether to start the service after install (0 or 1)                                                                          | 1                                             |
+| SERVICEACCOUNT         | The service account to set for the Windows service. Use downlevel[^1][ format](#user-content-fn-2)[^2] of domain\username\*. | None                                          |
+| SERVICEACCOUNTPASSWORD | The service account password to set for the Windows Service. The password will be masked with \*\*\*'s in the installer log. | None                                          |
 
 ### Example
 
@@ -31,7 +31,7 @@ Below is an example of how to run `msiexec.exe` to install PowerShell Universal 
 
 {% code overflow="wrap" %}
 ```powershell
- Start-Process msiexec.exe -ArgumentList "/I C:\Users\adamr\Downloads\PowerShellUniversal.3.5.1.msi /q /norestart /L*V `"C:\users\adamr\desktop\msi.log.txt`" STARTSERVICE=0" -Wait -NoNewWindow
+ Start-Process msiexec.exe -ArgumentList "/I C:\Users\adamr\Downloads\PowerShellUniversal.4.2.7.msi /q /norestart /L*V `"C:\users\adamr\desktop\msi.log.txt`" STARTSERVICE=0 SERVICEACCOUNT=contoso\service_account SERVICEACCOUNTPASSWORD=ThisPasswordWillBeReplacedWithAsterisksInTheMSILogs" -Wait -NoNewWindow
 ```
 {% endcode %}
 
@@ -54,9 +54,9 @@ Start-Process .\Universal\Universal.Server.exe
 You can use the following command line on Linux to install and start PowerShell Universal.&#x20;
 
 ```
- wget https://imsreleases.blob.core.windows.net/universal/production/2.0.0/Universal.linux-x64.2.0.0.zip
+ wget https://imsreleases.blob.core.windows.net/universal/production/4.2.7/Universal.linux-x64.4.2.7.zip
  sudo apt install unzip 
- unzip Universal.linux-x64.2.0.0.zip -d PSU
+ unzip Universal.linux-x64.4.2.7.zip -d PSU
  chmod +x ./PSU/Universal.Server
  ./PSU/Universal.Server
 ```
@@ -129,3 +129,7 @@ It may be necessary to exclude certain executables that will run PowerShell scri
 ## Next Steps
 
 At this point, Universal is up and running. You can navigate to the admin console by visiting `http://localhost:5000` by default. The default username is `admin` with a password of `admin`.
+
+[^1]: 
+
+[^2]: See [https://learn.microsoft.com/en-us/windows/win32/secauthn/user-name-formats#down-level-logon-name](https://learn.microsoft.com/en-us/windows/win32/secauthn/user-name-formats#down-level-logon-name) for more information on the "downlevel" username format that the installer expects
