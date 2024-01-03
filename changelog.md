@@ -4,6 +4,41 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.2.8 - 1/3/2023
+
+#### APIs
+
+* Fixed an issue where the API tester in the admin console wouldn't work in a nested IIS site (#3004)
+
+#### Apps
+
+* Fixed an issue where -Locale on New-UDDatePicker and New-UDTimePicker had no effect (#2988)
+* Added Variables page to live documentation (#2991)
+* Added -IgnoreResult to Invoke-UDJavaScript to work around a hang in certain circumstances (#2922)
+* Fix issue with New-UDTextbox date hand enter (#3006)
+* Fixed an issue with one of the examples for New-UDDataGrid
+* Fixed an issue with one of the examples for New-UDForm (#2990)
+* Added -DisableArcLinkLabels and -DisableArcLabels to New-UDNivoChart (#2907)
+
+#### Automation
+
+* Fixed an issue where the System Event page would show an error in the admin console (#2996)
+* Fixed an issue where the job timer wouldn't display days (#3008)
+* Fixed an issue where the admin console would display an error viewing a job (#2361)
+
+#### Platform
+
+* Fixed an issue where Azure DevOps git repositories could lose there tracking branch when clicking Synchronize Now
+* Fixed a warning at startup about Computer Groups (#2989)
+* Fixed an issue where the User Name computer tag would duplicate (#2997)
+* Changed the default sort direction for Notifications (#3000)
+* Fixed an issue with HTTPS certificate thumbprint lookups (#3002)
+* Added support for custom computer tags (#2998)
+* Fixed an issue where an extra new line character would be added to script scripts when splatting was enabled (#2995)
+* Added the git repo link to the git commit page (#2956)
+* Partial git commits now perform a git push (#2957)
+* Fixed an issue where users could create app tokens for the system account (#3010)
+
 ## 4.2.7 - 12/18/2023
 
 #### Apps
