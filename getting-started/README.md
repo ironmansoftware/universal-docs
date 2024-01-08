@@ -14,16 +14,16 @@ MSI downloads are available on our [download page](https://ironmansoftware.com/d
 
 The following table contains the parameters you can specify if running `msiexec` against our MSI install for automation purposes.&#x20;
 
-| Parameter              | Description                                                                                                                  | Default Value                                 |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
-| INSTALLFOLDER          | The installation folder for PowerShell Universal                                                                             | %ProgramFiles(x86)%\Universal                 |
-| TCPPORT                | The TCP port the HTTP server will be listening on.                                                                           | 5000                                          |
-| REPOFOLDER             | The repository folder to save the configuration files to.                                                                    | %ProgramData%\UniversalAutomation\Repository  |
-| CONNECTIONSTRING       | The LiteDB or SQL connection string.                                                                                         | %ProgramData%\UniversalAutomation\database.db |
-| DATABASETYPE           | LiteDB or SQL                                                                                                                | LiteDB                                        |
-| STARTSERVICE           | Whether to start the service after install (0 or 1)                                                                          | 1                                             |
-| SERVICEACCOUNT         | The service account to set for the Windows service. Use downlevel[^1][ format](#user-content-fn-2)[^2] of domain\username\*. | None                                          |
-| SERVICEACCOUNTPASSWORD | The service account password to set for the Windows Service. The password will be masked with \*\*\*'s in the installer log. | None                                          |
+| Parameter              | Description                                                                                                                  | Default Value                                             |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| INSTALLFOLDER          | The installation folder for PowerShell Universal                                                                             | %ProgramFiles(x86)%\Universal                             |
+| TCPPORT                | The TCP port the HTTP server will be listening on.                                                                           | 5000                                                      |
+| REPOFOLDER             | The repository folder to save the configuration files to.                                                                    | %ProgramData%\UniversalAutomation\Repository              |
+| CONNECTIONSTRING       | The LiteDB, SQL, SQLite connection string.                                                                                   | Data Source=%ProgramData%\UniversalAutomation\database.db |
+| DATABASETYPE           | LiteDB, SQL, SQLite                                                                                                          | SQLite                                                    |
+| STARTSERVICE           | Whether to start the service after install (0 or 1)                                                                          | 1                                                         |
+| SERVICEACCOUNT         | The service account to set for the Windows service. Use downlevel[^1][ format](#user-content-fn-2)[^2] of domain\username\*. | None                                                      |
+| SERVICEACCOUNTPASSWORD | The service account password to set for the Windows Service. The password will be masked with \*\*\*'s in the installer log. | None                                                      |
 
 ### Example
 

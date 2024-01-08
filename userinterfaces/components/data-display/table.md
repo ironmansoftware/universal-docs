@@ -132,6 +132,14 @@ New-UDTable -Id 'customColumnsTable' -Data $Data -Columns $Columns -ShowFilter
 
 ![](<../../../.gitbook/assets/image (445).png>)
 
+### Static Options for Select Filters
+
+When using server-side processing, the available filters may not display the full range of options since the select dropdown only has access to the current page of results. To avoid this, you can use the `-Options` parameter on `New-UDTableColumn`.&#x20;
+
+```powershell
+New-UDTableColumn -Property Dessert -Title 'Dessert' -Filter -FilterType 'Select' -Options @('Frozen yoghurt', 'Eclair', 'Cupcake')
+```
+
 ## Search
 
 To enable search, use the `-ShowSearch` parameter on `New-UDTable`.
