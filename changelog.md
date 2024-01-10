@@ -4,6 +4,37 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.2.9 - 1/10/2024
+
+#### APIs
+
+* Added Event Hub Client installer (#3003)
+
+#### Apps
+
+* Fixed an issue where the New-UDButton -Loading would not display properly in the dark theme (#2875)
+* Fixed an issue where the UDApp variable is null (#3014)
+* Fixed an issue where the create page dialog would clear on refocus (#2725)
+* Fixed an issue where $AppFullUrl would not be correct for nested IIS sites (#3013)
+* Fixed an issue where refreshing a Dynamic with a Table with an ID wouldn't refresh the table data (#2782)
+
+#### Automation
+
+* Fixed an issue expanding errors in the admin console (#3017)
+* Fixed an issue where Reader and Execute roles could view the contents of a script by typing in the URL
+* Improved the performance of the schedules page when using SQL persistence.
+* Fixed an issue where retried jobs would queue forever when using SQL persistence
+* Added HangfireWorkerCount configuration option to appsettings.json
+
+#### Platform
+
+* Fixed an error the groom job could fail clearing child jobs when using LiteDB (#3021)
+* Added support for local files as admin console login page logos (#2705)
+* Fixed warnings on server startup (#3023)
+* Libgit2sharp now logs to the system log (#3026)
+* Filters for health checks in the admin console (#3016)
+* Fixed an issue where Get-PSUComputer -Integrated would return a gRPC error when using SQL persistence (#3018)
+
 ## 4.2.8 - 1/3/2023
 
 #### APIs
