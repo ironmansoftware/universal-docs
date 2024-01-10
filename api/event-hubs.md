@@ -58,5 +58,3 @@ Connect-PSUEventHub -Hub 'Hub' -ScriptBlock {
 ```
 
 ## View Connected Clients
-
-Within the PowerShell Universal server, you can view connected clients by clicking APIs \ Event Hubs and then clicking the Connections tab.&#x20;
