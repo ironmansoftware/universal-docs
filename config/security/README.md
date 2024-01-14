@@ -159,6 +159,12 @@ Invoke-RestMethod $Env:UniversalUrl/api/v1/accessible -Headers @{
 } 
 ```
 
+You can also use the built-in -Credential parameter on Invoke-RestMethod to avoid having to encode the basic credentials yourself. The `$AdminCredential` below needs to be a `PSCredential`.
+
+```powershell
+Invoke-RestMethod $Env:UniversalUrl/api/v1/accessible -Credential $AdminCredential -Authentication Basic
+```
+
 ### Live Log
 
 You can use the live log view on the authentication page to view information about the script execution. The live log view will display PowerShell streams.
