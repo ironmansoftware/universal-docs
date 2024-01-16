@@ -57,4 +57,53 @@ Connect-PSUEventHub -Hub 'Hub' -ScriptBlock {
 }
 ```
 
-## View Connected Clients
+## Event Hub Client Installer
+
+While you can use the Universal module to connect to event hubs, it may not be the most resilient configuration for your environment. The Event Hub Client Installer provides a MSI that installs a Windows services that will connect to event hubs and run scripts.
+
+### eventHubClient.json
+
+After installing the MSI, you will need to configure the client by using an `eventHubClient.json` file. This file should be created in `%ProgramData%\PowerShellUniversal`. Changes to this file require a restart of the Event Hub Client service.
+
+This JSON file configures the Event Hub Client to connect to the hub and run scripts when invoked.&#x20;
+
+```json
+{
+    "Connections": [
+        {
+            "Url": "http://localhost:5000",
+            "Hub": "eventHub",
+            "AppToken": "tokenXyz",
+            "Script": "script.ps1"
+        }
+    ]
+}
+```
+
+### Options
+
+The below options can be included in the `eventHubClient.json` file.&#x20;
+
+#### Connections
+
+These are the connections to Event Hubs. Each connection can contain it's own URL, hub, authentication and script to execute.&#x20;
+
+#### Url
+
+The URL of the PowerShell Universal service.&#x20;
+
+#### Hub
+
+The name of the Event Hub.
+
+#### AppToken
+
+The app token used to authentication against the hub.&#x20;
+
+#### UseDefaultCredentials
+
+Windows Authentication will be used to authenticate against the hub.
+
+#### Script
+
+The script to execute when an event is received. This script is read into memory and not from disk. Variables such as `$PSScriptRoot` are currently not supported.
