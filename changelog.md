@@ -4,20 +4,33 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.10.4 - 1/20/2024
+
+#### APIs
+
+* Fixed an issue where the $Data variable would be $null when uploading files (#2974)
+
+#### Apps
+
+* Fixed an issue where Out-UDDataGridData would display a toast when filtering
+* Fixed an issue where New-UDUpload wouldn't work on a nested site
+
+#### Automation
+
+* Fixed an issue where jobs listed on a script page wouldn't link properly to a JobRunId (#2852)
+
 ## 3.10.3 - 12/13/2023
 
-```
-### Dashboards
+#### Dashboards
 
-- Fixed an issue where the select filter for New-UDTable was imprecise. (#107)
+* Fixed an issue where the select filter for New-UDTable was imprecise. (#107)
 
-### Automation 
+#### Automation
 
-- Fixed an issue where the groom job could delete one time schedules before they ran (#2912)
-- Fixed an issue where rerunning jobs with date\time parameters would not populate correctly (#2944)
-- Fixed an issue where Get-PSUJob -Id would not return the identity of the user that ran the script (#2945)
-- Fixed an issue where Reader roles couldn't see script names on the Scripts page. (#2847)
-```
+* Fixed an issue where the groom job could delete one time schedules before they ran (#2912)
+* Fixed an issue where rerunning jobs with date\time parameters would not populate correctly (#2944)
+* Fixed an issue where Get-PSUJob -Id would not return the identity of the user that ran the script (#2945)
+* Fixed an issue where Reader roles couldn't see script names on the Scripts page. (#2847)
 
 ## 3.10.2 - 11/16/2023
 
