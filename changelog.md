@@ -4,6 +4,43 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.2.10 - 1/20/2024
+
+#### APIs
+
+* Fixed an issue where $ClaimsPrincipal would be $null in endpoints when using Basic authentication
+* Fixed an issue where swagger documentation would show required if Mandatory was set to false (#3040)
+
+#### Apps
+
+* Status Description is now displayed when using Write-Progress in an app (#2768)
+* Fixed an example in the New-UDDatePicker documentation (#3041)
+* Fixed an issue with $AppFullUrl when using HTTPS with the default port (#3013)
+* Fixed an issue where New-UDAutocomplete with empty options would return a JavaScript error
+* Fixed an issue where New-UDDatePicker would not always send a DateTime object
+* Fixed an issue where a UDTransferList with no items would display a JavaScript error (#3048)
+
+#### Automation
+
+* Added -RandomDelayMaximum to New-PSUSchedule (#2886)
+* Added $Job variable to the Job Timed Out trigger (#2704)
+* Fixed an issue where One Time schedules would be deleted before run when using One-Way Git Sync and SQL persistence
+* Fixed an issue where canceling a job could result in an exception and the job becoming stuck in a canceling state
+* Fixed an issue where the job status sort and filter icons would overlap (#2893)
+* Fixed an issue where jobs would still run on computers in maintenance mode (#3034)
+* Fixed an issue where jobs listed on a script page wouldn't link properly to a JobRunId (#2852)
+
+#### Platform
+
+* Retrying module lookup during startup when it fails due to an internal PowerShell state (#2813)
+* Added Run Schedule and Job Diagnostics to the admin console when git one-way and manual mode are enabled (#3032)
+* Fixed an issue where -SessionTimeout for New-PSUSetting would not be applied (#2914)
+* Fixed an issue where the login page logo would fail to load over HTTP (#3037)
+* Fixed an issue where health checks wouldn't be shown on the home page in some cases (#3043)
+* Added PowerShell Universal version to the computer table (#3050)
+* Removed license check for installing modules from the PowerShell Gallery
+* Fixed an issue where updates to authentication methods could update the wrong method and cause authentication to fail (#3033)
+
 ## 4.2.9 - 1/10/2024
 
 #### APIs
