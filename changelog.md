@@ -6,9 +6,13 @@ description: Changelog for PowerShell Universal.
 
 ## 4.2.11 - 1/22/2024
 
+#### API
+
+* Fixed an issue where APIs could only return a maximum of 4MB of data when using an external environment
+
 #### Automation
 
-* Fixed an issue where the Server Started trigger could cause PowerShell Universal to fail to start (#3065)
+* **CRITICAL:** Fixed an issue where the Server Started trigger could cause PowerShell Universal to fail to start (#3065)
 
 ## 4.2.10 - 1/20/2024
 
