@@ -4,6 +4,12 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.2.11 - 1/22/2024
+
+#### Automation
+
+* Fixed an issue where the Server Started trigger could cause PowerShell Universal to fail to start (#3065)
+
 ## 4.2.10 - 1/20/2024
 
 #### APIs
