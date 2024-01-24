@@ -4,7 +4,7 @@ description: Authentication and authorization for REST APIs.
 
 # Security
 
-REST API authentication requires a Universal API license. Once enabled, you will be able to enforce authentication and authorization on your endpoints.
+Once enabled, you will be able to enforce authentication and authorization on your endpoints.
 
 ## Defining Secure Endpoints
 
