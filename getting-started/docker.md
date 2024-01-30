@@ -298,7 +298,7 @@ services:
     environment:
       - TZ=Europe/London
       - Plugins__0=SQL
-      - Data__ConnectionString = "Data Source=ServerName; Initial Catalog=DatabaseName; User Id=UserName; Password=UserPassword;"
+      - Data__ConnectionString=Data Source=sql1.domain.com;Initial Catalog=PSUTicketBridge;User Id=psu_ticketbridge_dbo;Password=Password123;TrustServerCertificate=True;Trusted_Connection=True;integrated security=false;
       - NodeName=mynodename
     volumes:
       - /docker/volumes/PSU:/root
