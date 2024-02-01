@@ -4,6 +4,12 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 3.10.5 - 1/31/2024
+
+#### Platform
+
+* Fixed an issue where Git sync could fail with an Object Disposed error
+
 ## 3.10.4 - 1/20/2024
 
 #### APIs
