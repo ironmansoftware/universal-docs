@@ -14,14 +14,14 @@ Plugins are enabled in `appsettings.json` or through environment variables. See 
 {
     "Plugins": [
         "SQL",
-        "PowerShell.Language.CSharp"
+        "PowerShellUniversal.Language.CSharp"
     }
 }
 ```
 
 ## C# API Environment
 
-**Identifier:** `PowerShell.Language.CSharp`
+**Identifier:** `PowerShellUniversal.Language.CSharp`
 
 This plugin creates a C#-based environment that can be used to create API endpoints with C# code. APIs created with C# are much faster than PowerShell-based endpoints. Endpoints run directly in the PowerShell Universal service. Any exception thrown from your endpoint will be handled and a valid status code will be returned to the caller.&#x20;
 
