@@ -4,6 +4,34 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.2.12 - 1/31/2024
+
+#### APIs
+
+* Fixed an issue with nested IIS sites and the API tester with variables (#3051)
+* Fixed an issue where syntax errors in endpoint docs would cause them to disappear from the admin console (#3056)
+
+#### Apps
+
+* Fixed an issue where New-UDChartJS would ignore -Options when using -Line (#2871)
+
+#### Automation
+
+* Added Set-PSUSchedule (#3055)
+* Fixed an issue where Max Job Memory would roll over if set above 2GB causing all jobs to terminate
+* Fixed an issue updating a terminal (#3070)
+* Fixed an issue where jobs could be stuck in a running state after finishing successfully
+
+#### Platform
+
+* Fixed an issue where $UserInfo would be $null when using Auth0 and OIDC
+* Fixed an issue where basic auth wouldn't correctly apply claims to the user
+* Added better reporting of when the admin console is disabled
+* Fixed an issue where configuration files would re-load twice when saved
+* Fixed an issue where New-PSUVariable wouldn't correctly create PSCredential's in some circumstances
+* Fixed an issue where disabling Local Account in an identity wouldn't change the status (#3077)
+* Fixed an issue where identities could duplicate when using SQL persistence (#3054)
+
 ## 4.2.11 - 1/22/2024
 
 #### API
