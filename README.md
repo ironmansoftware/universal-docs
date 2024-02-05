@@ -54,7 +54,7 @@ Build web-based tools for internal users with highly interactive user interfaces
 
 <figure><img src=".gitbook/assets/image (331).png" alt=""><figcaption><p>Universal Dashboard</p></figcaption></figure>
 
-* [Interactive Apps](userinterfaces/building-dashboards.md)
+* [Interactive Apps](apps/building-dashboards.md)
 * [Input Forms](https://docs.powershelluniversal.com/userinterfaces/dashboards/components/inputs/form)
 * [Customizable Tables](https://docs.powershelluniversal.com/userinterfaces/dashboards/components/data-display/table)
 * [Charts](https://docs.powershelluniversal.com/userinterfaces/dashboards/components/data-visualization/charts)

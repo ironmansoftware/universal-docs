@@ -4,15 +4,15 @@ description: Information about the PowerShell Universal repository.
 
 # Repository
 
-The configuration data for PowerShell Universal is primarily stored within the repository. By default, the repository folder can be found in `%ProgramData%\UniversalAutomation\Repository`. You can adjust the location of the repository by editing the `appsettings.json` file.&#x20;
+The configuration data for PowerShell Universal is primarily stored within the repository. By default, the repository folder can be found in `%ProgramData%\UniversalAutomation\Repository`. You can adjust the location of the repository by editing the `appsettings.json` file.
 
-The repository contains PowerShell scripts and XML files that are produced when using the PowerShell Universal admin console. The repository folder is also watched for changes so any change made on disk will cause the system to reload the file and reconfigure the platform. When using Git integration, the repository folder is what is synchronized with the git remote.&#x20;
+The repository contains PowerShell scripts and XML files that are produced when using the PowerShell Universal admin console. The repository folder is also watched for changes so any change made on disk will cause the system to reload the file and reconfigure the platform. When using Git integration, the repository folder is what is synchronized with the git remote.
 
 All configuration cmdlets are part of the [Universal ](https://www.powershellgallery.com/packages/Universal)module.
 
 ## What's Stored in the Repository
 
-Files stored in the repository are stored as plain text to allow for easy differencing with source control tools.&#x20;
+Files stored in the repository are stored as plain text to allow for easy differencing with source control tools.
 
 * Authentication
 * Dashboards
@@ -32,7 +32,7 @@ Files stored in the repository are stored as plain text to allow for easy differ
 
 ## What's Not Stored in the Repository
 
-These entities are stored within the PowerShell Universal database.&#x20;
+These entities are stored within the PowerShell Universal database.
 
 * App Tokens
 * Identities
@@ -40,7 +40,7 @@ These entities are stored within the PowerShell Universal database.&#x20;
 
 ## Editing the Repository
 
-You can edit the repository files directly in the admin console by navigating to Settings \ Configurations. The editor allows you to create files and folders and edit any file within the repository directory.&#x20;
+You can edit the repository files directly in the admin console by navigating to Settings \ Configurations. The editor allows you to create files and folders and edit any file within the repository directory.
 
 ![](<../.gitbook/assets/image (237).png>)
 
@@ -52,9 +52,9 @@ You can edit the repository files directly in the admin console by navigating to
 Stored in `.universal\authentication.ps1`
 {% endhint %}
 
-This script is responsible for configuring f[orms authentication](security/#forms-authentication). If forms authentication is not being used, this file is ignored.&#x20;
+This script is responsible for configuring f[orms authentication](security/#forms-authentication). If forms authentication is not being used, this file is ignored.
 
-You can use the [`Set-PSUAuthentication` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Set-PSUAuthenticationMethod.txt)cmdlet in this file.&#x20;
+You can use the [`Set-PSUAuthentication` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Set-PSUAuthenticationMethod.txt)cmdlet in this file.
 
 ### Dashboards.ps1
 
@@ -62,9 +62,9 @@ You can use the [`Set-PSUAuthentication` ](https://github.com/ironmansoftware/un
 Stored in `.universal\dashboards.ps1`
 {% endhint %}
 
-This script is responsible for registering PS1 files are [dashboards ](broken-reference)with the system. Each command contains the meta-data for the dashboard including name, base URL, and environment.&#x20;
+This script is responsible for registering PS1 files are [dashboards ](broken-reference/)with the system. Each command contains the meta-data for the dashboard including name, base URL, and environment.
 
-You can use the [`New-PSUDashboard` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSUDashboard.txt)cmdlet in this file.&#x20;
+You can use the [`New-PSUDashboard` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSUDashboard.txt)cmdlet in this file.
 
 ### Endpoints.ps1
 
@@ -72,9 +72,9 @@ You can use the [`New-PSUDashboard` ](https://github.com/ironmansoftware/univers
 Stored in `.universal\endpoints.ps1`
 {% endhint %}
 
-This script is responsible for defining all the [API endpoints](api.md) within the PowerShell Universal instance.&#x20;
+This script is responsible for defining all the [API endpoints](api.md) within the PowerShell Universal instance.
 
-You can use the [`New-PSUEndpoint` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSUEndpoint.txt)cmdlet in this file.&#x20;
+You can use the [`New-PSUEndpoint` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSUEndpoint.txt)cmdlet in this file.
 
 ### Environments.ps1
 
@@ -82,9 +82,9 @@ You can use the [`New-PSUEndpoint` ](https://github.com/ironmansoftware/universa
 Stored in `.universal\environments.ps1`
 {% endhint %}
 
-This script is responsible for defining all the environments within PowerShell Universal.&#x20;
+This script is responsible for defining all the environments within PowerShell Universal.
 
-You can use the [`New-PSUEnvironment` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSUEnvironment.txt)cmdlet in this file.&#x20;
+You can use the [`New-PSUEnvironment` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSUEnvironment.txt)cmdlet in this file.
 
 ### Licenses.ps1
 
@@ -106,9 +106,9 @@ Set-PSULicense -Key "<License></License>"
 Stored in `.universal\loginPage.ps1`
 {% endhint %}
 
-This script is responsible for configuring a custom [login page](login-page.md).&#x20;
+This script is responsible for configuring a custom [login page](login-page.md).
 
-You can use the [`New-PSULoginpage`](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSULoginPage.txt) and [`New-PSULoginPageLink` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSULoginPageLink.txt)in this file.&#x20;
+You can use the [`New-PSULoginpage`](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSULoginPage.txt) and [`New-PSULoginPageLink` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSULoginPageLink.txt)in this file.
 
 ### Initialize.ps1
 
@@ -116,7 +116,7 @@ You can use the [`New-PSULoginpage`](https://github.com/ironmansoftware/universa
 Stored in `.universal\initialize.ps1`
 {% endhint %}
 
-This script runs before any configuration is done within PowerShell Universal. The server is running but none of the services have started. This is useful for install modules or configuring secret vaults before discovery of those resources are started.&#x20;
+This script runs before any configuration is done within PowerShell Universal. The server is running but none of the services have started. This is useful for install modules or configuring secret vaults before discovery of those resources are started.
 
 ### Middleware.ps1
 
@@ -132,7 +132,7 @@ Allows for customization of the HTTP requests in PowerShell Universal.
 Stored in the `pages` folder.
 {% endhint %}
 
-This folder contains the page XML files. These are not intended to be edited manually and should be edited with the page designer.&#x20;
+This folder contains the page XML files. These are not intended to be edited manually and should be edited with the page designer.
 
 ### PublishedFolders.ps1
 
@@ -142,7 +142,7 @@ Stored in `.universal\publishedFolders.ps1`
 
 This script is responsible for configuring [published folders](../platform/published-folders.md).
 
-You can use the [`New-PSUPublishedFolder` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSUPublishedFolder.txt)cmdlet in this file.&#x20;
+You can use the [`New-PSUPublishedFolder` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSUPublishedFolder.txt)cmdlet in this file.
 
 ### RateLimits.ps1
 
@@ -150,9 +150,9 @@ You can use the [`New-PSUPublishedFolder` ](https://github.com/ironmansoftware/u
 Stored in `.universal\rateLimits.ps1`
 {% endhint %}
 
-This script is responsible for configuring [rate limits](../api/rate-limiting.md).&#x20;
+This script is responsible for configuring [rate limits](../api/rate-limiting.md).
 
-You can use the [`New-PSURateLimit` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSURateLimit.txt)cmdlet in this file.&#x20;
+You can use the [`New-PSURateLimit` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSURateLimit.txt)cmdlet in this file.
 
 ### Roles.ps1
 
@@ -160,9 +160,9 @@ You can use the [`New-PSURateLimit` ](https://github.com/ironmansoftware/univers
 Stored in `.universal\roles.ps1`
 {% endhint %}
 
-This script is responsible for configuring [roles](../userinterfaces/role-based-access.md).
+This script is responsible for configuring [roles](../apps/role-based-access.md).
 
-You can use the [`New-PSURole` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSURole.txt)cmdlet in this file.&#x20;
+You can use the [`New-PSURole` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSURole.txt)cmdlet in this file.
 
 ### Schedules.ps1
 
@@ -172,7 +172,7 @@ Stored in `.universal\schedules.ps1`
 
 This script is responsible for configuring [schedules](../automation/schedules.md).
 
-You can use the [`New-PSUSchedule` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSUSchedule.txt)cmdlet in this file.&#x20;
+You can use the [`New-PSUSchedule` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSUSchedule.txt)cmdlet in this file.
 
 ### Scripts.ps1
 
@@ -180,9 +180,9 @@ You can use the [`New-PSUSchedule` ](https://github.com/ironmansoftware/universa
 Stored in `.universal\scripts.ps1`
 {% endhint %}
 
-This script contains the meta-data for [scripts](../automation/scripts/). Actual scripts can be stored anywhere. The path that is included is relative to the repository. Full path names are also allowed.&#x20;
+This script contains the meta-data for [scripts](../automation/scripts/). Actual scripts can be stored anywhere. The path that is included is relative to the repository. Full path names are also allowed.
 
-You can use the [`New-PSUScript` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSUScript.txt)cmdlet in this file.&#x20;
+You can use the [`New-PSUScript` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSUScript.txt)cmdlet in this file.
 
 ### Settings.ps1
 
@@ -190,9 +190,9 @@ You can use the [`New-PSUScript` ](https://github.com/ironmansoftware/universal-
 Stored in `.universal\settings.ps1`
 {% endhint %}
 
-This script is responsible for configuring system [settings](settings.md).&#x20;
+This script is responsible for configuring system [settings](settings.md).
 
-You can use the [`Set-PSUSetting` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Set-PSUSetting.txt)cmdlet in this file.&#x20;
+You can use the [`Set-PSUSetting` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Set-PSUSetting.txt)cmdlet in this file.
 
 ### Tags.ps1
 
@@ -200,9 +200,9 @@ You can use the [`Set-PSUSetting` ](https://github.com/ironmansoftware/universal
 Stored in `.universal\tags.ps1`
 {% endhint %}
 
-This script is responsible for configuring tags.&#x20;
+This script is responsible for configuring tags.
 
-You can use the [`New-PSUTag` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSUTag.txt)cmdlet in this file.&#x20;
+You can use the [`New-PSUTag` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSUTag.txt)cmdlet in this file.
 
 ### Triggers.ps1
 
@@ -212,21 +212,21 @@ Stored in `.universal\triggers.ps1`
 
 This script is responsible for configuring [triggers](../automation/triggers.md).
 
-You can use the [`New-PSUTrigger` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSUTrigger.txt)cmdlet in this file.&#x20;
+You can use the [`New-PSUTrigger` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSUTrigger.txt)cmdlet in this file.
 
-### Variables&#x20;
+### Variables
 
 {% hint style="info" %}
 Stored in `.universal\variables.ps1`
 {% endhint %}
 
-This script is responsible for configuring [variables](broken-reference).
+This script is responsible for configuring [variables](broken-reference/).
 
 You can use the [`New-PSUVariable`](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSUVariable.txt) cmdlet in this file.
 
 ## Custom Configuration Script
 
-A custom configuration script can be executed within the configuration process. The path to the configuration script can be defined in `appsettings.json` or as an environment variable.&#x20;
+A custom configuration script can be executed within the configuration process. The path to the configuration script can be defined in `appsettings.json` or as an environment variable.
 
 {% code title="appsettings.json" %}
 ```json
@@ -242,11 +242,11 @@ $Env:Data__ConfigurationScript = "customScript.ps1"
 ```
 {% endcode %}
 
-You can chose to return items such as endpoints, scripts or dashboards from the script. Additionally, you can use this script to configure resources like modules and secret vaults before the system is started. The custom configuration script is run before any other configuration scripts.&#x20;
+You can chose to return items such as endpoints, scripts or dashboards from the script. Additionally, you can use this script to configure resources like modules and secret vaults before the system is started. The custom configuration script is run before any other configuration scripts.
 
 ## Read-Only Configuration Sections
 
-Read-Only sections allow you to include script in your configuration files that will not be touched by changes in the admin console. This allows you to run additional logic, generate resources dynamically and create classes for use in OpenAPI schemas.&#x20;
+Read-Only sections allow you to include script in your configuration files that will not be touched by changes in the admin console. This allows you to run additional logic, generate resources dynamically and create classes for use in OpenAPI schemas.
 
 The `PSUHeader` region is placed at the top of your script. `PSUFooter` is placed at the bottom.
 
@@ -268,4 +268,3 @@ New-PSUEndpoint -Url "/user" -Endpoint {
 #region PSUFooter
 #endregion
 ```
-

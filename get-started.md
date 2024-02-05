@@ -10,7 +10,7 @@ You'll need to install the PowerShell Universal server. [There are a lot of ways
 
 {% tabs %}
 {% tab title="Windows" %}
-You can install PowerShell Universal as a service. Ensure that PowerShell is running as administrator or the service won't install correctly.&#x20;
+You can install PowerShell Universal as a service. Ensure that PowerShell is running as administrator or the service won't install correctly.
 
 ```powershell
 Install-Module Universal
@@ -60,21 +60,21 @@ By default, PowerShell Universal is running on port 5000 of localhost. You can a
 
 ## Create an API
 
-APIs allow you to call PowerShell scripts over HTTP. To create an API, click API \ Endpoints and click Create New Endpoint. Specify a URL.&#x20;
+APIs allow you to call PowerShell scripts over HTTP. To create an API, click API \ Endpoints and click Create New Endpoint. Specify a URL.
 
 ![](<.gitbook/assets/image (259).png>)
 
-Next, click details on the API that was created an enter the following command into the editor.&#x20;
+Next, click details on the API that was created an enter the following command into the editor.
 
 ```
 Get-ComputerInfo
 ```
 
-Save the script and then click the Execute button to test it out.&#x20;
+Save the script and then click the Execute button to test it out.
 
 ![](<.gitbook/assets/image (448).png>)
 
-You can also execute the API via `Invoke-RestMethod`.&#x20;
+You can also execute the API via `Invoke-RestMethod`.
 
 ```
 PS C:\Users\adamr> Invoke-RestMethod http://localhost:5000/hello-world
@@ -91,11 +91,11 @@ WindowsRegisteredOrganization                           :
 
 ## Create a Script
 
-To create a script, click Automation \ Scripts and then click Create New Script.&#x20;
+To create a script, click Automation \ Scripts and then click Create New Script.
 
 ![](<.gitbook/assets/image (559).png>)
 
-Enter the following script into the editor and save.&#x20;
+Enter the following script into the editor and save.
 
 ```powershell
 Read-Host "What should I say?"
@@ -107,13 +107,13 @@ Read-Host "What should I say?"
 Get-Service
 ```
 
-Once the script is saved, click Run.&#x20;
+Once the script is saved, click Run.
 
 ![](.gitbook/assets/runjob.gif)
 
 ## Create an App
 
-To create a new PowerShell-based user interface (app), you can click User Interfaces \ Apps and then Create New App.&#x20;
+To create a new PowerShell-based user interface (app), you can click User Interfaces \ Apps and then Create New App.
 
 ![](<.gitbook/assets/image (248).png>)
 
@@ -127,7 +127,7 @@ New-UDApp -Title "Hello, World!" -Content {
 }
 ```
 
-Save the app, click the Restart button and then click the View button. Click the Click Me button.&#x20;
+Save the app, click the Restart button and then click the View button. Click the Click Me button.
 
 ![](<.gitbook/assets/image (483).png>)
 
@@ -135,4 +135,4 @@ Learn more about the various features of PowerShell Universal
 
 * [APIs](api/about.md)
 * [Automation](automation/about.md)
-* [Apps](userinterfaces/building-dashboards.md)
+* [Apps](apps/building-dashboards.md)
