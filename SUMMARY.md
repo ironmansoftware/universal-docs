@@ -116,6 +116,8 @@
   * [Cascading Style Sheets](apps/themes/cascading-style-sheets.md)
   * [Styles](apps/themes/styles.md)
 
+## Pages
+
 ## Desktop
 
 * [About Desktop Mode](desktop/about-desktop-mode.md)
