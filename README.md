@@ -8,9 +8,15 @@ description: >-
 
 <figure><img src=".gitbook/assets/image (354).png" alt=""><figcaption><p>PowerShell Universal Admin Console</p></figcaption></figure>
 
+
+
+{% hint style="info" %}
+This documentation is for PowerShell Universal v5 beta.&#x20;
+{% endhint %}
+
 A single pane of glass for managing and delegating access to your automation environment.
 
-Universal provides an Administrator console, management REST API, PowerShell cmdlets and an idempotent configuration system using PowerShell scripts. &#x20;
+Universal provides an Administrator console, management REST API, PowerShell cmdlets and an idempotent configuration system using PowerShell scripts.
 
 ## **APIs**
 
@@ -138,9 +144,8 @@ Join the growing community of users managing their automation environments with 
 * [Discord](https://discord.gg/tQMEYwbGVn)
 * [Issue Tracker](https://github.com/ironmansoftware/issues)
 
-## Licensing&#x20;
+## Licensing
 
-Universal is licensed per server. Visit our [website for more information ](https://ironmansoftware.com/powershell-universal/)on pricing.&#x20;
+Universal is licensed per server. Visit our [website for more information ](https://ironmansoftware.com/powershell-universal/)on pricing.
 
-Many features of PowerShell Universal are [free](licensing.md#licensed-features).&#x20;
-
+Many features of PowerShell Universal are [free](licensing.md#licensed-features).
