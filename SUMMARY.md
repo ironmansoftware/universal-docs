@@ -119,7 +119,6 @@
 ## Pages
 
 * [About](pages/about.md)
-* [About](pages/about-1.md)
 
 ## Desktop
 
