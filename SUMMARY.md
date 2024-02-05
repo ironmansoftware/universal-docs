@@ -1,7 +1,7 @@
 # Table of contents
 
 * [About](README.md)
-* [What's New in v4?](whats-new-in-v3.md)
+* [What's New in v5?](whats-new-in-v3.md)
 * [Get Started](get-started.md)
 * [Additional Resources](additional-resources.md)
 * [Installation](getting-started/README.md)

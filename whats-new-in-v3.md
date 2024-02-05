@@ -1,51 +1,32 @@
 ---
-description: New features in PowerShell Universal v4.
+description: New features in PowerShell Universal v5.
 ---
 
-# What's New in v4?
+# What's New in v5?
 
-## Event Hubs
+## New Admin Console
 
-Event Hubs allow client machines to receive events from the PowerShell Universal server and execute PowerShell locally. Event Hubs support authentication and transmitting data within the events.&#x20;
+The admin console has been rebuilt using Blazor for ASP.NET. The look and feel are the same but more tightly associated with the backend Universal platform.
 
-## Dashboards are Now Apps
+The admin console is also translated to additional languages by default.&#x20;
 
-Apps are a clearer description of what the previously named dashboard functionality represents. All the functionality of dashboards is still present in apps.&#x20;
+## PSBlazor for Pages
 
-## App Designer
+PSBlazor is a new technology that allows defining Razor pages and binding to PowerShell scripts. Razor is an XML-style syntax, and the development is similar to WPF.&#x20;
 
-A new drag and drop designer is now available for apps. A subset of controls can be used within the designer to visually layout and edit the properties of components.&#x20;
+## PostgreSQL Support
 
-## Live App Documentation
-
-PowerShell Universal now ships with live documentation for app components and features. You'll be able to quickly view examples and copy code directly into your apps.&#x20;
-
-## App Components
-
-We've added and updated components for apps. These include:
-
-* Split Button
-* Speed Dial
-* Improved Data Grid&#x20;
-* Updated Date and Time pickers
-
-## Improved Diagnostics
-
-### Health Checks&#x20;
-
-PowerShell Universal will now periodically run health checks on the environment. These include checks on resource usage (CPU, memory, etc) and service account configuration.&#x20;
-
-### Logging
-
-The logging framework is now highly customizable, consistent and searchable. You can output to the file system, TCP, HTTP and even extend the framework by logging in your own custom PowerShell script.&#x20;
-
-Logging can also be customized per feature (e.g. apps) and resource (e.g. a single app).&#x20;
+PostgreSQL is not supported as a persistence store.&#x20;
 
 ## Updated Runtimes
 
-The PowerShell Universal server has been updated to PowerShell 7.3 and .NET 7.&#x20;
+PowerShell Universal v5 is built on .NET 8 and PowerShell 7.4.
 
-## PowerShell Universal Modules
+## Extensibility NuGet Package
 
-Modules can now include PowerShell Universal resources like scripts, schedules, apps and roles. This allows for distribution of functionality via standard package repositories.&#x20;
+A NuGet package is published the provides the ability to extend PowerShell Universal. Extension point include features such as:
+
+* Persistence Stores
+* Languages
+* Custom Resources&#x20;
 
