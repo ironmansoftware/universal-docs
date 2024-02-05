@@ -118,6 +118,8 @@
 
 ## Pages
 
+* [About](config/about.md)
+
 ## Desktop
 
 * [About Desktop Mode](desktop/about-desktop-mode.md)
