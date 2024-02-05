@@ -63,6 +63,6 @@ Universal provides the ability to automatically synchronization configuration fi
 
 To configure git synchronization, use the `GitRemote`, `GitUserName`, and `GitPassword` settings in the `appsettings.json` file. You will need to restart Universal after making these changes.
 
-To learn more about configuration settings, read the [Settings](settings.md) page.
+To learn more about configuration settings, read the [Settings](../config/settings.md) page.
 
 You can view the status of Git synchronization operations on the `Settings \ General` page within the admin console. Git synchronizations take place one a minute.

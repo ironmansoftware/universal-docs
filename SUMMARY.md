@@ -118,7 +118,8 @@
 
 ## Pages
 
-* [About](config/about.md)
+* [About](pages/about.md)
+* [About](pages/about-1.md)
 
 ## Desktop
 
@@ -145,7 +146,7 @@
 
 ## Configuration <a href="#config" id="config"></a>
 
-* [About](config/about.md)
+*
 * [API](config/api.md)
 * [Command Line Options](config/command-line-options.md)
 * [Environments](config/environments.md)
