@@ -2,7 +2,7 @@
 description: Get started with PowerShell Universal
 ---
 
-# Get Started
+# ⏯ Get Started
 
 ## Install PowerShell Universal
 

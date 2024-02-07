@@ -2,7 +2,7 @@
 description: New features in PowerShell Universal v5.
 ---
 
-# What's New in v5?
+# 🆕 What's New in v5?
 
 ## New Admin Console
 

@@ -1,19 +1,19 @@
 # Table of contents
 
-* [About](README.md)
-* [What's New in v5?](whats-new-in-v3.md)
-* [Get Started](get-started.md)
-* [Additional Resources](additional-resources.md)
-* [Installation](getting-started/README.md)
+* [❓ About](README.md)
+* [🆕 What's New in v5?](whats-new-in-v3.md)
+* [⏯ Get Started](get-started.md)
+* [📚 Additional Resources](additional-resources.md)
+* [⬇ Installation](getting-started/README.md)
   * [Docker](getting-started/docker.md)
   * [Upgrading](getting-started/upgrading.md)
   * [Uninstall](getting-started/uninstall.md)
-* [Licensing](licensing.md)
-* [System Requirements](system-requirements.md)
-* [Supported Browsers](supported-browsers.md)
+* [🔑 Licensing](licensing.md)
+* [📊 System Requirements](system-requirements.md)
+* [🌐 Supported Browsers](supported-browsers.md)
 * [Cmdlet Help](https://github.com/ironmansoftware/universal-docs/tree/v4/cmdlets)
 
-## API
+## 🔌 API
 
 * [About](api/about.md)
 * [Endpoints](api/endpoints.md)
@@ -22,7 +22,7 @@
 * [Error Handling](api/error-handling.md)
 * [Rate Limiting](api/rate-limiting.md)
 
-## Automation
+## 🤖 Automation
 
 * [About Automation](automation/about.md)
 * [Scripts](automation/scripts/README.md)
@@ -34,7 +34,7 @@
 * [Triggers](automation/triggers.md)
 * [Queues](automation/queues.md)
 
-## Apps
+## 📊 Apps
 
 * [About](apps/about.md)
 * [Apps](apps/building-dashboards.md)
@@ -116,11 +116,12 @@
   * [Cascading Style Sheets](apps/themes/cascading-style-sheets.md)
   * [Styles](apps/themes/styles.md)
 
-## Pages
+## ⚒ Tools
 
-* [About](pages/about.md)
+* [About](tools/about.md)
+* [PSBlazor](tools/psblazor.md)
 
-## Desktop
+## 🖥 Desktop
 
 * [About Desktop Mode](desktop/about-desktop-mode.md)
 * [File Associations](desktop/file-associations.md)
@@ -128,7 +129,7 @@
 * [Pages](desktop/pages.md)
 * [Protocol Handlers](desktop/protocol-handlers.md)
 
-## Platform
+## 🏗 Platform
 
 * [Cache](platform/cache.md)
 * [Computers](platform/computers.md)
@@ -143,9 +144,8 @@
 * [User Sessions](platform/user-sessions.md)
 * [Variables](platform/variables.md)
 
-## Configuration <a href="#config" id="config"></a>
+## ⚙ Configuration <a href="#config" id="config"></a>
 
-*
 * [API](config/api.md)
 * [Command Line Options](config/command-line-options.md)
 * [Environments](config/environments.md)
@@ -172,7 +172,7 @@
 * [Running as a Service Account](config/running-as-a-service-account.md)
 * [Best Practices](config/best-practices.md)
 
-## Development
+## 👩💻 Development
 
 * [Debugging Scripts](development/debugging-scripts.md)
 * [Editor](development/editor.md)

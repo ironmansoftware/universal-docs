@@ -1,4 +1,4 @@
-# Supported Browsers
+# 🌐 Supported Browsers
 
 Universal uses a variety of modern web frameworks and can have issues with older browsers such as Internet Explorer.
 
