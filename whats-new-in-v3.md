@@ -10,9 +10,9 @@ The admin console has been rebuilt using Blazor for ASP.NET. The look and feel a
 
 The admin console is also translated to additional languages by default.&#x20;
 
-## PSBlazor for Pages
+## Tools
 
-PSBlazor is a new technology that allows defining Razor pages and binding to PowerShell scripts. Razor is an XML-style syntax, and the development is similar to WPF.&#x20;
+Tools are simplified interfaces that take advantage of PSBlazor to allow for robust solutions with less coding.
 
 ## PostgreSQL Support
 
