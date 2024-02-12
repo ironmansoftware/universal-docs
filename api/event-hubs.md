@@ -74,7 +74,7 @@ This JSON file configures the Event Hub Client to connect to the hub and run scr
             "Url": "http://localhost:5000",
             "Hub": "eventHub",
             "AppToken": "tokenXyz",
-            "Script": "script.ps1"
+            "ScriptPath": "script.ps1"
         }
     ]
 }
@@ -104,6 +104,6 @@ The app token used to authentication against the hub.&#x20;
 
 Windows Authentication will be used to authenticate against the hub.
 
-#### Script
+#### ScriptPath
 
 The script to execute when an event is received. This script is read into memory and not from disk. Variables such as `$PSScriptRoot` are currently not supported.
