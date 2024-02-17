@@ -119,7 +119,8 @@
 ## ⚒ Blazor Apps
 
 * [About](tools/about.md)
-* [Blazor](tools/psblazor.md)
+* [Syntax](tools/psblazor.md)
+* [Forms](blazor-apps/forms.md)
 
 ## 🖥 Desktop
 
