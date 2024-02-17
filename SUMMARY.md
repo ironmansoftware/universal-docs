@@ -116,7 +116,7 @@
   * [Cascading Style Sheets](apps/themes/cascading-style-sheets.md)
   * [Styles](apps/themes/styles.md)
 
-## ⚒ Blazor Apps
+## 🔥 Blazor Apps
 
 * [About](tools/about.md)
 * [Syntax](tools/psblazor.md)
