@@ -10,9 +10,9 @@ The admin console has been rebuilt using Blazor for ASP.NET. The look and feel a
 
 The admin console is also translated to additional languages by default.&#x20;
 
-## Tools
+## Blazor Apps
 
-Tools are simplified interfaces that take advantage of PSBlazor to allow for robust solutions with less coding.
+Blazor apps are simplified user interfaces that take advantage of PSBlazor to allow for robust solutions with less coding.&#x20;
 
 ## PostgreSQL Support
 
