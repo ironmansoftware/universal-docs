@@ -34,7 +34,7 @@
 * [Triggers](automation/triggers.md)
 * [Queues](automation/queues.md)
 
-## 📊 Apps
+## 📊 PowerShell Apps
 
 * [About](apps/about.md)
 * [Apps](apps/building-dashboards.md)
@@ -116,10 +116,10 @@
   * [Cascading Style Sheets](apps/themes/cascading-style-sheets.md)
   * [Styles](apps/themes/styles.md)
 
-## ⚒ Tools
+## ⚒ Blazor Apps
 
 * [About](tools/about.md)
-* [PSBlazor](tools/psblazor.md)
+* [Blazor](tools/psblazor.md)
 
 ## 🖥 Desktop
 
