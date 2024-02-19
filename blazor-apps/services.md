@@ -10,6 +10,6 @@ The message service is used to display messages to the end user. It is based on 
 
 ```powershell
 function OnClick {
-   $MessageService.Success("Hello!")
+   $Message.Success("Hello!")
 }
 ```
