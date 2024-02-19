@@ -366,9 +366,9 @@ function Out-UDSQLDataGrid {
             $linkOperator = $Context.Filter.linkOperator #The link operator is 'AND' or 'OR'. It will always be one or the other for all properties
             foreach ($item in $Context.Filter.Items) {         
                 $simpleFilter += [PSCustomObject]@{
-                    Property    = $item.columnField
+                    Property    = $item.field
                     Value       = $item.Value
-                    Operator    = $item.operatorValue
+                    Operator    = $item.operator
                 }
             }
         }
