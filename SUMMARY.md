@@ -122,6 +122,7 @@
 * [Syntax](tools/psblazor.md)
 * [Forms](blazor-apps/forms.md)
 * [Tables](blazor-apps/tables.md)
+* [Services](blazor-apps/services.md)
 
 ## 🖥 Desktop
 
