@@ -4,15 +4,15 @@ description: Data grid component for Universal Apps.
 
 # Data Grid
 
-The `UDDataGrid` component is an advanced version of the table that is useful for displaying large amounts of data. It supports many of the same features as the table but also provides complex filtering, row virtualization, multi-column sort and more.&#x20;
+The `UDDataGrid` component is an advanced version of the table that is useful for displaying large amounts of data. It supports many of the same features as the table but also provides complex filtering, row virtualization, multi-column sort and more.
 
 ## Simple Data Grid
 
 ![](<../../../.gitbook/assets/image (150).png>)
 
-Data grids load their data via the `-LoadRows` event handler. You will need to return a hashtable that contains the row data and the total number of rows.&#x20;
+Data grids load their data via the `-LoadRows` event handler. You will need to return a hashtable that contains the row data and the total number of rows.
 
-Columns are defined using hashtables.&#x20;
+Columns are defined using hashtables.
 
 ```powershell
 New-UDDataGrid -LoadRows {
@@ -30,7 +30,7 @@ New-UDDataGrid -LoadRows {
 
 ## Columns
 
-Columns are customizable using hashtables. You can find the supported properties below.&#x20;
+Columns are customizable using hashtables. You can find the supported properties below.
 
 | Property          | Description                                                                                                                                                           | Type\Value                                       |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
@@ -62,7 +62,7 @@ Columns are customizable using hashtables. You can find the supported properties
 
 You can render custom components in columns by specifying `render` within the column hashtable. You can access the current row's data by using the `$EventData` or `$Row` variable
 
-In this example, the number is shown in the name column with a `New-UDTypography` component.&#x20;
+In this example, the number is shown in the name column with a `New-UDTypography` component.
 
 ```powershell
 New-UDDataGrid -LoadRows {  
@@ -104,14 +104,14 @@ New-UDDataGrid -LoadRows {
 
 ## LoadRows
 
-The `-LoadRows` parameter is used to return data for the data grid. Table state will be provided to the event handler as `$EventData`. You will find the following properties within the `$EventData` object.&#x20;
+The `-LoadRows` parameter is used to return data for the data grid. Table state will be provided to the event handler as `$EventData`. You will find the following properties within the `$EventData` object.
 
-| Property | Description                                                               | Type      |
-| -------- | ------------------------------------------------------------------------- | --------- |
-| Filter   | A filter object that you can use to construct filters against your data.  | Hashtable |
-| Page     | The current page. Starts at 0.                                            | Integer   |
-| PageSize | The number of records in a page.                                          | Integer   |
-| Sort     | The sort options for the table                                            | Hashtable |
+| Property | Description                                                              | Type      |
+| -------- | ------------------------------------------------------------------------ | --------- |
+| Filter   | A filter object that you can use to construct filters against your data. | Hashtable |
+| Page     | The current page. Starts at 0.                                           | Integer   |
+| PageSize | The number of records in a page.                                         | Integer   |
+| Sort     | The sort options for the table                                           | Hashtable |
 
 ### Paging
 
@@ -133,7 +133,7 @@ New-UDDataGrid -LoadRows {
 
 ![](<../../../.gitbook/assets/image (374).png>)
 
-The filter hashtable is included in the `$EventData` for the `-LoadRows` event handler when a filter is defined. The hashtable has a structure as follows.&#x20;
+The filter hashtable is included in the `$EventData` for the `-LoadRows` event handler when a filter is defined. The hashtable has a structure as follows.
 
 ```powershell
 @{
@@ -148,40 +148,40 @@ The filter hashtable is included in the `$EventData` for the `-LoadRows` event h
 }
 ```
 
-#### Items&#x20;
+#### Items
 
-The items property contains an array of columns, operators and values. You can use these to filter your data.&#x20;
+The items property contains an array of columns, operators and values. You can use these to filter your data.
 
-| Property      | Description                                           | Type   |
-| ------------- | ----------------------------------------------------- | ------ |
-| ColumnField   | The name of the field to filter                       | String |
-| OperatorValue | The type of operator to use when filtering the data.  | String |
-| Value         | The value used to filter                              | Object |
+| Property      | Description                                          | Type   |
+| ------------- | ---------------------------------------------------- | ------ |
+| ColumnField   | The name of the field to filter                      | String |
+| OperatorValue | The type of operator to use when filtering the data. | String |
+| Value         | The value used to filter                             | Object |
 
 #### LinkOperator
 
-The link operator field is used to specify the link between the filters. This can be `and` or `or`.&#x20;
+The link operator field is used to specify the link between the filters. This can be `and` or `or`.
 
 ### Sorting
 
 ![](<../../../.gitbook/assets/image (389).png>)
 
-The `$EventData` object will contain a `Sort` property when the user sorts the data grid. It contains properties for each column that is sorted. The properties will start as 0 and increment as more columns are sorted.&#x20;
+The `$EventData` object will contain a `Sort` property when the user sorts the data grid. It contains properties for each column that is sorted. The properties will start as 0 and increment as more columns are sorted.
 
-For example, you can access the first sorted column as follows.&#x20;
+For example, you can access the first sorted column as follows.
 
 ```powershell
 $EventData.Sort.'0'.field
 ```
 
-You will also receive the sort direction for each column.&#x20;
+You will also receive the sort direction for each column.
 
 | Property | Description                      | Type      |
 | -------- | -------------------------------- | --------- |
 | Field    | The field to sort.               | String    |
 | Sort     | The direction to sort the field. | asc, desc |
 
-## Detailed Content&#x20;
+## Detailed Content
 
 <figure><img src="../../../.gitbook/assets/image (192).png" alt=""><figcaption></figcaption></figure>
 
@@ -206,9 +206,9 @@ New-UDDataGrid -LoadRows {
 
 ## Editing
 
-Tables provide editor support by specifying the `-OnEdit` event handler. The new row data will be provided as `$EventData`. You can chose to return updated row information (for example, adjusting something the user has entered) and return it from the event handler. If you do not return anything, the row will reflect what the user entered.&#x20;
+Tables provide editor support by specifying the `-OnEdit` event handler. The new row data will be provided as `$EventData`. You can chose to return updated row information (for example, adjusting something the user has entered) and return it from the event handler. If you do not return anything, the row will reflect what the user entered.
 
-The `$EventData` has the following format.&#x20;
+The `$EventData` has the following format.
 
 ```powershell
 @{
@@ -217,7 +217,7 @@ The `$EventData` has the following format.&#x20;
 }
 ```
 
-Ensure that you provide the `editable` property to each column you wish for the user to edit.&#x20;
+Ensure that you provide the `editable` property to each column you wish for the user to edit.
 
 ```powershell
 New-UDDataGrid -LoadRows {
@@ -237,7 +237,7 @@ New-UDDataGrid -LoadRows {
 
 ## Custom Export
 
-To override the default export functionality, use the `-OnExport` event handler. `$EventData` will be an array of rows with their values. You should use `Out-UDDataGridExport` to return the data from `-OnExport`.&#x20;
+To override the default export functionality, use the `-OnExport` event handler. `$EventData` will be an array of rows with their values. You should use `Out-UDDataGridExport` to return the data from `-OnExport`.
 
 ```powershell
 New-UDDataGrid -LoadRows {
@@ -258,7 +258,7 @@ New-UDDataGrid -LoadRows {
 
 ## Example: Static Data
 
-In this example, we generate an array of 10,000 records. We will create a new function, `Out-UDDataGridData` to manage the paging, sorting and filtering. This function is already included in the Universal module.&#x20;
+In this example, we generate an array of 10,000 records. We will create a new function, `Out-UDDataGridData` to manage the paging, sorting and filtering. This function is already included in the Universal module.
 
 ```powershell
 function Out-UDDataGridData {
@@ -346,7 +346,7 @@ New-UDDashboard -Title 'PowerShell Universal' -Content {
 
 ## Example: SQL Data
 
-In this example, we'll query the PowerShell Universal database with dbatools.&#x20;
+In this example, we'll query the PowerShell Universal database with dbatools.
 
 ```powershell
 function Out-UDSQLDataGrid {
@@ -366,9 +366,9 @@ function Out-UDSQLDataGrid {
             $linkOperator = $Context.Filter.linkOperator #The link operator is 'AND' or 'OR'. It will always be one or the other for all properties
             foreach ($item in $Context.Filter.Items) {         
                 $simpleFilter += [PSCustomObject]@{
-                    Property    = $item.columnField
+                    Property    = $item.field
                     Value       = $item.Value
-                    Operator    = $item.operatorValue
+                    Operator    = $item.operator
                 }
             }
         }
