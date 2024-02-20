@@ -351,36 +351,43 @@ In this example, we'll query the PowerShell Universal database with dbatools.&#x
 ```powershell
 function Out-UDSQLDataGrid {
     param(
-        [Parameter(Mandatory)]
         $Context,
         [Parameter(Mandatory)]
         [string]$Table,
         [Parameter(Mandatory)]
         [string]$SqlInstance,
         [Parameter(Mandatory)]
-        [string]$Database
+        [string]$Database,
+        [Parameter(Mandatory)]
+        [pscredential]$SqlCredential,
+        [Int32]$RowsPerPage
     )
+
     End {
         $simpleFilter = @()
-        if($null -ne $Context.Filter.Items -and $Context.Filter.Items.Count -gt 0) {
-            $linkOperator = $Context.Filter.linkOperator #The link operator is 'AND' or 'OR'. It will always be one or the other for all properties
+
+        if ($null -ne $Context.Filter.Items -and $Context.Filter.Items.Count -gt 0) {
+            $logicOperator = $Context.Filter.logicOperator #The link operator is 'AND' or 'OR'. It will always be one or the other for all properties
+
             foreach ($item in $Context.Filter.Items) {         
                 $simpleFilter += [PSCustomObject]@{
-                    Property    = $item.field
-                    Value       = $item.Value
-                    Operator    = $item.operator
+                    Property = $item.Field
+                    Value    = $item.Value
+                    Operator = $item.Operator
                 }
             }
         }
 
-        if($null -ne $simpleFilter -and $simpleFilter.Count -gt 0) {
+        if ($null -ne $simpleFilter -and $simpleFilter.Count -gt 0) {
             $count = 1
-            foreach($filter in $simpleFilter) {
-                if ($count -gt 1) {
-                    $SqlFilter += " $($linkOperator) "
-                } else {
+            foreach ($filter in $simpleFilter) {
+                if ($count -gt 1) {               
+                    $SqlFilter += " $($logicOperator) "
+                }
+                else {
                     $SqlFilter += " WHERE "
                 }
+
                 switch ($filter.Operator) {
                     "contains" { $SqlFilter += " $($filter.Property) LIKE '%$($filter.Value)%' " }
                     "equals" { $SqlFilter += " $($filter.Property) = '$($filter.Value)' " }
@@ -388,10 +395,11 @@ function Out-UDSQLDataGrid {
                     "endsWith" { $SqlFilter += " $($filter.Property) LIKE '%$($filter.Value)' " }
                     "isAnyOf" {
                         $count = 1
-                        foreach($val in $filter.Value){
-                            if($count -gt 1) {
+                        foreach ($val in $filter.Value) {
+                            if ($count -gt 1) {
                                 $list += ", '$val'"
-                            } else {
+                            }
+                            else {
                                 $list += "'$val'"
                             }  
                             $count += 1
@@ -405,24 +413,37 @@ function Out-UDSQLDataGrid {
                 }
                 $count += 1
             }
-        } else {
+        }
+        else {
             $SqlFilter = $null
         }
-        $totalCount = (Invoke-DbaQuery -SqlInstance $SqlInstance -Database $Database -Query "SELECT COUNT(*) As Count FROM $Table $SqlFilter" -SqlParameters $SqlParameters).Count
-        $sort = $Context.Sort.'0'
-        if ($sort)
-        {
+
+        if ($null -eq $SqlFilter) {
+            $totalCount = (Invoke-DbaQuery -SqlInstance $SqlInstance -Database $Database -SqlCredential $SqlCredential -Query "SELECT COUNT(*) As Count FROM $Table").Count
+        }
+        else {
+            $totalCount = (Invoke-DbaQuery -SqlInstance $SqlInstance -Database $Database -SqlCredential $SqlCredential -Query "SELECT COUNT(*) As Count FROM $Table $SqlFilter").Count
+            $sort = $Context.Sort.'0'
+        }
+
+        if ($sort) {
             $sqlSort = "ORDER BY $($sort.field) $($sort.Sort) "
-        } else {
+        }
+        else {
             $sqlSort = "ORDER BY (SELECT NULL)"
         }
-        $sqlPage = "OFFSET $($Context.Page * $Context.PageSize) ROWS FETCH NEXT $($Context.PageSize) ROWS ONLY;"
-        if($null -ne $SqlFilter) {
+
+        if ($null -ne $SqlFilter) {
+            $sqlPage = "OFFSET $($Context.Page * $Context.PageSize) ROWS FETCH NEXT $($Context.PageSize) ROWS ONLY;"
             $Query = "SELECT * FROM $Table $sqlFilter $sqlSort $sqlPage"
-        } else {
+        }
+        else {
+            $sqlPage = "OFFSET $($RowsPerPage) ROWS FETCH NEXT $($RowsPerPage) ROWS ONLY;"
             $Query = "SELECT * FROM $Table $sqlSort $sqlPage"
         }
-        $Rows = Invoke-DbaQuery -SqlInstance $SqlInstance -Database $Database -Query $Query -As PSObject -SqlParameters $SqlParameters
+
+        $Rows = Invoke-DbaQuery -SqlInstance $SqlInstance -Database $Database -SqlCredential $SqlCredential -Query $Query -As PSObject
+
         @{
             rows     = [Array]$Rows
             rowCount = $TotalCount
