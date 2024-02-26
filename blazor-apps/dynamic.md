@@ -41,9 +41,9 @@ The function `RenderStatusColumn` will be called for each row in the table.&#x20
 function RenderStatusColumn {
     param($Context)
     
-    if ($Context.Status -eq 'Started')
+    if ($Context.Status -eq 'Running')
     {
-        "<Alert Message='Running' />"
+        "<Alert Message='Started' />"
     }
     else 
     {
