@@ -16,7 +16,7 @@ Blazor apps are simplified user interfaces that take advantage of PSBlazor to al
 
 ## PostgreSQL Support
 
-PostgreSQL is not supported as a persistence store.&#x20;
+PostgreSQL is now supported as a persistence store.&#x20;
 
 ## Updated Runtimes
 
