@@ -38,7 +38,9 @@ Note that you will not input the entire endpoint URL. You will need to include t
 
 ![](<../../.gitbook/assets/image (333).png>)
 
-
+{% hint style="warning" %}
+To be able to assign users to roles (and filter on groups) you have to edit the manifest option `groupMembershipClaims`. Settings this to `All` will expose all groups a user belongs to - you can read more about the possible settings on [microsoft learn](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-fed-group-claims#configure-the-microsoft-entra-application-registration-for-group-attributes).
+{% endhint %}
 
 ### Configuring Universal for Azure Active Directory
 
