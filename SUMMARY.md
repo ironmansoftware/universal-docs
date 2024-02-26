@@ -2,9 +2,9 @@
 
 * [❓ About](README.md)
 * [🆕 What's New in v5?](whats-new-in-v3.md)
-* [⏯ Get Started](get-started.md)
+* [⏯️ Get Started](get-started.md)
 * [📚 Additional Resources](additional-resources.md)
-* [⬇ Installation](getting-started/README.md)
+* [⬇️ Installation](getting-started/README.md)
   * [Docker](getting-started/docker.md)
   * [Upgrading](getting-started/upgrading.md)
   * [Uninstall](getting-started/uninstall.md)
@@ -124,7 +124,7 @@
 * [Tables](blazor-apps/tables.md)
 * [Services](blazor-apps/services.md)
 
-## 🖥 Desktop
+## 🖥️ Desktop
 
 * [About Desktop Mode](desktop/about-desktop-mode.md)
 * [File Associations](desktop/file-associations.md)
@@ -132,7 +132,7 @@
 * [Pages](desktop/pages.md)
 * [Protocol Handlers](desktop/protocol-handlers.md)
 
-## 🏗 Platform
+## 🏗️ Platform
 
 * [Cache](platform/cache.md)
 * [Computers](platform/computers.md)
@@ -147,7 +147,7 @@
 * [User Sessions](platform/user-sessions.md)
 * [Variables](platform/variables.md)
 
-## ⚙ Configuration <a href="#config" id="config"></a>
+## ⚙️ Configuration <a href="#config" id="config"></a>
 
 * [API](config/api.md)
 * [Command Line Options](config/command-line-options.md)
@@ -175,7 +175,7 @@
 * [Running as a Service Account](config/running-as-a-service-account.md)
 * [Best Practices](config/best-practices.md)
 
-## 👩💻 Development
+## 👩‍💻 Development
 
 * [Debugging Scripts](development/debugging-scripts.md)
 * [Editor](development/editor.md)
