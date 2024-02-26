@@ -120,6 +120,7 @@
 
 * [About](tools/about.md)
 * [Syntax](tools/psblazor.md)
+* [Dynamic](blazor-apps/dynamic.md)
 * [Forms](blazor-apps/forms.md)
 * [Tables](blazor-apps/tables.md)
 * [Services](blazor-apps/services.md)
