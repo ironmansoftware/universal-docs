@@ -4,6 +4,52 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.2.13 - 3/6/2024
+
+#### API
+
+* Fixed an issue where gRPC commands and endpoint could fail when a proxy was configured (#3086)
+* Added logging to event hub client (#3114)
+
+#### Apps
+
+* Added -PaperStyle to Show-UDModal (#2832)
+* Fixed an issue where -Sx would not apply to New-UDTooltip (#3095)
+* Added -ValueOptions to New-UDDataGrid
+* Fixed an issue where when a PSU node was stopped, apps would stop on all other running nodes (#3119)
+* Fixed an issue where nested navigation more than one level deep would not expand when navigating to a page (#3107)
+* Fixed an issue with duplicate app pages and deleting app pages (#3120)
+* Fixed an issue where page icons might not be shown in the header (#3105)
+* Fixed an issue where New-UDRadioGroup -Label would have no affect (#3111)
+
+#### Automation
+
+* Fixed an issue where $Job.Script was null in triggers (#3087)
+* Added support for -InformationAction on Invoke-PSUScript.
+* Improved performance when loading many scripts at startup (#2859)
+* Fixed an issue where an invalid app token could be selected when running scripts.
+* Fixed an issue where the job page could throw a JavaScript error in the admin console (#3109)
+* Fixed an issue where default values for DateTime objects would not be honored in the admin console schedules (#2802)
+* Fixed an issue where Get-PSUJob wouldn't work in Windows PowerShell with certain parameter sets (#3138)
+* Fixed an issue where One Time schedules would not survive a restart in SQL (#3135)
+
+#### Platform
+
+* Fixed an issue where resources in read-only regions could be duplicated (#3082/#3090)
+* Fixed a race condition with module discovery that could cause inconsistent IDs and duplicate modules (#3088)
+* Fixed an issue where the version field would be empty on the computers page (#3089)
+* Fixed an issue when displaying large variable values (#3074)
+* Fixed an issue where Computer Groups would not show in the admin console (#3101)
+* Fixed an issue where INSTALLPATH wasn't honored when specified on the command line of the MSI (#1494/#3028)
+* Fixed an error deleting app tokens in the groom job
+* Fixed an issue where git bundles would not work with SQLite (#3108)
+* Fixed an issue where computers could fail to delete (#2812)
+* Fixed an issue where the ARM64/v8 docker image had the wrong platform set (#1024)
+* Fixed an issue launching PSU from the Okta dashboard when using SAML2
+* Fixed an issue were a service in a multi-node setup may not start when upgrading (#3103)
+
+## 4.2.12 - 2/1/2024
+
 #### APIs
 
 * Fixed an issue with nested IIS sites and the API tester with variables (#3051)
