@@ -65,6 +65,10 @@ While you can use the Universal module to connect to event hubs, it may not be t
 
 After installing the MSI, you will need to configure the client by using an `eventHubClient.json` file. This file should be created in `%ProgramData%\PowerShellUniversal`. Changes to this file require a restart of the Event Hub Client service.
 
+{% hint style="warning" %}
+The installer will not create the folder or file automatically.&#x20;
+{% endhint %}
+
 This JSON file configures the Event Hub Client to connect to the hub and run scripts when invoked.
 
 ```json
