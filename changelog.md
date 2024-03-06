@@ -4,8 +4,6 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
-## 4.2.12 - 1/31/2024
-
 #### APIs
 
 * Fixed an issue with nested IIS sites and the API tester with variables (#3051)
