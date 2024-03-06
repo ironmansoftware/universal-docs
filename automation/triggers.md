@@ -30,7 +30,6 @@ The following types of events can be assigned a trigger.
 * Server Stopping
 * User Login
 * Use of a Revoked App Token
-* PowerShell Protect Event
 * API Authentication Failed
 * API Error
 * New User Login
@@ -40,7 +39,7 @@ The following types of events can be assigned a trigger.
 
 ### New User Login
 
-The user login event takes place when a user accesses PowerShell Universal. The script will receive a `$User`parameter with user information.&#x20;
+The user login event takes place when a user accesses PowerShell Universal. The script will receive a `$User`parameter with user information.
 
 ```powershell
 @{
@@ -68,9 +67,9 @@ The app token event takes place when a revoked app token is used. The script wil
 
 ### Git Sync
 
-This trigger occurs when a git sync is run. This trigger will fire for both successful and unsuccessful git syncs.&#x20;
+This trigger occurs when a git sync is run. This trigger will fire for both successful and unsuccessful git syncs.
 
-You will receive the following object in the `$data` parameter.&#x20;
+You will receive the following object in the `$data` parameter.
 
 ```csharp
 public class GitStatus 
@@ -134,7 +133,7 @@ Triggers related to the server status will not receive a parameter.
 
 Using the `-Condition` parameter of `New-PSUTrigger`, you can determine whether or not a trigger should be run based on local conditions on the server. Return `$true` or `$false` from the condition.
 
-For example, you can disable a trigger if the `Environment` environment variable is not set to `production`.&#x20;
+For example, you can disable a trigger if the `Environment` environment variable is not set to `production`.
 
 ```powershell
 New-PSUTrigger -Condition {
