@@ -8,6 +8,10 @@ The UDUpload component is used to upload files to Universal Apps. You can proces
 
 This component works with [UDForm](form.md) and [UDStepper](../navigation/stepper.md).
 
+{% hint style="warning" %}
+Upload ony supports files up to 2 GB in size.
+{% endhint %}
+
 ## Uploading a File
 
 Uploads a file and shows the contents via a toast.
