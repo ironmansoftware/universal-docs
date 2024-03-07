@@ -10,6 +10,10 @@ This component works with [UDForm](form.md) and [UDStepper](../navigation/steppe
 
 ## Uploading a File
 
+{% hint style="warning" %}
+Upload ony supports files up to 2 GB in size.
+{% endhint %}
+
 Uploads a file and shows the contents via a toast.
 
 ```powershell
@@ -28,7 +32,7 @@ The body of the `OnUpload` script block is a JSON string with the following form
 }
 ```
 
-The `$EventData` is an object with the following structure.&#x20;
+The `$EventData` is an object with the following structure.
 
 ```csharp
 public class Upload
