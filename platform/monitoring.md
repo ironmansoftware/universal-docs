@@ -53,7 +53,54 @@ Performance counters are installed when running the MSI installer. Once this occ
 * PowerShell Universal \ API Execution Time \ \_Total
 * PowerShell Universal \ API Execution Time \ Endpoint
 * PowerShell Universal \ Active Dashboard Connections \ \_Total
-* PowerShell Universal \ Active Dashboard Connections \ Dashboard
+* PowerShell Universal \ Active Dashboard Connections \ Dashboard\
+
+
+### Installation
+
+By default, the MSI will install the performance counters. If you are running PowerShell Universal outside of the MSI, you will need to install them yourself. You can do so with the following script. You will need to run it from an elevated prompt.&#x20;
+
+```powershell
+$categoryName = "PowerShell Universal"
+$categoryType = [System.Diagnostics.PerformanceCounterCategoryType]::MultiInstance
+$categoryExists = [System.Diagnostics.PerformanceCounterCategory]::Exists($categoryName)
+
+If (-Not $categoryExists)
+{
+$objCCDC = New-Object System.Diagnostics.CounterCreationDataCollection
+$objCCD1 = New-Object System.Diagnostics.CounterCreationData
+$objCCD1.CounterName = "Active Endpoints"
+$objCCD1.CounterType = "NumberOfItems32"
+$objCCD1.CounterHelp = "Active number of executing endpoints."
+$objCCDC.Add($objCCD1) | Out-Null
+
+$objCCD1 = New-Object System.Diagnostics.CounterCreationData
+$objCCD1.CounterName = "Execution Time"
+$objCCD1.CounterType = "averageTimer32"
+$objCCD1.CounterHelp = "Average execution time."
+$objCCDC.Add($objCCD1) | Out-Null
+
+$objCCD1 = New-Object System.Diagnostics.CounterCreationData
+$objCCD1.CounterName = "Execution Time Base"
+$objCCD1.CounterType = "averageBase"
+$objCCD1.CounterHelp = "Average execution time base."
+$objCCDC.Add($objCCD1) | Out-Null
+
+$objCCD1 = New-Object System.Diagnostics.CounterCreationData
+$objCCD1.CounterName = "Calls per second"
+$objCCD1.CounterType = "rateOfCountsPerSecond64"
+$objCCD1.CounterHelp = "Number of executions per second."
+$objCCDC.Add($objCCD1) | Out-Null
+
+$objCCD1 = New-Object System.Diagnostics.CounterCreationData
+$objCCD1.CounterName = "Active Connections"
+$objCCD1.CounterType = "numberOfItems64"
+$objCCD1.CounterHelp = "Number of active connections to dashboards"
+$objCCDC.Add($objCCD1) | Out-Null
+
+[System.Diagnostics.PerformanceCounterCategory]::Create($categoryName, $categoryHelp, $categoryType, $objCCDC)|Out-Null
+}
+```
 
 ## Processes
 
