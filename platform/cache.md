@@ -62,13 +62,21 @@ You can use the `Get-PSUCache` cmdlet to retrieve items from the cache. You simp
 Get-PSUCache -Key "CurrentDate"
 ```
 
+## Persistent Cache
+
+You can use the `-Persist` parameter of `Set-PSUCache` to store data within the database. This allows for distributed caching and a cache the will survive restarts of the PowerShell Universal service.&#x20;
+
+```powershell
+Set-PSUCache -Key "CurrentDate" -Value (Get-Date) -Persist
+```
+
 ## $Cache Scope
 
-APIs, Automation scripts and Dashboards all support a $Cache scope. This scope is used to cache data across runspaces that will persist in memory of each of the execution environments. The $Cache scope differs from the server-level cache as it only resides in the execution environment of feature you are using.&#x20;
+APIs, Automation scripts and Dashboards all support a $Cache scope. This scope is used to cache data across runspaces that will persist in memory of each of the execution environments. The $Cache scope differs from the server-level cache as it only resides in the execution environment of feature you are using.
 
-For example, if you set a $Cache variable in a dashboard, then it will not be available in an API. This is not true when using the Integrated environment. If a dashboard and API both use the integrated environment, then they share the cache scope.&#x20;
+For example, if you set a $Cache variable in a dashboard, then it will not be available in an API. This is not true when using the Integrated environment. If a dashboard and API both use the integrated environment, then they share the cache scope.
 
-You can set and retrieve data from the cache scope using variable assignment and retrieval syntax.&#x20;
+You can set and retrieve data from the cache scope using variable assignment and retrieval syntax.
 
 ```powershell
 $Cache:MyValue = "Hello"
@@ -79,6 +87,3 @@ Write-Host $Cache:MyValue
 
 * [Get-PSUCache](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Get-PSUCache.txt)
 * [Set-PSUCache](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Set-PSUCache.txt)
-
-
-
