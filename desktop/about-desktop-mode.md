@@ -4,6 +4,10 @@ description: About PowerShell Universal Desktop mode.
 
 # About Desktop Mode
 
+{% hint style="danger" %}
+Desktop mode is deprecated and will be removed in PowerShell Universal v5.
+{% endhint %}
+
 Desktop mode runs PowerShell Universal as a desktop application. It installs to the current user's application data folders and does not require administrative access to run. It runs as the current user and with a tray icon to access the console and configuration files.&#x20;
 
 ## Install Desktop Mode
