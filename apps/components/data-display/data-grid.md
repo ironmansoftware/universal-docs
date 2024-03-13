@@ -256,7 +256,6 @@ New-UDDataGrid -LoadRows {
     @{ field = "number"}
 ) -OnExport {
     $ExportContent = $Data | ConvertTo-Csv -NoTypeInformation | Out-String
-    Show-UDToast $ExportContent
     Out-UDDataGridExport -Data $ExportContent -FileName 'export.csv' 
 }
 ```
