@@ -240,19 +240,24 @@ New-UDDataGrid -LoadRows {
 To override the default export functionality, use the `-OnExport` event handler. `$EventData` will be an array of rows with their values. You should use `Out-UDDataGridExport` to return the data from `-OnExport`.
 
 ```powershell
+$Data = @(
+    @{ name = 'Adam'; Number = Get-Random}
+    @{ name = 'Tom'; Number = Get-Random}
+    @{ name = 'Sarah'; Number = Get-Random}
+)
+
 New-UDDataGrid -LoadRows {
-    $Data = @(
-        @{ Name = 'Adam'; Number = Get-Random}
-        @{ Name = 'Tom'; Number = Get-Random}
-        @{ Name = 'Sarah'; Number = Get-Random}
-    )
-    $Data| Out-UDDataGridData -Context $EventData -TotalRows $Data.Length
+    @{
+        rows = $Data 
+        rowCount = $Data.Length
+    }
 } -Columns @(
-    New-UDDataGridColumn -Field name
-    New-UDDataGridColumn -Field number
-) -AutoHeight $true -OnExport {
-    $Data = $EventData | Select-Object -Expand name 
-    Out-UDDataGridExport -Data $Data -FileName 'export.txt' | Out-String
+    @{ field = "name"}
+    @{ field = "number"}
+) -OnExport {
+    $ExportContent = $Data | ConvertTo-Csv -NoTypeInformation | Out-String
+    Show-UDToast $ExportContent
+    Out-UDDataGridExport -Data $ExportContent -FileName 'export.csv' 
 }
 ```
 
