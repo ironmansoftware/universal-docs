@@ -58,7 +58,7 @@ New-UDButton -Text 'Message Box' -OnClick {
 
 ![](<../../../.gitbook/assets/image (117).png>)
 
-Loading buttons will display a loading icon while an event handler is running. This is useful for longer running events.&#x20;
+Loading buttons will display a loading icon while an event handler is running. This is useful for longer running events.
 
 ```powershell
 New-UDButton -Text 'Message Box' -OnClick {
@@ -87,7 +87,19 @@ New-UDButtonGroup -Children {
 
 <figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Button Group</p></figcaption></figure>
 
+## Disable Button After Click
+
+This example uses `Set-UDElement` to disable the button after performing an action.&#x20;
+
+```powershell
+New-UDButton -Id "btn1" -OnClick {
+    Show-UDToast "Hello!"
+    Set-UDElement -Id 'btn1' -Attributes @{
+        disabled = $true
+    }
+}
+```
+
 ## API
 
 * [New-UDButton](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDButton.txt)
-
