@@ -4,6 +4,43 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.2.14 - 3/22/2024
+
+#### APIs
+
+* Fixed route matching for variable routes that also match static routes (#3181)
+
+#### Automation
+
+* Fixed an issue where app tokens could duplicate due to schedules
+* Fixed an issue with the Hide Run As setting (#3187)
+* Fixed a performance issue with writing job logs to SQL (#3200)
+* Fixed an issue with calling Get-Acl (#2482)
+* Fixed an issue loading Microsoft.PowerShell.Utility (#2423)
+
+#### Apps
+
+* Fixed an issue where -Style wouldn't apply when using -Disabled with New-UDCheckbox (#2144)
+* Fixed an issue where the $Query hashtable was case sensitive (#3169)
+* Added -Views to New-UDDatePicker (#2005)
+* Fixed an issue with a stepper with no steps (#3188)
+* Fixed an issue with the docs app stopping when editing other apps (#3174)
+
+#### Platform
+
+* Pinned to the Az.Accounts 2.12.5 version to avoid breaking changes in the module container image
+* Fixed an issue with manually reloading dashboards.ps1
+* Fixed documentation links (#3178)
+* Removed manual garbage collection that could cause a service hang
+* Fixed an issue with creating file system items in Linux (#3136)
+* Fixed an issue with the Disabled Drives option for Disk Space Health Check (#3137)
+* Encrypted git token\password in database (#3182)
+* Fixed an issue with storing the git repository in the database (#3127)
+* Fixed an issue with installing modules on a nested IIS site (#3186)
+* Fixed an issue with computers being marked offline (#3197)
+* Added computer name to notifications in multi-node setups (#3195)
+* Computers are now listed under computer groups (#3196)
+
 ## 4.2.13 - 3/6/2024
 
 #### API
