@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSUSystemEvent [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] -Condition <String> [-Credential <Variable>] [-Environment <String>] [-Integrated] [-Name <String>] [-Type {Create | Delete | Modify}] [-UseDefaultCredentials] [<CommonParameters>]
+    New-PSUSystemEvent [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] -Condition <String> [-Credential <Variable>] [-Environment <String>] [-Integrated] [-Name <String>] [-Type {Create | Delete | Modify}] [-UseDefaultCredentials] [-Namespace <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -102,6 +102,15 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Namespace <String>
+        {{ Fill Namespace Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         

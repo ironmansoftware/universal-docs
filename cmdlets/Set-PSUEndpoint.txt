@@ -1,0 +1,221 @@
+
+NAME
+    Set-PSUEndpoint
+    
+SYNOPSIS
+    Updates an endpoint in PowerShell Universal.
+    
+    
+SYNTAX
+    Set-PSUEndpoint [-Id] <Int64> [-AppToken <String>] [-Authentication] [-ComputerName <String>] [-Description <String>] [-Documentation <String>] [-Endpoint <ScriptBlock>] [-Environment <String>] [-Integrated] [-Method {GET | POST | PUT | DELETE | OPTIONS | PATCH}] [-Path <String>] [-PersistentLog] [-RegEx] [-Role <String[]>] [-Tag <Tag[]>] [-Timeout <Int32>] [-Url <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Set-PSUEndpoint [-InputObject] <Endpoint> [-AppToken <String>] [-Authentication] [-ComputerName <String>] [-Description <String>] [-Documentation <String>] [-Endpoint <ScriptBlock>] [-Environment <String>] [-Integrated] [-Method {GET | POST | PUT | DELETE | OPTIONS | PATCH}] [-Path <String>] [-PersistentLog] [-RegEx] [-Role <String[]>] [-Tag <Tag[]>] [-Timeout <Int32>] [-Url <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Updates an endpoint in PowerShell Universal.
+    
+
+PARAMETERS
+    -AppToken <String>
+        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Authentication [<SwitchParameter>]
+        Enables authentication for the endpoint.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Description <String>
+        A description of the endpoint.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Documentation <String>
+        The documentation for the endpoint.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Endpoint <ScriptBlock>
+        The endpoint script block.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Environment <String>
+        The environment to run the endpoint in.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Id <Int64>
+        The ID of the endpoint to update.
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -InputObject <Endpoint>
+        The endpoint to update.
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Method <String[]>
+        The HTTP method to use for the endpoint.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Path <String>
+        The path to the endpoint.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -PersistentLog [<SwitchParameter>]
+        Enables persistent logging for the endpoint.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -RegEx [<SwitchParameter>]
+        Enables regular expression matching for the endpoint.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Role <String[]>
+        The role that can access the endpoint.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Tag <Tag[]>
+        The tags for the endpoint.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Timeout <Int32>
+        The timeout for the endpoint in seconds.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Url <String>
+        The URL of the endpoint.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    PowerShellUniversal.Endpoint
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Set-PSUEndpoint -Id 1 -Url '/test' -Method 'GET'
+    
+    Updates the endpoint with the ID of 1 to have the URL of '/test' and the method of 'GET'.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

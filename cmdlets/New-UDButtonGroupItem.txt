@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDButtonGroupItem [[-Id] <String>] [[-OnClick] <Endpoint>] [[-Text] <String>] [[-Href] <String>] [<CommonParameters>]
+    New-UDButtonGroupItem [[-Id] <String>] [[-OnClick] <Endpoint>] [[-Text] <String>] [[-Href] <String>] [[-Icon] <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -34,6 +34,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Text <String>
+        The text to display in the button group item.
         
         Required?                    false
         Position?                    3
@@ -46,6 +47,15 @@ PARAMETERS
         
         Required?                    false
         Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Icon <Hashtable>
+        An icon to display in the button group item.
+        
+        Required?                    false
+        Position?                    5
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false

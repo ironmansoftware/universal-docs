@@ -3,20 +3,20 @@ NAME
     Sync-PSUConfiguration
     
 SYNOPSIS
-    {{ Fill in the Synopsis }}
+    Reloads the PowerShell Universal configuration files.
     
     
 SYNTAX
-    Sync-PSUConfiguration [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    Sync-PSUConfiguration [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-Reset] [-File <String>] [<CommonParameters>]
     
     
 DESCRIPTION
-    {{ Fill in the Description }}
+    Reloads the PowerShell Universal configuration files.
     
 
 PARAMETERS
     -AppToken <String>
-        {{ Fill AppToken Description }}
+        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
         
         Required?                    false
         Position?                    named
@@ -25,7 +25,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        {{ Fill ComputerName Description }}
+        Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session.
         
         Required?                    false
         Position?                    named
@@ -34,7 +34,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
-        {{ Fill Integrated Description }}
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
         
         Required?                    false
         Position?                    named
@@ -43,11 +43,29 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
-        {{ Fill UseDefaultCredentials Description }}
+        Use default credentials when connecting to the management API
         
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Reset [<SwitchParameter>]
+        Completely resets the PowerShell Universal configuration. This is similar to restarting the service.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -File <String>
+        The configuration file to reload.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
@@ -74,9 +92,9 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> {{ Add example code here }}
+    PS C:\> Sync-PSUConfiguration
     
-    {{ Add example description here }}
+    Reloads the configuration files.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

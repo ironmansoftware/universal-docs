@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSURole [-AppToken <String>] [-ComputerName <String>] [-Description <String>] -Name <String> -Policy <ScriptBlock> [-UseDefaultCredentials] [-Integrated] [-Disabled] [-DefaultRoute <String>] [<CommonParameters>]
+    New-PSURole [-AppToken <String>] [-ComputerName <String>] [-Description <String>] -Name <String> [-Policy <ScriptBlock>] [-UseDefaultCredentials] [-Integrated] [-Disabled] [-DefaultRoute <String>] [-Roles <String[]>] [<CommonParameters>]
     
-    New-PSURole [-AppToken <String>] [-ComputerName <String>] [-Description <String>] -Name <String> [-UseDefaultCredentials] [-Integrated] -ClaimType <String> -ClaimValue <String> [-Disabled] [-DefaultRoute <String>] [<CommonParameters>]
+    New-PSURole [-AppToken <String>] [-ComputerName <String>] [-Description <String>] -Name <String> [-UseDefaultCredentials] [-Integrated] -ClaimType <String> -ClaimValue <String> [-Disabled] [-DefaultRoute <String>] [-Roles <String[]>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -62,7 +62,7 @@ PARAMETERS
     -Policy <ScriptBlock>
         The policy script block to execute when determining whether to assign this role.
         
-        Required?                    true
+        Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
@@ -115,6 +115,15 @@ PARAMETERS
         
     -DefaultRoute <String>
         The default URL to forward users in this role to.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Roles <String[]>
+        Child roles that should be assigned to the users that are assigned this role.
         
         Required?                    false
         Position?                    named

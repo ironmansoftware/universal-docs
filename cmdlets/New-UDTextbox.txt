@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTextbox [[-Id] <String>] [[-Label] <String>] [[-Placeholder] <String>] [[-Value] <String>] [[-Type] <String>] [-Disabled] [[-Icon] <Object>] [-Autofocus] [-Multiline] [[-Rows] <Int32>] [[-RowsMax] <Int32>] [-FullWidth] [[-Mask] <String>] [-Unmask] [[-Variant] <String>] [[-ClassName] <String>] [[-OnEnter] <Endpoint>] [[-OnBlur] <Endpoint>] [-Shrink] [[-OnValidate] <Endpoint>] [[-HelperText] <String>] [[-OnChange] <Endpoint>] [<CommonParameters>]
+    New-UDTextbox [[-Id] <String>] [[-Label] <String>] [[-Placeholder] <String>] [[-Value] <String>] [[-Type] <String>] [-Disabled] [[-Icon] <Object>] [-Autofocus] [-Multiline] [[-Rows] <Int32>] [[-RowsMax] <Int32>] [-FullWidth] [[-Mask] <String>] [-Unmask] [[-Variant] <String>] [[-ClassName] <String>] [[-OnEnter] <Endpoint>] [[-OnBlur] <Endpoint>] [-Shrink] [[-OnValidate] <Endpoint>] [[-HelperText] <String>] [[-OnChange] <Endpoint>] [[-Minimum] <Int32>] [[-Maximum] <Int32>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -212,6 +212,22 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
+    -Minimum <Int32>
+        
+        Required?                    false
+        Position?                    17
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Maximum <Int32>
+        
+        Required?                    false
+        Position?                    18
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
@@ -357,6 +373,15 @@ OUTPUTS
     PS > } -Label 'Name' -Placeholder 'Enter your name' -Value 'John Doe'
     
     OnChange|Creates a textbox with an OnChange event.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 15 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox15' -Type 'number' -Minimum 1 -Maximum 100
+    
+    Minimum and Maximum|Creates a number textbox with a minimum and maximum value.
     
     
     

@@ -13,6 +13,8 @@ SYNTAX
     
     Set-PSUAuthenticationMethod [-AppToken <String>] [-ComputerName <String>] [-ScriptBlock <ScriptBlock>] [-Disabled] [-UseDefaultCredentials] -CallbackPath <String> [-Configure <ScriptBlock>] [-CorrelationCookieSameSite <String>] [-Integrated] -MetadataAddress <String> [-Type <AuthenticationMethodType>] [-UseTokenLifetime <Boolean>] -Wreply <String> -Wtrealm <String> [<CommonParameters>]
     
+    Set-PSUAuthenticationMethod [-AppToken <String>] [-ComputerName <String>] [-ScriptBlock <ScriptBlock>] [-Disabled] [-UseDefaultCredentials] [-Configure <ScriptBlock>] [-Integrated] [-Type <AuthenticationMethodType>] [-LogoutUrl <String>] [<CommonParameters>]
+    
     
 DESCRIPTION
     Sets the authentication method settings.
@@ -268,6 +270,15 @@ PARAMETERS
         
     -SingleSignOnServiceUrl <String>
         The single signon service URL for SAML2.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -LogoutUrl <String>
+        The logout URL for OpenAPI Connect or WS-Federation.
         
         Required?                    false
         Position?                    named

@@ -7,9 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSUScript [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableManualInvocation] [-ManualTime <Int32>] [-MaxHistory <Int32>] -Name <String> [-Notes <String>] [-Parameter <ScriptParameter[]>] [-Path <String>] -ScriptBlock <ScriptBlock> [-Status {Draft | Pending_Review | Published | Disabled}] [-Tag <Tag[]>] [-ConcurrentJobs <Int32>] [-Environment <String>] [-TimeOut <Double>] [-Credential <Variable>] [-UseDefaultCredentials] [-Anonymous] [-Integrated] [-RetryLimit <Int32>] [-DiscardPipeline] [-LoadProfile] [-WorkingDirectory <String>] [<CommonParameters>]
+    New-PSUScript [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableManualInvocation] [-ManualTime <Int32>] [-MaxHistory <Int32>] -Name <String> [-Notes <String>] [-Parameter <ScriptParameter[]>] [-Path <String>] -ScriptBlock <ScriptBlock> [-Status {Draft | Pending_Review | Published | Disabled}] [-Tag <Tag[]>] [-ConcurrentJobs <Int32>] [-Environment <String>] [-TimeOut <Double>] [-Credential <Variable>] [-UseDefaultCredentials] [-Anonymous] [-Integrated] [-RetryLimit <Int32>] [-DiscardPipeline] [-LoadProfile] [-WorkingDirectory <String>] [-Role <String[]>] [<CommonParameters>]
     
-    New-PSUScript [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableManualInvocation] [-ManualTime <Int32>] [-MaxHistory <Int32>] -Name <String> [-Notes <String>] [-Parameter <ScriptParameter[]>] -Path <String> [-Status {Draft | Pending_Review | Published | Disabled}] [-Tag <Tag[]>] [-ConcurrentJobs <Int32>] [-Environment <String>] [-TimeOut <Double>] [-Credential <Variable>] [-UseDefaultCredentials] [-Anonymous] [-Integrated] [-RetryLimit <Int32>] [-DiscardPipeline] [-LoadProfile] [-WorkingDirectory <String>] [<CommonParameters>]
+    New-PSUScript [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableManualInvocation] [-ManualTime <Int32>] [-MaxHistory <Int32>] -Name <String> [-Notes <String>] [-Parameter <ScriptParameter[]>] -Path <String> [-Status {Draft | Pending_Review | Published | Disabled}] [-Tag <Tag[]>] [-ConcurrentJobs <Int32>] [-Environment <String>] [-TimeOut <Double>] [-Credential <Variable>] [-UseDefaultCredentials] [-Anonymous] [-Integrated] [-RetryLimit <Int32>] [-DiscardPipeline] [-LoadProfile] [-WorkingDirectory <String>] [-Role <String[]>] [<CommonParameters>]
+    
+    New-PSUScript [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableManualInvocation] [-ManualTime <Int32>] [-MaxHistory <Int32>] [-Notes <String>] [-Parameter <ScriptParameter[]>] [-Path <String>] [-Status {Draft | Pending_Review | Published | Disabled}] [-Tag <Tag[]>] [-ConcurrentJobs <Int32>] [-Environment <String>] [-TimeOut <Double>] [-Credential <Variable>] [-UseDefaultCredentials] [-Anonymous] [-Integrated] [-RetryLimit <Int32>] [-DiscardPipeline] [-LoadProfile] [-WorkingDirectory <String>] -Command <String> -Module <String> [-Role <String[]>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -184,7 +186,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Anonymous [<SwitchParameter>]
-        {{ Fill Anonymous Description }}
+        Allows for execution of this script without authentication.
         
         Required?                    false
         Position?                    named
@@ -202,7 +204,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -RetryLimit <Int32>
-        {{ Fill RetryLimit Description }}
+        The number of times to retry this script if it fails.
         
         Required?                    false
         Position?                    named
@@ -230,6 +232,33 @@ PARAMETERS
         
     -WorkingDirectory <String>
         The working directory of the script.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Command <String>
+        The command that defines this script.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Module <String>
+        The module that contains the command that defines this script.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Role <String[]>
+        The role that is required to execute this script.
         
         Required?                    false
         Position?                    named

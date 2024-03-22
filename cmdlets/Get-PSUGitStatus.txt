@@ -7,7 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    Get-PSUGitStatus [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    Get-PSUGitStatus [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] -Commits [-Credential <PSCredential>] [-First <UInt64>] [-HttpProtocolVersion <Version>] [-IncludeTotalCount] [-Skip <UInt64>] [<CommonParameters>]
+    
+    Get-PSUGitStatus [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-Credential <PSCredential>] -EditInProgress [-First <UInt64>] [-HttpProtocolVersion <Version>] [-IncludeTotalCount] [-Skip <UInt64>] [<CommonParameters>]
+    
+    Get-PSUGitStatus [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-Credential <PSCredential>] [-First <UInt64>] [-HttpProtocolVersion <Version>] [-IncludeTotalCount] [-Skip <UInt64>] -UncommittedChanges [<CommonParameters>]
     
     
 DESCRIPTION
@@ -46,6 +50,78 @@ PARAMETERS
         Use default credentials when connecting to the management API
         
         Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Commits [<SwitchParameter>]
+        {{ Fill Commits Description }}
+        
+        Required?                    true
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Credential <PSCredential>
+        {{ Fill Credential Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -EditInProgress [<SwitchParameter>]
+        {{ Fill EditInProgress Description }}
+        
+        Required?                    true
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -First <UInt64>
+        Gets only the specified number of objects. Enter the number of objects to get.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -HttpProtocolVersion <Version>
+        {{ Fill HttpProtocolVersion Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -IncludeTotalCount [<SwitchParameter>]
+        Reports the total number of objects in the data set (an integer) followed by the selected objects. If the cmdlet cannot determine the total count, it displays "Unknown total count." The integer has an Accuracy property that indicates the reliability of the total count value. The value of Accuracy ranges from 0.0 to 1.0 where 0.0 means that the cmdlet could not count the objects, 1.0 means that the count is exact, and a value between 0.0 and 1.0 indicates an increasingly reliable estimate.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Skip <UInt64>
+        Ignores the specified number of objects and then gets the remaining objects. Enter the number of objects to skip.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UncommittedChanges [<SwitchParameter>]
+        {{ Fill UncommittedChanges Description }}
+        
+        Required?                    true
         Position?                    named
         Default value                False
         Accept pipeline input?       False

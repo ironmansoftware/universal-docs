@@ -2,133 +2,129 @@
 NAME
     New-UDNivoPattern
     
+SYNOPSIS
+    Creates a nivo pattern.
+    
+    
 SYNTAX
-    New-UDNivoPattern -Id <string> -Dots [-Size <int>] [-Padding <int>] [-Stagger] [-Background <string>] [-Color <string>] [<CommonParameters>]
+    New-UDNivoPattern [-Background <String>] [-Color <String>] -Dots -Id <String> [-Padding <Int32>] [-Size <Int32>] [-Stagger] [<CommonParameters>]
     
-    New-UDNivoPattern -Id <string> -Lines [-Background <string>] [-Color <string>] [-Spacing <int>] [-Rotation <int>] [-LineWidth <int>] [<CommonParameters>]
+    New-UDNivoPattern [-Background <String>] [-Color <String>] -Id <String> [-LineWidth <Int32>] -Lines [-Rotation <Int32>] [-Spacing <Int32>] [<CommonParameters>]
     
-    New-UDNivoPattern -Id <string> -Squares [-Size <int>] [-Padding <int>] [-Stagger] [-Background <string>] [-Color <string>] [<CommonParameters>]
+    New-UDNivoPattern [-Background <String>] [-Color <String>] -Id <String> [-Padding <Int32>] [-Size <Int32>] -Squares [-Stagger] [<CommonParameters>]
     
     
+DESCRIPTION
+    Creates a nivo pattern.
+    
+
 PARAMETERS
-    -Background <string>
+    -Background <String>
+        The background color.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Color <string>
+    -Color <String>
+        The foreground color.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Dots
+    -Dots [<SwitchParameter>]
+        Include dots.
         
         Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           dots
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Id <string>
+    -Id <String>
+        The ID of this pattern.
         
         Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -LineWidth <int>
+    -LineWidth <Int32>
+        The width of the lines for this pattern.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           lines
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Lines
+    -Lines [<SwitchParameter>]
+        Use lines for this pattern.
         
         Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           lines
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Padding <int>
+    -Padding <Int32>
+        The padding between dots or squares.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           dots, squares
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Rotation <int>
+    -Rotation <Int32>
+        The rotation of lines in this pattern.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           lines
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Size <int>
+    -Size <Int32>
+        The size of the dots or squares.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           dots, squares
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Spacing <int>
+    -Spacing <Int32>
+        The spacing between lines in this pattern.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           lines
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Squares
+    -Squares [<SwitchParameter>]
+        Creates squares.
         
         Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           squares
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Stagger
+    -Stagger [<SwitchParameter>]
+        Stagger the dots or squares.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           dots, squares
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -137,19 +133,22 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
     None
+        
     
     
 OUTPUTS
     System.Object
+        
     
-ALIASES
-    None
     
-
-REMARKS
-    None
+NOTES
+    
+    
+        
+    
+    
+RELATED LINKS
 
 

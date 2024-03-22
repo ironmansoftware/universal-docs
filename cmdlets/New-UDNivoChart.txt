@@ -2,1113 +2,1012 @@
 NAME
     New-UDNivoChart
     
+SYNOPSIS
+    Creates a Nivo JS chart.
+    
+    
 SYNTAX
-    New-UDNivoChart -Data <Object> -Keys <string[]> [-Id <string>] [-Definitions <Object>] [-Fill <Object>] [-Theme <hashtable>] [-BorderWidth <int>] [-BorderColor <string>] [-IndexBy <string>] [-MinValue <int>] [-MaxValue <int>] [-Padding <float>] [-Responsive] [-Width <int>] [-Height <int>] [-Colors <Object>] [-ColorBy <Object>] [-UseDataColor] [-DisableInteractive] [-OnClick <Object>] [-MarginTop <int>] [-MarginBottom <int>] [-MarginLeft <int>] [-MarginRight <int>] [-LabelSkipWidth <int>] [-LabelSkipHeight <int>] [-LabelTextColor <string>] [-EnableGridX] [-GridXValues <Object[]>] [-EnableGridY] [-GridYValues <Object[]>] [-DisableAnimations] [-MotionStiffness <int>] [-MotionDamping <int>] [-Layers <string[]>] [-AxisTop <Object>] [-AxisBottom <Object>] [-AxisLeft <Object>] [-AxisRight <Object>] [-Bar] [-GroupMode {grouped | stacked}] [-Layout {vertical | horizontal}] [-Reverse] [-InnerPadding <float>] [-BorderRadius <int>] [-DisableLabel] [<CommonParameters>]
+    New-UDNivoChart [-AreaBaselineValue <String>] [-AreaBlendMode <String>] [-AreaOpacity <Single>] [-AxisBottom <Object>] [-AxisLeft <Object>] [-AxisRight <Object>] [-AxisTop <Object>] [-ColorBy <Object>] [-Colors <Object>] [-Curve {basis | cardinal | catmullRom | linear | monotoneX | monotoneY | natural | step | stepAfter | stepBefore}] -Data <Object> [-Definitions <Object>] [-DisableDots] [-DisableInteractive] [-DisableStackTooltip] [-DotBorderWidth <Int32>] [-DotLabelYOffset <Int32>] [-DotSize <Int32>] [-EnableArea] [-EnableDotLabel] [-EnableGridX] [-EnableGridY] [-Fill <Object>] [-GridXValues <Object[]>] [-GridYValues <Object[]>] [-Height <Int32>] [-Id <String>] [-Layers <String[]>] -Line [-LineWidth <Int32>] [-MarginBottom <Int32>] [-MarginLeft <Int32>] [-MarginRight <Int32>] [-MarginTop <Int32>] [-OnClick <Object>] [-Responsive] [-Theme <Hashtable>] [-UseDataColor] [-Width <Int32>] [-YScaleMax <Int32>] [-YScaleMin <Int32>] [-YScaleStacked] [<CommonParameters>]
     
-    New-UDNivoChart -Data <Object> -Pie [-Id <string>] [-Definitions <Object>] [-Fill <Object>] [-Theme <hashtable>] [-BorderWidth <int>] [-BorderColor <string>] [-Responsive] [-Width <int>] [-Height <int>] [-Colors <Object>] [-ColorBy <Object>] [-UseDataColor] [-DisableInteractive] [-OnClick <Object>] [-MarginTop <int>] [-MarginBottom <int>] [-MarginLeft <int>] [-MarginRight <int>] [-StartAngle <int>] [-EndAngle <int>] [-Fit <bool>] [-InnerRadius <float>] [-PadAngle <int>] [-CornerRadius <int>] [-SortByValue] [-DisableRadiusLabels] [-RadiusLabelSkipAngle <int>] [-RadiusLabelsLinkOffset <int>] [-RadialLabelsLinkDiagonalLength <int>] [-RadialLabelsLinkHorizontalLength <int>] [-RadialLabelsTextXOffset <int>] [-RadialLabelsLinkStrokeWidth <int>] [-DisableSliceLabels] [-SlicesLabelsSkipAngle <int>] [-SlicesLabelsTextColor <int>] [<CommonParameters>]
+    New-UDNivoChart [-AxisBottom <Object>] [-AxisLeft <Object>] [-AxisRight <Object>] [-AxisTop <Object>] [-Bar] [-BorderColor <String>] [-BorderRadius <Int32>] [-BorderWidth <Int32>] [-ColorBy <Object>] [-Colors <Object>] -Data <Object> [-Definitions <Object>] [-DisableAnimations] [-DisableInteractive] [-DisableLabel] [-EnableGridX] [-EnableGridY] [-Fill <Object>] [-GridXValues <Object[]>] [-GridYValues <Object[]>] [-GroupMode {grouped | stacked}] [-Height <Int32>] [-Id <String>] [-IndexBy <String>] [-InnerPadding <Single>] -Keys <String[]> [-LabelSkipHeight <Int32>] [-LabelSkipWidth <Int32>] [-LabelTextColor <String>] [-Layers <String[]>] [-Layout {vertical | horizontal}] [-MarginBottom <Int32>] [-MarginLeft <Int32>] [-MarginRight <Int32>] [-MarginTop <Int32>] [-MaxValue <Int32>] [-MinValue <Int32>] [-MotionDamping <Int32>] [-MotionStiffness <Int32>] [-OnClick <Object>] [-Padding <Single>] [-Responsive] [-Reverse] [-Theme <Hashtable>] [-UseDataColor] [-Width <Int32>] [<CommonParameters>]
     
-    New-UDNivoChart -Data <Object> -Stream [-Id <string>] [-Definitions <Object>] [-Fill <Object>] [-Theme <hashtable>] [-BorderWidth <int>] [-BorderColor <string>] [-Responsive] [-Width <int>] [-Height <int>] [-Colors <Object>] [-ColorBy <Object>] [-UseDataColor] [-DisableInteractive] [-OnClick <Object>] [-MarginTop <int>] [-MarginBottom <int>] [-MarginLeft <int>] [-MarginRight <int>] [-EnableGridX] [-GridXValues <Object[]>] [-EnableGridY] [-GridYValues <Object[]>] [-DisableAnimations] [-MotionStiffness <int>] [-MotionDamping <int>] [-Keys <string[]>] [-DotSize <int>] [-DotBorderWidth <int>] [-DisableStackTooltip] [-AxisTop <Object>] [-AxisBottom <Object>] [-AxisLeft <Object>] [-AxisRight <Object>] [-OffsetType <string>] [-Order <string>] [-Curve {basis | cardinal | catmullRom | linear | monotoneX | monotoneY | natural | step | stepAfter | stepBefore}] [-FillOpactiy <float>] [-DotColor <string>] [<CommonParameters>]
+    New-UDNivoChart [-AxisBottom <Object>] [-AxisLeft <Object>] [-AxisRight <Object>] [-AxisTop <Object>] [-BorderColor <String>] [-BorderWidth <Int32>] [-ColorBy <Object>] [-Colors <Object>] [-Curve {basis | cardinal | catmullRom | linear | monotoneX | monotoneY | natural | step | stepAfter | stepBefore}] -Data <Object> [-Definitions <Object>] [-DisableAnimations] [-DisableInteractive] [-DisableStackTooltip] [-DotBorderWidth <Int32>] [-DotColor <String>] [-DotSize <Int32>] [-EnableGridX] [-EnableGridY] [-Fill <Object>] [-FillOpactiy <Single>] [-GridXValues <Object[]>] [-GridYValues <Object[]>] [-Height <Int32>] [-Id <String>] [-Keys <String[]>] [-MarginBottom <Int32>] [-MarginLeft <Int32>] [-MarginRight <Int32>] [-MarginTop <Int32>] [-MotionDamping <Int32>] [-MotionStiffness <Int32>] [-OffsetType <String>] [-OnClick <Object>] [-Order <String>] [-Responsive] -Stream [-Theme <Hashtable>] [-UseDataColor] [-Width <Int32>] [<CommonParameters>]
     
-    New-UDNivoChart -Data <Object> [-Id <string>] [-Definitions <Object>] [-Fill <Object>] [-Theme <hashtable>] [-BorderWidth <int>] [-BorderColor <string>] [-Responsive] [-Width <int>] [-Height <int>] [-Colors <Object>] [-ColorBy <Object>] [-UseDataColor] [-DisableInteractive] [-OnClick <Object>] [-MarginTop <int>] [-MarginBottom <int>] [-MarginLeft <int>] [-MarginRight <int>] [-InnerPadding <float>] [-DisableLabel] [-Treemap] [-Identity <string>] [-Value <string>] [-Tile {squarify | slice | dice | slice-dice}] [-LeavesOnly] [-OuterPadding <int>] [<CommonParameters>]
+    New-UDNivoChart [-BorderColor <String>] [-BorderWidth <Int32>] [-ColorBy <Object>] [-Colors <Object>] [-CornerRadius <Int32>] -Data <Object> [-Definitions <Object>] [-DisableInteractive] [-DisableRadiusLabels] [-DisableSliceLabels] [-EndAngle <Int32>] [-Fill <Object>] [-Fit <Boolean>] [-Height <Int32>] [-Id <String>] [-InnerRadius <Single>] [-MarginBottom <Int32>] [-MarginLeft <Int32>] [-MarginRight <Int32>] [-MarginTop <Int32>] [-OnClick <Object>] [-PadAngle <Int32>] -Pie [-RadialLabelsLinkDiagonalLength <Int32>] [-RadialLabelsLinkHorizontalLength <Int32>] [-RadialLabelsLinkStrokeWidth <Int32>] [-RadialLabelsTextXOffset <Int32>] [-RadiusLabelSkipAngle <Int32>] [-RadiusLabelsLinkOffset <Int32>] [-Responsive] [-SlicesLabelsSkipAngle <Int32>] [-SlicesLabelsTextColor <Int32>] [-SortByValue] [-StartAngle <Int32>] [-Theme <Hashtable>] [-UseDataColor] [-Width <Int32>] [<CommonParameters>]
     
-    New-UDNivoChart -Data <Object> [-Id <string>] [-Definitions <Object>] [-Fill <Object>] [-Theme <hashtable>] [-BorderWidth <int>] [-BorderColor <string>] [-Responsive] [-Width <int>] [-Height <int>] [-Colors <Object>] [-ColorBy <Object>] [-UseDataColor] [-DisableInteractive] [-OnClick <Object>] [-MarginTop <int>] [-MarginBottom <int>] [-MarginLeft <int>] [-MarginRight <int>] [-DisableAnimations] [-MotionStiffness <int>] [-MotionDamping <int>] [-DisableLabel] [-Identity <string>] [-Value <string>] [-LeavesOnly] [-CirclePacking] [<CommonParameters>]
+    New-UDNivoChart [-BorderColor <String>] [-BorderWidth <Int32>] [-ColorBy <Object>] [-Colors <Object>] -Data <Object> [-Definitions <Object>] [-DisableInteractive] [-DisableLabel] [-Fill <Object>] [-Height <Int32>] [-Id <String>] [-Identity <String>] [-InnerPadding <Single>] [-LeavesOnly] [-MarginBottom <Int32>] [-MarginLeft <Int32>] [-MarginRight <Int32>] [-MarginTop <Int32>] [-OnClick <Object>] [-OuterPadding <Int32>] [-Responsive] [-Theme <Hashtable>] [-Tile {squarify | slice | dice | slice-dice}] [-Treemap] [-UseDataColor] [-Value <String>] [-Width <Int32>] [<CommonParameters>]
     
-    New-UDNivoChart -Data <Object> [-Id <string>] [-Definitions <Object>] [-Fill <Object>] [-Theme <hashtable>] [-IndexBy <string>] [-MinValue <int>] [-MaxValue <int>] [-Padding <float>] [-Responsive] [-Width <int>] [-Height <int>] [-Colors <Object>] [-ColorBy <Object>] [-UseDataColor] [-DisableInteractive] [-OnClick <Object>] [-MarginTop <int>] [-MarginBottom <int>] [-MarginLeft <int>] [-MarginRight <int>] [-LabelSkipWidth <int>] [-LabelSkipHeight <int>] [-LabelTextColor <string>] [-EnableGridX] [-GridXValues <Object[]>] [-EnableGridY] [-GridYValues <Object[]>] [-DisableAnimations] [-MotionStiffness <int>] [-MotionDamping <int>] [-Keys <string[]>] [-CellOpacity <float>] [-CellBorderWidth <int>] [-Heatmap] [-ForceSquare] [-SizeVariation <int>] [-DisableLabels] [<CommonParameters>]
+    New-UDNivoChart [-BorderColor <String>] [-BorderWidth <Int32>] [-CirclePacking] [-ColorBy <Object>] [-Colors <Object>] -Data <Object> [-Definitions <Object>] [-DisableAnimations] [-DisableInteractive] [-DisableLabel] [-Fill <Object>] [-Height <Int32>] [-Id <String>] [-Identity <String>] [-LeavesOnly] [-MarginBottom <Int32>] [-MarginLeft <Int32>] [-MarginRight <Int32>] [-MarginTop <Int32>] [-MotionDamping <Int32>] [-MotionStiffness <Int32>] [-OnClick <Object>] [-Responsive] [-Theme <Hashtable>] [-UseDataColor] [-Value <String>] [-Width <Int32>] [<CommonParameters>]
     
-    New-UDNivoChart -Data <Object> -Calendar -From <datetime> -To <datetime> [-Id <string>] [-Definitions <Object>] [-Fill <Object>] [-Theme <hashtable>] [-MinValue <int>] [-MaxValue <int>] [-Responsive] [-Width <int>] [-Height <int>] [-Colors <Object>] [-ColorBy <Object>] [-UseDataColor] [-DisableInteractive] [-OnClick <Object>] [-MarginTop <int>] [-MarginBottom <int>] [-MarginLeft <int>] [-MarginRight <int>] [-Domain <Object>] [-EmptyColor <Object>] [-YearSpacing <int>] [-YearLegendOffset <int>] [-MonthSpacing <int>] [-MonthLegendOffset <int>] [-DaySpacing <int>] [-DayLegendOffset <int>] [<CommonParameters>]
+    New-UDNivoChart -Calendar [-ColorBy <Object>] [-Colors <Object>] -Data <Object> [-DayLegendOffset <Int32>] [-DaySpacing <Int32>] [-Definitions <Object>] [-DisableInteractive] [-Domain <Object>] [-EmptyColor <Object>] [-Fill <Object>] -From <DateTime> [-Height <Int32>] [-Id <String>] [-MarginBottom <Int32>] [-MarginLeft <Int32>] [-MarginRight <Int32>] [-MarginTop <Int32>] [-MaxValue <Int32>] [-MinValue <Int32>] [-MonthLegendOffset <Int32>] [-MonthSpacing <Int32>] [-OnClick <Object>] [-Responsive] [-Theme <Hashtable>] -To <DateTime> [-UseDataColor] [-Width <Int32>] [-YearLegendOffset <Int32>] [-YearSpacing <Int32>] [<CommonParameters>]
     
-    New-UDNivoChart -Data <Object> -Line [-Id <string>] [-Definitions <Object>] [-Fill <Object>] [-Theme <hashtable>] [-Responsive] [-Width <int>] [-Height <int>] [-Colors <Object>] [-ColorBy <Object>] [-UseDataColor] [-DisableInteractive] [-OnClick <Object>] [-MarginTop <int>] [-MarginBottom <int>] [-MarginLeft <int>] [-MarginRight <int>] [-EnableGridX] [-GridXValues <Object[]>] [-EnableGridY] [-GridYValues <Object[]>] [-Layers <string[]>] [-DotSize <int>] [-DotBorderWidth <int>] [-DisableStackTooltip] [-AxisTop <Object>] [-AxisBottom <Object>] [-AxisLeft <Object>] [-AxisRight <Object>] [-LineWidth <int>] [-EnableArea] [-AreaBaselineValue <string>] [-AreaOpacity <float>] [-AreaBlendMode <string>] [-DisableDots] [-EnableDotLabel] [-DotLabelYOffset <int>] [-YScaleStacked] [-YScaleMin <int>] [-YScaleMax <int>] [-Curve {basis | cardinal | catmullRom | linear | monotoneX | monotoneY | natural | step | stepAfter | stepBefore}] [<CommonParameters>]
+    New-UDNivoChart [-CellBorderWidth <Int32>] [-CellOpacity <Single>] [-ColorBy <Object>] [-Colors <Object>] -Data <Object> [-Definitions <Object>] [-DisableAnimations] [-DisableInteractive] [-DisableLabels] [-EnableGridX] [-EnableGridY] [-Fill <Object>] [-ForceSquare] [-GridXValues <Object[]>] [-GridYValues <Object[]>] [-Heatmap] [-Height <Int32>] [-Id <String>] [-IndexBy <String>] [-Keys <String[]>] [-LabelSkipHeight <Int32>] [-LabelSkipWidth <Int32>] [-LabelTextColor <String>] [-MarginBottom <Int32>] [-MarginLeft <Int32>] [-MarginRight <Int32>] [-MarginTop <Int32>] [-MaxValue <Int32>] [-MinValue <Int32>] [-MotionDamping <Int32>] [-MotionStiffness <Int32>] [-OnClick <Object>] [-Padding <Single>] [-Responsive] [-SizeVariation <Int32>] [-Theme <Hashtable>] [-UseDataColor] [-Width <Int32>] [<CommonParameters>]
     
     
+DESCRIPTION
+    Creates a Nivo JS chart.
+    
+
 PARAMETERS
-    -AreaBaselineValue <string>
+    -AreaBaselineValue <String>
+        Define the value to be used for area baseline.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Line
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -AreaBlendMode <string>
+    -AreaBlendMode <String>
+        Define CSS mix-blend-mode for areas.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Line
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -AreaOpacity <float>
+    -AreaOpacity <Single>
+        Area opacity (0~1), depends on enableArea.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Line
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -AxisBottom <Object>
+        Bottom axis configuration. Use New-UDNivoChartAxisOption to create this object.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar, Line, Stream
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -AxisLeft <Object>
+        Left axis configuration. Use New-UDNivoChartAxisOption to create this object.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar, Line, Stream
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -AxisRight <Object>
+        Right axis configuration. Use New-UDNivoChartAxisOption to create this object.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar, Line, Stream
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -AxisTop <Object>
+        Top axis configuration. Use New-UDNivoChartAxisOption to create this object.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar, Line, Stream
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Bar
+    -Bar [<SwitchParameter>]
+        Creates a bar chart.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -BorderColor <string>
+    -BorderColor <String>
+        Sets the border color.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar, Pie, Stream, Treemap, CirclePacking
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -BorderRadius <int>
+    -BorderRadius <Int32>
+        Rectangle border radius.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -BorderWidth <int>
+    -BorderWidth <Int32>
+        Width of the border.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar, Pie, Stream, Treemap, CirclePacking
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Calendar
+    -Calendar [<SwitchParameter>]
+        Creates a calendar chart.
         
         Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Calendar
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -CellBorderWidth <int>
+    -CellBorderWidth <Int32>
+        {{ Fill CellBorderWidth Description }}
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Heatmap
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -CellOpacity <float>
+    -CellOpacity <Single>
+        {{ Fill CellOpacity Description }}
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Heatmap
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -CirclePacking
+    -CirclePacking [<SwitchParameter>]
+        Creates a Circle Packing (Bubble) chart.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           CirclePacking
-        Aliases                      Bubble
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -ColorBy <Object>
+        Define the property to use to assign a color to circles.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -Colors <Object>
+        Define chart's colors. Defaults to @{ scheme = 'Nivo' }
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -CornerRadius <int>
+    -CornerRadius <Int32>
+        Rounded slices radius.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Pie
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Curve <string>
+    -Curve <String>
+        Curve interpolation. Defaults to linear.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Stream, Line
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -Data <Object>
+        Chart data.
         
         Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -DayLegendOffset <int>
+    -DayLegendOffset <Int32>
+        {{ Fill DayLegendOffset Description }}
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Calendar
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -DaySpacing <int>
+    -DaySpacing <Int32>
+        define spacing between each day cell.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Calendar
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -Definitions <Object>
+        {{ Fill Definitions Description }}
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -DisableAnimations
+    -DisableAnimations [<SwitchParameter>]
+        {{ Fill DisableAnimations Description }}
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar, Heatmap, Stream, CirclePacking
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -DisableDots
+    -DisableDots [<SwitchParameter>]
+        Disables dots.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Line
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -DisableInteractive
+    -DisableInteractive [<SwitchParameter>]
+        Disables interactivity.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -DisableLabel
+    -DisableLabel [<SwitchParameter>]
+        Disables labels.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar, Treemap, CirclePacking
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -DisableLabels
+    -DisableLabels [<SwitchParameter>]
+        Disable labels.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Heatmap
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -DisableRadiusLabels
+    -DisableRadiusLabels [<SwitchParameter>]
+        Disables radius labels.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Pie
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -DisableSliceLabels
+    -DisableSliceLabels [<SwitchParameter>]
+        Disables slice labels.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Pie
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -DisableStackTooltip
+    -DisableStackTooltip [<SwitchParameter>]
+        Disables stack tooltip.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Stream, Line
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -Domain <Object>
+        {{ Fill Domain Description }}
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Calendar
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -DotBorderWidth <int>
+    -DotBorderWidth <Int32>
+        The dot border width.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Stream, Line
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -DotColor <string>
+    -DotColor <String>
+        The color of the dot.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Stream
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -DotLabelYOffset <int>
+    -DotLabelYOffset <Int32>
+        The Y offset of the dot label.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Line
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -DotSize <int>
+    -DotSize <Int32>
+        The size of the dot.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Stream, Line
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -EmptyColor <Object>
+        The empty color for the calendar.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Calendar
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -EnableArea
+    -EnableArea [<SwitchParameter>]
+        Enables the area below the line chart.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Line
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -EnableDotLabel
+    -EnableDotLabel [<SwitchParameter>]
+        Enables the dot labels.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Line
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -EnableGridX
+    -EnableGridX [<SwitchParameter>]
+        Enables the X axis grid.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar, Heatmap, Stream, Line
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -EnableGridY
+    -EnableGridY [<SwitchParameter>]
+        Enables the Y axis grid.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar, Heatmap, Stream, Line
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -EndAngle <int>
+    -EndAngle <Int32>
+        End angle (in degrees), useful to make gauges for example.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Pie
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -Fill <Object>
+        Define rules to apply patterns and gradients. Use New-UDNivoFill cmdlet to create this object.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -FillOpactiy <float>
+    -FillOpactiy <Single>
+        The opacity of the fill color.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Stream
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Fit <bool>
+    -Fit <Boolean>
+        If specified, pie will be optimized to occupy more space when using partial pie.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Pie
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -ForceSquare
+    -ForceSquare [<SwitchParameter>]
+        Force square cells (width = height), please note that padding is ignored.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Heatmap
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -From <datetime>
+    -From <DateTime>
+        Start date
         
         Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Calendar
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -GridXValues <Object[]>
+        Specify values to use for vertical grid lines.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar, Heatmap, Stream, Line
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -GridYValues <Object[]>
+        Specify values to use for horizontal grid lines.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar, Heatmap, Stream, Line
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -GroupMode <string>
+    -GroupMode <String>
+        How to group bars. Defaults to stacked.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Heatmap
+    -Heatmap [<SwitchParameter>]
+        Creates a heatmap.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Heatmap
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Height <int>
+    -Height <Int32>
+        Chart height.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Id <string>
+    -Id <String>
+        ID of this chart. If not specified, a random GUID will be used.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Identity <string>
+    -Identity <String>
+        The property to use to retrieve nodes identity.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Treemap, CirclePacking
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -IndexBy <string>
+    -IndexBy <String>
+        Property to use to index the data.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar, Heatmap
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -InnerPadding <float>
+    -InnerPadding <Single>
+        Padding between grouped/stacked bars.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar, Treemap
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -InnerRadius <float>
+    -InnerRadius <Single>
+        Donut chart if greater than 0. Value should be between 0~1 as it's a ratio from original radius.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Pie
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Keys <string[]>
+    -Keys <String[]>
+        Keys to use to determine each series.
         
         Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar, Heatmap, Stream
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -LabelSkipHeight <int>
+    -LabelSkipHeight <Int32>
+        Skip label if bar height is lower than provided value, ignored if 0.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar, Heatmap
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -LabelSkipWidth <int>
+    -LabelSkipWidth <Int32>
+        Skip label if bar width is lower than provided value, ignored if 0.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar, Heatmap
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -LabelTextColor <string>
+    -LabelTextColor <String>
+        Defines how to compute label text color.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar, Heatmap
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Layers <string[]>
+    -Layers <String[]>
+        Defines the order of layers. Defaults to @('grid', 'markers', 'axes', 'areas', 'lines', 'points', 'slices', 'legends')
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar, Line
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Layout <string>
+    -Layout <String>
+        How to display bars.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -LeavesOnly
+    -LeavesOnly [<SwitchParameter>]
+        Only render leaf nodes (no parent).
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Treemap, CirclePacking
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Line
+    -Line [<SwitchParameter>]
+        Creates a line chart.
         
         Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Line
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -LineWidth <int>
+    -LineWidth <Int32>
+        Line width. Defaults tp 2px.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Line
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -MarginBottom <int>
+    -MarginBottom <Int32>
+        Bottom margin for chart, in pixels.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -MarginLeft <int>
+    -MarginLeft <Int32>
+        Left margin for chart, in pixels.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -MarginRight <int>
+    -MarginRight <Int32>
+        Right margin for chart, in pixels.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -MarginTop <int>
+    -MarginTop <Int32>
+        Top margin for chart, in pixels.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -MaxValue <int>
+    -MaxValue <Int32>
+        Maximum value.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar, Heatmap, Calendar
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -MinValue <int>
+    -MinValue <Int32>
+        Minimum value.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar, Heatmap, Calendar
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -MonthLegendOffset <int>
+    -MonthLegendOffset <Int32>
+        Define offset from month edge to its label.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Calendar
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -MonthSpacing <int>
+    -MonthSpacing <Int32>
+        define spacing between each month row/column depending on the direction.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Calendar
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -MotionDamping <int>
+    -MotionDamping <Int32>
+        {{ Fill MotionDamping Description }}
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar, Heatmap, Stream, CirclePacking
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -MotionStiffness <int>
+    -MotionStiffness <Int32>
+        {{ Fill MotionStiffness Description }}
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar, Heatmap, Stream, CirclePacking
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -OffsetType <string>
+    -OffsetType <String>
+        Offset type. Defaults to none.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Stream
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -OnClick <Object>
+        An event handler that is called when the chart is clicked.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Order <string>
+    -Order <String>
+        Layers order. Defaults to none.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Stream
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -OuterPadding <int>
+    -OuterPadding <Int32>
+        Padding between parent and child node.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Treemap
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -PadAngle <int>
+    -PadAngle <Int32>
+        Padding between each pie slice.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Pie
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Padding <float>
+    -Padding <Single>
+        Padding between each bar (ratio).
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar, Heatmap
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Pie
+    -Pie [<SwitchParameter>]
+        Creates a pie chart.
         
         Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Pie
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -RadialLabelsLinkDiagonalLength <int>
+    -RadialLabelsLinkDiagonalLength <Int32>
+        {{ Fill RadialLabelsLinkDiagonalLength Description }}
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Pie
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -RadialLabelsLinkHorizontalLength <int>
+    -RadialLabelsLinkHorizontalLength <Int32>
+        {{ Fill RadialLabelsLinkHorizontalLength Description }}
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Pie
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -RadialLabelsLinkStrokeWidth <int>
+    -RadialLabelsLinkStrokeWidth <Int32>
+        {{ Fill RadialLabelsLinkStrokeWidth Description }}
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Pie
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -RadialLabelsTextXOffset <int>
+    -RadialLabelsTextXOffset <Int32>
+        {{ Fill RadialLabelsTextXOffset Description }}
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Pie
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -RadiusLabelSkipAngle <int>
+    -RadiusLabelSkipAngle <Int32>
+        {{ Fill RadiusLabelSkipAngle Description }}
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Pie
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -RadiusLabelsLinkOffset <int>
+    -RadiusLabelsLinkOffset <Int32>
+        {{ Fill RadiusLabelsLinkOffset Description }}
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Pie
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Responsive
+    -Responsive [<SwitchParameter>]
+        Creates a responsive chart. The parent must have a set size or the chart will not resize properly.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Reverse
+    -Reverse [<SwitchParameter>]
+        Reverse bars, starts on top instead of bottom for vertical layout and right instead of left for horizontal one.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Bar
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -SizeVariation <int>
+    -SizeVariation <Int32>
+        Optionally make the size of the cells vary depending on their value.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Heatmap
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -SlicesLabelsSkipAngle <int>
+    -SlicesLabelsSkipAngle <Int32>
+        {{ Fill SlicesLabelsSkipAngle Description }}
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Pie
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -SlicesLabelsTextColor <int>
+    -SlicesLabelsTextColor <Int32>
+        {{ Fill SlicesLabelsTextColor Description }}
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Pie
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -SortByValue
+    -SortByValue [<SwitchParameter>]
+        If specified, arcs will be ordered according to their associated value.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Pie
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -StartAngle <int>
+    -StartAngle <Int32>
+        Start angle (in degrees), useful to make gauges for example.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Pie
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Stream
+    -Stream [<SwitchParameter>]
+        Creates a stream chart.
         
         Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Stream
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Theme <hashtable>
+    -Theme <Hashtable>
+        Creates a nivo theme. Use New-UDNivoTheme to create this object.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Tile <string>
+    -Tile <String>
+        Strategy used to compute nodes. Defaults to squarify.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Treemap
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -To <datetime>
+    -To <DateTime>
+        The end date for this calendar.
         
         Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Calendar
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Treemap
+    -Treemap [<SwitchParameter>]
+        Creates a treemap chart.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Treemap
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -UseDataColor
+    -UseDataColor [<SwitchParameter>]
+        {{ Fill UseDataColor Description }}
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Value <string>
+    -Value <String>
+        The property to use to retrieve nodes value.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Treemap, CirclePacking
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Width <int>
+    -Width <Int32>
+        The width of this chart.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -YScaleMax <int>
+    -YScaleMax <Int32>
+        {{ Fill YScaleMax Description }}
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Line
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -YScaleMin <int>
+    -YScaleMin <Int32>
+        {{ Fill YScaleMin Description }}
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Line
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -YScaleStacked
+    -YScaleStacked [<SwitchParameter>]
+        {{ Fill YScaleStacked Description }}
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Line
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -YearLegendOffset <int>
+    -YearLegendOffset <Int32>
+        Define offset from year edge to its label.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Calendar
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -YearSpacing <int>
+    -YearSpacing <Int32>
+        Define spacing between each year row/column depending on the direction.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Calendar
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -1117,19 +1016,326 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
     None
+        
     
     
 OUTPUTS
     System.Object
+        
     
-ALIASES
-    None
     
-
-REMARKS
-    None
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS > $Data = 1..10 | ForEach-Object { 
+    PS >    $item = Get-Random -Max 1000 
+    PS > [PSCustomObject]@{
+    PS >    Name = "Test$item"
+    PS >    Value = $item
+    PS > }
+    PS > }
+    PS > New-UDNivoChart -Bar -Keys "value" -IndexBy 'name' -Data $Data -Height 500 -Width 1000
+    
+    Basic Chart|Defines a basic bar chart.
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS > $Data = @(
+    PS >     @{
+    PS >         country = 'USA'
+    PS >         burgers = (Get-Random -Minimum 10 -Maximum 100)
+    PS >         fries = (Get-Random -Minimum 10 -Maximum 100)
+    PS >         sandwich = (Get-Random -Minimum 10 -Maximum 100)
+    PS >     }
+    PS >     @{
+    PS >         country = 'Germany'
+    PS >         burgers = (Get-Random -Minimum 10 -Maximum 100)
+    PS >         fries = (Get-Random -Minimum 10 -Maximum 100)
+    PS >         sandwich = (Get-Random -Minimum 10 -Maximum 100)
+    PS >     }
+    PS >     @{
+    PS >         country = 'Japan'
+    PS >         burgers = (Get-Random -Minimum 10 -Maximum 100)
+    PS >         fries = (Get-Random -Minimum 10 -Maximum 100)
+    PS >         sandwich = (Get-Random -Minimum 10 -Maximum 100)
+    PS >     }
+    PS > )
+    PS > 
+    PS > $Pattern = New-UDNivoPattern -Dots -Id 'dots' -Background "inherit" -Color "#38bcb2" -Size 4 -Padding 1 -Stagger
+    PS > $Fill = New-UDNivoFill -ElementId "fries" -PatternId 'dots'
+    PS > 
+    PS > New-UDNivoChart -Definitions $Pattern -Fill $Fill -Bar -Data $Data -Height 400 -Width 900 -Keys @('burgers', 'fries', 'sandwich')  -IndexBy 'country'
+    
+    Patterns|Define pattens to use for coloring of your charts.
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS > New-UDDynamic -Content {
+    PS >     $Data = 1..10 | ForEach-Object { 
+    PS >         $item = Get-Random -Max 1000 
+    PS >         [PSCustomObject]@{
+    PS >             name = "Test$item"
+    PS >             value = $item
+    PS >         }
+    PS >     }
+    PS >     New-UDNivoChart -Id 'autoRefreshingNivoBar' -Bar -Keys "value" -IndexBy 'name' -Data $Data -Height 500 -Width 1000
+    PS > } -AutoRefresh
+    
+    Autorefreshing Charts|Use New-UDynamic to autorefresh a chart.
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS > $Data = @(
+    PS >     @{
+    PS >         country = 'USA'
+    PS >         burgers = (Get-Random -Minimum 10 -Maximum 100)
+    PS >         fries = (Get-Random -Minimum 10 -Maximum 100)
+    PS >         sandwich = (Get-Random -Minimum 10 -Maximum 100)
+    PS >     }
+    PS >     @{
+    PS >         country = 'Germany'
+    PS >         burgers = (Get-Random -Minimum 10 -Maximum 100)
+    PS >         fries = (Get-Random -Minimum 10 -Maximum 100)
+    PS >         sandwich = (Get-Random -Minimum 10 -Maximum 100)
+    PS >     }
+    PS >     @{
+    PS >         country = 'Japan'
+    PS >         burgers = (Get-Random -Minimum 10 -Maximum 100)
+    PS >         fries = (Get-Random -Minimum 10 -Maximum 100)
+    PS >         sandwich = (Get-Random -Minimum 10 -Maximum 100)
+    PS >     }
+    PS > )
+    PS > New-UDNivoChart -Bar -Data $Data -Height 400 -Width 900 -Keys @('burgers', 'fries', 'sandwich')  -IndexBy 'country' -OnClick {
+    PS >     Show-UDToast -Message $EventData -Position topLeft
+    PS > }
+    
+    OnClick|Use the -OnClick parameter to define a scriptblock to run when a chart is clicked.
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >     $Data = 1..10 | ForEach-Object { 
+    PS >         $item = Get-Random -Max 1000 
+    PS >         [PSCustomObject]@{
+    PS >             name = "Test$item"
+    PS >             value = $item
+    PS >         }
+    PS >     }
+    PS >     New-UDNivoChart -Bar -Keys "value" -IndexBy 'name' -Data $Data -Height 500 -Width 1000
+    
+    Bar|Create a bar chart.
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS > $TreeData = @{
+    PS >     Name     = "root"
+    PS >     children = @(
+    PS >         @{
+    PS >             Name  = "first"
+    PS >             children = @(
+    PS >                 @{
+    PS >                     Name = "first-first"
+    PS >                     Count = 7
+    PS >                 }
+    PS >                 @{
+    PS >                     Name = "first-second"
+    PS >                     Count = 8
+    PS >                 }
+    PS >             )
+    PS >         },
+    PS >         @{
+    PS >             Name  = "second"
+    PS >             Count = 21
+    PS >         }
+    PS >     )
+    PS > }
+    PS > 
+    PS > New-UDNivoChart -CirclePacking -Data $TreeData -Value "count" -Identity "name" -Height 500 -Width 800
+    
+    Circle Packing|Create a circle packing (bubble) chart.
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS > $Data = @()
+    PS > for($i = 365; $i -gt 0; $i--) {
+    PS >     $Data += @{
+    PS >         day = (Get-Date).AddDays($i * -1).ToString("yyyy-MM-dd")
+    PS >         value = Get-Random
+    PS >     }
+    PS > }
+    PS > 
+    PS > $From = (Get-Date).AddDays(-365)
+    PS > $To = Get-Date
+    PS > 
+    PS > New-UDNivoChart -Calendar -Data $Data -From $From -To $To -Height 500 -Width 1000 -MarginTop 50 -MarginRight 130 -MarginBottom 50 -MarginLeft 60
+    
+    Calendar|Create a calendar chart.
+    -------------------------- EXAMPLE 7 --------------------------
+    
+    PS > $Data = @(
+     PS >     @{
+     PS >         id = "idaho"
+     PS >         data = @(
+     PS >            @{ 
+     PS >                 x = "cats"
+     PS >                 y = Get-Random
+     PS >             }
+     PS >            @{ 
+     PS >                 x = "dogs"
+     PS >                 y = Get-Random
+     PS >             }
+     PS >             @{ 
+     PS >                 x = "moose"
+     PS >                 y = Get-Random
+     PS >             }
+     PS >             @{
+     PS >                 x = "bears"
+     PS >                 y = Get-Random
+     PS >             }
+     PS >         )
+     PS >     }
+     PS >     @{
+     PS >         id = "wisconsin"
+     PS >         data = @(
+     PS >            @{ 
+     PS >                 x = "cats"
+     PS >                 y = Get-Random
+     PS >             }
+     PS >            @{ 
+     PS >                 x = "dogs"
+     PS >                 y = Get-Random
+     PS >             }
+     PS >             @{ 
+     PS >                 x = "moose"
+     PS >                 y = Get-Random
+     PS >             }
+     PS >             @{
+     PS >                 x = "bears"
+     PS >                 y = Get-Random
+     PS >             }
+     PS >         )
+     PS >     }
+     PS >          @{
+     PS >         id = "california"
+     PS >         data = @(
+     PS >            @{ 
+     PS >                 x = "cats"
+     PS >                 y = Get-Random
+     PS >             }
+     PS >            @{ 
+     PS >                 x = "dogs"
+     PS >                 y = Get-Random
+     PS >             }
+     PS >             @{ 
+     PS >                 x = "moose"
+     PS >                 y = Get-Random
+     PS >             }
+     PS >             @{
+     PS >                 x = "bears"
+     PS >                 y = Get-Random
+     PS >             }
+     PS >         )
+     PS >     }
+     PS >    @{
+     PS >         id = "michigan"
+     PS >         data = @(
+     PS >            @{ 
+     PS >                 x = "cats"
+     PS >                 y = Get-Random
+     PS >             }
+     PS >            @{ 
+     PS >                 x = "dogs"
+     PS >                 y = Get-Random
+     PS >             }
+     PS >             @{ 
+     PS >                 x = "moose"
+     PS >                 y = Get-Random
+     PS >             }
+     PS >             @{
+     PS >                 x = "bears"
+     PS >                 y = Get-Random
+     PS >             }
+     PS >         )
+     PS >     }
+     PS > )
+     PS > New-UDNivoChart -Heatmap -Data $Data -Height 500 -Width 1000 -MarginTop 50 -MarginRight 130 -MarginBottom 50 -MarginLeft 60
+    
+    Heatmap|Create a heatmap chart.
+    -------------------------- EXAMPLE 8 --------------------------
+    
+    PS > [array]$Data = [PSCustomObject]@{
+    PS >     id = "DataSet"
+    PS >     data = (1..20 | ForEach-Object {
+    PS >         $item = Get-Random -Max 500 
+    PS >         [PSCustomObject]@{
+    PS >             x = "Test$item"
+    PS >             y = $item
+    PS >         }
+    PS >     })
+    PS > }
+    PS > New-UDNivoChart -Line -Data $Data -Height 500 -Width 1000 -LineWidth 1
+    
+    Line|Create a line chart.
+    -------------------------- EXAMPLE 9 --------------------------
+    
+    PS > $Data = 1..10 | ForEach-Object { 
+    PS >     @{
+    PS >         "Adam" = Get-Random 
+    PS >         "Alon" = Get-Random 
+    PS >         "Lee" = Get-Random 
+    PS >         "Frank" = Get-Random 
+    PS >         "Bill" = Get-Random 
+    PS >     }
+    PS > }
+    PS > 
+    PS > New-UDNivoChart -Stream -Data $Data -Height 500 -Width 1000 -Keys @("adam", "alon", "lee", "frank", "bill")
+    
+    Stream|Create a stream chart.
+    -------------------------- EXAMPLE 10 --------------------------
+    
+    PS > $TreeData = @{
+    PS >     name     = "root"
+    PS >     children = @(
+    PS >         @{
+    PS >             name  = "first"
+    PS >             children = @(
+    PS >                 @{
+    PS >                     name = "first-first"
+    PS >                     count = 7
+    PS >                 }
+    PS >                 @{
+    PS >                     name = "first-second"
+    PS >                     count = 8
+    PS >                 }
+    PS >             )
+    PS >         },
+    PS >         @{
+    PS >             name  = "second"
+    PS >             count = 21
+    PS >         }
+    PS >     )
+    PS > }
+    PS > 
+    PS > New-UDNivoChart -Treemap -Data $TreeData -Value "count" -Identity "name" -Height 500 -Width 800
+    
+    Treemap|Create a treemap chart.
+    -------------------------- EXAMPLE 11 --------------------------
+    
+    PS > $Data =
+    PS > $([PSCustomObject]@{
+    PS >         value = 30
+    PS >         color = '#BF5290'
+    PS >     }
+    PS >     [PSCustomObject]@{
+    PS >         value = 100
+    PS >         color = '#52BE80'
+    PS > 
+    PS >     }
+    PS > )
+    PS > 
+    PS > New-UDNivoChart -Pie -Data ($Data | Where-Object { $_.Value -ne 0 }) -InnerRadius 0.7 -CornerRadius 5 -PadAngle 1 -Colors @{datum = 'data.color' }` -MarginLeft "150" -MarginTop 1 -Height 370 -Responsive
+    
+    Color Based on Data|Use the -Colors parameter to define a color based on data.
+    
+RELATED LINKS
 
 

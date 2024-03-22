@@ -106,7 +106,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -LabelPlacement <String>
-        The placement of the label. Valid values are: "top", "left", "right", "bottom"
+        The placement of the label. Valid values are: "top", "start", "right", "bottom"
         
         Required?                    false
         Position?                    10

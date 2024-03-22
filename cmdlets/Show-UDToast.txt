@@ -474,7 +474,7 @@ OUTPUTS
     -------------------------- EXAMPLE 20 --------------------------
     
     PS >New-UDButton -Text 'Show Toast' -OnClick {
-    PS >    Show-UDToast -Message 'Hello, World!' -TransitionIn 'bounceInLeft' -TransitionOut 'bounceOutRight'
+    PS >    Show-UDToast -Message 'Hello, World!' -TransitionIn 'bounceInLeft' -TransitionOut 'bounceInRight'
     PS > } -Id 'toast21'
     
     Transition|Shows a toast message with a bounce in left transition and a bounce out right transition.

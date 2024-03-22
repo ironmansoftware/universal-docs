@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDMapFeatureGroup [[-Id] <String>] [[-Popup] <Hashtable>] [-Content] <ScriptBlock> [<CommonParameters>]
+    New-UDMapFeatureGroup [[-Id] <String>] [[-Popup] <Hashtable>] [-Children] <ScriptBlock> [<CommonParameters>]
     
     
 DESCRIPTION
@@ -33,8 +33,7 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -Content <ScriptBlock>
-        The content of the map feature group. This should be a script block that returns a map feature.
+    -Children <ScriptBlock>
         
         Required?                    true
         Position?                    3

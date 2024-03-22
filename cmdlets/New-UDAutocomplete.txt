@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDAutocomplete [-Id <String>] [-Label <String>] [-Value <String>] [-OnChange <Endpoint>] [-Options <Object>] [-FullWidth] [-AutoSelect] [-Variant <String>] [-Multiple] [-ClassName <String>] [-Icon <Object>] [-OnEnter <Endpoint>] [<CommonParameters>]
+    New-UDAutocomplete [-Id <String>] [-Label <String>] [-Value <Object>] [-OnChange <Endpoint>] [-Options <Object>] [-FullWidth] [-AutoSelect] [-Variant <String>] [-Multiple] [-ClassName <String>] [-Icon <Object>] [-OnEnter <Endpoint>] [-Disabled] [<CommonParameters>]
     
-    New-UDAutocomplete [-Id <String>] [-Label <String>] [-Value <String>] [-OnChange <Endpoint>] -OnLoadOptions <Endpoint> [-FullWidth] [-AutoSelect] [-Variant <String>] [-Multiple] [-ClassName <String>] [-Icon <Object>] [-OnEnter <Endpoint>] [<CommonParameters>]
+    New-UDAutocomplete [-Id <String>] [-Label <String>] [-Value <Object>] [-OnChange <Endpoint>] -OnLoadOptions <Endpoint> [-FullWidth] [-AutoSelect] [-Variant <String>] [-Multiple] [-ClassName <String>] [-Icon <Object>] [-OnEnter <Endpoint>] [-Disabled] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -35,7 +35,7 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -Value <String>
+    -Value <Object>
         The value of the textbox.
         
         Required?                    false
@@ -131,6 +131,15 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Disabled [<SwitchParameter>]
+        Whether this autocomplete is disabled.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

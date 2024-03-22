@@ -7,11 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDCard [-Id <String>] [-ClassName <String>] [-Style <Hashtable>] [-Elevation <Int32>] [-Title <String>] [-TitleAlignment <String>] [-Text <String>] [-Raised] [-Sx <Object>] [-Variant <String>] [<CommonParameters>]
+    New-UDCard [-Id <String>] [-ClassName <String>] [-Style <Hashtable>] [-Elevation <Int32>] [-Title <String>] [-TitleAlignment <String>] [-Text <String>] [-Raised] [-Sx <Object>] [-Variant <String>] [-OnClick <Endpoint>] [<CommonParameters>]
     
-    New-UDCard [-Id <String>] [-ClassName <String>] [-Header <Object>] [-Body <Object>] [-Expand <Object>] [-Footer <Object>] [-Media <Object>] [-Style <Hashtable>] [-Elevation <Int32>] [-Raised] [-Sx <Object>] [-Variant <String>] [<CommonParameters>]
+    New-UDCard [-Id <String>] [-ClassName <String>] [-Header <Object>] [-Body <Object>] [-Expand <Object>] [-Footer <Object>] [-Media <Object>] [-Style <Hashtable>] [-Elevation <Int32>] [-Raised] [-Sx <Object>] [-Variant <String>] [-OnClick <Endpoint>] [<CommonParameters>]
     
-    New-UDCard [-Id <String>] [-ClassName <String>] [-Style <Hashtable>] [-Elevation <Int32>] [-Title <String>] [-TitleAlignment <String>] [-Content <ScriptBlock>] [-Image <String>] [-Raised] [-Avatar <Object>] [-Sx <Object>] [-Variant <String>] [<CommonParameters>]
+    New-UDCard [-Id <String>] [-ClassName <String>] [-Style <Hashtable>] [-Elevation <Int32>] [-Title <String>] [-TitleAlignment <String>] [-Content <ScriptBlock>] [-Image <String>] [-Raised] [-Avatar <Object>] [-Sx <Object>] [-Variant <String>] [-OnClick <Endpoint>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -104,7 +104,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    named
-        Default value                Card
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -139,7 +139,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    named
-        Default value                This is a card
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -173,6 +173,15 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                elevation
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnClick <Endpoint>
+        The action to take when the card is clicked.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -223,6 +232,17 @@ OUTPUTS
     
     
     -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDCard -Text 'This is my card' -OnClick {
+    PS >     Show-UDToast -Message 'You clicked the card'
+    PS > } -Id 'card5'
+    
+    OnClick|A card with an OnClick event handler.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
     
     PS >$Header = New-UDCardHeader -Avatar (New-UDAvatar -Content { "R" } -Sx @{ backgroundColor = "#f44336" }) -Action (New-UDIconButton -Icon (New-UDIcon -Icon 'EllipsisVertical')) -Title 'Shrimp and Chorizo Paella' -SubHeader 'September 14, 2016';
     PS >     $Media = New-UDCardMedia -Image 'https://mui.com/static/images/cards/paella.jpg'

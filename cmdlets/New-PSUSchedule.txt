@@ -3,11 +3,11 @@ NAME
     New-PSUSchedule
     
 SYNTAX
-    New-PSUSchedule [-Script] <Script> [-Cron] <string> [-Credential <Variable>] [-TimeZone <string>] [-Environment <string>] [-Name <string>] [-Paused] [-RandomDelay] [-Timeout <int>] [-Condition <scriptblock>] [-Description <string>] [-Computer <string>] [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    New-PSUSchedule [-Script] <Script> [-Cron] <string> [-Credential <Variable>] [-TimeZone <string>] [-Environment <string>] [-Name <string>] [-Paused] [-RandomDelay] [-RandomDelayMaximum <int>] [-Timeout <int>] [-Condition <scriptblock>] [-Description <string>] [-Computer <string>] [-Parameters <hashtable>] [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
-    New-PSUSchedule [-Script] <Script> -Continuous [-Credential <Variable>] [-TimeZone <string>] [-Delay <timespan>] [-DelaySecond <int>] [-DelayMinute <int>] [-DelayHour <int>] [-Environment <string>] [-Name <string>] [-Paused] [-RandomDelay] [-Timeout <int>] [-Condition <scriptblock>] [-Description <string>] [-Computer <string>] [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    New-PSUSchedule [-Script] <Script> -Continuous [-Credential <Variable>] [-TimeZone <string>] [-Delay <timespan>] [-DelaySecond <int>] [-DelayMinute <int>] [-DelayHour <int>] [-Environment <string>] [-Name <string>] [-Paused] [-RandomDelay] [-RandomDelayMaximum <int>] [-Timeout <int>] [-Condition <scriptblock>] [-Description <string>] [-Computer <string>] [-Parameters <hashtable>] [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
-    New-PSUSchedule [-Script] <Script> [-Credential <Variable>] [-TimeZone <string>] [-Environment <string>] [-Name <string>] [-Paused] [-RandomDelay] [-Timeout <int>] [-Condition <scriptblock>] [-OneTime <datetime>] [-Description <string>] [-Computer <string>] [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    New-PSUSchedule [-Script] <Script> [-Credential <Variable>] [-TimeZone <string>] [-Environment <string>] [-Name <string>] [-Paused] [-RandomDelay] [-RandomDelayMaximum <int>] [-Timeout <int>] [-Condition <scriptblock>] [-OneTime <datetime>] [-Description <string>] [-Computer <string>] [-Parameters <hashtable>] [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
     
 PARAMETERS
@@ -171,6 +171,16 @@ PARAMETERS
         Dynamic?                     false
         Accept wildcard characters?  false
         
+    -Parameters <hashtable>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
     -Paused
         
         Required?                    false
@@ -182,6 +192,16 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -RandomDelay
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -RandomDelayMaximum <int>
         
         Required?                    false
         Position?                    Named

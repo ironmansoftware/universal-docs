@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTable [-Id <String>] [-Title <String>] [-Data <Object[]>] [-Columns <Hashtable[]>] [-OnRowSelection <Endpoint>] [-ShowSort] [-ShowFilter] [-ShowSearch] [-Dense] [-ShowExport] [-StickyHeader] [-PageSize <Int32>] [-PageSizeOptions <Int32[]>] [-PaginationLocation <String>] [-ShowSelection] [-ShowPagination] [-Padding <String>] [-Size <String>] [-TextOption <Hashtable>] [-ExportOption <String[]>] [-OnExport <Endpoint>] [-DisablePageSizeAll] [-DefaultSortDirection <String>] [-HideToggleAllRowsSelected] [-DisableMultiSelect] [-DisableSortRemove] [-Icon <Hashtable>] [-ClassName <String>] [-ShowRefresh] [-ToolbarContent <ScriptBlock>] [-OnRowExpand <ScriptBlock>] [-MaxHeight <Int32>] [-Language <String>] [-RemoveCard] [<CommonParameters>]
+    New-UDTable [-Id <String>] [-Title <String>] [-Data <Object[]>] [-Columns <Hashtable[]>] [-OnRowSelection <Endpoint>] [-ShowSort] [-ShowFilter] [-ShowSearch] [-Dense] [-ShowExport] [-StickyHeader] [-PageSize <Int32>] [-PageSizeOptions <Int32[]>] [-PaginationLocation <String>] [-ShowSelection] [-ShowPagination] [-Padding <String>] [-Size <String>] [-TextOption <Hashtable>] [-ExportOption <String[]>] [-OnExport <Endpoint>] [-DisablePageSizeAll] [-DefaultSortDirection <String>] [-HideToggleAllRowsSelected] [-DisableMultiSelect] [-DisableSortRemove] [-Icon <Hashtable>] [-ClassName <String>] [-ShowRefresh] [-ToolbarContent <ScriptBlock>] [-OnRowExpand <ScriptBlock>] [-MaxHeight <Int32>] [-Language <String>] [-RemoveCard] [-OnRowStyle <ScriptBlock>] [-HeaderStyle <Hashtable>] [<CommonParameters>]
     
-    New-UDTable [-Id <String>] [-Title <String>] -LoadRows <Endpoint> [-Columns <Hashtable[]>] [-OnRowSelection <Endpoint>] [-ShowSort] [-ShowFilter] [-ShowSearch] [-Dense] [-ShowExport] [-StickyHeader] [-PageSize <Int32>] [-PageSizeOptions <Int32[]>] [-PaginationLocation <String>] [-ShowSelection] [-ShowPagination] [-Padding <String>] [-Size <String>] [-TextOption <Hashtable>] [-ExportOption <String[]>] [-OnExport <Endpoint>] [-DisablePageSizeAll] [-DefaultSortDirection <String>] [-HideToggleAllRowsSelected] [-DisableMultiSelect] [-DisableSortRemove] [-Icon <Hashtable>] [-ClassName <String>] [-ShowRefresh] [-ToolbarContent <ScriptBlock>] [-OnRowExpand <ScriptBlock>] [-MaxHeight <Int32>] [-AutoRefresh] [-AutoRefreshInterval <Int32>] [-Language <String>] [-RemoveCard] [<CommonParameters>]
+    New-UDTable [-Id <String>] [-Title <String>] -LoadRows <Endpoint> [-Columns <Hashtable[]>] [-OnRowSelection <Endpoint>] [-ShowSort] [-ShowFilter] [-ShowSearch] [-Dense] [-ShowExport] [-StickyHeader] [-PageSize <Int32>] [-PageSizeOptions <Int32[]>] [-PaginationLocation <String>] [-ShowSelection] [-ShowPagination] [-Padding <String>] [-Size <String>] [-TextOption <Hashtable>] [-ExportOption <String[]>] [-OnExport <Endpoint>] [-DisablePageSizeAll] [-DefaultSortDirection <String>] [-HideToggleAllRowsSelected] [-DisableMultiSelect] [-DisableSortRemove] [-Icon <Hashtable>] [-ClassName <String>] [-ShowRefresh] [-ToolbarContent <ScriptBlock>] [-OnRowExpand <ScriptBlock>] [-MaxHeight <Int32>] [-AutoRefresh] [-AutoRefreshInterval <Int32>] [-Language <String>] [-RemoveCard] [-OnRowStyle <ScriptBlock>] [-HeaderStyle <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -359,6 +359,22 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
+    -OnRowStyle <ScriptBlock>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -HeaderStyle <Hashtable>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
@@ -626,6 +642,32 @@ OUTPUTS
     PS > New-UDTable -Data $Data -TextOption $Option -ShowSearch -Id 'table11'
     
     Text Options|Text options can be used to customize the text in the table.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 12 --------------------------
+    
+    PS >$Data = @(
+    PS >     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0 }
+    PS >     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0 }
+    PS >     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0 }
+    PS >     @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0 }
+    PS >     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0 }
+    PS > )
+    PS > 
+    PS > New-UDTable -Data $Data -OnRowStyle {
+    PS >     if ($EventData.Dessert -eq 'Frozen yoghurt')
+    PS >     {
+    PS >         @{
+    PS >             backgroundColor = "red"
+    PS >         }
+    PS >     } else {
+    PS >         @{}
+    PS >     }
+    PS > } -Id 'table12'
+    
+    Row Styling|You can style rows by using the -OnRowStyle parameter. The script block will be passed the row data as a hashtable in the $EventData variable. The script block should return a hashtable of CSS styles to apply to the row.
     
     
     

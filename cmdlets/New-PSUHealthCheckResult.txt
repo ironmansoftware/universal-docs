@@ -1,0 +1,61 @@
+
+NAME
+    New-PSUHealthCheckResult
+    
+SYNOPSIS
+    The result of a health check.
+    
+    
+SYNTAX
+    New-PSUHealthCheckResult [-Level {Ok | Warning | Error}] -Message <String> [<CommonParameters>]
+    
+    
+DESCRIPTION
+    The result of a health check.
+    
+
+PARAMETERS
+    -Level <HealthCheckLevel>
+        The level of the health check result.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Message <String>
+        The message of the health check result.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

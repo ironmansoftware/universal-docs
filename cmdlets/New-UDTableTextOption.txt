@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTableTextOption [[-ExportAllCsv] <String>] [[-ExportCurrentViewCsv] <String>] [[-ExportAllXLSX] <String>] [[-ExportCurrentViewXLSX] <String>] [[-ExportAllPDF] <String>] [[-ExportCurrentViewPDF] <String>] [[-ExportAllJson] <String>] [[-ExportCurrentViewJson] <String>] [[-ExportFileName] <String>] [[-Search] <String>] [[-FilterSearch] <String>] [[-Export] <String>] [[-FilterDate] <String>] [[-NoData] <String>] [[-Loading] <String>] [<CommonParameters>]
+    New-UDTableTextOption [[-ExportAllCsv] <String>] [[-ExportCurrentViewCsv] <String>] [[-ExportAllXLSX] <String>] [[-ExportCurrentViewXLSX] <String>] [[-ExportAllPDF] <String>] [[-ExportCurrentViewPDF] <String>] [[-ExportAllJson] <String>] [[-ExportCurrentViewJson] <String>] [[-ExportFileName] <String>] [[-Search] <String>] [[-FilterSearch] <String>] [[-Export] <String>] [[-FilterDate] <String>] [[-NoData] <String>] [[-Loading] <String>] [[-RowsPerPage] <String>] [[-CountDescription] <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -143,6 +143,22 @@ PARAMETERS
         Required?                    false
         Position?                    15
         Default value                Loading...
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -RowsPerPage <String>
+        
+        Required?                    false
+        Position?                    16
+        Default value                Rows per page:
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -CountDescription <String>
+        
+        Required?                    false
+        Position?                    17
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

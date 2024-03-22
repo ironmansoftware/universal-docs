@@ -7,11 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSUVariable [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableRunAsSupport] [-InputObject <Object>] [-Integrated] -Name <String> [-Type <String>] [-UseDefaultCredentials] [-Value <Object>] -Vault <String> [<CommonParameters>]
+    New-PSUVariable [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableRunAsSupport] [-InputObject <Object>] [-Integrated] -Name <String> [-Type <String>] [-UseDefaultCredentials] [-Value <Object>] -Vault <String> [-Database] [-Force] [-Role <String[]>] [<CommonParameters>]
     
-    New-PSUVariable [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableRunAsSupport] [-InputObject <Object>] [-Integrated] -Name <String> [-Type <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    New-PSUVariable [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableRunAsSupport] [-InputObject <Object>] [-Integrated] -Name <String> [-Type <String>] [-UseDefaultCredentials] [-Database] [-Force] [-Role <String[]>] [<CommonParameters>]
     
-    New-PSUVariable [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableRunAsSupport] [-Integrated] -Name <String> [-Type <String>] [-UseDefaultCredentials] [-Value <Object>] [<CommonParameters>]
+    New-PSUVariable [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableRunAsSupport] [-Integrated] -Name <String> [-Type <String>] [-UseDefaultCredentials] [-Value <Object>] [-Database] [-Force] [-Role <String[]>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -113,6 +113,33 @@ PARAMETERS
         The vault to store the variable within.
         
         Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Database [<SwitchParameter>]
+        Stores the variable value in the database.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Force [<SwitchParameter>]
+        Overwrites existing variables with the same name.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Role <String[]>
+        {{ Fill Role Description }}
+        
+        Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False

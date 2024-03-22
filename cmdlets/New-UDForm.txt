@@ -293,8 +293,8 @@ OUTPUTS
     PS >        }
     PS >     }
     PS > } -OnSubmit {
-    PS >     Show-UDToast -Message ($EventData.formData.name)
-    PS >     Show-UDToast -Message ($EventData.formData.age)
+    PS >     Show-UDToast -Message ($EventData.name)
+    PS >     Show-UDToast -Message ($EventData.age)
     PS > }
     
     Schema|Creates a form with a schema. You can find out more about JSON Schema here: https://rjsf-team.github.io/react-jsonschema-form/docs/
@@ -318,7 +318,7 @@ OUTPUTS
     PS > } -uiSchema @{
     PS >	"ui:order" = @('age','name')
     PS > } -OnSubmit {
-    PS >     Show-UDToast -Message ($EventData.formData.name)
+    PS >     Show-UDToast -Message ($EventData.name)
     PS > }
     
     UI Schema|Creates a form with a schema and a UI schema. You can find out more about JSON Schema here: https://rjsf-team.github.io/react-jsonschema-form/docs/
@@ -328,7 +328,13 @@ OUTPUTS
     
     -------------------------- EXAMPLE 10 --------------------------
     
-    PS >New-UDForm -Id 'form10' -Script "Script1.ps1" -OutputType "Table"
+    PS >$Script = Get-PSUScript -Name "TestScript.ps1"
+    PS > if ($Script -eq $null) {
+    PS >   New-UDAlert -Text "Create a script in the admin console named 'TestScript.ps1' to run this example."  
+    PS > }
+    PS > else {
+    PS >   New-UDForm -Id 'form10' -Script "TestScript.ps1" -OutputType "Table"
+    PS > }
     
     Script|Creates a form from a script. Parameters of the script will define the form. Output from the script will be displayed in a table.
     

@@ -2,119 +2,116 @@
 NAME
     New-PSULoggingTarget
     
+SYNOPSIS
+    Creates a new logging target in PowerShell Universal.
+    
+    
 SYNTAX
-    New-PSULoggingTarget -Type {File | Database | PowerShell | TCP | UDP | HTTP} [-Properties <Dictionary[string,string]>] [-Level {Verbose | Debug | Information | Warning | Error | Fatal}] [-Feature {Configuration | App | Automation | API}] [-Resource <string>] [-Scope {User | System}] [-ScriptBlock <scriptblock>] [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    New-PSULoggingTarget [-AppToken <String>] [-ComputerName <String>] [-Feature {Configuration | App | Automation | API}] [-Integrated] [-Level {Verbose | Debug | Information | Warning | Error | Fatal}] [-Properties <Hashtable>] [-Resource <String>] [-Scope {User | System}] [-ScriptBlock <ScriptBlock>] -Type {File | Database | PowerShell | TCP | UDP | HTTP} [-UseDefaultCredentials] [<CommonParameters>]
     
     
+DESCRIPTION
+    Creates a new logging target in PowerShell Universal.
+    
+
 PARAMETERS
-    -AppToken <string>
+    -AppToken <String>
+        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -ComputerName <string>
+    -ComputerName <String>
+        Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      Uri
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Feature <string>
+    -Feature <String>
+        The feature that this logging target will receive messages from.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Integrated
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Level <string>
+    -Level <String>
+        The base log level this logging target will receive messages from.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Properties <Dictionary[string,string]>
+    -Properties <Hashtable>
+        The properties that should be passed to the logging target.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Resource <string>
+    -Resource <String>
+        The resource that this logging target will receive messages from.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Scope <string>
+    -Scope <String>
+        The scope that this logging target will receive messages from.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -ScriptBlock <scriptblock>
+    -ScriptBlock <ScriptBlock>
+        The script block that will be executed when a log message is received when using the PowerShell logging target.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Type <string>
+    -Type <String>
+        The type of logging target to create.
         
         Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -UseDefaultCredentials
+    -UseDefaultCredentials [<SwitchParameter>]
+        Uses the credentials of the current user.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -123,20 +120,32 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
     None
+        
     
     
 OUTPUTS
     PowerShellUniversal.LoggingTarget
+        
     
     
-ALIASES
-    None
+NOTES
     
-
-REMARKS
-    None
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    New-PSULoggingTarget -Type 'PowerShell' -Level 'Information' -Scope User -Feature API -ScriptBlock {
+        param($LogEvent, $Message) 
+        
+        $Message | Out-File C:\logs\log.txt
+    }
+    
+    A custom logging target that writes to a file.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
 
 

@@ -2,79 +2,80 @@
 NAME
     New-UDNivoChartAxisOptions
     
+SYNOPSIS
+    Creates nivo chart axis options.
+    
+    
 SYNTAX
-    New-UDNivoChartAxisOptions [-Position {top | right | bottom | left}] [-TickSize <int>] [-TickPadding <int>] [-TickRotation <int>] [-Legend <string>] [-LegendPosition {center | start | end}] [-LegendOffset <int>] [<CommonParameters>]
+    New-UDNivoChartAxisOptions [-Legend <String>] [-LegendOffset <Int32>] [-LegendPosition {center | start | end}] [-Position {top | right | bottom | left}] [-TickPadding <Int32>] [-TickRotation <Int32>] [-TickSize <Int32>] [<CommonParameters>]
     
     
+DESCRIPTION
+    Creates nivo chart axis options.
+    
+
 PARAMETERS
-    -Legend <string>
+    -Legend <String>
+        The name of this legend.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -LegendOffset <int>
+    -LegendOffset <Int32>
+        The offset of the legend.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -LegendPosition <string>
+    -LegendPosition <String>
+        The position of the legend.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Position <string>
+    -Position <String>
+        The position of the axis.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -TickPadding <int>
+    -TickPadding <Int32>
+        
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -TickRotation <int>
+    -TickRotation <Int32>
+        {{ Fill TickRotation Description }}
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -TickSize <int>
+    -TickSize <Int32>
+        {{ Fill TickSize Description }}
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -83,19 +84,22 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
     None
+        
     
     
 OUTPUTS
     System.Object
+        
     
-ALIASES
-    None
     
-
-REMARKS
-    None
+NOTES
+    
+    
+        
+    
+    
+RELATED LINKS
 
 

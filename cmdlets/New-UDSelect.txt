@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDSelect [[-Id] <String>] [[-Option] <ScriptBlock>] [[-Label] <String>] [[-OnChange] <Endpoint>] [[-DefaultValue] <Object>] [-Disabled] [-Multiple] [[-MaxWidth] <String>] [[-ClassName] <String>] [-FullWidth] [[-Variant] <String>] [[-Icon] <Object>] [<CommonParameters>]
+    New-UDSelect [[-Id] <String>] [[-Option] <ScriptBlock>] [[-Label] <String>] [[-OnChange] <Endpoint>] [[-DefaultValue] <Object>] [-Disabled] [-Multiple] [[-MaxWidth] <String>] [[-ClassName] <String>] [-FullWidth] [[-Variant] <String>] [[-Icon] <Object>] [[-Sx] <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -119,6 +119,14 @@ PARAMETERS
         
         Required?                    false
         Position?                    9
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Sx <Hashtable>
+        
+        Required?                    false
+        Position?                    10
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false

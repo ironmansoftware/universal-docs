@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDDataGridColumn [[-Align] <String>] [[-CellClassName] <String>] [[-ColumnSpan] <Int32>] [[-Description] <String>] [-DisableColumnMenu] [-DisableExport] [-DisableReorder] [-Editable] [[-Field] <String>] [[-Filterable] <String>] [[-Flex] <Single>] [-Groupable] [[-HeaderAlign] <String>] [[-HeaderName] <String>] [[-Hideable] <String>] [[-HideSortIcons] <String>] [[-MaxWidth] <Int32>] [[-MinWidth] <Int32>] [-Pinnable] [-Resizable] [-Sortable] [[-SortingOrder] <String[]>] [[-Type] <String>] [[-Width] <Int32>] [[-Render] <ScriptBlock>] [<CommonParameters>]
+    New-UDDataGridColumn [[-Align] <String>] [[-CellClassName] <String>] [[-ColumnSpan] <Int32>] [[-Description] <String>] [-DisableColumnMenu] [-DisableExport] [-DisableReorder] [-Editable] [[-Field] <String>] [-Filterable] [[-Flex] <Single>] [-Groupable] [[-HeaderAlign] <String>] [[-HeaderName] <String>] [-Hideable] [-HideSortIcons] [[-MaxWidth] <Int32>] [[-MinWidth] <Int32>] [-Pinnable] [-Resizable] [-Sortable] [[-SortingOrder] <String[]>] [[-Type] <String>] [[-Width] <Int32>] [[-Render] <ScriptBlock>] [[-ValueOptions] <String[]>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -96,12 +96,12 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -Filterable <String>
+    -Filterable [<SwitchParameter>]
         If true, the column is filterable.
         
         Required?                    false
-        Position?                    6
-        Default value                
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -109,7 +109,7 @@ PARAMETERS
         The flex value used to set the column width.
         
         Required?                    false
-        Position?                    7
+        Position?                    6
         Default value                1
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -127,7 +127,7 @@ PARAMETERS
         The alignment of the column header cell. Possible values are 'left', 'center' and 'right'.
         
         Required?                    false
-        Position?                    8
+        Position?                    7
         Default value                left
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -136,26 +136,26 @@ PARAMETERS
         The name of the column header.
         
         Required?                    false
-        Position?                    9
+        Position?                    8
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -Hideable <String>
+    -Hideable [<SwitchParameter>]
         If true, the column is hideable.
         
         Required?                    false
-        Position?                    10
-        Default value                
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -HideSortIcons <String>
+    -HideSortIcons [<SwitchParameter>]
         If true, the sort icons are hidden.
         
         Required?                    false
-        Position?                    11
-        Default value                
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -163,7 +163,7 @@ PARAMETERS
         The maximum width of the column.
         
         Required?                    false
-        Position?                    12
+        Position?                    9
         Default value                0
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -172,7 +172,7 @@ PARAMETERS
         The minimum width of the column.
         
         Required?                    false
-        Position?                    13
+        Position?                    10
         Default value                0
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -191,7 +191,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    named
-        Default value                False
+        Default value                True
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -208,7 +208,7 @@ PARAMETERS
         The sorting order of the column. Possible values are 'asc', 'desc' and null.
         
         Required?                    false
-        Position?                    14
+        Position?                    11
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -217,7 +217,7 @@ PARAMETERS
         The type of the column. Possible values are 'string' | 'number' | 'date' | 'dateTime' | 'boolean' | 'singleSelect';
         
         Required?                    false
-        Position?                    15
+        Position?                    12
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -226,7 +226,7 @@ PARAMETERS
         The width of the column.
         
         Required?                    false
-        Position?                    16
+        Position?                    13
         Default value                0
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -235,7 +235,16 @@ PARAMETERS
         A script block that is used to render the column. The script block is passed the row data as $EventData.
         
         Required?                    false
-        Position?                    17
+        Position?                    14
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ValueOptions <String[]>
+        An array of options for the column filter when the filter is set to singleSelect.
+        
+        Required?                    false
+        Position?                    15
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false

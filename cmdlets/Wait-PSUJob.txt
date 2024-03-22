@@ -11,6 +11,8 @@ SYNTAX
     
     Wait-PSUJob [-AppToken <String>] [-ComputerName <String>] [-Integrated] -JobId <Int64> [-Timeout <Int32>] [-UseDefaultCredentials] [<CommonParameters>]
     
+    Wait-PSUJob [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-Timeout <Int32>] [-UseDefaultCredentials] -JobRunId <Guid> [<CommonParameters>]
+    
     
 DESCRIPTION
     Waits for a job to finish.
@@ -77,6 +79,15 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -JobRunId <Guid>
+        The run ID of the job to wait for.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         

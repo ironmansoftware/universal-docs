@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDListItem [[-Id] <String>] [[-AvatarType] <String>] [[-OnClick] <Endpoint>] [[-Label] <Object>] [[-Children] <ScriptBlock>] [[-SubTitle] <String>] [[-Icon] <Object>] [[-Url] <String>] [[-SecondaryAction] <ScriptBlock>] [[-ClassName] <String>] [-Open] [-Nested] [[-Href] <String>] [[-Switch] <Object>] [[-SwitchAlignment] <String>] [[-CheckBox] <Object>] [[-CheckBoxAlignment] <String>] [<CommonParameters>]
+    New-UDListItem [[-Id] <String>] [[-AvatarType] <String>] [[-OnClick] <Endpoint>] [[-Label] <Object>] [[-Children] <ScriptBlock>] [[-SubTitle] <String>] [[-Icon] <Object>] [[-Url] <String>] [-OpenInNewWindow] [[-SecondaryAction] <ScriptBlock>] [[-ClassName] <String>] [-Open] [-Nested] [[-Href] <String>] [[-Switch] <Object>] [[-SwitchAlignment] <String>] [[-CheckBox] <Object>] [[-CheckBoxAlignment] <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -87,6 +87,15 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
+    -OpenInNewWindow [<SwitchParameter>]
+        Open the HREF in a new window.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
     -SecondaryAction <ScriptBlock>
         The secondary action to issue with this list item.
         
@@ -121,6 +130,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Href <String>
+        A URL to navigate to when clicked.
         
         Required?                    false
         Position?                    11

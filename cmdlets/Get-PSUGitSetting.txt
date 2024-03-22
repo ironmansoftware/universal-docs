@@ -1,22 +1,22 @@
 
 NAME
-    Show-PSUPage
+    Get-PSUGitSetting
     
 SYNOPSIS
-    Shows a page or URL within PSU Desktop.
+    Returns git settings.
     
     
 SYNTAX
-    Show-PSUPage [-AppToken <String>] [-ComputerName <String>] [-Integrated] -Url <String> [-UseDefaultCredentials] [<CommonParameters>]
+    Get-PSUGitSetting [-AppToken <String>] [-ComputerName <String>] [-Credential <PSCredential>] [-HttpProtocolVersion <Version>] [-Integrated] [<CommonParameters>]
     
     
 DESCRIPTION
-    Shows a page or URL within PSU Desktop. This can be run within scripts, APIs and dashboards.
+    Returns git settings.
     
 
 PARAMETERS
     -AppToken <String>
-        Not used
+        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
         
         Required?                    false
         Position?                    named
@@ -25,7 +25,25 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        Not used
+        Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Credential <PSCredential>
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -HttpProtocolVersion <Version>
+        The HTTP protocol version to use when calling the PowerShell Universal Management API.
         
         Required?                    false
         Position?                    named
@@ -34,25 +52,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
-        Not used
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Url <String>
-        The URL or page name.
-        
-        Required?                    true
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -UseDefaultCredentials [<SwitchParameter>]
-        Not used
+        Use default credentials when connecting to the management API
         
         Required?                    false
         Position?                    named
@@ -83,9 +83,9 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> Show-PSUPage -Url MyPage
+    PS C:\> Get-PSUGitSetting
     
-    Shows MyPage in a new window within PSU Desktop.
+    Returns git settings.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

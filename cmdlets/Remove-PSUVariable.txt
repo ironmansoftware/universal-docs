@@ -9,6 +9,8 @@ SYNOPSIS
 SYNTAX
     Remove-PSUVariable [-Variable] <Variable> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-RemoveSecret] [<CommonParameters>]
     
+    Remove-PSUVariable [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-RemoveSecret] -Name <String> [<CommonParameters>]
+    
     
 DESCRIPTION
     Removes a variable. This also deletes the variable from the variables.psd1 file in the git repo.
@@ -67,6 +69,15 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        {{ Fill Name Description }}
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       True (ByValue)
         Accept wildcard characters?  false
         
     <CommonParameters>

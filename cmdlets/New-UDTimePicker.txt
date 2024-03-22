@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTimePicker [[-Id] <String>] [[-Label] <String>] [[-OnChange] <Endpoint>] [[-Value] <DateTime>] [[-Locale] <String>] [[-ClassName] <String>] [-DisableAmPm] [[-TimeZone] <TimeZoneInfo>] [<CommonParameters>]
+    New-UDTimePicker [[-Id] <String>] [[-Label] <String>] [[-OnChange] <Endpoint>] [[-Value] <DateTime>] [[-Locale] <String>] [[-ClassName] <String>] [-DisableAmPm] [[-TimeZone] <Object>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -47,7 +47,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    4
-        Default value                ([DateTime]::Now)
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -78,7 +78,7 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -TimeZone <TimeZoneInfo>
+    -TimeZone <Object>
         
         Required?                    false
         Position?                    7
