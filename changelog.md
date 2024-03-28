@@ -4,6 +4,28 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.2.15 - 3/28/2024
+
+#### Automation
+
+* Fixed an issue with Invoke-PSUScript -Wait and Wait-PSUJob (#3226)
+
+#### APIs
+
+* Fixed an issue where roles weren't displayed in the API Docs or the Event Hub modal (#3194)
+
+#### PowerShell Apps
+
+* Added -Hide to New-UDDataGridColumn (#3213)
+* Fixed an issue with New-UDDataGrid -ShowQuickFilter and wildcards (\*) (#3211)
+* Added -DefaultSortDirection example to docs for New-UDTable (#3216)
+* Fixed an issue where apps could be duplicated in multi-node SQL setups (#3102)
+
+#### Platform
+
+* Fixed an issue with displaying git commit timestamps (#3206)
+* Added an error message when the database encryption key was missing (#3222)
+
 ## 4.2.14 - 3/22/2024
 
 #### APIs
