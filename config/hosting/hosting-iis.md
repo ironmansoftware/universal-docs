@@ -14,7 +14,7 @@ The following components are required in order to host PowerShell Universal on I
 
 * [Internet Information Services (IIS) Version 10.0](https://docs.microsoft.com/en-us/iis/get-started/whats-new-in-iis-10-version-1709/new-features-introduced-in-iis-10-1709)
   * Including: WebSocket Protocol
-* [ASP.NET Core Hosting Bundle 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
+* [ASP.NET Core Hosting Bundle 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 
 <figure><img src="../../.gitbook/assets/image (577).png" alt=""><figcaption><p>Figure highlights the download link for the ASP.NET Core Hosting Bundle</p></figcaption></figure>
 
