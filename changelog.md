@@ -4,6 +4,22 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.2.16 - 4/5/2024
+
+#### Automation
+
+* Fixed an issue with computer maintenance mode (#3198)
+* Fixed a performance problem with job logs in SQL
+
+#### PowerShell Apps
+
+* Fixed an issue with New-UDDataGridColumn code completion (#3147)
+* Fixed an issue with -TimeZone on New-UDTimePicker and New-UDDatePicker (#3126)
+* Fixed an issue with spacing of icons in New-UDList (#3173)
+* Added -Style to New-UDTransition (#2836)
+* Fixed a JavaScript error with New-UDTable (#3234)
+* Added -MaximumLength to -New-UDTextbox (#3239)
+
 ## 4.2.15 - 3/28/2024
 
 #### Automation
