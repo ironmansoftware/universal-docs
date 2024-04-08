@@ -4,6 +4,17 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.2.17 - 4/8/2024
+
+#### Automation
+
+* Fixed an issue with Wait-PSUJob and Get-PSUJobOutput (#3249)
+* Fixed an issue where jobs may be cancelled if Hangfire reset server status between heartbeats
+
+#### Platform
+
+* Fixed an issue with the logging documentation link (#3236)
+
 ## 4.2.16 - 4/5/2024
 
 #### Automation
