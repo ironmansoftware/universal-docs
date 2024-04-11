@@ -64,6 +64,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ClassName <String>
+        A CSS class to apply to the radio group.
         
         Required?                    false
         Position?                    6
@@ -72,6 +73,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -DefaultValue <String>
+        The default value for this radio group.
         
         Required?                    false
         Position?                    7
@@ -80,6 +82,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Disabled [<SwitchParameter>]
+        Whether the radio group is disabled.
         
         Required?                    false
         Position?                    named

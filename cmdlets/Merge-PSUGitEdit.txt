@@ -3,20 +3,20 @@ NAME
     Merge-PSUGitEdit
     
 SYNOPSIS
-    {{ Fill in the Synopsis }}
+    Commits changes to a Git repository.
     
     
 SYNTAX
-    Merge-PSUGitEdit [-AppToken <String>] [-ComputerName <String>] [-Credential <PSCredential>] [-HttpProtocolVersion <Version>] [-Integrated] -Message <String> [-Paths <String[]>] [-UseDefaultCredentials] [<CommonParameters>]
+    Merge-PSUGitEdit [-AppToken <String>] [-ComputerName <String>] [-Credential <PSCredential>] [-HttpProtocolVersion <Version>] [-Integrated] -Message <String> [-Paths <String[]>] [<CommonParameters>]
     
     
 DESCRIPTION
-    {{ Fill in the Description }}
+    Commits changes to a Git repository.
     
 
 PARAMETERS
     -AppToken <String>
-        {{ Fill AppToken Description }}
+        An app token to access the PSU API.
         
         Required?                    false
         Position?                    named
@@ -25,7 +25,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        {{ Fill ComputerName Description }}
+        The HTTP address of the PSU server.
         
         Required?                    false
         Position?                    named
@@ -34,7 +34,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Credential <PSCredential>
-        {{ Fill Credential Description }}
+        The credentials to use to authenticate.
         
         Required?                    false
         Position?                    named
@@ -43,7 +43,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -HttpProtocolVersion <Version>
-        {{ Fill HttpProtocolVersion Description }}
+        The HTTP protocol version to use.
         
         Required?                    false
         Position?                    named
@@ -52,7 +52,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
-        {{ Fill Integrated Description }}
+        Used when running within the PSU server.
         
         Required?                    false
         Position?                    named
@@ -61,7 +61,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Message <String>
-        {{ Fill Message Description }}
+        The message for the commit.
         
         Required?                    true
         Position?                    named
@@ -70,20 +70,11 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Paths <String[]>
-        {{ Fill Paths Description }}
+        The paths to commit.
         
         Required?                    false
         Position?                    named
         Default value                None
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -UseDefaultCredentials [<SwitchParameter>]
-        {{ Fill UseDefaultCredentials Description }}
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
@@ -110,9 +101,9 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> {{ Add example code here }}
+    PS C:\> Merge-PSUGitEdit -Message 'My commit message' -Paths 'C:\git\myrepo\file.txt'
     
-    {{ Add example description here }}
+    Commits changes to a Git repository.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

@@ -60,6 +60,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Arrow [<SwitchParameter>]
+        Whether to display an arrow on the tooltip.
         
         Required?                    false
         Position?                    named
@@ -68,6 +69,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -FollowCursor [<SwitchParameter>]
+        Whether the tooltip should follow the cursor.
         
         Required?                    false
         Position?                    named
@@ -85,6 +87,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -EnterDelay <Int32>
+        The delay before the tooltip appears in milliseconds.
         
         Required?                    false
         Position?                    7
@@ -93,6 +96,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -LeaveDelay <Int32>
+        The delay before the tooltip disappears in milliseconds.
         
         Required?                    false
         Position?                    8

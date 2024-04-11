@@ -155,7 +155,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -AppBarLogo <String>
-        {{ Fill AppBarLogo Description }}
+        The logo to display in the app bar. This should be a URL to an image.
         
         Required?                    false
         Position?                    named

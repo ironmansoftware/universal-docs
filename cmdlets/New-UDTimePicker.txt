@@ -79,6 +79,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -TimeZone <Object>
+        The time zone to use for the time picker. This should be an IANA time zone string.
         
         Required?                    false
         Position?                    7

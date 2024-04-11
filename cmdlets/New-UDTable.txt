@@ -309,6 +309,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -OnRowExpand <ScriptBlock>
+        A script block to call when a row is expanded. The $EventData variable will contain the row data.
         
         Required?                    false
         Position?                    named
@@ -360,6 +361,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -OnRowStyle <ScriptBlock>
+        A script block to call to style rows. The $EventData variable will contain the row data.
         
         Required?                    false
         Position?                    named
@@ -368,6 +370,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -HeaderStyle <Hashtable>
+        A hashtable of styles to apply to the header.
         
         Required?                    false
         Position?                    named
@@ -668,6 +671,29 @@ OUTPUTS
     PS > } -Id 'table12'
     
     Row Styling|You can style rows by using the -OnRowStyle parameter. The script block will be passed the row data as a hashtable in the $EventData variable. The script block should return a hashtable of CSS styles to apply to the row.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 13 --------------------------
+    
+    PS >$Data = @(
+    PS >     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 1; Protein = 4.0 }
+    PS >     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 34; Protein = 4.0 }
+    PS >     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 73; Protein = 4.0 }
+    PS >     @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 25; Protein = 4.0 }
+    PS >     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 99; Protein = 4.0 }
+    PS > )
+    PS > $Columns = @(
+    PS >     New-UDTableColumn -Property Dessert -Title "Dessert" 
+    PS >     New-UDTableColumn -Property Calories -Title "Calories" 
+    PS >     New-UDTableColumn -Property Fat -Title "Fat" 
+    PS >     New-UDTableColumn -Property Carbs -Title "Carbs"  -DefaultSortColumn
+    PS >     New-UDTableColumn -Property Protein -Title "Protein" 
+    PS > )
+    PS > New-UDTable -Data $Data -DefaultSortDirection descending -Id 'table13' -ShowSort -Columns $Columns
+    
+    Default Sort|Set the default sort direction and column.
     
     
     

@@ -42,6 +42,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Icon <Hashtable>
+        The icon to display in the menu item. Use New-UDIcon to create an icon.
         
         Required?                    false
         Position?                    4
@@ -50,6 +51,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -OnClick <Endpoint>
+        An event handler to call when the user selects the menu item.
         
         Required?                    false
         Position?                    5

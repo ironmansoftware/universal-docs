@@ -82,6 +82,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -MaxWidth <String>
+        The maximum width of the select.
         
         Required?                    false
         Position?                    6
@@ -90,6 +91,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ClassName <String>
+        A CSS class to apply to the select.
         
         Required?                    false
         Position?                    7
@@ -107,6 +109,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Variant <String>
+        The variant of the select. Can be filled, outlined, or standard.
         
         Required?                    false
         Position?                    8
@@ -124,6 +127,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Sx <Hashtable>
+        A hashtable of styles to apply to the select.
         
         Required?                    false
         Position?                    10

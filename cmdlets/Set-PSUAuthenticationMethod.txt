@@ -9,7 +9,7 @@ SYNOPSIS
 SYNTAX
     Set-PSUAuthenticationMethod [-AppToken <String>] [-ComputerName <String>] [-ScriptBlock <ScriptBlock>] [-Disabled] [-UseDefaultCredentials] [-Authority <String>] -CallbackPath <String> -ClientId <String> [-ClientSecret <String>] [-Configure <ScriptBlock>] [-CorrelationCookieSameSite <String>] [-GetClaimsFromUserInfoEndpoint <Boolean>] [-Integrated] [-Resource <String>] [-ResponseType <String>] [-SaveTokens <Boolean>] [-Scopes <String>] [-Type <AuthenticationMethodType>] [-UseTokenLifetime <Boolean>] [-RequireMfa] [<CommonParameters>]
     
-    Set-PSUAuthenticationMethod [-AppToken <String>] [-ComputerName <String>] [-ScriptBlock <ScriptBlock>] [-Disabled] [-UseDefaultCredentials] -CallbackPath <String> [-Configure <ScriptBlock>] -EntityId <String> [-IdentityProviderEntityId <String>] [-Integrated] [-MetadataAddress <String>] [-ServiceCertificate <String>] [-Type <AuthenticationMethodType>] [-SigningKey <String>] [-SingleSignOnServiceUrl <String>] [<CommonParameters>]
+    Set-PSUAuthenticationMethod [-AppToken <String>] [-ComputerName <String>] [-ScriptBlock <ScriptBlock>] [-Disabled] [-UseDefaultCredentials] -CallbackPath <String> [-Configure <ScriptBlock>] -EntityId <String> [-IdentityProviderEntityId <String>] [-Integrated] [-MetadataAddress <String>] [-ServiceCertificate <String>] [-Type <AuthenticationMethodType>] [-SigningKey <String>] [-SingleSignOnServiceUrl <String>] [-AllowUnsolicitedAuthnResponse] [<CommonParameters>]
     
     Set-PSUAuthenticationMethod [-AppToken <String>] [-ComputerName <String>] [-ScriptBlock <ScriptBlock>] [-Disabled] [-UseDefaultCredentials] -CallbackPath <String> [-Configure <ScriptBlock>] [-CorrelationCookieSameSite <String>] [-Integrated] -MetadataAddress <String> [-Type <AuthenticationMethodType>] [-UseTokenLifetime <Boolean>] -Wreply <String> -Wtrealm <String> [<CommonParameters>]
     
@@ -283,6 +283,15 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -AllowUnsolicitedAuthnResponse [<SwitchParameter>]
+        Allow unsolicited authentication responses for SAML2.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       False
         Accept wildcard characters?  false
         

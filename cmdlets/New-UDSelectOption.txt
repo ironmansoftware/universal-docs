@@ -43,6 +43,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Disabled [<SwitchParameter>]
+        Whether this option is disabled.
         
         Required?                    false
         Position?                    named

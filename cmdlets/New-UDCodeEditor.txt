@@ -207,6 +207,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Options <Hashtable>
+        A hashtable of options to apply to the editor.
         
         Required?                    false
         Position?                    named
@@ -215,6 +216,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -CanSave [<SwitchParameter>]
+        Whether the code can be saved.
         
         Required?                    false
         Position?                    named
@@ -223,6 +225,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Extension <String>
+        The extension of the file.
         
         Required?                    false
         Position?                    named

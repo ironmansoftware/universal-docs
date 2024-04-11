@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSUHealthCheck [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableUnix] [-DisableWindows] [-Disabled] [-Integrated] -Name <String> [-Options <Hashtable>] [-ScriptBlock <ScriptBlock>] [<CommonParameters>]
+    New-PSUHealthCheck [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableUnix] [-DisableWindows] [-Disabled] [-Integrated] -Name <String> [-Options <Hashtable>] [-ScriptBlock <ScriptBlock>] [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -102,6 +102,15 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        {{ Fill UseDefaultCredentials Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       False
         Accept wildcard characters?  false
         

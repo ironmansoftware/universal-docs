@@ -43,6 +43,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ClassName <String>
+        A CSS class to apply to the expansion panel group.
         
         Required?                    false
         Position?                    named

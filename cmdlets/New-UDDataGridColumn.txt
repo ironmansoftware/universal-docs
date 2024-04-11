@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDDataGridColumn [[-Align] <String>] [[-CellClassName] <String>] [[-ColumnSpan] <Int32>] [[-Description] <String>] [-DisableColumnMenu] [-DisableExport] [-DisableReorder] [-Editable] [[-Field] <String>] [-Filterable] [[-Flex] <Single>] [-Groupable] [[-HeaderAlign] <String>] [[-HeaderName] <String>] [-Hideable] [-HideSortIcons] [[-MaxWidth] <Int32>] [[-MinWidth] <Int32>] [-Pinnable] [-Resizable] [-Sortable] [[-SortingOrder] <String[]>] [[-Type] <String>] [[-Width] <Int32>] [[-Render] <ScriptBlock>] [[-ValueOptions] <String[]>] [<CommonParameters>]
+    New-UDDataGridColumn [[-CellClassName] <String>] [[-Align] <String>] [[-ColumnSpan] <Int32>] [[-Description] <String>] [-DisableColumnMenu] [-DisableExport] [-DisableReorder] [-Editable] [[-Field] <String>] [-Filterable] [[-Flex] <Single>] [-Groupable] [[-HeaderAlign] <String>] [[-HeaderName] <String>] [-Hideable] [-HideSortIcons] [[-MaxWidth] <Int32>] [[-MinWidth] <Int32>] [-Pinnable] [-Resizable] [-Sortable] [[-SortingOrder] <String[]>] [[-Type] <String>] [[-Width] <Int32>] [[-Render] <ScriptBlock>] [[-ValueOptions] <String[]>] [-Hide] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -15,21 +15,21 @@ DESCRIPTION
     
 
 PARAMETERS
-    -Align <String>
-        The alignment of the cell data. Possible values are 'left', 'center' and 'right'.
-        
-        Required?                    false
-        Position?                    1
-        Default value                left
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
     -CellClassName <String>
         CSS class name to be applied on cell element.
         
         Required?                    false
-        Position?                    2
+        Position?                    1
         Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Align <String>
+        The alignment of the cell data. Possible values are 'left', 'center' and 'right'.
+        
+        Required?                    false
+        Position?                    2
+        Default value                left
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -246,6 +246,14 @@ PARAMETERS
         Required?                    false
         Position?                    15
         Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Hide [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

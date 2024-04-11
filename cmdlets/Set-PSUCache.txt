@@ -65,7 +65,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -AppToken <String>
-        {{ Fill AppToken Description }}
+        An app token to access the PSU API.
         
         Required?                    false
         Position?                    named
@@ -74,7 +74,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        {{ Fill ComputerName Description }}
+        The HTTP address of the PSU server.
         
         Required?                    false
         Position?                    named

@@ -70,6 +70,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Centered [<SwitchParameter>]
+        Whether the tabs should be centered.
         
         Required?                    false
         Position?                    named
@@ -78,6 +79,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ClassName <String>
+        The CSS class to apply to the tabs.
         
         Required?                    false
         Position?                    6

@@ -97,6 +97,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -MinimumDate <DateTime>
+        The minimum date that can be selected.
         
         Required?                    false
         Position?                    9
@@ -105,6 +106,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -MaximumDate <DateTime>
+        The maximum date that can be selected.
         
         Required?                    false
         Position?                    10
@@ -113,6 +115,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -TimeZone <Object>
+        The time zone to use for the date picker. This should be an IANA time zone string.
         
         Required?                    false
         Position?                    11
@@ -121,6 +124,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Disabled [<SwitchParameter>]
+        Disables the date picker.
         
         Required?                    false
         Position?                    named
@@ -129,6 +133,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Views <String[]>
+        The views to show in the date picker. Valid values are: "day", "year", "month"
         
         Required?                    false
         Position?                    12
