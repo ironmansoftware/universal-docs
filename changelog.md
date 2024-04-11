@@ -240,7 +240,7 @@ description: Changelog for PowerShell Universal.
 * Filters for health checks in the admin console (#3016)
 * Fixed an issue where Get-PSUComputer -Integrated would return a gRPC error when using SQL persistence (#3018)
 
-## 4.2.8 - 1/3/2023
+## 4.2.8 - 1/3/2024
 
 #### APIs
 
