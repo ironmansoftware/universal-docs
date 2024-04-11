@@ -110,13 +110,16 @@ You can also import pre-existing secrets as variables into Universal. The variab
 
 Variables can be used in APIs, Scripts and Dashboards. When using the default environments, all variables are automatically imported. This is accomplished by specifying the `-Variable` parameter of `New-PSUEnvironment` with a wild card (\*). If you are using your own environments, you will have to configure [which variables you would like included](https://docs.powershelluniversal.com/config/environments#variables). You can reference a variable like you would any other PowerShell variable. The variable will contain the value you set. If you use a secret, it will contain the secret's value.
 
-```
-$MyVariable
-```
-
 You can customize which variables are allowed in an environment by customizing the environments `-Variable` parameter.
 
 See [Environments](../config/environments.md#variables) for more information.
+
+## Public Scope
+To access public scoped variables, just reference them like a normal varaible. They are now global.
+
+```
+$MyVariable
+```
 
 ## Secret Scope
 
