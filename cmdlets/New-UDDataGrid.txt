@@ -203,6 +203,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -DefaultSortColumn <String>
+        The default column to sort by.
         
         Required?                    false
         Position?                    17
@@ -211,6 +212,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -DefaultSortDirection <String>
+        The default sort direction.
         
         Required?                    false
         Position?                    18
@@ -219,6 +221,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -DisableRowSelectionOnClick [<SwitchParameter>]
+        Disables row selection on click.
         
         Required?                    false
         Position?                    named
@@ -227,6 +230,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -HideExport [<SwitchParameter>]
+        Hides the export button.
         
         Required?                    false
         Position?                    named
@@ -235,6 +239,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -RowHeight <Int32>
+        The height of the rows.
         
         Required?                    false
         Position?                    19
@@ -243,6 +248,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -IdentityColumn <String>
+        The identity column for the data grid.
         
         Required?                    false
         Position?                    20

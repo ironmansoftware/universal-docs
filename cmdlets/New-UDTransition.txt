@@ -7,15 +7,15 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTransition [-Id <String>] [-Collapse] [-CollapseHeight <Int32>] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [<CommonParameters>]
+    New-UDTransition [-Id <String>] [-Collapse] [-CollapseHeight <Int32>] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [-Style <Hashtable>] [<CommonParameters>]
     
-    New-UDTransition [-Id <String>] [-Fade] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [<CommonParameters>]
+    New-UDTransition [-Id <String>] [-Fade] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [-Style <Hashtable>] [<CommonParameters>]
     
-    New-UDTransition [-Id <String>] [-Grow] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [<CommonParameters>]
+    New-UDTransition [-Id <String>] [-Grow] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [-Style <Hashtable>] [<CommonParameters>]
     
-    New-UDTransition [-Id <String>] [-Slide] [-SlideDirection <String>] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [<CommonParameters>]
+    New-UDTransition [-Id <String>] [-Slide] [-SlideDirection <String>] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [-Style <Hashtable>] [<CommonParameters>]
     
-    New-UDTransition [-Id <String>] [-Zoom] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [<CommonParameters>]
+    New-UDTransition [-Id <String>] [-Zoom] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [-Style <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -119,6 +119,14 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

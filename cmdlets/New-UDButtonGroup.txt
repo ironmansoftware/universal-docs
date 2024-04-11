@@ -34,6 +34,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ClassName <String>
+        A CSS class to apply to the button group.
         
         Required?                    false
         Position?                    3
@@ -42,6 +43,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Color <Object>
+        The color of the button group. Valid values are: "primary", "secondary", "success", "warning", "error", "success", "info"
         
         Required?                    false
         Position?                    4
@@ -50,6 +52,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Disabled [<SwitchParameter>]
+        Disables the button group.
         
         Required?                    false
         Position?                    named
@@ -58,6 +61,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -FullWidth [<SwitchParameter>]
+        Makes the button group full width.
         
         Required?                    false
         Position?                    named
@@ -66,6 +70,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Orientation <String>
+        The orientation of the button group. Valid values are: "horizontal", "vertical"
         
         Required?                    false
         Position?                    5
@@ -74,6 +79,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Size <String>
+        The size of the button group. Valid values are: "small", "medium", "large"
         
         Required?                    false
         Position?                    6
@@ -82,6 +88,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Sx <Hashtable>
+        An hashtable of styles to apply to this component.
         
         Required?                    false
         Position?                    7
@@ -90,6 +97,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Variant <String>
+        The variant of the button group. Valid values are: "contained", "outlined", "text"
         
         Required?                    false
         Position?                    8

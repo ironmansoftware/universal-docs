@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSUComputerGroup [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-Integrated] -Name <String> [-Tags <String[]>] [<CommonParameters>]
+    New-PSUComputerGroup [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-Integrated] -Name <String> [-Tags <String[]>] [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -66,6 +66,15 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        {{ Fill UseDefaultCredentials Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       False
         Accept wildcard characters?  false
         

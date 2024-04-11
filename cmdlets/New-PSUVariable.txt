@@ -137,7 +137,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Role <String[]>
-        {{ Fill Role Description }}
+        The roles that can access this variable.
         
         Required?                    false
         Position?                    named

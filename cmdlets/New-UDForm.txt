@@ -155,6 +155,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ShowBackButton [<SwitchParameter>]
+        Shows a back button after the form is submitted. This is only used for script forms.
         
         Required?                    false
         Position?                    named

@@ -126,6 +126,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -NavigationLayout <String>
+        The layout of the navigation. Valid values are 'Temporary' and 'Permanent'.
         
         Required?                    false
         Position?                    named
@@ -134,6 +135,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Navigation <Hashtable[]>
+        The navigation for the dashboard. This is an array of navigation items.
         
         Required?                    false
         Position?                    named
@@ -160,6 +162,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -LoadNavigation <Endpoint>
+        An endpoint to load navigation items. This endpoint should return an array of navigation items.
         
         Required?                    false
         Position?                    named
@@ -168,6 +171,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -HeaderContent <Endpoint>
+        An endpoint to load content into the header.
         
         Required?                    false
         Position?                    named
@@ -176,6 +180,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -PageNotFound <Endpoint>
+        An endpoint to load content when a page is not found.
         
         Required?                    false
         Position?                    named
@@ -184,6 +189,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -NotAuthorized <Endpoint>
+        An endpoint to load content when a user is not authorized.
         
         Required?                    false
         Position?                    named
@@ -192,6 +198,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -SessionTimeoutModal <ScriptBlock>
+        A script block that will be executed when the session times out.
         
         Required?                    false
         Position?                    named
@@ -200,6 +207,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Menu <Endpoint>
+        An endpoint to load a menu into the dashboard.
         
         Required?                    false
         Position?                    named

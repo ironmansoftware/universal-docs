@@ -79,6 +79,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -JustifyContent <String>
+        Defines the justify-content style property. It's applied for all screen sizes. Valid values are flex-start, flex-end, center, space-between, space-around, and space-evenly.
         
         Required?                    false
         Position?                    7

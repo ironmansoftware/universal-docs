@@ -7,11 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    Get-PSUGitStatus [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] -Commits [-Credential <PSCredential>] [-First <UInt64>] [-HttpProtocolVersion <Version>] [-IncludeTotalCount] [-Skip <UInt64>] [<CommonParameters>]
+    Get-PSUGitStatus [-AppToken <String>] [-ComputerName <String>] [-Integrated] -Commits [-Credential <PSCredential>] [-First <UInt64>] [-HttpProtocolVersion <Version>] [-IncludeTotalCount] [-Skip <UInt64>] [<CommonParameters>]
     
-    Get-PSUGitStatus [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-Credential <PSCredential>] -EditInProgress [-First <UInt64>] [-HttpProtocolVersion <Version>] [-IncludeTotalCount] [-Skip <UInt64>] [<CommonParameters>]
+    Get-PSUGitStatus [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-Credential <PSCredential>] -EditInProgress [-First <UInt64>] [-HttpProtocolVersion <Version>] [-IncludeTotalCount] [-Skip <UInt64>] [<CommonParameters>]
     
-    Get-PSUGitStatus [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-Credential <PSCredential>] [-First <UInt64>] [-HttpProtocolVersion <Version>] [-IncludeTotalCount] [-Skip <UInt64>] -UncommittedChanges [<CommonParameters>]
+    Get-PSUGitStatus [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-Credential <PSCredential>] [-First <UInt64>] [-HttpProtocolVersion <Version>] [-IncludeTotalCount] [-Skip <UInt64>] -UncommittedChanges [<CommonParameters>]
     
     
 DESCRIPTION
@@ -39,15 +39,6 @@ PARAMETERS
         
     -Integrated [<SwitchParameter>]
         Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -UseDefaultCredentials [<SwitchParameter>]
-        Use default credentials when connecting to the management API
         
         Required?                    false
         Position?                    named

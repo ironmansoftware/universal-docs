@@ -43,6 +43,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ClassName <String>
+        A CSS class to apply to the list.
         
         Required?                    false
         Position?                    4
@@ -51,6 +52,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Dense [<SwitchParameter>]
+        Whether the list is dense.
         
         Required?                    false
         Position?                    named
@@ -59,6 +61,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Sx <Hashtable>
+        An hashtable of styles to apply to this component.
         
         Required?                    false
         Position?                    5

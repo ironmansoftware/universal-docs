@@ -3,7 +3,7 @@ NAME
     Measure-PSUBlock
     
 SYNOPSIS
-    {{ Fill in the Synopsis }}
+    Profiles a script block.
     
     
 SYNTAX
@@ -11,12 +11,12 @@ SYNTAX
     
     
 DESCRIPTION
-    {{ Fill in the Description }}
+    Profiles a script block. Requires profiling to be enabled in the PSU settings.
     
 
 PARAMETERS
     -Name <String>
-        {{ Fill Name Description }}
+        The name of the script block that will be displayed in the PSU profiler.
         
         Required?                    true
         Position?                    named
@@ -25,7 +25,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ScriptBlock <ScriptBlock>
-        {{ Fill ScriptBlock Description }}
+        The script block to profile.
         
         Required?                    true
         Position?                    named
@@ -56,9 +56,9 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> {{ Add example code here }}
+    PS C:\> Measure-PSUBlock -ScriptBlock { Get-Process } -Name 'Get-Process'
     
-    {{ Add example description here }}
+    Profiles the `Get-Process` script block.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

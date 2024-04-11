@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDStep [[-Id] <String>] [-OnLoad] <Endpoint> [[-Label] <String>] [-Optional] [-DisablePrevious] [[-Icon] <Object>] [-RemoveIconStyle] [<CommonParameters>]
+    New-UDStep [[-Id] <String>] [-OnLoad] <Endpoint> [[-Label] <String>] [-Optional] [-DisablePrevious] [[-Icon] <Object>] [-RemoveIconStyle] [[-IconStyle] <Hashtable>] [[-DarkIconStyle] <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -75,6 +75,22 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -IconStyle <Hashtable>
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DarkIconStyle <Hashtable>
+        
+        Required?                    false
+        Position?                    6
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

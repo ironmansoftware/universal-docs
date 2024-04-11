@@ -2,275 +2,257 @@
 NAME
     Set-PSUSchedule
     
+SYNOPSIS
+    Updates a schedule.
+    
+    
 SYNTAX
-    Set-PSUSchedule [-Id] <long> [[-Script] <Script>] [[-Cron] <string>] [-Credential <Variable>] [-TimeZone <string>] [-Continuous] [-Delay <timespan>] [-DelaySecond <int>] [-Environment <string>] [-Name <string>] [-Paused] [-RandomDelay] [-RandomDelayMaximum <int>] [-Timeout <int>] [-Condition <scriptblock>] [-Description <string>] [-Computer <string>] [-Parameters <hashtable>] [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Set-PSUSchedule [[-Script] <Script>] [[-Cron] <String>] [-AppToken <String>] [-Computer <String>] [-ComputerName <String>] [-Condition <ScriptBlock>] [-Continuous] [-Credential <Variable>] [-Delay <TimeSpan>] [-DelayHour <Int32>] [-DelayMinute <Int32>] [-DelaySecond <Int32>] [-Description <String>] [-Environment <String>] [-Integrated] [-Name <String>] [-Parameters <Hashtable>] [-Paused] [-RandomDelay] [-RandomDelayMaximum <Int32>] [-TimeZone <String>] [-Timeout <Int32>] [-UseDefaultCredentials] [<CommonParameters>]
     
-    Set-PSUSchedule [-Schedule] <Schedule> [[-Script] <Script>] [[-Cron] <string>] [-Credential <Variable>] [-TimeZone <string>] [-Continuous] [-Delay <timespan>] [-DelaySecond <int>] [-Environment <string>] [-Name <string>] [-Paused] [-RandomDelay] [-RandomDelayMaximum <int>] [-Timeout <int>] [-Condition <scriptblock>] [-Description <string>] [-Computer <string>] [-Parameters <hashtable>] [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Set-PSUSchedule [-Id] <Int64> [[-Script] <Script>] [[-Cron] <String>] [-AppToken <String>] [-Computer <String>] [-ComputerName <String>] [-Condition <ScriptBlock>] [-Continuous] [-Credential <Variable>] [-Delay <TimeSpan>] [-DelaySecond <Int32>] [-Description <String>] [-Environment <String>] [-Integrated] [-Name <String>] [-Parameters <Hashtable>] [-Paused] [-RandomDelay] [-RandomDelayMaximum <Int32>] [-TimeZone <String>] [-Timeout <Int32>] [-UseDefaultCredentials] [<CommonParameters>]
     
-    Set-PSUSchedule [[-Script] <Script>] [[-Cron] <string>] [-Credential <Variable>] [-TimeZone <string>] [-Continuous] [-Delay <timespan>] [-DelaySecond <int>] [-DelayMinute <int>] [-DelayHour <int>] [-Environment <string>] [-Name <string>] [-Paused] [-RandomDelay] [-RandomDelayMaximum <int>] [-Timeout <int>] [-Condition <scriptblock>] [-Description <string>] [-Computer <string>] [-Parameters <hashtable>] [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Set-PSUSchedule [[-Script] <Script>] [[-Cron] <String>] [-AppToken <String>] [-Computer <String>] [-ComputerName <String>] [-Condition <ScriptBlock>] [-Continuous] [-Credential <Variable>] [-Delay <TimeSpan>] [-DelaySecond <Int32>] [-Description <String>] [-Environment <String>] [-Integrated] [-Name <String>] [-OneTime <DateTime>] [-Parameters <Hashtable>] [-Paused] [-RandomDelay] [-RandomDelayMaximum <Int32>] [-TimeZone <String>] [-Timeout <Int32>] [-UseDefaultCredentials] [<CommonParameters>]
     
-    Set-PSUSchedule [[-Script] <Script>] [[-Cron] <string>] [-Credential <Variable>] [-TimeZone <string>] [-Continuous] [-Delay <timespan>] [-DelaySecond <int>] [-Environment <string>] [-Name <string>] [-Paused] [-RandomDelay] [-RandomDelayMaximum <int>] [-Timeout <int>] [-Condition <scriptblock>] [-OneTime <datetime>] [-Description <string>] [-Computer <string>] [-Parameters <hashtable>] [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Set-PSUSchedule [-Schedule] <Schedule> [[-Script] <Script>] [[-Cron] <String>] [-AppToken <String>] [-Computer <String>] [-ComputerName <String>] [-Condition <ScriptBlock>] [-Continuous] [-Credential <Variable>] [-Delay <TimeSpan>] [-DelaySecond <Int32>] [-Description <String>] [-Environment <String>] [-Integrated] [-Name <String>] [-Parameters <Hashtable>] [-Paused] [-RandomDelay] [-RandomDelayMaximum <Int32>] [-TimeZone <String>] [-Timeout <Int32>] [-UseDefaultCredentials] [<CommonParameters>]
     
     
+DESCRIPTION
+    Updates a schedule.
+    
+
 PARAMETERS
-    -AppToken <string>
+    -AppToken <String>
+        An app token to access the PSU API.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Computer <string>
+    -Computer <String>
+        The computer to run the script on.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -ComputerName <string>
+    -ComputerName <String>
+        The URL of the PSU server.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      Uri
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Condition <scriptblock>
+    -Condition <ScriptBlock>
+        The condition to run the script. This should return true or false.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Continuous
+    -Continuous [<SwitchParameter>]
+        Indicates that the script should run continuously.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -Credential <Variable>
+        The credential to use when running the script.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Cron <string>
+    -Cron <String>
+        The cron expression to use for the schedule.
         
         Required?                    false
         Position?                    2
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Delay <timespan>
+    -Delay <TimeSpan>
+        The delay to use when running the script continuously.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -DelayHour <int>
+    -DelayHour <Int32>
+        The number of hours to delay the script.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Continuous
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -DelayMinute <int>
+    -DelayMinute <Int32>
+        The number of minutes to delay the script.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Continuous
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -DelaySecond <int>
+    -DelaySecond <Int32>
+        The number of seconds to delay the script.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Description <string>
+    -Description <String>
+        A description of the schedule.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Environment <string>
+    -Environment <String>
+        The environment to run the script in.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Id <long>
+    -Id <Int64>
+        The ID of the schedule to update.
         
         Required?                    true
         Position?                    0
-        Accept pipeline input?       false
-        Parameter set name           Id
-        Aliases                      None
-        Dynamic?                     false
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Integrated
+    -Integrated [<SwitchParameter>]
+        Used when running with the PSU server.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Name <string>
+    -Name <String>
+        The name of the schedule.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -OneTime <datetime>
+    -OneTime <DateTime>
+        The time to run the script.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           OneTime
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Parameters <hashtable>
+    -Parameters <Hashtable>
+        A hashtable of parameters to pass to the script.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Paused
+    -Paused [<SwitchParameter>]
+        Indicates that the schedule should be paused.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -RandomDelay
+    -RandomDelay [<SwitchParameter>]
+        Indicates that the script should have a random delay when starting the schedule.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -RandomDelayMaximum <int>
+    -RandomDelayMaximum <Int32>
+        The maximum number of seconds to delay the script.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -Schedule <Schedule>
+        The schedule to update.
         
         Required?                    true
         Position?                    0
-        Accept pipeline input?       true (ByValue)
-        Parameter set name           Schedule
-        Aliases                      None
-        Dynamic?                     false
+        Default value                None
+        Accept pipeline input?       True (ByValue)
         Accept wildcard characters?  false
         
     -Script <Script>
+        The script to run.
         
         Required?                    false
         Position?                    1
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -TimeZone <string>
+    -TimeZone <String>
+        The time zone to use when running the script. Use an IANA time zone.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Timeout <int>
+    -Timeout <Int32>
+        The number of seconds to wait for the script to complete.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -UseDefaultCredentials
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use the default credentials when connecting to the PSU server.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -279,19 +261,38 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
     PowerShellUniversal.Schedule
+        
     
     
 OUTPUTS
     System.Object
+        
     
-ALIASES
-    None
     
-
-REMARKS
-    None
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Set-PSUSchedule -Id 1 -Name 'New Name'
+    
+    Updates the schedule with the ID of 1 to have the name of 'New Name'.
+    -------------------------- Example 2 --------------------------
+    
+    PS C:\> Set-PSUSchedule -Schedule $schedule -Name 'New Name'
+    
+    Updates the schedule with the provided schedule object to have the name of 'New Name'.
+    -------------------------- Example 3 --------------------------
+    
+    PS C:\> Set-PSUSchedule -Id 1 -Name 'New Name' -Paused
+    
+    Updates the schedule with the ID of 1 to have the name of 'New Name' and be paused.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
 
 

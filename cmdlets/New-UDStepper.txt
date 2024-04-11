@@ -123,6 +123,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -CancelButtonText <String>
+        The text to display in the cancel button.
         
         Required?                    false
         Position?                    11
@@ -131,6 +132,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ClassName <String>
+        A CSS class to apply to the stepper.
         
         Required?                    false
         Position?                    12
@@ -139,6 +141,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Style <Hashtable>
+        A hashtable of styles to apply to the stepper.
         
         Required?                    false
         Position?                    13
@@ -147,6 +150,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Sx <Hashtable>
+        A hashtable of styles to apply to the stepper.
         
         Required?                    false
         Position?                    14
