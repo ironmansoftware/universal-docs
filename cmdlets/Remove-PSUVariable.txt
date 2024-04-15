@@ -54,7 +54,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Variable <Variable>
-        The variable to remove. Use Get-UAVariable to retrieve a variable object.
+        The variable to remove. Use Get-PSUVariable to retrieve a variable object.
         
         Required?                    true
         Position?                    0
@@ -72,7 +72,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Name <String>
-        {{ Fill Name Description }}
+        The name of the variable to remove.
         
         Required?                    true
         Position?                    named
@@ -103,10 +103,15 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> $Var = Get-UAVariable -Name 'username'
-    PS C:\> Remove-UAVariable -Variable $Var
+    PS C:\> $Var = Get-PSUVariable -Name 'username'
+    PS C:\> Remove-PSUVariable -Variable $Var
     
     Removes the username variable.
+    -------------------------- Example 2 --------------------------
+    
+    PS C:\> Remove-PSUVariable -Variable -Name "username"
+    
+    Removes the username variable by name.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
