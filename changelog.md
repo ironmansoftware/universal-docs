@@ -4,6 +4,33 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.2.18 - 4/15/2024
+
+#### APIs
+
+* Fixed an issue where the endpoint doc page didn't have an authorize button (#3262)
+
+#### Automation
+
+* Fixed an issue viewing job log files.
+* Changed the language of the Jobs run stat on the homepage (#3235)
+* Fixed an issue where Wait-PSUJob could throw an error based on job output (#3260)
+* Fixed an issue where the Get-PSJobOutput cmdlet returned a different data format in v4.2.16 (#3259)
+
+#### PowerShell Apps
+
+* Fixed an issue with how memory usage was reported (#3217)
+* Fixed an issue with $Query scoping (#3267)
+* Fixed an issue with New-UDTextbox object result formats (#2838)
+
+#### Platform
+
+* Fixed an issue with variables stored in the database (#3250)
+* New PSU versions are now automatically published to WinGet
+* Fixed Set-PSUCache example (#3265)
+* Fixed a display issue with app token expiration (#3097)
+* Fixed an issue where $UserInfo was not defined in role scripts when using Okta (#3241)
+
 ## 4.2.17 - 4/8/2024
 
 #### Automation
