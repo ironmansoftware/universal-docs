@@ -26,6 +26,22 @@ The only contents that you need to provide in the editor will be the script you 
 
 ![API Content](<../.gitbook/assets/image (550).png>)
 
+## HTTP Methods
+
+Endpoints can have one or more HTTP methods defined. To determine which method is used by an endpoint, use the built-in `$Method` variable.&#x20;
+
+```powershell
+New-PSUEndpoint -Url '/user' -Method @('GET', 'POST') -Endpoint {
+    if ($Method -eq 'GET')
+    {
+       Get-User
+    }
+    else {
+       New-User
+    }
+}
+```
+
 ## Variable URL
 
 URLs can contain variable segments. You can denote a variable segment using a colon (`:`). For example, the following URL would provide a variable for the ID of the user. The `$Id` variable will be defined within the endpoint when it is executed. Variables must be unique in the same endpoint URL.
