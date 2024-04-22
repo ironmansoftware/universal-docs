@@ -4,6 +4,37 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.2.19 - 4/22/2024
+
+#### APIs
+
+* Fixed an issue where swagger types could show up in multiple documents (#2830)
+* Fixed an issue with OpenAPI types in Swagger documents (#2948)
+* Fixed an issue with authenticated OpenAPI docs and JWT tokens
+* Fixed an issue with OpenAPI docs not reloading types properly (#3193)
+* Fixed an issue using tabs in OpenAPI docs (#3180)
+* Added error messages when OpenAPI docs fail to load
+
+#### Automation
+
+* Added -InformationAction and -ErrorAction support for Invoke-PSUScript -Wait
+* Added script name to the Script \ Jobs page to support nested jobs (#3272)
+* Fixed an issue where showing the timestamp in a jog log would cause an error (#3277)
+* Fixed an issue where canceled job could get stuck in cancelling state even after a server restart (#3164)
+
+#### PowerShell Apps
+
+* Fixed an issue where scheduled endpoints would not run properly (#3273)
+* Fixed an issue using -OnRowStyle, OnRowExpand and -LoadData with New-UDTable (#2848)
+
+#### Platform
+
+* Setting git sync interval to 0 will now disable the automatic sync (#3232)
+* Fixed an issue with proxy configuration
+* Fixed an issue where Remove-PSUVariable would not work in -Integrated mode (#3281)
+* Fixed an issue with logs for roles (#3227)
+* Fixed an issue with log entry timestamp display in the admin console
+
 ## 4.2.18 - 4/15/2024
 
 #### APIs
