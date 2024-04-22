@@ -136,7 +136,7 @@ You can access variables by name using the `$Secret:` prefix.
 ```powershell
 # PSCredential
 $Secret:MyNewSecret.UserName
-$Secret:MyNewSecret.Password
+$Secret:MyNewSecret.GetNetworkCredential().Password
 
 # String
 $Secret:DashboardSecret
@@ -149,7 +149,7 @@ You can access the secret scope dynamically by using `Get-Item`. The secret scop
 ```powershell
 # PSCredential
 (Get-ChildItem "Secret:MyNewSecret").UserName
-(Get-ChildItem "Secret:MyNewSecret").Password
+(Get-ChildItem "Secret:MyNewSecret").GetNetworkCredential().Password
 
 # String
 (Get-ChildItem "Secret:DashboardSecret")
