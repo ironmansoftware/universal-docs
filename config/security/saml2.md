@@ -151,10 +151,11 @@ You will need to capture the two URLs and download the certificate for configuri
 
 ### authentication.ps1
 
-The authentication.ps1 file is used for configuring PowerShell Universal.&#x20;
+The authentication.ps1 file is used for configuring PowerShell Universal. Note that `-AllowUnsolicitedAuthnResponse` was manually added to this file. It enables the use of the Okta dashboard for launching PowerShell Universal
 
 ```powershell
 Set-PSUAuthenticationMethod -Type "Saml2" `
+-AllowUnsolicitedAuthnResponse `
 -EntityId "https://localhost:5001" `
 -IdentityProviderEntityId "http://www.okta.com/exk5dvbyzgASPiOFp5d7" `
 -CallbackPath "https://localhost:5001" `
@@ -162,13 +163,9 @@ Set-PSUAuthenticationMethod -Type "Saml2" `
 -SingleSignOnServiceUrl "https://dev-36706648.okta.com/app/dev-36706648_psusaml_1/exk5dvbyzgASPiOFp5d7/sso/saml"
 ```
 
-| Parameter                | Description                                                                                | Type   |
-| ------------------------ | ------------------------------------------------------------------------------------------ | ------ |
-| EntityId                 | This value should match what you put in Audience Restriction within Okta.                  | string |
-| IdentityProviderEntityId | This is the value that was presented in the View SAML setup instructions page.             | string |
-| CallbackPath             | This is the path that the user will be redirected to if no redirect path was provided      | string |
-| SigningKey               | This is the certificate file that was downloaded on the View SAML setup instructions page. | string |
-| SingleSignOnServiceUrl   | This is the sign on URL that was provided on the View SAML setup instructions page.        | string |
+
+
+<table><thead><tr><th>Parameter</th><th width="227.33333333333331">Description</th><th>Type</th></tr></thead><tbody><tr><td>EntityId</td><td>This value should match what you put in Audience Restriction within Okta.</td><td>string</td></tr><tr><td>IdentityProviderEntityId</td><td>This is the value that was presented in the View SAML setup instructions page.</td><td>string</td></tr><tr><td>CallbackPath</td><td>This is the path that the user will be redirected to if no redirect path was provided</td><td>string</td></tr><tr><td>SigningKey</td><td>This is the certificate file that was downloaded on the View SAML setup instructions page.</td><td>string</td></tr><tr><td>SingleSignOnServiceUrl</td><td>This is the sign on URL that was provided on the View SAML setup instructions page.</td><td>string</td></tr><tr><td>AllowUnsolicitedAuthnResponse</td><td>Allows for unsolicited Authn responses. Required for Okta dashboard support</td><td>switch</td></tr></tbody></table>
 
 ## Example: Shibboleth
 
