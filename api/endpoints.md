@@ -18,19 +18,33 @@ To invoke the above method, you could use `Invoke-RestMethod`.
 Invoke-RestMethod http://localhost:5000/endpoint
 ```
 
-When defining endpoints in the management API, you can skip the `New-PSUEndpoint` call as it will be defined by the admin console.&#x20;
+When defining endpoints in the management API, you can skip the `New-PSUEndpoint` call as it will be defined by the admin console.
 
 ![API Properties](<../.gitbook/assets/image (442).png>)
 
-The only contents that you need to provide in the editor will be the script you wish to call.&#x20;
+The only contents that you need to provide in the editor will be the script you wish to call.
 
 ![API Content](<../.gitbook/assets/image (550).png>)
+
+## HTTP Methods
+
+Endpoints can have one or more HTTP methods defined. To determine which method is used by an endpoint, use the built-in `$Method` variable.&#x20;
+
+```powershell
+New-PSUEndpoint -Url '/user' -Method @('GET', 'POST') -Endpoint {
+    if ($Method -eq 'GET')
+    {
+       Get-User
+    }
+    else {
+       New-User
+    }
+}
+```
 
 ## Variable URL
 
 URLs can contain variable segments. You can denote a variable segment using a colon (`:`). For example, the following URL would provide a variable for the ID of the user. The `$Id` variable will be defined within the endpoint when it is executed. Variables must be unique in the same endpoint URL.
-
-
 
 ```powershell
 New-PSUEndpoint -Url '/user/:id' -Method 'GET' -Endpoint {
@@ -62,9 +76,9 @@ Invoke-RestMethod http://localhost:5000/user?Id=123
 
 ### Security Considerations
 
-When accepting input via Query String parameters you may be vulnerable to [CWE-914: Improper Control of Dynamically-Identified Variables](https://cwe.mitre.org/data/definitions/914.html). Consider using a `param` block to ensure that only valid parameters are provided to the endpoint.&#x20;
+When accepting input via Query String parameters you may be vulnerable to [CWE-914: Improper Control of Dynamically-Identified Variables](https://cwe.mitre.org/data/definitions/914.html). Consider using a `param` block to ensure that only valid parameters are provided to the endpoint.
 
-Below is an example of CWE-914. A `$IsChallengePassed` query string parameter could be included to bypass the challenge.&#x20;
+Below is an example of CWE-914. A `$IsChallengePassed` query string parameter could be included to bypass the challenge.
 
 ```powershell
 New-PSUEndpoint -Url "/api/v1.0/CWE914Test" -Description "Vulnerable to CWE-914" -Endpoint {
@@ -79,7 +93,7 @@ New-PSUEndpoint -Url "/api/v1.0/CWE914Test" -Description "Vulnerable to CWE-914"
 }
 ```
 
-In order to avoid this particular issue, you can use a `param` block.&#x20;
+In order to avoid this particular issue, you can use a `param` block.
 
 ```powershell
 New-PSUEndpoint -Url "/api/v1.0/CWE914Test" -Description "Not Vulnerable to CWE-914" -Endpoint {
@@ -99,7 +113,7 @@ New-PSUEndpoint -Url "/api/v1.0/CWE914Test" -Description "Not Vulnerable to CWE-
 
 ## Headers
 
-Request headers are available in APIs using the `$Headers` variable. The variable is a hashtable. To access a header, use the following syntax.&#x20;
+Request headers are available in APIs using the `$Headers` variable. The variable is a hashtable. To access a header, use the following syntax.
 
 ```powershell
 $Headers['Content-Type']
@@ -107,13 +121,13 @@ $Headers['Content-Type']
 
 ## Cookies
 
-Request cookies are availablein APIs using the `$Cookies` variable. The variable is a hashtable. To access a cookie, use the following syntax.&#x20;
+Request cookies are availablein APIs using the `$Cookies` variable. The variable is a hashtable. To access a cookie, use the following syntax.
 
 ```powershell
 $Cookies['Request-Cookie']
 ```
 
-Request cookies can be sent back using the `New-PSUApiResponse` cmdlet. Use the `-Cookies` parameter with a supplied hashtable.&#x20;
+Request cookies can be sent back using the `New-PSUApiResponse` cmdlet. Use the `-Cookies` parameter with a supplied hashtable.
 
 ```powershell
 New-PSUApiResponse -StatusCode 200 -Cookies @{
@@ -140,13 +154,13 @@ Invoke-RestMethod http://localhost:5000/user -Method Post -Body "{'username': 'a
 
 ## Live Log
 
-You can view the live log information for any endpoint by clicking the log tab. Live logs include URL, HTTP method, source IP address, PowerShell streams, status code, return Content Type and HTTP content length.&#x20;
+You can view the live log information for any endpoint by clicking the log tab. Live logs include URL, HTTP method, source IP address, PowerShell streams, status code, return Content Type and HTTP content length.
 
 ![](<../.gitbook/assets/image (407).png>)
 
 ## Form Data
 
-You can pass data to an endpoint as form data. Form data will be passed into your endpoint as parameters.&#x20;
+You can pass data to an endpoint as form data. Form data will be passed into your endpoint as parameters.
 
 ```powershell
 New-PSUEndpoint -Url '/user' -Method Post -Endpoint {
@@ -156,7 +170,7 @@ New-PSUEndpoint -Url '/user' -Method Post -Endpoint {
 }
 ```
 
-You can then use a hashtable with Invoke-RestMethod to pass form data.&#x20;
+You can then use a hashtable with Invoke-RestMethod to pass form data.
 
 ```powershell
 Invoke-RestMethod http://localhost:5000/user -Method Post -Body @{ 
@@ -168,7 +182,7 @@ Invoke-RestMethod http://localhost:5000/user -Method Post -Body @{
 
 ## JSON Data
 
-You can pass JSON data to an endpoint and it will automatically bind to a param block.&#x20;
+You can pass JSON data to an endpoint and it will automatically bind to a param block.
 
 ```powershell
 New-PSUEndpoint -Url '/user' -Method Post -Endpoint {
@@ -178,7 +192,7 @@ New-PSUEndpoint -Url '/user' -Method Post -Endpoint {
 }
 ```
 
-You can then send JSON data to the endpoint.&#x20;
+You can then send JSON data to the endpoint.
 
 ```powershell
 Invoke-RestMethod http://localhost:5000/user -Method Post -Body (@{ 
@@ -225,7 +239,7 @@ Content           : [137,80,78,71,13,10,26,10,0,0,0,13,73,72,68,82,0,0,2,17,0,0,
 ```
 
 {% hint style="warning" %}
-`The multipart/form-data`content type is not supported for uploading files to APIs.&#x20;
+`The multipart/form-data`content type is not supported for uploading files to APIs.
 {% endhint %}
 
 You could also save the file into a directory.
@@ -283,15 +297,15 @@ New-PSUEndpoint -Url '/file' -Method Get -Endpoint {
 
 ## Documenting APIs
 
-API documentation can be produced for your endpoints by creating a new OpenAPI definition and assigning endpoints to it. To create an OpenAPI definition, click APIs \ Documentation and then Create new Endpoint Documentation. You can set the name, URL, description and authentication details for the documentation.&#x20;
+API documentation can be produced for your endpoints by creating a new OpenAPI definition and assigning endpoints to it. To create an OpenAPI definition, click APIs \ Documentation and then Create new Endpoint Documentation. You can set the name, URL, description and authentication details for the documentation.
 
 <figure><img src="../.gitbook/assets/image (233).png" alt=""><figcaption><p>Endpoint Documentation</p></figcaption></figure>
 
-Once created, you can assign endpoints to the documentation by editing the endpoint.&#x20;
+Once created, you can assign endpoints to the documentation by editing the endpoint.
 
 <figure><img src="../.gitbook/assets/image (25).png" alt=""><figcaption><p>Edit Endpoint</p></figcaption></figure>
 
-The documentation for your endpoint will appear within the Swagger dashboard. Select the definition with the Select a definition dropdown.&#x20;
+The documentation for your endpoint will appear within the Swagger dashboard. Select the definition with the Select a definition dropdown.
 
 <figure><img src="../.gitbook/assets/image (146).png" alt=""><figcaption></figcaption></figure>
 
@@ -301,9 +315,9 @@ All your custom endpoints will be listed.
 
 ### Help Text
 
-You can specify help text for your APIs using comment-based help. Including a synopsis, description and parameter descriptions will result in each of those pieces being documented in the OpenAPI documentation and Swagger age.&#x20;
+You can specify help text for your APIs using comment-based help. Including a synopsis, description and parameter descriptions will result in each of those pieces being documented in the OpenAPI documentation and Swagger age.
 
-For example, with a simple `/get/:id` endpoint, we could have comment-based help such as this.&#x20;
+For example, with a simple `/get/:id` endpoint, we could have comment-based help such as this.
 
 ```powershell
 <# 
@@ -322,19 +336,19 @@ param($ID)
 $Id
 ```
 
-The resulting Swagger page will show each of these descriptions.&#x20;
+The resulting Swagger page will show each of these descriptions.
 
 ![Swagger Documentation for an API](<../.gitbook/assets/image (347).png>)
 
 ### Input and Output Types
 
-Types can be defined within an endpoint documentation scriptblock. Click the Edit Details button on the API documentation record.&#x20;
+Types can be defined within an endpoint documentation scriptblock. Click the Edit Details button on the API documentation record.
 
 <figure><img src="../.gitbook/assets/image (231).png" alt=""><figcaption><p>Edit Details for API Documentation</p></figcaption></figure>
 
-APIs can also be documented using input and output types by creating a PowerShell class and referencing it within your comment-based help. PowerShell Universal takes advantage of the `.INPUTS` and `.OUTPUTS` sections to specify accepted formats and define status code return values.&#x20;
+APIs can also be documented using input and output types by creating a PowerShell class and referencing it within your comment-based help. PowerShell Universal takes advantage of the `.INPUTS` and `.OUTPUTS` sections to specify accepted formats and define status code return values.
 
-Within the `.INPUTS` and `.OUTPUTS` , you will define a YAML block to provide this information. You can create types in the read-only section of the PowerShell Universal configuration file.&#x20;
+Within the `.INPUTS` and `.OUTPUTS` , you will define a YAML block to provide this information. You can create types in the read-only section of the PowerShell Universal configuration file.
 
 ```powershell
 #region PSUHeader 
@@ -396,15 +410,15 @@ You can then assign the API environment in the `settings.ps1` script.
 Set-PSUSetting -ApiEnvironment 'Env'
 ```
 
-## Timeout&#x20;
+## Timeout
 
-By default, endpoints will not time out. To set a timeout for your endpoints, you can use the `New-PSUEndpoint` `-Timeout` parameter. The timeout is set in the number of seconds.&#x20;
+By default, endpoints will not time out. To set a timeout for your endpoints, you can use the `New-PSUEndpoint` `-Timeout` parameter. The timeout is set in the number of seconds.
 
 ## External Endpoint Content
 
-You can define the path to an external endpoint content file by using the `-Path` parameter of `New-PSUEndpoint`. The path is relative to the `.universal` directory in Repository.&#x20;
+You can define the path to an external endpoint content file by using the `-Path` parameter of `New-PSUEndpoint`. The path is relative to the `.universal` directory in Repository.
 
-The content of the `endpoints.ps1` file is then this.&#x20;
+The content of the `endpoints.ps1` file is then this.
 
 ```powershell
 New-PSUEndpoint -Url "/path" -Path "endpoint-path.ps1"
@@ -414,9 +428,9 @@ New-PSUEndpoint -Url "/path" -Path "endpoint-path.ps1"
 
 As for PowerShell Universal 3.5, you can now enable C# APIs as an experimental feature. To learn more about enabling experimental features, [click here](../config/feature-flags.md). C# APIs are significantly faster than PowerShell APIs (5 - 20 times faster).
 
-There is no UI for creating a C# API and you will need to do so using configuration files. First, you will need to create a `.cs` file that will run your API.&#x20;
+There is no UI for creating a C# API and you will need to do so using configuration files. First, you will need to create a `.cs` file that will run your API.
 
-You will have access to a `request` parameter that includes all the data about the API request.&#x20;
+You will have access to a `request` parameter that includes all the data about the API request.
 
 ```csharp
 public class ApiRequest
@@ -436,7 +450,7 @@ public class ApiRequest
 }
 ```
 
-You will also have access to a `ServiceProvider` property that will allow you to access services within PowerShell Universal. These are currently not well documented but below is an example of restarting a dashboard.&#x20;
+You will also have access to a `ServiceProvider` property that will allow you to access services within PowerShell Universal. These are currently not well documented but below is an example of restarting a dashboard.
 
 ```csharp
 var dm = ServiceProvider.GetService(typeof(IDashboardManager));
@@ -451,7 +465,7 @@ Some other useful services may include:
 * IConfigurationService
 * IJobService
 
-You can choose to return an `ApiResponse` from your endpoint.&#x20;
+You can choose to return an `ApiResponse` from your endpoint.
 
 ```powershell
 return new ApiResponse {
@@ -459,13 +473,13 @@ return new ApiResponse {
 };
 ```
 
-Once you have defined your C# endpoint file, you can add it by editing `endpoints.ps1`.&#x20;
+Once you have defined your C# endpoint file, you can add it by editing `endpoints.ps1`.
 
 ```powershell
 New-PSUEndpoint -Url /csharp -Path endpoint.cs -Environment 'C#'
 ```
 
-C# endpoints are compiled and run directly in the PowerShell Universal service.&#x20;
+C# endpoints are compiled and run directly in the PowerShell Universal service.
 
 ## API
 
