@@ -19,7 +19,7 @@ description: Changelog for PowerShell Universal.
 
 * Added -InformationAction and -ErrorAction support for Invoke-PSUScript -Wait
 * Added script name to the Script \ Jobs page to support nested jobs (#3272)
-* Fixed an issue where showing the timestamp in a jog log would cause an error (#3277)
+* Fixed an issue where showing the timestamp in a job log would cause an error (#3277)
 * Fixed an issue where canceled job could get stuck in cancelling state even after a server restart (#3164)
 
 #### PowerShell Apps
