@@ -4,6 +4,26 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.2.20 - 4/30/2024
+
+#### APIs
+
+* Fixed an issue with the default endpoints.json Swagger documentation (#3287)
+
+#### Automation
+
+* Fixed an issue where Invoke-PSUScript -Wait wouldn't work with -UseDefaultCredentials (#3290)
+
+#### PowerShell Apps
+
+* Fixed an issue with including -1 in -RowsPerPageOptions to create an All option (#3240)
+* Fixed an issue with default pagination info and New-UDTable -LoadRows (#3228)
+
+#### Platform
+
+* Added Authentication:OIDC:AcceptAnyServerCertificate to appsettings.json (#3285)
+* Fixed a memory leak
+
 ## 4.2.19 - 4/22/2024
 
 #### APIs
