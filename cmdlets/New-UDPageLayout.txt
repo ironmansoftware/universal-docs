@@ -2,59 +2,62 @@
 NAME
     New-UDPageLayout
     
+SYNOPSIS
+    Creates a new page layout for New-UDGridLayout.
+    
+    
 SYNTAX
     New-UDPageLayout [[-Large] <DesignerItemLayout[]>] [[-Medium] <DesignerItemLayout[]>] [[-Small] <DesignerItemLayout[]>] [[-ExtraSmall] <DesignerItemLayout[]>] [[-ExtraExtraSmall] <DesignerItemLayout[]>] [<CommonParameters>]
     
     
+DESCRIPTION
+    Creates a new page layout for New-UDGridLayout. This command is used interally by the PowerShell Universal designer.
+    
+
 PARAMETERS
-    -ExtraExtraSmall <DesignerItemLayout[]>
-        
-        Required?                    false
-        Position?                    4
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -ExtraSmall <DesignerItemLayout[]>
-        
-        Required?                    false
-        Position?                    3
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
     -Large <DesignerItemLayout[]>
-        
-        Required?                    false
-        Position?                    0
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Medium <DesignerItemLayout[]>
+        Item layouts for large screen sizes.
         
         Required?                    false
         Position?                    1
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Small <DesignerItemLayout[]>
+    -Medium <DesignerItemLayout[]>
+        Item layouts for medium screen sizes.
         
         Required?                    false
         Position?                    2
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Small <DesignerItemLayout[]>
+        Item layouts for small screen sizes.
+        
+        Required?                    false
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ExtraSmall <DesignerItemLayout[]>
+        Item layouts for extra small screen sizes.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ExtraExtraSmall <DesignerItemLayout[]>
+        Item layouts for extra extra small screen sizes.
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -63,19 +66,11 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
     
-
-REMARKS
-    None
+RELATED LINKS
 
 

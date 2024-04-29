@@ -2,19 +2,26 @@
 NAME
     Out-UDChartJSMonitorData
     
+SYNOPSIS
+    Formats data for a UDMonitor chart.
+    
+    
 SYNTAX
     Out-UDChartJSMonitorData [[-Data] <Object>] [<CommonParameters>]
     
     
+DESCRIPTION
+    Formats data for a UDMonitor chart.
+    
+
 PARAMETERS
     -Data <Object>
+        The data to format.
         
         Required?                    false
-        Position?                    0
+        Position?                    1
+        Default value                
         Accept pipeline input?       true (ByValue)
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -23,19 +30,25 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    System.Object
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
+NOTES
     
-
-REMARKS
-    None
+    
+        General notes
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS > See New-UDChartJSMonitor for an example.
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
 
 

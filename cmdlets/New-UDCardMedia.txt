@@ -2,81 +2,82 @@
 NAME
     New-UDCardMedia
     
+SYNOPSIS
+    Creates a new card media.
+    
+    
 SYNTAX
-    New-UDCardMedia [-Id <string>] [-Component {img | video | audio}] [-Alt <string>] [-Height <string>] [-Image <string>] [-Title <string>] [<CommonParameters>]
+    New-UDCardMedia [-Id <String>] [-Component <String>] [-Alt <String>] [-Height <String>] [-Image <String>] [-Title <String>] [<CommonParameters>]
     
-    New-UDCardMedia [-Id <string>] [-Component {img | video | audio}] [-Alt <string>] [-Height <string>] [-Title <string>] [-Source <string>] [<CommonParameters>]
+    New-UDCardMedia [-Id <String>] [-Component <String>] [-Alt <String>] [-Height <String>] [-Title <String>] [-Source <String>] [<CommonParameters>]
     
     
+DESCRIPTION
+    Creates a new card media. Used with New-UDCard.
+    
+
 PARAMETERS
-    -Alt <string>
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                ([Guid]::NewGuid()).ToString()
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Component <string>
+    -Component <String>
+        The type of media component. This can be img, video or audio.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                img
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Height <string>
+    -Alt <String>
+        The alt text for the media.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Id <string>
+    -Height <String>
+        The height of the media.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Image <string>
+    -Image <String>
+        The image to display.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           image
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Source <string>
+    -Title <String>
+        The title of the media.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           media
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Title <string>
+    -Source <String>
+        The source of the media.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -85,20 +86,23 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
     System.Collections.Hashtable
     
     
-ALIASES
-    None
+    -------------------------- EXAMPLE 1 --------------------------
     
-
-REMARKS
-    None
+    PS >$Media = New-UDCardMedia -Image 'https://mui.com/static/images/cards/paella.jpg'
+    PS > New-UDCard -Media $Media -Id 'card1'
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
 
 

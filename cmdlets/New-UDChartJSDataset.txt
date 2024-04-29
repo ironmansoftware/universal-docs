@@ -2,129 +2,138 @@
 NAME
     New-UDChartJSDataset
     
+SYNOPSIS
+    Creates a new ChartJS dataset
+    
+    
 SYNTAX
-    New-UDChartJSDataset [[-Data] <Object>] [[-DataProperty] <string>] [[-Label] <string>] [[-BackgroundColor] <DashboardColor[]>] [[-BorderColor] <DashboardColor[]>] [[-BorderWidth] <int>] [[-HoverBackgroundColor] <DashboardColor[]>] [[-HoverBorderColor] <DashboardColor[]>] [[-HoverBorderWidth] <int>] [[-XAxisId] <string>] [[-YAxisId] <string>] [[-AdditionalOptions] <hashtable>] [<CommonParameters>]
+    New-UDChartJSDataset [[-Data] <Object>] [[-DataProperty] <String>] [[-Label] <String>] [[-BackgroundColor] <DashboardColor[]>] [[-BorderColor] <DashboardColor[]>] [[-BorderWidth] <Int32>] [[-HoverBackgroundColor] <DashboardColor[]>] [[-HoverBorderColor] <DashboardColor[]>] [[-HoverBorderWidth] <Int32>] [[-XAxisId] <String>] [[-YAxisId] <String>] [[-AdditionalOptions] <Hashtable>] [<CommonParameters>]
     
     
+DESCRIPTION
+    Creates a new ChartJS dataset. This cmdlet is used to create a new dataset for New-UDChartJS.
+    
+
 PARAMETERS
-    -AdditionalOptions <hashtable>
-        
-        Required?                    false
-        Position?                    11
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -BackgroundColor <DashboardColor[]>
-        
-        Required?                    false
-        Position?                    3
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -BorderColor <DashboardColor[]>
-        
-        Required?                    false
-        Position?                    4
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -BorderWidth <int>
-        
-        Required?                    false
-        Position?                    5
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
     -Data <Object>
-        
-        Required?                    false
-        Position?                    0
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -DataProperty <string>
+        The data for the dataset. The format of the data depends on the type of chart you are creating.
         
         Required?                    false
         Position?                    1
+        Default value                @()
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -HoverBackgroundColor <DashboardColor[]>
-        
-        Required?                    false
-        Position?                    6
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -HoverBorderColor <DashboardColor[]>
-        
-        Required?                    false
-        Position?                    7
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -HoverBorderWidth <int>
-        
-        Required?                    false
-        Position?                    8
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Label <string>
+    -DataProperty <String>
+        The property of the data object to use as the data for the dataset.
         
         Required?                    false
         Position?                    2
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -XAxisId <string>
+    -Label <String>
+        The label for the dataset.
+        
+        Required?                    false
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -BackgroundColor <DashboardColor[]>
+        The background color for the dataset.
+        
+        Required?                    false
+        Position?                    4
+        Default value                @("#807B210C")
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -BorderColor <DashboardColor[]>
+        The border color for the dataset.
+        
+        Required?                    false
+        Position?                    5
+        Default value                @("#FF7B210C")
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -BorderWidth <Int32>
+        The border width for the dataset.
+        
+        Required?                    false
+        Position?                    6
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -HoverBackgroundColor <DashboardColor[]>
+        The hover background color for the dataset.
+        
+        Required?                    false
+        Position?                    7
+        Default value                @("#807B210C")
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -HoverBorderColor <DashboardColor[]>
+        The hover border color for the dataset.
+        
+        Required?                    false
+        Position?                    8
+        Default value                @("#FF7B210C")
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -HoverBorderWidth <Int32>
+        The hover border width for the dataset.
         
         Required?                    false
         Position?                    9
+        Default value                0
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -YAxisId <string>
+    -XAxisId <String>
+        The ID of the X axis to use for the dataset.
         
         Required?                    false
         Position?                    10
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -YAxisId <String>
+        The ID of the Y axis to use for the dataset.
+        
+        Required?                    false
+        Position?                    11
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -AdditionalOptions <Hashtable>
+        A hashtable of additional options to apply to the dataset. See ChartJS documentation for more information.
+        
+        PS > .EXAMPLE
+        PS > $Data = Get-Process | Sort-Object -Property CPU -Descending | Select-Object -First 10 
+        PS > 
+        PS > $CPUDataset = New-UDChartJSDataset -DataProperty CPU -Label CPU -BackgroundColor '#126f8c'
+        PS > $MemoryDataset = New-UDChartJSDataset -DataProperty HandleCount -Label 'Handle Count' -BackgroundColor '#8da322'
+        PS > $Options = @{
+        PS >     Type = 'bar'
+        PS >     Data = $Data
+        PS >     Dataset = @($CPUDataset, $MemoryDataset)
+        PS >     LabelProperty = "ProcessName"
+        PS > }
+        PS > New-UDChartJS @Options
+        
+        Required?                    false
+        Position?                    12
+        Default value                
+        Accept pipeline input?       false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -133,19 +142,11 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
     
-
-REMARKS
-    None
+RELATED LINKS
 
 

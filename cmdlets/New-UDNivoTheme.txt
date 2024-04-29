@@ -2,49 +2,53 @@
 NAME
     New-UDNivoTheme
     
+SYNOPSIS
+    Creates a new Nivo theme.
+    
+    
 SYNTAX
-    New-UDNivoTheme [[-TickLineColor] <DashboardColor>] [[-TickTextColor] <DashboardColor>] [[-GridLineStrokeColor] <DashboardColor>] [[-GridStrokeWidth] <int>] [<CommonParameters>]
+    New-UDNivoTheme [[-TickLineColor] <DashboardColor>] [[-TickTextColor] <DashboardColor>] [[-GridLineStrokeColor] <DashboardColor>] [[-GridStrokeWidth] <Int32>] [<CommonParameters>]
     
     
+DESCRIPTION
+    Creates a new Nivo theme. See the Nivo documentation for more information. Use this command to create a theme for New-UDNivoChart.
+    
+
 PARAMETERS
-    -GridLineStrokeColor <DashboardColor>
-        
-        Required?                    false
-        Position?                    2
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -GridStrokeWidth <int>
-        
-        Required?                    false
-        Position?                    3
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
     -TickLineColor <DashboardColor>
-        
-        Required?                    false
-        Position?                    0
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -TickTextColor <DashboardColor>
+        The color of the tick lines.
         
         Required?                    false
         Position?                    1
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -TickTextColor <DashboardColor>
+        The color of the tick text.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -GridLineStrokeColor <DashboardColor>
+        The color of the grid lines.
+        
+        Required?                    false
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -GridStrokeWidth <Int32>
+        The width of the grid lines.
+        
+        Required?                    false
+        Position?                    4
+        Default value                0
+        Accept pipeline input?       false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -53,19 +57,20 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
+    -------------------------- EXAMPLE 1 --------------------------
     
-
-REMARKS
-    None
+    PS >New-UDNivoTheme -TickLineColor "#000000" -TickTextColor "#000000" -GridLineStrokeColor "#000000" -GridStrokeWidth 1
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
 
 
