@@ -2,59 +2,62 @@
 NAME
     New-UDItemLayout
     
+SYNOPSIS
+    Creates a new item layout for New-UDGridLayout.
+    
+    
 SYNTAX
-    New-UDItemLayout [-Id] <string> [-Row] <int> [-Column] <int> [[-ColumnSpan] <int>] [[-RowSpan] <int>] [<CommonParameters>]
+    New-UDItemLayout [-Id] <String> [-Row] <Int32> [-Column] <Int32> [[-ColumnSpan] <Int32>] [[-RowSpan] <Int32>] [<CommonParameters>]
     
     
+DESCRIPTION
+    Creates a new item layout for New-UDGridLayout. This command is used interally by the PowerShell Universal designer.
+    
+
 PARAMETERS
-    -Column <int>
-        
-        Required?                    true
-        Position?                    2
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -ColumnSpan <int>
-        
-        Required?                    false
-        Position?                    3
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Id <string>
-        
-        Required?                    true
-        Position?                    0
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Row <int>
+    -Id <String>
+        The ID of the item to layout.
         
         Required?                    true
         Position?                    1
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -RowSpan <int>
+    -Row <Int32>
+        The row of the item.
+        
+        Required?                    true
+        Position?                    2
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Column <Int32>
+        The column of the item.
+        
+        Required?                    true
+        Position?                    3
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ColumnSpan <Int32>
+        The number of columns the item spans.
         
         Required?                    false
         Position?                    4
+        Default value                1
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -RowSpan <Int32>
+        The number of rows the item spans.
+        
+        Required?                    false
+        Position?                    5
+        Default value                1
+        Accept pipeline input?       false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -63,19 +66,11 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
     
-
-REMARKS
-    None
+RELATED LINKS
 
 

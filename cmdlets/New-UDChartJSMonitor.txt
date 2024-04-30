@@ -2,109 +2,107 @@
 NAME
     New-UDChartJSMonitor
     
+SYNOPSIS
+    A chart that continuously updates with new data.
+    
+    
 SYNTAX
-    New-UDChartJSMonitor [[-Id] <string>] [[-Type] {bar | line | area | doughnut | radar | pie | horizontalBar}] [[-DataPointHistory] <int>] [[-Options] <hashtable>] [[-ChartBackgroundColor] <DashboardColor[]>] [[-ChartBorderColor] <DashboardColor[]>] [-Labels] <string[]> [[-RefreshInterval] <int>] [-LoadData] <Endpoint> [-AutoRefresh] [<CommonParameters>]
+    New-UDChartJSMonitor [[-Id] <String>] [[-Type] <String>] [[-DataPointHistory] <Int32>] [[-Options] <Hashtable>] [[-ChartBackgroundColor] <DashboardColor[]>] [[-ChartBorderColor] <DashboardColor[]>] [-Labels] <String[]> [-AutoRefresh] [[-RefreshInterval] <Int32>] [-LoadData] <Endpoint> [<CommonParameters>]
     
     
+DESCRIPTION
+    A chart that continuously updates with new data.
+    
+
 PARAMETERS
-    -AutoRefresh
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -ChartBackgroundColor <DashboardColor[]>
-        
-        Required?                    false
-        Position?                    4
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -ChartBorderColor <DashboardColor[]>
-        
-        Required?                    false
-        Position?                    5
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -DataPointHistory <int>
-        
-        Required?                    false
-        Position?                    2
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Id <string>
-        
-        Required?                    false
-        Position?                    0
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Labels <string[]>
-        
-        Required?                    true
-        Position?                    6
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -LoadData <Endpoint>
-        
-        Required?                    true
-        Position?                    8
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Options <hashtable>
-        
-        Required?                    false
-        Position?                    3
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -RefreshInterval <int>
-        
-        Required?                    false
-        Position?                    7
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Type <string>
+    -Id <String>
+        The ID of the chart. Defaults to a new GUID.
         
         Required?                    false
         Position?                    1
+        Default value                [Guid]::NewGuid()
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Type <String>
+        The type of chart to display. Defaults to 'line'.
+        
+        Required?                    false
+        Position?                    2
+        Default value                line
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DataPointHistory <Int32>
+        The number of data points to display on the chart. Defaults to 10.
+        
+        Required?                    false
+        Position?                    3
+        Default value                10
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Options <Hashtable>
+        The options for the chart. See the ChartJS documentation for more information.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ChartBackgroundColor <DashboardColor[]>
+        The background color of the chart.
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ChartBorderColor <DashboardColor[]>
+        The border color of the chart.
+        
+        Required?                    false
+        Position?                    6
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Labels <String[]>
+        The labels for the chart.
+        
+        Required?                    true
+        Position?                    7
+        Default value                @()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -AutoRefresh [<SwitchParameter>]
+        Automatically refresh the chart.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -RefreshInterval <Int32>
+        The interval to refresh the chart in seconds.
+        
+        Required?                    false
+        Position?                    8
+        Default value                5
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LoadData <Endpoint>
+        The endpoint to load data from.
+        
+        Required?                    true
+        Position?                    9
+        Default value                
+        Accept pipeline input?       false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -113,19 +111,22 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
+    -------------------------- EXAMPLE 1 --------------------------
     
-
-REMARKS
-    None
+    PS >New-UDChartJSMonitor -LoadData {
+    PS >     Get-Random -Max 100 | Out-UDChartJSMonitorData
+    PS > } -Labels "Random" -ChartBackgroundColor "#297741" -RefreshInterval 1
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
 
 
