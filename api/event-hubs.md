@@ -12,6 +12,10 @@ To create an event hub, click APIs \ Event Hub and click Create New Event Hub. E
 
 ## Connecting an Event Hub
 
+{% hint style="info" %}
+We recommend using the event hub client over the `Connect-PSUEventHub` cmdlet for persistent connections.&#x20;
+{% endhint %}
+
 Once created, clients can connect to an event hub using the `Connect-PSUEventHub` cmdlet found in the Universal module. The cmdlet connects to the hub using a web socket and provides credentials, if necessary. When connecting, specify the `-ScriptBlock` parameter to define what will happen on the client when an event is received.&#x20;
 
 ```powershell
