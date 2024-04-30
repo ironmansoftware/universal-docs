@@ -168,6 +168,16 @@ You can configure PowerShell Universal to pull from a git remote. In this config
 
 Configure the `appsettings.json` file to include the branch, credentials and git remote URL that you are cloning. Once the fields have been set, you can start the PowerShell Universal service. The first thing the service will do is clone the repository and configure it locally.&#x20;
 
+### Git Sync Timeout
+
+Git sync will timeout if it cannot contact the remote after 60 minutes. This allows for time to download large repositories or delay with slow networks. You may see the PowerShell Universal service hang on "Synchronizing with git" during start up while the server waits for this to happen. If you wish to reduce this time, you can use the following appsetting.json setting. The value is in minutes.
+
+```json
+"Data" : {
+    "GitSyncTimeout": 30
+}
+```
+
 ## Included Files
 
 The files that are included with a git sync are any files within the local repository. This includes PS1 configuration files, pages XML files and any other files you may add manually.&#x20;
