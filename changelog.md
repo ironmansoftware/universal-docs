@@ -4,6 +4,37 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.0.0-beta3 - 4/29/2024
+
+### Automation
+
+* Added inline script debugging terminal
+
+### Platform
+
+* Added granular permissions throughout the platform
+* Added custom module editor
+* Implemented gRPC cmdlets across the platform
+
+## 5.0.0-beta2 - 4/10/2024
+
+### API
+
+* Added API Test Tab
+* Added Invoke-PSUEndpoint
+
+### Automation
+
+* Added Terminals and Terminal History pages
+* Added folders for scripts
+* Added new columns to the jobs table
+
+### Platform
+
+* Added a process that checks for module updates
+* Added a health check that verifies an environment exists
+* Added tags for variables
+
 ## 5.0.0-beta1 - 3/11/2024
 
 #### Major Features
