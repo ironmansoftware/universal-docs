@@ -111,3 +111,58 @@ Windows Authentication will be used to authenticate against the hub.
 #### ScriptPath
 
 The script to execute when an event is received. This script is read into memory and not from disk. Variables such as `$PSScriptRoot` are currently not supported.
+
+### Example: Running Scripts on Remote Machines <a href="#example-running-scripts-on-remote-machines" id="example-running-scripts-on-remote-machines"></a>
+
+This example provides a way to run scripts on remote machines without having to install another instance of PowerShell Universal.
+
+This example allows for sending scripts to remote machines and executing them with a generic event hub script.
+
+First, create an event hub in PowerShell Universal. This example does not use authentication.
+
+Next, install the Event Hub Client on the remote machine. Create a configuration file in `%ProgramData%\PowerShellUniversal\eventHubClient.json`.
+
+```json
+{
+    "Connections": [
+        {
+            "Url": "http://localhost:5000",
+            "Hub": "eventHub",
+            "ScriptPath": "script.ps1"
+        }
+    ]
+}
+```
+
+Next, create a helper script.ps1 to receive the event hub data and process requests from PSU to invoke scripts. It creates a new temporary PS1 file and uses the `$EventData` passed down from the event hub message with the contents and parameters for the script.
+
+```powershell
+$TempFile = (New-TemporaryFile).FullName + ".ps1"
+$EventData.Contents | Out-File -FilePath $TempFile
+$Parameters = $EventData.Parameters
+& $TempFile @Parameters
+```
+
+In PowerShell Universal, add a script that you want to run on the remote machine. In this example, it simply starts a process.
+
+```powershell
+param($Name)
+
+Start-Process $Name
+```
+
+Finally, add another script that sends the event down to the client. This could be from an API or an App as well. It uses `Get-PSUEventHubConnection` to get the target computer’s connection ID and then sends an event with the contents of a script and any parameters for that script. Because the script on event hub side is generic, it will just run whatever is passed to it.
+
+```powershell
+param($TargetComputer, $ProcessName)
+ 
+$Connection = Get-PSUEventHubConnection | Where-Object { $_.Computer -eq $TargetComputer -and -not $_.Disconnected } | Select-Object -First 1
+Send-PSUEvent -Hub eventHub -ConnectionId $Connection.ConnectionId -Data @{
+    Contents = Get-Content StartAProcess.ps1 -Raw
+    Parameters = @{
+        Name = $ProcessName
+    }
+}
+```
+
+From here you could event use the script to schedule jobs to run on the remote machines using the event hub client.
