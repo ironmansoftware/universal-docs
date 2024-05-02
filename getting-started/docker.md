@@ -325,7 +325,7 @@ LABEL description="Universal - The ultimate platform for building web-based IT T
 EXPOSE 5000
 VOLUME ["/home/data"]
 ENV Data__RepositoryPath /home/data/Repository
-ENV Data__ConnectionString /home/data/database.db
+ENV Data__ConnectionString Data Source=/home/data/database.db
 ENV UniversalDashboard__AssetsFolder /home/data/UniversalDashboard 
 ENV Logging__Path /home/data/logs/log.txt
 ENTRYPOINT ["./Universal/Universal.Server"]
@@ -348,7 +348,7 @@ LABEL description="Universal - The ultimate platform for building web-based IT T
 EXPOSE 5000
 VOLUME ["C:/data"]
 ENV Data__RepositoryPath C:/data/Repository
-ENV Data__ConnectionString C:/data/database.db
+ENV Data__ConnectionString Data Source=C:/data/database.db
 ENV UniversalDashboard__AssetsFolder C:/data/UniversalDashboard 
 ENV Logging__Path C:/data/logs/log.txt
 ENTRYPOINT ["C:/ProgramData/Universal/Universal.Server.exe"]
@@ -386,19 +386,19 @@ RUN apt-get install -y tzdata
 
 ## Tags
 
-We publish the following tags to Docker Hub.&#x20;
+We publish the following tags to Docker Hub.
 
 * latest - Current version using Ubuntu LTS
-* 4.x-preview-modules - Nightly build of version 4 using Ubuntu LTS and select AZ modules&#x20;
-* 4.x-preview-\<OS>-\<PS> - Nightly build of version 4 with the specified OS and PS version&#x20;
-* 3.x-preview-\<OS>-\<PS> - Nightly build of version 3 with the specified OS and PS version&#x20;
-* 4.x-\<OS>-\<PS> - Production version 4 with the specified OS and PS version&#x20;
+* 4.x-preview-modules - Nightly build of version 4 using Ubuntu LTS and select AZ modules
+* 4.x-preview-\<OS>-\<PS> - Nightly build of version 4 with the specified OS and PS version
+* 3.x-preview-\<OS>-\<PS> - Nightly build of version 3 with the specified OS and PS version
+* 4.x-\<OS>-\<PS> - Production version 4 with the specified OS and PS version
 * 4.x-modules - Current production version on Ubuntu LTS with select AZ modules installed
 * 3.x-\<OS>-\<PS> - Current production version 3 with the specified OS and PS versions
 
 ### Included Modules
 
-The module container images include the following modules.&#x20;
+The module container images include the following modules.
 
 * Az.Accounts
 * Az.Compute
