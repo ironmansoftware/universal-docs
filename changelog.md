@@ -4,6 +4,30 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.0.0-beta4 - 5/6/2024
+
+#### APIs
+
+* Fixed an issue with the header tab on the API test page
+* Fixed an issue with API Docs (#3311)
+
+#### Automation
+
+* Fixed an issue where error messages would be written twice in the output log (#3305)
+* Fixed an issue with creating schedules.
+* Fixed an issue with one-time schedules
+
+#### Platform
+
+* Added permission enforcement for all cmdlets
+* Fixed an issue with OIDC authentication
+* Fixed an issue with the default authentication warning being shown even when authentication was configured.
+* Fixed an issue with the integrated security context for PSU cmdlets
+* Reduced server start up time
+* Fixed an issue logging in with demo mode
+* Fixed an issue with New-PSUPublishedFolder
+* Fixed a performance issue with the admin console
+
 ## 5.0.0-beta3 - 4/29/2024
 
 ### Automation
