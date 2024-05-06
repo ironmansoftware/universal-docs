@@ -4,6 +4,26 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.2.21 - 5/6/2024
+
+#### APIs
+
+* Fixed an issue with the roles field in the endpoint docs modal (#3303)
+
+#### Automation
+
+* Fixed an issue where error messages would be written twice in the output log (#3305)
+* Added -ComputerGroup alias for -Queue on Invoke-PSUScript
+
+#### Platform
+
+* Fixed an issue where the system would open an unnecessary amount of runspaces on startup
+* Fixed an issue where runspaces would not always be garbage collected
+* Added Jwt\_\_RoleClaimType to appsettings.json to support alternate claim types for roles
+* Fixed an issue where configuration scripts would run twice (#3304)
+* Fixed an issue where system logs would be verbose if SystemLogLevel was not defined (#3282)
+* Fixed an issue with CookiePrefix and BasePath (#3307)
+
 ## 4.2.20 - 4/30/2024
 
 #### APIs
