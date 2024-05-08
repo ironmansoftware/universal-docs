@@ -4,6 +4,10 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 4.2.2 - 5/8/2024
+
+* Fixed an issue where an error would be thrown during extension activation
+
 ## 4.2.1 - 12/8/2023
 
 * Fixed an issue where updating dashboard or pages would cause issues if the service was restarted while the extension was activated.&#x20;
