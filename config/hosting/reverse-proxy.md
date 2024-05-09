@@ -29,7 +29,7 @@ https://www.proxyaddress.com -> http://localhost:5000
 
 This can cause problems with URL redirects like the ones used in [OpenID Connect](../security/openid-connect.md) authentication flows. PowerShell Universal needs to be able to correctly formulate the redirect URL for the authentication flow. Without knowing what the actual host name, port or protocol used by the end user, invalid URLs can be generated causing the flow to fail.&#x20;
 
-By default, PowerShell Universal automatically hands [forwarded headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Forwarded). The following headers are automatically processed.
+By default, PowerShell Universal automatically handles [forwarded headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Forwarded). The following headers are automatically processed.
 
 * X-Forwarded-For
 * X-Forwarded-Host
