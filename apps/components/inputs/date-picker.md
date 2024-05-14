@@ -34,7 +34,7 @@ New-UDDatePicker -Variant static
 
 ## Locale
 
-To set the locate of the date picker, specify the `-Locale` parameter.&#x20;
+To set the locate of the date picker, specify the `-Locale` parameter.
 
 ```powershell
 New-UDDatePicker -Locale fr
@@ -44,13 +44,23 @@ New-UDDatePicker -Locale fr
 
 ## Minimum and Maximum
 
-By default, the user can select any date. To specify minimum and maximum dates, using the `-Minimum` and `-Maximum` parameters.&#x20;
+By default, the user can select any date. To specify minimum and maximum dates, using the `-Minimum` and `-Maximum` parameters.
 
 ```powershell
 New-UDDatePicker -Minimum ((Get-Date).AddDays(-15)) -Maximum ((Get-Date).AddDays(15))
 ```
 
+## Views
+
+You can limit which portions of the date picker are included by using the `-Views` parameter. For example, if you wanted to remove the year selector and limit to the current year, you could do the following.&#x20;
+
+```powershell
+$Year = (Get-Date).Year
+$MinDate = [DateTime]::new($year, 1, 1)
+$MaxDate = [DateTime]::new($year, 12, 31)
+New-UDDatePicker -Views "day" -MinimumDate $MinDate -MaximumDate $MaxDate
+```
+
 ## API
 
 * [New-UDDatePicker](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDDatePicker.txt)
-
