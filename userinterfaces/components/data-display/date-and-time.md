@@ -6,6 +6,10 @@ description: Date and time component for Universal Apps.
 
 The `New-UDDateTime` component is used for formatting dates and times within the client's browser. By using the client's browser, you can format the time based on the local time zone and locale settings for the user.
 
+{% hint style="warning" %}
+The output of `New-UDDateTime` cannot be used with components like `New-UDHtml`, `New-UDMarkdown` or `Show-UDToast`. The object returned by `New-UDDateTime` needs to run JavaScript within the browser and is not an actual DateTime object.
+{% endhint %}
+
 The date and time component uses DayJS. For a full list of custom formatting options, visit the [DayJS documentation](https://day.js.org/docs/en/display/format).
 
 ## Basic Formatting
