@@ -140,7 +140,7 @@ One connection pool per PSU server. 1024 connections maximum per server.
 
 ## PostgreSQL
 
-You can enable PostgreSQL will the `Postgres` plugin.&#x20;
+You can enable PostgreSQL will the `PostgreSQL` plugin.&#x20;
 
 ```json
  "Plugins": [
