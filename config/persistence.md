@@ -144,7 +144,7 @@ You can enable PostgreSQL will the `Postgres` plugin.&#x20;
 
 ```json
  "Plugins": [
-    "Postgres"
+    "PostgreSQL"
   ],
   "Data": {
     "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=PSUv3;Integrated Security=true;",
