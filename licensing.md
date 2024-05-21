@@ -24,6 +24,8 @@ Each website running PowerShell Universal will need a license and not a single l
 
 To install a license, click Settings \ License. Click the Add License button to upload your license file. You can also install licenses using the `Set-PSULicense` cmdlet. Offline licenses do not require an internet connection but will need to be reinstalled when the subscription expires, in you wish to update the version of PowerShell Universal. Online licenses require an internet connection and access to `https://ironmansoftware.com` in order to verify subscription status.
 
+You can use the `PSULICENSE` environment variable to set a license. The value of this environment variable needs to be the contents of the license file.&#x20;
+
 Proxy configuration can be done by clicking Settings \ General and configuring the proxy URI and, optionally, credentials. You can also configure proxy settings with the `Set-PSUSetting` cmdlet.
 
 ## Developer Licenses
