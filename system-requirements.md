@@ -8,12 +8,12 @@
 
 ## Linux
 
-* Optional\*: PowerShell v6.0 or greater
-* Validated Distributions: Ubuntu 18.04
+* Optional\*: PowerShell v7.2 or greater
+* Validated Distributions: Ubuntu 18.04 and 20.04
 
 ## Mac OS
 
-* Optional\*: PowerShell v6.0 or greater
+* Optional\*: PowerShell v7.2 or greater
 
 {% hint style="info" %}
 \*PowerShell Universal packages a version of the PowerShell SDK. If you do not have a version of PowerShell installed, the integrated PowerShell version will be used.
