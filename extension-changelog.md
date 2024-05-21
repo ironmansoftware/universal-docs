@@ -4,6 +4,10 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 4.2.3 - 5/21/2024
+
+* Added support for version 5 of PowerShell Universal
+
 ## 4.2.2 - 5/8/2024
 
 * Fixed an issue where an error would be thrown during extension activation
