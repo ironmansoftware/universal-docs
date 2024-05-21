@@ -132,6 +132,6 @@ By default, the administrator username is `admin` and password is `admin`. You c
 
 ## Next Steps
 
-At this point, Universal is up and running. You can navigate to the admin console by visiting `http://localhost:5000` by default. The default username is `admin` with a password of `admin`.
+At this point, Universal is up and running. You can navigate to the admin console by visiting `http://localhost:5000` by default. Login with the default admin name and password.&#x20;
 
 [^1]: See [https://learn.microsoft.com/en-us/windows/win32/secauthn/user-name-formats#down-level-logon-name](https://learn.microsoft.com/en-us/windows/win32/secauthn/user-name-formats#down-level-logon-name) for more information on the "downlevel" username format that the installer expects
