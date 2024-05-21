@@ -16,5 +16,5 @@
 * Optional\*: PowerShell v7.2 or greater
 
 {% hint style="info" %}
-\*PowerShell Universal packages a version of the PowerShell SDK. If you do not have a version of PowerShell installed, the integrated PowerShell version will be used.
+\*PowerShell Universal packages a version of the PowerShell SDK. If you do not have a version of PowerShell installed, the integrated and agent PowerShell version will be used.
 {% endhint %}
