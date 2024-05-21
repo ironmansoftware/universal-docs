@@ -2,7 +2,7 @@
 description: Installation instructions for PowerShell Universal.
 ---
 
-# ⬇ Installation
+# ⬇️ Installation
 
 ## MSI Install (Windows)
 
@@ -125,6 +125,10 @@ It may be necessary to exclude certain executables that will run PowerShell scri
 | Universal.Agent.exe  | The PowerShell Universal agent environment executable. |
 | pwsh.exe             | PowerShell 7.x                                         |
 | PowerShell.exe       | PowerShell 5.x                                         |
+
+## Default Admin Name and Password
+
+By default, the administrator username is `admin` and password is `admin`. You can use the `$ENV:PSUDefaultAdminName` and `$ENV:PSUDefaultAdminPassword` environment variables to change this behavior. These values are only used if no administrator account already exists. This is useful for cloud-based installations.&#x20;
 
 ## Next Steps
 
