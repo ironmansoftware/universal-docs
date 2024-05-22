@@ -4,6 +4,48 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.0.0-beta5 - 5/22/2024
+
+#### Automation
+
+* Added filter output by stream to job page (#3298)
+* Fixed syntax highlighting of job logs
+* Added Hide Run Later
+* Fixed an issue with Hide Run As, Hide Run On and Hide Environment settings
+* Added Quick Run button for scripts (#3319)
+* Added support for dynamic parameters (#2372)
+* Added -Tags to Invoke-PSUScript (#3302)
+
+#### Blazor Apps
+
+* Fixed issue with authentication and roles settings
+
+#### PowerShell Apps
+
+* Fixed an issue with Get-UDPage
+
+#### Platform
+
+* Added My Identity page (#2862)
+* Fixed some issues with the git edit button and commit page
+* Fixed PowerShell IntelliSense
+* Added stack traces to notifications
+* Fixed an issue with Branding \ Admin Console Title
+* Added support for Emoji favicons
+* Fixed an issue with gRPC errors in some environments
+* Added support for discovering Python environments
+* Fixed an issue with PostgreSQL support
+* Fixed an error adding git settings
+* Added PSUDefaultAdminPassword and PSUDefaultAdminName
+
+#### Portal
+
+* Added Portal
+* Added Portal link to admin console
+* Added dashboard page
+* Added Services page
+* Added scripts to services page
+
 ## 5.0.0-beta4 - 5/6/2024
 
 #### APIs
