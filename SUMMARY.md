@@ -126,13 +126,9 @@
 * [Tables](blazor-apps/tables.md)
 * [Services](blazor-apps/services.md)
 
-## 🖥️ Desktop
+***
 
-* [About Desktop Mode](desktop/about-desktop-mode.md)
-* [File Associations](desktop/file-associations.md)
-* [Hotkeys](desktop/hotkeys.md)
-* [Pages](desktop/pages.md)
-* [Protocol Handlers](desktop/protocol-handlers.md)
+* [Portal](portal.md)
 
 ## 🏗️ Platform
 
