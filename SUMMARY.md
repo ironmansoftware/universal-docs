@@ -126,9 +126,9 @@
 * [Tables](blazor-apps/tables.md)
 * [Services](blazor-apps/services.md)
 
-***
+## 🌐 Portal
 
-* [Portal](portal.md)
+* [About](portal.md)
 
 ## 🏗️ Platform
 
