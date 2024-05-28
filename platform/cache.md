@@ -4,6 +4,10 @@ description: Caching mechanisms in PowerShell Universal.
 
 # Cache
 
+{% hint style="warning" %}
+`$Cache` Scope vs Server-Level Cache: The `$Cache` scope differs from the server-level cache as it only resides in the execution environment of feature you are using. They are different and cannot be used to get the other one.
+{% endhint %}
+
 ## Server-Level Cache
 
 PowerShell Universal provides the ability to use a server-level cache to store data that you use between APIs, Automation and Dashboards. You can configure cache item life times use the `Set-PSUCache` cmdlet in any PowerShell script you run in PowerShell Universal. You can also retrieve items from the cache using `Get-PSUCache`.
@@ -64,7 +68,7 @@ Get-PSUCache -Key "CurrentDate"
 
 ## $Cache Scope
 
-APIs, Automation scripts and Dashboards all support a $Cache scope. This scope is used to cache data across runspaces that will persist in memory of each of the execution environments. The $Cache scope differs from the server-level cache as it only resides in the execution environment of feature you are using.&#x20;
+APIs, Automation scripts and Dashboards all support a $Cache scope. This scope is used to cache data across runspaces that will persist in memory of each of the execution environments.&#x20;
 
 For example, if you set a $Cache variable in a dashboard, then it will not be available in an API. This is not true when using the Integrated environment. If a dashboard and API both use the integrated environment, then they share the cache scope.&#x20;
 
