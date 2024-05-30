@@ -55,6 +55,7 @@ Columns are customizable using hashtables. You can find the supported properties
 | Render            | A script block to render components in the column                                                                                                                     | ScriptBlock                                      |
 | Resizable         | Whether the column can be resized                                                                                                                                     | boolean                                          |
 | Sortable          | Whether the column can be sorted.                                                                                                                                     | boolean                                          |
+| SortingOrder      | A list of sorting options. Can be 'asc', 'desc', or $null                                                                                                             | string\[]                                        |
 | Type              | The type of data within the column                                                                                                                                    | string, number, date, dateTime, boolean, actions |
 | Width             | How wide the column should be in pixels.                                                                                                                              | Integer                                          |
 
