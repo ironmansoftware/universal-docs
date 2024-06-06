@@ -8,6 +8,10 @@ description: Known issues for the v5 beta.
 Please review this list before opening issues on our tracker.
 {% endhint %}
 
+## For Release: v5.0.0-beta5
+
+These known issues are within beta5 and may be resolved in the next beta.&#x20;
+
 ## Admin Console
 
 * White UI flash when loading the admin console
