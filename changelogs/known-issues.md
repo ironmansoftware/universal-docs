@@ -16,6 +16,10 @@ These known issues are within beta5 and may be resolved in the next beta.&#x20;
 
 * White UI flash when loading the admin console
 
+## Environments
+
+* Windows PowerShell is not loading the PowerShell Universal host DLLs properly.
+
 ## PostgreSQL
 
 * Queries are case sensitive and may cause issues due to internal handling of strings.&#x20;
