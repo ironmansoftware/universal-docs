@@ -238,7 +238,7 @@ New-UDDataGrid -LoadRows {
 
 ## Custom Export
 
-To override the default export functionality, use the `-OnExport` event handler. `$EventData` will be an array of rows with their values. You should use `Out-UDDataGridExport` to return the data from `-OnExport`.
+To override the default export functionality, use the `-OnExport` event handler. `$EventData` will be the same context object used for `-LoadRows`. You should use `Out-UDDataGridExport` to return the data from `-OnExport`.
 
 ```powershell
 $Data = @(
