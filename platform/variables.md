@@ -26,6 +26,14 @@ From this dialog, you'll be able to define string and PSCredentials in the speci
 
 In some environments, it may be necessary to specify the domain name in the user name field. You can specify in either the `domain\user` or `user@domain` format. If you do not do so, you will receive errors when attempting to start processes, like scripts or dashboards, as that user account.
 
+### Roles
+
+{% hint style="warning" %}
+Roles assigned to secrets will prevent them from being used in schedules because no user is defined during a scheduled script.
+{% endhint %}
+
+You can assign roles to secrets. Users with the role will be able to access the secret in resources that they use directly. This includes scripts, APIs and apps.&#x20;
+
 ## Vaults
 
 ### Database
@@ -115,6 +123,7 @@ You can customize which variables are allowed in an environment by customizing t
 See [Environments](../config/environments.md#variables) for more information.
 
 ## Public Scope
+
 To access public scoped variables, just reference them like a normal varaible. They are now global.
 
 ```
