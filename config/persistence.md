@@ -147,7 +147,7 @@ You can enable PostgreSQL will the `PostgreSQL` plugin.&#x20;
     "PostgreSQL"
   ],
   "Data": {
-    "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=PSUv3;Integrated Security=true;",
+    "ConnectionString": "Host=PGhostname; Database=PGdatabase; User Id=PGusername; Password=PGpassword!;Port=5432",
   },
 ```
 
