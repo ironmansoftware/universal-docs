@@ -4,6 +4,45 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.0.0-beta6 - 6/16/2024
+
+#### Automation
+
+* Fixed issue with creating schedules (#3361)
+* Job status filters now persist refreshes (#3340)
+* Fixed an issue with the Jobs Failed Today widget on the home page (#3391)
+* Fixed an issue with script folders (#3398)
+
+#### Platform
+
+* Fixed an issue with Telemetry (#3347)
+* Added health check refresh, run and clear buttons
+* Fixed routing for nested sites
+* Fixed an issue with the groom job when using PostreSQL (#3360)
+* Fixed a login page redirect issue (#3366)
+* Fixed an issue accessing the secret scope (#3372)
+* Fixed an issue saving modules on non-Windows systems (#3371)
+* Fixed issue with deleting a license
+* Fixed an issue with file management when One-Way git sync was enabled (#3377)
+* Fixed an issue with the Import command in the library when One-Way git sync is enabled (#3374)
+* Fixed an issue with environment discovery (#3378)
+* Fixed an issue with the module controller (#3390)
+* Fixed issues with notification badge (#3387)
+* Fixed an issue editing git settings when One-Way Git Sync was enabled (#3389)
+* Fixed an issue with git settings validation (#3396)
+* Fixed an issue with the file page's title (#3400)
+* Added git commit file selector (#3403)
+* Added live logging checkbox
+
+#### Portal
+
+* Added Display In Portal and Roles to tags
+* Added grouping of resources by tags
+
+#### Security
+
+* Added input box for role default routes
+
 ## 5.0.0-beta5 - 5/22/2024
 
 #### Automation
