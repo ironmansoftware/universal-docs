@@ -4,6 +4,50 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.3.0 - 6/17/2024
+
+#### APIs
+
+* Added -AnonymousApiDocumentation to Set-PSUSettings (#3294)
+* Added support for bool parameters in API docs (#3349)
+
+#### Automation
+
+* Fixed an issue with module parameters
+* Fixed an issue with deleting a terminal (#3358)
+* Fixed an issue with error stack traces on the jobs page (#3380)
+* Fixed an issue with access controls and scripts (#3385)
+
+#### PowerShell Apps
+
+* Added -StripedRows to New-UDDataGrid (#3212)
+* Added -HeaderFilters to New-UDDataGrid (#3214)
+* Added -AutoSizeColumns to New-UDDataGrid (#3296)
+* Fixed an issue with Nivo line charts (#3318)
+* Added -ArcLinkLabel to New-UDNivoChart (#3293)
+* Added -ShowLoading, -LoadingIndicator, and -LoadingPosition to New-UDButtonGroupItem (#3247)
+* Fixed an error updating app pages (#3333)
+* Added -Sx and -Style to New-UDTabs and New-UDTab
+* Fixed an issue when viewing All items in a UDDataGrid (#3334)
+* Fixed an issue with case sensitivity in New-UDDataGrid (#3354)
+* Added a progress bar to New-UDTab when -Dynamic was used (#3357)
+* Fixed an issue with Get-UDTheme where it would not work without any parameters specified (#3363)
+* Fixed an issue with UDDataGrid -OnEdit duplicate IDs (#3316)
+* Fixed an issue with -ShowQuickFilter in New-UDDataGrid (#3394)
+* Added -Sx and -Style to New-UDListItem
+* Fixed an issue with boolean header filters in New-UDDataGrid (#3395)
+
+#### Platform
+
+* Fixed an issue with commit author when using git and external git clients (#3322)
+* Fixed an issue initializing an empty git repository (#3335)
+* Fixed an issue that could cause PSU to fail to start properly (#3351)
+* Added logging to debugging service
+* Fixed an issue with the copy button and published folders in nested IIS sites (#2655)
+* Fixed a case-sensitivity issue with the default environment and scripts
+* Fixed an issue with SQL connection string exhaustion in multi-node environments.
+* Fixed an issue deleting computers (#3364)
+
 ## 4.2.21 - 5/6/2024
 
 #### APIs
