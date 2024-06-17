@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDListItem [[-Id] <String>] [[-AvatarType] <String>] [[-OnClick] <Endpoint>] [[-Label] <Object>] [[-Children] <ScriptBlock>] [[-SubTitle] <String>] [[-Icon] <Object>] [[-Url] <String>] [-OpenInNewWindow] [[-SecondaryAction] <ScriptBlock>] [[-ClassName] <String>] [-Open] [-Nested] [[-Href] <String>] [[-Switch] <Object>] [[-SwitchAlignment] <String>] [[-CheckBox] <Object>] [[-CheckBoxAlignment] <String>] [<CommonParameters>]
+    New-UDListItem [[-Id] <String>] [[-AvatarType] <String>] [[-OnClick] <Endpoint>] [[-Label] <Object>] [[-Children] <ScriptBlock>] [[-SubTitle] <String>] [[-Icon] <Object>] [[-Url] <String>] [-OpenInNewWindow] [[-SecondaryAction] <ScriptBlock>] [[-ClassName] <String>] [-Open] [-Nested] [[-Href] <String>] [[-Switch] <Object>] [[-SwitchAlignment] <String>] [[-CheckBox] <Object>] [[-CheckBoxAlignment] <String>] [[-Style] <Hashtable>] [[-Sx] <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -171,6 +171,24 @@ PARAMETERS
         Required?                    false
         Position?                    15
         Default value                right
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        A hashtable of styles to apply to this component.
+        
+        Required?                    false
+        Position?                    16
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Sx <String>
+        A hashtable of styles to apply to this component.
+        
+        Required?                    false
+        Position?                    17
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

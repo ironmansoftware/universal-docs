@@ -227,6 +227,20 @@ OUTPUTS
     
     
     
+    -------------------------- EXAMPLE 9 --------------------------
+    
+    PS >New-UDButtonGroup -Content {
+    PS >     New-UDButtonGroupItem -Text 'Delete' -Icon (New-UDIcon -Icon 'trash') -ShowLoading -OnClick {
+    PS >        Start-Sleep -Seconds 5
+    PS >     }
+    PS >     New-UDButtonGroupItem -Text 'Copy'  -Icon (New-UDIcon -Icon 'copy') 
+    PS > }
+    
+    Loading|You can use the -ShowLoading parameter to show a loading spinner when the button is clicked.
+    
+    
+    
+    
     
 RELATED LINKS
 

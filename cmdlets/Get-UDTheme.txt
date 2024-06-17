@@ -53,11 +53,6 @@ INPUTS
     
 OUTPUTS
     
-NOTES
-    
-    
-        General notes
-    
     -------------------------- EXAMPLE 1 --------------------------
     
     PS > $Theme = Get-UDTheme -Name 'AntDesign'
