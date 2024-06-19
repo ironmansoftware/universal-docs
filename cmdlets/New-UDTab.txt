@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTab [[-Text] <String>] [-Content] <Endpoint> [[-Id] <String>] [-Dynamic] [[-Icon] <Object>] [-Disabled] [<CommonParameters>]
+    New-UDTab [[-Text] <String>] [-Content] <Endpoint> [[-Id] <String>] [-Dynamic] [[-Icon] <Object>] [-Disabled] [[-Style] <Hashtable>] [[-Sx] <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -66,6 +66,24 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        The style to apply to the tab.
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Sx <Hashtable>
+        A theme-specific style to apply to the tab.
+        
+        Required?                    false
+        Position?                    6
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

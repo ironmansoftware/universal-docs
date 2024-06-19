@@ -172,11 +172,6 @@ INPUTS
     
 OUTPUTS
     
-NOTES
-    
-    
-        General notes
-    
     -------------------------- EXAMPLE 1 --------------------------
     
     PS > $Options = New-UDTableTextOption -Search "Filter all the rows"

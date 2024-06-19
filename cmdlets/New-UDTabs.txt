@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTabs [-Tabs] <ScriptBlock> [[-Id] <String>] [-RenderOnActive] [[-Orientation] <String>] [[-Variant] <String>] [[-ScrollButtons] <String>] [-Centered] [[-ClassName] <String>] [<CommonParameters>]
+    New-UDTabs [-Tabs] <ScriptBlock> [[-Id] <String>] [-RenderOnActive] [[-Orientation] <String>] [[-Variant] <String>] [[-ScrollButtons] <String>] [-Centered] [[-ClassName] <String>] [[-Style] <Hashtable>] [[-Sx] <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -83,6 +83,24 @@ PARAMETERS
         
         Required?                    false
         Position?                    6
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        The style to apply to the tabs.
+        
+        Required?                    false
+        Position?                    7
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Sx <Hashtable>
+        A theme-specific style to apply to the tabs.
+        
+        Required?                    false
+        Position?                    8
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
