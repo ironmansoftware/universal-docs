@@ -1,5 +1,5 @@
 ---
-description: Blazor App forms
+description: Forms for portal components.
 ---
 
 # Forms

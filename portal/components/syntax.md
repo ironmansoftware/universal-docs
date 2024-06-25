@@ -2,7 +2,7 @@
 description: Information about PSBlazor syntax.
 ---
 
-# PSBlazor
+# Syntax
 
 PSBlazor is a custom syntax based on Blazor and Razor pages. It is similar to XML or XAML and provides a mechnaism to declatively define a user interface.&#x20;
 
@@ -20,13 +20,13 @@ To define a component, you will use the PSBlazor code editor to add the componen
 
 The result is page with a button defined.&#x20;
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption><p>Button on a tool</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Button on a tool</p></figcaption></figure>
 
 ### Setting Attributes
 
 Every component has attributes available. Within the code editor for the PSBlazor page, attributes will automatically be listed for the current component you are editing.&#x20;
 
-<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption><p>PSBlazor Attribute Components</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption><p>PSBlazor Attribute Components</p></figcaption></figure>
 
 Setting attributes is the same as setting any XML attribute. This example changes the button to the danger state.&#x20;
 
@@ -38,7 +38,7 @@ Setting attributes is the same as setting any XML attribute. This example change
 
 Once you save the tool, it will update the display. With the button in danger state, you'll see it is now red.
 
-<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption><p>Danger button</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption><p>Danger button</p></figcaption></figure>
 
 ### Child Content
 

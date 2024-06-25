@@ -1,5 +1,5 @@
 ---
-description: Services available in Blazor apps.
+description: Services available in portal components.
 ---
 
 # Services

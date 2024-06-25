@@ -1,5 +1,5 @@
 ---
-description: Blazor app Tables
+description: Tables for portal components.
 ---
 
 # Tables

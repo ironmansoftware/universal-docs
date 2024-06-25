@@ -2,14 +2,14 @@
 description: End user portal for PowerShell Universal services.
 ---
 
-# Portal
+# About
 
 The PowerShell Universal Portal provides a single location your end users can go to access resources and services you have developed in PowerShell Universal. The following resources will be shown the portal when they are assigned to a user's role.&#x20;
 
 * API Documentation
 * Scripts
-* Blazor Apps
-* PowerShell Apps
+* Portal Pages
+* Apps
 
 When a user visits the portal, they will be shown a searchable list of the resources you have assigned.&#x20;
 

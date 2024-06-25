@@ -30,12 +30,11 @@
   * [Parameters](automation/scripts/parameters.md)
 * [Jobs](automation/jobs.md)
 * [Schedules](automation/schedules.md)
-* [System Events](automation/system-events.md)
 * [Terminals](automation/terminals.md)
 * [Triggers](automation/triggers.md)
 * [Queues](automation/queues.md)
 
-## 📊 PowerShell Apps
+## 📊 Apps
 
 * [About](apps/about.md)
 * [Apps](apps/building-dashboards.md)
@@ -117,18 +116,16 @@
   * [Cascading Style Sheets](apps/themes/cascading-style-sheets.md)
   * [Styles](apps/themes/styles.md)
 
-## 🔥 Blazor Apps
-
-* [About](tools/about.md)
-* [Syntax](tools/psblazor.md)
-* [Dynamic](blazor-apps/dynamic.md)
-* [Forms](blazor-apps/forms.md)
-* [Tables](blazor-apps/tables.md)
-* [Services](blazor-apps/services.md)
-
 ## 🌐 Portal
 
 * [About](portal.md)
+* [Components](portal/components/README.md)
+  * [Syntax](portal/components/syntax.md)
+  * [Dynamic](portal/components/dynamic.md)
+  * [Forms](portal/components/forms.md)
+  * [Tables](portal/components/tables.md)
+  * [Services](portal/components/services.md)
+* [Pages](portal/pages.md)
 
 ## 🏗️ Platform
 

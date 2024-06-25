@@ -1,5 +1,5 @@
 ---
-description: Dynamic component for Blazor apps.
+description: Dynamic component for portal components.
 ---
 
 # Dynamic
