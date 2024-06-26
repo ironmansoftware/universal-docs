@@ -4,6 +4,31 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.3.1 - 6/26/2024
+
+## API
+
+* Fixed an issue with wildcard rate limits (#3420)
+
+## Automation
+
+* Fixed an issue with the job table becoming locked when grooming jobs when using SQL (#3414)
+
+## Apps
+
+* Fixed an issue with Add-UDElement and New-UDGrid (#3413)
+* Fixed an issue with query strings and page navigation (#3355, #3405)
+* Fixed an issue with -Options on New-UDTableColumn when using -FilterType autocomplete
+* Fixed an issue with the default values for -Views in New-UDDatePicker (#3429)
+
+## Platform
+
+* Added Kestrel\_\_AddServerHeader appsettings option (#3417)
+* Fixed an issue grooming log entries
+* Fixed an issue where the git service could attempt to pull\push before the server was completely started
+* Added Kestrel\_\_Headers to appsettings.json (#3418)
+* Fixed an issue with Get-PSUStats when using -Integrated (#3428)
+
 ## 4.3.0 - 6/17/2024
 
 #### APIs
