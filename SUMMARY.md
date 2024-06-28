@@ -119,13 +119,13 @@
 ## 🌐 Portal
 
 * [About](portal.md)
+* [Pages](portal/pages.md)
 * [Widgets](portal/widgets/README.md)
   * [Syntax](portal/widgets/syntax.md)
   * [Dynamic](portal/widgets/dynamic.md)
   * [Forms](portal/widgets/forms.md)
   * [Tables](portal/widgets/tables.md)
   * [Services](portal/widgets/services.md)
-* [Pages](portal/pages.md)
 
 ## 🏗️ Platform
 
