@@ -119,12 +119,12 @@
 ## 🌐 Portal
 
 * [About](portal.md)
-* [Components](portal/components/README.md)
-  * [Syntax](portal/components/syntax.md)
-  * [Dynamic](portal/components/dynamic.md)
-  * [Forms](portal/components/forms.md)
-  * [Tables](portal/components/tables.md)
-  * [Services](portal/components/services.md)
+* [Widgets](portal/widgets/README.md)
+  * [Syntax](portal/widgets/syntax.md)
+  * [Dynamic](portal/widgets/dynamic.md)
+  * [Forms](portal/widgets/forms.md)
+  * [Tables](portal/widgets/tables.md)
+  * [Services](portal/widgets/services.md)
 * [Pages](portal/pages.md)
 
 ## 🏗️ Platform
@@ -137,7 +137,6 @@
 * [Notifications](platform/notifications.md)
 * [Plugins](platform/plugins.md)
 * [Published Folders](platform/published-folders.md)
-* [Templates](platform/templates.md)
 * [Translations](platform/translations.md)
 * [User Sessions](platform/user-sessions.md)
 * [Variables](platform/variables.md)
