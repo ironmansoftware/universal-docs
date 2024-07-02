@@ -4,6 +4,20 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.3.2 - 7/2/2024
+
+## Automation
+
+* Fixed an issue with Get-PSUJob not returning child jobs (#3433)
+
+## Apps
+
+* Fixed an issue with route parameters in pages (#3434)
+
+## Platform
+
+* Fixed an issue with the author in git commits using external git client (#3431)
+
 ## 4.3.1 - 6/26/2024
 
 ## API
