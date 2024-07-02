@@ -4,6 +4,38 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.0.0-beta7 - 7/2/2024
+
+## APIs
+
+* Fixed an issue with connecting to event hubs
+
+## Automation
+
+* Added Pipeline Output Tab
+* Jobs Run Today now links to a page that only shows jobs run today (#3321)
+
+## Apps
+
+* Added -Path to Start-UDDownload
+* PowerShell Apps have been renamed back to Apps
+
+## Platform
+
+* Added support for module variables (#2711)
+* Fixed an issue with IntelliSense
+* Fixed an issue creating resources when git sync was enabled
+* Fixed a SQLite database locking error
+* Added Git Commit Discard button
+* Enabled the file system watcher
+* Fixed an issue with Windows PowerShell.
+* Added Password and KeySize to appsettings.json to configure AES 256 database secrets (#3291)
+
+## Portal
+
+* Blazor Apps have been renamed to Portal Widgets and Pages
+* Added support for properties in Portal Widgets
+
 ## 5.0.0-beta6 - 6/16/2024
 
 #### Automation
