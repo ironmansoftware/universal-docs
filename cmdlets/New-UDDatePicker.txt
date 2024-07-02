@@ -137,7 +137,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    12
-        Default value                @("day", "year")
+        Default value                @("day")
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
