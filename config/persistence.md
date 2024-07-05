@@ -21,18 +21,6 @@ You can configure SQLite by updating the `appsettings.json` file.
   },
 ```
 
-## LiteDB
-
-Using LiteDB, PowerShell Universal stores all data within a single file database local to the PowerShell Universal application.
-
-To configure the database location for LiteDB you can edit the `appsettings.json` file or set the file path during installation if using the MSI. By default, the database is stored in the ProgramData directory. Update this setting to change the database location.
-
-```json
-"ConnectionString": "filename=%ProgramData%\\UniversalAutomation\\database.db;upgrade=true",
-```
-
-LiteDB does not support multiple instances of PowerShell Universal connecting to the same database.
-
 ## SQL
 
 {% hint style="info" %}
@@ -140,7 +128,7 @@ One connection pool per PSU server. 1024 connections maximum per server.
 
 ## PostgreSQL
 
-You can enable PostgreSQL will the `PostgreSQL` plugin.&#x20;
+You can enable PostgreSQL will the `PostgreSQL` plugin.
 
 ```json
  "Plugins": [
