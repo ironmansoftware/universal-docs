@@ -171,9 +171,17 @@ Additionally, you may encounter issues due to the PSU service restart. When the 
 
 ## 5.0 Breaking Changes
 
-### New Pages Technology&#x20;
+### Removal of Pages
 
-Pages are no longer built using the page designer and instead use PSBlazor. Previous pages will not be displayed and should be re-built using the new technology.&#x20;
+The drag and drop page designer has been removed in favor of [Portal Pages](../portal/portal-pages.md) and [Widgets](../portal/portal-widgets/).&#x20;
+
+### Removal of App Pages Designer
+
+The drag and drop page designer for apps has been removed. Apps created with the designer will still function.&#x20;
+
+### Removal of Access Controls
+
+Access Controls have been removed in favor of [Permissions](../security/enterprise-security/permissions.md). You can also use the [Portal ](broken-reference)to assign resources, like scripts, to users without the need for complicated permissions.&#x20;
 
 ### IIS Hosting Package
 
@@ -186,3 +194,7 @@ The integrated environment now uses PowerShell 7.4.
 ### SQLite by Default
 
 SQLite is the default persistence method.&#x20;
+
+### LiteDB Support Removed
+
+LiteDB has been removed as a supported database engine.&#x20;
