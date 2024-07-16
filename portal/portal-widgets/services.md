@@ -41,3 +41,13 @@ function OnClick {
     $Notification.Open($Config)
 }
 ```
+
+## Navigation
+
+The navigation service can be used to move between portal pages, admin pages and external pages. The navigation service is an instance of [NavigationManager](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.components.navigationmanager?view=aspnetcore-8.0).
+
+```powershell
+function OnClick {
+    $Navigation.NavigateTo("/portal/page/name")
+}
+```

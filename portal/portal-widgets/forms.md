@@ -20,7 +20,7 @@ $Variables["Model"] = [MyClass]::new()
 function Submit {
     param($EventArgs)
 
-    $MessageService.Success($EventArgs.Model.Str)
+    $Messag.Success($EventArgs.Model.Str)
 }
 ```
 
