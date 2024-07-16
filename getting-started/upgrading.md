@@ -22,13 +22,13 @@ PowerShell Universal uses a script-based configuration system alongside a databa
 
 Backing up the database ensures that all apptokens, job history, identities and database secrets are retained in the case of an upgrade failure. SQL databases also may adjust the schema of the database and may require a rollback of not only the data, but also the schema of the tables in the database.
 
-#### LiteDB
+#### SQLite
 
-By default, PowerShell Universal uses a single file database called LiteDB. Unless configured otherwise, the database is stored in `%ProgramData%\UniversalAutomation`. You should have a `database.db` and possibility a `database-log.db`. Both of these files should be backed up. The service must be stopped in order to backup the files.
+By default, PowerShell Universal uses a single file database called SQLite. Unless configured otherwise, the database is stored in `%ProgramData%\UniversalAutomation`. You should have a `database.db` and possibility a `database-log.db`. Both of these files should be backed up. The service must be stopped in order to back up the files.
 
 #### SQL
 
-When using SQL for persistence, backup the entire database (including schema). There isn't necessarily a need to stop the PowerShell Universal service when backing up the database but it may continue to write to the database (for example when running scheduled jobs) after the backup has been completed.
+When using SQL for persistence, backup the entire database (including schema). There isn't necessarily a need to stop the PowerShell Universal service when backing up the database, but it may continue to write to the database (for example when running scheduled jobs) after the backup has been completed.
 
 ### Configuration Scripts
 
@@ -135,9 +135,9 @@ Upgrades to PowerShell Universal may change assembly versions of DLLs shipped wi
 
 If you have installed a version of the `Universal` module outside of PowerShell Universal (for example, with `Install-Module`), you must make sure to update the module or it can conflict with the new one installed with PowerShell Universal.
 
-### Dashboards
+### Apps
 
-The most common upgrade issues come due to changes in the dashboard framework. Dashboards can be complex and bug fixes or features can sometimes cause for certain user's dashboards while fixing issues pertaining to another user's dashboard. Please read the changelog before upgrading to understand the impact of changes made to the dashboard framework and consider testing the dashboard with development data before upgrading in production.
+The most common upgrade issues come due to changes in the Universal App framework. Apps can be complex and bug fixes or features can sometimes cause for certain user's app while fixing issues pertaining to another user's app. Please read the changelog before upgrading to understand the impact of changes made to the app framework and consider testing the app with development data before upgrading in production.
 
 ## Common Upgrade Issues
 
@@ -155,12 +155,12 @@ When new functionality is added to PowerShell Universal it is typically done usi
 
 This can happen if SQL schema upgrades are not being run during upgrades. If you set the `RunMigrations` setting to `false` in `appsettings.json`, you must run the migrations manually or the PowerShell Universal service will not function properly.
 
-### Breaking Dashboard Component Change
+### Breaking App Component Change
 
 These changes can be visual or functional. Please ensure that you review the changelog for items that may be related to the change you are seeing. Consider posting the forums or opening a GitHub issue to see if the issue is as designed and if there is a viable workaround.
 
 {% hint style="info" %}
-We make the best possible effort to support everyone's' dashboards without breaking changes. That said, every configuration is pretty unique so we are more than happy to address issues you may encounter. Please, just let us know.
+We make the best possible effort to support everyone's' apps without breaking changes. That said, every configuration is pretty unique so we are more than happy to address issues you may encounter. Please, just let us know.
 {% endhint %}
 
 ### License Issues after Upgrade
@@ -182,6 +182,12 @@ The drag and drop page designer for apps has been removed. Apps created with the
 ### Removal of Access Controls
 
 Access Controls have been removed in favor of [Permissions](../security/enterprise-security/permissions.md). You can also use the [Portal ](broken-reference)to assign resources, like scripts, to users without the need for complicated permissions.&#x20;
+
+### Cmdlet Communication Channel Change
+
+Prior to v5, cmdlets would send data over HTTP or by using an internal gRPC channel. Now, all cmdlets use an externally facing gRPC Channel that is protected by authentication and authorization. It no longer uses standard REST API HTTP calls.&#x20;
+
+This can be a problem for PowerShell Universal instances behind [reverse proxies](../config/hosting/reverse-proxy.md) and requires that the proper header values are sent.&#x20;
 
 ### IIS Hosting Package
 
