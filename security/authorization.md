@@ -1,11 +1,13 @@
+---
+description: Authorization in PowerShell Universal.
+---
+
 # Authorization
 
 User authorization is accomplished with roles. Roles can either be assigned through claims mapping, a policy script or by assigning the role directly to the identity.
 
 {% hint style="info" %}
-By default, users will receive all roles when logging in. Multiple role assignments are valid in PowerShell Universal. While you configure roles, you can choose to disable roles you are not yet or do not plan to use.
-
-Disabling the Administrators role will prevent you from making changes to roles within the Admin Console.
+No roles are automatically assigned by default. A local admin account is created during first time setup and used to configure role assignments.&#x20;
 {% endhint %}
 
 ### Role to Claim Mapping
@@ -282,7 +284,7 @@ return $IsMember
 
 ## Example: Group membership based on Azure Active Directory
 
-This example takes advantage of [OpenID Connect and Azure Active Directory](./enterprise-security/openid-connect.md#configuring-azuread).
+This example takes advantage of [OpenID Connect and Azure Active Directory](enterprise-security/openid-connect.md#configuring-azuread).
 
 Once you have configured PowerShell Universal and Azure Active Directory, you can configure role scripts to verify whether users are members of groups found in Azure AD. You can take advantage of claims mappings to map from the Azure AD Group ID to a PowerShell Universal role.
 
