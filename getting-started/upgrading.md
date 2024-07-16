@@ -189,6 +189,18 @@ Prior to v5, cmdlets would send data over HTTP or by using an internal gRPC chan
 
 This can be a problem for PowerShell Universal instances behind [reverse proxies](../config/hosting/reverse-proxy.md) and requires that the proper header values are sent.&#x20;
 
+### PowerShell.exe is no longer used
+
+The Windows PowerShell 5.1 environment no longer uses PowerShell.exe directly. It instead uses a .NET Framework version of the Universal.Agent.exe executable. This allows for the greatest compatibility with PowerShell Universal libraries and other modules. The agent still uses the PowerShell assemblies found on the executing machine.&#x20;
+
+PowerShell.exe is no longer supported. It can be used in minimal environments.
+
+### PowerShell 7 Environment No longer Users Pwsh.exe
+
+The default PowerShell 7 environment uses a .NET version of Universal.Agent.exe executable running PowerShell 7.4. This allows for the greatest compatibility with PowerShell Universal libraries and other modules.&#x20;
+
+It's still possible to use the pwsh.exe process in custom environment configurations.&#x20;
+
 ### IIS Hosting Package
 
 If you are hosting in IIS, ensure that you install the [.NET 8.0 hosting bundle](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-7.0.5-windows-hosting-bundle-installer).
