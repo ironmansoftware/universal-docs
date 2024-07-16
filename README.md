@@ -25,6 +25,7 @@ Expose scripts as RESTful HTTP APIs for integration from any platform.
 * [Large File Support](https://docs.powershelluniversal.com/api/endpoints#processing-files)
 * [Open API Documentation](https://docs.powershelluniversal.com/api/endpoints#documenting-apis)
 * [File Hosting](https://docs.powershelluniversal.com/platform/published-folders)
+* [Event Hubs](api/event-hubs.md)
 
 ## **Automation**
 
@@ -34,7 +35,7 @@ Execute, schedule, secure and audit scripts in an easy-to-use, web-interface.
 
 * [Scheduling](https://docs.powershelluniversal.com/automation/schedules)
 * [Run As Support](https://docs.powershelluniversal.com/automation/scripts#running-a-script-as-another-user)
-* [Mutliple Environments](https://docs.powershelluniversal.com/config/environments)
+* Multiple[ Environments](https://docs.powershelluniversal.com/config/environments)
 * [Automatic Form Generation](https://docs.powershelluniversal.com/automation/scripts#running-a-script-with-parameters)
 * [Feedback Integration](https://docs.powershelluniversal.com/automation/jobs#feedback)
 * [Pipeline Output](https://docs.powershelluniversal.com/automation/jobs#view-job-pipeline-output)
@@ -135,7 +136,6 @@ Join the growing community of users managing their automation environments with 
 <figure><img src=".gitbook/assets/image (308).png" alt=""><figcaption><p>Community Forums</p></figcaption></figure>
 
 * [Forums](https://forums.ironmansoftware.com/)
-* [Discord](https://discord.gg/tQMEYwbGVn)
 * [Issue Tracker](https://github.com/ironmansoftware/issues)
 
 ## Licensing&#x20;
