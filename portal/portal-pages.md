@@ -34,7 +34,7 @@ Doing so will add the Portal Widget to the page.&#x20;
 
 <figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption><p>Portal Widget on Portal Page</p></figcaption></figure>
 
-### Configuration Portal Widgets
+### Configuring Portal Widgets
 
 Portal Widgets can contain properties that change the behavior of the UI element. In most cases, a default value will be defined so a UI element is shown. Click the Properties button to view the properties for the widget.
 
