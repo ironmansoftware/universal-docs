@@ -8,23 +8,23 @@ PowerShell Universal leverages permissions throughout the platform to provide fi
 
 Permissions are stored in the database and not as part of the `.universal` configuration files.&#x20;
 
-### Permission Identifiers
+## Permission Identifiers
 
 Each permission uses an identifier to authorize a user to access a resource. They are strings that utilize the scope and resource type, followed by an access type.&#x20;
 
 For example, the following would provide read access to all API features.&#x20;
 
 ```
-apis\read
+apis/read
 ```
 
 Wildcards can be used in permission identifiers to include sub-scopes over multiple access types. The following provides access to all script features.&#x20;
 
 ```
-automation.scripts\*
+automation.scripts/*
 ```
 
-### Managing Permissions
+## Managing Permissions
 
 {% hint style="warning" %}
 PowerShell Universal v5 is still in beta and this is subject to change.
@@ -34,11 +34,11 @@ Permissions can be managed for an identity by click Security \ Permissions. You 
 
 Roles currently cannot be assigned permissions.
 
-### Default Role Permissions
+## Default Role Permissions
 
 Below are the default role permissions.&#x20;
 
-#### Administrator
+### Administrator
 
 
 
@@ -46,40 +46,69 @@ Below are the default role permissions.&#x20;
 | ---------- | ----------------------------------- |
 | \*         | Full access to PowerShell Universal |
 
-#### Operator
+### Operator
 
 
 
-| Identifier     | Description                         |
-| -------------- | ----------------------------------- |
-| apis\\\*       | Full access to APIs.                |
-| automation\\\* | Full access to automation features. |
-| apps\\\*       | Full access to Apps.                |
-| platform\\\*   | Full access to platform features    |
-| settings\\\*   | Full access to platform features    |
+| Identifier    | Description                         |
+| ------------- | ----------------------------------- |
+| apis/\*       | Full access to APIs.                |
+| automation/\* | Full access to automation features. |
+| apps/\*       | Full access to Apps.                |
+| platform/\*   | Full access to platform features    |
+| settings/\*   | Full access to platform features    |
 
-#### Execute
+### Execute
 
 
 
 | Identifier         | Description                             |
 | ------------------ | --------------------------------------- |
-| apis\read          | Read access to APIs                     |
-| apis\execute       | Execute access to APIs                  |
-| automation\read    | Read access to automation features.     |
-| automation\execute | Execute access to automation features.  |
-| apps\read          | Read access to Apps.                    |
-| apps\execute       | Execute access to Apps.                 |
-| platform\read      | Read access to platform features.       |
-| settings\read      | Read access to settings.                |
+| apis/read          | Read access to APIs                     |
+| apis/execute       | Execute access to APIs                  |
+| automation/read    | Read access to automation features.     |
+| automation/execute | Execute access to automation features.  |
+| apps/read          | Read access to Apps.                    |
+| apps/execute       | Execute access to Apps.                 |
+| platform/read      | Read access to platform features.       |
+| settings/read      | Read access to settings.                |
 
-#### Reader
+### Reader
 
 
 
 | Identifier      | Description                         |
 | --------------- | ----------------------------------- |
-| apis\read       | Read access to APIs.                |
-| apps\read       | Read access to Apps.                |
-| automation\read | Read access to automation features. |
+| apis/read       | Read access to APIs.                |
+| apps/read       | Read access to Apps.                |
+| automation/read | Read access to automation features. |
 
+### API Editor&#x20;
+
+
+
+| Identifier | Description         |
+| ---------- | ------------------- |
+| apis/\*    | All access to APIs. |
+
+### API Reader
+
+| Identifier | Description          |
+| ---------- | -------------------- |
+| apis/read  | Read access to APIs. |
+
+### App Editor
+
+
+
+| Identifier | Description         |
+| ---------- | ------------------- |
+| apps/\*    | All access to apps. |
+
+### App Reader
+
+
+
+|           |                      |
+| --------- | -------------------- |
+| apps/read | Read access to apps. |
