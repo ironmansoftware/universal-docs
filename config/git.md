@@ -217,7 +217,7 @@ Conflict resolution is only available in manual git sync mode.
 
 When multiple users are editing the PowerShell Universal configuration files, there may be conflicts. PowerShell Universal will display that a particular node is in a conflicted state when attempting to commit changes. You will see a list of changes that are conflicted on the git commit page. Click the Resolve Conflict button to view the conflict in an editor.
 
-<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 In this example, the string for this endpoint was edited on both the remote and the local repository.
 
@@ -225,7 +225,7 @@ In this example, the string for this endpoint was edited on both the remote and 
 
 Edit the text to remove the conflict.
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 Save the changes and navigate back to the git commit page. Enter a new commit message for the merge conflict and click Commit Changes.
 

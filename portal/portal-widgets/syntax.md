@@ -20,13 +20,13 @@ To define a component, you will use the PSBlazor code editor to add the componen
 
 The result is page with a button defined.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Button on a tool</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption><p>Button on a tool</p></figcaption></figure>
 
 ### Setting Attributes
 
 Every component has attributes available. Within the code editor for the PSBlazor page, attributes will automatically be listed for the current component you are editing.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption><p>PSBlazor Attribute Components</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11) (1).png" alt=""><figcaption><p>PSBlazor Attribute Components</p></figcaption></figure>
 
 Setting attributes is the same as setting any XML attribute. This example changes the button to the danger state.&#x20;
 

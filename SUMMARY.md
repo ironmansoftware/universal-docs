@@ -117,19 +117,20 @@
 
 ## 🌐 Portal
 
-* [About](portal.md)
-* [Pages](portal/pages.md)
-* [Widgets](portal/widgets/README.md)
-  * [Syntax](portal/widgets/syntax.md)
-  * [Dynamic](portal/widgets/dynamic.md)
-  * [Forms](portal/widgets/forms.md)
-  * [Tables](portal/widgets/tables.md)
-  * [Services](portal/widgets/services.md)
+* [About the Universal Portal](portal.md)
+* [Portal Pages](portal/portal-pages.md)
+* [Portal Widgets](portal/portal-widgets/README.md)
+  * [Syntax](portal/portal-widgets/syntax.md)
+  * [Dynamic](portal/portal-widgets/dynamic.md)
+  * [Forms](portal/portal-widgets/forms.md)
+  * [Tables](portal/portal-widgets/tables.md)
+  * [Services](portal/portal-widgets/services.md)
 
 ## 🏗️ Platform
 
 * [Cache](platform/cache.md)
 * [Computers](platform/computers.md)
+* [Library](platform/library.md)
 * [Middleware](platform/middleware.md)
 * [Modules](platform/modules.md)
 * [Monitoring](platform/monitoring.md)

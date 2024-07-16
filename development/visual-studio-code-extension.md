@@ -4,35 +4,35 @@ description: Learn about the Visual Studio Code extension for Universal.
 
 # Visual Studio Code Extension
 
-PowerShell Universal can be managed with the PowerShell Universal Visual Studio Code extension. It allows you to connect to a local Universal instance and manage APIs, dashboards and scripts.&#x20;
+PowerShell Universal can be managed with the PowerShell Universal Visual Studio Code extension. It allows you to connect to a local Universal instance and manage APIs, dashboards and scripts.
 
 ## Installation
 
-You can download the extension from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal). You can also download the extension from within the Visual Studio Code extension pane. Search for PowerShell Universal and click Install. &#x20;
+You can download the extension from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal). You can also download the extension from within the Visual Studio Code extension pane. Search for PowerShell Universal and click Install.
 
 ![](<../.gitbook/assets/image (278).png>)
 
 ## Configuration
 
-The extension will prompt you for the URL and App Token used to connect to your PowerShell Universal instance. Follow the instructions within the extension when it starts up.&#x20;
+The extension will prompt you for the URL and App Token used to connect to your PowerShell Universal instance. Follow the instructions within the extension when it starts up.
 
 ### Configure From PowerShell Universal
 
-You can configure the extension by navigating to your PowerShell Universal admin console and then logging in. Navigate to Settings \ Configurations and click Edit with VS Code. A new app token will be generated, and the URL will be set automatically.&#x20;
+You can configure the extension by navigating to your PowerShell Universal admin console and then logging in. Navigate to Settings \ Configurations and click Edit with VS Code. A new app token will be generated, and the URL will be set automatically.
 
 ![Configure From the Admin Console](<../.gitbook/assets/image (43).png>)
 
 ### Configure Multiple Connections
 
-You can configure multiple connections by using the Connections setting. Click the Add Connection button to open Settings.&#x20;
+You can configure multiple connections by using the Connections setting. Click the Add Connection button to open Settings.
 
 ![Add Connection](<../.gitbook/assets/image (213).png>)
 
-Next, click the Edit settings.json link underneath the Connections setting.&#x20;
+Next, click the Edit settings.json link underneath the Connections setting.
 
 ![Settings](<../.gitbook/assets/image (263).png>)
 
-The connections array can have zero to many connections. You can provide names for each connection.&#x20;
+The connections array can have zero to many connections. You can provide names for each connection.
 
 ```json
 "powerShellUniversal.connections": [
@@ -50,17 +50,17 @@ Once you have defined a connection, you can connect to that instance by clicking
 
 ## Features
 
-The PowerShell Universal extension adds a new activity pane panel for PowerShell Universal. It has the following sections.&#x20;
+The PowerShell Universal extension adds a new activity pane panel for PowerShell Universal. It has the following sections.
 
 ### APIs
 
-You can manage APIs with the extension. You will see a list of APIs. You can click the `Open endpoints.ps1` button to view the endpoints file and add new endpoints. Clicking the refresh button will reload any endpoints you add. You can click the `Insert Invoke-RestMethod to Console` to add a call to the endpoint to the PowerShell Integrated Console.&#x20;
+You can manage APIs with the extension. You will see a list of APIs. You can click the `Open endpoints.ps1` button to view the endpoints file and add new endpoints. Clicking the refresh button will reload any endpoints you add. You can click the `Insert Invoke-RestMethod to Console` to add a call to the endpoint to the PowerShell Integrated Console.
 
 ![](<../.gitbook/assets/image (392).png>)
 
 ### Apps
 
-You can manage apps with the extension. You will see a list of apps underneath this section. You can open the dashboards.ps1 script, open a single app's script, restart an app and view apps.&#x20;
+You can manage apps with the extension. You will see a list of apps underneath this section. You can open the dashboards.ps1 script, open a single app's script, restart an app and view apps.
 
 ![](<../.gitbook/assets/image (492).png>)
 
@@ -72,7 +72,7 @@ You can view dashboard logs by right clicking on the dashboard and clicking View
 
 ### Scripts
 
-You can manage scripts with the extension. You will see a list of available scripts underneath this section. You can edit the scripts.ps1, edit an individual script and run scripts. When running scripts, you will receive feedback about the status of the script. Scripts with parameters are not supported in VS Code. You can still run them in PowerShell Universal.&#x20;
+You can manage scripts with the extension. You will see a list of available scripts underneath this section. You can edit the scripts.ps1, edit an individual script and run scripts. When running scripts, you will receive feedback about the status of the script. Scripts with parameters are not supported in VS Code. You can still run them in PowerShell Universal.
 
 ![](<../.gitbook/assets/image (346).png>)
 
@@ -82,19 +82,19 @@ You can manage scripts with the extension. You will see a list of available scri
 The Administrator role is required for debugging scripts remotely.
 {% endhint %}
 
-As of PowerShell Universal v4.2, you can debug scripts remotely with the PowerShell Universal extension. To enable remote debugging, you will need to set the debugger environment in the settings. This is the process that will be started and will load PowerShell Editor Services.&#x20;
+As of PowerShell Universal v4.2, you can debug scripts remotely with the PowerShell Universal extension. To enable remote debugging, you will need to set the debugger environment in the settings. This is the process that will be started and will load PowerShell Editor Services.
 
 ```powershell
 Set-PSUSetting -DebuggerEnvironment 'pwsh'
 ```
 
-When connected to your PowerShell Universal instance, you can expand Platform \ Processes and then locate the process you wish to debug. If you use the `Wait-Debugger` cmdlet in your scripts, they will be displayed within the process and runspace drop down. Click the Attach Runspace command to begin debugging your script.&#x20;
+When connected to your PowerShell Universal instance, you can expand Platform \ Processes and then locate the process you wish to debug. If you use the `Wait-Debugger` cmdlet in your scripts, they will be displayed within the process and runspace drop down. Click the Attach Runspace command to begin debugging your script.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 ## Sample Browser
 
-The sample browser can be used to insert samples from the PowerShell Universal Sample Repository into your PowerShell Universal instance. Just save the files it updates and your PowerShell Universal system will reflect the changes.&#x20;
+The sample browser can be used to insert samples from the PowerShell Universal Sample Repository into your PowerShell Universal instance. Just save the files it updates and your PowerShell Universal system will reflect the changes.
 
 {% embed url="https://youtu.be/HkCVe1PUX0Q" %}
 
@@ -102,17 +102,17 @@ The sample browser can be used to insert samples from the PowerShell Universal S
 
 Settings can be found within the Visual Studio Code Settings dialog. You can open the settings dialog by press `Ctrl+,`
 
-PowerShell Universal settings can be found under Extensions \ PowerShell Universal.&#x20;
+PowerShell Universal settings can be found under Extensions \ PowerShell Universal.
 
 ### App Token
 
-The App Token is used for communicating with the PowerShell Universal management API. You can create an App Token manually by navigating to Security \ Tokens within the PowerShell Universal admin console.&#x20;
+The App Token is used for communicating with the PowerShell Universal management API. You can create an App Token manually by navigating to Security \ Tokens within the PowerShell Universal admin console.
 
-You can also automatically configure an App Token by click Edit with VS Code within Settings \ Configurations.&#x20;
+You can also automatically configure an App Token by click Edit with VS Code within Settings \ Configurations.
 
 ### Check Modules
 
-The extension will check the version of the Universal and UnviersalDashboard PowerShell modules found on the system. If they aren't installed or are not the latest version, new versions will be installed.&#x20;
+The extension will check the version of the Universal and UnviersalDashboard PowerShell modules found on the system. If they aren't installed or are not the latest version, new versions will be installed.
 
 ### Connections
 
@@ -120,15 +120,12 @@ The Connections array allow for defining multiple PowerShell Universal instance 
 
 ### Samples Directory
 
-This is the directory to store the PowerShell Universal samples.&#x20;
+This is the directory to store the PowerShell Universal samples.
 
 ### Sync Samples
 
-Whether to download samples from GitHub so they are available within the samples browser.&#x20;
+Whether to download samples from GitHub so they are available within the samples browser.
 
 ### Url
 
-The URL of the PowerShell Universal service. This should be the root URL, such as `http://localhost:5000`. This will be set automatically when clicking Edit in VS Code.&#x20;
-
-
-
+The URL of the PowerShell Universal service. This should be the root URL, such as `http://localhost:5000`. This will be set automatically when clicking Edit in VS Code.

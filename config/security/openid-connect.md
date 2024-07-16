@@ -30,15 +30,13 @@ Now, you will need to take note of your Application (client) ID GUID. This will 
 
 ![](<../../.gitbook/assets/image (133).png>)
 
-Finally, you will have to click the Endpoints button to open the Endpoints drawer. This contains a list of the endpoints. Make note of the OAuth 2.0 authorization endpoint URL. You will need this for the `appsettings.json`.&#x20;
+Finally, you will have to click the Endpoints button to open the Endpoints drawer. This contains a list of the endpoints. Make note of the OAuth 2.0 authorization endpoint URL. You will need this for the `appsettings.json`.
 
 {% hint style="warning" %}
 Note that you will not input the entire endpoint URL. You will need to include the portion of the URL through the GUID but without the path after oauth2 in the Authority setting below (e.g. [https://login.microsoftonline.com/fffffff-4b76-4470-a736-8481d7a2ed87](https://login.microsoftonline.com/fffffff-4b76-4470-a736-8481d7a2ed87)).
 {% endhint %}
 
 ![](<../../.gitbook/assets/image (333).png>)
-
-
 
 ### Configuring Universal for Azure Active Directory
 
@@ -65,22 +63,22 @@ Now that we have completed the configuration of an AzureAD App Registration, we 
 ```
 
 {% hint style="warning" %}
-If you are using Chrome, you will also need to enable HTTPS. You will see a 500 error without HTTPS enabled.&#x20;
+If you are using Chrome, you will also need to enable HTTPS. You will see a 500 error without HTTPS enabled.
 {% endhint %}
 
 #### Use Authentication.ps1
 
 {% hint style="info" %}
-Available in PowerShell Universal 2.5 or later.&#x20;
+Available in PowerShell Universal 2.5 or later.
 {% endhint %}
 
-You can use the admin console to configure OpenID Connect. We recommend this method as you will not need to restart the PowerShell Universal service after configuring OIDC.&#x20;
+You can use the admin console to configure OpenID Connect. We recommend this method as you will not need to restart the PowerShell Universal service after configuring OIDC.
 
-To add a new authentication method, navigate to Security \ Authentication and add the OpenID Connect provider.&#x20;
+To add a new authentication method, navigate to Security \ Authentication and add the OpenID Connect provider.
 
 ![](<../../.gitbook/assets/image (462).png>)
 
-Once the provider has been added, you can click the details button to enter the settings you'll need to authenticate against your OIDC provider. After setting the OIDC options, set the provider to enabled and log out. When visiting the `/admin` page, you'll be prompted for OIDC login.&#x20;
+Once the provider has been added, you can click the details button to enter the settings you'll need to authenticate against your OIDC provider. After setting the OIDC options, set the provider to enabled and log out. When visiting the `/admin` page, you'll be prompted for OIDC login.
 
 ![](<../../.gitbook/assets/image (80).png>)
 
@@ -134,11 +132,11 @@ Connect-AzureAD
 
 ### Refresh Tokens
 
-You can configure Azure Active Directory and PowerShell Universal to provide refresh tokens for requesting new tokens if the access token expires. To do so, you will need to enable offline\_access in your app registration.&#x20;
+You can configure Azure Active Directory and PowerShell Universal to provide refresh tokens for requesting new tokens if the access token expires. To do so, you will need to enable offline\_access in your app registration.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>offline_access</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>offline_access</p></figcaption></figure>
 
-When configuring PowerShell Universal, you need to request the `offline_access` scope and set SaveTokens to true and use the id\_token response type.&#x20;
+When configuring PowerShell Universal, you need to request the `offline_access` scope and set SaveTokens to true and use the id\_token response type.
 
 ```json
 "OIDC": {
@@ -157,33 +155,33 @@ When configuring PowerShell Universal, you need to request the `offline_access` 
 },
 ```
 
-Once configured, you can access the `$RefreshToken` variable in your scripts and apps.&#x20;
+Once configured, you can access the `$RefreshToken` variable in your scripts and apps.
 
 ## Configuring Okta
 
-Okta supports OpenID Connect. You can configure an application to allow authentication against PowerShell Universal instances.&#x20;
+Okta supports OpenID Connect. You can configure an application to allow authentication against PowerShell Universal instances.
 
-Within your Okta admin console, expand Applications and click Applications. Then click Create App Integration.&#x20;
+Within your Okta admin console, expand Applications and click Applications. Then click Create App Integration.
 
 ![](<../../.gitbook/assets/image (489).png>)
 
-Select OIDC and Web Application.&#x20;
+Select OIDC and Web Application.
 
 ![](<../../.gitbook/assets/image (373).png>)
 
-Name your application and define the Sign-In redirect URL used to call your PowerShell Universal server. You will need to specify this callback URL within your PowerShell Universal configuration.&#x20;
+Name your application and define the Sign-In redirect URL used to call your PowerShell Universal server. You will need to specify this callback URL within your PowerShell Universal configuration.
 
 ![](<../../.gitbook/assets/image (170).png>)
 
-Once you've created your application, take note of your Client ID and Client Secret. You will specify these within your PowerShell Universal configuration.&#x20;
+Once you've created your application, take note of your Client ID and Client Secret. You will specify these within your PowerShell Universal configuration.
 
 ![](<../../.gitbook/assets/image (306).png>)
 
-Within the Sign On tab, specify the group claims filter to use for providing claims to PowerShell Universal. These claims can be used to assign roles based on group membership. The following filter returns all claims.&#x20;
+Within the Sign On tab, specify the group claims filter to use for providing claims to PowerShell Universal. These claims can be used to assign roles based on group membership. The following filter returns all claims.
 
 ![](<../../.gitbook/assets/image (285).png>)
 
-Once you have your Application configured, you can configure PowerShell Universal.&#x20;
+Once you have your Application configured, you can configure PowerShell Universal.
 
 ### Configurating Universal for Okta
 
@@ -208,9 +206,9 @@ Once you have defined your Okta application, you can set your `appsettings.json`
 
 ### Role-Based Access
 
-In order to look up group membership for Okta, you will need to use the `$UserInfo` variable that is available within `roles.ps1`. This variable provides additional information about the user logging in.&#x20;
+In order to look up group membership for Okta, you will need to use the `$UserInfo` variable that is available within `roles.ps1`. This variable provides additional information about the user logging in.
 
-The groups property will contain a list of groups the user is a member of. You can validate membership by checking whether the list contains the desired group.&#x20;
+The groups property will contain a list of groups the user is a member of. You can validate membership by checking whether the list contains the desired group.
 
 ```powershell
 param($User)
@@ -218,11 +216,11 @@ param($User)
 $UserInfo.groups -contains 'Administrators'
 ```
 
-### Delegated Access Tokens&#x20;
+### Delegated Access Tokens
 
-Access tokens are available for users within their scripts. You can use access tokens in jobs started by users and dashboards.&#x20;
+Access tokens are available for users within their scripts. You can use access tokens in jobs started by users and dashboards.
 
-For example, you could return the current user's information by using the access token provided by Okta.&#x20;
+For example, you could return the current user's information by using the access token provided by Okta.
 
 ```powershell
 Invoke-RestMethod https://poshtools.okta.com/oauth2/v1/userinfo -Headers @{

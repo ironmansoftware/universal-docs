@@ -17,17 +17,17 @@ Once you have selected a resource group, assigned a name and selected a compute 
 Next, you'll need to deploy the image to your web app. To do so, select the Deployment Center and configure the image to pull. You can either pull a static tagged version (like 2.7.3) or pull the latest and your web app will automatically stay up to date with new PowerShell Universal releases.
 
 {% hint style="info" %}
-For production environments, we suggest setting a tagged version to avoid unintentional updates to your container when it restarts. By default, Azure will automatically update containers when a tag, such as latest, is updated. This will allow you to control updates to your PowerShell Universal version.&#x20;
+For production environments, we suggest setting a tagged version to avoid unintentional updates to your container when it restarts. By default, Azure will automatically update containers when a tag, such as latest, is updated. This will allow you to control updates to your PowerShell Universal version.
 {% endhint %}
 
 ![Deployment Center Settings](<../../.gitbook/assets/image (438).png>)
 
 ### Azure Storage and LiteDB
 
-For single instance systems, you can use an Azure Storage Account with a File Share to store the configuration and database.&#x20;
+For single instance systems, you can use an Azure Storage Account with a File Share to store the configuration and database.
 
 {% hint style="warning" %}
-Do not use an Azure Storage Account if you chose to use git integration. PowerShell Universal performance will be severely degraded if you use this configuration due to the performance of Azure File Shares.&#x20;
+Do not use an Azure Storage Account if you chose to use git integration. PowerShell Universal performance will be severely degraded if you use this configuration due to the performance of Azure File Shares.
 {% endhint %}
 
 We'll need to configure the Azure Storage Account for file shares to store the data for this web app. Within your storage account, create a new File Share that is transaction optimized.
@@ -50,35 +50,35 @@ Restart the App Service and login to your new PowerShell Universal instance. You
 
 If you choose to use git integration in PowerShell Universal, we recommend setting up a SQL server and database for storage. Git will be used to synchronize configuration files when the container is started. SQL will store the git configuration settings alongside resources like jobs, app tokens and identities.
 
-You'll need an Azure SQL database to get started. Once you create the resource, you will need to copy the connection string from the database to provide to PowerShell Universal.&#x20;
+You'll need an Azure SQL database to get started. Once you create the resource, you will need to copy the connection string from the database to provide to PowerShell Universal.
 
 <figure><img src="../../.gitbook/assets/image (385).png" alt=""><figcaption></figcaption></figure>
 
-Ensure that you have allowed Azure services to access the database.&#x20;
+Ensure that you have allowed Azure services to access the database.
 
 <figure><img src="../../.gitbook/assets/image (155).png" alt=""><figcaption></figcaption></figure>
 
-To enable SQL support, you should set the plugins within PowerShell Universal to use the SQL plugin in the Application Configuration for your web app.&#x20;
+To enable SQL support, you should set the plugins within PowerShell Universal to use the SQL plugin in the Application Configuration for your web app.
 
-Create a `Plugins__0` setting with the value `SQL`. Next, set the `Data__ConnectionString` value to your SQL server database.&#x20;
+Create a `Plugins__0` setting with the value `SQL`. Next, set the `Data__ConnectionString` value to your SQL server database.
 
 <figure><img src="../../.gitbook/assets/image (162).png" alt=""><figcaption></figcaption></figure>
 
-Once you have SQL configured, you can start your container. The database schema will be created as the container starts. Next, you'll need to configure git within PowerShell Universal by clicking Settings \ Git. Enter your remote, branch, username, password or personal access token, and synchronization mode. Push-only is not recommended in this configuration because container state is lost between restarts. Ensure that the initialization mode is set to Clone.&#x20;
+Once you have SQL configured, you can start your container. The database schema will be created as the container starts. Next, you'll need to configure git within PowerShell Universal by clicking Settings \ Git. Enter your remote, branch, username, password or personal access token, and synchronization mode. Push-only is not recommended in this configuration because container state is lost between restarts. Ensure that the initialization mode is set to Clone.
 
 {% hint style="info" %}
-Git settings are stored in your SQL database and will be retrieved each time the container is started.&#x20;
+Git settings are stored in your SQL database and will be retrieved each time the container is started.
 {% endhint %}
 
 <figure><img src="../../.gitbook/assets/image (164).png" alt=""><figcaption></figcaption></figure>
 
 ### Forwarded Headers
 
-Containers are typically hosted behind a reverse proxy and will not be aware of the actual external URL without additional configuration. In order to ensure that systems that require the external URL, like OpenID Connect, receive the proper information, you will need to set the `ASPNETCORE_FORWARDEDHEADERS_ENABLED`  environment variable to `true`.
+Containers are typically hosted behind a reverse proxy and will not be aware of the actual external URL without additional configuration. In order to ensure that systems that require the external URL, like OpenID Connect, receive the proper information, you will need to set the `ASPNETCORE_FORWARDEDHEADERS_ENABLED` environment variable to `true`.
 
 ![](<../../.gitbook/assets/image (390).png>)
 
-For more information, you can read this blog post from the [Microsoft](https://devblogs.microsoft.com/dotnet/forwarded-headers-middleware-updates-in-net-core-3-0-preview-6/).&#x20;
+For more information, you can read this blog post from the [Microsoft](https://devblogs.microsoft.com/dotnet/forwarded-headers-middleware-updates-in-net-core-3-0-preview-6/).
 
 ## Standard Web App
 
@@ -94,7 +94,7 @@ If you choose a Windows hosting plan rather than a Linux hosting plan in Azure w
 
 **Startup Command (Linux Only)**
 
-When hosting in a Linux environment, you will need to set the startup command under Settings \ Configuration \ General Settings \ Startup Command to the following.&#x20;
+When hosting in a Linux environment, you will need to set the startup command under Settings \ Configuration \ General Settings \ Startup Command to the following.
 
 ```
 dotnet Universal.Server.dll
@@ -125,7 +125,7 @@ Invoke-WebRequest "https://imsreleases.blob.core.windows.net/universal/productio
 
 ### Deploy Linux Files
 
-If you are using Linux, you will need to download the Linux ZIP file. This will download the latest version fo PowerShell Universal.&#x20;
+If you are using Linux, you will need to download the Linux ZIP file. This will download the latest version fo PowerShell Universal.
 
 ```powershell
 $LatestVersion = Invoke-RestMethod https://imsreleases.blob.core.windows.net/universal/production/v3-version.txt
@@ -196,7 +196,7 @@ $Env:Api__Url = "https://psudemo.azurewebsites.net"
 
 #### NodeName
 
-You can set the name of the PowerShell Universal instance by specifying the NodeName. This will ensure that restarts will not affect the PowerShell Universal database.  This is not required for LiteDB installations.&#x20;
+You can set the name of the PowerShell Universal instance by specifying the NodeName. This will ensure that restarts will not affect the PowerShell Universal database. This is not required for LiteDB installations.
 
 ```
 $Env:NodeName = "psuazure"
@@ -204,7 +204,7 @@ $Env:NodeName = "psuazure"
 
 #### PORT and WEBSITES\_PORT (Linux Only)
 
-To override the default port in a Linux web app, you need to set the PORT and WEBSITES\_PORT setting to 5000.&#x20;
+To override the default port in a Linux web app, you need to set the PORT and WEBSITES\_PORT setting to 5000.
 
 After publishing the Web App, view your PowerShell Universal instance by navigating to the Web App's URL.
 
@@ -253,30 +253,30 @@ Once you've delete the application files, you can redeploy them by running the m
 
 ## Application Gateway
 
-You can configure PowerShell Universal to run behind an Application Gateway within Azure. This is helpful for providing load balancing and high availability to multiple PowerShell Universal instances.&#x20;
+You can configure PowerShell Universal to run behind an Application Gateway within Azure. This is helpful for providing load balancing and high availability to multiple PowerShell Universal instances.
 
-First, configure a backend pool that targets one or more Azure Web Apps running PowerShell Universal.&#x20;
+First, configure a backend pool that targets one or more Azure Web Apps running PowerShell Universal.
 
 <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>Backend Pool</p></figcaption></figure>
 
-For the backend settings, you will want to ensure you are using HTTPS with a well known CA certificate. Cookie-based affinity is required to ensure that sessions are sticky to a individual node.&#x20;
+For the backend settings, you will want to ensure you are using HTTPS with a well known CA certificate. Cookie-based affinity is required to ensure that sessions are sticky to a individual node.
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption><p>Backend Pool Settings</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>Backend Pool Settings</p></figcaption></figure>
 
-In order to allow Azure to serve the proper web app, you will need to ensure that the Override with new host name setting is configured. Use the host name for the backend target.&#x20;
+In order to allow Azure to serve the proper web app, you will need to ensure that the Override with new host name setting is configured. Use the host name for the backend target.
 
 <figure><img src="../../.gitbook/assets/image (2) (2).png" alt=""><figcaption><p>Backend Settings Host Name</p></figcaption></figure>
 
-Ensure that the backend pool rule is configured as the target and not redirection.&#x20;
+Ensure that the backend pool rule is configured as the target and not redirection.
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption><p>Application Gateway Rule</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Application Gateway Rule</p></figcaption></figure>
 
-Configure a header rewrite rule to pass along the public facing host name as the `X-Forwarded-Host` header. PowerShell Universal will use this to internally construct URLs.&#x20;
+Configure a header rewrite rule to pass along the public facing host name as the `X-Forwarded-Host` header. PowerShell Universal will use this to internally construct URLs.
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption><p>Rewrite Rule</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (2).png" alt=""><figcaption><p>Rewrite Rule</p></figcaption></figure>
 
-The above rewrite rule is a requirement of OpenID Connect and SAML2 authentication methods.&#x20;
+The above rewrite rule is a requirement of OpenID Connect and SAML2 authentication methods.
 
-Finally, you can configure your Application Gateway public IP using a DNS provide to a custom host name. Create an A record in your DNS management.&#x20;
+Finally, you can configure your Application Gateway public IP using a DNS provide to a custom host name. Create an A record in your DNS management.
 
 <figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption><p>DNS Record</p></figcaption></figure>

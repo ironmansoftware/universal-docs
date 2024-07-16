@@ -16,7 +16,7 @@ The [PowerShell Universal Portal](broken-reference) provides a simple to use acc
 
 ### Pages and Widgets
 
-Portal [Pages ](portal/pages.md)and [Widgets ](portal/widgets/)provide easy to use UI components that can be visually positioned on pages that then can be assigned to roles. Widgets are built using Blazor and PowerShell, accept parameters and are interactive.
+Portal [Pages ](portal/portal-pages.md)and [Widgets ](portal/portal-widgets/)provide easy to use UI components that can be visually positioned on pages that then can be assigned to roles. Widgets are built using Blazor and PowerShell, accept parameters and are interactive.
 
 ## Script Library
 

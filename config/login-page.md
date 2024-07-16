@@ -44,28 +44,28 @@ This login page looks like this.
 ## Customizing the login page in the Admin Console
 
 {% hint style="warning" %}
-This feature will be available in PowerShell Universal 2.3.&#x20;
+This feature will be available in PowerShell Universal 2.3.
 {% endhint %}
 
-In addition to being able to customize the login page via PowerShell, you can also do so in the admin console. Click Settings \ Login page to adjust the settings.&#x20;
+In addition to being able to customize the login page via PowerShell, you can also do so in the admin console. Click Settings \ Login page to adjust the settings.
 
 ![](<../.gitbook/assets/image (515).png>)
 
 ## Customizing the login page with an App
 
-You can override the login page with an app by setting an app's base URL to `/login`. You need to ensure that the app does not require authentication.&#x20;
+You can override the login page with an app by setting an app's base URL to `/login`. You need to ensure that the app does not require authentication.
 
 ```powershell
 New-PSUApp -Name 'App' -Path 'app.ps1' -BaseUrl '/login'
 ```
 
-You will then need to implement the login features manually.&#x20;
+You will then need to implement the login features manually.
 
 ### Implementing an app-based login page
 
-This is an example of implementing an app-based login page using email addresses and passcodes. The user would enter their email address, the app would send a passcode to the account and cache it locally. Once the user redirects back to the app, they will be logged in.&#x20;
+This is an example of implementing an app-based login page using email addresses and passcodes. The user would enter their email address, the app would send a passcode to the account and cache it locally. Once the user redirects back to the app, they will be logged in.
 
-The app used for login has two different modes. The first is when no query string parameters are specified. The second is when the user is redirected back to the app with the passcode.&#x20;
+The app used for login has two different modes. The first is when no query string parameters are specified. The second is when the user is redirected back to the app with the passcode.
 
 ```powershell
 New-UDApp -Content {
@@ -108,17 +108,17 @@ New-UDApp -Content {
 }
 ```
 
-The resulting app will look like this when loaded.&#x20;
+The resulting app will look like this when loaded.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 After submitting the form, the following will be shown. Additionally, the passcode is cached into the server cache with `Set-PSUCache`.
 
 <figure><img src="../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
 
-A URL will be generated and, in this example, copied to the clipboard.&#x20;
+A URL will be generated and, in this example, copied to the clipboard.
 
-Within the admin console, navigate to the forms authentication method and add the following logic. This logic checks the cache to see if the passcode and email address combination is valid. When the user logs in, the JavaScript on the app will run and force a login. Once complete, the user will be redirected to another page. &#x20;
+Within the admin console, navigate to the forms authentication method and add the following logic. This logic checks the cache to see if the passcode and email address combination is valid. When the user logs in, the JavaScript on the app will run and force a login. Once complete, the user will be redirected to another page.
 
 ```powershell
 param(

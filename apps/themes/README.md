@@ -20,7 +20,7 @@ New-UDDashboard -Theme $Theme -Title 'Hello' -Content {
 ```
 
 {% hint style="info" %}
-Note that when specifying keys that require a number, ensure that the key is specified as a string.&#x20;
+Note that when specifying keys that require a number, ensure that the key is specified as a string.
 
 ```
 grey = @{
@@ -146,9 +146,9 @@ For a full list of options available for the theme system, you can look at the [
 
 ## Component Overrides
 
-You can override any component CSS value using the theme engine. In order to override a component's base theming, you will need to identify the CSS class name applied to that element.&#x20;
+You can override any component CSS value using the theme engine. In order to override a component's base theming, you will need to identify the CSS class name applied to that element.
 
-To identify a component's CSS classes, use the developer tools of your browser. Right click on the component you wish to style and click Inspect Element.&#x20;
+To identify a component's CSS classes, use the developer tools of your browser. Right click on the component you wish to style and click Inspect Element.
 
 This will highlight the HTML elements that make up that component. In the image below, you will see we have numerous CSS classes being applied such as:
 
@@ -159,7 +159,7 @@ This will highlight the HTML elements that make up that component. In the image 
 
 ![](<../../.gitbook/assets/image (428).png>)
 
-In order to override these various elements, you will need to add an `overrides` key to your theme.&#x20;
+In order to override these various elements, you will need to add an `overrides` key to your theme.
 
 ```powershell
 $Theme = @{
@@ -169,7 +169,7 @@ $Theme = @{
 }
 ```
 
-Next, you'll need to add keys to the overrides for each element you wish to modify. Notice that I have not included the portion of the class name after the hyphen.&#x20;
+Next, you'll need to add keys to the overrides for each element you wish to modify. Notice that I have not included the portion of the class name after the hyphen.
 
 ```powershell
 $Theme = @{
@@ -181,7 +181,7 @@ $Theme = @{
 }
 ```
 
-Now, add the subitems you wish to modify to the class name.&#x20;
+Now, add the subitems you wish to modify to the class name.
 
 ```powershell
 $Theme = @{
@@ -242,7 +242,7 @@ $Theme = @{
 
 ### Compliment
 
-![](<../../.gitbook/assets/image (9).png>)
+![](<../../.gitbook/assets/image (9) (1).png>)
 
 ```powershell
 $Theme = @{
@@ -286,7 +286,7 @@ $Theme = @{
 
 ![](<../../.gitbook/assets/image (93).png>)
 
-Based on the Material UI theme, [Onepirate](https://material-ui.com/store/previews/onepirate/).&#x20;
+Based on the Material UI theme, [Onepirate](https://material-ui.com/store/previews/onepirate/).
 
 ```powershell
 $Theme = @{
@@ -412,7 +412,7 @@ $Theme = @{
 }
 ```
 
-The dashboard used to generate the above image is included below.&#x20;
+The dashboard used to generate the above image is included below.
 
 ```powershell
 New-UDDashboard -Theme $theme -Title "Onepirate" -Content {
@@ -440,7 +440,7 @@ New-UDDashboard -Theme $theme -Title "Onepirate" -Content {
 
 ![Paperbase in Universal Dashboard](<../../.gitbook/assets/image (261).png>)
 
-Based on the Material UI theme, [Paperbase](https://material-ui.com/store/previews/paperbase/).&#x20;
+Based on the Material UI theme, [Paperbase](https://material-ui.com/store/previews/paperbase/).
 
 ```powershell
 $Theme = @{
@@ -552,7 +552,7 @@ $Theme = @{
 
 ```
 
-This the dashboard used to create the above image.&#x20;
+This the dashboard used to create the above image.
 
 ```powershell
 $Navigation = @(
