@@ -18,7 +18,7 @@ A single pane of glass for managing and delegating access to your automation env
 
 Universal provides an Administrator console, management REST API, PowerShell cmdlets and an idempotent configuration system using PowerShell scripts.
 
-## **APIs**
+## **Universal APIs**
 
 Expose scripts as RESTful HTTP APIs for integration from any platform.
 
@@ -31,8 +31,9 @@ Expose scripts as RESTful HTTP APIs for integration from any platform.
 * [Large File Support](https://docs.powershelluniversal.com/api/endpoints#processing-files)
 * [Open API Documentation](https://docs.powershelluniversal.com/api/endpoints#documenting-apis)
 * [File Hosting](https://docs.powershelluniversal.com/platform/published-folders)
+* [Event Hubs](api/event-hubs.md)
 
-## **Automation**
+## **Universal Automation**
 
 Execute, schedule, secure and audit scripts in an easy-to-use, web-interface.
 
@@ -40,7 +41,7 @@ Execute, schedule, secure and audit scripts in an easy-to-use, web-interface.
 
 * [Scheduling](https://docs.powershelluniversal.com/automation/schedules)
 * [Run As Support](https://docs.powershelluniversal.com/automation/scripts#running-a-script-as-another-user)
-* [Mutliple Environments](https://docs.powershelluniversal.com/config/environments)
+* Multiple[ Environments](https://docs.powershelluniversal.com/config/environments)
 * [Automatic Form Generation](https://docs.powershelluniversal.com/automation/scripts#running-a-script-with-parameters)
 * [Feedback Integration](https://docs.powershelluniversal.com/automation/jobs#feedback)
 * [Pipeline Output](https://docs.powershelluniversal.com/automation/jobs#view-job-pipeline-output)
@@ -48,9 +49,9 @@ Execute, schedule, secure and audit scripts in an easy-to-use, web-interface.
 * [Concurrency Controls](https://docs.powershelluniversal.com/automation/scripts#concurrent-jobs)
 * [Ad-Hoc Terminals](https://docs.powershelluniversal.com/automation/terminals)
 
-## **User Interfaces**
+## **Universal Apps**
 
-Build web-based tools for internal users with highly interactive user interfaces that run your scripts.
+Build web-based applications for users with highly interactive user interfaces that run your scripts.
 
 <figure><img src=".gitbook/assets/image (331).png" alt=""><figcaption><p>Universal Dashboard</p></figcaption></figure>
 
@@ -65,7 +66,7 @@ Build web-based tools for internal users with highly interactive user interfaces
 * [Extensible Platform](https://docs.powershelluniversal.com/userinterfaces/dashboards/components/building-custom-components)
 * [Custom Styling and Branding](https://docs.powershelluniversal.com/userinterfaces/dashboards/themes)
 
-## Hosting
+## Universal Hosting
 
 PowerShell Universal is cross-platform and can be hosted on-premises, in the cloud or even on a Raspberry Pi.
 
@@ -77,7 +78,7 @@ PowerShell Universal is cross-platform and can be hosted on-premises, in the clo
 * [Windows Service](https://docs.powershelluniversal.com/getting-started#msi-install-windows)
 * [HTTPS](https://docs.powershelluniversal.com/config/hosting#configuring-https)
 
-## Security
+## Universal Security
 
 Grant role-based access to different aspects of your automation environment with your choice of authentication and authorization integrations.
 
@@ -94,17 +95,7 @@ Grant role-based access to different aspects of your automation environment with
 * [Script Access Controls](https://docs.powershelluniversal.com/config/security/access-controls)
 * [Custom and Built-In Roles](https://docs.powershelluniversal.com/config/security#built-in-roles)
 
-## **Desktop**
-
-Create desktop automation and user interfaces that integrate with features of Windows.
-
-* [File Associations](https://docs.powershelluniversal.com/v/v3/desktop/file-associations)
-* [Hotkeys](https://docs.powershelluniversal.com/v/v3/desktop/hotkeys)
-* [Protocol Handlers](https://docs.powershelluniversal.com/v/v3/desktop/protocol-handlers)
-* [System Events](https://docs.powershelluniversal.com/v/v3/desktop/system-events)
-* [User Interfaces](https://docs.powershelluniversal.com/v/v3/desktop/pages)
-
-## Development
+## Universal Development
 
 Take advantage of rich development tools such as IntelliSense, code formatting, error checking and debugger integration without leaving your browser.
 
@@ -120,7 +111,7 @@ Take advantage of rich development tools such as IntelliSense, code formatting, 
 * [Desktop Mode](https://docs.powershelluniversal.com/platform/desktop-mode)
 * [Hotkeys](https://docs.powershelluniversal.com/platform/desktop-mode/hotkeys)
 
-## Platform
+## Universal Platform
 
 Configure the platform to meet the needs of your environment.
 
@@ -134,17 +125,16 @@ Configure the platform to meet the needs of your environment.
 * [Git Integration](https://docs.powershelluniversal.com/config/git)
 * [Application Insights Integration](https://docs.powershelluniversal.com/platform/monitoring)
 
-## Community
+## Universal Community
 
 Join the growing community of users managing their automation environments with PowerShell Universal.
 
 <figure><img src=".gitbook/assets/image (308).png" alt=""><figcaption><p>Community Forums</p></figcaption></figure>
 
 * [Forums](https://forums.ironmansoftware.com/)
-* [Discord](https://discord.gg/tQMEYwbGVn)
 * [Issue Tracker](https://github.com/ironmansoftware/issues)
 
-## Licensing
+## Universal Licensing
 
 Universal is licensed per server. Visit our [website for more information ](https://ironmansoftware.com/powershell-universal/)on pricing.
 
