@@ -4,6 +4,25 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.0.0-rc1 - 7/16/2024
+
+## Automation
+
+* Fixed issue with parameters from scripts provided by modules
+* Fixed issue with job filters on the Jobs page.
+
+## Portal
+
+* Added row and column guides to the Portal Page editor
+
+## Platform
+
+* Added a first run setup to set the default admin user name and password (#2616)
+* Added support for role-based access with PSUCache (#2963)
+* Fixed an issue using gRPC cmdlets in Apps
+* Added password complexity enforcement
+* Added password expiration enforcement
+
 ## 5.0.0-beta7 - 7/2/2024
 
 ## APIs

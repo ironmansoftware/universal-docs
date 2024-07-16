@@ -200,4 +200,3 @@
 
 * [Changelog](changelog.md)
 * [Extension Changelog](extension-changelog.md)
-* [Known Issues](changelogs/known-issues.md)
