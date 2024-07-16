@@ -141,15 +141,18 @@
 * [User Sessions](platform/user-sessions.md)
 * [Variables](platform/variables.md)
 
-## 🔒Security <a href="#security" id="security"></a>
+## 🔒Security
 
 * [About](config/security/README.md)
+* [Local Accounts](security/local-accounts.md)
+* [Forms Authentication](security/forms-authentication.md)
 * [App Tokens](config/security/app-tokens.md)
 * [Client Certificate](config/security/client-certificate.md)
 * [OpenID Connect](config/security/openid-connect.md)
 * [Permissions](config/security/permissions.md)
 * [SAML2](config/security/saml2.md)
 * [WS-Federation](config/security/ws-federation.md)
+* [Windows SSO](security/windows-sso.md)
 
 ## ⚙️ Configuration <a href="#config" id="config"></a>
 
@@ -167,7 +170,6 @@
 * [Management API](config/management-api.md)
 * [Persistence](config/persistence.md)
 * [App Settings](config/settings.md)
-
 * [Repository](config/repository.md)
 * [Running as a Service Account](config/running-as-a-service-account.md)
 * [Best Practices](config/best-practices.md)
