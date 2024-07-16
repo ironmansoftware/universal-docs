@@ -24,9 +24,9 @@ PowerShell Universal now ships with built in modules that can be install directl
 
 The [Script Library is open source](https://github.com/ironmansoftware/scripts) and contributions to the library will ship with the product.&#x20;
 
-## Granular Privileges
+## Granular Permissions
 
-Authorization within the platform is now configured via a granular privilege system that controls which users have access to which resources. This also includes new roles for specific feature groups, so administrators do not need to configure privileges for every scenario.&#x20;
+Authorization within the platform is now configured via a[ granular permission system](security/enterprise-security/permissions.md) that controls which users have access to which resources. This also includes new roles for specific feature groups, so administrators do not need to configure privileges for every scenario.&#x20;
 
 ## PostgreSQL Support
 

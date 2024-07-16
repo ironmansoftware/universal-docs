@@ -4,6 +4,10 @@ description: Receive client events from the PowerShell Universal server.
 
 # Event Hubs
 
+{% hint style="info" %}
+Event Hubs require a [license](../licensing.md).&#x20;
+{% endhint %}
+
 Event Hubs provide the ability to connect client to the PowerShell Universal server. Once connected, the PowerShell Universal server can send messages to the connected clients and they will run a local PowerShell script block.
 
 ## Creating an Event Hub
