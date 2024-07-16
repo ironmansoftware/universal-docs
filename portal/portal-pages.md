@@ -26,7 +26,7 @@ To add an UI element to the page, click Add Widget to select from a list of Widg
 
 <figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Adding a Portal Widget. </p></figcaption></figure>
 
-If you do not have widgets shown in the modal, you can add pre-made ones to your environment using the library. Once you find the Portal Widget to add, click the Add button under the description.
+If you do not have widgets shown in the modal, you can add pre-made ones to your environment using the [library](../platform/library.md). Once you find the Portal Widget to add, click the Add button under the description.
 
 <figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>Portal Widget Modal</p></figcaption></figure>
 
