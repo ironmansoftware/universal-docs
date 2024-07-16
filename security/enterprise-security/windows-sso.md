@@ -20,7 +20,7 @@ Windows Authentication provides single-sign on support for browsers and environm
 
 You can enable Windows authentication by adding a new authentication provider in Security \ Authentication. Select Windows and enable the authentication.
 
-![](<../.gitbook/assets/image (340).png>)
+![](<../../.gitbook/assets/image (340).png>)
 
 Once Windows set to authenticated, Windows authentication can now be used against Universal. You will have to log out in order to use Windows authentication.
 
@@ -28,7 +28,7 @@ Once Windows set to authenticated, Windows authentication can now be used agains
 
 To enable Windows Authentication in IIS, ensure that you enable Windows Authentication and disable anonymous authentication.
 
-![](<../.gitbook/assets/image (84).png>)
+![](<../../.gitbook/assets/image (84).png>)
 
 In the web.config file that is included with PowerShell Universal, ensure that you have set the `forwardWindowsAuthToken` to `true`.
 
@@ -42,7 +42,7 @@ Windows Authentication is supported outside of IIS but requires configuration of
 
 #### Windows
 
-On Windows, you should install PowerShell Universal as a [Windows Service](../getting-started/#windows). Once the service is installed, you will need to create a [service account user](../config/running-as-a-service-account.md#application-service-account) and set the service to run with that user's account. The Windows authentication [setting ](../config/settings.md)needs to be set to true.
+On Windows, you should install PowerShell Universal as a [Windows Service](../../getting-started/#windows). Once the service is installed, you will need to create a [service account user](../../config/running-as-a-service-account.md#application-service-account) and set the service to run with that user's account. The Windows authentication [setting ](../../config/settings.md)needs to be set to true.
 
 ```javascript
 "Windows": {

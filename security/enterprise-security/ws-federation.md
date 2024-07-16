@@ -38,7 +38,7 @@ Follow the documentation for the Azure Active Directory configuration found on t
 
 ### Use Appsettings.json
 
-After configuring ADFS or AAD, you can now provide the properties to Universal for the MetadataAddress and Wtrealm. Read about these settings on the our [Settings ](../settings.md)page.
+After configuring ADFS or AAD, you can now provide the properties to Universal for the MetadataAddress and Wtrealm. Read about these settings on the our [Settings ](../../config/settings.md)page.
 
 Here is an example of how to update the `appsettings.json` file to accommodate the correct settings for WS-Federation.
 
@@ -118,12 +118,12 @@ When running your server, you should now be prompted for your credentials either
 
 ### Use Authentication.ps1
 
-You can configure WS-Federation authentication in the admin console. To do so, navigate to Security \ Authentication. Add the WS-Federation provider by selecting it from the drop down in the top right.&#x20;
+You can configure WS-Federation authentication in the admin console. To do so, navigate to Security \ Authentication. Add the WS-Federation provider by selecting it from the drop down in the top right.
 
 ![](<../../.gitbook/assets/image (462).png>)
 
-Next, edit the properties of the authentication provider and specify the configuration details for your ADFS setup.&#x20;
+Next, edit the properties of the authentication provider and specify the configuration details for your ADFS setup.
 
 ![](<../../.gitbook/assets/image (232).png>)
 
-Once configured, enable the WS-Federation provider. Then, log out and navigate to `/admin` You will be prompted to login to your WS-Federation provider.&#x20;
+Once configured, enable the WS-Federation provider. Then, log out and navigate to `/admin` You will be prompted to login to your WS-Federation provider.

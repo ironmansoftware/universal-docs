@@ -288,7 +288,7 @@ return $IsMember
 
 ## Example: Group membership based on Azure Active Directory
 
-This example takes advantage of [OpenID Connect and Azure Active Directory](openid-connect.md#configuring-azuread).
+This example takes advantage of [OpenID Connect and Azure Active Directory](../../security/enterprise-security/openid-connect.md#configuring-azuread).
 
 Once you have configured PowerShell Universal and Azure Active Directory, you can configure role scripts to verify whether users are members of groups found in Azure AD. You can take advantage of claims mappings to map from the Azure AD Group ID to a PowerShell Universal role.
 

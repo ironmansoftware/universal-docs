@@ -12,41 +12,41 @@ PowerShell Universal can be configured to integrate with a SAML2 identity provid
 
 ## Identity Provider Settings
 
-You will need to configure your identity provider for the PowerShell Universal application. You will need to setup an acceptable entity ID and map attributes. PowerShell Universal requires that the name attribute is mapped. The attribute name needs to be the following.&#x20;
+You will need to configure your identity provider for the PowerShell Universal application. You will need to setup an acceptable entity ID and map attributes. PowerShell Universal requires that the name attribute is mapped. The attribute name needs to be the following.
 
 ```
 http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name
 ```
 
-You should map this to the user identity you wish to be used within PowerShell Universal.&#x20;
+You should map this to the user identity you wish to be used within PowerShell Universal.
 
-Additional attributes can be mapped and will be available during [role evaluation](./#authorization). You will find an example of configuring Shibboleth below.&#x20;
+Additional attributes can be mapped and will be available during [role evaluation](../../config/security/#authorization). You will find an example of configuring Shibboleth below.
 
 ## Entity ID Settings
 
 {% hint style="info" %}
-[HTTPS ](../hosting/#configuring-https)is required for SAML2 authentication.&#x20;
+[HTTPS ](../../config/hosting/#configuring-https)is required for SAML2 authentication.
 {% endhint %}
 
-There are several basic settings you can configure in the PowerShell Universal admin console. To add SAML2 support, click Security \ Authentication. In the top right corner, you can select SAML2 from the drop down.&#x20;
+There are several basic settings you can configure in the PowerShell Universal admin console. To add SAML2 support, click Security \ Authentication. In the top right corner, you can select SAML2 from the drop down.
 
 ![](<../../.gitbook/assets/image (301).png>)
 
-Once the SAML2 integration has been added, you can configure the basic settings for communicating with your identity provider. You will need at least the Entity ID and Identity Provider Entity ID configured.&#x20;
+Once the SAML2 integration has been added, you can configure the basic settings for communicating with your identity provider. You will need at least the Entity ID and Identity Provider Entity ID configured.
 
-Typically, these entity IDs are URLs configured within your identity provider.&#x20;
+Typically, these entity IDs are URLs configured within your identity provider.
 
 ![Entity ID Settings](<../../.gitbook/assets/image (87).png>)
 
-The service certificate is used for signing requests. It is not required. This can either be a path local to the PSU service or the distinguished name of a certificate installed in the Personal Computer Certificate store.&#x20;
+The service certificate is used for signing requests. It is not required. This can either be a path local to the PSU service or the distinguished name of a certificate installed in the Personal Computer Certificate store.
 
 ## Additional Settings
 
-In addition to the settings available within the admin console, you can also set the following within the `authentication.ps1` config file.&#x20;
+In addition to the settings available within the admin console, you can also set the following within the `authentication.ps1` config file.
 
 ### ServiceCertificatePassword
 
-If you are using a file path for your certificate and it requires a password, you can specify it via the `-ServiceCertificatePassword` of `Set-PSUAuthenticationMethod`. The value of this parameter is a `SecureString`. You can take advantage of the SecretManagement module to load secrets.&#x20;
+If you are using a file path for your certificate and it requires a password, you can specify it via the `-ServiceCertificatePassword` of `Set-PSUAuthenticationMethod`. The value of this parameter is a `SecureString`. You can take advantage of the SecretManagement module to load secrets.
 
 ```powershell
 Set-PSUAuthenticationMethod `
@@ -61,7 +61,7 @@ Set-PSUAuthenticationMethod `
 
 ### Configure
 
-The `-Configure` parameter is a script block that can be used to set additional settings not exposed by the `Set-PSUAuthenticationMethod`. The script block will be called when the provider is configured and will receive a single parameter that contains an object with the options for the SAML2 authentication.&#x20;
+The `-Configure` parameter is a script block that can be used to set additional settings not exposed by the `Set-PSUAuthenticationMethod`. The script block will be called when the provider is configured and will receive a single parameter that contains an object with the options for the SAML2 authentication.
 
 The object is of the type [Saml2Options](https://github.com/Sustainsys/Saml2/blob/develop/Sustainsys.Saml2.AspNetCore2/Saml2Options.cs). The sub object of SPOptions can be found [here](https://github.com/Sustainsys/Saml2/blob/20990905ecdcf15f6f76fef80506d53831f7857b/Sustainsys.Saml2/Configuration/SPOptions.cs).
 
@@ -79,27 +79,27 @@ Set-PSUAuthenticationMethod `
 
 ## Example: Azure AD
 
-You will need the following information from Azure AD.&#x20;
+You will need the following information from Azure AD.
 
-Application (client) ID - Found on the Overview page.&#x20;
+Application (client) ID - Found on the Overview page.
 
-Federation metadata document - Click Endpoints on the Overview page.&#x20;
+Federation metadata document - Click Endpoints on the Overview page.
 
-SAML-P sign-on endpoint - Click Endpoints on the Overview page.&#x20;
+SAML-P sign-on endpoint - Click Endpoints on the Overview page.
 
 ### Step by Step
 
-Click Security \ Authentication.&#x20;
+Click Security \ Authentication.
 
-Add SAML2 authentication provider.&#x20;
+Add SAML2 authentication provider.
 
-Click the Edit Properties button.&#x20;
+Click the Edit Properties button.
 
-For Entity ID, you will need to put the Azure AD application ID prefixed with `spn:`&#x20;
+For Entity ID, you will need to put the Azure AD application ID prefixed with `spn:`
 
 For example: `spn:2cf33625-e312-4659-a7bd-66ade51a0ea2`
 
-For Identity Provider Entity ID, you will need to retrieve the entity ID from the Federation metadata document. Open the document in a web browser.&#x20;
+For Identity Provider Entity ID, you will need to retrieve the entity ID from the Federation metadata document. Open the document in a web browser.
 
 <figure><img src="../../.gitbook/assets/image (493).png" alt=""><figcaption><p>Entity ID Property</p></figcaption></figure>
 
@@ -111,19 +111,17 @@ For the Return URL, insert the URL of your PowerShell Universal server with the 
 https://localhost/Saml2/Acs
 ```
 
-For Single Sign-On Service URL, insert the SAML-P sign-on endpoint from Azure.&#x20;
+For Single Sign-On Service URL, insert the SAML-P sign-on endpoint from Azure.
 
 <figure><img src="../../.gitbook/assets/image (202).png" alt=""><figcaption><p>SAML2 Properties</p></figcaption></figure>
 
-
-
-Once complete, save the settings and enable the SAML provider. Click sign out and navigate to your admin console URL.&#x20;
+Once complete, save the settings and enable the SAML provider. Click sign out and navigate to your admin console URL.
 
 ```
 https://localhost/admin
 ```
 
-You will be forwarded to Azure for login and redirected back to PowerShell Universal after authentication.&#x20;
+You will be forwarded to Azure for login and redirected back to PowerShell Universal after authentication.
 
 Any errors that occur will be listed in the PowerShell Universal log. If you fail to login, you can navigate to `/login` to login with a local account.
 
@@ -131,27 +129,27 @@ Any errors that occur will be listed in the PowerShell Universal log. If you fai
 
 ## Example: Okta
 
-This example shows how to configure Okta SAML2 authentication for use with PowerShell Universal.&#x20;
+This example shows how to configure Okta SAML2 authentication for use with PowerShell Universal.
 
-Within Okta, you will need to configure your application similar to the following. HTTPS is required by SAML2, and you will need to include the URL for your PSU instance in the Single Sign On URL, followed by `/Saml2/Acs`. The path is case sensitive.&#x20;
+Within Okta, you will need to configure your application similar to the following. HTTPS is required by SAML2, and you will need to include the URL for your PSU instance in the Single Sign On URL, followed by `/Saml2/Acs`. The path is case sensitive.
 
-The Audience Restriction should be the URL of your PowerShell Universal server.&#x20;
+The Audience Restriction should be the URL of your PowerShell Universal server.
 
 ![](<../../.gitbook/assets/image (132).png>)
 
-In order for your users to access PowerShell Universal, you will need to ensure they have been assigned to the Okta application.&#x20;
+In order for your users to access PowerShell Universal, you will need to ensure they have been assigned to the Okta application.
 
 ![](<../../.gitbook/assets/image (131).png>)
 
-Within the Sign On tab of your application, click the View SAML setup instructions button.&#x20;
+Within the Sign On tab of your application, click the View SAML setup instructions button.
 
 ![](<../../.gitbook/assets/image (382).png>)
 
-You will need to capture the two URLs and download the certificate for configuring PowerShell Universal. See the next step on how to use these URLs within the `authentication.ps1` file.&#x20;
+You will need to capture the two URLs and download the certificate for configuring PowerShell Universal. See the next step on how to use these URLs within the `authentication.ps1` file.
 
 ### authentication.ps1
 
-The authentication.ps1 file is used for configuring PowerShell Universal.&#x20;
+The authentication.ps1 file is used for configuring PowerShell Universal.
 
 ```powershell
 Set-PSUAuthenticationMethod -Type "Saml2" `
@@ -172,15 +170,15 @@ Set-PSUAuthenticationMethod -Type "Saml2" `
 
 ## Example: Shibboleth
 
-This example shows how to configure Shibboleth for use with PowerShell Universal. It provides the very basic configuration and does not necessarily follow best practices.&#x20;
+This example shows how to configure Shibboleth for use with PowerShell Universal. It provides the very basic configuration and does not necessarily follow best practices.
 
-This assumes that you have installed Shibboleth Identity Provider v4 with Active Directory integration.&#x20;
+This assumes that you have installed Shibboleth Identity Provider v4 with Active Directory integration.
 
 ### ldap.properties
 
-LDAP properties have been configured to authentication against the local domain using a Domain Administrator account. The LDAP URL has been configured and TLS has been disabled.&#x20;
+LDAP properties have been configured to authentication against the local domain using a Domain Administrator account. The LDAP URL has been configured and TLS has been disabled.
 
-Below you will find the full example of the `ldap.properties` file.&#x20;
+Below you will find the full example of the `ldap.properties` file.
 
 ```
 # LDAP authentication (and possibly attribute resolver) configuration
@@ -255,7 +253,7 @@ idp.attribute.resolver.LDAP.searchFilter=(sAMAccountName=$resolutionContext.prin
 
 ### relying-party.xml
 
-The `relying-party.xml` file has been updated to enable open IdP. This means that any entity ID can communicate with the identity provider. You can also configure this to enforce specific entity IDs. The default configure has also been adjusted to use the `SAML2.AttributeQuery` bean.&#x20;
+The `relying-party.xml` file has been updated to enable open IdP. This means that any entity ID can communicate with the identity provider. You can also configure this to enforce specific entity IDs. The default configure has also been adjusted to use the `SAML2.AttributeQuery` bean.
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -312,7 +310,7 @@ The `relying-party.xml` file has been updated to enable open IdP. This means tha
 
 ### attribute-resolver.xml
 
-The `attribute-resolver.xml` file has been updated to use the LDAPDirectory Data Connector. It loads the email address, given name, SN, and display name from Active Directory. It then maps the Principal Name, which will be the username of the user logging in, to the required claim type using an attribute encoder.&#x20;
+The `attribute-resolver.xml` file has been updated to use the LDAPDirectory Data Connector. It loads the email address, given name, SN, and display name from Active Directory. It then maps the Principal Name, which will be the username of the user logging in, to the required claim type using an attribute encoder.
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -383,7 +381,7 @@ The `attribute-resolver.xml` file has been updated to use the LDAPDirectory Data
 
 ### attribute-filter.xml
 
-The `attribute-filter.xml` file has been updated to release several of the attributes mapped by the LDAPDirectory data connector as well as the user name that will be used as the identity within PowerShell Universal.&#x20;
+The `attribute-filter.xml` file has been updated to release several of the attributes mapped by the LDAPDirectory data connector as well as the user name that will be used as the identity within PowerShell Universal.
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>

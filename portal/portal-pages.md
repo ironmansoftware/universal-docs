@@ -64,7 +64,7 @@ Pages can be assigned to users based on their role. Use the Page's properties to
 
 ## Permissions
 
-Permission related to pages. See [Permissions ](../config/security/permissions.md)for information on how these values are used.&#x20;
+Permission related to pages. See [Permissions ](../security/enterprise-security/permissions.md)for information on how these values are used.&#x20;
 
 
 

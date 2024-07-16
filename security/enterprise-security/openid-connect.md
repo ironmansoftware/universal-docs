@@ -43,7 +43,7 @@ Note that you will not input the entire endpoint URL. You will need to include t
 #### Use Appsettings.json
 
 {% hint style="info" %}
-Read more about `appsettings.json` on our [Settings ](../settings.md)page.
+Read more about `appsettings.json` on our [Settings ](../../config/settings.md)page.
 {% endhint %}
 
 Now that we have completed the configuration of an AzureAD App Registration, we can update the `appsettings.json` file with the appropriate settings. For my application, it would look something like this.

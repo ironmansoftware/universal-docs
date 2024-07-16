@@ -146,13 +146,15 @@
 * [About](config/security/README.md)
 * [Local Accounts](security/local-accounts.md)
 * [Forms Authentication](security/forms-authentication.md)
+* [Authorization](security/authorization.md)
 * [App Tokens](config/security/app-tokens.md)
-* [Client Certificate](config/security/client-certificate.md)
-* [OpenID Connect](config/security/openid-connect.md)
-* [Permissions](config/security/permissions.md)
-* [SAML2](config/security/saml2.md)
-* [WS-Federation](config/security/ws-federation.md)
-* [Windows SSO](security/windows-sso.md)
+* [Enterprise Security](security/enterprise-security/README.md)
+  * [Client Certificate](security/enterprise-security/client-certificate.md)
+  * [OpenID Connect](security/enterprise-security/openid-connect.md)
+  * [SAML2](security/enterprise-security/saml2.md)
+  * [WS-Federation](security/enterprise-security/ws-federation.md)
+  * [Windows SSO](security/enterprise-security/windows-sso.md)
+  * [Permissions](security/enterprise-security/permissions.md)
 
 ## ⚙️ Configuration <a href="#config" id="config"></a>
 
