@@ -28,6 +28,8 @@ When using non-integrated environments, an external PowerShell process is starte
 
 Additionally, when loading modules into the integrated environment, the process space may become polluted with different versions of common DLLs that PSU may be using itself. This can cause assembly binding problems that may cause the imported modules to fail to function as expected.
 
+The PowerShell 7 and Windows PowerShell 5.1 environments will have the greatest compatibility with modules because they take advantage of the `Universal.Agent` executable that can control assembly loading; unlike `pwsh.exe` or `powershell.exe`.
+
 ### Isolate Problematic Modules
 
 Complex PowerShell modules can cause problems with PowerShell Universal. Certain modules are not designed to be hosted in a long running process like PowerShell Universal. You will want to use these modules in transient operations like jobs.
