@@ -195,7 +195,7 @@ The Windows PowerShell 5.1 environment no longer uses PowerShell.exe directly. I
 
 PowerShell.exe is no longer supported. It can be used in minimal environments.
 
-### PowerShell 7 Environment No longer Users Pwsh.exe
+### PowerShell 7 Environment No longer Uses Pwsh.exe
 
 The default PowerShell 7 environment uses a .NET version of Universal.Agent.exe executable running PowerShell 7.4. This allows for the greatest compatibility with PowerShell Universal libraries and other modules.&#x20;
 
@@ -211,8 +211,14 @@ The integrated environment now uses PowerShell 7.4.
 
 ### SQLite by Default
 
-SQLite is the default persistence method.&#x20;
+SQLite is the default persistence method. You will need to perform a manual conversion from LiteDB before installing version 5.
 
 ### LiteDB Support Removed
 
-LiteDB has been removed as a supported database engine.&#x20;
+LiteDB has been removed as a supported database engine. Included with the PowerShell Universal installation files, you will find `psudb.exe`. It can be used to convert a LiteDB database into a SQLite database. Use the following command line.&#x20;
+
+```powershell
+.\psudb.exe -Path "$ENV:ProgramData\UniversalAutomation\database.db"
+```
+
+The tool will create a `database.bak` file before performing the conversion. Progress will be reported in the console.&#x20;
