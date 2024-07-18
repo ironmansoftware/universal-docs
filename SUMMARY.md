@@ -129,6 +129,7 @@
 
 * [Cache](platform/cache.md)
 * [Computers](platform/computers.md)
+* [Health Checks](platform/health-checks.md)
 * [Library](platform/library.md)
 * [Middleware](platform/middleware.md)
 * [Modules](platform/modules.md)
