@@ -54,6 +54,41 @@ New-UDTabs -Tabs {
 }
 ```
 
+## Selecting a tab based on a hash fragment
+
+This allows for selecting a tab based on a `#tab1` hash in the URL to link to a specific tab.&#x20;
+
+```powershell
+$Tabs = @(
+    New-UDTab -Text 'Tab1' -Id 'tab1' -Content {
+        "Tab 1" 
+    }  
+    New-UDTab -Text 'Tab2' -Id 'tab2' -Content {
+        "Tab 2" 
+    }  
+    New-UDTab -Text 'Tab3' -Id 'tab3' -Content {
+        "Tab 3" 
+    } 
+)
+
+$hash = Invoke-UDJavaScript "window.location.hash"
+$SelectedTabIndex = 0
+
+if ($hash -ne $null)
+{
+    for ($i=0; $i -lt $tabs.Length; $i++){
+        if ($tabs[$i].id -eq $hash.TrimStart('#'))
+        {
+            $SelectedTabIndex = $i
+        }
+    }
+}
+
+New-UDTabs -Tabs {
+    $Tabs
+}  -SelectedTabIndex $SelectedTabIndex
+```
+
 ## API
 
 * [New-UDTabs](../../../cmdlets/New-UDTabs.txt)
