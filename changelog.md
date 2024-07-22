@@ -4,6 +4,35 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.3.3 - 7/22/2024
+
+## Automation
+
+* Fixed an issue where calling Get-PSUJob over HTTP would return all child jobs (#3445)
+* Moved Script Base Folder setting from Data to Automation (#3447)
+* Fixed an issue where new jobs would not pass roles when the logged if user was Policy Defined (#3452)
+* Fixed an issue creating schedules on some machines (#3453)
+* Fixed an issue where jobs would queue up when all computers were in maintenance mode (#3458)
+* Fixed an issue where paused schedules would still run in some circumstances (#3450)
+* Fixed an issue where job parameters were not provided in triggers (#3382)
+
+## Apps
+
+* Fixed an issue filtering rows with a space in the field name (#3432)
+* Fixed an issue where app pages would not update properly during git sync (#3436)
+* Fixed an issue where all apps would reload when anything changed in the repository (#3442)
+* Fixed an issue where New-UDEditor image uploads wouldn't work when hosted in a nested IIS site (#3449)
+* Fixed an issue loading the app designer (#3454)
+* Fixed an issue using filters with number columns in New-UDDataGrid (#3459)
+* Added deprecation warning for app designer
+* Fixed an issue where it wasn't possible to link to a tab wish a hash in the URL (#3426)
+
+## Platform
+
+* Fixed an issue with the /api/v1/notification POST API (#3462)
+* Added a clearer error message to the IIS WebSocket health check when it fails (#3404)
+* Fixed an issue with adding files with spaces in the name when using git sync and an external client (#3465)
+
 ## 4.3.2 - 7/2/2024
 
 ## Automation
