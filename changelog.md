@@ -4,6 +4,31 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.0.0-rc2 - 7/22/2024
+
+## API
+
+* Added support for array query string parameters (#1851)
+* Fixed issue with endpoint tester (#3469)
+
+## Automation
+
+* Added support for selecting streams when running a script manually (#3306)
+
+## Portal
+
+* Users with non-built in roles will now redirect to the portal by default after login
+* Added a portal resource page to view all resources that show up on the portal.
+
+## Platform
+
+* Added URL validation for apps, endpoints and published folders (#2796)
+* Added custom PSScriptAnalyzer rule to check for built in variable usage.
+* Fixed issue with permission matching
+* Fixed issue with roles page reload after creating a role (#3470)
+* Fixed an issue with the permission edit form (#3472)
+* Fixed an issue with enterprise licenses and the computer page (#3474)
+
 ## 5.0.0-rc1 - 7/16/2024
 
 ## Automation
