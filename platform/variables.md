@@ -243,12 +243,80 @@ There are several built-in variables that are defined when a job is run. You can
 | $UAScheduleId | The ID of the schedule that started the script.                                                                                               |
 | $AccessToken  | When using OIDC authentication, you can retrieve the current user's access token for access resources on their behalf.                        |
 
+#### $UAJob Object Structure
+
+Note that properties may be null. `DateTime` objects are return in UTC time zone.
+
+```csharp
+class Job {
+    public long Id { get; set; }
+    public DateTime CreatedTime { get; set; }
+    public DateTime StartTime { get; set; }
+    public DateTime EndTime { get; set; }
+    public JobStatus Status { get; set; }
+    public string Output { get; set; }
+    public string ScriptFullPath { get; set; }
+    public Identity Identity { get; set; }
+    public Job ParentJob { get; set; }
+    public int ParentLineNumber { get; set; }
+    public string ComputerName { get; set; }
+    public int ProcessId { get; set; }
+    public long MemoryBytes { get; set; }
+    public int RunspaceId { get; set; }
+    public string Activity { get; set; }
+    public string CurrentOperation { get; set; }
+    public int PercentComplete { get; set; }
+    public int SecondsRemaining { get; set; }
+    public string StatusDescription { get; set; }
+    public string Environment { get; set; }
+    public Computer Computer { get; set; }
+    public ActionPreference ErrorAction { get; set; }
+    public IEnumerable<Job> Children { get; set; }
+    public IEnumerable<JobParameter> Parameters { get; set; }
+    public string Credential { get; set; }
+    public long ScheduleId { get; set; }
+    public bool Triggered { get; set; }
+    public string Trigger { get; set; }
+    public int RetryCount { get; set; }
+    public string Tags { get; set; }
+    public string Schedule { get; set; }
+    public bool Archived { get; set; }
+    public bool Batch { get; set; }
+    public Guid? RunId { get; set; }
+    public string Roles { get; set; }
+}
+
+public enum JobStatus
+{
+    Queued,
+    Running,
+    Completed,
+    Failed,
+    WaitingOnFeedback,
+    Canceled,
+    Canceling,
+    Historical,
+    Active,
+    TimedOut,
+    Warning,
+    Error
+}
+```
+
 #### Retrieving the user that started a script
 
 You can retrieve the name of the user that started the script by using the `UAJob` variable
 
 ```
 $UAJob.Identity.Name
+```
+
+#### Checking if a job was run manually
+
+You can check if a job was run manually by using the Schedule and Trigger properties.&#x20;
+
+```powershell
+$Manual = $UAJob.Schedule -eq $null -and $UAJob.Trigger -eq $null
 ```
 
 ## API
