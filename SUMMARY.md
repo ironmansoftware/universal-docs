@@ -137,6 +137,7 @@
 * [Notifications](platform/notifications.md)
 * [Plugins](platform/plugins.md)
 * [Published Folders](platform/published-folders.md)
+* [Telemetry](platform/telemetry.md)
 * [Translations](platform/translations.md)
 * [User Sessions](platform/user-sessions.md)
 * [Variables](platform/variables.md)
