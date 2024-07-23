@@ -32,11 +32,11 @@ We use the operating system to help determine which operating systems our produc
 
 ### Timestamp and Uptime&#x20;
 
-The timestamp indicates when the telemetry data was sent. The Uptime value provides how long the PSU server is running. Timestamp is helpful for correlation of data and uptime is useful to see how long PSU servers are running.&#x20;
+The timestamp indicates when the telemetry data was sent. The Uptime value provides how long the PSU server is running. Timestamp is helpful for correlation of data and uptime is useful to see how long PSU servers are running to ensure we make the platform as stable as possible for the mean runtime.&#x20;
 
-### Identity and Role Counts
+### Identity, Computer and Role Counts
 
-We send the number of roles and identities in a system to see how large PSU installations are. This helps us focus our development efforts to ensure the greatest number of installations are satisfied.&#x20;
+We send the number of identities, computers and roles in a system to see how large PSU installations are. This helps us focus our development efforts to ensure the greatest number of installations are satisfied.&#x20;
 
 ### Resource Counts
 
@@ -48,17 +48,19 @@ We will send several resource counts to see how often certain resources are used
 * Schedules
 * Portal Pages
 
+Highly used resources will receive more development.&#x20;
+
 ### License Status
 
-License status information is useful for marketing purposes and to determine which features lead to licensed instances.&#x20;
+License status information is useful for marketing purposes and to determine which features lead to licensed instances. Paying customers ensure we can support our development and support initiatives for the platform.&#x20;
 
 ### Errors in the Last Error
 
-We use error notifications are a metric for determining how healthy PSU environments of particular version is. This can help provide data about the health of a release before too many customers are impacted.&#x20;
+We use error notifications as a metric for determining how healthy PSU environments of particular version is. This can help provide data about the health of a release before too many customers are impacted.&#x20;
 
 ## How do we collect data?&#x20;
 
-We do not use any third-party systems to collect or store data. PSU instances with telemetry enabled will send a telemetry request to Ironman Software, directly, once at startup and once and hour. Telemetry will have no impact on performance but does require internet access for the node with the feature enabled.&#x20;
+We do not use any third-party systems to collect or store data. PSU instances with telemetry enabled will send a telemetry request to Ironman Software, directly, once at startup and once an hour. Telemetry will have no impact on performance but does require internet access for the node with the feature enabled.&#x20;
 
 If a firewall is in use, you will need to provide access to `ironmansoftware.com`.&#x20;
 
