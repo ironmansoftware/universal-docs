@@ -6,15 +6,15 @@ description: Anonymous data collected by Ironman Software about PowerShell Unive
 
 PowerShell Universal collects opt-in telemetry data. During an MSI install, the UI will prompt for whether to collect telemetry data. You can also configure telemetry data on other systems to help us learn more about how PSU is used.&#x20;
 
-## Configuring Telemetry
+## How do you configure Telemetry?
 
 Telemetry is configured via the `appsettings.json` configuration system. If you have enabled telemetry and would like to disable it, you can do so by modifying the file in `%ProgramData%\PowerShellUniversal\appsettings.json`. It can also be enabled and disabled by setting the environment variable `PSUTelemetry`. Set the value to `true` to send telemetry.
 
-## Why we collect telemetry&#x20;
+## Why are we collecting telemetry?
 
 Telemetry provides information about how the product is being used. It helps us make decisions about which features to focus on and provides feedback on error rates in new versions of the product.&#x20;
 
-## What we collect
+## What are we collecting?
 
 Below are the following data items we collect and why we collect them.&#x20;
 
@@ -61,6 +61,8 @@ We use error notifications are a metric for determining how healthy PSU environm
 We do not use any third-party systems to collect or store data. PSU instances with telemetry enabled will send a telemetry request to Ironman Software, directly, once at startup and once and hour. Telemetry will have no impact on performance but does require internet access for the node with the feature enabled.&#x20;
 
 If a firewall is in use, you will need to provide access to `ironmansoftware.com`.&#x20;
+
+We use the standard HttpClient class in .NET to send this data and do not provide any custom headers to the request. We will use a proxy if it has been configured in PSU.&#x20;
 
 ## Will more data be collected?&#x20;
 
