@@ -4,23 +4,51 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.0.0-r2 - 7/24/2024
+
+#### APIs
+
+* Added Authentication tab to API tester (#3483)
+
+#### Automation
+
+* Added Archive Job button
+* Added Archive All Jobs button (#3419)
+* Fixed an issue with SecureString parameters
+
+#### Platform
+
+* Fixed path to Universal.Agent for Windows PowerShell (#3478)
+* Fixed an issue with licenses from environment variables (#3477)
+* Fixed an issue where the logging.ps1 configuration file could throw a NotImplementedException
+* Fixed an issue where an error would be shown in the browser if the user was logged in during a service restart
+* Fixed an issue where editing files in the admin console would not stage them (#3480)
+* Fixed an issue rolling back script content changes in a git commit
+* Fixed an issue with git sync resetting an edit in progress if the server was restarted
+* Added Git Diff back to Commits page
+* Added opt-in telemetry collection
+* Fixed an issue with local time zone date time conversion in the admin console (#3481)
+* Improved Blazor app render performance
+* Get-PSUCache now returns the entire cache item information (#3464)
+* Fixed an issue where Universal cmdlets didn't work in nested IIS sites (#3484)
+
 ## 5.0.0-rc2 - 7/22/2024
 
-## API
+#### API
 
 * Added support for array query string parameters (#1851)
 * Fixed issue with endpoint tester (#3469)
 
-## Automation
+#### Automation
 
 * Added support for selecting streams when running a script manually (#3306)
 
-## Portal
+#### Portal
 
 * Users with non-built in roles will now redirect to the portal by default after login
 * Added a portal resource page to view all resources that show up on the portal.
 
-## Platform
+#### Platform
 
 * Added URL validation for apps, endpoints and published folders (#2796)
 * Added custom PSScriptAnalyzer rule to check for built in variable usage.
@@ -31,16 +59,16 @@ description: Changelog for PowerShell Universal.
 
 ## 5.0.0-rc1 - 7/16/2024
 
-## Automation
+#### Automation
 
 * Fixed issue with parameters from scripts provided by modules
 * Fixed issue with job filters on the Jobs page.
 
-## Portal
+#### Portal
 
 * Added row and column guides to the Portal Page editor
 
-## Platform
+#### Platform
 
 * Added a first run setup to set the default admin user name and password (#2616)
 * Added support for role-based access with PSUCache (#2963)
@@ -50,21 +78,21 @@ description: Changelog for PowerShell Universal.
 
 ## 5.0.0-beta7 - 7/2/2024
 
-## APIs
+#### APIs
 
 * Fixed an issue with connecting to event hubs
 
-## Automation
+#### Automation
 
 * Added Pipeline Output Tab
 * Jobs Run Today now links to a page that only shows jobs run today (#3321)
 
-## Apps
+#### Apps
 
 * Added -Path to Start-UDDownload
 * PowerShell Apps have been renamed back to Apps
 
-## Platform
+#### Platform
 
 * Added support for module variables (#2711)
 * Fixed an issue with IntelliSense
@@ -75,7 +103,7 @@ description: Changelog for PowerShell Universal.
 * Fixed an issue with Windows PowerShell.
 * Added Password and KeySize to appsettings.json to configure AES 256 database secrets (#3291)
 
-## Portal
+#### Portal
 
 * Blazor Apps have been renamed to Portal Widgets and Pages
 * Added support for properties in Portal Widgets
@@ -187,11 +215,11 @@ description: Changelog for PowerShell Universal.
 
 ## 5.0.0-beta3 - 4/29/2024
 
-### Automation
+#### Automation
 
 * Added inline script debugging terminal
 
-### Platform
+#### Platform
 
 * Added granular permissions throughout the platform
 * Added custom module editor
@@ -199,18 +227,18 @@ description: Changelog for PowerShell Universal.
 
 ## 5.0.0-beta2 - 4/10/2024
 
-### API
+#### API
 
 * Added API Test Tab
 * Added Invoke-PSUEndpoint
 
-### Automation
+#### Automation
 
 * Added Terminals and Terminal History pages
 * Added folders for scripts
 * Added new columns to the jobs table
 
-### Platform
+#### Platform
 
 * Added a process that checks for module updates
 * Added a health check that verifies an environment exists
