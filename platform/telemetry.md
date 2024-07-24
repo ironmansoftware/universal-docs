@@ -58,6 +58,10 @@ License status information is useful for marketing purposes and to determine whi
 
 We use error notifications as a metric for determining how healthy PSU environments of particular version is. This can help provide data about the health of a release before too many customers are impacted.&#x20;
 
+### Hosting Method
+
+This will return either IIS or Kestrel. This helps determine the most used hosting methods.
+
 ## How do we collect data?&#x20;
 
 We do not use any third-party systems to collect or store data. PSU instances with telemetry enabled will send a telemetry request to Ironman Software, directly, once at startup and once an hour. Telemetry will have no impact on performance but does require internet access for the node with the feature enabled.&#x20;
