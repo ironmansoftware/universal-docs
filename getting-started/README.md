@@ -10,7 +10,7 @@ The MSI install will create a PowerShell Universal service. By default, PowerShe
 
 MSI downloads are available on our [download page](https://ironmansoftware.com/downloads).
 
-System installs will run as a WIndows service. User installs will run when the user logins into the machine and runs in the user's context.
+System installs will run as a Windows service. User installs will run when the user logins into the machine and runs in the user's context.
 
 ### MSI Parameters
 
@@ -21,12 +21,15 @@ The following table contains the parameters you can specify if running `msiexec`
 | INSTALLFOLDER          | The installation folder for PowerShell Universal                                                                             | %ProgramFiles(x86)%\Universal                             |
 | TCPPORT                | The TCP port the HTTP server will be listening on.                                                                           | 5000                                                      |
 | REPOFOLDER             | The repository folder to save the configuration files to.                                                                    | %ProgramData%\UniversalAutomation\Repository              |
-| CONNECTIONSTRING       | The LiteDB, SQL, SQLite connection string.                                                                                   | Data Source=%ProgramData%\UniversalAutomation\database.db |
-| DATABASETYPE           | LiteDB, SQL, SQLite                                                                                                          | SQLite                                                    |
+| CONNECTIONSTRING       | The SQL, SQLite, or PostgreSQL connection string.                                                                            | Data Source=%ProgramData%\UniversalAutomation\database.db |
+| DATABASETYPE           | SQL, SQLite, or PostgreSQL                                                                                                   | SQLite                                                    |
 | STARTSERVICE           | Whether to start the service after install (0 or 1)                                                                          | 1                                                         |
-| SERVICEACCOUNT         | The service account to set for the Windows service. Use downlevel[ format](#user-content-fn-1)[^1] of domain\username\*.     | None                                                      |
+| SERVICEACCOUNT         | The service account to set for the Windows service. Use the format of domain\username.                                       | None                                                      |
 | SERVICEACCOUNTPASSWORD | The service account password to set for the Windows Service. The password will be masked with \*\*\*'s in the installer log. | None                                                      |
 | TELEMETRY              | Anonymous telemetry collection                                                                                               | 0                                                         |
+| ADDPSMODULEPATH        | Adds the PowerShell Universal module directory to the PSModulePath environment variable.                                     | 1                                                         |
+| STARTSERVICE           | Whether to start the service after install.                                                                                  | 1                                                         |
+| INSTALLTYPE            | Whether to perform a server or user install.                                                                                 | Server                                                    |
 
 ### Example
 
@@ -136,5 +139,3 @@ By default, the administrator username is `admin` and password is `admin`. You c
 ## Next Steps
 
 At this point, Universal is up and running. You can navigate to the admin console by visiting `http://localhost:5000` by default. Login with the default admin name and password.&#x20;
-
-[^1]: See [https://learn.microsoft.com/en-us/windows/win32/secauthn/user-name-formats#down-level-logon-name](https://learn.microsoft.com/en-us/windows/win32/secauthn/user-name-formats#down-level-logon-name) for more information on the "downlevel" username format that the installer expects
