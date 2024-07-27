@@ -6,9 +6,11 @@ description: Installation instructions for PowerShell Universal.
 
 ## MSI Install (Windows)
 
-The MSI install will create a PowerShell Universal service. By default, PowerShell Universal will be listening on port 5000. You will be able to navigate to `http://localhost:5000` and login with username `admin` and password `admin`.
+The MSI install will create a PowerShell Universal service. By default, PowerShell Universal will be listening on port 5000. You will be able to navigate to `http://localhost:5000`
 
 MSI downloads are available on our [download page](https://ironmansoftware.com/downloads).
+
+System installs will run as a WIndows service. User installs will run when the user logins into the machine and runs in the user's context.
 
 ### MSI Parameters
 
@@ -24,6 +26,7 @@ The following table contains the parameters you can specify if running `msiexec`
 | STARTSERVICE           | Whether to start the service after install (0 or 1)                                                                          | 1                                                         |
 | SERVICEACCOUNT         | The service account to set for the Windows service. Use downlevel[ format](#user-content-fn-1)[^1] of domain\username\*.     | None                                                      |
 | SERVICEACCOUNTPASSWORD | The service account password to set for the Windows Service. The password will be masked with \*\*\*'s in the installer log. | None                                                      |
+| TELEMETRY              | Anonymous telemetry collection                                                                                               | 0                                                         |
 
 ### Example
 

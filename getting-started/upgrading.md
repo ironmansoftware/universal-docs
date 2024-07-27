@@ -222,3 +222,7 @@ LiteDB has been removed as a supported database engine. Included with the PowerS
 ```
 
 The tool will create a `database.bak` file before performing the conversion. Progress will be reported in the console.&#x20;
+
+### Desktop Mode Removed
+
+Desktop mode has been removed. Resources such as hot keys, file associations and shortcuts are no longer supported. The MSI now supports User scope installs that will run as the current user and start upon login.
