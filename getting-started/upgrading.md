@@ -226,3 +226,20 @@ The tool will create a `database.bak` file before performing the conversion. Pro
 ### Desktop Mode Removed
 
 Desktop mode has been removed. Resources such as hot keys, file associations and shortcuts are no longer supported. The MSI now supports User scope installs that will run as the current user and start upon login.
+
+### Install-PSUServer on Windows Installs from the MSI
+
+In previous versions of PowerShell Universal, this command would install to a directory and create the service manually. This command now installs from MSI. If you previously installed with this module, you will need to remove the existing install with a previous version of the module and then install with the new version of the module.&#x20;
+
+```powershell
+Install-Module Universal -RequiredVersion 4.4.0
+Remove-PSUServer
+```
+
+Open a new command prompt and run the following.&#x20;
+
+```powershell
+Uninstall-Module Universal
+Install-Module Universal
+Install-PSUServer
+```
