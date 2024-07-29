@@ -4,24 +4,26 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## [Downloads](https://ironmansoftware.com/release/powershell-universal)
+
 ## 4.3.4 - 7/29/2024
 
-## Automation
+#### Automation
 
 * Fixed an issue where an unauthorized error would be shown when using Invoke-PSUScript (#3491)
 
-## Apps
+#### Apps
 
 * Fixed an issue with data grid columns not rendering properly (#3443)
 
-## Platform
+#### Platform
 
 * Fixed an issue where online module help was not being updated correctly. (#3475)
 * Added -MaximumTokenLifetime to settings.ps1
 
 ## 4.3.3 - 7/22/2024
 
-## Automation
+#### Automation
 
 * Fixed an issue where calling Get-PSUJob over HTTP would return all child jobs (#3445)
 * Moved Script Base Folder setting from Data to Automation (#3447)
@@ -31,7 +33,7 @@ description: Changelog for PowerShell Universal.
 * Fixed an issue where paused schedules would still run in some circumstances (#3450)
 * Fixed an issue where job parameters were not provided in triggers (#3382)
 
-## Apps
+#### Apps
 
 * Fixed an issue filtering rows with a space in the field name (#3432)
 * Fixed an issue where app pages would not update properly during git sync (#3436)
@@ -42,7 +44,7 @@ description: Changelog for PowerShell Universal.
 * Added deprecation warning for app designer
 * Fixed an issue where it wasn't possible to link to a tab wish a hash in the URL (#3426)
 
-## Platform
+#### Platform
 
 * Fixed an issue with the /api/v1/notification POST API (#3462)
 * Added a clearer error message to the IIS WebSocket health check when it fails (#3404)
@@ -50,36 +52,36 @@ description: Changelog for PowerShell Universal.
 
 ## 4.3.2 - 7/2/2024
 
-## Automation
+#### Automation
 
 * Fixed an issue with Get-PSUJob not returning child jobs (#3433)
 
-## Apps
+#### Apps
 
 * Fixed an issue with route parameters in pages (#3434)
 
-## Platform
+#### Platform
 
 * Fixed an issue with the author in git commits using external git client (#3431)
 
 ## 4.3.1 - 6/26/2024
 
-## API
+#### API
 
 * Fixed an issue with wildcard rate limits (#3420)
 
-## Automation
+#### Automation
 
 * Fixed an issue with the job table becoming locked when grooming jobs when using SQL (#3414)
 
-## Apps
+#### Apps
 
 * Fixed an issue with Add-UDElement and New-UDGrid (#3413)
 * Fixed an issue with query strings and page navigation (#3355, #3405)
 * Fixed an issue with -Options on New-UDTableColumn when using -FilterType autocomplete
 * Fixed an issue with the default values for -Views in New-UDDatePicker (#3429)
 
-## Platform
+#### Platform
 
 * Added Kestrel\_\_AddServerHeader appsettings option (#3417)
 * Fixed an issue grooming log entries
