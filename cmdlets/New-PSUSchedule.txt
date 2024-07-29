@@ -7,11 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSUSchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] -Continuous [-Credential <Variable>] [-Delay <TimeSpan>] [-DelayHour <Int32>] [-DelayMinute <Int32>] [-DelaySecond <Int32>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [<CommonParameters>]
+    New-PSUSchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] -Continuous [-Credential <Variable>] [-Delay <TimeSpan>] [-DelayHour <Int32>] [-DelayMinute <Int32>] [-DelaySecond <Int32>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [-Computer <String>] [-Parameters <Hashtable>] [-RandomDelayMaximum <Int32>] [<CommonParameters>]
     
-    New-PSUSchedule [-Script] <Script> [-Cron] <String> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [<CommonParameters>]
+    New-PSUSchedule [-Script] <Script> [-Cron] <String> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [-Computer <String>] [-Parameters <Hashtable>] [-RandomDelayMaximum <Int32>] [<CommonParameters>]
     
-    New-PSUSchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-OneTime <DateTime>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [<CommonParameters>]
+    New-PSUSchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-OneTime <DateTime>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [-Computer <String>] [-Parameters <Hashtable>] [-RandomDelayMaximum <Int32>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -205,6 +205,33 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Computer <String>
+        The computer to run this schedule.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Parameters <Hashtable>
+        A hashtable of parameters to pass to the script.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -RandomDelayMaximum <Int32>
+        The maximum random delay in seconds.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         

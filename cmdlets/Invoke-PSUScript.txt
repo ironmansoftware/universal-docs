@@ -128,7 +128,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Queue <String>
-        {{ Fill Queue Description }}
+        The computer group or queue to run the script on.
         
         Required?                    false
         Position?                    named
