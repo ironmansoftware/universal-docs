@@ -4,7 +4,31 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
-## 5.0.0-r3 - 7/24/2024
+## 5.0.0-rc4 - 7/29/2024
+
+## Apps
+
+* Fixed an issue display the Documentation App in a nested IIS site
+* Fixed first time admin user setup when using a nested IIS site
+
+## Automation
+
+* Fixed an issue with the job search bar.
+
+## Portal
+
+* Fixed issue with portal code editor not saving properly
+
+## Platform
+
+* Fixed an issue with the missing environment health check
+* Fixed an issue where files could be edited when platform was in git manual mode
+* Fixed issue with viewing cache data
+* Added Maximum App Token Lifetime to Settings (#3438)
+* Fixed an issue with the log viewer not disposing properly
+* Fixed issue with permissions in the admin console
+
+## 5.0.0-rc3 - 7/24/2024
 
 #### APIs
 
