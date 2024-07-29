@@ -17,6 +17,7 @@
 
 * [About](api/about.md)
 * [Endpoints](api/endpoints.md)
+* [OpenAPI](api/openapi.md)
 * [Event Hubs](api/event-hubs.md)
 * [Security](api/security.md)
 * [Error Handling](api/error-handling.md)
