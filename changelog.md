@@ -4,6 +4,21 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 4.3.4 - 7/29/2024
+
+## Automation
+
+* Fixed an issue where an unauthorized error would be shown when using Invoke-PSUScript (#3491)
+
+## Apps
+
+* Fixed an issue with data grid columns not rendering properly (#3443)
+
+## Platform
+
+* Fixed an issue where online module help was not being updated correctly. (#3475)
+* Added -MaximumTokenLifetime to settings.ps1
+
 ## 4.3.3 - 7/22/2024
 
 ## Automation
