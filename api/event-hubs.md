@@ -14,56 +14,9 @@ Event Hubs provide the ability to connect client to the PowerShell Universal ser
 
 To create an event hub, click APIs \ Event Hub and click Create New Event Hub. Event Hubs are named and can choose to enforce authentication and authorization.
 
-## Connecting an Event Hub
+## Event Hub Client
 
-Once created, clients can connect to an event hub using the `Connect-PSUEventHub` cmdlet found in the Universal module. The cmdlet connects to the hub using a web socket and provides credentials, if necessary. When connecting, specify the `-ScriptBlock` parameter to define what will happen on the client when an event is received.
-
-```powershell
-Connect-PSUEventHub -ComputerName http://localhost:5000 -Hub 'MyHub' -ScriptBlock {
-     Write-Host "Event Received"
-}
-```
-
-Objects sent from the hub will be available as `$_` or $`PSItem`.
-
-```powershell
-Connect-PSUEventHub -ComputerName http://localhost:5000 -Hub 'MyHub' -ScriptBlock {
-     Write-Host $_
-}
-```
-
-## Send Events
-
-From within the PowerShell Universal server, you can send events from a hub to connected clients using the `Send-PSUEvent` cmdlet.
-
-```powershell
-Send-PSUEvent -Hub 'MyHub' -Data "Hello!"
-```
-
-The `-Data` parameter accepts an object and will be serialized using CLIXML and send to the client. The data will be deserialized before passing to the script block.
-
-## Receive Data from Clients
-
-As of 4.1, you can now receive data back from clients. This feature is only available when sending data to an individual client, rather than all clients connected to a hub.
-
-```powershell
-$Connection = Get-PSUEventHubConnection | Where-Object UserName -eq 'Admin'
-$Result = Send-PSUEvent -Hub 'Hub' -Data 'Say Hello!' -Connectionid $Connection.ConnectionId
-Show-UDToast $Result
-```
-
-From the client side, you would return the data from the script block.
-
-```powershell
-Connect-PSUEventHub -Hub 'Hub' -ScriptBlock {
-    Write-Host $EventData 
-    "Hello!"
-}
-```
-
-## Event Hub Client Installer
-
-While you can use the Universal module to connect to event hubs, it may not be the most resilient configuration for your environment. The Event Hub Client Installer provides a MSI that installs a Windows services that will connect to event hubs and run scripts.
+The Event Hub Client installs a Windows service that will connect to event hubs and run scripts and commands.
 
 ### eventHubClient.json
 
@@ -114,7 +67,35 @@ Windows Authentication will be used to authenticate against the hub.
 
 #### ScriptPath
 
-The script to execute when an event is received. This script is read into memory and not from disk. Variables such as `$PSScriptRoot` are currently not supported.
+The script to execute when an event is received. This script is read into memory and not from disk. Variables such as `$PSScriptRoot` are currently not supported. This is optional as event hubs can also run commands directly.
+
+## Send Events
+
+From within the PowerShell Universal server, you can send events from a hub to connected clients using the `Send-PSUEvent` cmdlet.
+
+```powershell
+Send-PSUEvent -Hub 'MyHub' -Data "Hello!"
+```
+
+The `-Data` parameter accepts an object and will be serialized using CLIXML and send to the client. The data will be deserialized before passing to the script block.
+
+You can also run commands. This does not require defining a script on the event hub client.&#x20;
+
+```powershell
+Send-PSUEvent -Hub "MyHub" -Command "Start-Process" -Parameters @{
+    Path = "Notepad"
+}
+```
+
+## Receive Data from Clients
+
+This feature is only available when sending data to an individual client, rather than all clients connected to a hub.
+
+```powershell
+$Connection = Get-PSUEventHubConnection | Where-Object UserName -eq 'Admin'
+$Result = Send-PSUEvent -Hub 'Hub' -Data 'Say Hello!' -Connectionid $Connection.ConnectionId
+Show-UDToast $Result
+```
 
 ## Example: Running Scripts on Remote Machines
 
@@ -172,5 +153,7 @@ Send-PSUEvent -Hub eventHub -ConnectionId $Connection.ConnectionId -Data @{
 ```
 
 From here you could event use the script to schedule jobs to run on the remote machines using the event hub client.&#x20;
+
+
 
 &#x20;
