@@ -6,20 +6,20 @@ description: Changelog for PowerShell Universal.
 
 ## 5.0.0-rc4 - 7/29/2024
 
-## Apps
+#### Apps
 
 * Fixed an issue display the Documentation App in a nested IIS site
 * Fixed first time admin user setup when using a nested IIS site
 
-## Automation
+#### Automation
 
 * Fixed an issue with the job search bar.
 
-## Portal
+#### Portal
 
 * Fixed issue with portal code editor not saving properly
 
-## Platform
+#### Platform
 
 * Fixed an issue with the missing environment health check
 * Fixed an issue where files could be edited when platform was in git manual mode
