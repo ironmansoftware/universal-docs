@@ -115,4 +115,4 @@ Note that processes started by your scripts will not be listed here.
 
 You can view user sessions for dashboards and the admin console by click the User Sessions card on the Home page. Session information includes the connection time, source, user name, user agent string and remote IP Address.
 
-<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>

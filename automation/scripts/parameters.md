@@ -65,7 +65,7 @@ You can use a `[Bool]` type selector to create a switch.
 param([Bool]$Switch)
 ```
 
-![](<../../.gitbook/assets/image (8) (1).png>)
+![](<../../.gitbook/assets/image (8) (1) (1).png>)
 
 #### Integer
 
@@ -99,7 +99,7 @@ param([System.DayOfWeek]$DayOfWeek)
 
 #### PSCredential
 
-When you specify a `PSCredential` , the user will be presented with a drop down of credentials available as [variables](../../platform/variables.md#creating-a-secret-variable).&#x20;
+When you specify a `PSCredential` , the user will be presented with a drop down of credentials available as [variables](../../platform/variables.md#creating-a-secret-variable).
 
 ```powershell
 param(
@@ -109,9 +109,9 @@ param(
 
 ![](<../../.gitbook/assets/image (69).png>)
 
-#### File&#x20;
+#### File
 
-You can allow users to upload files by using the `[File]` type.&#x20;
+You can allow users to upload files by using the `[File]` type.
 
 ```powershell
 param(
@@ -119,7 +119,7 @@ param(
 )
 ```
 
-Files will be available as a `PSUFile` object in your scripts. This object has a `byte[]` array that you can use to process the file.&#x20;
+Files will be available as a `PSUFile` object in your scripts. This object has a `byte[]` array that you can use to process the file.
 
 For example, you can get the string content for the file by converting it using the Encoding classes.
 
@@ -129,7 +129,7 @@ For example, you can get the string content for the file by converting it using 
 
 ### Display Name
 
-You can use the `DisplayNameAtrribute` to set a display name for the script parameter.&#x20;
+You can use the `DisplayNameAtrribute` to set a display name for the script parameter.
 
 ```powershell
 param(
@@ -170,7 +170,7 @@ $RequiredParameter
 
 ### Default Value
 
-You can use both static and default values for parameters. The default value is calculated when the job is about to be run.&#x20;
+You can use both static and default values for parameters. The default value is calculated when the job is about to be run.
 
 ```powershell
 param(
@@ -204,7 +204,7 @@ The result would be that Hello was output in the job log and pipeline.
 
 ## Parameter Sets
 
-PowerShell Universal supports parameter sets. When a parameter set is defined, a drop down is provided that allows for switching between the sets.&#x20;
+PowerShell Universal supports parameter sets. When a parameter set is defined, a drop down is provided that allows for switching between the sets.
 
 ```powershell
 param(

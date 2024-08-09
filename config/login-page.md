@@ -110,7 +110,7 @@ New-UDApp -Content {
 
 The resulting app will look like this when loaded.
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 After submitting the form, the following will be shown. Additionally, the passcode is cached into the server cache with `Set-PSUCache`.
 

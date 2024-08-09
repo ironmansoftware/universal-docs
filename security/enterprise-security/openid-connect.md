@@ -8,37 +8,63 @@ description: Configure OpenID Connect with Universal.
 OpenID Connect requires a [license](https://ironmansoftware.com/pricing/powershell-universal).
 {% endhint %}
 
-OpenID Connect is an authentication layer on top of OAuth 2.0, an authorization framework. It is supported by many vendors and provides the ability to authenticate against systems like AzureAD.
+OpenID Connect is an authentication layer on top of OAuth 2.0, an authorization framework. It is supported by many vendors and provides the ability to authenticate against systems like EntraID.
 
-This document will outline the steps necessary to configure AzureAD OpenID Connect and use it with Universal.
+This document will outline the steps necessary to configure EntraID OpenID Connect and use it with Universal.
 
-## Configuring Azure Active Directory (Entra ID)
+## Configuring Azure Entra ID (Azure Active Directory)
 
-Within the Azure Portal, navigate to your Azure Active Directory blade. Next, click the App registrations node and then click New registration.
+Within the Azure Portal, navigate to your Entra ID blade. Next, click the Enterprise Application node and then click New application.
 
-![](<../../.gitbook/assets/image (31) (1).png>)
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-In the New registration page, enter the name of your application and the reply URL. The URL can be configured in the `appsettings.json` for Universal but the default value is shown below.
+Next, click Create your own application.
 
-![](<../../.gitbook/assets/image (524).png>)
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-Next, you'll need to configure a client secret. You can click the Certificates & secrets menu and then click New client secret. This secret will need to go into the `appsettings.json` file.
+Select a name for your application and select Register an application to integrate with Microsoft Entra ID.&#x20;
 
-![](<../../.gitbook/assets/image (78).png>)
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
-Now, you will need to take note of your Application (client) ID GUID. This will be used in the `appsettings.json` file.
+In the Register an application page, define a redirect URI. This will be the URL of PowerShell Universal server that Entra ID will redirect the user to. This value is defined in the PowerShell Universal configuration file, `appsettings.json`.
 
-![](<../../.gitbook/assets/image (133).png>)
+Now that the application has been created, from the Enterprise Applications page, click Single sign-on and then Go to application. This will bring you to the application registration page.&#x20;
 
-Finally, you will have to click the Endpoints button to open the Endpoints drawer. This contains a list of the endpoints. Make note of the OAuth 2.0 authorization endpoint URL. You will need this for the `appsettings.json`.
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
-{% hint style="warning" %}
-Note that you will not input the entire endpoint URL. You will need to include the portion of the URL through the GUID but without the path after oauth2 in the Authority setting below (e.g. [https://login.microsoftonline.com/fffffff-4b76-4470-a736-8481d7a2ed87](https://login.microsoftonline.com/fffffff-4b76-4470-a736-8481d7a2ed87)).
-{% endhint %}
+Certificates and secrets and define a new secret. This will be used with the PowerShell Universal configuration file.
 
-![](<../../.gitbook/assets/image (333).png>)
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
-### Configuring Universal for Azure Active Directory
+Now, we'll need to capture several points of information from the application to provide to PowerShell Universal. From the application's home page, save the Application (client) and directory (tenant) ID.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+
+### Groups
+
+Next, we need to configure group membership to provide access and claims to PowerShell Universal. Click Token configuration under the application registration. Next, click Add groups claims.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
+To provide all a user's groups to PowerShell Universal, check All groups.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+
+### Group Overages
+
+For organizations that have users with many groups, you will want to limit the number of groups sent to PowerShell Universal. Sending large numbers of groups can exceed the size of the token and cause authorization failures. If you wish to limit the groups, select Groups assigned to the application.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+
+To add groups to the application, navigate back to the Enterprise application's page and select Users and groups.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+
+Click the Add user/group value to assign these groups to your application. When users login to PowerShell Universal, only these group claims will be provided.&#x20;
+
+To learn more about Group Overages, [click here](https://learn.microsoft.com/en-us/security/zero-trust/develop/configure-tokens-group-claims-app-roles#group-overages).
+
+### Configuring Universal for Entra ID
 
 #### Use Appsettings.json
 
@@ -52,10 +78,10 @@ Now that we have completed the configuration of an AzureAD App Registration, we 
     "OIDC": {
       "Enabled": "true",
       "CallbackPath": "/auth/signin-oidc",
-      "ClientID": "6f006906-643a-40fe-af00-9060ceffffff",
-      "ClientSecret": "xxxxxxxxxxxxxxxxxx",
+      "ClientID": "<application ID>",
+      "ClientSecret": "<client secret>",
       "Resource": "",
-      "Authority": "https://login.microsoftonline.com/fffffff-4b76-4470-a736-8481d7a2ed87",
+      "Authority": "https://login.microsoftonline.com/<directory ID>",
       "ResponseType": "code",
       "SaveTokens": "false",
       "GetUserInfo": false
@@ -67,10 +93,6 @@ If you are using Chrome, you will also need to enable HTTPS. You will see a 500 
 {% endhint %}
 
 #### Use Authentication.ps1
-
-{% hint style="info" %}
-Available in PowerShell Universal 2.5 or later.
-{% endhint %}
 
 You can use the admin console to configure OpenID Connect. We recommend this method as you will not need to restart the PowerShell Universal service after configuring OIDC.
 
@@ -84,7 +106,7 @@ Once the provider has been added, you can click the details button to enter the 
 
 ### Delegated Access Tokens
 
-You can use access tokens generated by an OIDC login for other services the user may have access to. Within your OIDC provider, like Azure AD, you can grant additional permissions to the token.
+You can use access tokens generated by an OIDC login for other services the user may have access to. Within your OIDC provider, like Entra ID, you can grant additional permissions to the token.
 
 ![](<../../.gitbook/assets/image (459).png>)
 
@@ -134,7 +156,7 @@ Connect-AzureAD
 
 You can configure Azure Active Directory and PowerShell Universal to provide refresh tokens for requesting new tokens if the access token expires. To do so, you will need to enable offline\_access in your app registration.
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>offline_access</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (2).png" alt=""><figcaption><p>offline_access</p></figcaption></figure>
 
 When configuring PowerShell Universal, you need to request the `offline_access` scope and set SaveTokens to true and use the id\_token response type.
 

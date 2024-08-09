@@ -20,7 +20,7 @@ To define a component, you will use the PSBlazor code editor to add the componen
 
 The result is page with a button defined.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption><p>Button on a tool</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption><p>Button on a tool</p></figcaption></figure>
 
 ### Setting Attributes
 

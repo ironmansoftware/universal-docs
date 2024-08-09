@@ -12,11 +12,11 @@ The [library ](https://github.com/ironmansoftware/scripts/issues)is open-source,
 
 To install resources from the library, click Platform \ Library in the Universal Admin Console. Click the Install icon to save the resource into your environment. Each solution is a PowerShell module that will be included in your Repository's module directory.&#x20;
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Universal Library Catalog</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption><p>Universal Library Catalog</p></figcaption></figure>
 
 Resources installed from modules, like from the Library, are marked as read-only in the Admin Console.&#x20;
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Read-Only Resource in the Admin Console</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Read-Only Resource in the Admin Console</p></figcaption></figure>
 
 ## Uninstalling Resources
 
@@ -24,7 +24,7 @@ Once a resource is installed, you cannot remove it unless you remove the module 
 
 Clicking the Delete icon will remove the module and any resources associated with it.&#x20;
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Repository Modules</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Repository Modules</p></figcaption></figure>
 
 ## Contributing to the Library
 
