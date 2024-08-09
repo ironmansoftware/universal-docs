@@ -77,17 +77,15 @@ Set-PSUAuthenticationMethod `
 }
 ```
 
-## Example: Azure AD
+## Example: Entra ID
 
-You will need the following information from Azure AD.&#x20;
+Setup an Entra ID Enterprise Application within Azure. You can find a [step-by-step guide here](openid-connect.md#configuring-azure-entra-id-azure-active-directory). You will need to retrieve the application ID and the Federation metadata document as well as the SAML-P sign-on endpoint. Within your Application Registration, click the Endpoints button.
 
-Application (client) ID - Found on the Overview page.&#x20;
-
-Federation metadata document - Click Endpoints on the Overview page.&#x20;
-
-SAML-P sign-on endpoint - Click Endpoints on the Overview page.&#x20;
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ### Step by Step
+
+Within PowerShell Universal:
 
 Click Security \ Authentication.&#x20;
 
@@ -95,11 +93,11 @@ Add SAML2 authentication provider.&#x20;
 
 Click the Edit Properties button.&#x20;
 
-For Entity ID, you will need to put the Azure AD application ID prefixed with `spn:`&#x20;
+For Entity ID, you will need to put the Entra ID application ID prefixed with `spn:`&#x20;
 
 For example: `spn:2cf33625-e312-4659-a7bd-66ade51a0ea2`
 
-For Identity Provider Entity ID, you will need to retrieve the entity ID from the Federation metadata document. Open the document in a web browser.&#x20;
+For Identity Provider Entity ID, you will need to retrieve the entity ID from the Federation metadata document. Open the document URL in a web browser.&#x20;
 
 <figure><img src="../../.gitbook/assets/image (493).png" alt=""><figcaption><p>Entity ID Property</p></figcaption></figure>
 
@@ -127,7 +125,15 @@ You will be forwarded to Azure for login and redirected back to PowerShell Unive
 
 Any errors that occur will be listed in the PowerShell Universal log. If you fail to login, you can navigate to `/login` to login with a local account.
 
-### Ad
+### Group Overages
+
+For organizations with many groups, you will want to limit the number of groups provided to PowerShell Universal. This can alleviate authorization issues that arise from having too many groups provide causing it to exceed limits within the application. Within the Enterprise application settings, click Single sign-on and then click the Edit button under Attributes & Claims.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+Click the groups claim to view the options. The advanced options will allow you to filter the groups that are provided to the PowerShell Universal server.  You can also configure group claims through the token configuration on the Application Registration for the Enterprise Application.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Example: Okta
 

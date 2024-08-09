@@ -30,7 +30,7 @@ This health check verifies that the IIS server has the IIS WebSocket feature ena
 
 To configure this, you will need to open `wmimgmt.msc`, right click on the WMI Control (Local) node and then click properties. Navigate to the Security tab, select ROOT\CIMv2 and press the Security button to view the access controls for this namespace.&#x20;
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>WMI Security</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>WMI Security</p></figcaption></figure>
 
 ### Memory Usage
 

@@ -34,7 +34,7 @@ You can expand the tree view to see the objects and properties from the pipeline
 
 Any errors written to the error stream will be available on the Error tab within the job page.
 
-![Errors](<../.gitbook/assets/image (1) (1) (1) (1) (1).png>)
+![Errors](<../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png>)
 
 ## Status
 

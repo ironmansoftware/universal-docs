@@ -239,11 +239,11 @@ You can configure PowerShell Universal to run behind an Application Gateway with
 
 First, configure a backend pool that targets one or more Azure Web Apps running PowerShell Universal.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>Backend Pool</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Backend Pool</p></figcaption></figure>
 
 For the backend settings, you will want to ensure you are using HTTPS with a well known CA certificate. Cookie-based affinity is required to ensure that sessions are sticky to a individual node.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption><p>Backend Pool Settings</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (2).png" alt=""><figcaption><p>Backend Pool Settings</p></figcaption></figure>
 
 In order to allow Azure to serve the proper web app, you will need to ensure that the Override with new host name setting is configured. Use the host name for the backend target.&#x20;
 
