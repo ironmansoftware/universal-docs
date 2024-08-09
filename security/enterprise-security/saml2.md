@@ -77,31 +77,27 @@ Set-PSUAuthenticationMethod `
 }
 ```
 
-## Example: Azure AD
+## Example: Entra ID <a href="#example-entra-id" id="example-entra-id"></a>
 
-You will need the following information from Azure AD.
+Setup an Entra ID Enterprise Application within Azure. You can find a [step-by-step guide here](https://docs.powershelluniversal.com/config/security/openid-connect#configuring-azure-entra-id-azure-active-directory). You will need to retrieve the application ID and the Federation metadata document as well as the SAML-P sign-on endpoint. Within your Application Registration, click the Endpoints button.
 
-Application (client) ID - Found on the Overview page.
+<figure><img src="../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
 
-Federation metadata document - Click Endpoints on the Overview page.
+### Step by Step <a href="#step-by-step" id="step-by-step"></a>
 
-SAML-P sign-on endpoint - Click Endpoints on the Overview page.
+**Within PowerShell Universal:**
 
-### Step by Step
+1. Click Security \ Authentication.
+2. Add SAML2 authentication provider.
+3. Click the Edit Properties button.
 
-Click Security \ Authentication.
-
-Add SAML2 authentication provider.
-
-Click the Edit Properties button.
-
-For Entity ID, you will need to put the Azure AD application ID prefixed with `spn:`
+For Entity ID, you will need to put the Entra ID application ID prefixed with `spn:`
 
 For example: `spn:2cf33625-e312-4659-a7bd-66ade51a0ea2`
 
-For Identity Provider Entity ID, you will need to retrieve the entity ID from the Federation metadata document. Open the document in a web browser.
+For Identity Provider Entity ID, you will need to retrieve the entity ID from the Federation metadata document. Open the document URL in a web browser.
 
-<figure><img src="../../.gitbook/assets/image (493).png" alt=""><figcaption><p>Entity ID Property</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
 
 For Metadata Address, insert the Federation metadata document URL.
 
@@ -113,7 +109,7 @@ https://localhost/Saml2/Acs
 
 For Single Sign-On Service URL, insert the SAML-P sign-on endpoint from Azure.
 
-<figure><img src="../../.gitbook/assets/image (202).png" alt=""><figcaption><p>SAML2 Properties</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
 
 Once complete, save the settings and enable the SAML provider. Click sign out and navigate to your admin console URL.
 
@@ -125,7 +121,15 @@ You will be forwarded to Azure for login and redirected back to PowerShell Unive
 
 Any errors that occur will be listed in the PowerShell Universal log. If you fail to login, you can navigate to `/login` to login with a local account.
 
-### Ad
+### Group Overages <a href="#group-overages" id="group-overages"></a>
+
+For organizations with many groups, you will want to limit the number of groups provided to PowerShell Universal. This can alleviate authorization issues that arise from having too many groups provide causing it to exceed limits within the application. Within the Enterprise application settings, click Single sign-on and then click the Edit button under Attributes & Claims.
+
+<figure><img src="../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+
+Click the groups claim to view the options. The advanced options will allow you to filter the groups that are provided to the PowerShell Universal server. You can also configure group claims through the token configuration on the Application Registration for the Enterprise Application.
+
+<figure><img src="../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
 ## Example: Okta
 
