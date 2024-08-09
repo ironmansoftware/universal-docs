@@ -253,8 +253,8 @@ New-UDDataGrid -LoadRows {
         rowCount = $Data.Length
     }
 } -Columns @(
-    @{ field = "name"}
-    @{ field = "number"}
+    New-UDDataGridColumn -Field name
+    New-UDDataGridColumn -Field number
 ) -OnExport {
     $ExportContent = $Data | ConvertTo-Csv -NoTypeInformation | Out-String
     Out-UDDataGridExport -Data $ExportContent -FileName 'export.csv' 
@@ -339,10 +339,10 @@ New-UDDashboard -Title 'PowerShell Universal' -Content {
     New-UDDataGrid -LoadRows {  
       $Data | Out-UDDataGridData -Context $EventData
     } -Columns @(
-        @{ field = "name"; render = { 
-            New-UDButton -Icon (New-UDIcon -Icon User) -OnClick { Show-UDToast $EventData.Name } } 
+        New-UDDataGridColumn -Field name
+        New-UDDataGridColumn -Field number -Render {
+                    New-UDButton -Icon (New-UDIcon -Icon User) -OnClick { Show-UDToast $EventData.Name } } 
         }
-        @{ field = "number" }
     ) -AutoHeight $true -Pagination
 }   
 ```
@@ -460,17 +460,17 @@ New-UDDashboard -Title 'PowerShell Universal' -Content {
     New-UDDataGrid -LoadRows {  
       Out-UDSqlDataGrid -Context $EventData -SqlInstance "(localdb)\MSSQLLocalDb" -Database "PSU" -Table "Job"
     } -Columns @(
-        @{ field = "id"; }
-        @{ field = "startTime"; }
-        @{ field = "status"; render = {
-            if ($EventData.Status -eq 2) {
+        New-UDDataGridColumn -Field id
+        New-UDDataGridColumn -Field startTime
+        New-UDDataGridColumn -Field status -Render {
+          if ($EventData.Status -eq 2) {
                 New-UDAlert -Severity 'Success' -Text 'Success'
             }
 
             if ($EventData.Status -eq 3) {
                 New-UDAlert -Severity 'Error' -Text 'Failed'
             }
-        } }
+        }
     ) -AutoHeight $true -Pagination
 }
 ```
