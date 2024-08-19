@@ -136,6 +136,18 @@ It may be necessary to exclude certain executables that will run PowerShell scri
 
 By default, the administrator username is `admin` and password is `admin`. You can use the `$ENV:PSUDefaultAdminName` and `$ENV:PSUDefaultAdminPassword` environment variables to change this behavior. These values are only used if no administrator account already exists. This is useful for cloud-based installations.&#x20;
 
+## Agent
+
+The PowerShell Universal Agent is used for executing Event Hub actions. Depending on your environment, you will install it in different ways.&#x20;
+
+### Windows (MSI)
+
+The PowerShell Universal Agent MSI is available on our download page. After installing the MSI, you will have a PowerShell Universal Agent service running on your machine. You will need to [configure it](../api/event-hubs.md) to connect to PowerShell Universal.&#x20;
+
+### ZIP
+
+There are ZIP files for each platform we support on our downloads page. Each ZIP will contain a `PowerShellUniversal.Agent.exe` or `PowerShellUniversal.Agent` file that can be used to start an agent. You will need to run the process as a service for it to start whenever the machine is rebooted.&#x20;
+
 ## Next Steps
 
 At this point, Universal is up and running. You can navigate to the admin console by visiting `http://localhost:5000` by default. Login with the default admin name and password.&#x20;

@@ -14,19 +14,19 @@ Event Hubs provide the ability to connect client to the PowerShell Universal ser
 
 To create an event hub, click APIs \ Event Hub and click Create New Event Hub. Event Hubs are named and can choose to enforce authentication and authorization.
 
-## Event Hub Client
+## Agent
 
-The Event Hub Client installs a Windows service that will connect to event hubs and run scripts and commands.
+The agent process is responsible for responding to Event Hub requests. You can learn more about installing the agent on our [Installation page](../getting-started/).&#x20;
 
 ### eventHubClient.json
 
-After installing the MSI, you will need to configure the client by using an `eventHubClient.json` file. This file should be created in `%ProgramData%\PowerShellUniversal`. Changes to this file require a restart of the Event Hub Client service.
+After installing the agent, you will need to configure the client by using an `agent.json` file. This file should be created in `%ProgramData%\PowerShellUniversal`. Changes to this file require a restart of the Agent service.
 
 {% hint style="warning" %}
 The installer will not create the folder or file automatically.&#x20;
 {% endhint %}
 
-This JSON file configures the Event Hub Client to connect to the hub and run scripts when invoked.
+This JSON file configures the Agent to connect to the hub and run scripts when invoked.
 
 ```json
 {
@@ -43,7 +43,7 @@ This JSON file configures the Event Hub Client to connect to the hub and run scr
 
 ### Options
 
-The below options can be included in the `eventHubClient.json` file.
+The below options can be included in the `agent.json` file.
 
 #### Connections
 
@@ -83,7 +83,7 @@ You can also run commands. This does not require defining a script on the event 
 
 ```powershell
 Send-PSUEvent -Hub "MyHub" -Command "Start-Process" -Parameters @{
-    Path = "Notepad"
+    FilePath = "Notepad"
 }
 ```
 
