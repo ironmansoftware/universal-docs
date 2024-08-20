@@ -2,89 +2,89 @@
 NAME
     New-PSUEventHub
     
+SYNOPSIS
+    Creates a new event hub.
+    
+    
 SYNTAX
-    New-PSUEventHub -Name <string> [-Description <string>] [-Role <string[]>] [-Authenticated] [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    New-PSUEventHub [-AppToken <String>] [-Authenticated] [-ComputerName <String>] [-Description <String>] [-Integrated] -Name <String> [-Role <String[]>] [-UseDefaultCredentials] [<CommonParameters>]
     
     
+DESCRIPTION
+    Creates a new event hub.
+    
+
 PARAMETERS
-    -AppToken <string>
+    -AppToken <String>
+        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Authenticated
+    -Authenticated [<SwitchParameter>]
+        Whether this event hub requires authentication.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -ComputerName <string>
+    -ComputerName <String>
+        Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      Uri
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Description <string>
+    -Description <String>
+        A description for this event hub.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Integrated
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Name <string>
+    -Name <String>
+        The name of the event hub.
         
         Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Role <string[]>
+    -Role <String[]>
+        The roles that can access this event hub.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -UseDefaultCredentials
+    -UseDefaultCredentials [<SwitchParameter>]
+        Whether to use the default credentials when accessing the PowerShell Universal Management API.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -93,19 +93,28 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
     None
+        
     
     
 OUTPUTS
     System.Object
+        
     
-ALIASES
-    None
     
-
-REMARKS
-    None
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> New-PSUEventHub -Name 'Hub' -Description 'A new event hub'
+    
+    Creates a new event hub named 'Hub' with the description 'A new event hub'.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
 
 

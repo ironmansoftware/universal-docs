@@ -1,31 +1,42 @@
 
 NAME
-    New-PSUProtocolHandler
+    Set-PSUComputerGroup
     
 SYNOPSIS
-    A custom protocol handler that runs a script. Only supported in PSU Desktop.
+    Updates a computer group in PowerShell Universal.
     
     
 SYNTAX
-    New-PSUProtocolHandler [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-Environment <String>] [-Integrated] [-Protocol <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    Set-PSUComputerGroup [-ComputerGroup] <ComputerGroup> [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-Integrated] [-Name <String>] [-Tags <String[]>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Set-PSUComputerGroup [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-Integrated] [-Name <String>] [-Tags <String[]>] [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION
-    A custom protocol handler that runs a script. Only supported in PSU Desktop.
+    Updates a computer group in PowerShell Universal.
     
 
 PARAMETERS
     -AppToken <String>
-        Not used
+        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerGroup <ComputerGroup>
+        The computer group to update.
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       True (ByValue)
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        Not used
+        Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session.
         
         Required?                    false
         Position?                    named
@@ -33,8 +44,8 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Credential <Variable>
-        The credential to use when running the script.
+    -Description <String>
+        A description of the computer group.
         
         Required?                    false
         Position?                    named
@@ -42,17 +53,17 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Environment <String>
-        The environment to use when running the script.
+    -Id <Int64>
+        The ID of the computer group to update.
         
-        Required?                    false
-        Position?                    named
+        Required?                    true
+        Position?                    0
         Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
-        Not used
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
         
         Required?                    false
         Position?                    named
@@ -60,8 +71,8 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Protocol <String>
-        The protocol name.
+    -Name <String>
+        The name of the computer group.
         
         Required?                    false
         Position?                    named
@@ -69,17 +80,17 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Script <Script>
-        The script to run whene executing the protocol.
+    -Tags <String[]>
+        The tags to associate with the computer group.
         
-        Required?                    true
-        Position?                    1
+        Required?                    false
+        Position?                    named
         Default value                None
-        Accept pipeline input?       True (ByValue)
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
-        Not used
+        Use default credentials when connecting to the management API
         
         Required?                    false
         Position?                    named
@@ -94,7 +105,7 @@ PARAMETERS
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
 INPUTS
-    PowerShellUniversal.Script
+    PowerShellUniversal.ComputerGroup
         
     
     
@@ -110,9 +121,9 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> New-PSUProtocolHandler -Script ProtocolHandler.ps1 -Protocol psu
+    PS C:\> Set-PSUComputerGroup -Id 1 -Name 'Test Group'
     
-    Creates a psu protocol handler. When a protocol link like psu://test is opened, for example from a web browser, the ProtocolHandler.ps1 script will be executed.
+    Updates the computer group with the ID of 1 to have the name of 'Test Group'.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

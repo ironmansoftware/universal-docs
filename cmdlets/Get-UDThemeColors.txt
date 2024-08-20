@@ -2,19 +2,26 @@
 NAME
     Get-UDThemeColors
     
+SYNOPSIS
+    Returns the colors of a JSON-based theme file.
+    
+    
 SYNTAX
     Get-UDThemeColors [-Theme] <Object> [<CommonParameters>]
     
     
+DESCRIPTION
+    Returns the colors of a JSON-based theme file.
+    
+
 PARAMETERS
     -Theme <Object>
+        The name of the theme to get the colors for.
         
         Required?                    true
-        Position?                    0
+        Position?                    1
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -23,19 +30,25 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
+NOTES
     
-
-REMARKS
-    None
+    
+        General notes
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >Get-UDThemeColors -Theme '1984'
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
 
 

@@ -2,49 +2,53 @@
 NAME
     New-UDCardBody
     
+SYNOPSIS
+    Creates a new card body.
+    
+    
 SYNTAX
-    New-UDCardBody [[-Id] <string>] [[-ClassName] <string>] [[-Content] <scriptblock>] [[-Style] <hashtable>] [<CommonParameters>]
+    New-UDCardBody [[-Id] <String>] [[-ClassName] <String>] [[-Content] <ScriptBlock>] [[-Style] <Hashtable>] [<CommonParameters>]
     
     
+DESCRIPTION
+    Creates a new card body. Used with New-UDCard.
+    
+
 PARAMETERS
-    -ClassName <string>
+    -Id <String>
+        The ID of the component. It defaults to a random GUID.
         
         Required?                    false
         Position?                    1
+        Default value                ([Guid]::NewGuid()).ToString()
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Content <scriptblock>
+    -ClassName <String>
+        A CSS class to assign to this card body.
         
         Required?                    false
         Position?                    2
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Id <string>
-        
-        Required?                    false
-        Position?                    0
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Style <hashtable>
+    -Content <ScriptBlock>
+        The content of the card body.
         
         Required?                    false
         Position?                    3
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        Styles to apply to the card body.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -53,19 +57,21 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
+    -------------------------- EXAMPLE 1 --------------------------
     
-
-REMARKS
-    None
+    PS >$Body = New-UDCardBody -Content { "This is the body of the card" }
+    PS > New-UDCard -Body $Body -Id 'card1'
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
 
 

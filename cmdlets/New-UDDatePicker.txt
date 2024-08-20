@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDDatePicker [[-Id] <String>] [[-Label] <String>] [[-Variant] <String>] [-DisableToolbar] [[-OnChange] <Endpoint>] [[-Format] <String>] [[-Value] <DateTime>] [[-Locale] <String>] [[-ClassName] <String>] [[-MinimumDate] <DateTime>] [[-MaximumDate] <DateTime>] [[-TimeZone] <TimeZoneInfo>] [-Disabled] [<CommonParameters>]
+    New-UDDatePicker [[-Id] <String>] [[-Label] <String>] [[-Variant] <String>] [-DisableToolbar] [[-OnChange] <Endpoint>] [[-Format] <String>] [[-Value] <DateTime>] [[-Locale] <String>] [[-ClassName] <String>] [[-MinimumDate] <DateTime>] [[-MaximumDate] <DateTime>] [[-TimeZone] <Object>] [-Disabled] [[-Views] <String[]>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -74,7 +74,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    6
-        Default value                ([DateTime]::Now)
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -97,6 +97,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -MinimumDate <DateTime>
+        The minimum date that can be selected.
         
         Required?                    false
         Position?                    9
@@ -105,6 +106,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -MaximumDate <DateTime>
+        The maximum date that can be selected.
         
         Required?                    false
         Position?                    10
@@ -112,7 +114,8 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -TimeZone <TimeZoneInfo>
+    -TimeZone <Object>
+        The time zone to use for the date picker. This should be an IANA time zone string.
         
         Required?                    false
         Position?                    11
@@ -121,10 +124,20 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Disabled [<SwitchParameter>]
+        Disables the date picker.
         
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Views <String[]>
+        The views to show in the date picker. Valid values are: "day", "year", "month"
+        
+        Required?                    false
+        Position?                    12
+        Default value                @("day")
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -214,7 +227,7 @@ OUTPUTS
     
     -------------------------- EXAMPLE 9 --------------------------
     
-    PS >New-UDDatePicker -Id 'datepicker9' -Value '1-2-2020' -TimeZone 'Eastern Standard Time'
+    PS >New-UDDatePicker -Id 'datepicker9' -Value '1-2-2020' -TimeZone 'America/Toronto'
     
     Date picker with time zone|Creates a new date picker with the default date value and a time zone.
     

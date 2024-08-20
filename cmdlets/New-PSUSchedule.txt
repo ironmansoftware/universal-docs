@@ -2,233 +2,210 @@
 NAME
     New-PSUSchedule
     
+SYNOPSIS
+    Creates a new schedule within PSU.
+    
+    
 SYNTAX
-    New-PSUSchedule [-Script] <Script> [-Cron] <string> [-Credential <Variable>] [-TimeZone <string>] [-Environment <string>] [-Name <string>] [-Paused] [-RandomDelay] [-Timeout <int>] [-Condition <scriptblock>] [-Description <string>] [-Computer <string>] [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    New-PSUSchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] -Continuous [-Credential <Variable>] [-Delay <TimeSpan>] [-DelayHour <Int32>] [-DelayMinute <Int32>] [-DelaySecond <Int32>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [<CommonParameters>]
     
-    New-PSUSchedule [-Script] <Script> -Continuous [-Credential <Variable>] [-TimeZone <string>] [-Delay <timespan>] [-DelaySecond <int>] [-DelayMinute <int>] [-DelayHour <int>] [-Environment <string>] [-Name <string>] [-Paused] [-RandomDelay] [-Timeout <int>] [-Condition <scriptblock>] [-Description <string>] [-Computer <string>] [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    New-PSUSchedule [-Script] <Script> [-Cron] <String> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [<CommonParameters>]
     
-    New-PSUSchedule [-Script] <Script> [-Credential <Variable>] [-TimeZone <string>] [-Environment <string>] [-Name <string>] [-Paused] [-RandomDelay] [-Timeout <int>] [-Condition <scriptblock>] [-OneTime <datetime>] [-Description <string>] [-Computer <string>] [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    New-PSUSchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-OneTime <DateTime>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [<CommonParameters>]
     
     
+DESCRIPTION
+    Creates a new schedule within PSU. Schedules allow you to automate when jobs run and run jobs continously.
+    
+
 PARAMETERS
-    -AppToken <string>
+    -AppToken <String>
+        An app token to access the PSU API.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Computer <string>
+    -ComputerName <String>
+        The HTTP address of the PSU REST API server.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -ComputerName <string>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      Uri
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Condition <scriptblock>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Continuous
+    -Continuous [<SwitchParameter>]
+        Runs a job continously with an optional delay between executions.
         
         Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Continuous
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -Credential <Variable>
+        A credential for the user to run the job as. Use New-UACredential to create this credential object.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Cron <string>
+    -Cron <String>
+        The CRON schedule to use for this schedule.
         
         Required?                    true
         Position?                    2
-        Accept pipeline input?       false
-        Parameter set name           Cron
-        Aliases                      None
-        Dynamic?                     false
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Delay <timespan>
+    -Delay <TimeSpan>
+        The delay inbetween continous job executions.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Continuous
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -DelayHour <int>
+    -DelayHour <Int32>
+        The delay in hours inbetween continous job executions.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Continuous
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -DelayMinute <int>
+    -DelayMinute <Int32>
+        The delay in minutes inbetween continous job executions.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Continuous
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -DelaySecond <int>
+    -DelaySecond <Int32>
+        The delay in seconds inbetween continous job executions.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           Continuous
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Description <string>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Environment <string>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Integrated
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Name <string>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -OneTime <datetime>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           OneTime
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Paused
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -RandomDelay
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -Script <Script>
+        The script to schedule. Use Get-UAScript to retrieve a script object.
         
         Required?                    true
         Position?                    1
-        Accept pipeline input?       true (ByValue)
-        Parameter set name           Cron, Continuous, OneTime
-        Aliases                      None
-        Dynamic?                     false
+        Default value                None
+        Accept pipeline input?       True (ByValue)
         Accept wildcard characters?  false
         
-    -TimeZone <string>
+    -TimeZone <String>
+        The TimeZone to execute the script in. By default, it runs in the current user's time zone.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Timeout <int>
+    -Environment <String>
+        The name of the environment to run the script within.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -UseDefaultCredentials
+    -OneTime <DateTime>
+        Whether this is a one-time schedule.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Description <String>
+        Description for the schedule.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        Name of the schedule to display in the admin console.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Condition <ScriptBlock>
+        A script block that determines whether this schedule should execute. This script block should return $true or $false.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Paused [<SwitchParameter>]
+        Whether this schedule is paused.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Timeout <Int32>
+        The timeout in minutes for this schedule.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -RandomDelay [<SwitchParameter>]
+        A random delay will be applied to when this script is started. The random delay will be between 0 and 60 seconds.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -237,19 +214,43 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    PowerShellUniversal.Script
+    UniversalAutomation.Script
+        
     
     
 OUTPUTS
     System.Object
+        
     
-ALIASES
-    None
     
-
-REMARKS
-    None
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> $Script = Get-UAScript -Name 'Script1.ps1'
+    PS C:\> New-PSUSchedule -Script $Script -Cron '*/5 * * * *'
+    
+    Creates a new schedule that runs every five minutes.
+    -------------------------- Example 2 --------------------------
+    
+    PS C:\> $Password = Get-UAVariable -Name 'password'
+    PS C:\> $Credential = New-UACredential -Name 'adam' -Password $Password
+    PS C:\> $Script = Get-UAScript -Name 'Script1.ps1'
+    PS C:\> New-PSUSchedule -Script $Script -Cron '*/5 * * * *'
+    
+    Creates a new schedule that runs every five minutes as 'adam'.
+    -------------------------- Example 3 --------------------------
+    
+    PS C:\> $Script = Get-UAScript -Name 'Script1.ps1'
+    PS C:\> New-PSUSchedule -Script $Script -Continous -DelayMinute 5
+    
+    Creates a schedule that runs conintously. It will start a new job once the previous one finishes with a delay of 5 minutes inbetween executions.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
 
 

@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    Install-PSUServer [-Path <String>] [-Version <String>] [-AddToPath] [-IISWebsite <String>] [-IISAppPool <String>] [-IISPort <Int32>] [<CommonParameters>]
+    Install-PSUServer [-Path <String>] [-Version <String>] [-IISWebsite <String>] [-IISAppPool <String>] [-IISPort <Int32>] [<CommonParameters>]
     
-    Install-PSUServer [-Path <String>] [-LatestVersion] [-AddToPath] [-IISWebsite <String>] [-IISAppPool <String>] [-IISPort <Int32>] [<CommonParameters>]
+    Install-PSUServer [-Path <String>] [-LatestVersion] [-IISWebsite <String>] [-IISAppPool <String>] [-IISPort <Int32>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -38,15 +38,6 @@ PARAMETERS
         
     -LatestVersion [<SwitchParameter>]
         Install the most recent version.
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -AddToPath [<SwitchParameter>]
-        Whether to add the path to the PATH environment variable.
         
         Required?                    false
         Position?                    named

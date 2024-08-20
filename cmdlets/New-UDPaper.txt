@@ -65,7 +65,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    5
-        Default value                
+        Default value                @{}
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

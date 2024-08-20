@@ -106,7 +106,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Color <String>
-        The color of the component. Valid values are: 'default', 'inherit', 'primary', 'secondary'
+        The color of the component. Valid values are: 'default', 'inherit', 'primary', 'secondary', 'info', 'warning', 'error', 'success'
         
         Required?                    false
         Position?                    named

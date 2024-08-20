@@ -116,7 +116,7 @@ OUTPUTS
     PS >    Show-UDToast -Message 'Hello'
     PS > } -Id 'fab3'
     
-    Position|Creates a floating action button with a user icon and shows a toast when clicked. The button is positioned in the bottom right of the page.
+    Position|Creates a floating action button with a user icon and shows a toast when clicked. The button is positioned in the bottom right of the buttons's container.
     
     
     

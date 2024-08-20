@@ -15,6 +15,8 @@ SYNTAX
     
     Get-PSUJob [-AppToken <String>] [-ComputerName <String>] [-First <UInt64>] [-IncludeTotalCount] [-Integrated] [-OrderBy {Id | StartTime | EndTime}] [-OrderDirection {Descending | Ascending}] [-Skip <UInt64>] [-Status {Queued | Running | Completed | Failed | WaitingOnFeedback | Canceled | Canceling | Historical | Active | TimedOut | Warning}] [-UseDefaultCredentials] -RunId <Guid> [<CommonParameters>]
     
+    Get-PSUJob [-AppToken <String>] [-ComputerName <String>] [-First <UInt64>] [-IncludeTotalCount] [-Integrated] [-OrderBy {Id | StartTime | EndTime}] [-OrderDirection {Descending | Ascending}] [-Skip <UInt64>] [-Status {Queued | Running | Completed | Failed | WaitingOnFeedback | Canceled | Canceling | Historical | Active | TimedOut | Warning}] [-UseDefaultCredentials] -Schedule <Schedule> [<CommonParameters>]
+    
     
 DESCRIPTION
     Returns jobs run within PSU.
@@ -145,6 +147,15 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Schedule <Schedule>
+        {{ Fill Schedule Description }}
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       True (ByValue)
         Accept wildcard characters?  false
         
     <CommonParameters>

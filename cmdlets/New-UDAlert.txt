@@ -81,6 +81,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Dense [<SwitchParameter>]
+        Reduces the vertical padding of the alert.
         
         Required?                    false
         Position?                    named

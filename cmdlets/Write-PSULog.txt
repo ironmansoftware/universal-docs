@@ -2,59 +2,62 @@
 NAME
     Write-PSULog
     
+SYNOPSIS
+    Writes a log to the PowerShell Universal logging system.
+    
+    
 SYNTAX
-    Write-PSULog [-Message] <string> [-Feature <string>] [-Resource <string>] [-Level {Error | Warning | Information | Debug}] [-Properties <hashtable>] [<CommonParameters>]
+    Write-PSULog [-Message] <String> [-Feature <String>] [-Level {Error | Warning | Information | Debug}] [-Properties <Hashtable>] [-Resource <String>] [<CommonParameters>]
     
     
+DESCRIPTION
+    Writes a log to the PowerShell Universal logging system.
+    
+
 PARAMETERS
-    -Feature <string>
+    -Feature <String>
+        The feature that is writing the log. This is typically the name of the feature group. For example, 'App' or 'API'.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -Level <AgentLogLevel>
+        The level of the log. This can be Error, Warning, Information or Debug.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Message <string>
+    -Message <String>
+        The message to write to the log.
         
         Required?                    true
         Position?                    0
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Properties <hashtable>
+    -Properties <Hashtable>
+        Additional properties to write to the log. This should be a hashtable of key/value pairs.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Resource <string>
+    -Resource <String>
+        The resource to associate this log message to. This may be an app, API or script.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -63,19 +66,28 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
     None
+        
     
     
 OUTPUTS
     System.Object
+        
     
-ALIASES
-    None
     
-
-REMARKS
-    None
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Write-PSULog -Message "Hello" -Level 'Error'
+    
+    Writes an error log to the PowerShell Universal logging system.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
 
 

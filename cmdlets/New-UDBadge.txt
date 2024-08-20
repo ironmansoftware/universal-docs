@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDBadge [[-Id] <String>] [[-Color] <String>] [[-Children] <ScriptBlock>] [[-BadgeContent] <ScriptBlock>] [-Invisible] [[-Max] <Int32>] [[-Overlap] <String>] [-ShowZero] [[-Variant] <String>] [[-Location] <String>] [<CommonParameters>]
+    New-UDBadge [[-Id] <String>] [[-Color] <String>] [[-Children] <ScriptBlock>] [[-BadgeContent] <ScriptBlock>] [-Invisible] [[-Max] <Int32>] [[-Overlap] <String>] [-ShowZero] [[-Variant] <String>] [[-Location] <String>] [[-Sx] <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -102,6 +102,14 @@ PARAMETERS
         Required?                    false
         Position?                    8
         Default value                topright
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Sx <Hashtable>
+        
+        Required?                    false
+        Position?                    9
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

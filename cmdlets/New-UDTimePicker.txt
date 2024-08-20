@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTimePicker [[-Id] <String>] [[-Label] <String>] [[-OnChange] <Endpoint>] [[-Value] <DateTime>] [[-Locale] <String>] [[-ClassName] <String>] [-DisableAmPm] [[-TimeZone] <TimeZoneInfo>] [<CommonParameters>]
+    New-UDTimePicker [[-Id] <String>] [[-Label] <String>] [[-OnChange] <Endpoint>] [[-Value] <DateTime>] [[-Locale] <String>] [[-ClassName] <String>] [-DisableAmPm] [[-TimeZone] <Object>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -47,7 +47,7 @@ PARAMETERS
         
         Required?                    false
         Position?                    4
-        Default value                ([DateTime]::Now)
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -78,7 +78,8 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -TimeZone <TimeZoneInfo>
+    -TimeZone <Object>
+        The time zone to use for the time picker. This should be an IANA time zone string.
         
         Required?                    false
         Position?                    7
@@ -145,7 +146,7 @@ OUTPUTS
     
     -------------------------- EXAMPLE 6 --------------------------
     
-    PS >New-UDTimePicker -Id 'timepicker6' -TimeZone (Get-TimeZone -Id "Central Standard Time")
+    PS >New-UDTimePicker -Id 'timepicker6' -TimeZone "America/New_York"
     
     TimeZone|Creates a time picker with a specific time zone.
     

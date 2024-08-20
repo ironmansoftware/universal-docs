@@ -92,7 +92,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
-        {{ Fill UseDefaultCredentials Description }}
+        Provides Windows Credentials when authenticating against PowerShell Universal.
         
         Required?                    false
         Position?                    named
@@ -128,7 +128,7 @@ NOTES
     Caches data forever within the server-level cache.
     -------------------------- Example 2 --------------------------
     
-    PS C:\> Set-PSUCache -Key 'Data' -Value 'MyValue' -AbsoluteExpirationTime (Get-Date).AddMinutes(10)
+    PS C:\> Set-PSUCache -Key 'Data' -Value 'MyValue' -AbsoluteExpiration (Get-Date).AddMinutes(10)
     
     Caches data within the cache that will expire in 10 minutes.
     -------------------------- Example 3 --------------------------

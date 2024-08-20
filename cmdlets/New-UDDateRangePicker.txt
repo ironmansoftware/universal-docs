@@ -1,0 +1,358 @@
+
+NAME
+    New-UDDateRangePicker
+    
+SYNOPSIS
+    Creates a new date range picker
+    
+    
+SYNTAX
+    New-UDDateRangePicker [[-Id] <String>] [-AutoFocus] [[-Calendars] <Int32>] [[-ClassName] <String>] [-CloseOnSelect] [[-CurrentMonthCalendarPositition] <Int32>] [[-DefaultRangePosition] <String>] [[-DesktopModeMediaQuery] <String>] [-Disabled] [-DisableDragEditing] [-DisableFuture] [-DisableHightlightToday] [-DisableOpenPicker] [-DisablePast] [-DisableWeekNumber] [[-Label] <String>] [[-MaxDate] <DateTime>] [[-MinDate] <DateTime>] [[-OnAccept] <Endpoint>] [[-OnChange] <Endpoint>] [[-OnClose] <Endpoint>] [[-OnError] <Endpoint>] [[-OnMonthChange] <Endpoint>] [[-OnOpen] <Endpoint>] [[-onRangePositionChange] <Endpoint>] [[-onSelectedSectionsChange] <Endpoint>] [[-RangePosition] <String>] [-ReduceAnimations] [[-DisabledDates] <DateTime[]>] [-showDaysOutsideCurrentMonth] [[-Sx] <Hashtable>] [[-Timezone] <String>] [[-Value] <DateTime[]>] [[-LocaleText] <Hashtable>] [[-Format] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new date range picker
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the date range picker. Defaults to a new GUID.
+        
+        Required?                    false
+        Position?                    1
+        Default value                [Guid]::NewGuid()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -AutoFocus [<SwitchParameter>]
+        Whether to autofocus this field.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Calendars <Int32>
+        Parameter description
+        
+        Required?                    false
+        Position?                    2
+        Default value                2
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        A CSS class name to apply to the date range picker.
+        
+        Required?                    false
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -CloseOnSelect [<SwitchParameter>]
+        Whether to close the picker when a date is selected.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -CurrentMonthCalendarPositition <Int32>
+        The position of the current month calendar.
+        
+        Required?                    false
+        Position?                    4
+        Default value                1
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DefaultRangePosition <String>
+        The default range position. Valid values are 'start' and 'end'.
+        
+        Required?                    false
+        Position?                    5
+        Default value                start
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DesktopModeMediaQuery <String>
+        The media query for desktop mode. Defaults to '@media (pointer: fine)'.
+        
+        Required?                    false
+        Position?                    6
+        Default value                @media (pointer: fine)
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Disabled [<SwitchParameter>]
+        Whether the date range picker is disabled.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DisableDragEditing [<SwitchParameter>]
+        Disables drag editing.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DisableFuture [<SwitchParameter>]
+        Disables future dates.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DisableHightlightToday [<SwitchParameter>]
+        Disables highlighting today.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DisableOpenPicker [<SwitchParameter>]
+        Disables opening the picker.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DisablePast [<SwitchParameter>]
+        Disables past dates.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DisableWeekNumber [<SwitchParameter>]
+        Disables the week number.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Label <String>
+        The label for the date range picker.
+        
+        Required?                    false
+        Position?                    7
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -MaxDate <DateTime>
+        The maximum date.
+        
+        Required?                    false
+        Position?                    8
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -MinDate <DateTime>
+        The minimum date.
+        
+        Required?                    false
+        Position?                    9
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnAccept <Endpoint>
+        An endpoint to call when the date range picker is accepted. $EventData will contain the selected date range.
+        
+        Required?                    false
+        Position?                    10
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnChange <Endpoint>
+        An endpoint to call when the date range picker changes. $EventData will contain the selected date range.
+        
+        Required?                    false
+        Position?                    11
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnClose <Endpoint>
+        An endpoint to call when the date range picker closes. $EventData will contain the selected date range.
+        
+        Required?                    false
+        Position?                    12
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnError <Endpoint>
+        An endpoint to call when an error occurs. $EventData will contain the error.
+        
+        Required?                    false
+        Position?                    13
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnMonthChange <Endpoint>
+        An endpoint to call when the month changes.
+        
+        Required?                    false
+        Position?                    14
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnOpen <Endpoint>
+        An endpoint to call when the date range picker opens.
+        
+        Required?                    false
+        Position?                    15
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -onRangePositionChange <Endpoint>
+        An endpoint to call when the range position changes.
+        
+        Required?                    false
+        Position?                    16
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -onSelectedSectionsChange <Endpoint>
+        An endpoint to call when the selected sections change.
+        
+        Required?                    false
+        Position?                    17
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -RangePosition <String>
+        The range position. Valid values are 'start' and 'end'.
+        
+        Required?                    false
+        Position?                    18
+        Default value                start
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ReduceAnimations [<SwitchParameter>]
+        Reduces animations.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DisabledDates <DateTime[]>
+        The disabled dates.
+        
+        Required?                    false
+        Position?                    19
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -showDaysOutsideCurrentMonth [<SwitchParameter>]
+        Whether to show days outside the current month.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Sx <Hashtable>
+        A hashtable of theme-specific styling properties.
+        
+        Required?                    false
+        Position?                    20
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Timezone <String>
+        The timezone.
+        
+        Required?                    false
+        Position?                    21
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Value <DateTime[]>
+        The value of the date range picker.
+        
+        Required?                    false
+        Position?                    22
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LocaleText <Hashtable>
+        The locale text for the date range picker.
+        
+        Required?                    false
+        Position?                    23
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Format <String>
+        The format of the dates in the date range picker.
+        
+        Required?                    false
+        Position?                    24
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDDateRangePicker -Id "DateRangePicker" -Label "Select a date range" -OnAccept {
+    PS >     param($DateRange)
+    PS >     Show-UDToast -Message "You selected $DateRange"
+    PS > }
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

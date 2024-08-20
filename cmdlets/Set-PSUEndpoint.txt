@@ -1,21 +1,19 @@
 
 NAME
-    New-PSULoginPage
+    Set-PSUEndpoint
     
 SYNOPSIS
-    Configuration settings for the login page in PowerShell Universal.
+    Updates an endpoint in PowerShell Universal.
     
     
 SYNTAX
-    New-PSULoginPage [-AppToken <String>] [-ComputerName <String>] [-Copyright <String>] [-CssStylesheet <String[]>] [-HeaderColor <String>] [-HeaderFontColor <String>] [-Image <String>] [-PrimaryColor <String>] [-PrimaryFontColor <String>] [-SecondaryColor <String>] [-SecondaryFontColor <String>] [-Title <String>] [-Links <LoginPageLink[]>] [-UseDefaultCredentials] [-Integrated] [-AppBarLogo <String>] [<CommonParameters>]
+    Set-PSUEndpoint [-Id] <Int64> [-AppToken <String>] [-Authentication] [-ComputerName <String>] [-Description <String>] [-Documentation <String>] [-Endpoint <ScriptBlock>] [-Environment <String>] [-Integrated] [-Method {GET | POST | PUT | DELETE | OPTIONS | PATCH}] [-Path <String>] [-PersistentLog] [-RegEx] [-Role <String[]>] [-Tag <Tag[]>] [-Timeout <Int32>] [-Url <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Set-PSUEndpoint [-InputObject] <Endpoint> [-AppToken <String>] [-Authentication] [-ComputerName <String>] [-Description <String>] [-Documentation <String>] [-Endpoint <ScriptBlock>] [-Environment <String>] [-Integrated] [-Method {GET | POST | PUT | DELETE | OPTIONS | PATCH}] [-Path <String>] [-PersistentLog] [-RegEx] [-Role <String[]>] [-Tag <Tag[]>] [-Timeout <Int32>] [-Url <String>] [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION
-    Configuration settings for the login page in PowerShell Universal. The login page is displayed when using forms authentication. You can configure colors, text and images for the login page.
-    
-    Login page configurations are stored in .universal/loginPage.ps1
-    
-    You can also use this cmdlet to update the login page through the REST API.
+    Updates an endpoint in PowerShell Universal.
     
 
 PARAMETERS
@@ -28,6 +26,15 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
+    -Authentication [<SwitchParameter>]
+        Enables authentication for the endpoint.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
     -ComputerName <String>
         Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session.
         
@@ -37,8 +44,8 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Copyright <String>
-        The copyright text to display at the bottom of the page.
+    -Description <String>
+        A description of the endpoint.
         
         Required?                    false
         Position?                    named
@@ -46,8 +53,8 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -CssStylesheet <String[]>
-        One or more URLs to stylesheets to apply to the login page.
+    -Documentation <String>
+        The documentation for the endpoint.
         
         Required?                    false
         Position?                    named
@@ -55,8 +62,8 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -HeaderColor <String>
-        The background color of the header.
+    -Endpoint <ScriptBlock>
+        The endpoint script block.
         
         Required?                    false
         Position?                    named
@@ -64,8 +71,8 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -HeaderFontColor <String>
-        The font color of the header.
+    -Environment <String>
+        The environment to run the endpoint in.
         
         Required?                    false
         Position?                    named
@@ -73,8 +80,35 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Image <String>
-        An image to display within the login page. You can use published folders to host images.
+    -Id <Int64>
+        The ID of the endpoint to update.
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -InputObject <Endpoint>
+        The endpoint to update.
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Method <String[]>
+        The HTTP method to use for the endpoint.
         
         Required?                    false
         Position?                    named
@@ -82,8 +116,8 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -PrimaryColor <String>
-        The primary background color.
+    -Path <String>
+        The path to the endpoint.
         
         Required?                    false
         Position?                    named
@@ -91,8 +125,26 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -PrimaryFontColor <String>
-        The primary font color.
+    -PersistentLog [<SwitchParameter>]
+        Enables persistent logging for the endpoint.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -RegEx [<SwitchParameter>]
+        Enables regular expression matching for the endpoint.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Role <String[]>
+        The role that can access the endpoint.
         
         Required?                    false
         Position?                    named
@@ -100,8 +152,8 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -SecondaryColor <String>
-        The secondary background color.
+    -Tag <Tag[]>
+        The tags for the endpoint.
         
         Required?                    false
         Position?                    named
@@ -109,8 +161,8 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -SecondaryFontColor <String>
-        The secondary font color.
+    -Timeout <Int32>
+        The timeout for the endpoint in seconds.
         
         Required?                    false
         Position?                    named
@@ -118,17 +170,8 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Title <String>
-        The tile to display in the header.
-        
-        Required?                    false
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Links <LoginPageLink[]>
-        Links to display on the login page. Use New-PSULoginPageLink.
+    -Url <String>
+        The URL of the endpoint.
         
         Required?                    false
         Position?                    named
@@ -145,24 +188,6 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -AppBarLogo <String>
-        {{ Fill AppBarLogo Description }}
-        
-        Required?                    false
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
@@ -170,7 +195,7 @@ PARAMETERS
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
 INPUTS
-    None
+    PowerShellUniversal.Endpoint
         
     
     
@@ -186,23 +211,11 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    $LoginPage = @{
-     PrimaryColor = '#5c2751' 
-     Title = 'DBATools Web Portal'
-     Copyright = 'DBATools 2020' 
-     HeaderFontColor = 'white'
-     HeaderColor = '#4bc0d9' 
-     SecondaryColor = '#6457a6'
-     SecondaryFontColor = 'white'
-     Image = 'http://localhost:5000/images/dbatools.png'
-    }
+    PS C:\> Set-PSUEndpoint -Id 1 -Url '/test' -Method 'GET'
     
-    New-PSULoginPage @LoginPage
-    
-    Creates a custom login page with colors, images and text.
+    Updates the endpoint with the ID of 1 to have the URL of '/test' and the method of 'GET'.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
-    New-PSUPublishedFolder 
 
 

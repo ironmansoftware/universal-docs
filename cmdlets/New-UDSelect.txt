@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDSelect [[-Id] <String>] [[-Option] <ScriptBlock>] [[-Label] <String>] [[-OnChange] <Endpoint>] [[-DefaultValue] <Object>] [-Disabled] [-Multiple] [[-MaxWidth] <String>] [[-ClassName] <String>] [-FullWidth] [[-Variant] <String>] [[-Icon] <Object>] [<CommonParameters>]
+    New-UDSelect [[-Id] <String>] [[-Option] <ScriptBlock>] [[-Label] <String>] [[-OnChange] <Endpoint>] [[-DefaultValue] <Object>] [-Disabled] [-Multiple] [[-MaxWidth] <String>] [[-ClassName] <String>] [-FullWidth] [[-OnEnter] <Endpoint>] [[-Variant] <String>] [[-Icon] <Object>] [[-Sx] <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -82,6 +82,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -MaxWidth <String>
+        The maximum width of the select.
         
         Required?                    false
         Position?                    6
@@ -90,6 +91,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ClassName <String>
+        A CSS class to apply to the select.
         
         Required?                    false
         Position?                    7
@@ -106,10 +108,20 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -Variant <String>
+    -OnEnter <Endpoint>
+        A script block that is called when the user presses the enter key. The $EventData variable will contain the current value of the textbox.
         
         Required?                    false
         Position?                    8
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Variant <String>
+        The variant of the select. Can be filled, outlined, or standard.
+        
+        Required?                    false
+        Position?                    9
         Default value                standard
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -118,7 +130,16 @@ PARAMETERS
         The icon to show next to the textbox. Use New-UDIcon to create an icon.
         
         Required?                    false
-        Position?                    9
+        Position?                    10
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Sx <Hashtable>
+        A hashtable of styles to apply to the select.
+        
+        Required?                    false
+        Position?                    11
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false

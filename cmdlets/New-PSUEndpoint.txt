@@ -7,9 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSUEndpoint [-AppToken <String>] [-Authentication] [-ComputerName <String>] -Endpoint <ScriptBlock> [-Method {GET | POST | PUT | DELETE | OPTIONS}] [-RegEx] [-Role <String[]>] -Url <String> [-Description <String>] [-UseDefaultCredentials] [-Integrated] [-Tag <Tag[]>] [-Timeout <Int32>] [-Environment <String>] [-PersistentLog] [-Documentation <String>] [<CommonParameters>]
+    New-PSUEndpoint [-AppToken <String>] [-Authentication] [-ComputerName <String>] -Endpoint <ScriptBlock> [-Method {GET | POST | PUT | DELETE | OPTIONS}] [-RegEx] [-Role <String[]>] -Url <String> [-Description <String>] [-UseDefaultCredentials] [-Integrated] [-Tag <Tag[]>] [-Timeout <Int32>] [-Path <String>] [-Environment <String>] [-PersistentLog] [-Documentation <String>] [-Command <String>] [-Module <String>] [-ComputerGroup <String[]>] [<CommonParameters>]
     
-    New-PSUEndpoint [-AppToken <String>] [-Authentication] [-ComputerName <String>] [-Method {GET | POST | PUT | DELETE | OPTIONS}] [-RegEx] [-Role <String[]>] -Url <String> [-Description <String>] [-UseDefaultCredentials] [-Integrated] [-Tag <Tag[]>] [-Timeout <Int32>] -Path <String> [-Environment <String>] [-PersistentLog] [-Documentation <String>] [<CommonParameters>]
+    New-PSUEndpoint [-AppToken <String>] [-Authentication] [-ComputerName <String>] [-Method {GET | POST | PUT | DELETE | OPTIONS}] [-RegEx] [-Role <String[]>] -Url <String> [-Description <String>] [-UseDefaultCredentials] [-Integrated] [-Tag <Tag[]>] [-Timeout <Int32>] -Path <String> [-Environment <String>] [-PersistentLog] [-Documentation <String>] [-Command <String>] [-Module <String>] [-ComputerGroup <String[]>] [<CommonParameters>]
+    
+    New-PSUEndpoint [-AppToken <String>] [-Authentication] [-ComputerName <String>] [-Method {GET | POST | PUT | DELETE | OPTIONS}] [-RegEx] [-Role <String[]>] -Url <String> [-Description <String>] [-UseDefaultCredentials] [-Integrated] [-Tag <Tag[]>] [-Timeout <Int32>] [-Environment <String>] [-PersistentLog] [-Documentation <String>] -Command <String> -Module <String> [-ComputerGroup <String[]>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -119,7 +121,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Tag <Tag[]>
-        {{ Fill Tag Description }}
+        Tags for this endpoint.
         
         Required?                    false
         Position?                    named
@@ -139,7 +141,7 @@ PARAMETERS
     -Path <String>
         The path to a PS1 file containing the content of this endpoint.
         
-        Required?                    true
+        Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
@@ -165,6 +167,33 @@ PARAMETERS
         
     -Documentation <String>
         The documentation definition to associate this end with.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Command <String>
+        The command that defines this endpoint content.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Module <String>
+        The module that contains the command that defines this endpoint content.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerGroup <String[]>
+        The computer group to run this endpoint on.
         
         Required?                    false
         Position?                    named

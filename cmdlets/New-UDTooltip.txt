@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTooltip [[-Id] <String>] [[-Placement] <String>] [-TooltipContent] <ScriptBlock> [-Content] <ScriptBlock> [[-Sx] <Hashtable>] [-Arrow] [-FollowCursor] [[-EnterDelay] <Int32>] [[-LeaveDelay] <Int32>] [<CommonParameters>]
+    New-UDTooltip [[-Id] <String>] [[-Placement] <String>] [-TooltipContent] <ScriptBlock> [-Content] <ScriptBlock> [[-Sx] <Hashtable>] [-Arrow] [-FollowCursor] [[-Type] <String>] [[-EnterDelay] <Int32>] [[-LeaveDelay] <Int32>] [[-Open] <Boolean>] [[-OnOpen] <Endpoint>] [[-OnClose] <Endpoint>] [-Persistent] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -60,6 +60,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Arrow [<SwitchParameter>]
+        Whether to display an arrow on the tooltip.
         
         Required?                    false
         Position?                    named
@@ -68,6 +69,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -FollowCursor [<SwitchParameter>]
+        Whether the tooltip should follow the cursor.
         
         Required?                    false
         Position?                    named
@@ -75,19 +77,65 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -EnterDelay <Int32>
+    -Type <String>
+        The type of tooltip.
         
         Required?                    false
         Position?                    6
+        Default value                dark
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -EnterDelay <Int32>
+        The delay before the tooltip appears in milliseconds.
+        
+        Required?                    false
+        Position?                    7
         Default value                0
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
     -LeaveDelay <Int32>
+        The delay before the tooltip disappears in milliseconds.
         
         Required?                    false
-        Position?                    7
+        Position?                    8
         Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Open <Boolean>
+        Whether the tooltip is open.
+        
+        Required?                    false
+        Position?                    9
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnOpen <Endpoint>
+        An endpoint to call when the tooltip is opened.
+        
+        Required?                    false
+        Position?                    10
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -OnClose <Endpoint>
+        An endpoint to call when the tooltip is closed.
+        
+        Required?                    false
+        Position?                    11
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Persistent [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -103,7 +151,11 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS >New-UDTooltip -TooltipContent { New-UDTypography -Text "Hello World" -Variant "h1" } -Content { New-UDTypography -Text "Hover over me" -Variant "h1" } -Id "tooltip1"
+    PS >New-UDTooltip -TooltipContent { 
+    PS >    New-UDTypography -Text "Hello World" 
+    PS > } -Content { 
+    PS >    New-UDButton -Text "Hover over me"
+    PS > } -Id "tooltip1"
     
     Basic Tooltip|A basic tooltip component that displays a header when hovered over.
     
@@ -112,9 +164,26 @@ OUTPUTS
     
     -------------------------- EXAMPLE 2 --------------------------
     
-    PS >New-UDTooltip -TooltipContent { New-UDTypography -Text "Hello World" -Variant "h1" } -Content { New-UDTypography -Text "Hover over me" -Variant "h1" } -Id "tooltip3" -Place "right"
+    PS >New-UDTooltip -TooltipContent { 
+    PS >    New-UDTypography -Text "Hello World" 
+    PS > } -Content { 
+    PS >    New-UDButton -Text "Hover over me"
+    PS > } -Id "tooltip3" -Place "right"
     
     Placement|A tooltip component that displays a header when hovered over with a right placement.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDTooltip -TooltipContent { 
+    PS >     New-UDTypography -Text "Hello World" 
+    PS > } -Content { 
+    PS >     New-UDButton -Text "Hover over me"
+    PS > } -Id "tooltip3" -Type "info" -Persistent
+    
+    Persistent Tooltip|A tooltip component that displays an alert when hovered over with a persistent tooltip. Click outside the tooltip to close it.
     
     
     

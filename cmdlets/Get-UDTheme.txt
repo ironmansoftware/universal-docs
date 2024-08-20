@@ -7,7 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    Get-UDTheme [[-Name] <Object>] [[-NavigationStyle] <String>] [<CommonParameters>]
+    Get-UDTheme [-Name <Object>] [-NavigationStyle <String>] [<CommonParameters>]
+    
+    Get-UDTheme [-Current] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -19,7 +21,7 @@ PARAMETERS
         The name of the theme.
         
         Required?                    false
-        Position?                    1
+        Position?                    named
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -28,8 +30,16 @@ PARAMETERS
         The style of the navigation.
         
         Required?                    false
-        Position?                    2
+        Position?                    named
         Default value                theme
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Current [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -42,11 +52,6 @@ PARAMETERS
 INPUTS
     
 OUTPUTS
-    
-NOTES
-    
-    
-        General notes
     
     -------------------------- EXAMPLE 1 --------------------------
     

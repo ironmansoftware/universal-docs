@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDStepper [[-Id] <String>] [[-ActiveStep] <Int32>] [-Children] <ScriptBlock> [-NonLinear] [-AlternativeLabel] [-OnFinish] <Endpoint> [[-OnCancel] <Endpoint>] [[-OnValidateStep] <Endpoint>] [[-Orientation] <String>] [[-NextButtonText] <String>] [[-BackButtonText] <String>] [[-FinishButtonText] <String>] [[-CancelButtonText] <String>] [[-ClassName] <String>] [<CommonParameters>]
+    New-UDStepper [[-Id] <String>] [[-ActiveStep] <Int32>] [-Children] <ScriptBlock> [-NonLinear] [-AlternativeLabel] [-OnFinish] <Endpoint> [[-OnCancel] <Endpoint>] [[-OnValidateStep] <Endpoint>] [[-Orientation] <String>] [[-NextButtonText] <String>] [[-BackButtonText] <String>] [[-FinishButtonText] <String>] [[-CancelButtonText] <String>] [[-ClassName] <String>] [[-Style] <Hashtable>] [[-Sx] <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -123,6 +123,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -CancelButtonText <String>
+        The text to display in the cancel button.
         
         Required?                    false
         Position?                    11
@@ -131,9 +132,28 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ClassName <String>
+        A CSS class to apply to the stepper.
         
         Required?                    false
         Position?                    12
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        A hashtable of styles to apply to the stepper.
+        
+        Required?                    false
+        Position?                    13
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Sx <Hashtable>
+        A hashtable of styles to apply to the stepper.
+        
+        Required?                    false
+        Position?                    14
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -331,7 +351,7 @@ OUTPUTS
     PS >     New-UDTypography -Text 'Nice! You did it!' -Variant h3
     PS >     New-UDElement -Tag 'div' -Id 'result' -Content {$Body}
     PS > } -OnValidateStep { 
-    PS >     if ($EventData.Step -eq 1 -and $EventData.txtStep17 -eq '') {
+    PS >     if ($EventData.CurrentStep -eq 0 -and [string]::IsNullOrEmpty($EventData.txtStep17)) {
     PS >         New-UDValidationResult -ValidationError 'Step 1 is required'
     PS >     }
     PS >     else {
@@ -339,7 +359,7 @@ OUTPUTS
     PS >     }
     PS > }
     
-    Validation|Creates a new stepper with three steps and custom icons.
+    Validation|Creates a new stepper with three steps and validation.
     
     
     
@@ -366,7 +386,7 @@ OUTPUTS
     PS >     New-UDElement -Tag 'div' -Id 'result' -Content {$Body}
     PS > }
     
-    Disable previous|Creates a new stepper with three steps and custom icons.
+    Disable previous|Creates a new stepper with three steps and disables the back button on the second step.
     
     [Component("Stepper", "WandMagicSparkles", "Creates a new card.")]
     

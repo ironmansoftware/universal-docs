@@ -11,6 +11,8 @@ SYNTAX
     
     Remove-PSUSchedule [-AppToken <String>] [-ComputerName <String>] [-Integrated] -Schedule <Schedule> [-UseDefaultCredentials] [<CommonParameters>]
     
+    Remove-PSUSchedule [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] -Name <String> [<CommonParameters>]
+    
     
 DESCRIPTION
     Removes a schedule for a script.
@@ -68,6 +70,15 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        The name of the schedule to remove.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         

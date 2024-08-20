@@ -1,0 +1,40 @@
+
+NAME
+    Hide-UDSnackbar
+    
+SYNOPSIS
+    Hides a snackbar.
+    
+    
+SYNTAX
+    Hide-UDSnackbar [[-Id] <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Hides a snackbar.
+    
+
+PARAMETERS
+    -Id <String>
+        The ID of the snackbar to hide. If not specified, all snackbars will be hidden.
+        
+        Required?                    false
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    
+RELATED LINKS
+
+

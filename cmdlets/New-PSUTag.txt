@@ -2,79 +2,80 @@
 NAME
     New-PSUTag
     
+SYNOPSIS
+    Creates a new tag in PSU.
+    
+    
 SYNTAX
-    New-PSUTag -Name <string> [-Color <string>] [-Description <string>] [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    New-PSUTag [-AppToken <String>] [-Color <String>] [-ComputerName <String>] [-Description <String>] -Name <String> [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
     
+DESCRIPTION
+    Creates a new tag in PSU. Tags are used for identifying scripts.
+    
+
 PARAMETERS
-    -AppToken <string>
+    -AppToken <String>
+        An app token to access the PSU API.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Color <string>
+    -Color <String>
+        Color to show in the UI.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -ComputerName <string>
+    -ComputerName <String>
+        The HTTP address of the PSU REST API server.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      Uri
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Description <string>
+    -Description <String>
+        Description of this tag.
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Integrated
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Name <string>
+    -Name <String>
+        Name of the tag.
         
         Required?                    true
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -UseDefaultCredentials
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -83,19 +84,28 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
     None
+        
     
     
 OUTPUTS
     System.Object
+        
     
-ALIASES
-    None
     
-
-REMARKS
-    None
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> New-PSUTag -Name 'Release Pipeline' -Color 'red'
+    
+    Creates a new tag called Release Pipeline that will be red in the UI.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
 
 

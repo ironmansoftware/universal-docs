@@ -1,17 +1,23 @@
 
 NAME
-    Remove-PSUSystemEvent
+    New-PSUPortalPage
     
 SYNTAX
-    Remove-PSUSystemEvent [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
-    
-    Remove-PSUSystemEvent [-SystemEvent] <SystemEvent> [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
-    
-    Remove-PSUSystemEvent [-Id] <long> [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    New-PSUPortalPage -Name <string> [-Description <string>] [-Widget <PortalComponentInstance[]>] [-Authenticated] [-Role <string[]>] [-ComputerName <string>] [-AppToken <string>] [-Credential <pscredential>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
     
 PARAMETERS
     -AppToken <string>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Authenticated
         
         Required?                    false
         Position?                    Named
@@ -31,12 +37,22 @@ PARAMETERS
         Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Id <long>
+    -Credential <pscredential>
         
-        Required?                    true
-        Position?                    0
+        Required?                    false
+        Position?                    Named
         Accept pipeline input?       false
-        Parameter set name           Id
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Description <string>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
         Aliases                      None
         Dynamic?                     false
         Accept wildcard characters?  false
@@ -51,17 +67,37 @@ PARAMETERS
         Dynamic?                     false
         Accept wildcard characters?  false
         
-    -SystemEvent <SystemEvent>
+    -Name <string>
         
         Required?                    true
-        Position?                    0
-        Accept pipeline input?       true (ByValue)
-        Parameter set name           SystemEvent
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Role <string[]>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
         Aliases                      None
         Dynamic?                     false
         Accept wildcard characters?  false
         
     -UseDefaultCredentials
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Widget <PortalComponentInstance[]>
         
         Required?                    false
         Position?                    Named
@@ -79,7 +115,7 @@ PARAMETERS
     
     
 INPUTS
-    PowerShellUniversal.SystemEvent
+    None
     
     
 OUTPUTS

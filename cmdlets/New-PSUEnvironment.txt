@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSUEnvironment [-AppToken <String>] [-Arguments <String>] [-ComputerName <String>] [-Modules <String[]>] -Name <String> [-PSModulePath <String[]>] -Path <String> [-PersistentRunspace] [-Variables <String[]>] [-UseDefaultCredentials] [-Integrated] [-StartupScript <String[]>] [-Version <String>] [-RunspaceRecycling] [-HighPerformanceRunspacePool] [-MaxRunspaces <Int32>] [-EnableDebugger] [-Credential <Variable>] [-MaxVirtualMemory <Int64>] [-RecycleSchedule <String>] [-Description <String>] [-DisableImplicitWinCompat] [<CommonParameters>]
+    New-PSUEnvironment [-AppToken <String>] [-Arguments <String>] [-ComputerName <String>] [-Modules <String[]>] -Name <String> [-PSModulePath <String[]>] -Path <String> [-PersistentRunspace] [-Variables <String[]>] [-UseDefaultCredentials] [-Integrated] [-StartupScript <String[]>] [-Version <String>] [-RunspaceRecycling] [-HighPerformanceRunspacePool] [-MaxRunspaces <Int32>] [-EnableDebugger] [-Credential <Variable>] [-MaxVirtualMemory <Int64>] [-RecycleSchedule <String>] [-Description <String>] [-DisableImplicitWinCompat] [-Minimal] [-ProcessStartupScript <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -214,6 +214,24 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Minimal [<SwitchParameter>]
+        A minimal environment that does not load any modules or variables.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ProcessStartupScript <String>
+        {{ Fill ProcessStartupScript Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         

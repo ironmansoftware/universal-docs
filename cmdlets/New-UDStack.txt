@@ -79,6 +79,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -JustifyContent <String>
+        Defines the justify-content style property. It's applied for all screen sizes. Valid values are flex-start, flex-end, center, space-between, space-around, and space-evenly.
         
         Required?                    false
         Position?                    7
@@ -99,9 +100,9 @@ OUTPUTS
     -------------------------- EXAMPLE 1 --------------------------
     
     PS >New-UDStack -Content {
-    PS >    New-UDCard -Text "Card 1"
-    PS >    New-UDCard -Text "Card 2"
-    PS >    New-UDCard -Text "Card 3"
+    PS >    New-UDCard -Text "Card 1" -RemoveMargin
+    PS >    New-UDCard -Text "Card 2" -RemoveMargin
+    PS >    New-UDCard -Text "Card 3" -RemoveMargin
     PS > } -Spacing 2 -Id 'stack1'
     
     Basic Stack|A basic stack.
@@ -112,9 +113,9 @@ OUTPUTS
     -------------------------- EXAMPLE 2 --------------------------
     
     PS >New-UDStack -Content {
-    PS >    New-UDCard -Text "Card 1"
-    PS >    New-UDCard -Text "Card 2"
-    PS >    New-UDCard -Text "Card 3"
+    PS >    New-UDCard -Text "Card 1" -RemoveMargin
+    PS >    New-UDCard -Text "Card 2" -RemoveMargin
+    PS >    New-UDCard -Text "Card 3" -RemoveMargin
     PS > } -Spacing 2 -Id 'stack2' -Direction 'column'
     
     Direction|A stack in a column direction.
@@ -125,9 +126,9 @@ OUTPUTS
     -------------------------- EXAMPLE 3 --------------------------
     
     PS >New-UDStack -Content {
-    PS >    New-UDCard -Text "Card 1"
-    PS >    New-UDCard -Text "Card 2"
-    PS >    New-UDCard -Text "Card 3"
+    PS >    New-UDCard -Text "Card 1" -RemoveMargin
+    PS >    New-UDCard -Text "Card 2" -RemoveMargin
+    PS >    New-UDCard -Text "Card 3" -RemoveMargin
     PS > } -Spacing 2 -Id 'stack3' -Direction 'row-reverse'
     
     Row Reverse|A row reverse stack.
@@ -138,9 +139,9 @@ OUTPUTS
     -------------------------- EXAMPLE 4 --------------------------
     
     PS >New-UDStack -Content {
-    PS >    New-UDCard -Text "Card 1"
-    PS >    New-UDCard -Text "Card 2"
-    PS >    New-UDCard -Text "Card 3"
+    PS >    New-UDCard -Text "Card 1" -RemoveMargin
+    PS >    New-UDCard -Text "Card 2" -RemoveMargin
+    PS >    New-UDCard -Text "Card 3" -RemoveMargin
     PS > } -Spacing 2 -Id 'stack4' -AlignItems 'center'
     
     Alignment|A center stack.
@@ -151,9 +152,9 @@ OUTPUTS
     -------------------------- EXAMPLE 5 --------------------------
     
     PS >New-UDStack -Content {
-    PS >    New-UDCard -Text "Card 1"
-    PS >    New-UDCard -Text "Card 2"
-    PS >    New-UDCard -Text "Card 3"
+    PS >    New-UDCard -Text "Card 1" -RemoveMargin
+    PS >    New-UDCard -Text "Card 2" -RemoveMargin
+    PS >    New-UDCard -Text "Card 3" -RemoveMargin
     PS > } -Spacing 2 -Id 'stack5' -Divider {
     PS >    New-UDDivider
     PS > }
@@ -166,9 +167,9 @@ OUTPUTS
     -------------------------- EXAMPLE 6 --------------------------
     
     PS >New-UDStack -Content {
-    PS >    New-UDCard -Text "Card 1"
-    PS >    New-UDCard -Text "Card 2"
-    PS >    New-UDCard -Text "Card 3"
+    PS >    New-UDCard -Text "Card 1" -RemoveMargin
+    PS >    New-UDCard -Text "Card 2" -RemoveMargin
+    PS >    New-UDCard -Text "Card 3" -RemoveMargin
     PS > } -Spacing 2 -Id 'stack6' -AlignItems 'center' -JustifyContent 'space-between'
     
     Justify Content|A stack with justify content.

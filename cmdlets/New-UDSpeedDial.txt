@@ -70,6 +70,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -OnActionClick <Endpoint>
+        A scriptblock to call when an action is clicked.
         
         Required?                    false
         Position?                    7

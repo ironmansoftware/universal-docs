@@ -408,10 +408,10 @@ OUTPUTS
     -------------------------- EXAMPLE 14 --------------------------
     
     PS >New-UDButton -Text 'Show Toast' -OnClick {
-    PS >    Show-UDToast -Message 'Hello, World!' -ReplaceToast
+    PS >    Show-UDToast -Message 'Hello, World!' -ReplaceToast -Id "toastId"
     PS > } -Id 'toast15'
     
-    Replace Toast|Shows a toast message that will replace an existing toast.
+    Replace Toast|Shows a toast message that will replace an existing toast. -Id is required.
     
     
     
@@ -474,7 +474,7 @@ OUTPUTS
     -------------------------- EXAMPLE 20 --------------------------
     
     PS >New-UDButton -Text 'Show Toast' -OnClick {
-    PS >    Show-UDToast -Message 'Hello, World!' -TransitionIn 'bounceInLeft' -TransitionOut 'bounceOutRight'
+    PS >    Show-UDToast -Message 'Hello, World!' -TransitionIn 'bounceInLeft' -TransitionOut 'bounceInRight'
     PS > } -Id 'toast21'
     
     Transition|Shows a toast message with a bounce in left transition and a bounce out right transition.

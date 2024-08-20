@@ -1,0 +1,83 @@
+
+NAME
+    Clear-PSUCache
+    
+SYNOPSIS
+    Clears the server side cache.
+    
+    
+SYNTAX
+    Clear-PSUCache [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Clears the server side cache. This does not affect $Cache: variables in the current session.
+    
+
+PARAMETERS
+    -AppToken <String>
+        An application token to use for authentication.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The URL of the server to connect to.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        For use when running within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use the default credentials for the current user.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Clear-PSUCache
+    
+    Clears the server side cache.
+    
+RELATED LINKS
+
+

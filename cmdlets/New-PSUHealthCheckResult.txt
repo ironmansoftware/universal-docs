@@ -1,31 +1,31 @@
 
 NAME
-    New-PSULoginPageLink
+    New-PSUHealthCheckResult
     
 SYNOPSIS
-    Creates a new link on the login page.
+    The result of a health check.
     
     
 SYNTAX
-    New-PSULoginPageLink -Text <String> -Url <String> [<CommonParameters>]
+    New-PSUHealthCheckResult [-Level {Ok | Warning | Error}] -Message <String> [<CommonParameters>]
     
     
 DESCRIPTION
-    Creates a new link on the login page. Use in conjunction with New-PSULoginPage.
+    The result of a health check.
     
 
 PARAMETERS
-    -Text <String>
-        The text of the link.
+    -Level <HealthCheckLevel>
+        The level of the health check result.
         
-        Required?                    true
+        Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Url <String>
-        The URL the link should go to.
+    -Message <String>
+        The message of the health check result.
         
         Required?                    true
         Position?                    named
@@ -54,18 +54,6 @@ NOTES
     
         
     
-    -------------------------- Example 1 --------------------------
-    
-    $LoginPage = @{
-        Links = @(
-            New-PSULoginPageLink -Text 'Google' -Url 'http://www.google.com'
-            New-PSULoginPageLink -Text 'Microsoft' -Url 'http://www.microsoft.com'
-        )
-    }
-    
-    New-PSULoginPage @LoginPage
-    
-    Creates a login page with two links.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

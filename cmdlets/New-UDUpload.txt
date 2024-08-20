@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDUpload [[-Id] <String>] [[-Accept] <String>] [[-OnUpload] <Endpoint>] [[-Text] <String>] [[-Variant] <String>] [[-Color] <String>] [[-ClassName] <String>] [-HideUploadedFileName] [[-Icon] <Object>] [[-IconAlignment] <String>] [<CommonParameters>]
+    New-UDUpload [[-Id] <String>] [[-Accept] <String>] [[-OnUpload] <Endpoint>] [[-Text] <String>] [[-Variant] <String>] [[-Color] <String>] [[-ClassName] <String>] [-HideUploadedFileName] [-ShowLoading] [[-LoadingIndicator] <Object>] [[-LoadingPosition] <String>] [[-Icon] <Object>] [[-IconAlignment] <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -101,11 +101,38 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
+    -ShowLoading [<SwitchParameter>]
+        Displays a loading spinner while the OnClick event handler is running.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LoadingIndicator <Object>
+        A custom element to display instead of the built in spinner for -ShowLoading
+        
+        Required?                    false
+        Position?                    8
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LoadingPosition <String>
+        The position of the loading indicator. Valid values are: 'start', 'end', 'center'
+        
+        Required?                    false
+        Position?                    9
+        Default value                center
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
     -Icon <Object>
         The icon to show instead of the default icon. Use New-UDIcon to create an icon.
         
         Required?                    false
-        Position?                    8
+        Position?                    10
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -114,7 +141,7 @@ PARAMETERS
         How to align the icon within the button. Valid values are: "left", "right"
         
         Required?                    false
-        Position?                    9
+        Position?                    11
         Default value                left
         Accept pipeline input?       false
         Accept wildcard characters?  false

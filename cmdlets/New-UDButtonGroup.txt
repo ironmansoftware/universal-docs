@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDButtonGroup [[-Id] <String>] [[-Children] <ScriptBlock>] [[-ClassName] <String>] [<CommonParameters>]
+    New-UDButtonGroup [[-Id] <String>] [[-Children] <ScriptBlock>] [[-ClassName] <String>] [[-Color] <Object>] [-Disabled] [-FullWidth] [[-Orientation] <String>] [[-Size] <String>] [[-Sx] <Hashtable>] [[-Variant] <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -34,10 +34,74 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ClassName <String>
+        A CSS class to apply to the button group.
         
         Required?                    false
         Position?                    3
         Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Color <Object>
+        The color of the button group. Valid values are: "primary", "secondary", "success", "warning", "error", "success", "info"
+        
+        Required?                    false
+        Position?                    4
+        Default value                primary
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Disabled [<SwitchParameter>]
+        Disables the button group.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -FullWidth [<SwitchParameter>]
+        Makes the button group full width.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Orientation <String>
+        The orientation of the button group. Valid values are: "horizontal", "vertical"
+        
+        Required?                    false
+        Position?                    5
+        Default value                horizontal
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Size <String>
+        The size of the button group. Valid values are: "small", "medium", "large"
+        
+        Required?                    false
+        Position?                    6
+        Default value                medium
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Sx <Hashtable>
+        An hashtable of styles to apply to this component.
+        
+        Required?                    false
+        Position?                    7
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Variant <String>
+        The variant of the button group. Valid values are: "contained", "outlined", "text"
+        
+        Required?                    false
+        Position?                    8
+        Default value                outlined
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -53,12 +117,126 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > Creates a new button group with two items.
+    PS >New-UDButtonGroup -Content {
+    PS >     New-UDButtonGroupItem -Text 'Delete'
+    PS >     New-UDButtonGroupItem -Text 'Copy'
+    PS > }
     
-    New-UDButtonGroup -Content {
-        New-UDButtonGroupItem -Text 'Delete'
-        New-UDButtonGroupItem -Text 'Copy'
-    }
+    Basic button group|The button group offers two items.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDButtonGroup -Content {
+    PS >     New-UDButtonGroupItem -Text 'Delete' 
+    PS >     New-UDButtonGroupItem -Text 'Copy'
+    PS > } -Color 'success'
+    
+    Color|You can use the -Color parameter to change the color of the button group.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDButtonGroup -Content {
+    PS >     New-UDButtonGroupItem -Text 'Delete'
+    PS >     New-UDButtonGroupItem -Text 'Copy'
+    PS > } -Orientation 'vertical'
+    
+    Vertical|You can use the -Orientation parameter to change the orientation of the button group.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDButtonGroup -Content {
+    PS >     New-UDButtonGroupItem -Text 'Delete'
+    PS >     New-UDButtonGroupItem -Text 'Copy'
+    PS > } -Size 'small'
+    PS > New-UDButtonGroup -Content {
+    PS >     New-UDButtonGroupItem -Text 'Delete'
+    PS >     New-UDButtonGroupItem -Text 'Copy'
+    PS > } -Size 'medium'
+    PS > New-UDButtonGroup -Content {
+    PS >     New-UDButtonGroupItem -Text 'Delete'
+    PS >     New-UDButtonGroupItem -Text 'Copy'
+    PS > } -Size 'large'
+    
+    Size|You can use the -Size parameter to change the size of the button group.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDButtonGroup -Content {
+    PS >     New-UDButtonGroupItem -Text 'Delete'
+    PS >     New-UDButtonGroupItem -Text 'Copy'
+    PS > } -Variant 'contained'
+    PS > New-UDButtonGroup -Content {
+    PS >     New-UDButtonGroupItem -Text 'Delete'
+    PS >     New-UDButtonGroupItem -Text 'Copy'
+    PS > } -Variant 'outlined'
+    PS > New-UDButtonGroup -Content {
+    PS >     New-UDButtonGroupItem -Text 'Delete'
+    PS >     New-UDButtonGroupItem -Text 'Copy'
+    PS > } -Variant 'text'
+    
+    Variant|You can use the -Variant parameter to change the variant of the button group.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS >New-UDButtonGroup -Content {
+    PS >     New-UDButtonGroupItem -Text 'Delete'
+    PS >     New-UDButtonGroupItem -Text 'Copy'
+    PS > } -Disabled
+    
+    Disabled|You can use the -Disabled parameter to disable the button group.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 7 --------------------------
+    
+    PS >New-UDButtonGroup -Content {
+    PS >     New-UDButtonGroupItem -Text 'Delete'
+    PS >     New-UDButtonGroupItem -Text 'Copy'
+    PS > } -FullWidth
+    
+    FullWidth|You can use the -FullWidth parameter to make the button group full width.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 8 --------------------------
+    
+    PS >New-UDButtonGroup -Content {
+    PS >     New-UDButtonGroupItem -Text 'Delete' -Icon (New-UDIcon -Icon 'trash')
+    PS >     New-UDButtonGroupItem -Text 'Copy'  -Icon (New-UDIcon -Icon 'copy')
+    PS > }
+    
+    Icon|You can use the -Icon parameter to add an icon to the button group item.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 9 --------------------------
+    
+    PS >New-UDButtonGroup -Content {
+    PS >     New-UDButtonGroupItem -Text 'Delete' -Icon (New-UDIcon -Icon 'trash') -ShowLoading -OnClick {
+    PS >        Start-Sleep -Seconds 5
+    PS >     }
+    PS >     New-UDButtonGroupItem -Text 'Copy'  -Icon (New-UDIcon -Icon 'copy') 
+    PS > }
+    
+    Loading|You can use the -ShowLoading parameter to show a loading spinner when the button is clicked.
     
     
     
