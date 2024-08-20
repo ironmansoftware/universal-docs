@@ -14,6 +14,10 @@ This document will cover the upgrade process for production PowerShell Universal
 
 The Universal application binaries can generally be upgraded without having to change the configuration or database manually, but we do recommend backups of production data.
 
+## Recommendations
+
+For production environments, we recommend deploying PowerShell Universal to a staging or development environment prior to major upgrades. This allows for testing before end users are affected. You can use [Development Licenses ](../licensing.md#developer-licenses)to test changes in PowerShell Universal instances without purchasing another license.&#x20;
+
 ## 1. Data Backup
 
 PowerShell Universal uses a script-based configuration system alongside a database used for retention of entities such as app tokens, job history and identities. If possible, you will want to backup these items before running an upgrade for easy rollback in case an issue is encountered during validation.
