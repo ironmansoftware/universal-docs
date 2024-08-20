@@ -219,6 +219,16 @@ LiteDB has been removed as a supported database engine. Included with the PowerS
 
 The tool will create a `database.bak` file before performing the conversion. Progress will be reported in the console.&#x20;
 
+#### Converting a Database for a MSI Upgrade
+
+In order for the PowerShell Universal installer to run successfully, you will need to update the database before running the MSI installer. Below are the steps to take to do so.&#x20;
+
+1. Download the ZIP package for Windows and extract to a local directory.&#x20;
+2. Stop the PowerShell Universal service
+3. Run the psudb.exe command from the ZIP directory, as stated above, to convert the database file in %ProgramData%\UniversalAutomation
+4. Update the %ProgramData%\PowerShellUniversal\appsettings.json file to use the SQLite plugin rather than the LiteDB plugin
+5. Run the PowerShell Universal v5 installer to upgrade the application files.
+
 ### Desktop Mode Removed
 
 Desktop mode has been removed. Resources such as hot keys, file associations and shortcuts are no longer supported. The MSI now supports User scope installs that will run as the current user and start upon login.
