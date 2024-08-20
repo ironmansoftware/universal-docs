@@ -40,8 +40,8 @@ There are over 50 components that you can use in your apps. Some of the commonly
   * [Stack](layout/stack.md)
 * Utilities
   * [Dynamic](../../portal/portal-widgets/dynamic.md)
-  * [Element ](utilities/element.md)
-  * [HTML](utilities/html.md)
+  * [Element ](element.md)
+  * [HTML](html.md)
 * Surfaces
   * [Card](surfaces/card.md)
   * [Expansion Panel](surfaces/expansion-panel.md)

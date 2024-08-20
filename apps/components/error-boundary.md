@@ -16,7 +16,7 @@ New-UDErrorBoundary -Content {
 
 If any error is thrown from the content, you will see an error such as thing.
 
-![](<../../../.gitbook/assets/image (58).png>)
+![](<../../.gitbook/assets/image (58).png>)
 
 ## API
 

@@ -20,7 +20,7 @@ New-UDApp -Title "Hello, World!" -Content {
 }
 ```
 
-![Reload on button click](../../../.gitbook/assets/NzJtyYOL54.gif)
+![Reload on button click](../../.gitbook/assets/NzJtyYOL54.gif)
 
 ## Arguments List
 
@@ -36,7 +36,7 @@ New-UDDynamic -Id 'dynamic_01' -Content {
 } -ArgumentList @('example of', 'arguments list') 
 ```
 
-<figure><img src="../../../.gitbook/assets/20221208a.png" alt=""><figcaption><p>utilizing the arguments list</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/20221208a.png" alt=""><figcaption><p>utilizing the arguments list</p></figcaption></figure>
 
 ## Auto Refresh
 
@@ -53,7 +53,7 @@ If you have multiple related components that use the same data, consider putting
     } -AutoRefresh -AutoRefreshInterval 1
 ```
 
-![Auto refresh dynamic region](../../../.gitbook/assets/jFrntpLfW0.gif)
+![Auto refresh dynamic region](../../.gitbook/assets/jFrntpLfW0.gif)
 
 ## Loading Component
 
@@ -68,7 +68,7 @@ Sometimes refreshing a dynamic component may take some time. For example, if you
     }
 ```
 
-![Loading component for dynamic region](../../../.gitbook/assets/Vwly75oKA9.gif)
+![Loading component for dynamic region](../../.gitbook/assets/Vwly75oKA9.gif)
 
 ## API
 

@@ -6,6 +6,10 @@ description: Changelog for PowerShell Universal.
 
 ## 5.0.0 - 8/20/2024
 
+{% hint style="warning" %}
+Please review the [upgrade documentation](getting-started/upgrading.md) before updating your environment.
+{% endhint %}
+
 #### Breaking Changes
 
 * Removal of Pages
