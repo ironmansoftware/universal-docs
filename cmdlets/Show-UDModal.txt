@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    Show-UDModal [-FullScreen] [[-Footer] <ScriptBlock>] [[-Header] <ScriptBlock>] [[-Content] <ScriptBlock>] [-Persistent] [-FullWidth] [[-MaxWidth] <String>] [[-Style] <Hashtable>] [[-HeaderStyle] <Hashtable>] [[-ContentStyle] <Hashtable>] [[-FooterStyle] <Hashtable>] [-Dividers] [<CommonParameters>]
+    Show-UDModal [-FullScreen] [[-Footer] <ScriptBlock>] [[-Header] <ScriptBlock>] [[-Content] <ScriptBlock>] [-Persistent] [-FullWidth] [-FullHeight] [[-MaxWidth] <String>] [[-Style] <Hashtable>] [[-HeaderStyle] <Hashtable>] [[-ContentStyle] <Hashtable>] [[-FooterStyle] <Hashtable>] [-Dividers] [[-PaperStyle] <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -69,6 +69,14 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
+    -FullHeight [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
     -MaxWidth <String>
         The max width of the modal.
         
@@ -120,6 +128,14 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -PaperStyle <Hashtable>
+        
+        Required?                    false
+        Position?                    9
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

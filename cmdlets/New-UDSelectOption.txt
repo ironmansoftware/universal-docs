@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDSelectOption [-Name] <String> [-Value] <String> [[-Icon] <Object>] [<CommonParameters>]
+    New-UDSelectOption [-Name] <String> [[-Value] <String>] [[-Icon] <Object>] [-Disabled] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -27,7 +27,7 @@ PARAMETERS
     -Value <String>
         Thevalue of the select option. This will be passed back to New-UDForm -OnSubmit or the $EventData for -OnChange on New-UDSelect.
         
-        Required?                    true
+        Required?                    false
         Position?                    2
         Default value                
         Accept pipeline input?       false
@@ -39,6 +39,15 @@ PARAMETERS
         Required?                    false
         Position?                    3
         Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Disabled [<SwitchParameter>]
+        Whether this option is disabled.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

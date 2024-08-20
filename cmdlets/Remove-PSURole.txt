@@ -1,22 +1,24 @@
 
 NAME
-    New-PSUSystemEvent
+    Remove-PSURole
     
 SYNOPSIS
-    Registers a system event handler with PSU Desktop.
+    Removes a role from PowerShell Universal.
     
     
 SYNTAX
-    New-PSUSystemEvent [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] -Condition <String> [-Credential <Variable>] [-Environment <String>] [-Integrated] [-Name <String>] [-Type {Create | Delete | Modify}] [-UseDefaultCredentials] [<CommonParameters>]
+    Remove-PSURole [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Remove-PSURole [-Role] <Role> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION
-    Registers a system event handler with PSU Desktop.
+    Removes a role from PowerShell Universal.
     
 
 PARAMETERS
     -AppToken <String>
-        {{ Fill AppToken Description }}
+        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
         
         Required?                    false
         Position?                    named
@@ -25,7 +27,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        {{ Fill ComputerName Description }}
+        Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session.
         
         Required?                    false
         Position?                    named
@@ -33,35 +35,17 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Condition <String>
-        {{ Fill Condition Description }}
+    -Id <Int64>
+        The ID of the role to remove.
         
         Required?                    true
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Credential <Variable>
-        {{ Fill Credential Description }}
-        
-        Required?                    false
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Environment <String>
-        {{ Fill Environment Description }}
-        
-        Required?                    false
-        Position?                    named
+        Position?                    0
         Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
-        {{ Fill Integrated Description }}
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
         
         Required?                    false
         Position?                    named
@@ -69,35 +53,17 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Name <String>
-        {{ Fill Name Description }}
-        
-        Required?                    false
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Script <Script>
-        {{ Fill Script Description }}
+    -Role <Role>
+        The role to remove.
         
         Required?                    true
-        Position?                    1
+        Position?                    0
         Default value                None
         Accept pipeline input?       True (ByValue)
         Accept wildcard characters?  false
         
-    -Type <SystemEventType>
-        {{ Fill Type Description }}
-        
-        Required?                    false
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
     -UseDefaultCredentials [<SwitchParameter>]
-        {{ Fill UseDefaultCredentials Description }}
+        Specifies that the cmdlet uses the credentials of the current user.
         
         Required?                    false
         Position?                    named
@@ -112,7 +78,7 @@ PARAMETERS
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
 INPUTS
-    PowerShellUniversal.Script
+    PowerShellUniversal.Role
         
     
     
@@ -128,9 +94,9 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> {{ Add example code here }}
+    PS C:\> Remove-PSURole -Id 1
     
-    {{ Add example description here }}
+    Removes a role with the ID of 1.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

@@ -1,31 +1,42 @@
 
 NAME
-    New-PSUFileAssociation
+    Remove-PSUComputerGroup
     
 SYNOPSIS
-    Creates a new file association within Windows to a script. Only supported by PSU Desktop.
+    Removes a computer group from PowerShell Universal.
     
     
 SYNTAX
-    New-PSUFileAssociation [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-Environment <String>] [-Extension <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    Remove-PSUComputerGroup [-ComputerGroup] <ComputerGroup> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    Remove-PSUComputerGroup [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION
-    Creates a new file association within Windows to a script. Only supported by PSU Desktop.
+    Removes a computer group from PowerShell Universal.
     
 
 PARAMETERS
     -AppToken <String>
-        Not used
+        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ComputerGroup <ComputerGroup>
+        Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session.
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       True (ByValue)
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        Not used
+        Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session.
         
         Required?                    false
         Position?                    named
@@ -33,35 +44,17 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Credential <Variable>
-        The credential to use when running the script.
+    -Id <Int64>
+        The ID of the computer group to remove.
         
-        Required?                    false
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Environment <String>
-        The environment to use when running the script.
-        
-        Required?                    false
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Extension <String>
-        The file extension to use.
-        
-        Required?                    false
-        Position?                    named
+        Required?                    true
+        Position?                    0
         Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
-        Not used
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
         
         Required?                    false
         Position?                    named
@@ -69,17 +62,8 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Script <Script>
-        The script to run when the associated file is opened.
-        
-        Required?                    true
-        Position?                    1
-        Default value                None
-        Accept pipeline input?       True (ByValue)
-        Accept wildcard characters?  false
-        
     -UseDefaultCredentials [<SwitchParameter>]
-        Not used
+        Use default credentials when connecting to the management API
         
         Required?                    false
         Position?                    named
@@ -94,7 +78,7 @@ PARAMETERS
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
 INPUTS
-    PowerShellUniversal.Script
+    PowerShellUniversal.ComputerGroup
         
     
     
@@ -110,9 +94,9 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> New-PSUFileAssociation -Script FileAssociation.ps1 -Extension .ps3
+    PS C:\> Remove-PSUComputerGroup -Id 1
     
-    creates a file association to the *.ps3 file type and runs the FileAssocation.ps1 file when it's opened.
+    Removes a computer group with the ID of 1.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

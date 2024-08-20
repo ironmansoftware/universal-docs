@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDSwitch [[-Id] <String>] [-Disabled] [[-OnChange] <Endpoint>] [[-Checked] <Boolean>] [[-ClassName] <String>] [[-Color] <String>] [[-Label] <String>] [[-CheckedLabel] <String>] [[-UncheckedLabel] <String>] [[-Size] <String>] [[-LabelPlacement] <String>] [-CheckStyle] [<CommonParameters>]
+    New-UDSwitch [[-Id] <String>] [-Disabled] [[-OnChange] <Endpoint>] [[-Checked] <Boolean>] [[-ClassName] <String>] [[-Color] <String>] [[-Label] <String>] [[-CheckedLabel] <String>] [[-UncheckedLabel] <String>] [[-Size] <String>] [[-LabelPlacement] <String>] [-CheckStyle] [[-Sx] <Hashtable>] [[-Style] <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -106,7 +106,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -LabelPlacement <String>
-        The placement of the label. Valid values are: "top", "left", "right", "bottom"
+        The placement of the label. Valid values are: "top", "start", "right", "bottom"
         
         Required?                    false
         Position?                    10
@@ -120,6 +120,24 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Sx <Hashtable>
+        A hashtable of theme-based styles to apply to the switch.
+        
+        Required?                    false
+        Position?                    11
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        A hashtable of styles to apply to the switch.
+        
+        Required?                    false
+        Position?                    12
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

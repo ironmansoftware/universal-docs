@@ -127,8 +127,8 @@ OUTPUTS
     -------------------------- EXAMPLE 1 --------------------------
     
     PS >New-UDMap -Content {
-    PS >     New-UDMapRasterLayer -TileServer 'https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png' 
-    PS > } -Latitude 43.52107 -Longitude -114.31644 -Zoom 13 -Height '100vh' -Id 'map1'
+    PS >     New-UDMapRasterLayer -TileServer 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' 
+    PS > } -Latitude 43.52107 -Longitude -114.31644 -Zoom 13 -Height '25vh' -Id 'map1'
     
     Basic map|This basic map defines a simple base layer using the wmflabs.org tile server. You can use your own custom tile server by specifying a URL. The map is position over Hailey, Idaho.
     
@@ -139,12 +139,9 @@ OUTPUTS
     
     PS >New-UDMap -Content {
     PS >    New-UDMapLayerControl -Content {
-    PS >         New-UDMapBaseLayer -Name 'Black and White' -Content {
-    PS >             New-UDMapRasterLayer -TileServer 'https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png' 
-    PS >         } -Checked
     PS >         New-UDMapBaseLayer -Name 'Color' -Content {
     PS >             New-UDMapRasterLayer -TileServer 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' 
-    PS >         }
+    PS >         } -Checked
     PS >         New-UDMapOverlay -Name 'Marker' -Content {
     PS >             New-UDMapMarker -Latitude 51.505 -Longitude -0.09 
     PS >         } -Checked
@@ -152,9 +149,9 @@ OUTPUTS
     PS >             New-UDMapMarker -Latitude 51.555 -Longitude -0.00 
     PS >         } -Checked
     PS >     }
-    PS > } -Latitude 51.505 -Longitude -0.09 -Zoom 13 -Height '100vh'
+    PS > } -Latitude 51.505 -Longitude -0.09 -Zoom 13 -Height '25vh' -Id 'map2'
     
-    Lay Control|You can enable the layer control by using the New-UDMapLayerControl cmdlet. This map defines several layers with components that you can toggle on and off. You can only have one base layer selected as a time. Map overlay layers can toggle on and off.
+    Layer Control|You can enable the layer control by using the New-UDMapLayerControl cmdlet. This map defines several layers with components that you can toggle on and off. You can only have one base layer selected as a time. Map overlay layers can toggle on and off.
     
     
     
@@ -163,14 +160,26 @@ OUTPUTS
     
     PS >New-UDMap -Content {
     PS >    New-UDMapRasterLayer -TileServer 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' 
-    PS >    New-UDMapMarker -Latitude "51.100" -Longitude "-0.5" -Popup (
+    PS >    New-UDMapMarker -Latitude "51.105" -Longitude "-0.09" -Popup (
     PS >       New-UDMapPopup -Content {
     PS >          New-UDAlert -Text "Hello"
     PS >       } -MinWidth 200
     PS >    )
-    PS > } -Latitude 51.505 -Longitude -0.09 -Zoom 13 -Height '100vh'
+    PS > } -Latitude 51.505 -Longitude -0.09 -Zoom 13 -Height '25vh' -Id 'map3'
     
-    Markers|You can add markers to the map by using the New-UDMapMarker cmdlet.
+    Markers with Popup|You can add markers to the map by using the New-UDMapMarker cmdlet.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDMap -Content {
+    PS >    New-UDMapRasterLayer -TileServer 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' 
+    PS >    New-UDMapVectorLayer -Circle -Radius 1000 -Latitude 51.505 -Longitude -0.09 -Color 'red' -FillColor 'blue' -FillOpacity 0.5
+    PS > } -Latitude 51.505 -Longitude -0.09 -Zoom 13 -Height '25vh' -Id 'map4'
+    
+    Vectors|You can add vectors to the map by using the New-UDMapVectorLayer cmdlet.
     
     
     

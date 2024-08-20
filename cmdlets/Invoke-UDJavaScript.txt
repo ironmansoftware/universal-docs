@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    Invoke-UDJavaScript [-JavaScript] <String> [<CommonParameters>]
+    Invoke-UDJavaScript [-JavaScript] <String> [-IgnoreResult] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -21,6 +21,14 @@ PARAMETERS
         Required?                    true
         Position?                    1
         Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -IgnoreResult [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

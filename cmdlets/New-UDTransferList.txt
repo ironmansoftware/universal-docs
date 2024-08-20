@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTransferList [[-Id] <String>] [[-Item] <ScriptBlock>] [[-SelectedItem] <String[]>] [[-OnChange] <Endpoint>] [[-ClassName] <String>] [-Disabled] [[-Height] <String>] [[-Width] <String>] [-ShowSearch] [[-Alignment] <String>] [<CommonParameters>]
+    New-UDTransferList [[-Id] <String>] [[-Item] <ScriptBlock>] [[-SelectedItem] <String[]>] [[-OnChange] <Endpoint>] [[-ClassName] <String>] [-Disabled] [[-Height] <String>] [[-Width] <String>] [-ShowSearch] [[-Alignment] <String>] [-Dense] [[-LeftTitle] <String>] [[-RightTitle] <String>] [[-LeftSubTitle] <String>] [[-RightSubTitle] <String>] [-Enhanced] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -93,10 +93,65 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Alignment <String>
+        Alignment of the transfer list. Valid values are left, right, and center.
         
         Required?                    false
         Position?                    8
         Default value                center
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Dense [<SwitchParameter>]
+        Makes the transfer list dense.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LeftTitle <String>
+        Title for the left hand list.
+        
+        Required?                    false
+        Position?                    9
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -RightTitle <String>
+        Title for the right hand list.
+        
+        Required?                    false
+        Position?                    10
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LeftSubTitle <String>
+        Subtitle for the left hand list.
+        
+        Required?                    false
+        Position?                    11
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -RightSubTitle <String>
+        Subtitle for the right hand list.
+        
+        Required?                    false
+        Position?                    12
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Enhanced [<SwitchParameter>]
+        Show enhanced selection.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -134,7 +189,11 @@ OUTPUTS
     PS >     New-UDTransferListItem -Name 'test4' -Value 4
     PS >     New-UDTransferListItem -Name 'test5' -Value 5
     PS > } -OnChange {
-    PS >     Show-UDToast ($EventData | ConvertTo-Json)
+    PS >     if ($EventData) {
+    PS >        Show-UDToast ($EventData | ConvertTo-Json)
+    PS >     } else {
+    PS >        Show-UDToast "No items selected"
+    PS >     }
     PS > } -Id 'transferlist2'
     
     OnChange|Creates a transfer list with an OnChange script block.
@@ -150,7 +209,7 @@ OUTPUTS
     PS >     New-UDTransferListItem -Name 'test3' -Value 3
     PS >     New-UDTransferListItem -Name 'test4' -Value 4
     PS >     New-UDTransferListItem -Name 'test5' -Value 5
-    PS > } -SelectedItem @('test1', 'test2') -Id 'transferlist3'
+    PS > } -SelectedItem @(1, 2) -Id 'transferlist3'
     
     Selected Items|Creates a transfer list with selected items.
     
@@ -199,7 +258,65 @@ OUTPUTS
     
     Width and Height|Creates a transfer list with a width and height.
     
-    [Component("Transfer List", "ListCheck", "Creates a new card.")]
+    
+    
+    
+    -------------------------- EXAMPLE 7 --------------------------
+    
+    PS >New-UDTransferList -Item {
+    PS >     New-UDTransferListItem -Name 'test1' -Value 1
+    PS >     New-UDTransferListItem -Name 'test2' -Value 2
+    PS >     New-UDTransferListItem -Name 'test3' -Value 3
+    PS >     New-UDTransferListItem -Name 'test4' -Value 4
+    PS >     New-UDTransferListItem -Name 'test5' -Value 5
+    PS > } -Id 'transferlist7' -Dense
+    
+    Dense|Creates a transfer list with dense items.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 8 --------------------------
+    
+    PS >New-UDTransferList -Item {
+    PS >     New-UDTransferListItem -Name 'test1' -Value 1
+    PS >     New-UDTransferListItem -Name 'test2' -Value 2
+    PS >     New-UDTransferListItem -Name 'test3' -Value 3
+    PS >     New-UDTransferListItem -Name 'test4' -Value 4
+    PS >     New-UDTransferListItem -Name 'test5' -Value 5
+    PS > } -Id 'transferlist8' -ShowSearch
+    
+    Show Search|Creates a transfer list with a search box.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 9 --------------------------
+    
+    PS >New-UDTransferList -Item {
+    PS >     New-UDTransferListItem -Name 'test1' -Value 1
+    PS >     New-UDTransferListItem -Name 'test2' -Value 2
+    PS >     New-UDTransferListItem -Name 'test3' -Value 3
+    PS >     New-UDTransferListItem -Name 'test4' -Value 4
+    PS >     New-UDTransferListItem -Name 'test5' -Value 5
+    PS > } -Id 'transferlist9' -LeftTitle 'Left Title' -RightTitle 'Right Title' -LeftSubTitle 'Left Subtitle' -RightSubTitle 'Right Subtitle'
+    
+    Titles|Creates a transfer list with titles.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 10 --------------------------
+    
+    PS >New-UDTransferList -Item {
+    PS >     New-UDTransferListItem -Name 'test1' -Value 1
+    PS >     New-UDTransferListItem -Name 'test2' -Value 2
+    PS >     New-UDTransferListItem -Name 'test3' -Value 3
+    PS >     New-UDTransferListItem -Name 'test4' -Value 4
+    PS >     New-UDTransferListItem -Name 'test5' -Value 5
+    PS > } -Id 'transferlist10' -Enhanced
+    
+    Enhanced|Creates a transfer list with enhanced selection.
     
     
     

@@ -1,24 +1,22 @@
 
 NAME
-    Get-PSUScriptParameter
+    Get-PSUEventHubConnection
     
 SYNOPSIS
-    Returns parameters for a script.
+    Returns event hub connections.
     
     
 SYNTAX
-    Get-PSUScriptParameter [-AppToken <String>] [-ComputerName <String>] [-Integrated] -Script <Script> [-UseDefaultCredentials] [<CommonParameters>]
-    
-    Get-PSUScriptParameter [-AppToken <String>] [-ComputerName <String>] [-Integrated] -ScriptId <Int64> [-UseDefaultCredentials] [<CommonParameters>]
+    Get-PSUEventHubConnection [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-Local] [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION
-    Returns parameters for a script.
+    {{ Fill in the Description }}
     
 
 PARAMETERS
     -AppToken <String>
-        An app token to access the PSU API.
+        {{ Fill AppToken Description }}
         
         Required?                    false
         Position?                    named
@@ -27,7 +25,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The HTTP address of the PSU REST API server.
+        {{ Fill ComputerName Description }}
         
         Required?                    false
         Position?                    named
@@ -36,7 +34,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        {{ Fill Integrated Description }}
         
         Required?                    false
         Position?                    named
@@ -44,26 +42,17 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Script <Script>
-        The script to return parameters for. Use Get-UAScript to get a Script object.
+    -Local [<SwitchParameter>]
+        {{ Fill Local Description }}
         
-        Required?                    true
+        Required?                    false
         Position?                    named
-        Default value                None
-        Accept pipeline input?       True (ByValue)
-        Accept wildcard characters?  false
-        
-    -ScriptId <Int64>
-        The ID of the script to return parameters for.
-        
-        Required?                    true
-        Position?                    named
-        Default value                None
+        Default value                False
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
-        Use default credentials when connecting to the management API
+        {{ Fill UseDefaultCredentials Description }}
         
         Required?                    false
         Position?                    named
@@ -78,7 +67,7 @@ PARAMETERS
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
 INPUTS
-    UniversalAutomation.Script
+    None
         
     
     
@@ -94,15 +83,9 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> Get-UAScriptParameter -ScriptId 12
+    PS C:\> {{ Add example code here }}
     
-    Returns parameters for script 12.
-    -------------------------- Example 2 --------------------------
-    
-    PS C:\> $Script = Get-UAScript -Name 'Script1.ps1'
-    PS C:\> Get-UAScriptParameter -Script $Script
-    
-    Returns parameters for script 'Script1.ps1'
+    {{ Add example description here }}
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

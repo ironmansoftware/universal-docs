@@ -9,6 +9,8 @@ SYNOPSIS
 SYNTAX
     Start-UDDownload [-FileName <String>] -StringData <String> [-ContentType <String>] [<CommonParameters>]
     
+    Start-UDDownload [-FileName <String>] -Path <String> [-ContentType <String>] [<CommonParameters>]
+    
     Start-UDDownload [-FileName <String>] [-ContentType <String>] -Url <String> [<CommonParameters>]
     
     
@@ -28,6 +30,14 @@ PARAMETERS
         
     -StringData <String>
         The data to be written to the file.
+        
+        Required?                    true
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Path <String>
         
         Required?                    true
         Position?                    named

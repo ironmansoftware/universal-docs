@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDMenu [[-Id] <String>] [-Text] <String> [[-OnChange] <Endpoint>] [-Children] <ScriptBlock> [[-ClassName] <ParameterAttribute>] [[-Variant] <String>] [[-Icon] <Hashtable>] [[-Size] <String>] [<CommonParameters>]
+    New-UDMenu [[-Id] <String>] [[-Text] <String>] [[-OnChange] <Endpoint>] [-Children] <ScriptBlock> [[-ClassName] <ParameterAttribute>] [[-Variant] <String>] [[-Icon] <Hashtable>] [[-Size] <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -27,7 +27,7 @@ PARAMETERS
     -Text <String>
         The text to display in the button that opens this menu.
         
-        Required?                    true
+        Required?                    false
         Position?                    2
         Default value                
         Accept pipeline input?       false

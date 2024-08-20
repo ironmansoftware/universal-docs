@@ -7,11 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    Invoke-PSUScript [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-Environment <String>] [-Integrated] [-Notes <String>] [-UseDefaultCredentials] [-Wait] [-WaitForDebugger] [<CommonParameters>]
+    Invoke-PSUScript [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-Environment <String>] [-Integrated] [-Notes <String>] [-UseDefaultCredentials] [-Wait] [-WaitForDebugger] [-Queue <String>] [-Parameters <Hashtable>] [-WaitTimeout <Int32>] [<CommonParameters>]
     
-    Invoke-PSUScript [-Name] <String> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-Environment <String>] [-Integrated] [-Notes <String>] [-UseDefaultCredentials] [-Wait] [-WaitForDebugger] [<CommonParameters>]
+    Invoke-PSUScript [-Name] <String> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-Environment <String>] [-Integrated] [-Notes <String>] [-UseDefaultCredentials] [-Wait] [-WaitForDebugger] [-Queue <String>] [-Parameters <Hashtable>] [-WaitTimeout <Int32>] [<CommonParameters>]
     
-    Invoke-PSUScript [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-Environment <String>] [-Integrated] [-Notes <String>] [-UseDefaultCredentials] [-Wait] [-WaitForDebugger] [<CommonParameters>]
+    Invoke-PSUScript [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-Environment <String>] [-Integrated] [-Notes <String>] [-UseDefaultCredentials] [-Wait] [-WaitForDebugger] [-Queue <String>] [-Parameters <Hashtable>] [-WaitTimeout <Int32>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -110,7 +110,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Wait [<SwitchParameter>]
-        {{ Fill Wait Description }}
+        Waits for the script to execute before returning.
         
         Required?                    false
         Position?                    named
@@ -124,6 +124,33 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Queue <String>
+        The computer, computer group or queue to run this script against.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Parameters <Hashtable>
+        A hashtable of parameters to pass to the script. This can be used instead of dynamic parameters on this cmdlet.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -WaitTimeout <Int32>
+        The number of seconds to wait.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
         Accept pipeline input?       False
         Accept wildcard characters?  false
         

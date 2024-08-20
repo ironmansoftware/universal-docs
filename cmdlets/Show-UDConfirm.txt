@@ -1,46 +1,36 @@
 
 NAME
-    Get-PSUSystemEvent
+    Show-UDConfirm
     
 SYNTAX
-    Get-PSUSystemEvent [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    Show-UDConfirm [[-Title] <Object>] [[-Question] <Object>] [[-Choices] <string[]>] [<CommonParameters>]
     
     
 PARAMETERS
-    -AppToken <string>
+    -Choices <string[]>
         
         Required?                    false
-        Position?                    Named
+        Position?                    2
         Accept pipeline input?       false
         Parameter set name           (All)
         Aliases                      None
         Dynamic?                     false
         Accept wildcard characters?  false
         
-    -ComputerName <string>
+    -Question <Object>
         
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      Uri
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Integrated
-        
-        Required?                    false
-        Position?                    Named
+        Position?                    1
         Accept pipeline input?       false
         Parameter set name           (All)
         Aliases                      None
         Dynamic?                     false
         Accept wildcard characters?  false
         
-    -UseDefaultCredentials
+    -Title <Object>
         
         Required?                    false
-        Position?                    Named
+        Position?                    0
         Accept pipeline input?       false
         Parameter set name           (All)
         Aliases                      None

@@ -1,24 +1,22 @@
 
 NAME
-    Get-PSUScriptHistory
+    Start-PSUGitEdit
     
 SYNOPSIS
-    Returns the git history for a script.
+    Starts an edit within PowerShell Universal when git sync is used.
     
     
 SYNTAX
-    Get-PSUScriptHistory [-AppToken <String>] [-ComputerName <String>] [-Integrated] -Script <Script> [-UseDefaultCredentials] [<CommonParameters>]
-    
-    Get-PSUScriptHistory [-AppToken <String>] [-ComputerName <String>] [-Integrated] -ScriptId <Int64> [-UseDefaultCredentials] [<CommonParameters>]
+    Start-PSUGitEdit [-AppToken <String>] [-ComputerName <String>] [-Credential <PSCredential>] [-HttpProtocolVersion <Version>] [-Integrated] [<CommonParameters>]
     
     
 DESCRIPTION
-    Returns the git history for a script.
+    Starts an edit within PowerShell Universal when git sync is used.
     
 
 PARAMETERS
     -AppToken <String>
-        App token to access the PowerShell Universal server.
+        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
         
         Required?                    false
         Position?                    named
@@ -27,7 +25,25 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The name or URL of the PowerShell Universal server.
+        Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Credential <PSCredential>
+        The credentials to use when accessing the PowerShell Universal Management API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -HttpProtocolVersion <Version>
+        The HTTP protocol version to use when calling the PowerShell Universal Management API.
         
         Required?                    false
         Position?                    named
@@ -36,34 +52,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
-        Whether to use integrated transport
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Script <Script>
-        The script for which to receive history.
-        
-        Required?                    true
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       True (ByValue)
-        Accept wildcard characters?  false
-        
-    -ScriptId <Int64>
-        The script ID for which to receive history.
-        
-        Required?                    true
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -UseDefaultCredentials [<SwitchParameter>]
-        Use default Windows Credentials when connecting to PowerShell Universal.
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
         
         Required?                    false
         Position?                    named
@@ -78,7 +67,7 @@ PARAMETERS
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
 INPUTS
-    UniversalAutomation.Script
+    None
         
     
     
@@ -94,15 +83,9 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> Get-UAScriptHistory -ScriptId 12
+    PS C:\> Start-PSUGitEdit
     
-    Returns the script history for script with ID 12.
-    -------------------------- Example 2 --------------------------
-    
-    PS C:\> $Script = Get-UAScript -Name 'Script1.ps1'
-    PS C:\> Get-UAScriptHistory -Script $Script
-    
-    Returns the history for script 'Script1.ps1'
+    Starts an edit within PowerShell Universal when git sync is used.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

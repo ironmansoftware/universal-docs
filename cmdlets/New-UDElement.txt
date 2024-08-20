@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDElement [-ArgumentList <Object[]>] [-Attributes <Hashtable>] [-AutoRefresh] [-Content <ScriptBlock>] [-Endpoint <ScriptBlock>] [-Id <String>] [-RefreshInterval <Int32>] -Tag <String> [<CommonParameters>]
+    New-UDElement [-ArgumentList <Object[]>] [-Attributes <Hashtable>] [-AutoRefresh] [-Content <ScriptBlock>] [-Endpoint <Endpoint>] [-Id <String>] [-RefreshInterval <Int32>] [-Tag <String>] [-ClassName <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -51,7 +51,7 @@ PARAMETERS
         Accept pipeline input?       False
         Accept wildcard characters?  false
         
-    -Endpoint <ScriptBlock>
+    -Endpoint <Endpoint>
         Dynamic content for the element.
         
         Required?                    false
@@ -81,7 +81,16 @@ PARAMETERS
     -Tag <String>
         The HTML tag.
         
-        Required?                    true
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        A class to apply to the element.
+        
+        Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False

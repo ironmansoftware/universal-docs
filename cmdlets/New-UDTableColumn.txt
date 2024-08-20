@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTableColumn [[-Id] <String>] [-Property] <String> [[-Title] <String>] [[-Render] <ScriptBlock>] [-ShowSort] [-ShowFilter] [[-FilterType] <String>] [[-Style] <Hashtable>] [[-Width] <Int32>] [[-MinWidth] <Int32>] [-IncludeInSearch] [-IncludeInExport] [-DefaultSortColumn] [[-Align] <String>] [-Truncate] [[-SortType] <String>] [-Hidden] [<CommonParameters>]
+    New-UDTableColumn [[-Id] <String>] [-Property] <String> [[-Title] <String>] [[-OnRender] <ScriptBlock>] [-ShowSort] [-ShowFilter] [[-FilterType] <String>] [[-Style] <Hashtable>] [[-Width] <Int32>] [[-MinWidth] <Int32>] [-IncludeInSearch] [-IncludeInExport] [-DefaultSortColumn] [[-Align] <String>] [-Truncate] [[-SortType] <String>] [-Hidden] [[-Options] <String[]>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -42,8 +42,7 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
-    -Render <ScriptBlock>
-        How to render this table. Use this parameter instead of property to render custom content within a column. The $Body variable will contain the current row being rendered.
+    -OnRender <ScriptBlock>
         
         Required?                    false
         Position?                    4
@@ -164,6 +163,15 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Options <String[]>
+        The options to use for a select filter.
+        
+        Required?                    false
+        Position?                    11
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

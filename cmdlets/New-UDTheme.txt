@@ -1,0 +1,139 @@
+
+NAME
+    New-UDTheme
+    
+SYNOPSIS
+    Creates a new theme.
+    
+    
+SYNTAX
+    New-UDTheme [[-PrimaryColor] <DashboardColor>] [[-SecondaryColor] <DashboardColor>] [[-WarningColor] <DashboardColor>] [[-ErrorColor] <DashboardColor>] [[-SuccessColor] <DashboardColor>] [[-Background] <DashboardColor>] [[-DarkPrimaryColor] <DashboardColor>] [[-DarkSecondaryColor] <DashboardColor>] [[-DarkWarningColor] <DashboardColor>] [[-DarkErrorColor] <DashboardColor>] [[-DarkSuccessColor] <DashboardColor>] [[-DarkBackground] <DashboardColor>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new theme.
+    
+
+PARAMETERS
+    -PrimaryColor <DashboardColor>
+        The primary color for the light theme.
+        
+        Required?                    false
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -SecondaryColor <DashboardColor>
+        The secondary color for the light theme.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -WarningColor <DashboardColor>
+        The warning color for the light theme.
+        
+        Required?                    false
+        Position?                    3
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ErrorColor <DashboardColor>
+        The error color for the light theme.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -SuccessColor <DashboardColor>
+        The success color for the light theme.
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Background <DashboardColor>
+        The background color for the light theme.
+        
+        Required?                    false
+        Position?                    6
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DarkPrimaryColor <DashboardColor>
+        The primary color for the dark theme.
+        
+        Required?                    false
+        Position?                    7
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DarkSecondaryColor <DashboardColor>
+        The secondary color for the dark theme.
+        
+        Required?                    false
+        Position?                    8
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DarkWarningColor <DashboardColor>
+        The warning color for the dark theme.
+        
+        Required?                    false
+        Position?                    9
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DarkErrorColor <DashboardColor>
+        The error color for the dark theme.
+        
+        Required?                    false
+        Position?                    10
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DarkSuccessColor <DashboardColor>
+        The success color for the dark theme.
+        
+        Required?                    false
+        Position?                    11
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DarkBackground <DashboardColor>
+        The background color for the dark theme.
+        
+        Required?                    false
+        Position?                    12
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    
+RELATED LINKS
+
+

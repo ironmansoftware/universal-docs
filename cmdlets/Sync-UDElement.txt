@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    Sync-UDElement [-Id] <String[]> [-Broadcast] [<CommonParameters>]
+    Sync-UDElement [-Id] <String[]> [-Broadcast] [[-ArgumentList] <Object[]>] [-Wait] [[-Timeout] <Int32>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -33,6 +33,31 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
+    -ArgumentList <Object[]>
+        The argument list to pass to the element.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Wait [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Timeout <Int32>
+        
+        Required?                    false
+        Position?                    3
+        Default value                5000
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
@@ -46,7 +71,7 @@ OUTPUTS
     -------------------------- EXAMPLE 1 --------------------------
     
     PS >New-UDDynamic -Id 'sync1' -Content {
-    PS >    Get-Date
+    PS >    New-UDTypography (Get-Random)
     PS > }
     PS > New-UDButton -Text 'Refresh' -OnClick {
     PS >    Sync-UDElement 'sync1'
@@ -60,7 +85,7 @@ OUTPUTS
     -------------------------- EXAMPLE 2 --------------------------
     
     PS >New-UDDynamic -Id 'sync2' -Content {
-    PS >    Get-Date
+    PS >    New-UDTypography (Get-Random)
     PS > }
     PS > New-UDButton -Text 'Refresh' -OnClick {
     PS >    Sync-UDElement 'sync2' -Broadcast

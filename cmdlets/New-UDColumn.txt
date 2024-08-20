@@ -2,79 +2,80 @@
 NAME
     New-UDColumn
     
+SYNOPSIS
+    Creates a new column for a grid.
+    
+    
 SYNTAX
-    New-UDColumn [[-Content] <scriptblock>] [-Id <string>] [-SmallSize <int>] [-LargeSize <int>] [-MediumSize <int>] [-ExtraLargeSize <int>] [-ExtraSmallSize <int>] [<CommonParameters>]
+    New-UDColumn [-Id <String>] [-SmallSize <Int32>] [-LargeSize <Int32>] [-MediumSize <Int32>] [-ExtraLargeSize <Int32>] [-ExtraSmallSize <Int32>] [[-Content] <ScriptBlock>] [<CommonParameters>]
     
     
+DESCRIPTION
+    Creates a new column for a grid. This is a wrapper for New-UDGrid -Item. Sizing uses screen size breakpoints and a 12 column grid system.
+    
+
 PARAMETERS
-    -Content <scriptblock>
+    -Id <String>
+        The ID of the column.
         
         Required?                    false
-        Position?                    1
+        Position?                    named
+        Default value                ([Guid]::NewGuid())
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -ExtraLargeSize <int>
+    -SmallSize <Int32>
+        The size of the column on small screens.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                12
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -ExtraSmallSize <int>
+    -LargeSize <Int32>
+        The size of the column on large screens.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                12
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Id <string>
+    -MediumSize <Int32>
+        The size of the column on medium screens.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                12
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -LargeSize <int>
+    -ExtraLargeSize <Int32>
+        The size of the column on extra large screens.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                0
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -MediumSize <int>
+    -ExtraSmallSize <Int32>
+        The size of the column on extra small screens.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                0
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -SmallSize <int>
+    -Content <ScriptBlock>
+        The content of the column.
         
         Required?                    false
-        Position?                    Named
+        Position?                    2
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      Size
-        Dynamic?                     false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -83,19 +84,22 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
+    -------------------------- EXAMPLE 1 --------------------------
     
-
-REMARKS
-    None
+    PS >New-UDColumn -SmallSize 6 -Content {
+    PS >     "Column 1"
+    PS > }
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
 
 

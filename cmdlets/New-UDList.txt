@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDList [[-Id] <String>] [[-Children] <ScriptBlock>] [[-SubHeader] <String>] [[-ClassName] <String>] [-Dense] [<CommonParameters>]
+    New-UDList [[-Id] <String>] [[-Children] <ScriptBlock>] [[-SubHeader] <String>] [[-ClassName] <String>] [-Dense] [[-Sx] <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -43,6 +43,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ClassName <String>
+        A CSS class to apply to the list.
         
         Required?                    false
         Position?                    4
@@ -51,10 +52,20 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Dense [<SwitchParameter>]
+        Whether the list is dense.
         
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Sx <Hashtable>
+        An hashtable of styles to apply to this component.
+        
+        Required?                    false
+        Position?                    5
+        Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
@@ -172,6 +183,20 @@ OUTPUTS
     PS > } -Id 'list7'
     
     CheckBox|Create a list item with a checkbox.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 8 --------------------------
+    
+    PS >New-UDList -Content {
+    PS >    New-UDListItem -Label 'Inbox' -SubTitle 'New Stuff' -Href 'https://ironmansoftware.com' -OpenInNewWindow
+    PS >    New-UDListItem -Label 'Drafts' -SubTitle "Stuff I'm working on " -Href 'https://powershellgallery.com' -OpenInNewWindow
+    PS >    New-UDListItem -Label 'Trash' -SubTitle 'Stuff I deleted' -Href 'https://github.com/powershell/powershell' -OpenInNewWindow
+    PS >    New-UDListItem -Label 'Spam' -SubTitle "Stuff I didn't want" 
+    PS > } -Id 'list7'
+    
+    Links|Create a list item with links
     
     
     

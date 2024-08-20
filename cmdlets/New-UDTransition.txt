@@ -7,15 +7,15 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTransition [-Id <String>] [-Collapse] [-CollapseHeight <Int32>] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [<CommonParameters>]
+    New-UDTransition [-Id <String>] [-Collapse] [-CollapseHeight <Int32>] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [-Style <Hashtable>] [<CommonParameters>]
     
-    New-UDTransition [-Id <String>] [-Fade] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [<CommonParameters>]
+    New-UDTransition [-Id <String>] [-Fade] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [-Style <Hashtable>] [<CommonParameters>]
     
-    New-UDTransition [-Id <String>] [-Grow] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [<CommonParameters>]
+    New-UDTransition [-Id <String>] [-Grow] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [-Style <Hashtable>] [<CommonParameters>]
     
-    New-UDTransition [-Id <String>] [-Slide] [-SlideDirection <String>] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [<CommonParameters>]
+    New-UDTransition [-Id <String>] [-Slide] [-SlideDirection <String>] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [-Style <Hashtable>] [<CommonParameters>]
     
-    New-UDTransition [-Id <String>] [-Zoom] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [<CommonParameters>]
+    New-UDTransition [-Id <String>] [-Zoom] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [-Style <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -122,6 +122,14 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
         
+    -Style <Hashtable>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
@@ -137,6 +145,11 @@ OUTPUTS
     PS >New-UDTransition -Fade -In -Children {
     PS >    New-UDButton -Text 'Click Me'  -Id 'button1'
     PS > } -Id 'transition1' -Timeout 1000
+    PS > New-UDCheckbox -Label 'Toggle' -OnChange {
+    PS >    Set-UDElement -Id 'transition1' -Properties @{
+    PS >        In = $EventData
+    PS >    }
+    PS > } -Checked $true
     
     Fade|A fade transition.
     
@@ -148,6 +161,11 @@ OUTPUTS
     PS >New-UDTransition -Slide -In -Children {
     PS >    New-UDButton -Text 'Click Me' -Id 'button2'
     PS > } -Id 'transition2'  -Timeout 1000
+    PS > New-UDCheckbox -Label 'Toggle' -OnChange {
+    PS >    Set-UDElement -Id 'transition2' -Properties @{
+    PS >        In = $EventData
+    PS >    }
+    PS > } -Checked $true
     
     Slide|A slide transition.
     
@@ -159,6 +177,11 @@ OUTPUTS
     PS >New-UDTransition -Zoom -In -Children {
     PS >    New-UDButton -Text 'Click Me' -Id 'button3'
     PS > } -Id 'transition3'  -Timeout 1000
+    PS > New-UDCheckbox -Label 'Toggle' -OnChange {
+    PS >    Set-UDElement -Id 'transition3' -Properties @{
+    PS >        In = $EventData
+    PS >    }
+    PS > } -Checked $true
     
     Zoom|A zoom transition.
     
@@ -170,6 +193,11 @@ OUTPUTS
     PS >New-UDTransition -Grow -In -Children {
     PS >    New-UDButton -Text 'Click Me' -Id 'button4'
     PS > } -Id 'transition4'  -Timeout 1000
+    PS > New-UDCheckbox -Label 'Toggle' -OnChange {
+    PS >    Set-UDElement -Id 'transition4' -Properties @{
+    PS >        In = $EventData
+    PS >    }
+    PS > } -Checked $true
     
     Grow|A grow transition.
     
@@ -181,6 +209,11 @@ OUTPUTS
     PS >New-UDTransition -Collapse -In -Children {
     PS >    New-UDButton -Text 'Click Me' -Id 'button5'
     PS > } -Id 'transition5'  -Timeout 1000
+    PS > New-UDCheckbox -Label 'Toggle' -OnChange {
+    PS >    Set-UDElement -Id 'transition5' -Properties @{
+    PS >        In = $EventData
+    PS >    }
+    PS > } -Checked $true
     
     Collapse|A collapse transition.
     
@@ -192,6 +225,11 @@ OUTPUTS
     PS >New-UDTransition -Collapse -In -Children {
     PS >    New-UDButton -Text 'Click Me' -Id 'button6'
     PS > } -Id 'transition6' -CollapseHeight 100  -Timeout 1000
+    PS > New-UDCheckbox -Label 'Toggle' -OnChange {
+    PS >    Set-UDElement -Id 'transition6' -Properties @{
+    PS >        In = $EventData
+    PS >    }
+    PS > } -Checked $true
     
     Collapse Height|A collapse transition with 100 height.
     
@@ -203,6 +241,11 @@ OUTPUTS
     PS >New-UDTransition -Slide -In -Children {
     PS >    New-UDButton -Text 'Click Me' -Id 'button7'
     PS > } -Id 'transition7' -SlideDirection 'Left'  -Timeout 1000
+    PS > New-UDCheckbox -Label 'Toggle' -OnChange {
+    PS >    Set-UDElement -Id 'transition7' -Properties @{
+    PS >        In = $EventData
+    PS >    }
+    PS > } -Checked $true
     
     Slide Direction|A slide transition with left direction.
     
@@ -214,24 +257,13 @@ OUTPUTS
     PS >New-UDTransition -Fade -In -Children {
     PS >    New-UDButton -Text 'Click Me' -Id 'button8'
     PS > } -Id 'transition8' -Timeout 1000
+    PS > New-UDCheckbox -Label 'Toggle' -OnChange {
+    PS >    Set-UDElement -Id 'transition8' -Properties @{
+    PS >        In = $EventData
+    PS >    }
+    PS > } -Checked $true
     
     Timeout|A fade transition with 1000 timeout.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 9 --------------------------
-    
-    PS >New-UDTransition -Fade -Children {
-    PS >    New-UDButton -Text 'Click Me' -Id 'button9'
-    PS > } -Id 'transition9' -Timeout 1000
-    PS > New-UDButton -Text 'Click Me' -OnClick {
-    PS >    Set-UDElement -Id 'transition9' -Properties @{
-    PS >        In = $true
-    PS >    }
-    PS > }
-    
-    Interaction|A button that causes the transition to happen.
     
     
     

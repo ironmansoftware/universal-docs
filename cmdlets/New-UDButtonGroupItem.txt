@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDButtonGroupItem [[-Id] <String>] [[-OnClick] <Endpoint>] [[-Text] <String>] [[-Href] <String>] [<CommonParameters>]
+    New-UDButtonGroupItem [[-Id] <String>] [[-OnClick] <Endpoint>] [[-Text] <String>] [[-Href] <String>] [[-Icon] <Hashtable>] [-ShowLoading] [[-LoadingIndicator] <Object>] [[-LoadingPosition] <String>] [[-Sx] <Hashtable>] [[-Style] <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -34,6 +34,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Text <String>
+        The text to display in the button group item.
         
         Required?                    false
         Position?                    3
@@ -46,6 +47,58 @@ PARAMETERS
         
         Required?                    false
         Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Icon <Hashtable>
+        An icon to display in the button group item.
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ShowLoading [<SwitchParameter>]
+        Displays a loading spinner while the OnClick event handler is running.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LoadingIndicator <Object>
+        A custom element to display instead of the built in spinner for -ShowLoading
+        
+        Required?                    false
+        Position?                    6
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -LoadingPosition <String>
+        The position of the loading indicator. Valid values are: 'start', 'end', 'center'
+        
+        Required?                    false
+        Position?                    7
+        Default value                center
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Sx <Hashtable>
+        
+        Required?                    false
+        Position?                    8
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        
+        Required?                    false
+        Position?                    9
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false

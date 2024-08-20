@@ -2,59 +2,62 @@
 NAME
     New-UDSplitPane
     
+SYNOPSIS
+    Creates a new split pane the user can resize.
+    
+    
 SYNTAX
-    New-UDSplitPane [[-Id] <string>] [-Content] <scriptblock> [[-Direction] {vertical | horizontal}] [[-MinimumSize] <int>] [[-DefaultSize] <int>] [<CommonParameters>]
+    New-UDSplitPane [[-Id] <String>] [-Content] <ScriptBlock> [[-Direction] <String>] [[-MinimumSize] <Int32>] [[-DefaultSize] <Int32>] [<CommonParameters>]
     
     
+DESCRIPTION
+    Creates a new split pane the user can resize.
+    
+
 PARAMETERS
-    -Content <scriptblock>
+    -Id <String>
+        The ID of the split pane. Defaults to a new GUID.
+        
+        Required?                    false
+        Position?                    1
+        Default value                ([Guid]::NewGuid()).ToString()
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Content <ScriptBlock>
+        The content of the split pane. This should be a script block that returns two components.
         
         Required?                    true
-        Position?                    1
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -DefaultSize <int>
-        
-        Required?                    false
-        Position?                    4
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Direction <string>
-        
-        Required?                    false
         Position?                    2
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Id <string>
-        
-        Required?                    false
-        Position?                    0
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -MinimumSize <int>
+    -Direction <String>
+        The direction of the split pane. Valid values are 'vertical' and 'horizontal'.
         
         Required?                    false
         Position?                    3
+        Default value                vertical
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -MinimumSize <Int32>
+        The minimum size of the split pane.
+        
+        Required?                    false
+        Position?                    4
+        Default value                0
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -DefaultSize <Int32>
+        The default size of the split pane.
+        
+        Required?                    false
+        Position?                    5
+        Default value                0
+        Accept pipeline input?       false
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -63,19 +66,23 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
+    -------------------------- EXAMPLE 1 --------------------------
     
-
-REMARKS
-    None
+    PS >New-UDSplitPane -Content {
+    PS >     New-UDTypography -Text "Left"
+    PS >     New-UDTypography -Text "Right"
+    PS > }
+    
+    
+    
+    
+    
+    
+    
+RELATED LINKS
 
 

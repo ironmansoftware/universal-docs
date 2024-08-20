@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDGrid [-Id <String>] [-ExtraSmallSize <Int32>] [-SmallSize <Int32>] [-MediumSize <Int32>] [-LargeSize <Int32>] [-ExtraLargeSize <Int32>] [-Item] [-Children <ScriptBlock>] [-ClassName <String>] [<CommonParameters>]
+    New-UDGrid [-Id <String>] [-ExtraSmallSize <Int32>] [-SmallSize <Int32>] [-MediumSize <Int32>] [-LargeSize <Int32>] [-ExtraLargeSize <Int32>] [-Item] [-Children <ScriptBlock>] [-ClassName <String>] [-Direction <String>] [-RowSpacing <Object>] [-ColumnSpacing <Object>] [-JustifyContent <String>] [-AlignItems <String>] [<CommonParameters>]
     
-    New-UDGrid [-Id <String>] [-Container] [-Spacing <Int32>] [-Children <ScriptBlock>] [-ClassName <String>] [<CommonParameters>]
+    New-UDGrid [-Id <String>] [-Container] [-Spacing <Int32>] [-Children <ScriptBlock>] [-ClassName <String>] [-Direction <String>] [-RowSpacing <Object>] [-ColumnSpacing <Object>] [-JustifyContent <String>] [-AlignItems <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -109,6 +109,51 @@ PARAMETERS
         
     -ClassName <String>
         A CSS class to apply to the grid.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Direction <String>
+        The direction of the grid. Can be row, column, row-reverse or column-reverse.
+        
+        Required?                    false
+        Position?                    named
+        Default value                row
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -RowSpacing <Object>
+        The spacing between rows.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -ColumnSpacing <Object>
+        The spacing between columns.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -JustifyContent <String>
+        The alignment of the grid items along the main axis. Can be flex-start, flex-end, center, space-between, space-around or space-evenly.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -AlignItems <String>
+        The alignment of the grid items along the cross axis. Can be flex-start, flex-end, center, baseline or stretch.
         
         Required?                    false
         Position?                    named
@@ -224,6 +269,70 @@ OUTPUTS
     PS > } -Id 'grid5'
     
     Row and Columns|The row and column aliases can be used to create a grid.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >$Session:direction = 'row'
+    PS > $Session:justifyContent = 'center'
+    PS > $Session:alignItems = 'center'
+    PS > New-UDSelect -Label 'direction' -Option {
+    PS >     New-UDSelectOption -Name 'row'
+    PS >     New-UDSelectOption -Name 'row-reverse'
+    PS >     New-UDSelectOption -Name 'column'
+    PS >     New-UDSelectOption -Name 'column-reverse'
+    PS > } -DefaultValue 'row' -OnChange {
+    PS >     $Session:direction = $EventData
+    PS >     Sync-UDElement -Id 'example'
+    PS > }
+    PS > New-UDSelect -Label 'justifyContent' -Option {
+    PS >     New-UDSelectOption -Name 'flex-start'
+    PS >     New-UDSelectOption -Name 'center'
+    PS >     New-UDSelectOption -Name 'flex-end'
+    PS >     New-UDSelectOption -Name 'space-between'
+    PS >     New-UDSelectOption -Name 'space-around'
+    PS >     New-UDSelectOption -Name 'space-evenly'
+    PS > } -DefaultValue 'center' -OnChange {
+    PS >     $Session:justifyContent = $EventData
+    PS >     Sync-UDElement -Id 'example'
+    PS > }
+    PS > New-UDSelect -Label 'alignItems' -Option {
+    PS >     New-UDSelectOption -Name 'flex-start'
+    PS >     New-UDSelectOption -Name 'center'
+    PS >     New-UDSelectOption -Name 'flex-end'
+    PS >     New-UDSelectOption -Name 'stretch'
+    PS >     New-UDSelectOption -Name 'baseline'
+    PS > } -DefaultValue 'center' -OnChange {
+    PS >     $Session:alignItems = $EventData
+    PS >     Sync-UDElement -Id 'example'
+    PS > }
+    PS > New-UDDynamic -Id 'example' -Content {
+    PS >     New-UDGrid -Container -Children {
+    PS >         New-UDGrid -Item -Children {
+    PS >             New-UDPaper -Children { "Cell 1" } -Style @{
+    PS >                 backgroundColor = 'rgb(26, 32, 39)'
+    PS >                 color           = 'white'
+    PS >             }
+    PS >         }
+    PS >         New-UDGrid -Item -Children {
+    PS >             New-UDPaper -Children { "Cell 2" } -Style @{
+    PS >                 backgroundColor = 'rgb(26, 32, 39)'
+    PS >                 color           = 'white'
+    PS >             }
+    PS >         }
+    PS >         New-UDGrid -Item -Children {
+    PS >             New-UDPaper -Children { "Cell 3" } -Style @{
+    PS >                 backgroundColor = 'rgb(26, 32, 39)'
+    PS >                 color           = 'white'
+    PS >             }
+    PS >         }
+    PS >     } -Direction $Session:Direction -JustifyContent $Session:justifyContent -AlignItems $Session:alignItems
+    PS > }
+    
+    Alignment|The alignment of the grid items can be changed with the direction, justifyContent and alignItems parameters.
+    
     
     [Component("Grid", "Grid", "Creates a new card.")]
     

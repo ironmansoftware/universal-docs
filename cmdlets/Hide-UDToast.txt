@@ -9,6 +9,8 @@ SYNOPSIS
 SYNTAX
     Hide-UDToast [-Id] <String> [<CommonParameters>]
     
+    Hide-UDToast [-All] [<CommonParameters>]
+    
     
 DESCRIPTION
     Hides a toast message.
@@ -21,6 +23,14 @@ PARAMETERS
         Required?                    true
         Position?                    1
         Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -All [<SwitchParameter>]
+        
+        Required?                    true
+        Position?                    1
+        Default value                False
         Accept pipeline input?       false
         Accept wildcard characters?  false
         

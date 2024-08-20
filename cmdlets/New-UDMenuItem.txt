@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDMenuItem [[-Id] <String>] [-Text] <String> [[-Value] <String>] [[-Icon] <Hashtable>] [[-OnClick] <Endpoint>] [<CommonParameters>]
+    New-UDMenuItem [[-Id] <String>] [[-Text] <String>] [[-Value] <String>] [[-Icon] <Hashtable>] [[-OnClick] <Endpoint>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -26,7 +26,7 @@ PARAMETERS
     -Text <String>
         The text to display in the menu item.
         
-        Required?                    true
+        Required?                    false
         Position?                    2
         Default value                
         Accept pipeline input?       false
@@ -42,6 +42,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Icon <Hashtable>
+        The icon to display in the menu item. Use New-UDIcon to create an icon.
         
         Required?                    false
         Position?                    4
@@ -50,6 +51,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -OnClick <Endpoint>
+        An event handler to call when the user selects the menu item.
         
         Required?                    false
         Position?                    5

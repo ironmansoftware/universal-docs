@@ -1,22 +1,22 @@
 
 NAME
-    Remove-PSUScriptTag
+    Get-PSUGitSetting
     
 SYNOPSIS
-    Removes a tag from a script.
+    Returns git settings.
     
     
 SYNTAX
-    Remove-PSUScriptTag [-Script] <Script> [-Tag] <Tag> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    Get-PSUGitSetting [-AppToken <String>] [-ComputerName <String>] [-Credential <PSCredential>] [-HttpProtocolVersion <Version>] [-Integrated] [<CommonParameters>]
     
     
 DESCRIPTION
-    Removes a tag from a script.
+    Returns git settings.
     
 
 PARAMETERS
     -AppToken <String>
-        An app token to access the PSU API.
+        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
         
         Required?                    false
         Position?                    named
@@ -25,7 +25,25 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The HTTP address of the PSU REST API server.
+        Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -Credential <PSCredential>
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Accept wildcard characters?  false
+        
+    -HttpProtocolVersion <Version>
+        The HTTP protocol version to use when calling the PowerShell Universal Management API.
         
         Required?                    false
         Position?                    named
@@ -34,33 +52,6 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Script <Script>
-        The script to remove the tag from. Use Get-UAScript to retrieve a Script object.
-        
-        Required?                    true
-        Position?                    0
-        Default value                None
-        Accept pipeline input?       True (ByValue)
-        Accept wildcard characters?  false
-        
-    -Tag <Tag>
-        The tag to remove from the script. Use Get-UATag to retrieve a Tag object.
-        
-        Required?                    true
-        Position?                    1
-        Default value                None
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -UseDefaultCredentials [<SwitchParameter>]
         Use default credentials when connecting to the management API
         
         Required?                    false
@@ -76,7 +67,7 @@ PARAMETERS
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
 INPUTS
-    UniversalAutomation.Script
+    None
         
     
     
@@ -92,11 +83,9 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> $Tag = Get-UATag -Name 'Release'
-    PS C:\> $Script = Get-UAScript -Name 'Script1.ps1'
-    PS C:\> Remove-UAScriptTag -Tag $Tag -Script $Script
+    PS C:\> Get-PSUGitSetting
     
-    Removes the Release tag from the Script1.ps1 script.
+    Returns git settings.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

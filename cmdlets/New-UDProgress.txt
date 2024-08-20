@@ -7,11 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDProgress [-Id <String>] [-BackgroundColor <DashboardColor>] [-ProgressColor <DashboardColor>] [<CommonParameters>]
-    
-    New-UDProgress [-Id <String>] [-PercentComplete <Int32>] [-BackgroundColor <DashboardColor>] [-ProgressColor <DashboardColor>] [<CommonParameters>]
-    
-    New-UDProgress [-Id <String>] [-ProgressColor <DashboardColor>] [-Circular] [-Size <String>] [<CommonParameters>]
+    New-UDProgress [[-Id] <String>] [[-PercentComplete] <Int32>] [[-BackgroundColor] <DashboardColor>] [[-ProgressColor] <DashboardColor>] [-Circular] [[-Size] <String>] [[-Label] <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -23,7 +19,7 @@ PARAMETERS
         The ID of the component. It defaults to a random GUID.
         
         Required?                    false
-        Position?                    named
+        Position?                    1
         Default value                [Guid]::NewGuid().ToString()
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -32,7 +28,7 @@ PARAMETERS
         The percent complete for the progress.
         
         Required?                    false
-        Position?                    named
+        Position?                    2
         Default value                0
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -41,7 +37,7 @@ PARAMETERS
         The background color.
         
         Required?                    false
-        Position?                    named
+        Position?                    3
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -50,7 +46,7 @@ PARAMETERS
         The progress bar color.
         
         Required?                    false
-        Position?                    named
+        Position?                    4
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -68,7 +64,16 @@ PARAMETERS
         The size of the progress. Valid values are: "small", "medium", "large"
         
         Required?                    false
-        Position?                    named
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+        
+    -Label <String>
+        Adds a label to a circle progress.
+        
+        Required?                    false
+        Position?                    6
         Default value                
         Accept pipeline input?       false
         Accept wildcard characters?  false
@@ -111,6 +116,15 @@ OUTPUTS
     
     
     -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDProgress -Circular -Size large -Id 'progress4' -PercentComplete 75 -Label '75%'
+    
+    Circular with Label|Create a circle progress with a label
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
     
     PS >New-UDProgress -Circular -Size large -Id 'progress4'
     

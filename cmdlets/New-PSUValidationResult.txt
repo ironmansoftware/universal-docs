@@ -3,7 +3,7 @@ NAME
     New-PSUValidationResult
     
 SYNOPSIS
-    {{ Fill in the Synopsis }}
+    A validation result for a form or stepper.
     
     
 SYNTAX
@@ -11,12 +11,12 @@ SYNTAX
     
     
 DESCRIPTION
-    {{ Fill in the Description }}
+    A validation result for a form or stepper.
     
 
 PARAMETERS
     -ErrorMessage <String>
-        {{ Fill ErrorMessage Description }}
+        The error message to display when the validation result is unsuccessful.
         
         Required?                    false
         Position?                    named
@@ -25,7 +25,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Success [<SwitchParameter>]
-        {{ Fill Success Description }}
+        Indicates that the validation result is successful.
         
         Required?                    false
         Position?                    named
@@ -56,9 +56,14 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> {{ Add example code here }}
+    PS C:\> New-PSUValidationResult -Success
     
-    {{ Add example description here }}
+    Creates a new validation result that is successful.
+    -------------------------- Example 2 --------------------------
+    
+    PS C:\> New-PSUValidationResult -ErrorMessage 'This is an error message.'
+    
+    Creates a new validation result that is unsuccessful with an error message.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

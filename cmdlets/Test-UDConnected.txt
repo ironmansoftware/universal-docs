@@ -11,6 +11,7 @@ SYNTAX
     
     
 DESCRIPTION
+    Tests if a user is connected to the dashboard. It uses the connection ID to determine if the user is connected.
     
 
 PARAMETERS
@@ -23,6 +24,15 @@ PARAMETERS
 INPUTS
     
 OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >Test-UDConnected
+    
+    
+    
+    
+    
     
     
 RELATED LINKS

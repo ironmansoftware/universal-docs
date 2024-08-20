@@ -1,13 +1,23 @@
 
 NAME
-    Connect-PSUEventHub
+    New-PSUPortalComponent
     
 SYNTAX
-    Connect-PSUEventHub -Hub <string> [-ScriptBlock <scriptblock>] [-ComputerName <string>] [-AppToken <string>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
+    New-PSUPortalComponent -Name <string> [-Description <string>] [-Title <string>] [-AvailableInBranch <string[]>] [-ComputerName <string>] [-AppToken <string>] [-Credential <pscredential>] [-UseDefaultCredentials] [-Integrated] [<CommonParameters>]
     
     
 PARAMETERS
     -AppToken <string>
+        
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -AvailableInBranch <string[]>
         
         Required?                    false
         Position?                    Named
@@ -27,9 +37,19 @@ PARAMETERS
         Dynamic?                     false
         Accept wildcard characters?  false
         
-    -Hub <string>
+    -Credential <pscredential>
         
-        Required?                    true
+        Required?                    false
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Description <string>
+        
+        Required?                    false
         Position?                    Named
         Accept pipeline input?       false
         Parameter set name           (All)
@@ -47,7 +67,17 @@ PARAMETERS
         Dynamic?                     false
         Accept wildcard characters?  false
         
-    -ScriptBlock <scriptblock>
+    -Name <string>
+        
+        Required?                    true
+        Position?                    Named
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Title <string>
         
         Required?                    false
         Position?                    Named
