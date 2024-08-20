@@ -1,3 +1,7 @@
+---
+description: Various hosting methods for PowerShell Universal.
+---
+
 # Hosting
 
 You can host PowerShell Universal as a Windows Service, in IIS, as a Azure Web App or just as a stand alone application. If you are running on Windows, we suggest either a Windows Service or IIS.
@@ -79,7 +83,7 @@ To configure HTTPS, you can adjust the `appsettings.json` file to use a particul
 
 #### Certificate Store
 
-To configure a certificate in a particular location and store, you can use a configuration such as this. When selecting the certificate by subject name, ensure you use the common name with out `CN=` prefix.&#x20;
+To configure a certificate in a particular location and store, you can use a configuration such as this. When selecting the certificate by subject name, ensure you use the common name with out `CN=` prefix.
 
 ```javascript
 {
@@ -102,7 +106,7 @@ Location can be either `CurrentUser` or `LocalMachine`.
 
 #### Certificate Store by Thumbprint
 
-You can use thumbprint rather than subject in version 3.4 and later.&#x20;
+You can use thumbprint rather than subject in version 3.4 and later.
 
 ```powershell
 {
@@ -124,7 +128,7 @@ You can use thumbprint rather than subject in version 3.4 and later.&#x20;
 
 #### PEM And Key Certificates
 
-Some providers, like Let's Encrypt and GoDaddy, will issue certificates as PEM and key text files. You can use these types of certificates directly with the Kestrel web server. You will need to specify the `HttpsFromPem` section within the `Endpoints` for Kestrel.&#x20;
+Some providers, like Let's Encrypt and GoDaddy, will issue certificates as PEM and key text files. You can use these types of certificates directly with the Kestrel web server. You will need to specify the `HttpsFromPem` section within the `Endpoints` for Kestrel.
 
 ```json
 {
@@ -178,19 +182,19 @@ Some versions of Windows Server (like 2012R2), do not support HTTP2. To disable 
 
 For a full set of listening options, you can refer to the [ASP.NET Core Documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-3.1#listenoptionsusehttps).
 
-## Example: Self-Signed Certificate&#x20;
+## Example: Self-Signed Certificate
 
-In this example, we'll show how to create a self-signed certificated and use it with PowerShell Universal.&#x20;
+In this example, we'll show how to create a self-signed certificated and use it with PowerShell Universal.
 
-First, create a self-signed certificate and store it into your local machine store. You will need to run PowerShell as administrator. The local machine store is required because PowerShell Universal may be running as service and not as your account.&#x20;
+First, create a self-signed certificate and store it into your local machine store. You will need to run PowerShell as administrator. The local machine store is required because PowerShell Universal may be running as service and not as your account.
 
 ```powershell
 New-SelfSignedCertificate -DnsName localhost -CertStoreLocation cert:\LocalMachine\My
 ```
 
-Next, you'll need to configure PowerShell Universal to use the certificate. This can be accomplished by editing or creating the `appsettings.json` file in `%ProgramData%\PowerShellUniversal`. This file should already exist if you installed with the MSI installer. The contents of the file should include the DNS name of your certificate and the location.&#x20;
+Next, you'll need to configure PowerShell Universal to use the certificate. This can be accomplished by editing or creating the `appsettings.json` file in `%ProgramData%\PowerShellUniversal`. This file should already exist if you installed with the MSI installer. The contents of the file should include the DNS name of your certificate and the location.
 
-For self-signed certificates, you will need to include the `AllowInvalid` option.&#x20;
+For self-signed certificates, you will need to include the `AllowInvalid` option.
 
 ```json
 {

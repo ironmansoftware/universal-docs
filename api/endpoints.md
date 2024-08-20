@@ -329,9 +329,9 @@ The content of the `endpoints.ps1` file is then this.
 New-PSUEndpoint -Url "/path" -Path "endpoint-path.ps1"
 ```
 
-## Experimental Feature: C# APIs
+## C# APIs
 
-As for PowerShell Universal 3.5, you can now enable C# APIs as an experimental feature. To learn more about enabling experimental features, [click here](../config/feature-flags.md). C# APIs are significantly faster than PowerShell APIs (5 - 20 times faster).
+C# APIs are enabled as a [plugin](../platform/plugins.md#c-api-environment).
 
 There is no UI for creating a C# API and you will need to do so using configuration files. First, you will need to create a `.cs` file that will run your API.
 

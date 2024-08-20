@@ -1,3 +1,7 @@
+---
+description: Custom variable scopes to use in your PowerShell Universal apps.
+---
+
 # Custom Variable Scopes
 
 ## Custom Variable Scopes
@@ -22,7 +26,7 @@ New-UDMonitor -Title Computers -Endpoint {
 }
 ```
 
-### Page Scope&#x20;
+### Page Scope
 
 Page scope stores variables in per browser tab or window. If a new tab is opened or the current one is closed, the state will be removed.
 

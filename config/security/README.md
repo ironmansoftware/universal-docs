@@ -4,14 +4,21 @@ description: Security features of PowerShell Universal.
 
 # About
 
+## Authentication
+
+By default, PowerShell Universal provides [local user authentication](../../security/local-accounts.md). User names and encrypted passwords are stored in the PowerShell Universal database. For enterprise environments, you may want to consider utilizing authentication methods supported by your organization.&#x20;
+
+* [Windows SSO](../../security/enterprise-security/windows-sso.md)
+* [OpenID Connect](../../security/enterprise-security/openid-connect.md)
+* [SAML2](../../security/enterprise-security/saml2.md)
+* [WS-Federation](../../security/enterprise-security/ws-federation.md)
+
 ## Authorization
 
 User authorization is accomplished with roles. Roles can either be assigned through claims mapping, a policy script or by assigning the role directly to the identity.
 
 {% hint style="info" %}
-By default, users will receive all roles when logging in. Multiple role assignments are valid in PowerShell Universal. While you configure roles, you can choose to disable roles you are not yet or do not plan to use.
-
-Disabling the Administrators role will prevent you from making changes to roles within the Admin Console.
+By default, users will receive no roles. Multiple role assignments are valid in PowerShell Universal.&#x20;
 {% endhint %}
 
 ### Role to Claim Mapping

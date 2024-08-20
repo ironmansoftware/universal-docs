@@ -4,320 +4,78 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
-## 5.0.0-rc4 - 7/29/2024
+## 5.0.0 - 8/20/2024
 
-#### Apps
+#### Breaking Changes
 
-* Fixed an issue display the Documentation App in a nested IIS site
-* Fixed first time admin user setup when using a nested IIS site
-
-#### Automation
-
-* Fixed an issue with the job search bar.
-
-#### Portal
-
-* Fixed issue with portal code editor not saving properly
-
-#### Platform
-
-* Fixed an issue with the missing environment health check
-* Fixed an issue where files could be edited when platform was in git manual mode
-* Fixed issue with viewing cache data
-* Added Maximum App Token Lifetime to Settings (#3438)
-* Fixed an issue with the log viewer not disposing properly
-* Fixed issue with permissions in the admin console
-
-## 5.0.0-rc3 - 7/24/2024
+* Removal of Pages
+* Removal of Desktop mode
+* Removal of App Designer
+* Removal of LiteDB support
 
 #### APIs
 
-* Added Authentication tab to API tester (#3483)
+* Added endpoint tester
+* Added support for string array query string parameters
+* Added -ApiBaseFolder to Set-PSUSettings
 
 #### Automation
 
-* Added Archive Job button
-* Added Archive All Jobs button (#3419)
-* Fixed an issue with SecureString parameters
-
-#### Platform
-
-* Fixed path to Universal.Agent for Windows PowerShell (#3478)
-* Fixed an issue with licenses from environment variables (#3477)
-* Fixed an issue where the logging.ps1 configuration file could throw a NotImplementedException
-* Fixed an issue where an error would be shown in the browser if the user was logged in during a service restart
-* Fixed an issue where editing files in the admin console would not stage them (#3480)
-* Fixed an issue rolling back script content changes in a git commit
-* Fixed an issue with git sync resetting an edit in progress if the server was restarted
-* Added Git Diff back to Commits page
-* Added opt-in telemetry collection
-* Fixed an issue with local time zone date time conversion in the admin console (#3481)
-* Improved Blazor app render performance
-* Get-PSUCache now returns the entire cache item information (#3464)
-* Fixed an issue where Universal cmdlets didn't work in nested IIS sites (#3484)
-
-## 5.0.0-rc2 - 7/22/2024
-
-#### API
-
-* Added support for array query string parameters (#1851)
-* Fixed issue with endpoint tester (#3469)
-
-#### Automation
-
-* Added support for selecting streams when running a script manually (#3306)
-
-#### Portal
-
-* Users with non-built in roles will now redirect to the portal by default after login
-* Added a portal resource page to view all resources that show up on the portal.
-
-#### Platform
-
-* Added URL validation for apps, endpoints and published folders (#2796)
-* Added custom PSScriptAnalyzer rule to check for built in variable usage.
-* Fixed issue with permission matching
-* Fixed issue with roles page reload after creating a role (#3470)
-* Fixed an issue with the permission edit form (#3472)
-* Fixed an issue with enterprise licenses and the computer page (#3474)
-
-## 5.0.0-rc1 - 7/16/2024
-
-#### Automation
-
-* Fixed issue with parameters from scripts provided by modules
-* Fixed issue with job filters on the Jobs page.
-
-#### Portal
-
-* Added row and column guides to the Portal Page editor
-
-#### Platform
-
-* Added a first run setup to set the default admin user name and password (#2616)
-* Added support for role-based access with PSUCache (#2963)
-* Fixed an issue using gRPC cmdlets in Apps
-* Added password complexity enforcement
-* Added password expiration enforcement
-
-## 5.0.0-beta7 - 7/2/2024
-
-#### APIs
-
-* Fixed an issue with connecting to event hubs
-
-#### Automation
-
-* Added Pipeline Output Tab
-* Jobs Run Today now links to a page that only shows jobs run today (#3321)
+* Added support for selecting streams when running a script manually
+* Added Hide Run Later
+* Added Quick Run button
+* Added in-line debugger
+* Extended job filtering to include all columns
+* Added support for dynamic parameters
+* Added -Tags to Invoke-PSUScript
+* Added -HideChildren, -HideTriggered, -HideScheduled to Get-PSUJob&#x20;
+* Added a page to view jobs for a schedule&#x20;
+* JobRunId has been promoted from an experimental to a full feature
+* Added support for script documentation
 
 #### Apps
 
 * Added -Path to Start-UDDownload
-* PowerShell Apps have been renamed back to Apps
-
-#### Platform
-
-* Added support for module variables (#2711)
-* Fixed an issue with IntelliSense
-* Fixed an issue creating resources when git sync was enabled
-* Fixed a SQLite database locking error
-* Added Git Commit Discard button
-* Enabled the file system watcher
-* Fixed an issue with Windows PowerShell.
-* Added Password and KeySize to appsettings.json to configure AES 256 database secrets (#3291)
+* Added -Sx to New-UDBadge&#x20;
+* Added -RemoveMargin to New-UDCard
+* Added -SelectedTabIndex to New-UDTabs
+* Added -Enhanced to New-UDTransferList
+* Added -DisableArcLinkLabels and -DisableArcLabels to New-UDNivoChart
+* Added module support for apps
 
 #### Portal
 
-* Blazor Apps have been renamed to Portal Widgets and Pages
-* Added support for properties in Portal Widgets
-
-## 5.0.0-beta6 - 6/16/2024
-
-#### Automation
-
-* Fixed issue with creating schedules (#3361)
-* Job status filters now persist refreshes (#3340)
-* Fixed an issue with the Jobs Failed Today widget on the home page (#3391)
-* Fixed an issue with script folders (#3398)
+* Added preview version of Portal
+* Added Portal Page designer
+* Added Portal Widget editor&#x20;
 
 #### Platform
 
-* Fixed an issue with Telemetry (#3347)
-* Added health check refresh, run and clear buttons
-* Fixed routing for nested sites
-* Fixed an issue with the groom job when using PostreSQL (#3360)
-* Fixed a login page redirect issue (#3366)
-* Fixed an issue accessing the secret scope (#3372)
-* Fixed an issue saving modules on non-Windows systems (#3371)
-* Fixed issue with deleting a license
-* Fixed an issue with file management when One-Way git sync was enabled (#3377)
-* Fixed an issue with the Import command in the library when One-Way git sync is enabled (#3374)
-* Fixed an issue with environment discovery (#3378)
-* Fixed an issue with the module controller (#3390)
-* Fixed issues with notification badge (#3387)
-* Fixed an issue editing git settings when One-Way Git Sync was enabled (#3389)
-* Fixed an issue with git settings validation (#3396)
-* Fixed an issue with the file page's title (#3400)
-* Added git commit file selector (#3403)
-* Added live logging checkbox
-
-#### Portal
-
-* Added Display In Portal and Roles to tags
-* Added grouping of resources by tags
-
-#### Security
-
-* Added input box for role default routes
-
-## 5.0.0-beta5 - 5/22/2024
-
-#### Automation
-
-* Added filter output by stream to job page (#3298)
-* Fixed syntax highlighting of job logs
-* Added Hide Run Later
-* Fixed an issue with Hide Run As, Hide Run On and Hide Environment settings
-* Added Quick Run button for scripts (#3319)
-* Added support for dynamic parameters (#2372)
-* Added -Tags to Invoke-PSUScript (#3302)
-
-#### Blazor Apps
-
-* Fixed issue with authentication and roles settings
-
-#### PowerShell Apps
-
-* Fixed an issue with Get-UDPage
-
-#### Platform
-
-* Added My Identity page (#2862)
-* Fixed some issues with the git edit button and commit page
-* Fixed PowerShell IntelliSense
+* Added New Blazor-based Admin Console
+* Updated to .NET 8.0 and PowerShell 7.4
+* Added opt-in telemetry collection
+* Get-PSUCache now returns the entire cache item information
+* Added custom PSScriptAnalyzer rule to check for built in variable usage.
+* Added a first run setup to set the default admin user name and password
+* Added support for role-based access with PSUCache
+* Added password complexity and expiration enforcement
+* Added support for module variables
+* Added Password and KeySize to appsettings.json to configure AES 256 database secrets
 * Added stack traces to notifications
-* Fixed an issue with Branding \ Admin Console Title
 * Added support for Emoji favicons
-* Fixed an issue with gRPC errors in some environments
 * Added support for discovering Python environments
-* Fixed an issue with PostgreSQL support
-* Fixed an error adding git settings
-* Added PSUDefaultAdminPassword and PSUDefaultAdminName
-
-#### Portal
-
-* Added Portal
-* Added Portal link to admin console
-* Added dashboard page
-* Added Services page
-* Added scripts to services page
-
-## 5.0.0-beta4 - 5/6/2024
-
-#### APIs
-
-* Fixed an issue with the header tab on the API test page
-* Fixed an issue with API Docs (#3311)
-
-#### Automation
-
-* Fixed an issue where error messages would be written twice in the output log (#3305)
-* Fixed an issue with creating schedules.
-* Fixed an issue with one-time schedules
-
-#### Platform
-
-* Added permission enforcement for all cmdlets
-* Fixed an issue with OIDC authentication
-* Fixed an issue with the default authentication warning being shown even when authentication was configured.
-* Fixed an issue with the integrated security context for PSU cmdlets
-* Reduced server start up time
-* Fixed an issue logging in with demo mode
-* Fixed an issue with New-PSUPublishedFolder
-* Fixed a performance issue with the admin console
-
-## 5.0.0-beta3 - 4/29/2024
-
-#### Automation
-
-* Added inline script debugging terminal
-
-#### Platform
-
+* Added PSUDefaultAdminPassword and PSUDefaultAdminName environment variables
 * Added granular permissions throughout the platform
-* Added custom module editor
 * Implemented gRPC cmdlets across the platform
-
-## 5.0.0-beta2 - 4/10/2024
-
-#### API
-
-* Added API Test Tab
-* Added Invoke-PSUEndpoint
-
-#### Automation
-
-* Added Terminals and Terminal History pages
-* Added folders for scripts
-* Added new columns to the jobs table
-
-#### Platform
-
 * Added a process that checks for module updates
 * Added a health check that verifies an environment exists
 * Added tags for variables
-
-## 5.0.0-beta1 - 3/11/2024
-
-#### Major Features
-
-* New Admin Console based on Blazor
-* PostgreSQL support
-* Blazor Apps
-* Script Library
-
-#### Breaking Changes
-
-* PowerShell Universal defaults to SQLite
-* PowerShell App designer has been removed
-* LiteDB Support has been removed
-* Removed support for pages
-* Removed -Mask from New-UDTextbox
-
-#### PowerShell Apps
-
-* Added -Sx to New-UDBadge (#2878)
-* Added -RemoveMargin to New-UDCard
-* Added -SelectedTabIndex to New-UDTabs (#2897)
-* Remove mandatory on text for New-UDMenuItem (#2906)
-* Added -Enhanced to New-UDTransferList (#2888)
-* Fix issue with New-UDAutocomplete always being fullwidth (#2949)
-* Fix issue with New-UDTextbox date hand enter (#3006)
-* Added -DisableArcLinkLabels and -DisableArcLabels to New-UDNivoChart (#2907)
-* Fix issue with 'line' Chartjs issue (#2871)
-* Added module support for apps (#2177)
-
-#### APIs
-
-* Added -ApiBaseFolder to Set-PSUSettings (#2794)
-
-#### Automation
-
-* Added -HideChildren, -HideTriggered, -HideScheduled to Get-PSUJob (#2444)
-* Added a page to view jobs for a schedule (#1377)
-* JobRunId has been promoted from an experimental to a full feature (#2799)
-* Added support for script documentation (#2743)
-
-#### Platform
-
-* Added an option for updating git submodules during a pull (#2889)
-* Computers and computer groups are now visible in single-node environments (#2915)
-* Added Pause Git Sync button (#2994)
-* Customize logged out page (#2643)
+* Added PostgreSQL Support
+* Added Script Library
+* Added an option for updating git submodules during a pull
+* Added Pause Git Sync button
 * Added configuration settings for the loading page
-* Improved the access denied error for the CPU health check (#2671)
-* Added support for customizing the table name for log entries in SQL and PostgreSQL (#2786)
-* Added a page to view all tagged resources (#1302)
-* Added support for uploading to Published Folders (#2555)
+* Added a page to view all tagged resources&#x20;
+* Added support for uploading to Published Folders
 * Added support for database cache
+

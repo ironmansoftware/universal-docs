@@ -1,5 +1,5 @@
 ---
-description: Use cascading style sheets with Universal Dashboard.
+description: Use cascading style sheets with PowerShell Universal.
 ---
 
 # Cascading Style Sheets

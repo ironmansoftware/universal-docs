@@ -43,3 +43,7 @@ Checks that the PSScriptAnalyzer module is installed. PowerShell Universal uses 
 ```powershell
 Install-Module PSScriptAnalyzer -Force
 ```
+
+#### Missing Environment
+
+Checks to see if an environment defined in `environments.ps1` actually exists on the machine.

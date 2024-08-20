@@ -201,7 +201,7 @@ The default name for any compose file is `docker-compose.yml` it is recommended 
 The following compose file will run a Powershell Universal container in Windows
 
 ```yml
-version: "3.7"
+version: "5.0"
 services:
   PSU:
     container_name: PSU
@@ -220,7 +220,7 @@ services:
 The following compose file will run a Powershell Universal container on Mac's and Linux
 
 ```yml
-version: "3.7"
+version: "5.0"
 services:
   PSU:
     container_name: PSU
@@ -287,7 +287,7 @@ You can add Environment variables into your Compose Scripts. Below is an example
 * Adding a SQL Connection String
 
 ```yaml
-version: "3.7"
+version: "5.0"
 services:
   PSU:
     container_name: PSU
@@ -342,7 +342,7 @@ docker build . --tag=universal-persistent
 #### Windows
 
 ```
-FROM ironmansoftware/universal:1.3.1-windowsservercore-1809
+FROM ironmansoftware/universal:5.0.0-windowsservercore-1809
 LABEL description="Universal - The ultimate platform for building web-based IT Tools" 
 
 EXPOSE 5000

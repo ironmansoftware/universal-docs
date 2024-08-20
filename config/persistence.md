@@ -139,20 +139,3 @@ You can enable PostgreSQL will the `PostgreSQL` plugin.
   },
 ```
 
-## Data Migration
-
-PowerShell Universal includes a data migration tool for moving data from LiteDB to SQL. You can find `DataMigration.exe` in the installation folder.
-
-You will need access to the LiteDB database and the SQL server in order to run the tool. You cannot have PowerShell Universal running while migrating the data.
-
-Below is an example of how to run the data migration tool.
-
-```
-DataMigration.exe -l C:\ProgramData\UniversalAutomation\database.db -s 'Server=(localdb)\mssqllocaldb;Database=PSU;Trusted_Connection=True;'
-```
-
-By default, the migration tool will install the schema for the database. You can use the `--noschema` parameter to prevent this from happening.
-
-### Command Line Arguments
-
-<table><thead><tr><th>Argument</th><th width="406">Description</th><th>Required</th></tr></thead><tbody><tr><td>-l, --litedb</td><td>Path to the LiteDB database file.</td><td>yes</td></tr><tr><td>-s, --sql</td><td>Connection string for the SQL database</td><td>yes</td></tr><tr><td>-c, --clean</td><td>Drop the database before migrating</td><td>no</td></tr><tr><td>--noschema</td><td>Skip schema migrations and only transfer the data</td><td>no</td></tr><tr><td>--continueonerror</td><td>Continue migrating items even if there is an error</td><td>no</td></tr></tbody></table>

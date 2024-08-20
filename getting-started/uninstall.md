@@ -6,21 +6,21 @@ description: Uninstall PowerShell Universal
 
 ## Application Files
 
-Depending on how you installed PowerShell Universal, you will need to uninstall the application files.&#x20;
+Depending on how you installed PowerShell Universal, you will need to uninstall the application files.
 
 ### ZIP Installation
 
-If you installed using a provided ZIP file, you can simply stop the PowerShell Universal process or service and delete the folder you extracted to.&#x20;
+If you installed using a provided ZIP file, you can simply stop the PowerShell Universal process or service and delete the folder you extracted to.
 
 ### MSI Installation
 
-If you installed with the Windows MSI, uninstall the application from Add\Remove Programs.&#x20;
+If you installed with the Windows MSI, uninstall the application from Add\Remove Programs.
 
-### Module Installation&#x20;
+### Module Installation
 
-The Universal module installs the application files to the following locations by default.&#x20;
+The Universal module installs the application files to the following locations by default.
 
-#### Windows&#x20;
+#### Windows
 
 * `%ProgramData%\PowerShellUniversal`
 
@@ -30,9 +30,9 @@ The Universal module installs the application files to the following locations b
 
 ## Configuration Files
 
-Configuration files are stored in the repository folder. Once you have removed the application files, you can delete the configuration files. They are stored in the following locations by default:&#x20;
+Configuration files are stored in the repository folder. Once you have removed the application files, you can delete the configuration files. They are stored in the following locations by default:
 
-### Windows&#x20;
+### Windows
 
 * `%ProgramData%\PowerShellUniversal`
 * `%ProgramData%\UniversalAutomation`
@@ -41,7 +41,7 @@ Configuration files are stored in the repository folder. Once you have removed t
 
 * `%HOME%/.PowerShellUniversal/`
 
-### Mac OS&#x20;
+### Mac OS
 
 * `%HOME%/.PowerShellUniversal/`
 
@@ -51,13 +51,13 @@ Configuration files are stored in the repository folder. Once you have removed t
 
 ## Database
 
-Removing the database depends on the database type used.&#x20;
+Removing the database depends on the database type used.
 
-### LiteDB
+### SQLite
 
-LiteDB databases are stored in a single file on the file system.
+SQLite databases are stored in a single file on the file system.
 
-#### Windows&#x20;
+#### Windows
 
 * `%ProgramData%\PowerShellUniversal\database.db`
 
@@ -65,10 +65,10 @@ LiteDB databases are stored in a single file on the file system.
 
 * `%HOME%/.PowerShellUniversal/database.db`
 
-### SQL
+### PostgreSQL and SQL
 
-SQL databases are stored on your SQL server and will require you to manually remove the database.&#x20;
+PostgreSQL and SQL databases are stored on your SQL server and will require you to manually remove the database.
 
-## IIS&#x20;
+## IIS
 
-You may need to uninstall the IIS App Pool and Website when removing PowerShell Universal. &#x20;
+You need to remove the IIS App Pool and Website when removing PowerShell Universal. Note that App Pools can be shared amongst websites and caution should be taken when doing so.

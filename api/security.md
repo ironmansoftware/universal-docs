@@ -23,8 +23,9 @@ New-PSUEndpoint -Url '/endpoint' -Method 'GET' -Endpoint {
 When authentication is enabled, it will enforce the use of one of the configured authentication methods. APIs support the following methods.
 
 * JWT App Tokens
-* Windows Authentication&#x20;
-* Cookie Authentication&#x20;
+* Windows Authentication
+* Cookie Authentication
+* Basic Authentication
 
 ## Accessing Secure Endpoints
 
@@ -36,7 +37,7 @@ Once you have defined a secure endpoint, you will need to provide authentication
 Note that if you are hosting in IIS and do not have Anonymous Authentication enabled, you will not be able to pass app tokens to the PowerShell Universal server.
 {% endhint %}
 
-To authenticate with tokens, first, you need generate a new app token for use. You can use the `Grant-PSUAppToken` cmdlet to do so remotely or you can create an app token in the UI using the Settings  Security  AppTokens tab.
+To authenticate with tokens, first, you need generate a new app token for use. You can use the `Grant-PSUAppToken` cmdlet to do so remotely or you can create an app token in the UI using the Settings Security AppTokens tab.
 
 Click Grant App Token to create a new one.
 

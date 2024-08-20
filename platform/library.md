@@ -4,9 +4,13 @@ description: The Universal Library of scripts, widgets, triggers and more.
 
 # Library
 
-The Universal Library is a collection of pre-built solutions for PowerShell Universal. It includes resources such as scripts, triggers, apps, and widgets. The library is installed with PowerShell Universal.&#x20;
+The Universal Library is a collection of pre-built solutions for PowerShell Universal. It includes resources such as scripts, triggers, apps, and widgets.&#x20;
 
 The [library ](https://github.com/ironmansoftware/scripts/issues)is open-source, and each release of PowerShell Universal includes a copy that is downloaded during the build process. The library is registered as a PowerShell Module Repository in PowerShell Universal. It consists of a folder of `.nupkg` files for each module.&#x20;
+
+## Installing and Updating the Library
+
+Navigate to the Library page on Platform \ Library and click Install Library to install the latest version of the library. It will download a ZIP file from GitHub, extract it locally and register the folder as a PowerShell Module Repository.
 
 ## Installing Resources from the Library
 
@@ -28,4 +32,4 @@ Clicking the Delete icon will remove the module and any resources associated wit
 
 ## Contributing to the Library
 
-You can contribute your own scripts to the Universal Library. We accept pull requests on the[ Library GitHub repository](https://github.com/ironmansoftware/scripts). When a new version of PowerShell Universal is released, we update the library files and distribute them alongside the install media.&#x20;
+You can contribute your own scripts to the Universal Library. We accept pull requests on the[ Library GitHub repository](https://github.com/ironmansoftware/scripts).&#x20;

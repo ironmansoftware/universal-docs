@@ -1,10 +1,10 @@
 ---
-description: UDStyle component for Universal Dashboard
+description: UDStyle component for PowerShell Universal
 ---
 
 # Styles
 
-You can apply styles to individual components within Universal Dashboard by using the `UDStyle` component. This component will need to be added to your dashboard and is part of the core components included with PowerShell Universal.
+You can apply styles to individual components within apps by using the `UDStyle` component. This component will need to be added to your dashboard and is part of the core components included with PowerShell Universal.
 
 ## Applying a Style
 

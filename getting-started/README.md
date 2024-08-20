@@ -134,7 +134,7 @@ It may be necessary to exclude certain executables that will run PowerShell scri
 
 ## Default Admin Name and Password
 
-By default, the administrator username is `admin` and password is `admin`. You can use the `$ENV:PSUDefaultAdminName` and `$ENV:PSUDefaultAdminPassword` environment variables to change this behavior. These values are only used if no administrator account already exists. This is useful for cloud-based installations.&#x20;
+&#x20;You can use the `$ENV:PSUDefaultAdminName` and `$ENV:PSUDefaultAdminPassword` environment variables to change this behavior. These values are only used if no administrator account already exists. This is useful for cloud-based installations.&#x20;
 
 ## Agent
 
@@ -150,4 +150,4 @@ There are ZIP files for each platform we support on our downloads page. Each ZIP
 
 ## Next Steps
 
-At this point, Universal is up and running. You can navigate to the admin console by visiting `http://localhost:5000` by default. Login with the default admin name and password.&#x20;
+At this point, Universal is up and running. You can navigate to the admin console by visiting `http://localhost:5000` by default. Login with the default admin name and password or create a default admin account.&#x20;

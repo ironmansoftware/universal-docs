@@ -12,7 +12,7 @@ PowerShell Universal is capable of synchronizing the configuration scripts with 
 
 ## Configuration
 
-### Admin Console and Database
+### Admin Console&#x20;
 
 Git sync can be configured in the database by adjusting the settings within the admin console. This is the preferred approach. The benefit is that when you connect new instances of PowerShell Universal to your SQL instance, you will not need to configure git sync again.
 
@@ -28,17 +28,13 @@ If git sync settings are specified in the database, settings defined in appsetti
 
 ## Git Sync Settings
 
-### Use Database
-
-{% hint style="info" %}
-This feature requires a git client installed on each PowerShell Universal server.
-{% endhint %}
-
-To avoid having to use an external git service like GitHub or Gitlab, you can use the PowerShell Universal database. Git synchronization will produce a git bundle and upload it to the SQL database. Other nodes within your cluster will pull the git bundle and update their configuration based on the bundle rather than a remote git fork.
-
 ### Branch
 
 By default, PowerShell Universal will sync with the `master` branch. If you wish to use a different branch, specify the `GitBranch` setting within your `appsettings.json`.
+
+### Remote
+
+Remotes are not required. If a remote is not specified, the git repository is stored locally in the Repository directory. If specified, PowerShell Universal will sync with the remote. Proper credentials are required for access to that remote.&#x20;
 
 ### Authentication
 
@@ -279,48 +275,6 @@ Push-only git sync mode will not pull changes from the remote. Any changes made 
   "GitSyncBehavior": "PushOnly",
   "ConfigurationScript": ""
 },
-```
-
-## Git Initialization Behavior
-
-Defines the git initialization behavior. If this parameter is not set, PowerShell Universal will attempt to select the proper method based on the state of the local file system.
-
-### Clone
-
-Clones the remote to the local repository folder. The local folder must be empty.
-
-```json
-  "Data": {
-    "RepositoryPath": "%ProgramData%\\UniversalAutomation\\Repository",
-    "ConnectionString": "%ProgramData%\\UniversalAutomation\\database.db",
-    "DatabaseType": "LiteDB",
-    "GitRemote": "https://github.com/myorg/myrepo.git",
-    "GitUserName": "any",
-    "GitPassword": "MYPAT----------------"
-    "GitBranch": "dev",
-    "GitSyncBehavior": "OneWay",
-    "GitInitializationBehavior": "clone",
-    "ConfigurationScript": ""
-  },
-```
-
-### Init
-
-Initializes the local repository and pushes it to the remote. The remote must be bare.
-
-```json
-  "Data": {
-    "RepositoryPath": "%ProgramData%\\UniversalAutomation\\Repository",
-    "ConnectionString": "%ProgramData%\\UniversalAutomation\\database.db",
-    "DatabaseType": "LiteDB",
-    "GitRemote": "https://github.com/myorg/myrepo.git",
-    "GitUserName": "any",
-    "GitPassword": "MYPAT----------------"
-    "GitBranch": "dev",
-    "GitSyncBehavior": "OneWay",
-    "GitInitializationBehavior": "init",
-    "ConfigurationScript": ""
-  },
 ```
 
 ## Personal Access Token

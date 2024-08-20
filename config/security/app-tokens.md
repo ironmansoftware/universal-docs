@@ -4,7 +4,7 @@ description: App tokens for accessing PowerShell Universal APIs.
 
 # App Tokens
 
-PowerShell Universal app tokens can be used with both [custom API endpoints](../api.md) and the [management API](../management-api.md). The management API uses the standard Administrator, Operator and Reader roles. The custom API app tokens can utilize custom roles as well as the built in ones.
+PowerShell Universal app tokens can be used with both [custom API endpoints](broken-reference) and the [management API](../management-api.md). The management API uses the standard Administrator, Operator and Reader roles. The custom API app tokens can utilize custom roles as well as the built in ones.
 
 You can grant App Tokens to using the Admin Console or you can use the Management API directly.
 
@@ -85,4 +85,4 @@ Invoke-RestMethod http://localhost:5000/api/v1/apptoken -Method POST -Body (@{
 
 ## Enhanced App Token Security
 
-When enhanced app token security is enabled, token values are only accessible once they are created. They are hashed and the hash value is stored in the database rather than the token. You will use the token the same way as any other token.&#x20;
+When enhanced app token security is enabled, token values are only accessible once they are created. They are hashed and the hash value is stored in the database rather than the token. You will use the token the same way as any other token.

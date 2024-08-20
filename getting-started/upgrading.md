@@ -125,10 +125,6 @@ After running an upgrade, you should perform basic validation against your PSU s
 
 Verify that there are no errors within the notification drop down. They may be a sign of issues during the upgrade.
 
-### Environments
-
-Verify that all environments are listed in the Settings \ Environments page. Although upgrades may not necessarily cause a change in environments, restarting the PowerShell Universal service (without an `environments.ps1` file) will cause PSU to rediscover environments. Updates to PowerShell outside of PSU may cause issues with PSU after it restarts.
-
 ### Modules
 
 Upgrades to PowerShell Universal may change assembly versions of DLLs shipped with the platform. This can cause other modules to fail to load. While this may not be obvious at first, you may consider taking an inventory of modules used in your platform to ensure that the versions are consistent before and after the upgrade to limit changes.

@@ -1,22 +1,12 @@
 ---
-description: >-
-  A single pane of glass for managing and delegating access to your automation
-  environment.
+description: The ultimate command center for your PowerShell environment.
 ---
 
 # ❓ About
 
 <figure><img src=".gitbook/assets/image (354).png" alt=""><figcaption><p>PowerShell Universal Admin Console</p></figcaption></figure>
 
-
-
-{% hint style="info" %}
-This documentation is for PowerShell Universal v5 beta.&#x20;
-{% endhint %}
-
-A single pane of glass for managing and delegating access to your automation environment.
-
-Universal provides an Administrator console, management REST API, PowerShell cmdlets and an idempotent configuration system using PowerShell scripts.
+PowerShell Universal provides a centralized location to store and run scripts, build modules, expose REST APIs and share them with end users via automatic or custom user interfaces, setup schedules and more.&#x20;
 
 ## **Universal APIs**
 

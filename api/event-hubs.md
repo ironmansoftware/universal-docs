@@ -18,7 +18,7 @@ To create an event hub, click APIs \ Event Hub and click Create New Event Hub. E
 
 The agent process is responsible for responding to Event Hub requests. You can learn more about installing the agent on our [Installation page](../getting-started/).&#x20;
 
-### eventHubClient.json
+### agent.json
 
 After installing the agent, you will need to configure the client by using an `agent.json` file. This file should be created in `%ProgramData%\PowerShellUniversal`. Changes to this file require a restart of the Agent service.
 
@@ -49,11 +49,11 @@ The below options can be included in the `agent.json` file.
 
 These are the connections to Event Hubs. Each connection can contain it's own URL, hub, authentication and script to execute.
 
-#### Url
+#### URL (Required)
 
 The URL of the PowerShell Universal service.
 
-#### Hub
+#### Hub (Required)
 
 The name of the Event Hub.
 
@@ -79,10 +79,10 @@ Send-PSUEvent -Hub 'MyHub' -Data "Hello!"
 
 The `-Data` parameter accepts an object and will be serialized using CLIXML and send to the client. The data will be deserialized before passing to the script block.
 
-You can also run commands. This does not require defining a script on the event hub client.&#x20;
+You can also run commands. This does not require defining a script on the event hub client. You can also use the `Invoke-PSUCommand` alias to mimic native PowerShell behavior.
 
 ```powershell
-Send-PSUEvent -Hub "MyHub" -Command "Start-Process" -Parameters @{
+Invoke-PSUCommand -Hub "MyHub" -Command "Start-Process" -Parameters @{
     FilePath = "Notepad"
 }
 ```

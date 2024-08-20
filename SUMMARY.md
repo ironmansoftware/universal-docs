@@ -37,15 +37,8 @@
 
 * [About](apps/about.md)
 * [Apps](apps/building-dashboards.md)
-* [Examples](apps/examples.md)
 * [Components](apps/components/README.md)
   * [Pages](apps/components/pages.md)
-  * [Dynamic Regions](apps/components/dynamic-regions.md)
-  * [Element](apps/components/element.md)
-  * [Error Boundary](apps/components/error-boundary.md)
-  * [HTML](apps/components/html.md)
-  * [Custom Components](apps/components/custom-components/README.md)
-    * [Building Custom JavaScript Components](apps/components/custom-components/building-custom-components.md)
   * [Data Display](apps/components/data-display/README.md)
     * [Alert](apps/components/data-display/alert.md)
     * [Badge](apps/components/data-display/badge.md)
@@ -99,13 +92,19 @@
     * [Hidden](apps/components/layout/hidden.md)
     * [Stack](apps/components/layout/stack.md)
   * [Utilities](apps/components/utilities/README.md)
+    * [Dynamic Regions](apps/components/utilities/dynamic-regions.md)
+    * [Element](apps/components/utilities/element.md)
+    * [Error Boundary](apps/components/utilities/error-boundary.md)
     * [Protect Section](apps/components/utilities/protect-section.md)
     * [Transitions](apps/components/utilities/transitions.md)
+    * [HTML](apps/components/utilities/html.md)
   * [Surfaces](apps/components/surfaces/README.md)
     * [AppBar](apps/components/surfaces/appbar.md)
     * [Card](apps/components/surfaces/card.md)
     * [Paper](apps/components/surfaces/paper.md)
     * [Expansion Panel](apps/components/surfaces/expansion-panel.md)
+  * [Custom Components](apps/components/custom-components/README.md)
+    * [Building Custom JavaScript Components](apps/components/custom-components/building-custom-components.md)
 * [Custom Variable Scopes](apps/custom-variable-scopes.md)
 * [Interaction](apps/interaction.md)
 * [Role Based Access](apps/role-based-access.md)
@@ -161,7 +160,6 @@
 
 ## ⚙️ Configuration <a href="#config" id="config"></a>
 
-* [API](config/api.md)
 * [Command Line Options](config/command-line-options.md)
 * [Environments](config/environments.md)
 * [Feature Flags](config/feature-flags.md)
@@ -187,18 +185,6 @@
 * [Logging](development/logging.md)
 * [Profiling](development/profiling.md)
 * [Visual Studio Code Extension](development/visual-studio-code-extension.md)
-
-## Samples
-
-* [APIs](samples/apis/README.md)
-  * [Custom Status Codes](samples/apis/custom-status-codes.md)
-* [Apps](samples/apps/README.md)
-  * [Active Directory Tree View](samples/apps/active-directory-tree-view.md)
-  * [Export-CSV Download](samples/apps/export-csv-download.md)
-  * [Dynamic Select Dropdown](samples/apps/dynamic-select-dropdown.md)
-  * [Textbox Length Validation](samples/apps/textbox-length-validation.md)
-  * [Tree View Font Size](samples/apps/tree-view-font-size.md)
-  * [SQL Data Grid](samples/apps/sql-data-grid.md)
 
 ## Changelogs
 

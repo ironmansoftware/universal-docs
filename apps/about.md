@@ -12,4 +12,4 @@ Apps are individual websites created with PowerShell Universal. They take advant
 
 For a full list of real-life examples, [click here](https://forums.ironmansoftware.com/t/real-world-examples/7000).&#x20;
 
-Apps should be considered an advanced feature and require both knowledge of the PowerShell Universal app cmdlets as well as a decent knowledge of PowerShell itself. With that said, the provide the greatest level of customization for web apps in PowerShell.
+Apps should be considered an advanced feature and require both knowledge of the PowerShell Universal app cmdlets as well as a decent knowledge of PowerShell itself. With that said, they provide the greatest level of customization for web apps in PowerShell.

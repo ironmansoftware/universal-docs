@@ -8,8 +8,6 @@ description: New features in PowerShell Universal v5.
 
 The admin console has been rebuilt using Blazor for ASP.NET. The look and feel are the same but more tightly associated with the backend Universal platform.
 
-The admin console is also translated to additional languages by default.
-
 ## Portal
 
 The [PowerShell Universal Portal](broken-reference) provides a simple to use access point for consumers of PSU resources.  Resources can be assigned by role and will be grouped by tags in a searchable interface without the complexities of the admin console.&#x20;

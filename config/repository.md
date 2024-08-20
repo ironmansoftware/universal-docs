@@ -15,7 +15,7 @@ All configuration cmdlets are part of the [Universal ](https://www.powershellgal
 Files stored in the repository are stored as plain text to allow for easy differencing with source control tools.
 
 * Authentication
-* Dashboards
+* Apps
 * Endpoints
 * Environments
 * Licenses
@@ -62,9 +62,9 @@ You can use the [`Set-PSUAuthentication` ](https://github.com/ironmansoftware/un
 Stored in `.universal\dashboards.ps1`
 {% endhint %}
 
-This script is responsible for registering PS1 files are [dashboards ](broken-reference/)with the system. Each command contains the meta-data for the dashboard including name, base URL, and environment.
+This script is responsible for registering PS1 files are apps within the system. Each command contains the meta-data for the app including name, base URL, and environment.
 
-You can use the [`New-PSUDashboard` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSUDashboard.txt)cmdlet in this file.
+You can use the [`New-PSUApp` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSUDashboard.txt)cmdlet in this file.
 
 ### Endpoints.ps1
 
@@ -72,7 +72,7 @@ You can use the [`New-PSUDashboard` ](https://github.com/ironmansoftware/univers
 Stored in `.universal\endpoints.ps1`
 {% endhint %}
 
-This script is responsible for defining all the [API endpoints](api.md) within the PowerShell Universal instance.
+This script is responsible for defining all the [API endpoints](broken-reference) within the PowerShell Universal instance.
 
 You can use the [`New-PSUEndpoint` ](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSUEndpoint.txt)cmdlet in this file.
 
@@ -125,14 +125,6 @@ Stored in `.universal\initialize.ps1`
 {% endhint %}
 
 Allows for customization of the HTTP requests in PowerShell Universal.
-
-### Pages
-
-{% hint style="info" %}
-Stored in the `pages` folder.
-{% endhint %}
-
-This folder contains the page XML files. These are not intended to be edited manually and should be edited with the page designer.
 
 ### PublishedFolders.ps1
 

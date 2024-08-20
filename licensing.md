@@ -58,5 +58,5 @@ The following features of PowerShell Universal require a license.
 * PostgreSQL Support
 * Triggers
 * Terminals
-* Custom Login Page
+* Branding
 * Event Hubs

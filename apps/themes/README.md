@@ -1,6 +1,37 @@
+---
+description: Custom themes for PowerShell Universal apps.
+---
+
 # Themes
 
-Universal Dashboard v3 is built on Material UI. Material UI provides a [built-in theme system ](https://material-ui.com/customization/theming/)that UD now takes advantage of. You can utilize this theme system by providing a hashtable of options to the `New-UDDashboard` 's `-Theme` parameter.
+## Built-In Themes
+
+You can use built-in themes by using the `Get-UDTheme` cmdlet. If you run the cmdlet without parameters, it will return a list of all available themes.&#x20;
+
+```powershell
+$Theme = Get-UDTheme -Name 'MaterialDesign'
+New-UDApp -Theme $Theme -Title 'Hello' -Content {
+    New-UDButton -Text "Test " -OnClick {
+        Show-UDToast -Message 'HEllo'
+    }
+}
+```
+
+## Setting the default theme
+
+You can set the default theme to either Light or Dark using the `-DefaultTheme` parameter.
+
+```powershell
+New-UDApp -Title 'Hello' -Content {
+    New-UDButton -Text "Test " -OnClick {
+        Show-UDToast -Message 'HEllo'
+    }
+} -DefaultTheme dark
+```
+
+## Custom Themes&#x20;
+
+PowerShell Univeral apps are built on MUI. MUI provides a [built-in theme system ](https://material-ui.com/customization/theming/)that apps take advantage of. You can utilize this theme system by providing a hashtable of options to the `New-UDApp` 's `-Theme` parameter.
 
 Here's an example of changing the theme's main color.
 
@@ -12,7 +43,7 @@ $Theme = @{
         }
     }
 }
-New-UDDashboard -Theme $Theme -Title 'Hello' -Content {
+New-UDApp -Theme $Theme -Title 'Hello' -Content {
     New-UDButton -Text "Test " -OnClick {
         Show-UDToast -Message 'HEllo'
     }
@@ -46,19 +77,7 @@ grey = @{
 ```
 {% endhint %}
 
-## Setting the default theme
-
-You can set the default theme to either Light or Dark using the `-DefaultTheme` parameter.
-
-```powershell
-New-UDDashboard -Title 'Hello' -Content {
-    New-UDButton -Text "Test " -OnClick {
-        Show-UDToast -Message 'HEllo'
-    }
-} -DefaultTheme dark
-```
-
-## Changing the background color
+### Changing the background color
 
 You can change the page background color by setting the background default color. To adjust the header background color, set the primary main color.
 
@@ -73,14 +92,14 @@ $Theme = @{
         }
     }
 }
-New-UDDashboard -Theme $Theme -Title 'Hello' -Content {
+New-UDApp -Theme $Theme -Title 'Hello' -Content {
     New-UDButton -Text 'Hello' 
 }
 ```
 
 ![](<../../.gitbook/assets/image (166).png>)
 
-## Supporting dark and light palettes
+### Supporting dark and light palettes
 
 To support dark and light palettes, you can define a dark and light sections in your hashtable. They have the same properties as a theme.
 
@@ -101,14 +120,14 @@ $Theme = @{
         }
     }
 }
-New-UDDashboard -Theme $Theme -Title 'Hello' -Content {
+New-UDApp -Theme $Theme -Title 'Hello' -Content {
     New-UDButton -Text 'Hello' 
 }
 ```
 
 ![](../../.gitbook/assets/3yIzYxdOaa.gif)
 
-## Changing the font size
+### Changing the font size
 
 To change the font size, set the typography fontSize property.
 
@@ -118,14 +137,14 @@ $Theme = @{
         fontSize = 20
     }
 }
-New-UDDashboard -Theme $Theme -Title 'Hello' -Content {
+New-UDApp -Theme $Theme -Title 'Hello' -Content {
     New-UDButton -Text 'Hello' 
 }
 ```
 
 ![](<../../.gitbook/assets/image (271).png>)
 
-## Changing default button colors
+### Changing default button colors
 
 ```powershell
 $Theme = @{
@@ -135,16 +154,16 @@ $Theme = @{
         }
     }
 }
-New-UDDashboard -Theme $Theme -Title 'Hello' -Content {
+New-UDApp -Theme $Theme -Title 'Hello' -Content {
     New-UDButton -Text 'Small Button'
 }
 ```
 
 ![](<../../.gitbook/assets/image (465).png>)
 
-For a full list of options available for the theme system, you can look at the [default theme for Material UI](https://material-ui.com/customization/default-theme/).
+For a full list of options available for the theme system, you can look at the [default theme for MUI](https://material-ui.com/customization/default-theme/).
 
-## Component Overrides
+### Component Overrides
 
 You can override any component CSS value using the theme engine. In order to override a component's base theming, you will need to identify the CSS class name applied to that element.
 
@@ -217,9 +236,9 @@ $Theme = @{
 
 For more examples, look at the Onepirate and Paperbase themes below that include many component overrides.
 
-## Example Themes
+### Example Themes
 
-### Sand
+#### Sand
 
 ![Sand Theme](<../../.gitbook/assets/image (468).png>)
 
@@ -240,7 +259,7 @@ $Theme = @{
 }
 ```
 
-### Compliment
+#### Compliment
 
 ![](<../../.gitbook/assets/image (9) (1) (1).png>)
 
@@ -261,7 +280,7 @@ $Theme = @{
 }
 ```
 
-### Pastel
+#### Pastel
 
 ![](<../../.gitbook/assets/image (562).png>)
 
@@ -282,7 +301,7 @@ $Theme = @{
 }
 ```
 
-### Onepirate
+#### Onepirate
 
 ![](<../../.gitbook/assets/image (93).png>)
 
@@ -436,7 +455,7 @@ New-UDDashboard -Theme $theme -Title "Onepirate" -Content {
 }
 ```
 
-### Paperbase
+#### Paperbase
 
 ![Paperbase in Universal Dashboard](<../../.gitbook/assets/image (261).png>)
 
@@ -567,7 +586,7 @@ $Navigation = @(
 )
 
 
-New-UDDashboard -Theme $theme -Title "Paperbase" -Content {
+New-UDApp -Theme $theme -Title "Paperbase" -Content {
     New-UDButton -Text 'Add user' -Color primary
     New-UDCard -Title 'User Info' -Content {
         "No users for this project yet."

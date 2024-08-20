@@ -38,23 +38,21 @@ Any errors written to the error stream will be available on the Error tab within
 
 ## Status
 
-Jobs will return various statuses depending on configuration and the result of the execution. Settings that can affect job status include:&#x20;
+Jobs will return various statuses depending on configuration and the result of the execution. Settings that can affect job status include:
 
 * ErrorActionPreference
-* WarningActionPreference&#x20;
+* WarningActionPreference
 
-The following table describes how PowerShell Universal treats statuses.&#x20;
+The following table describes how PowerShell Universal treats statuses.
 
-
-
-| Status              | Description                                          | Suppress                                        |
-| ------------------- | ---------------------------------------------------- | ----------------------------------------------- |
-| Error               | A script had a non-terminating error.                | Set ErrorActionPreference to SilentlyContinue   |
-| Warning             | A script had a warning.                              | Set WarningActionPreference to SilentlyContinue |
-| Failed              | A script had a terminating error.                    | Handle the terminating error or catch it.       |
-| Waiting on Feedback | A script is waiting on feedback, such as Read-Host.  | Avoid user callbacks such as read-host.         |
-| Running             | The script is currently running.                     | N\A                                             |
-| Queued              | The script is currently queued to run.               | N\A                                             |
+| Status              | Description                                         | Suppress                                        |
+| ------------------- | --------------------------------------------------- | ----------------------------------------------- |
+| Error               | A script had a non-terminating error.               | Set ErrorActionPreference to SilentlyContinue   |
+| Warning             | A script had a warning.                             | Set WarningActionPreference to SilentlyContinue |
+| Failed              | A script had a terminating error.                   | Handle the terminating error or catch it.       |
+| Waiting on Feedback | A script is waiting on feedback, such as Read-Host. | Avoid user callbacks such as read-host.         |
+| Running             | The script is currently running.                    | N\A                                             |
+| Queued              | The script is currently queued to run.              | N\A                                             |
 
 ## Feedback
 
@@ -200,7 +198,7 @@ Invoke-RestMethod http://localhost:5000/api/v1/script/7 -Method POST -Body $JobC
 
 Variables defined in jobs can be found on the [variables page](../platform/variables.md#scripts).
 
-## Experimental Feature: Job Run ID
+## Job Run ID
 
 The default behavior for PowerShell Universal is to track jobs based on an autoincrementing int64-based ID. Every time a new job is run, the job is one higher in ID than the last. Because of this behavior, it is easy to guess other job IDs and can potentially lead to a security risk.
 
@@ -209,7 +207,7 @@ In order to avoid this issue, you can enable the `JobRunID` experimental feature
 You will need to enable this feature to use it.
 
 ```powershell
-Set-PSUSetting -ExperimentalFeature ([PowerShellUniversal.ExperimentalFeatures]::JobRunId)
+Set-PSUSetting -JobRunId
 ```
 
 ## API

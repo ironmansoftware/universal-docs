@@ -1,3 +1,7 @@
+---
+description: Schedule scripts to run in PowerShell Universal.
+---
+
 # Schedules
 
 Schedules can be assigned to scripts and allow you to define frequency and other parameters for a script such as run as credentials.
@@ -24,7 +28,7 @@ Simple schedules are really just helpers for various standard CRON schedules. Wh
 
 ### CRON
 
-CRON schedules use CRON expressions to define schedules. PowerShell Universal takes advantage of Chronos. For examples of valid expressions, [click here](https://github.com/HangfireIO/Cronos).&#x20;
+CRON schedules use CRON expressions to define schedules. PowerShell Universal takes advantage of Chronos. For examples of valid expressions, [click here](https://github.com/HangfireIO/Cronos).
 
 ![](<../.gitbook/assets/image (470).png>)
 
@@ -80,7 +84,7 @@ New-PSUSchedule -Script "MyScript.ps1" -Cron '* * * * *' -Credential 'MyUser'
 
 ## Computer
 
-You can select the computer or computers to run the schedule on. By default, schedules will run on any available computer. If you select All Computers, the schedule will run on all computers connect to the PSU cluster. If you select a specific computer, the schedule will run on only that computer.&#x20;
+You can select the computer or computers to run the schedule on. By default, schedules will run on any available computer. If you select All Computers, the schedule will run on all computers connect to the PSU cluster. If you select a specific computer, the schedule will run on only that computer.
 
 ```powershell
 New-PSUSchedule -Script "MyScript.ps1" -Cron '* * * * *' -Computer 'PSUNODE1'
@@ -88,9 +92,9 @@ New-PSUSchedule -Script "MyScript.ps1" -Cron '* * * * *' -Computer 'PSUNODE1'
 
 ## Conditions
 
-Conditions can be defined that determine whether a schedule should be run. This is useful if you are using the same repository scripts for multiple environments. Currently, conditions cannot be defined within the admin console. Conditions are passed the current script and schedule as parameters. The condition scriptblock is run within the integrated environment.&#x20;
+Conditions can be defined that determine whether a schedule should be run. This is useful if you are using the same repository scripts for multiple environments. Currently, conditions cannot be defined within the admin console. Conditions are passed the current script and schedule as parameters. The condition scriptblock is run within the integrated environment.
 
-The condition needs to return true or false. Below is an example of a condition where the schedule will only run if there is an environment variable named `Slot` that contains the value `production`.&#x20;
+The condition needs to return true or false. Below is an example of a condition where the schedule will only run if there is an environment variable named `Slot` that contains the value `production`.
 
 ```powershell
 New-PSUSchedule -Script "MyScript.ps1" -Cron '* * * * *' -Condition {
@@ -100,19 +104,18 @@ New-PSUSchedule -Script "MyScript.ps1" -Cron '* * * * *' -Condition {
 
 ## Pausing Schedules
 
-You can pause a schedule by setting the Paused property. When a schedule is paused, it will not run. This is useful to stop a schedule from running but not delete it.&#x20;
+You can pause a schedule by setting the Paused property. When a schedule is paused, it will not run. This is useful to stop a schedule from running but not delete it.
 
 ## Time Out
 
-You can set a time out for scheduled jobs. The time out is the number of minutes before the scheduled job is canceled.&#x20;
+You can set a time out for scheduled jobs. The time out is the number of minutes before the scheduled job is canceled.
 
 ## Random Delay
 
-The Random Delay property causes a schedule to start anywhere between 0 and 60 seconds from the scheduled time. This is useful when running many schedules at the same time. For example, if you had 10 schedules that start at midnight, you may want to set a random delay to limit resource contention on the PowerShell Universal service.&#x20;
+The Random Delay property causes a schedule to start anywhere between 0 and 60 seconds from the scheduled time. This is useful when running many schedules at the same time. For example, if you had 10 schedules that start at midnight, you may want to set a random delay to limit resource contention on the PowerShell Universal service.
 
 ## API
 
 * [New-PSUSchedule](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-PSUSchedule.txt)
 * [Get-PSUSchedule](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Get-PSUSchedule.txt)
 * [Remove-PSUSchedule](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Remove-PSUSchedule.txt)
-

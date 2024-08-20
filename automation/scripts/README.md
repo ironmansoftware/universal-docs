@@ -34,10 +34,6 @@ A description of the script. This is shown in various places within the UA UI an
 
 Prevents a script from being run manually. This is enforced in the UI as well as the web server and cmdlets.
 
-### **Manual Time**
-
-This setting is used to track the amount of time saved.
-
 ### **Max Job History**
 
 Defaults to 100. It defines the amount of jobs that are stored when running this script. Jobs are also cleaned up based on the server-wide job retention duration setting from within the Settings / General page.
@@ -46,7 +42,7 @@ Defaults to 100. It defines the amount of jobs that are stored when running this
 
 Changes how the script reacts when there is an error within the script. By default, terminating and non-terminating errors are ignored and the script will always be successful. You can change this setting to stop to cause scripts to fail immediately when an error is encountered.
 
-If you wish to write errors directly to the error pane without causing changes in how the script is handled (for example in an exception handler), you can use `Write-PSUError` to output the error record and it will appear in the error tab of the job.&#x20;
+If you wish to write errors directly to the error pane without causing changes in how the script is handled (for example in an exception handler), you can use `Write-PSUError` to output the error record and it will appear in the error tab of the job.
 
 ### **Environment**
 
@@ -56,13 +52,9 @@ Allows you to define the required PowerShell environment for the script. By defa
 
 The number of minutes before the script will timeout. The default value of 0 means the script will run forever. Once a script reaches it's time out, it will be cancelled.
 
-### Anonymous
-
-The anonymous setting allows the script to be run when the user is not authenticated. This is useful when using scripts in Pages.
-
 ### Discard Pipeline
 
-When checked, this will disable the storage of pipeline output. This will greatly reduce the CPU and storage overhead of jobs. The script will still write to the information, warning, and error streams.&#x20;
+When checked, this will disable the storage of pipeline output. This will greatly reduce the CPU and storage overhead of jobs. The script will still write to the information, warning, and error streams.
 
 ### **Concurrent Jobs**
 
@@ -105,7 +97,7 @@ The result is a set of input options that are based on the types of parameters.
 ### Running a Script as Another User
 
 {% hint style="info" %}
-The integrated [environment](../../config/environments.md) does not support running as alternate credentials.&#x20;
+The integrated [environment](../../config/environments.md) does not support running as alternate credentials.
 {% endhint %}
 
 You can run scripts as another user by configuring [secret variables](../../platform/variables.md#creating-a-secret-variable). PowerShell Universal uses the Microsoft Secret Management module to integrate with secret providers. See variables for more information on secrets.
@@ -120,7 +112,7 @@ You can use the Computer drop down to select other machines to run a script on. 
 
 ### Running a Script on All Computers
 
-You can run a script on all computers by selecting the All Computers option from the Computer drop down.&#x20;
+You can run a script on all computers by selecting the All Computers option from the Computer drop down.
 
 ## Remoting
 
@@ -128,7 +120,7 @@ Note that you can use PowerShell remoting by taking advantage of `Invoke-Command
 
 ## Comment-Based Help
 
-You can use comment-based to define the description, a synopsis, parameter based help, and links for your scripts. These will be displayed within the PowerShell Universal UI.&#x20;
+You can use comment-based to define the description, a synopsis, parameter based help, and links for your scripts. These will be displayed within the PowerShell Universal UI.
 
 ```powershell
 <#
@@ -152,19 +144,15 @@ param($HostName)
 Test-NetConnection $HostName
 ```
 
-This above will yield the following user interface. The synopsis will be shown as the short description and a longer description can be shown in the description section. Links will appear under the description.&#x20;
+This above will yield the following user interface. The synopsis will be shown as the short description and a longer description can be shown in the description section. Links will appear under the description.
 
 ![](<../../.gitbook/assets/image (431).png>)
 
 ## Modules and Commands
 
-Commands and cmdlets found in modules can be used at the target for scripts rather than authoring the script directly. The `-Module` and `-Command` parameters are not displayed in the admin console but can be included in `scripts.ps1`.&#x20;
+Commands and cmdlets found in modules can be used at the target for scripts rather than authoring the script directly.&#x20;
 
-{% hint style="info" %}
-This feature does not support binary cmdlets.
-{% endhint %}
-
-Let's assume that we have a module called `PSUModule` that contains the following function.&#x20;
+Let's assume that we have a module called `PSUModule` that contains the following function.
 
 ```powershell
 function Show-HelloWorld {
@@ -173,13 +161,13 @@ function Show-HelloWorld {
 }
 ```
 
-It's possible to expose this function as a script by using the following syntax in `scripts.ps1`.&#x20;
+It's possible to expose this function as a script by using the following syntax in `scripts.ps1`.
 
 ```powershell
 New-PSUScript -Module 'PSUModule' -Command 'Show-HelloWorld'
 ```
 
-The function will be surfaced just as other scripts within the admin console. Parameters, help text and other PSU features will work the same as with scripts.&#x20;
+The function will be surfaced just as other scripts within the admin console. Parameters, help text and other PSU features will work the same as with scripts.
 
 <figure><img src="../../.gitbook/assets/image (578).png" alt=""><figcaption><p>Parameter for a function<br></p></figcaption></figure>
 
@@ -189,4 +177,3 @@ The function will be surfaced just as other scripts within the admin console. Pa
 * [Remove-PSUScript](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Remove-PSUScript.txt)
 * [Set-PSUScript](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Set-PSUScript.txt)
 * [Get-PSUScript](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/Get-PSUScript.txt)
-

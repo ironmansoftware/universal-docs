@@ -4,7 +4,7 @@ description: Disable features within PowerShell Universal.
 
 # Feature Flags
 
-Using feature flags, you can disable features that you don't use to simplify your deployments. This can be useful to make the platform easier to use and reduce attack vectors from a security standpoint.&#x20;
+Using feature flags, you can disable features that you don't use to simplify your deployments. This can be useful to make the platform easier to use and reduce attack vectors from a security standpoint.
 
 ## Disable Features
 
@@ -17,13 +17,13 @@ $Parameters = @{
 Set-PSUSetting @Parameters
 ```
 
-Once a feature has been disabled, it will no longer appear in the admin console.&#x20;
+Once a feature has been disabled, it will no longer appear in the admin console.
 
 ![](<../.gitbook/assets/image (322).png>)
 
-More importantly, disabled features will be completely disabled in the PowerShell Universal server. The Management APIs will no longer function, and the configuration scripts will not be run.&#x20;
+More importantly, disabled features will be completely disabled in the PowerShell Universal server. The Management APIs will no longer function, and the configuration scripts will not be run.
 
-Features that can be disabled include:&#x20;
+Features that can be disabled include:
 
 * API
 * Scripts
@@ -33,21 +33,3 @@ Features that can be disabled include:&#x20;
 * RateLimiting
 * PublishedFolders
 * Templates
-* Protect
-
-## Experimental Features
-
-Experimental features are disabled by default. To enable an experiment feature, use the `-ExperimentalFeatures` parameter of `Set-PSUSetting`.&#x20;
-
-```powershell
-$Parameters = @{
-	ExperimentalFeatures = ([PowerShellUniversal.ExperimentalFeatures]::CSharpLang)
-}
-Set-PSUSetting @Parameters 
-```
-
-Experimental features may not have a user interface component when enabled.&#x20;
-
-Experimental features that can be enabled include:&#x20;
-
-* C# APIs
