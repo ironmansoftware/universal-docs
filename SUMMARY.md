@@ -169,7 +169,7 @@
   * [High Availability](config/hosting/high-availability.md)
   * [IIS](config/hosting/hosting-iis.md)
   * [Reverse Proxy](config/hosting/reverse-proxy.md)
-* [Login Page](config/login-page.md)
+* [Branding](config/login-page.md)
 * [Management API](config/management-api.md)
 * [Persistence](config/persistence.md)
 * [App Settings](config/settings.md)
