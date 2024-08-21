@@ -67,6 +67,88 @@ You can use the following command line on Linux to install and start PowerShell 
  ./PSU/Universal.Server
 ```
 
+## Linux Service
+
+You can use `systemd` to start PowerShell Universal as a service. The below script is an example of downloading a version of PowerShell Universal and installing it as a service.&#x20;
+
+```bash
+# ----
+# This script will install PowerShell Universal on Linux as a service
+# This has been tested on Ubuntu 20.04 (ARM64) on a Raspberry Pi 4
+# ----
+# Dependencies:
+# wget
+# unzip
+#
+# Make sure they are installed
+# ----
+
+# These are used to derive the download URL
+PSU_VERSION="5.0.0" # Change this to the current version
+PSU_ARCH="arm64" # Change this to your desired architecture
+PSU_FILE="Universal.linux-${PSU_ARCH}.${PSU_VERSION}.zip"
+PSU_URL="https://imsreleases.blob.core.windows.net/universal/production/${PSU_VERSION}/${PSU_FILE}"
+
+# These are used for installing PowerShell Universal
+# If you'd like to use a different path, change this
+PSU_PATH="/opt/psuniversal"
+PSU_EXEC="${PSU_PATH}/Universal.Server"
+
+# These are for installing it as a service
+PSU_SERVICE="psuniversal"
+PSU_USER="psuniversal"
+
+# ----
+# BEGIN
+# ----
+
+echo "Creating $PSU_PATH and granting access to $USER"
+sudo mkdir $PSU_PATH
+sudo setfacl -m "u:${USER}:rwx" $PSU_PATH
+
+echo "Creating user $PSU_USER and making it the owner of $PSU_PATH"
+sudo useradd $PSU_USER -m
+sudo chown $PSU_USER -R $PSU_PATH
+
+echo "Downloading PowerShell Universal $PSU_VERSION ($PSU_ARCH)"
+wget -q $PSU_URL -O $PSU_FILE
+
+echo "Extracting $PSU_FILE to $PSU_PATH"
+unzip -o -qq $PSU_FILE -d $PSU_PATH
+
+echo "Make $PSU_EXEC executable"
+sudo chmod +x $PSU_EXEC
+
+echo "Creating service configuration"
+cat <<EOF > ~/$PSU_SERVICE.service
+[Unit]
+Description=PowerShell Universal
+[Service]
+ExecStart=$PSU_EXEC
+SyslogIdentifier=psuniversal
+User=$PSU_USER
+Restart=always
+RestartSec=5
+[Install]
+WantedBy=multi-user.target
+EOF
+
+echo "Creating and starting service"
+sudo cp -f ~/$PSU_SERVICE.service /etc/systemd/system
+sudo systemctl daemon-reload
+sudo systemctl enable $PSU_SERVICE
+sudo systemctl start $PSU_SERVICE
+sudo systemctl status $PSU_SERVICE --no-pager
+
+# If you don't use UFW, you can comment this out
+echo "Allow port 5000/tcp"
+sudo ufw allow 5000/tcp
+
+# ----
+# END
+# ----
+```
+
 ## PowerShell Module
 
 You can use the PowerShell Universal PowerShell module to install the Universal server. To install the module, use `Install-Module`.
