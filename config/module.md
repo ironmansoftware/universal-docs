@@ -74,11 +74,11 @@ You can also set the application settings API URL value to provide the same valu
 
 ## Technical Considerations
 
-The Universal module using gRPC for all communicate with the PowerShell Universal server. Depending on the server configuration, the gRPC communication will be slightly different.&#x20;
+The Universal module uses gRPC for all communication with the PowerShell Universal server. Depending on the server configuration, the gRPC communication will be slightly different.&#x20;
 
 ### HTTPS
 
-When using HTTPS, the standard gRPC communication channel will be used. This is the fastest configuration because it does not require special serialization or accommodations of downlevel protocols. HTTP/2 is required for gRPC.&#x20;
+When using HTTPS, the standard gRPC communication channel will be used. This is the fastest configuration because it does not require special serialization or accommodations for down-level protocols. HTTP/2 is required for gRPC.&#x20;
 
 ### HTTP and Windows Authentication
 
