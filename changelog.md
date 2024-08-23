@@ -4,6 +4,40 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.0.1 - 8/23/2024
+
+#### APIs
+
+* Fixed an issue when viewing endpoint documentation (#3607)
+* Added event hub connections table
+* Fixed an issue with Send-PSUEvent and -Parameters
+* Fixed an issue with the endpoint tester and nested IIS sites (#3611)
+* Added endpoint search (#3631)
+
+#### Apps
+
+* Fixed issues with the Pages tab in the app editor
+* Live docs menu item now opens in a new tab
+* Fixed an issue with New-UDTransferList (#3634)
+* Fixed an issue with a New-UDDataGrid example
+
+#### Automation
+
+* Fixed an issue with job output appearing out of order
+
+#### Platform
+
+* Reduced the default System Log Level from Debug to Information
+* Fixed an issue with environment discovery and Windows PowerShell 5.1
+* Improved error reporting when jobs fail to start
+* Fixed an issue with the configuration file editor (#3603)
+* Fixed an issue with Universal cmdlets and HTTP
+* Fixed an issue with SQLite v4 to v5 database update
+* Fixed an issue logging in with SAML2 (#3623)
+* Fixed an issue with home page formatting (#3620)
+* Added select all button to the git commit page (#3584)
+* Fixed a theme issue with the permission drawer (#3618)
+
 ## 5.0.0 - 8/20/2024
 
 {% hint style="warning" %}
