@@ -171,6 +171,7 @@
   * [Reverse Proxy](config/hosting/reverse-proxy.md)
 * [Branding](config/login-page.md)
 * [Management API](config/management-api.md)
+* [Module](config/module.md)
 * [Persistence](config/persistence.md)
 * [App Settings](config/settings.md)
 * [Repository](config/repository.md)
