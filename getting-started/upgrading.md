@@ -183,11 +183,13 @@ The drag and drop page designer for apps has been removed. Apps created with the
 
 Access Controls have been removed in favor of [Permissions](../security/enterprise-security/permissions.md). You can also use the [Portal ](broken-reference)to assign resources, like scripts, to users without the need for complicated permissions.&#x20;
 
-### Cmdlet Communication Channel Change
+### Cmdlet Communication Channel and Authorization Changes
 
 Prior to v5, cmdlets would send data over HTTP or by using an internal gRPC channel. Now, all cmdlets use an externally facing gRPC Channel that is protected by authentication and authorization. It no longer uses standard REST API HTTP calls.&#x20;
 
 This can be a problem for PowerShell Universal instances behind [reverse proxies](../config/hosting/reverse-proxy.md) and requires that the proper header values are sent.&#x20;
+
+Please review the [Module ](../config/module.md)documentation for more information.
 
 ### PowerShell.exe is no longer used
 
