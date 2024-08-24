@@ -48,15 +48,29 @@ The following features of PowerShell Universal require a license.
   * Windows Authentication
   * Custom Authentication Scripts
   * Client Certificate
+  * App Tokens
 * Enterprise Authorization
   * Permissions
   * Custom Authorization Scripts
-* Git Support
-* Module Management
-* Non-Database Credential Vaults
-* SQL Support
-* PostgreSQL Support
-* Triggers
-* Terminals
-* Branding
-* Event Hubs
+* Platform
+  * Git Support
+  * Module Management
+  * Non-Database Credential Vaults
+  * SQL Support
+  * PostgreSQL Support
+  * Published Folders
+  * Cache Management
+  * Computer Groups
+  * Translations
+* Settings
+  * Branding
+  * Tags
+* APIs
+  * Event Hubs
+  * OpenAPI Documentation
+* Automation
+  * Triggers
+  * Terminals
+* Apps
+  * App Page Editor
+  * App Function Editor
