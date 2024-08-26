@@ -2,7 +2,7 @@
 description: Information about the PowerShell Universal Gallery.
 ---
 
-# Gallery
+# 🖼️ Gallery
 
 Similar to the PowerShell Gallery, the PowerShell Universal Gallery provides a way to share modules built for PowerShell Universal with the community. It is managed via a GitHub repository and published as a NuGet feed for consumption by PSResourceGet.&#x20;
 
