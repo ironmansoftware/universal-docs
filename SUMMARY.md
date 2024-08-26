@@ -3,6 +3,7 @@
 * [❓ About](README.md)
 * [🆕 What's New in v5?](whats-new-in-v5.md)
 * [⏯️ Get Started](get-started.md)
+* [Gallery](gallery.md)
 * [📚 Additional Resources](additional-resources.md)
 * [⬇️ Installation](getting-started/README.md)
   * [Docker](getting-started/docker.md)
