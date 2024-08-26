@@ -17,7 +17,7 @@ The PowerShell Universal Gallery is published as a NuGet feed at [https://galler
 You will need the `Microsoft.PowerShell.PSResourceGet` module in order to register it as a provider as the feed is NuGet v3.&#x20;
 
 ```powershell
-Install-Module 
+Install-Module Microsoft.PowerShell.PSResourceGet
 Register-PSResourceRepository -Name 'PSUGallery' -Uri 'https://gallery.powershelluniversal.com/feed/index.json' -Trusted
 ```
 
