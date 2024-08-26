@@ -8,15 +8,15 @@ An app can consist of one or more pages. A page can have a particular name and U
 
 ## Creating a new page
 
-Within the app editor, expand the Pages navigation menu and click New Page.&#x20;
+Within the app editor, expand the Pages navigation menu and click New Page.
 
 <figure><img src="../../.gitbook/assets/image (364).png" alt=""><figcaption><p>New Page Button</p></figcaption></figure>
 
-You can edit a page by clicking the link in the menu. The code editor will switch to the page's content.&#x20;
+You can edit a page by clicking the link in the menu. The code editor will switch to the page's content.
 
 <figure><img src="../../.gitbook/assets/image (536).png" alt=""><figcaption><p>A page editor</p></figcaption></figure>
 
-To reference the page in your dashboard, use `Get-UDPage`.&#x20;
+To reference the page in your dashboard, use `Get-UDPage`.
 
 <figure><img src="../../.gitbook/assets/image (193).png" alt=""><figcaption><p>Using a page in a dashboard</p></figcaption></figure>
 
@@ -94,11 +94,11 @@ New-UDApp -Title 'Pages' -Pages $Pages
 
 ### Query string parameters
 
-Query string parameters are passed to pages and other endpoints as a hashtable variable called `$Query`.&#x20;
+Query string parameters are passed to pages and other endpoints as a hashtable variable called `$Query`.
 
 For example, if you visited a page with the following query string parameter: `http://localhost:5000/dashboard/Page1?test=123`
 
-You would have access to this value using the following syntax:&#x20;
+You would have access to this value using the following syntax:
 
 ```powershell
 $Query.test
@@ -128,11 +128,11 @@ New-UDApp -Title 'Pages' -Pages $Pages
 
 ## Header
 
-The following options are available for customizing the header.&#x20;
+The following options are available for customizing the header.
 
 ### Position
 
-Use the `-HeaderPosition` parameter to adjust the behavior of the header.&#x20;
+Use the `-HeaderPosition` parameter to adjust the behavior of the header.
 
 * absolute\fixed - Remains at the top of the page, even when scrolling
 * relative - Remains at the top of the page. Not visible when scrolling.
@@ -149,7 +149,7 @@ New-UDPage -HeaderPosition fixed -Content {
 
 ### Colors
 
-You can adjust the colors of the header by specifying the `-HeaderColor` and `-HeaderBackgroundColor` parameters. These colors will override the theme colors.&#x20;
+You can adjust the colors of the header by specifying the `-HeaderColor` and `-HeaderBackgroundColor` parameters. These colors will override the theme colors.
 
 ```powershell
 New-UDPage -Name 'Home' -Content {
@@ -221,6 +221,30 @@ $Pages += New-UDPage -Name 'Test2' -Content {
 New-UDApp -Title "Hello, World!" -Pages $Pages
 ```
 
+### Role-Based Access
+
+You can use dynamic navigation to create a navigation menu that takes advantage of roles. Use `Protect-UDSection` to limit who has access to particular menu items. Ensure that you also include the same role on the page.&#x20;
+
+```powershell
+$Navigation = {
+    New-UDListItem -Label "Home" -Href '/Home' 
+    Protect-UDSection -Role "Administrator" -Content {
+        New-UDListItem -Label "Admins" -Href '/Admins' 
+    }
+}
+
+$Pages = @()
+$Pages += New-UDPage -Name 'Home' -Content {
+ New-UDTypography -Text "Hello"
+} -NavigationLayout permanent -LoadNavigation $Navigation
+
+$Pages += New-UDPage -Name 'Admins' -Content {
+    New-UDTypography -Text "Hello"
+} -NavigationLayout permanent -LoadNavigation $Navigation -Roles "Administrator"
+
+New-UDApp -Title "Hello, World!" -Pages $Pages
+```
+
 ### Layouts
 
 The permanent layout creates a static navigation drawer on the left hand side of the page. It cannot be hidden by the user.
@@ -263,7 +287,7 @@ New-UDApp -Title "Hello, World!" -Pages $Pages
 
 <figure><img src="../../.gitbook/assets/image (212).png" alt=""><figcaption><p>Horizontal Navigation</p></figcaption></figure>
 
-You can use `New-UDAppBar` with a blank page to create horizontal navigation.&#x20;
+You can use `New-UDAppBar` with a blank page to create horizontal navigation.
 
 ```powershell
 New-UDApp -Title 'PowerShell Universal' -Pages @(
@@ -315,7 +339,7 @@ To customize the style of your logo, you can use a [cascading style sheet](../th
 
 ## Header Content
 
-You can define custom content to include in the header by using the `-HeaderContent` parameter.&#x20;
+You can define custom content to include in the header by using the `-HeaderContent` parameter.
 
 ```powershell
 $Page = New-UDPage -Name 'Home' -Content {
@@ -331,7 +355,7 @@ New-UDApp -Title "Dashboard" -Pages $Page
 
 ## Dynamic Page Title
 
-Page titles are static by default, but you can override this behavior by using `-LoadTitle`. It will be called when the page is loaded. This is useful when defining pages in multilingual dashboards.&#x20;
+Page titles are static by default, but you can override this behavior by using `-LoadTitle`. It will be called when the page is loaded. This is useful when defining pages in multilingual dashboards.
 
 ```powershell
 New-UDPage -Name "Home" -LoadTitle { "Current Time" + (Get-Date) } -Content { } 
@@ -339,20 +363,20 @@ New-UDPage -Name "Home" -LoadTitle { "Current Time" + (Get-Date) } -Content { }
 
 ## Static Pages
 
-Static pages allow for better performance by not executing PowerShell to load the content of the page. This can be useful when displaying data that does not require dynamic PowerShell execution. The page content is constructed when the dashboard is started.&#x20;
+Static pages allow for better performance by not executing PowerShell to load the content of the page. This can be useful when displaying data that does not require dynamic PowerShell execution. The page content is constructed when the dashboard is started.
 
 <pre class="language-powershell"><code class="lang-powershell"><strong>New-UDPage -Name 'Static Page' -Content {
 </strong>    New-UDTypography (Get-Date)
 } -Static
 </code></pre>
 
-Static pages do not have access to user specific data. This includes variables such as:&#x20;
+Static pages do not have access to user specific data. This includes variables such as:
 
 * $Headers
 * $User
 * $Roles
 
-You can still include dynamic regions within pages. These dynamic regions will have access to user data. Reloading the below example will update the date and time listed in the page.&#x20;
+You can still include dynamic regions within pages. These dynamic regions will have access to user data. Reloading the below example will update the date and time listed in the page.
 
 ```powershell
 New-UDPage -Name 'Static Page' -Content {
@@ -365,4 +389,3 @@ New-UDPage -Name 'Static Page' -Content {
 ## API
 
 [New-UDPage](https://github.com/ironmansoftware/universal-docs/blob/master/cmdlets/New-UDPage.txt)
-
