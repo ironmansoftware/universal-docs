@@ -4,6 +4,39 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.0.2 - 8/28/2024
+
+#### Apps
+
+* Fixed an issue with displaying non-authenticated apps (#3641)
+
+#### Automation
+
+* Fixed an issue with scheduling on Windows Server 2016 (#3647)
+* Fixed an issue with script folder display (#3639, #3660)
+* Fixed an issue where the Time Zone selector was missing for schedules (#3649)
+* Added missing list view for scripts (#3635)
+* Fixed an issue where the inline debugger wouldn't trigger in the integrated environment (#3622)
+* Fixed an issue where schedule parameters would not display
+
+#### Portal
+
+* Fixed issue with parameter sets on the portal (#3617)
+
+#### Platform
+
+* Fixed issue with license enforcement in the admin console
+* Fixed an issue where the agent would give up retrying to connect after some time (#3614)
+* Fixed an issue with psudb.exe throwing an exception then migrating app tokens and jobs (#3652)
+* Improved performance of psudb.exe
+* Fixed an issue where disabling Windows Auth would cause users to fail to login until cookies were deleted (#3648)
+* Fixed an issue where the platform would attempt to use powershell.exe, if configured
+* Fixed an issue changing Script Base Path when API Base Path was already set (#3651)
+* Fixed a locking issue with SQLite databases
+* Fixed issue copying app tokens on HTTP servers (#3655)
+* Improved connection logic in cmdlets to support more server configurations
+* Fixed an issue with the online license activation retry failing
+
 ## 5.0.1 - 8/23/2024
 
 #### APIs
