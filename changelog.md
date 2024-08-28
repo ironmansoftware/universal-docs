@@ -4,6 +4,16 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.0.3 - 8/28/2024
+
+#### Automation
+
+* Fixed an issue displaying the scripts page
+
+#### Apps
+
+* Fixed a license expiration issue with data grids and date\time pickers
+
 ## 5.0.2 - 8/28/2024
 
 #### Apps
