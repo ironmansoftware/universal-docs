@@ -197,6 +197,28 @@ This can be a problem for PowerShell Universal instances behind [reverse proxies
 
 Please review the [Module ](../config/module.md)documentation for more information.
 
+#### Common cmdlet errors you may encounter during upgrade
+
+#### HTTP Status Code 403
+
+The cmdlet you are calling does not have access to the PowerShell Universal APIs. You will need to specify an -AppToken parameter on the cmdlets in order to use them.&#x20;
+
+#### URI Not Defined
+
+The cmdlets are unable to determine how to call the PowerShell Universal APIs. You will need to either specify a -ComputerName parameter or setup the API URL in appsettings.json.&#x20;
+
+```json
+{
+   "API" : {
+      "URL": "http://localhost:5000"
+   }
+}
+```
+
+#### SSL Certificate Error
+
+If you are using a self-signed certificate, you will need to specify the -TrustCertificate parameter of the cmdlets.&#x20;
+
 ### PowerShell.exe is no longer used
 
 The Windows PowerShell 5.1 environment no longer uses PowerShell.exe directly. It instead uses a .NET Framework version of the Universal.Agent.exe executable. This allows for the greatest compatibility with PowerShell Universal libraries and other modules. The agent still uses the PowerShell assemblies found on the executing machine.&#x20;
