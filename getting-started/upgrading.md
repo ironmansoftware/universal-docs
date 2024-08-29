@@ -60,7 +60,13 @@ If you perform an uninstall and then an install using the MSI, then the service 
 
 #### Upgrade Process
 
-Once all the configuration files and the database are backed up, you can run the new MSI installer. The installer may prompt for a restart of the machine if files are locked. The PSU MSI will uninstall all the files in the installation directory and install entirely new files.
+Once all the configuration files and the database are backed up, you can run the new MSI installer.&#x20;
+
+{% hint style="warning" %}
+For major upgrades (e.g. v4.3.4 to v5.0.4 etc), you will need to uninstall the previous version prior to running the new version.&#x20;
+{% endhint %}
+
+The installer may prompt for a restart of the machine if files are locked. The PSU MSI will uninstall all the files in the installation directory and install entirely new files.
 
 Once the MSI has completed, you can navigate to your PowerShell Universal admin console to perform installation validation.
 
