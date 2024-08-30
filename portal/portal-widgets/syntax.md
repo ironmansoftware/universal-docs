@@ -4,7 +4,7 @@ description: Information about PSBlazor syntax.
 
 # Syntax
 
-PSBlazor is a custom syntax based on Blazor and Razor pages. It is similar to XML or XAML and provides a mechnaism to declatively define a user interface.&#x20;
+PSBlazor is a custom syntax based on Blazor and Razor pages. It is similar to XML or XAML and provides a mechanism to declaratively define a user interface.&#x20;
 
 ## Components
 
@@ -12,9 +12,9 @@ Each component is defined with an XML node, such as `<Button>` or `<Text>`. Each
 
 ### Defining a Component
 
-To define a component, you will use the PSBlazor code editor to add the componen's XML tags. For example, to create a button, you would do the following.&#x20;
+To define a component, you will use the PSBlazor code editor to add the component's XML tags. For example, to create a button, you would do the following.&#x20;
 
-```markup
+```xml
 <Button>Click Me</Button>
 ```
 
@@ -30,7 +30,7 @@ Every component has attributes available. Within the code editor for the PSBlazo
 
 Setting attributes is the same as setting any XML attribute. This example changes the button to the danger state.&#x20;
 
-```markup
+```xml
 <Row>
     <Button Danger="true">Click Me</Button>
 </Row>
@@ -44,7 +44,7 @@ Once you save the tool, it will update the display. With the button in danger st
 
 Some components provide the ability to define child content. You can use the `<ChildContent>` node to specify this is the case.&#x20;
 
-```markup
+```xml
 <Row>
    <ChildContent>
       <Button>Click Me</Button>
@@ -54,7 +54,7 @@ Some components provide the ability to define child content. You can use the `<C
 
 If no other nodes are specified within the child of the component, then it is assumed to be child content. The above can be simplified to this.&#x20;
 
-```markup
+```xml
 <Row>
     <Button>Click Me</Button>
 </Row>
@@ -62,7 +62,7 @@ If no other nodes are specified within the child of the component, then it is as
 
 Some components provide template attributes that can be set by specifying multiple child content nodes with the appropriate node names. For example, the table can have child content that consists of columns and a title template that defines how the title is displayed. When multiple child nodes are defined, `<ChildContent>` is required.&#x20;
 
-```markup
+```xml
 <Table DataSource="$Services">
    <ChildContent>
        <PropertyColumn Name="Name" />
@@ -127,14 +127,14 @@ Within the PSBlazor syntax, you can reference variables similar to how you would
 
 You can also use variables in attributes.&#x20;
 
-```markup
+```xml
 <Alert Message="$TestVariable"></Alert>
 <Button OnClick="OnClick">Click Me</Button>
 ```
 
 Variables can also be complex objects such as `PSCustomObject` or `Hashtable`. If they have properties, you can reference those in the PSBlazor syntax as well.&#x20;
 
-```markup
+```xml
 <Alert Message="$TestVariable.Name"></Alert>
 <Button OnClick="OnClick">Click Me</Button>
 ```
@@ -145,7 +145,7 @@ Data binding provides a mechanism to update variables without having to call Pow
 
 For example, you could bind to a `$test` variable for an input box like this.&#x20;
 
-```markup
+```xml
 <Input bind-Value="$TextValue"></Input>
 ```
 
