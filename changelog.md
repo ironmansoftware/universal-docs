@@ -4,6 +4,46 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.0.5 - 9/2/2024
+
+#### APIs
+
+* Fixed an issue where endpoint content wouldn't be displayed in the admin console when using -Path
+* Fixed an issue changing the path of endpoints (#3685)
+
+#### Apps
+
+* Fixed an issue where -DisableAutoStart had no affect (#3658)
+* Fixed issue with -OnClick and -Theme on New-UDNivoChart (#3667)
+* Added icon selector to page properties (#3678)
+* Fixed an issue where a blank file and folder would be created if the app pointed to a path that didn't exist (#3679)
+* Fixed an issue where installing apps from the library wouldn't show up (#3686)
+
+#### Automation
+
+* Added missing trigger schedule button
+
+#### Platform
+
+* Fixed an issue where the computer page would incorrectly show an error about the number of licensed computers.
+* Fixed an issue where changing branding would duplicate lines in branding.ps1 (#3666)
+* Fixed an issue with psudb.exe failing to convert jobs in certain configurations (#3670)
+* Added permissive security model to cmdlets (#3676)
+* Display number of selected changes in git commit (#3645)
+* Fixed an issue where secret variable values would not be deleted from the database (#3654)
+* Added missing clear cached claims button on the roles page.
+* Fixed an issue running Connect-AzAccount
+
+## 5.0.4 - 8/28/2024
+
+#### Platform
+
+* Fixed an issue loading custom health checks
+
+#### Security
+
+* ❗Fixed an issue where First Run dialog could be called multiple times
+
 ## 5.0.3 - 8/28/2024
 
 #### Automation
