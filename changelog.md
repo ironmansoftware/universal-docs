@@ -4,7 +4,7 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
-## 5.0.5 - 9/2/2024
+## 5.0.5 - 9/3/2024
 
 #### APIs
 
