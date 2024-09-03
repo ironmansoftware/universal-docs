@@ -203,6 +203,8 @@ Please review the [Module ](../config/module.md)documentation for more informati
 
 The cmdlet you are calling does not have access to the PowerShell Universal APIs. You will need to specify an -AppToken parameter on the cmdlets in order to use them.&#x20;
 
+You can also enable the [permissive API security model](../config/module.md#authorization-security-model) to allow internally called cmdlets from PowerShell Universal without the need for authorization.&#x20;
+
 #### URI Not Defined
 
 The cmdlets are unable to determine how to call the PowerShell Universal APIs. You will need to either specify a -ComputerName parameter or setup the API URL in appsettings.json.&#x20;
