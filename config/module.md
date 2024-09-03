@@ -40,6 +40,18 @@ Calls to the Universal cmdlets do not require additional authorization when run 
 
 The API developer can work around this by providing an App Token that does have the necessary permissions.&#x20;
 
+#### Authorization Security Model&#x20;
+
+You can change the authorization model to allow any calls from within PowerShell Universal to function without an app token. While this may be considered less secure by some, it depends on your organization's use of the platform.&#x20;
+
+```json
+{
+    "Api": {
+       "SecurityModel": "Permissive"
+    }
+}
+```
+
 ### Schedules
 
 Schedules do not have a current user. You will need to specify an App Token or Default Credential when using cmdlets within scheduled scripts. Although this is an extra step, it ensures that only the necessary permissions are applied to the schedule script.&#x20;
