@@ -6,6 +6,29 @@ description: Changelog for PowerShell Universal.
 
 ## [Downloads](https://ironmansoftware.com/release/powershell-universal)
 
+## 4.4.0 - 9/4/2024
+
+#### Apps
+
+* Fixed an issue with transfer list documentation (#3506)
+* Added -Enhanced to New-UDTransferList (#2888)
+* Added search box to the right hand list in New-UDTransferList
+* Fixed an issue with New-UDTimePicker documentation (#3505)
+* Added dark mode support for New-UDEditor (#3502)
+* Fixed an issue with New-UDCard -Image example (#3509)
+* Fixed an issue with autocomplete formatting (#3570)
+
+#### Automation
+
+* Fixed an issue where Invoke-PSUScript -Wait would not return the correct output (#3508)
+* Fixed an issue with exception output in Python (#3586)
+* Fixed an issue with excessive database growth when using LiteDB (#3672)
+
+#### Platform
+
+* Fixed an issue where the ComputerTag collection will fill when using LiteDB (#3671)
+* Fixed an issue with background job scheduling when using multi-node configurations
+
 ## 4.3.4 - 7/29/2024
 
 #### Automation
