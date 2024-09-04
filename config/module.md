@@ -42,7 +42,7 @@ The API developer can work around this by providing an App Token that does have 
 
 #### Authorization Security Model&#x20;
 
-You can change the authorization model to allow any calls from within PowerShell Universal to function without an app token. While this may be considered less secure by some, it depends on your organization's use of the platform.&#x20;
+You can change the authorization model to allow any calls from within PowerShell Universal to function without an app token. While this may be considered less secure by some, it depends on your organization's use of the platform. This value can be set in `appsettings.json` or within the `API__SecurityModel` environment variable.
 
 ```json
 {
