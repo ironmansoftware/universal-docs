@@ -92,6 +92,8 @@ The Universal module uses gRPC for all communication with the PowerShell Univers
 
 When using HTTPS, the standard gRPC communication channel will be used. This is the fastest configuration because it does not require special serialization or accommodations for down-level protocols. HTTP/2 is required for gRPC.&#x20;
 
+If HTTPS is used, the certificate must be trusted by the system. If the certificate is self-signed, you can use the `-TrustCertificate` parameter on the cmdlets to avoid the certificate check.&#x20;
+
 ### HTTP and Windows Authentication
 
 When using HTTP or Windows Authentication, HTTP/2 is not supported and gRPC cannot run natively because trailing headers are not supported. To accommodate this, the Universal module will use a technology call gRPC-Web to translate gRPC calls to HTTP and JSON in order call HTTP REST methods rather than the standard gRPC methods. &#x20;
