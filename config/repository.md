@@ -40,9 +40,9 @@ These entities are stored within the PowerShell Universal database.
 
 ## Editing the Repository
 
-You can edit the repository files directly in the admin console by navigating to Settings \ Configurations. The editor allows you to create files and folders and edit any file within the repository directory.
+You can edit the repository files directly in the admin console by navigating to Settings \ Files. The editor allows you to create files and folders and edit any file within the repository directory.
 
-![](<../.gitbook/assets/image (237).png>)
+<figure><img src="../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
 
 ## Configuration Scripts
 
