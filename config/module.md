@@ -52,6 +52,18 @@ You can change the authorization model to allow any calls from within PowerShell
 }
 ```
 
+#### Trust HTTPS Certificate
+
+In some environments, it may be required to allow PowerShell Universal to trust the certificate of the web server in order for it to communicate successfully. On each call, you can use the `-TrustCertificate` parameter to allow to behavior. Additionally, you can set the value at a server level to allow for internal communications.&#x20;
+
+```json
+{
+    "Api": {
+       "TrustCertificate": true
+    }
+}
+```
+
 ### Schedules
 
 Schedules do not have a current user. You will need to specify an App Token or Default Credential when using cmdlets within scheduled scripts. Although this is an extra step, it ensures that only the necessary permissions are applied to the schedule script.&#x20;
