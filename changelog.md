@@ -4,6 +4,60 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.0.6 - 9/9/2024
+
+#### Admin Console
+
+* Fixed an issue where the git pause switch wouldn't display the proper status when paused (#3688)
+* Added delete computer button for offline computers (#3693)
+* Improved display of charts on dashboard
+* Fixed property label text wrapping in modal dialogs in the admin console (#3703)
+* Improved admin portal page header formatting (#3704)
+* Fixed an issue where the Discover Environments button would be enabled when git sync wasn't editing (#3714)
+* Fixed an issue where editing git settings when using SQL would cause it to delete the settings (#3688)
+* Fixed a display issue with the job feedback modal (#3692)
+* Fixed the performance of the schedules page (#3659)
+* Added missing Diagnostics button
+
+#### APIs
+
+* Fixed an issue calling Invoke-PSUScript in an unauthenticated API using the permissive security policy
+
+#### Automation
+
+* Fixed a SQLite locking issue when running many jobs at once
+* Fixed an issue calling Invoke-PSUScript -Name with a path (#3708)
+
+#### Apps
+
+* Fixed an issue calling OnRender in OnRowExpand in New-UDTable (#3695)
+* Fixed an issue calling Invoke-PSUScript in apps using the permissive security policy
+* Fixed an issue with a base URL of / and the admin console routing (#3711)
+* Fixed an issue where duplicate apps could show up after server restart (#3706)
+* General fixes to Nivo Charts (#3682, #2083)
+
+#### Platform
+
+* Fixed an issue with redirect URL after login (#3694)
+* Added support for configuring -TrustCertificate flag at the server level (#3697)
+* Fixed an issue where variables stored in database would be null after restart (#3701)
+* Removed 4MB limit for Universal cmdlet calls (#3700)
+* Fixed an issue with psudb.exe where it could throw an exception attempting to move job output
+* Fixed an issue with background job scheduling when using multi-node configurations
+* Added -Migrate to psudb.exe to enabling migration to the newest schema in SQLite
+* Fixed an issue where upgrades from v4 with New-PSUEnvironment -EnableDebugger would cause the environment to not show up (#3712)
+* Fixed an issue where git sync would push even when there were no changes (#3713)
+
+#### Portal
+
+* Fixed an issue where an error could be displayed on the portal for certain authentication types
+
+#### Security
+
+* Updated .NET (8.0.8) and PowerShell (7.4.5) SDK versions to address security issues in dependencies
+* Added missing View Claim Information button
+* Fixed an issue enabling Anonymous Authentication and Windows Authentication in IIS (#3715)
+
 ## 5.0.5 - 9/3/2024
 
 #### APIs
