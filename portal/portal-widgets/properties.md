@@ -1,10 +1,10 @@
 ---
-description: Parameters for Portal Widgets.
+description: Properties for Portal Widgets.
 ---
 
-# Parameters
+# Properties
 
-You can define the `Initialize-PSUWidget` function to add parameters to Widgets. Parameters are displayed as properties in both the widget editor and page designer.&#x20;
+You can define the `Initialize-PSUWidget` function to add properties to Widgets. Parameters are displayed as properties in both the widget editor and page designer.&#x20;
 
 ## Initialize-PSUWidget
 
