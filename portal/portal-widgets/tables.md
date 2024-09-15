@@ -57,6 +57,6 @@ To reference the current row in the button click, use the `$Context` parameter.&
 ```powershell
 function ShowStatus {
     param($Context)
-    $MessageService.Success($Context.Status.ToString())
+    $Message.Success($Context.Status.ToString())
 }
 ```

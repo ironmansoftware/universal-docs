@@ -124,6 +124,7 @@
   * [Conditions](portal/portal-widgets/conditions.md)
   * [Dynamic](portal/portal-widgets/dynamic.md)
   * [Forms](portal/portal-widgets/forms.md)
+  * [Parameters](portal/portal-widgets/parameters.md)
   * [Services](portal/portal-widgets/services.md)
   * [Tables](portal/portal-widgets/tables.md)
 
