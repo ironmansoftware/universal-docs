@@ -121,10 +121,11 @@
 * [Portal Pages](portal/portal-pages.md)
 * [Portal Widgets](portal/portal-widgets/README.md)
   * [Syntax](portal/portal-widgets/syntax.md)
+  * [Conditions](portal/portal-widgets/conditions.md)
   * [Dynamic](portal/portal-widgets/dynamic.md)
   * [Forms](portal/portal-widgets/forms.md)
-  * [Tables](portal/portal-widgets/tables.md)
   * [Services](portal/portal-widgets/services.md)
+  * [Tables](portal/portal-widgets/tables.md)
 
 ## 🏗️ Platform
 
