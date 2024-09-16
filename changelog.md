@@ -4,6 +4,73 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.0.7 - 9/16/2024
+
+{% hint style="info" %}
+This update adds an index to the database. If your service fails to start in a timely manner during the install, you may need to run a [manual schema update](https://docs.powershelluniversal.com/config/persistence#manual-schema-install-update).&#x20;
+{% endhint %}
+
+#### Admin Console
+
+* Fixed an issue where computer groups weren't displayed in the Run On dropdown.
+* Fixed an issue where DateTime parameters would not display the time portion of the selector
+* Fixed an issue creating nested folders (#3723)
+* Fixed an issue displaying schedules that do not include a computer but have a custom environment (#3721)
+* Library has been renamed to Gallery to align with other nomenclature
+* Fixed an issue where users logging in with a non-admin user would redirect to /admin rather than /portal
+* Fixed issue autocompleting paths in the editor (#3726)
+* Added a Not Authorized page, rather than a blank page, when a user tries to access a page they do not have access to ( #3735)
+* Added confirmation dialog when navigating away from a page with unsaved changes (#3737)
+* Added missing Startup Script and Process Startup Script controls to the environment properties modal (#3748)
+* Fixed an issue displaying the default value for scripts in the run and schedule dialog (#3752)
+* Fixed an issue displaying string array types in the run and schedule dialog (#3751)
+* Fixed an issue where PowerShell Universal could crash when loading large job output in the admin console (#3745)
+* Improved performance of job output in the admin console
+
+#### Agent
+
+* Added global exception handling and logging for the agent process
+
+#### APIs
+
+* Added /api/v1/first-run endpoint to set first run settings (#3749)
+
+#### Apps
+
+* Fixed an issue where apps would not start when using pwsh.exe (#3732)
+* Fixed an issue where Set-UDElement did not work with UDExpansionPanel (#3626)
+
+#### Automation
+
+* Fixed an issue with schedule parameters
+* Added DateOnly and TimeOnly parameter selectors
+* Fixed an issue where long-running jobs would spawn a new job after some time (#3709)
+* Added indices to the JobOutput table to improve performance
+
+#### Module
+
+* Invoke-PSUScript -Name is now more flexible to relative paths (#3727)
+* Fixed an issue with New-PSUSchedule when changing parameter names of the target script
+* Fixed an issue with TrustCertificate in appsettings.json
+* Fixed an issue where license cmdlets were not implemented properly (#3738)
+
+#### Portal
+
+* Fixed an issue setting nullable bool attributes in PSBlazor
+
+#### Platform
+
+* Fixed an issue with Windows PowerShell $Env:PSModulePath (#3728)
+* Modules are now installed in a background job to avoid long delays in the UI
+
+#### Security
+
+* Fixed an issue where certain APIs would not work when SAML2 was enabled (#3739)
+
+#### Tools
+
+* Fixed an issue migrating terminal history with psudb.exe
+
 ## 5.0.6 - 9/9/2024
 
 #### Admin Console
