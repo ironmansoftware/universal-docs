@@ -26,6 +26,12 @@ The only contents that you need to provide in the editor will be the script you 
 
 ![API Content](<../.gitbook/assets/image (550).png>)
 
+
+
+{% hint style="warning" %}
+Be aware that you should avoid using endpoint URLs that match with internal PowerShell Universal Management API URLs as this will cause unexpected behavior. You can reference the [OpenAPI documentation](openapi.md#management-api-documentation) for the [Management API](../config/management-api.md) to verify this is not the case.&#x20;
+{% endhint %}
+
 ## HTTP Methods
 
 Endpoints can have one or more HTTP methods defined. To determine which method is used by an endpoint, use the built-in `$Method` variable.&#x20;

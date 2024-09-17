@@ -8,6 +8,14 @@ description: Standardized documentation for your endpoints.
 
 API documentation can be produced for your endpoints by creating a new OpenAPI definition and assigning endpoints to it. OpenAPI is a standard format and can be consumed by tools, such as the [OpenAPI Generator](https://openapi-generator.tech/) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/), to create clients.  The Swagger dashboard is also integrated into PowerShell Universal to provide interactive documentation.
 
+## Management API Documentation
+
+You can view the Managment API documentation by visiting the built in Swagger dashboard.&#x20;
+
+```
+http://localhost:5000/swagger/index.html
+```
+
 ## Create an OpenAPI Document
 
 To create an OpenAPI definition, click APIs \ Documentation and then Create new Endpoint Documentation. You can set the name, URL, description and authentication details for the documentation.
