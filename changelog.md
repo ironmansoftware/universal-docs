@@ -19,7 +19,7 @@ This update adds an index to the database. If your service fails to start in a t
 * Library has been renamed to Gallery to align with other nomenclature
 * Fixed an issue where users logging in with a non-admin user would redirect to /admin rather than /portal
 * Fixed issue autocompleting paths in the editor (#3726)
-* Added a Not Authorized page, rather than a blank page, when a user tries to access a page they do not have access to ( #3735)
+* Added a Not Authorized page, rather than a blank page, when a user tries to access a page, they do not have access to (#3735)
 * Added confirmation dialog when navigating away from a page with unsaved changes (#3737)
 * Added missing Startup Script and Process Startup Script controls to the environment properties modal (#3748)
 * Fixed an issue displaying the default value for scripts in the run and schedule dialog (#3752)
