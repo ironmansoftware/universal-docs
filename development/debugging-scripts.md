@@ -1,65 +1,40 @@
+---
+description: Debugging scripts in PowerShell Universal.
+---
+
 # Debugging Scripts
 
 Scripts that run within Universal run within background processes or runspaces which may make it hard to debug what is happening within a script. You can use cmdlets like Write-Debug and Write-Verbose to provide more information in logs for dashboards and jobs.
 
 ## Visual Studio Remote Debugger
 
-Using the PowerShell [Universal Visual Studio Code Extension](visual-studio-code-extension.md), you can connect directly to your PowerShell scripts running PowerShell Universal.&#x20;
+Using the PowerShell [Universal Visual Studio Code Extension](visual-studio-code-extension.md), you can connect directly to your PowerShell scripts running PowerShell Universal.
 
 ## Integrated Debugger
 
-{% hint style="danger" %}
-The integrated debugger is deprecated and will be removed in version 5. It has been replaced with the Visual Studio Code extension for PowerShell Universal.
+{% hint style="warning" %}
+The integrated debugger is support in PowerShell 7 and integrated environments. It is not supported in Windows PowerShell.
 {% endhint %}
 
-{% hint style="info" %}
-Requires a [license](https://ironmansoftware.com/pricing/powershell-universal). Debugging is not supported in Windows PowerShell.
-{% endhint %}
-
-### Enable Debugger
-
-In order to use the debugger, you need to enable it in the environment to wish to use it within. Click Settings \ Environment and select Enable Debugger.&#x20;
+The integrated debugger allows for access to a debug console for running scripts. You can include the `Wait-Debugger` cmdlet call in your scripts and they will transition to an In Breakpoint state. Once this takes place, you can view the Job to run commands against the script.&#x20;
 
 ### Use the Debugger
 
-PowerShell Universal integrates directly with the PowerShell debugger. You can include `Wait-Debugger` within your scripts to cause them to pause. Once paused, you will be able to access the runspace by navigating to Platform \ Debugging&#x20;
+PowerShell Universal integrates directly with the PowerShell debugger. You can include `Wait-Debugger` within your scripts to cause them to pause.&#x20;
 
-For example, assume you have a dashboard with a `Wait-Debugger` call included.&#x20;
+For example, assume you have a script with a `Wait-Debugger` call included. The first line will execute and then it will pause once it reaches the second line.&#x20;
 
-```powershell
-New-UDDashboard -Title "Dashboard" -Content {
-    Wait-Debugger
-    $Data = @(
-        @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
-        @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
-        @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
-        @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
-        @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
-    ) 
+<pre class="language-powershell"><code class="lang-powershell"><strong>$Processes = Get-Process
+</strong><strong>Wait-Debugger
+</strong></code></pre>
 
-    New-UDTable -Data $Data -Paging -PageSize 2 -PaginationLocation 'top'
-}
-```
+Once a script is paused, you will see a terminal for debugging the script.
 
-You'll notice that loading the page will result in the dashboard hanging. This is because the debugger is paused.&#x20;
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Debugger Terminal</p></figcaption></figure>
 
-![Paused Dashboard](<../.gitbook/assets/image (422).png>)
+You can then use the built in debugging commands to step through the script.&#x20;
 
-You can then view the paused scripts in the debugging table.&#x20;
-
-![Breakpoints](<../.gitbook/assets/image (236).png>)
-
-You can then click the Debug button to open a debug terminal.&#x20;
-
-![Debug Button](<../.gitbook/assets/image (246).png>)
-
-Once within the debug terminal, you can execute commands as well as continue, step into, step out of and step over lines in the script.&#x20;
-
-![Debug Terminal](<../.gitbook/assets/image (290).png>)
-
-Executing commands will execute them directly in the PowerShell Universal runspace. You can inspect variables or execute additional commands in the runspace's context.
-
-![Debug Terminal Commands](<../.gitbook/assets/image (209).png>)
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Debugging Commands</p></figcaption></figure>
 
 ## Logging Scripts
 
@@ -67,7 +42,7 @@ Certain aspects of Universal will log their scripts automatically. Other feature
 
 ### APIs
 
-You can use the Live Log view on the Log tab to view logs for the selected API.&#x20;
+You can use the Live Log view on the Log tab to view logs for the selected API.
 
 ### Jobs
 
@@ -76,7 +51,7 @@ Jobs log extensively. You will see console and pipeline output. If you set`$Debu
 ### Dashboards
 
 {% hint style="info" %}
-See [dashboard Development](broken-reference) for information on how to use VS Code for development.
+See [dashboard Development](broken-reference/) for information on how to use VS Code for development.
 {% endhint %}
 
 Dashboards log informational, warning and error messages to their log. It's recommended to use logging when starting a dashboard rather than trying to attach a debugger. You can also use the `$DebugPreference` variable to get additional information during your dashboard startup.
@@ -93,7 +68,7 @@ New-UDDashboard -Title 'Test' -Content {
 
 ### Authentication and Authorization
 
-You can use the Live Log view on the authentication and role pages to see PowerShell stream output.&#x20;
+You can use the Live Log view on the authentication and role pages to see PowerShell stream output.
 
 ## Debugging Scripts from a PowerShell Console
 
@@ -133,7 +108,7 @@ Authentication and authorization scripts run within the Universal server. You ca
 
 **Integrated Environment**
 
-Any feature running within the integrated environment will be running within the `Universal.Server.exe` process. You will need to attach to this process in order to debug them.&#x20;
+Any feature running within the integrated environment will be running within the `Universal.Server.exe` process. You will need to attach to this process in order to debug them.
 
 ### Attaching to the Process and Debugging the Runspace
 
@@ -155,7 +130,7 @@ For a full list of debugging commands, you can see the [Microsoft documentation 
 
 ### Example of Connecting to API Process
 
-The following is an example of how to connect to an API process.&#x20;
+The following is an example of how to connect to an API process.
 
 ```powershell
 $Process = Get-Process pwsh | Where-Object { $_.CommandLine.Contains('StartApi') }
