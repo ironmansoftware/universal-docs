@@ -4,6 +4,60 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.0.8 - 9/23/2024
+
+#### Admin Console
+
+* Improved scrolling of git commit table (#3741)
+* Fixed an issue with the Discover Environments button in Two Way Automatic git sync mode
+* Added the ability to clear the Run In, On and As dialogs for schedules (#3772)
+* Fixed an issue where computer groups did not display the (Any)(All) specifier and would only run on 1 node in the group (#3770)
+* Fixed an issue with JavaScript caching between versions of the admin console (#3774)
+* Child jobs are now shown as a nested table in the jobs page (#3767)
+* Fixed issue with file parameters for scripts (#3778)
+* Fixed an issue where computer group tags were not populated in the computer group dialog (#3771)
+* Fixed an issue filtering API endpoints by documentation (#3642)
+* Endpoint search now adds the search to the query string (#3643)
+* Added search to schedule page (#3785)
+* Fixed an issue where clicking on a script name in a job details page wouldn't navigate to the script (#3787)
+* Added the schedule buttons to the scripts page (#3785)
+* Fixed an issue with display app token expiration date (#3782)
+* Extended the width of the script filter for the jobs table (#3795)
+* Fixed validation in the reset password dialog (#3793)
+* Fixed an issue where IntelliSense in the editor would overwrite content past the autocomplete suggestion (#3758)
+* Fixed an issue where you could not set the value of secrets in one-way git sync (#3792)
+* Added error stack trace to error tab in jobs page (#3807)
+* Added color indicator to filters in the jobs page (#3805)
+* Fixed an issue clearing the script filter for the jobs table (#3806)
+
+#### Apps
+
+* Fixed an issue with New-UDFloatingActionButton not staying in the bottom right corner of the screen. (#3720)
+* Fixed an issue with intermittent runspace errors on startup (#3777)
+* Improved startup performance and memory usage.
+* Fixed an issue with apps running under Windows PowerShell 5.1 (#3801)
+
+#### Automation
+
+* Fixed an issue where Wait-Debugger wouldn't trigger the debug console in the Integrated environment (#3803)
+
+#### Module
+
+* Fixed an issue receiving large data from the server (#3775)
+
+#### Platform
+
+* Fixed an issue checking for updates
+* Fixed an issue pushing to git remote using SSH keys (#3729)
+* Fixed issue pausing git sync when set through appsettings.json (#3766)
+* Fixed an issue where PSU would start slowly when many modules were installed in the Repository directory (#3790)
+* Fixed an issue where the Missing Environment health check would fail for Universal.Agent
+
+#### Security
+
+* Fixed an open redirect issue (#3763)
+* Fixed an issue with Windows authentication and authorization in the admin console (#3776)
+
 ## 5.0.7 - 9/16/2024
 
 {% hint style="info" %}
