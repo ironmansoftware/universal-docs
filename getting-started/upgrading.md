@@ -290,6 +290,6 @@ Install-PSUServer
 
 PowerShell Universal no longer supports storing the git repository directly in the database. We recommend using a remote git provider like GitHub, GitLab, or Gitea. PowerShell Universal v5 does support local git repositories without the need to sync to a remote. This allows for storing file history directly on the PowerShell Universal server.&#x20;
 
-## Removed Heatmap and Marker Cluster from New-UDMap
+### Removed Heatmap and Marker Cluster from New-UDMap
 
 Maps no longer support heatmaps or marker clusters.&#x20;
