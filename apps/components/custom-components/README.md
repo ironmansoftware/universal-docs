@@ -4,33 +4,7 @@ description: Build custom components.
 
 # Custom Components
 
-Components in PowerShell Universal apps are exposed as functions. You can combine built in components to produce your own custom components.&#x20;
-
-## Designer Support
-
-You can include your custom components as part of a module to allow for the designer to present them in the component picker. Parameters will automatically be displayed as properties in the component properties drawer.&#x20;
-
-Here's an example component the creates a textbox with a red border. It's required to include the `Category`attribute so that PowerShell Universal treats this function as an app component. You will need to define the `app/component` category and, optionally, a description and display name.
-
-```powershell
-function New-UDRedbox {
-    [Category("app/component")]
-    [Description("A redbox component.")]
-    [DisplayName("Redbox")]
-    param(
-        [Parameter()]
-        [string]$Id
-    )
-
-    New-UDStyle -style "border: 2px solid red" -Content {
-        New-UDTextbox -Id $Id
-    }
-}
-```
-
-The component will now be available within the designer. Once added, you can adjust the parameters are desired.&#x20;
-
-<figure><img src="../../../.gitbook/assets/image (425).png" alt=""><figcaption><p>Custom Component in Designer</p></figcaption></figure>
+Components in PowerShell Universal apps are exposed as functions. You can combine built in components to produce your own custom components.
 
 ## Example: People Picker
 
@@ -38,7 +12,7 @@ The component will now be available within the designer. Once added, you can adj
 
 The below example creates a `New-UDPeoplePicker` component from existing app components. You can use the `New-UDPeoplePicker` component in your apps. This function can either be defined within your app directly or within a [Module](../../../platform/modules.md).
 
-This example users a published folder of avatars.&#x20;
+This example users a published folder of avatars.
 
 ```powershell
 function Get-User {
