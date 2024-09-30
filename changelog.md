@@ -4,11 +4,54 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.0.9 - 9/30/2024
+
+#### Admin Console
+
+* Fixed an issue working with array variables (#3802)
+* Fixed an issue with the job list in a script's page (#3816)
+* Fixed a UI issue with Enhanced Token Security (#3783)
+* Fixed tree view scrolling for files (#3819)
+* Improved feedback of the start\stop button for apps.
+* Fixed issue with schedule search (#3813)
+* Fixed an issue displaying date and time in the proper client time zone (#3753)
+* Fixed an issue where the console would flash when in light mode
+* Fixed an issue with one-time schedule time zones
+* Fixed an issue where the console would show the license paywall when reloading pages in certain configurations (#3725)
+* Fixed an issue when navigating directly to the scripts page when using SQL server and Windows Authentication (#3731)
+
+#### Automation
+
+* Fixed an issue running a script manually on a target node (#3818)
+* Fixed an issue with scheduling scripts against computer groups
+* Fixed an issue running one-time schedules in multi-node environments (#3784)
+
+#### APIs
+
+* Fixed an issue with Send-PSUEvent not being implemented in certain invocation methods (#3810)
+
+#### Apps
+
+* Fixed an issue loading data in New-UDDataGrid
+* Fixed an issue with -IdentityColumn in New-UDDataGrid (#3832)
+* Fixed an issue with Nivo chart tool tips (#3718)
+* Fixed an issue with labels for New-UDNivo -Chart Bubble (#3719)
+
+#### Module
+
+* Improved the error message when attempting to create a schedule for a script that doesn't exist (#3824)
+
+#### Platform
+
+* Fixed an issue where improperly formatted configuration scripts would cause issues with the platform (#3800)
+* Fixed an issue with redirection after login in when using a Linux docker container
+* Fixed an issue with log file configuration (#3261)
+
 ## 5.0.8 - 9/23/2024
 
 #### Admin Console
 
-* Improved scrolling of git commit table (#3741)
+* Improved scrolling of git commits table (#3741)
 * Fixed an issue with the Discover Environments button in Two Way Automatic git sync mode
 * Added the ability to clear the Run In, On and As dialogs for schedules (#3772)
 * Fixed an issue where computer groups did not display the (Any)(All) specifier and would only run on 1 node in the group (#3770)
