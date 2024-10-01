@@ -6,6 +6,41 @@ description: Changelog for PowerShell Universal.
 
 ## [Downloads](https://ironmansoftware.com/release/powershell-universal)
 
+## 4.4.1 - 10/1/2024
+
+#### APIs
+
+* Fixed an issue with OpenAPI docs default value for properties (#3430)
+
+#### Apps
+
+* Added example to New-UDEditor (#3410)
+* Added -PreventCollapse to New-UDTreeView (#2252)
+* Fixed an issue were logging out in a nested IIS site would redirect to the root site (#3229)
+* Fixed Ant Design styling of New-UDExpansionPanel and New-UDTreeView (#3408)
+* Fixed a rendering issue with dropdown buttons in a data grid cell (#3327)
+* Fixed an issue with New-UDFloatingActionButton not staying in the bottom right corner of the screen (#3720)
+* Fixed an issue with -IdentityColumn in New-UDDataGrid (#3832)
+* Fixed an issue rendering a nested table.
+* Fixed an issue with Nivo chart tool tips (#3718)
+
+#### Automation
+
+* Fixed an issue with running one-time schedules in multi-node environments
+* Fixed an issue with running scripts over 30 minutes
+
+#### Cmdlets
+
+* Fixed an issue with New-PSUVariable where it wouldn't create a string secret unless the type was explicitly set (#3656)
+
+#### Git
+
+* Fixed an issue with running git pack on an empty repository folder (#3744)
+
+#### Platform
+
+* Fixed an issue with the log configuration system (#3261)
+
 ## 4.4.0 - 9/4/2024
 
 #### Apps
