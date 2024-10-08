@@ -25,6 +25,10 @@ $ENV:PSUDefaultAdminPassword = "MyPassword"
 $ENV:PSUDefaultAdminName = 'MyAdmin'
 ```
 
+## Reset Admin Account
+
+You can reset the admin account by specifying the `ResetAdminAccount` environment variable to `true` and then restarting the PowerShell Universal service. Ensure that the environment variable is set at the system level so that service has access to it. If no `admin` user is present, it will create one and set the password to `admin`. If one is present, it will reset the password to `admin`.&#x20;
+
 ## Password Restrictions
 
 Passwords are required to be of at least 12 characters long and require a letter, number and symbol. Passwords will expire after 90 days. Users can reset their passwords at any time in the admin console or portal.&#x20;
