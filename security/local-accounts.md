@@ -27,7 +27,9 @@ $ENV:PSUDefaultAdminName = 'MyAdmin'
 
 ## Reset Admin Account
 
-You can reset the admin account by specifying the `ResetAdminAccount` environment variable to `true` and then restarting the PowerShell Universal service. Ensure that the environment variable is set at the system level so that service has access to it. If no `admin` user is present, it will create one and set the password to `admin`. If one is present, it will reset the password to `admin`.&#x20;
+In the event that you become locked out the PowerShell Universal server, you can perform the following to reset the admin account.&#x20;
+
+You can reset the admin account by setting the `ResetAdminAccount` environment variable to `true` and then restarting the PowerShell Universal service. Ensure that the environment variable is set at the system level so that service has access to it. If no `admin` user is present, it will create one and set the password to `admin`. If one is present, it will reset the password to `admin`.&#x20;
 
 ## Password Restrictions
 
