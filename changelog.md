@@ -4,6 +4,56 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.0.10 - 10/7/2024
+
+#### Admin Console
+
+* Fixed an issue where job search was case-sensitive (#3835)
+* Fixed horizontal scrollbar on claim information table (#3834)
+* Fixed an issue filtering jobs by multiple statuses (#3833)
+* Fixed date time display
+* Fixed issue with endpoint tab (#3848)
+* Fixed an issue with script documentation editor (#3862)
+* Added reset settings button to My Identity page (#3863)
+* Fixed issue saving endpoint docs and tags (#3866)
+
+#### APIs
+
+* Fixed an issue with OpenAPI docs default value for properties (#3430)
+* Fixed an issue with endpoint path format (#3838)
+* Fixed an issue calling endpoints with Windows authentication (#3858)
+* Fixed an issue with the view docs button in a nested IIS site
+
+#### Apps
+
+* Fixed an issue with nested table rendering and overall table performance
+* Fixed a performance issue when loading and saving apps (#3809)
+* Fixed an issue with New-UDForm -Script (#3854)
+
+#### Automation
+
+* Fixed an issue with PSCredential parameters (#3864)
+
+#### Cmdlets
+
+* Fixed an issue where valid certificates could be rejected by the cmdlet transport layer
+* Improved gRPC errors (#3830)
+
+#### Platform
+
+* Fixed an issue where saving schedules could cause changes to parameter positions resulting in unnecessary file changes (#3847)
+* Fixed an issue with database logging
+* Configuration file resources are now sorted deterministically (#3857)
+* Windows PowerShell 5.1 now targets .NET 4.7.2 to support the PartnerCenter Module (#3855)
+
+#### Portal
+
+* Fixed an issue editing Portal widgets (#3839)
+
+#### Security
+
+* Fixed an issue signing out of WS-Federation (#3861)
+
 ## 5.0.9 - 9/30/2024
 
 #### Admin Console
