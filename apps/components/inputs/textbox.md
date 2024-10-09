@@ -72,32 +72,9 @@ New-UDTextbox -Id "ServerGroups" -Icon (New-UDIcon -Icon 'server') -Value "This 
 
 ![](<../../../.gitbook/assets/image (46).png>)
 
-## Mask
-
-The textbox mask is accomplished using react-imask. You can specify RegEx and pattern matching.&#x20;
-
-* [Pattern Mask](https://imask.js.org/guide.html#masked-pattern)
-* [RegEx Mask](https://imask.js.org/guide.html#masked-base)
-
-This example creates a mask for US based phone numbers.
-
-```powershell
-New-UDTextbox -Mask "+1 (000) 000-0000"
-```
-
-![](<../../../.gitbook/assets/image (61).png>)
-
-### Unmasking&#x20;
-
-The default behavior of `-Mask` is to return the masked value in forms and `Get-UDElement`. You can return the unmasked value by specifying the `-Unmask` parameter.&#x20;
-
-```powershell
-New-UDTextbox -Mask "+1 (000) 000-0000" -Unmask
-```
-
 ## OnEnter
 
-The `-OnEnter` event handler is executed when the user presses enter in the text field. It is useful for performing other actions, like clicking a button, on enter.&#x20;
+The `-OnEnter` event handler is executed when the user presses enter in the text field. It is useful for performing other actions, like clicking a button, on enter.
 
 ```powershell
 New-UDTextbox -OnEnter {
@@ -111,7 +88,7 @@ New-UDButton -Id 'submit' -OnClick {
 
 ## OnBlur
 
-The `-OnBlur` event handler is executed when the textbox loses focus.&#x20;
+The `-OnBlur` event handler is executed when the textbox loses focus.
 
 ```powershell
 New-UDTextbox -OnBlur {
