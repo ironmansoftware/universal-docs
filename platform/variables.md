@@ -223,6 +223,7 @@ Below are variables that are available in apps in addition to the global variabl
 | $Query           | The query string parameters from the URL of the app                                                               | Hashtable                                      |
 | $RefreshToken    | The refresh token when using OpenID Connect                                                                       | string                                         |
 | $AccessToken     | The app token when using OpenID Connect                                                                           | string                                         |
+| $UDPage          | The name of the current page.                                                                                     | string                                         |
 
 ### Scripts
 
