@@ -4,6 +4,45 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.0.11 - 10/15/2024
+
+#### Admin Console
+
+* Fixed an issue updating the logging target file path (#3882)
+* Fixed an issue saving non-PowerShell files in the Settings \ File editor (#3886)
+* Added copy button to variables page (#3870)
+* Fixed an issue with date time zone conversion when using PostgreSQL
+* Added missing Identity page.
+* Fixed an issue with the Show Streams and Show Timestamp buttons (#3902)
+* Added log tab to roles page (#3896)
+* Fixed an issue modifying module content (#3849)
+* Fixed vertical sizing of code editor (#3883)
+
+#### APIs
+
+* Fixed an issue where swagger docs could crash the browser (#3877)
+* Fixed an issue when editing endpoint files on disk (#3869)
+* Fixed an issue specifying arrays of custom types with OpenAPI docs (#3874)
+* Fixed an issue with nested IIS site and Swagger UI (#3867)
+
+#### Apps
+
+* Fixed an issue with apps that have a space at the end of the name (#3891)
+
+#### Automation
+
+* Fixed an issue where Invoke-PSUScript could cause job status to be stuck in "Running" state. (#3845)
+* Fixed an issue where DateTime parameters without a value were set to an empty string in Schedules (#3893)
+
+#### Platform
+
+* Fixed server startup performance when the database has a large number of jobs
+* Fixed an issue with schedule configuration files updating when they should not be (#3885)
+* Improved performance of configuration file database queries
+* Improved performance of database updates
+* Fixed an issue when renaming or deleting environments (#3897)
+* Added $PSUGitBranch automatic variable (#3909)
+
 ## 5.0.10 - 10/7/2024
 
 #### Admin Console
