@@ -78,7 +78,7 @@ The `-OnEnter` event handler is executed when the user presses enter in the text
 
 ```powershell
 New-UDTextbox -OnEnter {
-    Invoke-UDEndpoint -Id 'submit'
+    Invoke-UDEndpoint -Id 'submit' -Session
 }
 
 New-UDButton -Id 'submit' -OnClick {
