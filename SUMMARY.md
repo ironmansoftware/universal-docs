@@ -194,3 +194,4 @@
 
 * [Changelog](changelog.md)
 * [Extension Changelog](extension-changelog.md)
+* [CVEs](changelogs/cves.md)
