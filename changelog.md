@@ -4,6 +4,44 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.0.12 - 10/18/2024
+
+#### Security
+
+* [Critical security fix for admin console (CVE TBD)](https://docs.powershelluniversal.com/changelogs/cves#cve-tbd-10-17-2024-privilege-escalation-and-information-disclosure)
+
+#### Admin Console
+
+* Fixed an issue with the back button on several pages (#3876)
+* Fixed an issue with the tree view in the scripts page
+* Fixed an issue adding secret variables (#3918)
+* Fixed an issue where the incorrect execution was displayed for running jobs (#3915)
+* Fixed an issue where the git status of only the current node would be shown (#3921)
+* Fixed an issue with the display of nested jobs
+
+#### API
+
+* Fixed an issue where the swagger UI would default to schema rather than example (#3913)
+
+#### Apps
+
+* Removed the need to call Invoke-UDEndpoint with -Session for it to work (#2139)
+* Fixed an issue where the tooltip arrow did not match the background color (#3580)
+* Fixed an issue where the icon property in the page properties wouldn't persist (#3924)
+
+#### Automation
+
+* Fixed an issue scheduling scripts against computer groups (#3768)
+* Fixed an issue running triggers when on trigger was missing the trigger script
+
+#### Platform
+
+* Fixed an issue where the Conflicting Modules health check could show conflicting information (#2850)
+
+#### Security
+
+* Fixed an issue logging in with Windows Authentication in IIS (#3916)
+
 ## 5.0.11 - 10/15/2024
 
 #### Admin Console
