@@ -94,6 +94,7 @@ There may be other resources that PowerShell Universal uses on the system that s
 * File System Permissions&#x20;
 * Proxy Configuration
 * Certificates
+* Git SSH keys or credentials&#x20;
 
 ## Application Files
 
