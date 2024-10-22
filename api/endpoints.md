@@ -220,6 +220,18 @@ New-PSUEndpoint -Url '/user/:name' -Endpoint {
 }
 ```
 
+When using the `param` block with route parameters, like the above example, you must include the route variable in your parameter. If it is not specified, you will not have access to that value.&#x20;
+
+For example, the following `$Name` variable will always be `$null`. The endpoint will always return false.&#x20;
+
+```powershell
+New-PSUEndpoint -Url '/user/:name' -Endpoint {
+    param($Role = "Default")
+    
+    $Name -eq 'Adam'
+}
+```
+
 ## Returning Data
 
 Data returned from endpoints will be assumed to be JSON data. If you return an object from the endpoint script block, it will be automatically serialized to JSON. If you want to return another type of data, you can return a string formatted however you chose.
