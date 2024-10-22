@@ -84,6 +84,18 @@ $Secret = Get-Secret -Name 'TestApiKey' -Vault 'BuiltInLocalVault' -AsPlainText
 
 On the new server, you can do the reverse and call `Set-Secret`. Note that these commands need to run as the service account running PowerShell Universal in order to store them properly in the Credential Manager account for the user.&#x20;
 
+## Authentication&#x20;
+
+Certain authentication types will require configuration outside of PowerShell Universal.&#x20;
+
+### OpenID Connect&#x20;
+
+Ensure that the proper sign-on URLs are configured in your Identity provider (e.g. Azure AD or Okta) if the host name of the server is changing. Without properly configured sign-on URLs, users will not be able to sign on the new system.&#x20;
+
+### Windows&#x20;
+
+[Windows authentication](../security/enterprise-security/windows-sso.md) requires the setup of an SPN for the service account running the PowerShell Universal service. Ensure this SPN is in place before attempting to use Windows authentication with the new system.&#x20;
+
 ## Other Resources and Considerations
 
 There may be other resources that PowerShell Universal uses on the system that should be taken into account when migrating servers.&#x20;
@@ -95,6 +107,7 @@ There may be other resources that PowerShell Universal uses on the system that s
 * Proxy Configuration
 * Certificates
 * Git SSH keys or credentials&#x20;
+* DNS Settings
 
 ## Application Files
 
