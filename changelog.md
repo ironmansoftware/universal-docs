@@ -4,6 +4,32 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.0.13 - 10/22/2024
+
+#### Admin Console
+
+* Fixed an issue where dynamic parameter wouldn't update properly when other parameters changed (#3843)
+* Added Permissions to role properties (#3931)
+* Fixed an issue where the API tester incorrectly replaced route variables (#3937)
+* Improved feedback of developer license usage
+* Fixed an issue with app debugging
+
+#### Apps
+
+* Fixed an issue rendering static tabs (#3928)
+* Fixed an issue where Show-UDModal would throw errors (#3930)
+* Fixed an issue with favicons and a base URL of / (#3873)
+
+#### Automation
+
+* Fixed scheduling a script against a computer group with a space in the name (#3927)
+* Fixed an issue when scheduling scripts with the same name but different paths
+* Fixed an issue loading scripts in nested folders that had differing names and paths
+
+#### Cmdlets
+
+* Improved certificate error information
+
 ## 5.0.12 - 10/18/2024
 
 #### Security
