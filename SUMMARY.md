@@ -9,6 +9,7 @@
   * [Docker](getting-started/docker.md)
   * [Upgrading](getting-started/upgrading.md)
   * [Uninstall](getting-started/uninstall.md)
+  * [Migration](getting-started/migration.md)
 * [🔑 Licensing](licensing.md)
 * [📊 System Requirements](system-requirements.md)
 * [🌐 Supported Browsers](supported-browsers.md)
