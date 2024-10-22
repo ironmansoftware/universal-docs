@@ -18,7 +18,7 @@ The integrated debugger is support in PowerShell 7 and integrated environments. 
 
 The integrated debugger allows for access to a debug console for running scripts. You can include the `Wait-Debugger` cmdlet call in your scripts and they will transition to an In Breakpoint state. Once this takes place, you can view the Job to run commands against the script.&#x20;
 
-### Use the Debugger
+### Scripts
 
 PowerShell Universal integrates directly with the PowerShell debugger. You can include `Wait-Debugger` within your scripts to cause them to pause.&#x20;
 
@@ -35,6 +35,33 @@ Once a script is paused, you will see a terminal for debugging the script.
 You can then use the built in debugging commands to step through the script.&#x20;
 
 <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Debugging Commands</p></figcaption></figure>
+
+### Apps
+
+You can use `Wait-Debugger` directly in your PowerShell Universal Apps. You can include this command in event handlers and dynamics to pause the app execution and evaluate the current state of the script.&#x20;
+
+For example, you can include `Wait-Debugger` in a dynamic.&#x20;
+
+```powershell
+New-UDApp -Title 'PowerShell Universal' -Content {
+     New-UDDynamic -Id 'dynamic' -Content {
+        Wait-Debugger
+        New-UDTypography "Loaded"
+    } -LoadingComponent {
+        New-UDSkeleton
+    }
+}
+```
+
+The result is the app will display the loading skeleton because the PowerShell debugger is in breakpoint.&#x20;
+
+<figure><img src="../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
+
+Within the admin console, you can find the session and endpoint that is currently waiting the breakpoint by clicking Sessions, expanding the session ID, and then expanding the endpoint. Only endpoints that are waiting in breakpoint will have an expansion panel.&#x20;
+
+<figure><img src="../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
+
+The debug console can now be used to run commands to learn more about the current state of the execution. Use `?` to learn about debugging commands. You can use commands like `Get-Variable` to get information about variable state. Execute `c` to allow the endpoint to continue executing.&#x20;
 
 ## Logging Scripts
 
