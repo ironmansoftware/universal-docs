@@ -6,6 +6,29 @@ description: Changelog for PowerShell Universal.
 
 ## [Downloads](https://ironmansoftware.com/release/powershell-universal)
 
+## 4.5.1 - 1/15/2025
+
+#### APIs
+
+* Fixed an issue with event hub client reconnect (#4126)
+* Fixed an issue with endpoint paths (#4194)
+
+#### Apps
+
+* Fixed an issue with New-UDDataGrid quick filters (#3951)
+
+#### Automation
+
+* Fixed an issue creating scripts with periods in the name (#4077)
+* Fixed an issue with multiple default values for string array parameters (#4181)
+
+#### Platform
+
+* Fixed an issue with -SessionTimeout not being honored (#4175)
+* Added error script stack trace to logs (#4198)
+* Fixed an issue with the file system watcher and apps without file paths (#4166)
+* Fixed an issue with Revoke-PSUAppToken (#4205)
+
 ## 4.5.0 - 12/10/2024
 
 #### APIs
