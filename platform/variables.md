@@ -32,6 +32,10 @@ In some environments, it may be necessary to specify the domain name in the user
 
 ### Roles
 
+{% hint style="warning" %}
+Applying roles to a secret will prevent the secret from being accessible in scheduled jobs because no roles are applied in the scheduler.&#x20;
+{% endhint %}
+
 Secret variables can include role-based access. Roles limit who can use the secret in their scripts and as run as credentials.
 
 When a secret has a role defined, it will not be accessible in resources that cannot provide that role. This can include the following:&#x20;
