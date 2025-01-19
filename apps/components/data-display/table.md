@@ -15,7 +15,7 @@ Tables display information in a way that’s easy to scan, so that users can loo
 A simple example with no frills. Table columns are defined from the data.
 
 ```powershell
-$Data = @(
+$TableData = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -23,7 +23,7 @@ $Data = @(
     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
 )
 
-New-UDTable -Data $Data
+New-UDTable -Data $TableData
 ```
 
 ## Table with Custom Columns
@@ -33,7 +33,7 @@ New-UDTable -Data $Data
 Define custom columns for your table.
 
 ```powershell
-$Data = @(
+$TableData = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -49,7 +49,7 @@ $Columns = @(
     New-UDTableColumn -Property Protein -Title Protein 
 )
 
-New-UDTable -Id 'customColumnsTable' -Data $Data -Columns $Columns
+New-UDTable -Id 'customColumnsTable' -Data $TableData -Columns $Columns
 ```
 
 ## Table with Custom Column Rendering
@@ -59,7 +59,7 @@ New-UDTable -Id 'customColumnsTable' -Data $Data -Columns $Columns
 Define column rendering. Sorting and exporting still work for the table.
 
 ```powershell
-$Data = @(
+$TableData = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 1; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -77,7 +77,7 @@ $Columns = @(
     New-UDTableColumn -Property Protein -Title Protein 
 )
 
-New-UDTable -Data $Data -Columns $Columns -Sort -Export
+New-UDTable -Data $TableData -Columns $Columns -Sort -Export
 ```
 
 ## Table Column Width
@@ -85,7 +85,7 @@ New-UDTable -Data $Data -Columns $Columns -Sort -Export
 Column width can be defined using the `-Width` parameter. You can also decide to truncate columns that extend past that width.
 
 ```powershell
-$Data = @(
+$TableData = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -103,7 +103,7 @@ $Columns = @(
     New-UDTableColumn -Property Protein -Title Protein 
 )
 
-New-UDTable -Data $Data -Columns $Columns -Sort
+New-UDTable -Data $TableData -Columns $Columns -Sort
 ```
 
 ## Filters
@@ -111,7 +111,7 @@ New-UDTable -Data $Data -Columns $Columns -Sort
 You can configure custom filters per column. The table supports `text`, `select`, `fuzzy` , `slider`, `range`, `date` , `number`, and `autocomplete` filters.
 
 ```powershell
-$Data = @(
+$TableData = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -127,7 +127,7 @@ $Columns = @(
     New-UDTableColumn -Property Protein -Title Protein -Filter -FilterType Range
 )
 
-New-UDTable -Id 'customColumnsTable' -Data $Data -Columns $Columns -ShowFilter
+New-UDTable -Id 'customColumnsTable' -Data $TableData -Columns $Columns -ShowFilter
 ```
 
 ![](<../../../.gitbook/assets/image (445).png>)
@@ -145,7 +145,7 @@ New-UDTableColumn -Property Dessert -Title 'Dessert' -Filter -FilterType 'Select
 To enable search, use the `-ShowSearch` parameter on `New-UDTable`.
 
 ```powershell
-$Data = @(
+$TableData = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -153,13 +153,13 @@ $Data = @(
     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
 )
 
-New-UDTable -Data $Data -ShowSearch
+New-UDTable -Data $TableData -ShowSearch
 ```
 
 When using custom columns, you will need to add the `-IncludeInSearch` parameter to the columns you'd like to include in the search.
 
 ```powershell
-$Data = @(
+$TableData = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -175,7 +175,7 @@ $Columns = @(
     New-UDTableColumn -Property Protein -Title Protein 
 )
 
-New-UDTable -Id 'customColumnsTable' -Data $Data -Columns $Columns -ShowSearch
+New-UDTable -Id 'customColumnsTable' -Data $TableData -Columns $Columns -ShowSearch
 ```
 
 ## Table with server-side processing
@@ -205,7 +205,7 @@ $Columns = @(
     New-UDTableColumn -Property Value -Title "Value" -ShowFilter
 )
 
-$Data = 1..1000 | ForEach-Object {
+$TableData = 1..1000 | ForEach-Object {
   [PSCustomObject]@{
       Name = "Record-$_"
       Value = $_ 
@@ -215,25 +215,25 @@ $Data = 1..1000 | ForEach-Object {
 New-UDTable -Columns $Columns -LoadData {
     foreach($Filter in $EventData.Filters)
     {
-        $Data = $Data | Where-Object -Property $Filter.Id -Match -Value $Filter.Value
+        $TableData = $TableData | Where-Object -Property $Filter.Id -Match -Value $Filter.Value
     }
     
     if ($EventData.Search)
     {
-        $Data = $Data | Where-Object { $_.Name -match $EventData.Search -or $_.Value -match $EventData.Search }
+        $TableData = $TableData | Where-Object { $_.Name -match $EventData.Search -or $_.Value -match $EventData.Search }
     }
 
-    $TotalCount = $Data.Count 
+    $TotalCount = $TableData.Count 
 
     if (-not [string]::IsNullOrEmpty($EventData.OrderBy.Field))
     {
         $Descending = $EventData.OrderDirection -ne 'asc'
-        $Data = $Data | Sort-Object -Property ($EventData.orderBy.Field) -Descending:$Descending
+        $TableData = $TableData | Sort-Object -Property ($EventData.orderBy.Field) -Descending:$Descending
     }
     
-    $Data = $Data | Select-Object -First $EventData.PageSize -Skip ($EventData.Page * $EventData.PageSize)
+    $TableData = $TableData | Select-Object -First $EventData.PageSize -Skip ($EventData.Page * $EventData.PageSize)
 
-    $Data | Out-UDTableData -Page $EventData.Page -TotalCount $TotalCount -Properties $EventData.Properties 
+    $TableData | Out-UDTableData -Page $EventData.Page -TotalCount $TotalCount -Properties $EventData.Properties 
 } -ShowFilter -ShowSort -ShowPagination
 ```
 
@@ -247,7 +247,7 @@ $Columns = @(
     New-UDTableColumn -Property Value -Title "Value" -ShowFilter
 )
 
-$Data = 1..1000 | ForEach-Object {
+$TableData = 1..1000 | ForEach-Object {
   @{
       Name = "Record-$_"
       Value = $_ 
@@ -266,20 +266,20 @@ New-UDButton -Text 'Get Filtered Data' -OnClick {
 New-UDTable -Id 'filteredTable' -Columns $Columns -LoadData {
     foreach($Filter in $EventData.Filters)
     {
-        $Data = $Data | Where-Object -Property $Filter.Id -Match -Value $Filter.Value
+        $TableData = $TableData | Where-Object -Property $Filter.Id -Match -Value $Filter.Value
     }
 
-    $TotalCount = $Data.Count 
+    $TotalCount = $TableData.Count 
 
     if (-not [string]::IsNullOrEmpty($EventData.OrderBy))
     {
         $Descending = $EventData.OrderDirection -ne 'asc'
-        $Data = $Data | Sort-Object -Property $EventData.orderBy -Descending:$Descending
+        $TableData = $TableData | Sort-Object -Property $EventData.orderBy -Descending:$Descending
     }
     
-    $Data = $Data | Select-Object -First $EventData.PageSize -Skip ($EventData.Page * $EventData.PageSize)
+    $TableData = $TableData | Select-Object -First $EventData.PageSize -Skip ($EventData.Page * $EventData.PageSize)
 
-    $Data | Out-UDTableData -Page $EventData.Page -TotalCount $TotalCount -Properties $EventData.Properties 
+    $TableData | Out-UDTableData -Page $EventData.Page -TotalCount $TotalCount -Properties $EventData.Properties 
 } -ShowFilter -ShowSort -ShowPagination
 ```
 
@@ -288,7 +288,7 @@ New-UDTable -Id 'filteredTable' -Columns $Columns -LoadData {
 By default, paging is disable and tables will grow based on how many rows of data you provide. You can enable paging by using the `-ShowPagination` cmdlet (alias `-Paging`). You can configure the page size using the `-PageSize` cmdlet.
 
 ```powershell
-$Data = @(
+$TableData = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -296,7 +296,7 @@ $Data = @(
     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
 ) 
 
-New-UDTable -Data $Data -Paging -PageSize 2
+New-UDTable -Data $TableData -Paging -PageSize 2
 ```
 
 ### Disable Page Size All
@@ -314,7 +314,7 @@ You can change the location of the pagination control by using the `-PaginationL
 The page size, by default, is set to 5. Users can adjust the number of rows per page by using the Rows per page drop down. You can adjust the default page size by using the `-PageSize` parameter. To adjust the values available within the Rows per page drop down, you can use an array of integers pass to the `-PageSizeOptions` parameter.
 
 ```powershell
-$Data = @(
+$TableData = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -322,7 +322,7 @@ $Data = @(
     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
 ) 
 
-New-UDTable -Data $Data -Paging -PageSize 2 -PageSizeOptions @(2, 4, 6)
+New-UDTable -Data $TableData -Paging -PageSize 2 -PageSizeOptions @(2, 4, 6)
 ```
 
 ## Sorting
@@ -330,7 +330,7 @@ New-UDTable -Data $Data -Paging -PageSize 2 -PageSizeOptions @(2, 4, 6)
 To enable sorting for a table, use the `-ShowSort` parameter. When you enable sorting, you will be able to click the table headers to sort the table by clicking the headers. By default, multi-sort is enabled. To multi-hold shift and click a column header.
 
 ```powershell
-$Data = @(
+$TableData = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -338,7 +338,7 @@ $Data = @(
     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
 ) 
 
-New-UDTable -Data $Data -ShowSort
+New-UDTable -Data $TableData -ShowSort
 ```
 
 You can control which columns can be sorted by using `New-UDTableColumn` and `-ShowSort` parameter.
@@ -357,7 +357,7 @@ $Columns = @(
     New-UDTableColumn -Property Protein -Title Protein -ShowSort
 )
 
-New-UDTable -Id 'customColumnsTable' -Data $Data -Columns $Columns
+New-UDTable -Id 'customColumnsTable' -Data $TableData -Columns $Columns
 ```
 
 ### Disable Sort Remove
@@ -365,7 +365,7 @@ New-UDTable -Id 'customColumnsTable' -Data $Data -Columns $Columns
 By default, the sorting of a table has 3 states. Unsorted, ascending and descending. If you would like to disable the unsorted state, use the `-DisableSortRemove` parameter of `New-UDTable`.
 
 ```powershell
-$Data = @(
+$TableData = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -373,7 +373,7 @@ $Data = @(
     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
 ) 
 
-New-UDTable -Data $Data -ShowSort -DisableSortRemove
+New-UDTable -Data $TableData -ShowSort -DisableSortRemove
 ```
 
 ## Selection
@@ -385,14 +385,14 @@ Tables support selection of rows. You can create an event handler for the `OnRow
 The following example creates a table with row selection enabled. A toast is show when clicking the row or when clicking the GET Rows button.
 
 ```powershell
-$Data = try { get-service -ea Stop | select Name,@{n = "Status";e={ $_.Status.ToString()}},@{n = "StartupType";e={ $_.StartupType.ToString()}},@{n = "StartType";e={ $_.StartType.ToString()}} } catch {}
+$TableData = try { get-service -ea Stop | select Name,@{n = "Status";e={ $_.Status.ToString()}},@{n = "StartupType";e={ $_.StartupType.ToString()}},@{n = "StartType";e={ $_.StartType.ToString()}} } catch {}
 $Columns = @(
     New-UDTableColumn -Property Name -Title "Service Name" -ShowSort -IncludeInExport -IncludeInSearch -ShowFilter -FilterType text
     New-UDTableColumn -Property Status -Title Status -ShowSort -DefaultSortColumn -IncludeInExport -IncludeInSearch -ShowFilter -FilterType select 
     New-UDTableColumn -Property StartupType -Title StartupType -IncludeInExport -ShowFilter -FilterType select
     New-UDTableColumn -Property StartType -Title StartType -IncludeInExport -ShowFilter -FilterType select 
 )
-New-UDTable -Id 'service_table' -Data $Data -Columns $Columns -Title 'Services' -ShowSearch -ShowPagination -ShowSelection -Dense -OnRowSelection {
+New-UDTable -Id 'service_table' -Data $TableData -Columns $Columns -Title 'Services' -ShowSearch -ShowPagination -ShowSelection -Dense -OnRowSelection {
     $Item = $EventData
     Show-UDToast -Message "$($Item | out-string)"
 }
@@ -443,14 +443,14 @@ New-UDTable -Data (Get-Service) -OnRowExpand {
 Tables support exporting the data within the table. You can export as CSV, XLSX, JSON or PDF. You can define which columns to include in an export and choose to export just the current page or all the data within the table.
 
 ```powershell
-$Data = try { get-service -ea Stop | select Name,@{n = "Status";e={ $_.Status.ToString()}},@{n = "StartupType";e={ $_.StartupType.ToString()}},@{n = "StartType";e={ $_.StartType.ToString()}} } catch {}
+$TableData = try { get-service -ea Stop | select Name,@{n = "Status";e={ $_.Status.ToString()}},@{n = "StartupType";e={ $_.StartupType.ToString()}},@{n = "StartType";e={ $_.StartType.ToString()}} } catch {}
 $Columns = @(
     New-UDTableColumn -Property Name -Title "Service Name" -IncludeInExport
     New-UDTableColumn -Property Status -Title Status 
     New-UDTableColumn -Property StartupType
     New-UDTableColumn -Property StartType -IncludeInExport
 )
-New-UDTable -Id 'service_table' -Data $Data -Columns $Columns -Title 'Services' -ShowSearch -ShowPagination -Dense -Export
+New-UDTable -Id 'service_table' -Data $TableData -Columns $Columns -Title 'Services' -ShowSearch -ShowPagination -Dense -Export
 ```
 
 ![](<../../../.gitbook/assets/image (31).png>)
@@ -462,14 +462,14 @@ Hidden columns allow you to include data that is not displayed in the table but 
 The following hides the StartType column from the user but includes it in the export.
 
 ```powershell
-$Data = try { get-service -ea Stop | select Name,@{n = "Status";e={ $_.Status.ToString()}},@{n = "StartupType";e={ $_.StartupType.ToString()}},@{n = "StartType";e={ $_.StartType.ToString()}} } catch {}
+$TableData = try { get-service -ea Stop | select Name,@{n = "Status";e={ $_.Status.ToString()}},@{n = "StartupType";e={ $_.StartupType.ToString()}},@{n = "StartType";e={ $_.StartType.ToString()}} } catch {}
 $Columns = @(
     New-UDTableColumn -Property Name -Title "Service Name" -IncludeInExport
     New-UDTableColumn -Property Status -Title Status 
     New-UDTableColumn -Property StartupType
     New-UDTableColumn -Property StartType -IncludeInExport -Hidden
 )
-New-UDTable -Id 'service_table' -Data $Data -Columns $Columns -Title 'Services' -ShowSearch -ShowPagination -Dense -Export
+New-UDTable -Id 'service_table' -Data $TableData -Columns $Columns -Title 'Services' -ShowSearch -ShowPagination -Dense -Export
 ```
 
 ## Server-Side Exporting
@@ -484,7 +484,7 @@ $Columns = @(
     New-UDTableColumn -Property Value -Title "Value" -ShowFilter -IncludeInExport
 )
 
-$Data = 1..1000 | ForEach-Object {
+$TableData = 1..1000 | ForEach-Object {
   [PSCustomObject]@{
       Name = "Record-$_"
       Value = $_ 
@@ -494,20 +494,20 @@ $Data = 1..1000 | ForEach-Object {
 New-UDTable -Columns $Columns -LoadData {
     foreach($Filter in $EventData.Filters)
     {
-        $Data = $Data | Where-Object -Property $Filter.Id -Match -Value $Filter.Value
+        $TableData = $TableData | Where-Object -Property $Filter.Id -Match -Value $Filter.Value
     }
 
-    $TotalCount = $Data.Count 
+    $TotalCount = $TableData.Count 
 
     if (-not [string]::IsNullOrEmpty($EventData.OrderBy.Field))
     {
         $Descending = $EventData.OrderDirection -ne 'asc'
-        $Data = $Data | Sort-Object -Property ($EventData.orderBy.Field) -Descending:$Descending
+        $TableData = $TableData | Sort-Object -Property ($EventData.orderBy.Field) -Descending:$Descending
     }
     
-    $Data = $Data | Select-Object -First $EventData.PageSize -Skip ($EventData.Page * $EventData.PageSize)
+    $TableData = $TableData | Select-Object -First $EventData.PageSize -Skip ($EventData.Page * $EventData.PageSize)
 
-    $Data | Out-UDTableData -Page $EventData.Page -TotalCount $TotalCount -Properties $EventData.Properties 
+    $TableData | Out-UDTableData -Page $EventData.Page -TotalCount $TotalCount -Properties $EventData.Properties 
 } -ShowFilter -ShowSort -ShowPagination  -Export -OnExport {
    $Query = $Body | ConvertFrom-Json
 
@@ -523,7 +523,7 @@ New-UDTable -Columns $Columns -LoadData {
             allRows: true
         #>
 
-    $Data | ConvertTo-Json
+    $TableData | ConvertTo-Json
 }
 ```
 
@@ -532,14 +532,14 @@ New-UDTable -Columns $Columns -LoadData {
 You can decide which export options to present to your users using the `-ExportOption` cmdlet. The following example would only show the CSV export option.
 
 ```powershell
-$Data = try { get-service -ea Stop | select Name,@{n = "Status";e={ $_.Status.ToString()}},@{n = "StartupType";e={ $_.StartupType.ToString()}},@{n = "StartType";e={ $_.StartType.ToString()}} } catch {}
+$TableData = try { get-service -ea Stop | select Name,@{n = "Status";e={ $_.Status.ToString()}},@{n = "StartupType";e={ $_.StartupType.ToString()}},@{n = "StartType";e={ $_.StartType.ToString()}} } catch {}
 $Columns = @(
     New-UDTableColumn -Property Name -Title "Service Name" -IncludeInExport
     New-UDTableColumn -Property Status -Title Status 
     New-UDTableColumn -Property StartupType
     New-UDTableColumn -Property StartType -IncludeInExport
 )
-New-UDTable -Id 'service_table' -Data $Data -Columns $Columns -Title 'Services' -ShowSearch -ShowPagination -Dense -Export -ExportOption "csv"
+New-UDTable -Id 'service_table' -Data $TableData -Columns $Columns -Title 'Services' -ShowSearch -ShowPagination -Dense -Export -ExportOption "csv"
 ```
 
 ## Customizing Labels
@@ -547,7 +547,7 @@ New-UDTable -Id 'service_table' -Data $Data -Columns $Columns -Title 'Services' 
 You can use the `-TextOption` parameter along with the `New-UDTableTextOption` cmdlet to set text fields within the table.
 
 ```powershell
-$Data = @(
+$TableData = @(
     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
@@ -557,7 +557,7 @@ $Data = @(
 
 $Option = New-UDTableTextOption -Search "Search all these records"
 
-New-UDTable -Data $Data -TextOption $Option -ShowSearch
+New-UDTable -Data $TableData -TextOption $Option -ShowSearch
 ```
 
 ## Refresh with a button
@@ -570,7 +570,7 @@ This example creates a button to refresh the table.
 
 ```powershell
 New-UDDynamic -Id 'table' -Content {
-    $Data = @(
+    $TableData = @(
         @{ Random = Get-Random }
         @{ Random = Get-Random }
         @{ Random = Get-Random }
@@ -580,7 +580,7 @@ New-UDDynamic -Id 'table' -Content {
     
     # Store in the page so we can get the current ID. 
     # Using the same ID fails to update when the dynamic reloads.
-    $Page:Table = New-UDTable -Data $Data -Paging -ShowSelection
+    $Page:Table = New-UDTable -Data $TableData -Paging -ShowSelection
     $Page:Table
 } 
 
@@ -606,7 +606,7 @@ $Columns = @(
 )
 
 New-UDTable -Columns $Columns -LoadData {
-    $Data = 1..1000 | ForEach-Object {
+    $TableData = 1..1000 | ForEach-Object {
         @{
             Name = "Record-$_"
             Value = $_ 
@@ -615,20 +615,20 @@ New-UDTable -Columns $Columns -LoadData {
     
     foreach($Filter in $EventData.Filters)
     {
-        $Data = $Data | Where-Object -Property $Filter.Id -Match -Value $Filter.Value
+        $TableData = $TableData | Where-Object -Property $Filter.Id -Match -Value $Filter.Value
     }
 
-    $TotalCount = $Data.Count 
+    $TotalCount = $TableData.Count 
 
     if (-not [string]::IsNullOrEmpty($EventData.OrderBy))
     {
         $Descending = $EventData.OrderDirection -ne 'asc'
-        $Data = $Data | Sort-Object -Property $EventData.orderBy -Descending:$Descending
+        $TableData = $TableData | Sort-Object -Property $EventData.orderBy -Descending:$Descending
     }
     
-    $Data = $Data | Select-Object -First $EventData.PageSize -Skip ($EventData.Page * $EventData.PageSize)
+    $TableData = $TableData | Select-Object -First $EventData.PageSize -Skip ($EventData.Page * $EventData.PageSize)
 
-    $Data | Out-UDTableData -Page $EventData.Page -TotalCount $TotalCount -Properties $EventData.Properties 
+    $TableData | Out-UDTableData -Page $EventData.Page -TotalCount $TotalCount -Properties $EventData.Properties 
 } -ShowFilter -ShowSort -ShowPagination  -Id 'Table1'
 ```
 
@@ -692,10 +692,10 @@ $Theme = @{
 }
 
 New-UDDashboard -Content {
-$data = 1..10 | % { [PSCustomObject]@{ Item = $_}}
+$TableData = 1..10 | % { [PSCustomObject]@{ Item = $_}}
   New-UDTable -ShowPagination -PageSize 10 -PageSizeOptions @(10, 10) -DisablePageSizeAll -Columns @(
         New-UDTableColumn -Property 'Item' -Title 'Item' -Width 180 -Truncate
-    ) -Data $Data -Dense -ShowSearch
+    ) -Data $TableData -Dense -ShowSearch
 } -Theme $Theme
 ```
 
