@@ -4,6 +4,35 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.2.1 - 1/19/2025
+
+### Bug Fixes
+
+#### Admin Console
+
+* Fixed an issue clicking the help links in the admin console (#4237)
+
+#### Apps
+
+* Fixed an issue with New-UDMenuItem -Style and -Sx (#4219)
+
+#### Automation
+
+* Fixed an issue with Default Run On, computer groups and manually run jobs (#4244)
+
+#### Cmdlets
+
+* Fixed an issue calling Invoke-PSUScript -Script with the name of a script in a folder and not the full path
+
+#### Platform
+
+* Fixed an issue starting processes when the default environment had a credential set
+* Updated Azure.Identity and Microsoft.Identity libraries to support the latest version of Az and Microsoft.Graph modules
+
+#### Portal
+
+* Fixed an issue rearranging portal widgets in the portal page editor
+
 ## 5.2.0 - 1/14/2025
 
 ### Features
