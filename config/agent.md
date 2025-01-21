@@ -69,8 +69,9 @@ Environment variables can be used to configure various operational settings for 
 
 
 
-| Name               | Description                               | Default Value |
-| ------------------ | ----------------------------------------- | ------------- |
-| PSU\_AgentLogLevel | Sets the log level for the agent service. | Information   |
-|                    |                                           |               |
-|                    |                                           |               |
+| Name                              | Description                                            | Default Value |
+| --------------------------------- | ------------------------------------------------------ | ------------- |
+| PSU\_AgentLogLevel                | Sets the log level for the agent service.              | Information   |
+| PSU\_Connections\_\_0\_\_Url      | The URL of the PowerShell Universal service.           |               |
+| PSU\_Connections\_\_0\_\_Hub      | The name of the Event Hub to connect to.               |               |
+| PSU\_Connections\_\_0\_\_AppToken | The app token used to connect to an authenticated hub. |               |
