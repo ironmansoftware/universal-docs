@@ -6,9 +6,9 @@ description: Apps are the root component for your web page.
 
 ## Create An App
 
-The first step is to create an app in PowerShell Universal. This is the container for all your pages and components for your app website. We recommend running apps in external environments, like PowerShell 7, to ensure they are isolated from the rest of the server. To create an app, click Apps \ Apps and then Create New App.&#x20;
+The first step is to create an app in PowerShell Universal. This is the container for all your pages and components for your app website. We recommend running apps in external environments, like PowerShell 7, to ensure they are isolated from the rest of the server. To create an app, click Apps \ Apps and then Create New App.
 
-You will need to provide a unique name and URL for the app when creating it. All other properties are optional. After creating the app, you can edit the app code. For example, try adding a component to your app.&#x20;
+You will need to provide a unique name and URL for the app when creating it. All other properties are optional. After creating the app, you can edit the app code. For example, try adding a component to your app.
 
 ```powershell
 New-UDApp -Content {
@@ -68,7 +68,7 @@ New-UDPage -Content {
 }
 ```
 
-Learn more about [components here](components).
+Learn more about [components here](components/).
 
 ## Pages
 
@@ -85,11 +85,11 @@ Learn more about [Pages here](components/pages.md).
 
 ## Functions
 
-Apps will automatically have access to any commands available within the PSModulePath as well as modules you load directly into the app itself. That said, you can also define functions within the app itself. These functions will be included with a module that is stored alongside your app code. Any functions defined within this file will be automatically included with your app.&#x20;
+Apps will automatically have access to any commands available within the PSModulePath as well as modules you load directly into the app itself. That said, you can also define functions within the app itself. These functions will be included with a module that is stored alongside your app code. Any functions defined within this file will be automatically included with your app.
 
-Within the PowerShell Universal admin console, define functions in the Functions tab. Any functions defined with be written to a `PSM1` file in the same directory as the application code.&#x20;
+Within the PowerShell Universal admin console, define functions in the Functions tab. Any functions defined with be written to a `PSM1` file in the same directory as the application code.
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Function Tab</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>Function Tab</p></figcaption></figure>
 
 ## Built-in Variables
 
@@ -186,4 +186,3 @@ When starting an app, information about the variables and modules is displayed w
 ```
 New-PSUApp -Name 'App' -BaseUrl '/' -DisableStartupLogging
 ```
-

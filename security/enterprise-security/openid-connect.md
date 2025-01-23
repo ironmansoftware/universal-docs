@@ -16,51 +16,51 @@ This document will outline the steps necessary to configure EntraID OpenID Conne
 
 Within the Azure Portal, navigate to your Entra ID blade. Next, click the Enterprise Application node and then click New application.
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Next, click Create your own application.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-Select a name for your application and select Register an application to integrate with Microsoft Entra ID.&#x20;
+Select a name for your application and select Register an application to integrate with Microsoft Entra ID.
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 In the Register an application page, define a redirect URI. This will be the URL of PowerShell Universal server that Entra ID will redirect the user to. This value is defined in the PowerShell Universal configuration file, `appsettings.json`.
 
-Now that the application has been created, from the Enterprise Applications page, click Single sign-on and then Go to application. This will bring you to the application registration page.&#x20;
+Now that the application has been created, from the Enterprise Applications page, click Single sign-on and then Go to application. This will bring you to the application registration page.
 
-<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Certificates and secrets and define a new secret. This will be used with the PowerShell Universal configuration file.
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
-Now, we'll need to capture several points of information from the application to provide to PowerShell Universal. From the application's home page, save the Application (client) and directory (tenant) ID.&#x20;
+Now, we'll need to capture several points of information from the application to provide to PowerShell Universal. From the application's home page, save the Application (client) and directory (tenant) ID.
 
 <figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 ### Groups
 
-Next, we need to configure group membership to provide access and claims to PowerShell Universal. Click Token configuration under the application registration. Next, click Add groups claims.&#x20;
+Next, we need to configure group membership to provide access and claims to PowerShell Universal. Click Token configuration under the application registration. Next, click Add groups claims.
 
 <figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
-To provide all a user's groups to PowerShell Universal, check All groups.&#x20;
+To provide all a user's groups to PowerShell Universal, check All groups.
 
 <figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 ### Group Overages
 
-For organizations that have users with many groups, you will want to limit the number of groups sent to PowerShell Universal. Sending large numbers of groups can exceed the size of the token and cause authorization failures. If you wish to limit the groups, select Groups assigned to the application.&#x20;
+For organizations that have users with many groups, you will want to limit the number of groups sent to PowerShell Universal. Sending large numbers of groups can exceed the size of the token and cause authorization failures. If you wish to limit the groups, select Groups assigned to the application.
 
 <figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
-To add groups to the application, navigate back to the Enterprise application's page and select Users and groups.&#x20;
+To add groups to the application, navigate back to the Enterprise application's page and select Users and groups.
 
 <figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
-Click the Add user/group value to assign these groups to your application. When users login to PowerShell Universal, only these group claims will be provided.&#x20;
+Click the Add user/group value to assign these groups to your application. When users login to PowerShell Universal, only these group claims will be provided.
 
 To learn more about Group Overages, [click here](https://learn.microsoft.com/en-us/security/zero-trust/develop/configure-tokens-group-claims-app-roles#group-overages).
 

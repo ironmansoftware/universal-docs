@@ -14,7 +14,7 @@ Once you have selected a resource group, assigned a name and selected a compute 
 
 ![Container Web App](<../../.gitbook/assets/image (424).png>)
 
-Next, you'll need to deploy the image to your web app. To do so, select the Deployment Center and configure the image to pull. You can either pull a static tagged version (like 2.7.3) or pull the latest and your web app will automatically stay up to date with new PowerShell Universal releases. Use the tag with the `azure` suffix. It is pre-configured to run in Azure.&#x20;
+Next, you'll need to deploy the image to your web app. To do so, select the Deployment Center and configure the image to pull. You can either pull a static tagged version (like 2.7.3) or pull the latest and your web app will automatically stay up to date with new PowerShell Universal releases. Use the tag with the `azure` suffix. It is pre-configured to run in Azure.
 
 {% hint style="info" %}
 For production environments, we suggest setting a tagged version to avoid unintentional updates to your container when it restarts. By default, Azure will automatically update containers when a tag, such as latest, is updated. This will allow you to control updates to your PowerShell Universal version.
@@ -24,9 +24,9 @@ For production environments, we suggest setting a tagged version to avoid uninte
 
 ### Local Persistence
 
-By default, the container will write to the `/home` directory.&#x20;
+By default, the container will write to the `/home` directory.
 
-You will need to ensure that the `WEBSITES_ENABLE_APP_SERVICE_STORAGE` environment variable is set to true. This configures the container to make the `/home` folder persistent and this is where the configuration data for PowerShell Universal is stored.&#x20;
+You will need to ensure that the `WEBSITES_ENABLE_APP_SERVICE_STORAGE` environment variable is set to true. This configures the container to make the `/home` folder persistent and this is where the configuration data for PowerShell Universal is stored.
 
 ### Git and SQL
 
@@ -243,7 +243,7 @@ First, configure a backend pool that targets one or more Azure Web Apps running 
 
 For the backend settings, you will want to ensure you are using HTTPS with a well known CA certificate. Cookie-based affinity is required to ensure that sessions are sticky to a individual node.
 
-<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption><p>Backend Pool Settings</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1).png" alt=""><figcaption><p>Backend Pool Settings</p></figcaption></figure>
 
 In order to allow Azure to serve the proper web app, you will need to ensure that the Override with new host name setting is configured. Use the host name for the backend target.
 
@@ -251,7 +251,7 @@ In order to allow Azure to serve the proper web app, you will need to ensure tha
 
 Ensure that the backend pool rule is configured as the target and not redirection.
 
-<figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption><p>Application Gateway Rule</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption><p>Application Gateway Rule</p></figcaption></figure>
 
 Configure a header rewrite rule to pass along the public facing host name as the `X-Forwarded-Host` header. PowerShell Universal will use this to internally construct URLs.
 

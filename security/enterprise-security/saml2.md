@@ -109,7 +109,7 @@ https://localhost/Saml2/Acs
 
 For Single Sign-On Service URL, insert the SAML-P sign-on endpoint from Azure.
 
-<figure><img src="../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>PSU Configuration</p></figcaption></figure>
 
 Once complete, save the settings and enable the SAML provider. Click sign out and navigate to your admin console URL.
 
@@ -120,6 +120,30 @@ https://localhost/admin
 You will be forwarded to Azure for login and redirected back to PowerShell Universal after authentication.
 
 Any errors that occur will be listed in the PowerShell Universal log. If you fail to login, you can navigate to `/login` to login with a local account.
+
+### Claim Mapping
+
+In order to provide group claims to PowerShell Universal, you will need to expose the group claims from your app registration. Click Token Configuration and then click Add groups claim.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Entra ID Group Claims</p></figcaption></figure>
+
+After clicking Add groups claim, you will have the option to select which groups are provided. If you select All Groups, the groups claims will be provided to PowerShell Universal
+
+If you select Groups assigned to the application, ensure that you check the Emit groups as role claims value. This setting requires a paid Entra ID plan.
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Emit groups as role claims setting</p></figcaption></figure>
+
+To assign a group to your app registration, locate your app in Enterprise Applications and click User and Groups. Next, click Add User\Group and select the groups you would like assigned to your application.&#x20;
+
+Once you have the groups claim configured in Entra ID, you can then update PowerShell Universal claim mappings to the groups provided.&#x20;
+
+For each role you would like to assign to an Entra ID group, specify the Claim Type and Claim Value for that role. For example, I have a group in my environment with the ID 446832da-d4ad-4972-b0a2-eda736129928. The Claim Type for this object is [http://schemas.microsoft.com/ws/2008/06/identity/claims/groups](http://schemas.microsoft.com/ws/2008/06/identity/claims/groups).&#x20;
+
+To assign this to the administrator group, I would do the following.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption><p>Claim Mapping</p></figcaption></figure>
+
+Users of this group would now be part of the Administrator role in PowerShell Universal. If you selected a different SAML group property, the value may be different (e.g. sAMAccountName).
 
 ### Group Overages <a href="#group-overages" id="group-overages"></a>
 
