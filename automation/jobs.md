@@ -10,13 +10,13 @@ Jobs are the result of running a script. Jobs are retained based on the script a
 
 Jobs can be viewed by clicking the Automation / Jobs page. Click the View button to navigate to the job. Jobs in progress can also been cancelled.
 
-![Job Output](<../.gitbook/assets/image (221).png>)
+<figure><img src="../.gitbook/assets/image (98).png" alt=""><figcaption><p>Job  List</p></figcaption></figure>
 
 ### View Job Output
 
 Standard PowerShell streams such as information, host, error, warning and verbose are shown within the output pane.
 
-![Standard Output](<../.gitbook/assets/image (450).png>)
+<figure><img src="../.gitbook/assets/image (102).png" alt=""><figcaption><p>Job Stream Output</p></figcaption></figure>
 
 ### View Job Pipeline Output
 
@@ -28,13 +28,13 @@ Pipeline output for jobs is also stored within PowerShell Universal. Any object 
 
 You can expand the tree view to see the objects and properties from the pipeline.
 
-![Pipeline Output](<../.gitbook/assets/image (454).png>)
+<figure><img src="../.gitbook/assets/image (104).png" alt=""><figcaption><p>Job Pipeline Output</p></figcaption></figure>
 
 ### Viewing Errors
 
 Any errors written to the error stream will be available on the Error tab within the job page.
 
-![Errors](<../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png>)
+<figure><img src="../.gitbook/assets/image (109).png" alt=""><figcaption><p>Job Error Output</p></figcaption></figure>
 
 ## Status
 
@@ -58,7 +58,7 @@ The following table describes how PowerShell Universal treats statuses.
 
 Some jobs will require feedback. Any script that contains a `Read-Host` call will wait until there is user interaction with that job. The job will be in a Waiting for Feedback state, and you can respond to that feedback by click the Response to Feedback button on the job page.
 
-![Waiting for Feedback](<../.gitbook/assets/image (400).png>)
+<figure><img src="../.gitbook/assets/image (112).png" alt=""><figcaption><p>Job Waiting on Feedback</p></figcaption></figure>
 
 To accept a `SecureString` with a password input field, you can use the `-AsSecureString` parameter of `Read-Host`.
 

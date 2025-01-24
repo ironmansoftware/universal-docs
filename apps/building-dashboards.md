@@ -83,13 +83,13 @@ New-UDApp -Pages $Pages -Title 'Dashboard'
 
 Learn more about [Pages here](components/pages.md).
 
-## Functions
+## Module
 
 Apps will automatically have access to any commands available within the PSModulePath as well as modules you load directly into the app itself. That said, you can also define functions within the app itself. These functions will be included with a module that is stored alongside your app code. Any functions defined within this file will be automatically included with your app.
 
-Within the PowerShell Universal admin console, define functions in the Functions tab. Any functions defined with be written to a `PSM1` file in the same directory as the application code.
+Within the PowerShell Universal admin console, define functions, variables and aliases in the Module tab. Any functions defined with be written to a `PSM1` file in the same directory as the application code.
 
-<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>Function Tab</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (134).png" alt=""><figcaption><p>Module Tab</p></figcaption></figure>
 
 ## Built-in Variables
 

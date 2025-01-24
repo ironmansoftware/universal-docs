@@ -18,8 +18,6 @@ param($Test)
 $Test
 ```
 
-![](<../../.gitbook/assets/image (139).png>)
-
 ### Parameters Types
 
 Universal supports various types of parameters. You can use String, String\[], Int, DateTime, Boolean, Switch and Enum types.
@@ -182,11 +180,11 @@ $Parameter
 $ExecutionTime
 ```
 
-## ValidateSet&#x20;
+## ValidateSet
 
-The `ValidateSet` attribute is used to enforce which values can be passed to a parameter. Learn about [ValidateSet here.](https://duckduckgo.com/?q=validateset\&ia=web) PowerShell Universal will automatically create a drop-down menu with the values provided to the `ValidateSet` attribute for parameters.&#x20;
+The `ValidateSet` attribute is used to enforce which values can be passed to a parameter. Learn about [ValidateSet here.](https://duckduckgo.com/?q=validateset\&ia=web) PowerShell Universal will automatically create a drop-down menu with the values provided to the `ValidateSet` attribute for parameters.
 
-For example, a script could define a param block as follows.&#x20;
+For example, a script could define a param block as follows.
 
 ```powershell
 param(
@@ -195,7 +193,7 @@ param(
 )
 ```
 
-The result is shown below.&#x20;
+The result is shown below.
 
 <figure><img src="../../.gitbook/assets/image (64).png" alt=""><figcaption><p>ValidateSet Attribute</p></figcaption></figure>
 

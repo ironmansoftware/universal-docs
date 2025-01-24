@@ -166,7 +166,9 @@ Invoke-RestMethod http://localhost:5000/user -Method Post -Body "{'username': 'a
 
 You can view the live log information for any endpoint by clicking the log tab. Live logs include URL, HTTP method, source IP address, PowerShell streams, status code, return Content Type, and HTTP content length.
 
-![](<../.gitbook/assets/image (407).png>)
+You can write to the live log from within your endpoints with cmdlets like `Write-Host`.
+
+<figure><img src="../.gitbook/assets/image (67).png" alt=""><figcaption><p>Endpoint Live Log</p></figcaption></figure>
 
 ## Form Data
 
@@ -317,7 +319,7 @@ New-PSUEndpoint -Url '/file' -Method Get -Endpoint {
 }
 ```
 
-You can control the response headers with a hashtable of values that you pass to the `-Headers`parameter.&#x20;
+You can control the response headers with a hashtable of values that you pass to the `-Headers`parameter.
 
 ```powershell
 New-PSUApiResponse -StatusCode 200 -Headers @{

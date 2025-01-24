@@ -64,7 +64,7 @@ Get-PSUCache -Key "CurrentDate"
 
 ## Persistent Cache
 
-You can use the `-Persist` parameter of `Set-PSUCache` to store data within the database. This allows for distributed caching and a cache the will survive restarts of the PowerShell Universal service.&#x20;
+You can use the `-Persist` parameter of `Set-PSUCache` to store data within the database. This allows for distributed caching and a cache the will survive restarts of the PowerShell Universal service.
 
 ```powershell
 Set-PSUCache -Key "CurrentDate" -Value (Get-Date) -Persist
@@ -85,7 +85,13 @@ Write-Host $Cache:MyValue
 
 `$Cache` Scope vs Server-Level Cache: The `$Cache` scope differs from the server-level cache as it only resides in the execution environment of feature you are using. They are different and cannot be used to get the other one.
 
+## Viewing the Cache
+
+You can view the server-level cache in the admin console by navigating to Platform \ Cache.&#x20;
+
+<figure><img src="../.gitbook/assets/image (148).png" alt=""><figcaption><p>Viewing cached data</p></figcaption></figure>
+
 ## API
 
-* [Get-PSUCache](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Get-PSUCache.txt)
-* [Set-PSUCache](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Set-PSUCache.txt)
+* [Get-PSUCache](../cmdlets/Get-PSUCache.txt)
+* [Set-PSUCache](../cmdlets/Set-PSUCache.txt)

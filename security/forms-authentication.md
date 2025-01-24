@@ -14,9 +14,7 @@ By default, the forms authentication script is configured to accept the user Adm
 Authentication settings are also stored with `authentication.ps1`
 {% endhint %}
 
-To update forms authentication, you can click Settings Security and then click the Settings button for the forms authentication.
-
-![](<../.gitbook/assets/image (251).png>)
+To update forms authentication, you can click Settings Security and then click the Edit Code button for the forms authentication.
 
 You can update the PowerShell script found in settings to configure how the user is authenticated. You'll need to return a `New-PSUAuthenticationResult` from the script to indicate whether the user was successfully authenticated.
 

@@ -92,11 +92,7 @@ When connected to your PowerShell Universal instance, you can expand Platform \ 
 
 <figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
-## Sample Browser
 
-The sample browser can be used to insert samples from the PowerShell Universal Sample Repository into your PowerShell Universal instance. Just save the files it updates and your PowerShell Universal system will reflect the changes.
-
-{% embed url="https://youtu.be/HkCVe1PUX0Q" %}
 
 ## Settings
 
@@ -110,21 +106,9 @@ The App Token is used for communicating with the PowerShell Universal management
 
 You can also automatically configure an App Token by click Edit with VS Code within Settings \ Configurations.
 
-### Check Modules
-
-The extension will check the version of the Universal and UnviersalDashboard PowerShell modules found on the system. If they aren't installed or are not the latest version, new versions will be installed.
-
 ### Connections
 
 The Connections array allow for defining multiple PowerShell Universal instance connections.
-
-### Samples Directory
-
-This is the directory to store the PowerShell Universal samples.
-
-### Sync Samples
-
-Whether to download samples from GitHub so they are available within the samples browser.
 
 ### Url
 

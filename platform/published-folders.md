@@ -12,11 +12,11 @@ From the `Dashboard / Published Folders` page, you can click Add Published Folde
 
 You can turn on authentication and authorization for the folder.
 
-![](<../.gitbook/assets/image (255).png>)
+<figure><img src="../.gitbook/assets/image (175).png" alt=""><figcaption><p>Published Folders Dialog</p></figcaption></figure>
 
 Once the folder is published, it appears in the published folders table.
 
-![](<../.gitbook/assets/image (287).png>)
+<figure><img src="../.gitbook/assets/image (176).png" alt=""><figcaption><p>Puiblished Folders Table</p></figcaption></figure>
 
 ## Download Files
 
@@ -49,13 +49,12 @@ New-PSUPublishedFolder -Path C:\website -RequestPath /docs -DefaultDocument @("i
 Impersonation only works when using [Windows authentication](../api/security.md#authenticating-with-windows-authentication).
 {% endhint %}
 
-By default, when PSU accesses files to serve them to users, it does so using the same service account as the process. To access files as the user that is downloading the file, turn on impersonation.&#x20;
+By default, when PSU accesses files to serve them to users, it does so using the same service account as the process. To access files as the user that is downloading the file, turn on impersonation.
 
 ```powershell
 New-PSUPublishedFolder -Path C:\website -RequestPath /docs -DefaultDocument @("index.hml") -Impersonation
 ```
 
-## API&#x20;
+## API
 
-* [New-PSUPublishedFolder](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/New-PSUPublishedFolder.txt)
-
+* [New-PSUPublishedFolder](../cmdlets/New-PSUPublishedFolder.txt)

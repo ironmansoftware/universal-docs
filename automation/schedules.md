@@ -18,31 +18,21 @@ You can define schedules based on simple selections like Every Minute or Every H
 
 You can also define under which user the scheduled job runs, as well as which PowerShell version it uses.
 
-![Create a Schedule](<../.gitbook/assets/image (101).png>)
-
 ### Simple Schedules
 
 Simple schedules are really just helpers for various standard CRON schedules. When you select one, it defines a CRON schedule for your script.
-
-![](<../.gitbook/assets/image (159).png>)
 
 ### CRON
 
 CRON schedules use CRON expressions to define schedules. PowerShell Universal takes advantage of Chronos. For examples of valid expressions, [click here](https://github.com/HangfireIO/Cronos).
 
-![](<../.gitbook/assets/image (470).png>)
+### One-Time
 
-### One Time
-
-One time schedules will run once in the future. You can select the time and day of when they will run.
-
-![](<../.gitbook/assets/image (505).png>)
+One-time schedules will run once in the future. You can select the time and day of when they will run.
 
 ### Continuous
 
 Continuous schedules run over and over again. You can define a delay between each scheduled job run.
-
-![](<../.gitbook/assets/image (368).png>)
 
 ## Parameters
 
@@ -55,8 +45,6 @@ $UserName
 ```
 
 Within the modal for defining the schedule, you can set the parameter value.
-
-![](<../.gitbook/assets/image (452).png>)
 
 When editing schedules from PowerShell, you can define the parameters on the `New-PSUSchedule` cmdlet. This cmdlet accepts dynamic parameters so that you can pass the values in for your schedule.
 
@@ -116,6 +104,6 @@ The Random Delay property causes a schedule to start anywhere between 0 and 60 s
 
 ## API
 
-* [New-PSUSchedule](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/New-PSUSchedule.txt)
-* [Get-PSUSchedule](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Get-PSUSchedule.txt)
-* [Remove-PSUSchedule](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Remove-PSUSchedule.txt)
+* [New-PSUSchedule](../cmdlets/New-PSUSchedule.txt)
+* [Get-PSUSchedule](../cmdlets/Get-PSUSchedule.txt)
+* [Remove-PSUSchedule](../cmdlets/Remove-PSUSchedule.txt)

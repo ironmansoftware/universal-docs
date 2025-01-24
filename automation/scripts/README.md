@@ -14,7 +14,7 @@ The `scripts.ps1` configuration file stores the Script properties.
 
 To add a new script, click the New Script button within the Automation / Scripts page. There are various settings you can provide for the script.
 
-![](<../../.gitbook/assets/image (230).png>)
+<figure><img src="../../.gitbook/assets/image (85).png" alt=""><figcaption><p>New Script Dialog</p></figcaption></figure>
 
 ## Script Options
 
@@ -68,7 +68,7 @@ New-PSUScript -Name Script.ps1 -Path Script.Ps1 -ConcurrentJobs 1
 
 You can run a script in the UI from the Automation / Scripts page by clicking Run or by clicking View and then Run. In each case, the Run Dialog appears, allowing you to select various settings for the job.
 
-![](<../../.gitbook/assets/image (225).png>)
+<figure><img src="../../.gitbook/assets/image (86).png" alt=""><figcaption><p>Run Script Dialog</p></figcaption></figure>
 
 ### Running a Script With Parameters
 
@@ -92,7 +92,7 @@ param(
 
 The result is a set of input options based on the types of parameters.
 
-![](<../../.gitbook/assets/image (420).png>)
+<figure><img src="../../.gitbook/assets/image (90).png" alt=""><figcaption><p>Script Parameters Dialog</p></figcaption></figure>
 
 ### Running a Script as Another User
 
@@ -104,7 +104,7 @@ You can run scripts as another user by configuring [secret variables](../../plat
 
 To run as another user, simply add or import a PSCredential variable. From there, you can select the credential within the run dialog.
 
-![](<../../.gitbook/assets/image (89).png>)
+<figure><img src="../../.gitbook/assets/image (92).png" alt=""><figcaption><p>Run As Dropdown</p></figcaption></figure>
 
 ### Running a Script on Another Computer
 
@@ -146,11 +146,11 @@ Test-NetConnection $HostName
 
 The above yields the following user interface. The synopsis displays as the short description, and a longer description displays in the description section. Links appear under the description.
 
-![](<../../.gitbook/assets/image (431).png>)
+<figure><img src="../../.gitbook/assets/image (94).png" alt=""><figcaption><p>Additional Script Information</p></figcaption></figure>
 
 ## Modules and Commands
 
-Commands and cmdlets found in modules can be used as the target for scripts rather than authoring the script directly.&#x20;
+Commands and cmdlets found in modules can be used as the target for scripts rather than authoring the script directly.
 
 Let's assume that we have a module called `PSUModule` that contains the following function.
 
@@ -169,11 +169,9 @@ New-PSUScript -Module 'PSUModule' -Command 'Show-HelloWorld'
 
 The function surfaces just like other scripts within the admin console. Parameters, help text and other PSU features work the same as with scripts.
 
-<figure><img src="../../.gitbook/assets/image (578).png" alt=""><figcaption><p>Parameter for a function<br></p></figcaption></figure>
-
 ## API
 
-* [New-PSUScript](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/New-PSUScript.txt)
-* [Remove-PSUScript](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Remove-PSUScript.txt)
-* [Set-PSUScript](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Set-PSUScript.txt)
-* [Get-PSUScript](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Get-PSUScript.txt)
+* [New-PSUScript](../../cmdlets/New-PSUScript.txt)
+* [Remove-PSUScript](../../cmdlets/Remove-PSUScript.txt)
+* [Set-PSUScript](../../cmdlets/Set-PSUScript.txt)
+* [Get-PSUScript](../../cmdlets/Get-PSUScript.txt)

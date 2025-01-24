@@ -12,11 +12,11 @@ Environments are stored within the `environments.ps1` file.
 
 To configure environments, you can use the Settings \ Environments page.
 
-![Environments Page](<../.gitbook/assets/image (75).png>)
+<figure><img src="../.gitbook/assets/image (245).png" alt=""><figcaption><p>Environments Page</p></figcaption></figure>
 
 Environments support setting the name, path, arguments, modules and variables.
 
-![](<../.gitbook/assets/image (488).png>)
+<figure><img src="../.gitbook/assets/image (247).png" alt=""><figcaption><p>Environment Settings Dialog</p></figcaption></figure>
 
 ### Name
 
@@ -43,8 +43,6 @@ You can also use wildcards (`*`) to bring in multiple variables that match a pat
 You can use the `-PSModulePath` parameter of `New-PSUEnvironment` to configure additional PSModulePaths to include within the environment.
 
 ### Startup Scripts
-
-![](<../.gitbook/assets/image (196).png>)
 
 Startup scripts are run once when the environment first creates a runspace. For APIs, this happens whenever a runspace is created to service an HTTP request. This can happen frequently if the server is busy. For apps (formerly known as dashboards), this will happen whenever a runspace is created to service an endpoint being run while the user views an app (dashboard). Busy servers and apps with many dynamic components will do this more frequently. For jobs, this will happen once when the job is started.
 
@@ -116,19 +114,13 @@ Set-PSetting -DefaultEnvironment 'Integrated'
 
 You can also choose the integrated environment from the run dialog.
 
-![](<../.gitbook/assets/image (59).png>)
+### Apps
 
-### Dashboards
-
-You can run dashboards in the integrated environment. Select the integrated environment from the environment drop down.
-
-![](<../.gitbook/assets/image (72).png>)
-
-
+You can run apps in the integrated environment. Select the integrated environment from the environment drop down.
 
 ## PowerShell 7
 
-The PowerShell 7 environment uses an embedded hosting process for the PowerShell SDK that is included with PowerShell Universal. This is the recommend environment as it provides the greatest compatibility with third-party modules. &#x20;
+The PowerShell 7 environment uses an embedded hosting process for the PowerShell SDK that is included with PowerShell Universal. This is the recommend environment as it provides the greatest compatibility with third-party modules.
 
 ## Windows PowerShell 5.1
 
@@ -192,10 +184,10 @@ Get-ScheduledJob | Out-Null
 Get-PSSession -Name 'WinPSCompatSession' | Remove-PSSession
 ```
 
-You can learn more about [Windows PowerShell Compatibility here](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about\_windows\_powershell\_compatibility?view=powershell-7.2).
+You can learn more about [Windows PowerShell Compatibility here](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_windows_powershell_compatibility?view=powershell-7.2).
 
 ## API
 
-* [New-PSUEnvironment](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/New-PSUEnvironment.txt)
-* [Get-PSUEnvironment](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Get-PSUEnvironment.txt)
-* [Remove-PSUEnvironment](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Remove-PSUEnvironment.txt)
+* [New-PSUEnvironment](../cmdlets/New-PSUEnvironment.txt)
+* [Get-PSUEnvironment](../cmdlets/Get-PSUEnvironment.txt)
+* [Remove-PSUEnvironment](../cmdlets/Remove-PSUEnvironment.txt)

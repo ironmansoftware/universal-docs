@@ -6,7 +6,7 @@ description: Security features of PowerShell Universal.
 
 ## Authentication
 
-By default, PowerShell Universal provides [local user authentication](../../security/local-accounts.md). User names and encrypted passwords are stored in the PowerShell Universal database. For enterprise environments, you may want to consider utilizing authentication methods supported by your organization.&#x20;
+By default, PowerShell Universal provides [local user authentication](../../security/local-accounts.md). User names and encrypted passwords are stored in the PowerShell Universal database. For enterprise environments, you may want to consider utilizing authentication methods supported by your organization.
 
 * [Windows SSO](../../security/enterprise-security/windows-sso.md)
 * [OpenID Connect](../../security/enterprise-security/openid-connect.md)
@@ -18,14 +18,14 @@ By default, PowerShell Universal provides [local user authentication](../../secu
 User authorization is accomplished with roles. Roles can either be assigned through claims mapping, a policy script or by assigning the role directly to the identity.
 
 {% hint style="info" %}
-By default, users will receive no roles. Multiple role assignments are valid in PowerShell Universal.&#x20;
+By default, users will receive no roles. Multiple role assignments are valid in PowerShell Universal.
 {% endhint %}
 
 ### Role to Claim Mapping
 
 You can map roles to a claim (such as a group membership) by using the `-ClaimType` and `-ClaimValue` parameters of `New-PSURole`. Settings are also available in the role properties dialog within Security \ Roles.
 
-![](<../../.gitbook/assets/image (235).png>)
+<figure><img src="../../.gitbook/assets/image (190).png" alt=""><figcaption><p>Claim Type and Value Mapping</p></figcaption></figure>
 
 For example, with Windows authentication, if you wanted to map a group to a role, you could configure it such that the group SID maps to the administrator role.
 
@@ -39,7 +39,7 @@ Mapping roles to claims in this manner is faster than Policy scripts because it 
 
 To help develop policy scripts or assign roles to claims, you can view claim information by clicking View Claim Information in Security \ Roles.
 
-![View Claim Information](<../../.gitbook/assets/image (363).png>)
+<figure><img src="../../.gitbook/assets/image (200).png" alt=""><figcaption><p>View Claim Information Button</p></figcaption></figure>
 
 ### Example: Azure Active Directory
 
@@ -59,9 +59,7 @@ New-PSURole -Name "User" -Description "Does not have access to the admin console
 
 ### Policy Assignment
 
-By default, roles are assigned by policies. Policies are run when the user logs in. You can change the policy scripts by visiting the Security / Roles page. Click the Edit Policy button to configure the Policy script.
-
-![](<../../.gitbook/assets/image (14).png>)
+By default, roles are assigned by policies. Policies are run when the user logs in. You can change the policy scripts by visiting the Security / Roles page. Click the Edit Code button to configure the Policy script.
 
 Policy scripts will receive a `ClaimsPrincipal` object as a parameter and need to return true or false. Policies that throw errors will be assumed to be false. The `ClaimsPrincipal` object contains the user's identity and the claims that the user has received. These may include group assignments or other features of a user's account.
 
@@ -93,11 +91,11 @@ public class Claim
 
 To assign a role to a user, you can create their identity within Universal and then select the role in the drop down on the Identities page.
 
-![](<../../.gitbook/assets/image (565).png>)
+<figure><img src="../../.gitbook/assets/image (206).png" alt=""><figcaption><p>Identities Table</p></figcaption></figure>
 
 By default, identities receive a role through claim mapping or policy.
 
-![](<../../.gitbook/assets/image (555).png>)
+<figure><img src="../../.gitbook/assets/image (207).png" alt=""><figcaption><p>Edit Identity Role</p></figcaption></figure>
 
 ### Built in Roles
 
@@ -182,7 +180,7 @@ The token will have a expiration of one year and have the valid roles for your a
 
 You can use App Tokens with the Universal cmdlets or by using web requests directly using Bearer authorization.
 
-![](<../../.gitbook/assets/image (421).png>)
+<figure><img src="../../.gitbook/assets/image (208).png" alt=""><figcaption><p>App Token Page</p></figcaption></figure>
 
 ## Environment
 

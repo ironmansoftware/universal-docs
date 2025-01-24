@@ -8,9 +8,7 @@ Once enabled, you will be able to enforce authentication and authorization on yo
 
 ## Defining Secure Endpoints
 
-You can define secure endpoints in the UI by enabling authentication.
-
-![](<../.gitbook/assets/image (242).png>)
+You can define secure endpoints in the UI by enabling authentication. You will endpoint authentication and authorization under the Security tab of an endpoint's properties.
 
 You can also define secure endpoints using the `.universal/endpoints.ps1` file or the Management API using `New-PSUEndpoint`.
 
@@ -39,9 +37,7 @@ Note that if you are hosting in IIS and do not have Anonymous Authentication ena
 
 To authenticate with tokens, first, you need generate a new app token for use. You can use the `Grant-PSUAppToken` cmdlet to do so remotely or you can create an app token in the UI using the Settings Security AppTokens tab.
 
-Click Grant App Token to create a new one.
-
-![](<../.gitbook/assets/image (24).png>)
+Hover over your user name in the top right of the admin console, click Tokens and click Create Application Token.&#x20;
 
 Once you have created your app token, you can now use it to authenticate against the secure endpoint. To do so, pass the Authorization header along with the request.
 
@@ -84,8 +80,8 @@ JWT app tokens will use the role that was defined when they were generated.
 
 ## API
 
-* [New-PSUEndpoint](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/New-PSUEndpoint.txt)
-* [Get-PSUEndpoint](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Get-PSUEndpoint.txt)
-* [Remove-PSUEndpoint](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Remove-PSUEndpoint.txt)
-* [New-PSUApiResponse](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/New-PSUApiResponse.txt)
-* [Set-PSUSetting](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Set-PSUSetting.txt)
+* [New-PSUEndpoint](../cmdlets/New-PSUEndpoint.txt)
+* [Get-PSUEndpoint](../cmdlets/Get-PSUEndpoint.txt)
+* [Remove-PSUEndpoint](../cmdlets/Remove-PSUEndpoint.txt)
+* [New-PSUApiResponse](../cmdlets/New-PSUApiResponse.txt)
+* [Set-PSUSetting](../cmdlets/Set-PSUSetting.txt)

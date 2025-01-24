@@ -19,8 +19,6 @@ Set-PSUSetting @Parameters
 
 Once a feature has been disabled, it will no longer appear in the admin console.
 
-![](<../.gitbook/assets/image (322).png>)
-
 More importantly, disabled features will be completely disabled in the PowerShell Universal server. The Management APIs will no longer function, and the configuration scripts will not be run.
 
 Features that can be disabled include:

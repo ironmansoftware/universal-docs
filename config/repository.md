@@ -29,6 +29,7 @@ Files stored in the repository are stored as plain text to allow for easy differ
 * Settings
 * Tags
 * Triggers
+* Vaults
 
 ## What's Not Stored in the Repository
 
@@ -55,6 +56,16 @@ Stored in `.universal\authentication.ps1`
 This script is responsible for configuring f[orms authentication](security/#forms-authentication). If forms authentication is not being used, this file is ignored.
 
 You can use the [`Set-PSUAuthentication` ](../cmdlets/Set-PSUAuthenticationMethod.txt)cmdlet in this file.
+
+### Branding.ps1
+
+{% hint style="info" %}
+Stored in `.universal\branding.ps1`
+{% endhint %}
+
+This script is responsible for configuring branding settings.&#x20;
+
+You can use the New-PSUBranding cmdlet in this file.
 
 ### Dashboards.ps1
 
@@ -99,16 +110,6 @@ You can use the [`Set-PSULicense` ](../cmdlets/Set-PSULicense.txt)cmdlet in this
 ```
 Set-PSULicense -Key "<License></License>"
 ```
-
-### LoginPage.ps1
-
-{% hint style="info" %}
-Stored in `.universal\loginPage.ps1`
-{% endhint %}
-
-This script is responsible for configuring a custom [login page](login-page.md).
-
-You can use the [`New-PSULoginpage`](../cmdlets/New-PSULoginPage.txt) and [`New-PSULoginPageLink` ](../cmdlets/New-PSULoginPageLink.txt)in this file.
 
 ### Initialize.ps1
 
@@ -206,7 +207,7 @@ This script is responsible for configuring [triggers](../automation/triggers.md)
 
 You can use the [`New-PSUTrigger` ](../cmdlets/New-PSUTrigger.txt)cmdlet in this file.
 
-### Variables
+### Variables.ps1
 
 {% hint style="info" %}
 Stored in `.universal\variables.ps1`
@@ -215,6 +216,14 @@ Stored in `.universal\variables.ps1`
 This script is responsible for configuring [variables](broken-reference/).
 
 You can use the [`New-PSUVariable`](../cmdlets/New-PSUVariable.txt) cmdlet in this file.
+
+### Vaults.ps1
+
+{% hint style="info" %}
+Stored in `.universal\vaults.ps1`
+{% endhint %}
+
+This script is responsible for configuring [vaults](../platform/variables.md#vaults).
 
 ## Custom Configuration Script
 

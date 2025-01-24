@@ -10,8 +10,6 @@ Triggers require a [license](https://ironmansoftware.com/pricing/powershell-univ
 
 Triggers allow for automation jobs to be started when certain events happen within PowerShell Universal. For example, this allows you to take action when jobs complete, the server starts or dashboards stop. Triggers are useful for assigning global error handling or sending notifications when certain things happen.
 
-![](<../.gitbook/assets/image (441).png>)
-
 {% hint style="info" %}
 Triggered jobs will not cause additional triggers to start. Triggers are stored in the `triggers.ps1`.
 {% endhint %}
@@ -143,7 +141,7 @@ New-PSUTrigger -Condition {
 
 ## API
 
-* [New-PSUTrigger](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/New-PSUTrigger.txt)
-* [Remove-PSUTrigger](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Remove-PSUTrigger.txt)
-* [Set-PSUTrigger](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Set-PSUTrigger.txt)
-* [Get-PSUTrigger](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Get-PSUTrigger.txt)
+* [New-PSUTrigger](../cmdlets/New-PSUTrigger.txt)
+* [Remove-PSUTrigger](../cmdlets/Remove-PSUTrigger.txt)
+* [Set-PSUTrigger](../cmdlets/Set-PSUTrigger.txt)
+* [Get-PSUTrigger](../cmdlets/Get-PSUTrigger.txt)

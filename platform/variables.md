@@ -12,19 +12,19 @@ Variables are stored in the `variables.ps1` configuration file.
 
 ## Creating a Variable
 
-To create a variable, navigate to the Platform \ Variables page. Click Add Variable to define a new variable.
+To create a variable, navigate to the Platform \ Variables page. Click Create Variable to define a new variable.
 
-Standard variables are just name \ value pairs of strings. They will be added to your scripts before they are run.
+<figure><img src="../.gitbook/assets/image (177).png" alt=""><figcaption><p>Create Variable dialog</p></figcaption></figure>
 
-![](<../.gitbook/assets/image (451).png>)
+Variables will be added to your scripts before they are run.
 
 ## Creating a Secret Variable
 
-Secret variables are stored within the selected vault. The value of those variables is never stored within Universal. To define a new secret variable, click Add Variable on the variables page and select the Secret tab.
+Secret variables are stored within the selected vault. The value of those variables is never stored within Universal. To define a new secret variable, click Create Secret Variable on the variables page and select the Secret tab.
 
 From this dialog, you'll be able to define string and PSCredentials in the specified vault.
 
-![](<../.gitbook/assets/image (277).png>)
+<figure><img src="../.gitbook/assets/image (180).png" alt=""><figcaption><p>Secret Variable Dialog</p></figcaption></figure>
 
 ### Credential Format
 
@@ -116,9 +116,9 @@ Register-SecretVault -ModuleName Az.KeyVault -Name AzureKeyVault -VaultParameter
 
 Now, when you are creating secrets, you will see the AzureKeyVault available.
 
-![](<../.gitbook/assets/image (310) (1) (1) (1).png>)
+<figure><img src="../.gitbook/assets/image (188).png" alt=""><figcaption><p>Secret Variables Vault Selector</p></figcaption></figure>
 
-To ensure the application is connected to Azure and the key vault is registered, run the script within `initialize.ps1`. We recommend running the script in an external PowerShell process to avoid assembly conflicts with PowerShell Universal DLLs.
+To ensure the application is connected to Azure and the key vault is registered, run the script within `vaults.ps1`. We recommend running the script in an external PowerShell process to avoid assembly conflicts with PowerShell Universal DLLs.
 
 ```powershell
 $pwsh = (Get-Command pwsh).Path

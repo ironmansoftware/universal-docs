@@ -16,9 +16,9 @@ PowerShell Universal is capable of synchronizing the configuration scripts with 
 
 Git sync can be configured in the database by adjusting the settings within the admin console. This is the preferred approach. The benefit is that when you connect new instances of PowerShell Universal to your SQL instance, you will not need to configure git sync again.
 
-To configure git sync, navigate to Settings \ Git within the Admin Console. You will be able to click the Git Settings button.
+To configure git sync, navigate to Settings \ Git within the Admin Console. You will be able to click the Create Git Settings button.
 
-<figure><img src="../.gitbook/assets/image (199).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (250).png" alt=""><figcaption><p>Git Settings Dialog</p></figcaption></figure>
 
 ### appsettings.json
 

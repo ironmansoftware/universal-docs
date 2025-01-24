@@ -60,16 +60,16 @@ Start-Process .\Universal\Universal.Server.exe
 You can use the following command line on Linux to install and start PowerShell Universal:
 
 ```
- wget https://imsreleases.blob.core.windows.net/universal/production/4.2.7/Universal.linux-x64.4.2.7.zip
+ wget https://imsreleases.blob.core.windows.net/universal/production/5.2.1/Universal.linux-x64.5.2.1.zip
  sudo apt install unzip 
- unzip Universal.linux-x64.4.2.7.zip -d PSU
+ unzip Universal.linux-x64.5.2.1.zip -d PSU
  chmod +x ./PSU/Universal.Server
  ./PSU/Universal.Server
 ```
 
 ## Linux Service
 
-You can use `systemd` to start PowerShell Universal as a service. The below script is an example of downloading a version of PowerShell Universal and installing it as a service:&#x20;
+You can use `systemd` to start PowerShell Universal as a service. The below script is an example of downloading a version of PowerShell Universal and installing it as a service:
 
 ```bash
 # ----
@@ -214,20 +214,20 @@ It may be necessary to exclude certain executables that run PowerShell scripts. 
 
 ## Default Admin Name and Password
 
-&#x20;You can use the `$ENV:PSUDefaultAdminName` and `$ENV:PSUDefaultAdminPassword` environment variables to change this behavior. These values are only used if no administrator account already exists. This is useful for cloud-based installations.&#x20;
+You can use the `$ENV:PSUDefaultAdminName` and `$ENV:PSUDefaultAdminPassword` environment variables to change this behavior. These values are only used if no administrator account already exists. This is useful for cloud-based installations.
 
 ## Agent
 
-The PowerShell Universal Agent executes Event Hub actions. Install it depending on your environment:&#x20;
+The PowerShell Universal Agent executes Event Hub actions. Install it depending on your environment:
 
 ### Windows (MSI)
 
-The PowerShell Universal Agent MSI is on our download page. After installing the MSI, a PowerShell Universal Agent service runs on your machine. [Configure it](../api/event-hubs.md) to connect to PowerShell Universal.&#x20;
+The PowerShell Universal Agent MSI is on our download page. After installing the MSI, a PowerShell Universal Agent service runs on your machine. [Configure it](../api/event-hubs.md) to connect to PowerShell Universal.
 
 ### ZIP
 
-ZIP files for each platform we support are on our downloads page. Each ZIP contains a `PowerShellUniversal.Agent.exe` or `PowerShellUniversal.Agent` file that can start an agent. Run the process as a service for it to start whenever the machine reboots.&#x20;
+ZIP files for each platform we support are on our downloads page. Each ZIP contains a `PowerShellUniversal.Agent.exe` or `PowerShellUniversal.Agent` file that can start an agent. Run the process as a service for it to start whenever the machine reboots.
 
 ## Next Steps
 
-At this point, Universal is up and running. Visit `http://localhost:5000` or your default port to navigate to the admin console. Log in with the default admin name and password or create a default admin account.&#x20;
+At this point, Universal is up and running. Visit `http://localhost:5000` or your default port to navigate to the admin console. Log in with the default admin name and password or create a default admin account.

@@ -10,13 +10,13 @@ Local accounts are created and stored in the PowerShell Universal database. By d
 
 To create a local account, you can navigate to Security \ Identities and create a new identity. Ensure that the Local Account switch is enabled and set a password.
 
-<figure><img src="../.gitbook/assets/image (323).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (211).png" alt=""><figcaption><p>Local Account Dialog</p></figcaption></figure>
 
 If you have a licensed instance of PowerShell Universal, you can use a different credential vault.
 
 ## Admin Account
 
-When first running PowerShell Universal, you will be prompted to set the admin account name and password.&#x20;
+When first running PowerShell Universal, you will be prompted to set the admin account name and password.
 
 You can automate this by setting the following environment variables. The account will be created and assigned the Administrator role. Password restrictions are not enforced when using the environment variable.
 
@@ -27,10 +27,10 @@ $ENV:PSUDefaultAdminName = 'MyAdmin'
 
 ## Reset Admin Account
 
-In the event that you become locked out the PowerShell Universal server, you can perform the following to reset the admin account.&#x20;
+In the event that you become locked out the PowerShell Universal server, you can perform the following to reset the admin account.
 
-You can reset the admin account by setting the `ResetAdminAccount` environment variable to `true` and then restarting the PowerShell Universal service. Ensure that the environment variable is set at the system level so that service has access to it. If no `admin` user is present, it will create one and set the password to `admin`. If one is present, it will reset the password to `admin`.&#x20;
+You can reset the admin account by setting the `ResetAdminAccount` environment variable to `true` and then restarting the PowerShell Universal service. Ensure that the environment variable is set at the system level so that service has access to it. If no `admin` user is present, it will create one and set the password to `admin`. If one is present, it will reset the password to `admin`.
 
 ## Password Restrictions
 
-Passwords are required to be of at least 12 characters long and require a letter, number and symbol. Passwords will expire after 90 days. Users can reset their passwords at any time in the admin console or portal.&#x20;
+Passwords are required to be of at least 12 characters long and require a letter, number and symbol. Passwords will expire after 90 days. Users can reset their passwords at any time in the admin console or portal.

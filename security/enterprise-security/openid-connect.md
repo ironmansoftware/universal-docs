@@ -102,7 +102,7 @@ To add a new authentication method, navigate to Security \ Authentication and ad
 
 Once the provider has been added, you can click the details button to enter the settings you'll need to authenticate against your OIDC provider. After setting the OIDC options, set the provider to enabled and log out. When visiting the `/admin` page, you'll be prompted for OIDC login.
 
-![](<../../.gitbook/assets/image (80).png>)
+<figure><img src="../../.gitbook/assets/image (238).png" alt=""><figcaption><p>OpenID Connect Settings</p></figcaption></figure>
 
 ### Delegated Access Tokens
 

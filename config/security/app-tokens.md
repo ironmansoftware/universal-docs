@@ -4,19 +4,19 @@ description: App tokens for accessing PowerShell Universal APIs.
 
 # App Tokens
 
-You can use PowerShell Universal app tokens with both [custom API endpoints](broken-reference) and the [management API](../management-api.md). The management API uses the standard Administrator, Operator and Reader roles. The custom API app tokens can utilize custom roles as well as the built-in ones.
+You can use PowerShell Universal app tokens with both [custom API endpoints](broken-reference/) and the [management API](../management-api.md). The management API uses the standard Administrator, Operator and Reader roles. The custom API app tokens can utilize custom roles as well as the built-in ones.
 
 You can grant App Tokens to using the Admin Console or you can use the Management API directly.
 
 ## Admin Console
 
-To grant a token in the Admin Console, navigate to Security \ Tokens. Click the Add New App Token button to grant an App Token.
+To grant a token in the Admin Console, navigate to Security \ Tokens. Click the Create App Token button to grant an App Token.
 
-![](<../../.gitbook/assets/image (473).png>)
+<figure><img src="../../.gitbook/assets/image (229).png" alt=""><figcaption></figcaption></figure>
 
-When you click Grant App Token, a dialog allows you to specify the Identity, Role and expiration time of the token.
+When you click Create App Token, a dialog allows you to specify the Identity, Role and expiration time of the token.
 
-![App Token options.](<../../.gitbook/assets/image (449).png>)
+<figure><img src="../../.gitbook/assets/image (234).png" alt=""><figcaption><p>App Token Dialog</p></figcaption></figure>
 
 ## Management API
 
@@ -42,8 +42,6 @@ revokedDate : 01/01/0001 00:00:00
 ```
 
 Administrators can grant app tokens to any user by specifying the user's identity ID. To grant an app token to an identity via the REST API, the user needs a defined role. The Operator role defines the user, and their App Token will be granted access based on that role.
-
-![](<../../.gitbook/assets/image (377).png>)
 
 ```
 PS C:\Users\adamr> Invoke-RestMethod http://localhost:5000/api/v1/apptoken/grant/2  -WebSession $Session

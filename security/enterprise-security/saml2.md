@@ -36,7 +36,7 @@ Once the SAML2 integration has been added, you can configure the basic settings 
 
 Typically, these entity IDs are URLs configured within your identity provider.
 
-![Entity ID Settings](<../../.gitbook/assets/image (87).png>)
+<figure><img src="../../.gitbook/assets/image (243).png" alt=""><figcaption><p>SAML2 Dialog</p></figcaption></figure>
 
 The service certificate is used for signing requests. It is not required. This can either be a path local to the PSU service or the distinguished name of a certificate installed in the Personal Computer Certificate store.
 

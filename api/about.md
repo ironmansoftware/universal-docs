@@ -10,8 +10,6 @@ Universal provides the ability to define REST API endpoints using PowerShell. Wh
 This feature is for developing custom APIs run by Universal. It not required for managing Universal. Universal provides a set of management APIs that are included with the platform.
 {% endhint %}
 
-{% embed url="https://youtu.be/M6z0iYhmUkQ" %}
-
 ## Execution Environment
 
 The REST API execution environment runs in your default PowerShell version. Unlike Automation jobs, which can also be run via the Universal management API, APIs that you define are run in a single PowerShell process. Because the PowerShell process is not started and stopped for each call to the endpoint, the API is much faster.
@@ -44,7 +42,7 @@ Variables are listed on the [variables page](../platform/variables.md#api).
 
 ## API
 
-* [New-PSUEndpoint](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/New-PSUEndpoint.txt)
-* [Get-PSUEndpoint](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Get-PSUEndpoint.txt)
-* [Remove-PSUEndpoint](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Universal/Remove-PSUEndpoint.md)
-* [Set-UASetting](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Universal/Set-UASetting.md)
+* [New-PSUEndpoint](../cmdlets/New-PSUEndpoint.txt)
+* [Get-PSUEndpoint](../cmdlets/Get-PSUEndpoint.txt)
+* [Remove-PSUEndpoint](../cmdlets/Universal/Remove-PSUEndpoint.md)
+* [Set-UASetting](../cmdlets/Universal/Set-UASetting.md)

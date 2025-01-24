@@ -8,7 +8,7 @@ description: Role based access for apps.
 
 When app authentication is enabled, you can define the role that a user must be a part of in order to access the dashboard. Roles are configured on the Settings \ Security page or from within the `roles.ps1` configuration file.
 
-![](<../.gitbook/assets/image (62).png>)
+<figure><img src="../.gitbook/assets/image (144).png" alt=""><figcaption><p>App Security</p></figcaption></figure>
 
 If a user attempts to visit an app that they do not have access to, they will be presented with a Not Authorized page.
 
