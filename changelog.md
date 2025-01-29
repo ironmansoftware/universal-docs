@@ -6,6 +6,18 @@ description: Changelog for PowerShell Universal.
 
 ## [Downloads](https://ironmansoftware.com/release/powershell-universal)
 
+## 4.5.2 - 1/29/2025
+
+#### CVE
+
+* [Fixed a directory traversal issue with Published Folders (CVE TBD)](https://docs.powershelluniversal.com/changelogs/cves#cve-tbd-1-29-2025-information-disclosure)
+
+#### Installer
+
+* Fixed an issue where the installer would log the service account in plain text (#4246)
+
+
+
 ## 4.5.1 - 1/15/2025
 
 #### APIs
