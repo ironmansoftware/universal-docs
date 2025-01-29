@@ -40,15 +40,29 @@ Now, we'll need to capture several points of information from the application to
 
 <figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
-### Groups
+### Claim Mapping
 
-Next, we need to configure group membership to provide access and claims to PowerShell Universal. Click Token configuration under the application registration. Next, click Add groups claims.
+In order to provide group claims to PowerShell Universal, you will need to expose the group claims from your app registration. Click Token Configuration and then click Add groups claim.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Entra ID Group Claims</p></figcaption></figure>
 
-To provide all a user's groups to PowerShell Universal, check All groups.
+After clicking Add groups claim, you will have the option to select which groups are provided. If you select All Groups, the groups claims will be provided to PowerShell Universal
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+If you select Groups assigned to the application, ensure that you check the Emit groups as role claims value. This setting requires a paid Entra ID plan.
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Emit groups as role claims setting</p></figcaption></figure>
+
+To assign a group to your app registration, locate your app in Enterprise Applications and click User and Groups. Next, click Add User\Group and select the groups you would like assigned to your application.&#x20;
+
+Once you have the groups claim configured in Entra ID, you can then update PowerShell Universal claim mappings to the groups provided.&#x20;
+
+For each role you would like to assign to an Entra ID group, specify the Claim Type and Claim Value for that role. For example, I have a group in my environment with the ID 446832da-d4ad-4972-b0a2-eda736129928. The Claim Type for this object is [http://schemas.microsoft.com/ws/2008/06/identity/claims/groups](http://schemas.microsoft.com/ws/2008/06/identity/claims/groups).&#x20;
+
+To assign this to the administrator group, I would do the following.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption><p>Claim Mapping</p></figcaption></figure>
+
+Users of this group would now be part of the Administrator role in PowerShell Universal.&#x20;
 
 ### Group Overages
 
@@ -249,3 +263,7 @@ Invoke-RestMethod https://poshtools.okta.com/oauth2/v1/userinfo -Headers @{
     Authorization = "Bearer $AccessToken"
 }
 ```
+
+## Viewing Claim Information
+
+If you are unsure about what claim information is being sent to PowerShell Universal from your identity provider, you can use the View Claim Information button on the Security \ Roles page to view all the roles that have been provided to PSU from the remote system.&#x20;

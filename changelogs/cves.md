@@ -4,17 +4,27 @@ description: CVEs for PowerShell Universal.
 
 # CVEs
 
-Please report vulnerabilities to Ironman Software. To learn about our vulnerability response policy, [click here](https://ironmansoftware.com/vulnerability-response-policy/).&#x20;
+Please report vulnerabilities to Ironman Software. To learn about our vulnerability response policy, [click here](https://ironmansoftware.com/vulnerability-response-policy/).
 
-## CVE-2024-50616 - 10/17/2024 - Privilege escalation and information disclosure&#x20;
+## CVE-TBD - 1/29/2025 - Information disclosure
 
-### Description&#x20;
+### Description
 
-Version 5.0.0 through 5.0.11 are vulnerable to an exploit that allows an authenticated attacker to elevate their privileges and view job information.&#x20;
+Version 4.5.x and 5.x.x are vulnerable to an information disclosure through directory traversal when using PowerShell Universal published folders. Systems that do not have this feature configured, are not affected. If authenticated published folders are configured, the attacker will need to be authenticated.&#x20;
 
-### CVSS v4.0 Score: 7.4 / High&#x20;
+### CVSS v4.0 Score: 5.4 / Medium
 
-This exploit allows an authenticated attacker to take control of the platform via a vulnerability in the admin console.&#x20;
+This exploit allows an attacker to expose information of the affected system, depending on system configuration.
+
+## CVE-2024-50616 - 10/17/2024 - Privilege escalation and information disclosure
+
+### Description
+
+Version 5.0.0 through 5.0.11 are vulnerable to an exploit that allows an authenticated attacker to elevate their privileges and view job information.
+
+### CVSS v4.0 Score: 7.4 / High
+
+This exploit allows an authenticated attacker to take control of the platform via a vulnerability in the admin console.
 
 ###
 

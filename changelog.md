@@ -4,6 +4,36 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.2.2 - 1/29/2025
+
+### Bug Fixes
+
+#### CVE
+
+* [Fixed a directory traversal issue with Published Folders (CVE TBD)](changelogs/cves.md#cve-tbd-1-29-2025-information-disclosure)
+
+#### Admin Console
+
+* Fixed an issue where Run As credential selector was not available on the Environments property dialog (#4298)
+
+#### APIs
+
+* Fixed an issue where Send-PSUEvent would attempt to send events to invalid groups (#4262)
+
+#### Apps
+
+* Fixed an issue where Sync-UDElement would not reset table selection state (#4257)
+* Fixed an issue where reloading modules would cause apps to restart (#4241)
+* Fixed an issue with New-UDSelect -DefaultValue and -Sx (#4169)
+
+#### Cmdlets
+
+* Fixed an issue where Get-PSUSchedule could throw an exception
+
+#### Platform
+
+* Fixed an issue authenticating against APIs with Basic credentials
+
 ## 5.2.1 - 1/19/2025
 
 ### Bug Fixes
