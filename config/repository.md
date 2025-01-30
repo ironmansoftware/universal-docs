@@ -247,10 +247,6 @@ You can chose to return items such as endpoints, scripts or dashboards from the 
 
 ## Read-Only Configuration Sections
 
-{% hint style="warning" %}
-Read-Only configuration sections are deprecated. We recommend using [modules with Universal resources](../platform/modules.md#modules-with-universal-resources) instead.&#x20;
-{% endhint %}
-
 Read-Only sections allow you to include script in your configuration files that will not be touched by changes in the admin console. This allows you to run additional logic, generate resources dynamically and create classes for use in OpenAPI schemas.
 
 The `PSUHeader` region is placed at the top of your script. `PSUFooter` is placed at the bottom.
