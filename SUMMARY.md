@@ -32,6 +32,7 @@
 * [Jobs](automation/jobs.md)
 * [Schedules](automation/schedules.md)
 * [Terminals](automation/terminals.md)
+* [Tests](automation/tests.md)
 * [Triggers](automation/triggers.md)
 
 ## 📊 Apps

@@ -4,6 +4,136 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.3.0 - 2/11/2025
+
+### Features
+
+#### Admin Console
+
+* Added Rate Limits page (#4201)
+* Updated to Ant Design 1.1 (#4060)
+* Improved Script Folder Management (#3724)
+* Process view now works in multi-node environments (#1705)
+* Added memory and process ID to jobs page (#4305, #4304)
+
+#### Apps
+
+* Added -FormData to New-UDForm (#4196)
+* Added -ClassName, -AnchorVertical, -AnchorHorizontal and a close button to Show-UDSnackbar (#3535)
+* Added support for new line characters in New-UDButton -Text (#3665)
+* Added -ShowLoading to New-UDIconButton (#3047)
+* Added -ShowTime to New-UDDatePicker (#1809)
+* Added -RadialBar to New-UDNivoChart (#3717)
+* Added -LogoComponent to New-UDPage (#2803)
+* Added command history to app debug console (#2194)
+
+#### APIs
+
+* Added Run As support to endpoints (#3068)
+
+#### Automation
+
+* Improved simple schedules (#4203)
+* Schedules and triggers are now deleted when their script is deleted (#1979)
+* Added computer groups to triggers run on settings (#3993)
+* Added Pester test support (#2977)
+* Added support for excluding scripts from the job tab (#4019)
+
+#### Agent
+
+* Added PSU\_AgentLogPath (#4232)
+
+#### Cmdlets
+
+* Improved Write-PSULog's default behavior (#4253)
+
+#### Platform
+
+* Added support for specifying NameIdFormat for SAML2 configurations (#4226)
+* Added the ability to create app tokens without identities (#3185)
+* Added reset admin password function to psucli (#4221)
+* Optimized module discovery (#4247)
+* Improved git error messages (#2027)
+* Added support for loading SAML2 metadata (#3061)
+
+#### Portal
+
+* Unauthenticated apps are now displayed on the portal (#4258)
+
+### Bugs
+
+#### Admin Console
+
+* Fixed an issue with git sync status display (#4215)
+* Fixed sort order of scripts on the trigger modal (#4242)
+* Fixed an issue with the UI on refreshing properly after an app was installed (#4228)
+* Fixed issues with Rerun job button (#4209)
+* Fixed an issue clearing DateTime parameters on schedules (#4208)
+* Fixed an issue with the tags table reload (#4268)
+* Fixed search on several pages (#4267, #4231)
+* Fixed an issue with the Portal Resources page (#4291)
+* Fixed an issue selecting nested folders for scripts (#4284)
+* Fixed an issue running scripts with certain parameter set definitions (#4299)
+
+#### Agent
+
+* Fixed an errant warning in the agent log (#4265)
+
+#### Apps
+
+* Fixed an issue with the New-UDProgress in the dark theme (#3905)
+* Fixed an issue where New-UDDataGrid did not display the first\last page buttons (#3973)
+* Fixed an issue with Publish-PSUStaticApp
+* Fixed an issue calling New-UDUpload multiple times with the same file (#4165)
+* Fixed an issue with Start-UDDownload in external environments (#4273)
+* Fixed an issue changing the year in New-UDDatePicker (#4230)
+* Fixed an issue with New-UDTransferList -Enhanced (#4223)
+
+#### APIs
+
+* Fixed an errant warning log message in post APIs (#4252)
+* Fixed an issue with secret variables in endpoints (#4301)
+* Fixed an issue executing a C# API after a compilation error had occurred (#4214)
+
+#### Automation
+
+* Fixed an issue with Job Cancelled triggers not running (#4245)
+* Fixed job log order (#4274)
+
+#### Cmdlets
+
+* Fixed an issue with the default parameter set on Set-PSUEvent (#4262)
+* Fixed an issue with the deployment cmdlets (#4278)
+* Fixed an issue with Stop-PSUJob (#4341)
+
+#### Deployments
+
+* Fixed the deployment download button (#4277)
+
+#### Installer
+
+* Fixed an issue where the MSI would log the service account password in clear text during install (#4246)
+
+#### Platform
+
+* Fixed an issue where git settings from appsettings.json would be used across a computers (#4261)
+* Fixed an issue loading custom module information (#4254)
+* Fixed an issue running the Memory Health Check on new versions of Windows (#4293)
+* Fixed an issue setting the system log level
+* Fixed an issue with DisableAutoReload (#4327)
+* Fixed an issue using basic auth when Windows auth was enabled in IIS
+* Fixed an issue where $RefreshToken was not available in apps when SaveTokens was set for OIDC (#4330)
+* Fixed an issue accessing published folders by UNC path (#4339)
+* Fixed an issue with psu git --disable-crl (#4164)
+
+## 5.2.3 - 2/05/2025
+
+### Bug Fixes
+
+#### Installer
+
+* Fixed issue with default service account passwor
+
 ## 5.2.2 - 1/29/2025
 
 ### Bug Fixes

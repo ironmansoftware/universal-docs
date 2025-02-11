@@ -10,15 +10,15 @@ An app can consist of one or more pages. A page can have a particular name and U
 
 Within the app editor, click the Create App Page button.
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Create App Page Button</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Create App Page Button</p></figcaption></figure>
 
 Once the page has been created, it will be listed in the pages tab.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Pages Tab</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>Pages Tab</p></figcaption></figure>
 
 To update the content of a page, click the Edit Code button.
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Edit App Page</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>Edit App Page</p></figcaption></figure>
 
 As an example, you could add a button to your page.
 

@@ -84,3 +84,11 @@ Invoke-RestMethod http://localhost:5000/api/v1/apptoken -Method POST -Body (@{
 ## Enhanced App Token Security
 
 When enhanced app token security is enabled, token values are only accessible upon creation. They are hashed and the database stores the hash value rather than the token. You use the token the same way as any other token.
+
+{% hint style="warning" %}
+Enabling app token security will invalidate all existing tokens.&#x20;
+{% endhint %}
+
+## System Tokens
+
+System tokens are a way to provide tokens to non-user systems. They are not tied directly to a user's identity. You can provide a name for the token as well as expiration and roles.&#x20;

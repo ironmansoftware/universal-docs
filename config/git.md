@@ -221,7 +221,7 @@ In this example, the string for this endpoint was edited on both the remote and 
 
 Edit the text to remove the conflict.
 
-<figure><img src="../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Save the changes and navigate back to the git commit page. Enter a new commit message for the merge conflict and click Commit Changes.
 
