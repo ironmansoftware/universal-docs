@@ -102,9 +102,19 @@ The integrated [environment](../../config/environments.md) does not support runn
 
 You can run scripts as another user by configuring [secret variables](../../platform/variables.md#creating-a-secret-variable). PowerShell Universal uses the Microsoft Secret Management module to integrate with secret providers. See variables for more information on secrets.
 
-To run as another user, simply add or import a PSCredential variable. From there, you can select the credential within the run dialog.
+1. Create a new PSCredential secret variable.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (92).png" alt=""><figcaption><p>Run As Dropdown</p></figcaption></figure>
+Click Platform \ Variables and then click Create Secret. Select the PSCredential variable type. Enter the username and password. Ensure that the Disable Run As Support value is unchecked.&#x20;
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Create Secret Variable</p></figcaption></figure>
+
+2. Run the Script and select the credential&#x20;
+
+Navigate back to Automation \ Scripts and click the Run Script button. Select an environment besides the Integrated environment. By default, this will be either PowerShell 7 or Windows PowerShell 5.1.&#x20;
+
+You will now be prompted with the Run As drop down to select the credential. From there, you can select the credential within the run dialog.
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Run as a User</p></figcaption></figure>
 
 ### Running a Script on Another Computer
 
