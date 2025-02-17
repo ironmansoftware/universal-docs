@@ -4,6 +4,36 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.3.1 - 2/17/2025
+
+### Bugs
+
+#### Admin Console
+
+* Fixed an issue expanding the git commit table (#4368)
+
+#### Apps
+
+* Fixed an issue where the page icon would be duplicated
+* Fixed a file encoding issue with pages (#4360)
+
+#### APIs
+
+* Fixed an issue calling Invoke-PSUScript in an API when Strict permission mode was enabled (#4367)
+
+#### Automation
+
+* Fixed an issue where jobs could be marked as failed after completing successfully
+* Fixed an issue discovering test files in nested directories.
+
+#### Cmdlets
+
+* Fixed an issue with Invoke-PSUScript -Integrated (#4373)
+
+#### Platform
+
+* Fixed several issues git settings, changing remotes and cloning (#4369)
+
 ## 5.3.0 - 2/11/2025
 
 ### Features
