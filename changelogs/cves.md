@@ -6,7 +6,15 @@ description: CVEs for PowerShell Universal.
 
 Please report vulnerabilities to Ironman Software. To learn about our vulnerability response policy, [click here](https://ironmansoftware.com/vulnerability-response-policy/).
 
-## CVE-TBD - 1/29/2025 - Information disclosure
+## CVE-TBD - 2/18/2025 - Incorrect Access Controls
+
+### Description
+
+Due to an authorization issue with the PowerShell Universal v5.3.x's gRPC service registration, a remote attacker can access the server using the Universal PowerShell module without authentication.&#x20;
+
+### CVSS v4.0 Score: 9.8 High
+
+## CVE-2025-26792 - 1/29/2025 - Information disclosure
 
 ### Description
 

@@ -4,6 +4,18 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.3.2 - 2/18/2025
+
+### Bugs
+
+#### Cmdlets
+
+* Fixed a critical security issue with the Universal module authentication. [(CVE TBD)](changelogs/cves.md#cve-tbd-2-18-2025-privilege)
+
+#### Agent
+
+* Fixed an issue with certain messages sent to event hubs (#4390)
+
 ## 5.3.1 - 2/17/2025
 
 ### Bugs
@@ -162,7 +174,7 @@ description: Changelog for PowerShell Universal.
 
 #### Installer
 
-* Fixed issue with default service account passwor
+* Fixed issue with default service account password
 
 ## 5.2.2 - 1/29/2025
 
@@ -170,7 +182,7 @@ description: Changelog for PowerShell Universal.
 
 #### CVE
 
-* [Fixed a directory traversal issue with Published Folders (CVE TBD)](changelogs/cves.md#cve-tbd-1-29-2025-information-disclosure)
+* Fixed a directory traversal issue with Published Folders - [CVE-2025-26792](changelogs/cves.md#cve-2025-26792-1-29-2025-information-disclosure)
 
 #### Admin Console
 
