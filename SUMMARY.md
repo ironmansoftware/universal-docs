@@ -8,6 +8,7 @@
   * [Docker](getting-started/docker.md)
   * [Upgrading](getting-started/upgrading.md)
   * [Uninstall](getting-started/uninstall.md)
+  * [Downgrading](getting-started/downgrading.md)
   * [Migration](getting-started/migration.md)
 * [🔑 Licensing](licensing.md)
 * [📊 System Requirements](system-requirements.md)

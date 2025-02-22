@@ -183,6 +183,16 @@ The following are not included:
 * web.config
 * PowerShell Universal Application Binaries
 
+## Multiple Git Repositories
+
+PowerShell Universal supports storing multiple git repository configurations within the database. By doing so, you can quickly switch between different configurations of PowerShell Universal. Click the Repositories tab to view the currently configured repositories. From here you can delete and edit repository configurations.&#x20;
+
+{% hint style="warning" %}
+PowerShell Universal does not remove the .git folder when deleting a repository configuration. You will need to manually do this in order to configure a new repository.
+{% endhint %}
+
+When you add a new repository configuration, you can click the Apply button to switch to the selected repository. This will delete all files in the repository directory and clone the selected repository. You cannot apply a repository configuration if there are uncommitted changes in your repository. After cloning the repository, PowerShell Universal will completely reload it's configuration.
+
 ## Git History and Status Page
 
 The history tab displays all the git commit history for the current repository.
