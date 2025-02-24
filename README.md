@@ -38,6 +38,7 @@ Streamline your automation with an intuitive web interface for executing, schedu
 * [Event Triggers](https://docs.powershelluniversal.com/automation/triggers)
 * [Concurrency Controls](https://docs.powershelluniversal.com/automation/scripts#concurrent-jobs)
 * [Ad-Hoc Terminals](https://docs.powershelluniversal.com/automation/terminals)
+* [Pester Test Support](automation/tests.md)
 
 ## **Apps**
 
