@@ -4,6 +4,10 @@ description: This document covers upgrading the PowerShell Universal application
 
 # Upgrading
 
+{% hint style="warning" %}
+You cannot upgrade from Nightly builds.
+{% endhint %}
+
 ## Overview
 
 This document will cover the upgrade process for production PowerShell Universal instances. We will cover the following topics.

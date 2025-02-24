@@ -4,6 +4,27 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.3.3 - 2/24/2025
+
+### Bugs
+
+#### APIs
+
+* Fixed an issue with event hub commands (#4406)
+
+#### Automation
+
+* Fixed an issue where the identity was not listed correctly when calling Invoke-PSUScript with an app token (#4414)
+* Fixed an issue reading scripts from a UNC path (#4413)
+
+#### Module
+
+* Fixed an issue with Set-PSUAuthenticationMethod (#4421)
+
+#### Tools
+
+* Fixed an issue with psu CLI's db tool
+
 ## 5.3.2 - 2/18/2025
 
 ### Bugs
