@@ -85,6 +85,7 @@ The following features of PowerShell Universal require a license.
 * Automation
   * Triggers
   * Terminals
+  * Tests
 * Apps
   * App Page Editor
   * App Function Editor
