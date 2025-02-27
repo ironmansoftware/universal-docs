@@ -6,6 +6,23 @@ description: Changelog for PowerShell Universal.
 
 ## [Downloads](https://ironmansoftware.com/release/powershell-universal)
 
+## 4.5.3 - 2/27/2025
+
+#### APIs
+
+* Built-in variables are now read-only
+
+#### Admin Console
+
+* Fixed an issue where Executor and Reader roles could not view scripts (#4302, #3486)
+* Fixed an issue with the re-run job button not populating the correct job parameters (#4303)
+
+#### Automation
+
+* Fixed an error thrown when running scripts (#4235)
+* Added -DefaultScriptListView to Set-PSUSettings (#4204)
+* Fixed an issue with one-time schedules in schedules.ps1 (#4428)
+
 ## 4.5.2 - 1/29/2025
 
 #### CVE
