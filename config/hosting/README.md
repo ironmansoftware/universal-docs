@@ -150,6 +150,21 @@ Some providers, like Let's Encrypt and GoDaddy, will issue certificates as PEM a
 }
 ```
 
+#### Permissions
+
+On Windows, the user running the PowerShell Universal service will need access to the certificate in order to properly provide HTTPS support. This is typically an issue if the service uses a Group Managed Service Account. You can use the following PowerShell script to provide the proper permissions.&#x20;
+
+```powershell
+$thumbprint = "<<THUMBPRINT>>"
+$certPath = "C:\ProgramData\Microsoft\Crypto\RSA\MachineKeys"
+$cert = Get-ChildItem -Path Cert:\LocalMachine\My\$thumbprint
+$acl = Get-Acl -Path (Join-Path $certPath $cert.PrivateKey.CspKeyContainerInfo.UniqueKeyContainerName)
+$gmSaAccount = "Domain\<<GMSA_Account>>$"
+$accessRule = New-Object System.Security.AccessControl.FileSystemAccessRule($gmSaAccount, "Read", "Allow")
+$acl.SetAccessRule($accessRule)
+Set-Acl -Path (Join-Path $certPath $cert.PrivateKey.CspKeyContainerInfo.UniqueKeyContainerName) -AclObject $acl
+```
+
 ### Protocol
 
 By default, Universal will listen on HTTP1 and HTTP2. You can adjust the protocols that the server listens to by setting the Protocols property. For example, you can specifically set HTTP1 and HTTP2 support with the following setting.
