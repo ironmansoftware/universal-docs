@@ -92,3 +92,21 @@ Enabling app token security will invalidate all existing tokens.&#x20;
 ## System Tokens
 
 System tokens are a way to provide tokens to non-user systems. They are not tied directly to a user's identity. You can provide a name for the token as well as expiration and roles.&#x20;
+
+## Signing Keys
+
+### Local Signing Key
+
+By default, PowerShell Universal creates a signing key based on the Jwt \ SigningKey string in appsettings.json. This value is used to encode and decode the token. If the signing keys do not match, the token will be considered invalid. Changing the signing key will invalidate all existing signing keys.&#x20;
+
+### Remote Signing Key
+
+You may want to use an OAuth 2.0 discovery document to provide signing key validation. By using a remote system such as this, you can ensure that when signing keys are changed, the PowerShell Universal configuration will not need to be changed. To use a remote signing key, set the Jwt \ DiscoveryDocument value in appsettings.json to the URL of the OAuth 2.0 meta data document. When PowerShell Universal loads, it will read the signing keys from the document and provide them to the JWT validation system.&#x20;
+
+```json
+{
+    "Jwt" : {
+        "DiscoveryDocument": "https://auth20/metadata.xml"
+    }
+}
+```
