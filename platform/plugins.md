@@ -86,6 +86,21 @@ return new ApiResponse {
 };
 ```
 
+When defining an endpoint's content, understand that the code is being added to a dynamically named class with a single Execute function. Your code should be valid syntax for such a source file.
+
+```csharp
+using PowerShellUniversal;
+
+public class c{id} : ExecutionClass {{ 
+    public static ApiResponse Execute(ApiRequest request) 
+    {{ 
+        {fileContents} 
+
+        return new ApiResponse();
+    }} 
+}}";
+```
+
 You can access the PowerShell Universal service container within your endpoint by accessing the `ServiceProvider` property in your endpoint. We currently do not document the internal services of PowerShell Universal.
 
 ```csharp
