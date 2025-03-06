@@ -319,18 +319,23 @@ The `$EventData` has the following format.
 Ensure that you provide the `editable` property to each column you wish for the user to edit.
 
 ```powershell
+$Cache:Data = @(
+    @{ Name = 'Adam'; number = Get-Random }
+    @{ Name = 'Tom'; number = Get-Random }
+    @{ Name = 'Sarah'; number = Get-Random }
+)
+
 New-UDDataGrid -LoadRows {
-    $Data = @(
-        @{ Name = 'Adam'; number = Get-Random }
-        @{ Name = 'Tom'; number = Get-Random }
-        @{ Name = 'Sarah'; number = Get-Random }
-    )
-    $Data| Out-UDDataGridData -Context $EventData -TotalRows $Data.Length
+    $Cache:Data| Out-UDDataGridData -Context $EventData -TotalRows $Cache:Data.Length
 } -Columns @(
-    New-UDDataGridColumn -Field name -Editable
+    New-UDDataGridColumn -Field name -Render {
+        New-UDButton -Text $EventData.number
+    }
     New-UDDataGridColumn -Field number -Editable
 ) -AutoHeight $true -OnEdit {
-    Show-UDToast "Editing $Body" 
+    $Cache:Data | Where-Object { $_.Name -eq $EventData.NewRow.Name } | ForEach-Object {
+        $_.Number = $EventData.NewRow.Number
+    }
 }
 ```
 
