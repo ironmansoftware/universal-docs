@@ -106,7 +106,7 @@ New-UDDataGrid -LoadRows {
 ) -AutoHeight $true -Pagination
 ```
 
-`Out-UDDataGridData` automatically implements paging, and you do not need to do the above if you have all your data in memory. The above is just used for demonstration purposes.&#x20;
+`Out-UDDataGridData` automatically implements paging, and you do not need to do the above if you have all your data in memory. The above is just used for demonstration purposes.
 
 ## Filtering
 
@@ -133,8 +133,6 @@ The filter object is included in the `$EventData` for the `-LoadRows` event hand
 }
 ```
 
-
-
 #### Items
 
 The items property contains a collection of fields, operators and values. You can use these to filter your data.
@@ -151,15 +149,15 @@ The logic operator field is used to specify the link between the filters. This c
 
 #### QuickFilterValues
 
-Contains a collection of quick filter values that you can chose how to apply to your data.&#x20;
+Contains a collection of quick filter values that you can chose how to apply to your data.
 
 #### QuickFilterLogicOperator
 
-Contains the logic operator for the quick filter values specified by the user. This can be `and` or `or`.&#x20;
+Contains the logic operator for the quick filter values specified by the user. This can be `and` or `or`.
 
 ### Custom Filter
 
-The `Out-UDDataGridData` cmdlet provides an implmentation of filtering for static data. If you use this cmdlet, you do not need to implement filtering manually. If you have a remote data source, you will want to provide a custom implementation for filtering. Below is an example of using the filter structure in `$EventData` to eliminate rows based on the filters provided by the user.&#x20;
+The `Out-UDDataGridData` cmdlet provides an implmentation of filtering for static data. If you use this cmdlet, you do not need to implement filtering manually. If you have a remote data source, you will want to provide a custom implementation for filtering. Below is an example of using the filter structure in `$EventData` to eliminate rows based on the filters provided by the user.
 
 ```powershell
 New-UDDataGrid -LoadRows {  
@@ -188,9 +186,9 @@ New-UDDataGrid -LoadRows {
 
 ### Custom Quick Filter
 
-The quick filter is a similar to a simple search box. You can enable quick filtering with the `-ShowQuickFilter` parameter on `New-UDDataGrid`. A search box will appear in the top right of the data grid. When the user enters a value in the data grid, the quick filter information will be provided.&#x20;
+The quick filter is a similar to a simple search box. You can enable quick filtering with the `-ShowQuickFilter` parameter on `New-UDDataGrid`. A search box will appear in the top right of the data grid. When the user enters a value in the data grid, the quick filter information will be provided.
 
-Below is an example of how to use quick filters. `Out-UDDataGridData` implements quick filtering and is not required when using local data. The below is done for demonstration only.&#x20;
+Below is an example of how to use quick filters. `Out-UDDataGridData` implements quick filtering and is not required when using local data. The below is done for demonstration only.
 
 ```powershell
 New-UDDataGrid -LoadRows {  
@@ -209,8 +207,6 @@ New-UDDataGrid -LoadRows {
     New-UDDataGridColumn -Field number
 ) -AutoHeight $true
 ```
-
-
 
 ## Sorting
 
@@ -235,7 +231,7 @@ You will also receive the sort direction for each column.
 
 <figure><img src="../../../.gitbook/assets/image (192).png" alt=""><figcaption></figcaption></figure>
 
-You can use the `-LoadDetailedContent` event handler to display additional information about the row you are expanding. Information about the current row is available in `$EventData.row`.
+You can use the `-LoadDetailContent` event handler to display additional information about the row you are expanding. Information about the current row is available in `$EventData.row`.
 
 ```powershell
 New-UDDataGrid -LoadRows {
@@ -251,6 +247,59 @@ New-UDDataGrid -LoadRows {
 ) -AutoHeight $true -LoadDetailContent {
     Show-UDToast $Body
     New-UDAlert -Text $EventData.row.Name
+}
+```
+
+### Example: Nested Data Grids
+
+You can use the -LoadDetailContent parameter to look up nested data about an object. In this example, we load a data grid of virtual machines and display the name, operating system, memory and CPU cores. Expanding the detail content provides a data grid of the network cards available on the virtual machine. We are using dummy data in this example but you could use any cmdlet available to PowerShell Universal.&#x20;
+
+```powershell
+function Get-VirtualMachine {
+    1..10 | ForEach-Object {
+        [PSCustomObject]@{
+            Name = "VM-$_"
+            OperatingSystem = @("Windows Server 2019", "Windows Server 2022", "Ubuntu 20.02") | Get-Random
+            Memory = @(64, 128, 512, 1024) | Get-Random
+            Cores = @(8, 16, 32) | Get-Random
+        }
+    }
+}
+
+function Get-NetworkCard {
+    param($VirtualMachine)
+
+    1..4 | ForEach-Object {
+        [PSCustomObject]@{
+            Name = "NIC-$_"
+            Speed = @(64, 128, 512, 1024) | Get-Random
+        }
+    }
+}
+
+New-UDApp -Content { 
+    New-UDDataGrid -LoadRows {
+        $VMs = Get-VirtualMachine
+        $VMs| Out-UDDataGridData -Context $EventData -TotalRows $VMs.Length
+    } -Columns @(
+        New-UDDataGridColumn -Field Name
+        New-UDDataGridColumn -Field OperatingSystem
+        New-UDDataGridColumn -Field Memory -Render {
+            New-UDTypography -Text "$($EventData.Memory) GB\s"
+        }
+        New-UDDataGridColumn -Field Cores
+    ) -AutoHeight $true -LoadDetailContent {
+        $VirutalMachine = $EventData.row
+        New-UDDataGrid -LoadRows {
+            $NICs = Get-NetworkCard -VirtualMachine $VirutalMachine
+            $NICs | Out-UDDataGridData -Context $EventData -TotalRows $NICs.Length
+        } -Columns @(
+            New-UDDataGridColumn -Field Name
+            New-UDDataGridColumn -Field Speed -Render {
+                New-UDTypography -Text "$($EventData.Speed) GB\s"
+            }
+        ) -AutoHeight $true
+    }
 }
 ```
 
@@ -287,7 +336,7 @@ New-UDDataGrid -LoadRows {
 
 ## Selection
 
-You can enable row selection using the `-CheckboxSelection` parameter to display checkboxes for the rows to select. Row selection requires a deterministic ID for the data rows provided. In the below example, you will see each row has a specific ID specified.&#x20;
+You can enable row selection using the `-CheckboxSelection` parameter to display checkboxes for the rows to select. Row selection requires a deterministic ID for the data rows provided. In the below example, you will see each row has a specific ID specified.
 
 ```powershell
 New-UDApp -Content { 
@@ -302,7 +351,7 @@ New-UDApp -Content {
 ) -AutoHeight $true -Pagination -CheckboxSelection -CheckboxSelectionVisibleOnly -DisableRowSelectionOnClick
 ```
 
-You can access selected data with the `-OnSelectionChange` event handler or by retrieving the row IDs via `Get-UDElement`.&#x20;
+You can access selected data with the `-OnSelectionChange` event handler or by retrieving the row IDs via `Get-UDElement`.
 
 ```powershell
 New-UDButton -Text 'Get Selected Rows' -OnClick {
