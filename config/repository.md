@@ -225,25 +225,27 @@ Stored in `.universal\vaults.ps1`
 
 This script is responsible for configuring [vaults](../platform/variables.md#vaults).
 
-## Custom Configuration Script
+## Templates
 
-A custom configuration script can be executed within the configuration process. The path to the configuration script can be defined in `appsettings.json` or as an environment variable.
+Using the Templates folder within the Repository, you can create a selection of item templates for commonly used features in PowerShell Universal. This includes apps, app pages, scripts and endpoints.&#x20;
 
-{% code title="appsettings.json" %}
-```json
-"Data": {
-    "ConfigurationScript": "customScript.ps1"
-}
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Script Template</p></figcaption></figure>
+
+PS1 files in the following folders will be provided as templates in the admin console.&#x20;
+
+* Templates \ App
+* Templates \ AppPage
+* Templates \ Endpoint
+* Templates \ Script
+
+## .psuignore&#x20;
+
+The `.psuignore`file can be used to exclude certain files or patterns from the file system watcher in PowerShell Universal. This is useful when saving files like logs to the repository directory. The format of the file should be a single regular expression per line. If the regular expression matches a path, the configuration system will ignore it.&#x20;
+
 ```
-{% endcode %}
-
-{% code title="Environment Variable" %}
-```powershell
-$Env:Data__ConfigurationScript = "customScript.ps1"
+logs.*
+.git.*
 ```
-{% endcode %}
-
-You can chose to return items such as endpoints, scripts or dashboards from the script. Additionally, you can use this script to configure resources like modules and secret vaults before the system is started. The custom configuration script is run before any other configuration scripts.
 
 ## Read-Only Configuration Sections
 

@@ -72,7 +72,7 @@ By default, authentication and authorization happen within the `Universal.Server
 
 ## Integrated Environment
 
-{% hint style="info" %}
+{% hint style="warning" %}
 The integrated environment does not support running as alternate credentials.
 {% endhint %}
 

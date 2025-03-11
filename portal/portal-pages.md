@@ -18,17 +18,17 @@ You can create a portal page by navigating to Portal \ Pages in the Admin Consol
 
 Click the view button for the page in order to begin editing the content of the page. Once viewing the page, you can click Edit to enter edit mode.
 
-<figure><img src="../.gitbook/assets/image (3) (1) (1) (1) (1).png" alt=""><figcaption><p>Edit Page Button</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Edit Page Button</p></figcaption></figure>
 
 ### Adding Widgets
 
 To add an UI element to the page, click Add Widget to select from a list of Widgets to add to the page.
 
-<figure><img src="../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption><p>Adding a Portal Widget.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1) (1) (1) (1).png" alt=""><figcaption><p>Adding a Portal Widget.</p></figcaption></figure>
 
 If you do not have widgets shown in the modal, you can add pre-made ones to your environment using the [library](../platform/library.md). Once you find the Portal Widget to add, click the Add button under the description.
 
-<figure><img src="../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption><p>Portal Widget Modal</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1) (1) (1).png" alt=""><figcaption><p>Portal Widget Modal</p></figcaption></figure>
 
 Doing so will add the Portal Widget to the page.
 

@@ -30,6 +30,14 @@ From this dialog, you'll be able to define string and PSCredentials in the speci
 
 In some environments, it may be necessary to specify the domain name in the user name field. You can specify in either the `domain\user` or `user@domain` format. If you do not do so, you will receive errors when attempting to start processes, like scripts or dashboards, as that user account.
 
+### Group Managed Service Accounts
+
+When using Group Managed Service Accounts (GMSA), you will need to ensure that the machine and account has access to the GSMA account. You can follow [Microsoft's guide here](https://techcommunity.microsoft.com/blog/itopstalkblog/step-by-step-how-to-work-with-group-managed-service-accounts-gmsa/329864). Once configuration is complete, create a new credential in PowerShell Universal secret management and select the Password Not Required option. Enter the GSMA account (e.g. domain\user$). As long as the hosting account has the proper privileges, you will be able to run jobs are the GMSA account.&#x20;
+
+### Credential Validation
+
+On Windows, you can validate credentials before saving their value. Click the Validate button on the password field to attempt to login the user locally. This button will not appear on non-Windows systems.
+
 ### Roles
 
 {% hint style="warning" %}

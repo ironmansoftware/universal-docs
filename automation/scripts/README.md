@@ -106,7 +106,7 @@ You can run scripts as another user by configuring [secret variables](../../plat
 
 Click Platform \ Variables and then click Create Secret. Select the PSCredential variable type. Enter the username and password. Ensure that the Disable Run As Support value is unchecked.&#x20;
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Create Secret Variable</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Create Secret Variable</p></figcaption></figure>
 
 2. Run the Script and select the credential&#x20;
 
@@ -114,7 +114,7 @@ Navigate back to Automation \ Scripts and click the Run Script button. Select an
 
 You will now be prompted with the Run As drop down to select the credential. From there, you can select the credential within the run dialog.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Run as a User</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Run as a User</p></figcaption></figure>
 
 ### Running a Script on Another Computer
 
@@ -124,9 +124,13 @@ You can use the Computer dropdown to select other machines on which to run a scr
 
 You can run a script on all computers by selecting the All Computers option from the Computer dropdown.
 
+### Load Balancing
+
+PowerShell Universal uses a least-busy server loading balancing algorithm. If more than one server is a valid target for a job, PowerShell Universal will select the server with the least number of jobs running on that server.&#x20;
+
 ## Remoting
 
-You can use PowerShell remoting by taking advantage of `Invoke-Command` . We do not support the use of `Enter-PSSession` or `Import-PSSession`.
+You can use PowerShell remoting by taking advantage of `Invoke-Command` . PowerShell Universal does not support the use of `Enter-PSSession` or `Import-PSSession`.
 
 ## Comment-Based Help
 
@@ -178,6 +182,12 @@ New-PSUScript -Module 'PSUModule' -Command 'Show-HelloWorld'
 ```
 
 The function surfaces just like other scripts within the admin console. Parameters, help text and other PSU features work the same as with scripts.
+
+## Statistics
+
+Using a script's job history, PowerShell Universal will provide basic statistics about the execution of the script. These include success rate, average execution time, and breaks downs of environment, user and computer execution.&#x20;
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Script Stats</p></figcaption></figure>
 
 ## API
 

@@ -4,6 +4,117 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.4.0 - 3/11/2025
+
+### Features
+
+#### Admin Console
+
+* Add PSU Admin CLI (#4099)
+* Added script metrics to script page (#4191)
+* Added validate secret button on Windows (#4321)
+* Added Create App From Command button (#4383)
+* Added Import Windows Roles button (#4218)
+* Added Danish language support
+* Git commits now display line breaks for messages (#4318)
+
+#### Automation
+
+* Added least busy server load balancer for jobs (#3199)
+* Cancelling a parent job now cancels all child jobs (#4336)
+* Added View Jobs button to scripts table (#4353)
+* Added the option to not delete the script file when removing a script from the admin console (#4320)
+* Added support for run as of Group Managed Service Accounts (#2430)
+
+#### Apps
+
+* Added -LoadingComponent to New-UDIconButton (#4340)
+* Added -Version to New-UDGrid (#2159)
+* Added -ExportOptions to New-UDDataGrid
+* Added search to built in docs (#3042)
+
+#### APIs
+
+* Added history to the API tester (#4097)
+* Added -Timeout to Send-PSUEvent (#4354)
+* Added EventHubConnect and EventHubDisconnect to trigger types (#4394)
+* Added -Disabled to New-PSUEndpoint (#4407)
+* Added OpenAPI Example support (#4184)
+
+#### Git
+
+* Added Create Branch button (#4334, #3075)
+
+#### Platform
+
+* Updated to PowerShell 7.5.0 and .NET 9.0
+* Added .psuignore (#4195)
+* File system logging now defaults to specific log file folders (#4346)
+* Added Blocked File health check (#2609)
+* Added -Type parameter to Environments
+* Added Blank Item Templates (#4312)
+* Renamed agent logs to host.txt for PowerShell host processes (#4392)
+* Added -DisableFirstRun to Set-PSUSettings (#4399)
+* Added secret support to configuration files (#4397)
+* Groom job now cleans event hub connections (#4410)
+* Added PSScriptAnalyzer module to installation media
+* Debugger Environment is no longer needed
+
+#### Security
+
+* Added priority to roles for default routes (#4331)
+* New User Login trigger now provides effective roles (#3781)
+
+### Bug Fixes
+
+#### Admin Console
+
+* Fixed an issue with job stats on the home page (#4342)
+* Fixed an issue with the admin console link for non-administrator users in the portal (#4440)
+* Fixed an issue with the API stepper (#4441)
+* Fixed an issue expanding a git commit twice (#4430)
+* Fixed an issue working with large git repositories (#4347)
+* General performance improvements
+* Fixed an issue editing C# files
+
+#### Apps
+
+* Fixed an issue loading app modules on Linux in some scenarios (#4025)
+* Fixed an issue with background image stretching (#4269)
+* Fixed an issue with the table toolbar when there is no data in the table (#3755)
+* Fixed an issue with duplicate values in New-UDAutocomplete (#4454)
+* Fixed an issue with editing columns and rendered cells in New-UDDataGrid (#2539)
+
+#### Automation
+
+* Fixed an issue with the Default Run On setting and computer groups (#4333)
+
+#### Installer
+
+* Fixed an issue with the installer and custom appsettings.json files during upgrades (#4393)
+
+#### Module
+
+* Fixed an issue with Get-PSUAppToken -Id (#4412)
+* Fixed an issue with Grant-PSUAppToken (#4416, #4415)
+* Fixed issue loading module in Windows PowerShell
+
+#### Platform
+
+* Fixed an issue deleting identities (#4332)
+* Fixed an issue with psu cli's db migration tool to SQL (#4442)
+* Fixed an issue with SQLite the docker container default settings (#4447)
+* Fixed an issue where the login redirect would drop the query string (#4381)
+* Fixed an issue with grooming certain database tables (#4361)
+
+#### Portal
+
+* Fixed an issue with the built-in widgets and scripts in folders
+
+#### Security
+
+* Fixed an issue with statically assigned nested roles (#4432)
+
 ## 5.3.3 - 2/24/2025
 
 ### Bugs

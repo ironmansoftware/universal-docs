@@ -390,6 +390,34 @@ New-UDDataGrid -LoadRows {
 }
 ```
 
+### Multiple Export Types
+
+When using a custom export, you can use the `-ExportOptions`parameter to define multiple export types. When the user selects the export type, you can check the Type property of `$EventData`to  determine which type of export to produce.&#x20;
+
+```powershell
+$Data = @(
+    @{ name = 'Adam'; Number = Get-Random}
+    @{ name = 'Tom'; Number = Get-Random}
+    @{ name = 'Sarah'; Number = Get-Random}
+)
+
+New-UDDataGrid -LoadRows {
+    @{
+        rows = $Data 
+        rowCount = $Data.Length
+    }
+} -Columns @(
+    New-UDDataGridColumn -Field name
+    New-UDDataGridColumn -Field number
+) -OnExport {
+    if ($EventData.Type -eq 'CSV')
+    {
+        $ExportContent = $Data | ConvertTo-Csv -NoTypeInformation | Out-String
+        Out-UDDataGridExport -Data $ExportContent -FileName 'export.csv' 
+    }
+} -ExportOptions @("CSV", "PDF")
+```
+
 ## Example: Static Data
 
 In this example, we generate an array of 10,000 records. We will create a new function, `Out-UDDataGridData` to manage the paging, sorting and filtering. This function is already included in the [Universal module](../../../cmdlets/Out-UDDataGridData.txt).
