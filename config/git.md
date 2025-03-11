@@ -130,6 +130,7 @@ Manual mode can be set in the git settings within the admin console or within `a
   "GitInitializeBehavior": "",
   "GitSyncInterval": "1",
   "ConfigurationScript": "",
+  "ExternalGitClient": false
   "Mode": "Manual" // Or Automatic
 },
 ```
