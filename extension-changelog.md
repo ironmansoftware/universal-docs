@@ -4,6 +4,13 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 5.4.0 - 3/11/2025
+
+* Fixed issue with process information
+* Fixed an issue with empty values causing the extension to throw errors
+* Fixed an issue with the debuger
+* Fixed an issue saving an app module&#x20;
+
 ## 5.2.0 - 1/14/2025
 
 * Removed samples section
