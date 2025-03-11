@@ -30,6 +30,7 @@ PARAMETERS
         Position?                    named
         Default value                ([Guid]::NewGuid())
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Color <DashboardColor>
@@ -39,6 +40,7 @@ PARAMETERS
         Position?                    named
         Default value                black
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -FillColor <DashboardColor>
@@ -48,6 +50,7 @@ PARAMETERS
         Position?                    named
         Default value                black
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -FillOpacity <Double>
@@ -57,6 +60,7 @@ PARAMETERS
         Position?                    named
         Default value                0.5
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Weight <Int32>
@@ -66,6 +70,7 @@ PARAMETERS
         Position?                    named
         Default value                3
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Opacity <Double>
@@ -75,6 +80,7 @@ PARAMETERS
         Position?                    named
         Default value                1
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Circle [<SwitchParameter>]
@@ -84,6 +90,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Latitude <Double>
@@ -93,6 +100,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Longitude <Double>
@@ -102,6 +110,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Radius <Int32>
@@ -111,6 +120,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Polyline [<SwitchParameter>]
@@ -120,6 +130,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Polygon [<SwitchParameter>]
@@ -129,6 +140,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Positions <Object>
@@ -138,6 +150,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Rectangle [<SwitchParameter>]
@@ -147,6 +160,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LatitudeTopLeft <Double>
@@ -156,6 +170,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LongitudeTopLeft <Double>
@@ -165,6 +180,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LatitudeBottomRight <Double>
@@ -174,6 +190,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LongitudeBottomRight <Double>
@@ -183,6 +200,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Popup <Object>
@@ -192,6 +210,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -GeoJSON <String>
@@ -201,6 +220,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>

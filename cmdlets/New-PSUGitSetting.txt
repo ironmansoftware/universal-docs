@@ -3,7 +3,7 @@ NAME
     New-PSUGitSetting
     
 SYNOPSIS
-    Creates a new git remote repository configuration.
+    Creates a new git setting for a PowerShell Universal application. This setting is used to configure the git repository for the application.
     
     
 SYNTAX
@@ -11,134 +11,148 @@ SYNTAX
     
     
 DESCRIPTION
-    Creates a new git remote repository configuration.
+    Creates a new git setting for a PowerShell Universal application. This setting is used to configure the git repository for the application.
     
 
 PARAMETERS
     -AppToken <String>
-        An app token to access the PSU API.
+        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Branch <String>
-        The branch to sync with.
+        The branch of the git repository to use. You can switch branches later using the Set-PSUGitSetting cmdlet.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The HTTP address of the PSU REST API server.
+        The name of the PowerShell Universal server to connect to.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      Uri
         Accept wildcard characters?  false
         
     -Credential <PSCredential>
-        The credential to use to authenticate with the PSU REST API.
+        The credential used to connect to the PowerShell Universal server.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ExternalGit [<SwitchParameter>]
-        Use an external git client rather than the integrated client.
+        Whether to use an external git client.
         
         Required?                    false
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -GitCredential <PSCredential>
-        The credential to use to authenticate with the git repository.
+        The credential used to connect to the git repository.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        Whether to use the integrated PowerShell Universal Management API.
         
         Required?                    false
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Interval <Int32>
-        The interval to sync the git repository.
+        The interval in seconds to check for changes in the git repository.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Mode <GitMode>
-        The edit mode for the git repository in the admin console.
+        The git edit mode.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ProxyUrl <String>
-        The URL of the proxy server to use.
+        A proxy URL to use for the git repository.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Remote <String>
-        The URL of the git repository.
+        The URL of the remote git repository.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -SyncBehavior <GitSyncBehavior>
-        The sync behavior for the git repository.
+        The sync behavior of the git repository. This determines how changes are synchronized between the local and remote repositories.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -TrustCertificate [<SwitchParameter>]
-        Trust the certificate when connecting to the PSU REST API.
+        Whether to trust the certificate used by the git repository.
         
         Required?                    false
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
-        Use default credentials when connecting to the PSU REST API.
+        Whether to use default credentials when connecting to the PowerShell Universal Management API.
         
         Required?                    false
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -164,9 +178,14 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> New-PSUGitSetting -Remote 'https://github.com/username/repo.git' -Branch 'main' -SyncBehavior TwoWay
+    PS C:\> New-PSUGitSetting -Branch 'main' -Name 'MyApp'
     
-    Creates a new git remote repository configuration.
+    Creates a local git setting for the application named 'MyApp' with the branch set to 'main'.
+    -------------------------- Example 2 --------------------------
+    
+    PS C:\> New-PSUGitSetting -Remote 'https://www.example.com/repo.git' -Branch 'main' -Name 'MyApp'
+    
+    Creates a remote git setting for the application named 'MyApp' with the branch set to 'main' and the remote repository set to 'https://www.example.com/repo.git'.
     
 RELATED LINKS
 

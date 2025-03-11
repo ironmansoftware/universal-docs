@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    Show-UDSnackbar [-Message] <String> [[-Id] <String>] [[-AutoHideDuration] <Int32>] [-Persist] [[-Variant] <String>] [<CommonParameters>]
+    Show-UDSnackbar [-Message] <String> [[-Id] <String>] [[-AutoHideDuration] <Int32>] [-Persist] [[-Variant] <String>] [[-AnchorVertical] <String>] [[-AnchorHorizontal] <String>] [[-ClassName] <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    1
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Id <String>
@@ -31,6 +32,7 @@ PARAMETERS
         Position?                    2
         Default value                [Guid]::NewGuid()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -AutoHideDuration <Int32>
@@ -40,6 +42,7 @@ PARAMETERS
         Position?                    3
         Default value                5000
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Persist [<SwitchParameter>]
@@ -49,6 +52,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Variant <String>
@@ -58,6 +62,34 @@ PARAMETERS
         Position?                    4
         Default value                default
         Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -AnchorVertical <String>
+        
+        Required?                    false
+        Position?                    5
+        Default value                top
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -AnchorHorizontal <String>
+        
+        Required?                    false
+        Position?                    6
+        Default value                left
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        
+        Required?                    false
+        Position?                    7
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -88,6 +120,17 @@ OUTPUTS
     PS > }
     
     Error Snackbar|Shows an error snackbar with the message 'Hello World'.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDButton -Text 'Say Hello' -OnClick {
+    PS >   Show-UDSnackbar -Message 'Hello, World' -AnchorVertical 'bottom' -AnchorHorizontal 'right'
+    PS > }
+    
+    Position|Shows a snackbar in the bottom right corner of the screen.
     
     
     

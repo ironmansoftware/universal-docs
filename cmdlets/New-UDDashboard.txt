@@ -26,6 +26,7 @@ PARAMETERS
         Position?                    named
         Default value                PowerShell Universal
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Content <Endpoint>
@@ -35,6 +36,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Pages <DashboardPage[]>
@@ -44,6 +46,7 @@ PARAMETERS
         Position?                    named
         Default value                @()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Theme <Hashtable>
@@ -53,6 +56,7 @@ PARAMETERS
         Position?                    named
         Default value                (Get-UDTheme -Name $UDDefaultTheme)
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Scripts <String[]>
@@ -62,6 +66,7 @@ PARAMETERS
         Position?                    named
         Default value                @()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Stylesheets <String[]>
@@ -71,6 +76,7 @@ PARAMETERS
         Position?                    named
         Default value                @()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Logo <String>
@@ -80,6 +86,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DefaultTheme <String>
@@ -89,6 +96,7 @@ PARAMETERS
         Position?                    named
         Default value                Light
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisableThemeToggle [<SwitchParameter>]
@@ -98,6 +106,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -HeaderPosition <String>
@@ -107,6 +116,7 @@ PARAMETERS
         Position?                    named
         Default value                static
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -HeaderColor <DashboardColor>
@@ -116,6 +126,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -HeaderBackgroundColor <DashboardColor>
@@ -125,6 +136,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -NavigationLayout <String>
@@ -134,6 +146,7 @@ PARAMETERS
         Position?                    named
         Default value                Temporary
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Navigation <Hashtable[]>
@@ -143,6 +156,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -HideUserName [<SwitchParameter>]
@@ -152,6 +166,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -HideNavigation [<SwitchParameter>]
@@ -161,6 +176,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LoadNavigation <Endpoint>
@@ -170,6 +186,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -HeaderContent <Endpoint>
@@ -179,6 +196,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -PageNotFound <Endpoint>
@@ -188,6 +206,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -NotAuthorized <Endpoint>
@@ -197,6 +216,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -SessionTimeoutModal <ScriptBlock>
@@ -206,6 +226,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Menu <Endpoint>
@@ -215,6 +236,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>

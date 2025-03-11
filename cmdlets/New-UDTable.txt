@@ -24,6 +24,7 @@ PARAMETERS
         Position?                    named
         Default value                [Guid]::NewGuid().ToString()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Title <String>
@@ -33,6 +34,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Data <Object[]>
@@ -42,6 +44,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LoadRows <Endpoint>
@@ -64,6 +67,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Columns <Hashtable[]>
@@ -73,6 +77,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnRowSelection <Endpoint>
@@ -82,6 +87,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ShowSort [<SwitchParameter>]
@@ -91,6 +97,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ShowFilter [<SwitchParameter>]
@@ -100,6 +107,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ShowSearch [<SwitchParameter>]
@@ -109,6 +117,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Dense [<SwitchParameter>]
@@ -118,6 +127,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ShowExport [<SwitchParameter>]
@@ -127,6 +137,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -StickyHeader [<SwitchParameter>]
@@ -136,6 +147,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -PageSize <Int32>
@@ -145,6 +157,7 @@ PARAMETERS
         Position?                    named
         Default value                5
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -PageSizeOptions <Int32[]>
@@ -154,6 +167,7 @@ PARAMETERS
         Position?                    named
         Default value                @()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -PaginationLocation <String>
@@ -163,6 +177,7 @@ PARAMETERS
         Position?                    named
         Default value                bottom
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ShowSelection [<SwitchParameter>]
@@ -172,6 +187,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ShowPagination [<SwitchParameter>]
@@ -181,6 +197,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Padding <String>
@@ -189,6 +206,7 @@ PARAMETERS
         Position?                    named
         Default value                default
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Size <String>
@@ -198,6 +216,7 @@ PARAMETERS
         Position?                    named
         Default value                medium
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -TextOption <Hashtable>
@@ -207,6 +226,7 @@ PARAMETERS
         Position?                    named
         Default value                (New-UDTableTextOption)
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ExportOption <String[]>
@@ -216,6 +236,7 @@ PARAMETERS
         Position?                    named
         Default value                @("XLSX", "PDF", "JSON", "CSV")
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnExport <Endpoint>
@@ -225,6 +246,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisablePageSizeAll [<SwitchParameter>]
@@ -234,6 +256,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DefaultSortDirection <String>
@@ -243,6 +266,7 @@ PARAMETERS
         Position?                    named
         Default value                ascending
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -HideToggleAllRowsSelected [<SwitchParameter>]
@@ -252,6 +276,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisableMultiSelect [<SwitchParameter>]
@@ -261,6 +286,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisableSortRemove [<SwitchParameter>]
@@ -270,6 +296,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Icon <Hashtable>
@@ -279,6 +306,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ClassName <String>
@@ -288,6 +316,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ShowRefresh [<SwitchParameter>]
@@ -297,6 +326,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ToolbarContent <ScriptBlock>
@@ -306,6 +336,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnRowExpand <ScriptBlock>
@@ -315,6 +346,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -MaxHeight <Int32>
@@ -323,6 +355,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -AutoRefresh [<SwitchParameter>]
@@ -332,6 +365,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -AutoRefreshInterval <Int32>
@@ -341,6 +375,7 @@ PARAMETERS
         Position?                    named
         Default value                10
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Language <String>
@@ -350,6 +385,7 @@ PARAMETERS
         Position?                    named
         Default value                en
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -RemoveCard [<SwitchParameter>]
@@ -358,6 +394,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnRowStyle <ScriptBlock>
@@ -367,6 +404,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -HeaderStyle <Hashtable>
@@ -376,6 +414,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -InitialState <Hashtable>
@@ -384,6 +423,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -749,6 +789,34 @@ OUTPUTS
     PS > } -ShowSort
     
     Initial state|Set the initial state of the table. This can be used to set the page index, page size, filters, and order by column.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 15 --------------------------
+    
+    PS >$Data = @(
+    PS >     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 1; Protein = 4.0 }
+    PS >     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 150.0; Carbs = 34; Protein = 4.0 }
+    PS >     @{Dessert = 'Eclair'; Calories = 159; Fat = 100.0; Carbs = 73; Protein = 4.0 }
+    PS >     @{Dessert = 'Cupcake'; Calories = 159; Fat = 30.0; Carbs = 25; Protein = 4.0 }
+    PS >     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 99; Protein = 4.0 }
+    PS > )
+    PS > $Columns = @(
+    PS >     New-UDTableColumn -Property Dessert -Title "Dessert" 
+    PS >     New-UDTableColumn -Property Calories -Title "Calories" 
+    PS >     New-UDTableColumn -Property Fat -Title "Fat" 
+    PS >     New-UDTableColumn -Property Carbs -Title "Carbs"  -DefaultSortColumn
+    PS >     New-UDTableColumn -Property Protein -Title "Protein" 
+    PS > )
+    PS > New-UDTable -Data $Data -Id 'table14' -Columns $Columns -OnRowStyle {
+    PS >     if ($EventData.Fat -lt 10) { $Color = 'green' }
+    PS >     elseif ($EventData.Fat -ge 10 -and $EventData.Fat -lt 50) { $Color = 'Yellow' }
+    PS >     else { $Color = 'Red' }
+    PS >     @{ backgroundColor = $Color }    
+    PS > }
+    
+    Row coloring|Use OnRowStyle to style rows based on the row data.
     
     
     

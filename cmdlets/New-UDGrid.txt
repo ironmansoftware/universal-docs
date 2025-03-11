@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDGrid [-Id <String>] [-ExtraSmallSize <Int32>] [-SmallSize <Int32>] [-MediumSize <Int32>] [-LargeSize <Int32>] [-ExtraLargeSize <Int32>] [-Item] [-Children <ScriptBlock>] [-ClassName <String>] [-Direction <String>] [-RowSpacing <Object>] [-ColumnSpacing <Object>] [-JustifyContent <String>] [-AlignItems <String>] [<CommonParameters>]
+    New-UDGrid [-Id <String>] [-ExtraSmallSize <Int32>] [-SmallSize <Int32>] [-MediumSize <Int32>] [-LargeSize <Int32>] [-ExtraLargeSize <Int32>] [-Item] [-Children <ScriptBlock>] [-ClassName <String>] [-Direction <String>] [-RowSpacing <Object>] [-ColumnSpacing <Object>] [-JustifyContent <String>] [-AlignItems <String>] [-Version <String>] [<CommonParameters>]
     
-    New-UDGrid [-Id <String>] [-Container] [-Spacing <Int32>] [-Children <ScriptBlock>] [-ClassName <String>] [-Direction <String>] [-RowSpacing <Object>] [-ColumnSpacing <Object>] [-JustifyContent <String>] [-AlignItems <String>] [<CommonParameters>]
+    New-UDGrid [-Id <String>] [-Container] [-Spacing <Int32>] [-Children <ScriptBlock>] [-ClassName <String>] [-Direction <String>] [-RowSpacing <Object>] [-ColumnSpacing <Object>] [-JustifyContent <String>] [-AlignItems <String>] [-Version <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -24,6 +24,7 @@ PARAMETERS
         Position?                    named
         Default value                [Guid]::NewGuid().ToString()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ExtraSmallSize <Int32>
@@ -33,6 +34,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -SmallSize <Int32>
@@ -42,6 +44,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -MediumSize <Int32>
@@ -51,6 +54,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LargeSize <Int32>
@@ -60,6 +64,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ExtraLargeSize <Int32>
@@ -69,6 +74,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Container [<SwitchParameter>]
@@ -78,6 +84,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Spacing <Int32>
@@ -87,6 +94,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Item [<SwitchParameter>]
@@ -96,6 +104,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Children <ScriptBlock>
@@ -105,6 +114,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ClassName <String>
@@ -114,6 +124,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Direction <String>
@@ -123,6 +134,7 @@ PARAMETERS
         Position?                    named
         Default value                row
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -RowSpacing <Object>
@@ -132,6 +144,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ColumnSpacing <Object>
@@ -141,6 +154,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -JustifyContent <String>
@@ -150,6 +164,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -AlignItems <String>
@@ -159,6 +174,16 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Version <String>
+        
+        Required?                    false
+        Position?                    named
+        Default value                2
+        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>

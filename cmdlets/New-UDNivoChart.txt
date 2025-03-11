@@ -7,6 +7,8 @@ SYNOPSIS
     
     
 SYNTAX
+    New-UDNivoChart [-Id <String>] -Data <Object> [-Definitions <Object>] [-Fill <Object>] [-Theme <Hashtable>] [-MotionConfig <String>] [-BorderWidth <Int32>] [-BorderColor <String>] [-MaxValue <Int32>] [-Responsive] [-Width <Int32>] [-Height <Int32>] [-Colors <Object>] [-ColorBy <Object>] [-UseDataColor] [-DisableInteractive] [-OnClick <Endpoint>] [-MarginTop <Int32>] [-MarginRight <Int32>] [-MarginBottom <Int32>] [-MarginLeft <Int32>] [-StartAngle <Int32>] [-EndAngle <Int32>] [-InnerRadius <Single>] [-PadAngle <Int32>] [-CornerRadius <Int32>] [-RadialBar] [-DisableTracks] [-TracksColor <String>] [-DisableRadialGrid] [-DisableCircularGird] [-RadialAxisStart <Hashtable>] [-RadialAxisEnd <Hashtable>] [-CircluarAxisInner <Hashtable>] [-CircularAxisOuter <Hashtable>] [<CommonParameters>]
+    
     New-UDNivoChart [-Id <String>] -Data <Object> [-Definitions <Object>] [-Fill <Object>] [-Theme <Hashtable>] [-MotionConfig <String>] [-BorderWidth <Int32>] [-BorderColor <String>] [-Responsive] [-Width <Int32>] [-Height <Int32>] [-Colors <Object>] [-ColorBy <Object>] [-UseDataColor] [-DisableInteractive] [-OnClick <Endpoint>] [-MarginTop <Int32>] [-MarginRight <Int32>] [-MarginBottom <Int32>] [-MarginLeft <Int32>] [-DisableAnimations] [-DisableLabels] [-Identity <String>] [-Value <String>] [-LeavesOnly] [-CirclePacking] [<CommonParameters>]
     
     New-UDNivoChart [-Id <String>] -Data <Object> [-Definitions <Object>] [-Fill <Object>] [-Theme <Hashtable>] [-MotionConfig <String>] [-BorderWidth <Int32>] [-BorderColor <String>] [-Responsive] [-Width <Int32>] [-Height <Int32>] [-Colors <Object>] [-ColorBy <Object>] [-UseDataColor] [-DisableInteractive] [-OnClick <Endpoint>] [-MarginTop <Int32>] [-MarginRight <Int32>] [-MarginBottom <Int32>] [-MarginLeft <Int32>] [-InnerPadding <Single>] [-DisableLabel] [-Treemap] [-Identity <String>] [-Value <String>] [-Tile <String>] [-LeavesOnly] [-OuterPadding <Int32>] [<CommonParameters>]
@@ -38,6 +40,7 @@ PARAMETERS
         Position?                    named
         Default value                (New-Guid).ToString()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Data <Object>
@@ -47,6 +50,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Definitions <Object>
@@ -56,6 +60,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Fill <Object>
@@ -65,6 +70,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Theme <Hashtable>
@@ -74,6 +80,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -MotionConfig <String>
@@ -82,6 +89,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -BorderWidth <Int32>
@@ -91,6 +99,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -BorderColor <String>
@@ -100,6 +109,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -IndexBy <String>
@@ -109,6 +119,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -MinValue <Int32>
@@ -118,6 +129,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -MaxValue <Int32>
@@ -127,6 +139,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Padding <Single>
@@ -136,6 +149,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Responsive [<SwitchParameter>]
@@ -145,6 +159,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Width <Int32>
@@ -154,6 +169,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Height <Int32>
@@ -163,6 +179,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Colors <Object>
@@ -172,6 +189,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ColorBy <Object>
@@ -181,6 +199,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -UseDataColor [<SwitchParameter>]
@@ -190,6 +209,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisableInteractive [<SwitchParameter>]
@@ -199,6 +219,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnClick <Endpoint>
@@ -208,6 +229,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -MarginTop <Int32>
@@ -217,6 +239,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -MarginRight <Int32>
@@ -226,6 +249,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -MarginBottom <Int32>
@@ -235,6 +259,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -MarginLeft <Int32>
@@ -244,6 +269,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LabelSkipWidth <Int32>
@@ -253,6 +279,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LabelSkipHeight <Int32>
@@ -262,6 +289,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LabelTextColor <String>
@@ -271,6 +299,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -EnableGridX [<SwitchParameter>]
@@ -280,6 +309,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -GridXValues <Object[]>
@@ -289,6 +319,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -EnableGridY [<SwitchParameter>]
@@ -298,6 +329,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -GridYValues <Object[]>
@@ -307,6 +339,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisableAnimations [<SwitchParameter>]
@@ -316,6 +349,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Keys <String[]>
@@ -325,6 +359,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Layers <String[]>
@@ -334,6 +369,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DotSize <Int32>
@@ -343,6 +379,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DotBorderWidth <Int32>
@@ -352,6 +389,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisableStackTooltip [<SwitchParameter>]
@@ -361,6 +399,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -AxisTop <Object>
@@ -370,6 +409,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -AxisBottom <Object>
@@ -379,6 +419,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -AxisLeft <Object>
@@ -388,6 +429,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -AxisRight <Object>
@@ -397,6 +439,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Bar [<SwitchParameter>]
@@ -406,6 +449,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -GroupMode <String>
@@ -415,6 +459,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Layout <String>
@@ -424,6 +469,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Reverse [<SwitchParameter>]
@@ -433,6 +479,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -InnerPadding <Single>
@@ -442,6 +489,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -BorderRadius <Int32>
@@ -451,6 +499,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisableLabel [<SwitchParameter>]
@@ -460,6 +509,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Calendar [<SwitchParameter>]
@@ -469,6 +519,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -From <DateTime>
@@ -478,6 +529,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -To <DateTime>
@@ -487,6 +539,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -EmptyColor <Object>
@@ -496,6 +549,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -YearSpacing <Int32>
@@ -505,6 +559,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -YearLegendOffset <Int32>
@@ -514,6 +569,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -MonthSpacing <Int32>
@@ -523,6 +579,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -MonthLegendOffset <Int32>
@@ -532,6 +589,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DaySpacing <Int32>
@@ -541,6 +599,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DayLegendOffset <Int32>
@@ -550,6 +609,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -CellOpacity <Single>
@@ -559,6 +619,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -CellBorderWidth <Int32>
@@ -568,6 +629,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Heatmap [<SwitchParameter>]
@@ -577,6 +639,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ForceSquare [<SwitchParameter>]
@@ -586,6 +649,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -SizeVariation <Int32>
@@ -595,6 +659,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisableLabels [<SwitchParameter>]
@@ -604,6 +669,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Line [<SwitchParameter>]
@@ -613,6 +679,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LineWidth <Int32>
@@ -622,6 +689,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -EnableArea [<SwitchParameter>]
@@ -631,6 +699,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -AreaBaselineValue <String>
@@ -640,6 +709,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -AreaOpacity <Single>
@@ -649,6 +719,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -AreaBlendMode <String>
@@ -658,6 +729,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisableDots [<SwitchParameter>]
@@ -667,6 +739,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -EnableDotLabel [<SwitchParameter>]
@@ -676,6 +749,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DotLabelYOffset <Int32>
@@ -685,6 +759,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -YScaleStacked [<SwitchParameter>]
@@ -694,6 +769,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -YScaleMin <Int32>
@@ -703,6 +779,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -YScaleMax <Int32>
@@ -712,6 +789,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Pie [<SwitchParameter>]
@@ -721,6 +799,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -StartAngle <Int32>
@@ -730,6 +809,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -EndAngle <Int32>
@@ -739,6 +819,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Fit <Boolean>
@@ -748,6 +829,7 @@ PARAMETERS
         Position?                    named
         Default value                True
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -InnerRadius <Single>
@@ -757,6 +839,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -PadAngle <Int32>
@@ -766,6 +849,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -CornerRadius <Int32>
@@ -775,6 +859,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -SortByValue [<SwitchParameter>]
@@ -784,6 +869,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisableRadiusLabels [<SwitchParameter>]
@@ -793,6 +879,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -RadiusLabelSkipAngle <Int32>
@@ -802,6 +889,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -RadiusLabelsLinkOffset <Int32>
@@ -811,6 +899,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -RadialLabelsLinkDiagonalLength <Int32>
@@ -820,6 +909,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -RadialLabelsLinkHorizontalLength <Int32>
@@ -829,6 +919,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -RadialLabelsTextXOffset <Int32>
@@ -838,6 +929,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -RadialLabelsLinkStrokeWidth <Int32>
@@ -847,6 +939,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisableSliceLabels [<SwitchParameter>]
@@ -856,6 +949,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisableArcLinkLabels [<SwitchParameter>]
@@ -865,6 +959,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ArcLinkLabel <String>
@@ -874,6 +969,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisableArcLabels [<SwitchParameter>]
@@ -883,6 +979,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -SlicesLabelsSkipAngle <Int32>
@@ -892,6 +989,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -SlicesLabelsTextColor <Int32>
@@ -901,6 +999,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Stream [<SwitchParameter>]
@@ -910,6 +1009,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OffsetType <String>
@@ -919,6 +1019,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Order <String>
@@ -928,6 +1029,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Curve <String>
@@ -937,6 +1039,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -FillOpactiy <Single>
@@ -946,6 +1049,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DotColor <String>
@@ -955,6 +1059,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Treemap [<SwitchParameter>]
@@ -964,6 +1069,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Identity <String>
@@ -973,6 +1079,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Value <String>
@@ -982,6 +1089,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Tile <String>
@@ -991,6 +1099,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LeavesOnly [<SwitchParameter>]
@@ -1000,6 +1109,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OuterPadding <Int32>
@@ -1009,6 +1119,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -CirclePacking [<SwitchParameter>]
@@ -1018,6 +1129,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Network [<SwitchParameter>]
@@ -1027,6 +1139,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LinkDistance <Int32>
@@ -1035,6 +1148,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -CenteringStrength <Double>
@@ -1043,6 +1157,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Repulsivity <Int32>
@@ -1051,6 +1166,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DistanceMin <Int32>
@@ -1059,6 +1175,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DistanceMax <Int32>
@@ -1067,6 +1184,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Iterations <Int32>
@@ -1075,6 +1193,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -NodeColor <String>
@@ -1083,6 +1202,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -NodeBorderColor <String>
@@ -1091,6 +1211,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LinkThickness <Int32>
@@ -1099,6 +1220,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LinkColor <String>
@@ -1107,15 +1229,99 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LinkBlendMode <String>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -RadialBar [<SwitchParameter>]
+        region Radial Bar
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -DisableTracks [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -TracksColor <String>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -DisableRadialGrid [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -DisableCircularGird [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -RadialAxisStart <Hashtable>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -RadialAxisEnd <Hashtable>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -CircluarAxisInner <Hashtable>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -CircularAxisOuter <Hashtable>
         endregion
         
         Required?                    false
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -1257,6 +1463,41 @@ OUTPUTS
     
     -------------------------- EXAMPLE 6 --------------------------
     
+    PS >$Data = @(
+    PS >     [PSCustomObject]@{
+    PS >         id = "Supermarket"
+    PS >         data = @(
+    PS >             @{ "x" = "meat"; "y" = 10 }
+    PS >             @{ "x" = "fish"; "y" = 20 }
+    PS >             @{ "x" = "milk"; "y" = 30 }
+    PS >         ) 
+    PS >     }
+    PS >     [PSCustomObject]@{
+    PS >         id = "Gas station"
+    PS >         data = @(
+    PS >             @{ "x" = "meat"; "y" = 20 }
+    PS >             @{ "x" = "fish"; "y" = 30 }
+    PS >             @{ "x" = "milk"; "y" = 40 }
+    PS >         )
+    PS >     }
+    PS >     [PSCustomObject]@{
+    PS >         id = "Restaurant"
+    PS >         data = @(
+    PS >             @{ "x" = "meat"; "y" = 30 }
+    PS >             @{ "x" = "fish"; "y" = 40 }
+    PS >             @{ "x" = "milk"; "y" = 50 }
+    PS >         )
+    PS >     }
+    PS > )
+    PS > New-UDNivoChart -RadialBar -Data $Data -Height 370 -Responsive -MarginLeft 150 -MarginTop 1
+    
+    Radial bar chart|Creates a simple radial bar chart.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 7 --------------------------
+    
     PS >$Data = 1..10 | ForEach-Object { 
     PS >     @{
     PS >         "Adam" = Get-Random 
@@ -1273,7 +1514,7 @@ OUTPUTS
     
     
     
-    -------------------------- EXAMPLE 7 --------------------------
+    -------------------------- EXAMPLE 8 --------------------------
     
     PS >$Data = $([PSCustomObject]@{
     PS >         value = 30

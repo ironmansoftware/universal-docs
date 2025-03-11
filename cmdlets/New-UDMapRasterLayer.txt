@@ -24,6 +24,7 @@ PARAMETERS
         Position?                    named
         Default value                ([Guid]::NewGuid())
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -TileServer <String>
@@ -33,6 +34,7 @@ PARAMETERS
         Position?                    named
         Default value                https://a.tile.openstreetmap.org/{z}/{x}/{y}.png
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ApiKey <String>
@@ -42,6 +44,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Type <String>
@@ -51,6 +54,7 @@ PARAMETERS
         Position?                    named
         Default value                Aerial
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Bing [<SwitchParameter>]
@@ -60,6 +64,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Attribution <String>
@@ -69,6 +74,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Opacity <Int32>
@@ -78,6 +84,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ZIndex <Int32>
@@ -87,6 +94,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Name <String>
@@ -96,6 +104,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>

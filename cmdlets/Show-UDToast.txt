@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    1
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -MessageColor <DashboardColor>
@@ -31,6 +32,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -MessageSize <String>
@@ -40,6 +42,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Duration <Int32>
@@ -49,6 +52,7 @@ PARAMETERS
         Position?                    named
         Default value                1000
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Title <String>
@@ -58,6 +62,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -TitleColor <DashboardColor>
@@ -67,6 +72,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -TitleSize <String>
@@ -76,6 +82,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Id <String>
@@ -85,6 +92,7 @@ PARAMETERS
         Position?                    named
         Default value                [Guid]::NewGuid()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -BackgroundColor <DashboardColor>
@@ -94,6 +102,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Theme <String>
@@ -103,6 +112,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Icon <Object>
@@ -112,6 +122,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -IconColor <DashboardColor>
@@ -121,6 +132,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Position <String>
@@ -130,6 +142,7 @@ PARAMETERS
         Position?                    named
         Default value                topRight
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -HideCloseButton [<SwitchParameter>]
@@ -139,6 +152,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -CloseOnClick [<SwitchParameter>]
@@ -148,6 +162,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -CloseOnEscape [<SwitchParameter>]
@@ -157,6 +172,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ReplaceToast [<SwitchParameter>]
@@ -166,6 +182,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -RightToLeft [<SwitchParameter>]
@@ -175,6 +192,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Balloon [<SwitchParameter>]
@@ -184,6 +202,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Overlay [<SwitchParameter>]
@@ -193,6 +212,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OverlayClose [<SwitchParameter>]
@@ -202,6 +222,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OverlayColor <DashboardColor>
@@ -211,6 +232,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -TransitionIn <String>
@@ -220,6 +242,7 @@ PARAMETERS
         Position?                    named
         Default value                fadeInUp
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -TransitionOut <String>
@@ -229,6 +252,7 @@ PARAMETERS
         Position?                    named
         Default value                fadeOut
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Broadcast [<SwitchParameter>]
@@ -238,6 +262,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Persistent [<SwitchParameter>]
@@ -247,6 +272,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>

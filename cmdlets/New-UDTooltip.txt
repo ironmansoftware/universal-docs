@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    1
         Default value                [Guid]::NewGuid()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Placement <String>
@@ -30,6 +31,7 @@ PARAMETERS
         Position?                    2
         Default value                top
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -TooltipContent <ScriptBlock>
@@ -39,6 +41,7 @@ PARAMETERS
         Position?                    3
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Content <ScriptBlock>
@@ -48,6 +51,7 @@ PARAMETERS
         Position?                    4
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Sx <Hashtable>
@@ -57,6 +61,7 @@ PARAMETERS
         Position?                    5
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Arrow [<SwitchParameter>]
@@ -66,6 +71,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -FollowCursor [<SwitchParameter>]
@@ -75,6 +81,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Type <String>
@@ -84,6 +91,7 @@ PARAMETERS
         Position?                    6
         Default value                dark
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -EnterDelay <Int32>
@@ -93,6 +101,7 @@ PARAMETERS
         Position?                    7
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LeaveDelay <Int32>
@@ -102,6 +111,7 @@ PARAMETERS
         Position?                    8
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Open <Boolean>
@@ -111,6 +121,7 @@ PARAMETERS
         Position?                    9
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnOpen <Endpoint>
@@ -120,6 +131,7 @@ PARAMETERS
         Position?                    10
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnClose <Endpoint>
@@ -129,6 +141,7 @@ PARAMETERS
         Position?                    11
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Persistent [<SwitchParameter>]
@@ -137,6 +150,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>

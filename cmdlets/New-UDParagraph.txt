@@ -24,6 +24,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Text <String>
@@ -33,6 +34,7 @@ PARAMETERS
         Position?                    named
         Default value                Hello
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Color <DashboardColor>
@@ -42,6 +44,7 @@ PARAMETERS
         Position?                    named
         Default value                black
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>

@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDDataGrid [[-Id] <String>] [[-Columns] <Hashtable[]>] [[-LoadRows] <Endpoint>] [[-Height] <String>] [[-AutoHeight] <Boolean>] [-AutoPageSize] [-CheckboxSelection] [-CheckboxSelectionVisibleOnly] [[-ColumnBuffer] <Int32>] [[-ColumnThreshold] <Int32>] [[-Density] <String>] [[-PageSize] <Int32>] [[-RowsPerPageOptions] <Int32[]>] [-ShowPagination] [[-OnSelectionChange] <Endpoint>] [[-Language] <String>] [[-LoadDetailContent] <Endpoint>] [[-DetailHeight] <String>] [[-OnEdit] <Endpoint>] [[-OnExport] <Endpoint>] [-ShowQuickFilter] [[-DefaultSortColumn] <String>] [[-DefaultSortDirection] <String>] [-DisableRowSelectionOnClick] [-HideExport] [[-RowHeight] <Int32>] [[-IdentityColumn] <String>] [-StripedRows] [-HeaderFilters] [-AutoSizeColumns] [<CommonParameters>]
+    New-UDDataGrid [[-Id] <String>] [[-Columns] <Hashtable[]>] [[-LoadRows] <Endpoint>] [[-Height] <String>] [[-AutoHeight] <Boolean>] [-AutoPageSize] [-CheckboxSelection] [-CheckboxSelectionVisibleOnly] [[-ColumnBuffer] <Int32>] [[-ColumnThreshold] <Int32>] [[-Density] <String>] [[-PageSize] <Int32>] [[-RowsPerPageOptions] <Int32[]>] [-ShowPagination] [[-OnSelectionChange] <Endpoint>] [[-Language] <String>] [[-LoadDetailContent] <Endpoint>] [[-DetailHeight] <String>] [[-OnEdit] <Endpoint>] [[-OnExport] <Endpoint>] [-ShowQuickFilter] [[-DefaultSortColumn] <String>] [[-DefaultSortDirection] <String>] [-DisableRowSelectionOnClick] [-HideExport] [[-RowHeight] <Int32>] [[-IdentityColumn] <String>] [-StripedRows] [-HeaderFilters] [-AutoSizeColumns] [[-ExportOptions] <String[]>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    1
         Default value                [Guid]::NewGuid()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Columns <Hashtable[]>
@@ -31,6 +32,7 @@ PARAMETERS
         Position?                    2
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LoadRows <Endpoint>
@@ -40,6 +42,7 @@ PARAMETERS
         Position?                    3
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Height <String>
@@ -49,6 +52,7 @@ PARAMETERS
         Position?                    4
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -AutoHeight <Boolean>
@@ -58,6 +62,7 @@ PARAMETERS
         Position?                    5
         Default value                True
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -AutoPageSize [<SwitchParameter>]
@@ -67,6 +72,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -CheckboxSelection [<SwitchParameter>]
@@ -76,6 +82,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -CheckboxSelectionVisibleOnly [<SwitchParameter>]
@@ -85,6 +92,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ColumnBuffer <Int32>
@@ -94,6 +102,7 @@ PARAMETERS
         Position?                    6
         Default value                3
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ColumnThreshold <Int32>
@@ -102,6 +111,7 @@ PARAMETERS
         Position?                    7
         Default value                3
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Density <String>
@@ -111,6 +121,7 @@ PARAMETERS
         Position?                    8
         Default value                standard
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -PageSize <Int32>
@@ -120,6 +131,7 @@ PARAMETERS
         Position?                    9
         Default value                5
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -RowsPerPageOptions <Int32[]>
@@ -129,6 +141,7 @@ PARAMETERS
         Position?                    10
         Default value                @(5, 10, 25)
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ShowPagination [<SwitchParameter>]
@@ -138,6 +151,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnSelectionChange <Endpoint>
@@ -146,6 +160,7 @@ PARAMETERS
         Position?                    11
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Language <String>
@@ -155,6 +170,7 @@ PARAMETERS
         Position?                    12
         Default value                en-US
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LoadDetailContent <Endpoint>
@@ -164,6 +180,7 @@ PARAMETERS
         Position?                    13
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DetailHeight <String>
@@ -173,6 +190,7 @@ PARAMETERS
         Position?                    14
         Default value                auto
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnEdit <Endpoint>
@@ -182,6 +200,7 @@ PARAMETERS
         Position?                    15
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnExport <Endpoint>
@@ -191,6 +210,7 @@ PARAMETERS
         Position?                    16
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ShowQuickFilter [<SwitchParameter>]
@@ -200,6 +220,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DefaultSortColumn <String>
@@ -209,6 +230,7 @@ PARAMETERS
         Position?                    17
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DefaultSortDirection <String>
@@ -218,6 +240,7 @@ PARAMETERS
         Position?                    18
         Default value                asc
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisableRowSelectionOnClick [<SwitchParameter>]
@@ -227,6 +250,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -HideExport [<SwitchParameter>]
@@ -236,6 +260,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -RowHeight <Int32>
@@ -245,6 +270,7 @@ PARAMETERS
         Position?                    19
         Default value                -1
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -IdentityColumn <String>
@@ -254,6 +280,7 @@ PARAMETERS
         Position?                    20
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -StripedRows [<SwitchParameter>]
@@ -263,6 +290,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -HeaderFilters [<SwitchParameter>]
@@ -272,6 +300,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -AutoSizeColumns [<SwitchParameter>]
@@ -281,6 +310,16 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -ExportOptions <String[]>
+        
+        Required?                    false
+        Position?                    21
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -378,22 +417,23 @@ OUTPUTS
     
     -------------------------- EXAMPLE 5 --------------------------
     
-    PS >New-UDDataGrid -LoadRows {
-    PS >     $Data = @(
-    PS >         @{ Name = 'Adam'; number = Get-Random }
-    PS >         @{ Name = 'Tom'; number = Get-Random }
-    PS >         @{ Name = 'Sarah'; number = Get-Random }
-    PS >     )
-    PS >     @{
-    PS >         rows     = $Data 
-    PS >         rowCount = $Data.Length
-    PS >     }
+    PS >$Cache:Data = @(
+    PS >     @{ Name = 'Adam'; number = Get-Random }
+    PS >     @{ Name = 'Tom'; number = Get-Random }
+    PS >     @{ Name = 'Sarah'; number = Get-Random }
+    PS > )
+    PS > New-UDDataGrid -LoadRows {
+    PS >     $Cache:Data| Out-UDDataGridData -Context $EventData -TotalRows $Cache:Data.Length
     PS > } -Columns @(
-    PS >     New-UDDataGridColumn -Field 'Name' -Editable
-    PS >     New-UDDataGridColumn -Field 'Number' -Editable
-    PS > ) -OnEdit {
-    PS >     Show-UDToast "Editing $Body" 
-    PS > } -Id 'dataGrid5'
+    PS >     New-UDDataGridColumn -Field name -Render {
+    PS >         New-UDButton -Text $EventData.number
+    PS >     }
+    PS >     New-UDDataGridColumn -Field number -Editable
+    PS > ) -AutoHeight $true -OnEdit {
+    PS >     $Cache:Data | Where-Object { $_.Name -eq $EventData.NewRow.Name } | ForEach-Object {
+    PS >         $_.Number = $EventData.NewRow.Number
+    PS >     }
+    PS > } -Id 'datagrid5
     
     Editing|Adds support for editing rows.
     

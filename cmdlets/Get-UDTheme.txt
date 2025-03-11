@@ -24,6 +24,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -NavigationStyle <String>
@@ -33,6 +34,7 @@ PARAMETERS
         Position?                    named
         Default value                theme
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Current [<SwitchParameter>]
@@ -41,6 +43,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>

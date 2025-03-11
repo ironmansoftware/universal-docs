@@ -3,52 +3,56 @@ NAME
     Publish-PSUDeployment
     
 SYNOPSIS
-    Published a new deployment to a PowerShell Universal server.
+    Creates a deployment to a PowerShell Universal server.
     
     
 SYNTAX
-    Publish-PSUDeployment [-AppToken <String>] [-ComputerName <String>] [-Credential <PSCredential>] [-Integrated] -Name <String> [-TrustCertificate] [-UseDefaultCredentials] -Version <String> [<CommonParameters>]
+    Publish-PSUDeployment [-AppToken <String>] [-ComputerName <String>] [-Credential <PSCredential>] [-Integrated] -Name <String> [-Synchronous] [-TrustCertificate] [-UseDefaultCredentials] -Version <String> [<CommonParameters>]
     
     
 DESCRIPTION
-    Published a new deployment to a PowerShell Universal server.
+    Creates a deployment to a PowerShell Universal server.
     
 
 PARAMETERS
     -AppToken <String>
-        An app token to access the PSU API.
+        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The computer name or URL of the PowerShell Universal server.
+        The HTTP address of the PSU Management API.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      Uri
         Accept wildcard characters?  false
         
     -Credential <PSCredential>
-        The credentials to use to authenticate with the PowerShell Universal server.
+        The credentials used to connect to the PowerShell Universal server. This is only used if the server is not using default credentials.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        Whether to use integrated mode for this cmdlet.
         
         Required?                    false
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Name <String>
@@ -58,24 +62,37 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Synchronous [<SwitchParameter>]
+        Whether to wait for the deployment to complete before returning.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -TrustCertificate [<SwitchParameter>]
-        Trust the certificate when using SSL.
+        Whether to trust the certificate of the PowerShell Universal server.
         
         Required?                    false
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
-        Use the default credentials to authenticate with the PowerShell Universal server.
+        Whether to use default credentials when connecting to the PowerShell Universal server.
         
         Required?                    false
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Version <String>
@@ -85,6 +102,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -110,9 +128,9 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> Publish-PSUDeployment -Name 'MyDashboard' -Version '1.0.0'
+    PS C:\> Publish-PSUDeployment -Name 'MyApp' -Version '1.0.0'
     
-    Published a new deployment to the PowerShell Universal server.
+    Creates a deployment for the application named 'MyApp' with the
     
 RELATED LINKS
 

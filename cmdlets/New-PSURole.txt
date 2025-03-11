@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSURole [-AppToken <String>] [-ComputerName <String>] [-Description <String>] -Name <String> [-Policy <ScriptBlock>] [-UseDefaultCredentials] [-Integrated] [-Disabled] [-DefaultRoute <String>] [-Roles <String[]>] [-Credential <PSCredential>] [-Permissions <String[]>] [-TrustCertificate] [<CommonParameters>]
+    New-PSURole [-AppToken <String>] [-ComputerName <String>] [-Description <String>] -Name <String> [-Policy <ScriptBlock>] [-UseDefaultCredentials] [-Integrated] [-Disabled] [-DefaultRoute <String>] [-Roles <String[]>] [-Credential <PSCredential>] [-Permissions <String[]>] [-TrustCertificate] [-Priority <Int32>] [<CommonParameters>]
     
-    New-PSURole [-AppToken <String>] [-ComputerName <String>] [-Description <String>] -Name <String> [-UseDefaultCredentials] [-Integrated] -ClaimType <String> -ClaimValue <String> [-Disabled] [-DefaultRoute <String>] [-Roles <String[]>] [-Credential <PSCredential>] [-Permissions <String[]>] [-TrustCertificate] [<CommonParameters>]
+    New-PSURole [-AppToken <String>] [-ComputerName <String>] [-Description <String>] -Name <String> [-UseDefaultCredentials] [-Integrated] -ClaimType <String> -ClaimValue <String> [-Disabled] [-DefaultRoute <String>] [-Roles <String[]>] [-Credential <PSCredential>] [-Permissions <String[]>] [-TrustCertificate] [-Priority <Int32>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -30,6 +30,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ComputerName <String>
@@ -39,6 +40,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      Uri
         Accept wildcard characters?  false
         
     -Description <String>
@@ -48,6 +50,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Name <String>
@@ -57,6 +60,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Policy <ScriptBlock>
@@ -66,6 +70,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
@@ -75,6 +80,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
@@ -84,6 +90,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ClaimType <String>
@@ -93,6 +100,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ClaimValue <String>
@@ -102,6 +110,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Disabled [<SwitchParameter>]
@@ -111,6 +120,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -DefaultRoute <String>
@@ -120,6 +130,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Roles <String[]>
@@ -129,6 +140,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Credential <PSCredential>
@@ -138,6 +150,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Permissions <String[]>
@@ -147,6 +160,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -TrustCertificate [<SwitchParameter>]
@@ -156,6 +170,17 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Priority <Int32>
+        The priority of this role. Determines which redirect to use when multiple roles are assigned to a user.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     <CommonParameters>

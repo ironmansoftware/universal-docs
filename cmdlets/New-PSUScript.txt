@@ -7,11 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSUScript [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableManualInvocation] [-ManualTime <Int32>] [-MaxHistory <Int32>] -Name <String> [-Notes <String>] [-Parameter <ScriptParameter[]>] [-Path <String>] -ScriptBlock <ScriptBlock> [-Status {Draft | Pending_Review | Published | Disabled}] [-Tag <Tag[]>] [-ConcurrentJobs <Int32>] [-Environment <String>] [-TimeOut <Double>] [-Credential <Variable>] [-UseDefaultCredentials] [-Integrated] [-RetryLimit <Int32>] [-DiscardPipeline] [-LoadProfile] [-WorkingDirectory <String>] [-Role <String[]>] [-AvailableInBranch <String[]>] [-PortalOutputType <PortalOutputType>] [-TrustCertificate] [<CommonParameters>]
+    New-PSUScript [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableManualInvocation] [-ManualTime <Int32>] [-MaxHistory <Int32>] -Name <String> [-Notes <String>] [-Parameter <ScriptParameter[]>] [-Path <String>] -ScriptBlock <ScriptBlock> [-Status {Draft | Pending_Review | Published | Disabled}] [-Tag <Tag[]>] [-ConcurrentJobs <Int32>] [-Environment <String>] [-TimeOut <Double>] [-Credential <Variable>] [-UseDefaultCredentials] [-Integrated] [-RetryLimit <Int32>] [-DiscardPipeline] [-LoadProfile] [-WorkingDirectory <String>] [-Role <String[]>] [-AvailableInBranch <String[]>] [-PortalOutputType <PortalOutputType>] [-TrustCertificate] [-PortalOpenInNewWindow] [<CommonParameters>]
     
-    New-PSUScript [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableManualInvocation] [-ManualTime <Int32>] [-MaxHistory <Int32>] -Name <String> [-Notes <String>] [-Parameter <ScriptParameter[]>] -Path <String> [-Status {Draft | Pending_Review | Published | Disabled}] [-Tag <Tag[]>] [-ConcurrentJobs <Int32>] [-Environment <String>] [-TimeOut <Double>] [-Credential <Variable>] [-UseDefaultCredentials] [-Integrated] [-RetryLimit <Int32>] [-DiscardPipeline] [-LoadProfile] [-WorkingDirectory <String>] [-Role <String[]>] [-AvailableInBranch <String[]>] [-PortalOutputType <PortalOutputType>] [-TrustCertificate] [<CommonParameters>]
+    New-PSUScript [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableManualInvocation] [-ManualTime <Int32>] [-MaxHistory <Int32>] -Name <String> [-Notes <String>] [-Parameter <ScriptParameter[]>] -Path <String> [-Status {Draft | Pending_Review | Published | Disabled}] [-Tag <Tag[]>] [-ConcurrentJobs <Int32>] [-Environment <String>] [-TimeOut <Double>] [-Credential <Variable>] [-UseDefaultCredentials] [-Integrated] [-RetryLimit <Int32>] [-DiscardPipeline] [-LoadProfile] [-WorkingDirectory <String>] [-Role <String[]>] [-AvailableInBranch <String[]>] [-PortalOutputType <PortalOutputType>] [-TrustCertificate] [-PortalOpenInNewWindow] [<CommonParameters>]
     
-    New-PSUScript [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableManualInvocation] [-ManualTime <Int32>] [-MaxHistory <Int32>] [-Notes <String>] [-Parameter <ScriptParameter[]>] [-Status {Draft | Pending_Review | Published | Disabled}] [-Tag <Tag[]>] [-ConcurrentJobs <Int32>] [-Environment <String>] [-TimeOut <Double>] [-Credential <Variable>] [-UseDefaultCredentials] [-Integrated] [-RetryLimit <Int32>] [-DiscardPipeline] [-LoadProfile] [-WorkingDirectory <String>] -Command <String> -Module <String> [-Role <String[]>] [-AvailableInBranch <String[]>] [-PortalOutputType <PortalOutputType>] [-TrustCertificate] [<CommonParameters>]
+    New-PSUScript [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableManualInvocation] [-ManualTime <Int32>] [-MaxHistory <Int32>] [-Notes <String>] [-Parameter <ScriptParameter[]>] [-Status {Draft | Pending_Review | Published | Disabled}] [-Tag <Tag[]>] [-ConcurrentJobs <Int32>] [-Environment <String>] [-TimeOut <Double>] [-Credential <Variable>] [-UseDefaultCredentials] [-Integrated] [-RetryLimit <Int32>] [-DiscardPipeline] [-LoadProfile] [-WorkingDirectory <String>] -Command <String> -Module <String> [-Role <String[]>] [-AvailableInBranch <String[]>] [-PortalOutputType <PortalOutputType>] [-TrustCertificate] [-PortalOpenInNewWindow] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -30,6 +30,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ComputerName <String>
@@ -39,6 +40,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      Uri
         Accept wildcard characters?  false
         
     -Description <String>
@@ -48,6 +50,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -DisableManualInvocation [<SwitchParameter>]
@@ -57,6 +60,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ManualTime <Int32>
@@ -66,6 +70,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -MaxHistory <Int32>
@@ -75,6 +80,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Name <String>
@@ -84,6 +90,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Notes <String>
@@ -93,6 +100,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Parameter <ScriptParameter[]>
@@ -102,6 +110,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Path <String>
@@ -111,6 +120,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ScriptBlock <ScriptBlock>
@@ -120,6 +130,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Status <ScriptStatus>
@@ -129,6 +140,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Tag <Tag[]>
@@ -138,6 +150,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ConcurrentJobs <Int32>
@@ -147,6 +160,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Environment <String>
@@ -156,6 +170,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -TimeOut <Double>
@@ -165,6 +180,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Credential <Variable>
@@ -174,6 +190,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
@@ -183,6 +200,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
@@ -192,6 +210,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -RetryLimit <Int32>
@@ -201,6 +220,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -DiscardPipeline [<SwitchParameter>]
@@ -210,6 +230,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -LoadProfile [<SwitchParameter>]
@@ -219,6 +240,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -WorkingDirectory <String>
@@ -228,6 +250,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Command <String>
@@ -237,6 +260,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Module <String>
@@ -246,6 +270,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Role <String[]>
@@ -255,6 +280,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -AvailableInBranch <String[]>
@@ -264,6 +290,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -PortalOutputType <PortalOutputType>
@@ -273,6 +300,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -TrustCertificate [<SwitchParameter>]
@@ -282,6 +310,17 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -PortalOpenInNewWindow [<SwitchParameter>]
+        Whether to open this script in a new window when viewing it in the portal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     <CommonParameters>

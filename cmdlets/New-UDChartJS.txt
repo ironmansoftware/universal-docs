@@ -26,6 +26,7 @@ PARAMETERS
         Position?                    named
         Default value                [Guid]::NewGuid()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DatasetLabel <String>
@@ -35,6 +36,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Type <String>
@@ -44,6 +46,7 @@ PARAMETERS
         Position?                    named
         Default value                bar
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Options <Hashtable>
@@ -53,6 +56,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnClick <Endpoint>
@@ -62,6 +66,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Data <Object>
@@ -71,6 +76,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LoadData <Endpoint>
@@ -89,6 +95,7 @@ PARAMETERS
                     New-UDChartJSDataset -Data ($Data | Select-Object -Expand AvailableRam) -DataProperty AvailableRam -Label 'Available RAM' -BackgroundColor '#126f8c' -BorderWidth 1
                 }
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Dataset <Hashtable[]>
@@ -98,6 +105,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DataProperty <String>
@@ -107,6 +115,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LabelProperty <String>
@@ -116,6 +125,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -BackgroundColor <DashboardColor[]>
@@ -125,6 +135,7 @@ PARAMETERS
         Position?                    named
         Default value                @("#808978FF")
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -BorderColor <DashboardColor[]>
@@ -134,6 +145,7 @@ PARAMETERS
         Position?                    named
         Default value                @("#FF8978FF")
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -HoverBackgroundColor <DashboardColor[]>
@@ -143,6 +155,7 @@ PARAMETERS
         Position?                    named
         Default value                @("#807B210C")
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -HoverBorderColor <DashboardColor[]>
@@ -152,6 +165,7 @@ PARAMETERS
         Position?                    named
         Default value                @("#FF7B210C")
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -BorderWidth <Int32>
@@ -161,6 +175,7 @@ PARAMETERS
         Position?                    named
         Default value                1
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>
