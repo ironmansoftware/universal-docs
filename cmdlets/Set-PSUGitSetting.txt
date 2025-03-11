@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Branch <String>
@@ -31,6 +32,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ComputerName <String>
@@ -40,6 +42,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      Uri
         Accept wildcard characters?  false
         
     -Credential <PSCredential>
@@ -49,6 +52,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ExternalGit [<SwitchParameter>]
@@ -58,6 +62,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -GitCredential <PSCredential>
@@ -67,6 +72,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
@@ -76,6 +82,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Interval <Int32>
@@ -85,6 +92,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Mode <GitMode>
@@ -94,6 +102,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ProxyUrl <String>
@@ -103,6 +112,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Remote <String>
@@ -112,6 +122,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -SyncBehavior <GitSyncBehavior>
@@ -121,6 +132,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -TrustCertificate [<SwitchParameter>]
@@ -130,6 +142,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
@@ -139,15 +152,17 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Settings <GitSettings>
-        {{ Fill Settings Description }}
+        The settings to set for git.
         
         Required?                    true
         Position?                    named
         Default value                None
         Accept pipeline input?       True (ByValue)
+        Aliases                      none
         Accept wildcard characters?  false
         
     <CommonParameters>

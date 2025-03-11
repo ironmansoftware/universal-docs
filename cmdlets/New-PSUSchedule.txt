@@ -13,9 +13,19 @@ SYNTAX
     
     New-PSUSchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-OneTime <DateTime>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [-AvailableInBranch <String[]>] [-Computer <String>] [-Parameters <Hashtable>] [-RandomDelayMaximum <Int32>] [-TrustCertificate] [<CommonParameters>]
     
+    New-PSUSchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [-AvailableInBranch <String[]>] [-Computer <String>] [-Parameters <Hashtable>] [-RandomDelayMaximum <Int32>] [-TrustCertificate] -Day <String[]> -DayOfWeek [-Hour <Int32>] [-Minute <Int32>] [<CommonParameters>]
+    
+    New-PSUSchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [-AvailableInBranch <String[]>] [-Computer <String>] [-Parameters <Hashtable>] [-RandomDelayMaximum <Int32>] [-TrustCertificate] -DayOfMonth <Int32> -EveryMonth [-Hour <Int32>] [-Minute <Int32>] [<CommonParameters>]
+    
+    New-PSUSchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [-AvailableInBranch <String[]>] [-Computer <String>] [-Parameters <Hashtable>] [-RandomDelayMaximum <Int32>] [-TrustCertificate] -DayOfMonth <Int32> [-Hour <Int32>] [-Minute <Int32>] -Month <String[]> -SpecificMonth [<CommonParameters>]
+    
+    New-PSUSchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [-AvailableInBranch <String[]>] [-Computer <String>] [-Parameters <Hashtable>] [-RandomDelayMaximum <Int32>] [-TrustCertificate] -EveryDay [-Hour <Int32>] [-Minute <Int32>] [<CommonParameters>]
+    
+    New-PSUSchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [-AvailableInBranch <String[]>] [-Computer <String>] [-Parameters <Hashtable>] [-RandomDelayMaximum <Int32>] [-TrustCertificate] -EveryHour [-Minute <Int32>] [<CommonParameters>]
+    
     
 DESCRIPTION
-    Creates a new schedule within PSU. Schedules allow you to automate when jobs run and run jobs continously.
+    Creates a new schedule within PSU. Schedules allow you to automate when jobs run and run jobs continuously.
     
 
 PARAMETERS
@@ -26,6 +36,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ComputerName <String>
@@ -35,6 +46,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      Uri
         Accept wildcard characters?  false
         
     -Continuous [<SwitchParameter>]
@@ -44,6 +56,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Credential <Variable>
@@ -53,6 +66,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Cron <String>
@@ -62,6 +76,7 @@ PARAMETERS
         Position?                    2
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Delay <TimeSpan>
@@ -71,6 +86,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -DelayHour <Int32>
@@ -80,6 +96,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -DelayMinute <Int32>
@@ -89,6 +106,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -DelaySecond <Int32>
@@ -98,6 +116,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Script <Script>
@@ -107,6 +126,7 @@ PARAMETERS
         Position?                    1
         Default value                None
         Accept pipeline input?       True (ByValue)
+        Aliases                      none
         Accept wildcard characters?  false
         
     -TimeZone <String>
@@ -116,6 +136,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Environment <String>
@@ -125,15 +146,17 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -OneTime <DateTime>
-        Whether this is a one-time schedule.
+        Schedules at a time in the future. The initial time zone is determined by the Kind property of the DateTime object. It the kind is Unknown, it will be assumed to be UTC.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Description <String>
@@ -143,6 +166,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Name <String>
@@ -152,6 +176,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
@@ -161,6 +186,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Condition <ScriptBlock>
@@ -170,6 +196,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
@@ -179,6 +206,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Paused [<SwitchParameter>]
@@ -188,6 +216,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Timeout <Int32>
@@ -197,6 +226,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -RandomDelay [<SwitchParameter>]
@@ -206,6 +236,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -AvailableInBranch <String[]>
@@ -215,6 +246,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Computer <String>
@@ -224,6 +256,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Parameters <Hashtable>
@@ -233,6 +266,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -RandomDelayMaximum <Int32>
@@ -242,6 +276,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -TrustCertificate [<SwitchParameter>]
@@ -251,6 +286,107 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Day <String[]>
+        The day of the week to run the script.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -DayOfMonth <Int32>
+        The day of the month to run the script.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -DayOfWeek [<SwitchParameter>]
+        The day of the week to run the script.
+        
+        Required?                    true
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -EveryDay [<SwitchParameter>]
+        Whether to run the script every day.
+        
+        Required?                    true
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -EveryHour [<SwitchParameter>]
+        Whether to run the script every hour.
+        
+        Required?                    true
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -EveryMonth [<SwitchParameter>]
+        Whether to run the script every month.
+        
+        Required?                    true
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Hour <Int32>
+        The hour to run the script.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Minute <Int32>
+        The minute to run the script.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Month <String[]>
+        The months to run the script.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -SpecificMonth [<SwitchParameter>]
+        Whether to run the script in specific months.
+        
+        Required?                    true
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -276,24 +412,29 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> $Script = Get-UAScript -Name 'Script1.ps1'
+    PS C:\> $Script = Get-PSUScript -Name 'Script1.ps1'
     PS C:\> New-PSUSchedule -Script $Script -Cron '*/5 * * * *'
     
     Creates a new schedule that runs every five minutes.
     -------------------------- Example 2 --------------------------
     
-    PS C:\> $Password = Get-UAVariable -Name 'password'
-    PS C:\> $Credential = New-UACredential -Name 'adam' -Password $Password
-    PS C:\> $Script = Get-UAScript -Name 'Script1.ps1'
-    PS C:\> New-PSUSchedule -Script $Script -Cron '*/5 * * * *'
+    PS C:\> $Script = Get-PSUScript -Name 'Script1.ps1'
+    PS C:\> New-PSUSchedule -Script $Script -Cron '*/5 * * * *' -Credential $Secret:Credential
     
     Creates a new schedule that runs every five minutes as 'adam'.
     -------------------------- Example 3 --------------------------
     
-    PS C:\> $Script = Get-UAScript -Name 'Script1.ps1'
+    PS C:\> $Script = Get-PSUScript -Name 'Script1.ps1'
     PS C:\> New-PSUSchedule -Script $Script -Continous -DelayMinute 5
     
-    Creates a schedule that runs conintously. It will start a new job once the previous one finishes with a delay of 5 minutes inbetween executions.
+    Creates a schedule that runs continuously. It will start a new job once the previous one finishes with a delay of 5 minutes inbetween executions.
+    -------------------------- Example 4 --------------------------
+    
+    PS C:\> $Script = Get-PSUScript -Name 'Script1.ps1'
+    PS C:\> $Time = (Get-Date).AddMinutes(30).ToUniversalTime()
+    PS C:\> New-PSUSchedule -Script $Script -OneTime $Time -TimeZone "America/Phoenix"
+    
+    Creates a schedule that runs once in 30 minutes in the 'America/Phoenix' time zone.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

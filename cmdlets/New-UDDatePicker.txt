@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDDatePicker [[-Id] <String>] [[-Label] <String>] [[-Variant] <String>] [-DisableToolbar] [[-OnChange] <Endpoint>] [[-Format] <String>] [[-Value] <DateTime>] [[-Locale] <String>] [[-ClassName] <String>] [[-MinimumDate] <DateTime>] [[-MaximumDate] <DateTime>] [[-TimeZone] <Object>] [-Disabled] [[-Views] <String[]>] [<CommonParameters>]
+    New-UDDatePicker [[-Id] <String>] [[-Label] <String>] [[-Variant] <String>] [-DisableToolbar] [[-OnChange] <Endpoint>] [[-Format] <String>] [[-Value] <DateTime>] [[-Locale] <String>] [[-ClassName] <String>] [[-MinimumDate] <DateTime>] [[-MaximumDate] <DateTime>] [[-TimeZone] <Object>] [-Disabled] [[-Views] <String[]>] [-ShowTime] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    1
         Default value                [Guid]::NewGuid().ToString()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Label <String>
@@ -31,6 +32,7 @@ PARAMETERS
         Position?                    2
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Variant <String>
@@ -40,6 +42,7 @@ PARAMETERS
         Position?                    3
         Default value                inline
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisableToolbar [<SwitchParameter>]
@@ -49,6 +52,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnChange <Endpoint>
@@ -58,6 +62,7 @@ PARAMETERS
         Position?                    4
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Format <String>
@@ -67,6 +72,7 @@ PARAMETERS
         Position?                    5
         Default value                MM/DD/YYYY
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Value <DateTime>
@@ -76,6 +82,7 @@ PARAMETERS
         Position?                    6
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Locale <String>
@@ -85,6 +92,7 @@ PARAMETERS
         Position?                    7
         Default value                en
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ClassName <String>
@@ -94,6 +102,7 @@ PARAMETERS
         Position?                    8
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -MinimumDate <DateTime>
@@ -103,6 +112,7 @@ PARAMETERS
         Position?                    9
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -MaximumDate <DateTime>
@@ -112,6 +122,7 @@ PARAMETERS
         Position?                    10
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -TimeZone <Object>
@@ -121,6 +132,7 @@ PARAMETERS
         Position?                    11
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Disabled [<SwitchParameter>]
@@ -130,6 +142,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Views <String[]>
@@ -139,6 +152,17 @@ PARAMETERS
         Position?                    12
         Default value                @("day")
         Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -ShowTime [<SwitchParameter>]
+        Show time in the date picker.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -239,6 +263,24 @@ OUTPUTS
     PS >New-UDDatePicker -Id 'datepicker10' -Value '1-2-2020' -Disabled
     
     Disabled date picker|Creates a new date picker with the default date value and disabled.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 11 --------------------------
+    
+    PS >New-UDDatePicker -Id 'datepicker11' -Value '1-2-2020' -Views @('day', 'year')
+    
+    Date picker with views|Creates a new date picker with the default date value and only the day and year views.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 12 --------------------------
+    
+    PS >New-UDDatePicker -Id 'datepicker12' -Value '1-2-2020' -ShowTime -Views @('day', 'year', 'hours', 'minutes')
+    
+    Date picker with time|Creates a new date picker with the default date value and time.
     
     
     

@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    1
         Default value                [Guid]::NewGuid()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Accept <String>
@@ -31,6 +32,7 @@ PARAMETERS
         Position?                    2
         Default value                *
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnUpload <Endpoint>
@@ -54,6 +56,7 @@ PARAMETERS
         Position?                    3
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Text <String>
@@ -63,6 +66,7 @@ PARAMETERS
         Position?                    4
         Default value                Upload
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Variant <String>
@@ -72,6 +76,7 @@ PARAMETERS
         Position?                    5
         Default value                contained
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Color <String>
@@ -81,6 +86,7 @@ PARAMETERS
         Position?                    6
         Default value                primary
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ClassName <String>
@@ -90,6 +96,7 @@ PARAMETERS
         Position?                    7
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -HideUploadedFileName [<SwitchParameter>]
@@ -99,6 +106,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ShowLoading [<SwitchParameter>]
@@ -108,6 +116,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LoadingIndicator <Object>
@@ -117,6 +126,7 @@ PARAMETERS
         Position?                    8
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LoadingPosition <String>
@@ -126,6 +136,7 @@ PARAMETERS
         Position?                    9
         Default value                center
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Icon <Object>
@@ -135,6 +146,7 @@ PARAMETERS
         Position?                    10
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -IconAlignment <String>
@@ -144,6 +156,7 @@ PARAMETERS
         Position?                    11
         Default value                left
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>

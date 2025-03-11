@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -PatternId <String>
@@ -31,6 +32,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      GradientId
         Accept wildcard characters?  false
         
     <CommonParameters>

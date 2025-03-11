@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    1
         Default value                [Guid]::NewGuid().ToString()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Data <Int32[]>
@@ -31,6 +32,7 @@ PARAMETERS
         Position?                    2
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Limit <Int32>
@@ -40,6 +42,7 @@ PARAMETERS
         Position?                    3
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Width <Int32>
@@ -49,6 +52,7 @@ PARAMETERS
         Position?                    4
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Height <Int32>
@@ -58,6 +62,7 @@ PARAMETERS
         Position?                    5
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Margin <Int32>
@@ -67,6 +72,7 @@ PARAMETERS
         Position?                    6
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Color <DashboardColor>
@@ -76,6 +82,7 @@ PARAMETERS
         Position?                    7
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Type <Object>
@@ -85,6 +92,7 @@ PARAMETERS
         Position?                    8
         Default value                bars
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Min <Int32>
@@ -94,6 +102,7 @@ PARAMETERS
         Position?                    9
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Max <Int32>
@@ -103,6 +112,7 @@ PARAMETERS
         Position?                    10
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>

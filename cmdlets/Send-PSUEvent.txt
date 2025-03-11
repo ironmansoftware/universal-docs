@@ -7,13 +7,13 @@ SYNOPSIS
     
     
 SYNTAX
-    Send-PSUEvent [-AppToken <String>] [-ComputerName <String>] [-Data <Object>] [-Integrated] [-UseDefaultCredentials] -Computer <String> [-Credential <PSCredential>] [-TrustCertificate] [<CommonParameters>]
+    Send-PSUEvent [-AppToken <String>] [-ComputerName <String>] [-Data <Object>] -Hub <String> [-Integrated] [-UseDefaultCredentials] [-ConnectionId <String>] [-Credential <PSCredential>] [-TrustCertificate] [-Timeout <Int32>] [<CommonParameters>]
     
-    Send-PSUEvent [-AppToken <String>] [-ComputerName <String>] [-Data <Object>] -Hub <String> [-Integrated] [-UseDefaultCredentials] [-ConnectionId <String>] [-Credential <PSCredential>] [-TrustCertificate] [<CommonParameters>]
+    Send-PSUEvent [-AppToken <String>] [-ComputerName <String>] [-Data <Object>] [-Integrated] [-UseDefaultCredentials] -Computer <String> [-Credential <PSCredential>] [-TrustCertificate] [-Timeout <Int32>] [<CommonParameters>]
     
-    Send-PSUEvent [-AppToken <String>] [-ComputerName <String>] -Hub <String> [-Integrated] [-UseDefaultCredentials] [-ConnectionId <String>] [-Command <String>] [-Credential <PSCredential>] [-Parameters <Hashtable>] [-TrustCertificate] [<CommonParameters>]
+    Send-PSUEvent [-AppToken <String>] [-ComputerName <String>] -Hub <String> [-Integrated] [-UseDefaultCredentials] [-ConnectionId <String>] [-Command <String>] [-Credential <PSCredential>] [-Parameters <Hashtable>] [-TrustCertificate] [-Timeout <Int32>] [<CommonParameters>]
     
-    Send-PSUEvent [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-Command <String>] -Computer <String> [-Credential <PSCredential>] [-Parameters <Hashtable>] [-TrustCertificate] [<CommonParameters>]
+    Send-PSUEvent [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-Command <String>] -Computer <String> [-Credential <PSCredential>] [-Parameters <Hashtable>] [-TrustCertificate] [-Timeout <Int32>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -28,6 +28,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ComputerName <String>
@@ -37,6 +38,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      Uri
         Accept wildcard characters?  false
         
     -Data <Object>
@@ -46,6 +48,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Hub <String>
@@ -55,6 +58,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
@@ -64,6 +68,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
@@ -73,6 +78,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ConnectionId <String>
@@ -82,6 +88,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Command <String>
@@ -91,6 +98,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Computer <String>
@@ -100,6 +108,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Credential <PSCredential>
@@ -109,6 +118,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Parameters <Hashtable>
@@ -118,6 +128,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -TrustCertificate [<SwitchParameter>]
@@ -127,6 +138,17 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Timeout <Int32>
+        The timeout in seconds for the command to run.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     <CommonParameters>

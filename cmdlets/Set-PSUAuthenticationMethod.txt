@@ -9,7 +9,7 @@ SYNOPSIS
 SYNTAX
     Set-PSUAuthenticationMethod [-AppToken <String>] [-ComputerName <String>] [-ScriptBlock <ScriptBlock>] [-Disabled] [-UseDefaultCredentials] [-Authority <String>] -CallbackPath <String> -ClientId <String> [-ClientSecret <String>] [-Configure <ScriptBlock>] [-CorrelationCookieSameSite <String>] [-GetClaimsFromUserInfoEndpoint <Boolean>] [-Integrated] [-Resource <String>] [-ResponseType <String>] [-SaveTokens <Boolean>] [-Scopes <String>] [-Type <AuthenticationMethodType>] [-UseTokenLifetime <Boolean>] [-RequireMfa] [-Credential <PSCredential>] [-TrustCertificate] [<CommonParameters>]
     
-    Set-PSUAuthenticationMethod [-AppToken <String>] [-ComputerName <String>] [-ScriptBlock <ScriptBlock>] [-Disabled] [-UseDefaultCredentials] -CallbackPath <String> [-Configure <ScriptBlock>] -EntityId <String> [-IdentityProviderEntityId <String>] [-Integrated] [-MetadataAddress <String>] [-ServiceCertificate <String>] [-Type <AuthenticationMethodType>] [-SigningKey <String>] [-SingleSignOnServiceUrl <String>] [-AllowUnsolicitedAuthnResponse] [-Credential <PSCredential>] [-TrustCertificate] [<CommonParameters>]
+    Set-PSUAuthenticationMethod [-AppToken <String>] [-ComputerName <String>] [-ScriptBlock <ScriptBlock>] [-Disabled] [-UseDefaultCredentials] -CallbackPath <String> [-Configure <ScriptBlock>] [-EntityId <String>] [-IdentityProviderEntityId <String>] [-Integrated] [-MetadataAddress <String>] [-ServiceCertificate <String>] [-Type <AuthenticationMethodType>] [-SigningKey <String>] [-SingleSignOnServiceUrl <String>] [-AllowUnsolicitedAuthnResponse] [-Credential <PSCredential>] [-TrustCertificate] [-LoadMetadata] [-NameIdPolicy <String>] [<CommonParameters>]
     
     Set-PSUAuthenticationMethod [-AppToken <String>] [-ComputerName <String>] [-ScriptBlock <ScriptBlock>] [-Disabled] [-UseDefaultCredentials] -CallbackPath <String> [-Configure <ScriptBlock>] [-CorrelationCookieSameSite <String>] [-Integrated] -MetadataAddress <String> [-Type <AuthenticationMethodType>] [-UseTokenLifetime <Boolean>] -Wreply <String> -Wtrealm <String> [-Credential <PSCredential>] [-TrustCertificate] [<CommonParameters>]
     
@@ -32,6 +32,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ComputerName <String>
@@ -41,6 +42,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      Uri
         Accept wildcard characters?  false
         
     -ScriptBlock <ScriptBlock>
@@ -50,6 +52,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Disabled [<SwitchParameter>]
@@ -59,6 +62,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
@@ -68,6 +72,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Authority <String>
@@ -77,6 +82,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -CallbackPath <String>
@@ -86,6 +92,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ClientId <String>
@@ -95,6 +102,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ClientSecret <String>
@@ -104,6 +112,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Configure <ScriptBlock>
@@ -113,6 +122,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -CorrelationCookieSameSite <String>
@@ -122,15 +132,17 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -EntityId <String>
         The entity ID for SAML2 authentication.
         
-        Required?                    true
+        Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -GetClaimsFromUserInfoEndpoint <Boolean>
@@ -140,6 +152,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -IdentityProviderEntityId <String>
@@ -149,6 +162,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
@@ -158,6 +172,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -MetadataAddress <String>
@@ -167,6 +182,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      MetadataUrl
         Accept wildcard characters?  false
         
     -Resource <String>
@@ -176,6 +192,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ResponseType <String>
@@ -185,6 +202,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -SaveTokens <Boolean>
@@ -194,6 +212,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Scopes <String>
@@ -203,6 +222,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ServiceCertificate <String>
@@ -212,6 +232,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Type <AuthenticationMethodType>
@@ -221,6 +242,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -UseTokenLifetime <Boolean>
@@ -230,6 +252,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Wreply <String>
@@ -239,6 +262,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Wtrealm <String>
@@ -248,6 +272,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -RequireMfa [<SwitchParameter>]
@@ -257,6 +282,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -SigningKey <String>
@@ -266,6 +292,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -SingleSignOnServiceUrl <String>
@@ -275,6 +302,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -LogoutUrl <String>
@@ -284,6 +312,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -AllowUnsolicitedAuthnResponse [<SwitchParameter>]
@@ -293,6 +322,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Credential <PSCredential>
@@ -302,6 +332,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -TrustCertificate [<SwitchParameter>]
@@ -311,6 +342,27 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -LoadMetadata [<SwitchParameter>]
+        Whether to load metadata for SAML2 authentication.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -NameIdPolicy <String>
+        The SAML2 Name ID policy.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     <CommonParameters>

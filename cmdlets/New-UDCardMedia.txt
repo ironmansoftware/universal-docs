@@ -24,6 +24,7 @@ PARAMETERS
         Position?                    named
         Default value                ([Guid]::NewGuid()).ToString()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Component <String>
@@ -33,6 +34,7 @@ PARAMETERS
         Position?                    named
         Default value                img
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Alt <String>
@@ -42,6 +44,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Height <String>
@@ -51,6 +54,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Image <String>
@@ -60,6 +64,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Title <String>
@@ -69,6 +74,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Source <String>
@@ -78,6 +84,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Sx <Hashtable>
@@ -86,6 +93,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Style <Hashtable>
@@ -94,6 +102,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>

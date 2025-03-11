@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Authentication [<SwitchParameter>]
@@ -31,6 +32,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ComputerName <String>
@@ -40,6 +42,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      Uri
         Accept wildcard characters?  false
         
     -Definition <ScriptBlock>
@@ -49,6 +52,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Description <String>
@@ -58,6 +62,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
@@ -67,6 +72,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Name <String>
@@ -76,6 +82,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Role <String[]>
@@ -85,6 +92,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Url <String>
@@ -94,6 +102,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
@@ -103,6 +112,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Credential <PSCredential>
@@ -112,6 +122,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -TrustCertificate [<SwitchParameter>]
@@ -121,6 +132,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ContactEmail <String>
@@ -130,6 +142,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ContactName <String>
@@ -139,6 +152,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ContactUrl <String>
@@ -148,6 +162,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -LicenseName <String>
@@ -157,6 +172,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -LicenseUrl <String>
@@ -166,6 +182,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -TermsOfServiceUrl <String>
@@ -175,6 +192,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Version <String>
@@ -184,6 +202,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     <CommonParameters>

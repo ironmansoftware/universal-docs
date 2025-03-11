@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    1
         Default value                ([Guid]::NewGuid())
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Label <String>
@@ -31,6 +32,7 @@ PARAMETERS
         Position?                    2
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Placeholder <String>
@@ -40,6 +42,7 @@ PARAMETERS
         Position?                    3
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Value <String>
@@ -49,6 +52,7 @@ PARAMETERS
         Position?                    4
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Type <String>
@@ -58,6 +62,7 @@ PARAMETERS
         Position?                    5
         Default value                text
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Disabled [<SwitchParameter>]
@@ -67,6 +72,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Icon <Object>
@@ -76,6 +82,7 @@ PARAMETERS
         Position?                    6
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Autofocus [<SwitchParameter>]
@@ -85,6 +92,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Multiline [<SwitchParameter>]
@@ -94,6 +102,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Rows <Int32>
@@ -103,6 +112,7 @@ PARAMETERS
         Position?                    7
         Default value                -1
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -RowsMax <Int32>
@@ -112,6 +122,7 @@ PARAMETERS
         Position?                    8
         Default value                9999
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -FullWidth [<SwitchParameter>]
@@ -121,6 +132,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Variant <String>
@@ -130,6 +142,7 @@ PARAMETERS
         Position?                    9
         Default value                standard
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ClassName <String>
@@ -139,6 +152,7 @@ PARAMETERS
         Position?                    10
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnEnter <Endpoint>
@@ -148,6 +162,7 @@ PARAMETERS
         Position?                    11
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnBlur <Endpoint>
@@ -157,6 +172,7 @@ PARAMETERS
         Position?                    12
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Shrink [<SwitchParameter>]
@@ -166,6 +182,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnValidate <Endpoint>
@@ -175,6 +192,7 @@ PARAMETERS
         Position?                    13
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -HelperText <String>
@@ -184,6 +202,7 @@ PARAMETERS
         Position?                    14
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnChange <Endpoint>
@@ -193,6 +212,7 @@ PARAMETERS
         Position?                    15
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Minimum <Int32>
@@ -202,6 +222,7 @@ PARAMETERS
         Position?                    16
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Maximum <Int32>
@@ -211,6 +232,7 @@ PARAMETERS
         Position?                    17
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -MaximumLength <Int32>
@@ -220,6 +242,7 @@ PARAMETERS
         Position?                    18
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Sx <Hashtable>
@@ -229,6 +252,7 @@ PARAMETERS
         Position?                    19
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Style <Hashtable>
@@ -238,6 +262,7 @@ PARAMETERS
         Position?                    20
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>

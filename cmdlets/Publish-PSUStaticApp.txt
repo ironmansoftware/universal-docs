@@ -3,7 +3,7 @@ NAME
     Publish-PSUStaticApp
     
 SYNOPSIS
-    Publish a new PowerShell Universal static app.
+    Publishes a static app based on the PowerShell Universal app framework.
     
     
 SYNTAX
@@ -11,35 +11,38 @@ SYNTAX
     
     
 DESCRIPTION
-    Publish a new PowerShell Universal static app.
+    Publishes a static app based on the PowerShell Universal app framework. Static apps can be hosted outside of PowerShell Universal.
     
 
 PARAMETERS
     -Definition <ScriptBlock>
-        The definition of the static app.
+        The definition of the static app. This is a script block that contains the definition of the app. The script block should contain a call to `New-UDApp` with the content of the app.
         
         Required?                    true
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -DestinationPath <String>
-        The path to publish the static app to.
+        The path to the directory where the static app will be published. This path must be a valid file system path.
         
         Required?                    true
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Force [<SwitchParameter>]
-        Forces the publishing of the static app. Removes the destination path if it exists.
+        If specified, the cmdlet will overwrite any existing files in the destination path without prompting for confirmation.
         
         Required?                    false
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -65,13 +68,9 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> Publish-PSUStaticApp -Definition {
-        New-UDApp -Name 'MyApp' -Content {
-            New-UDButton -Text 'Hello!'
-        }
-    } -DestinationPath 'C:\MyApp'
+    PS C:\> Publish-PSUStaticApp -Definition { New-UDApp -Content { New-UDTypography "Hello!" } } -DestinationPath 'C:\MyStaticApp'
     
-    Publishes a new static app to the 'C:\MyApp' directory.
+    Creates a static app in the path `C:\MyStaticApp` based on the definition provided.
     
 RELATED LINKS
 

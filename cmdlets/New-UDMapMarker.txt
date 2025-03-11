@@ -24,6 +24,7 @@ PARAMETERS
         Position?                    named
         Default value                ([Guid]::NewGuid())
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Longitude <Single>
@@ -33,6 +34,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Latitude <Single>
@@ -42,6 +44,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Attribution <String>
@@ -51,6 +54,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Opacity <Int32>
@@ -60,6 +64,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ZIndex <Int32>
@@ -69,6 +74,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Popup <Hashtable>
@@ -78,6 +84,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Icon <Hashtable>
@@ -87,6 +94,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -GeoJSON <String>
@@ -96,6 +104,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>

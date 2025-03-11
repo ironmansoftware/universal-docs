@@ -11,7 +11,7 @@ SYNTAX
     
     
 DESCRIPTION
-    Sets branding for PowerShell Universal.
+    {{ Fill in the Description }}
     
 
 PARAMETERS
@@ -22,15 +22,17 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -AppBarLogo <String>
-        The URL to the app bar logo.
+        The URL of the logo to use in the app bar.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -AppNotRunningDescription <String>
@@ -40,33 +42,37 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -AppToken <String>
-        The app token to access the PowerShell Universal server.
+        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The name or URL of the PowerShell Universal server.
+        Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      Uri
         Accept wildcard characters?  false
         
     -Copyright <String>
-        The copyright text to display.
+        The copyright text to display in the footer.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Credential <PSCredential>
@@ -76,195 +82,217 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -CssStylesheet <String[]>
-        A list of CSS stylesheets to include.
+        The URL of the CSS stylesheet to use for branding.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -CssStylesheetIntegrity <String[]>
-        The integrity of the CSS stylesheets.
+        The integrity attribute for the CSS stylesheet.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Favicon <String>
-        The URL to the favicon.
+        The URL of the favicon to use for branding.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -HeaderColor <String>
-        The admin console header color.
+        The header background color.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -HeaderFontColor <String>
-        The admin console header font color.
+        The header font color.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        Whether the cmdlet should use the integrated PowerShell Universal Management API.
         
         Required?                    false
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -LoggedOut <String>
-        The text to display when logged out.
+        The text to display when the user is logged out.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -LoggedOutDescription <String>
-        The description to display when logged out.
+        The text to display when the user is logged out.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -LoginPageDescription <String>
-        The login page description.
+        The description to display on the login page.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -LoginPageImage <String>
-        {{ Fill LoginPageImage Description }}
+        The URL of the image to use on the login page.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      Image
         Accept wildcard characters?  false
         
     -LoginPageLinks <LoginPageLink[]>
-        {{ Fill LoginPageLinks Description }}
+        The links to display on the login page.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -LoginPageText <String>
-        {{ Fill LoginPageText Description }}
+        The text to display on the login page.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -LoginPageTitle <String>
-        {{ Fill LoginPageTitle Description }}
+        The title to display on the login page.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      Title
         Accept wildcard characters?  false
         
     -NotAuthorizedDescription <String>
-        {{ Fill NotAuthorizedDescription Description }}
+        The description to display when the user is not authorized.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -NotAuthorizedTitle <String>
-        {{ Fill NotAuthorizedTitle Description }}
+        The title to display when the user is not authorized.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -PageNotFoundDescription <String>
-        {{ Fill PageNotFoundDescription Description }}
+        The description to display when the page is not found.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -PageNotFoundTitle <String>
-        {{ Fill PageNotFoundTitle Description }}
+        The title to display when the page is not found.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -PrimaryColor <String>
-        {{ Fill PrimaryColor Description }}
+        The primary color to use for branding.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -PrimaryFontColor <String>
-        {{ Fill PrimaryFontColor Description }}
+        The primary font color to use for branding.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -SecondaryColor <String>
-        {{ Fill SecondaryColor Description }}
+        The secondary color to use for branding.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -SecondaryFontColor <String>
-        {{ Fill SecondaryFontColor Description }}
+        The secondary font color to use for branding.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -TrustCertificate [<SwitchParameter>]
@@ -274,42 +302,47 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
-        {{ Fill UseDefaultCredentials Description }}
+        Whether the cmdlet should use the default credentials.
         
         Required?                    false
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -DarkAppBarLogo <String>
-        {{ Fill DarkAppBarLogo Description }}
+        The URL of the dark logo to use in the app bar. This will be used when the dark theme is enabled.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -LoginPageTheme <ThemePreference>
-        {{ Fill LoginPageTheme Description }}
+        The theme preference for the login page. This can be set to Light, Dark, or Auto. The default is Auto.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -PortalTitle <String>
-        {{ Fill PortalTitle Description }}
+        The title of the portal.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -335,9 +368,9 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> Set-PSUBranding -LoginPageImage 'https://example.com/image.png' -AppBarLogo 'https://example.com/logo.png'
+    PS C:\> Set-PSUBranding -LoginPageImage 'C:\logo.png' -AppBarLogo 'C:\logo.png' -AdminConsoleTitle 'My Admin Console'
     
-    Sets the login page image and app bar logo.
+    Sets the branding for PowerShell Universal. The login page image and app bar logo are set to the specified image files. The admin console title is set to "My Admin Console".
     
 RELATED LINKS
 

@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    1
         Default value                [Guid]::NewGuid()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -AutoFocus [<SwitchParameter>]
@@ -31,6 +32,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Calendars <Int32>
@@ -40,6 +42,7 @@ PARAMETERS
         Position?                    2
         Default value                2
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ClassName <String>
@@ -49,6 +52,7 @@ PARAMETERS
         Position?                    3
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -CloseOnSelect [<SwitchParameter>]
@@ -58,6 +62,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -CurrentMonthCalendarPositition <Int32>
@@ -67,6 +72,7 @@ PARAMETERS
         Position?                    4
         Default value                1
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DefaultRangePosition <String>
@@ -76,6 +82,7 @@ PARAMETERS
         Position?                    5
         Default value                start
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DesktopModeMediaQuery <String>
@@ -85,6 +92,7 @@ PARAMETERS
         Position?                    6
         Default value                @media (pointer: fine)
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Disabled [<SwitchParameter>]
@@ -94,6 +102,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisableDragEditing [<SwitchParameter>]
@@ -103,6 +112,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisableFuture [<SwitchParameter>]
@@ -112,6 +122,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisableHightlightToday [<SwitchParameter>]
@@ -121,6 +132,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisableOpenPicker [<SwitchParameter>]
@@ -130,6 +142,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisablePast [<SwitchParameter>]
@@ -139,6 +152,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisableWeekNumber [<SwitchParameter>]
@@ -148,6 +162,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Label <String>
@@ -157,6 +172,7 @@ PARAMETERS
         Position?                    7
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -MaxDate <DateTime>
@@ -166,6 +182,7 @@ PARAMETERS
         Position?                    8
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -MinDate <DateTime>
@@ -175,6 +192,7 @@ PARAMETERS
         Position?                    9
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnAccept <Endpoint>
@@ -184,6 +202,7 @@ PARAMETERS
         Position?                    10
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnChange <Endpoint>
@@ -193,6 +212,7 @@ PARAMETERS
         Position?                    11
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnClose <Endpoint>
@@ -202,6 +222,7 @@ PARAMETERS
         Position?                    12
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnError <Endpoint>
@@ -211,6 +232,7 @@ PARAMETERS
         Position?                    13
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnMonthChange <Endpoint>
@@ -220,6 +242,7 @@ PARAMETERS
         Position?                    14
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnOpen <Endpoint>
@@ -229,6 +252,7 @@ PARAMETERS
         Position?                    15
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -onRangePositionChange <Endpoint>
@@ -238,6 +262,7 @@ PARAMETERS
         Position?                    16
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -onSelectedSectionsChange <Endpoint>
@@ -247,6 +272,7 @@ PARAMETERS
         Position?                    17
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -RangePosition <String>
@@ -256,6 +282,7 @@ PARAMETERS
         Position?                    18
         Default value                start
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ReduceAnimations [<SwitchParameter>]
@@ -265,6 +292,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisabledDates <DateTime[]>
@@ -274,6 +302,7 @@ PARAMETERS
         Position?                    19
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -showDaysOutsideCurrentMonth [<SwitchParameter>]
@@ -283,6 +312,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Sx <Hashtable>
@@ -292,6 +322,7 @@ PARAMETERS
         Position?                    20
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Timezone <String>
@@ -301,6 +332,7 @@ PARAMETERS
         Position?                    21
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Value <DateTime[]>
@@ -310,6 +342,7 @@ PARAMETERS
         Position?                    22
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LocaleText <Hashtable>
@@ -319,6 +352,7 @@ PARAMETERS
         Position?                    23
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Format <String>
@@ -328,6 +362,7 @@ PARAMETERS
         Position?                    24
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>

@@ -26,6 +26,7 @@ PARAMETERS
         Position?                    named
         Default value                ([Guid]::NewGuid()).ToString()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ClassName <String>
@@ -35,6 +36,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Header <Object>
@@ -44,6 +46,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Body <Object>
@@ -53,6 +56,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Expand <Object>
@@ -62,6 +66,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Footer <Object>
@@ -71,6 +76,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Media <Object>
@@ -79,6 +85,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Style <Hashtable>
@@ -88,6 +95,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Elevation <Int32>
@@ -97,6 +105,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Title <String>
@@ -106,6 +115,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -TitleAlignment <String>
@@ -115,6 +125,7 @@ PARAMETERS
         Position?                    named
         Default value                left
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Content <ScriptBlock>
@@ -124,6 +135,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Image <String>
@@ -133,6 +145,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Text <String>
@@ -141,6 +154,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Raised [<SwitchParameter>]
@@ -149,6 +163,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Avatar <Object>
@@ -157,6 +172,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Sx <Object>
@@ -166,6 +182,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Variant <String>
@@ -174,6 +191,7 @@ PARAMETERS
         Position?                    named
         Default value                elevation
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnClick <Endpoint>
@@ -183,6 +201,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -RemoveMargin [<SwitchParameter>]
@@ -191,6 +210,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>

@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDSwitch [[-Id] <String>] [-Disabled] [[-OnChange] <Endpoint>] [[-Checked] <Boolean>] [[-ClassName] <String>] [[-Color] <String>] [[-Label] <String>] [[-CheckedLabel] <String>] [[-UncheckedLabel] <String>] [[-Size] <String>] [[-LabelPlacement] <String>] [-CheckStyle] [[-Sx] <Hashtable>] [[-Style] <Hashtable>] [<CommonParameters>]
+    New-UDSwitch [[-Id] <String>] [-Disabled] [[-OnChange] <Endpoint>] [[-Checked] <Boolean>] [[-ClassName] <String>] [[-Color] <String>] [[-Label] <String>] [[-LabelComponent] <Hashtable>] [[-CheckedLabel] <String>] [[-CheckedLabelComponent] <Hashtable>] [[-UncheckedLabel] <String>] [[-UncheckedLabelComponent] <Hashtable>] [[-Size] <String>] [[-LabelPlacement] <String>] [-CheckStyle] [[-Sx] <Hashtable>] [[-Style] <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    1
         Default value                ([Guid]::NewGuid())
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Disabled [<SwitchParameter>]
@@ -31,6 +32,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnChange <Endpoint>
@@ -40,6 +42,7 @@ PARAMETERS
         Position?                    2
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Checked <Boolean>
@@ -49,6 +52,7 @@ PARAMETERS
         Position?                    3
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ClassName <String>
@@ -58,6 +62,7 @@ PARAMETERS
         Position?                    4
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Color <String>
@@ -67,6 +72,7 @@ PARAMETERS
         Position?                    5
         Default value                default
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Label <String>
@@ -76,42 +82,74 @@ PARAMETERS
         Position?                    6
         Default value                
         Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -LabelComponent <Hashtable>
+        
+        Required?                    false
+        Position?                    7
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -CheckedLabel <String>
         The label to display for when the switch is checked
         
         Required?                    false
-        Position?                    7
+        Position?                    8
         Default value                
         Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -CheckedLabelComponent <Hashtable>
+        
+        Required?                    false
+        Position?                    9
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -UncheckedLabel <String>
         The label to display for when the switch is unchecked
         
         Required?                    false
-        Position?                    8
+        Position?                    10
         Default value                
         Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -UncheckedLabelComponent <Hashtable>
+        
+        Required?                    false
+        Position?                    11
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Size <String>
         The size of the switch. Valid values are: "small", "medium"
         
         Required?                    false
-        Position?                    9
+        Position?                    12
         Default value                medium
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LabelPlacement <String>
         The placement of the label. Valid values are: "top", "start", "right", "bottom"
         
         Required?                    false
-        Position?                    10
+        Position?                    13
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -CheckStyle [<SwitchParameter>]
@@ -121,24 +159,27 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Sx <Hashtable>
         A hashtable of theme-based styles to apply to the switch.
         
         Required?                    false
-        Position?                    11
+        Position?                    14
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Style <Hashtable>
         A hashtable of styles to apply to the switch.
         
         Required?                    false
-        Position?                    12
+        Position?                    15
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>

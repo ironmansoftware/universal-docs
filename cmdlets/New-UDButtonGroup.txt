@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    1
         Default value                ([Guid]::NewGuid()).ToString()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Children <ScriptBlock>
@@ -31,6 +32,7 @@ PARAMETERS
         Position?                    2
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ClassName <String>
@@ -40,6 +42,7 @@ PARAMETERS
         Position?                    3
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Color <Object>
@@ -49,6 +52,7 @@ PARAMETERS
         Position?                    4
         Default value                primary
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Disabled [<SwitchParameter>]
@@ -58,6 +62,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -FullWidth [<SwitchParameter>]
@@ -67,6 +72,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Orientation <String>
@@ -76,6 +82,7 @@ PARAMETERS
         Position?                    5
         Default value                horizontal
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Size <String>
@@ -85,6 +92,7 @@ PARAMETERS
         Position?                    6
         Default value                medium
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Sx <Hashtable>
@@ -94,6 +102,7 @@ PARAMETERS
         Position?                    7
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Variant <String>
@@ -103,6 +112,7 @@ PARAMETERS
         Position?                    8
         Default value                outlined
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>

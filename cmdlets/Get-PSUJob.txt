@@ -32,6 +32,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ComputerName <String>
@@ -41,6 +42,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      Uri
         Accept wildcard characters?  false
         
     -First <UInt64>
@@ -50,6 +52,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Id <Int64>
@@ -59,6 +62,7 @@ PARAMETERS
         Position?                    0
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Identity <Identity>
@@ -68,6 +72,7 @@ PARAMETERS
         Position?                    0
         Default value                None
         Accept pipeline input?       True (ByValue)
+        Aliases                      none
         Accept wildcard characters?  false
         
     -IncludeTotalCount [<SwitchParameter>]
@@ -77,6 +82,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
@@ -86,6 +92,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -OrderBy <String>
@@ -95,6 +102,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -OrderDirection <OrderDirection>
@@ -104,6 +112,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Script <Script>
@@ -113,6 +122,7 @@ PARAMETERS
         Position?                    0
         Default value                None
         Accept pipeline input?       True (ByValue)
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Skip <UInt64>
@@ -122,6 +132,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Status <JobStatus>
@@ -131,6 +142,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
@@ -140,6 +152,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -RunId <Guid>
@@ -149,6 +162,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Schedule <Schedule>
@@ -158,6 +172,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       True (ByValue)
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Credential <PSCredential>
@@ -167,6 +182,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -HideChildren <Boolean>
@@ -176,6 +192,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -HideScheduled <Boolean>
@@ -185,6 +202,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -HideTriggered <Boolean>
@@ -194,6 +212,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -TrustCertificate [<SwitchParameter>]
@@ -203,6 +222,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     <CommonParameters>

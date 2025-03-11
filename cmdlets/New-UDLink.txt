@@ -24,6 +24,7 @@ PARAMETERS
         Position?                    named
         Default value                ([Guid]::NewGuid()).ToString()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Url <String>
@@ -33,6 +34,7 @@ PARAMETERS
         Position?                    named
         Default value                https://www.ironmansoftware.com
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Underline <String>
@@ -42,6 +44,7 @@ PARAMETERS
         Position?                    named
         Default value                none
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Style <Hashtable>
@@ -51,6 +54,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Variant <String>
@@ -60,6 +64,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ClassName <String>
@@ -69,6 +74,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OpenInNewWindow [<SwitchParameter>]
@@ -78,6 +84,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Children <ScriptBlock>
@@ -87,6 +94,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Text <String>
@@ -96,6 +104,7 @@ PARAMETERS
         Position?                    named
         Default value                Ironman Software
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnClick <Endpoint>
@@ -105,6 +114,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Download [<SwitchParameter>]
@@ -114,6 +124,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>

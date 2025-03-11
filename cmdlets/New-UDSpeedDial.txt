@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    1
         Default value                ([Guid]::NewGuid().ToString())
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Children <ScriptBlock>
@@ -31,6 +32,7 @@ PARAMETERS
         Position?                    2
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Direction <String>
@@ -40,6 +42,7 @@ PARAMETERS
         Position?                    3
         Default value                up
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Icon <Hashtable>
@@ -49,6 +52,7 @@ PARAMETERS
         Position?                    4
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnClose <Endpoint>
@@ -58,6 +62,7 @@ PARAMETERS
         Position?                    5
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnOpen <Endpoint>
@@ -67,6 +72,7 @@ PARAMETERS
         Position?                    6
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnActionClick <Endpoint>
@@ -76,6 +82,7 @@ PARAMETERS
         Position?                    7
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>

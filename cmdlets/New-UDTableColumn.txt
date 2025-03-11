@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    1
         Default value                [Guid]::NewGuid().ToString()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Property <String>
@@ -31,6 +32,7 @@ PARAMETERS
         Position?                    2
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Title <String>
@@ -40,6 +42,7 @@ PARAMETERS
         Position?                    3
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnRender <ScriptBlock>
@@ -48,6 +51,7 @@ PARAMETERS
         Position?                    4
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ShowSort [<SwitchParameter>]
@@ -57,6 +61,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ShowFilter [<SwitchParameter>]
@@ -66,6 +71,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -FilterType <String>
@@ -75,6 +81,7 @@ PARAMETERS
         Position?                    5
         Default value                text
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Style <Hashtable>
@@ -84,6 +91,7 @@ PARAMETERS
         Position?                    6
         Default value                @{ }
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Width <Int32>
@@ -93,6 +101,7 @@ PARAMETERS
         Position?                    7
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -MinWidth <Int32>
@@ -101,6 +110,7 @@ PARAMETERS
         Position?                    8
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -IncludeInSearch [<SwitchParameter>]
@@ -110,6 +120,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -IncludeInExport [<SwitchParameter>]
@@ -119,6 +130,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DefaultSortColumn [<SwitchParameter>]
@@ -128,6 +140,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Align <String>
@@ -137,6 +150,7 @@ PARAMETERS
         Position?                    9
         Default value                inherit
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Truncate [<SwitchParameter>]
@@ -146,6 +160,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -SortType <String>
@@ -155,6 +170,7 @@ PARAMETERS
         Position?                    10
         Default value                alphanumeric
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Hidden [<SwitchParameter>]
@@ -164,6 +180,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Options <String[]>
@@ -173,6 +190,7 @@ PARAMETERS
         Position?                    11
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>

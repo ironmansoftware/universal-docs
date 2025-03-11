@@ -24,6 +24,7 @@ PARAMETERS
         Position?                    named
         Default value                ([Guid]::NewGuid())
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Language <String>
@@ -33,6 +34,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Height <String>
@@ -42,6 +44,7 @@ PARAMETERS
         Position?                    named
         Default value                100ch
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Width <String>
@@ -51,6 +54,7 @@ PARAMETERS
         Position?                    named
         Default value                100%
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -HideCodeLens [<SwitchParameter>]
@@ -60,6 +64,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisableCodeFolding [<SwitchParameter>]
@@ -69,6 +74,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -FormatOnPaste [<SwitchParameter>]
@@ -78,6 +84,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -GlyphMargin [<SwitchParameter>]
@@ -87,6 +94,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisableLineNumbers [<SwitchParameter>]
@@ -96,6 +104,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisableLinks [<SwitchParameter>]
@@ -105,6 +114,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisableBracketMatching [<SwitchParameter>]
@@ -114,6 +124,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -MouseWheelScrollSensitivity <Int32>
@@ -123,6 +134,7 @@ PARAMETERS
         Position?                    named
         Default value                1
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -MouseWheelZoom [<SwitchParameter>]
@@ -132,6 +144,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ReadOnly [<SwitchParameter>]
@@ -141,6 +154,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -RenderControlCharacters [<SwitchParameter>]
@@ -150,6 +164,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ShowFoldingControls <String>
@@ -159,6 +174,7 @@ PARAMETERS
         Position?                    named
         Default value                mouseover
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -SmoothScrolling [<SwitchParameter>]
@@ -168,6 +184,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LightTheme <String>
@@ -177,6 +194,7 @@ PARAMETERS
         Position?                    named
         Default value                vs
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DarkTheme <String>
@@ -186,6 +204,7 @@ PARAMETERS
         Position?                    named
         Default value                vs-dark
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Code <String>
@@ -195,6 +214,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Original <String>
@@ -204,6 +224,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Options <Hashtable>
@@ -213,6 +234,7 @@ PARAMETERS
         Position?                    named
         Default value                @{}
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -CanSave [<SwitchParameter>]
@@ -222,6 +244,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Extension <String>
@@ -231,6 +254,7 @@ PARAMETERS
         Position?                    named
         Default value                txt
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>

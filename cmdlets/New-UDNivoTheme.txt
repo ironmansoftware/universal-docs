@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    1
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -TickTextColor <DashboardColor>
@@ -31,6 +32,7 @@ PARAMETERS
         Position?                    2
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -GridLineStrokeColor <DashboardColor>
@@ -40,6 +42,7 @@ PARAMETERS
         Position?                    3
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -GridStrokeWidth <Int32>
@@ -49,6 +52,7 @@ PARAMETERS
         Position?                    4
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>

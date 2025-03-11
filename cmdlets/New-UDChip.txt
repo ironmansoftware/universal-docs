@@ -24,6 +24,7 @@ PARAMETERS
         Position?                    named
         Default value                ([Guid]::NewGuid()).ToString()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Label <String>
@@ -33,6 +34,7 @@ PARAMETERS
         Position?                    1
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnDelete <Endpoint>
@@ -42,6 +44,7 @@ PARAMETERS
         Position?                    9
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnClick <Endpoint>
@@ -51,6 +54,7 @@ PARAMETERS
         Position?                    8
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Icon <Object>
@@ -60,6 +64,7 @@ PARAMETERS
         Position?                    2
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Style <Hashtable>
@@ -69,6 +74,7 @@ PARAMETERS
         Position?                    3
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Variant <String>
@@ -78,6 +84,7 @@ PARAMETERS
         Position?                    4
         Default value                default
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Avatar <String>
@@ -87,6 +94,7 @@ PARAMETERS
         Position?                    5
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -AvatarType <String>
@@ -96,6 +104,7 @@ PARAMETERS
         Position?                    6
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Size <String>
@@ -105,6 +114,7 @@ PARAMETERS
         Position?                    10
         Default value                medium
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ClassName <String>
@@ -114,6 +124,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Color <String>
@@ -123,6 +134,7 @@ PARAMETERS
         Position?                    named
         Default value                default
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>
