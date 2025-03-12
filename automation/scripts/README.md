@@ -189,6 +189,14 @@ Using a script's job history, PowerShell Universal will provide basic statistics
 
 <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Script Stats</p></figcaption></figure>
 
+## Start-Job Support
+
+While it's possible to start jobs using Invoke-PSUScript, it may be desirable to start a job using the PowerShell Start-Job cmdlet. Using Start-Job does not register the job with PowerShell Universal and the execution information will not be present in the jobs table.&#x20;
+
+The Integrated, PowerShell 7 and Windows PowerShell 5.1 environments are not compatible with Start-Job because they are custom PowerShell hosts. In order to use Start-Job, you will need to configure a custom PowerShell environment. Click Settings \ Environments. Next, click Create New Environment. Name the environment, select the Custom environment type and specify pwsh.exe as the executable path.&#x20;
+
+You will now be able to use this environment to run the Start-Job cmdlet.&#x20;
+
 ## API
 
 * [New-PSUScript](../../cmdlets/New-PSUScript.txt)
