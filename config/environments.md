@@ -122,6 +122,8 @@ You can run apps in the integrated environment. Select the integrated environmen
 
 The PowerShell 7 environment uses an embedded hosting process for the PowerShell SDK that is included with PowerShell Universal. This is the recommend environment as it provides the greatest compatibility with third-party modules.
 
+The PowerShell 7 environment does not support using System.Windows.Forms assemblies. These assemblies are required for scripts or modules, use a custom environment targeting pwsh.exe.&#x20;
+
 ## Windows PowerShell 5.1
 
 The Windows PowerShell 5.1 environment users an embedded hosting process for the PowerShell runtime that is found on the current machine. This is the only environment available for running Windows PowerShell scripts.
