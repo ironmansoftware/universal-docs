@@ -4,6 +4,28 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.4.1 - 3/13/2025
+
+### Bug Fixes
+
+#### Admin Console
+
+* Fixed a login issue with Windows authentication (#4471)
+
+#### Automation
+
+* Fixed an issue with schedules set to a specific computer
+
+#### Module
+
+* Fixed an issue with -Integrated switch
+
+#### Platform
+
+* Updated .NET SDK to address CVE-2025-24070
+* Fixed an issue with expiration of persistent cache items (#4472)
+* Fixed an issue updating the database schema with PostgreSQL (#4485)
+
 ## 5.4.0 - 3/11/2025
 
 ### Features
