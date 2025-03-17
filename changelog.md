@@ -4,6 +4,33 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.4.2 - 3/17/2025
+
+### Bug Fixes
+
+#### Admin Console
+
+* Fixed an issue with the Create Script dialog and folders (#4501)
+
+#### APIs
+
+* Fixed an issue with the default endpoints.json docs (#4504)
+
+#### Apps
+
+* Fixed an issue starting apps that were a part of a computer group (#4493)
+* Fixed a UDTable rendering issue (#4495)
+
+#### Module
+
+* Fixed an issue loading the Universal module in PowerShell 7.4.x
+
+#### Platform
+
+* Fixed an execution policy issue with vaults.ps1
+* Fixed an errant log message in standard out (#4500)
+* Fixed an issue where scripts contents could be overwritten with the default value
+
 ## 5.4.1 - 3/13/2025
 
 ### Bug Fixes
