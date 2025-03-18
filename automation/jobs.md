@@ -108,11 +108,7 @@ The following example invokes a script, stores the job object in a `$job` variab
 Invoke-PSUScript -Script 'Script1.ps1' -RequiredParameter 'Hello' | Tee-Object -Variable job | Wait-PSUJob
 
 $Pipeline = Get-PSUJobPipelineOutput -Job $Job
-$HostOutput = Get-PSUJobOutput -Job $Job
-
-# Access the actual string returned by the job
-# $HostOutput may be an array 
-$HostOutput.Data
+Get-PSUJobOutput -Job $Job
 ```
 
 If you are using PowerShell Universal 2.4 or later, you can use the `-Wait` parameter of `Invoke-PSUScript` to achieve this.
