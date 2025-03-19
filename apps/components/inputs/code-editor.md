@@ -52,14 +52,10 @@ New-UDButton -Text 'Get Code' -OnClick {
 
 ## Options
 
-{% hint style="warning" %}
-The documentation is for an upcoming feature of PowerShell Universal .
-{% endhint %}
+The Monaco editor supports a wide range of options. If you wish to use options that aren't available on the `New-UDCodeEditor` cmdlet, you can use the `-Options` parameter and pass a hashtable of options instead.
 
-The Monaco editor supports a wide range of options. If you wish to use options that aren't available on the `New-UDCodeEditor` cmdlet, you can use the `-Options` parameter and pass a hashtable of options instead.&#x20;
+For a full list of options, check the [IEditorConsturctionOptions](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor.IEditorConstructionOptions.html) interface.
 
-For a full list of options, check the [IEditorConsturctionOptions](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditorconstructionoptions.html) interface.
-
-```
+```powershell
 New-UDCodeEditor -Language powershell -Height 100 -Options @{ fontSize = 10 }
 ```
