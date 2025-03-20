@@ -85,7 +85,21 @@ New-UDRow -Columns {
 }
 ```
 
+When working with columns, you will need to specify the medium and large sizes, otherwise they will always be set to 12.&#x20;
+
+```powershell
+New-UDRow -Columns {
+    New-UDColumn -SmallSize 12 -MediumSize 12 -LargeSize 12 -Content {
+        New-UDPaper -Content { "xs-12" } -Elevation 2
+    }
+    New-UDColumn -SmallSize 12 -MediumSize 12 -LargeSize 12 -Content {
+        New-UDPaper -Content { "xs-12" } -Elevation 2
+    }
+}
+```
+
 ## API
 
-* [New-UDGrid](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/New-UDGrid.txt)
-
+* [New-UDGrid](../../../cmdlets/New-UDGrid.txt)
+* [New-UDRow](../../../cmdlets/New-UDRow.txt)
+* [New-UDColumn](../../../cmdlets/New-UDColumn.txt)
