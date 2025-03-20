@@ -197,6 +197,35 @@ Some versions of Windows Server (like 2012R2), do not support HTTP2. To disable 
 
 For a full set of listening options, you can refer to the [ASP.NET Core Documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-3.1#listenoptionsusehttps).
 
+### Security Headers
+
+Organizations may require that PowerShell Universal provides certain security headers in HTTP responses coming from the server, these may include:
+
+* Strict-Transport-Security
+* Content-Security-Policy
+* X-Content-Type-Options
+* X-XSS-Protection
+* Referrer-Policy
+
+You can use the Kestrel \ Headers section to define these values.&#x20;
+
+```json
+{
+    "Kestrel" : {
+       "Headers": {
+          "X-Content-Type-Options": "nosniff",
+          "Content-Security-Policy": "default-src 'self';",
+          "X-XSS-Protection": "block",
+          
+       }
+    }
+}
+```
+
+{% hint style="warning" %}
+Be careful when configuring these headers as they change the behavior of every web request returned by PowerShell Universal.
+{% endhint %}
+
 ## Example: Self-Signed Certificate
 
 In this example, we'll show how to create a self-signed certificated and use it with PowerShell Universal.

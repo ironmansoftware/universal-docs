@@ -42,7 +42,7 @@ Using an environment variable for JWT signing key.
 $Env:Jwt__SigningKey = "mySigningKey"
 ```
 
-## Command Line&#x20;
+## Command Line
 
 You can specify the location of the `appsettings.json` file by using the `--appsettings` command line argument for `Universal.Server.exe` .
 
@@ -77,6 +77,7 @@ Kestrel is the web server implementation for ASP.NET Core that PowerShell Univer
 | BasePath          | Required when configuring PowerShell Universal as a nested site within IIS. This should contain the nested IIS route. Such as `/psu` |
 | Hsts \ MaxAgeDays | Sets the max age in days for [HTTP Strict Transport Security](https://https.cio.gov/hsts/).                                          |
 | CookiePolicy      | When set to SameSiteNone, the SameSite=None value will be set on cookies in PSU. This is useful for when hosting PSU in iframes.     |
+| Headers           | An object where the keys are the headers to set on each request with the value being the value of the header.                        |
 
 ### Application Insights
 
@@ -238,7 +239,7 @@ OpenID Connect authentication settings.
 | Authority                 | The authority to invoke when authenticating. This is the URL of your OIDC provider.                                                         |
 | ResponseType              | The type of response returned by the provider. This most common value here is `code`                                                        |
 | SaveTokens                | Whether to save the token so it is available to endpoints like dashboards.                                                                  |
-| CorrelationCookieSameSite | [Correlation cookie same settings. ](https://docs.microsoft.com/en-us/aspnet/core/security/samesite?view=aspnetcore-5.0)                    |
+| CorrelationCookieSameSite | [Correlation cookie same settings.](https://docs.microsoft.com/en-us/aspnet/core/security/samesite?view=aspnetcore-5.0)                     |
 | UseTokenLifetime          | If set to true, the cookie life time will be set to the token life time. This overrides the session time out value.                         |
 | GetUserInfo               | Returns additional user information for use within roles.ps1 files. You can access the additional information using the $UserInfo variable. |
 
@@ -246,25 +247,21 @@ OpenID Connect authentication settings.
 
 WS-Federation authentication settings.
 
-| Key                       | Description                                                                                                              |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| Enabled                   | Whether WS-Fed is enabled.                                                                                               |
-| MetadataAddress           | The metadata address to retrieve information about the WS-Fed instance.                                                  |
-| Wrealm                    |                                                                                                                          |
-| Wreply                    |                                                                                                                          |
-| CallbackPath              | The path that the OIDC provider will call back to.                                                                       |
-| UseTokenLifetime          | If set to true, the cookie life time will be set to the token life time. This overrides the session time out value.      |
-| CorrelationCookieSameSite | [Correlation cookie same settings. ](https://docs.microsoft.com/en-us/aspnet/core/security/samesite?view=aspnetcore-5.0) |
-
-
+| Key                       | Description                                                                                                             |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Enabled                   | Whether WS-Fed is enabled.                                                                                              |
+| MetadataAddress           | The metadata address to retrieve information about the WS-Fed instance.                                                 |
+| Wrealm                    |                                                                                                                         |
+| Wreply                    |                                                                                                                         |
+| CallbackPath              | The path that the OIDC provider will call back to.                                                                      |
+| UseTokenLifetime          | If set to true, the cookie life time will be set to the token life time. This overrides the session time out value.     |
+| CorrelationCookieSameSite | [Correlation cookie same settings.](https://docs.microsoft.com/en-us/aspnet/core/security/samesite?view=aspnetcore-5.0) |
 
 **Session timeout threshold (minutes)**
 
 | Key            | Description                                                             |
 | -------------- | ----------------------------------------------------------------------- |
 | SessionTimeout | Number of minutes before a logged in session times out (defaults to 25) |
-
-
 
 ### **JWT**
 
@@ -288,7 +285,7 @@ JSON Web Token configuration settings
 
 ### Secrets
 
-Options for configuring the default secret vaults.&#x20;
+Options for configuring the default secret vaults.
 
 **Default Value**
 
@@ -313,7 +310,7 @@ Options for configuring the default secret vaults.&#x20;
 
 Encryption keys are 128-bit and require the proper length. They are encoded as a base64 string and converted to bytes on startup.
 
-You can use the following code to generate a secret key of the proper length.&#x20;
+You can use the following code to generate a secret key of the proper length.
 
 ```powershell
 $random = [System.Security.Cryptography.RandomNumberGenerator]::Create();
@@ -324,7 +321,7 @@ $random.GetBytes($buffer);
 
 ### UniversalAutomation
 
-Settings for automation specific features.&#x20;
+Settings for automation specific features.
 
 **Default Value**
 
@@ -337,13 +334,13 @@ Settings for automation specific features.&#x20;
   }
 ```
 
-| Key                     | Description                                                                                                                                                                                              |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Queues                  | Custom queues that this PSU instance is a part of.                                                                                                                                                       |
-| JobHandshakeTimeout     | The number of seconds to wait before failing a job after starting the PowerShell process to execute it if the process does not communicate back to the server.                                           |
-| JobDebugging            | Whether to generate files in the temporary directory when starting job. This is useful for debugging if jobs are timing out before starting.                                                             |
-| ContinueJobOnServerStop | Whether to continue running a job after the service has stopped. Job progress will fail to be reported but the script will continue to run.                                                              |
-| HangfireWorkerCount     | The number of Hangfire worker threads to start on the server. This setting is node specific. It defaults to 100. This is the total number of jobs that can run on the particular node at a single time.  |
+| Key                     | Description                                                                                                                                                                                             |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Queues                  | Custom queues that this PSU instance is a part of.                                                                                                                                                      |
+| JobHandshakeTimeout     | The number of seconds to wait before failing a job after starting the PowerShell process to execute it if the process does not communicate back to the server.                                          |
+| JobDebugging            | Whether to generate files in the temporary directory when starting job. This is useful for debugging if jobs are timing out before starting.                                                            |
+| ContinueJobOnServerStop | Whether to continue running a job after the service has stopped. Job progress will fail to be reported but the script will continue to run.                                                             |
+| HangfireWorkerCount     | The number of Hangfire worker threads to start on the server. This setting is node specific. It defaults to 100. This is the total number of jobs that can run on the particular node at a single time. |
 
 ### **HideAdminConsole**
 
@@ -351,10 +348,10 @@ Prevents the service from serving the admin console. This will prevent the admin
 
 ### NodeName
 
-The node name option is used to change the name of the PowerShell Universal instance. By default, this is the local computer's name. When using PowerShell Universal in a container, this can become probematic because the name can change whenever the container is restarted.&#x20;
+The node name option is used to change the name of the PowerShell Universal instance. By default, this is the local computer's name. When using PowerShell Universal in a container, this can become probematic because the name can change whenever the container is restarted.
 
-To set a static node name, change this parameter.&#x20;
+To set a static node name, change this parameter.
 
 ### Profiling
 
-Enables [profiling](../development/profiling.md) of scripts within PowerShell Universal. This is disabled by default as there is a memory impact when enabling profiling.&#x20;
+Enables [profiling](../development/profiling.md) of scripts within PowerShell Universal. This is disabled by default as there is a memory impact when enabling profiling.
