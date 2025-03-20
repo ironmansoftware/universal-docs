@@ -421,7 +421,7 @@ For example, the service table data would look like this.
 
 ### Dynamic (Server-Side) Tables
 
-When using selection and `-LoadData`, the `-OnRowSelected $EventData` will be the IDs of the rows and not the entire row data. It will still indicate where the row has been selected or de-selected.&#x20;
+When using selection and `-LoadData`, the `-OnRowSelected $EventData` will be the IDs of the rows and not the entire row data. It will still indicate where the row has been selected or de-selected.
 
 ## Collapsible Rows
 
@@ -697,6 +697,35 @@ $TableData = 1..10 | % { [PSCustomObject]@{ Item = $_}}
         New-UDTableColumn -Property 'Item' -Title 'Item' -Width 180 -Truncate
     ) -Data $TableData -Dense -ShowSearch
 } -Theme $Theme
+```
+
+## Custom Row Styles
+
+<figure><img src="../../../.gitbook/assets/image (267).png" alt=""><figcaption><p>Table Custom Row Style</p></figcaption></figure>
+
+Use the `-OnRowStyle`parameter to style the rows based on the row content. Return a hashtable with CSS styles for the row.&#x20;
+
+```powershell
+$Data = @(
+     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 1; Protein = 4.0 }
+     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 150.0; Carbs = 34; Protein = 4.0 }
+     @{Dessert = 'Eclair'; Calories = 159; Fat = 100.0; Carbs = 73; Protein = 4.0 }
+     @{Dessert = 'Cupcake'; Calories = 159; Fat = 30.0; Carbs = 25; Protein = 4.0 }
+     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 99; Protein = 4.0 }
+ )
+ $Columns = @(
+     New-UDTableColumn -Property Dessert -Title "Dessert" 
+     New-UDTableColumn -Property Calories -Title "Calories" 
+     New-UDTableColumn -Property Fat -Title "Fat" 
+     New-UDTableColumn -Property Carbs -Title "Carbs"  -DefaultSortColumn
+     New-UDTableColumn -Property Protein -Title "Protein" 
+ )
+ New-UDTable -Data $Data -Id 'table14' -Columns $Columns -OnRowStyle {
+     if ($EventData.Fat -lt 10) { $Color = 'green' }
+     elseif ($EventData.Fat -ge 10 -and $EventData.Fat -lt 50) { $Color = 'Yellow' }
+     else { $Color = 'Red' }
+     @{ backgroundColor = $Color }    
+ }
 ```
 
 ## API
