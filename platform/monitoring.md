@@ -12,15 +12,15 @@ PowerShell Universal automatically integrates with Microsoft Application Insight
 
 ### Configuring Application Insights
 
-Within the Azure Portal, you will need to create a new Application Insights resource. Once it's been created, you will need to copy the instrumentation key.
+Within the Azure Portal, you will need to create a new Application Insights resource. Once it's been created, you will need to copy the connection string.
 
 ![Application Insights Information](<../.gitbook/assets/image (429).png>)
 
-Next, paste your instrumentation key into the [Settings file ](../config/settings.md)for PowerShell Universal. Finally, restart the PowerShell Universal server. Application monitoring will now be enabled.
+Next, paste your connection string into the [Settings file ](../config/settings.md)for PowerShell Universal. Finally, restart the PowerShell Universal server. Application monitoring will now be enabled.
 
-```
+```json
   "ApplicationInsights": {
-    "InstrumentationKey": "73b84b67-6fc9-4c37-9f54-000000000000"
+    "ConnectionString": "InstrumentationKey=73b84b67-6fc9-4c37-9f54-000000000000"
   },
 ```
 
@@ -29,10 +29,10 @@ If you are running PowerShell Universal in Azure, you can also create a new Appl
 The name should be:
 
 ```
-APPLICATIONINSIGHTS__INSTRUMENTATIONKEY
+APPLICATIONINSIGHTS__CONNECTIONSTRING
 ```
 
-The value should be the instrumentation key. Restart your web app to start collecting metrics.
+The value should be the connection string. Restart your web app to start collecting metrics.
 
 ### Viewing Monitoring Data
 
@@ -57,7 +57,7 @@ Performance counters are installed when running the MSI installer. Once this occ
 
 ### Installation
 
-By default, the MSI will install the performance counters. If you are running PowerShell Universal outside of the MSI, you will need to install them yourself. You can do so with the following script. You will need to run it from an elevated prompt.&#x20;
+By default, the MSI will install the performance counters. If you are running PowerShell Universal outside of the MSI, you will need to install them yourself. You can do so with the following script. You will need to run it from an elevated prompt.
 
 ```powershell
 $categoryName = "PowerShell Universal"
