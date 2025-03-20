@@ -4,21 +4,21 @@ description: Permissions for resources within PowerShell Universal
 
 # Permissions
 
-PowerShell Universal leverages permissions throughout the platform to provide fine-grained authorization against different scopes and resources. Built-in roles have a read-only set of permissions that are automatically applied to users with those roles. Custom roles can have custom permissions set. Additionally, individual users can have their own set of permissions.&#x20;
+PowerShell Universal leverages permissions throughout the platform to provide fine-grained authorization against different scopes and resources. Built-in roles have a read-only set of permissions that are automatically applied to users with those roles. Custom roles can have custom permissions set. Additionally, individual users can have their own set of permissions.
 
-Permissions are stored in the database and not as part of the `.universal` configuration files.&#x20;
+Permissions are stored in the database and not as part of the `.universal` configuration files.
 
 ## Permission Identifiers
 
-Each permission uses an identifier to authorize a user to access a resource. They are strings that utilize the scope and resource type, followed by an access type.&#x20;
+Each permission uses an identifier to authorize a user to access a resource. They are strings that utilize the scope and resource type, followed by an access type.
 
-For example, the following would provide read access to all API features.&#x20;
+For example, the following would provide read access to all API features.
 
 ```
 apis/read
 ```
 
-Wildcards can be used in permission identifiers to include sub-scopes over multiple access types. The following provides access to all script features.&#x20;
+Wildcards can be used in permission identifiers to include sub-scopes over multiple access types. The following provides access to all script features.
 
 ```
 automation.scripts/*
@@ -26,29 +26,44 @@ automation.scripts/*
 
 ## Managing Permissions
 
-{% hint style="warning" %}
-PowerShell Universal v5 is still in beta and this is subject to change.
-{% endhint %}
+Permissions can be managed for an identity by clicking Security \ Permissions. You can select the identity and define a permission identifier to grant to the identity. This will blend with the permissions granted by any role assignments they may have.
 
-Permissions can be managed for an identity by click Security \ Permissions. You can select the identity and define a permission identifier to grant to the identity. This will blend with the permissions granted by any role assignments they may have.&#x20;
+Roles currently cannot be assigned permissions in the permission UI.
 
-Roles currently cannot be assigned permissions.
+### Example: Scheduler Role
+
+In this example, we'll define a role that can only manage schedules.&#x20;
+
+First, create a role name Scheduler. This can be done in the Admin Console by clicking Security \ Roles and then Create New Role. Set the role name and click Ok.
+
+Next, define the following permission for the role. Click the Properties button on the Scheduler role. This grants full access to scheduling and read access to automation.
+
+* automation.schedules/\*
+* automation/read
+
+The resulting role definition is below.&#x20;
+
+```powershell
+New-PSURole -Name "Scheduler" -Permission @('automation.schedules/*', 'automation/read') 
+```
+
+Finally, assign the role to a user. You can do so statically, with a policy script or via role to claim mapping.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (260).png" alt=""><figcaption><p>Assigned Role</p></figcaption></figure>
+
+
 
 ## Default Role Permissions
 
-Below are the default role permissions.&#x20;
+Below are the default role permissions.
 
 ### Administrator
-
-
 
 | Identifier | Description                         |
 | ---------- | ----------------------------------- |
 | \*         | Full access to PowerShell Universal |
 
 ### Operator
-
-
 
 | Identifier    | Description                         |
 | ------------- | ----------------------------------- |
@@ -60,22 +75,18 @@ Below are the default role permissions.&#x20;
 
 ### Execute
 
-
-
-| Identifier         | Description                             |
-| ------------------ | --------------------------------------- |
-| apis/read          | Read access to APIs                     |
-| apis/execute       | Execute access to APIs                  |
-| automation/read    | Read access to automation features.     |
-| automation/execute | Execute access to automation features.  |
-| apps/read          | Read access to Apps.                    |
-| apps/execute       | Execute access to Apps.                 |
-| platform/read      | Read access to platform features.       |
-| settings/read      | Read access to settings.                |
+| Identifier         | Description                            |
+| ------------------ | -------------------------------------- |
+| apis/read          | Read access to APIs                    |
+| apis/execute       | Execute access to APIs                 |
+| automation/read    | Read access to automation features.    |
+| automation/execute | Execute access to automation features. |
+| apps/read          | Read access to Apps.                   |
+| apps/execute       | Execute access to Apps.                |
+| platform/read      | Read access to platform features.      |
+| settings/read      | Read access to settings.               |
 
 ### Reader
-
-
 
 | Identifier      | Description                         |
 | --------------- | ----------------------------------- |
@@ -83,9 +94,7 @@ Below are the default role permissions.&#x20;
 | apps/read       | Read access to Apps.                |
 | automation/read | Read access to automation features. |
 
-### API Editor&#x20;
-
-
+### API Editor
 
 | Identifier | Description         |
 | ---------- | ------------------- |
@@ -99,15 +108,11 @@ Below are the default role permissions.&#x20;
 
 ### App Editor
 
-
-
 | Identifier | Description         |
 | ---------- | ------------------- |
 | apps/\*    | All access to apps. |
 
 ### App Reader
-
-
 
 |           |                      |
 | --------- | -------------------- |
