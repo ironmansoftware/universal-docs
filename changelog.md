@@ -4,6 +4,14 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.4.3 - 3/23/2025
+
+### Bug Fixes
+
+#### Security
+
+* Fixed an issue with role policy scripts not running properly after startup
+
 ## 5.4.2 - 3/17/2025
 
 ### Bug Fixes
