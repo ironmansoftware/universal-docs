@@ -53,7 +53,7 @@ You can edit the repository files directly in the admin console by navigating to
 Stored in `.universal\authentication.ps1`
 {% endhint %}
 
-This script is responsible for configuring f[orms authentication](security/#forms-authentication). If forms authentication is not being used, this file is ignored.
+This script is responsible for configuring [forms authentication](security/#forms-authentication). If forms authentication is not being used, this file is ignored.
 
 You can use the [`Set-PSUAuthentication` ](../cmdlets/Set-PSUAuthenticationMethod.txt)cmdlet in this file.
 
