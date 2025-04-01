@@ -12,23 +12,55 @@ You first need to configure ADFS or AzureAD to support Universal.
 
 ### Service Settings <a href="#service-settings" id="service-settings"></a>
 
-These are the current Federation Service settings for our domain.
+First, you will need to gather the Federation Service Properties from ADFS. Open the AD FS app (Microsoft.IdentityServer.msc). Next, click Service and then Edit Federation Service Properties.&#x20;
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+This will open a dialog with the values for your ADFS service. You will need these values for configuring PowerShell Universal.&#x20;
 
 ![](https://gblobscdn.gitbook.com/assets%2F-L9mVQO4zbOX7ZcHvIte%2F-Lob6ow15SQRLl3vo8ZV%2F-Lob7luBvuEGUTrLIors%2Fimage.png?alt=media\&token=64c3c00f-1d2c-4346-bcc1-dd89e7cf4c24)
 
 ### Relying Parties <a href="#relying-parties" id="relying-parties"></a>
 
-You need to configure the following Relying Parties settings for Universal. On the Identifiers tab, provide the URL to the Universal website. HTTPS is required.
+If you have no Reply Party Trusts configured, click Add Replying Party Trust. Select Claims aware.&#x20;
 
-![](https://gblobscdn.gitbook.com/assets%2F-L9mVQO4zbOX7ZcHvIte%2F-Lob6ow15SQRLl3vo8ZV%2F-Lob8DOuN3sGBzbdctQb%2Fimage.png?alt=media\&token=8b2fac2f-c5e1-4ceb-963e-ab9c7eb85484)
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Claims Aware</p></figcaption></figure>
 
-On the Endpoints tab. You'll need to include a WS-Federation Passive Endpoint. Make sure to include the trailing slash.
+Select Enter data about the relying party manually.
 
-![](https://gblobscdn.gitbook.com/assets%2F-L9mVQO4zbOX7ZcHvIte%2F-Lob6ow15SQRLl3vo8ZV%2F-Lob8hIg0Ot1uN1PsimG%2Fimage.png?alt=media\&token=e6673c7c-a125-4b04-b0c0-ba7d0a677d6a)
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Manual Relying Party</p></figcaption></figure>
 
-Finally, you'll need to configure a Claim Issuance Policy for the Relying Party Trust. Create an Issuance Transform Rule that sends at least the Name and Name ID to Universal.![](https://gblobscdn.gitbook.com/assets%2F-L9mVQO4zbOX7ZcHvIte%2F-Lob6ow15SQRLl3vo8ZV%2F-Lob92zcF4qYpWtR0g\_4%2Fimage.png?alt=media\&token=34dfd4db-d742-4f8b-a271-86d37542dc35)
+Specify a name for the relying party.
+
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption><p>Relying Party Name</p></figcaption></figure>
+
+Enable WS-Federation Passive protocol. Enter the PowerShell Universal server URL with a trailing slash.
+
+<figure><img src="../../.gitbook/assets/image (268).png" alt=""><figcaption></figcaption></figure>
+
+Enter the URL of your PowerShell Universal server.
+
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Replying Party Trust Identifier</p></figcaption></figure>
+
+After finishing your Replying Party Trust configuration, you will need to setup a Claim Issuance Policy. Create an Issuance Transform Rule that sends at least the Name and Name ID to Universal.
+
+<figure><img src="https://gblobscdn.gitbook.com/assets%2F-L9mVQO4zbOX7ZcHvIte%2F-Lob6ow15SQRLl3vo8ZV%2F-Lob92zcF4qYpWtR0g_4%2Fimage.png?alt=media&#x26;token=34dfd4db-d742-4f8b-a271-86d37542dc35" alt=""><figcaption></figcaption></figure>
 
 You can configure additional claims you'd like to use if you are using policies in Universal.
+
+### Troubleshooting
+
+MSIS7065: There are no registered protocol handlers on path /adfs/ls to process the incoming request.
+
+This issue can be caused if the IDP Initiated Sign On page is disabled. This is the default. Run the following command from an administrative console.&#x20;
+
+```powershell
+ Set-AdfsProperties -EnableIdPInitiatedSignonPage $true
+```
+
+MSIS7001: The passive protocol context was not found or not valid. If the context was stored in cookies, the cookies that were presented by the client were not valid. Ensure that the client browser is configured to accept cookies from this website and retry this request.
+
+
 
 ## Configuring For Azure Active Directory <a href="#configuring-for-azure-active-directory" id="configuring-for-azure-active-directory"></a>
 

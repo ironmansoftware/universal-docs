@@ -18,7 +18,7 @@ You can work with tests by visiting Automation \ Tests.&#x20;
 
 Tests files are located based on file name. Any files found in the respository that end in `.Tests.ps1` will be listed in the Test Files tab. You can create new test files on the Automation \ Scripts page.
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Test Files</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>Test Files</p></figcaption></figure>
 
 ## Test Execution
 
@@ -30,10 +30,10 @@ Tests can be run by clicking the Run Test or Run All Tests buttons. Run Test wil
 
 You will have the option to select the environment, credential and computer to run the tests.&#x20;
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Run Tests</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>Run Tests</p></figcaption></figure>
 
 ## Test Results
 
 Test Results are produced after the test run finishes. You will be able to see the overal status of the test run and the result of individual test suites and cases.&#x20;
 
-<figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>Test Results</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption><p>Test Results</p></figcaption></figure>

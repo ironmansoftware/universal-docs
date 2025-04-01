@@ -16,7 +16,7 @@ PowerShell Universal provides a mechanism to load the metadata document directly
 
 The callback path will be displayed at the top of the property's modal.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Loading Metadata</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption><p>Loading Metadata</p></figcaption></figure>
 
 ## Manually Providing Values
 
@@ -46,7 +46,7 @@ Once the SAML2 integration has been added, you can configure the basic settings 
 
 Typically, these entity IDs are URLs configured within your identity provider.
 
-<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>SAML2 Properties</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption><p>SAML2 Properties</p></figcaption></figure>
 
 The service certificate is used for signing requests. It is not required. This can either be a path local to the PSU service or the distinguished name of a certificate installed in the Personal Computer Certificate store.
 
@@ -119,7 +119,7 @@ https://localhost/Saml2/Acs
 
 For Single Sign-On Service URL, insert the SAML-P sign-on endpoint from Azure.
 
-<figure><img src="../../.gitbook/assets/image (5) (1).png" alt=""><figcaption><p>PSU Configuration</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption><p>PSU Configuration</p></figcaption></figure>
 
 Once complete, save the settings and enable the SAML provider. Click sign out and navigate to your admin console URL.
 
@@ -135,13 +135,13 @@ Any errors that occur will be listed in the PowerShell Universal log. If you fai
 
 In order to provide group claims to PowerShell Universal, you will need to expose the group claims from your app registration. Click Token Configuration and then click Add groups claim.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>Entra ID Group Claims</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Entra ID Group Claims</p></figcaption></figure>
 
 After clicking Add groups claim, you will have the option to select which groups are provided. If you select All Groups, the groups claims will be provided to PowerShell Universal
 
 If you select Groups assigned to the application, ensure that you check the Emit groups as role claims value. This setting requires a paid Entra ID plan.
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption><p>Emit groups as role claims setting</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption><p>Emit groups as role claims setting</p></figcaption></figure>
 
 To assign a group to your app registration, locate your app in Enterprise Applications and click User and Groups. Next, click Add User\Group and select the groups you would like assigned to your application.&#x20;
 
@@ -151,7 +151,7 @@ For each role you would like to assign to an Entra ID group, specify the Claim T
 
 To assign this to the administrator group, I would do the following.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption><p>Claim Mapping</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption><p>Claim Mapping</p></figcaption></figure>
 
 Users of this group would now be part of the Administrator role in PowerShell Universal. If you selected a different SAML group property, the value may be different (e.g. sAMAccountName).
 

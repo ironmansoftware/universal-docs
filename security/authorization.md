@@ -90,7 +90,7 @@ By default, identities receive a role through claim mapping or policy.
 
 When Windows authentication is enabled, you can click the Import Windows Groups button to select groups that you'd like to import into PowerShell Universal. After selecting these groups, roles will be created, with Role to Claim mapping, without having to configure it manually.&#x20;
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Import Windows Groups button</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Import Windows Groups button</p></figcaption></figure>
 
 ### Built in Roles
 

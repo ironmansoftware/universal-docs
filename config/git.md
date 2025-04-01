@@ -186,7 +186,7 @@ The following are not included:
 
 ## Multiple Git Repositories
 
-PowerShell Universal supports storing multiple git repository configurations within the database. By doing so, you can quickly switch between different configurations of PowerShell Universal. Click the Repositories tab to view the currently configured repositories. From here you can delete and edit repository configurations.&#x20;
+PowerShell Universal supports storing multiple git repository configurations within the database. By doing so, you can quickly switch between different configurations of PowerShell Universal. Click the Repositories tab to view the currently configured repositories. From here you can delete and edit repository configurations.
 
 {% hint style="warning" %}
 PowerShell Universal does not remove the .git folder when deleting a repository configuration. You will need to manually do this in order to configure a new repository.
@@ -232,7 +232,7 @@ In this example, the string for this endpoint was edited on both the remote and 
 
 Edit the text to remove the conflict.
 
-<figure><img src="../.gitbook/assets/image (5) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Save the changes and navigate back to the git commit page. Enter a new commit message for the merge conflict and click Commit Changes.
 
@@ -383,8 +383,8 @@ Depending on the complexity of your environment, it may be advised to use Deploy
 
 ### Large Teams
 
-In large teams, we recommend using git for development purposes but use Deployments, or a similar concept, for production.&#x20;
+In large teams, we recommend using git for development purposes but use Deployments, or a similar concept, for production.
 
-[Deployments ](deployments.md)provide immutable configuration packages that have been well tested in down-level environments. By using Deployments, you can choose how you develop and manage your code and simply publish the result to your development, staging, QA and production environments. This ensures that all code is well tested before deploying to your critical systems.&#x20;
+[Deployments ](deployments.md)provide immutable configuration packages that have been well tested in down-level environments. By using Deployments, you can choose how you develop and manage your code and simply publish the result to your development, staging, QA and production environments. This ensures that all code is well tested before deploying to your critical systems.
 
 You can use automated workflows, like GitHub Actions, to publish your Deployments without having to manually update any system.

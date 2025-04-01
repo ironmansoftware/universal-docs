@@ -144,7 +144,7 @@ New-UDButton -Text 'Click Me' -OnClick {
 
 Create a color picker with an OnChange event handler using New-UDElement.
 
-<figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption><p>Color Picker</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption><p>Color Picker</p></figcaption></figure>
 
 ```powershell
 function New-UDColorPicker {
