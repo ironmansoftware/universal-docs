@@ -4,6 +4,27 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.4.4 - 4/2/2025
+
+### Bug Fixes
+
+#### Automation
+
+* Fixed an issue running jobs as Group Managed Service Accounts (#4548)
+
+#### APIs
+
+* Fixed an issue updating endpoints with nested paths from outside the admin console
+
+#### Security
+
+* Fixed an issue saving roles (#4574)
+* Disabled Pushed Authorization Requests for OpenID Connect (#4586)
+
+#### Platform
+
+* Fixed an issue with Microsoft.Graph, Az.Accounts, and MicrosoftTeams modules (#4581)
+
 ## 5.4.3 - 3/23/2025
 
 ### Bug Fixes
