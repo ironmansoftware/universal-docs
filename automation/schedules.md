@@ -102,6 +102,12 @@ You can set a time out for scheduled jobs. The time out is the number of minutes
 
 The Random Delay property causes a schedule to start anywhere between 0 and 60 seconds from the scheduled time. This is useful when running many schedules at the same time. For example, if you had 10 schedules that start at midnight, you may want to set a random delay to limit resource contention on the PowerShell Universal service.
 
+## Available in Branch
+
+In multi-branch environments, it may be necessary to avoid running schedules based on the branch that is loaded in PowerShell Universal. You can use the `-AvailableInBranch`option on `New-PSUSchedule` to avoid having a schedule run when running in a certain branch. This value is also available in the admin console under the schedule settings when git is enabled.&#x20;
+
+<figure><img src="../.gitbook/assets/image (269).png" alt=""><figcaption><p>Available in Branch</p></figcaption></figure>
+
 ## API
 
 * [New-PSUSchedule](../cmdlets/New-PSUSchedule.txt)
