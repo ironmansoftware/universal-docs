@@ -36,4 +36,4 @@ New-UDStack -Content {
 
 ## API
 
-* New-UDStack
+* [New-UDStack](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/New-UDStack.txt)
