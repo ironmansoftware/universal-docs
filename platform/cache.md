@@ -107,3 +107,5 @@ You can view the server-level cache in the admin console by navigating to Platfo
 
 * [Get-PSUCache](../cmdlets/Get-PSUCache.txt)
 * [Set-PSUCache](../cmdlets/Set-PSUCache.txt)
+* [Remove-PSUCache](../cmdlets/Remove-PSUCache.txt)
+* [Clear-PSUCache](../cmdlets/Clear-PSUCache.txt)
