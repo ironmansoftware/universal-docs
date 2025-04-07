@@ -70,6 +70,18 @@ You can use the `-Persist` parameter of `Set-PSUCache` to store data within the 
 Set-PSUCache -Key "CurrentDate" -Value (Get-Date) -Persist
 ```
 
+### Clearing the Cache
+
+You can remove items from the cache using `Remove-PSUCache` or `Clear-PSUCache` .
+
+```powershell
+# Remove a specific item
+Remove-PSUCache -Key 'Key123'
+
+# Clear the entire cache
+Clear-PSUCache
+```
+
 ## $Cache Scope
 
 APIs, Automation scripts and Dashboards all support a $Cache scope. This scope is used to cache data across runspaces that will persist in memory of each of the execution environments.
