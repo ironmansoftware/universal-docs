@@ -44,7 +44,7 @@ All widgets have a height and width property that can be set. By default, the wi
 
 ### Positioning Portal Widgets
 
-Portal Pages use a grid system to lay out Portal Widgets. Each row has 24 possible columns. You can use the widget's width property to define how many of the columns the widget will span. For example, you can place 2 widgets side by side by setting both of their widths to 12.
+Portal Pages use a grid system to lay out Portal Widgets. Each row has 12 possible columns. You can use the widget's width property to define how many of the columns the widget will span. For example, you can place 2 widgets side by side by setting both of their widths to 6.
 
 <figure><img src="../.gitbook/assets/image (8) (1).png" alt=""><figcaption><p>Side by side Portal Widgets</p></figcaption></figure>
 
