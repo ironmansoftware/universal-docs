@@ -102,19 +102,19 @@ Get-PSUJobOutput -Job $Job
 
 ### Invoke a Script and Wait for Output
 
-The following example invokes a script, stores the job object in a `$job` variable, waits for the job to complete and then returns the pipeline and host output.
+You can use the `-Wait` parameter of `Invoke-PSUScript` to achieve this.
+
+```powershell
+$Output = Invoke-PSUScript -Script 'Script1.ps1' -RequiredParameter 'Hello' -Wait
+```
+
+Additionally, the following example invokes a script, stores the job object in a `$job` variable, waits for the job to complete and then returns the pipeline and host output.
 
 ```powershell
 Invoke-PSUScript -Script 'Script1.ps1' -RequiredParameter 'Hello' | Tee-Object -Variable job | Wait-PSUJob
 
-$Pipeline = Get-PSUJobPipelineOutput -Job $Job
+$Output = Get-PSUJobPipelineOutput -Job $Job
 Get-PSUJobOutput -Job $Job
-```
-
-If you are using PowerShell Universal 2.4 or later, you can use the `-Wait` parameter of `Invoke-PSUScript` to achieve this.
-
-```powershell
-$Pipeline = Invoke-PSUScript -Script 'Script1.ps1' -RequiredParameter 'Hello' -Wait
 ```
 
 ### Integrated Mode

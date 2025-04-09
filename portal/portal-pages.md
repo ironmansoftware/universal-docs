@@ -6,10 +6,6 @@ description: Pages in the portal.
 
 Portal pages contain one or more portal widgets. Each widget on a portal page can be resized and may accept properties to configure the widget's behavior. Widget's are self contained UI elements that provide features without the need to write code.
 
-{% hint style="info" %}
-Portal Pages are currently in preview.
-{% endhint %}
-
 ## Creating a Page
 
 You can create a portal page by navigating to Portal \ Pages in the Admin Console's menu. Next, click Create New Portal Page.
