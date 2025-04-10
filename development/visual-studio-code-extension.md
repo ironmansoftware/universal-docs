@@ -62,13 +62,11 @@ You can manage APIs with the extension. You will see a list of APIs. You can cli
 
 You can manage apps with the extension. You will see a list of apps underneath this section. You can open the dashboards.ps1 script, open a single app's script, restart an app and view apps.
 
-![](<../.gitbook/assets/image (492).png>)
+#### View App Logs
 
-#### View Dashboard Logs
+You can view app logs by right clicking on the app and clicking View Logs. They will open in a new tab.
 
-You can view dashboard logs by right clicking on the dashboard and clicking View Logs. They will open in a new tab.
-
-![](<../.gitbook/assets/image (107).png>)
+<figure><img src="../.gitbook/assets/image (280).png" alt=""><figcaption><p>View App Logs</p></figcaption></figure>
 
 ### Scripts
 
@@ -78,19 +76,15 @@ You can manage scripts with the extension. You will see a list of available scri
 
 ## Debugging
 
-{% hint style="info" %}
-The Administrator role is required for debugging scripts remotely.
+{% hint style="warning" %}
+The Administrator role is required for debugging scripts remotely. Remote debugging is deprecated and will be removed in a future version. We recommend using the [admin console debugging tools](debugging-scripts.md#integrated-debugger).
 {% endhint %}
 
-As of PowerShell Universal v4.2, you can debug scripts remotely with the PowerShell Universal extension. To enable remote debugging, you will need to set the debugger environment in the settings. This is the process that will be started and will load PowerShell Editor Services.
-
-```powershell
-Set-PSUSetting -DebuggerEnvironment 'pwsh'
-```
+You can debug scripts remotely with the PowerShell Universal extension.&#x20;
 
 When connected to your PowerShell Universal instance, you can expand Platform \ Processes and then locate the process you wish to debug. If you use the `Wait-Debugger` cmdlet in your scripts, they will be displayed within the process and runspace drop down. Click the Attach Runspace command to begin debugging your script.
 
-<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (281).png" alt=""><figcaption><p>Remote Debugger</p></figcaption></figure>
 
 
 

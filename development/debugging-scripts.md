@@ -13,7 +13,7 @@ Using the PowerShell [Universal Visual Studio Code Extension](visual-studio-code
 ## Integrated Debugger
 
 {% hint style="warning" %}
-The integrated debugger is support in PowerShell 7 and integrated environments. It is not supported in Windows PowerShell.
+The integrated debugger is supported in PowerShell 7 and integrated environments. It is not supported in Windows PowerShell.
 {% endhint %}
 
 The integrated debugger allows for access to a debug console for running scripts. You can include the `Wait-Debugger` cmdlet call in your scripts and they will transition to an In Breakpoint state. Once this takes place, you can view the Job to run commands against the script.
