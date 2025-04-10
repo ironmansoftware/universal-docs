@@ -62,6 +62,103 @@ Containers are typically hosted behind a reverse proxy and will not be aware of 
 
 For more information, you can read this blog post from the [Microsoft](https://devblogs.microsoft.com/dotnet/forwarded-headers-middleware-updates-in-net-core-3-0-preview-6/).
 
+### Bicep
+
+You can use the following Bicep template to deploy a container web app with persistent storage.&#x20;
+
+```bicep
+@description('Name of Azure Web App')
+param siteName string = 'psu-${uniqueString(resourceGroup().id)}'
+
+@description('The version of PowerShell Universal')
+param version string = '5.4.4'
+
+@description('App Service Plan Pricing Tier')
+@allowed([
+  'B1'
+  'B2'
+  'B3'
+  'S1'
+  'S2'
+  'S3'
+  'P1V2'
+  'P2V2'
+  'P2V3'
+])
+param servicePlanPricingTier string = 'S2'
+var servicePlanName = '${siteName}-asp'
+
+@description('Location for all the resources.')
+param location string = resourceGroup().location
+
+var servicePlanPricingTiers = {
+  F1: {
+    tier: 'Free'
+  }
+  B1: {
+    tier: 'Basic'
+  }
+  B2: {
+    tier: 'Basic'
+  }
+  B3: {
+    tier: 'Basic'
+  }
+  S1: {
+    tier: 'Standard'
+  }
+  S2: {
+    tier: 'Standard'
+  }
+  S3: {
+    tier: 'Standard'
+  }
+  P1V2: {
+    tier: 'Standard'
+  }
+  P2V2: {
+    tier: 'Standard'
+  }
+  P2V3: {
+    tier: 'Standard'
+  }
+}
+
+resource planResource 'Microsoft.Web/serverfarms@2024-04-01' = {
+  name: servicePlanName
+  location: location
+  sku: {
+    name: servicePlanPricingTier
+    tier: servicePlanPricingTiers[servicePlanPricingTier].tier
+    capacity: 1
+  }
+  kind: 'linux'
+  properties: {
+    reserved: true
+  }
+}
+
+resource siteResource 'Microsoft.Web/sites@2024-04-01' = {
+  name: siteName
+  location: location
+  properties: {
+    serverFarmId: planResource.id
+    siteConfig: {
+      linuxFxVersion: 'DOCKER|index.docker.io/ironmansoftware/universal:${version}-azure'
+    }
+  }
+}
+
+resource siteWebAppsettingsResource 'Microsoft.Web/sites/config@2024-04-01' = {
+  parent: siteResource
+  name: 'appsettings'
+  properties: {
+    WEBSITES_ENABLE_APP_SERVICE_STORAGE: 'true'
+  }
+}
+
+```
+
 ## Standard Web App
 
 ### Manually Creating a Web App
@@ -193,14 +290,6 @@ After publishing the Web App, view your PowerShell Universal instance by navigat
 #### Persistent Storage
 
 The default `appsettings.json` file will store the database and configuration files in a non-persistent location. You can add environment variables to move them to persistent storage within your web app.
-
-**Data\_\_ConnectionString**
-
-The `Data__ConnectionString` environment variable sets the location of the database. You will have to ensure that you enable a "shared" connection for LiteDB to function properly in Azure. Set the value to the following.
-
-```
-filename=D:\home\Data\PowerShellUniversal\database.db;Connection=shared
-```
 
 **Data\_\_RepositoryPath**
 
