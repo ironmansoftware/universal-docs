@@ -163,7 +163,7 @@ resource siteWebAppsettingsResource 'Microsoft.Web/sites/config@2024-04-01' = {
 
 ### Manually Creating a Web App
 
-Within the Azure Portal, you will need to create a new Web App resource. PowerShell Universal currently requires the .NET 6 runtime stack. You can use either Linux or Windows.
+Within the Azure Portal, you will need to create a new Web App resource. PowerShell Universal currently requires the .NET 9 runtime stack. You can use either Linux or Windows.
 
 {% hint style="info" %}
 If you choose a Windows hosting plan rather than a Linux hosting plan in Azure when configuring your WebApp then you need to choose a Basic Plan (B1) or higher to be able to use 64-bit apps. You also have to go to Settings > Configuration > General setting > Platform and select 64-bit before you run the `Publish-AzWebApp` command, or it will fail to install.
