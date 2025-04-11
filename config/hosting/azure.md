@@ -144,7 +144,7 @@ resource siteResource 'Microsoft.Web/sites@2024-04-01' = {
   properties: {
     serverFarmId: planResource.id
     siteConfig: {
-      linuxFxVersion: 'DOCKER|index.docker.io/ironmansoftware/universal:${version}-azure'
+      linuxFxVersion: 'DOCKER|ironmansoftware/universal:${version}-azure'
     }
   }
 }
