@@ -6,11 +6,15 @@ Download the latest version of PowerShell Universal.
 
 ## [Scripts](https://github.com/ironmansoftware/scripts)
 
-Examples and full solutions for PowerShell Universal.&#x20;
+Examples and full solutions for PowerShell Universal.
 
 ## [Blog](https://blog.ironmansoftware.com/tags/powershelluniversal/)
 
 The Ironman Software blog has articles about PowerShell Universal.
+
+## [Chat](https://discord.gg/5EQkwKPh)
+
+Chat with other PowerShell Universal users.&#x20;
 
 ## [Forums](https://forums.ironmansoftware.com)
 
@@ -23,4 +27,3 @@ Purchase a license for the features of PowerShell Universal.
 ## [Issue Tracker](https://github.com/ironmansoftware/issues)
 
 File a bug report or feature request for PowerShell Universal.
-
