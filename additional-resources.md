@@ -12,7 +12,7 @@ Examples and full solutions for PowerShell Universal.
 
 The Ironman Software blog has articles about PowerShell Universal.
 
-## [Chat](https://discord.gg/5EQkwKPh)
+## [Chat](https://discord.gg/Sb5ngcjkj4)
 
 Chat with other PowerShell Universal users.&#x20;
 
