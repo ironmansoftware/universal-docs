@@ -255,10 +255,10 @@ SQLite is the default persistence method. You will need to perform a manual conv
 
 ### LiteDB Support Removed
 
-LiteDB has been removed as a supported database engine. Included with the PowerShell Universal installation files, you will find `psudb.exe`. It can be used to convert a LiteDB database into a SQLite database. Use the following command line.
+LiteDB has been removed as a supported database engine. Included with the PowerShell Universal installation files, you will find `psucli.exe`. It can be used to convert a LiteDB database into a SQLite database. Use the following command line.
 
 ```powershell
-.\psudb.exe --Path "$ENV:ProgramData\UniversalAutomation\database.db"
+.\psucli.exe db convert --Path "$ENV:ProgramData\UniversalAutomation\database.db"
 ```
 
 The tool will create a `database.bak` file before performing the conversion. Progress will be reported in the console.
