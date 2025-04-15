@@ -72,6 +72,28 @@ New-UDTextbox -Id "ServerGroups" -Icon (New-UDIcon -Icon 'server') -Value "This 
 
 ![](<../../../.gitbook/assets/image (46).png>)
 
+## Masking
+
+You can use the `-MaskPattern` to define a mask for the textbox. The following is an example of a textbox mask.&#x20;
+
+```powershell
+New-UDTextbox -Id 'textbox16' -MaskPattern '+7 (000) 000-00-00'
+```
+
+The definition can contain
+
+* `0` - any digit
+* `a` - any letter
+* `*` - any char
+* other chars which are not in custom definitions supposed to be _fixed_
+* `[]` - make input optional
+* `{}` - include fixed part in unmasked value
+* `` ` `` - prevent symbols shift back
+
+If definition character should be treated as fixed it should be escaped by `\\` (E.g. `\\0`).
+
+The masking for the textbox is controlled by [imaskjs](https://imask.js.org/guide.html#masked-pattern).
+
 ## OnEnter
 
 The `-OnEnter` event handler is executed when the user presses enter in the text field. It is useful for performing other actions, like clicking a button, on enter.
@@ -111,4 +133,4 @@ New-UDTextbox -OnValidate {
 
 ## API
 
-[New-UDTextbox](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/New-UDTextbox.txt)
+[New-UDTextbox](../../../cmdlets/New-UDTextbox.txt)

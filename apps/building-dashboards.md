@@ -155,7 +155,7 @@ New-PSUApp -Name 'App' -BaseUrl '/' -Authenticated -GrantAppToken
 
 From within your app, you can now invoke the management API without having to worry about app token management. The API will be invoked in the context of the user that is visiting the app.
 
-```
+```powershell
 New-UDApp -Title "Hello, World!" -Content {
     New-UDButton -Text 'Job' -OnClick {
         Invoke-UAScript -Name 'Test.ps1'
@@ -167,11 +167,11 @@ New-UDApp -Title "Hello, World!" -Content {
 
 By default, apps will display a toast message when an error is generated within an endpoint script. To avoid this behavior, you can use the `-DisableErrorToast` parameter of `New-UDApp`
 
-```
+```powershell
 New-PSUApp -Name 'App' -BaseUrl '/' -Authenticated -DisableErrorToast
 ```
 
-```
+```powershell
 New-UDApp -Title "Hello, World!" -Content {
     New-UDButton -Text 'Job' -OnClick {
         throw "Exception
@@ -183,6 +183,14 @@ New-UDApp -Title "Hello, World!" -Content {
 
 When starting an app, information about the variables and modules is displayed within the app log. If you wish to suppress this information, you can use the `-DisableStartupLogging` parameter.
 
+```powershell
+New-PSUApp -Name 'App' -BaseUrl '/' -DisableStartupLogging
 ```
+
+## Critical Apps
+
+Critical apps, set based on the `-Critical` parameter, define apps that will cause the load balancer status endpoint to return a  500 response code if the app is not running. The load balancer status endpoint is `/api/v1/status` .
+
+```powershell
 New-PSUApp -Name 'App' -BaseUrl '/' -DisableStartupLogging
 ```

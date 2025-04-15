@@ -151,6 +151,12 @@ You can also use the built-in -Credential parameter on Invoke-RestMethod to avoi
 Invoke-RestMethod $Env:UniversalUrl/api/v1/accessible -Credential $AdminCredential -Authentication Basic
 ```
 
+## Windows Login
+
+If you enable the Native Login on the forms authentication method, PowerShell Universal will attempt to login to the current machine or domain using the credentials specified. Once logged in, the user's groups will be collected and then provided to the authorization system.&#x20;
+
+You can configure a non-default domain by specifying the native login domain. If you don't specify this domain, the default machine domain or the user's specified domain will be used.&#x20;
+
 ## Live Log
 
 You can use the live log view on the authentication page to view information about the script execution. The live log view will display PowerShell streams.

@@ -34,6 +34,7 @@ The following types of events can be assigned a trigger.
 * Git Sync
 * License Expired
 * License Expiring
+* Computer Offline
 
 ### New User Login
 
@@ -82,6 +83,45 @@ public class GitStatus
     public GitStatusResult Result { get; set; }
     public string ResultMessage { get; set; }
     public string ComputerName { get; set; }
+}
+```
+
+### Computer Offline
+
+The computer offline trigger will provide the computer object to the `$Data` parameter.&#x20;
+
+```powershell
+class Computer
+{
+    [long]$Id
+    [string]$Name
+    [DateTime]$HeartBeat
+    [ComputerStatus]$Status
+    [bool]$Maintenance
+    [bool]$Deleted
+    [List<ComputerTag>]$Tags
+    [string]$Version
+    [DateTime]$FileSyncTimestamp
+    [string]$DeploymentVersion
+    [string]$DeploymentName
+    [string]$GitSettings
+    [string]$GitBranch
+    [ComputerType]$Type
+}
+
+enum ComputerStatus
+{
+    Offline,
+    Online,
+    Busy,
+    Loading,
+    StartupError
+}
+
+enum ComputerType
+{
+    Server,
+    Agent
 }
 ```
 

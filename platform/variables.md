@@ -341,6 +341,24 @@ You can check if a job was run manually by using the Schedule and Trigger proper
 $Manual = $UAJob.Schedule -eq $null -and $UAJob.Trigger -eq $null
 ```
 
+## Preference Variables&#x20;
+
+Preference variables can be configured on a script, during the execution of a job and on a global level. These include:&#x20;
+
+* DebugPreference
+* ErrorActionPreference
+* InformationPreference
+* ProgressPreference
+* VerbosePreference
+* WarningPreference
+
+The preference variables have precedence. The following list is ordered in precedence. For example, if a script manually sets the `$DebugPreference` variable, it will override the value set in the script's properties dialog.
+
+* Script
+* Run Dialog or Invoke-PSUScript
+* Script Properties
+* Global Settings
+
 ## API
 
 * [New-PSUVariable](../cmdlets/New-PSUVariable.txt)

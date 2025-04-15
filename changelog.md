@@ -4,6 +4,123 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.5.0 - 4/15/2025
+
+### Features
+
+#### Admin Console
+
+* Event Hub connections are now listed under their respective Event Hub (#4451)
+* Excluded scripts are now persistent (#4467)
+* Script filter is now multiselect on the jobs page (#4020)
+* Added known environment variables to support page (#3578)
+
+#### Automation
+
+* Added Computer Offline trigger (#4461)
+* Added global preference variable settings (#3779)
+* Added support for script permissions (#3941)
+
+#### Apps
+
+* Added -Critical to New-PSUApp (#4118)
+* Added New-UDGauge (#4455)
+* Added -MaskPattern to New-UDTextbox (#4236)
+* Added -Indeterminate to New-UDCheckbox (#4424)
+* Added -MountOnEnter and -UnmountOnExit to New-UDTransition (#4449)
+* Added -All to Hide-UDModal (#4557)
+* Added MUI Sparklines support to New-UDSparkline (#4489)
+* Added -Attributes to New-UDTextbox (#4048)
+* Added more examples to New-UDAvatar to match MUI documentation (#2170)
+
+#### APIs
+
+* C# endpoints now support references and using statements
+* Event Hub Connections now return agent version (#4553)
+
+#### Module
+
+* Added Measure-PSUConvertToJsonDepth (#4309)
+* Added -Limit to Get-PSUJobOutput (#4516)
+* Added Get-PSUEventHub (#4525)
+* Added -AsObject to Get-PSUJobOutput (#4496)
+* Added -Scope and -Credential to Connect-PSUServer
+* Added Disconnect-PSUServer
+
+#### Platform
+
+* Added support for powershell.exe environments
+* Added support for app tokens with multiple roles (#4479)
+* Added horizontal login page layout (#4147)
+* Added support for Windows Form Login (#4521)
+
+### Bug Fixes
+
+#### Admin Console
+
+* Fixed an issue updating git repository settings (#4524)
+* Fixed an issue with the git diff editor theme color (#4530)
+* Fixed an issue viewing portal resources (#4546)
+* Fixed an issue deleting non-empty folders (#4549)
+* Fixed an issue archiving jobs with child jobs (#4545)
+* Fixed an issue creating a script in a deeply nested folder (#4605)
+
+#### Agent
+
+* Fixed an issue returning domain name of agent (#4554)
+
+#### Apps
+
+* Fixed an issue with page icons (#4466)
+* Fixed an issue with New-UDNivoChart -Heatmap (#4528)
+* Fixed an issue with UDStepper buttons (#4444)
+* Fixed an issue displaying tables with no data (#4561)
+* Fixed an issue with finally blocks not being called when sessions expired (#4448)
+* Fixed an issue loading apps with ErrorActionPreference set to stop (#4564)
+* Fixed an issue with New-UDTextbox, New-UDForm and Set-UDElement (#4202)
+* Fixed an encoding issue with exporting CSVs from New-UDTable (#2094)
+* Fixed an issue with New-UDTransferList search (#4294)
+* Fixed an issue with New-UDTreeView (#4613)
+
+#### APIs
+
+* Fixed an issue reloading API endpoints from disk in nested paths (#4458)
+* Fixed an issue updating an endpoint path if the file already exists (#4635)
+
+#### Automation
+
+* Fixed an issue with manually running a script against a computer group with nodes in maintenance mode (#4400)
+* Fixed an issue with re-queued continuous and one-time jobs (#4522)
+* Fixed an issue calling exit with non-zero exit codes in scripts (#4492)
+* Fixed an issue updating a script that had a parameter in multiple parameter sets (#4532)
+* Fixed an issue uploading files to a script (#4602)
+
+#### Cmdlets
+
+* Fixed an issue with mixed slashes and Invoke-PSUScript (#4578)
+* Fixed an issue with Set-PSUCache (#4604)
+* Fixed an issue with Set-PSUVariable (#4590)
+* Fixed issues with Invoke-PSUScript -WaitTimeout (#4611, #4610)
+* Fixed an issue with Invoke-PSUScript output repeating (#4491)
+
+#### Diagnostics
+
+* Fixed an issue with the Missing Environment health check (#4470)
+
+#### Platform
+
+* Fixed an issue detecting updated PowerShell versions (#4398)
+* Fixed an issue with password reset and expiration (#4464)
+* Fixed a display issue with modules in the admin console (#4507)
+* Fixed an issue with data retention days set below 30 (#4519)
+* Removed support for Application Insights instrumentation key (No longer supported by Microsoft)
+* Fixed an issue with git edit mode (#4538)
+* Fixed an issue with Windows PowerShell 5.1 PSModulePath (#4542)
+* Fixed an issue with roles provided by modules (#4547)
+* Fixed an issue with MicrosoftTeams and Az.Accounts module (#4581)
+* Fixed an issue with WS-Federation in appsettings.json (#4579)
+* Fixed an issue with ExchangeOnlineManagement module (#4592)
+
 ## 5.4.4 - 4/2/2025
 
 ### Bug Fixes

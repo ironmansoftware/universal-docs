@@ -107,6 +107,23 @@ You can access the PowerShell Universal service container within your endpoint b
 var database = ServiceProvider.GetService(typeof(IDatabase));
 ```
 
+### References
+
+You can control which assemblies are referenced by using the `#ref` keyword. The value can be a DLL file in the PowerShell Universal installation directory, or the full path to another assembly.&#x20;
+
+```csharp
+#ref PowerShellUniversal.Apis.dll
+#ref C:\assemblies\markdiag.dll
+```
+
+### Namespace Using
+
+You can referene a namespace using the `#using` keyword.&#x20;
+
+```csharp
+#using System.Management.Automation
+```
+
 ## OpenTelemetry
 
 **Identifier:** `PowerShellUniversal.Plugins.OpenTelemetry`

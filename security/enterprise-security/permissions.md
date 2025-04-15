@@ -30,6 +30,22 @@ Permissions can be managed for an identity by clicking Security \ Permissions. Y
 
 Roles currently cannot be assigned permissions in the permission UI.
 
+### Example: Assigning a Script to a Role
+
+You can assign a specific script to a user by accessing the permission dialog for the script. Click the Permissions icon.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (282).png" alt=""><figcaption><p>Permission Icon</p></figcaption></figure>
+
+Next, click Create Permission. This will display the Creat Permission dialog. This dialog allows you to select the identity or role to assign the script to and the access you'd like to permit.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (284).png" alt=""><figcaption><p>Permission Editor</p></figcaption></figure>
+
+The user now has access to execute the script. In order to view it within the admin console, you will also need to grant access to the pages necessary to do so.&#x20;
+
+Click Security \ Permissions. Click Create Permission. Assign the View access to `automation.scripts` to the role.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (288).png" alt=""><figcaption><p>View Role</p></figcaption></figure>
+
 ### Example: Scheduler Role
 
 In this example, we'll define a role that can only manage schedules.&#x20;
@@ -40,6 +56,7 @@ Next, define the following permission for the role. Click the Properties button 
 
 * automation.schedules/\*
 * automation/read
+* automation/view
 
 The resulting role definition is below.&#x20;
 
