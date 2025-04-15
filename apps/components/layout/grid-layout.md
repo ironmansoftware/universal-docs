@@ -14,7 +14,7 @@ The Grid Layout component is useful for defining layouts in a visual manner. You
 
 ## Designing Layouts
 
-You can employ the -Design parameter to configure the layout of yourr page. This allows dynamic drag and drop of components that you place within the content of the grid layout. As you drag and resize components, the layout will be copied to your clipboard. Note: All components must possess a statid -Id
+You can employ the -Design parameter to configure the layout of your page. This allows dynamic drag and drop of components that you place within the content of the grid layout. As you drag and resize components, the layout will be copied to your clipboard. Note: All components must possess a static -Id
 
 ```
 New-UDGridLayout -Content { 1..10 | ForEach-Object { New-UDPaper -Id "Paper$" -Content { New-UDTypography -Text $ } -Elevation 5 } } -Design
