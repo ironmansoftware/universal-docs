@@ -127,6 +127,20 @@ Get-ChildItem -Recurse | Unblock-File
 
 After the upgrade is complete, navigate to the PowerShell Universal Admin Console and begin upgrade validation.
 
+### Database
+
+By default, the PSU service will migrate to the latest database version during the startup process.
+
+The database can also be upgraded before upgrading the application. This is recommended for larger installations that may require some time for the schema update to take place. In some environments, allowing the service to upgrade the database can result in a timeout, like with Service Control Manager in Windows.&#x20;
+
+If you are using SQL, you can find SQL files generated and placed in the SQL folder within the PSU installation media. Run these scripts against your database before upgrading.&#x20;
+
+All types of databases support the `psu` command line tool for upgrades.&#x20;
+
+```powershell
+psu db schema latest --connection-string "Data Source=C:\ProgramData\UniversalAutomation\database.db"
+```
+
 ## 3. Upgrade Validation
 
 After running an upgrade, you should perform basic validation against your PSU server to ensure that it is fully functional.
