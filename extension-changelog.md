@@ -4,6 +4,10 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 5.5.0 - 4/17/2025
+
+* Added folder view to scripts
+
 ## 5.4.0 - 3/11/2025
 
 * Fixed issue with process information
