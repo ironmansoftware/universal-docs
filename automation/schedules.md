@@ -46,10 +46,10 @@ $UserName
 
 Within the modal for defining the schedule, you can set the parameter value.
 
-When editing schedules from PowerShell, you can define the parameters on the `New-PSUSchedule` cmdlet. This cmdlet accepts dynamic parameters so that you can pass the values in for your schedule.
+When editing schedules from PowerShell, you can define the parameters on the `New-PSUSchedule` cmdlet. This cmdlet accepts a hashtable representing the scripts parameters so that you can pass the values in for your schedule.
 
 ```powershell
-New-PSUSchedule -Script "MyScript.ps1" -Cron '* * * * *' -UserName 'adam'
+New-PSUSchedule -Script "MyScript.ps1" -Cron '* * * * *' -Parameters @{ UserName = 'adam' }
 ```
 
 ## Environments
