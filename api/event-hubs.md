@@ -56,7 +56,7 @@ This example allows for sending scripts to remote machines and executing them wi
 
 First, create an event hub in PowerShell Universal. This example does not use authentication.
 
-Next, install the Event Hub Client on the remote machine. Create a configuration file in `%ProgramData%\PowerShellUniversal\eventHubClient.json`.
+Next, install the PowerShell Universal Agent on the remote machine. Create a configuration file in `%ProgramData%\PowerShellUniversal\agent.json`.
 
 ```json
 {
@@ -87,13 +87,12 @@ param($Name)
 Start-Process $Name
 ```
 
-Finally, add another script that sends the event down to the client. This could be from an API or an App as well. It uses `Get-PSUEventHubConnection` to get the target computer’s connection ID and then sends an event with the contents of a script and any parameters for that script. Because the script on event hub side is generic, it will just run whatever is passed to it.
+Finally, add another script that sends the event down to the client. This could be from an API or an App as well. Because the script on the agent is generic, it will just run whatever is passed to it.
 
 ```powershell
 param($TargetComputer, $ProcessName)
  
-$Connection = Get-PSUEventHubConnection | Where-Object { $_.Computer -eq $TargetComputer -and -not $_.Disconnected } | Select-Object -First 1
-Send-PSUEvent -Hub eventHub -ConnectionId $Connection.ConnectionId -Data @{
+Send-PSUEvent -Computer $TargetComputer -Data @{
     Contents = Get-Content StartAProcess.ps1 -Raw
     Parameters = @{
         Name = $ProcessName
@@ -101,4 +100,4 @@ Send-PSUEvent -Hub eventHub -ConnectionId $Connection.ConnectionId -Data @{
 }
 ```
 
-From here you could event use the script to schedule jobs to run on the remote machines using the event hub client.
+From here you could event use the script to schedule jobs to run on the remote machines using the agent.
