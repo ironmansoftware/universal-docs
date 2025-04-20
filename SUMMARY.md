@@ -115,6 +115,7 @@
 * [Sessions](apps/sessions.md)
 * [Static Apps](apps/static-apps.md)
 * [Themes](apps/themes/README.md)
+  * [Colors](apps/themes/colors.md)
   * [Cascading Style Sheets](apps/themes/cascading-style-sheets.md)
   * [Styles](apps/themes/styles.md)
 
