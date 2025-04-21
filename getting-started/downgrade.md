@@ -2,7 +2,7 @@
 description: Learn how to revert to a downgrade level of PowerShell Universal.
 ---
 
-# Downgrading
+# Downgrade
 
 In some scenarios it may be required to roll back the version of PowerShell Universal. This could be due to a feature change or bug that affects the system in a way too impactful to continue with the version. We [always recommend](upgrading.md) validating a version in a development or quality assurance environment before upgrading in production to avoid having to perform a downgrade. &#x20;
 
@@ -45,6 +45,8 @@ Downgrading the application files is typically a simple process and depends on h
 ### MSI
 
 To downgrade an MSI installation, you will need to first uninstall the current version. PowerShell Universal will not allow you to run a downgrade. After the uninstall is complete, perform an installation of the target version.&#x20;
+
+If you have configured a service account, you will need to set the service account again after install. This will require the service account credentials.
 
 ### ZIP
 
