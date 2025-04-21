@@ -302,7 +302,15 @@ We recommend that you use a personal access token (PAT) over a user name and pas
   },
 ```
 
-In GitHub, you can retrieve a personal access token by clicking your avatar in the top right, selecting Settings, Developer Settings and then Personal Access Tokens.
+### GitHub Fine-Grained Tokens
+
+In GitHub, you can retrieve a fine-grained token by click your avatar in the top right, selecting Settings, Developers Settings, Personal Access Tokens and then Fine-Grained Tokens.&#x20;
+
+When generating the token, ensure that you provide the repository Read-Write to the Content permission. This will automatically add Read to the Metadata permission. You can provide access to just the repository you are looking to clone.
+
+### GitHub Tokens (Classic)
+
+In GitHub, you can retrieve a personal access token by clicking your avatar in the top right, selecting Settings, Developer Settings, Personal Access Tokens and then Tokens (Classic).
 
 When generating your access token, ensure that you select the Repo permissions.
 
