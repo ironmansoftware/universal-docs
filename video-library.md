@@ -10,6 +10,7 @@ description: PowerShell Universal Training Videos
 
 ## Automation
 
+* [Script Parameters](https://youtu.be/iIlcc9Jhejs)
 * [Inline Debugger](https://youtu.be/gteP8BpZj84)
 
 ## Git
