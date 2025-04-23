@@ -4,6 +4,12 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 5.5.1 - 4/23/2025
+
+* Fixed an issue viewing scripts and folders in nested folder paths
+* Fixed an issue editing files directly in the configuration directory
+* Fixed an issue connecting the debugger to a remote runspace
+
 ## 5.5.0 - 4/17/2025
 
 * Added folder view to scripts
