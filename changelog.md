@@ -4,6 +4,44 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.5.1 - 4/22/2025
+
+### Bugs
+
+#### Admin Console
+
+* Fixed an issue with the API endpoint tester (#4658)
+* Fixed an issue with filtering on a script's job page (#4661)
+* Fixed an issue creating and updating endpoints (#4657)
+* Fixed an issue validating GMSA credentials in the admin console
+* Fixed a crash that could occur when viewing job data (#4659)
+* Fixed an issue with tag colors (#4673)
+* Fixed an issue with the merge conflict resolution dialog (#4630)
+* Fixed an issue display timestamps for jobs
+
+#### Apps
+
+* Fixed an issue with row selection in New-UDTable (#4614)
+
+#### Automation
+
+* Fixed an errant log message in jobs started as another user (#4666)
+
+#### Platform
+
+* Fixed a redirect loop when initiating OpenID Connect logins from the login page
+* Fixed an issue where the groom job could become unscheduled (#4664)
+* Fixed an issue connecting using the Az.Authentication module
+* Fixed an issue listing runspaces and assemblies for the PSU server process
+
+#### Module
+
+* Fixed an issue with Write-PSULog in jobs (#4652)
+
+#### VS Code
+
+* Fixed an issue with the VS Code debugger (#4627)
+
 ## 5.5.0 - 4/15/2025
 
 ### Features

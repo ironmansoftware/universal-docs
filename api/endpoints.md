@@ -254,6 +254,33 @@ New-PSUEndpoint -Url '/user/:name' -Endpoint {
 }
 ```
 
+If you use the `CmdletBinding` or `Parameter` attribute within your param block, the endpoint will strictly enforce which parameters are allowed into the endpoint.&#x20;
+
+For example, the following enforces that the name parameter is specified.&#x20;
+
+```powershell
+New-PSUEndpoint -Url '/user' -Endpoint {
+    param([Parameter(Mandatory)$Name)
+}
+```
+
+That said, you cannot specify additional parameters to the endpoint. Doing the following will cause an error.
+
+```powershell
+Invoke-RestMethod http://localhost:5000/user -Method Post -Body (@{ 
+    Name = "adriscoll"
+    DisplayName = 'Adam'
+} | ConvertTo-Json) -ContentType 'application/json'
+```
+
+If you change your endpoint to avoid using the `Parameter` attribute, you can pass in any number of params and they will be bound as variables and not parameters to the endpoint.&#x20;
+
+```powershell
+New-PSUEndpoint -Url '/user' -Endpoint {
+    param($Name)
+}
+```
+
 ## Returning Data
 
 Data returned from endpoints is assumed to be JSON data. If you return an object from the endpoint script block, it is automatically serialized to JSON. If you want to return another type of data, you can return a string formatted however you chose.

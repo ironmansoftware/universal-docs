@@ -76,6 +76,24 @@ New-UDDataGrid -LoadRows {
 ) -AutoHeight $true
 ```
 
+### Auto Sizing Columns&#x20;
+
+If you'd like to let the data grid auto size the column widths, you can use the `-AutoSizeColumns` parameter of `New-UDDataGrid`. The data grid will evaluate the size of the data and determine the best size for the columns after the data is loaded. This may cause some UI rearrangement after the data loads.&#x20;
+
+```powershell
+New-UDDataGrid -LoadRows {  
+    $Rows = 1..100 | % {
+        @{ Name = 'Adam'; Number = "This column is a very long string. This column is a very long string. This column is a very long string. This column is a very long string. This column is a very long string. This column is a very long string."}
+    }        
+    $Rows| Out-UDDataGridData -Context $EventData -TotalRows $Rows.Length
+} -Columns @(
+    New-UDDataGridColumn -Field name -Render {
+         New-UDTypography $EventData.number 
+    }
+    New-UDDataGridColumn -Field number
+) -AutoHeight $true -AutoSizeColumns
+```
+
 ## LoadRows
 
 The `-LoadRows` parameter is used to return data for the data grid. Table state will be provided to the event handler as `$EventData`. You will find the following properties within the `$EventData` object.
