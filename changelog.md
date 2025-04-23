@@ -4,7 +4,7 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
-## 5.5.1 - 4/22/2025
+## 5.5.1 - 4/23/2025
 
 ### Bugs
 
