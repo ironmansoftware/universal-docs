@@ -21,6 +21,10 @@ description: PowerShell Universal Training Videos
 
 * [Azure](https://youtu.be/tHB8hqvHhlU)
 
+## Platform
+
+* [Variables](https://youtu.be/u06v9t7pkfg)
+
 ## Portal
 
 * [Assigning Scripts to the Portal](https://youtu.be/sna8La-hrDs)
