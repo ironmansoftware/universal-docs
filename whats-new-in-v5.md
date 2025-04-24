@@ -18,9 +18,9 @@ Portal [Pages ](portal/portal-pages.md)and [Widgets ](portal/portal-widgets/)pro
 
 ## PowerShell Universal Gallery
 
-The PowerShell Universal Gallery is now integrated directly in PowerShell Universal. Access pre-built solutions for your PowerShell Universal environment.&#x20;
+The PowerShell Universal Gallery is now integrated directly in PowerShell Universal. Access pre-built solutions for your PowerShell Universal environment.
 
-You can view the [Gallery repository here](https://github.com/ironmansoftware/gallery).&#x20;
+You can view the [Gallery repository here](https://github.com/ironmansoftware/gallery).
 
 ## Granular Permissions
 
@@ -32,7 +32,7 @@ PostgreSQL is now supported as a persistence store. PostgreSQL is open source an
 
 ## Updated Runtimes
 
-PowerShell Universal v5 is built on .NET 8 and PowerShell 7.4.
+PowerShell Universal v5 is built on .NET 9 and PowerShell 7.5.
 
 ## gRPC Cmdlets
 
@@ -40,4 +40,4 @@ The Universal module now uses gRPC for all communication with the system. gRPC i
 
 ## Windows PowerShell 5.1 and PowerShell 7 Environments
 
-The Agent environment has been replaced with Windows PowerShell 5.1 and PowerShell 7 environments. These environments host the PowerShell engine, but they allow for better control of assembly loading to ensure more modules are compatible with PowerShell Universal. While pwsh.exe is still supported, we suggest using PowerShell 7 when possible. The Windows PowerShell 5.1 environment is now a requirement for running this version of PowerShell, and powershell.exe is no longer supported.
+The Agent environment has been replaced with Windows PowerShell 5.1 and PowerShell 7 environments. These environments host the PowerShell engine, but they allow for better control of assembly loading to ensure more modules are compatible with PowerShell Universal.&#x20;
