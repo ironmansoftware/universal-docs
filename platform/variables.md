@@ -80,9 +80,17 @@ $Env:Secrets__Database__EncryptionKey = "=b0ywQA@VOSdr&R7an5g&XK6NVO%s4Tf"
 
 ### BuiltInLocalVault
 
+{% hint style="warning" %}
+If PowerShell Universal is run as a group managed service account, it cannot use the `BuiltInLocalVault`.
+{% endhint %}
+
 Values for secrets with the `BuiltInLocalVault` are stored within the Windows Credential Manager instance of the security principal that is running PSU. For example, the service account of the user running the Universal service. If you change users (such as running as a service account), the account will not have access to the previous user's secrets and you will need to add those secrets again.
 
 ### PSUSecretStore
+
+{% hint style="warning" %}
+If PowerShell Universal is run as a group managed service account, it cannot use the `PSUSecretStore`.
+{% endhint %}
 
 The `PSUSecretStore` vault is integrated with the Microsoft `SecretStore` module to store secrets in a cross-platform file. Ths file is tied to the current user account running PowerShell Universal. The password for the vault is stored in `appsettings.json`.
 
