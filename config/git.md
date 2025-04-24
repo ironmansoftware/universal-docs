@@ -332,6 +332,46 @@ You can also configure a git remote to authenticate with a user name and passwor
   },
 ```
 
+## Common Errors
+
+### Git synchronization failed. unknown certificate lookup failure: 16777280
+
+The lib2gitsharp library was unable to validate the certificate of the remote git repository. You will need to use the [external git client](git.md#external-git-client) and a custom git config in order to address this.&#x20;
+
+Some common options for git HTTPS support include:&#x20;
+
+```
+http.sslVerify
+    Whether to verify the SSL certificate when fetching or pushing over HTTPS.
+    Can be overridden by the GIT_SSL_NO_VERIFY environment variable.
+
+http.sslCAInfo
+    File containing the certificates to verify the peer with when fetching or pushing
+    over HTTPS. Can be overridden by the GIT_SSL_CAINFO environment variable.
+
+http.sslCAPath
+    Path containing files with the CA certificates to verify the peer with when
+    fetching or pushing over HTTPS.
+    Can be overridden by the GIT_SSL_CAPATH environment variable.
+```
+
+### too many redirects or authentication replays
+
+The git remote has rejected your credentials to access the repository. Your personal access token may have expired or does not have access to the remote.&#x20;
+
+### repository not owned by current user
+
+The local git repository does not have the proper access controls for the user trying to access it. This can happen if PowerShell Universal cloned the repository and then a different service account was set on the service. Because the access controls do not match, the git will not access the folder due. This is a security feature of git.&#x20;
+
+You can update the owner of the folder to avoid this or configure git to trust the folder. Set the following value into the global git config.&#x20;
+
+```
+[safe]
+directory = C:\ProgramData\UniversalAutomation\Repository
+```
+
+The global config can be found in: `C:\Program Files\git\etc\gitconfig`
+
 ## Benefits of Git Sync vs Manual Git Sync
 
 It is possible to manually git sync a repository. PowerShell Universal uses very basic commands when dealing with git. Any changes made to PowerShell Universal through the admin console or API invoke a `git commit` and the author is set to the identity of the user making the change. During a git sync operation, we first perform a `git pull` to ensure that we have the latest version of files on the remote. Next, we perform a `git push` to push up local commits that have happened since the last sync.
