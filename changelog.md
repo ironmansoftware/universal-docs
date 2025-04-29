@@ -4,6 +4,44 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.5.2 - 4/29/2025
+
+### Bugs
+
+#### Apps
+
+* \[5.5.0] New-UDRow Unable to set ID [#4700](https://github.com/ironmansoftware/powershell-universal/issues/4700)
+* \[5.5.1] New-UDTransferList only renders first item when populated dynamically or statically in Windows PowerShell 5.1 [#4625](https://github.com/ironmansoftware/powershell-universal/issues/4625)
+
+#### Admin Console
+
+* Added a warning when adding roles to secret variables
+* \[5.5.1] Average Execution Time seems overly precise [#4697](https://github.com/ironmansoftware/powershell-universal/issues/4697)
+* \[5.5.1] missing job history for scripts called with Invoke-PSUScript [#4706](https://github.com/ironmansoftware/powershell-universal/issues/4706)
+
+#### Automation
+
+* Fixed an issue changing script base folder
+
+#### Platform
+
+* Improved error messages for GMSA account login failures
+* Improved assembly load logging for PowerShell 7 environment.
+* \[5.5.0] Git sync not working [#4679](https://github.com/ironmansoftware/powershell-universal/issues/4679)
+* \[5.5.0] License file not expiring properly [#4693](https://github.com/ironmansoftware/powershell-universal/issues/4693)
+* Fixed an issue when $ENV:PSModulePath was set in the user scope
+* \[5.5.0] Git settings persisting despite deletion [#4699](https://github.com/ironmansoftware/powershell-universal/issues/4699)
+* Updated to PowerShell SDK 7.5.1 and .NET SDK 9.0.203
+
+#### Portal
+
+* \[5.5.0] Custom Widget Properties Showing Non-Existent Properties [#4667](https://github.com/ironmansoftware/powershell-universal/issues/4667)
+* \[5.5.1] Portal - Side bar navigation between scripts only works for the first script select [#4708](https://github.com/ironmansoftware/powershell-universal/issues/4708)
+
+#### VS Code
+
+* \[5.5.1] Script Base Path causes VS Code Extension to fail to load scripts. [#4715](https://github.com/ironmansoftware/powershell-universal/issues/4715)
+
 ## 5.5.1 - 4/23/2025
 
 ### Bugs

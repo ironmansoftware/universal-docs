@@ -214,8 +214,8 @@ The below module versions have been validated against PowerShell Universal. Modu
 
 | Module                         | Module Version | PSU Version | PSU Environments         |
 | ------------------------------ | -------------- | ----------- | ------------------------ |
-| Microsoft.Graph.Authentication | 2.26.1         | 5.5.1       | PowerShell 7             |
-| ExchangeOnlineManagement       | 3.7.2          | 5.5.1       | PowerShell 7             |
-| MicrosoftTeams                 | 6.9.0          | 5.5.1       | PowerShell 7             |
-| Az.Accounts                    | 4.1.0          | 5.5.1       | PowerShell 7, Integrated |
+| Microsoft.Graph.Authentication | 2.26.1         | 5.5.2       | PowerShell 7             |
+| ExchangeOnlineManagement       | 3.7.2          | 5.5.2       | PowerShell 7             |
+| MicrosoftTeams                 | 6.9.0          | 5.5.2       | PowerShell 7             |
+| Az.Accounts                    | 4.1.0          | 5.5.2       | PowerShell 7, Integrated |
 
