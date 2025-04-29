@@ -37,7 +37,7 @@ The example below shows how to run `msiexec.exe` to install PowerShell Universal
 
 {% code overflow="wrap" %}
 ```powershell
- Start-Process msiexec.exe -ArgumentList "/I C:\Users\adamr\Downloads\PowerShellUniversal.4.2.7.msi /q /norestart /L*V `"C:\users\adamr\desktop\msi.log.txt`" STARTSERVICE=0 SERVICEACCOUNT=contoso\service_account SERVICEACCOUNTPASSWORD=ThisPasswordWillBeReplacedWithAsterisksInTheMSILogs" -Wait -NoNewWindow
+ Start-Process msiexec.exe -ArgumentList "/I C:\Users\adamr\Downloads\PowerShellUniversal.5.5.2.msi /q /norestart /L*V `"C:\users\adamr\desktop\msi.log.txt`" STARTSERVICE=0 SERVICEACCOUNT=contoso\service_account SERVICEACCOUNTPASSWORD=ThisPasswordWillBeReplacedWithAsterisksInTheMSILogs" -Wait -NoNewWindow
 ```
 {% endcode %}
 
@@ -60,9 +60,9 @@ Start-Process .\Universal\Universal.Server.exe
 You can use the following command line on Linux to install and start PowerShell Universal:
 
 ```
- wget https://imsreleases.blob.core.windows.net/universal/production/5.2.1/Universal.linux-x64.5.2.1.zip
+ wget https://imsreleases.blob.core.windows.net/universal/production/5.5.2/Universal.linux-x64.5.2.1.zip
  sudo apt install unzip 
- unzip Universal.linux-x64.5.2.1.zip -d PSU
+ unzip Universal.linux-x64.5.5.2.zip -d PSU
  chmod +x ./PSU/Universal.Server
  ./PSU/Universal.Server
 ```
@@ -84,7 +84,7 @@ You can use `systemd` to start PowerShell Universal as a service. The below scri
 # ----
 
 # These are used to derive the download URL
-PSU_VERSION="5.0.0" # Change this to the current version
+PSU_VERSION="5.5.2" # Change this to the current version
 PSU_ARCH="arm64" # Change this to your desired architecture
 PSU_FILE="Universal.linux-${PSU_ARCH}.${PSU_VERSION}.zip"
 PSU_URL="https://imsreleases.blob.core.windows.net/universal/production/${PSU_VERSION}/${PSU_FILE}"
@@ -165,21 +165,7 @@ Install-PSUServer -LatestVersion
 
 Running this command on Windows creates and starts a Windows service on your machine. Running this command on Linux creates and starts a systemd service on your machine. Running this command on Mac OS downloads and extracts the PowerShell Universal server.
 
-## Chocolatey Package (Windows)
-
-{% hint style="warning" %}
-Chocolatey packages for PowerShell Universal are usually available within a week of release but are not available the day of a release.
-{% endhint %}
-
-You can install PowerShell Universal using the [Chocolatey package](https://chocolatey.org/packages/powershelluniversal). The package runs the MSI install. It installs Universal as a service and opens a web browser after the install.
-
-You can login with the "admin" user and any password.
-
-```
-choco install powershelluniversal
-```
-
-### Docker
+## Docker
 
 See the [Docker page](docker.md#installation).
 
@@ -205,12 +191,12 @@ The following directories contain examples from a standard Windows system of scr
 
 It may be necessary to exclude certain executables that run PowerShell scripts. The below is a list of executables that run PowerShell from PowerShell Universal.
 
-| Name                 | Description                                            |
-| -------------------- | ------------------------------------------------------ |
-| Universal.Server.exe | The PowerShell Universal core service.                 |
-| Universal.Agent.exe  | The PowerShell Universal agent environment executable. |
-| pwsh.exe             | PowerShell 7.x                                         |
-| PowerShell.exe       | PowerShell 5.x                                         |
+| Name                         | Description                                           |
+| ---------------------------- | ----------------------------------------------------- |
+| Universal.Server.exe         | The PowerShell Universal core service.                |
+| PowerShellUniversal.Host.exe | The PowerShell Universal host environment executable. |
+| pwsh.exe                     | PowerShell 7.x                                        |
+| PowerShell.exe               | PowerShell 5.x                                        |
 
 ## Default Admin Name and Password
 
