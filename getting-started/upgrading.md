@@ -241,27 +241,21 @@ The cmdlets are unable to determine how to call the PowerShell Universal APIs. Y
 
 #### SSL Certificate Error
 
-If you are using a self-signed certificate, you will need to specify the -TrustCertificate parameter of the cmdlets.
-
-### PowerShell.exe is no longer used
-
-The Windows PowerShell 5.1 environment no longer uses PowerShell.exe directly. It instead uses a .NET Framework version of the Universal.Agent.exe executable. This allows for the greatest compatibility with PowerShell Universal libraries and other modules. The agent still uses the PowerShell assemblies found on the executing machine.
-
-PowerShell.exe is no longer supported. It can be used in minimal environments.
+If you are using a self-signed certificate, you will need to specify the `-TrustCertificate` parameter of the cmdlets.
 
 ### PowerShell 7 Environment No longer Uses Pwsh.exe
 
-The default PowerShell 7 environment uses a .NET version of Universal.Agent.exe executable running PowerShell 7.4. This allows for the greatest compatibility with PowerShell Universal libraries and other modules.
+The default PowerShell 7 environment uses a .NET version of Universal.Agent.exe executable running PowerShell 7.5. This allows for the greatest compatibility with PowerShell Universal libraries and other modules.
 
 It's still possible to use the pwsh.exe process in custom environment configurations.
 
 ### IIS Hosting Package
 
-If you are hosting in IIS, ensure that you install the [.NET 8.0 hosting bundle](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-7.0.5-windows-hosting-bundle-installer).
+If you are hosting in IIS, ensure that you install the [.NET 9.0 hosting bundle](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-9.0.4-windows-hosting-bundle-installer).
 
 ### Integrated Environment PowerShell Version
 
-The integrated environment now uses PowerShell 7.4.
+The integrated environment now uses PowerShell 7.5.
 
 ### SQLite by Default
 
@@ -293,7 +287,7 @@ Desktop mode has been removed. Resources such as hot keys, file associations and
 
 ### Install-PSUServer on Windows Installs from the MSI
 
-In previous versions of PowerShell Universal, this command would install to a directory and create the service manually. This command now installs from MSI. If you previously installed with this module, you will need to remove the existing install with a previous version of the module and then install with the new version of the module.
+In previous versions of PowerShell Universal, this command would install to a directory and create the service manually. This command now installs from MSI. If you previously installed with this module, you would need to remove the existing install with a previous version of the module and then install with the new version of the module.
 
 ```powershell
 Install-Module Universal -RequiredVersion 4.4.0
