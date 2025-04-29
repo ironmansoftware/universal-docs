@@ -123,6 +123,7 @@ Join the thriving PowerShell Universal community and connect with like-minded pr
 
 * [Forums](https://forums.ironmansoftware.com/)
 * [Issue Tracker](https://github.com/ironmansoftware/issues)
+* [Discord](https://discord.gg/Sb5ngcjkj4)
 
 ## Licensing
 
