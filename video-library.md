@@ -23,6 +23,7 @@ description: PowerShell Universal Training Videos
 
 ## Platform
 
+* [Module](https://youtu.be/tWHwcDXlKdY)
 * [Variables](https://youtu.be/u06v9t7pkfg)
 
 ## Portal
