@@ -63,7 +63,7 @@ You can use the [`Set-PSUAuthentication` ](../cmdlets/Set-PSUAuthenticationMetho
 Stored in `.universal\branding.ps1`
 {% endhint %}
 
-This script is responsible for configuring branding settings.&#x20;
+This script is responsible for configuring branding settings.
 
 You can use the New-PSUBranding cmdlet in this file.
 
@@ -122,7 +122,7 @@ This script runs before any configuration is done within PowerShell Universal. T
 ### Middleware.ps1
 
 {% hint style="info" %}
-Stored in `.universal\initialize.ps1`
+Stored in `.universal\middleware.ps1`
 {% endhint %}
 
 Allows for customization of the HTTP requests in PowerShell Universal.
@@ -227,20 +227,20 @@ This script is responsible for configuring [vaults](../platform/variables.md#vau
 
 ## Templates
 
-Using the Templates folder within the Repository, you can create a selection of item templates for commonly used features in PowerShell Universal. This includes apps, app pages, scripts and endpoints.&#x20;
+Using the Templates folder within the Repository, you can create a selection of item templates for commonly used features in PowerShell Universal. This includes apps, app pages, scripts and endpoints.
 
 <figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Script Template</p></figcaption></figure>
 
-PS1 files in the following folders will be provided as templates in the admin console.&#x20;
+PS1 files in the following folders will be provided as templates in the admin console.
 
 * Templates \ App
 * Templates \ AppPage
 * Templates \ Endpoint
 * Templates \ Script
 
-## .psuignore&#x20;
+## .psuignore
 
-The `.psuignore`file can be used to exclude certain files or patterns from the file system watcher in PowerShell Universal. This is useful when saving files like logs to the repository directory. The format of the file should be a single regular expression per line. If the regular expression matches a path, the configuration system will ignore it.&#x20;
+The `.psuignore`file can be used to exclude certain files or patterns from the file system watcher in PowerShell Universal. This is useful when saving files like logs to the repository directory. The format of the file should be a single regular expression per line. If the regular expression matches a path, the configuration system will ignore it.
 
 ```
 logs.*
