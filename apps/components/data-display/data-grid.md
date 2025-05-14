@@ -441,7 +441,7 @@ New-UDDataGrid -LoadRows {
 In this example, we generate an array of 10,000 records. We will create a new function, `Out-UDDataGridData` to manage the paging, sorting and filtering. This function is already included in the [Universal module](../../../cmdlets/Out-UDDataGridData.txt).
 
 ```powershell
-New-UDDashboard -Title 'PowerShell Universal' -Content {
+New-UDApp -Title 'PowerShell Universal' -Content {
      $Data =  1..10000 | % {
         @{ Name = 'Adam'; Number = Get-Random }
     } 
@@ -450,10 +450,10 @@ New-UDDashboard -Title 'PowerShell Universal' -Content {
     } -Columns @(
         New-UDDataGridColumn -Field name
         New-UDDataGridColumn -Field number -Render {
-                    New-UDButton -Icon (New-UDIcon -Icon User) -OnClick { Show-UDToast $EventData.Name } } 
+                    New-UDButton -Icon (New-UDIcon -Icon User) -OnClick { Show-UDToast $EventData.Name } 
         }
-    ) -AutoHeight $true -Pagination
-}   
+    ) -AutoHeight $true -Pagination -HeaderFilters
+}     
 ```
 
 <figure><img src="../../../.gitbook/assets/image (356).png" alt=""><figcaption></figcaption></figure>
