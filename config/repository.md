@@ -97,6 +97,16 @@ This script is responsible for defining all the environments within PowerShell U
 
 You can use the [`New-PSUEnvironment` ](../cmdlets/New-PSUEnvironment.txt)cmdlet in this file.
 
+### healthChecks.ps1
+
+{% hint style="info" %}
+Stored in `.universal\healthChecks.ps1`
+{% endhint %}
+
+This script is responsible for defining Health Checks within PowerShell Universal.
+
+You can use the [`New-PSUHealthCheck` ](../cmdlets/New-PSUHealthCheck.txt)cmdlet in this file.
+
 ### Licenses.ps1
 
 {% hint style="info" %}
