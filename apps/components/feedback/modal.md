@@ -76,9 +76,28 @@ New-UDButton -Text 'Basic' -OnClick {
 }
 ```
 
+When opening multiple modals, you can also use the `-All` parameter of `Hide-UDModal` to hide all of them instead of one at a time.&#x20;
+
+```powershell
+New-UDButton -Text 'Parent' -OnClick {
+    Show-UDModal -Content {
+       New-UDButton -Text 'Child' -OnClick {
+          Show-UDModal -Content {
+              New-UDButton -Text 'hide current' -OnClick {
+                  Hide-UDModal
+              }
+              New-UDButton -Text 'hide all' -OnClick {
+                  Hide-UDModal -All
+              }
+          } 
+       }
+    }
+}
+```
+
 ## Styling
 
-You can style modules using the `-Style`, `-HeaderStyle`, `-ContentStyle` and `-FooterStyle` parameters. Style is applied to the entire modal itself and the individual section styles are only applied to those sections. The value for these parameters are hashtables of CSS values.&#x20;
+You can style modules using the `-Style`, `-HeaderStyle`, `-ContentStyle` and `-FooterStyle` parameters. Style is applied to the entire modal itself and the individual section styles are only applied to those sections. The value for these parameters are hashtables of CSS values.
 
 ```powershell
 New-UDButton -Text 'Styling' -OnClick {
@@ -92,5 +111,5 @@ New-UDButton -Text 'Styling' -OnClick {
 
 ## API
 
-* [Show-UDModal](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Show-UDModal.txt)
-* [Hide-UDModal](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Hide-UDModal.txt)
+* [Show-UDModal](../../../cmdlets/Show-UDModal.txt)
+* [Hide-UDModal](../../../cmdlets/Hide-UDModal.txt)
