@@ -59,3 +59,7 @@ For a full list of options, check the [IEditorConsturctionOptions](https://micro
 ```powershell
 New-UDCodeEditor -Language powershell -Height 100 -Options @{ fontSize = 10 }
 ```
+
+## API
+
+* [New-UDCodeEditor](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/New-UDCodeEditor.txt)
