@@ -143,6 +143,12 @@ $pwsh = (Get-Command pwsh).Path
 
 This script runs before variables are registered and vaults are located. You can create this file directly in the Repository\\.universal directory. It will be run during system startup before other configuration scripts are run.
 
+### vaults.ps1
+
+The `vaults.ps1` file contains vault registration commands. While the above example defines an Azure KeyVault secret vault registration, you can actually include any vault registration you need in this file.&#x20;
+
+You can edit vaults by clicking Platform \ Variables \ Vaults and then navigate to the vaults.ps1 tab.
+
 ## Importing Secret Variables
 
 You can also import pre-existing secrets as variables into Universal. The variable values are not imported but will be looked up during execution. Click the Import Secret button to import secrets.
