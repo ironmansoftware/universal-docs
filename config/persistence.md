@@ -80,7 +80,11 @@ PowerShell Universal performs limited database operations during daily activitie
 
 _Which versions of SQL Server are supported? Is there a minimum version required?_
 
-We support Microsoft SQL Server 2016 and onwards.
+PowerShell Universal supports Microsoft SQL Server 2016 and onwards.
+
+_Which database compatibility versions do you support?_
+
+PowerShell Universal supports require [database compatbility version 130 ](https://learn.microsoft.com/en-us/sql/relational-databases/databases/view-or-change-the-compatibility-level-of-a-database?view=sql-server-ver16)of later.&#x20;
 
 _Do any other SQL Server components need to be installed beside the Database Engine?_
 
@@ -138,4 +142,3 @@ You can enable PostgreSQL will the `PostgreSQL` plugin.
     "ConnectionString": "Host=PGhostname; Database=PGdatabase; User Id=PGusername; Password=PGpassword!;Port=5432",
   },
 ```
-

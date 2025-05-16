@@ -1,3 +1,7 @@
+---
+description: System requirements for PowerShell Universal
+---
+
 # 📊 System Requirements
 
 ## Windows
