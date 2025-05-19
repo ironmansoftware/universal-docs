@@ -16,7 +16,11 @@ New-UDTextbox -Label 'Disabled' -Placeholder 'Textbox' -Disabled
 New-UDTextbox -Label 'Textbox' -Value 'With value'
 ```
 
-## Password Textbox
+## Textbox Types
+
+Textboxes can be switched to accept specific types, such as passwords, numbers, or emails.
+
+### Password Type
 
 A password textbox will mask the input.
 
@@ -24,6 +28,16 @@ A password textbox will mask the input.
 
 ```powershell
 New-UDTextbox -Label 'Password' -Type password
+```
+
+### Number Type
+
+Only accepts numbers. Some browsers will include up and down arrows to increase and decrease the current value.
+
+![](<../../../.gitbook/assets/input-number.png>)
+
+```powershell
+New-UDTextbox -Label 'Number' -Type number -Minimum 10 -Maximum 10000 -Value 1234
 ```
 
 ## Multiline
