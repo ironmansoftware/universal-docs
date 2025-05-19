@@ -37,7 +37,7 @@ Only accepts numbers. Some browsers will include up and down arrows to increase 
 ![](<../../../.gitbook/assets/input-number.png>)
 
 ```powershell
-New-UDTextbox -Label 'Number' -Type number -Min 10 -Max 10000 -Value 1234
+New-UDTextbox -Label 'Number' -Type number -Minimum 10 -Maximum 10000 -Value 1234
 ```
 
 ## Multiline
