@@ -4,6 +4,60 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.5.3 - 5/19/2025
+
+### Bugs
+
+#### Admin Console
+
+* \[5.5.2] Error in Logs from EditorService [#4724](https://github.com/ironmansoftware/powershell-universal/issues/4724)
+* \[5.5.0] Removing Auth from a Portal Page Doesn't Display Properly [#4683](https://github.com/ironmansoftware/powershell-universal/issues/4683)
+* \[5.5.3] Settings not applying ? [#4728](https://github.com/ironmansoftware/powershell-universal/issues/4728)
+* \[5.5.2] Cannot see fatal errors [#4733](https://github.com/ironmansoftware/powershell-universal/issues/4733)
+* \[5.5.2] View Page in nestedIIS does not work [#4746](https://github.com/ironmansoftware/powershell-universal/issues/4746)
+* \[5.5.3] label on "create script" button turns into "View Properties" (x2) [#4734](https://github.com/ironmansoftware/powershell-universal/issues/4734)
+* \[5.5.2] Can't create tokens or identities in one-way git sync [#4753](https://github.com/ironmansoftware/powershell-universal/issues/4753)
+* \[5.5.2] Git commit list expand/contract button is missing [#4768](https://github.com/ironmansoftware/powershell-universal/issues/4768)
+* \[5.5.2] Forced Git Sync can fail if admin console page is reloaded [#4792](https://github.com/ironmansoftware/powershell-universal/issues/4792)
+* \[5.5.2] IIS WebSocket health check typo [#4794](https://github.com/ironmansoftware/powershell-universal/issues/4794)
+* \[5.5.2] Clear Health Checks button throws an error [#4793](https://github.com/ironmansoftware/powershell-universal/issues/4793)
+* Repository modules search [#4773](https://github.com/ironmansoftware/powershell-universal/issues/4773)
+* \[5.5.2] Not Authenticated Error with Windows Auth [#4790](https://github.com/ironmansoftware/powershell-universal/issues/4790)
+
+#### APIs
+
+* \[5.5.0] Accessing PSU Variables / Secrets in Csharp Endpoint [#4681](https://github.com/ironmansoftware/powershell-universal/issues/4681)
+
+#### Apps
+
+* Optimize Table Component Refresh Speed (Target: <0.2s) [#4622](https://github.com/ironmansoftware/powershell-universal/issues/4622)
+* \[5.5.2] New-UDDateRangePicker shows MUI X expired error [#4776](https://github.com/ironmansoftware/powershell-universal/issues/4776)
+* \[5.5.0] Regression: -HeaderFilters no longer enables header filters in DataGrid [#4771](https://github.com/ironmansoftware/powershell-universal/issues/4771)
+* \[5.5.2] Hide-UDModal defaults to -All [#4781](https://github.com/ironmansoftware/powershell-universal/issues/4781)
+* \[5.5.2] New-UDAutocomplete only shows first item in the list [#4774](https://github.com/ironmansoftware/powershell-universal/issues/4774)
+* \[5.5.2] Scripts run from a Dashboard using Invoke-PSUScript now show as Identity=System in Job list. [#4770](https://github.com/ironmansoftware/powershell-universal/issues/4770)
+
+#### Automation
+
+* \[5.5.2] 'Default Run On' setting is being ignored [#4745](https://github.com/ironmansoftware/powershell-universal/issues/4745)
+
+#### Cmdlets
+
+* \[5.5.0] Get-PSUComputer not returning tags [#4718](https://github.com/ironmansoftware/powershell-universal/issues/4718)
+* \[5.5.0] Set-PSUCache AbsoluteExpiration does not work with non-US time formats [#4725](https://github.com/ironmansoftware/powershell-universal/issues/4725)
+* \[5.5.2] Fix the error message -> Invalid URI: The format of the URI could not be determined. [#4749](https://github.com/ironmansoftware/powershell-universal/issues/4749)
+
+#### Platform
+
+* \[5.5.1] Execution policy for PSU-installed modules [#4720](https://github.com/ironmansoftware/powershell-universal/issues/4720)
+* \[5.3.2] Graceful shutdown of PSU Service on Linux takes a long time [#4506](https://github.com/ironmansoftware/powershell-universal/issues/4506)
+* \[5.5.2] Locked out after git repository delete [#4788](https://github.com/ironmansoftware/powershell-universal/issues/4788)
+* \[5.2.0] Users with no role gain access to role assigned apps [#4315](https://github.com/ironmansoftware/powershell-universal/issues/4315)
+
+#### Security
+
+* \[5.5.2] Error Creating Permissions [#4730](https://github.com/ironmansoftware/powershell-universal/issues/4730)
+
 ## 5.5.2 - 4/29/2025
 
 ### Bugs

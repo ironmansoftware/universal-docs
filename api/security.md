@@ -45,6 +45,17 @@ Once you have created your app token, you can now use it to authenticate against
 Invoke-RestMethod http://localhost:5000/auth -Headers @{ Authorization = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9oYXNoIjoiMWUyY2IzNzAtMmMyNS00ZDU5LTk4YzgtMzc5MTFjMDAyZmI5Iiwic3ViIjoiUG93ZXJTaGVsbFVuaXZlcnNhbCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE2MDU2NjEyNTUsImV4cCI6MTYzNzM2NzI1OCwiaXNzIjoiSXJvbm1hblNvZnR3YXJlIiwiYXVkIjoiUG" }
 ```
 
+#### Custom Authorization Header
+
+PowerShell Universal provides a custom authorization header to support scenarios with reverse proxies that may require their own Authorization header. If the `X-PSU-Authorization` header is specified, PSU will ignore the `Authorization` header and use this header instead.&#x20;
+
+```
+Invoke-RestMethod http://localhost:5000/auth -Headers @{ 
+    Authorization = "Bearer msft_xyz_123" 
+    'X-PSU-Authorization' = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9oYXNoIjoiMWUyY2IzNzAtMmMyNS00ZDU5LTk4YzgtMzc5MTFjMDAyZmI5Iiwic3ViIjoiUG93ZXJTaGVsbFVuaXZlcnNhbCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE2MDU2NjEyNTUsImV4cCI6MTYzNzM2NzI1OCwiaXNzIjoiSXJvbm1hblNvZnR3YXJlIiwiYXVkIjoiUG'
+}
+```
+
 ### Authenticating with Windows Authentication
 
 To authenticate with [Windows Authentication](../config/security/#windows-authentication-in-iis), you can use the `-UseDefaultCredentials` parameter of `Invoke-RestMethod` and `Invoke-WebRequest` . This will perform negotiate authentication whether you are running inside IIS or a service.

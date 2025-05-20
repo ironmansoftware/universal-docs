@@ -118,10 +118,21 @@ You can control which assemblies are referenced by using the `#ref` keyword. The
 
 ### Namespace Using
 
-You can referene a namespace using the `#using` keyword.&#x20;
+You can reference a namespace using the `#using` keyword.&#x20;
 
 ```csharp
 #using System.Management.Automation
+```
+
+### Variables
+
+You can access variables in C# endpoints with `GetVariable`, `GetSecretString`, and `GetSecretCredential` methods.
+
+```csharp
+return new ApiResponse {
+    StatusCode = 200
+    Body = GetVariable("MyVar").ToString()
+};
 ```
 
 ## OpenTelemetry
