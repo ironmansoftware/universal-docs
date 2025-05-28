@@ -135,6 +135,18 @@ return new ApiResponse {
 };
 ```
 
+To access a `PSCredential`, you can do the following.&#x20;
+
+```csharp
+#ref System  
+#ref System.Management.Automation
+
+return new ApiResponse { 
+    StatusCode = 200, 
+    Body = GetSecretCredential("MyCred").UserName.ToString() 
+};
+```
+
 ## OpenTelemetry
 
 **Identifier:** `PowerShellUniversal.Plugins.OpenTelemetry`
