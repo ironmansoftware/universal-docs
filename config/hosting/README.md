@@ -203,6 +203,7 @@ Organizations may require that PowerShell Universal provides certain security he
 
 * Strict-Transport-Security
 * Content-Security-Policy
+* X-Frame-Options
 * X-Content-Type-Options
 * X-XSS-Protection
 * Referrer-Policy
@@ -216,7 +217,7 @@ You can use the Kestrel \ Headers section to define these values.&#x20;
           "X-Content-Type-Options": "nosniff",
           "Content-Security-Policy": "default-src 'self';",
           "X-XSS-Protection": "block",
-          
+          "X-Frame-Options": "DENY"
        }
     }
 }
