@@ -25,7 +25,7 @@ psu admin reset --connection-string 'Data Source=C:\ProgramData\UniversalAutomat
 | Argument            | Description                                            | Required |
 | ------------------- | ------------------------------------------------------ | -------- |
 | --connection-string | The database connection string                         | ✅        |
-| database-type       | PostgreSQL, SQL or SQLite (default)                    | ❌        |
+| --database-type     | PostgreSQL, SQL or SQLite (default)                    | ❌        |
 | --encryption-key    | Database vault encryption key, if changed.             | ❌        |
 | --password          | Database vault password, if changed.                   | ❌        |
 | --key-size          | Database vault password key size, if changed from 128. | ❌        |
