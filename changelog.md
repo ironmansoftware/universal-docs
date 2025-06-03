@@ -4,6 +4,37 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.5.4 - 6/3/2025
+
+### Bugs
+
+#### Admin Console
+
+* Improved IntelliSense and Help performance
+* Fixed an issue with the permissions on the module editor page
+
+#### Apps
+
+* \[5.5.0] Invoke-UDJavascript throws exceptions [#4656](https://github.com/ironmansoftware/powershell-universal/issues/4656)
+* New-UDGridLayout not working since 5.3.x [#4575](https://github.com/ironmansoftware/powershell-universal/issues/4575)
+
+#### Automation
+
+* Reloading scripts in PSU 5.5.2 causes EF tracking conflict when using ParameterSetName in script definitions [#4751](https://github.com/ironmansoftware/powershell-universal/issues/4751)
+* OneTime Schedules Are Not Persisting or Removable Across Restarts in PSU v5.5.3 [#4763](https://github.com/ironmansoftware/powershell-universal/issues/4763)
+* Regression – POST /api/v1/script/path/{scriptFullPath} returns “Data at the root level is invalid” and fails to bind parameters in PSU 5.x [#4828](https://github.com/ironmansoftware/powershell-universal/issues/4828)
+
+#### Platform
+
+* Scheduler resets and DB‑lock timeouts in PSU5.5.x Hangfire jobs stop executing, queues refill, or concentrate on one node after upgrade [#4780](https://github.com/ironmansoftware/powershell-universal/issues/4780)
+* psu not executable by default on Linux [#4832](https://github.com/ironmansoftware/powershell-universal/issues/4832)
+* Fixed an issue where certain docker images were targeting PS 7.3 rather than 7.5.
+* RunAs sessions do not inherit PSModulePath, causing built-in module load failures [#4769](https://github.com/ironmansoftware/powershell-universal/issues/4769)
+* \[5.3.2] Deployment Error [#4417](https://github.com/ironmansoftware/powershell-universal/issues/4417)
+* Added log messages for slow SQL queries
+* Long Running Queries [#4841](https://github.com/ironmansoftware/powershell-universal/issues/4841)
+* Git sync crashes in 5.5.1 [#4702](https://github.com/ironmansoftware/powershell-universal/issues/4702)
+
 ## 5.5.3 - 5/19/2025
 
 ### Bugs
