@@ -14,6 +14,7 @@
 * [🔑 Licensing](licensing.md)
 * [📊 System Requirements](system-requirements.md)
 * [🌐 Supported Browsers](supported-browsers.md)
+* [Release Support Policy](release-support-policy.md)
 * [Cmdlet Help](https://github.com/ironmansoftware/universal-docs/tree/v5/cmdlets)
 
 ## 🔌 API
