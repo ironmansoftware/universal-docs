@@ -6,6 +6,30 @@ description: Changelog for PowerShell Universal.
 
 ## [Downloads](https://ironmansoftware.com/release/powershell-universal)
 
+## 4.5.4 - 6/3/2025
+
+#### APIs
+
+* \[4.5.3] Restarting API Button Not Available in One Way Git Sync [#4704](https://github.com/ironmansoftware/powershell-universal/issues/4704)
+
+#### Apps
+
+* Fixed an issue with the Sync-UDElement docs [#4443](https://github.com/ironmansoftware/powershell-universal/issues/4443)
+* Add Excel Filter Pattern to select more than on filter to New-UDTableColumn -FilterType [#4694](https://github.com/ironmansoftware/powershell-universal/issues/4694)
+
+#### Automation
+
+* Added Running to job status filter selector [#4534](https://github.com/ironmansoftware/powershell-universal/issues/4534)
+* Fixed an issue displaying error message from Invoke-PSUScript [#4563](https://github.com/ironmansoftware/powershell-universal/issues/4563)
+* \[4.5.2] Editing schedule results in invalid parameter when using ValidateSet [#4450](https://github.com/ironmansoftware/powershell-universal/issues/4450)
+* AppToken with Reader role can archive jobs [#4755](https://github.com/ironmansoftware/powershell-universal/issues/4755)
+
+#### Module
+
+* Added -AsObject to Get-PSUJobOutput [#4496](https://github.com/ironmansoftware/powershell-universal/issues/4496)
+* Parameter defined multiple times when calling New-PSUSchedule [#4359](https://github.com/ironmansoftware/powershell-universal/issues/4359)
+* Added Add-PSUComputerTag\Remove-PSUComputerTag
+
 ## 4.5.3 - 2/27/2025
 
 #### APIs
