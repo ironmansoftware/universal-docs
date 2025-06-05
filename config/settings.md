@@ -79,43 +79,37 @@ Kestrel is the web server implementation for ASP.NET Core that PowerShell Univer
 | CookiePolicy      | When set to SameSiteNone, the SameSite=None value will be set on cookies in PSU. This is useful for when hosting PSU in iframes.     |
 | Headers           | An object where the keys are the headers to set on each request with the value being the value of the header.                        |
 
-### Application Insights
+### Azure Application Insights
 
 **Default value**
 
 ```javascript
 "ApplicationInsights": {
-  "InstrumentationKey": ""
+  "ConnectionString": ""
 },
 ```
 
-| Key                | Description                                            |
-| ------------------ | ------------------------------------------------------ |
-| InstrumentationKey | Sets the instrumentation key for Application Insights. |
+| Key              | Description                                          |
+| ---------------- | ---------------------------------------------------- |
+| ConnectionString | Sets the connection string for Application Insights. |
 
 ### Logging
 
 **Default Value**
 
 ```javascript
-"Logging": {
-  "Path": "%PROGRAMDATA%/PowerShellUniversal/log.txt",
-  "RetainedFileCountLimit": 31,
-  "LogLevel": {
-    "Default": "Information",
-    "Microsoft": "Warning",
-    "Microsoft.Hosting.Lifetime": "Information"
-  }
-},
+{
+    "SystemLogPath": "%PROGRAMDATA%/PowerShellUniversal/Logs/System/log.txt",
+    "SystemLogLevel": "Information"
+}
 ```
 
-The logging options define the level of logging exposed by Universal. The core Universal logging setting Logging / LogLevel / Default can be adjusted to increase the level of logging by the Universal components.
+Sets the system log path and level. This will be overridden by the log level in settings.ps1 after it loads. This setting is useful for debugging issues during system start up.
 
-| Key                    | Description                                                                                                                     |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| Path                   | Path to the log file.                                                                                                           |
-| RetainedFileCountLimit | The number of log files to retain. A new log file will be created each day.                                                     |
-| LogLevel               | The log levels for various portions for the Universal server. You can set values such as Debug, Information, Warning and Error. |
+| Key            | Description                                                                             |
+| -------------- | --------------------------------------------------------------------------------------- |
+| SystemLogPath  | Path to the log file.                                                                   |
+| SystemLogLevel | The system log level. You can set values such as Debug, Information, Warning and Error. |
 
 ### AllowedHosts
 
@@ -155,7 +149,8 @@ Configures the hosts that are allowed to make cross-origin resource sharing requ
   "GitBranch": "",
   "ConfigurationScript": "",
   "ExternalGitClient": false,
-  "Mode": "automatic"
+  "Mode": "automatic",
+  "SlowQueryLimit": 500
 },
 ```
 
@@ -191,7 +186,7 @@ Configures the hosts that are allowed to make cross-origin resource sharing requ
 **Default Value**
 
 ```javascript
-    "Authentication" : {
+"Authentication" : {
     "Windows": {
       "Enabled": "false"
     },
@@ -215,6 +210,23 @@ Configures the hosts that are allowed to make cross-origin resource sharing requ
       "SaveTokens": "false",
       "CorrelationCookieSameSite": "",
       "UseTokenLifetime": true
+    },
+    "OIDC": {
+      "Enabled": "false",
+      "CallbackPath": "/auth/signin-oidc",
+      "ClientID": "",
+      "ClientSecret": "",
+      "Resource": "",
+      "Authority": "",
+      "ResponseType": "",
+      "SaveTokens": "false",
+      "CorrelationCookieSameSite": "",
+      "UseTokenLifetime": true,
+      "Scope": "openid profile groups",
+      "GetUserInfo": false
+    },
+    "ClientCertificate": {
+      "Enabled": "false"
     },
     "SessionTimeout": "25"
   },
@@ -296,16 +308,19 @@ Options for configuring the default secret vaults.
     "Password": "PSUSecretStore"
   },
   "Database": {
-    "EncryptionKey": "=b0ywQA@VOSdr&R7an5g&XK6NVO%s4Tf"
+    "EncryptionKey": "=b0ywQA@VOSdr&R7an5g&XK6NVO%s4Tf",
+    "Password": "",
+    "KeySize": 128
   }
 }
 ```
 
-| Key                      | Description                                                                            |
-| ------------------------ | -------------------------------------------------------------------------------------- |
-| SecretStore \ Password   | The password for the PSUSecretStore vault. This uses the Microsoft SecretStore module. |
-| Database \ EncryptionKey | The AES 128 encryption key used to encrypt secrets stored in the database.             |
-|                          |                                                                                        |
+| Key                      | Description                                                                                            |
+| ------------------------ | ------------------------------------------------------------------------------------------------------ |
+| SecretStore \ Password   | The password for the PSUSecretStore vault. This uses the Microsoft SecretStore module.                 |
+| Database \ EncryptionKey | The AES 128 encryption key used to encrypt secrets stored in the database.                             |
+| Database \ Password      | A password used to generate an encryption key. EncryptionKey will be ignored if password is specified. |
+| Database \ KeySize       | The number of bytes in the key. Should be a multiple of 128 and defaults to 128.                       |
 
 #### Generating an Encryption Key
 
@@ -329,9 +344,10 @@ Settings for automation specific features.
 ```json
 "UniversalAutomation": {
     "Queues": [],
-    "JobHandshakeTimeout": 5,
+    "JobHandshakeTimeout": 30,
     "JobDebugging": false,
-    "ContinueJobOnServerStop": false
+    "ContinueJobOnServerStop": false,
+    "HangfireWorkerCount" : 100
   }
 ```
 
@@ -345,14 +361,32 @@ Settings for automation specific features.
 
 ### **HideAdminConsole**
 
+```json
+{
+    "HideAdminConsole": false
+}
+```
+
 Prevents the service from serving the admin console. This will prevent the admin console from being used by any user, including administrators.
 
 ### NodeName
+
+```json
+{
+    "NodeName": ""
+}
+```
 
 The node name option is used to change the name of the PowerShell Universal instance. By default, this is the local computer's name. When using PowerShell Universal in a container, this can become probematic because the name can change whenever the container is restarted.
 
 To set a static node name, change this parameter.
 
 ### Profiling
+
+```json
+{
+    "Profiling": "false"
+}
+```
 
 Enables [profiling](../development/profiling.md) of scripts within PowerShell Universal. This is disabled by default as there is a memory impact when enabling profiling.
