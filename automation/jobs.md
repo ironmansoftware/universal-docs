@@ -102,6 +102,15 @@ Get-PSUJobPipelineOutput -Job $Job
 Get-PSUJobOutput -Job $Job
 ```
 
+### Returns the last job's output as an object
+
+By default, `Get-PSUJobOutput` will return the output as a string. To return the output as an object with information about the output, use `-AsObject`.
+
+```powershell
+$Job = Get-PSUScript -Name 'Script.ps1' | Get-PSUJob -OrderDirection Descending -First 1
+Get-PSUJobOutput -Job $Job -AsObject
+```
+
 ### Invoke a Script and Wait for Output
 
 The following example invokes a script, stores the job object in a `$job` variable, waits for the job to complete and then returns the pipeline and host output.
