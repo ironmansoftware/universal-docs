@@ -65,7 +65,7 @@ In scopes that have a user context, like an app, calls to cmdlets are made under
 ```json
 {
     "Api": {
-       "SecurityModel": "Permissive"
+       "SecurityModel": "Strict"
     }
 }
 ```
