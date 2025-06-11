@@ -58,7 +58,9 @@ The API developer can work around this by providing an App Token that does have 
 
 You can change the authorization model to allow any calls from within PowerShell Universal to function without an app token. While this may be considered less secure by some, it depends on your organization's use of the platform. This value can be set in `appsettings.json` or within the `API__SecurityModel` environment variable.
 
-Permissive mode still uses the external PowerShell Universal APIs and communicates the user context, if available, when calling the PowerShell Universal APIs.
+Strict mode requires that the external PowerShell Universal APIs are used for communication. In strict mode, you cannot use the `-Integrated` switch. A user context is required for authentication. This means that when using the module in non-user contexts, like the Schedules, you will need to provide an app token.&#x20;
+
+In scopes that have a user context, like an app, calls to cmdlets are made under that user's privileges. For example, if a user accessing an app doesn't have access to call `Get-PSUScript`, the cmdlet will not be usable without an app token with those privileges.
 
 ```json
 {
@@ -68,7 +70,17 @@ Permissive mode still uses the external PowerShell Universal APIs and communicat
 }
 ```
 
-You can also use the `Integrated` Security Model to completely avoid the need to configure app tokens, URLs or certificates. The Integrated Security Model does not communicate the user context, even when the user is authenticated.
+Permissive mode still uses the external PowerShell Universal APIs and communicates the user context, if available, when calling the PowerShell Universal APIs. Permissive mode allows the use of the -Integrated switch to bypass authorization and to use the back-channel TCP connection rather than the PowerShell Universal external API.
+
+```json
+{
+    "Api": {
+       "SecurityModel": "Permissive"
+    }
+}
+```
+
+You can also use the `Integrated` Security Model to completely avoid the need to configure app tokens, URLs or certificates. The Integrated Security Model does not communicate the user context, even when the user is authenticated. It also uses the back-channel TCP connection rather than the PowerShell Universal external API.&#x20;
 
 ```json
 {
