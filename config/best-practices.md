@@ -14,17 +14,15 @@ You can use tools like Docker Compose to layer PowerShell Universal configuratio
 
 Depending on your needs, typically based on team size and usage, this type of configuration may not be necessary.
 
-### Avoiding Writing to the Repository Directory
+### Disable Auto Reload When Not In Use
+
+The auto reload feature detects changes in the repository directory using a file system watcher. This feature is useful when developing a PowerShell Universal configuration directly from the file system using tools like Visual Studio Code. That said, this can have unexpected side effects if you are not using the feature. For example, writing files to the repository, like logs, can result in the PowerShell Universal configuration system reloading itself unnecessarily.
 
 {% hint style="info" %}
 The repository directory defaults to `C:\ProgramData\UniversalAutomation\Repository`
 {% endhint %}
 
-Writing files directly to the repository directory in your scripts can have adverse side effects on performance of the system. PowerShell Universal employs a file system watcher to check for changes to files made on disk. Any changes made within the directory trigger the watcher and configuration file reload verification.
-
-In some instances, writing files can result in configuration reloads that may restart dashboards or cause internal caches to be cleared.
-
-It's recommended to avoid writing to this directory directly in a default configuration. If you would like to write to the directory, consider disabling the server-wide Auto Reload setting. This will disable the file system watcher and you will no longer risk impacting the configuration of the system.
+If you are making changes through the admin console, via git sync, or using deployments, you should disable auto reload. This will both increase performance and also reduce the risk of unexpected changes to your deployed configuration.
 
 <figure><img src="../.gitbook/assets/image (361).png" alt=""><figcaption></figcaption></figure>
 
