@@ -255,6 +255,10 @@ Not all modules will cause issues so this technique may not always be necessary.
 
 ## Infrastructure and Hosting
 
+### Dedicated PowerShell Universal Server
+
+Consider a dedicated PowerShell Universal server to host the platform. Avoid installing alongside other platforms that may cause contention of resources with the application. PowerShell Universal uses standard PowerShell features like modules, execution policies and remoting configuration and other platforms may configure these settings in ways that PSU may not work well with.
+
 ### Utilize MS SQL or PostgreSQL for Production
 
 Avoid using SQLite for production use cases. It does not provide the ability to scale when workloads increase. It prevents multiple PSU servers from using the same data store. It does not scale when reaching sizes over 2 GBs.&#x20;
