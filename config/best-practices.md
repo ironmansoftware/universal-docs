@@ -252,3 +252,29 @@ Using `Invoke-PSUScript` and running a script in an external environment ensures
 For a good user experience, it may not always make sense to start a job for every interaction on a page. Consider using the PSUCache cmdlets to set and retrieve data from the cache to improve page loading times.
 
 Not all modules will cause issues so this technique may not always be necessary. Script modules are very unlikely to cause any issues with assembly loading.
+
+## Infrastructure and Hosting
+
+### Utilize MS SQL or PostgreSQL for Production
+
+Avoid using SQLite for production use cases. It does not provide the ability to scale when workloads increase. It prevents multiple PSU servers from using the same data store. It does not scale when reaching sizes over 2 GBs.&#x20;
+
+Migrating from a SQLite database to a SQL database can be error prone and time consuming. If you are considering a deployment for production use, we recommend starting with a centralized SQL server.&#x20;
+
+### Perform Scheduled Database Backups
+
+We recommend backing up the database on regular intervals. While configuration data is primarily stored in the repository, the database contains resources such as App Tokens, local identities, job history and more. Regular backups also help to recover from failed schema upgrades and provide the ability to rollback to previous schema versions without the need to perform a schema downgrade.&#x20;
+
+### Database Cluster for Redundancy
+
+We recommend using a database failover cluster, if possible. This allows for quick recovery and limits down time of the PowerShell Universal server is one of the SQL servers were to go offline.&#x20;
+
+### Load Balancing
+
+Consider employing a load balancer in front of your PowerShell Universal instances. Users will be directed to the least busy server or will fail over from offline servers. This also provides a better way to stage upgrades of the PowerShell Universal application.&#x20;
+
+PowerShell Universal supports load balancers like F5.
+
+### Use HTTPS&#x20;
+
+[HTTPS ](hosting/#configuring-https)not only provides security from attackers listening on the network, but it also provides better performance when using the PowerShell Universal cmdlets. They rely on features of HTTPS when communicating with the platform and fall back to legacy communication technologies if they are not available.&#x20;
