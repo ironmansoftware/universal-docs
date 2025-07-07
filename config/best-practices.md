@@ -278,3 +278,9 @@ PowerShell Universal supports load balancers like F5.
 ### Use HTTPS&#x20;
 
 [HTTPS ](hosting/#configuring-https)not only provides security from attackers listening on the network, but it also provides better performance when using the PowerShell Universal cmdlets. They rely on features of HTTPS when communicating with the platform and fall back to legacy communication technologies if they are not available.&#x20;
+
+### Log Shipping
+
+System log files are written to the `%ProgramData%\PowerShellUniversal\Logs` folder and will be purged after 30 days. Each day, a new log file is written, by default. Consider shipping logs from this directory to your SIEM if you intend to keep logs longer than 30 days.&#x20;
+
+You can also configure [Logging Targets](../development/logging.md#targets) to send log messages directly to a SIEM.
