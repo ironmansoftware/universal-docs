@@ -4,6 +4,36 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.5.5 - 7/9/2025
+
+### Bugs
+
+#### Admin Console
+
+* Built in widgets not saved in portal pages [#4909](https://github.com/ironmansoftware/powershell-universal/issues/4909)
+
+#### APIs
+
+* Eventhub sends payload of 'test' when data is sent to a Computer or ConnectionID in 5.5.4 [#4896](https://github.com/ironmansoftware/powershell-universal/issues/4896)
+
+#### Automation
+
+* \[5.5.4] 'Cannot find drive. A drive with the name 'Cert' does not exist.' when using Windows Powershell 5.1 [#4845](https://github.com/ironmansoftware/powershell-universal/issues/4845)
+* \[5.5.4] 'The term 'New-Guid' is not recognized as the name of a cmdlet, function, script file, or operable program.' when using Windows Powershell 5.1 [#4844](https://github.com/ironmansoftware/powershell-universal/issues/4844)
+* files in all sub folders are shown [#4835](https://github.com/ironmansoftware/powershell-universal/issues/4835)
+* Scripts root level folder shows all scripts including nested [#4851](https://github.com/ironmansoftware/powershell-universal/issues/4851)
+* \[5.5.4] Script Duplication [#4847](https://github.com/ironmansoftware/powershell-universal/issues/4847)
+* Edit Properties Dialog Pagination issue [#4850](https://github.com/ironmansoftware/powershell-universal/issues/4850)
+* Scripts with -ConcurrentJobs x parameter defined, stuck in queue [#4862](https://github.com/ironmansoftware/powershell-universal/issues/4862)
+* Memory leak in PSU server [#4892](https://github.com/ironmansoftware/powershell-universal/issues/4892)
+* Scheduler fails to register server node; jobs stuck with 0001-12-31 StartTime after upgrade to 5.5.4 [#4934](https://github.com/ironmansoftware/powershell-universal/issues/4934)
+* Improved performance of Write-Progress
+
+#### Platform
+
+* Creating or deleting a deployment in admin console doesn't refresh deployment list [#4891](https://github.com/ironmansoftware/powershell-universal/issues/4891)
+* Run As accounts using local login rather than batch [#4904](https://github.com/ironmansoftware/powershell-universal/issues/4904)
+
 ## 5.5.4 - 6/3/2025
 
 ### Bugs
