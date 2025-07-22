@@ -41,5 +41,17 @@ Reserve proxies may require configuration to properly send these headers.
 
 * IIS Automatically configures forwarded headers.
 * [NGINX Forwarded Headers](https://www.nginx.com/resources/wiki/start/topics/examples/forwarded/)
-* [Apache mod\_proxy](https://httpd.apache.org/docs/2.4/mod/mod\_proxy.html#x-headers)
+* [Apache mod\_proxy](https://httpd.apache.org/docs/2.4/mod/mod_proxy.html#x-headers)
 * [CloudFlare HTTP request headers](https://developers.cloudflare.com/fundamentals/get-started/reference/http-request-headers/#x-forwarded-for)
+
+## Azure Application Proxy&#x20;
+
+The Azure Application Proxy, also referred to as the Entra ID Private Network Connector, provides access to on premises resources over the internet using security provided by Microsoft. You'll need a connector installed within your network in order to proxy the connection to PowerShell Universal.&#x20;
+
+Configure the Application Proxy settings for your Enterprise Application, to point to your local server. In this example, the Default - North America group has my connector associated with it. This connector machine has PowerShell Universal installed.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (298).png" alt=""><figcaption></figcaption></figure>
+
+For the advanced settings, use a persistent cookie and avoid translating any URLs. You can chose whether to validate the backend SSL certificate, if desired.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (303).png" alt=""><figcaption></figcaption></figure>

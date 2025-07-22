@@ -23,17 +23,17 @@ To update the content of a page, click the Edit Code button.
 As an example, you could add a button to your page.
 
 ```powershell
-New-UDButton -Text 'What page is this?' -OnClick {
-    Show-UDToast $UDPage
-}
+New-UDPage -Name 'Users' -Url '/users' -Content {
+    New-UDButton -Text 'What page is this?' -OnClick {
+        Show-UDToast $UDPage
+    }
+} -AutoInclude
 ```
 
-Once you have added the controls you would like to the page, you can add it to your app. To reference the page in your app, use `Get-UDPage`.
+Pages are automatically added to apps with the `-AutoInclude` parameter. Simply call New-UDApp in the root of your app's PS1 file.
 
 ```powershell
-New-UDApp -Pages @(
-    Get-UDPage -Name 'Users'
-)
+New-UDApp 
 ```
 
 ## Basic Page
@@ -42,8 +42,8 @@ A basic page can be defined using the `New-UDPage` cmdlet. You could navigate to
 
 ```powershell
 $Pages = @()
-$Pages += New-UDPage -Name 'Dashboard' -Content {
-    New-UDTypography -Text 'Dashboard'
+$Pages += New-UDPage -Name 'App' -Content {
+    New-UDTypography -Text 'App'
 }
 
 New-UDApp -Title 'Pages' -Pages $Pages

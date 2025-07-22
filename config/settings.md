@@ -150,7 +150,8 @@ Configures the hosts that are allowed to make cross-origin resource sharing requ
   "ConfigurationScript": "",
   "ExternalGitClient": false,
   "Mode": "automatic",
-  "SlowQueryLimit": 500
+  "SlowQueryLimit": 500,
+  "Persistence": {}
 },
 ```
 
@@ -166,6 +167,7 @@ Configures the hosts that are allowed to make cross-origin resource sharing requ
 | ExternalGitClient   | When set to true the Operating Systems Git client will be used instead of the inbuilt library client                               |
 | Mode                | Sets the git mode. It can be either manual or automatic. Defaults to manual.                                                       |
 | SlowQueryLimit      | The number of milliseconds a SQL query needs to run before a log message is written. Defaults to 500ms. Only available for MS SQL. |
+| Persistence         | Configures [database persistence of resources](repository.md).                                                                     |
 
 ### **API**
 
@@ -173,13 +175,15 @@ Configures the hosts that are allowed to make cross-origin resource sharing requ
 
 ```javascript
 "Api": {
-  "Url": ""
+  "Url": "",
+  "HideManagementDoc": false
 },
 ```
 
-| Key | Description                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Url | Sets the external URL used internally by Universal. This is necessary when running Universal from within a reverse proxy like IIS. When using cmdlets like `Get-UAScript` from within a running job, the Universal server needs to determine where the web server. When running within a proxy, it cannot determine this itself. You will want to configure this to point to the name and port of the IIS website in this configuration. |
+| Key               | Description                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Url               | Sets the external URL used internally by Universal. This is necessary when running Universal from within a reverse proxy like IIS. When using cmdlets like `Get-UAScript` from within a running job, the Universal server needs to determine where the web server. When running within a proxy, it cannot determine this itself. You will want to configure this to point to the name and port of the IIS website in this configuration. |
+| HideManagementDoc | If true, hides the PowerShell Universal Management API's OpenAPI documentation.                                                                                                                                                                                                                                                                                                                                                          |
 
 ### **Authentication**
 
@@ -381,12 +385,30 @@ The node name option is used to change the name of the PowerShell Universal inst
 
 To set a static node name, change this parameter.
 
-### Profiling
+## Static Resources
+
+You can define static resources using app settings. These include environment variables and appsettings.json. To define a resource, use the `Resources` node within appsettings.json or the prefix `Resources` with an environment variable.&#x20;
+
+For example, to define a static role in appsettings.json, use the following.&#x20;
 
 ```json
 {
-    "Profiling": "false"
+    "Resources": {
+        "Roles": [
+            {
+                "Name": "Static Role",
+                "ClaimType": "group",
+                "ClaimValue": "xyz123"
+            }
+        }
+    }
 }
 ```
 
-Enables [profiling](../development/profiling.md) of scripts within PowerShell Universal. This is disabled by default as there is a memory impact when enabling profiling.
+You can define the same role using environment variables.&#x20;
+
+```powershell
+$ENV:Resources__Roles__0__Name = "Static Role"
+$ENV:Resources__Roles__0__ClaimType = "group"
+$ENV:Resources__Roles__0__ClaimValue = "xyz123"
+```

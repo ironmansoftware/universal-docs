@@ -42,9 +42,13 @@ Next, click Create Permission. This will display the Creat Permission dialog. Th
 
 The user now has access to execute the script. In order to view it within the admin console, you will also need to grant access to the pages necessary to do so.&#x20;
 
-Click Security \ Permissions. Click Create Permission. Assign the View access to `automation.scripts` to the role.&#x20;
+Click Security \ Permissions. Click Create Permission. Assign the View access to `automation.scripts` and `automation` to the role.&#x20;
 
 <figure><img src="../../.gitbook/assets/image (288).png" alt=""><figcaption><p>View Role</p></figcaption></figure>
+
+The resulting permissions should look like this.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (294).png" alt=""><figcaption></figcaption></figure>
 
 ### Example: Scheduler Role
 

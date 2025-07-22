@@ -4,6 +4,12 @@ description: Changelog for the Visual Studio Code extension for PowerShell Unive
 
 # Extension Changelog
 
+## 5.6.0 - 7/22/2025
+
+* Local development mode
+* Added reconnect button
+* Added computer name to processes
+
 ## 5.5.1 - 4/23/2025
 
 * Fixed an issue viewing scripts and folders in nested folder paths

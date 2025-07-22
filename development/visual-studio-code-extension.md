@@ -12,6 +12,26 @@ You can download the extension from the [Visual Studio Marketplace](https://mark
 
 ![](<../.gitbook/assets/image (278).png>)
 
+## Local Development
+
+Local development provides a mechanism of running PowerShell Universal quickly in a local instance based on configuration in your source repository. This avoids developers having to manually configure a local PowerShell Universal instance.&#x20;
+
+In order to support local development, create a `psu.dev.config` file in the root of your source repository. A version is required. By default, a SQLite database will be used and stored in a workspace-specific location.&#x20;
+
+```json
+{
+    "version": "5.6.0",
+    "browserPort": "5005",
+    "env": {
+        "NodeName": "MyDevNode"
+    }
+}
+```
+
+After defining `psu.dev.config` file or cloning a repository that contains the file, run the `Start Local Development` command to instruct VS Code to download and configure PSU. It will then start the PSU server with the configured settings. It will use the local folder as the repository for this PSU instance.&#x20;
+
+You can login to the PSU server and make changes locally to see them reflected in the platform.
+
 ## Configuration
 
 The extension will prompt you for the URL and App Token used to connect to your PowerShell Universal instance. Follow the instructions within the extension when it starts up.

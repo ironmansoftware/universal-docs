@@ -44,6 +44,14 @@ You will need to configure authentication to your remote git repository. We reco
 
 You can choose to use an external git client rather than using the library built into PowerShell Universal. This allows you additional configuration options such as using SSH authentication. PowerShell Universal will not use configured username, passwords or PATs when enabling this method. You will need to have a git client installed.
 
+#### Using SSH Keys
+
+You can use PowerShell Universal to generate and manage SSH keys. Within the admin console, click Platform \ SSH Keys. Generate a new SSH key. Next, click the copy button next to the SSH key to get the public key.&#x20;
+
+Register the public key with the target repository or account. For example, you can follow the [GitHub guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) here.&#x20;
+
+Within the Git Settings window, select the SSH Key you wish to use with the git sync.&#x20;
+
 #### Setting Credentials
 
 When using the external git client, you are responsible for configuring credentials before performing a synchronization.

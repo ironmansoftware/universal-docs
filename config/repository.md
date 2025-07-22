@@ -45,6 +45,10 @@ You can edit the repository files directly in the admin console by navigating to
 
 <figure><img src="../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
 
+You can also edit the repository directly on disk using editors like Visual Studio Code. By default, files are stored in `%ProgramData%\UniversalAutomation\Repository`. You will need to toggle the node into VS Code editing mode. The toggle to do so can be found on the home page. Only administrators will see this button and, if Disable Code First Editing is on in Settings \ General, you will not be able to change the edit mode.&#x20;
+
+<figure><img src="../.gitbook/assets/image (296).png" alt=""><figcaption></figcaption></figure>
+
 ## Configuration Scripts
 
 ### Authentication.ps1
@@ -280,4 +284,32 @@ New-PSUEndpoint -Url "/user" -Endpoint {
 
 #region PSUFooter
 #endregion
+```
+
+## Database Resources
+
+You can optionally configure resources to be stored in the database rather than within the configuration repository. These resources will no longer be stored on disk and will be stored directly in the database. This makes them instantly available to allow connected computers in the PSU cluster.&#x20;
+
+{% hint style="warning" %}
+When configured, configuration files for resources will be ignored.
+{% endhint %}
+
+Some resources are not supported. These include:
+
+* Apps
+* Endpoints with paths
+* Scripts
+* Modules
+
+To configure a resource for database persistence, you need to setup the [App Settings](settings.md) for each class type. Below is an example of storing schedules within the database.
+
+```json
+{
+    "Data": {
+        "Persistence" : {
+            "Schedule": "Database",
+            "ScheduleParameter": "Database"
+        }
+    }
+}
 ```

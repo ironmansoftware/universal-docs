@@ -19,7 +19,8 @@ This JSON file configures the Agent to connect to the hub and run scripts when i
             "Url": "http://localhost:5000",
             "Hub": "eventHub",
             "AppToken": "tokenXyz",
-            "ScriptPath": "script.ps1"
+            "ScriptPath": "script.ps1",
+            "Description": "My agent"
         }
     ]
 }
@@ -62,6 +63,10 @@ Windows Authentication will be used to authenticate against the hub.
 #### ScriptPath
 
 The script to execute when an event is received. This script is read into memory and not from disk. Variables such as `$PSScriptRoot` are currently not supported. This is optional as event hubs can also run commands directly.
+
+#### Description
+
+The description for this connection. This will be reported to the PowerShell Universal server.
 
 ## Environment Variables
 

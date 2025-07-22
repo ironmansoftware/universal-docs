@@ -4,6 +4,145 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.6.0 - 7/22/2025
+
+### Features
+
+#### Admin Console
+
+* Login Page Styling Improvements [#4698](https://github.com/ironmansoftware/powershell-universal/issues/4698)
+* Allow separate Dark/Light modes for the Code Editor [#4690](https://github.com/ironmansoftware/powershell-universal/issues/4690)
+* Add last execution date/time for schedules page [#4584](https://github.com/ironmansoftware/powershell-universal/issues/4584)
+* Notifications 99+ in red [#4758](https://github.com/ironmansoftware/powershell-universal/issues/4758)
+* Install module from PSGallery with specific version [#4775](https://github.com/ironmansoftware/powershell-universal/issues/4775)
+* show logging icon for an app in module [#4712](https://github.com/ironmansoftware/powershell-universal/issues/4712)
+* Show line numbers and minimap by default [#4717](https://github.com/ironmansoftware/powershell-universal/issues/4717)
+* Add Splitter Panels in Admin Console [#4797](https://github.com/ironmansoftware/powershell-universal/issues/4797)
+* View files in published folders [#4638](https://github.com/ironmansoftware/powershell-universal/issues/4638)
+* Improve validation of Endpoint URL [#3789](https://github.com/ironmansoftware/powershell-universal/issues/3789)
+* Switch to editor after creating script [#4861](https://github.com/ironmansoftware/powershell-universal/issues/4861)
+* Admin Console Idle Timeout [#4585](https://github.com/ironmansoftware/powershell-universal/issues/4585)
+
+#### Agent
+
+* Track agent scripts and reload service if changed [#4674](https://github.com/ironmansoftware/powershell-universal/issues/4674)
+* Admin console sessions list should show IPv4 and IPv6 in separate columns [#4606](https://github.com/ironmansoftware/powershell-universal/issues/4606)
+* Add Description to agent.json [#4829](https://github.com/ironmansoftware/powershell-universal/issues/4829)
+
+#### APIs
+
+* Configure Swagger Default Documents [#4716](https://github.com/ironmansoftware/powershell-universal/issues/4716)
+
+#### Apps
+
+* New-UDRow Styling [#4783](https://github.com/ironmansoftware/powershell-universal/issues/4783)
+* Load data when expand for expansion on UDCard? [#3761](https://github.com/ironmansoftware/powershell-universal/issues/3761)
+* Support for groupings within the AutoComplete component [#4779](https://github.com/ironmansoftware/powershell-universal/issues/4779)
+* Expose ID property in $Eventdata variable [#4623](https://github.com/ironmansoftware/powershell-universal/issues/4623)
+* Add Excel Filter Pattern to select more than on filter to New-UDTableColumn -FilterType [#4694](https://github.com/ironmansoftware/powershell-universal/issues/4694)
+* Added Reset-UDTheme
+* App Page Editor doesn't show outer 'New-UDPage' cmdlet [#4021](https://github.com/ironmansoftware/powershell-universal/issues/4021)
+* Auto-Add Option for App Pages [#4736](https://github.com/ironmansoftware/powershell-universal/issues/4736)
+* Prevent Accidental App Restarts When Accessing "View/Edit Code" [#4913](https://github.com/ironmansoftware/powershell-universal/issues/4913)
+
+#### Automation
+
+* Added upload script button
+* Discover scripts button [#4212](https://github.com/ironmansoftware/powershell-universal/issues/4212)
+* Schedules: Allow folders for organization [#3268](https://github.com/ironmansoftware/powershell-universal/issues/3268)
+* Increase Invisibility Timeout to 7 days [#4990](https://github.com/ironmansoftware/powershell-universal/issues/4990)
+
+#### Module
+
+* Added -Detail to Get-PSUCache [#4589](https://github.com/ironmansoftware/powershell-universal/issues/4589)
+* Test-PSUAppToken [#4573](https://github.com/ironmansoftware/powershell-universal/issues/4573)
+
+#### Platform
+
+* Added Name to runspace information
+* Declarative Settings and Resources for PSU [#4787](https://github.com/ironmansoftware/powershell-universal/issues/4787)
+* Environment Recycling [#4703](https://github.com/ironmansoftware/powershell-universal/issues/4703)
+* Disable Database Vault [#4536](https://github.com/ironmansoftware/powershell-universal/issues/4536)
+* \[5.5.2] Missing Branch [#4750](https://github.com/ironmansoftware/powershell-universal/issues/4750)
+* Support for Managing GitHub Deploy Keys in PowerShell Universal (PSU) [#3488](https://github.com/ironmansoftware/powershell-universal/issues/3488)
+* Admin account will not allow login after 3 months with no indication except "bad username or password" [#4595](https://github.com/ironmansoftware/powershell-universal/issues/4595)
+* Improve Notifications View [#4874](https://github.com/ironmansoftware/powershell-universal/issues/4874)
+* Improve Status API [#4869](https://github.com/ironmansoftware/powershell-universal/issues/4869)
+* Docker arm container image is not arm [#4903](https://github.com/ironmansoftware/powershell-universal/issues/4903)
+* Add NodeName to configuration file runspace [#4973](https://github.com/ironmansoftware/powershell-universal/issues/4973)
+
+### Bugs
+
+#### Admin Console
+
+* \[5.5.3] Excessive Runspace Usage in Integrated Environment [#4741](https://github.com/ironmansoftware/powershell-universal/issues/4741)
+* Error when viewing changes before commit [#4766](https://github.com/ironmansoftware/powershell-universal/issues/4766)
+* Merge Conflict Wizard Allows Commit with Unresolved Conflict Markers, Corrupting Pages [#4815](https://github.com/ironmansoftware/powershell-universal/issues/4815)
+* \[5.5.2] Unable to reload initialize.ps1 [#4731](https://github.com/ironmansoftware/powershell-universal/issues/4731)
+* \[5.4.4] System.ObjectDisposedException in JobPage.razor causes persistent job state access errors and UI instability [#4760](https://github.com/ironmansoftware/powershell-universal/issues/4760)
+* Unreliable IntelliSense, double scrollbar and missing fullscreen in v5.5.2 GUI [#4814](https://github.com/ironmansoftware/powershell-universal/issues/4814)
+* script filter box too narrow [#4834](https://github.com/ironmansoftware/powershell-universal/issues/4834)
+* \[5.5.2] first run license import fail [#4727](https://github.com/ironmansoftware/powershell-universal/issues/4727)
+* intelisense deletes the first char [#4917](https://github.com/ironmansoftware/powershell-universal/issues/4917)
+* Forms authentication loses returnUrl after failed login in PSU 5.5.1 [#4935](https://github.com/ironmansoftware/powershell-universal/issues/4935)
+* Unauthorized redirect does not display custom branding when user lacks dashboard role [#4810](https://github.com/ironmansoftware/powershell-universal/issues/4810)
+* \[5.6] Schedule last run reports incorrect time [#4929](https://github.com/ironmansoftware/powershell-universal/issues/4929)
+* \[5.5.2] Repository doesn't point at a valid Git repository or workdir. [#4729](https://github.com/ironmansoftware/powershell-universal/issues/4729)
+* Discarding changes doesn't update count [#4886](https://github.com/ironmansoftware/powershell-universal/issues/4886)
+* Severe UI slowdown when notifications table grows to \~150 000 entries while log level is set to Information [#4959](https://github.com/ironmansoftware/powershell-universal/issues/4959)
+* Editor issues in v5 (5.6) [#4983](https://github.com/ironmansoftware/powershell-universal/issues/4983)
+* Permissions can be created but not deleted in RO mode [#4976](https://github.com/ironmansoftware/powershell-universal/issues/4976)
+* Unable to save Verbose preference in Settings/General [#4977](https://github.com/ironmansoftware/powershell-universal/issues/4977)
+
+#### APIs
+
+* Enhance Documentation for accessing secrets for C# API Credential (Issue #4681) [#4817](https://github.com/ironmansoftware/powershell-universal/issues/4817)
+* Agent output streams not redirected to job log [#4803](https://github.com/ironmansoftware/powershell-universal/issues/4803)
+
+#### Apps
+
+* \[5.5.0] Windows Auth - identity missmatch [#4663](https://github.com/ironmansoftware/powershell-universal/issues/4663)
+* New-UDTextbox: icon is ignored when used in combination with -maskpattern [#4839](https://github.com/ironmansoftware/powershell-universal/issues/4839)
+* UDDataGrid Error on No Data [#4767](https://github.com/ironmansoftware/powershell-universal/issues/4767)
+* \[5.5.2] Write-PSULog doesn't write to logs within Apps [#4855](https://github.com/ironmansoftware/powershell-universal/issues/4855)
+* Missing New-UDDivider in docs #4905
+* New-UDExpansionPanel Icon is smashed and it needs a space [#4928](https://github.com/ironmansoftware/powershell-universal/issues/4928)
+* UDSelect not aligned vertically when Value is set [#4518](https://github.com/ironmansoftware/powershell-universal/issues/4518)
+* New-UDRadioGroup label color is incorrect (disappears) in dark mode when a radio is selected in the group. [#3215](https://github.com/ironmansoftware/powershell-universal/issues/3215)
+* Child dashboard pages under /dashboards/SelfService/Pages no longer auto-reload after save in VS Code [#4884](https://github.com/ironmansoftware/powershell-universal/issues/4884)
+* OnEnter (UDButton) has stopped working after upgrading to v5 [#4864](https://github.com/ironmansoftware/powershell-universal/issues/4864)
+* \[5.5.4] Slow UDAutocomplete #[4846](https://github.com/ironmansoftware/powershell-universal/issues/4846)
+* Apps view/read allows users to start/stop/restart all apps [#4986](https://github.com/ironmansoftware/powershell-universal/issues/4986)
+
+#### Automation
+
+* Script gets deleted if there is an error when moving script [#4765](https://github.com/ironmansoftware/powershell-universal/issues/4765)
+* \[5.5.2] Job log results don't expand to fill space [#4744](https://github.com/ironmansoftware/powershell-universal/issues/4744)
+* Write-Host -NoNewLine not working correctly in PSU Scripts. [#4840](https://github.com/ironmansoftware/powershell-universal/issues/4840)
+* Retry job running on node that's not part of original scheduled computer group [#4813](https://github.com/ironmansoftware/powershell-universal/issues/4813)
+* \[5.5.3] Scripts from modules don't show in folder view [#4843](https://github.com/ironmansoftware/powershell-universal/issues/4843)
+* \[5.5.0] Issue with DateOnly and TimeOnly parameters [#4684](https://github.com/ironmansoftware/powershell-universal/issues/4684)
+* Script Documentation / Markdown view [#4922](https://github.com/ironmansoftware/powershell-universal/issues/4922)
+* Jobs stuck in queued state [#4989](https://github.com/ironmansoftware/powershell-universal/issues/4989)
+
+#### Diagnostics
+
+* \[5.5.2] Health Check Failed: Missing Environment [#4743](https://github.com/ironmansoftware/powershell-universal/issues/4743)
+
+#### Module
+
+* SecureString visible in job parameters when script is called using Invoke-PSUScript [#4784](https://github.com/ironmansoftware/powershell-universal/issues/4784)
+* Grant-PSUAppToken response shows 0 for ID [#4902](https://github.com/ironmansoftware/powershell-universal/issues/4902)
+
+#### Platform
+
+* Cached values dont observe expiration rules once the value is read [#4798](https://github.com/ironmansoftware/powershell-universal/issues/4589)
+* \[5.6.0] Git commit preview (manual mode) shows last 2 changes [#4816](https://github.com/ironmansoftware/powershell-universal/issues/4816)
+* Documentation for configuring VS Code Extension from PSU Admin is out of date [#4853](https://github.com/ironmansoftware/powershell-universal/issues/4853)
+* Universal Server Process reports 0 bytes of memory [#4898](https://github.com/ironmansoftware/powershell-universal/issues/4898)
+* Process View Shows Old Processes [#4895](https://github.com/ironmansoftware/powershell-universal/issues/4895)
+* psuignore doesn't hide files or folders [#4944](https://github.com/ironmansoftware/powershell-universal/issues/4944)
+
 ## 5.5.5 - 7/9/2025
 
 ### Bugs
