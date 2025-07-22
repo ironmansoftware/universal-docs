@@ -155,19 +155,20 @@ Configures the hosts that are allowed to make cross-origin resource sharing requ
 },
 ```
 
-| Key                 | Description                                                                                                                        |
-| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| RepositoryPath      | Path to the storage location of the configuration files used by Universal.                                                         |
-| ConnectionString    | Path to the database used by Universal.                                                                                            |
-| GitRemote           | Git remote used to sync to Universal.                                                                                              |
-| GitBranch           | Git branch to checkout when syncing to Universal.                                                                                  |
-| GitUserName         | Git user name used to sync to the GitRemote. When using a PAT, this can be any value.                                              |
-| GitPassword         | The Git user password or personal access token used to sync to the GitRemote.                                                      |
-| ConfigurationScript | Location of a custom configuration script to load. You can return objects like scripts, dashboards and endpoints from this script. |
-| ExternalGitClient   | When set to true the Operating Systems Git client will be used instead of the inbuilt library client                               |
-| Mode                | Sets the git mode. It can be either manual or automatic. Defaults to manual.                                                       |
-| SlowQueryLimit      | The number of milliseconds a SQL query needs to run before a log message is written. Defaults to 500ms. Only available for MS SQL. |
-| Persistence         | Configures [database persistence of resources](repository.md).                                                                     |
+| Key                        | Description                                                                                                                        |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| RepositoryPath             | Path to the storage location of the configuration files used by Universal.                                                         |
+| ConnectionString           | Path to the database used by Universal.                                                                                            |
+| GitRemote                  | Git remote used to sync to Universal.                                                                                              |
+| GitBranch                  | Git branch to checkout when syncing to Universal.                                                                                  |
+| GitUserName                | Git user name used to sync to the GitRemote. When using a PAT, this can be any value.                                              |
+| GitPassword                | The Git user password or personal access token used to sync to the GitRemote.                                                      |
+| ConfigurationScript        | Location of a custom configuration script to load. You can return objects like scripts, dashboards and endpoints from this script. |
+| ExternalGitClient          | When set to true the Operating Systems Git client will be used instead of the inbuilt library client                               |
+| Mode                       | Sets the git mode. It can be either manual or automatic. Defaults to manual.                                                       |
+| SlowQueryLimit             | The number of milliseconds a SQL query needs to run before a log message is written. Defaults to 500ms. Only available for MS SQL. |
+| Persistence                | Configures [database persistence of resources](repository.md).                                                                     |
+| InvisibilityTimeoutMinutes | The number of minutes before a job will timeout in Hangfire. Defaults to 5. Only applies to PostgreSQL.                            |
 
 ### **API**
 
