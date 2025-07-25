@@ -6,6 +6,12 @@ description: Changelog for PowerShell Universal.
 
 ## [Downloads](https://ironmansoftware.com/release/powershell-universal)
 
+## 4.5.5 - 7/25/2025
+
+#### CVE
+
+* \[CVE-2025-54552] - Apps Docs > Variables includes database connection string with plain text password [#5026](https://github.com/ironmansoftware/powershell-universal/issues/5026)
+
 ## 4.5.4 - 6/3/2025
 
 #### APIs
