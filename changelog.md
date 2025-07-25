@@ -4,6 +4,38 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.6.1 - 7/25/2025
+
+### Bug Fixes
+
+#### CVE
+
+* \[CVE-2025-54552] - Apps Docs > Variables includes database connection string with plain text password [#5026](https://github.com/ironmansoftware/powershell-universal/issues/5026)
+
+#### Admin Console
+
+* Jobs \ Computer column not populated in 5.5.5 [#4996](https://github.com/ironmansoftware/powershell-universal/issues/4996)
+* Import script does not allow searching. [#5009](https://github.com/ironmansoftware/powershell-universal/issues/5009)
+
+#### Automation
+
+* Invoke-PSUScript from App taking a very long time to trigger [#4238](https://github.com/ironmansoftware/powershell-universal/issues/4238)
+
+#### Apps
+
+* Problems with UDTextbox [#5004](https://github.com/ironmansoftware/powershell-universal/issues/5004)
+* Icon and Title missing space in New-UDPages [#4963](https://github.com/ironmansoftware/powershell-universal/issues/4963)
+
+#### Installer
+
+* MSI v5 installer should detect if PSU v4 is running and fail with a warning [#5005](https://github.com/ironmansoftware/powershell-universal/issues/5005)
+
+#### Platform
+
+* psudb should identify SQLite databases [#4999](https://github.com/ironmansoftware/powershell-universal/issues/4999)
+* 5.5.5 - Overloads postgreSQL database [#4968](https://github.com/ironmansoftware/powershell-universal/issues/4968)
+* Configuration error displayed in UI and error in log as well. [#5016](https://github.com/ironmansoftware/powershell-universal/issues/5016)
+
 ## 5.6.0 - 7/22/2025
 
 ### Features
