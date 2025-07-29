@@ -8,7 +8,7 @@ Published folders allow you to share a local folder through your Universal websi
 
 ## Publishing a Folder
 
-From the `Dashboard / Published Folders` page, you can click Add Published Folder. Enter the local path as well as the request path. The local path is the folder that you wish to publish. The request path is the path that the end user requests to download the files from the folder.
+From the `Platform/ Published Folders` page, you can click Add Published Folder. Enter the local path as well as the request path. The local path is the folder that you wish to publish. The request path is the path that the end user requests to download the files from the folder.
 
 You can turn on authentication and authorization for the folder.
 
