@@ -433,7 +433,7 @@ OUTPUTS
     PS >     $Cache:Data | Where-Object { $_.Name -eq $EventData.NewRow.Name } | ForEach-Object {
     PS >         $_.Number = $EventData.NewRow.Number
     PS >     }
-    PS > } -Id 'datagrid5
+    PS > } -Id 'datagrid5'
     
     Editing|Adds support for editing rows.
     

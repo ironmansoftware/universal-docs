@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    Set-PSUVariable [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-Integrated] [-Name <String>] [-UseDefaultCredentials] [-Value <String>] [-Credential <PSCredential>] [-TrustCertificate] [<CommonParameters>]
+    Set-PSUVariable [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-Integrated] [-Name <String>] [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] [<CommonParameters>]
     
     Set-PSUVariable [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-InputObject <Object>] [-Integrated] [-Name <String>] [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] [<CommonParameters>]
     
@@ -15,7 +15,7 @@ SYNTAX
     
     Set-PSUVariable [-Variable] <Variable> [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-InputObject <Object>] [-Integrated] [-Name <String>] [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] [<CommonParameters>]
     
-    Set-PSUVariable [-Variable] <Variable> [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-Integrated] [-Name <String>] [-UseDefaultCredentials] [-Value <String>] [-Credential <PSCredential>] [-TrustCertificate] [<CommonParameters>]
+    Set-PSUVariable [-Variable] <Variable> [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-Integrated] [-Name <String>] [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] [<CommonParameters>]
     
     Set-PSUVariable [-Variable] <Variable> [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-Integrated] [-Name <String>] [-UseDefaultCredentials] [-Credential <PSCredential>] [-Password <String>] [-TrustCertificate] [-UserName <String>] [<CommonParameters>]
     
@@ -72,7 +72,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
-        Aliases                      none
+        Aliases                      Value
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
@@ -101,16 +101,6 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
-        Accept pipeline input?       False
-        Aliases                      none
-        Accept wildcard characters?  false
-        
-    -Value <String>
-        The value of the variable.
-        
-        Required?                    false
-        Position?                    named
-        Default value                None
         Accept pipeline input?       False
         Aliases                      none
         Accept wildcard characters?  false

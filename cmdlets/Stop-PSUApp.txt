@@ -7,7 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    Stop-PSUApp [-AppToken <String>] [-ComputerName <String>] -Dashboard <Dashboard> [-Integrated] [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] [<CommonParameters>]
+    Stop-PSUApp [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] -App <Dashboard> [<CommonParameters>]
+    
+    Stop-PSUApp [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] -Name <String> [<CommonParameters>]
     
     
 DESCRIPTION
@@ -33,16 +35,6 @@ PARAMETERS
         Default value                None
         Accept pipeline input?       False
         Aliases                      Uri
-        Accept wildcard characters?  false
-        
-    -Dashboard <Dashboard>
-        The app to stop.
-        
-        Required?                    true
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       True (ByValue)
-        Aliases                      none
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
@@ -82,6 +74,26 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -App <Dashboard>
+        The app to stop.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Aliases                      Dashboard
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        The name of the app to stop.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       True (ByValue)
         Aliases                      none
         Accept wildcard characters?  false
         

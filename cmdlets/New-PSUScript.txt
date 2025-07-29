@@ -7,11 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSUScript [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableManualInvocation] [-ManualTime <Int32>] [-MaxHistory <Int32>] -Name <String> [-Notes <String>] [-Parameter <ScriptParameter[]>] [-Path <String>] -ScriptBlock <ScriptBlock> [-Status {Draft | Pending_Review | Published | Disabled}] [-Tag <Tag[]>] [-ConcurrentJobs <Int32>] [-Environment <String>] [-TimeOut <Double>] [-Credential <Variable>] [-UseDefaultCredentials] [-Integrated] [-RetryLimit <Int32>] [-DiscardPipeline] [-LoadProfile] [-WorkingDirectory <String>] [-Role <String[]>] [-AvailableInBranch <String[]>] [-PortalOutputType <PortalOutputType>] [-TrustCertificate] [-PortalOpenInNewWindow] [<CommonParameters>]
+    New-PSUScript [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableManualInvocation] [-ManualTime <Int32>] [-MaxHistory <Int32>] -Name <String> [-Notes <String>] [-Parameter <ScriptParameter[]>] [-Path <String>] -ScriptBlock <ScriptBlock> [-Status {Draft | Pending_Review | Published | Disabled}] [-Tag <Tag[]>] [-ConcurrentJobs <Int32>] [-Environment <String>] [-TimeOut <Double>] [-Credential <Variable>] [-UseDefaultCredentials] [-Integrated] [-RetryLimit <Int32>] [-DiscardPipeline] [-LoadProfile] [-WorkingDirectory <String>] [-Role <String[]>] [-AvailableInBranch <String[]>] [-PortalOutputType <PortalOutputType>] [-TrustCertificate] [-PortalOpenInNewWindow] [-Icon <String>] [-DisplayOutputOnExecute] [-PortalBehavior <ScriptPortalBehavior>] [-PortalLeaveForm] [<CommonParameters>]
     
-    New-PSUScript [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableManualInvocation] [-ManualTime <Int32>] [-MaxHistory <Int32>] -Name <String> [-Notes <String>] [-Parameter <ScriptParameter[]>] -Path <String> [-Status {Draft | Pending_Review | Published | Disabled}] [-Tag <Tag[]>] [-ConcurrentJobs <Int32>] [-Environment <String>] [-TimeOut <Double>] [-Credential <Variable>] [-UseDefaultCredentials] [-Integrated] [-RetryLimit <Int32>] [-DiscardPipeline] [-LoadProfile] [-WorkingDirectory <String>] [-Role <String[]>] [-AvailableInBranch <String[]>] [-PortalOutputType <PortalOutputType>] [-TrustCertificate] [-PortalOpenInNewWindow] [<CommonParameters>]
+    New-PSUScript [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableManualInvocation] [-ManualTime <Int32>] [-MaxHistory <Int32>] -Name <String> [-Notes <String>] [-Parameter <ScriptParameter[]>] -Path <String> [-Status {Draft | Pending_Review | Published | Disabled}] [-Tag <Tag[]>] [-ConcurrentJobs <Int32>] [-Environment <String>] [-TimeOut <Double>] [-Credential <Variable>] [-UseDefaultCredentials] [-Integrated] [-RetryLimit <Int32>] [-DiscardPipeline] [-LoadProfile] [-WorkingDirectory <String>] [-Role <String[]>] [-AvailableInBranch <String[]>] [-PortalOutputType <PortalOutputType>] [-TrustCertificate] [-PortalOpenInNewWindow] [-Icon <String>] [-DisplayOutputOnExecute] [-PortalBehavior <ScriptPortalBehavior>] [-PortalLeaveForm] [<CommonParameters>]
     
-    New-PSUScript [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableManualInvocation] [-ManualTime <Int32>] [-MaxHistory <Int32>] [-Notes <String>] [-Parameter <ScriptParameter[]>] [-Status {Draft | Pending_Review | Published | Disabled}] [-Tag <Tag[]>] [-ConcurrentJobs <Int32>] [-Environment <String>] [-TimeOut <Double>] [-Credential <Variable>] [-UseDefaultCredentials] [-Integrated] [-RetryLimit <Int32>] [-DiscardPipeline] [-LoadProfile] [-WorkingDirectory <String>] -Command <String> -Module <String> [-Role <String[]>] [-AvailableInBranch <String[]>] [-PortalOutputType <PortalOutputType>] [-TrustCertificate] [-PortalOpenInNewWindow] [<CommonParameters>]
+    New-PSUScript [-AppToken <String>] [-ComputerName <String>] [-Description <String>] [-DisableManualInvocation] [-ManualTime <Int32>] [-MaxHistory <Int32>] [-Notes <String>] [-Parameter <ScriptParameter[]>] [-Status {Draft | Pending_Review | Published | Disabled}] [-Tag <Tag[]>] [-ConcurrentJobs <Int32>] [-Environment <String>] [-TimeOut <Double>] [-Credential <Variable>] [-UseDefaultCredentials] [-Integrated] [-RetryLimit <Int32>] [-DiscardPipeline] [-LoadProfile] [-WorkingDirectory <String>] -Command <String> -Module <String> [-Role <String[]>] [-AvailableInBranch <String[]>] [-PortalOutputType <PortalOutputType>] [-TrustCertificate] [-PortalOpenInNewWindow] [-Icon <String>] [-DisplayOutputOnExecute] [-PortalBehavior <ScriptPortalBehavior>] [-PortalLeaveForm] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -315,6 +315,46 @@ PARAMETERS
         
     -PortalOpenInNewWindow [<SwitchParameter>]
         Whether to open this script in a new window when viewing it in the portal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Icon <String>
+        An icon to display in the portal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -DisplayOutputOnExecute [<SwitchParameter>]
+        Displays output of the script while it is executing in the portal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -PortalBehavior <ScriptPortalBehavior>
+        How this script behaves in the portal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -PortalLeaveForm [<SwitchParameter>]
+        Whether to leave the script's form after executing it in the portal.
         
         Required?                    false
         Position?                    named

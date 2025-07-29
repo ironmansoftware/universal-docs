@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDCardExpand [[-Id] <String>] [[-ClassName] <String>] [[-Content] <ScriptBlock>] [[-Style] <Hashtable>] [<CommonParameters>]
+    New-UDCardExpand [[-Id] <String>] [[-ClassName] <String>] [[-Content] <Endpoint>] [-Dynamic] [[-Style] <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -35,12 +35,22 @@ PARAMETERS
         Aliases                      
         Accept wildcard characters?  false
         
-    -Content <ScriptBlock>
+    -Content <Endpoint>
         The content of the card expandable content.
         
         Required?                    false
         Position?                    3
         Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Dynamic [<SwitchParameter>]
+        Whether the content is dynamic. If set to true, the content will be registered as an endpoint and can be updated dynamically.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
         Aliases                      
         Accept wildcard characters?  false

@@ -15,6 +15,10 @@ SYNTAX
     
     Set-PSUAuthenticationMethod [-AppToken <String>] [-ComputerName <String>] [-ScriptBlock <ScriptBlock>] [-Disabled] [-UseDefaultCredentials] [-Configure <ScriptBlock>] [-Integrated] [-Type <AuthenticationMethodType>] [-LogoutUrl <String>] [-Credential <PSCredential>] [-TrustCertificate] [<CommonParameters>]
     
+    Set-PSUAuthenticationMethod [-AppToken <String>] [-ComputerName <String>] [-ScriptBlock <ScriptBlock>] [-Disabled] [-UseDefaultCredentials] [-Configure <ScriptBlock>] [-Integrated] [-Type <AuthenticationMethodType>] [-Credential <PSCredential>] [-TrustCertificate] [-Domain <String>] [<CommonParameters>]
+    
+    Set-PSUAuthenticationMethod [-AppToken <String>] [-ComputerName <String>] [-ScriptBlock <ScriptBlock>] [-Disabled] [-UseDefaultCredentials] [-Configure <ScriptBlock>] [-Integrated] [-Type <AuthenticationMethodType>] [-Credential <PSCredential>] [-TrustCertificate] [-Native] [<CommonParameters>]
+    
     
 DESCRIPTION
     Sets the authentication method settings.
@@ -361,6 +365,26 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Domain <String>
+        The domain to login when using native authentication.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Native [<SwitchParameter>]
+        Forms authentication will use the native operating system for login. Currently, only supported on Windows.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       False
         Aliases                      none
         Accept wildcard characters?  false

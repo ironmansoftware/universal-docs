@@ -9,7 +9,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSUBranding [-AdminConsoleTitle <String>] [-AppBarLogo <String>] [-AppNotRunningDescription <String>] [-AppToken <String>] [-ComputerName <String>] [-Copyright <String>] [-Credential <PSCredential>] [-CssStylesheet <String[]>] [-CssStylesheetIntegrity <String[]>] [-Favicon <String>] [-HeaderColor <String>] [-HeaderFontColor <String>] [-Integrated] [-LoggedOut <String>] [-LoggedOutDescription <String>] [-LoginPageDescription <String>] [-LoginPageImage <String>] [-LoginPageLinks <LoginPageLink[]>] [-LoginPageText <String>] [-LoginPageTitle <String>] [-NotAuthorizedDescription <String>] [-NotAuthorizedTitle <String>] [-PageNotFoundDescription <String>] [-PageNotFoundTitle <String>] [-PrimaryColor <String>] [-PrimaryFontColor <String>] [-SecondaryColor <String>] [-SecondaryFontColor <String>] [-TrustCertificate] [-UseDefaultCredentials] [-DarkAppBarLogo <String>] [-LoginPageTheme <ThemePreference>] [-PortalTitle <String>] [<CommonParameters>]
+    New-PSUBranding [-AdminConsoleTitle <String>] [-AppBarLogo <String>] [-AppNotRunningDescription <String>] [-AppToken <String>] [-ComputerName <String>] [-Copyright <String>] [-Credential <PSCredential>] [-CssStylesheet <String[]>] [-CssStylesheetIntegrity <String[]>] [-Favicon <String>] [-HeaderColor <String>] [-HeaderFontColor <String>] [-Integrated] [-LoggedOut <String>] [-LoggedOutDescription <String>] [-LoginPageDescription <String>] [-LoginPageImage <String>] [-LoginPageLinks <LoginPageLink[]>] [-LoginPageText <String>] [-LoginPageTitle <String>] [-NotAuthorizedDescription <String>] [-NotAuthorizedTitle <String>] [-PageNotFoundDescription <String>] [-PageNotFoundTitle <String>] [-PrimaryColor <String>] [-PrimaryFontColor <String>] [-SecondaryColor <String>] [-SecondaryFontColor <String>] [-TrustCertificate] [-UseDefaultCredentials] [-DarkAppBarLogo <String>] [-LoginPageTheme <ThemePreference>] [-PortalTitle <String>] [-LoginPageCssStylesheet <String>] [-LoginPageLayout <LoginPageLayout>] [-LoginPageBackgroundColor <String>] [-LoginPageFontColor <String>] [-LoginPageLogoSize <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -339,6 +339,56 @@ PARAMETERS
         
     -PortalTitle <String>
         The title of the portal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -LoginPageCssStylesheet <String>
+        A style sheet for the login page.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -LoginPageLayout <LoginPageLayout>
+        The login page layout. Defaults to vertical.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -LoginPageBackgroundColor <String>
+        The background color of the login page.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -LoginPageFontColor <String>
+        The font color of the login page.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -LoginPageLogoSize <String>
+        The size of of the login page logo. Pixels, percentages and any valid CSS width is allowed.
         
         Required?                    false
         Position?                    named

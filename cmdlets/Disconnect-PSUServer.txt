@@ -1,29 +1,20 @@
 
 NAME
-    Hide-UDModal
+    Disconnect-PSUServer
     
 SYNOPSIS
-    Hide a modal.
+    Disconnects from a PSU server.
     
     
 SYNTAX
-    Hide-UDModal [-All] [<CommonParameters>]
+    Disconnect-PSUServer [<CommonParameters>]
     
     
 DESCRIPTION
-    Hide a modal.
+    Disconnects from a PSU server. This clears the state of a Connect-PSUServer call.
     
 
 PARAMETERS
-    -All [<SwitchParameter>]
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       false
-        Aliases                      
-        Accept wildcard characters?  false
-        
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
@@ -31,9 +22,25 @@ PARAMETERS
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
 INPUTS
+    None
+        
+    
     
 OUTPUTS
+    System.Object
+        
     
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Disconnect-PSUServer
+    
+    Disconnect from a PSU server.
     
 RELATED LINKS
 

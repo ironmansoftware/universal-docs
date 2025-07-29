@@ -231,6 +231,20 @@ OUTPUTS
     
     
     
+    -------------------------- EXAMPLE 7 --------------------------
+    
+    PS >New-UDAutocomplete -Options @(
+    PS >    New-UDAutocompleteOption -Name 'Test' -Value 'test' -Group 'Group1'
+    PS >    New-UDAutocompleteOption -Name 'Test2' -Value 'test2' -Group 'Group1'
+    PS >    New-UDAutocompleteOption -Name 'Test3' -Value 'test3' -Group 'Group2'
+    PS >    New-UDAutocompleteOption -Name 'Test4' -Value 'test4' -Group 'Group2'
+    PS > ) -Id 'autocomplete9' -FullWidth
+    
+    
+    
+    
+    
+    
     
 RELATED LINKS
 

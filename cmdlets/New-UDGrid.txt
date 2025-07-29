@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDGrid [-Id <String>] [-ExtraSmallSize <Int32>] [-SmallSize <Int32>] [-MediumSize <Int32>] [-LargeSize <Int32>] [-ExtraLargeSize <Int32>] [-Item] [-Children <ScriptBlock>] [-ClassName <String>] [-Direction <String>] [-RowSpacing <Object>] [-ColumnSpacing <Object>] [-JustifyContent <String>] [-AlignItems <String>] [-Version <String>] [<CommonParameters>]
+    New-UDGrid [-Id <String>] [-ExtraSmallSize <Int32>] [-SmallSize <Int32>] [-MediumSize <Int32>] [-LargeSize <Int32>] [-ExtraLargeSize <Int32>] [-Item] [-Children <ScriptBlock>] [-ClassName <String>] [-Direction <String>] [-RowSpacing <Object>] [-ColumnSpacing <Object>] [-JustifyContent <String>] [-AlignItems <String>] [-Version <String>] [-Style <Hashtable>] [<CommonParameters>]
     
-    New-UDGrid [-Id <String>] [-Container] [-Spacing <Int32>] [-Children <ScriptBlock>] [-ClassName <String>] [-Direction <String>] [-RowSpacing <Object>] [-ColumnSpacing <Object>] [-JustifyContent <String>] [-AlignItems <String>] [-Version <String>] [<CommonParameters>]
+    New-UDGrid [-Id <String>] [-Container] [-Spacing <Int32>] [-Children <ScriptBlock>] [-ClassName <String>] [-Direction <String>] [-RowSpacing <Object>] [-ColumnSpacing <Object>] [-JustifyContent <String>] [-AlignItems <String>] [-Version <String>] [-Style <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -181,7 +181,16 @@ PARAMETERS
         
         Required?                    false
         Position?                    named
-        Default value                2
+        Default value                1
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
         Accept pipeline input?       false
         Aliases                      
         Accept wildcard characters?  false

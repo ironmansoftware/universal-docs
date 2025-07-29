@@ -30,7 +30,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Down <String>
-        Content will be hidden below the specified breakpoint.
+        Content will be hidden at the specified breakpoint.
         
         Required?                    false
         Position?                    named
@@ -40,7 +40,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Up <String>
-        Content will be hidden above the specified breakpoint.
+        Content will be hidden at the specified breakpoint.
         
         Required?                    false
         Position?                    named

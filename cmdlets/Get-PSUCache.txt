@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    Get-PSUCache -Key <String> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] [<CommonParameters>]
+    Get-PSUCache -Key <String> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] [-Detail] [<CommonParameters>]
     
-    Get-PSUCache [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-Credential <PSCredential>] -List [-TrustCertificate] [<CommonParameters>]
+    Get-PSUCache [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-Credential <PSCredential>] -List [-TrustCertificate] [-Detail] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -91,6 +91,16 @@ PARAMETERS
         
     -TrustCertificate [<SwitchParameter>]
         Whether the cmdlet should ignore certificate issues.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Detail [<SwitchParameter>]
+        Returns the cache value details rather than the value.
         
         Required?                    false
         Position?                    named

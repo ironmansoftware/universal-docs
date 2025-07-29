@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDRow [-Id <String>] [[-Columns] <ScriptBlock>] [<CommonParameters>]
+    New-UDRow [-Id <String>] [[-Columns] <ScriptBlock>] [-Style <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -35,6 +35,16 @@ PARAMETERS
         Aliases                      
         Accept wildcard characters?  false
         
+    -Style <Hashtable>
+        The style of the row.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
@@ -56,7 +66,23 @@ OUTPUTS
     PS >     }
     PS > }
     
+    Basic Row|Creates a new row with two columns, each taking up half the width on small screens.
     
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDRow -Id "myRow" -Columns {
+    PS >     New-UDColumn -SmallSize 4 -Content {
+    PS >         "Column 1"
+    PS >     }
+    PS >     New-UDColumn -SmallSize 4 -Content {
+    PS >         "Column 2"
+    PS >     }
+    PS > } -Style @{ backgroundColor = "#f0f0f0" }
+    
+    Row Style| Creates a new row with two columns, each taking up one-third of the width on small screens, and applies a background color style to the row.
     
     
     

@@ -1,154 +1,156 @@
 
 NAME
-    New-UDSparkline
+    New-UDGauge
     
 SYNOPSIS
-    Small charts for displaying data.
+    Creates a gauge component for an app.
     
     
 SYNTAX
-    New-UDSparkline [-Id <String>] -Data <Int32[]> [-Limit <Int32>] [-Width <Int32>] [-Height <Int32>] [-Margin <Int32>] [-Color <DashboardColor>] [-Type <Object>] [-Min <Int32>] [-Max <Int32>] [<CommonParameters>]
-    
-    New-UDSparkline [-Id <String>] -Data <Int32[]> [-Width <Int32>] [-Height <Int32>] [-PlotType <Object>] [-ShowTooltip] [-ShowHighlight] [-Area] [<CommonParameters>]
+    New-UDGauge [[-Id] <String>] [[-Width] <Int32>] [[-Height] <Int32>] [[-Value] <Int32>] [[-ValueMinimum] <Int32>] [[-ValueMaximum] <Int32>] [[-StartAngle] <Int32>] [[-EndAngle] <Int32>] [[-CornerRadius] <String>] [[-InnerRadius] <String>] [[-OuterRadius] <String>] [[-ArchCenterX] <String>] [[-ArchCenterY] <String>] [[-Style] <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
-    Small charts for displaying data.
+    The New-UDGauge function creates a gauge component for a PowerShell Universal app.
     
 
 PARAMETERS
     -Id <String>
-        The ID of this component. The default value is a random GUID.
+        The unique identifier for the gauge component. If not provided, a new GUID is generated.
         
         Required?                    false
-        Position?                    named
+        Position?                    1
         Default value                [Guid]::NewGuid().ToString()
         Accept pipeline input?       false
         Aliases                      
         Accept wildcard characters?  false
         
-    -Data <Int32[]>
-        The data to display in the sparkline. Usually, a list of numbers.
-        
-        Required?                    true
-        Position?                    named
-        Default value                
-        Accept pipeline input?       false
-        Aliases                      
-        Accept wildcard characters?  false
-        
-    -Limit <Int32>
-        The number of data points to display.
-        
-        Required?                    false
-        Position?                    named
-        Default value                0
-        Accept pipeline input?       false
-        Aliases                      
-        Accept wildcard characters?  false
-        
     -Width <Int32>
-        The width of the sparkline.
+        The width of the gauge component in pixels.
         
         Required?                    false
-        Position?                    named
+        Position?                    2
         Default value                0
         Accept pipeline input?       false
         Aliases                      
         Accept wildcard characters?  false
         
     -Height <Int32>
-        The height of the sparkline.
+        The height of the gauge component in pixels.
         
         Required?                    false
-        Position?                    named
+        Position?                    3
         Default value                0
         Accept pipeline input?       false
         Aliases                      
         Accept wildcard characters?  false
         
-    -Margin <Int32>
-        The margin of the sparkline.
+    -Value <Int32>
+        The current value of the gauge.
         
         Required?                    false
-        Position?                    named
+        Position?                    4
         Default value                0
         Accept pipeline input?       false
         Aliases                      
         Accept wildcard characters?  false
         
-    -Color <DashboardColor>
-        The color of the sparkline.
+    -ValueMinimum <Int32>
+        The minimum value of the gauge.
         
         Required?                    false
-        Position?                    named
+        Position?                    5
+        Default value                0
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -ValueMaximum <Int32>
+        The maximum value of the gauge.
+        
+        Required?                    false
+        Position?                    6
+        Default value                0
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -StartAngle <Int32>
+        The starting angle of the gauge in degrees.
+        
+        Required?                    false
+        Position?                    7
+        Default value                0
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -EndAngle <Int32>
+        The ending angle of the gauge in degrees.
+        
+        Required?                    false
+        Position?                    8
+        Default value                0
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -CornerRadius <String>
+        The corner radius of the gauge.
+        
+        Required?                    false
+        Position?                    9
         Default value                
         Accept pipeline input?       false
         Aliases                      
         Accept wildcard characters?  false
         
-    -Type <Object>
-        The type of sparkline to display. Valid values are bars, lines, and both.
+    -InnerRadius <String>
+        The inner radius of the gauge.
         
         Required?                    false
-        Position?                    named
-        Default value                bars
+        Position?                    10
+        Default value                
         Accept pipeline input?       false
         Aliases                      
         Accept wildcard characters?  false
         
-    -PlotType <Object>
+    -OuterRadius <String>
+        The outer radius of the gauge.
         
         Required?                    false
-        Position?                    named
-        Default value                line
+        Position?                    11
+        Default value                
         Accept pipeline input?       false
         Aliases                      
         Accept wildcard characters?  false
         
-    -Min <Int32>
-        The minimum value.
+    -ArchCenterX <String>
+        The X coordinate of the center of the gauge arc.
         
         Required?                    false
-        Position?                    named
-        Default value                0
+        Position?                    12
+        Default value                
         Accept pipeline input?       false
         Aliases                      
         Accept wildcard characters?  false
         
-    -Max <Int32>
-        The maximum value.
+    -ArchCenterY <String>
+        The Y coordinate of the center of the gauge arc.
         
         Required?                    false
-        Position?                    named
-        Default value                0
+        Position?                    13
+        Default value                
         Accept pipeline input?       false
         Aliases                      
         Accept wildcard characters?  false
         
-    -ShowTooltip [<SwitchParameter>]
+    -Style <Hashtable>
+        A hashtable containing the style properties for the gauge.
         
         Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       false
-        Aliases                      
-        Accept wildcard characters?  false
-        
-    -ShowHighlight [<SwitchParameter>]
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       false
-        Aliases                      
-        Accept wildcard characters?  false
-        
-    -Area [<SwitchParameter>]
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
+        Position?                    14
+        Default value                
         Accept pipeline input?       false
         Aliases                      
         Accept wildcard characters?  false
@@ -165,30 +167,9 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS >$Data = 1..10 | ForEach-Object { Get-Random -Max 1000 }
-    PS > New-UDSparkline -Data $Data -Max 1000 -Height 100 -Width 500
+    PS >New-UDGauge -Width 300 -Height 200 -Value 50 -ValueMinimum 0 -ValueMaximum 100 -StartAngle 0 -EndAngle 180 -CornerRadius "10px" -InnerRadius "50%" -OuterRadius "100%" -ArchCenterX "50%" -ArchCenterY "50%" -Style @{ color = "blue" }
     
-    Basic sparkline|A basic sparkline.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 2 --------------------------
-    
-    PS >$Data = 1..10 | ForEach-Object { Get-Random -Max 1000 }
-    PS > New-UDSparkline -Data $Data -Type 'lines' -Max 1000 -Height 100 -Width 500
-    
-    Lines|A sparkline with lines.
-    
-    
-    
-    
-    -------------------------- EXAMPLE 3 --------------------------
-    
-    PS >$Data = 1..10 | ForEach-Object { Get-Random -Max 1000 }
-    PS > New-UDSparkline -Data $Data -Type 'both' -Max 1000 -Height 100 -Width 500
-    
-    Both|A sparkline with both lines and bars.
+    Basic|This example creates a gauge component with the specified properties.
     
     
     

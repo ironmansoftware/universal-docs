@@ -75,7 +75,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -FilterType <String>
-        The type of filter to use with this column. Valid values are "text", "select", "fuzzy", "slider", "range", "date", "number", 'autocomplete'
+        The type of filter to use with this column. Valid values are "text", "select", "fuzzy", "slider", "range", "date", "number", 'autocomplete', 'multiselect'
         
         Required?                    false
         Position?                    5

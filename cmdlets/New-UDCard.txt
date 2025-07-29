@@ -297,6 +297,16 @@ OUTPUTS
     
     
     
+    -------------------------- EXAMPLE 7 --------------------------
+    
+    PS >$Expand = New-UDCardExpand -Content { "$(Get-Random)" } -Dynamic
+    PS > New-UDCard -Expand $Expand -Id 'card6'
+    
+    Dynamic Expand|A card with a dynamic expandable content. The content will be updated every time the card is expanded.
+    
+    
+    
+    
     
 RELATED LINKS
 
