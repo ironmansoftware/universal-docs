@@ -3,11 +3,11 @@ NAME
     New-UDTextbox
     
 SYNOPSIS
-    Creates a textbox.
+    Textboxes let users enter and edit text.
     
     
 SYNTAX
-    New-UDTextbox [[-Id] <String>] [[-Label] <String>] [[-Placeholder] <String>] [[-Value] <String>] [[-Type] <String>] [-Disabled] [[-Icon] <Object>] [-Autofocus] [-Multiline] [[-Rows] <Int32>] [[-RowsMax] <Int32>] [-FullWidth] [[-Mask] <String>] [-Unmask] [[-Variant] <String>] [[-ClassName] <String>] [[-OnEnter] <Endpoint>] [[-OnBlur] <Endpoint>] [-Shrink] [<CommonParameters>]
+    New-UDTextbox [[-Id] <String>] [[-Label] <String>] [[-Placeholder] <String>] [[-Value] <String>] [[-Type] <String>] [-Disabled] [[-Icon] <Object>] [-Autofocus] [-Multiline] [[-Rows] <Int32>] [[-RowsMax] <Int32>] [-FullWidth] [[-Variant] <String>] [[-ClassName] <String>] [[-OnEnter] <Endpoint>] [[-OnBlur] <Endpoint>] [-Shrink] [[-OnValidate] <Endpoint>] [[-HelperText] <String>] [[-OnChange] <Endpoint>] [[-Minimum] <Int32>] [[-Maximum] <Int32>] [[-MaximumLength] <Int32>] [[-Sx] <Hashtable>] [[-Style] <Hashtable>] [[-MaskPattern] <String>] [[-Attributes] <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    1
         Default value                ([Guid]::NewGuid())
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Label <String>
@@ -31,6 +32,7 @@ PARAMETERS
         Position?                    2
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Placeholder <String>
@@ -40,6 +42,7 @@ PARAMETERS
         Position?                    3
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Value <String>
@@ -49,6 +52,7 @@ PARAMETERS
         Position?                    4
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Type <String>
@@ -58,6 +62,7 @@ PARAMETERS
         Position?                    5
         Default value                text
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Disabled [<SwitchParameter>]
@@ -67,6 +72,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Icon <Object>
@@ -76,6 +82,7 @@ PARAMETERS
         Position?                    6
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Autofocus [<SwitchParameter>]
@@ -85,6 +92,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Multiline [<SwitchParameter>]
@@ -94,6 +102,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Rows <Int32>
@@ -103,6 +112,7 @@ PARAMETERS
         Position?                    7
         Default value                -1
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -RowsMax <Int32>
@@ -112,6 +122,7 @@ PARAMETERS
         Position?                    8
         Default value                9999
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -FullWidth [<SwitchParameter>]
@@ -121,57 +132,47 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -Mask <String>
-        The mask to apply over a textbox.
-        
-        Required?                    false
-        Position?                    9
-        Default value                
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -Unmask [<SwitchParameter>]
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Variant <String>
         The variant of textbox. Valid values are "filled", "outlined", "standard"
         
         Required?                    false
-        Position?                    10
+        Position?                    9
         Default value                standard
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ClassName <String>
         A CSS class to apply to the textbox.
         
         Required?                    false
-        Position?                    11
+        Position?                    10
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnEnter <Endpoint>
+        A script block that is called when the user presses the enter key. The $EventData variable will contain the current value of the textbox.
+        
+        Required?                    false
+        Position?                    11
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -OnBlur <Endpoint>
+        A script block that is called when the user leaves the textbox. The $EventData variable will contain the current value of the textbox.
         
         Required?                    false
         Position?                    12
         Default value                
         Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -OnBlur <Endpoint>
-        
-        Required?                    false
-        Position?                    13
-        Default value                
-        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Shrink [<SwitchParameter>]
@@ -181,6 +182,106 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -OnValidate <Endpoint>
+        A script block that is called when the user leaves the textbox. The $EventData variable will contain the current value of the textbox. If the script block returns an validation result that is invalid, it will be displayed below the textbox.
+        
+        Required?                    false
+        Position?                    13
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -HelperText <String>
+        A helper text to show below the textbox.
+        
+        Required?                    false
+        Position?                    14
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -OnChange <Endpoint>
+        A script block that is called when the user changes the value of the textbox. The $EventData variable will contain the current value of the textbox.
+        
+        Required?                    false
+        Position?                    15
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Minimum <Int32>
+        The minimum value for a number textbox.
+        
+        Required?                    false
+        Position?                    16
+        Default value                0
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Maximum <Int32>
+        The maximum value for a number textbox.
+        
+        Required?                    false
+        Position?                    17
+        Default value                0
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -MaximumLength <Int32>
+        The maximum length of the text in the textbox.
+        
+        Required?                    false
+        Position?                    18
+        Default value                0
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Sx <Hashtable>
+        A hashtable of theme-based properties to apply to the textbox.
+        
+        Required?                    false
+        Position?                    19
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        A hashtable of CSS properties to apply to the textbox.
+        
+        Required?                    false
+        Position?                    20
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -MaskPattern <String>
+        A mask pattern to apply to the textbox. This is used for input masks. Check iMaskjs for more information.
+        
+        Required?                    false
+        Position?                    21
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Attributes <Hashtable>
+        
+        Required?                    false
+        Position?                    22
+        Default value                @{}
+        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -195,18 +296,157 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > Creates a standard textbox.
+    PS >New-UDTextbox -Id 'textbox1' -Label 'Name' -Placeholder 'Enter your name' -Value 'John Doe'
     
-    New-UDTextbox -Label 'text' -Id 'txtLabel'
+    Basic textbox|Creates a basic textbox.
     
     
     
     
     -------------------------- EXAMPLE 2 --------------------------
     
-    PS > Creates a password textbox.
+    PS >New-UDTextbox -Id 'textbox2' -Label 'Password' -Placeholder 'Enter your password' -Type 'password'
     
-    New-UDTextbox -Label 'password' -Id 'txtPassword' -Type 'password'
+    Password textbox|Creates a password textbox.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox3' -Label 'Email' -Placeholder 'Enter your email' -Type 'email'
+    
+    Email textbox|Creates an email textbox.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox4' -Disabled -Label 'Disabled' -Placeholder 'Enter your name' -Value 'John Doe'
+    
+    Disabled textbox|Creates a disabled textbox.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox5' -Label 'Name' -Placeholder 'Enter your name' -Value 'John Doe' -Icon (New-UDIcon -Icon 'User')
+    
+    Textbox with icon|Creates a textbox with an icon.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox6' -Label 'Name' -Placeholder 'Enter your name' -Value 'John Doe' -Autofocus
+    
+    Autofocus textbox|Creates a textbox that will autofocus when the page loads.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 7 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox7' -Label 'Name' -Placeholder 'Enter your name' -Value 'John Doe' -Multiline
+    
+    Multiline textbox|Creates a multiline textbox.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 8 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox8' -Label 'Name' -Placeholder 'Enter your name' -Value 'John Doe' -Multiline -Rows 5 -RowsMax 10
+    
+    Multiline textbox with 5 rows|Creates a multiline textbox with 5 rows.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 9 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox9' -Variant 'filled' -Label 'Name' -Placeholder 'Enter your name' -Value 'John Doe'
+    
+    Variant|Creates a filled textbox.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 10 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox10' -OnEnter {
+    PS >    Show-UDToast -Message "You pressed enter!"
+    PS > } -Label 'Name' -Placeholder 'Enter your name' -Value 'John Doe'
+    
+    OnEnter|Creates a textbox with an OnEnter event.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 11 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox11' -OnBlur {
+    PS >    Show-UDToast -Message "You left the textbox!"
+    PS > } -Label 'Name' -Placeholder 'Enter your name' -Value 'John Doe'
+    
+    OnBlur|Creates a textbox with an OnBlur event.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 12 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox12' -OnValidate {
+    PS >    if ($EventData -eq 'John Doe') {
+    PS >        return New-UDValidationResult -Valid
+    PS >    }
+    PS >    else {
+    PS >        return New-UDValidationResult -ValidationError "You must enter John Doe"
+    PS >    }
+    PS > } -Label 'Name' -Placeholder 'Enter your name' -Value 'John Doe'
+    
+    OnValidate|Creates a textbox with an OnValidate event.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 13 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox13' -HelperText 'This is a helper text' -Label 'Name' -Placeholder 'Enter your name' -Value 'John Doe'
+    
+    Helper Text|Creates a textbox with helper text.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 14 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox14' -OnChange {
+    PS >    Show-UDToast -Message $EventData
+    PS > } -Label 'Name' -Placeholder 'Enter your name' -Value 'John Doe'
+    
+    OnChange|Creates a textbox with an OnChange event.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 15 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox15' -Type 'number' -Minimum 1 -Maximum 100
+    
+    Minimum and Maximum|Creates a number textbox with a minimum and maximum value.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 16 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox16' -MaskPattern '+7 (000) 000-00-00'
+    
+    Mask Pattern|Creates a textbox with a mask pattern.
     
     
     

@@ -7,9 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSUEndpoint [-AppToken <String>] [-Authentication] [-ComputerName <String>] -Endpoint <ScriptBlock> [-Method {GET | POST | PUT | DELETE | OPTIONS}] [-RegEx] [-Role <String[]>] -Url <String> [-Description <String>] [-UseDefaultCredentials] [-Integrated] [-Tag <Tag[]>] [-Timeout <Int32>] [-Environment <String>] [-PersistentLog] [<CommonParameters>]
+    New-PSUEndpoint [-AppToken <String>] [-Authentication] [-ComputerName <String>] -Endpoint <ScriptBlock> [-Method {GET | POST | PUT | DELETE | OPTIONS}] [-RegEx] [-Role <String[]>] -Url <String> [-Description <String>] [-UseDefaultCredentials] [-Integrated] [-Tag <Tag[]>] [-Timeout <Int32>] [-Path <String>] [-Environment <String>] [-PersistentLog] [-Documentation <String>] [-Command <String>] [-Module <String>] [-ComputerGroup <String[]>] [-AvailableInBranch <String[]>] [-Credential <String>] [-TrustCertificate] [-Disabled] [<CommonParameters>]
     
-    New-PSUEndpoint [-AppToken <String>] [-Authentication] [-ComputerName <String>] [-Method {GET | POST | PUT | DELETE | OPTIONS}] [-RegEx] [-Role <String[]>] -Url <String> [-Description <String>] [-UseDefaultCredentials] [-Integrated] [-Tag <Tag[]>] [-Timeout <Int32>] -Path <String> [-Environment <String>] [-PersistentLog] [<CommonParameters>]
+    New-PSUEndpoint [-AppToken <String>] [-Authentication] [-ComputerName <String>] [-Method {GET | POST | PUT | DELETE | OPTIONS}] [-RegEx] [-Role <String[]>] -Url <String> [-Description <String>] [-UseDefaultCredentials] [-Integrated] [-Tag <Tag[]>] [-Timeout <Int32>] -Path <String> [-Environment <String>] [-PersistentLog] [-Documentation <String>] [-Command <String>] [-Module <String>] [-ComputerGroup <String[]>] [-AvailableInBranch <String[]>] [-Credential <String>] [-TrustCertificate] [-Disabled] [<CommonParameters>]
+    
+    New-PSUEndpoint [-AppToken <String>] [-Authentication] [-ComputerName <String>] [-Method {GET | POST | PUT | DELETE | OPTIONS}] [-RegEx] [-Role <String[]>] -Url <String> [-Description <String>] [-UseDefaultCredentials] [-Integrated] [-Tag <Tag[]>] [-Timeout <Int32>] [-Environment <String>] [-PersistentLog] [-Documentation <String>] -Command <String> -Module <String> [-ComputerGroup <String[]>] [-AvailableInBranch <String[]>] [-Credential <String>] [-TrustCertificate] [-Disabled] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -26,6 +28,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Authentication [<SwitchParameter>]
@@ -35,6 +38,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ComputerName <String>
@@ -44,6 +48,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      Uri
         Accept wildcard characters?  false
         
     -Endpoint <ScriptBlock>
@@ -53,6 +58,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Method <String[]>
@@ -62,6 +68,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -RegEx [<SwitchParameter>]
@@ -71,6 +78,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Role <String[]>
@@ -80,6 +88,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Url <String>
@@ -89,6 +98,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Description <String>
@@ -98,6 +108,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
@@ -107,6 +118,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
@@ -116,33 +128,37 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Tag <Tag[]>
-        {{ Fill Tag Description }}
+        Tags for this endpoint.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Timeout <Int32>
-        The timeout in milliseconds for this API endpoint. 0 or not defined means no timeout.
+        The timeout in seconds for this API endpoint. 0 or not defined means no timeout.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Path <String>
         The path to a PS1 file containing the content of this endpoint.
         
-        Required?                    true
+        Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Environment <String>
@@ -152,6 +168,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -PersistentLog [<SwitchParameter>]
@@ -161,6 +178,87 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Documentation <String>
+        The documentation definition to associate this end with.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Command <String>
+        The command that defines this endpoint content.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Module <String>
+        The module that contains the command that defines this endpoint content.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -ComputerGroup <String[]>
+        The computer group to run this endpoint on.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -AvailableInBranch <String[]>
+        When specified, the endpoint will only be available in the specified branches.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Credential <String>
+        Credentials to login to the PowerShell Universal Management API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -TrustCertificate [<SwitchParameter>]
+        Whether the cmdlet should ignore certificate issues.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Disabled [<SwitchParameter>]
+        Disables the endpoint. The endpoint will not be available until it is enabled.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     <CommonParameters>

@@ -7,15 +7,15 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTransition [-Id <String>] [-Collapse] [-CollapseHeight <Int32>] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [<CommonParameters>]
+    New-UDTransition [-Id <String>] [-Collapse] [-CollapseHeight <Int32>] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [-Style <Hashtable>] [-MountOnEnter] [-UnmountOnExit] [<CommonParameters>]
     
-    New-UDTransition [-Id <String>] [-Fade] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [<CommonParameters>]
+    New-UDTransition [-Id <String>] [-Fade] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [-Style <Hashtable>] [-MountOnEnter] [-UnmountOnExit] [<CommonParameters>]
     
-    New-UDTransition [-Id <String>] [-Grow] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [<CommonParameters>]
+    New-UDTransition [-Id <String>] [-Grow] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [-Style <Hashtable>] [-MountOnEnter] [-UnmountOnExit] [<CommonParameters>]
     
-    New-UDTransition [-Id <String>] [-Slide] [-SlideDirection <String>] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [<CommonParameters>]
+    New-UDTransition [-Id <String>] [-Slide] [-SlideDirection <String>] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [-Style <Hashtable>] [-MountOnEnter] [-UnmountOnExit] [<CommonParameters>]
     
-    New-UDTransition [-Id <String>] [-Zoom] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [<CommonParameters>]
+    New-UDTransition [-Id <String>] [-Zoom] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [-Style <Hashtable>] [-MountOnEnter] [-UnmountOnExit] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -30,6 +30,7 @@ PARAMETERS
         Position?                    named
         Default value                [Guid]::NewGuid().ToString()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Collapse [<SwitchParameter>]
@@ -39,6 +40,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -CollapseHeight <Int32>
@@ -48,6 +50,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Fade [<SwitchParameter>]
@@ -57,6 +60,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Grow [<SwitchParameter>]
@@ -66,6 +70,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Slide [<SwitchParameter>]
@@ -75,6 +80,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -SlideDirection <String>
@@ -84,6 +90,7 @@ PARAMETERS
         Position?                    named
         Default value                Down
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Zoom [<SwitchParameter>]
@@ -93,6 +100,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Children <ScriptBlock>
@@ -102,6 +110,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -In [<SwitchParameter>]
@@ -111,6 +120,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Timeout <Int32>
@@ -120,6 +130,37 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        A hashtable of CSS styles to apply to the transition.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -MountOnEnter [<SwitchParameter>]
+        Whether to mount the content when entering the transition.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -UnmountOnExit [<SwitchParameter>]
+        Whether to unmount the content when exiting the transition.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -131,6 +172,134 @@ PARAMETERS
 INPUTS
     
 OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDTransition -Fade -In -Children {
+    PS >    New-UDButton -Text 'Click Me'  -Id 'button1'
+    PS > } -Id 'transition1' -Timeout 1000
+    PS > New-UDCheckbox -Label 'Toggle' -OnChange {
+    PS >    Set-UDElement -Id 'transition1' -Properties @{
+    PS >        In = $EventData
+    PS >    }
+    PS > } -Checked $true
+    
+    Fade|A fade transition.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDTransition -Slide -In -Children {
+    PS >    New-UDButton -Text 'Click Me' -Id 'button2'
+    PS > } -Id 'transition2'  -Timeout 1000
+    PS > New-UDCheckbox -Label 'Toggle' -OnChange {
+    PS >    Set-UDElement -Id 'transition2' -Properties @{
+    PS >        In = $EventData
+    PS >    }
+    PS > } -Checked $true
+    
+    Slide|A slide transition.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDTransition -Zoom -In -Children {
+    PS >    New-UDButton -Text 'Click Me' -Id 'button3'
+    PS > } -Id 'transition3'  -Timeout 1000
+    PS > New-UDCheckbox -Label 'Toggle' -OnChange {
+    PS >    Set-UDElement -Id 'transition3' -Properties @{
+    PS >        In = $EventData
+    PS >    }
+    PS > } -Checked $true
+    
+    Zoom|A zoom transition.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDTransition -Grow -In -Children {
+    PS >    New-UDButton -Text 'Click Me' -Id 'button4'
+    PS > } -Id 'transition4'  -Timeout 1000
+    PS > New-UDCheckbox -Label 'Toggle' -OnChange {
+    PS >    Set-UDElement -Id 'transition4' -Properties @{
+    PS >        In = $EventData
+    PS >    }
+    PS > } -Checked $true
+    
+    Grow|A grow transition.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDTransition -Collapse -In -Children {
+    PS >    New-UDButton -Text 'Click Me' -Id 'button5'
+    PS > } -Id 'transition5'  -Timeout 1000
+    PS > New-UDCheckbox -Label 'Toggle' -OnChange {
+    PS >    Set-UDElement -Id 'transition5' -Properties @{
+    PS >        In = $EventData
+    PS >    }
+    PS > } -Checked $true
+    
+    Collapse|A collapse transition.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS >New-UDTransition -Collapse -In -Children {
+    PS >    New-UDButton -Text 'Click Me' -Id 'button6'
+    PS > } -Id 'transition6' -CollapseHeight 100  -Timeout 1000
+    PS > New-UDCheckbox -Label 'Toggle' -OnChange {
+    PS >    Set-UDElement -Id 'transition6' -Properties @{
+    PS >        In = $EventData
+    PS >    }
+    PS > } -Checked $true
+    
+    Collapse Height|A collapse transition with 100 height.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 7 --------------------------
+    
+    PS >New-UDTransition -Slide -In -Children {
+    PS >    New-UDButton -Text 'Click Me' -Id 'button7'
+    PS > } -Id 'transition7' -SlideDirection 'Left'  -Timeout 1000
+    PS > New-UDCheckbox -Label 'Toggle' -OnChange {
+    PS >    Set-UDElement -Id 'transition7' -Properties @{
+    PS >        In = $EventData
+    PS >    }
+    PS > } -Checked $true
+    
+    Slide Direction|A slide transition with left direction.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 8 --------------------------
+    
+    PS >New-UDTransition -Fade -In -Children {
+    PS >    New-UDButton -Text 'Click Me' -Id 'button8'
+    PS > } -Id 'transition8' -Timeout 1000
+    PS > New-UDCheckbox -Label 'Toggle' -OnChange {
+    PS >    Set-UDElement -Id 'transition8' -Properties @{
+    PS >        In = $EventData
+    PS >    }
+    PS > } -Checked $true
+    
+    Timeout|A fade transition with 1000 timeout.
+    
+    
+    
     
     
 RELATED LINKS

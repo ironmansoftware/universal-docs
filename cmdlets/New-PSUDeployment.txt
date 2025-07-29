@@ -1,0 +1,147 @@
+
+NAME
+    New-PSUDeployment
+    
+SYNOPSIS
+    Creates a new deployment.
+    
+    
+SYNTAX
+    New-PSUDeployment [-AppToken <String>] [-ComputerName <String>] [-Credential <PSCredential>] [-Description <String>] [-Integrated] -Name <String> [-Path <String>] [-TrustCertificate] [-UseDefaultCredentials] -Version <String> [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new deployment. This takes the current repository configuration and creates a new deployment with the specified name and version.
+    
+
+PARAMETERS
+    -AppToken <String>
+        An application token to use for authentication.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The URL of the server to connect to.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      Uri
+        Accept wildcard characters?  false
+        
+    -Credential <PSCredential>
+        The credentials to use to connect to the server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Description <String>
+        A description of the deployment.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        For use when running within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        The name of the deployment.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Path <String>
+        Outputs the deployment as a module to the local file system.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -TrustCertificate [<SwitchParameter>]
+        Trust the certificate on the server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use the default credentials for the current user.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Version <String>
+        The version of the deployment.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> New-PSUDeployment -Name 'Production' -Version '1.0.0'
+    
+    Creates a new deployment with the name 'Production' and version '1.0.0'.
+    
+RELATED LINKS
+
+

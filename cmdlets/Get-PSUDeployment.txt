@@ -1,0 +1,144 @@
+
+NAME
+    Get-PSUDeployment
+    
+SYNOPSIS
+    Returns deployment information from the PowerShell Universal server.
+    
+    
+SYNTAX
+    Get-PSUDeployment [-AppToken <String>] [-ComputerName <String>] [-Credential <PSCredential>] [-Integrated] [-Name <String>] [-TrustCertificate] [-UseDefaultCredentials] [-Version <String>] [<CommonParameters>]
+    
+    Get-PSUDeployment [-AppToken <String>] [-ComputerName <String>] [-Credential <PSCredential>] [-Integrated] [-Pinned] [-TrustCertificate] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Returns deployment information from the PowerShell Universal server.
+    
+
+PARAMETERS
+    -AppToken <String>
+        An application token to use for authentication.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The URL of the server to connect to.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      Uri
+        Accept wildcard characters?  false
+        
+    -Credential <PSCredential>
+        The credentials to use to connect to the server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        For use when running within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        The name of the deployment to return.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Pinned [<SwitchParameter>]
+        Returns the pinned deployment information. Returns $null if no deployment is pinned.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -TrustCertificate [<SwitchParameter>]
+        Trust the certificate when connecting to the server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use the default credentials for the current user.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Version <String>
+        The version of the deployment to return.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Get-PSUDeployment -Name 'Production'
+    
+    Returns deployment information with the name 'Production'.
+    -------------------------- Example 2 --------------------------
+    
+    PS C:\> Get-PSUDeployment -Pinned
+    
+    Returns the pinned deployment information. Returns $null if no deployment is pinned.
+    
+RELATED LINKS
+
+

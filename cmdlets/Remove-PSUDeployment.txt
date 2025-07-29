@@ -1,0 +1,118 @@
+
+NAME
+    Remove-PSUDeployment
+    
+SYNOPSIS
+    Removes a deployment.
+    
+    
+SYNTAX
+    Remove-PSUDeployment [-AppToken <String>] [-ComputerName <String>] [-Credential <PSCredential>] -Deployment <Deployment> [-Integrated] [-TrustCertificate] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Removes a deployment from the server.
+    
+
+PARAMETERS
+    -AppToken <String>
+        An application token to use for authentication.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The URL of the server to connect to.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      Uri
+        Accept wildcard characters?  false
+        
+    -Credential <PSCredential>
+        The credentials to use to authenticate.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Deployment <Deployment>
+        The deployment to remove.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        For use when running within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -TrustCertificate [<SwitchParameter>]
+        Trust the certificate on the server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use the default credentials for the current user.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    PowerShellUniversal.Deployment
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> $deployment = Get-PSUDeployment -Name 'Production'
+    PS C:\> Remove-PSUDeployment -Deployment $deployment
+    
+    Removes the deployment with the name 'Production'.
+    
+RELATED LINKS
+
+

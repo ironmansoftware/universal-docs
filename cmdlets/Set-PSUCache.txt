@@ -7,11 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    Set-PSUCache [-AbsoluteExpiration <DateTime>] -Key <String> -Value <Object> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    Set-PSUCache [-AbsoluteExpiration <DateTime>] -Key <String> -Value <Object> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-Credential <PSCredential>] [-Persist] [-Role <String[]>] [-TrustCertificate] [<CommonParameters>]
     
-    Set-PSUCache [-AbsoluteExpirationFromNow <TimeSpan>] -Key <String> -Value <Object> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    Set-PSUCache [-AbsoluteExpirationFromNow <TimeSpan>] -Key <String> -Value <Object> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-Credential <PSCredential>] [-Persist] [-Role <String[]>] [-TrustCertificate] [<CommonParameters>]
     
-    Set-PSUCache -Key <String> [-SlidingExpiration <TimeSpan>] -Value <Object> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    Set-PSUCache -Key <String> [-SlidingExpiration <TimeSpan>] -Value <Object> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-Credential <PSCredential>] [-Persist] [-Role <String[]>] [-TrustCertificate] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -26,6 +26,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -AbsoluteExpirationFromNow <TimeSpan>
@@ -35,6 +36,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Key <String>
@@ -44,6 +46,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -SlidingExpiration <TimeSpan>
@@ -53,6 +56,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Value <Object>
@@ -62,6 +66,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -AppToken <String>
@@ -71,6 +76,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ComputerName <String>
@@ -80,6 +86,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      Uri
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
@@ -89,15 +96,57 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
-        {{ Fill UseDefaultCredentials Description }}
+        Provides Windows Credentials when authenticating against PowerShell Universal.
         
         Required?                    false
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Credential <PSCredential>
+        Credentials to login to the PowerShell Universal Management API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Persist [<SwitchParameter>]
+        Persists cache data to the database.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Role <String[]>
+        The roles that have access to this cached data.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -TrustCertificate [<SwitchParameter>]
+        Whether the cmdlet should ignore certificate issues.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -128,7 +177,7 @@ NOTES
     Caches data forever within the server-level cache.
     -------------------------- Example 2 --------------------------
     
-    PS C:\> Set-PSUCache -Key 'Data' -Value 'MyValue' -AbsoluteExpirationTime (Get-Date).AddMinutes(10)
+    PS C:\> Set-PSUCache -Key 'Data' -Value 'MyValue' -AbsoluteExpiration (Get-Date).AddMinutes(10)
     
     Caches data within the cache that will expire in 10 minutes.
     -------------------------- Example 3 --------------------------

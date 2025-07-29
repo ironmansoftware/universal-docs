@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    1
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Broadcast [<SwitchParameter>]
@@ -31,6 +32,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -45,13 +47,28 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > New-UDElement -Tag 'div' -Id 'parent' -Content {
-        New-UDTypography -Text 'Hello World'
-    }
+    PS >New-UDElement -Tag 'div' -Id 'clearElement1' -Content {
+    PS >     New-UDTypography -Text 'Hello World'
+    PS > }
+    PS > New-UDButton -Text 'Click Me' -OnClick {
+    PS >     Clear-UDElement -Id 'clearElement1'
+    PS > }
     
-    New-UDButton -Text 'Click Me' -OnClick {
-        Clear-UDElement -Id 'parent'
-    }
+    Clear Element|Clears an element.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDElement -Tag 'div' -Id 'clearElement2' -Content {
+    PS >     New-UDTypography -Text 'Hello World'
+    PS > }
+    PS > New-UDButton -Text 'Click Me' -OnClick {
+    PS >     Clear-UDElement -Id 'clearElement2' -Broadcast
+    PS > }
+    
+    Broadcast|Clears an element and broadcasts it to all connected dashboards.
     
     
     

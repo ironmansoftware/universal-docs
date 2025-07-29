@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    Sync-UDElement [-Id] <String[]> [-Broadcast] [<CommonParameters>]
+    Sync-UDElement [-Id] <String[]> [-Broadcast] [[-ArgumentList] <Object[]>] [-Wait] [[-Timeout] <Int32>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    1
         Default value                
         Accept pipeline input?       true (ByValue)
+        Aliases                      
         Accept wildcard characters?  false
         
     -Broadcast [<SwitchParameter>]
@@ -31,6 +32,35 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -ArgumentList <Object[]>
+        The argument list to pass to the element.
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Wait [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Timeout <Int32>
+        
+        Required?                    false
+        Position?                    3
+        Default value                5000
+        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -45,13 +75,28 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > New-UDDyanmic -Id 'dateTime' -Content {
-        Get-Date
-    }
+    PS >New-UDDynamic -Id 'sync1' -Content {
+    PS >    New-UDTypography (Get-Random)
+    PS > }
+    PS > New-UDButton -Text 'Refresh' -OnClick {
+    PS >    Sync-UDElement 'sync1'
+    PS > } -Id 'syncButton1'
     
-    New-UDButton -Text 'Refresh' -Content {
-        Sync-UDElement 'dateTime'
-    }
+    Sync Element|Syncs an element.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDDynamic -Id 'sync2' -Content {
+    PS >    New-UDTypography (Get-Random)
+    PS > }
+    PS > New-UDButton -Text 'Refresh' -OnClick {
+    PS >    Sync-UDElement 'sync2' -Broadcast
+    PS > } -Id 'syncButton2'
+    
+    Broadcast|Syncs an element and broadcasts it to all connected dashboards.
     
     
     

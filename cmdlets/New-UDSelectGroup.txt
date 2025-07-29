@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    1
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Name <String>
@@ -31,6 +32,7 @@ PARAMETERS
         Position?                    2
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -42,26 +44,6 @@ PARAMETERS
 INPUTS
     
 OUTPUTS
-    
-    -------------------------- EXAMPLE 1 --------------------------
-    
-    PS > Creates a new select with two select groups.
-    
-    New-UDSelect -Id 'selectGrouped' -Option {
-        New-UDSelectGroup -Name "Category 1" -Option {
-            New-UDSelectOption -Name "One" -Value 1
-            New-UDSelectOption -Name "Two" -Value 2
-            New-UDSelectOption -Name "Three" -Value 3
-        }
-        New-UDSelectGroup -Name "Category 2" -Option {
-            New-UDSelectOption -Name "Four" -Value 4
-            New-UDSelectOption -Name "Five" -Value 5
-            New-UDSelectOption -Name "Six" -Value 6
-        }
-    } -DefaultValue 2 -OnChange { Show-UDToast -Message $EventData }
-    
-    
-    
     
     
 RELATED LINKS

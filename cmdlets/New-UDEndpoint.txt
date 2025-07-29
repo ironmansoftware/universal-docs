@@ -7,7 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
+    New-UDEndpoint [-ArgumentList <Object[]>] -Endpoint <ScriptBlock> [-Id <String>] [-Role <String[]>] [<CommonParameters>]
+    
     New-UDEndpoint [-ArgumentList <Object[]>] -Endpoint <ScriptBlock> [-Id <String>] [-Role <String[]>] -Schedule <EndpointSchedule> [<CommonParameters>]
+    
+    New-UDEndpoint [-ArgumentList <Object[]>] [-Id <String>] [-Role <String[]>] -JavaScript <String> [<CommonParameters>]
     
     
 DESCRIPTION
@@ -22,6 +26,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Endpoint <ScriptBlock>
@@ -31,6 +36,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Id <String>
@@ -40,6 +46,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Role <String[]>
@@ -49,6 +56,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Schedule <EndpointSchedule>
@@ -58,6 +66,17 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -JavaScript <String>
+        The JavaScript code to run on the endpoint.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -85,10 +104,13 @@ NOTES
     
     $Schedule = New-UDEndpointSchedule 10 -Second
     New-UDEndpoint -Schedule $Schedule -Endpoint {
-        $Cache:Processes = Get-Process
+        $Cache:Random = Get-Random
+    }
+    New-UDButton -Text "Get Random" -OnClick {
+        Show-UDToast $Cache:Random
     }
     
-    Caches the local machines processes every 10 seconds.
+    Scheduled Endpoints|Caches a random value every ten seconds
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

@@ -24,6 +24,7 @@ PARAMETERS
         Position?                    named
         Default value                ([Guid]::NewGuid())
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Style <String>
@@ -33,6 +34,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Sx <Hashtable>
@@ -42,6 +44,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Component <String>
@@ -51,6 +54,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Tag <String>
@@ -60,6 +64,7 @@ PARAMETERS
         Position?                    named
         Default value                div
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Content <ScriptBlock>
@@ -69,6 +74,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -83,9 +89,13 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > 
+    PS >New-UDStyle -Style 'color: red; background-color: black' -Content {
+    PS >    New-UDTypography -Text "This is red"
+    PS > }
     
+    Style|Apply a CSS style to a component.
     
+    [Component("Style", "Css3", "Creates a new card.")]
     
     
     

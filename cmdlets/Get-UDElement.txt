@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    Get-UDElement [-Id] <String> [<CommonParameters>]
+    Get-UDElement [-Id] <String> [[-Property] <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -22,6 +22,16 @@ PARAMETERS
         Position?                    1
         Default value                
         Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Property <String>
+        
+        Required?                    false
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -36,11 +46,24 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > New-UDCodeEditor -Id 'editor' -Code 'Hello World'
+    PS >New-UDTextbox -Id 'getElement1' -Placeholder 'Enter your name'
+    PS > New-UDButton -Text 'Get Value' -OnClick {
+    PS >    Show-UDToast (Get-UDElement -Id 'getElement1').Value
+    PS > }
     
-    New-UDButton -Text 'Click Me' -OnClick {
-        Show-UDToast (Get-UDElement).Code
-    }
+    Get Element|Gets the state of an element.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDTextbox -Id 'getElement2' -Placeholder 'Enter your name'
+    PS > New-UDButton -Text 'Get Value' -OnClick {
+    PS >    Show-UDToast (Get-UDElement -Id 'getElement2' -Property 'Value')
+    PS > }
+    
+    Get Property|Gets a specific property of an element.
     
     
     

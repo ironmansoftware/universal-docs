@@ -1,0 +1,77 @@
+
+NAME
+    Publish-PSUStaticApp
+    
+SYNOPSIS
+    Publishes a static app based on the PowerShell Universal app framework.
+    
+    
+SYNTAX
+    Publish-PSUStaticApp -Definition <ScriptBlock> -DestinationPath <String> [-Force] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Publishes a static app based on the PowerShell Universal app framework. Static apps can be hosted outside of PowerShell Universal.
+    
+
+PARAMETERS
+    -Definition <ScriptBlock>
+        The definition of the static app. This is a script block that contains the definition of the app. The script block should contain a call to `New-UDApp` with the content of the app.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -DestinationPath <String>
+        The path to the directory where the static app will be published. This path must be a valid file system path.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Force [<SwitchParameter>]
+        If specified, the cmdlet will overwrite any existing files in the destination path without prompting for confirmation.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Publish-PSUStaticApp -Definition { New-UDApp -Content { New-UDTypography "Hello!" } } -DestinationPath 'C:\MyStaticApp'
+    
+    Creates a static app in the path `C:\MyStaticApp` based on the definition provided.
+    
+RELATED LINKS
+
+

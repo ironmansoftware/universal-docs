@@ -3,17 +3,17 @@ NAME
     New-UDAutocomplete
     
 SYNOPSIS
-    Creates an autocomplete textbox.
+    The autocomplete is a normal text input enhanced by a panel of suggested options.
     
     
 SYNTAX
-    New-UDAutocomplete [-Id <String>] [-Label <String>] [-Value <String>] [-OnChange <Endpoint>] -OnLoadOptions <Endpoint> [-FullWidth] [-Variant <String>] [-Multiple] [-ClassName <String>] [-Icon <Object>] [-OnEnter <Endpoint>] [<CommonParameters>]
+    New-UDAutocomplete [-Id <String>] [-Label <String>] [-Value <Object>] [-OnChange <Endpoint>] [-Options <Object>] [-FullWidth] [-AutoSelect] [-Variant <String>] [-Multiple] [-ClassName <String>] [-Icon <Object>] [-OnEnter <Endpoint>] [-Disabled] [<CommonParameters>]
     
-    New-UDAutocomplete [-Id <String>] [-Label <String>] [-Value <String>] [-OnChange <Endpoint>] -Options <Array> [-FullWidth] [-Variant <String>] [-Multiple] [-ClassName <String>] [-Icon <Object>] [-OnEnter <Endpoint>] [<CommonParameters>]
+    New-UDAutocomplete [-Id <String>] [-Label <String>] [-Value <Object>] [-OnChange <Endpoint>] -OnLoadOptions <Endpoint> [-FullWidth] [-AutoSelect] [-Variant <String>] [-Multiple] [-ClassName <String>] [-Icon <Object>] [-OnEnter <Endpoint>] [-Disabled] [<CommonParameters>]
     
     
 DESCRIPTION
-    Creates an autocomplete textbox. Autocomplete text boxes can be used to allow the user to select from a large list of static or dynamic items. Typing in the textbox will filter the list.
+    Autocomplete text boxes can be used to allow the user to select from a large list of static or dynamic items. Typing in the textbox will filter the list.
     
 
 PARAMETERS
@@ -24,6 +24,7 @@ PARAMETERS
         Position?                    named
         Default value                ([Guid]::NewGuid())
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Label <String>
@@ -33,15 +34,17 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
-    -Value <String>
+    -Value <Object>
         The value of the textbox.
         
         Required?                    false
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnChange <Endpoint>
@@ -51,6 +54,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnLoadOptions <Endpoint>
@@ -60,15 +64,17 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
-    -Options <Array>
+    -Options <Object>
         Static options to display in the selection drop down. When the user types, these options will be filtered.
         
-        Required?                    true
+        Required?                    false
         Position?                    named
         Default value                @()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -FullWidth [<SwitchParameter>]
@@ -78,6 +84,17 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -AutoSelect [<SwitchParameter>]
+        Whether the component should automatically be selected if there was only one total option with the options array.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Variant <String>
@@ -87,6 +104,7 @@ PARAMETERS
         Position?                    named
         Default value                standard
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Multiple [<SwitchParameter>]
@@ -96,6 +114,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ClassName <String>
@@ -105,6 +124,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Icon <Object>
@@ -114,6 +134,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnEnter <Endpoint>
@@ -123,6 +144,17 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Disabled [<SwitchParameter>]
+        Whether this autocomplete is disabled.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -137,20 +169,78 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > Creates a autocomplete with a static list of options.
+    PS >New-UDAutocomplete -Options @('Test', 'Test2', 'Test3', 'Test4') -Id 'autocomplete1' -FullWidth
     
-    New-UDAutocomplete -Id 'autoComplete' -Options @('Test', 'Test2', 'Test3', 'Test4')
+    Basic autocomplete|The value must be chosen from a predefined set of allowed values.
     
     
     
     
     -------------------------- EXAMPLE 2 --------------------------
     
-    PS > Creates an autocomplete with a dynamically filtered set of options
+    PS >New-UDAutocomplete -Options @("Test", "No", "Yes") -Multiple  -Id 'autocomplete2' -FullWidth
     
-    New-UDAutocomplete -Id 'autoCompleteDynamic' -OnLoadOptions { 
-        @('Test', 'Test2', 'Test3', 'Test4') | Where-Object { $_ -match $Body } | ConvertTo-Json
-    }
+    Multi-Select|Allow the user to select multiple values.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDStack -Content {
+    PS >    New-UDAutocomplete -Options @("Test", "No", "Yes") -Variant 'filled'  -Id 'autocomplete3' -FullWidth
+    PS >    New-UDAutocomplete -Options @("Test", "No", "Yes") -Variant 'outlined'  -Id 'autocomplete4' -FullWidth
+    PS >    New-UDAutocomplete -Options @("Test", "No", "Yes") -Variant 'standard'  -Id 'autocomplete5' -FullWidth
+    PS > } -Direction 'column' -FullWidth
+    
+    Variants|Change the the style of the autocomplete textbox.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDAutocomplete -Options @("Test", "No", "Yes") -OnChange {
+    PS >    Show-UDToast $EventData
+    PS > }  -Id 'autocomplete6' -FullWidth
+    
+    Handling changes|Execute PowerShell when the autocomplete changes.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDAutocomplete -Options @("Test", "No", "Yes") -OnEnter {
+    PS >    Show-UDToast $EventData
+    PS > } -Id 'autocomplete7' -FullWidth
+    
+    OnEnter|Execute PowerShell when the user presses enter.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS >New-UDAutocomplete -OnLoadOptions { 
+    PS >   @('Test', 'Test2', 'Test3', 'Test4') | Where-Object { $_ -match $Body } | ConvertTo-Json
+    PS > } -Id 'autocomplete8' -FullWidth
+    
+    Asynchronous options|Creates an autocomplete with a dynamically filtered set of options
+    
+    
+    
+    
+    -------------------------- EXAMPLE 7 --------------------------
+    
+    PS >New-UDAutocomplete -Options @(
+    PS >    New-UDAutocompleteOption -Name 'Test' -Value 'test' -Group 'Group1'
+    PS >    New-UDAutocompleteOption -Name 'Test2' -Value 'test2' -Group 'Group1'
+    PS >    New-UDAutocompleteOption -Name 'Test3' -Value 'test3' -Group 'Group2'
+    PS >    New-UDAutocompleteOption -Name 'Test4' -Value 'test4' -Group 'Group2'
+    PS > ) -Id 'autocomplete9' -FullWidth
+    
+    
     
     
     

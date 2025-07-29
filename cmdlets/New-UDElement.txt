@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDElement [-ArgumentList <Object[]>] [-Attributes <Hashtable>] [-AutoRefresh] [-Content <ScriptBlock>] [-Endpoint <ScriptBlock>] [-Id <String>] [-OnMount <String>] [-RefreshInterval <Int32>] -Tag <String> [<CommonParameters>]
+    New-UDElement [-ArgumentList <Object[]>] [-Attributes <Hashtable>] [-AutoRefresh] [-Content <ScriptBlock>] [-Endpoint <Endpoint>] [-Id <String>] [-RefreshInterval <Int32>] [-Tag <String>] [-ClassName <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -16,12 +16,13 @@ DESCRIPTION
 
 PARAMETERS
     -ArgumentList <Object[]>
-        No required. For backwards compatibility.
+        Not required. For backwards compatibility.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Attributes <Hashtable>
@@ -31,6 +32,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -AutoRefresh [<SwitchParameter>]
@@ -40,6 +42,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Content <ScriptBlock>
@@ -49,15 +52,17 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
-    -Endpoint <ScriptBlock>
+    -Endpoint <Endpoint>
         Dynamic content for the element.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Id <String>
@@ -67,15 +72,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -OnMount <String>
-        An event handler to call when the React element is mounted.
-        
-        Required?                    false
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -RefreshInterval <Int32>
@@ -85,15 +82,27 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Tag <String>
         The HTML tag.
         
-        Required?                    true
+        Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -ClassName <String>
+        A class to apply to the element.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -127,7 +136,18 @@ NOTES
         "Hello!"
     }
     
-    Creates a div with red text.
+    Basic Element|Creates a div with red text.
+    -------------------------- Example 2 --------------------------
+    
+    New-UDElement -Tag 'div' -Attributes @{
+        onClick = {
+            Show-UDToast "Clicked!"
+        }
+    } -Content {
+        "Hello!"
+    }
+    
+    Event Handler|An element with an event handler.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032

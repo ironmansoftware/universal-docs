@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDDateTime [-Id <String>] [-InputObject] <DateTime> [-LocalizedFormat <String>] [-Locale <String>] [<CommonParameters>]
+    New-UDDateTime [-Id <String>] [[-InputObject] <DateTime>] [-LocalizedFormat <String>] [-Locale <String>] [<CommonParameters>]
     
-    New-UDDateTime [-Id <String>] [-InputObject] <DateTime> [-Format <String>] [-Locale <String>] [<CommonParameters>]
+    New-UDDateTime [-Id <String>] [[-InputObject] <DateTime>] [-Format <String>] [-Locale <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -24,15 +24,17 @@ PARAMETERS
         Position?                    named
         Default value                [Guid]::NewGuid()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -InputObject <DateTime>
         The date and time object to format.
         
-        Required?                    true
+        Required?                    false
         Position?                    1
-        Default value                
+        Default value                (Get-Date)
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Format <String>
@@ -42,6 +44,7 @@ PARAMETERS
         Position?                    named
         Default value                DD/MM/YYYY
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LocalizedFormat <String>
@@ -51,6 +54,7 @@ PARAMETERS
         Position?                    named
         Default value                LLL
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Locale <String>
@@ -60,6 +64,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -74,9 +79,27 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > Formats a date and time using the format 'DD/MM/YYYY'
+    PS >New-UDDateTime -InputObject (Get-Date) -Format 'DD/MM/YYYY' -Id 'dateTime1'
     
-    New-UDDateTime -InputObject (Get-Date) -Format 'DD/MM/YYYY'
+    Formats a date and time using the format 'DD/MM/YYYY'
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDDateTime -InputObject (Get-Date) -LocalizedFormat 'LLL' -Id 'dateTime2'
+    
+    Localized Format|Formats a date and time using the localized format 'LLL'
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDDateTime -InputObject (Get-Date) -Locale 'es' -Id 'dateTime3'
+    
+    Locale|Formats a date and time using the locale 'es'
     
     
     

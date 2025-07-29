@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTable [-Id <String>] [-Title <String>] -Data <Object[]> [-Columns <Hashtable[]>] [-OnRowSelection <Endpoint>] [-ShowSort] [-ShowFilter] [-ShowSearch] [-Dense] [-ShowExport] [-StickyHeader] [-PageSize <Int32>] [-PageSizeOptions <Int32[]>] [-PaginationLocation <String>] [-ShowSelection] [-ShowPagination] [-Padding <String>] [-Size <String>] [-TextOption <Hashtable>] [-ExportOption <String[]>] [-OnExport <Endpoint>] [-DisablePageSizeAll] [-DefaultSortDirection <String>] [-HideToggleAllRowsSelected] [-DisableMultiSelect] [-DisableSortRemove] [-Icon <Hashtable>] [-ClassName <String>] [-ShowRefresh] [-ToolbarContent <ScriptBlock>] [-OnRowExpand <ScriptBlock>] [-MaxHeight <Int32>] [-Locale <String>] [<CommonParameters>]
+    New-UDTable [-Id <String>] [-Title <String>] [-Data <Object[]>] [-Columns <Hashtable[]>] [-OnRowSelection <Endpoint>] [-ShowSort] [-ShowFilter] [-ShowSearch] [-Dense] [-ShowExport] [-StickyHeader] [-PageSize <Int32>] [-PageSizeOptions <Int32[]>] [-PaginationLocation <String>] [-ShowSelection] [-ShowPagination] [-Padding <String>] [-Size <String>] [-TextOption <Hashtable>] [-ExportOption <String[]>] [-OnExport <Endpoint>] [-DisablePageSizeAll] [-DefaultSortDirection <String>] [-HideToggleAllRowsSelected] [-DisableMultiSelect] [-DisableSortRemove] [-Icon <Hashtable>] [-ClassName <String>] [-ShowRefresh] [-ToolbarContent <ScriptBlock>] [-OnRowExpand <ScriptBlock>] [-MaxHeight <Int32>] [-Language <String>] [-RemoveCard] [-OnRowStyle <ScriptBlock>] [-HeaderStyle <Hashtable>] [-InitialState <Hashtable>] [<CommonParameters>]
     
-    New-UDTable [-Id <String>] [-Title <String>] -LoadData <Endpoint> -Columns <Hashtable[]> [-OnRowSelection <Endpoint>] [-ShowSort] [-ShowFilter] [-ShowSearch] [-Dense] [-ShowExport] [-StickyHeader] [-PageSize <Int32>] [-PageSizeOptions <Int32[]>] [-PaginationLocation <String>] [-ShowSelection] [-ShowPagination] [-Padding <String>] [-Size <String>] [-TextOption <Hashtable>] [-ExportOption <String[]>] [-OnExport <Endpoint>] [-DisablePageSizeAll] [-DefaultSortDirection <String>] [-HideToggleAllRowsSelected] [-DisableMultiSelect] [-DisableSortRemove] [-Icon <Hashtable>] [-ClassName <String>] [-ShowRefresh] [-ToolbarContent <ScriptBlock>] [-OnRowExpand <ScriptBlock>] [-MaxHeight <Int32>] [-AutoRefresh] [-AutoRefreshInterval <Int32>] [-Locale <String>] [<CommonParameters>]
+    New-UDTable [-Id <String>] [-Title <String>] -LoadRows <Endpoint> [-Columns <Hashtable[]>] [-OnRowSelection <Endpoint>] [-ShowSort] [-ShowFilter] [-ShowSearch] [-Dense] [-ShowExport] [-StickyHeader] [-PageSize <Int32>] [-PageSizeOptions <Int32[]>] [-PaginationLocation <String>] [-ShowSelection] [-ShowPagination] [-Padding <String>] [-Size <String>] [-TextOption <Hashtable>] [-ExportOption <String[]>] [-OnExport <Endpoint>] [-DisablePageSizeAll] [-DefaultSortDirection <String>] [-HideToggleAllRowsSelected] [-DisableMultiSelect] [-DisableSortRemove] [-Icon <Hashtable>] [-ClassName <String>] [-ShowRefresh] [-ToolbarContent <ScriptBlock>] [-OnRowExpand <ScriptBlock>] [-MaxHeight <Int32>] [-AutoRefresh] [-AutoRefreshInterval <Int32>] [-Language <String>] [-RemoveCard] [-OnRowStyle <ScriptBlock>] [-HeaderStyle <Hashtable>] [-InitialState <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -24,6 +24,7 @@ PARAMETERS
         Position?                    named
         Default value                [Guid]::NewGuid().ToString()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Title <String>
@@ -33,18 +34,20 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Data <Object[]>
         The data to put into the table.
         
-        Required?                    true
+        Required?                    false
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
-    -LoadData <Endpoint>
+    -LoadRows <Endpoint>
         When using dynamic tables, this script block is called. The $Body parameter will contain a hashtable the following options: 
         
         filters: @()
@@ -64,6 +67,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Columns <Hashtable[]>
@@ -73,6 +77,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnRowSelection <Endpoint>
@@ -82,6 +87,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ShowSort [<SwitchParameter>]
@@ -91,6 +97,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ShowFilter [<SwitchParameter>]
@@ -100,6 +107,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ShowSearch [<SwitchParameter>]
@@ -109,6 +117,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Dense [<SwitchParameter>]
@@ -118,14 +127,17 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ShowExport [<SwitchParameter>]
+        Whether to show the export button.
         
         Required?                    false
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -StickyHeader [<SwitchParameter>]
@@ -135,6 +147,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -PageSize <Int32>
@@ -144,6 +157,7 @@ PARAMETERS
         Position?                    named
         Default value                5
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -PageSizeOptions <Int32[]>
@@ -153,6 +167,7 @@ PARAMETERS
         Position?                    named
         Default value                @()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -PaginationLocation <String>
@@ -162,6 +177,7 @@ PARAMETERS
         Position?                    named
         Default value                bottom
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ShowSelection [<SwitchParameter>]
@@ -171,6 +187,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ShowPagination [<SwitchParameter>]
@@ -180,6 +197,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Padding <String>
@@ -188,6 +206,7 @@ PARAMETERS
         Position?                    named
         Default value                default
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Size <String>
@@ -197,6 +216,7 @@ PARAMETERS
         Position?                    named
         Default value                medium
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -TextOption <Hashtable>
@@ -206,6 +226,7 @@ PARAMETERS
         Position?                    named
         Default value                (New-UDTableTextOption)
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ExportOption <String[]>
@@ -215,6 +236,7 @@ PARAMETERS
         Position?                    named
         Default value                @("XLSX", "PDF", "JSON", "CSV")
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnExport <Endpoint>
@@ -224,6 +246,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisablePageSizeAll [<SwitchParameter>]
@@ -233,6 +256,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DefaultSortDirection <String>
@@ -242,6 +266,7 @@ PARAMETERS
         Position?                    named
         Default value                ascending
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -HideToggleAllRowsSelected [<SwitchParameter>]
@@ -251,6 +276,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisableMultiSelect [<SwitchParameter>]
@@ -260,6 +286,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisableSortRemove [<SwitchParameter>]
@@ -269,6 +296,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Icon <Hashtable>
@@ -278,6 +306,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ClassName <String>
@@ -287,30 +316,37 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ShowRefresh [<SwitchParameter>]
+        Whether to show the refresh button.
         
         Required?                    false
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ToolbarContent <ScriptBlock>
-        
-        Required?                    false
-        Position?                    named
-        Default value                {}
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -OnRowExpand <ScriptBlock>
+        Custom content to show in the toolbar.
         
         Required?                    false
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -OnRowExpand <ScriptBlock>
+        A script block to call when a row is expanded. The $EventData variable will contain the row data.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -MaxHeight <Int32>
@@ -319,15 +355,17 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -AutoRefresh [<SwitchParameter>]
-        Reloads the table on an interval when -LoadData is being used.
+        Reloads the table on an interval when -LoadRows is being used.
         
         Required?                    false
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -AutoRefreshInterval <Int32>
@@ -337,15 +375,55 @@ PARAMETERS
         Position?                    named
         Default value                10
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
-    -Locale <String>
-        The locale. Primarily used for Date and Time filters.
+    -Language <String>
+        The language. Primarily used for Date and Time filters.
         
         Required?                    false
         Position?                    named
         Default value                en
         Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -RemoveCard [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -OnRowStyle <ScriptBlock>
+        A script block to call to style rows. The $EventData variable will contain the row data.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -HeaderStyle <Hashtable>
+        A hashtable of styles to apply to the header.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -InitialState <Hashtable>
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -358,98 +436,387 @@ INPUTS
     
 OUTPUTS
     
-NOTES
-    
-    
-        General notes
-    
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > Creates a static table whether the columns of the table are the properties of the data specified.
+    PS >$Data = @(
+    PS >     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS > ) 
+    PS > New-UDTable -Data $Data -Id 'table1'
     
-    $Data = @(
-        @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
-        @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
-        @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
-        @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
-        @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
-    ) 
-    
-    New-UDTable -Id 'defaultTable' -Data $Data
+    Basic Table|Creates a static table whether the columns of the table are the properties of the data specified.
     
     
     
     
     -------------------------- EXAMPLE 2 --------------------------
     
-    PS > Creates a table where there are custom columns defined for that table.
+    PS >$Data = @(
+    PS >     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS > ) 
+    PS > $Columns = @(
+    PS >     New-UDTableColumn -Property Dessert -Title "A Dessert"
+    PS >     New-UDTableColumn -Property Calories -Title Calories 
+    PS >     New-UDTableColumn -Property Fat -Title Fat 
+    PS >     New-UDTableColumn -Property Carbs -Title Carbs 
+    PS >     New-UDTableColumn -Property Protein -Title Protein 
+    PS > )
+    PS > New-UDTable -Data $Data -Columns $Columns -Id 'table2'
     
-    $Columns = @(
-        New-UDTableColumn -Property Dessert -Title "A Dessert"
-        New-UDTableColumn -Property Calories -Title Calories 
-        New-UDTableColumn -Property Fat -Title Fat 
-        New-UDTableColumn -Property Carbs -Title Carbs 
-        New-UDTableColumn -Property Protein -Title Protein 
-    )
-    
-    New-UDTable -Id 'customColumnsTable' -Data $Data -Columns $Columns
+    Columns|Creates a table where there are custom columns defined for that table.
     
     
     
     
     -------------------------- EXAMPLE 3 --------------------------
     
-    PS > Creates a table where the table has custom rendering for one of the columns and an export button.
+    PS >$Data = @(
+    PS >     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS > ) 
+    PS > $Columns = @(
+    PS >     New-UDTableColumn -Property Dessert -Title Dessert -Render { 
+    PS >        New-UDButton -Id "btn$($EventData.Dessert)" -Text "Click for Dessert!" -OnClick { Show-UDToast -Message $EventData.Dessert } 
+    PS >     }
+    PS >     New-UDTableColumn -Property Calories -Title Calories 
+    PS >     New-UDTableColumn -Property Fat -Title Fat 
+    PS >     New-UDTableColumn -Property Carbs -Title Carbs 
+    PS >     New-UDTableColumn -Property Protein -Title Protein 
+    PS > )
+    PS > New-UDTable -Data $Data -Columns $Columns -Id 'table3'
     
-    $Columns = @(
-        New-UDTableColumn -Property Dessert -Title Dessert -Render { 
-            $Item = $Body | ConvertFrom-Json 
-            New-UDButton -Id "btn$($Item.Dessert)" -Text "Click for Dessert!" -OnClick { Show-UDToast -Message $Item.Dessert } 
-        }
-        New-UDTableColumn -Property Calories -Title Calories 
-        New-UDTableColumn -Property Fat -Title Fat 
-        New-UDTableColumn -Property Carbs -Title Carbs 
-        New-UDTableColumn -Property Protein -Title Protein 
-    )
-    
-    New-UDTable -Id 'customColumnsTableRender' -Data $Data -Columns $Columns -Sort -Export
+    Render|Creates a table where the columns are rendered with custom content.
     
     
     
     
     -------------------------- EXAMPLE 4 --------------------------
     
-    PS > Creates a table within a New-UDDynamic that refreshes automatically on an interval.
+    PS >$Data = @(
+    PS >     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS > ) 
+    PS > 
+    PS > $Columns = @(
+    PS >     New-UDTableColumn -Property Dessert -Title Dessert -Render { 
+    PS >         New-UDButton -Id "btn$($EventData.Dessert)" -Text "Click for Dessert!" -OnClick { Show-UDToast -Message $EventData.Dessert } 
+    PS >     }
+    PS >     New-UDTableColumn -Property Calories -Title Calories -Width 5 -Truncate
+    PS >     New-UDTableColumn -Property Fat -Title Fat 
+    PS >     New-UDTableColumn -Property Carbs -Title Carbs 
+    PS >     New-UDTableColumn -Property Protein -Title Protein 
+    PS > )
+    PS > 
+    PS > New-UDTable -Data $Data -Columns $Columns -Id 'table4'
     
-    New-UDDynamic -Content {
-        $DynamicData = @(
-            @{Dessert = 'Frozen yoghurt'; Calories = (Get-Random); Fat = 6.0; Carbs = 24; Protein = 4.0}
-            @{Dessert = 'Ice cream sandwich'; Calories = (Get-Random); Fat = 6.0; Carbs = 24; Protein = 4.0}
-            @{Dessert = 'Eclair'; Calories = (Get-Random); Fat = 6.0; Carbs = 24; Protein = 4.0}
-            @{Dessert = 'Cupcake'; Calories = (Get-Random); Fat = 6.0; Carbs = 24; Protein = 4.0}
-            @{Dessert = 'Gingerbread'; Calories = (Get-Random); Fat = 6.0; Carbs = 24; Protein = 4.0}
-        ) 
-    
-        New-UDTable -Id 'dynamicTable' -Data $DynamicData
-    } -AutoRefresh -AutoRefreshInterval 2
+    Column Width|Set custom column width
     
     
     
     
     -------------------------- EXAMPLE 5 --------------------------
     
-    PS > Creates a table that uses the LoadData script block to load data dynamically.
+    PS >$Data = @(
+    PS >     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS > ) 
+    PS > 
+    PS > $Columns = @(
+    PS >     New-UDTableColumn -Property Dessert -Title "A Dessert" -Filter -FilterType AutoComplete
+    PS >     New-UDTableColumn -Property Calories -Title Calories -Filter -FilterType Range
+    PS >     New-UDTableColumn -Property Fat -Title Fat -Filter -FilterType Range
+    PS >     New-UDTableColumn -Property Carbs -Title Carbs -Filter -FilterType Range
+    PS >     New-UDTableColumn -Property Protein -Title Protein -Filter -FilterType Range
+    PS > )
+    PS > 
+    PS > New-UDTable -Id 'table5' -Data $Data -Columns $Columns -ShowFilter
     
-    New-UDTable -Id 'loadDataTable' -Columns $Columns -LoadData {
-    $Query = $Body | ConvertFrom-Json
+    Column Filter|Columns filters for a table
     
-    @(
-        @{Dessert = 'Frozen yoghurt'; Calories = (Get-Random); Fat = 6.0; Carbs = 24; Protein = 4.0}
-        @{Dessert = 'Ice cream sandwich'; Calories = (Get-Random); Fat = 6.0; Carbs = 24; Protein = 4.0}
-        @{Dessert = 'Eclair'; Calories = (Get-Random); Fat = 6.0; Carbs = 24; Protein = 4.0}
-        @{Dessert = 'Cupcake'; Calories = (Get-Random); Fat = 6.0; Carbs = 24; Protein = 4.0}
-        @{Dessert = 'Gingerbread'; Calories = (Get-Random); Fat = 6.0; Carbs = 24; Protein = 4.0}
-    ) | Out-UDTableData -Page 0 -TotalCount 5 -Properties $Query.Properties
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS >$Data = @(
+    PS >     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS > ) 
+    PS > 
+    PS > $Columns = @(
+    PS >     New-UDTableColumn -Property Dessert -Title "A Dessert" -IncludeInSearch
+    PS >     New-UDTableColumn -Property Calories -Title Calories 
+    PS >     New-UDTableColumn -Property Fat -Title Fat 
+    PS >     New-UDTableColumn -Property Carbs -Title Carbs 
+    PS >     New-UDTableColumn -Property Protein -Title Protein 
+    PS > )
+    PS > 
+    PS > New-UDTable -Id 'table6' -Data $Data -Columns $Columns -ShowSearch
+    
+    Column Search|Columns can be included in the search
+    
+    
+    
+    
+    -------------------------- EXAMPLE 7 --------------------------
+    
+    PS >$Columns = @(
+    PS >     New-UDTableColumn -Property Name -Title "Name" -ShowFilter
+    PS >     New-UDTableColumn -Property Value -Title "Value" -ShowFilter
+    PS > )
+    PS > 
+    PS > $Data = 1..1000 | ForEach-Object {
+    PS > [PSCustomObject]@{
+    PS >     Name = "Record-$_"
+    PS >     Value = $_ 
+    PS > }
+    PS > }
+    PS > 
+    PS > New-UDTable -Columns $Columns -LoadData {
+    PS >     foreach($Filter in $EventData.Filters)
+    PS >     {
+    PS >         $Data = $Data | Where-Object -Property $Filter.Id -Match -Value $Filter.Value
+    PS >     }
+    PS > 
+    PS >     $TotalCount = $Data.Count 
+    PS > 
+    PS >     if (-not [string]::IsNullOrEmpty($EventData.OrderBy.Field))
+    PS >     {
+    PS >         $Descending = $EventData.OrderDirection -ne 'asc'
+    PS >         $Data = $Data | Sort-Object -Property ($EventData.orderBy.Field) -Descending:$Descending
+    PS >     }
+    PS >     
+    PS >     $Data = $Data | Select-Object -First $EventData.PageSize -Skip ($EventData.Page * $EventData.PageSize)
+    PS > 
+    PS >     $Data | Out-UDTableData -Page $EventData.Page -TotalCount $TotalCount -Properties $EventData.Properties 
+    PS > } -ShowFilter -ShowSort -ShowPagination -Id 'table7'
+    
+    Server-Side Processing|Server-side processing is useful for large data sets that should not be loaded into the browser.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 8 --------------------------
+    
+    PS >$Data = @(
+    PS >     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS > ) 
+    PS > 
+    PS > New-UDTable -Data $Data -Paging -PageSize 2 -Id 'table8'
+    
+    Paging|Paging can be enabled by setting the -Paging parameter to $true. The default page size is 10.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 9 --------------------------
+    
+    PS >$Data = @(
+    PS >     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS > ) 
+    PS > 
+    PS > New-UDTable -Data $Data -OnRowExpand {
+    PS >     New-UDAlert -Text $EventData.Calories
+    PS > } -Columns @(
+    PS >     New-UDTableColumn -Title 'Dessert' -Property 'Dessert'
+    PS > ) -Id 'table9'
+    
+    Row Expansion|Row expansion can be enabled by setting the -OnRowExpand parameter to a scriptblock. The scriptblock will be passed the row data as a hashtable in the $EventData variable.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 10 --------------------------
+    
+    PS >$Data = @(
+    PS >     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS > ) 
+    PS > 
+    PS > $Columns = @(
+    PS >     New-UDTableColumn -Property Dessert -Title "A Dessert" -IncludeInExport
+    PS >     New-UDTableColumn -Property Calories -Title Calories  -IncludeInExport
+    PS >     New-UDTableColumn -Property Fat -Title Fat   -IncludeInExport
+    PS >     New-UDTableColumn -Property Carbs -Title Carbs   -IncludeInExport
+    PS >     New-UDTableColumn -Property Protein -Title Protein   -IncludeInExport -Hidden
+    PS > )
+    PS > 
+    PS > New-UDTable -Id 'table10' -Data $Data -Columns $Columns -Export
+    
+    Export|Export table data with the -Export parameter. You can configure which columns are included in the export by setting the -IncludeInExport parameter on the column. Use -Hidden to hide a column from the table but include it in the export.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 11 --------------------------
+    
+    PS >$Data = @(
+    PS >     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS >     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0}
+    PS > ) 
+    PS > 
+    PS > $Option = New-UDTableTextOption -Search "Search all these records"
+    PS > 
+    PS > New-UDTable -Data $Data -TextOption $Option -ShowSearch -Id 'table11'
+    
+    Text Options|Text options can be used to customize the text in the table.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 12 --------------------------
+    
+    PS >$Data = @(
+    PS >     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0 }
+    PS >     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0 }
+    PS >     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0 }
+    PS >     @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0 }
+    PS >     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 24; Protein = 4.0 }
+    PS > )
+    PS > 
+    PS > New-UDTable -Data $Data -OnRowStyle {
+    PS >     if ($EventData.Dessert -eq 'Frozen yoghurt')
+    PS >     {
+    PS >         @{
+    PS >             backgroundColor = "red"
+    PS >         }
+    PS >     } else {
+    PS >         @{}
+    PS >     }
+    PS > } -Id 'table12'
+    
+    Row Styling|You can style rows by using the -OnRowStyle parameter. The script block will be passed the row data as a hashtable in the $EventData variable. The script block should return a hashtable of CSS styles to apply to the row.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 13 --------------------------
+    
+    PS >$Data = @(
+    PS >     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 1; Protein = 4.0 }
+    PS >     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 6.0; Carbs = 34; Protein = 4.0 }
+    PS >     @{Dessert = 'Eclair'; Calories = 159; Fat = 6.0; Carbs = 73; Protein = 4.0 }
+    PS >     @{Dessert = 'Cupcake'; Calories = 159; Fat = 6.0; Carbs = 25; Protein = 4.0 }
+    PS >     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 99; Protein = 4.0 }
+    PS > )
+    PS > $Columns = @(
+    PS >     New-UDTableColumn -Property Dessert -Title "Dessert" 
+    PS >     New-UDTableColumn -Property Calories -Title "Calories" 
+    PS >     New-UDTableColumn -Property Fat -Title "Fat" 
+    PS >     New-UDTableColumn -Property Carbs -Title "Carbs"  -DefaultSortColumn
+    PS >     New-UDTableColumn -Property Protein -Title "Protein" 
+    PS > )
+    PS > New-UDTable -Data $Data -DefaultSortDirection descending -Id 'table13' -ShowSort -Columns $Columns
+    
+    Default Sort|Set the default sort direction and column.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 14 --------------------------
+    
+    PS >$Data = 1..100 | ForEach-Object {
+    PS >     [PSCustomObject]@{
+    PS >         Dessert = "Dessert $_"
+    PS >         Calories = Get-Random -Minimum 100 -Maximum 500
+    PS >         Fat = Get-Random -Minimum 1 -Maximum 10
+    PS >         Carbs = Get-Random -Minimum 1 -Maximum 100
+    PS >         Protein = Get-Random -Minimum 1 -Maximum 100
+    PS >  }
+    PS > }
+    PS > $Columns = @(
+    PS >     New-UDTableColumn -Property Dessert -Title "Dessert" -ShowFilter
+    PS >     New-UDTableColumn -Property Calories -Title "Calories" 
+    PS >     New-UDTableColumn -Property Fat -Title "Fat" 
+    PS >     New-UDTableColumn -Property Carbs -Title "Carbs" 
+    PS >     New-UDTableColumn -Property Protein -Title "Protein" 
+    PS > )
+    PS >  New-UDTable -Id 'table14'  -ShowPagination  -LoadData {
+    PS >     foreach($Filter in $EventData.Filters)
+    PS >     {
+    PS >         $Data = $Data | Where-Object -Property $Filter.Id -Match -Value $Filter.Value
+    PS >     }
+    PS >     $TotalCount = $Data.Count 
+    PS >     if (-not [string]::IsNullOrEmpty($EventData.OrderBy))
+    PS >     {
+    PS >         $Descending = $EventData.OrderDirection -ne 'asc'
+    PS >         $Data = $Data | Sort-Object -Property $EventData.orderBy.field -Descending:$Descending
+    PS >     }
+    PS >     
+    PS >     $Data = $Data | Select-Object -First $EventData.PageSize -Skip ($EventData.Page * $EventData.PageSize)
+    PS >     $Data | Out-UDTableData -Page $EventData.Page -TotalCount $TotalCount -Properties $EventData.Properties 
+    PS > } -Columns $Columns -InitialState @{
+    PS >     pageIndex = 0
+    PS >     pageSize = 20
+    PS >     filters = @{
+    PS >         id = "dessert"
+    PS >         value = "20"
+    PS >     }
+    PS >     orderBy = @{ field = "fat" }
+    PS > } -ShowSort
+    
+    Initial state|Set the initial state of the table. This can be used to set the page index, page size, filters, and order by column.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 15 --------------------------
+    
+    PS >$Data = @(
+    PS >     @{Dessert = 'Frozen yoghurt'; Calories = 159; Fat = 6.0; Carbs = 1; Protein = 4.0 }
+    PS >     @{Dessert = 'Ice cream sandwich'; Calories = 159; Fat = 150.0; Carbs = 34; Protein = 4.0 }
+    PS >     @{Dessert = 'Eclair'; Calories = 159; Fat = 100.0; Carbs = 73; Protein = 4.0 }
+    PS >     @{Dessert = 'Cupcake'; Calories = 159; Fat = 30.0; Carbs = 25; Protein = 4.0 }
+    PS >     @{Dessert = 'Gingerbread'; Calories = 159; Fat = 6.0; Carbs = 99; Protein = 4.0 }
+    PS > )
+    PS > $Columns = @(
+    PS >     New-UDTableColumn -Property Dessert -Title "Dessert" 
+    PS >     New-UDTableColumn -Property Calories -Title "Calories" 
+    PS >     New-UDTableColumn -Property Fat -Title "Fat" 
+    PS >     New-UDTableColumn -Property Carbs -Title "Carbs"  -DefaultSortColumn
+    PS >     New-UDTableColumn -Property Protein -Title "Protein" 
+    PS > )
+    PS > New-UDTable -Data $Data -Id 'table14' -Columns $Columns -OnRowStyle {
+    PS >     if ($EventData.Fat -lt 10) { $Color = 'green' }
+    PS >     elseif ($EventData.Fat -ge 10 -and $EventData.Fat -lt 50) { $Color = 'Yellow' }
+    PS >     else { $Color = 'Red' }
+    PS >     @{ backgroundColor = $Color }    
+    PS > }
+    
+    Row coloring|Use OnRowStyle to style rows based on the row data.
     
     
     

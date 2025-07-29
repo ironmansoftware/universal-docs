@@ -1,17 +1,21 @@
+Stop-PSUDashboard is an alias for Stop-PSUApp
+===========================================
 
 NAME
     Stop-PSUDashboard
     
 SYNOPSIS
-    Stops a PowerShell Universal dashboard.
+    Stops an app in PowerShell Universal.
     
     
 SYNTAX
-    Stop-PSUDashboard [-AppToken <String>] [-ComputerName <String>] -Dashboard <Dashboard> [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    Stop-PSUDashboard [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] -App <Dashboard> [<CommonParameters>]
+    
+    Stop-PSUDashboard [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] -Name <String> [<CommonParameters>]
     
     
 DESCRIPTION
-    Stops a PowerShell Universal dashboard. Use Get-PSUDashboard to retrieve dashboards to stop.
+    Stops an app in PowerShell Universal.
     
 
 PARAMETERS
@@ -22,6 +26,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ComputerName <String>
@@ -31,33 +36,67 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      Uri
         Accept wildcard characters?  false
         
-    -Dashboard <Dashboard>
-        The dashboard to stop.
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Credential <PSCredential>
+        Credentials to login to the PowerShell Universal Management API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -TrustCertificate [<SwitchParameter>]
+        Whether the cmdlet should ignore certificate issues.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -App <Dashboard>
+        The app to stop.
         
         Required?                    true
         Position?                    named
         Default value                None
         Accept pipeline input?       True (ByValue)
+        Aliases                      Dashboard
         Accept wildcard characters?  false
         
-    -Integrated [<SwitchParameter>]
-        {{ Fill Integrated Description }}
+    -Name <String>
+        The name of the app to stop.
         
-        Required?                    false
+        Required?                    true
         Position?                    named
-        Default value                False
-        Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -UseDefaultCredentials [<SwitchParameter>]
-        {{ Fill UseDefaultCredentials Description }}
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Aliases                      none
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -67,7 +106,7 @@ PARAMETERS
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
 INPUTS
-    UniversalAutomation.Dashboard
+    PowerShellUniversal.Dashboard
         
     
     
@@ -83,13 +122,12 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> Get-PSUDashboard | Stop-PSUDashboard
+    PS C:\> Get-PSUApp -Name 'MyApp' | Stop-PSUDashboard
     
-    Stops all dashboards on the server.
+    Stops the 'MyApp' app in PowerShell Universal.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
-    Get-PSUDashboard 
-    Start-PSUDashboard 
+
 
 

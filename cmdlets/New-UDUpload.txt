@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDUpload [[-Id] <String>] [[-Accept] <String>] [[-OnUpload] <Endpoint>] [[-Text] <String>] [[-Variant] <String>] [[-Color] <String>] [[-ClassName] <String>] [-HideUploadedFileName] [<CommonParameters>]
+    New-UDUpload [[-Id] <String>] [[-Accept] <String>] [[-OnUpload] <Endpoint>] [[-Text] <String>] [[-Variant] <String>] [[-Color] <String>] [[-ClassName] <String>] [-HideUploadedFileName] [-ShowLoading] [[-LoadingIndicator] <Object>] [[-LoadingPosition] <String>] [[-Icon] <Object>] [[-IconAlignment] <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    1
         Default value                [Guid]::NewGuid()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Accept <String>
@@ -31,6 +32,7 @@ PARAMETERS
         Position?                    2
         Default value                *
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnUpload <Endpoint>
@@ -54,6 +56,7 @@ PARAMETERS
         Position?                    3
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Text <String>
@@ -61,8 +64,9 @@ PARAMETERS
         
         Required?                    false
         Position?                    4
-        Default value                
+        Default value                Upload
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Variant <String>
@@ -72,6 +76,7 @@ PARAMETERS
         Position?                    5
         Default value                contained
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Color <String>
@@ -79,8 +84,9 @@ PARAMETERS
         
         Required?                    false
         Position?                    6
-        Default value                inherit
+        Default value                primary
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ClassName <String>
@@ -90,6 +96,7 @@ PARAMETERS
         Position?                    7
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -HideUploadedFileName [<SwitchParameter>]
@@ -99,6 +106,57 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -ShowLoading [<SwitchParameter>]
+        Displays a loading spinner while the OnClick event handler is running.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -LoadingIndicator <Object>
+        A custom element to display instead of the built in spinner for -ShowLoading
+        
+        Required?                    false
+        Position?                    8
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -LoadingPosition <String>
+        The position of the loading indicator. Valid values are: 'start', 'end', 'center'
+        
+        Required?                    false
+        Position?                    9
+        Default value                center
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Icon <Object>
+        The icon to show instead of the default icon. Use New-UDIcon to create an icon.
+        
+        Required?                    false
+        Position?                    10
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -IconAlignment <String>
+        How to align the icon within the button. Valid values are: "left", "right"
+        
+        Required?                    false
+        Position?                    11
+        Default value                left
+        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -113,28 +171,66 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > A file uploader
+    PS >New-UDUpload -Text "Upload" -OnUpload {
+    PS >     Show-UDToast $Body
+    PS > } -Id 'upload1'
     
-    New-UDDashboard -Title "Hello, World!" -Content {
-        New-UDUpload -Text "Upload" -OnUpload {
-            Show-UDToast $Body
-        }
-    }
+    Basic Upload|A basic upload component that shows a toast when a file is uploaded.
     
     
     
     
     -------------------------- EXAMPLE 2 --------------------------
     
-    PS > A file uploader in a form
+    PS >New-UDUpload -Text "Upload" -OnUpload {
+    PS >     Show-UDToast $Body
+    PS > } -Id 'upload2' -HideUploadedFileName
     
-    New-UDDashboard -Title "Hello, World!" -Content {
-        New-UDForm -Content {
-            New-UDUpload -Text "Upload" 
-        } -OnSubmit {
-            Show-UDToast $Body
-        }
-    }
+    Hide File Name|Hides the file name text that is shown after upload.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDUpload -Text "Upload" -OnUpload {
+    PS >     Show-UDToast $Body
+    PS > } -Id 'upload3' -Icon (New-UDIcon -Icon 'Upload')
+    
+    Icon|Upload component with an icon instead of the default icon.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDUpload -Text "Upload" -OnUpload {
+    PS >     Show-UDToast $Body
+    PS > } -Id 'upload4' -IconAlignment 'right' -Icon (New-UDIcon -Icon 'Upload')
+    
+    Icon Alignment|Upload component with an icon on the right side of the button.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDUpload -Text "Upload" -OnUpload {
+    PS >     Show-UDToast $Body
+    PS > } -Id 'upload5' -Variant 'text'
+    
+    Variant|Upload component with a text variant.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS >New-UDUpload -Text "Upload" -OnUpload {
+    PS >     Show-UDToast $Body
+    PS > } -Id 'upload6' -Accept ".jpg"
+    
+    Accept|Upload component that only accepts .jpg files.
     
     
     

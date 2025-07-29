@@ -3,7 +3,7 @@ NAME
     New-UDCardHeader
     
 SYNTAX
-    New-UDCardHeader [[-Id] <string>] [[-Title] <string>] [[-SubHeader] <string>] [[-TitleAlignment] {inherit | left | justify | right | center}] [[-SubHeaderAlignment] {inherit | left | justify | right | center}] [[-Avatar] <Object>] [[-Action] <Object>] [<CommonParameters>]
+    New-UDCardHeader [[-Id] <string>] [[-Title] <string>] [[-SubHeader] <string>] [[-TitleAlignment] {inherit | left | justify | right | center}] [[-SubHeaderAlignment] {inherit | left | justify | right | center}] [[-Avatar] <Object>] [[-Action] <Object>] [[-Sx] <hashtable>] [[-Style] <hashtable>] [<CommonParameters>]
     
     
 PARAMETERS
@@ -37,6 +37,16 @@ PARAMETERS
         Dynamic?                     false
         Accept wildcard characters?  false
         
+    -Style <hashtable>
+        
+        Required?                    false
+        Position?                    8
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
     -SubHeader <string>
         
         Required?                    false
@@ -51,6 +61,16 @@ PARAMETERS
         
         Required?                    false
         Position?                    4
+        Accept pipeline input?       false
+        Parameter set name           (All)
+        Aliases                      None
+        Dynamic?                     false
+        Accept wildcard characters?  false
+        
+    -Sx <hashtable>
+        
+        Required?                    false
+        Position?                    7
         Accept pipeline input?       false
         Parameter set name           (All)
         Aliases                      None

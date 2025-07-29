@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    Set-PSUTag [-Id] <Int64> [-AppToken <String>] [-Color <String>] [-ComputerName <String>] [-Description <String>] [-Integrated] [-Name <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    Set-PSUTag [-Id] <Int64> [-AppToken <String>] [-Color <String>] [-ComputerName <String>] [-Description <String>] [-Integrated] [-Name <String>] [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] [<CommonParameters>]
     
-    Set-PSUTag [-Tag] <Tag> [-AppToken <String>] [-Color <String>] [-ComputerName <String>] [-Description <String>] [-Integrated] [-Name <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    Set-PSUTag [-Tag] <Tag> [-AppToken <String>] [-Color <String>] [-ComputerName <String>] [-Description <String>] [-Integrated] [-Name <String>] [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -18,12 +18,13 @@ DESCRIPTION
 
 PARAMETERS
     -AppToken <String>
-        An app token to access the UA API.
+        An app token to access the PSU API.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Color <String>
@@ -33,15 +34,17 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The HTTP address of the UA REST API server.
+        The HTTP address of the PSU REST API server.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      Uri
         Accept wildcard characters?  false
         
     -Description <String>
@@ -51,6 +54,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Id <Int64>
@@ -60,6 +64,7 @@ PARAMETERS
         Position?                    0
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
@@ -69,6 +74,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Name <String>
@@ -78,6 +84,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Tag <Tag>
@@ -87,6 +94,7 @@ PARAMETERS
         Position?                    0
         Default value                None
         Accept pipeline input?       True (ByValue)
+        Aliases                      none
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
@@ -96,6 +104,27 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Credential <PSCredential>
+        Credentials to login to the PowerShell Universal Management API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -TrustCertificate [<SwitchParameter>]
+        Whether the cmdlet should ignore certificate issues.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     <CommonParameters>

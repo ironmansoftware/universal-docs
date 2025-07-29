@@ -1,0 +1,382 @@
+
+NAME
+    New-PSUApp
+    
+SYNOPSIS
+    Creates a new app in PowerShell Universal.
+    
+    
+SYNTAX
+    New-PSUApp [-AppToken <String>] [-Authenticated] [-AutoDeploy] [-BaseUrl <String>] [-Command <String>] [-Component <DashboardComponent[]>] [-ComputerName <String>] [-Credential <String>] [-Description <String>] [-DisableAutoStart] [-DisableErrorToast] [-DisableInteractiveHost] [-DisableStartupLog] [-Environment <String>] [-FavIcon <String>] [-GrantAppToken] [-IdleTimeout <Int32>] [-Integrated] [-Maintenance] [-Module <String>] -Name <String> [-Role <String[]>] [-SessionTimeout <Int32>] [-Tag <Tag[]>] [-UseDefaultCredentials] [-VerboseErrorMessages] [-ComputerGroup <String[]>] [-OnSessionTimeout <ScriptBlock>] [-AvailableInBranch <String[]>] [-TrustCertificate] [-Critical] [<CommonParameters>]
+    
+    New-PSUApp [-AppToken <String>] [-Authenticated] [-AutoDeploy] [-BaseUrl <String>] [-Component <DashboardComponent[]>] [-ComputerName <String>] -Content <ScriptBlock> [-Credential <String>] [-Description <String>] [-DisableAutoStart] [-DisableErrorToast] [-DisableInteractiveHost] [-DisableStartupLog] [-Environment <String>] [-FavIcon <String>] [-GrantAppToken] [-IdleTimeout <Int32>] [-Integrated] [-Maintenance] -Name <String> [-Role <String[]>] [-SessionTimeout <Int32>] [-Tag <Tag[]>] [-UseDefaultCredentials] [-VerboseErrorMessages] [-ComputerGroup <String[]>] [-OnSessionTimeout <ScriptBlock>] [-AvailableInBranch <String[]>] [-TrustCertificate] [-Critical] [<CommonParameters>]
+    
+    New-PSUApp [-AppToken <String>] [-Authenticated] [-AutoDeploy] [-BaseUrl <String>] [-Component <DashboardComponent[]>] [-ComputerName <String>] [-Credential <String>] [-Description <String>] [-DisableAutoStart] [-DisableErrorToast] [-DisableInteractiveHost] [-DisableStartupLog] [-Environment <String>] [-FavIcon <String>] [-FilePath <String>] [-GrantAppToken] [-IdleTimeout <Int32>] [-Integrated] [-Maintenance] -Name <String> [-Role <String[]>] [-SessionTimeout <Int32>] [-Tag <Tag[]>] [-UseDefaultCredentials] [-VerboseErrorMessages] [-ComputerGroup <String[]>] [-OnSessionTimeout <ScriptBlock>] [-AvailableInBranch <String[]>] [-TrustCertificate] [-Critical] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new app in PowerShell Universal.
+    
+
+PARAMETERS
+    -AppToken <String>
+        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Authenticated [<SwitchParameter>]
+        When specified, authentication is enabled for this app.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -AutoDeploy [<SwitchParameter>]
+        Whether to deploy this app when changes are made. If not specified, the app needs to be restarted before changes are applied.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -BaseUrl <String>
+        The base URL to access this app. You can use / to serve the app at the root of the server or /app to serve the app at /app.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Command <String>
+        The command used to create this app.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Component <DashboardComponent[]>
+        Not used. Only present for backwards compatibility.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      Uri
+        Accept wildcard characters?  false
+        
+    -Content <ScriptBlock>
+        The content of this app.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Credential <String>
+        The user credential to run this app under.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Description <String>
+        A description of this app.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -DisableAutoStart [<SwitchParameter>]
+        Whether to disable auto starting this app when the server starts.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -DisableErrorToast [<SwitchParameter>]
+        Whether to disable error toasts for this app.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -DisableInteractiveHost [<SwitchParameter>]
+        Whether to disable the interactive host for this app. Write-Host, Read-Host, Get-Credential and other features will no longer work.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -DisableStartupLog [<SwitchParameter>]
+        Whether to disable the startup log for this app.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Environment <String>
+        The environment to run this app under.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -FavIcon <String>
+        The URL to the favicon for this app.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -FilePath <String>
+        The path to the file that contains the content for this app.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -GrantAppToken [<SwitchParameter>]
+        Whether to grant an app token to users of this app. You can use the app token within your app to access resources of PSU as the user logging in.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -IdleTimeout <Int32>
+        The idle timeout for this app.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Maintenance [<SwitchParameter>]
+        Whether to put this app into maintenance mode. Only administrators will be able to access the app when in maintenance mode.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Module <String>
+        The module that contains the command used to define this app.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        The name of this app.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Role <String[]>
+        Roles that have access to this app.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -SessionTimeout <Int32>
+        The session timeout for this app.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Tag <Tag[]>
+        Tags to apply to this app.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Use default credentials when connecting to the management API
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -VerboseErrorMessages [<SwitchParameter>]
+        Whether to display verbose error messages for this app.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -ComputerGroup <String[]>
+        {{ Fill ComputerGroup Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -OnSessionTimeout <ScriptBlock>
+        {{ Fill OnSessionTimeout Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -AvailableInBranch <String[]>
+        When specified, this app will only be displayed and running the specified branches.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -TrustCertificate [<SwitchParameter>]
+        Whether the cmdlet should ignore certificate issues.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Critical [<SwitchParameter>]
+        App is critical. This will cause the /api/v1/status endpoint to return a 500 if the app did not start.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    New-PSUApp -Name 'App' -BaseUrl '/app' -FilePath "app.ps1"
+    
+    Creates an app using the app.ps1 file in the repository directory and serves it at the base URL of /app.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

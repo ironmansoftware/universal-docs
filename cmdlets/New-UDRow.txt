@@ -2,61 +2,47 @@
 NAME
     New-UDRow
     
+SYNOPSIS
+    Creates a new row for a grid.
+    
+    
 SYNTAX
-    New-UDRow [[-Columns] <scriptblock>] [-Id <string>] [<CommonParameters>]
-    
-    New-UDRow [-Id <string>] [-Endpoint <Object>] [-AutoRefresh] [-RefreshInterval <int>] [<CommonParameters>]
+    New-UDRow [-Id <String>] [[-Columns] <ScriptBlock>] [-Style <Hashtable>] [<CommonParameters>]
     
     
+DESCRIPTION
+    Creates a new row for a grid. This is a wrapper for New-UDGrid -Container.
+    
+
 PARAMETERS
-    -AutoRefresh
+    -Id <String>
+        The ID of the row.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                ([Guid]::NewGuid())
         Accept pipeline input?       false
-        Parameter set name           dynamic
-        Aliases                      None
-        Dynamic?                     false
+        Aliases                      
         Accept wildcard characters?  false
         
-    -Columns <scriptblock>
+    -Columns <ScriptBlock>
+        The columns to include in the row.
         
         Required?                    false
-        Position?                    0
+        Position?                    1
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           static
-        Aliases                      None
-        Dynamic?                     false
+        Aliases                      
         Accept wildcard characters?  false
         
-    -Endpoint <Object>
+    -Style <Hashtable>
+        The style of the row.
         
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           dynamic
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -Id <string>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-        
-    -RefreshInterval <int>
-        
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           dynamic
-        Aliases                      None
-        Dynamic?                     false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -65,19 +51,43 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
-    
 INPUTS
-    None
-    
     
 OUTPUTS
-    System.Object
     
-ALIASES
-    None
+    -------------------------- EXAMPLE 1 --------------------------
     
-
-REMARKS
-    None
+    PS >New-UDRow -Columns {
+    PS >     New-UDColumn -SmallSize 6 -Content {
+    PS >         "Column 1"
+    PS >     }
+    PS >     New-UDColumn -SmallSize 6 -Content {
+    PS >         "Column 2"
+    PS >     }
+    PS > }
+    
+    Basic Row|Creates a new row with two columns, each taking up half the width on small screens.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDRow -Id "myRow" -Columns {
+    PS >     New-UDColumn -SmallSize 4 -Content {
+    PS >         "Column 1"
+    PS >     }
+    PS >     New-UDColumn -SmallSize 4 -Content {
+    PS >         "Column 2"
+    PS >     }
+    PS > } -Style @{ backgroundColor = "#f0f0f0" }
+    
+    Row Style| Creates a new row with two columns, each taking up one-third of the width on small screens, and applies a background color style to the row.
+    
+    
+    
+    
+    
+RELATED LINKS
 
 

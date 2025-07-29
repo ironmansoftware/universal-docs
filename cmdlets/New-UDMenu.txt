@@ -3,11 +3,11 @@ NAME
     New-UDMenu
     
 SYNOPSIS
-    Creates a pop up menu.
+    Menus display a list of choices on temporary surfaces.
     
     
 SYNTAX
-    New-UDMenu [[-Id] <String>] [-Text] <String> [[-OnChange] <Endpoint>] [-Children] <ScriptBlock> [[-ClassName] <ParameterAttribute>] [[-Variant] <String>] [[-Icon] <Hashtable>] [[-Size] <String>] [<CommonParameters>]
+    New-UDMenu [[-Id] <String>] [[-Text] <String>] [[-OnChange] <Endpoint>] [-Children] <ScriptBlock> [[-ClassName] <ParameterAttribute>] [[-Variant] <String>] [[-Icon] <Hashtable>] [[-Size] <String>] [[-Sx] <Hashtable>] [[-Style] <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -22,15 +22,17 @@ PARAMETERS
         Position?                    1
         Default value                [Guid]::NewGuid()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Text <String>
         The text to display in the button that opens this menu.
         
-        Required?                    true
+        Required?                    false
         Position?                    2
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnChange <Endpoint>
@@ -40,6 +42,7 @@ PARAMETERS
         Position?                    3
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Children <ScriptBlock>
@@ -49,6 +52,7 @@ PARAMETERS
         Position?                    4
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ClassName <ParameterAttribute>
@@ -58,6 +62,7 @@ PARAMETERS
         Position?                    5
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Variant <String>
@@ -67,6 +72,7 @@ PARAMETERS
         Position?                    6
         Default value                contained
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Icon <Hashtable>
@@ -75,15 +81,37 @@ PARAMETERS
         Position?                    7
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Size <String>
-        The size of the menu button.
+        The size of the menu button. Valid values are: "small", "medium"
         
         Required?                    false
         Position?                    8
         Default value                medium
         Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Sx <Hashtable>
+        The sx prop allows you to add custom styles to the component.
+        
+        Required?                    false
+        Position?                    9
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        The style prop allows you to add custom styles to the component.
+        
+        Required?                    false
+        Position?                    10
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -98,15 +126,70 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > New-UDMenu -Text 'Click Me' -OnChange {
-        Show-UDToast $EventData
-    } -Children {
-        New-UDMenuItem -Text 'Test'
-        New-UDMenuItem -Text 'Test2'
-        New-UDMenuItem -Text 'Test3'
-    }
+    PS >New-UDMenu -Text 'Click Me'  -Children {
+    PS >    New-UDMenuItem -Text 'Test'
+    PS >    New-UDMenuItem -Text 'Test2'
+    PS >    New-UDMenuItem -Text 'Test3'
+    PS > } -Id 'menu1'
     
-    Creates a simple menu.
+    Basic menu|Creates a simple menu.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDMenu -Text 'Click Me' -OnChange {
+    PS >    Show-UDToast -Message $EventData
+    PS > } -Children {
+    PS >    New-UDMenuItem -Text 'Test'
+    PS >    New-UDMenuItem -Text 'Test2'
+    PS >    New-UDMenuItem -Text 'Test3'
+    PS > } -Id 'menu2'
+    
+    Menu with event handler|Creates a menu with an event handler.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDMenu -Text 'Click Me' -Children {
+    PS >       New-UDMenuItem -Text 'Test'
+    PS >       New-UDMenuItem -Text 'Test2'
+    PS >       New-UDMenuItem -Text 'Test3'
+    PS > } -Variant text -Id 'menu3'
+    
+    Text variant|Creates a menu with a text variant.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDMenu -Text 'Click Me' -Children {
+    PS >       New-UDMenuItem -Text 'Test'
+    PS >       New-UDMenuItem -Text 'Test2'
+    PS >       New-UDMenuItem -Text 'Test3'
+    PS > } -Size small -Id 'menu4'
+    
+    Small menu|Creates a small menu.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDMenu -Text 'Click Me' -Children {
+    PS >       New-UDMenuItem -Text 'Test' -Value 1
+    PS >       New-UDMenuItem -Text 'Test2' -Value 2
+    PS >       New-UDMenuItem -Text 'Test3' -Value 3
+    PS > }  -Id 'menu5'
+    
+    Menu with values|Creates a menu with values.
+    
+    
+    [Component("Menu", "Bars", "Creates a new card.")]
     
     
     

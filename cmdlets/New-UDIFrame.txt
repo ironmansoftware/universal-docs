@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    1
         Default value                ([Guid]::NewGuid())
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Uri <String>
@@ -29,8 +30,9 @@ PARAMETERS
         
         Required?                    false
         Position?                    2
-        Default value                
+        Default value                https://ironmansoftware.com
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>

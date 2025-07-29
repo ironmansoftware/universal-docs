@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTableTextOption [[-ExportAllCsv] <String>] [[-ExportCurrentViewCsv] <String>] [[-ExportAllXLSX] <String>] [[-ExportCurrentViewXLSX] <String>] [[-ExportAllPDF] <String>] [[-ExportCurrentViewPDF] <String>] [[-ExportAllJson] <String>] [[-ExportCurrentViewJson] <String>] [[-ExportFileName] <String>] [[-Search] <String>] [[-FilterSearch] <String>] [[-Export] <String>] [[-FilterDate] <String>] [<CommonParameters>]
+    New-UDTableTextOption [[-ExportAllCsv] <String>] [[-ExportCurrentViewCsv] <String>] [[-ExportAllXLSX] <String>] [[-ExportCurrentViewXLSX] <String>] [[-ExportAllPDF] <String>] [[-ExportCurrentViewPDF] <String>] [[-ExportAllJson] <String>] [[-ExportCurrentViewJson] <String>] [[-ExportFileName] <String>] [[-Search] <String>] [[-FilterSearch] <String>] [[-Export] <String>] [[-FilterDate] <String>] [[-NoData] <String>] [[-Loading] <String>] [[-RowsPerPage] <String>] [[-CountDescription] <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    1
         Default value                Export all as CSV
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ExportCurrentViewCsv <String>
@@ -31,6 +32,7 @@ PARAMETERS
         Position?                    2
         Default value                Export Current View as CSV
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ExportAllXLSX <String>
@@ -40,6 +42,7 @@ PARAMETERS
         Position?                    3
         Default value                Export all as XLSX
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ExportCurrentViewXLSX <String>
@@ -49,6 +52,7 @@ PARAMETERS
         Position?                    4
         Default value                Export Current View as XLSX
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ExportAllPDF <String>
@@ -58,6 +62,7 @@ PARAMETERS
         Position?                    5
         Default value                Export all as PDF
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ExportCurrentViewPDF <String>
@@ -67,6 +72,7 @@ PARAMETERS
         Position?                    6
         Default value                Export Current View as PDF
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ExportAllJson <String>
@@ -76,6 +82,7 @@ PARAMETERS
         Position?                    7
         Default value                Export all as JSON
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ExportCurrentViewJson <String>
@@ -85,6 +92,7 @@ PARAMETERS
         Position?                    8
         Default value                Export Current View as JSON
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ExportFileName <String>
@@ -93,6 +101,7 @@ PARAMETERS
         Position?                    9
         Default value                File Name
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Search <String>
@@ -102,6 +111,7 @@ PARAMETERS
         Position?                    10
         Default value                Search {0} records...
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -FilterSearch <String>
@@ -111,6 +121,7 @@ PARAMETERS
         Position?                    11
         Default value                Search {0} records...
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Export <String>
@@ -119,6 +130,7 @@ PARAMETERS
         Position?                    12
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -FilterDate <String>
@@ -127,6 +139,44 @@ PARAMETERS
         Position?                    13
         Default value                Filter Date
         Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -NoData <String>
+        Overrides the No Data text.
+        
+        Required?                    false
+        Position?                    14
+        Default value                No Data
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Loading <String>
+        
+        Required?                    false
+        Position?                    15
+        Default value                Loading...
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -RowsPerPage <String>
+        
+        Required?                    false
+        Position?                    16
+        Default value                Rows per page:
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -CountDescription <String>
+        
+        Required?                    false
+        Position?                    17
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -138,11 +188,6 @@ PARAMETERS
 INPUTS
     
 OUTPUTS
-    
-NOTES
-    
-    
-        General notes
     
     -------------------------- EXAMPLE 1 --------------------------
     

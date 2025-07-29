@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    Install-PSUServer [-Path <String>] [-Version <String>] [-AddToPath] [-IISWebsite <String>] [-IISAppPool <String>] [-IISPort <Int32>] [<CommonParameters>]
+    Install-PSUServer [-Path <String>] [-Version <String>] [-IISWebsite <String>] [-IISAppPool <String>] [-IISPort <Int32>] [<CommonParameters>]
     
-    Install-PSUServer [-Path <String>] [-LatestVersion] [-AddToPath] [-IISWebsite <String>] [-IISAppPool <String>] [-IISPort <Int32>] [<CommonParameters>]
+    Install-PSUServer [-Path <String>] [-LatestVersion] [-IISWebsite <String>] [-IISAppPool <String>] [-IISPort <Int32>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -25,6 +25,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Version <String>
@@ -34,6 +35,7 @@ PARAMETERS
         Position?                    named
         Default value                (Get-Module Universal).Version
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -LatestVersion [<SwitchParameter>]
@@ -43,15 +45,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -AddToPath [<SwitchParameter>]
-        Whether to add the path to the PATH environment variable.
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -IISWebsite <String>
@@ -60,6 +54,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -IISAppPool <String>
@@ -68,6 +63,7 @@ PARAMETERS
         Position?                    named
         Default value                PowerShellUniversal
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -IISPort <Int32>
@@ -76,6 +72,7 @@ PARAMETERS
         Position?                    named
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>

@@ -3,38 +3,46 @@ NAME
     Get-PSUJob
     
 SYNOPSIS
-    Returns jobs run within UA.
+    Returns jobs run within PSU.
     
     
 SYNTAX
-    Get-PSUJob [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-First <UInt64>] [-IncludeTotalCount] [-Integrated] [-OrderBy {Id | StartTime | EndTime}] [-OrderDirection {Descending | Ascending}] [-Skip <UInt64>] [-Status {Queued | Running | Completed | Failed | WaitingOnFeedback | Canceled | Canceling | Historical | Active | TimedOut | Warning}] [-UseDefaultCredentials] [<CommonParameters>]
+    Get-PSUJob [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-First <UInt64>] [-IncludeTotalCount] [-Integrated] [-OrderBy {Id | StartTime | EndTime}] [-OrderDirection {Descending | Ascending}] [-Skip <UInt64>] [-Status {Queued | Running | Completed | Failed | WaitingOnFeedback | Canceled | Canceling | Historical | Active | TimedOut | Warning}] [-UseDefaultCredentials] [-Credential <PSCredential>] [-HideChildren <Boolean>] [-TrustCertificate] [<CommonParameters>]
     
-    Get-PSUJob [-Identity] <Identity> [-AppToken <String>] [-ComputerName <String>] [-First <UInt64>] [-IncludeTotalCount] [-Integrated] [-OrderBy {Id | StartTime | EndTime}] [-OrderDirection {Descending | Ascending}] [-Skip <UInt64>] [-Status {Queued | Running | Completed | Failed | WaitingOnFeedback | Canceled | Canceling | Historical | Active | TimedOut | Warning}] [-UseDefaultCredentials] [<CommonParameters>]
+    Get-PSUJob [-Identity] <Identity> [-AppToken <String>] [-ComputerName <String>] [-First <UInt64>] [-IncludeTotalCount] [-Integrated] [-OrderBy {Id | StartTime | EndTime}] [-OrderDirection {Descending | Ascending}] [-Skip <UInt64>] [-Status {Queued | Running | Completed | Failed | WaitingOnFeedback | Canceled | Canceling | Historical | Active | TimedOut | Warning}] [-UseDefaultCredentials] [-Credential <PSCredential>] [-HideChildren <Boolean>] [-HideScheduled <Boolean>] [-HideTriggered <Boolean>] [-TrustCertificate] [<CommonParameters>]
     
-    Get-PSUJob [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-First <UInt64>] [-IncludeTotalCount] [-Integrated] [-OrderBy {Id | StartTime | EndTime}] [-OrderDirection {Descending | Ascending}] [-Skip <UInt64>] [-Status {Queued | Running | Completed | Failed | WaitingOnFeedback | Canceled | Canceling | Historical | Active | TimedOut | Warning}] [-UseDefaultCredentials] [<CommonParameters>]
+    Get-PSUJob [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-First <UInt64>] [-IncludeTotalCount] [-Integrated] [-OrderBy {Id | StartTime | EndTime}] [-OrderDirection {Descending | Ascending}] [-Skip <UInt64>] [-Status {Queued | Running | Completed | Failed | WaitingOnFeedback | Canceled | Canceling | Historical | Active | TimedOut | Warning}] [-UseDefaultCredentials] [-Credential <PSCredential>] [-HideChildren <Boolean>] [-HideScheduled <Boolean>] [-HideTriggered <Boolean>] [-TrustCertificate] [<CommonParameters>]
+    
+    Get-PSUJob [-AppToken <String>] [-ComputerName <String>] [-First <UInt64>] [-IncludeTotalCount] [-Integrated] [-OrderBy {Id | StartTime | EndTime}] [-OrderDirection {Descending | Ascending}] [-Skip <UInt64>] [-Status {Queued | Running | Completed | Failed | WaitingOnFeedback | Canceled | Canceling | Historical | Active | TimedOut | Warning}] [-UseDefaultCredentials] -RunId <Guid> [-Credential <PSCredential>] [-HideChildren <Boolean>] [-TrustCertificate] [<CommonParameters>]
+    
+    Get-PSUJob [-AppToken <String>] [-ComputerName <String>] [-First <UInt64>] [-IncludeTotalCount] [-Integrated] [-OrderBy {Id | StartTime | EndTime}] [-OrderDirection {Descending | Ascending}] [-Skip <UInt64>] [-Status {Queued | Running | Completed | Failed | WaitingOnFeedback | Canceled | Canceling | Historical | Active | TimedOut | Warning}] [-UseDefaultCredentials] -Schedule <Schedule> [-Credential <PSCredential>] [-HideChildren <Boolean>] [-HideScheduled <Boolean>] [-HideTriggered <Boolean>] [-TrustCertificate] [<CommonParameters>]
+    
+    Get-PSUJob [-AppToken <String>] [-ComputerName <String>] [-First <UInt64>] [-IncludeTotalCount] [-Integrated] [-OrderBy {Id | StartTime | EndTime}] [-OrderDirection {Descending | Ascending}] [-Skip <UInt64>] [-Status {Queued | Running | Completed | Failed | WaitingOnFeedback | Canceled | Canceling | Historical | Active | TimedOut | Warning}] [-UseDefaultCredentials] [-Credential <PSCredential>] [-HideChildren <Boolean>] [-HideScheduled <Boolean>] [-HideTriggered <Boolean>] [-TrustCertificate] [<CommonParameters>]
     
     
 DESCRIPTION
-    Returns jobs run within UA.
+    Returns jobs run within PSU.
     
 
 PARAMETERS
     -AppToken <String>
-        An app token to access the UA API.
+        An app token to access the PSU API.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The HTTP address of the UA REST API server.
+        The HTTP address of the PSU REST API server.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      Uri
         Accept wildcard characters?  false
         
     -First <UInt64>
@@ -44,6 +52,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Id <Int64>
@@ -53,6 +62,7 @@ PARAMETERS
         Position?                    0
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Identity <Identity>
@@ -62,6 +72,7 @@ PARAMETERS
         Position?                    0
         Default value                None
         Accept pipeline input?       True (ByValue)
+        Aliases                      none
         Accept wildcard characters?  false
         
     -IncludeTotalCount [<SwitchParameter>]
@@ -71,6 +82,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
@@ -80,6 +92,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -OrderBy <String>
@@ -89,6 +102,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -OrderDirection <OrderDirection>
@@ -98,6 +112,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Script <Script>
@@ -107,6 +122,7 @@ PARAMETERS
         Position?                    0
         Default value                None
         Accept pipeline input?       True (ByValue)
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Skip <UInt64>
@@ -116,6 +132,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Status <JobStatus>
@@ -125,6 +142,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
@@ -134,6 +152,77 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -RunId <Guid>
+        The run ID (GUID) for this job. Requires JobRunId experimental feature.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Schedule <Schedule>
+        {{ Fill Schedule Description }}
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Credential <PSCredential>
+        Credentials to login to the PowerShell Universal Management API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -HideChildren <Boolean>
+        Does not return child jobs.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -HideScheduled <Boolean>
+        Does not return scheduled jobs.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -HideTriggered <Boolean>
+        Does not return triggered job.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -TrustCertificate [<SwitchParameter>]
+        Whether the cmdlet should ignore certificate issues.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -164,12 +253,12 @@ NOTES
     
     PS C:\> Get-UAJob
     
-    Returns all jobs run in UA.
+    Returns all jobs run in PSU.
     -------------------------- Example 2 --------------------------
     
     PS C:\> Get-UAJob -Id 10
     
-    Returns job 10 from UA.
+    Returns job 10 from PSU.
     -------------------------- Example 3 --------------------------
     
     PS C:\> $Script = Get-UAScript -Id 4

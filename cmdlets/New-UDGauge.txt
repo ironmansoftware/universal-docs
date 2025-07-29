@@ -1,0 +1,180 @@
+
+NAME
+    New-UDGauge
+    
+SYNOPSIS
+    Creates a gauge component for an app.
+    
+    
+SYNTAX
+    New-UDGauge [[-Id] <String>] [[-Width] <Int32>] [[-Height] <Int32>] [[-Value] <Int32>] [[-ValueMinimum] <Int32>] [[-ValueMaximum] <Int32>] [[-StartAngle] <Int32>] [[-EndAngle] <Int32>] [[-CornerRadius] <String>] [[-InnerRadius] <String>] [[-OuterRadius] <String>] [[-ArchCenterX] <String>] [[-ArchCenterY] <String>] [[-Style] <Hashtable>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    The New-UDGauge function creates a gauge component for a PowerShell Universal app.
+    
+
+PARAMETERS
+    -Id <String>
+        The unique identifier for the gauge component. If not provided, a new GUID is generated.
+        
+        Required?                    false
+        Position?                    1
+        Default value                [Guid]::NewGuid().ToString()
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Width <Int32>
+        The width of the gauge component in pixels.
+        
+        Required?                    false
+        Position?                    2
+        Default value                0
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Height <Int32>
+        The height of the gauge component in pixels.
+        
+        Required?                    false
+        Position?                    3
+        Default value                0
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Value <Int32>
+        The current value of the gauge.
+        
+        Required?                    false
+        Position?                    4
+        Default value                0
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -ValueMinimum <Int32>
+        The minimum value of the gauge.
+        
+        Required?                    false
+        Position?                    5
+        Default value                0
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -ValueMaximum <Int32>
+        The maximum value of the gauge.
+        
+        Required?                    false
+        Position?                    6
+        Default value                0
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -StartAngle <Int32>
+        The starting angle of the gauge in degrees.
+        
+        Required?                    false
+        Position?                    7
+        Default value                0
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -EndAngle <Int32>
+        The ending angle of the gauge in degrees.
+        
+        Required?                    false
+        Position?                    8
+        Default value                0
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -CornerRadius <String>
+        The corner radius of the gauge.
+        
+        Required?                    false
+        Position?                    9
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -InnerRadius <String>
+        The inner radius of the gauge.
+        
+        Required?                    false
+        Position?                    10
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -OuterRadius <String>
+        The outer radius of the gauge.
+        
+        Required?                    false
+        Position?                    11
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -ArchCenterX <String>
+        The X coordinate of the center of the gauge arc.
+        
+        Required?                    false
+        Position?                    12
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -ArchCenterY <String>
+        The Y coordinate of the center of the gauge arc.
+        
+        Required?                    false
+        Position?                    13
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        A hashtable containing the style properties for the gauge.
+        
+        Required?                    false
+        Position?                    14
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+    -------------------------- EXAMPLE 1 --------------------------
+    
+    PS >New-UDGauge -Width 300 -Height 200 -Value 50 -ValueMinimum 0 -ValueMaximum 100 -StartAngle 0 -EndAngle 180 -CornerRadius "10px" -InnerRadius "50%" -OuterRadius "100%" -ArchCenterX "50%" -ArchCenterY "50%" -Style @{ color = "blue" }
+    
+    Basic|This example creates a gauge component with the specified properties.
+    
+    
+    
+    
+    
+RELATED LINKS
+
+

@@ -7,9 +7,9 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDParagraph [-Content <ScriptBlock>] [-Color <DashboardColor>] [<CommonParameters>]
-    
     New-UDParagraph [-Text <String>] [-Color <DashboardColor>] [<CommonParameters>]
+    
+    New-UDParagraph [-Content <ScriptBlock>] [-Color <DashboardColor>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -24,6 +24,7 @@ PARAMETERS
         Position?                    named
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Text <String>
@@ -31,8 +32,9 @@ PARAMETERS
         
         Required?                    false
         Position?                    named
-        Default value                
+        Default value                Hello
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Color <DashboardColor>
@@ -42,6 +44,7 @@ PARAMETERS
         Position?                    named
         Default value                black
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>

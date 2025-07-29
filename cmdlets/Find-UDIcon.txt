@@ -16,12 +16,13 @@ DESCRIPTION
 
 PARAMETERS
     -Name <Object>
-        The name of the icon to find.
+        The name of the icon to find.  Wild cards are supported.
         
         Required?                    true
         Position?                    1
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>

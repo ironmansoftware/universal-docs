@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    1
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -36,11 +37,14 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > Defines an error boundary that traps the exception that is thrown and displays it on the page.
+    PS >New-UDErrorBoundary -Content {
+    PS >    throw 'This is an error'
+    PS > }
     
-    New-UDErrorBoundary -Content {
-        throw 'This is an error'
-    }
+    Error Boundary|Defines an error boundary that traps the exception that is thrown and displays it on the page.
+    
+    
+    [Component("Error Boundary", "Bug", "Creates a new card.")]
     
     
     

@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    1
         Default value                ([Guid]::NewGuid())
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Value <Int32[]>
@@ -31,6 +32,7 @@ PARAMETERS
         Position?                    2
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Minimum <Int32>
@@ -40,6 +42,7 @@ PARAMETERS
         Position?                    3
         Default value                0
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Maximum <Int32>
@@ -49,6 +52,7 @@ PARAMETERS
         Position?                    4
         Default value                100
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Disabled [<SwitchParameter>]
@@ -58,6 +62,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Marks [<SwitchParameter>]
@@ -67,6 +72,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnChange <Endpoint>
@@ -76,6 +82,7 @@ PARAMETERS
         Position?                    5
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Orientation <String>
@@ -85,6 +92,7 @@ PARAMETERS
         Position?                    6
         Default value                horizontal
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Step <Int32>
@@ -94,6 +102,7 @@ PARAMETERS
         Position?                    7
         Default value                1
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ValueLabelDisplay <String>
@@ -103,6 +112,7 @@ PARAMETERS
         Position?                    8
         Default value                auto
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ClassName <String>
@@ -112,6 +122,7 @@ PARAMETERS
         Position?                    9
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Color <String>
@@ -121,6 +132,7 @@ PARAMETERS
         Position?                    10
         Default value                primary
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -133,16 +145,66 @@ INPUTS
     
 OUTPUTS
     
-NOTES
-    
-    
-        General notes
-    
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > An example
+    PS >New-UDSlider -Value 50 -Minimum 0 -Maximum 100 -OnChange {
+    PS >    Show-UDToast -Message "Slider value changed to $($EventData.value)"
+    PS > } -Id 'slider1'
     
-    New-UDSlider
+    Basic Slider|Creates a basic slider.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDSlider -Value 50 -Minimum 0 -Maximum 100 -Marks -OnChange {
+    PS >    Show-UDToast -Message "Slider value changed to $($EventData.value)"
+    PS > } -Id 'slider2'
+    
+    Slider with Marks|Creates a slider with marks.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDElement -Tag 'div' -Content {
+    PS >    New-UDSlider -Orientation vertical -Id 'slider3'
+    PS > } -Attributes @{
+    PS >    style = @{
+    PS >        height = '200px'
+    PS >    }
+    PS > }
+    
+    Vertical Slider|Creates a vertical slider.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDSlider -Value 50 -Minimum 0 -Maximum 100 -Disabled -Id 'slider4'
+    
+    Disabled Slider|Creates a disabled slider.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDSlider -Value 50 -Minimum 0 -Maximum 100 -ValueLabelDisplay on -Id 'slider5'
+    
+    Slider with Value Labels|Creates a slider with value labels.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS >New-UDSlider -Value 50 -Minimum 0 -Maximum 100 -Step 10 -Id 'slider6'
+    
+    Slider with Step|Creates a slider with a step size of 10.
     
     
     

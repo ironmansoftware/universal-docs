@@ -1,74 +1,102 @@
+Remove-PSUDashboard is an alias for Remove-PSUApp
+===========================================
 
 NAME
     Remove-PSUDashboard
     
 SYNOPSIS
-    Removes a dashboard from PowerShell Universal.
+    Removes an app from PowerShell Universal.
     
     
 SYNTAX
-    Remove-PSUDashboard [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    Remove-PSUDashboard [-Dashboard] <Dashboard> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] [<CommonParameters>]
     
-    Remove-PSUDashboard [-Dashboard] <Dashboard> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    Remove-PSUDashboard [-Id] <Int64> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] [<CommonParameters>]
     
     
 DESCRIPTION
-    Removes a dashboard from PowerShell Universal.
+    Removes an app from PowerShell Universal.
     
 
 PARAMETERS
     -AppToken <String>
-        An app token used to connect to PSU.
+        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The URL of the PSU server.
+        Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -Id <Int64>
-        The Id of the dashboard to remove.
-        
-        Required?                    true
-        Position?                    0
-        Default value                None
-        Accept pipeline input?       False
+        Aliases                      Uri
         Accept wildcard characters?  false
         
     -Dashboard <Dashboard>
-        The dashboard to remove. Use Get-PSUDashboard to retrieve one or more dashboards.
+        The dashboard (app) to remove.
         
         Required?                    true
         Position?                    0
         Default value                None
         Accept pipeline input?       True (ByValue)
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Id <Int64>
+        The ID of the app to remove.
+        
+        Required?                    true
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
-        No supported.
+        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
         
         Required?                    false
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
-        Whether to use default Windows credentials when connecting to PSU.
+        Use default credentials when connecting to the management API
         
         Required?                    false
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Credential <PSCredential>
+        Credentials to login to the PowerShell Universal Management API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -TrustCertificate [<SwitchParameter>]
+        Whether the cmdlet should ignore certificate issues.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -94,11 +122,12 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> Get-PSUDashboard -Name Dashboard | Remove-PSUDashboard
+    PS C:\> Remove-PSUDashboard -Id 1
     
-    
+    Removes an app with the ID of 1.
     
 RELATED LINKS
     Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
 
 

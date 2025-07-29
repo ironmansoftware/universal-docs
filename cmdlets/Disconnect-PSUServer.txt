@@ -1,0 +1,47 @@
+
+NAME
+    Disconnect-PSUServer
+    
+SYNOPSIS
+    Disconnects from a PSU server.
+    
+    
+SYNTAX
+    Disconnect-PSUServer [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Disconnects from a PSU server. This clears the state of a Connect-PSUServer call.
+    
+
+PARAMETERS
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Disconnect-PSUServer
+    
+    Disconnect from a PSU server.
+    
+RELATED LINKS
+
+

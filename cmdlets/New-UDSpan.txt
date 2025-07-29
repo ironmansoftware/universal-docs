@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    1
         Default value                ([Guid]::NewGuid())
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Content <ScriptBlock>
@@ -31,6 +32,7 @@ PARAMETERS
         Position?                    2
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -45,11 +47,11 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > An example
+    PS >New-UDSpan -Content {
+    PS >    New-UDTypography -Text 'Text'
+    PS > }
     
-    New-UDSpan -Content {
-        New-UDTypography -Text 'Text'
-    }
+    Basic Span|A basic span.
     
     
     

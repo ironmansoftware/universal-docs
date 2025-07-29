@@ -3,38 +3,40 @@ NAME
     Get-PSUFolder
     
 SYNOPSIS
-    Returns folders defined within UA.
+    Returns folders defined within PSU.
     
     
 SYNTAX
-    Get-PSUFolder [-AppToken <String>] [-ComputerName <String>] [-Id <Int64>] [-Integrated] [-UseDefaultCredentials] [<CommonParameters>]
+    Get-PSUFolder [-AppToken <String>] [-ComputerName <String>] [-Id <Int64>] [-Integrated] [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] [<CommonParameters>]
     
-    Get-PSUFolder [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-Name <String>] [-UseDefaultCredentials] [<CommonParameters>]
+    Get-PSUFolder [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-Name <String>] [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] [<CommonParameters>]
     
-    Get-PSUFolder [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-Parent <Folder>] [-UseDefaultCredentials] [<CommonParameters>]
+    Get-PSUFolder [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-Parent <Folder>] [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] [<CommonParameters>]
     
     
 DESCRIPTION
-    Returns folders defined within UA. Folders will be based on the internal and\or remote git repo.
+    Returns folders defined within PSU. Folders will be based on the internal and\or remote git repo.
     
 
 PARAMETERS
     -AppToken <String>
-        An app token to access the UA API.
+        An app token to access the PSU API.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The HTTP address of the UA REST API server.
+        The HTTP address of the PSU REST API server.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      Uri
         Accept wildcard characters?  false
         
     -Id <Int64>
@@ -44,6 +46,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
@@ -53,6 +56,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Name <String>
@@ -62,6 +66,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Parent <Folder>
@@ -71,6 +76,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
@@ -80,6 +86,27 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Credential <PSCredential>
+        Credentials to login to the PowerShell Universal Management API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -TrustCertificate [<SwitchParameter>]
+        Whether the cmdlet should ignore certificate issues.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -107,7 +134,7 @@ NOTES
     
     PS C:\> Get-UAFolder
     
-    Returns all folders within UA.
+    Returns all folders within PSU.
     -------------------------- Example 2 --------------------------
     
     PS C:\> Get-UAFolder -Name 'Folder 1'

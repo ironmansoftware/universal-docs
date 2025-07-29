@@ -3,11 +3,11 @@ NAME
     Invoke-UDJavaScript
     
 SYNOPSIS
-    Invokes JavaScript within the browser.
+    Invokes JavaScript within the browser. JavaScript is executed with eval()
     
     
 SYNTAX
-    Invoke-UDJavaScript [-JavaScript] <String> [<CommonParameters>]
+    Invoke-UDJavaScript [-JavaScript] <String> [-IgnoreResult] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -22,6 +22,16 @@ PARAMETERS
         Position?                    1
         Default value                
         Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -IgnoreResult [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -36,11 +46,11 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > New-UDButton -Text 'Click Me' -OnClick {
-        Invoke-UDJavaScript 'alert("Hello World!")'
-    }
+    PS >New-UDButton -Text 'Click Me' -OnClick {
+    PS >    Invoke-UDJavaScript 'alert("Hello World!")'
+    PS > }
     
-    
+    Invoke JavaScript|Invokes JavaScript within the browser.
     
     
     

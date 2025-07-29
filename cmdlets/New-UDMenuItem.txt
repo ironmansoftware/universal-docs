@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDMenuItem [-Text] <String> [[-Value] <String>] [[-Icon] <Hashtable>] [<CommonParameters>]
+    New-UDMenuItem [[-Id] <String>] [[-Text] <String>] [[-Value] <String>] [[-Icon] <Hashtable>] [[-OnClick] <Endpoint>] [[-Sx] <Hashtable>] [[-Style] <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -15,30 +15,73 @@ DESCRIPTION
     
 
 PARAMETERS
+    -Id <String>
+        
+        Required?                    false
+        Position?                    1
+        Default value                [Guid]::NewGuid()
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
     -Text <String>
         The text to display in the menu item.
         
-        Required?                    true
-        Position?                    1
+        Required?                    false
+        Position?                    2
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Value <String>
         The value of the menu item. If not specified, the text will be used.
         
         Required?                    false
-        Position?                    2
-        Default value                
-        Accept pipeline input?       false
-        Accept wildcard characters?  false
-        
-    -Icon <Hashtable>
-        
-        Required?                    false
         Position?                    3
         Default value                
         Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Icon <Hashtable>
+        The icon to display in the menu item. Use New-UDIcon to create an icon.
+        
+        Required?                    false
+        Position?                    4
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -OnClick <Endpoint>
+        An event handler to call when the user selects the menu item.
+        
+        Required?                    false
+        Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Sx <Hashtable>
+        The sx prop allows you to add custom styles to the component.
+        
+        Required?                    false
+        Position?                    6
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        The style prop allows you to add custom styles to the component.
+        
+        Required?                    false
+        Position?                    7
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>

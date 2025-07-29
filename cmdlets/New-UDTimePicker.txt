@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTimePicker [[-Id] <String>] [[-Label] <String>] [[-OnChange] <Endpoint>] [[-Value] <String>] [[-Locale] <String>] [[-ClassName] <String>] [-DisableAmPm] [[-TimeZone] <TimeZoneInfo>] [<CommonParameters>]
+    New-UDTimePicker [[-Id] <String>] [[-Label] <String>] [[-OnChange] <Endpoint>] [[-Value] <DateTime>] [[-Locale] <String>] [[-ClassName] <String>] [-DisableAmPm] [[-TimeZone] <Object>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    1
         Default value                [Guid]::NewGuid().ToString()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Label <String>
@@ -31,6 +32,7 @@ PARAMETERS
         Position?                    2
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnChange <Endpoint>
@@ -40,15 +42,17 @@ PARAMETERS
         Position?                    3
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
-    -Value <String>
+    -Value <DateTime>
         The current value of the time picker.
         
         Required?                    false
         Position?                    4
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Locale <String>
@@ -58,6 +62,7 @@ PARAMETERS
         Position?                    5
         Default value                en
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ClassName <String>
@@ -67,6 +72,7 @@ PARAMETERS
         Position?                    6
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -DisableAmPm [<SwitchParameter>]
@@ -76,14 +82,17 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
-    -TimeZone <TimeZoneInfo>
+    -TimeZone <Object>
+        The time zone to use for the time picker. This should be an IANA time zone string.
         
         Required?                    false
         Position?                    7
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -98,9 +107,56 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > Creates a new time picker
+    PS >New-UDTimePicker -Id 'timepicker1'
     
-    New-UDTimePicker -Id 'timePicker'
+    Basic Time Picker|Creates a basic time picker.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDTimePicker -Id 'timepicker2' -OnChange {
+    PS >     Show-UDToast -Message "Time changed to $($EventData)"
+    PS > }
+    
+    OnChange|Creates a time picker with an OnChange script block.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDTimePicker -Id 'timepicker3' -Value "12:00"
+    
+    Value|Creates a time picker with a value.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDTimePicker -Id 'timepicker4' -Locale "de"
+    
+    Locale|Creates a time picker with a German locale.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDTimePicker -Id 'timepicker5' -DisableAmPm
+    
+    DisableAmPm|Creates a time picker with 24-hour time.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS >New-UDTimePicker -Id 'timepicker6' -TimeZone "America/New_York"
+    
+    TimeZone|Creates a time picker with a specific time zone.
     
     
     

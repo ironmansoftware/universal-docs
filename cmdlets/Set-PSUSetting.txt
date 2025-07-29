@@ -7,11 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    Set-PSUSetting [-AdminConsoleLogo <String>] [-AdminConsoleTitle <String>] [-ApiEnvironment <String>] [-AppToken <String>] [-ComputerName <String>] [-ConcurrentJobLimit <Int32>] [-DefaultEnvironment <String>] [-DefaultPage <String>] [-DisableAutoReload] [-DisableUpdateCheck] [-GroomDays <Int32>] [-HideApi] [-HideAutomation] [-HideDashboard] [-HideHomePage] [-Integrated] [-LogLevel <String>] [-LoggingFilePath <String>] [-MicrosoftLogLevel <String>] [-RateLimitClientAllowList <String[]>] [-RateLimitEndpointAllowList <String[]>] [-RateLimitIpAddressAllowList <String[]>] [-ScriptBaseFolder <String>] [-SecurityEnvironment <String>] [-UseDefaultCredentials] [-GroomInterval <Int32>] [-NotificationLevel <NotificationLevel>] [-FallbackLanguageId <String>] [-HideRunAs] [-JobHandshakeTimeout <Int32>] [-ProxyCredential <Variable>] [-ProxyUri <String>] [-Splatting] [-DisabledFeatures <Features>] [-DontLoadProfile] [-EnhancedAppTokenSecurity] [-ExperimentalFeatures <ExperimentalFeatures>] [-FavIcon <String>] [-LimitIdentities] [-Telemetry] [<CommonParameters>]
+    Set-PSUSetting [-AdminConsoleLogo <String>] [-AdminConsoleTitle <String>] [-ApiEnvironment <String>] [-AppToken <String>] [-ComputerName <String>] [-ConcurrentJobLimit <Int32>] [-DefaultEnvironment <String>] [-DefaultPage <String>] [-DisableUpdateCheck] [-GroomDays <Int32>] [-HideApi] [-HideAutomation] [-HideDashboard] [-HideHomePage] [-Integrated] [-LogLevel <String>] [-LoggingFilePath <String>] [-MicrosoftLogLevel <String>] [-RateLimitClientAllowList <String[]>] [-RateLimitEndpointAllowList <String[]>] [-RateLimitIpAddressAllowList <String[]>] [-ScriptBaseFolder <String>] [-SecurityEnvironment <String>] [-UseDefaultCredentials] [-GroomInterval <Int32>] [-NotificationLevel <NotificationLevel>] [-FallbackLanguageId <String>] [-HideRunAs] [-JobHandshakeTimeout <Int32>] [-ProxyCredential <Variable>] [-ProxyUri <String>] [-Splatting] [-DisabledFeatures <Features>] [-DontLoadProfile] [-EnhancedAppTokenSecurity] [-ExperimentalFeatures <ExperimentalFeatures>] [-FavIcon <String>] [-LimitIdentities] [-Telemetry] [-DefaultDashboardTheme <String>] [-UseLogoSize] [-ContentSecurityPolicy <String>] [-DarkTheme] [-DisableFormatOnSave] [-HideEnvironment] [-HideRunOn] [-Branding <OldBranding>] [-DebuggerEnvironment <String>] [-FileEncoding <String>] [-LogGroomDays <Int32>] [-ModuleDiscoveryFrequency <String>] [-PreformattedJobOutput] [-MaxJobMemory <Int32>] [-AnonymousApiDocumentation] [-ApiBaseFolder <String>] [-CheckForModuleUpdates] [-Credential <PSCredential>] [-HideRunLater] [-JobRunId] [-MaximumTokenLifetime <Int32>] [-TrustCertificate] [-DefaultTokenLifetime <Int32>] [-PortalDisabled] [-PortalRole <String[]>] [-ApiSecurityModel <ApiSecurityModel>] [-DefaultRunOn <String>] [-DisableFirstRun] [-SessionTimeout <Int32>] [-DebugPreference <ActionPreference>] [-ErrorPreference <ActionPreference>] [-InformationPreference <ActionPreference>] [-ProgressPreference <ActionPreference>] [-VerbosePreference <ActionPreference>] [-WarningPreference <ActionPreference>] [-DisableCodeFirst] [-DisableDatabaseVault] [-PasswordExpirationDays <Int32>] [-PasswordLength <Int32>] [<CommonParameters>]
     
     
 DESCRIPTION
-    Sets a UA setting.
+    Sets a PSU setting.
     
 
 PARAMETERS
@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -AdminConsoleTitle <String>
@@ -31,6 +32,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ApiEnvironment <String>
@@ -40,24 +42,27 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -AppToken <String>
-        An app token to access the UA API.
+        An app token to access the PSU API.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        The HTTP address of the UA REST API server.
+        The HTTP address of the PSU REST API server.
         
         Required?                    false
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      Uri
         Accept wildcard characters?  false
         
     -ConcurrentJobLimit <Int32>
@@ -67,6 +72,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -DefaultEnvironment <String>
@@ -76,6 +82,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -DefaultPage <String>
@@ -85,15 +92,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
-        Accept wildcard characters?  false
-        
-    -DisableAutoReload [<SwitchParameter>]
-        Disables configuration auto-reload from disk.
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -DisableUpdateCheck [<SwitchParameter>]
@@ -103,6 +102,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -GroomDays <Int32>
@@ -112,6 +112,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -HideApi [<SwitchParameter>]
@@ -121,6 +122,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -HideAutomation [<SwitchParameter>]
@@ -130,6 +132,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -HideDashboard [<SwitchParameter>]
@@ -139,6 +142,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -HideHomePage [<SwitchParameter>]
@@ -148,6 +152,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Integrated [<SwitchParameter>]
@@ -157,6 +162,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -LogLevel <String>
@@ -166,6 +172,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -LoggingFilePath <String>
@@ -175,6 +182,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -MicrosoftLogLevel <String>
@@ -184,6 +192,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -RateLimitClientAllowList <String[]>
@@ -193,6 +202,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -RateLimitEndpointAllowList <String[]>
@@ -202,6 +212,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -RateLimitIpAddressAllowList <String[]>
@@ -211,6 +222,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ScriptBaseFolder <String>
@@ -220,6 +232,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -SecurityEnvironment <String>
@@ -229,6 +242,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
@@ -238,6 +252,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -GroomInterval <Int32>
@@ -247,6 +262,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -NotificationLevel <NotificationLevel>
@@ -256,6 +272,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -FallbackLanguageId <String>
@@ -265,6 +282,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -HideRunAs [<SwitchParameter>]
@@ -274,6 +292,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -JobHandshakeTimeout <Int32>
@@ -283,6 +302,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ProxyCredential <Variable>
@@ -292,6 +312,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ProxyUri <String>
@@ -301,6 +322,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Splatting [<SwitchParameter>]
@@ -310,6 +332,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -DisabledFeatures <Features>
@@ -319,6 +342,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -DontLoadProfile [<SwitchParameter>]
@@ -328,6 +352,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -EnhancedAppTokenSecurity [<SwitchParameter>]
@@ -337,6 +362,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -ExperimentalFeatures <ExperimentalFeatures>
@@ -346,6 +372,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -FavIcon <String>
@@ -355,6 +382,7 @@ PARAMETERS
         Position?                    named
         Default value                None
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -LimitIdentities [<SwitchParameter>]
@@ -364,6 +392,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     -Telemetry [<SwitchParameter>]
@@ -373,6 +402,397 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -DefaultDashboardTheme <String>
+        The default dashboard theme to use when none is specified. By default, this value is AntDesign.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -UseLogoSize [<SwitchParameter>]
+        Does not adjust the size of the logo used in the admin console.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -ContentSecurityPolicy <String>
+        The content security policy to set. This can be useful when hosting PowerShell Universal in an iframe.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -DarkTheme [<SwitchParameter>]
+        Whether the dark theme should be used throughout the admin console.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -DisableFormatOnSave [<SwitchParameter>]
+        Disables formatting on save for PowerShell scripts.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -HideEnvironment [<SwitchParameter>]
+        Hides the environment drop down when running scripts.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -HideRunOn [<SwitchParameter>]
+        Hides the Run On drop down when running scripts.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Branding <OldBranding>
+        The branding to use for the admin console and dashboards.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -DebuggerEnvironment <String>
+        The environment to use when debugging scripts.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -FileEncoding <String>
+        The file encoding to use when reading and writing files.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -LogGroomDays <Int32>
+        The number of days to retain log files for.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -ModuleDiscoveryFrequency <String>
+        The frequency to check for new modules.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -PreformattedJobOutput [<SwitchParameter>]
+        Whether job output should be preformatted.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -MaxJobMemory <Int32>
+        The maximum amount of memory a job can use in MB.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -AnonymousApiDocumentation [<SwitchParameter>]
+        {{ Fill AnonymousApiDocumentation Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -ApiBaseFolder <String>
+        {{ Fill ApiBaseFolder Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -CheckForModuleUpdates [<SwitchParameter>]
+        {{ Fill CheckForModuleUpdates Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Credential <PSCredential>
+        Credentials to login to the PowerShell Universal Management API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -HideRunLater [<SwitchParameter>]
+        {{ Fill HideRunLater Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -JobRunId [<SwitchParameter>]
+        {{ Fill JobRunId Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -MaximumTokenLifetime <Int32>
+        {{ Fill MaximumTokenLifetime Description }}
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -TrustCertificate [<SwitchParameter>]
+        Whether the cmdlet should ignore certificate issues.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -DefaultTokenLifetime <Int32>
+        The default token lifetime in minutes.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -PortalDisabled [<SwitchParameter>]
+        Whether the portal is disabled.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -PortalRole <String[]>
+        The roles required to access the portal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -ApiSecurityModel <ApiSecurityModel>
+        The API security model to use for cmdlets run within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -DefaultRunOn <String>
+        The default run on computer or computer group.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -DisableFirstRun [<SwitchParameter>]
+        Disables the first run wizard even if an admin user is not defined.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -SessionTimeout <Int32>
+        The number of minutes to wait before a session is considered inactive.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -DebugPreference <ActionPreference>
+        The global debug preference. Can be overriden locally.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -ErrorPreference <ActionPreference>
+        The global debug preference. Can be overriden locally.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -InformationPreference <ActionPreference>
+        The global information preference. Can be overriden locally.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -ProgressPreference <ActionPreference>
+        The global progress preference. Can be overriden locally.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -VerbosePreference <ActionPreference>
+        The global verbose preference. Can be overriden locally.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -WarningPreference <ActionPreference>
+        The global warning preference. Can be overriden locally.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -DisableCodeFirst [<SwitchParameter>]
+        Disables the code first auto-reload feature.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      DisableAutoReload
+        Accept wildcard characters?  false
+        
+    -DisableDatabaseVault [<SwitchParameter>]
+        Disables the database vault.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -PasswordExpirationDays <Int32>
+        The number of days before a local account's password expires.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -PasswordLength <Int32>
+        The required minimum length for a local account's password.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
         Accept wildcard characters?  false
         
     <CommonParameters>

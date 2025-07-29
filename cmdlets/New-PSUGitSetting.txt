@@ -1,0 +1,192 @@
+
+NAME
+    New-PSUGitSetting
+    
+SYNOPSIS
+    Creates a new git setting for a PowerShell Universal application. This setting is used to configure the git repository for the application.
+    
+    
+SYNTAX
+    New-PSUGitSetting [-AppToken <String>] [-Branch <String>] [-ComputerName <String>] [-Credential <PSCredential>] [-ExternalGit] [-GitCredential <PSCredential>] [-Integrated] [-Interval <Int32>] [-Mode {Manual | Automatic}] [-ProxyUrl <String>] [-Remote <String>] [-SyncBehavior {TwoWay | OneWay | PushOnly}] [-TrustCertificate] [-UseDefaultCredentials] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Creates a new git setting for a PowerShell Universal application. This setting is used to configure the git repository for the application.
+    
+
+PARAMETERS
+    -AppToken <String>
+        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Branch <String>
+        The branch of the git repository to use. You can switch branches later using the Set-PSUGitSetting cmdlet.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        The name of the PowerShell Universal server to connect to.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      Uri
+        Accept wildcard characters?  false
+        
+    -Credential <PSCredential>
+        The credential used to connect to the PowerShell Universal server.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -ExternalGit [<SwitchParameter>]
+        Whether to use an external git client.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -GitCredential <PSCredential>
+        The credential used to connect to the git repository.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Whether to use the integrated PowerShell Universal Management API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Interval <Int32>
+        The interval in seconds to check for changes in the git repository.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Mode <GitMode>
+        The git edit mode.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -ProxyUrl <String>
+        A proxy URL to use for the git repository.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Remote <String>
+        The URL of the remote git repository.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -SyncBehavior <GitSyncBehavior>
+        The sync behavior of the git repository. This determines how changes are synchronized between the local and remote repositories.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -TrustCertificate [<SwitchParameter>]
+        Whether to trust the certificate used by the git repository.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Whether to use default credentials when connecting to the PowerShell Universal Management API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> New-PSUGitSetting -Branch 'main' -Name 'MyApp'
+    
+    Creates a local git setting for the application named 'MyApp' with the branch set to 'main'.
+    -------------------------- Example 2 --------------------------
+    
+    PS C:\> New-PSUGitSetting -Remote 'https://www.example.com/repo.git' -Branch 'main' -Name 'MyApp'
+    
+    Creates a remote git setting for the application named 'MyApp' with the branch set to 'main' and the remote repository set to 'https://www.example.com/repo.git'.
+    
+RELATED LINKS
+
+

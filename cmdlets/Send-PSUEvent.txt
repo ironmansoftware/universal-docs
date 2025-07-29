@@ -1,0 +1,184 @@
+
+NAME
+    Send-PSUEvent
+    
+SYNOPSIS
+    Sends events to an event hub.
+    
+    
+SYNTAX
+    Send-PSUEvent [-AppToken <String>] [-ComputerName <String>] [-Data <Object>] -Hub <String> [-Integrated] [-UseDefaultCredentials] [-ConnectionId <String>] [-Credential <PSCredential>] [-TrustCertificate] [-Timeout <Int32>] [<CommonParameters>]
+    
+    Send-PSUEvent [-AppToken <String>] [-ComputerName <String>] [-Data <Object>] [-Integrated] [-UseDefaultCredentials] -Computer <String> [-Credential <PSCredential>] [-TrustCertificate] [-Timeout <Int32>] [<CommonParameters>]
+    
+    Send-PSUEvent [-AppToken <String>] [-ComputerName <String>] -Hub <String> [-Integrated] [-UseDefaultCredentials] [-ConnectionId <String>] [-Command <String>] [-Credential <PSCredential>] [-Parameters <Hashtable>] [-TrustCertificate] [-Timeout <Int32>] [<CommonParameters>]
+    
+    Send-PSUEvent [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-Command <String>] -Computer <String> [-Credential <PSCredential>] [-Parameters <Hashtable>] [-TrustCertificate] [-Timeout <Int32>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Sends events to an event hub.
+    
+
+PARAMETERS
+    -AppToken <String>
+        Not used.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        Not used.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      Uri
+        Accept wildcard characters?  false
+        
+    -Data <Object>
+        The data to send to the client. This data will be serialized to CliXml and deserialized on the client.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Hub <String>
+        The name of the event hub to send the event to.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Not used.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Not used.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -ConnectionId <String>
+        The connection ID to send the event to. If not specified, the event will be sent to all connected clients.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Command <String>
+        The command to run on the agent.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Computer <String>
+        The computer to run this command on.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Credential <PSCredential>
+        Credentials to login to the PowerShell Universal Management API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Parameters <Hashtable>
+        A hashtable of parameters to send to the command.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -TrustCertificate [<SwitchParameter>]
+        Whether the cmdlet should ignore certificate issues.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Timeout <Int32>
+        The timeout in seconds for the command to run.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Send-PSUEvent -Hub 'MyHub' -Data @{ Name = 'Adam' }
+    
+    Sends an event to the MyHub event hub. All connected clients will receive the event.
+    
+RELATED LINKS
+    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+
+

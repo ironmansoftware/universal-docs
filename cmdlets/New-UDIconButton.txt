@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDIconButton [[-Id] <String>] [[-Icon] <Object>] [[-OnClick] <Endpoint>] [-Disabled] [[-Href] <String>] [[-Style] <Hashtable>] [[-ClassName] <String>] [[-Size] <String>] [<CommonParameters>]
+    New-UDIconButton [[-Id] <String>] [[-Icon] <Object>] [[-OnClick] <Endpoint>] [-Disabled] [[-Href] <String>] [[-Style] <Hashtable>] [[-ClassName] <String>] [[-Size] <String>] [[-Variant] <String>] [-ShowLoading] [[-LoadingComponent] <ScriptBlock>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -22,6 +22,7 @@ PARAMETERS
         Position?                    1
         Default value                ([Guid]::NewGuid()).ToString()
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Icon <Object>
@@ -29,8 +30,9 @@ PARAMETERS
         
         Required?                    false
         Position?                    2
-        Default value                
+        Default value                User
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -OnClick <Endpoint>
@@ -40,6 +42,7 @@ PARAMETERS
         Position?                    3
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Disabled [<SwitchParameter>]
@@ -49,6 +52,7 @@ PARAMETERS
         Position?                    named
         Default value                False
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Href <String>
@@ -58,6 +62,7 @@ PARAMETERS
         Position?                    4
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Style <Hashtable>
@@ -67,6 +72,7 @@ PARAMETERS
         Position?                    5
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -ClassName <String>
@@ -76,15 +82,44 @@ PARAMETERS
         Position?                    6
         Default value                
         Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     -Size <String>
-        The size of the icon button.
+        The size of the icon button. Valid values are: "small", "medium", "large"
         
         Required?                    false
         Position?                    7
         Default value                medium
         Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Variant <String>
+        
+        Required?                    false
+        Position?                    8
+        Default value                text
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -ShowLoading [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -LoadingComponent <ScriptBlock>
+        
+        Required?                    false
+        Position?                    9
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
         
     <CommonParameters>
@@ -99,9 +134,50 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS > Creates an icon button with a user icon with a custom style.
+    PS >New-UDIconButton -Icon (New-UDIcon -Icon user -Size sm)  -Id 'iconButton1'
     
-    New-UDIconButton -Icon (New-UDIcon -Icon user -Size sm -Style @{color = '#000'})  -Id 'iconButtonContent'
+    Basic Icon Button|Creates a basic icon button.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 2 --------------------------
+    
+    PS >New-UDIconButton -Icon (New-UDIcon -Icon user -Size sm) -OnClick {
+    PS >    Show-UDToast -Message 'Icon Button Clicked'
+    PS > } -Id 'iconButton2'
+    
+    Icon Button with OnClick|Creates an icon button with an OnClick script block.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 3 --------------------------
+    
+    PS >New-UDIconButton -Icon (New-UDIcon -Icon user -Size sm) -Href 'https://www.google.com' -Id 'iconButton3'
+    
+    Icon Button with Href|Creates an icon button that navigates to a URL.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 4 --------------------------
+    
+    PS >New-UDIconButton -Icon (New-UDIcon -Icon user -Size sm) -Disabled -Id 'iconButton4'
+    
+    Disabled Icon Button|Creates a disabled icon button.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDIconButton -Icon (New-UDIcon -Icon user -Size sm) -Id 'iconButton5' -OnClick {
+    PS >    Show-UDToast -Message 'Icon Button Clicked'
+    PS >    Start-Sleep -Seconds 5
+    PS > } -ShowLoading
+    
+    Icon Button with Loading|Creates an icon button with a loading spinner.
     
     
     

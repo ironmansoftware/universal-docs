@@ -1,0 +1,427 @@
+
+NAME
+    Set-PSUBranding
+    
+SYNOPSIS
+    Sets branding for PowerShell Universal.
+    
+    
+SYNTAX
+    Set-PSUBranding [-AdminConsoleTitle <String>] [-AppBarLogo <String>] [-AppNotRunningDescription <String>] [-AppToken <String>] [-ComputerName <String>] [-Copyright <String>] [-Credential <PSCredential>] [-CssStylesheet <String[]>] [-CssStylesheetIntegrity <String[]>] [-Favicon <String>] [-HeaderColor <String>] [-HeaderFontColor <String>] [-Integrated] [-LoggedOut <String>] [-LoggedOutDescription <String>] [-LoginPageDescription <String>] [-LoginPageImage <String>] [-LoginPageLinks <LoginPageLink[]>] [-LoginPageText <String>] [-LoginPageTitle <String>] [-NotAuthorizedDescription <String>] [-NotAuthorizedTitle <String>] [-PageNotFoundDescription <String>] [-PageNotFoundTitle <String>] [-PrimaryColor <String>] [-PrimaryFontColor <String>] [-SecondaryColor <String>] [-SecondaryFontColor <String>] [-TrustCertificate] [-UseDefaultCredentials] [-DarkAppBarLogo <String>] [-LoginPageTheme <ThemePreference>] [-PortalTitle <String>] [-LoginPageCssStylesheet <String>] [-LoginPageLayout <LoginPageLayout>] [-LoginPageBackgroundColor <String>] [-LoginPageFontColor <String>] [-LoginPageLogoSize <String>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    {{ Fill in the Description }}
+    
+
+PARAMETERS
+    -AdminConsoleTitle <String>
+        The title of the admin console.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -AppBarLogo <String>
+        The URL of the logo to use in the app bar.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -AppNotRunningDescription <String>
+        The text to display when the app is not running.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -AppToken <String>
+        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -ComputerName <String>
+        Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      Uri
+        Accept wildcard characters?  false
+        
+    -Copyright <String>
+        The copyright text to display in the footer.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Credential <PSCredential>
+        Credentials to login to the PowerShell Universal Management API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -CssStylesheet <String[]>
+        The URL of the CSS stylesheet to use for branding.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -CssStylesheetIntegrity <String[]>
+        The integrity attribute for the CSS stylesheet.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Favicon <String>
+        The URL of the favicon to use for branding.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -HeaderColor <String>
+        The header background color.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -HeaderFontColor <String>
+        The header font color.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Integrated [<SwitchParameter>]
+        Whether the cmdlet should use the integrated PowerShell Universal Management API.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -LoggedOut <String>
+        The text to display when the user is logged out.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -LoggedOutDescription <String>
+        The text to display when the user is logged out.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -LoginPageDescription <String>
+        The description to display on the login page.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -LoginPageImage <String>
+        The URL of the image to use on the login page.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      Image
+        Accept wildcard characters?  false
+        
+    -LoginPageLinks <LoginPageLink[]>
+        The links to display on the login page.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -LoginPageText <String>
+        The text to display on the login page.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -LoginPageTitle <String>
+        The title to display on the login page.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      Title
+        Accept wildcard characters?  false
+        
+    -NotAuthorizedDescription <String>
+        The description to display when the user is not authorized.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -NotAuthorizedTitle <String>
+        The title to display when the user is not authorized.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -PageNotFoundDescription <String>
+        The description to display when the page is not found.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -PageNotFoundTitle <String>
+        The title to display when the page is not found.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -PrimaryColor <String>
+        The primary color to use for branding.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -PrimaryFontColor <String>
+        The primary font color to use for branding.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -SecondaryColor <String>
+        The secondary color to use for branding.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -SecondaryFontColor <String>
+        The secondary font color to use for branding.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -TrustCertificate [<SwitchParameter>]
+        Whether the cmdlet should ignore certificate issues.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -UseDefaultCredentials [<SwitchParameter>]
+        Whether the cmdlet should use the default credentials.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -DarkAppBarLogo <String>
+        The URL of the dark logo to use in the app bar. This will be used when the dark theme is enabled.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -LoginPageTheme <ThemePreference>
+        The theme preference for the login page. This can be set to Light, Dark, or Auto. The default is Auto.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -PortalTitle <String>
+        The title of the portal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -LoginPageCssStylesheet <String>
+        A style sheet for the login page.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -LoginPageLayout <LoginPageLayout>
+        The login page layout. Defaults to vertical.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -LoginPageBackgroundColor <String>
+        The background color of the login page.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -LoginPageFontColor <String>
+        The font color of the login page.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -LoginPageLogoSize <String>
+        The size of of the login page logo. Pixels, percentages and any valid CSS width is allowed.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    None
+        
+    
+    
+OUTPUTS
+    System.Object
+        
+    
+    
+NOTES
+    
+    
+        
+    
+    -------------------------- Example 1 --------------------------
+    
+    PS C:\> Set-PSUBranding -LoginPageImage 'C:\logo.png' -AppBarLogo 'C:\logo.png' -AdminConsoleTitle 'My Admin Console'
+    
+    Sets the branding for PowerShell Universal. The login page image and app bar logo are set to the specified image files. The admin console title is set to "My Admin Console".
+    
+RELATED LINKS
+
+
