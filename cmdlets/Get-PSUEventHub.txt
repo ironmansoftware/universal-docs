@@ -1,24 +1,24 @@
 
 NAME
-    Start-PSUApp
+    Get-PSUEventHub
     
 SYNOPSIS
-    Starts an app in PowerShell Universal.
+    Return event hubs.
     
     
 SYNTAX
-    Start-PSUApp [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] -App <Dashboard> [<CommonParameters>]
+    Get-PSUEventHub [[-Id] <Int64>] [-AppToken <String>] [-ComputerName <String>] [-Credential <PSCredential>] [-Integrated] [-TrustCertificate] [-UseDefaultCredentials] [<CommonParameters>]
     
-    Start-PSUApp [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] -Name <String> [<CommonParameters>]
+    Get-PSUEventHub [[-Name] <String>] [-AppToken <String>] [-ComputerName <String>] [-Credential <PSCredential>] [-Integrated] [-TrustCertificate] [-UseDefaultCredentials] [<CommonParameters>]
     
     
 DESCRIPTION
-    Starts an app in PowerShell Universal.
+    Return event hubs.
     
 
 PARAMETERS
     -AppToken <String>
-        The AppToken that is used for calling the PowerShell Universal Management API. You can also call Connect-PSUServer before calling this cmdlet to set the AppToken for the entire session.
+        An application token to use for authentication.
         
         Required?                    false
         Position?                    named
@@ -28,7 +28,7 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -ComputerName <String>
-        Specifies the computer name or URL that should be called when accessing the PowerShell Universal Management API. You can also use Connect-PSUServer before calling this cmdlet to set the computer name for the entire session.
+        The URL of the server to connect to.
         
         Required?                    false
         Position?                    named
@@ -37,8 +37,48 @@ PARAMETERS
         Aliases                      Uri
         Accept wildcard characters?  false
         
+    -Credential <PSCredential>
+        The credentials to use for authentication.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Id <Int64>
+        The ID of the event hub to return.
+        
+        Required?                    false
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Aliases                      none
+        Accept wildcard characters?  false
+        
     -Integrated [<SwitchParameter>]
-        Executes the command internally rather than using the Management API. Only works when running script from within PowerShell Universal.
+        For use when running within PowerShell Universal.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        The name of the event hub to return.
+        
+        Required?                    false
+        Position?                    0
+        Default value                None
+        Accept pipeline input?       True (ByValue)
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -TrustCertificate [<SwitchParameter>]
+        Trust the certificate of the server. This is useful for self-signed certificates.
         
         Required?                    false
         Position?                    named
@@ -48,52 +88,12 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -UseDefaultCredentials [<SwitchParameter>]
-        Use default credentials when connecting to the management API
+        Use the default credentials for the current user.
         
         Required?                    false
         Position?                    named
         Default value                False
         Accept pipeline input?       False
-        Aliases                      none
-        Accept wildcard characters?  false
-        
-    -Credential <PSCredential>
-        Credentials to login to the PowerShell Universal Management API.
-        
-        Required?                    false
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       False
-        Aliases                      none
-        Accept wildcard characters?  false
-        
-    -TrustCertificate [<SwitchParameter>]
-        Whether the cmdlet should ignore certificate issues.
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       False
-        Aliases                      none
-        Accept wildcard characters?  false
-        
-    -App <Dashboard>
-        {{ Fill App Description }}
-        
-        Required?                    true
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       True (ByValue)
-        Aliases                      Dashboard
-        Accept wildcard characters?  false
-        
-    -Name <String>
-        The name of the app to start.
-        
-        Required?                    true
-        Position?                    named
-        Default value                None
-        Accept pipeline input?       True (ByValue)
         Aliases                      none
         Accept wildcard characters?  false
         
@@ -104,7 +104,10 @@ PARAMETERS
         about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
     
 INPUTS
-    PowerShellUniversal.Dashboard
+    System.String
+        
+    
+    System.Int64
         
     
     
@@ -120,11 +123,10 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> Get-PSUApp -Name 'MyApp' | Start-PSUApp
+    PS C:\> Get-PSUEventHub -Name 'EventHub'
     
-    Starts the 'MyApp' app in PowerShell Universal.
+    Returns the event hub EventHub.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
 
 

@@ -13,6 +13,8 @@ SYNTAX
     
     Get-PSUSchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] [<CommonParameters>]
     
+    Get-PSUSchedule [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] -Name <String> [<CommonParameters>]
+    
     
 DESCRIPTION
     Returns schedules defined in PSU. Schedules define when scripts will be run.
@@ -105,6 +107,16 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Name <String>
+        Gets a schedule by name.
+        
+        Required?                    true
+        Position?                    named
+        Default value                None
         Accept pipeline input?       False
         Aliases                      none
         Accept wildcard characters?  false

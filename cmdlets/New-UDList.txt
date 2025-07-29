@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDList [[-Id] <String>] [[-Children] <ScriptBlock>] [[-SubHeader] <String>] [[-ClassName] <String>] [-Dense] [[-Sx] <Hashtable>] [<CommonParameters>]
+    New-UDList [[-Id] <String>] [[-Children] <ScriptBlock>] [[-SubHeader] <String>] [[-ClassName] <String>] [-Dense] [[-Sx] <Hashtable>] [[-AlignItems] <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -70,6 +70,15 @@ PARAMETERS
         
         Required?                    false
         Position?                    5
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -AlignItems <String>
+        
+        Required?                    false
+        Position?                    6
         Default value                
         Accept pipeline input?       false
         Aliases                      

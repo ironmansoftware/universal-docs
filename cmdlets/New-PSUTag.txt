@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSUTag [-AppToken <String>] [-Color <String>] [-ComputerName <String>] [-Description <String>] -Name <String> [-UseDefaultCredentials] [-Integrated] [-Credential <PSCredential>] [-DisplayInPortal] [-FontColor <String>] [-Role <String[]>] [-TrustCertificate] [<CommonParameters>]
+    New-PSUTag [-AppToken <String>] [-Color <String>] [-ComputerName <String>] [-Description <String>] -Name <String> [-UseDefaultCredentials] [-Integrated] [-Credential <PSCredential>] [-DisplayInPortal] [-FontColor <String>] [-Role <String[]>] [-TrustCertificate] [-Icon <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -131,6 +131,16 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Icon <String>
+        The icon to display in the tag.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
         Accept pipeline input?       False
         Aliases                      none
         Accept wildcard characters?  false

@@ -170,10 +170,10 @@ OUTPUTS
     PS >     New-UDTreeNode -Name "Root Node" -Id "root5" -Children {
     PS >         New-UDTreeNode -Name "Child Node" -Id "child7" -Children {
     PS >             New-UDTreeNode -Name "Grandchild Node" -Id "grandchild7" -Leaf -Icon (New-UDIcon -Icon "File") 
-    PS >         } -Leaf -Icon (New-UDIcon -Icon "Folder") -ExpandedIcon (New-UDIcon -Icon "FolderOpen")
+    PS >         } -Icon (New-UDIcon -Icon "Folder") -ExpandedIcon (New-UDIcon -Icon "FolderOpen")
     PS >         New-UDTreeNode -Name "Child Node 2" -Id "child8" -Children {
     PS >             New-UDTreeNode -Name "Grandchild Node 2" -Id "grandchild8" -Leaf -Icon (New-UDIcon -Icon "File") 
-    PS >         } -Leaf -Icon (New-UDIcon -Icon "Folder") -ExpandedIcon (New-UDIcon -Icon "FolderOpen")
+    PS >         } -Icon (New-UDIcon -Icon "Folder") -ExpandedIcon (New-UDIcon -Icon "FolderOpen")
     PS >     }
     PS > } -Id "treeview5" -Expanded
     
@@ -185,12 +185,12 @@ OUTPUTS
     -------------------------- EXAMPLE 6 --------------------------
     
     PS >New-UDTreeView -Node {
-    PS >     New-UDTreeNode -Name "Root Node" -Id "root3" -Children {
-    PS >         New-UDTreeNode -Name "Child Node" -Id "child5" -Children {
-    PS >             New-UDTreeNode -Name "Grandchild Node" -Id "grandchild5"  -Leaf
+    PS >     New-UDTreeNode -Name "Root Node" -Id "root6" -Children {
+    PS >         New-UDTreeNode -Name "Child Node" -Id "child9" -Children {
+    PS >             New-UDTreeNode -Name "Grandchild Node" -Id "grandchild9"  -Leaf
     PS >         }
-    PS >         New-UDTreeNode -Name "Child Node 2" -Id "child6" -Children {
-    PS >             New-UDTreeNode -Name "Grandchild Node 2" -Id "grandchild6"  -Leaf
+    PS >         New-UDTreeNode -Name "Child Node 2" -Id "child10" -Children {
+    PS >             New-UDTreeNode -Name "Grandchild Node 2" -Id "grandchild10"  -Leaf
     PS >         }
     PS >     }
     PS > } -Id "treeview3" -Expanded -PreventCollapse

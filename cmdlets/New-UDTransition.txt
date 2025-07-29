@@ -7,15 +7,15 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTransition [-Id <String>] [-Collapse] [-CollapseHeight <Int32>] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [-Style <Hashtable>] [<CommonParameters>]
+    New-UDTransition [-Id <String>] [-Collapse] [-CollapseHeight <Int32>] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [-Style <Hashtable>] [-MountOnEnter] [-UnmountOnExit] [<CommonParameters>]
     
-    New-UDTransition [-Id <String>] [-Fade] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [-Style <Hashtable>] [<CommonParameters>]
+    New-UDTransition [-Id <String>] [-Fade] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [-Style <Hashtable>] [-MountOnEnter] [-UnmountOnExit] [<CommonParameters>]
     
-    New-UDTransition [-Id <String>] [-Grow] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [-Style <Hashtable>] [<CommonParameters>]
+    New-UDTransition [-Id <String>] [-Grow] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [-Style <Hashtable>] [-MountOnEnter] [-UnmountOnExit] [<CommonParameters>]
     
-    New-UDTransition [-Id <String>] [-Slide] [-SlideDirection <String>] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [-Style <Hashtable>] [<CommonParameters>]
+    New-UDTransition [-Id <String>] [-Slide] [-SlideDirection <String>] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [-Style <Hashtable>] [-MountOnEnter] [-UnmountOnExit] [<CommonParameters>]
     
-    New-UDTransition [-Id <String>] [-Zoom] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [-Style <Hashtable>] [<CommonParameters>]
+    New-UDTransition [-Id <String>] [-Zoom] -Children <ScriptBlock> [-In] [-Timeout <Int32>] [-Style <Hashtable>] [-MountOnEnter] [-UnmountOnExit] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -134,10 +134,31 @@ PARAMETERS
         Accept wildcard characters?  false
         
     -Style <Hashtable>
+        A hashtable of CSS styles to apply to the transition.
         
         Required?                    false
         Position?                    named
         Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -MountOnEnter [<SwitchParameter>]
+        Whether to mount the content when entering the transition.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -UnmountOnExit [<SwitchParameter>]
+        Whether to unmount the content when exiting the transition.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
         Aliases                      
         Accept wildcard characters?  false

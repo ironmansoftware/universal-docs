@@ -7,11 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    Get-PSUJobOutput [-AppToken <String>] [-ComputerName <String>] [-Integrated] -Job <Job> [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] [<CommonParameters>]
+    Get-PSUJobOutput [-AppToken <String>] [-ComputerName <String>] [-Integrated] -Job <Job> [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] [-AsObject] [-Limit <Int32>] [<CommonParameters>]
     
-    Get-PSUJobOutput [-AppToken <String>] [-ComputerName <String>] [-Integrated] -JobId <Int64> [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] [<CommonParameters>]
+    Get-PSUJobOutput [-AppToken <String>] [-ComputerName <String>] [-Integrated] -JobId <Int64> [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] [-AsObject] [-Limit <Int32>] [<CommonParameters>]
     
-    Get-PSUJobOutput [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] -RunId <Guid> [-Credential <PSCredential>] [-TrustCertificate] [<CommonParameters>]
+    Get-PSUJobOutput [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] -RunId <Guid> [-Credential <PSCredential>] [-TrustCertificate] [-AsObject] [-Limit <Int32>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -105,6 +105,26 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -AsObject [<SwitchParameter>]
+        Returns the JobOutput object rather than a string.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Limit <Int32>
+        Limit the number of results returned.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
         Accept pipeline input?       False
         Aliases                      none
         Accept wildcard characters?  false

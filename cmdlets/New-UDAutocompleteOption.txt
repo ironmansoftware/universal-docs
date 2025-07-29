@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDAutocompleteOption [-Name] <String> [-Value] <String> [<CommonParameters>]
+    New-UDAutocompleteOption [-Name] <String> [-Value] <String> [[-Group] <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -30,6 +30,16 @@ PARAMETERS
         
         Required?                    true
         Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Group <String>
+        The group to which this option belongs. This is used to group options in the autocomplete dropdown.
+        
+        Required?                    false
+        Position?                    3
         Default value                
         Accept pipeline input?       false
         Aliases                      

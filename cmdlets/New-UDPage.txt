@@ -7,11 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDPage [[-DefaultHomePage]] [[-Title] <String>] [-Blank] -Content <Endpoint> [-Description <String>] [-HeaderBackgroundColor <DashboardColor>] [-HeaderColor <DashboardColor>] [-HeaderPosition {absolute | fixed | relative | static | sticky}] [-HideNavigation] [-HideUserName] [-Icon <Object>] [-Id <String>] [-Name <String>] [-OnLoading <ScriptBlock>] [-Role <String[]>] [-Url <String>] [-Static] [-Generated] [-Layout <DesignerPageLayout>] [-BackgroundRepeat] [<CommonParameters>]
+    New-UDPage [[-DefaultHomePage]] [[-Title] <String>] [-Blank] -Content <Endpoint> [-Description <String>] [-HeaderBackgroundColor <DashboardColor>] [-HeaderColor <DashboardColor>] [-HeaderPosition {absolute | fixed | relative | static | sticky}] [-HideNavigation] [-HideUserName] [-Icon <Object>] [-Id <String>] [-Name <String>] [-OnLoading <ScriptBlock>] [-Role <String[]>] [-Url <String>] [-Static] [-Generated] [-Layout <DesignerPageLayout>] [-BackgroundRepeat] [-AutoInclude] [<CommonParameters>]
     
-    New-UDPage [[-DefaultHomePage]] [[-Title] <String>] -Content <Endpoint> [-Description <String>] [-HeaderBackgroundColor <DashboardColor>] [-HeaderColor <DashboardColor>] [-HeaderContent <Endpoint>] [-HeaderPosition {absolute | fixed | relative | static | sticky}] [-HideNavigation] [-HideUserName] [-Icon <Object>] [-Id <String>] [-LoadTitle <Endpoint>] [-Logo <String>] [-Name <String>] [-Navigation <Hashtable[]>] [-NavigationLayout {Temporary | Permanent}] [-OnLoading <ScriptBlock>] [-Role <String[]>] [-Url <String>] [-Static] [-Generated] [-Layout <DesignerPageLayout>] [-BackgroundImage <String>] [-BackgroundRepeat] [-LogoComponent <Hashtable>] [<CommonParameters>]
+    New-UDPage [[-DefaultHomePage]] [[-Title] <String>] -Content <Endpoint> [-Description <String>] [-HeaderBackgroundColor <DashboardColor>] [-HeaderColor <DashboardColor>] [-HeaderContent <Endpoint>] [-HeaderPosition {absolute | fixed | relative | static | sticky}] [-HideNavigation] [-HideUserName] [-Icon <Object>] [-Id <String>] [-LoadTitle <Endpoint>] [-Logo <String>] [-Name <String>] [-Navigation <Hashtable[]>] [-NavigationLayout {Temporary | Permanent}] [-OnLoading <ScriptBlock>] [-Role <String[]>] [-Url <String>] [-Static] [-Generated] [-Layout <DesignerPageLayout>] [-BackgroundImage <String>] [-BackgroundRepeat] [-LogoComponent <Hashtable>] [-AutoInclude] [<CommonParameters>]
     
-    New-UDPage [[-DefaultHomePage]] [[-Title] <String>] -Content <Endpoint> [-Description <String>] [-HeaderBackgroundColor <DashboardColor>] [-HeaderColor <DashboardColor>] [-HeaderContent <Endpoint>] [-HeaderPosition {absolute | fixed | relative | static | sticky}] [-HideNavigation] [-HideUserName] [-Icon <Object>] [-Id <String>] [-LoadNavigation <Endpoint>] [-LoadTitle <Endpoint>] [-Logo <String>] [-Name <String>] [-NavigationLayout {Temporary | Permanent}] [-OnLoading <ScriptBlock>] [-Role <String[]>] [-Url <String>] [-Static] [-Generated] [-Layout <DesignerPageLayout>] [-BackgroundImage <String>] [-BackgroundRepeat] [-LogoComponent <Hashtable>] [<CommonParameters>]
+    New-UDPage [[-DefaultHomePage]] [[-Title] <String>] -Content <Endpoint> [-Description <String>] [-HeaderBackgroundColor <DashboardColor>] [-HeaderColor <DashboardColor>] [-HeaderContent <Endpoint>] [-HeaderPosition {absolute | fixed | relative | static | sticky}] [-HideNavigation] [-HideUserName] [-Icon <Object>] [-Id <String>] [-LoadNavigation <Endpoint>] [-LoadTitle <Endpoint>] [-Logo <String>] [-Name <String>] [-NavigationLayout {Temporary | Permanent}] [-OnLoading <ScriptBlock>] [-Role <String[]>] [-Url <String>] [-Static] [-Generated] [-Layout <DesignerPageLayout>] [-BackgroundImage <String>] [-BackgroundRepeat] [-LogoComponent <Hashtable>] [-AutoInclude] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -295,6 +295,16 @@ PARAMETERS
         Required?                    false
         Position?                    named
         Default value                None
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -AutoInclude [<SwitchParameter>]
+        Automatically includes this page. No need to call Get-UDPage in the main app.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
         Accept pipeline input?       False
         Aliases                      none
         Accept wildcard characters?  false

@@ -97,7 +97,7 @@ OUTPUTS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    PS >New-UDAvatar -Alt "Remy Sharp" -Image "/admin/logo.png"
+    PS >New-UDAvatar -Alt "Remy Sharp" -Image "/assets/logo.png"
     
     Basic avatar|Displays a basic avatar with an image.
     
@@ -142,6 +142,62 @@ OUTPUTS
     PS > }
     
     Avatar group|Displays a group of avatars.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 5 --------------------------
+    
+    PS >New-UDAvatar -Alt "Remy Sharp" -Content {
+    PS >   "A"
+    PS > } -Sx @{
+    PS >   width = 24
+    PS >   height = 24
+    PS > }
+    PS > New-UDAvatar -Alt "Remy Sharp" -Content {
+    PS >   "A"
+    PS > } 
+    PS > New-UDAvatar -Alt "Remy Sharp" -Content {
+    PS >   "A"
+    PS > } -Sx @{
+    PS >   width = 56
+    PS >   height = 56
+    PS > }
+    
+    Sizes|Displays a group of avatars with different sizes.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 6 --------------------------
+    
+    PS >New-UDAvatar -Alt "Remy Sharp" -Content {
+    PS >   New-UDIcon -Icon "User"
+    PS > }
+    
+    Icons|Displays an avatar with an icon.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 7 --------------------------
+    
+    PS >New-UDAvatar -Alt "Remy Sharp" -Image "/broken.png" -Content { "A" }
+    
+    Fallback|Displays an avatar with a fallback to a broken image.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 8 --------------------------
+    
+    PS >New-UDBadge -BadgeContent {
+    PS >     10
+    PS > } -Children {
+    PS >     New-UDAvatar 
+    PS > }
+    
+    Badge| Displays an avatar with a badge.
     
     
     

@@ -9,6 +9,8 @@ SYNOPSIS
 SYNTAX
     Get-UDPage [-AppToken <String>] [-ComputerName <String>] [-Integrated] -Name <String> [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] [<CommonParameters>]
     
+    Get-UDPage [-AppToken <String>] [-ComputerName <String>] [-Integrated] [-UseDefaultCredentials] [-Credential <PSCredential>] [-TrustCertificate] -AutoInclude [<CommonParameters>]
+    
     
 DESCRIPTION
     Get a page for the current dashboard. This cmdlet is only valid when running within a dashboard.
@@ -79,6 +81,16 @@ PARAMETERS
         Whether the cmdlet should ignore certificate issues.
         
         Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -AutoInclude [<SwitchParameter>]
+        Gets auto included pages.
+        
+        Required?                    true
         Position?                    named
         Default value                False
         Accept pipeline input?       False

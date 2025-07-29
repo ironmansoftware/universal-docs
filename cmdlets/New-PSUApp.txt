@@ -7,11 +7,11 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSUApp [-AppToken <String>] [-Authenticated] [-AutoDeploy] [-BaseUrl <String>] [-Command <String>] [-Component <DashboardComponent[]>] [-ComputerName <String>] [-Credential <String>] [-Description <String>] [-DisableAutoStart] [-DisableErrorToast] [-DisableInteractiveHost] [-DisableStartupLog] [-Environment <String>] [-FavIcon <String>] [-GrantAppToken] [-IdleTimeout <Int32>] [-Integrated] [-Maintenance] [-Module <String>] -Name <String> [-Role <String[]>] [-SessionTimeout <Int32>] [-Tag <Tag[]>] [-UseDefaultCredentials] [-VerboseErrorMessages] [-ComputerGroup <String[]>] [-OnSessionTimeout <ScriptBlock>] [-AvailableInBranch <String[]>] [-TrustCertificate] [<CommonParameters>]
+    New-PSUApp [-AppToken <String>] [-Authenticated] [-AutoDeploy] [-BaseUrl <String>] [-Command <String>] [-Component <DashboardComponent[]>] [-ComputerName <String>] [-Credential <String>] [-Description <String>] [-DisableAutoStart] [-DisableErrorToast] [-DisableInteractiveHost] [-DisableStartupLog] [-Environment <String>] [-FavIcon <String>] [-GrantAppToken] [-IdleTimeout <Int32>] [-Integrated] [-Maintenance] [-Module <String>] -Name <String> [-Role <String[]>] [-SessionTimeout <Int32>] [-Tag <Tag[]>] [-UseDefaultCredentials] [-VerboseErrorMessages] [-ComputerGroup <String[]>] [-OnSessionTimeout <ScriptBlock>] [-AvailableInBranch <String[]>] [-TrustCertificate] [-Critical] [<CommonParameters>]
     
-    New-PSUApp [-AppToken <String>] [-Authenticated] [-AutoDeploy] [-BaseUrl <String>] [-Component <DashboardComponent[]>] [-ComputerName <String>] -Content <ScriptBlock> [-Credential <String>] [-Description <String>] [-DisableAutoStart] [-DisableErrorToast] [-DisableInteractiveHost] [-DisableStartupLog] [-Environment <String>] [-FavIcon <String>] [-GrantAppToken] [-IdleTimeout <Int32>] [-Integrated] [-Maintenance] -Name <String> [-Role <String[]>] [-SessionTimeout <Int32>] [-Tag <Tag[]>] [-UseDefaultCredentials] [-VerboseErrorMessages] [-ComputerGroup <String[]>] [-OnSessionTimeout <ScriptBlock>] [-AvailableInBranch <String[]>] [-TrustCertificate] [<CommonParameters>]
+    New-PSUApp [-AppToken <String>] [-Authenticated] [-AutoDeploy] [-BaseUrl <String>] [-Component <DashboardComponent[]>] [-ComputerName <String>] -Content <ScriptBlock> [-Credential <String>] [-Description <String>] [-DisableAutoStart] [-DisableErrorToast] [-DisableInteractiveHost] [-DisableStartupLog] [-Environment <String>] [-FavIcon <String>] [-GrantAppToken] [-IdleTimeout <Int32>] [-Integrated] [-Maintenance] -Name <String> [-Role <String[]>] [-SessionTimeout <Int32>] [-Tag <Tag[]>] [-UseDefaultCredentials] [-VerboseErrorMessages] [-ComputerGroup <String[]>] [-OnSessionTimeout <ScriptBlock>] [-AvailableInBranch <String[]>] [-TrustCertificate] [-Critical] [<CommonParameters>]
     
-    New-PSUApp [-AppToken <String>] [-Authenticated] [-AutoDeploy] [-BaseUrl <String>] [-Component <DashboardComponent[]>] [-ComputerName <String>] [-Credential <String>] [-Description <String>] [-DisableAutoStart] [-DisableErrorToast] [-DisableInteractiveHost] [-DisableStartupLog] [-Environment <String>] [-FavIcon <String>] [-FilePath <String>] [-GrantAppToken] [-IdleTimeout <Int32>] [-Integrated] [-Maintenance] -Name <String> [-Role <String[]>] [-SessionTimeout <Int32>] [-Tag <Tag[]>] [-UseDefaultCredentials] [-VerboseErrorMessages] [-ComputerGroup <String[]>] [-OnSessionTimeout <ScriptBlock>] [-AvailableInBranch <String[]>] [-TrustCertificate] [<CommonParameters>]
+    New-PSUApp [-AppToken <String>] [-Authenticated] [-AutoDeploy] [-BaseUrl <String>] [-Component <DashboardComponent[]>] [-ComputerName <String>] [-Credential <String>] [-Description <String>] [-DisableAutoStart] [-DisableErrorToast] [-DisableInteractiveHost] [-DisableStartupLog] [-Environment <String>] [-FavIcon <String>] [-FilePath <String>] [-GrantAppToken] [-IdleTimeout <Int32>] [-Integrated] [-Maintenance] -Name <String> [-Role <String[]>] [-SessionTimeout <Int32>] [-Tag <Tag[]>] [-UseDefaultCredentials] [-VerboseErrorMessages] [-ComputerGroup <String[]>] [-OnSessionTimeout <ScriptBlock>] [-AvailableInBranch <String[]>] [-TrustCertificate] [-Critical] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -331,6 +331,16 @@ PARAMETERS
         
     -TrustCertificate [<SwitchParameter>]
         Whether the cmdlet should ignore certificate issues.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Critical [<SwitchParameter>]
+        App is critical. This will cause the /api/v1/status endpoint to return a 500 if the app did not start.
         
         Required?                    false
         Position?                    named

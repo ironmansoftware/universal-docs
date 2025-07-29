@@ -1516,6 +1516,45 @@ OUTPUTS
     
     -------------------------- EXAMPLE 8 --------------------------
     
+    PS >$Data = @(
+    PS >     @{
+    PS >         state = "idaho"
+    PS >         cats = 72307
+    PS >         dogs = 23429
+    PS >         moose = 23423
+    PS >         bears = 784
+    PS >     }
+    PS >     @{
+    PS >         state = "wisconsin"
+    PS >         cats = 2343342
+    PS >         dogs = 3453623
+    PS >         moose = 1
+    PS >         bears = 23423
+    PS >     }
+    PS >     @{
+    PS >         state = "montana"
+    PS >         cats = 9234
+    PS >         dogs = 3973457
+    PS >         moose = 23472
+    PS >         bears = 347303
+    PS >     }
+    PS >     @{
+    PS >         state = "colorado"
+    PS >         cats = 345973789
+    PS >         dogs = 0237234
+    PS >         moose = 2302
+    PS >         bears = 2349772
+    PS >     }
+    PS > )
+    PS > New-UDNivoChart -Heatmap -Data $Data -IndexBy 'state' -keys @('cats', 'dogs', 'moose', 'bears')  -Height 500 -Width 1000 -MarginTop 50 -MarginRight 130 -MarginBottom 50 -MarginLeft 60
+    
+    Heatmap chart|Creates a simple heatmap chart.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 9 --------------------------
+    
     PS >$Data = $([PSCustomObject]@{
     PS >         value = 30
     PS >         color = '#BF5290'

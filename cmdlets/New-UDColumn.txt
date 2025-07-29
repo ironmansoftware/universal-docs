@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDColumn [-Id <String>] [-SmallSize <Int32>] [-LargeSize <Int32>] [-MediumSize <Int32>] [-ExtraLargeSize <Int32>] [-ExtraSmallSize <Int32>] [[-Content] <ScriptBlock>] [<CommonParameters>]
+    New-UDColumn [-Id <String>] [-SmallSize <Int32>] [-LargeSize <Int32>] [-MediumSize <Int32>] [-ExtraLargeSize <Int32>] [-ExtraSmallSize <Int32>] [[-Content] <ScriptBlock>] [-Style <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -80,6 +80,16 @@ PARAMETERS
         
         Required?                    false
         Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Style <Hashtable>
+        The style of the column.
+        
+        Required?                    false
+        Position?                    named
         Default value                
         Accept pipeline input?       false
         Aliases                      

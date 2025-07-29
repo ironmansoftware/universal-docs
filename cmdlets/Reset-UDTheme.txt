@@ -1,29 +1,20 @@
 
 NAME
-    Hide-UDModal
+    Reset-UDTheme
     
 SYNOPSIS
-    Hide a modal.
+    Sets the theme back to the default.
     
     
 SYNTAX
-    Hide-UDModal [-All] [<CommonParameters>]
+    Reset-UDTheme [<CommonParameters>]
     
     
 DESCRIPTION
-    Hide a modal.
+    Sets the theme back to the default.
     
 
 PARAMETERS
-    -All [<SwitchParameter>]
-        
-        Required?                    false
-        Position?                    named
-        Default value                False
-        Accept pipeline input?       false
-        Aliases                      
-        Accept wildcard characters?  false
-        
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,

@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDCheckBox [[-Label] <String>] [[-Icon] <Object>] [[-CheckedIcon] <Object>] [[-OnChange] <Endpoint>] [[-Style] <Hashtable>] [[-Disabled]] [[-Checked] <Boolean>] [[-ClassName] <String>] [[-LabelPlacement] <String>] [[-Id] <String>] [[-Size] <String>] [-Color <String>] [<CommonParameters>]
+    New-UDCheckBox [[-Label] <String>] [[-Icon] <Object>] [[-CheckedIcon] <Object>] [[-OnChange] <Endpoint>] [[-Style] <Hashtable>] [[-Disabled]] [[-Checked] <Boolean>] [[-ClassName] <String>] [[-LabelPlacement] <String>] [[-Id] <String>] [[-Size] <String>] [-Color <String>] [-Indeterminate] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -135,6 +135,16 @@ PARAMETERS
         Aliases                      
         Accept wildcard characters?  false
         
+    -Indeterminate [<SwitchParameter>]
+        Whether the checkbox is in an indeterminate state. This is a visual state only and does not affect the value of the checkbox.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
@@ -206,6 +216,15 @@ OUTPUTS
     PS >New-UDCheckbox -Label 'Demo' -Color 'secondary' -Id 'checkbox7'
     
     Checkbox with secondary color|A checkbox with the secondary color.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 8 --------------------------
+    
+    PS >New-UDCheckbox -Label 'Demo' -Id 'checkbox8' -Indeterminate
+    
+    Checkbox in indeterminate state|A checkbox in an indeterminate state.
     
     
     

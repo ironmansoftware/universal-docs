@@ -7,21 +7,21 @@ SYNOPSIS
     
     
 SYNTAX
-    New-PSUSchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] -Continuous [-Credential <Variable>] [-Delay <TimeSpan>] [-DelayHour <Int32>] [-DelayMinute <Int32>] [-DelaySecond <Int32>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [-AvailableInBranch <String[]>] [-Computer <String>] [-Parameters <Hashtable>] [-RandomDelayMaximum <Int32>] [-TrustCertificate] [<CommonParameters>]
+    New-PSUSchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] -Continuous [-Credential <Variable>] [-Delay <TimeSpan>] [-DelayHour <Int32>] [-DelayMinute <Int32>] [-DelaySecond <Int32>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [-AvailableInBranch <String[]>] [-Computer <String>] [-Parameters <Hashtable>] [-RandomDelayMaximum <Int32>] [-TrustCertificate] [-Folder <String>] [<CommonParameters>]
     
-    New-PSUSchedule [-Script] <Script> [-Cron] <String> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [-AvailableInBranch <String[]>] [-Computer <String>] [-Parameters <Hashtable>] [-RandomDelayMaximum <Int32>] [-TrustCertificate] [<CommonParameters>]
+    New-PSUSchedule [-Script] <Script> [-Cron] <String> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [-AvailableInBranch <String[]>] [-Computer <String>] [-Parameters <Hashtable>] [-RandomDelayMaximum <Int32>] [-TrustCertificate] [-Folder <String>] [<CommonParameters>]
     
-    New-PSUSchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-OneTime <DateTime>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [-AvailableInBranch <String[]>] [-Computer <String>] [-Parameters <Hashtable>] [-RandomDelayMaximum <Int32>] [-TrustCertificate] [<CommonParameters>]
+    New-PSUSchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-OneTime <DateTime>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [-AvailableInBranch <String[]>] [-Computer <String>] [-Parameters <Hashtable>] [-RandomDelayMaximum <Int32>] [-TrustCertificate] [-Folder <String>] [<CommonParameters>]
     
-    New-PSUSchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [-AvailableInBranch <String[]>] [-Computer <String>] [-Parameters <Hashtable>] [-RandomDelayMaximum <Int32>] [-TrustCertificate] -Day <String[]> -DayOfWeek [-Hour <Int32>] [-Minute <Int32>] [<CommonParameters>]
+    New-PSUSchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [-AvailableInBranch <String[]>] [-Computer <String>] [-Parameters <Hashtable>] [-RandomDelayMaximum <Int32>] [-TrustCertificate] -Day <String[]> -DayOfWeek [-Hour <Int32>] [-Minute <Int32>] [-Folder <String>] [<CommonParameters>]
     
-    New-PSUSchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [-AvailableInBranch <String[]>] [-Computer <String>] [-Parameters <Hashtable>] [-RandomDelayMaximum <Int32>] [-TrustCertificate] -DayOfMonth <Int32> -EveryMonth [-Hour <Int32>] [-Minute <Int32>] [<CommonParameters>]
+    New-PSUSchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [-AvailableInBranch <String[]>] [-Computer <String>] [-Parameters <Hashtable>] [-RandomDelayMaximum <Int32>] [-TrustCertificate] -DayOfMonth <Int32> -EveryMonth [-Hour <Int32>] [-Minute <Int32>] [-Folder <String>] [<CommonParameters>]
     
-    New-PSUSchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [-AvailableInBranch <String[]>] [-Computer <String>] [-Parameters <Hashtable>] [-RandomDelayMaximum <Int32>] [-TrustCertificate] -DayOfMonth <Int32> [-Hour <Int32>] [-Minute <Int32>] -Month <String[]> -SpecificMonth [<CommonParameters>]
+    New-PSUSchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [-AvailableInBranch <String[]>] [-Computer <String>] [-Parameters <Hashtable>] [-RandomDelayMaximum <Int32>] [-TrustCertificate] -DayOfMonth <Int32> [-Hour <Int32>] [-Minute <Int32>] -Month <String[]> -SpecificMonth [-Folder <String>] [<CommonParameters>]
     
-    New-PSUSchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [-AvailableInBranch <String[]>] [-Computer <String>] [-Parameters <Hashtable>] [-RandomDelayMaximum <Int32>] [-TrustCertificate] -EveryDay [-Hour <Int32>] [-Minute <Int32>] [<CommonParameters>]
+    New-PSUSchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [-AvailableInBranch <String[]>] [-Computer <String>] [-Parameters <Hashtable>] [-RandomDelayMaximum <Int32>] [-TrustCertificate] -EveryDay [-Hour <Int32>] [-Minute <Int32>] [-Folder <String>] [<CommonParameters>]
     
-    New-PSUSchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [-AvailableInBranch <String[]>] [-Computer <String>] [-Parameters <Hashtable>] [-RandomDelayMaximum <Int32>] [-TrustCertificate] -EveryHour [-Minute <Int32>] [<CommonParameters>]
+    New-PSUSchedule [-Script] <Script> [-AppToken <String>] [-ComputerName <String>] [-Credential <Variable>] [-TimeZone <String>] [-Environment <String>] [-Description <String>] [-Name <String>] [-UseDefaultCredentials] [-Condition <ScriptBlock>] [-Integrated] [-Paused] [-Timeout <Int32>] [-RandomDelay] [-AvailableInBranch <String[]>] [-Computer <String>] [-Parameters <Hashtable>] [-RandomDelayMaximum <Int32>] [-TrustCertificate] -EveryHour [-Minute <Int32>] [-Folder <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -385,6 +385,16 @@ PARAMETERS
         Required?                    true
         Position?                    named
         Default value                False
+        Accept pipeline input?       False
+        Aliases                      none
+        Accept wildcard characters?  false
+        
+    -Folder <String>
+        The folder in which to store this schedule. This is for visual use only.
+        
+        Required?                    false
+        Position?                    named
+        Default value                None
         Accept pipeline input?       False
         Aliases                      none
         Accept wildcard characters?  false

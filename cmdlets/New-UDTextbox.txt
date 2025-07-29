@@ -7,7 +7,7 @@ SYNOPSIS
     
     
 SYNTAX
-    New-UDTextbox [[-Id] <String>] [[-Label] <String>] [[-Placeholder] <String>] [[-Value] <String>] [[-Type] <String>] [-Disabled] [[-Icon] <Object>] [-Autofocus] [-Multiline] [[-Rows] <Int32>] [[-RowsMax] <Int32>] [-FullWidth] [[-Variant] <String>] [[-ClassName] <String>] [[-OnEnter] <Endpoint>] [[-OnBlur] <Endpoint>] [-Shrink] [[-OnValidate] <Endpoint>] [[-HelperText] <String>] [[-OnChange] <Endpoint>] [[-Minimum] <Int32>] [[-Maximum] <Int32>] [[-MaximumLength] <Int32>] [[-Sx] <Hashtable>] [[-Style] <Hashtable>] [<CommonParameters>]
+    New-UDTextbox [[-Id] <String>] [[-Label] <String>] [[-Placeholder] <String>] [[-Value] <String>] [[-Type] <String>] [-Disabled] [[-Icon] <Object>] [-Autofocus] [-Multiline] [[-Rows] <Int32>] [[-RowsMax] <Int32>] [-FullWidth] [[-Variant] <String>] [[-ClassName] <String>] [[-OnEnter] <Endpoint>] [[-OnBlur] <Endpoint>] [-Shrink] [[-OnValidate] <Endpoint>] [[-HelperText] <String>] [[-OnChange] <Endpoint>] [[-Minimum] <Int32>] [[-Maximum] <Int32>] [[-MaximumLength] <Int32>] [[-Sx] <Hashtable>] [[-Style] <Hashtable>] [[-MaskPattern] <String>] [[-Attributes] <Hashtable>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -265,6 +265,25 @@ PARAMETERS
         Aliases                      
         Accept wildcard characters?  false
         
+    -MaskPattern <String>
+        A mask pattern to apply to the textbox. This is used for input masks. Check iMaskjs for more information.
+        
+        Required?                    false
+        Position?                    21
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Attributes <Hashtable>
+        
+        Required?                    false
+        Position?                    22
+        Default value                @{}
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
@@ -419,6 +438,15 @@ OUTPUTS
     PS >New-UDTextbox -Id 'textbox15' -Type 'number' -Minimum 1 -Maximum 100
     
     Minimum and Maximum|Creates a number textbox with a minimum and maximum value.
+    
+    
+    
+    
+    -------------------------- EXAMPLE 16 --------------------------
+    
+    PS >New-UDTextbox -Id 'textbox16' -MaskPattern '+7 (000) 000-00-00'
+    
+    Mask Pattern|Creates a textbox with a mask pattern.
     
     
     
