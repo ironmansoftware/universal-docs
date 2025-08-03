@@ -124,6 +124,33 @@ You can use the Computer dropdown to select other machines on which to run a scr
 
 You can run a script on all computers by selecting the All Computers option from the Computer dropdown.
 
+### Running a Script from an App with Output
+
+If you would like to run a script from an app and display the output as it runs, using the following example. It takes advantage of `Invoke-PSUScript` and `Get-PSUJobOutput`.&#x20;
+
+```powershell
+New-UDButton -OnClick {
+    $Job = Invoke-PSUScript -Name Script.ps1
+    while($Job.Status -eq 'Running' -or $Job.Status -eq 'Queued')
+    {
+        [array]$Output = Get-PSUJobOutput -Job $Job
+        $Job = Get-PSUJob -Id $Job.Id
+        $Session:Code = $Output | ForEach-Object { 
+            "$_`r`n"
+        } | Join-String 
+        Sync-UDElement -Id 'code'
+        Start-Sleep -Seconds 1
+    }
+} -Text 'Run Script'
+
+New-UDDynamic -Id 'code' -Content {
+    if ($Session:Code)
+    {
+        New-UDSyntaxHighlighter -Code $Session:Code -Language batch
+    }
+}
+```
+
 ### Load Balancing
 
 PowerShell Universal uses a least-busy server loading balancing algorithm. If more than one server is a valid target for a job, PowerShell Universal will select the server with the least number of jobs running on that server.&#x20;
