@@ -14,10 +14,6 @@ Configuration data for rate limits are stored in the `ratelimits.ps1` file.
 
 ## Configuring Rate Limiting
 
-{% hint style="info" %}
-The rate limiting UI will be added in PowerShell Universal 5.3
-{% endhint %}
-
 To configure rate limiting, visit the APIs / Rate Limiting page. Click the Add button and define a new rate limit rule.
 
 {% hint style="warning" %}
@@ -43,6 +39,28 @@ This is the period over which the rate limit is counted. For example, if you sel
 ## Allow Lists
 
 To disable rate limiting for particular IP Addresses, clients, and endpoints, add them to the rate limiting allow lists. Find these by clicking the settings button.
+
+The below example prevents the loopback adapter from being rate limited.
+
+```powershell
+Set-PSUSetting -RateLimitIpAddressAllowList @("127.0.0.1")
+```
+
+## Example: Limit Custom API
+
+Limits callers of the `/api/users` endpoint to 100 requests per minute.&#x20;
+
+```powershell
+New-PSURateLimit -Endpoint "GET|/api/users" -TimeSpan "00:01:00" -Limit 100
+```
+
+## Example: Limit Management API
+
+Limits callers of the management API to 100 requests per second.&#x20;
+
+```powershell
+New-PSURateLimit -Endpoint "*|/api/v1/*" -TimeSpan "00:00:01" -Limit 100
+```
 
 ## API
 
