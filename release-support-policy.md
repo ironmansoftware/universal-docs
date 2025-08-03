@@ -14,6 +14,6 @@ Version 5 is the last version on the historical, arbitrary support policy per ma
 | v5      | 8/24         | 8/26           | Legacy       |
 | v6      | 3/26         | 3/29           | Long Term    |
 | v7      | 3/27         | 9/28           | Standard     |
-| v8      | 3/28         | 3/31           | Long Terms   |
+| v8      | 3/28         | 3/31           | Long Term    |
 | v9      | 3/29         | 9/32           | Standard     |
 

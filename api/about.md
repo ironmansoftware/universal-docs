@@ -7,7 +7,7 @@ description: About PowerShell Universal REST APIs.
 Universal provides the ability to define REST API endpoints using PowerShell. When the endpoints are executed by a compatible HTTP client, the PowerShell script will execute and return the result to the end user.
 
 {% hint style="info" %}
-This feature is for developing custom APIs run by Universal. It not required for managing Universal. Universal provides a set of management APIs that are included with the platform.
+This feature is for developing custom APIs run by Universal. It is not required for managing Universal. Universal provides a set of management APIs that are included with the platform.
 {% endhint %}
 
 ## Execution Environment
@@ -16,7 +16,7 @@ The REST API execution environment runs in your default PowerShell version. Unli
 
 You can define the [environment ](../config/environments.md)that runs the PowerShell Universal API process by specifying the `-ApiEnvironment` on `Set-PSUSetting`. Changing this setting will cause the API process to restart.
 
-```
+```powershell
 Set-PSUSetting -ApiEnvironment '7.1'
 ```
 
