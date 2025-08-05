@@ -404,7 +404,7 @@ New-PSUEndpoint -Url "/path" -Path "endpoint-path.ps1"
 
 ## C# APIs
 
-C# APIs are enabled as a [plugin](../platform/plugins.md#c-api-environment).
+C# APIs are enabled as a [plugin](../platform/plugins/#c-api-environment).
 
 There is no UI for creating a C# API, so you need to do so using configuration files. First, create a `.cs` file that runs your API.
 
