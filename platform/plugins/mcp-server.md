@@ -48,11 +48,11 @@ The resulting `settings.json` contents will look something like this.
 }
 ```
 
-if the server is configured properly, the CoPilot plugin will list the number of tools.
+If the server is configured properly, the CoPilot plugin will list the number of tools.
 
 <figure><img src="../../.gitbook/assets/image (313).png" alt=""><figcaption></figcaption></figure>
 
-VS Code configured, we can now use our AI agent tool. Click the Copilot icon and open a new chat.
+With VS Code configured, we can now use our AI agent tool. Click the Copilot icon and open a new chat.
 
 <figure><img src="../../.gitbook/assets/image (307).png" alt=""><figcaption></figcaption></figure>
 
