@@ -82,9 +82,9 @@ Consider storing data in smaller partitions. If possible, segment the data into 
 
 ```powershell
 $OU1 = Get-ADUser -SearchBase "OU=OU1,DC=PSU" -Properties CN,Enabled 
-Set-PSUCache -Key Users -Value $OU1
+Set-PSUCache -Key Users_OU1 -Value $OU1
 $OU2 = Get-ADUser -SearchBase "OU=OU2,DC=PSU" -Properties CN,Enabled 
-Set-PSUCache -Key Users -Value $OU2
+Set-PSUCache -Key Users_OU2 -Value $OU2
 ```
 
 
