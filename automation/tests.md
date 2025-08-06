@@ -30,7 +30,7 @@ Tests can be run by clicking the Run Test or Run All Tests buttons. Run Test wil
 
 You will have the option to select the environment, credential and computer to run the tests.&#x20;
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Run Tests</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Run Tests</p></figcaption></figure>
 
 ## Test Results
 

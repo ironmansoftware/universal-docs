@@ -14,9 +14,9 @@ You can use tools like Docker Compose to layer PowerShell Universal configuratio
 
 Depending on your needs, typically based on team size and usage, this type of configuration may not be necessary.
 
-### Disable Auto Reload When Not In Use
+### Disable Code First Editing When Not In Use
 
-The auto reload feature detects changes in the repository directory using a file system watcher. This feature is useful when developing a PowerShell Universal configuration directly from the file system using tools like Visual Studio Code. That said, this can have unexpected side effects if you are not using the feature. For example, writing files to the repository, like logs, can result in the PowerShell Universal configuration system reloading itself unnecessarily.
+The Code First Editing feature detects changes in the repository directory using a file system watcher. This feature is useful when developing a PowerShell Universal configuration directly from the file system using tools like Visual Studio Code. That said, this can have unexpected side effects if you are not using the feature. For example, writing files to the repository, like logs, can result in the PowerShell Universal configuration system reloading itself unnecessarily.
 
 {% hint style="info" %}
 The repository directory defaults to `C:\ProgramData\UniversalAutomation\Repository`
@@ -24,7 +24,7 @@ The repository directory defaults to `C:\ProgramData\UniversalAutomation\Reposit
 
 If you are making changes through the admin console, via git sync, or using deployments, you should disable auto reload. This will both increase performance and also reduce the risk of unexpected changes to your deployed configuration.
 
-<figure><img src="../.gitbook/assets/image (361).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ### Favor Non-Integrated Environments
 
@@ -64,6 +64,30 @@ For example, you can use the sliding expiration to expire cache data if it isn't
 ```powershell
 Set-PSUCache -Key 'Data' -Value (Get-Date) -SlidingExpiration (New-Timespan -Hours 1)
 ```
+
+### Limit or Partition Size of Persistent Cache
+
+The persistent cache stores data in the PSU database. The data is serialized with the [PSSerializer class](https://learn.microsoft.com/en-us/dotnet/api/system.management.automation.psserializer?view=powershellsdk-7.4.0) that is part of the PowerShell SDK. This data format is the same one used by PowerShell Remoting. Being an XML format, this data will be significantly larger than binary storage. Storing many objects in a single cached item will result in poor deserialization performance once the data reaches certain limits.&#x20;
+
+This can negatively affect the PowerShell Universal server because it needs to retrieve and then deserialize a large string every time the data is read from the cache.&#x20;
+
+Consider selecting smaller subsets of the objects you wish to store. For example, only select the properties you need rather than the entire object.
+
+```powershell
+$Data = Get-ADUser -Properties CN,Enabled 
+Set-PSUCache -Key Users -Value $Data
+```
+
+Consider storing data in smaller partitions. If possible, segment the data into smaller chunks to avoid retrieving a large value from the database.&#x20;
+
+```powershell
+$OU1 = Get-ADUser -SearchBase "OU=OU1,DC=PSU" -Properties CN,Enabled 
+Set-PSUCache -Key Users -Value $OU1
+$OU2 = Get-ADUser -SearchBase "OU=OU2,DC=PSU" -Properties CN,Enabled 
+Set-PSUCache -Key Users -Value $OU2
+```
+
+
 
 ### Reduce Log Level in Production
 

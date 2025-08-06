@@ -18,7 +18,7 @@ To install resources from the library, click Platform \ Gallery in the Universal
 
 Resources installed from modules, like from the Gallery, are marked as read-only in the Admin Console.
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Read-Only Resource in the Admin Console</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Read-Only Resource in the Admin Console</p></figcaption></figure>
 
 ### Module Page
 

@@ -14,7 +14,7 @@ You first need to configure ADFS or AzureAD to support Universal.
 
 First, you will need to gather the Federation Service Properties from ADFS. Open the AD FS app (Microsoft.IdentityServer.msc). Next, click Service and then Edit Federation Service Properties.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 This will open a dialog with the values for your ADFS service. You will need these values for configuring PowerShell Universal.&#x20;
 
@@ -24,7 +24,7 @@ This will open a dialog with the values for your ADFS service. You will need the
 
 If you have no Reply Party Trusts configured, click Add Replying Party Trust. Select Claims aware.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Claims Aware</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Claims Aware</p></figcaption></figure>
 
 Select Enter data about the relying party manually.
 

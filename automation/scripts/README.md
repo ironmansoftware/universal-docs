@@ -114,7 +114,7 @@ Navigate back to Automation \ Scripts and click the Run Script button. Select an
 
 You will now be prompted with the Run As drop down to select the credential. From there, you can select the credential within the run dialog.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>Run as a User</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Run as a User</p></figcaption></figure>
 
 ### Running a Script on Another Computer
 
