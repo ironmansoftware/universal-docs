@@ -4,6 +4,57 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.6.2 - 8/5/2025
+
+### Bug Fixes
+
+#### Admin Console
+
+* cannot click on menu items in /admin [#5013](https://github.com/ironmansoftware/powershell-universal/issues/5013)
+* Intelisense no working right [#5019](https://github.com/ironmansoftware/powershell-universal/issues/5019)
+* Password Expiration Days and Password Length settings linked [#5037](https://github.com/ironmansoftware/powershell-universal/issues/5037)
+* \[5.6.0] Modules tab gets out of sync from the files tab [#5021](https://github.com/ironmansoftware/powershell-universal/issues/5021)
+* \[5.6.0] Help refresh kills editor focus [#5018](https://github.com/ironmansoftware/powershell-universal/issues/5018)
+* View Page goes to a bad url [#4912](https://github.com/ironmansoftware/powershell-universal/issues/4912)
+* Logout goes to a 401 [#5059](https://github.com/ironmansoftware/powershell-universal/issues/5059)
+* Fixed admin console cache breaking issue
+* Testing an API endpoint causes a service crash [#4972](https://github.com/ironmansoftware/powershell-universal/issues/4972)
+* Invalid Average Execution Time [#5061](https://github.com/ironmansoftware/powershell-universal/issues/5061)
+* Ctrl+S Allows Save When Save Icon is Disabled [#5063](https://github.com/ironmansoftware/powershell-universal/issues/5063)
+* Saving changes to a script in the web UI often spins and doesn't receive the completed response [#5017](https://github.com/ironmansoftware/powershell-universal/issues/5017)
+* unable to delete identity when in one-way mode [#5070](https://github.com/ironmansoftware/powershell-universal/issues/5070)
+* Fixed permission issues with resources in the admin console
+
+#### Agent
+
+* Fixed an issue with the agent service and scripts that were not fully qualified paths
+
+#### Apps
+
+* Fixed an issue where pages would be added twice
+* \[5.5.2] Missing Restart Dashboard and Admin Console from app [#4747](https://github.com/ironmansoftware/powershell-universal/issues/4747)
+
+#### API
+
+* Rate Limit not being honored [#5051](https://github.com/ironmansoftware/powershell-universal/issues/5051)
+* Cannot access password from C# API Credential Secrets [#5057](https://github.com/ironmansoftware/powershell-universal/issues/5057)
+
+#### Automation
+
+* Pester / Tests page not showing any scripts that end in Test [#5039](https://github.com/ironmansoftware/powershell-universal/issues/5039)
+* Since 5.6.1, jobs are not being logged with their tags [#5056](https://github.com/ironmansoftware/powershell-universal/issues/5056)
+* Using a non-existent computer for Default Run As prevents jobs from running [#5062](https://github.com/ironmansoftware/powershell-universal/issues/5062)
+* Script with parameter \[FILE] doesn't work anymore [#5076](https://github.com/ironmansoftware/powershell-universal/issues/5076)
+* RunAs jobs use service-account TEMP directory instead of impersonated userâ€™s TEMP in PSU 5.5.x [#5075](https://github.com/ironmansoftware/powershell-universal/issues/5075)
+* Groom Job never delete old jobs [#5058](https://github.com/ironmansoftware/powershell-universal/issues/5058)
+
+#### Platform
+
+* Set git repository owner [#4569](https://github.com/ironmansoftware/powershell-universal/issues/4569)
+* Cannot access a disposed object. Object name: 'System.IO.FileSystemWatcher'. [#5041](https://github.com/ironmansoftware/powershell-universal/issues/5041)
+* BaGetter repository does not work in PSU [#4971](https://github.com/ironmansoftware/powershell-universal/issues/4971)
+* Updated to Microsoft.PowerShell.SDK 7.5.2
+
 ## 5.6.1 - 7/25/2025
 
 ### Bug Fixes
