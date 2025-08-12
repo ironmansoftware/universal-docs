@@ -4,6 +4,32 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.6.3 - 8/12/2025
+
+### Bug Fixes
+
+#### Admin Console
+
+* Admin Console JavaScript Errors [#5096](https://github.com/ironmansoftware/powershell-universal/issues/5096)
+* Clear Cache from /admin/platform/cache [#5080](https://github.com/ironmansoftware/powershell-universal/issues/5080)
+* End time filtering not working [#5006](https://github.com/ironmansoftware/powershell-universal/issues/5006)
+* Issue with editing variables in the UI in web view mode. [#5034](https://github.com/ironmansoftware/powershell-universal/issues/5034)
+* Optimized Automation \ Schedules page [#5104](https://github.com/ironmansoftware/powershell-universal/issues/5104)
+
+#### Apps
+
+* cross threaded console logs [#5049](https://github.com/ironmansoftware/powershell-universal/issues/5049)
+* New-UDCheckbox LabelPlacement value is case-sensitive (and other properties as well) [#5010](https://github.com/ironmansoftware/powershell-universal/issues/5010)
+* Slide transitions are not working [#3460](https://github.com/ironmansoftware/powershell-universal/issues/3460)
+
+#### Automation
+
+* Jobs get stuck when cancelling [#5078](https://github.com/ironmansoftware/powershell-universal/issues/5078)
+
+#### Cmdlets
+
+* Set-PSUCache does not store nested objects well after 3 depth [#5086](https://github.com/ironmansoftware/powershell-universal/issues/5086)
+
 ## 5.6.2 - 8/5/2025
 
 ### Bug Fixes
