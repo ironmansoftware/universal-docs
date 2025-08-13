@@ -4,6 +4,13 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.6.4 - 8/13/2025
+
+### Bug Fixes
+
+* Fixed an issue with New-UDButton
+* Fixed an issue viewing job output
+
 ## 5.6.3 - 8/12/2025
 
 ### Bug Fixes
