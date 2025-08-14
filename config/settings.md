@@ -275,7 +275,7 @@ WS-Federation authentication settings.
 | UseTokenLifetime          | If set to true, the cookie life time will be set to the token life time. This overrides the session time out value.     |
 | CorrelationCookieSameSite | [Correlation cookie same settings.](https://docs.microsoft.com/en-us/aspnet/core/security/samesite?view=aspnetcore-5.0) |
 
-**Session timeout threshold (minutes)**
+#### Session timeout threshold (minutes)
 
 | Key            | Description                                                             |
 | -------------- | ----------------------------------------------------------------------- |
