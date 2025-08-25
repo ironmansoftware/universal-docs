@@ -4,6 +4,55 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.6.5 - 8/25/2025
+
+### Bug Fixes
+
+#### Admin Console
+
+* Show computers under computer group [#5152](https://github.com/ironmansoftware/powershell-universal/issues/5152)
+* Secret variables cannot be selected from the Environments page [#5126](https://github.com/ironmansoftware/powershell-universal/issues/5126)
+* Can't set time on schedule [#5112](https://github.com/ironmansoftware/powershell-universal/issues/5112), [#4938](https://github.com/ironmansoftware/powershell-universal/issues/4938), [#4870](https://github.com/ironmansoftware/powershell-universal/issues/4938) Restart app is hard to click [#5165](https://github.com/ironmansoftware/powershell-universal/issues/5165)
+
+#### APIs
+
+* Configurable API process startup timeout for API environments (e.g., Windows PowerShell 5.1 under IIS) [#5161](https://github.com/ironmansoftware/powershell-universal/issues/5161)
+
+#### Apps
+
+* Half of the apps were in a 'stopped' status [#5123](https://github.com/ironmansoftware/powershell-universal/issues/5123)
+* Date Range Picker Broken [#5117](https://github.com/ironmansoftware/powershell-universal/issues/5117)
+* Apps from Module parameter error [#4822](https://github.com/ironmansoftware/powershell-universal/issues/4822)
+* UDRadio: Set-UDElement -Properties @{ Disabled = $true } does not disable the  at runtime (4.5.3 and 5.6.4) [#5144](https://github.com/ironmansoftware/powershell-universal/issues/5144)
+* Table 'SelectAll' Server-side issues [#4916](https://github.com/ironmansoftware/powershell-universal/issues/4916), [#4931](https://github.com/ironmansoftware/powershell-universal/issues/4931)
+* add a new variant to New-UDDivider [#5131](https://github.com/ironmansoftware/powershell-universal/issues/5131)
+
+#### Automation
+
+* Jobs are still getting stuck in queued state when service starts and job executes via trigger [#5116](https://github.com/ironmansoftware/powershell-universal/issues/5116)
+* OutOfMemory Exception with Windows PowerShell 5.1 Jobs [#5135](https://github.com/ironmansoftware/powershell-universal/issues/5135) More information about schedules on scripts [#5139](https://github.com/ironmansoftware/powershell-universal/issues/5139)
+* Event Handler - Error [#5092](https://github.com/ironmansoftware/powershell-universal/issues/5092)
+* Script base path is not honored in custom environment jobs [#5107](https://github.com/ironmansoftware/powershell-universal/issues/5107)
+* Some trigger events give additional unexpected arguments [#5159](https://github.com/ironmansoftware/powershell-universal/issues/5159)
+
+#### Module
+
+* Fixed an issue with Get-PSUJob returning child jobs when using -Id or -RunId
+* Get-PSUJob doesn't return archived jobs [#5134](https://github.com/ironmansoftware/powershell-universal/issues/5134)
+* Get-PSUJob does not return ParentJobId [#4799](https://github.com/ironmansoftware/powershell-universal/issues/4799)
+* Invoke-PSUEndpoint returns $null if there are query parameters [#5121](https://github.com/ironmansoftware/powershell-universal/issues/5121)
+
+#### Platform
+
+* \[ERR]\[UniversalAutomation.StartupService] Failed to add license from environment variable. [#5130](https://github.com/ironmansoftware/powershell-universal/issues/5130)
+* All ntSecurityDescriptor are empty value - Powershell 7 integrated environment (or external PowerShell 7) [#5111](https://github.com/ironmansoftware/powershell-universal/issues/5111-)
+* 4.x / 5.x Modules resources vanish when reloading configs [#4856](https://github.com/ironmansoftware/powershell-universal/issues/4856)
+* SessionTimeout set to 0 in settings.ps1 [#5143](https://github.com/ironmansoftware/powershell-universal/issues/5143)
+* PSU Fails to start if security environment is missing [#5151](https://github.com/ironmansoftware/powershell-universal/issues/5151)
+* scripts.ps1: Production system creates missing files that are empty [#5127](https://github.com/ironmansoftware/powershell-universal/issues/5127)
+* Restart of PSU Service "touched" all script files [#5053](https://github.com/ironmansoftware/powershell-universal/issues/5053)
+* Force git sync for all machines [#5149](https://github.com/ironmansoftware/powershell-universal/issues/5149)
+
 ## 5.6.4 - 8/13/2025
 
 ### Bug Fixes
