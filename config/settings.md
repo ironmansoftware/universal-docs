@@ -163,6 +163,7 @@ Configures the hosts that are allowed to make cross-origin resource sharing requ
 | GitBranch                  | Git branch to checkout when syncing to Universal.                                                                                  |
 | GitUserName                | Git user name used to sync to the GitRemote. When using a PAT, this can be any value.                                              |
 | GitPassword                | The Git user password or personal access token used to sync to the GitRemote.                                                      |
+| GitSyncTimeout             | The number of seconds before an external git client command times out. Defaults to 60 seconds.                                     |
 | ConfigurationScript        | Location of a custom configuration script to load. You can return objects like scripts, dashboards and endpoints from this script. |
 | ExternalGitClient          | When set to true the Operating Systems Git client will be used instead of the inbuilt library client                               |
 | Mode                       | Sets the git mode. It can be either manual or automatic. Defaults to manual.                                                       |
