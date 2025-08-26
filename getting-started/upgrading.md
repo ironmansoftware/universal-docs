@@ -197,6 +197,14 @@ The licensing model of PowerShell Universal provides licensed users the ability 
 
 Additionally, you may encounter issues due to the PSU service restart. When the service starts, it verifies license subscription status. If it fails to do so, it may not be licensed properly and cause other issues. The root cause is typically networking issues while attempting to access the IronmanSoftware.com website for activation. Offline license keys do not contact the IMS website for activation and will not encounter this issue.
 
+### Mixed Versions
+
+Mixing versions of PowerShell Universal servers with the same database may cause issues as schema changes between the database or protocol changes in internal APIs may be mismatched. We recommend staging your upgrades in a way that you will eventually be running all PowerShell Universal servers as the same version.&#x20;
+
+{% hint style="warning" %}
+There is a known compatibility issue between PSU 5.5.4 and earlier and PSU 5.6.0 and later. We do not recommend mixing these versions. Scheduling jobs may fail on existing 5.5.4 servers when combined with 5.6.0 servers.
+{% endhint %}
+
 ## 5.0 Breaking Changes
 
 ### Removal of Pages
