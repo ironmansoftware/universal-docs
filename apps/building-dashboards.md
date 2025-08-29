@@ -38,6 +38,62 @@ New-UDApp -Title 'My New Dashboard' -Content {
 
 You can customize the header of the app using several parameters.
 
+### Position <a href="#position" id="position"></a>
+
+Use the `-HeaderPosition` parameter to adjust the behavior of the header.
+
+* absolute\fixed - Remains at the top of the page, even when scrolling
+* relative - Remains at the top of the page. Not visible when scrolling.
+
+```powershell
+New-UDApp -HeaderPosition fixed -Content {
+    New-UDElement -tag div -Attributes @{
+        style = @{
+            height = '150vh'
+        }
+    }
+}
+```
+
+### Colors
+
+You can adjust the colors of the header by specifying the `-HeaderColor` and `-HeaderBackgroundColor` parameters. These colors will override the theme colors.
+
+```powershell
+New-UDApp -Content {
+} -HeaderColor 'black' -HeaderBackgroundColor 'white'
+```
+
+### Content
+
+You can define custom content to include in the header by using the `-HeaderContent` parameter.
+
+```powershell
+New-UDApp -Content {
+
+} -HeaderContent {
+    New-UDButton -Icon (New-UDIcon -Icon Users) -Text 'User'
+}
+```
+
+### Disable Theme Toggle
+
+You can remove the theme toggle with `-DisableThemeToggle`.
+
+```powershell
+New-UDApp -Content {} -DisableThemeToggle
+```
+
+### Logo
+
+You can change the logo image by providing a URL to the `-Logo` parameter.
+
+```powershell
+New-UDApp -Content {} -Logo '/logo.png'
+```
+
+### Navigation
+
 To change the navigation layout, use the `-Navigation` and `-NavigationLayout` parameters.
 
 ```powershell
