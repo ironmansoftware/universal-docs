@@ -4,6 +4,50 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.6.6 - 9/2/2025
+
+### Bug Fixes
+
+#### Admin Console
+
+* Date format settings not respected [#5141](https://github.com/ironmansoftware/powershell-universal/issues/5141)
+* Improved performance of rendering timestamps
+* Move Web/VSCode Toggle up to global bar [#5179](https://github.com/ironmansoftware/powershell-universal/issues/5179)
+* Reload All is hidden [#5181](https://github.com/ironmansoftware/powershell-universal/issues/5181)
+* Modules from Gallery is not working after 5.6.5 update [#5190](https://github.com/ironmansoftware/powershell-universal/issues/5190)
+
+#### Apps
+
+* Reset-UDTheme Broke [#5136](https://github.com/ironmansoftware/powershell-universal/issues/5136)
+* Style Theme Color Help Addition [#5137](https://github.com/ironmansoftware/powershell-universal/issues/5137)
+* Invoke-UDRedirect prevents "Open in new tab" from working correctly [#5067](https://github.com/ironmansoftware/powershell-universal/issues/5067)
+* Missing useful debug information [#5105](https://github.com/ironmansoftware/powershell-universal/issues/5105)
+* Windows Auth: Direct navigation to page with -Role shows “Page Not Found” / $Roles empty until visiting /login (PSU 5.6.4 on IIS) [#5162](https://github.com/ironmansoftware/powershell-universal/issues/5162)
+* "Error rendering Dashboard": Please, keep displaying and log this exception! [#5180](https://github.com/ironmansoftware/powershell-universal/issues/5180)
+
+#### Automation
+
+* Improved database performance when starting jobs
+* Enable variables for script documentation [#5158](https://github.com/ironmansoftware/powershell-universal/issues/5158)
+
+#### Module
+
+* Fixed a permission issue with Get-PSUScript
+
+#### Platform
+
+* \[5.6.5] another admin site not working after upgrade \[#5169]
+* Changing an environment name doesn't update settings [#5150](https://github.com/ironmansoftware/powershell-universal/issues/5150)
+* Specify module version for environments. [#5148](https://github.com/ironmansoftware/powershell-universal/issues/5148)
+* Module discovery doesn't find modules that don't have a manifest [#5147](https://github.com/ironmansoftware/powershell-universal/issues/5147)
+* Module created via Modules page does not appear in list until PSU service is restarted [#4906](https://github.com/ironmansoftware/powershell-universal/issues/4906)
+* Upgraded PSResourceGet to 1.1.1
+* Persist and display “Last Applied Commit SHA” per node on Git Status (do not clear on no-change sync) [#5188](https://github.com/ironmansoftware/powershell-universal/issues/5188)
+
+#### Portal
+
+* Portal pages require portal.pages/update for widgets to render (read-only roles see blank page) [#5173](https://github.com/ironmansoftware/powershell-universal/issues/5173)
+
 ## 5.6.5 - 8/25/2025
 
 ### Bug Fixes
