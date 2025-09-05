@@ -206,6 +206,5 @@
 ## Changelogs
 
 * [Changelog](changelog.md)
-* [Extension Changelog](extension-changelog.md)
 * [Roadmap](changelogs/roadmap.md)
 * [CVEs](changelogs/cves.md)
