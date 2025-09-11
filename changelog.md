@@ -4,6 +4,49 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.6.7 - 9/11/2025
+
+### Bug Fixes
+
+#### Admin Console
+
+* Vscode / Web toggle bar - always show [#5193](https://github.com/ironmansoftware/powershell-universal/issues/5193)
+* Job output log doesn't have word wrap and the show streams/timestamps are not persistent on page refresh [#5025](https://github.com/ironmansoftware/powershell-universal/issues/5025)
+* The current user is not the owner error [#5194](https://github.com/ironmansoftware/powershell-universal/issues/5194)
+* Install modules to global scope [#4970](https://github.com/ironmansoftware/powershell-universal/issues/4970)
+* Branch Switching Issues [#5163](https://github.com/ironmansoftware/powershell-universal/issues/5163)
+* Waiting for feedback prompt causes an error on Enter [#5214](https://github.com/ironmansoftware/powershell-universal/issues/5214)
+* Selecting all in Git to commit is displaying wrong number of files selected when using "Select All" - 5.5.5 [#5000](https://github.com/ironmansoftware/powershell-universal/issues/5000)
+* In endpoints, Roles column bleeds under Tags column [#5207](https://github.com/ironmansoftware/powershell-universal/issues/5207)
+
+#### APIs
+
+* User with apis.endpoints/read access cannot view the endpoints from the ui [#5201](https://github.com/ironmansoftware/powershell-universal/issues/5201)
+
+#### Apps
+
+* Restart App after adding -AutoInclude causes page not found [#5177](https://github.com/ironmansoftware/powershell-universal/issues/5177)
+* onClick attribute fails for li tag [#5185](https://github.com/ironmansoftware/powershell-universal/issues/5185)
+
+#### Automation
+
+* Fixed long delays when starting jobs with automatic transcripts enabled
+* Fixed an issue with job load balancer randomization causing jobs to concentrate on a single node in a multi-node environment
+* $ENV:Temp points to incorrect location when running as another user [#5200](https://github.com/ironmansoftware/powershell-universal/issues/5200)
+* Unexpected behavior from variables when used in script documentation [#5210](https://github.com/ironmansoftware/powershell-universal/issues/5210)
+* 'Job Completed with Errors' event triggers fires on completed with success [#5209](https://github.com/ironmansoftware/powershell-universal/issues/5209)
+
+#### Module
+
+* Improve Efficiency of Cache Cmdlets [#5095](https://github.com/ironmansoftware/powershell-universal/issues/5095)
+
+#### Platform
+
+* Single letter published folder breaks all apps [#4877](https://github.com/ironmansoftware/powershell-universal/issues/4877)
+* Expose if a server is in maintenance mode [#5206](https://github.com/ironmansoftware/powershell-universal/issues/5206)
+* Variables defined in Modules//\_universal/variables.ps1 are visible in “Platform - Variables” but aren’t available in runspaces (Get-Variable / module code can’t read them) [#5211](https://github.com/ironmansoftware/powershell-universal/issues/5211)
+* Fixed an issue cloning git repositories using SSH keys
+
 ## 5.6.6 - 9/2/2025
 
 ### Bug Fixes
