@@ -414,3 +414,17 @@ $ENV:Resources__Roles__0__Name = "Static Role"
 $ENV:Resources__Roles__0__ClaimType = "group"
 $ENV:Resources__Roles__0__ClaimValue = "xyz123"
 ```
+
+## .NET Runtime Settings
+
+The .NET runtime also supports settings that apply to PowerShell Universal. You may want to adjust these settings based on your needs.&#x20;
+
+You can find all about [.NET Runtime settings on the Microsoft Docs](https://learn.microsoft.com/en-us/dotnet/core/runtime-config/).
+
+### Excessive Temp Files
+
+In Linux environments, you may have many temp files created by the runtime to enable debugging features. [Disabling the diagnostics settings](https://learn.microsoft.com/en-us/dotnet/core/runtime-config/debugging-profiling#enable-diagnostics) of the runtime will prevent this from happening. You will not be able to use .NET debugging tools with this disabled.&#x20;
+
+```powershell
+$Env:DOTNET_EnableDiagnostics = $false
+```
