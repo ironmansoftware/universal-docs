@@ -28,13 +28,13 @@ You can configure Prometheus to collect PowerShell Universal data by starting it
  .\prometheus.exe --web.enable-otlp-receiver
 ```
 
-Within PowerShell Universal, you will need to specify the `/metrics`URL for the Prometheus server.
+Within PowerShell Universal, you will need to specify the `/api/v1/otlp/v1/metrics` URL for the Prometheus server. This example uses Prometheus 3.5.
 
 ```powershell
 {    
     "OpenTelemetry": {
         "Otlp": {
-            "Endpoint": "http://localhost:9090/metrics"
+            "Endpoint": "http://localhost:9090/api/v1/otlp/v1/metrics"
         }
     }
 }
