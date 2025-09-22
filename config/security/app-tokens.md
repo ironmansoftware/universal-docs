@@ -61,6 +61,14 @@ expiration  : 26/06/2021 17:26:00
 revokedDate : 01/01/0001 00:00:00
 ```
 
+## Roles
+
+App Tokens roles are assigned directly into the token itself. Roles indicate what the token is capable of performing. They are not calculated during use so role to claim mapping will not work with app tokens.&#x20;
+
+We also suggest limiting the number of roles within an app token. The more roles that are added to the token will increase the size of the token and reduce performance or cause issues with certain tools that do not allow for longer token values.&#x20;
+
+You can use custom roles with a custom set of permissions to limit the number of roles but to provide custom access to the PowerShell Universal platform. Permissions are evaluated when the role is used. This means that assigning a custom role to a token makes it more flexible than a built-in role since the permissions can be add or removed from a role without generating a new token.
+
 ## Migrating App Tokens
 
 You can migrate app tokens between systems using the management API. This is helpful when developing for high availability scenarios.
