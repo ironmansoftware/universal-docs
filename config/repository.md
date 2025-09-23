@@ -243,7 +243,7 @@ This script is responsible for configuring [vaults](../platform/variables.md#vau
 
 Using the Templates folder within the Repository, you can create a selection of item templates for commonly used features in PowerShell Universal. This includes apps, app pages, scripts and endpoints.
 
-<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Script Template</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption><p>Script Template</p></figcaption></figure>
 
 PS1 files in the following folders will be provided as templates in the admin console.
 

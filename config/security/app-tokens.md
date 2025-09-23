@@ -118,3 +118,87 @@ You may want to use an OAuth 2.0 discovery document to provide signing key valid
     }
 }
 ```
+
+### Example: Auth0&#x20;
+
+You can use Auth0 APIs and Applications to provide app tokens for PowerShell Universal.&#x20;
+
+#### Create an Auth0 Application
+
+In Auth0, create an application for a regular web application. You can do so by clicking Applications \ Applications and then Create Application.
+
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+#### Create an Auth0 API
+
+Next, create an Auth0 API by clicking Applications \ APIs and then Create API. Set the name and namespace to unique values and leave the rest of the options as default.&#x20;
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+#### Authorize the Application to Use the API
+
+Within the Application settings, click APIs and toggle the switch by the API to authorize the application to use the API.&#x20;
+
+#### Retrieve an Access Token from Auth0
+
+With the Application and API defined, you can now request an access token in Auth0. The `client_id` and `client_secret` values can be found on the Application Details page. The `audience` value should be the Identifier for you API.
+
+```powershell
+Invoke-RestMethod 'https://ironmansoftware.us.auth0.com/oauth/token' -Body @{
+    client_id = "xyz123"
+    client_secret = "xyz123"
+    audience = "https://powershelluniversal.com"
+    grant_type = "client_credentials"
+} -Method POST
+```
+
+#### Configure PowerShell Universal&#x20;
+
+You will need to configure PowerShell Universal to use Auth0 as the JWT provider. You can do so by adjusting the appsettings.json file. These should include values from Auth0. The `DiscoveryDocument` will be part of your tenant and helps define data like the signing keys for the JWT tokens. The `Issuer` will be the URL of your tenant. The `Audience` will be your API's identifier.
+
+```json
+{
+    "Jwt": {
+        "DiscoveryDocument": "https://ironmansoftware.us.auth0.com/v2.0/.well-known/openid-configuration",
+        "Issuer": "https://ironmansoftware.us.auth0.com/",
+        "Audience": "https://powershelluniversal.com"
+    }
+}
+```
+
+#### Using an App Token with PowerShell Universal
+
+Now that you have an Auth0 app token, you can use it just as you would with built-in app tokens.&#x20;
+
+```powershell
+Invoke-RestMethod http://localhost:5000/api/v1/identity/my -Headers @{ Authorization = "tokenValue" }
+```
+
+#### Optional: Define an Auth0 Action Trigger
+
+When granting a new access token from Auth0, they will not contain the standard roles or permissions like built-in app tokens in PowerShell Universal. You can control this by defining a Custom Action and assigning it to the `credential-exchange` trigger.
+
+Click Actions and then Library and Create Action and then Create Custom Action. Select the Password Reset / Post Challenge Trigger and name the action.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+Define the action by setting a custom claim for the `PSUPermission` claim type. This example simply provides all access to PowerShell Universal APIs. You can use event context to define which permissions are received based on the access token request.
+
+```javascript
+exports.onExecuteCredentialsExchange = async (event, api) => {
+  api.accessToken.setCustomClaim("PSUPermission", "(.*)")
+};
+```
+
+Next, add the action to the workflow trigger for `credential-exchange` by clicking Actions and then Triggers and then `credential-exchange.`
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+Drag the Set Permissions action into the workflow.
+
+Once this has been completed, you can generate a new token and access any API within PowerShell Universal.
+
+```powershell
+Invoke-RestMethod http://localhost:5000/api/v1/identity -Headers @{ Authorization = "tokenValue" }
+```
+

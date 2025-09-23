@@ -30,11 +30,11 @@ For example, assume you have a script with a `Wait-Debugger` call included. The 
 
 Once a script is paused, you will see a terminal for debugging the script.
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Debugger Terminal</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Debugger Terminal</p></figcaption></figure>
 
 You can then use the built in debugging commands to step through the script.
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Debugging Commands</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Debugging Commands</p></figcaption></figure>
 
 ### Apps
 

@@ -24,7 +24,7 @@ The repository directory defaults to `C:\ProgramData\UniversalAutomation\Reposit
 
 If you are making changes through the admin console, via git sync, or using deployments, you should disable auto reload. This will both increase performance and also reduce the risk of unexpected changes to your deployed configuration.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 ### Favor Non-Integrated Environments
 
