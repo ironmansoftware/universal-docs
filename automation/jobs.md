@@ -199,6 +199,95 @@ $JobContext = @{
 Invoke-RestMethod http://localhost:5000/api/v1/script/7 -Method POST -Body $JobContext -Headers @{ Authorization = "Bearer appToken" } -ContentType 'application/json'
 ```
 
+## Invoke Jobs from Apps
+
+You can use the same cmdlets that you use in other PowerShell scripts to run scripts in apps. You may want a more interactive experience when doing so. Below are some examples of how to achieve that using the app framework.&#x20;
+
+### Displaying Output
+
+You can use the `Invoke-PSUScript` and the `Get-PSUJobOutput` cmdlets to create a UI element that updates as the script runs. Assume you have a script like the one below. It simply writes to the Information stream every 100 milliseconds 100 times.
+
+```powershell
+1..100 | % {
+    Write-Output "Hello $_"
+    Start-Sleep -Milliseconds 100
+}
+```
+
+Within your app, you can start the script based on some user interaction and then update an element as the script is running. The below example creates a button and a `pre` tag element to serve as the destination for the script's output. When the user clicks the button, it will start the job and wait for it to finish. Within the loop, it retrieves the script's output and then updates the `pre` element with the output content.&#x20;
+
+Finally, it retrieves an updated status of the job and waits 100 milliseconds before running again.
+
+```powershell
+New-UDApp -Content {
+    New-UDButton -Text "Run Script" -OnClick {
+        $Job = Invoke-PSUScript -Name "AppExample.ps1" -Integrated
+        while($Job.Status -eq 'Queued' -or $Job.Status -eq 'Running')
+        {
+            $Output = Get-PSUJobOutput -Job $Job
+            Set-UDElement -Id 'output' -Content {
+                $Output | ForEach-Object {
+                    $_ +  [Environment]::NewLine
+                }
+            }
+            $Job = Get-PSUJob -Id $Job.Id
+            Start-Sleep -Milliseconds 100
+        }
+    } -ShowLoading
+
+    New-UDElement -Tag 'pre' -Id 'output'
+}
+```
+
+### Displaying Progress
+
+The app framework's PowerShell host will automatically interface with features of PowerShell, like `Write-Progress`.&#x20;
+
+If you use the `-Wait` parameter of `Invoke-PSUScript` , it will automatically display the script's progress in a dialog in your app. Assume we have a script defined as below. This script writes progress every 100 milliseconds.
+
+```powershell
+1..100 | % {
+    Write-Progress -Activity "Working..." -PercentComplete $_
+    Start-Sleep -Milliseconds 100
+}
+```
+
+Within our app, we can simply call the script with the `-Wait` parameter. When the user clicks the button, the progress will be displayed in the app.
+
+```powershell
+New-UDApp -Content {
+    New-UDButton -Text "Run Script" -OnClick {
+        Invoke-PSUScript -Name "AppExample.ps1" -Integrated -Wait
+    } -ShowLoading
+}
+```
+
+<figure><img src="../.gitbook/assets/image (314).png" alt=""><figcaption></figcaption></figure>
+
+### Requesting Input
+
+The app framework's PowerShell host will automatically interface with features of PowerShell, like `Read-Host`.&#x20;
+
+If you use the `-Wait` parameter of `Invoke-PSUScript` , it will automatically prompt the user for input when encountering the `Read-Host` command. Assume we have a script that requests user input using `Read-Host`.
+
+```powershell
+Read-Host -Prompt "What should I say?"
+```
+
+In your app, simply call the script with the `-Wait` parameter.
+
+```powershell
+New-UDApp -Content {
+    New-UDButton -Text "Run Script" -OnClick {
+        Invoke-PSUScript -Name "AppExample.ps1" -Integrated -Wait
+    } -ShowLoading
+}
+```
+
+The user will then be prompted as the script runs.&#x20;
+
+<figure><img src="../.gitbook/assets/image (318).png" alt=""><figcaption></figcaption></figure>
+
 ## Variables Defined in Jobs
 
 Variables defined in jobs can be found on the [variables page](../platform/variables.md#scripts).
