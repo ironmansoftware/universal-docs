@@ -174,7 +174,7 @@ You can write to the live log from within your endpoints with cmdlets like `Writ
 
 You can use the Test tab in the Endpoint editor to test your APIs. Using this Test tool, you can adjust headers, the query string, and body. You can also adjust the Authentication and Authorization for the test.&#x20;
 
-<figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>Endpoint Test Tab</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption><p>Endpoint Test Tab</p></figcaption></figure>
 
 When using the test tab, any changes to the values of the test will result in an updated Code block that you can then use within PowerShell. Click the Code tab to view the test code.&#x20;
 

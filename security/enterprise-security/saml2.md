@@ -135,13 +135,13 @@ Any errors that occur will be listed in the PowerShell Universal log. If you fai
 
 In order to provide group claims to PowerShell Universal, you will need to expose the group claims from your app registration. Click Token Configuration and then click Add groups claim.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Entra ID Group Claims</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Entra ID Group Claims</p></figcaption></figure>
 
 After clicking Add groups claim, you will have the option to select which groups are provided. If you select All Groups, the groups claims will be provided to PowerShell Universal
 
 If you select Groups assigned to the application, ensure that you check the Emit groups as role claims value. This setting requires a paid Entra ID plan.
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Emit groups as role claims setting</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Emit groups as role claims setting</p></figcaption></figure>
 
 To assign a group to your app registration, locate your app in Enterprise Applications and click User and Groups. Next, click Add User\Group and select the groups you would like assigned to your application.&#x20;
 

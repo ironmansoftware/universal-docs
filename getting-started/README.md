@@ -212,7 +212,15 @@ The PowerShell Universal Agent MSI is on our download page. After installing the
 
 ### ZIP
 
-ZIP files for each platform we support are on our downloads page. Each ZIP contains a `PowerShellUniversal.Agent.exe` or `PowerShellUniversal.Agent` file that can start an agent. Run the process as a service for it to start whenever the machine reboots.
+ZIP files for each platform we support are on our downloads page. Each ZIP contains a `PSUAgent.exe` or `PSUAgent` file that can start an agent. Run the process as a service for it to start whenever the machine reboots.
+
+### Docker
+
+The `ironmansoftware/universal-agent:latest` container image provides the PowerShell Universal Agent as a Linux docker container.
+
+```
+docker pull ironmansoftware/universal-agent:latest
+```
 
 ## Next Steps
 

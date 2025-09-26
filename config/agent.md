@@ -4,7 +4,13 @@ description: Information about PowerShell Universal agents.
 
 # Agent
 
-The PowerShell Universal Agent is used to provide the Event Hub feature to remote clients. You can learn more about installing the agent on our [Installation page](../getting-started/).
+PowerShell Universal Agents provide a mechanism to run scripts on remote machines without having to configure PowerShell Remoting. Agents are lightweight services that host the PowerShell SDK and connect to PowerShell Universal using WebSockets.&#x20;
+
+You can learn how to send commands to agents on the [Event Hubs page](../api/event-hubs.md).
+
+## Installation
+
+You can learn more about installing the agent on our [Installation page](../getting-started/).
 
 ## agent.json
 

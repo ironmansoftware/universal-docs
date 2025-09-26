@@ -4,6 +4,61 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.6.8 - 9/26/2025
+
+### Bug Fixes
+
+#### Admin Console
+
+* v5 Permissions/Roles [#4954](https://github.com/ironmansoftware/powershell-universal/issues/4954)
+* Empty computer groups computer list never loads [#5220](https://github.com/ironmansoftware/powershell-universal/issues/5220)
+* Very hard to select reload configuration file(s) [#5242](https://github.com/ironmansoftware/powershell-universal/issues/5242)
+* Custom Admin console title is not visible in light mode [#5243](https://github.com/ironmansoftware/powershell-universal/issues/5243)
+* The Send to Support button is inoperable [#5232](https://github.com/ironmansoftware/powershell-universal/issues/5232)
+* Sending logs to support should include the case number [#5231](https://github.com/ironmansoftware/powershell-universal/issues/5231)
+* Looks like the different streams are not coloring correctly in the log [#5033](https://github.com/ironmansoftware/powershell-universal/issues/5033)
+
+#### Agent
+
+* Agent stops creating logs [#4921](https://github.com/ironmansoftware/powershell-universal/issues/4921)
+* Published a Linux Docker image for the agent
+
+#### Apps
+
+* Not very intuitive error line numbers in app log [#5219](https://github.com/ironmansoftware/powershell-universal/issues/5219)
+* \[5.6.6] ImportExcel module errors but nothing is in the logs [#5202](https://github.com/ironmansoftware/powershell-universal/issues/5202)
+* Set-UDClipboard adds an unexpected background color [#5212](https://github.com/ironmansoftware/powershell-universal/issues/5212)
+* Developer License tagline moves [#5227](https://github.com/ironmansoftware/powershell-universal/issues/5227)
+* For New-UDTable add the 'Search' Box the -InitialState hashtable [#5196](https://github.com/ironmansoftware/powershell-universal/issues/5196)
+* New-UDPage Role parameter is reset on save with PSU VSCode Extension [#5236](https://github.com/ironmansoftware/powershell-universal/issues/5236)
+* Windows Authentication users getting blank app pages [#5250](https://github.com/ironmansoftware/powershell-universal/issues/5250)
+
+#### APIs
+
+* API Swagger Documentation page throwing error [#5234](https://github.com/ironmansoftware/powershell-universal/issues/5234)
+* Endpoint testing returns 401 ClientError when testing from GUI with Authentication Enabled [#5238](https://github.com/ironmansoftware/powershell-universal/issues/5238)
+
+#### Automation
+
+* Pester / Tests page not showing any scripts that end in .Test.ps1 [#5228](https://github.com/ironmansoftware/powershell-universal/issues/5228)
+* DBUpdateConcurrencyException in job logs [#5237](https://github.com/ironmansoftware/powershell-universal/issues/5237)
+
+#### Module
+
+* Added Set-PSUSchedule
+
+#### Portal
+
+* Error on resubmission of portal form [#5223](https://github.com/ironmansoftware/powershell-universal/issues/5223)
+* Added Jwt\_\_EvaluateClaims to allow for custom claim evaluation in JWT authentication.
+
+#### Platform
+
+* SSH Key error when using git on Linux [#5222](https://github.com/ironmansoftware/powershell-universal/issues/5222)
+* \[5.6.6] Scripts not updating when in VS Code mode [#5208](https://github.com/ironmansoftware/powershell-universal/issues/5208)
+* Fixed an issue processing PSModulePath in some environments.
+* Fixed an issue applying deployments.
+
 ## 5.6.7 - 9/11/2025
 
 ### Bug Fixes
