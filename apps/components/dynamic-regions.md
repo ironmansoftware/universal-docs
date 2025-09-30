@@ -26,10 +26,6 @@ New-UDApp -Title "Hello, World!" -Content {
 
 An array of arguments may be passed to the dynamic region.
 
-{% hint style="info" %}
-Note that the arguments are static and do not change when Sync-UDElement is invoked.
-{% endhint %}
-
 ```powershell
 New-UDDynamic -Id 'dynamic_01' -Content {
     New-UDTypography -Text "This is an $($ArgumentList[0]) an $($ArgumentList[1]) in a UDDynamic"
@@ -37,6 +33,20 @@ New-UDDynamic -Id 'dynamic_01' -Content {
 ```
 
 <figure><img src="../../.gitbook/assets/20221208a.png" alt=""><figcaption><p>utilizing the arguments list</p></figcaption></figure>
+
+You can use `Sync-UDElement` to change the argument values.&#x20;
+
+```powershell
+ New-UDDynamic -id DynamicRegion -ArgumentList 5,'hello' -content {
+  foreach($item in $argumentList){
+      New-UDTypography -Variant h3 -Text "Item: $item"
+  }
+ }
+
+ New-UDButton -Text "Sync Dynamic" -onclick {
+  Sync-UDElement -id DynamicRegion -ArgumentList 10,'World'
+ }
+```
 
 ## Auto Refresh
 
@@ -72,4 +82,4 @@ Sometimes refreshing a dynamic component may take some time. For example, if you
 
 ## API
 
-[New-UDDynamic](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/New-UDDynamic.txt)
+[New-UDDynamic](../../cmdlets/New-UDDynamic.txt)
