@@ -50,7 +50,7 @@ psu db convert --path C:\ProgramData\UniversalAutomation\databased.db
 
 ### schema
 
-Migrate from one schema version to another. Migrating to lower versions can cause data loss.
+Migrate from one schema version to another. Migrating to lower versions can cause data loss. This can also be used to create a new database from scratch at the target schema.
 
 ```
 psu db schema --connection-string 'Server=SQL;Data Source=PSU;Integrated Security=True' --schema-version 5.1.0 --database-type 'SQL'
@@ -62,7 +62,7 @@ psu db schema --connection-string 'Server=SQL;Data Source=PSU;Integrated Securit
 | --target-version    | The database schema version. Defaults to "Latest" | ❌        |
 | --database-type     | PostgreSQL, SQL or SQLite (default)               | ❌        |
 
-### Migrate
+### migrate
 
 Migrates from one database to another. This command can migrate between database types.
 
@@ -76,6 +76,19 @@ psu db migrate --source-connection-string 'Server=SQL;Data Source=PSU;Integrated
 | --source-connection-string | Source database connection string   | ✅        |
 | --target-database-type     | PostgreSQL, SQL or SQLite (default) | ❌        |
 | --source-database-type     | PostgreSQL, SQL or SQLite (default) | ❌        |
+
+#### Migrating between versions
+
+We recommend you update the schema of your database to the version you wish to migrate to before running the migration command to avoid differences in the schema.
+
+{% code overflow="wrap" lineNumbers="true" fullWidth="false" %}
+```powershell
+# Update source schema version
+psu db schema --connection-string 'Data Source=C:\ProgramData\UniversalAutomation\database.db' --database-type 'SQLite'
+# Migrate to new data source
+psu db migrate --source-connection-string 'Data Source=C:\ProgramData\UniversalAutomation\database.db' --target-connection-string 'Server=PostgreSQL;Data Source=PSU;Integrated Security=True' --target-database-type 'PostgreSQL'
+```
+{% endcode %}
 
 ## git
 
