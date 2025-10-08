@@ -21,6 +21,20 @@ You can configure SQLite by updating the `appsettings.json` file.
   },
 ```
 
+### Troubleshooting Large Database Sizes
+
+Large SQLite databases can be the result of long job history, jobs that write excessively to pipeline output or PowerShell output streams, stale computer, process or runspace information, or large log entry tables.&#x20;
+
+As the database grows, the performance of PowerShell Universal will be affected. In order to troubleshoot what is causing this growth, use the SQLite\_Analyzer tool. You can download SQLite\_Analyzer as part of the tools ZIP on the [SQLite download page](https://www.sqlite.org/download.html).
+
+Once downloaded, run the analyzer against your PowerShell Universal database file to get an extensive list of information about the status of your database. We recommend stopping PowerShell Universal before running the following command.
+
+```
+.\sqlite_analyzer.exe C:\ProgramData\UniversalAutomation\database.db
+```
+
+The command will include information about the size of tables and indexes within the database. This will help to pinpoint exactly where the large amount of data is being stored.
+
 ## SQL
 
 {% hint style="info" %}
