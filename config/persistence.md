@@ -35,6 +35,42 @@ Once downloaded, run the analyzer against your PowerShell Universal database fil
 
 The command will include information about the size of tables and indexes within the database. This will help to pinpoint exactly where the large amount of data is being stored.
 
+### Reducing Database Size
+
+SQLite will retain unused space in the freelist within the database after records are updated or deleted. Databases that run many jobs or have been running for a longer duration may have a large database file with a large freelist. You can run the `sqlite_analyzer` tool to determine how much space is used by the free list.
+
+The example database below is 23 GB in size but 99.946% of it is unused space.
+
+```
+/** Disk-Space Utilization Report For ./psu.db
+
+Page size in bytes................................ 4096      
+Pages in the whole file (measured)................ 5953770   
+Pages in the whole file (calculated).............. 5953770   
+Pages that store data............................. 3230         0.054% 
+Pages on the freelist (per header)................ 5950539     99.946% 
+Pages on the freelist (calculated)................ 5950539     99.946% 
+Pages of auto-vacuum overhead..................... 0            0.0% 
+Number of tables in the database.................. 66        
+Number of indices................................. 48        
+Number of defined indices......................... 47        
+Number of implied indices......................... 1         
+Size of the file in bytes......................... 24386641920
+Bytes of user payload stored...................... 6611527      0.027% 
+```
+
+To reclaim this space, SQLite can use the vacuum feature to rebuild the database and reduce the size of the freelist. `auto-vacuum` is not enabled in PowerShell Universal databases. If you are experiencing issues with database size, you can run the `VACUUM;` command within the Support Tool's Database tool.&#x20;
+
+{% hint style="warning" %}
+We recommend backing up your database file before performing a VACUUM. This command rebuilds the database, defragments it and removes the freelist from the file.
+{% endhint %}
+
+Click Help \ Support Tools \ Tools \ Database \ Execute. Enter the following command and execute it.&#x20;
+
+```
+VACUUM;
+```
+
 ## SQL
 
 {% hint style="info" %}
