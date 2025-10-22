@@ -4,6 +4,50 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.6.9 - 10/22/2025
+
+### Bug Fixes
+
+#### Security
+
+* Updated to latest .NET SDK to address security vulnerabilities
+
+#### Admin Console
+
+* Revoke option for tokens is disabled [#5261](https://github.com/ironmansoftware/powershell-universal/issues/5261)
+* Triggering a schedule does not work [#5262](https://github.com/ironmansoftware/powershell-universal/issues/5262)
+* Windows Auth users can not execute scripts [#5266](https://github.com/ironmansoftware/powershell-universal/issues/5266)
+* Fixed an issue querying jobs when using custom permissions for scripts in folders
+* Create App from Command parameter order is important [#5197](https://github.com/ironmansoftware/powershell-universal/issues/5197)
+* Script folders are now sorted alphabetically
+
+#### APIs
+
+* Case sensitivity when calling endpoints with Windows Auth and PostgreSQL [#5289](https://github.com/ironmansoftware/powershell-universal/issues/5289)
+* Endpoint Test History is not scoped to a specific endpoint [#5299](https://github.com/ironmansoftware/powershell-universal/issues/5299)
+* Endpoint Documentation Not Working for Commands and Classes in Modules [#5322](https://github.com/ironmansoftware/powershell-universal/issues/5322)
+
+#### Apps
+
+* Title flicker when using LoadTitle [#5270](https://github.com/ironmansoftware/powershell-universal/issues/5270)
+* UDScript/UDPage not found [#5071](https://github.com/ironmansoftware/powershell-universal/issues/5071)
+* If Page Name Doesn't Match File, Page Doesn't Load [#5269](https://github.com/ironmansoftware/powershell-universal/issues/5269)
+* Saving changes to app in Files tab takes a long time for refresh [#5273](https://github.com/ironmansoftware/powershell-universal/issues/5273)
+* Duplicate trigger names causes trigger page to fail to load [#5290](https://github.com/ironmansoftware/powershell-universal/issues/5290)
+* Transfer List: New-UDTransferListItem -Disabled not respected [#5300](https://github.com/ironmansoftware/powershell-universal/issues/5300)
+
+#### Automation
+
+* Fixed an issue running scripts with Triggers in nested folders
+* Improved performance of progress reporting that was causing SQLite locking issues
+* Job Trigger at ServerStartup delay [#5297](https://github.com/ironmansoftware/powershell-universal/issues/5297)
+
+#### Platform
+
+* Deployment module isn't installed as a module [#4901](https://github.com/ironmansoftware/powershell-universal/issues/4901)
+* Fixed an issue with child process reporting
+* Fixed an issue with account-based licensing installed with environment variables
+
 ## 5.6.8 - 9/26/2025
 
 ### Bug Fixes
