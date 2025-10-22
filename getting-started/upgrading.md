@@ -279,6 +279,19 @@ LiteDB has been removed as a supported database engine. Included with the PowerS
 
 The tool will create a `database.bak` file before performing the conversion. Progress will be reported in the console.
 
+After converting the database, you will need to update the `appsettings.json` file to use the new SQLite plugin and update the connection string to a SQLite format. Below is a snippet you can use to apply to your configuration file.
+
+```json
+{
+    "Plugins": [
+        "SQLite"
+    ],
+    "Data": {
+        "ConnectionString": "Data Source=C:\ProgramData\UniversalAutomation\database.db"
+    }
+}
+```
+
 #### Converting a Database for a MSI Upgrade
 
 In order for the PowerShell Universal installer to run successfully, you will need to update the database before running the MSI installer. Below are the steps to take to do so.
