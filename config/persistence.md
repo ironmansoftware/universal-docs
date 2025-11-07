@@ -8,6 +8,10 @@ PowerShell Universal stores job output and input, identities and app tokens with
 
 ## SQLite
 
+{% hint style="warning" %}
+SQLite does not scale and is only recommended for small instances or testing. We recommend selecting MS SQL or PostgreSQL for production environments.
+{% endhint %}
+
 When using SQLite, PowerShell Universal stores all data within a single file database local to the PowerShell Universal application. We recommend SQLite over LiteDB for new installations as it is more widely used and supported.
 
 You can configure SQLite by updating the `appsettings.json` file.
@@ -23,7 +27,7 @@ You can configure SQLite by updating the `appsettings.json` file.
 
 ### Troubleshooting Large Database Sizes
 
-Large SQLite databases can be the result of long job history, jobs that write excessively to pipeline output or PowerShell output streams, stale computer, process or runspace information, or large log entry tables.&#x20;
+Large SQLite databases can be the result of long job history, jobs that write excessively to pipeline output or PowerShell output streams, stale computer, process or runspace information, or large log entry tables.
 
 As the database grows, the performance of PowerShell Universal will be affected. In order to troubleshoot what is causing this growth, use the SQLite\_Analyzer tool. You can download SQLite\_Analyzer as part of the tools ZIP on the [SQLite download page](https://www.sqlite.org/download.html).
 
@@ -59,13 +63,13 @@ Size of the file in bytes......................... 24386641920
 Bytes of user payload stored...................... 6611527      0.027% 
 ```
 
-To reclaim this space, SQLite can use the vacuum feature to rebuild the database and reduce the size of the freelist. `auto-vacuum` is not enabled in PowerShell Universal databases. If you are experiencing issues with database size, you can run the `VACUUM;` command within the Support Tool's Database tool.&#x20;
+To reclaim this space, SQLite can use the vacuum feature to rebuild the database and reduce the size of the freelist. `auto-vacuum` is not enabled in PowerShell Universal databases. If you are experiencing issues with database size, you can run the `VACUUM;` command within the Support Tool's Database tool.
 
 {% hint style="warning" %}
 We recommend backing up your database file before performing a VACUUM. This command rebuilds the database, defragments it and removes the freelist from the file.
 {% endhint %}
 
-Click Help \ Support Tools \ Tools \ Database \ Execute. Enter the following command and execute it.&#x20;
+Click Help \ Support Tools \ Tools \ Database \ Execute. Enter the following command and execute it.
 
 ```
 VACUUM;
@@ -134,7 +138,7 @@ PowerShell Universal supports Microsoft SQL Server 2016 and onwards.
 
 _Which database compatibility versions do you support?_
 
-PowerShell Universal supports require [database compatbility version 130 ](https://learn.microsoft.com/en-us/sql/relational-databases/databases/view-or-change-the-compatibility-level-of-a-database?view=sql-server-ver16)of later.&#x20;
+PowerShell Universal supports require [database compatbility version 130 ](https://learn.microsoft.com/en-us/sql/relational-databases/databases/view-or-change-the-compatibility-level-of-a-database?view=sql-server-ver16)of later.
 
 _Do any other SQL Server components need to be installed beside the Database Engine?_
 

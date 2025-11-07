@@ -4,7 +4,7 @@ description: The ultimate command center for your PowerShell environment.
 
 # ❓ About
 
-<figure><img src=".gitbook/assets/image (354).png" alt=""><figcaption><p>PowerShell Universal Admin Console</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (332) (1).png" alt=""><figcaption><p>PowerShell Universal Admin Console</p></figcaption></figure>
 
 PowerShell Universal provides a centralized location to store and run scripts, build modules, expose REST APIs and share them with end users via automatic or custom user interfaces, setup schedules and more.
 
@@ -12,7 +12,7 @@ PowerShell Universal provides a centralized location to store and run scripts, b
 
 Transform your PowerShell scripts into RESTful HTTP and WebSocket APIs for seamless integration across platforms. Leverage OpenAPI provide documentation and additional automation opportunities.
 
-<figure><img src=".gitbook/assets/image (332).png" alt=""><figcaption><p>Execute PowerShell with HTTP</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (332) (1).png" alt=""><figcaption><p>Execute PowerShell with HTTP</p></figcaption></figure>
 
 * [HTTP Endpoints](https://docs.powershelluniversal.com/api/endpoints)
 * [Custom Responses](https://docs.powershelluniversal.com/api/endpoints#returning-custom-responses)
@@ -91,7 +91,7 @@ PowerShell Universal is a versatile, cross-platform solution that adapts to your
 
 PowerShell Universal delivers a seamless development experience with built-in tools like IntelliSense, syntax highlighting, error checking, formatting, and debugging—all accessible directly from your browser. Enhance productivity further with a dedicated VS Code extension and integrated Git support for streamlined version control.
 
-<figure><img src=".gitbook/assets/image (189).png" alt=""><figcaption><p>Development Tools in PowerShell Universal</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (91) (1).png" alt=""><figcaption><p>Development Tools in PowerShell Universal</p></figcaption></figure>
 
 * [Rich Editing Experience](https://docs.powershelluniversal.com/platform/editor)
 * [Code-First Configuration](https://docs.powershelluniversal.com/config/repository)

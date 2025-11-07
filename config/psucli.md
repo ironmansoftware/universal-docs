@@ -20,8 +20,6 @@ psu admin reset --connection-string 'Data Source=C:\ProgramData\UniversalAutomat
 ```
 {% endcode %}
 
-
-
 | Argument            | Description                                            | Required |
 | ------------------- | ------------------------------------------------------ | -------- |
 | --connection-string | The database connection string                         | ✅        |
@@ -29,8 +27,6 @@ psu admin reset --connection-string 'Data Source=C:\ProgramData\UniversalAutomat
 | --encryption-key    | Database vault encryption key, if changed.             | ❌        |
 | --password          | Database vault password, if changed.                   | ❌        |
 | --key-size          | Database vault password key size, if changed from 128. | ❌        |
-
-
 
 ## db
 
@@ -63,6 +59,10 @@ psu db schema --connection-string 'Server=SQL;Data Source=PSU;Integrated Securit
 | --database-type     | PostgreSQL, SQL or SQLite (default)               | ❌        |
 
 ### migrate
+
+{% hint style="warning" %}
+Converting one database type to another can be a problematic process and you may experience issues. It is better to choose the final database type at the type of the first installation. Be aware that SQLite does not scale; if you expect your instance to grow at a later time, you should choose another database type.
+{% endhint %}
 
 Migrates from one database to another. This command can migrate between database types.
 
