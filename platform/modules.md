@@ -105,6 +105,122 @@ When creating modules that extend PowerShell Universal, you can include the `Pow
 
 [Publish modules to the PowerShell Gallery](https://jeffbrown.tech/how-to-publish-your-first-powershell-gallery-package/) in order to share them with others.
 
+## Root Module
+
+You can define a root module as the PowerShell Universal configuration. This allows for reproducible configurations based on published modules. A root module is defined within the application settings for the PowerShell Universal server. When PowerShell Universal starts up, it will load this module and an dependencies automatically. The root module needs to be found within the PSModulePath or the Repository's Modules folder.&#x20;
+
+### Example
+
+Below is an example of using a root module and depedencies to define a PowerShell Universal configuration. Resources provided by modules are read-only within the platform. By using modules, you can ensure that specific versions of resources are packaged and deployed to your PowerShell Universal  instances.&#x20;
+
+{% hint style="success" %}
+The root module can appear anywhere within the registered PSModulePath for your server or service account. They can also reside within your repository's module folder. The example below uses relative paths.
+{% endhint %}
+
+#### ARD.Core
+
+The ARD.Core module defines a few functions an an environment that is used by other modules. Here is an example of a basic environment being defined.
+
+{% code title="Modules\ARD.Core\1.0.0\.universal\environments.ps1" %}
+```powershell
+New-PSUEnvironment -Name 'ARD.Core' -Path pwsh.exe -Type PowerShell7
+```
+{% endcode %}
+
+The functions are defined in the PSM1 file for the module.&#x20;
+
+{% code title="Modules\ARD.Core\1.0.0\ARD.Core.psm1" %}
+```powershell
+function Get-ARDCore {
+    @{
+        Name = "ARD.Core"
+        Description = "This is a test function result"
+    }
+}
+```
+{% endcode %}
+
+The module manifest exports the function and provides some basic metadata.
+
+{% code title="Modules\ARD.Core\1.0.0\ARD.Core.psd1" %}
+```powershell
+@{
+    RootModule = "ARD.Core.psm1"
+    Description = "ARD.Core is the base module for other modules"
+    Version = "1.0.0"
+    FunctionsToExport = @("Get-ARDCore")
+}
+```
+{% endcode %}
+
+#### ARD.Endpoints
+
+The ARD.Endpoints module is structure similar to the ARD.Core module but exposes an endpoint rather than an environment. This example endpoint calls the `Get-ARDResponse` function when the `ard.endpoint` URL is called.  Notice that the endpoint uses the ARD.Core endpoint provided by the above module.
+
+{% code title="Modules\ARD.Endpoints\1.0.0\.universal\endpoints.ps1" %}
+```powershell
+New-PSUEndpoint -Url /ard.endpoint -Module 'ARD.Endpoints' -Command "Get-ARDResponse" -Environment 'ARD.Core'
+```
+{% endcode %}
+
+The ARD.Endpoints.psm1 file defines the function to export that we can also use for the endpoint. The endpoint uses the function from ARD.Core to return a response. This works because they are all just regular PowerShell modules.
+
+{% code title="Modules\ARD.Endpoints\1.0.0\ARD.Endpoints.psm1" %}
+```powershell
+function Get-ARDResponse {
+    Get-ARDCore
+}
+```
+{% endcode %}
+
+The ARD.Endpoints.psd1 file will export the function and also take a dependency on ARD.Core to ensure that module is loaded first because the endpoint relies on both the function and the environment to exist.&#x20;
+
+{% code title="Modules\ARD.Endpoints\1.0.0\ARD.Endpoints.psd1" %}
+```powershell
+@{
+    RootModule = "ARD.Endpoints.psm1"
+    Description = "Sample endpoints"
+    Version = "1.0.0"
+    RequiredModules = @("ARD.Core")
+    FunctionsToExport = @("Get-ARDResponse")
+}
+```
+{% endcode %}
+
+#### ARD.Root
+
+The root module will be loaded first by PowerShell Universal. It takes a dependency on both the core and endpoints module but does not define any functionality itself. PowerShell Universal will determine the proper load order and then load resources during startup.
+
+```powershell
+@{
+    Description = "A PowerShell Universal configuration"
+    Version = "1.0.0"
+    RequiredModules = @("ARD.Core", "ARD.Endpoints")
+}
+```
+
+Within application settings, you can select the root module and version.
+
+{% code title="appsettings.json" %}
+```json
+{
+    "Data": {
+        "Module": "ARD.Root",
+        "ModuleVersion": "1.0.0"
+    }
+}
+```
+{% endcode %}
+
+You can also configure via environment variables. Changing either the file or the environment variables will require a restart of PowerShell Universal.
+
+```powershell
+$ENV:Data__Module = "ARD.Root"
+$ENV:Data__ModuleVersion = "1.0.0"
+```
+
+
+
 ## Manually Install Modules
 
 PowerShell Universal will add the repository's `Modules` directory to the `$ENV:PSModulePath` for all environments. Adding modules to this directory will ensure the module is available to any PowerShell process running with PowerShell Universal.
@@ -134,9 +250,9 @@ Choose from 1 of 2 available workarounds:
 
 ### Exchange
 
-On-premises Microsoft Exchange can be managed using remote sessions in PowerShell. If you are using sessions in apps, you will want to consider managing the session in a way to prevent having to open a new session for every request. This greatly improves performance. The below example uses the `$Cache:` scope to persist the session across requests.&#x20;
+On-premises Microsoft Exchange can be managed using remote sessions in PowerShell. If you are using sessions in apps, you will want to consider managing the session in a way to prevent having to open a new session for every request. This greatly improves performance. The below example uses the `$Cache:` scope to persist the session across requests.
 
-While this example uses PSSessions and Exchange, you could use the same pattern for other types of persistent connections.&#x20;
+While this example uses PSSessions and Exchange, you could use the same pattern for other types of persistent connections.
 
 ```powershell
 $Cache:ExchangeServer = ''
@@ -210,7 +326,7 @@ function Invoke-ExampleExchFunction {
 
 ## Validated Module Versions
 
-The below module versions have been validated against PowerShell Universal. Module validation ensures that these modules load and interact with their respective services.&#x20;
+The below module versions have been validated against PowerShell Universal. Module validation ensures that these modules load and interact with their respective services.
 
 | Module                         | Module Version | PSU Version | PSU Environments         |
 | ------------------------------ | -------------- | ----------- | ------------------------ |
@@ -218,4 +334,3 @@ The below module versions have been validated against PowerShell Universal. Modu
 | ExchangeOnlineManagement       | 3.7.2          | 5.5.2       | PowerShell 7             |
 | MicrosoftTeams                 | 6.9.0          | 5.5.2       | PowerShell 7             |
 | Az.Accounts                    | 4.1.0          | 5.5.2       | PowerShell 7, Integrated |
-
