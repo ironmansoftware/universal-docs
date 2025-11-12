@@ -4,6 +4,48 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.6.10 - 11/12/2025
+
+### Bug Fixes
+
+* Admin Console
+  * Nested jobs table should be more condensed [#5328](https://github.com/ironmansoftware/powershell-universal/issues/5328)
+  * Parameterized variables do not repopulate when rerunning a job [#5313](https://github.com/ironmansoftware/powershell-universal/issues/5313)
+  * Variables not visible when created from module [#5314](https://github.com/ironmansoftware/powershell-universal/issues/5314)
+  * Elapsed timer loops for long running jobs [#5306](https://github.com/ironmansoftware/powershell-universal/issues/5306)
+  * Variables - Don't show the "Disable run as support" for string types for the secret [#5344](https://github.com/ironmansoftware/powershell-universal/issues/5344)
+  * A duplicated schedule breaks Scheduling [#5343](https://github.com/ironmansoftware/powershell-universal/issues/5343)
+  * Pending changes in the UI should prompt if clicking away from popup [#5349](https://github.com/ironmansoftware/powershell-universal/issues/5349)
+  * Modifying existing tag hangs the UI [#5346](https://github.com/ironmansoftware/powershell-universal/issues/5346)
+  * UI becomes unresponsive after saving changes to an existing app settings [#5274](https://github.com/ironmansoftware/powershell-universal/issues/5274)
+* APIs
+  * Fixed an issue with APIs returning blank values when provided by a module
+  * OpenAPI spec omits endpoints with Role after IIS recycle when the documentation has Authentication enabled [#5345](https://github.com/ironmansoftware/powershell-universal/issues/5345)
+  * Send-PSUEvent: second send to same Hub/ConnectionId intermittently fails; Get-PSUEventHubConnection -Active sometimes omits active connections [#5295](https://github.com/ironmansoftware/powershell-universal/issues/5295)
+* Apps
+  * App logging is now too verbose [#5342](https://github.com/ironmansoftware/powershell-universal/issues/5342)
+  * New-UDLink with no text shows as "Ironman Software" [#5294](https://github.com/ironmansoftware/powershell-universal/issues/5294)
+  * Editing App pages in Docker results in 404 [#5357](https://github.com/ironmansoftware/powershell-universal/issues/5357)
+  * Disable Interactive Host also disables write-host logging [#5352](https://github.com/ironmansoftware/powershell-universal/issues/5352)
+* Automation
+  * Fixed an issue loading parameters from scripts in a module
+  * RBAC issue with viewing job from /automation/scripts [#5340](https://github.com/ironmansoftware/powershell-universal/issues/5340)
+  * Pester / Tests page not showing any scripts [#5312](https://github.com/ironmansoftware/powershell-universal/issues/5312)
+  * FilesystemWater is not picking up changes when in vscode mode [#5347](https://github.com/ironmansoftware/powershell-universal/issues/5347)
+* Module
+  * Stop-PSUJob does not stop external environment jobs [#5318](https://github.com/ironmansoftware/powershell-universal/issues/5318)
+  * Grant-PSUAppToken does not return the app token [#5337](https://github.com/ironmansoftware/powershell-universal/issues/5337)
+  * Rerun job is missing labels [#5263](https://github.com/ironmansoftware/powershell-universal/issues/5263)
+  * New-PSUApp does not restrict creation of apps with relative paths to the repository location [#5333](https://github.com/ironmansoftware/powershell-universal/issues/5333)
+* Portal
+  * Fixed an issue running scripts from the portal with Windows Authentication
+  * Using generated SSH keys from PSU [#5101](https://github.com/ironmansoftware/powershell-universal/issues/5101)
+* Platform
+  * Run VACUUM in SQLite Groom Job \[#5323]
+  * Deployment as Module breaks instance config - file already exists [#5376](https://github.com/ironmansoftware/powershell-universal/issues/5376)
+* Tools
+  * SQLite to SQL Server migration fails on ComputerTag with IDENTITY\_INSERT OFF [#5320](https://github.com/ironmansoftware/powershell-universal/issues/5320)
+
 ## 5.6.9 - 10/22/2025
 
 ### Bug Fixes
@@ -209,7 +251,7 @@ description: Changelog for PowerShell Universal.
 * Half of the apps were in a 'stopped' status [#5123](https://github.com/ironmansoftware/powershell-universal/issues/5123)
 * Date Range Picker Broken [#5117](https://github.com/ironmansoftware/powershell-universal/issues/5117)
 * Apps from Module parameter error [#4822](https://github.com/ironmansoftware/powershell-universal/issues/4822)
-* UDRadio: Set-UDElement -Properties @{ Disabled = $true } does not disable the  at runtime (4.5.3 and 5.6.4) [#5144](https://github.com/ironmansoftware/powershell-universal/issues/5144)
+* UDRadio: Set-UDElement -Properties @{ Disabled = $true } does not disable the at runtime (4.5.3 and 5.6.4) [#5144](https://github.com/ironmansoftware/powershell-universal/issues/5144)
 * Table 'SelectAll' Server-side issues [#4916](https://github.com/ironmansoftware/powershell-universal/issues/4916), [#4931](https://github.com/ironmansoftware/powershell-universal/issues/4931)
 * add a new variant to New-UDDivider [#5131](https://github.com/ironmansoftware/powershell-universal/issues/5131)
 

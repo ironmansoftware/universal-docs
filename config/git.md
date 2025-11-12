@@ -46,11 +46,11 @@ You can choose to use an external git client rather than using the library built
 
 #### Using SSH Keys
 
-You can use PowerShell Universal to generate and manage SSH keys. Within the admin console, click Platform \ SSH Keys. Generate a new SSH key. Next, click the copy button next to the SSH key to get the public key.&#x20;
+You can use PowerShell Universal to generate and manage SSH keys. Within the admin console, click Platform \ SSH Keys. Generate a new SSH key. Next, click the copy button next to the SSH key to get the public key.
 
-Register the public key with the target repository or account. For example, you can follow the [GitHub guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) here.&#x20;
+Register the public key with the target repository or account. For example, you can follow the [GitHub guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) here.
 
-Within the Git Settings window, select the SSH Key you wish to use with the git sync.&#x20;
+Within the Git Settings window, select the SSH Key you wish to use with the git sync. When using SSH Keys, ensure that the SSH URL is selected for cloning your repository.
 
 #### Setting Credentials
 
@@ -312,7 +312,7 @@ We recommend that you use a personal access token (PAT) over a user name and pas
 
 ### GitHub Fine-Grained Tokens
 
-In GitHub, you can retrieve a fine-grained token by click your avatar in the top right, selecting Settings, Developers Settings, Personal Access Tokens and then Fine-Grained Tokens.&#x20;
+In GitHub, you can retrieve a fine-grained token by click your avatar in the top right, selecting Settings, Developers Settings, Personal Access Tokens and then Fine-Grained Tokens.
 
 When generating the token, ensure that you provide the repository Read-Write to the Content permission. This will automatically add Read to the Metadata permission. You can provide access to just the repository you are looking to clone.
 
@@ -344,9 +344,9 @@ You can also configure a git remote to authenticate with a user name and passwor
 
 ### Git synchronization failed. unknown certificate lookup failure: 16777280
 
-The lib2gitsharp library was unable to validate the certificate of the remote git repository. You will need to use the [external git client](git.md#external-git-client) and a custom git config in order to address this.&#x20;
+The lib2gitsharp library was unable to validate the certificate of the remote git repository. You will need to use the [external git client](git.md#external-git-client) and a custom git config in order to address this.
 
-Some common options for git HTTPS support include:&#x20;
+Some common options for git HTTPS support include:
 
 ```
 http.sslVerify
@@ -365,13 +365,13 @@ http.sslCAPath
 
 ### too many redirects or authentication replays
 
-The git remote has rejected your credentials to access the repository. Your personal access token may have expired or does not have access to the remote.&#x20;
+The git remote has rejected your credentials to access the repository. Your personal access token may have expired or does not have access to the remote.
 
 ### repository not owned by current user
 
-The local git repository does not have the proper access controls for the user trying to access it. This can happen if PowerShell Universal cloned the repository and then a different service account was set on the service. Because the access controls do not match, the git will not access the folder due. This is a security feature of git.&#x20;
+The local git repository does not have the proper access controls for the user trying to access it. This can happen if PowerShell Universal cloned the repository and then a different service account was set on the service. Because the access controls do not match, the git will not access the folder due. This is a security feature of git.
 
-You can update the owner of the folder to avoid this or configure git to trust the folder. Set the following value into the global git config.&#x20;
+You can update the owner of the folder to avoid this or configure git to trust the folder. Set the following value into the global git config.
 
 ```
 [safe]
