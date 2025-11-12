@@ -181,7 +181,7 @@
 * [Deployments](config/deployments.md)
 * [Environments](config/environments.md)
 * [Feature Flags](config/feature-flags.md)
-* [Gitfo](config/git.md)
+* [Git](config/git.md)
 * [Hosting](config/hosting/README.md)
   * [Azure](config/hosting/azure.md)
   * [High Availability](config/hosting/high-availability.md)
