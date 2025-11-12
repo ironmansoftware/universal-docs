@@ -12,19 +12,19 @@ You first need to configure ADFS or AzureAD to support Universal.
 
 ### Service Settings <a href="#service-settings" id="service-settings"></a>
 
-First, you will need to gather the Federation Service Properties from ADFS. Open the AD FS app (Microsoft.IdentityServer.msc). Next, click Service and then Edit Federation Service Properties.&#x20;
+First, you will need to gather the Federation Service Properties from ADFS. Open the AD FS app (Microsoft.IdentityServer.msc). Next, click Service and then Edit Federation Service Properties.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-This will open a dialog with the values for your ADFS service. You will need these values for configuring PowerShell Universal.&#x20;
+This will open a dialog with the values for your ADFS service. You will need these values for configuring PowerShell Universal.
 
 ![](https://gblobscdn.gitbook.com/assets%2F-L9mVQO4zbOX7ZcHvIte%2F-Lob6ow15SQRLl3vo8ZV%2F-Lob7luBvuEGUTrLIors%2Fimage.png?alt=media\&token=64c3c00f-1d2c-4346-bcc1-dd89e7cf4c24)
 
 ### Relying Parties <a href="#relying-parties" id="relying-parties"></a>
 
-If you have no Reply Party Trusts configured, click Add Replying Party Trust. Select Claims aware.&#x20;
+If you have no Reply Party Trusts configured, click Add Replying Party Trust. Select Claims aware.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Claims Aware</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Claims Aware</p></figcaption></figure>
 
 Select Enter data about the relying party manually.
 
@@ -52,15 +52,13 @@ You can configure additional claims you'd like to use if you are using policies 
 
 MSIS7065: There are no registered protocol handlers on path /adfs/ls to process the incoming request.
 
-This issue can be caused if the IDP Initiated Sign On page is disabled. This is the default. Run the following command from an administrative console.&#x20;
+This issue can be caused if the IDP Initiated Sign On page is disabled. This is the default. Run the following command from an administrative console.
 
 ```powershell
  Set-AdfsProperties -EnableIdPInitiatedSignonPage $true
 ```
 
 MSIS7001: The passive protocol context was not found or not valid. If the context was stored in cookies, the cookies that were presented by the client were not valid. Ensure that the client browser is configured to accept cookies from this website and retry this request.
-
-
 
 ## Configuring For Azure Active Directory <a href="#configuring-for-azure-active-directory" id="configuring-for-azure-active-directory"></a>
 

@@ -2,7 +2,7 @@
 description: Git integration for PowerShell Universal.
 ---
 
-# Git
+# Gitfo
 
 {% hint style="info" %}
 Git integration requires a [license](https://ironmansoftware.com/pricing/powershell-universal).
@@ -50,7 +50,13 @@ You can use PowerShell Universal to generate and manage SSH keys. Within the adm
 
 Register the public key with the target repository or account. For example, you can follow the [GitHub guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) here.
 
-Within the Git Settings window, select the SSH Key you wish to use with the git sync. When using SSH Keys, ensure that the SSH URL is selected for cloning your repository.
+Within the Git Settings window, select the SSH Key you wish to use with the git sync. When using SSH Keys, ensure that the SSH URL is selected for cloning your repository.&#x20;
+
+```
+git@github.com:ironmansoftware/psu-devo
+```
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>GitHub SSH URL</p></figcaption></figure>
 
 #### Setting Credentials
 

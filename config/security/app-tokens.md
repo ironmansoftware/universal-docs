@@ -182,13 +182,13 @@ Next, create an Auth0 API by clicking Applications \ APIs and then Create API. S
 
 Within your API, define custom permissions, such as one with a Role name.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 #### Authorize the Application to Use the API
 
 Within the Application settings, click APIs and toggle the switch by the API to authorize the application to use the API. Select the permissions you would like to provide to the application. These will show up as permission claims in the token.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### Retrieve an Access Token from Auth0
 
@@ -295,7 +295,7 @@ When granting a new access token from Auth0, they will not contain the standard 
 
 Click Actions and then Library and Create Action and then Create Custom Action. Select the Password Reset / Post Challenge Trigger and name the action.
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Define the action by setting a custom claim for the `PSUPermission` claim type. This example simply provides all access to PowerShell Universal APIs. You can use event context to define which permissions are received based on the access token request.
 

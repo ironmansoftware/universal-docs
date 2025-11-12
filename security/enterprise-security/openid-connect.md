@@ -20,7 +20,7 @@ Within the Azure Portal, navigate to your Entra ID blade. Next, click the Enterp
 
 Next, click Create your own application.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Select a name for your application and select Register an application to integrate with Microsoft Entra ID.
 
@@ -42,9 +42,9 @@ Now, we'll need to capture several points of information from the application to
 
 ### Claim Mapping
 
-In order to provide group claims to PowerShell Universal, you will need to expose the group claims from your app registration. Click Token Configuration and then click Add groups claim.&#x20;
+In order to provide group claims to PowerShell Universal, you will need to expose the group claims from your app registration. Click Token Configuration and then click Add groups claim.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Entra ID Group Claims</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Entra ID Group Claims</p></figcaption></figure>
 
 After clicking Add groups claim, you will have the option to select which groups are provided. If you select All Groups, the groups claims will be provided to PowerShell Universal
 
@@ -52,17 +52,17 @@ If you select Groups assigned to the application, ensure that you check the Emit
 
 <figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Emit groups as role claims setting</p></figcaption></figure>
 
-To assign a group to your app registration, locate your app in Enterprise Applications and click User and Groups. Next, click Add User\Group and select the groups you would like assigned to your application.&#x20;
+To assign a group to your app registration, locate your app in Enterprise Applications and click User and Groups. Next, click Add User\Group and select the groups you would like assigned to your application.
 
-Once you have the groups claim configured in Entra ID, you can then update PowerShell Universal claim mappings to the groups provided.&#x20;
+Once you have the groups claim configured in Entra ID, you can then update PowerShell Universal claim mappings to the groups provided.
 
-For each role you would like to assign to an Entra ID group, specify the Claim Type and Claim Value for that role. For example, I have a group in my environment with the ID 446832da-d4ad-4972-b0a2-eda736129928. The Claim Type for this object is [http://schemas.microsoft.com/ws/2008/06/identity/claims/groups](http://schemas.microsoft.com/ws/2008/06/identity/claims/groups).&#x20;
+For each role you would like to assign to an Entra ID group, specify the Claim Type and Claim Value for that role. For example, I have a group in my environment with the ID 446832da-d4ad-4972-b0a2-eda736129928. The Claim Type for this object is [http://schemas.microsoft.com/ws/2008/06/identity/claims/groups](http://schemas.microsoft.com/ws/2008/06/identity/claims/groups).
 
-To assign this to the administrator group, I would do the following.&#x20;
+To assign this to the administrator group, I would do the following.
 
 <figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1).png" alt=""><figcaption><p>Claim Mapping</p></figcaption></figure>
 
-Users of this group would now be part of the Administrator role in PowerShell Universal.&#x20;
+Users of this group would now be part of the Administrator role in PowerShell Universal.
 
 ### Group Overages
 
@@ -266,4 +266,4 @@ Invoke-RestMethod https://poshtools.okta.com/oauth2/v1/userinfo -Headers @{
 
 ## Viewing Claim Information
 
-If you are unsure about what claim information is being sent to PowerShell Universal from your identity provider, you can use the View Claim Information button on the Security \ Roles page to view all the roles that have been provided to PSU from the remote system.&#x20;
+If you are unsure about what claim information is being sent to PowerShell Universal from your identity provider, you can use the View Claim Information button on the Security \ Roles page to view all the roles that have been provided to PSU from the remote system.

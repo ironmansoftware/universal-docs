@@ -30,11 +30,11 @@ Proxy configuration can be done by clicking Settings \ General and configuring t
 
 ### Account-Based Licensing
 
-When using account-based licensing, you will enter your account's license key. Whenever you activate a PowerShell Universal server, it will assign a license to computer. This license key does not change so there is no need to install a new license when renewing. You can view the assigned computers and account license key in your Ironman Software account.&#x20;
+When using account-based licensing, you will enter your account's license key. Whenever you activate a PowerShell Universal server, it will assign a license to computer. This license key does not change so there is no need to install a new license when renewing. You can view the assigned computers and account license key in your Ironman Software account.
 
-The PowerShell Universal server needs to have access to ironmansoftware.com.&#x20;
+The PowerShell Universal server needs to have access to ironmansoftware.com.
 
-<figure><img src=".gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Offline Licenses
 

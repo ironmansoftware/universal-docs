@@ -102,19 +102,19 @@ The integrated [environment](../../config/environments.md) does not support runn
 
 You can run scripts as another user by configuring [secret variables](../../platform/variables.md#creating-a-secret-variable). PowerShell Universal uses the Microsoft Secret Management module to integrate with secret providers. See variables for more information on secrets.
 
-1. Create a new PSCredential secret variable.&#x20;
+1. Create a new PSCredential secret variable.
 
-Click Platform \ Variables and then click Create Secret. Select the PSCredential variable type. Enter the username and password. Ensure that the Disable Run As Support value is unchecked.&#x20;
+Click Platform \ Variables and then click Create Secret. Select the PSCredential variable type. Enter the username and password. Ensure that the Disable Run As Support value is unchecked.
 
 <figure><img src="../../.gitbook/assets/image (5) (1).png" alt=""><figcaption><p>Create Secret Variable</p></figcaption></figure>
 
-2. Run the Script and select the credential&#x20;
+2. Run the Script and select the credential
 
-Navigate back to Automation \ Scripts and click the Run Script button. Select an environment besides the Integrated environment. By default, this will be either PowerShell 7 or Windows PowerShell 5.1.&#x20;
+Navigate back to Automation \ Scripts and click the Run Script button. Select an environment besides the Integrated environment. By default, this will be either PowerShell 7 or Windows PowerShell 5.1.
 
 You will now be prompted with the Run As drop down to select the credential. From there, you can select the credential within the run dialog.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Run as a User</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Run as a User</p></figcaption></figure>
 
 ### Running a Script on Another Computer
 
@@ -126,7 +126,7 @@ You can run a script on all computers by selecting the All Computers option from
 
 ### Running a Script from an App with Output
 
-If you would like to run a script from an app and display the output as it runs, using the following example. It takes advantage of `Invoke-PSUScript` and `Get-PSUJobOutput`.&#x20;
+If you would like to run a script from an app and display the output as it runs, using the following example. It takes advantage of `Invoke-PSUScript` and `Get-PSUJobOutput`.
 
 ```powershell
 New-UDButton -OnClick {
@@ -153,7 +153,7 @@ New-UDDynamic -Id 'code' -Content {
 
 ### Load Balancing
 
-PowerShell Universal uses a least-busy server loading balancing algorithm. If more than one server is a valid target for a job, PowerShell Universal will select the server with the least number of jobs running on that server.&#x20;
+PowerShell Universal uses a least-busy server loading balancing algorithm. If more than one server is a valid target for a job, PowerShell Universal will select the server with the least number of jobs running on that server.
 
 ## Remoting
 
@@ -212,17 +212,17 @@ The function surfaces just like other scripts within the admin console. Paramete
 
 ## Statistics
 
-Using a script's job history, PowerShell Universal will provide basic statistics about the execution of the script. These include success rate, average execution time, and breaks downs of environment, user and computer execution.&#x20;
+Using a script's job history, PowerShell Universal will provide basic statistics about the execution of the script. These include success rate, average execution time, and breaks downs of environment, user and computer execution.
 
 <figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Script Stats</p></figcaption></figure>
 
 ## Start-Job Support
 
-While it's possible to start jobs using Invoke-PSUScript, it may be desirable to start a job using the PowerShell Start-Job cmdlet. Using Start-Job does not register the job with PowerShell Universal and the execution information will not be present in the jobs table.&#x20;
+While it's possible to start jobs using Invoke-PSUScript, it may be desirable to start a job using the PowerShell Start-Job cmdlet. Using Start-Job does not register the job with PowerShell Universal and the execution information will not be present in the jobs table.
 
-The Integrated, PowerShell 7 and Windows PowerShell 5.1 environments are not compatible with Start-Job because they are custom PowerShell hosts. In order to use Start-Job, you will need to configure a custom PowerShell environment. Click Settings \ Environments. Next, click Create New Environment. Name the environment, select the Custom environment type and specify pwsh.exe as the executable path.&#x20;
+The Integrated, PowerShell 7 and Windows PowerShell 5.1 environments are not compatible with Start-Job because they are custom PowerShell hosts. In order to use Start-Job, you will need to configure a custom PowerShell environment. Click Settings \ Environments. Next, click Create New Environment. Name the environment, select the Custom environment type and specify pwsh.exe as the executable path.
 
-You will now be able to use this environment to run the Start-Job cmdlet.&#x20;
+You will now be able to use this environment to run the Start-Job cmdlet.
 
 ## API
 
