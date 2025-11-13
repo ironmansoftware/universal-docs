@@ -389,9 +389,9 @@ To set a static node name, change this parameter.
 
 ## Static Resources
 
-You can define static resources using app settings. These include environment variables and appsettings.json. To define a resource, use the `Resources` node within appsettings.json or the prefix `Resources` with an environment variable.&#x20;
+You can define static resources using app settings. These include environment variables and appsettings.json. To define a resource, use the `Resources` node within appsettings.json or the prefix `Resources` with an environment variable.
 
-For example, to define a static role in appsettings.json, use the following.&#x20;
+For example, to define a static role in appsettings.json, use the following.
 
 ```json
 {
@@ -407,7 +407,7 @@ For example, to define a static role in appsettings.json, use the following.&#x2
 }
 ```
 
-You can define the same role using environment variables.&#x20;
+You can define the same role using environment variables.
 
 ```powershell
 $ENV:Resources__Roles__0__Name = "Static Role"
@@ -415,15 +415,41 @@ $ENV:Resources__Roles__0__ClaimType = "group"
 $ENV:Resources__Roles__0__ClaimValue = "xyz123"
 ```
 
+### Example: Docker Compose
+
+You can use environment variables in a Docker Compose YML file to define resources that will be available in PowerShell Universal after it starts. The below example creates tags, a role, sets a custom admin title, adds a license and sets the default environment.
+
+```yaml
+services:    
+    psu:         
+      image: ironmansoftware/universal:latest
+      environment:
+          - Resources__Tags__0__Name=Production  
+          - Resources__Tags__1__Name=Development
+          - Resources__Roles__0__Name=PSUAdmin
+          - Resources__Roles__0__ClaimType=groups
+          - Resources__Roles__0__ClaimValue=1234567890abcdef1234567890abcdef
+          - Resources__Roles__0__Permissions_0=*
+          - Resources__Settings__DefaultEnvironment=PowerShell 7
+          - Resources__Branding__0__AdminConsoleTitle=PSU Admin Console
+          - Authentication__OIDC__Enabled=true
+          - Authentication__OIDC__ClientId=123-123-123-123-123
+          - Authentication__OIDC__ClientSecret=secret
+          - Authentication__OIDC__Authority=https://login.microsoftonline.com/123-123-123-123
+          - PSULICENSE=<License></License>
+      ports:
+        - "5000:5000"
+```
+
 ## .NET Runtime Settings
 
-The .NET runtime also supports settings that apply to PowerShell Universal. You may want to adjust these settings based on your needs.&#x20;
+The .NET runtime also supports settings that apply to PowerShell Universal. You may want to adjust these settings based on your needs.
 
 You can find all about [.NET Runtime settings on the Microsoft Docs](https://learn.microsoft.com/en-us/dotnet/core/runtime-config/).
 
 ### Excessive Temp Files
 
-In Linux environments, you may have many temp files created by the runtime to enable debugging features. [Disabling the diagnostics settings](https://learn.microsoft.com/en-us/dotnet/core/runtime-config/debugging-profiling#enable-diagnostics) of the runtime will prevent this from happening. You will not be able to use .NET debugging tools with this disabled.&#x20;
+In Linux environments, you may have many temp files created by the runtime to enable debugging features. [Disabling the diagnostics settings](https://learn.microsoft.com/en-us/dotnet/core/runtime-config/debugging-profiling#enable-diagnostics) of the runtime will prevent this from happening. You will not be able to use .NET debugging tools with this disabled.
 
 ```powershell
 $Env:DOTNET_EnableDiagnostics = $false
