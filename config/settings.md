@@ -431,7 +431,7 @@ services:
           - Resources__Roles__0__ClaimValue=1234567890abcdef1234567890abcdef
           - Resources__Roles__0__Permissions_0=*
           - Resources__Settings__DefaultEnvironment=PowerShell 7
-          - Resources__Branding__0__AdminConsoleTitle=PSU Admin Console
+          - Resources__Branding__AdminConsoleTitle=PSU Admin Console
           - Authentication__OIDC__Enabled=true
           - Authentication__OIDC__ClientId=123-123-123-123-123
           - Authentication__OIDC__ClientSecret=secret
