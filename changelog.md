@@ -4,6 +4,16 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.6.11 - 11/19/2025
+
+### Bug Fixes
+
+* Admin Console - Issue with creating app tokens [#5379](https://github.com/ironmansoftware/powershell-universal/issues/5379)
+* Admin Console - Improved git settings credential dialog [#5364](https://github.com/ironmansoftware/powershell-universal/issues/5364)
+* Platform - File System Watcher in 5.6.x does not respect module changes [#5385](https://github.com/ironmansoftware/powershell-universal/issues/5379)
+* Platform - Fixed an issue where SQLite VACUUM would run too frequently. [#5402](https://github.com/ironmansoftware/powershell-universal/issues/5402)
+* Module - Invoke-PSUScript errors in strict mode [#5339](https://github.com/ironmansoftware/powershell-universal/issues/5339)
+
 ## 5.6.10 - 11/12/2025
 
 ### Bug Fixes
