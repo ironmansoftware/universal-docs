@@ -1,5 +1,6 @@
 ---
 description: PowerShell Universal Training Videos
+hidden: true
 ---
 
 # 📺 Video Library
