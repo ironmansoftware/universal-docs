@@ -147,7 +147,7 @@ To assign a group to your app registration, locate your app in Enterprise Applic
 
 Once you have the groups claim configured in Entra ID, you can then update PowerShell Universal claim mappings to the groups provided.
 
-For each role you would like to assign to an Entra ID group, specify the Claim Type and Claim Value for that role. For example, I have a group in my environment with the ID 446832da-d4ad-4972-b0a2-eda736129928. The Claim Type for this object is [http://schemas.microsoft.com/ws/2008/06/identity/claims/groups](http://schemas.microsoft.com/ws/2008/06/identity/claims/groups).
+For each role you would like to assign to an Entra ID group, specify the Claim Type and Claim Value for that role. For example, I have a group in my environment with the ID 446832da-d4ad-4972-b0a2-eda736129928. The Claim Type for this object is [http://schemas.microsoft.com/ws/2008/06/identity/claims/role](http://schemas.microsoft.com/ws/2008/06/identity/claims/role).
 
 To assign this to the administrator group, I would do the following.
 
