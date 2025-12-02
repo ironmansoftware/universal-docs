@@ -50,25 +50,27 @@ chmod +x ./PSU/Universal.Server
 
 ## Open PowerShell Universal
 
-By default, PowerShell Universal runs on port 5000 of localhost.&#x20;
+By default, PowerShell Universal runs on port 5000 of localhost.
 
-### First Run Wizard&#x20;
+### First Run Wizard
 
-The first run wizard will step you through the basic settings of PowerShell Universal. This includes the default admin username and password, security settings, telemetry settings and license.&#x20;
+The first run wizard will step you through the basic settings of PowerShell Universal. This includes the default admin username and password, security settings, telemetry settings and license.
 
-#### Admin Account&#x20;
+<div data-with-frame="true"><figure><img src=".gitbook/assets/image (229).png" alt=""><figcaption><p>Figure shows the final step of the first run with the license key entered</p></figcaption></figure></div>
 
-The admin account is used to login to PowerShell Universal. It will display a warning if the password does not match the complexity requirements. You can always change it later.&#x20;
+#### Admin Account
 
-#### Security Settings&#x20;
+The admin account is used to login to PowerShell Universal. It will display a warning if the password does not match the complexity requirements. You can always change it later.
 
-Select from the drop down of security settings. They tweak certain features of PowerShell Universal in different levels of security. If you plan on cloning from a git repository, skip this step or set it to default.&#x20;
+#### Security Settings
 
-#### Telemetry&#x20;
+Select from the drop down of security settings. They tweak certain features of PowerShell Universal in different levels of security. If you plan on cloning from a git repository, skip this step or set it to default.
 
-PowerShell Universal can [send anonymous telemetry data](platform/telemetry.md) if you opt-in to do so. If you plan to clone from a git repository, skip this setting.&#x20;
+#### Telemetry
 
-#### License&#x20;
+PowerShell Universal can [send anonymous telemetry data](platform/telemetry.md) if you opt-in to do so. If you plan to clone from a git repository, skip this setting.
+
+#### License
 
 Add your license file. This is optional and needs to be an account-based license key.
 
