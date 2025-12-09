@@ -32,7 +32,7 @@ In some environments, it may be necessary to specify the domain name in the user
 
 ### Group Managed Service Accounts
 
-When using Group Managed Service Accounts (GMSA), you will need to ensure that the machine and account has access to the GSMA account. You can follow [Microsoft's guide here](https://techcommunity.microsoft.com/blog/itopstalkblog/step-by-step-how-to-work-with-group-managed-service-accounts-gmsa/329864). Once configuration is complete, create a new credential in PowerShell Universal secret management and select the Password Not Required option. Enter the GSMA account (e.g. domain\user$). As long as the hosting account has the proper privileges, you will be able to run jobs are the GMSA account.&#x20;
+When using Group Managed Service Accounts (GMSA), you will need to ensure that the machine and account has access to the GSMA account. You can follow [Microsoft's guide here](https://techcommunity.microsoft.com/blog/itopstalkblog/step-by-step-how-to-work-with-group-managed-service-accounts-gmsa/329864). Once configuration is complete, create a new credential in PowerShell Universal secret management and select the Password Not Required option. Enter the GSMA account (e.g. domain\user$). As long as the hosting account has the proper privileges, you will be able to run jobs are the GMSA account.
 
 ### Credential Validation
 
@@ -41,15 +41,15 @@ On Windows, you can validate credentials before saving their value. Click the Va
 ### Roles
 
 {% hint style="warning" %}
-Applying roles to a secret will prevent the secret from being accessible in scheduled jobs because no roles are applied in the scheduler.&#x20;
+Applying roles to a secret will prevent the secret from being accessible in scheduled jobs because no roles are applied in the scheduler.
 {% endhint %}
 
 Secret variables can include role-based access. Roles limit who can use the secret in their scripts and as run as credentials.
 
-When a secret has a role defined, it will not be accessible in resources that cannot provide that role. This can include the following:&#x20;
+When a secret has a role defined, it will not be accessible in resources that cannot provide that role. This can include the following:
 
 * Schedule Jobs
-* Unauthenticated APIs or Apps&#x20;
+* Unauthenticated APIs or Apps
 * Terminals
 
 ## Vaults
@@ -145,7 +145,7 @@ This script runs before variables are registered and vaults are located. You can
 
 ### vaults.ps1
 
-The `vaults.ps1` file contains vault registration commands. While the above example defines an Azure KeyVault secret vault registration, you can actually include any vault registration you need in this file.&#x20;
+The `vaults.ps1` file contains vault registration commands. While the above example defines an Azure KeyVault secret vault registration, you can actually include any vault registration you need in this file.
 
 You can edit vaults by clicking Platform \ Variables \ Vaults and then navigate to the vaults.ps1 tab.
 
@@ -278,6 +278,7 @@ There are several built-in variables that are defined when a job is run. You can
 | $UASchedule   | The schedule that was used to start the script.                                                                                               |
 | $UAScheduleId | The ID of the schedule that started the script.                                                                                               |
 | $AccessToken  | When using OIDC authentication, you can retrieve the current user's access token for access resources on their behalf.                        |
+| $Roles        | The roles of the caller of the script.                                                                                                        |
 
 #### $UAJob Object Structure
 
@@ -355,9 +356,9 @@ You can check if a job was run manually by using the Schedule and Trigger proper
 $Manual = $UAJob.Schedule -eq $null -and $UAJob.Trigger -eq $null
 ```
 
-## Preference Variables&#x20;
+## Preference Variables
 
-Preference variables can be configured on a script, during the execution of a job and on a global level. These include:&#x20;
+Preference variables can be configured on a script, during the execution of a job and on a global level. These include:
 
 * DebugPreference
 * ErrorActionPreference

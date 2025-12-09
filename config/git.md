@@ -2,7 +2,7 @@
 description: Git integration for PowerShell Universal.
 ---
 
-# Gitfo
+# Git
 
 {% hint style="info" %}
 Git integration requires a [license](https://ironmansoftware.com/pricing/powershell-universal).
@@ -450,3 +450,20 @@ In large teams, we recommend using git for development purposes but use Deployme
 [Deployments ](deployments.md)provide immutable configuration packages that have been well tested in down-level environments. By using Deployments, you can choose how you develop and manage your code and simply publish the result to your development, staging, QA and production environments. This ensures that all code is well tested before deploying to your critical systems.
 
 You can use automated workflows, like GitHub Actions, to publish your Deployments without having to manually update any system.
+
+## Git Hosting
+
+PowerShell Universal supports any standard git hosting solution. Our customers frequently use the following:
+
+* GitHub
+* GitHub Enterprise
+* GitLab
+* Bitbucket
+* Azure DevOps
+
+While these are the most common platforms, we support any platform that talks the git protocol.&#x20;
+
+### Example: Gitea
+
+You can also use simple, self-hosted solutions like [Gitea](https://gitea.com). Here is an example of how to easily configure a Gitea docker container for use with PowerShell Universal.
+
