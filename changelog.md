@@ -4,6 +4,40 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.6.12 - 12/11/2025
+
+### Bug Fixes
+
+* Admin Console - Order Deployments by reverse chronological order (newest at the top) [#5401](https://github.com/ironmansoftware/powershell-universal/issues/5401)
+* Admin Console - Logging viewer displays timestamps ahead of actual time (double conversion under en-AU / Hobart) [#5370](https://github.com/ironmansoftware/powershell-universal/issues/5370)
+* Admin Console - Schedules “Next Execution” and Home cards ignore browser locale (en-AU) and show MM/DD/YYYY [#5369](https://github.com/ironmansoftware/powershell-universal/issues/5369)
+* Admin Console - Parameter list does not appear in task scheduler [#5405](https://github.com/ironmansoftware/powershell-universal/issues/5405)
+* Admin Console - Deployments do not include prerelease tag [#5399](https://github.com/ironmansoftware/powershell-universal/issues/5399)
+* Admin Console - Fixed an issue with the favicon not displaying on the login page [#5437](https://github.com/ironmansoftware/powershell-universal/issues/5437)
+* Admin Console - Added toggle switch for condensed job table view [#5432](https://github.com/ironmansoftware/powershell-universal/issues/5432)
+* Admin Console - Added missing Restart APIs button [#5450](https://github.com/ironmansoftware/powershell-universal/issues/5450)
+* Admin Console - Added the ability to create endpoints by Module and Command [#5443](https://github.com/ironmansoftware/powershell-universal/issues/5443)
+* APIs - Having using namespace at top of script prevent document from processing [#5424](https://github.com/ironmansoftware/powershell-universal/issues/5424)
+* APIs - Swagger includes standard cmdlet parameters [#5423](https://github.com/ironmansoftware/powershell-universal/issues/5423)
+* Apps - MUI X Expired package version [#5410](https://github.com/ironmansoftware/powershell-universal/issues/5410)
+* Apps - New-UDLink child icons break in v5.6.11 [#5427](https://github.com/ironmansoftware/powershell-universal/issues/5427)
+* Apps - New-UDMap -ZoomControlPosition is ignored [#5412](https://github.com/ironmansoftware/powershell-universal/issues/5412)
+* Apps - Fixed an issue with New-UDTextbox -Mask and other parameters [#5407](https://github.com/ironmansoftware/powershell-universal/issues/5407)
+* Automation - Reduced default Hangfire worker count to avoid PostgreSQL connection exhaustion [#5391](https://github.com/ironmansoftware/powershell-universal/issues/5391)
+* Automation - Improved VS Code mode file change detection performance for scripts [#5417](https://github.com/ironmansoftware/powershell-universal/issues/5417)
+* Git - Prevent Git Credential Manager from prompting for credentials
+* Git - Improve error reporting when Git operations fail
+* Git - Add support for disabling timed git sync [#5360](https://github.com/ironmansoftware/powershell-universal/issues/5360)
+* Git - Fixed an issue using SSH keys [#5434](https://github.com/ironmansoftware/powershell-universal/issues/5434)
+* Installer - 5.6.11 MSI install asked me if I wanted server or desktop install [#5418](https://github.com/ironmansoftware/powershell-universal/issues/5418)
+* Platform - Cannot import/declare module configuration by name [#5400](https://github.com/ironmansoftware/powershell-universal/issues/5400)
+* Platform - Improved performance of groom job [#5435](https://github.com/ironmansoftware/powershell-universal/issues/5435)
+* Platform - Fixed an issue with psu.exe database migrations to SQL Server
+* Platform - Fixed an issue calling Connect-AzAccount
+* Module - Invoke-PSUEndpoint not returning errors [#5411](https://github.com/ironmansoftware/powershell-universal/issues/5411)
+* Module - Fixed an issue calling Invoke-PSUScript with -Integrated and -Wait
+* Module - Improved performance of Wait-PSUJob
+
 ## 5.6.11 - 11/19/2025
 
 ### Bug Fixes
