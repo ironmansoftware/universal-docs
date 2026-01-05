@@ -19,18 +19,25 @@ Triggered jobs will not cause additional triggers to start. Triggers are stored 
 The following types of events can be assigned a trigger.
 
 * Job Started
+* Job Cancelled
 * Job Completed
+* Job Completed with Error
 * Job Requesting Feedback
 * Job Failed
-* Dashboard Started
-* Dashboard Stopped
+* Job Timed Out
+* App (Dashboard) Started
+* App (Dashboard) Stopped
+* App (Dashboard) Session Expired
+* Event Hub Connected
+* Event Hub Disconnected
+* Health Check Failed
 * Server Started
 * Server Stopping
+* New User Login
 * User Login
 * Use of a Revoked App Token
 * API Authentication Failed
 * API Error
-* New User Login
 * Git Sync
 * License Expired
 * License Expiring
@@ -88,7 +95,7 @@ public class GitStatus
 
 ### Computer Offline
 
-The computer offline trigger will provide the computer object to the `$Data` parameter.&#x20;
+The computer offline trigger will provide the computer object to the `$Data` parameter.
 
 ```powershell
 class Computer
