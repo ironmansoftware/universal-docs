@@ -20,6 +20,10 @@ To configure git sync, navigate to Settings \ Git within the Admin Console. You 
 
 <figure><img src="../.gitbook/assets/image (250).png" alt=""><figcaption><p>Git Settings Dialog</p></figcaption></figure>
 
+{% hint style="info" %}
+In PowerShell Universal 5.x and later, Git credentials (Remote URL, Username, and Personal Access Token) are stored in the SQL database rather than in appsettings.json. Editing these settings in the UI will update the database. If you edit Git settings and then click OK, PSU may clear stored credentials even if the fields appear populated. In multi-node environments, you must re-enter credentials on each node individually after making changes.
+{% endhint %}
+
 ### appsettings.json
 
 You can also use the [Configuration settings](settings.md) to setup git sync. This is useful if you have a single instance of PSU and would like to back up your appsettings.json file. Adjusting settings within the admin console will not update the appsettings.json file. You will need to do so manually and restart PowerShell Universal after changing the settings.
@@ -32,9 +36,45 @@ If git sync settings are specified in the database, settings defined in appsetti
 
 By default, PowerShell Universal will sync with the `master` branch. If you wish to use a different branch, specify the `GitBranch` setting within your `appsettings.json`.
 
+#### Fixing Missing Upstream Tracking
+
+If you encounter the error **"There is no tracking information for the current branch"**, the local branch is not linked to the remote. To fix this:
+
+1. Open PowerShell in `%ProgramData%\UniversalAutomation\Repository` (or the configured repository path)
+2. Run:
+
+```powershell
+git fetch
+git branch --set-upstream-to=origin/main main
+git pull
+```
+
 ### Remote
 
 Remotes are not required. If a remote is not specified, the git repository is stored locally in the Repository directory. If specified, PowerShell Universal will sync with the remote. Proper credentials are required for access to that remote.
+
+#### Azure DevOps URL Format
+
+Azure DevOps repositories should use the modern `dev.azure.com` URL format rather than the legacy `visualstudio.com` domain:
+
+**Correct format:**
+
+```
+https://dev.azure.com/<organization>/<project>/_git/<repository>
+```
+
+**Examples:**
+
+```
+https://dev.azure.com/mycompany/MyProject/_git/PowerShellUniversal
+https://dev.azure.com/mycompany/MyProject/_git/PSU%20Scripts
+```
+
+If your repository name contains spaces, they should be encoded as `%20` in the URL. Avoid using URLs with the older `visualstudio.com` domain, as they may cause redirect loops or authentication failures with the "too many redirects or authentication replays" error.
+
+For Azure DevOps, your Personal Access Token must have the **Code (Read & Write)** scope. Fine-grained tokens work, but classic PATs are recommended for compatibility across PSU versions.
+
+**Note for GitLab users:** If your GitLab instance requires header-based authentication, you may need to use the External Git Client option and configure Git credential helpers, as PSU's built-in Git client uses HTTP Basic authentication with the PAT as the password. Some GitLab configurations expect a `Private-Token` header instead.
 
 ### Authentication
 
@@ -185,6 +225,152 @@ Git sync will timeout if it cannot contact the remote after 60 minutes. This all
 "Data" : {
     "GitSyncTimeout": 30
 }
+```
+
+### Sync Interval
+
+**Type:** Integer\
+**Default:** 60\
+**appsettings.json:** `GitSyncInterval`
+
+The interval, in seconds, between automatic Git synchronization attempts when automatic sync is enabled. The default value is 60 seconds (1 minute).
+
+To adjust the sync frequency, edit `appsettings.json`:
+
+```json
+"GitSyncInterval": 300
+```
+
+This would change the sync interval to 5 minutes. Lower values increase sync frequency but may impact performance in large repositories or slow networks. Setting this value too low (below 30 seconds) is not recommended for production environments.
+
+### Troubleshooting
+
+#### Azure DevOps: "Too many redirects or authentication replays"
+
+This error typically indicates one of the following issues:
+
+* **Legacy URL format:** Ensure you are using `https://dev.azure.com/<org>/<project>/_git/<repo>` instead of the older `visualstudio.com` domain
+* **Invalid PAT scope:** Your Personal Access Token must have **Code (Read & Write)** permissions in Azure DevOps
+* **Expired credentials:** Generate a new PAT and re-enter it in PSU's Git settings
+* **Encoded spaces:** If your repository name has spaces, ensure they are encoded as `%20` in the URL
+
+**Resolution:**
+
+1. Update the remote URL to use `dev.azure.com`
+2. Generate a new PAT with Code (Read & Write) scope
+3. Enable **Use External Git Client** and install Git for Windows if the built-in client continues to fail
+
+#### Missing Upstream Tracking
+
+**Error:** "There is no tracking information for the current branch"
+
+**Cause:** The local Git branch is not configured to track a remote branch.
+
+**Resolution:** Open PowerShell in the repository directory and run:
+
+```powershell
+git fetch
+git branch --set-upstream-to=origin/main main
+git pull
+```
+
+Replace `main` with your actual branch name. Then click **Synchronize Now** in PSU.
+
+#### Git Sync Stops After Changing Settings in UI
+
+**Symptoms:** After editing Git settings (remote URL, credentials, sync interval, etc.) in the PSU UI and clicking OK, synchronization stops working even though settings appear correct.
+
+**Cause:** In PSU 5.x, Git credentials are stored in the SQL database. Making any change to Git settings through the UI can clear the stored credentials, even if the password field still appears populated in the form.
+
+**Resolution:**
+
+1. Re-enter the Personal Access Token in **Settings → Git**
+2. Click **OK** to save
+3. In multi-node environments, **repeat this process on every node**—credentials must be entered individually on each server
+4. Click **Synchronize Now** to verify sync is working again
+
+The system does not automatically propagate credentials across nodes in a load-balanced or high-availability configuration.
+
+#### Agent and Network Issues
+
+**Symptoms:** Sync works on one node but fails on others, or you see `RpcException` or "service is unavailable" errors in logs.
+
+**Common causes:**
+
+* **Version mismatch:** Ensure all PSU servers and agents are running the same version
+* **Firewall rules:** Agents communicate with the PSU server over gRPC on ports **5000** (HTTP) or **5001** (HTTPS)
+* **Proxy or WebSocket blocking:** Corporate proxies may block or inspect gRPC traffic; configure git to use the proxy or enable External Git Client
+
+**Resolution:**
+
+1. Verify all nodes are running the same PSU version
+2. Check firewall rules allow traffic on ports 5000/5001
+3. Test gRPC connectivity between nodes
+4. If using a proxy, configure `http_proxy` and `https_proxy` environment variables for the PSU service account
+
+#### Docker and Containerized Deployments
+
+* Ensure the container image includes `git` (run `git --version` to verify)
+* Verify outbound network access to the git remote
+* Mount persistent volumes for `/data` or `%ProgramData%\UniversalAutomation` to preserve git state across restarts
+* If sync silently fails, check container logs for git or network errors
+
+#### Editing .git/config Without Git CLI
+
+If the Git command-line tool is not installed on the server and you encounter upstream tracking errors, you can edit the repository configuration directly through PSU's file browser:
+
+1. Navigate to **Platform → Configuration → Repository → .git → config**
+2. Add the following lines (adjust the branch name to match your repository):
+
+```ini
+[branch "main"]
+    remote = origin
+    merge = refs/heads/main
+```
+
+3. Click **Save**
+4. Return to **Settings → Git** and click **Synchronize Now**
+
+This approach allows you to configure upstream tracking without needing `git` commands, which is particularly useful when Git for Windows is not installed or when running under restricted service accounts.
+
+#### Git Settings Not Persisting
+
+If changes to Git settings are not saved or revert immediately after clicking OK:
+
+**Check file system permissions:**
+
+* Stop the PowerShell Universal service
+* Try manually editing `%ProgramData%\PowerShellUniversal\appsettings.json` (or `%ProgramData%\UniversalAutomation\appsettings.json` in older versions)
+* Add a comment line, save, and reopen the file to verify your changes persist
+* If changes revert, check for antivirus software, Group Policy Objects (GPO), or NTFS permissions blocking writes to the PSU data directory
+
+**Enable debug logging for troubleshooting:**
+
+1. Stop the PowerShell Universal service
+2. Edit `appsettings.json` and set:
+
+```json
+"SystemLogLevel": "Debug"
+```
+
+3. Save and restart the service
+4. Attempt to save Git settings again
+5. Review `%PROGRAMDATA%\PowerShellUniversal\systemLog.txt` for errors related to configuration writes
+
+**Manually populate Git settings:**
+
+With the service stopped, you can directly populate Git fields in `appsettings.json`:
+
+```json
+"GitRemote": "https://dev.azure.com/org/project/_git/repo",
+"GitUserName": "any",
+"GitPassword": "your-PAT-here",
+"GitBranch": "main"
+```
+
+Restart the service and verify the settings appear in **Settings → Git**. If they vanish again, the debug logs will indicate whether a permission issue, endpoint protection software, or configuration validation error is causing the reset.
+
+```
 ```
 
 ## Included Files
@@ -348,7 +534,7 @@ You can also configure a git remote to authenticate with a user name and passwor
 
 ## Common Errors
 
-### Git synchronization failed. unknown certificate lookup failure: 16777280
+#### Git synchronization failed. unknown certificate lookup failure: 16777280
 
 The lib2gitsharp library was unable to validate the certificate of the remote git repository. You will need to use the [external git client](git.md#external-git-client) and a custom git config in order to address this.
 
@@ -369,11 +555,11 @@ http.sslCAPath
     Can be overridden by the GIT_SSL_CAPATH environment variable.
 ```
 
-### too many redirects or authentication replays
+#### "too many redirects" or authentication replays
 
 The git remote has rejected your credentials to access the repository. Your personal access token may have expired or does not have access to the remote.
 
-### repository not owned by current user
+#### repository not owned by current user
 
 The local git repository does not have the proper access controls for the user trying to access it. This can happen if PowerShell Universal cloned the repository and then a different service account was set on the service. Because the access controls do not match, the git will not access the folder due. This is a security feature of git.
 
