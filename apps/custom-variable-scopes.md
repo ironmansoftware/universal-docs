@@ -66,3 +66,53 @@ New-UDColumn -Endpoint {
 ```
 
 Once a session is terminated, the session variables are cleared.
+
+#### Storing Credentials in Session Scope
+
+Session scope is particularly useful for storing user credentials that should not be persisted beyond the user's session. This pattern allows apps to prompt for administrative credentials without storing them permanently, addressing security requirements where credentials must not be saved.
+
+> ℹ️ **Information**
+>
+> Session variables expire when the user's session ends. This makes them ideal for storing sensitive data like credentials that should only exist during active use.
+
+**Example: Prompting for Administrator Credentials**
+
+This example demonstrates prompting users for credentials once per session and reusing them for privileged operations:
+
+```powershell
+# Check if credentials are already stored in the session
+if (-not $Session:AdminCredentials) {
+    # Prompt user for credentials (only happens once per session)
+    $Session:AdminCredentials = Get-Credential -Message "Enter administrator credentials"
+}
+
+# Use the stored credentials for privileged operations
+New-UDButton -Text 'Check ACL' -OnClick {
+    try {
+        # Execute command as the credentialed user
+        $result = Invoke-Command -Credential $Session:AdminCredentials -ScriptBlock {
+            Get-Acl C:\SensitiveFolder
+        }
+        
+        Show-UDToast -Message "ACL retrieved successfully" -BackgroundColor Green
+        Set-UDElement -Id 'aclOutput' -Content { 
+            $result | Out-String 
+        }
+    }
+    catch {
+        Show-UDToast -Message "Failed: $($_.Exception.Message)" -BackgroundColor Red
+    }
+}
+
+New-UDElement -Tag 'pre' -Id 'aclOutput'
+```
+
+**Key Points:**
+
+* `$Session:AdminCredentials` stores credentials for the duration of the user's session only
+* `Get-Credential` prompts the user once; subsequent operations reuse the stored credential
+* `Invoke-Command -Credential` executes commands as the credentialed user
+* Credentials are never persisted to disk or shared between users
+* When the user's session ends, the credentials are automatically cleared
+
+This approach is ideal for applications that perform ACL management, file system operations, or other tasks requiring elevated privileges without storing administrator credentials permanently.
