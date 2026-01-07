@@ -4,6 +4,20 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 5.6.13 - 01/07/2026
+
+### Security Fix
+
+* \[CVE-2026-0618] - Apps - Show-UDToast -Message and -Title are now HTML encoded to prevent XSS attacks.
+
+### Bug Fixes
+
+* Admin Console - Fixed an issue where Upload and Import scripts were visible when the console was in read-only mode.
+* Agent - Fixed agent memory leak when using Windows PowerShell compatibility mode. [#5475](https://github.com/ironmansoftware/powershell-universal/issues/5475)
+* Git - Takeown Fails with syntax error on some operating systems [#5470](https://github.com/ironmansoftware/powershell-universal/issues/5470)
+* Module - Added -UseBasicParsing to Invoke-WebRequest calls in the Universal module
+* Platform - Fixed an issue viewing files in published folders that use an absolute path [#5485](https://github.com/ironmansoftware/powershell-universal/issues/5485)
+
 ## 5.6.12 - 12/11/2025
 
 ### Bug Fixes
