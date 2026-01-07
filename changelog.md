@@ -6,6 +6,11 @@ description: Changelog for PowerShell Universal.
 
 ## [Downloads](https://ironmansoftware.com/release/powershell-universal)
 
+## 4.5.6 - 01/07/2025
+
+\
+\- \[CVE-2026-0618] - Apps - Show-UDToast -Message and -Title are now HTML encoded to prevent XSS attacks.
+
 ## 4.5.5 - 7/25/2025
 
 #### CVE
