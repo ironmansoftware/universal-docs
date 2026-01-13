@@ -100,6 +100,7 @@
     * [Dynamic Regions](apps/components/dynamic-regions.md)
     * [Element](apps/components/element.md)
     * [Error Boundary](apps/components/error-boundary.md)
+    * [Head Element](apps/components/utilities/head-element.md)
     * [Protect Section](apps/components/utilities/protect-section.md)
     * [Transitions](apps/components/utilities/transitions.md)
     * [HTML](apps/components/html.md)
