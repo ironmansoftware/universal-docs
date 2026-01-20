@@ -261,6 +261,19 @@ $Pages += New-UDPage -Name 'Admins' -Content {
 New-UDApp -Title "Hello, World!" -Pages $Pages
 ```
 
+If you wish to check roles within pages, you can also use the `-In` operator and the `$Roles` variable.
+
+```powershell
+New-UDPage -Name 'Home' -Content { 
+    if ("Administrator" -in $Roles)
+    {
+        New-UDTypography -Text "I am an administrator"
+    } else {
+        New-UDTypography -Text "I am NOT an administrator"
+    }
+} 
+```
+
 ### Layouts
 
 The permanent layout creates a static navigation drawer on the left hand side of the page. It cannot be hidden by the user.
