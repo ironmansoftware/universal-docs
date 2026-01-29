@@ -59,10 +59,10 @@ Start-Process .\Universal\Universal.Server.exe
 
 You can use the following command line on Linux to install and start PowerShell Universal:
 
-```
- wget https://imsreleases.blob.core.windows.net/universal/production/5.5.2/Universal.linux-x64.5.2.1.zip
+```bash
+ wget -O psu.zip https://powershelluniversal.com/download/psu/linux-x64/latest
  sudo apt install unzip 
- unzip Universal.linux-x64.5.5.2.zip -d PSU
+ unzip psu.zip -d PSU
  chmod +x ./PSU/Universal.Server
  ./PSU/Universal.Server
 ```
