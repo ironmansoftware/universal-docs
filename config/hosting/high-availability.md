@@ -31,15 +31,23 @@ To aid with load balancing; you can use the `/api/v1/status` endpoint for your n
 
 You can set your nodes into Maintenance Mode by clicking Platform \ Computers and checking the maintenance mode option. Once maintenance mode is enabled, the `/api/v1/status` endpoint will begin returning `503`. This should be configured to disable traffic being routed to the node while maintenance is performed.
 
+### /api/v2/status
+
+The v2 status API will return a `503` for additional reasons. They include:
+
+* Any computer in the cluster is offline but not in maintenance mode
+* Git sync is failing to pull changes on any node
+* API endpoints are configured but are not running properly
+
 ## Limitations
 
 There currently are some limitations to highly available PowerShell Universal clusters.
 
 ### Multi-Node Caching
 
-Caching performed using `$Cache` is limited to a single process on a single node. For example, each app running outside the integrated environment will have its own cache.&#x20;
+Caching performed using `$Cache` is limited to a single process on a single node. For example, each app running outside the integrated environment will have its own cache.
 
-`Set-PSUCache` will not share data across nodes if `-Persist` is not specified. To ensure all nodes have the same data include this switch.&#x20;
+`Set-PSUCache` will not share data across nodes if `-Persist` is not specified. To ensure all nodes have the same data include this switch.
 
 ### Multi-Node App Broadcast
 
