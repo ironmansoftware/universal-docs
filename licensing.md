@@ -46,11 +46,7 @@ Online licenses work the same as offline but check the subscription status on ir
 
 ## Developer Licenses
 
-When a server license is purchased, you will be able to generate developer licenses for users building solutions for your team. Their intent is to be used by individual developers in their local environments. Do not use developer licenses when hosting a server for remote access for testing or production. Instances of PowerShell Universal running with a Developer License will display a water mark in the admin console and any apps stating they are intended only for development purposes.
-
-You can generate a developer license on the Settings \ License page by clicking the Generate Developer License button.
-
-![Generate Developer License](<.gitbook/assets/image (96).png>)
+You can obtain a free developer license by logging in with a [Devolutions Account](https://docs.devolutions.net/portal/profile/create-devolutions-account/). Using a developer license allows for use in non-production workloads. You can use this license for developing or testing PowerShell Universal.
 
 ## Licensed Features
 

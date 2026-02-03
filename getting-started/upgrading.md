@@ -62,10 +62,6 @@ If you perform an uninstall and then an install using the MSI, then the service 
 
 Once all the configuration files and the database are backed up, you can run the new MSI installer.
 
-{% hint style="warning" %}
-For major upgrades (e.g. v4.3.4 to v5.0.4 etc), you will need to uninstall the previous version prior to running the new version.
-{% endhint %}
-
 The installer may prompt for a restart of the machine if files are locked. The PSU MSI will uninstall all the files in the installation directory and install entirely new files.
 
 Once the MSI has completed, you can navigate to your PowerShell Universal admin console to perform installation validation.
@@ -131,11 +127,11 @@ After the upgrade is complete, navigate to the PowerShell Universal Admin Consol
 
 By default, the PSU service will migrate to the latest database version during the startup process.
 
-The database can also be upgraded before upgrading the application. This is recommended for larger installations that may require some time for the schema update to take place. In some environments, allowing the service to upgrade the database can result in a timeout, like with Service Control Manager in Windows.&#x20;
+The database can also be upgraded before upgrading the application. This is recommended for larger installations that may require some time for the schema update to take place. In some environments, allowing the service to upgrade the database can result in a timeout, like with Service Control Manager in Windows.
 
-If you are using SQL, you can find SQL files generated and placed in the SQL folder within the PSU installation media. Run these scripts against your database before upgrading.&#x20;
+If you are using SQL, you can find SQL files generated and placed in the SQL folder within the PSU installation media. Run these scripts against your database before upgrading.
 
-All types of databases support the `psu` command line tool for upgrades.&#x20;
+All types of databases support the `psu` command line tool for upgrades.
 
 ```powershell
 psu db schema latest --connection-string "Data Source=C:\ProgramData\UniversalAutomation\database.db"
@@ -161,7 +157,7 @@ The most common upgrade issues come due to changes in the Universal App framewor
 
 ## Nightly Builds
 
-When using nightly builds, you cannot upgrade from one nightly version to another. You can upgrade from a generally available version to a nightly version. In order to test a new nightly build, you will need to uninstall the current nightly build, rollback the database schema and then install the new version. You can roll back the database schema with `psu.exe` .&#x20;
+When using nightly builds, you cannot upgrade from one nightly version to another. You can upgrade from a generally available version to a nightly version. In order to test a new nightly build, you will need to uninstall the current nightly build, rollback the database schema and then install the new version. You can roll back the database schema with `psu.exe` .
 
 ```powershell
 .\psu.exe db schema --schema-version 5.4.0
@@ -199,7 +195,7 @@ Additionally, you may encounter issues due to the PSU service restart. When the 
 
 ### Mixed Versions
 
-Mixing versions of PowerShell Universal servers with the same database may cause issues as schema changes between the database or protocol changes in internal APIs may be mismatched. We recommend staging your upgrades in a way that you will eventually be running all PowerShell Universal servers as the same version.&#x20;
+Mixing versions of PowerShell Universal servers with the same database may cause issues as schema changes between the database or protocol changes in internal APIs may be mismatched. We recommend staging your upgrades in a way that you will eventually be running all PowerShell Universal servers as the same version.
 
 {% hint style="warning" %}
 There is a known compatibility issue between PSU 5.5.4 and earlier and PSU 5.6.0 and later. We do not recommend mixing these versions. Scheduling jobs may fail on existing 5.5.4 servers when combined with 5.6.0 servers.

@@ -1,7 +1,7 @@
 # Table of contents
 
 * [❓ About](README.md)
-* [🆕 What's New in v5?](whats-new-in-v5.md)
+* [📰 What's new?](whats-new.md)
 * [⏯️ Get Started](get-started.md)
 * [📺 Video Library](video-library.md)
 * [📚 Additional Resources](additional-resources.md)
@@ -14,7 +14,6 @@
 * [🔑 Licensing](licensing.md)
 * [📊 System Requirements](system-requirements.md)
 * [🌐 Supported Browsers](supported-browsers.md)
-* [Release Support Policy](release-support-policy.md)
 * [Cmdlet Help](https://github.com/ironmansoftware/universal-docs/tree/v5/cmdlets)
 
 ## 🔌 API

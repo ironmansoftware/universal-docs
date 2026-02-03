@@ -50,33 +50,19 @@ chmod +x ./PSU/Universal.Server
 
 ## Open PowerShell Universal
 
-By default, PowerShell Universal runs on port 5000 of localhost.
+By default, PowerShell Universal runs on port 5000 of localhost. Open a web browser and navigate to `http://localhost:5000`.
+
+### Login with a Devolutions Account
+
+The first time you navigate to PowerShell Universal, you can login with a [Devolutions account](https://docs.devolutions.net/portal/profile/create-devolutions-account/) in order to receive a free developer license. This license will enable all features and is intended for non-production workflows.
 
 ### First Run Wizard
 
-The first run wizard will step you through the basic settings of PowerShell Universal. This includes the default admin username and password, security settings, telemetry settings and license.
-
-<div data-with-frame="true"><figure><img src=".gitbook/assets/image (229).png" alt=""><figcaption><p>Figure shows the final step of the first run with the license key entered</p></figcaption></figure></div>
-
-#### Admin Account
-
-The admin account is used to login to PowerShell Universal. It will display a warning if the password does not match the complexity requirements. You can always change it later.
-
-#### Security Settings
-
-Select from the drop down of security settings. They tweak certain features of PowerShell Universal in different levels of security. If you plan on cloning from a git repository, skip this step or set it to default.
-
-#### Telemetry
-
-PowerShell Universal can [send anonymous telemetry data](platform/telemetry.md) if you opt-in to do so. If you plan to clone from a git repository, skip this setting.
-
-#### License
-
-Add your license file. This is optional and needs to be an account-based license key.
+Optionally, you can select to run the First Run wizard setup instead of logging in with a Devolutions account and provide a license key.
 
 ## Create an API
 
-APIs allow you to call PowerShell scripts over HTTP. To create an API, click API \ Endpoints and click Create New Endpoint. Specify a URL.
+APIs allow you to call PowerShell scripts over HTTP. To create an API, click API \ Endpoints and click Create New Endpoint. Specify a URL. Disable authentication for this endpoint.
 
 Next, click details on your new API and enter the following command into the editor:
 

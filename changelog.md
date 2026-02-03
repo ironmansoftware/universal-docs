@@ -4,6 +4,39 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2026.1.0 - 02/03/2026
+
+{% hint style="info" %}
+PowerShell Universal has aligned with the Devolutions' version number scheme and will use dated versions moving forward. Previous versions of PowerShell Universal can be directly upgraded to 2026.1.0.
+{% endhint %}
+
+### Improvements
+
+* Add support for developer self-signed certificate in installer
+* Added -HideMiniMap to New-UDCodeEditor
+* Added -Id to Set-PSUSchedule
+* Added support for Devolutions account login and PSU Developer License
+* Improved the New-UDTransferList visuals
+* The PSU website can now be launched by the installer
+
+### Fixes
+
+* Fixed a case-sensitivity issue with folders in scripts.ps1
+* Fixed a database error that could occur when saving app pages
+* Fixed an issue where /api/v1/schedule would not return all schedules
+* Fixed an issue where logs were written to the console log in apps
+* Fixed an issue where renaming an app page URL would cause the content of the page to be removed
+* Fixed an issue where rows would stay expanded when paging in New-UDTable
+* Fixed an issue where the git page could hang
+* Fixed an issue where the installer would not respect the Start Service checkbox
+* Fixed an issue with casing of API endpoint methods
+* Fixed an issue with multiselect filters in New-UDTable
+* Fixed an issue with number filters in New-UDTable
+* Fixed an issue with string array parameters with a default value of $null in the job parameter window
+* Fixed an issue with the agent leaking memory
+* Fixed an issue with the v2 status API
+* Fixed an issue with ValidateSetAttribute not repopulating the form in the Rerun Script button
+
 ## 5.6.13 - 01/07/2026
 
 ### Security Fix
