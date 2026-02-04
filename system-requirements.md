@@ -12,14 +12,14 @@ Hardware recommendations are based on use and depend on how many scripts are run
 
 This is the base line for a Universal server with very minimal server load. It should be used for trial or development purposes only.
 
-* 2 CPU&#x20;
+* 2 CPU
 * 4 GB
 * 250 GB
 * SQLite Database
 
 ### Recommended
 
-This is the base line for a Universal server running several jobs an hour, hosting APIs with fewer than 100 requests per hour and a single App. It will support up to 10 concurrent users.
+This is the base line for a Universal server running several jobs an hour, hosting APIs with fewer than 100 requests per second and a single App. It will support up to 10 concurrent users.
 
 * 4 CPU
 * 16 GB
@@ -28,7 +28,7 @@ This is the base line for a Universal server running several jobs an hour, hosti
 
 ### Performance
 
-This is the base line for a Universal server running dozens of jobs an hour, hosting APIs with greater than 100 requests per hour and up to 5 Apps. It will support up to 50 concurrent users.&#x20;
+This is the base line for a Universal server running dozens of jobs an hour, hosting APIs with greater than 100 requests per second and up to 5 Apps. It will support up to 50 concurrent users.
 
 * 16 CPU
 * 32 GB
@@ -39,7 +39,7 @@ This is the base line for a Universal server running dozens of jobs an hour, hos
 
 A distributed system employs multiple instances of PowerShell Universal connected to the same database. It requires either Git or managed deployments to share configuration data. We recommend this for widely used production instances. It provides the best performance, stability and redundancy.
 
-This configuration can support hundreds of jobs per hour, thousands of API requests and many apps. The number of concurrent users will depend on the number of PSU servers in the cluster.
+This configuration can support hundreds of jobs per hour, thousands of API requests per second and many apps. The number of concurrent users will depend on the number of PSU servers in the cluster.
 
 * 32 CPU
 * 64 GB
@@ -69,7 +69,7 @@ This configuration can support hundreds of jobs per hour, thousands of API reque
 
 ## Network
 
-PowerShell Universal communicates on the port configured during installation and\or configuration.&#x20;
+PowerShell Universal communicates on the port configured during installation and\or configuration.
 
 ### Web Server Front End
 
@@ -78,14 +78,14 @@ PowerShell Universal communicates on the port configured during installation and
 
 ### TCP Backend
 
-* Dynamically assigned local port on loopback&#x20;
+* Dynamically assigned local port on loopback
 
 ### Database
 
 * MS SQL: 1433
 * PostgreSQL: 5432
 
-### Agent&#x20;
+### Agent
 
 * Web Server Front End Port, default 5000
 
@@ -97,7 +97,6 @@ PowerShell Universal communicates on the port configured during installation and
 
 Online licensing requires access to www.ironmansoftware.com on port 443. Offline licenses do not require internet access.
 
-### Proxy&#x20;
+### Proxy
 
 PowerShell Universal provides proxy configuration settings in the Settings \ General page. These are used for communication with remote git, database or internet services.
-
