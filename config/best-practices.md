@@ -28,6 +28,10 @@ If you are making changes through the admin console, via git sync, or using depl
 
 ### Favor Non-Integrated Environments
 
+{% hint style="info" %}
+This does not refer to the `-Integrated` switch parameter for the PSU cmdlets and only applies to environments.
+{% endhint %}
+
 While the integrated environment is fast and easy to use, it runs all of your PowerShell operations within the PowerShell Universal service. Issues with a single script or endpoint can affect the stability of the system.
 
 When using non-integrated environments, an external PowerShell process is started. For APIs and Dashboards, that process can be long running but can be restarted without affecting the rest of the system. With jobs and terminals, a new process is started for each instance of the job and terminal. As jobs and terminals are stopped, the process is terminated, and any resources consumed by that process are reclaimed by the system.
@@ -67,9 +71,9 @@ Set-PSUCache -Key 'Data' -Value (Get-Date) -SlidingExpiration (New-Timespan -Hou
 
 ### Limit or Partition Size of Persistent Cache
 
-The persistent cache stores data in the PSU database. The data is serialized with the [PSSerializer class](https://learn.microsoft.com/en-us/dotnet/api/system.management.automation.psserializer?view=powershellsdk-7.4.0) that is part of the PowerShell SDK. This data format is the same one used by PowerShell Remoting. Being an XML format, this data will be significantly larger than binary storage. Storing many objects in a single cached item will result in poor deserialization performance once the data reaches certain limits.&#x20;
+The persistent cache stores data in the PSU database. The data is serialized with the [PSSerializer class](https://learn.microsoft.com/en-us/dotnet/api/system.management.automation.psserializer?view=powershellsdk-7.4.0) that is part of the PowerShell SDK. This data format is the same one used by PowerShell Remoting. Being an XML format, this data will be significantly larger than binary storage. Storing many objects in a single cached item will result in poor deserialization performance once the data reaches certain limits.
 
-This can negatively affect the PowerShell Universal server because it needs to retrieve and then deserialize a large string every time the data is read from the cache.&#x20;
+This can negatively affect the PowerShell Universal server because it needs to retrieve and then deserialize a large string every time the data is read from the cache.
 
 Consider selecting smaller subsets of the objects you wish to store. For example, only select the properties you need rather than the entire object.
 
@@ -78,7 +82,7 @@ $Data = Get-ADUser -Properties CN,Enabled
 Set-PSUCache -Key Users -Value $Data
 ```
 
-Consider storing data in smaller partitions. If possible, segment the data into smaller chunks to avoid retrieving a large value from the database.&#x20;
+Consider storing data in smaller partitions. If possible, segment the data into smaller chunks to avoid retrieving a large value from the database.
 
 ```powershell
 $OU1 = Get-ADUser -SearchBase "OU=OU1,DC=PSU" -Properties CN,Enabled 
@@ -86,8 +90,6 @@ Set-PSUCache -Key Users_OU1 -Value $OU1
 $OU2 = Get-ADUser -SearchBase "OU=OU2,DC=PSU" -Properties CN,Enabled 
 Set-PSUCache -Key Users_OU2 -Value $OU2
 ```
-
-
 
 ### Reduce Log Level in Production
 
@@ -285,30 +287,30 @@ Consider a dedicated PowerShell Universal server to host the platform. Avoid ins
 
 ### Utilize MS SQL or PostgreSQL for Production
 
-Avoid using SQLite for production use cases. It does not provide the ability to scale when workloads increase. It prevents multiple PSU servers from using the same data store. It does not scale when reaching sizes over 2 GBs.&#x20;
+Avoid using SQLite for production use cases. It does not provide the ability to scale when workloads increase. It prevents multiple PSU servers from using the same data store. It does not scale when reaching sizes over 2 GBs.
 
-Migrating from a SQLite database to a SQL database can be error prone and time consuming. If you are considering a deployment for production use, we recommend starting with a centralized SQL server.&#x20;
+Migrating from a SQLite database to a SQL database can be error prone and time consuming. If you are considering a deployment for production use, we recommend starting with a centralized SQL server.
 
 ### Perform Scheduled Database Backups
 
-We recommend backing up the database on regular intervals. While configuration data is primarily stored in the repository, the database contains resources such as App Tokens, local identities, job history and more. Regular backups also help to recover from failed schema upgrades and provide the ability to rollback to previous schema versions without the need to perform a schema downgrade.&#x20;
+We recommend backing up the database on regular intervals. While configuration data is primarily stored in the repository, the database contains resources such as App Tokens, local identities, job history and more. Regular backups also help to recover from failed schema upgrades and provide the ability to rollback to previous schema versions without the need to perform a schema downgrade.
 
 ### Database Cluster for Redundancy
 
-We recommend using a database failover cluster, if possible. This allows for quick recovery and limits down time of the PowerShell Universal server is one of the SQL servers were to go offline.&#x20;
+We recommend using a database failover cluster, if possible. This allows for quick recovery and limits down time of the PowerShell Universal server is one of the SQL servers were to go offline.
 
 ### Load Balancing
 
-Consider employing a load balancer in front of your PowerShell Universal instances. Users will be directed to the least busy server or will fail over from offline servers. This also provides a better way to stage upgrades of the PowerShell Universal application.&#x20;
+Consider employing a load balancer in front of your PowerShell Universal instances. Users will be directed to the least busy server or will fail over from offline servers. This also provides a better way to stage upgrades of the PowerShell Universal application.
 
 PowerShell Universal supports load balancers like F5.
 
-### Use HTTPS&#x20;
+### Use HTTPS
 
-[HTTPS ](hosting/#configuring-https)not only provides security from attackers listening on the network, but it also provides better performance when using the PowerShell Universal cmdlets. They rely on features of HTTPS when communicating with the platform and fall back to legacy communication technologies if they are not available.&#x20;
+[HTTPS ](hosting/#configuring-https)not only provides security from attackers listening on the network, but it also provides better performance when using the PowerShell Universal cmdlets. They rely on features of HTTPS when communicating with the platform and fall back to legacy communication technologies if they are not available.
 
 ### Log Shipping
 
-System log files are written to the `%ProgramData%\PowerShellUniversal\Logs` folder and will be purged after 30 days. Each day, a new log file is written, by default. Consider shipping logs from this directory to your SIEM if you intend to keep logs longer than 30 days.&#x20;
+System log files are written to the `%ProgramData%\PowerShellUniversal\Logs` folder and will be purged after 30 days. Each day, a new log file is written, by default. Consider shipping logs from this directory to your SIEM if you intend to keep logs longer than 30 days.
 
 You can also configure [Logging Targets](../development/logging.md#targets) to send log messages directly to a SIEM.
