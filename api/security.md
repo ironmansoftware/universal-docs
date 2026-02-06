@@ -37,7 +37,7 @@ Note that if you are hosting in IIS and do not have Anonymous Authentication ena
 
 To authenticate with tokens, first, you need generate a new app token for use. You can use the `Grant-PSUAppToken` cmdlet to do so remotely or you can create an app token in the UI using the Settings Security AppTokens tab.
 
-Hover over your user name in the top right of the admin console, click Tokens and click Create Application Token.&#x20;
+Hover over your user name in the top right of the admin console, click Tokens and click Create Application Token.
 
 Once you have created your app token, you can now use it to authenticate against the secure endpoint. To do so, pass the Authorization header along with the request.
 
@@ -47,7 +47,7 @@ Invoke-RestMethod http://localhost:5000/auth -Headers @{ Authorization = "Bearer
 
 #### Custom Authorization Header
 
-PowerShell Universal provides a custom authorization header to support scenarios with reverse proxies that may require their own Authorization header. If the `X-PSU-Authorization` header is specified, PSU will ignore the `Authorization` header and use this header instead.&#x20;
+PowerShell Universal provides a custom authorization header to support scenarios with reverse proxies that may require their own Authorization header. If the `X-PSU-Authorization` header is specified, PSU will ignore the `Authorization` header and use this header instead.
 
 ```
 Invoke-RestMethod http://localhost:5000/auth -Headers @{ 
@@ -88,6 +88,10 @@ In addition to creating endpoints that require authentication, you can also enfo
 Windows and Cookie authentication will assign roles based on the Identity of the user and the role policies as they are applied.
 
 JWT app tokens will use the role that was defined when they were generated.
+
+## Execution Roles
+
+By using the Execution Roles property, you can set what roles are assigned as the API endpoint is executing. By default, the endpoint will execute based on the roles of the caller. In some scenarios, for example when using Secrets with Roles, you may want to provide additional roles that the caller may not posses. Execution Roles do not require that the API authentication be enabled.&#x20;
 
 ## API
 

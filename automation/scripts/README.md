@@ -64,6 +64,10 @@ Defines the maximum concurrent jobs with which the script can be run. It default
 New-PSUScript -Name Script.ps1 -Path Script.Ps1 -ConcurrentJobs 1
 ```
 
+### Execution Roles
+
+By using the Execution Roles property, you can set what roles are assigned as the script is executing. By default, the script will execute based on the roles of the caller. In some scenarios, for example when using Secrets with Roles, you may want to provide additional roles that the caller may not posses. When running scripts in a Schedule, they will not have any roles so providing them via Execution Roles will allow using Secret variables with Roles in the scheduled script.
+
 ## Running a Script
 
 You can run a script in the UI from the Automation / Scripts page by clicking Run or by clicking View and then Run. In each case, the Run Dialog appears, allowing you to select various settings for the job.
