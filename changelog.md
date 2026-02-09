@@ -4,6 +4,24 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2026.1.1 - 02/09/2026
+
+### Improvements
+
+* Added support for logging in with the Devolutions account after the first run wizard
+* Updated the /api/v1/status API to check if API endpoints were not started properly
+
+### Fixes
+
+* Fixed an issue where apps would not start
+* Fixed an issue where the Devolutions login button could be missing on the login page
+* Fixed an issue where the Docker Container would Not Start
+* Fixed an issue where the MSI truncates connection strings
+* Fixed an issue where the MSI upgrade would remove the service account
+* Fixed an issue where the role cleared out for local admin user
+* Fixed an issue where users were unable to Call Invoke-PSUScript in Certain Environments
+* Fixed an issue with New-UDTable and -ShowSelections
+
 ## 2026.1.0 - 02/03/2026
 
 {% hint style="info" %}
