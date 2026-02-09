@@ -44,9 +44,13 @@ Offline license files are required for environments that do not have internet ac
 
 Online licenses work the same as offline but check the subscription status on ironmansoftware.com. The license is tied to a specific subscription and may require a change after renewal. We recommend account-based licensing over online licenses.
 
-## Developer Licenses
+## Developer License
 
-You can obtain a free developer license by logging in with a [Devolutions Account](https://docs.devolutions.net/portal/profile/create-devolutions-account/). Using a developer license allows for use in non-production workloads. You can use this license for developing or testing PowerShell Universal.
+You can obtain a free developer license by logging in with a [Devolutions Account](https://docs.devolutions.net/portal/profile/create-devolutions-account/). Using a developer license allows for use in non-production workloads. You can use this license for developing or testing PowerShell Universal.&#x20;
+
+During the first run wizard, you will be presented with the option to login with a Devolutions Account. After doing so, you will be redirected back to PowerShell Universal with a license installed.
+
+<figure><img src=".gitbook/assets/image (328).png" alt=""><figcaption></figcaption></figure>
 
 ## Licensed Features
 
