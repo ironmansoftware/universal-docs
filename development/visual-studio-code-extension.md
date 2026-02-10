@@ -8,15 +8,15 @@ PowerShell Universal can be managed with the PowerShell Universal Visual Studio 
 
 ## Installation
 
-You can download the extension from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ironmansoftware.powershell-universal). You can also download the extension from within the Visual Studio Code extension pane. Search for PowerShell Universal and click Install.
+You can download the extension from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=devolutionsinc.devolutions-powershell-universal). You can also download the extension from within the Visual Studio Code extension pane. Search for Devolutions PowerShell Universal and click Install.
 
 ![](<../.gitbook/assets/image (278).png>)
 
 ## Local Development
 
-Local development provides a mechanism of running PowerShell Universal quickly in a local instance based on configuration in your source repository. This avoids developers having to manually configure a local PowerShell Universal instance.&#x20;
+Local development provides a mechanism of running PowerShell Universal quickly in a local instance based on configuration in your source repository. This avoids developers having to manually configure a local PowerShell Universal instance.
 
-In order to support local development, create a `psu.dev.config` file in the root of your source repository. A version is required. By default, a SQLite database will be used and stored in a workspace-specific location.&#x20;
+In order to support local development, create a `psu.dev.config` file in the root of your source repository. A version is required. By default, a SQLite database will be used and stored in a workspace-specific location.
 
 ```json
 {
@@ -28,7 +28,7 @@ In order to support local development, create a `psu.dev.config` file in the roo
 }
 ```
 
-After defining `psu.dev.config` file or cloning a repository that contains the file, run the `Start Local Development` command to instruct VS Code to download and configure PSU. It will then start the PSU server with the configured settings. It will use the local folder as the repository for this PSU instance.&#x20;
+After defining `psu.dev.config` file or cloning a repository that contains the file, run the `Start Local Development` command to instruct VS Code to download and configure PSU. It will then start the PSU server with the configured settings. It will use the local folder as the repository for this PSU instance.
 
 You can login to the PSU server and make changes locally to see them reflected in the platform.
 
@@ -100,13 +100,11 @@ You can manage scripts with the extension. You will see a list of available scri
 The Administrator role is required for debugging scripts remotely. Remote debugging is deprecated and will be removed in a future version. We recommend using the [admin console debugging tools](debugging-scripts.md#integrated-debugger).
 {% endhint %}
 
-You can debug scripts remotely with the PowerShell Universal extension.&#x20;
+You can debug scripts remotely with the PowerShell Universal extension.
 
 When connected to your PowerShell Universal instance, you can expand Platform \ Processes and then locate the process you wish to debug. If you use the `Wait-Debugger` cmdlet in your scripts, they will be displayed within the process and runspace drop down. Click the Attach Runspace command to begin debugging your script.
 
 <figure><img src="../.gitbook/assets/image (281).png" alt=""><figcaption><p>Remote Debugger</p></figcaption></figure>
-
-
 
 ## Settings
 
