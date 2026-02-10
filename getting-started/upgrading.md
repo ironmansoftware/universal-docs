@@ -155,14 +155,6 @@ If you have installed a version of the `Universal` module outside of PowerShell 
 
 The most common upgrade issues come due to changes in the Universal App framework. Apps can be complex and bug fixes or features can sometimes cause for certain user's app while fixing issues pertaining to another user's app. Please read the changelog before upgrading to understand the impact of changes made to the app framework and consider testing the app with development data before upgrading in production.
 
-## Nightly Builds
-
-When using nightly builds, you cannot upgrade from one nightly version to another. You can upgrade from a generally available version to a nightly version. In order to test a new nightly build, you will need to uninstall the current nightly build, rollback the database schema and then install the new version. You can roll back the database schema with `psu.exe` .
-
-```powershell
-.\psu.exe db schema --schema-version 5.4.0
-```
-
 ## Common Upgrade Issues
 
 ### IIS App Pool Does Not Start After Upgrade

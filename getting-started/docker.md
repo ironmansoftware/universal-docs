@@ -422,11 +422,8 @@ RUN apt-get install -y tzdata
 We publish the following tags to Docker Hub:
 
 * latest - Current version using Ubuntu LTS
-* 5.x-preview-modules - Nightly build of version 5 using Ubuntu LTS and select AZ modules
-* 5.x-preview-\<OS>-\<PS> - Nightly build of version 5 with the specified OS and PS version
-* 4.x-preview-\<OS>-\<PS> - Nightly build of version 4 with the specified OS and PS version
-* 5.x-\<OS>-\<PS> - Production version 5 with the specified OS and PS version
-* 5.x-modules - Current production version on Ubuntu LTS with select AZ modules installed
+* 2026.x-\<OS>-\<PS> - Production version with the specified OS and PS version
+* 2026.x-modules - Current production version on Ubuntu LTS with select AZ modules installed
 * 4.x-\<OS>-\<PS> - Current production version 4 with the specified OS and PS versions
 
 ### Included Modules
