@@ -48,6 +48,10 @@ Online licenses work the same as offline but check the subscription status on ir
 
 You can obtain a free developer license by logging in with a [Devolutions Account](https://docs.devolutions.net/portal/profile/create-devolutions-account/). Using a developer license allows for use in non-production workloads. You can use this license for developing or testing PowerShell Universal.&#x20;
 
+{% hint style="warning" %}
+You will need to be accessing PowerShell Universal locally in order to login with a Devolutions account. Docker hosting is not supported.
+{% endhint %}
+
 During the first run wizard, you will be presented with the option to login with a Devolutions Account. After doing so, you will be redirected back to PowerShell Universal with a license installed.
 
 <figure><img src=".gitbook/assets/image (328).png" alt=""><figcaption></figcaption></figure>
