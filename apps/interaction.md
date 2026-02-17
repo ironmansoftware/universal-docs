@@ -18,7 +18,7 @@ New-UDButton -Text 'Clipboard' -OnClick {
 
 #### API
 
-* [Set-UDClipboard](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Set-UDClipboard.txt)
+* [Set-UDClipboard](../cmdlets/Set-UDClipboard.txt)
 
 ## Downloads
 
@@ -32,9 +32,9 @@ New-UDButton -Text 'Download' -OnClick {
 
 ## Event Handlers
 
-Many components support event handlers in the form of script blocks. You may also see these referred to as endpoints as that is what they were called in Universal Dashboard v2. These event handlers allow you to invoke PowerShell scripts when certain actions take place on the page.&#x20;
+Many components support event handlers in the form of script blocks. You may also see these referred to as endpoints as that is what they were called in Universal Dashboard v2. These event handlers allow you to invoke PowerShell scripts when certain actions take place on the page.
 
-For example, you may have a button click that calls an event handler. This button will show a toast when clicked. You can include any valid PowerShell cmdlet within the event handler code.&#x20;
+For example, you may have a button click that calls an event handler. This button will show a toast when clicked. You can include any valid PowerShell cmdlet within the event handler code.
 
 ```powershell
 New-UDButton -Text 'Click Me' -OnClick {
@@ -44,7 +44,7 @@ New-UDButton -Text 'Click Me' -OnClick {
 
 ### Variable Scope
 
-Variables are automatically scoped into event handlers. You will be able to access variables that you define outside of the variable within the event handler.&#x20;
+Variables are automatically scoped into event handlers. You will be able to access variables that you define outside of the variable within the event handler.
 
 ```powershell
 $MyVariable = "Hello!"
@@ -53,11 +53,11 @@ New-UDButton -Text 'Click Me' -OnClick {
 }
 ```
 
-### Event Data&#x20;
+### Event Data
 
-Some event handlers will provide data as a string or as a hashtable. This depends on the event handler you are using. For example, the `New-UDButton` `-OnClick` event handler does not provide any data. On the other hand, the `New-UDSelect` `-OnChange` will provider event data.&#x20;
+Some event handlers will provide data as a string or as a hashtable. This depends on the event handler you are using. For example, the `New-UDButton` `-OnClick` event handler does not provide any data. On the other hand, the `New-UDSelect` `-OnChange` will provider event data.
 
-You can access the event data by using the `$Body` variable to access the data as a string (sometimes formatted as JSON) or as a hashtable by using the `$EventData` variable.&#x20;
+You can access the event data by using the `$Body` variable to access the data as a string (sometimes formatted as JSON) or as a hashtable by using the `$EventData` variable.
 
 ```powershell
 New-UDSelect -Option {
@@ -115,7 +115,7 @@ New-UDButton -Text 'Alert Me' -OnClick {
 
 #### **API**
 
-* [Invoke-UDJavaScript](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Invoke-UDJavaScript.txt)
+* [Invoke-UDJavaScript](../cmdlets/Invoke-UDJavaScript.txt)
 
 ## Toast
 
@@ -129,7 +129,7 @@ Show-UDToast -Message 'Hello, World!'
 
 ### Show as toast with an Icon
 
-Toasts support icons as strings. You can use all the FontAwesome v5 icons.&#x20;
+Toasts support icons as strings. You can use all the FontAwesome v5 icons.
 
 ```powershell
 Show-UDToast -Icon "Ad" -Message "Test"
@@ -149,8 +149,8 @@ New-UDButton -Text 'Click' -OnClick {
 
 ### API
 
-* [Show-UDToast](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Show-UDToast.txt)
-* [Hide-UDToast](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Hide-UDToast.txt)
+* [Show-UDToast](../cmdlets/Show-UDToast.txt)
+* [Hide-UDToast](../cmdlets/Hide-UDToast.txt)
 
 ## Redirect
 
@@ -160,13 +160,13 @@ You can redirect users to different pages using the `Invoke-UDRedirect` cmdlet. 
 Invoke-UDRedirect http://www.ironmansoftware.com
 ```
 
-`Invoke-UDRedirect` will automatically redirect to pages in the dashboard when using a relative path.&#x20;
+`Invoke-UDRedirect` will automatically redirect to pages in the dashboard when using a relative path.
 
 ```powershell
 Invoke-UDRedirect '/page1' 
 ```
 
-If you'd like to redirect to a local path outside of the dashboard, you can use the `-Native` parameter.&#x20;
+If you'd like to redirect to a local path outside of the dashboard, you can use the `-Native` parameter.
 
 ```powershell
 Invoke-UDRedirect '/publishedFolder/test.txt' -Native
@@ -174,7 +174,7 @@ Invoke-UDRedirect '/publishedFolder/test.txt' -Native
 
 #### API
 
-* [Invoke-UDRedirect](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Invoke-UDRedirect.txt)
+* [Invoke-UDRedirect](../cmdlets/Invoke-UDRedirect.txt)
 
 ## Modal
 
@@ -193,8 +193,6 @@ You can receive the state of an element using `Get-UDElement` . The state will b
 ```powershell
 $Value = (Get-UDElement -Id 'txtExample').value
 ```
-
-
 
 ### Setting Component State
 
@@ -284,11 +282,11 @@ New-UDButton -Text 'Select' -OnClick {
 
 ## PowerShell Host Integration
 
-Dashboards integrate directly with the PowerShell host to provide features based on standard cmdlets.&#x20;
+Dashboards integrate directly with the PowerShell host to provide features based on standard cmdlets.
 
 ### Read-Host
 
-Using the `Read-Host` cmdlet will cause a dialog to show on the user's dashboard. The text entered will be returned by the cmdlet.&#x20;
+Using the `Read-Host` cmdlet will cause a dialog to show on the user's dashboard. The text entered will be returned by the cmdlet.
 
 ```powershell
 $Text = Read-Host 'Enter Some Text'
@@ -299,7 +297,7 @@ Show-UDToast $Text
 
 ### Get-Credential
 
-Using `Get-Credential` will cause a dialog to show that accepts a username and password. A `PSCredential` object will be returned from the cmdlet.&#x20;
+Using `Get-Credential` will cause a dialog to show that accepts a username and password. A `PSCredential` object will be returned from the cmdlet.
 
 ```powershell
 Get-Credential -UserName "adam"
@@ -328,7 +326,7 @@ $ProgressPreference = 'SilentlyContinue'
 
 ### Prompt For Choice
 
-You can use the `$Host.UI.PromptForChoice` function to display a multi-select dialog.&#x20;
+You can use the `$Host.UI.PromptForChoice` function to display a multi-select dialog.
 
 ```powershell
 $Title = "Welcome"
@@ -346,11 +344,23 @@ switch ($opt) {
 
 <figure><img src="../.gitbook/assets/image (335).png" alt=""><figcaption></figcaption></figure>
 
+### Write-Host
+
+`Write-Host` within apps will write to the Log tab within the Admin Console for the app. If you wish to receive these log messages in your browser's console in the Developer Tools, you can enable console logging in appsettings.json.
+
+```json
+{
+    "UniversalDashboard": {
+        "ConsoleLog": true
+    }
+}
+```
+
 ## API
 
-* [Get-UDElement](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Get-UDElement.txt)
-* [Set-UDElement](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Set-UDElement.txt)
-* [Clear-UDElement](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Clear-UDElement.txt)
-* [Remove-UDElement](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Remove-UDElement.txt)
-* [Sync-UDElement](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Sync-UDElement.txt)
-* [Select-UDElement](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/Select-UDElement.txt)
+* [Get-UDElement](../cmdlets/Get-UDElement.txt)
+* [Set-UDElement](../cmdlets/Set-UDElement.txt)
+* [Clear-UDElement](../cmdlets/Clear-UDElement.txt)
+* [Remove-UDElement](../cmdlets/Remove-UDElement.txt)
+* [Sync-UDElement](../cmdlets/Sync-UDElement.txt)
+* [Select-UDElement](../cmdlets/Select-UDElement.txt)
