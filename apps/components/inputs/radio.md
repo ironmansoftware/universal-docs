@@ -28,7 +28,7 @@ New-UDRadioGroup -Label "Day" -Content {
 
 ## OnChange
 
-An event handler that is called when the radio group is changed. the $Body variable will contain the current value.
+An event handler that is called when the radio group is changed. The `$EventData` variable will contain the current value. The `$Body` variable contains the full JSON for the event.
 
 ```powershell
 New-UDRadioGroup -Label "Day" -Content {
@@ -39,8 +39,9 @@ New-UDRadioGroup -Label "Day" -Content {
     New-UDRadio -Label Friday  -Value 'friday'
     New-UDRadio -Label Saturday -Value 'saturday'
     New-UDRadio -Label Sunday -Value 'sunday'
-} -OnChange { Show-UDToast -Message $Body }
-    }
+} -OnChange {
+    Show-UDToast -Message `$EventData`
+}
 ```
 
 ## Default Value
