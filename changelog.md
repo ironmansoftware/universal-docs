@@ -4,6 +4,21 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2026.1.2 - 02/13/2026
+
+### Improvements
+
+* Update Docker images to Ubuntu 24.04 LTS base
+* Update Secret Variable Roles warning to mention Execution Roles
+* Updated to latest version of git in Docker container image
+
+### Fixes
+
+* Fix exception thrown by Universal cmdlets
+* Fixed an issue where Git Sync Loses Remote Branch Association
+* Fixed an issue where the version notification is displayed all the time
+* Fixed an issue where Write-PSULog -Console doesn't work outside PSU
+
 ## 2026.1.1 - 02/09/2026
 
 ### Improvements
