@@ -4,13 +4,9 @@ description: Enable a model context protocol server.
 
 # MCP Server
 
-{% hint style="warning" %}
-This plugin is experimental and is only available in [PowerShell Universal 5.7.0 nightly builds](https://powershelluniversal.com/release/powershell-universal-nightly).&#x20;
-{% endhint %}
-
 **Identifier:** `PowerShellUniversal.Plugins.MCP`
 
-The Model Context Protocol is a mechanism for communicating with AI agents, like GitHub CoPilot. You can enable this MCP plugin to expose your scripts as an MCP AI agent tool.&#x20;
+The Model Context Protocol is a mechanism for communicating with AI agents, like GitHub Copilot. You can enable this MCP plugin to expose your scripts as an MCP AI agent tool.
 
 Tools will include the following information to AI agents:
 
@@ -18,15 +14,29 @@ Tools will include the following information to AI agents:
 * Description
 * Parameters with name, type, help text, and mandatory flag.
 
-{% hint style="danger" %}
-The experimental MCP plugin does not enforce access controls.&#x20;
-{% endhint %}
+## Creating a Tool
 
-## Access in GitHub CoPilot
+You can create a `mcpTools.ps1` file in your `.universal` folder to create new MCP Tools.&#x20;
 
-You can provide GitHub CoPilot to your PowerShell Universal scripts by configuring the AI agent in VS Code.&#x20;
+{% code overflow="wrap" %}
+```powershell
+New-PSUMCPTool -Name "Get Processes" -Description "Return the processes running on the PowerShell Universal Server" -ScriptFullPath "GetProcesses.ps1"
+```
+{% endcode %}
 
-In this example, we are using a script with a single call to Get-Process.&#x20;
+Tools can be restricted to authenticated users and roles.
+
+{% code overflow="wrap" %}
+```powershell
+New-PSUMCPTool -Name "Get Processes" -Description "Return the processes running on the PowerShell Universal Server" -ScriptFullPath "GetProcesses.ps1" -Authenticated -Role @("Administrator")
+```
+{% endcode %}
+
+## Access in GitHub Copilot
+
+You can provide GitHub Copilot to your PowerShell Universal scripts by configuring the AI agent in VS Code.
+
+In this example, we are using a script with a single call to Get-Process.
 
 ```powershell
 Get-Process | Select-Object Name, Id
@@ -34,7 +44,7 @@ Get-Process | Select-Object Name, Id
 
 With the MCP plugin enabled, we can configure GitHub Copilot. You will need the extension installed before continuing. In VS Code, press `Ctrl+Shift+P` and search for `MCP: Add Server...`.
 
-Select the HTTP option and enter the URL to the MCP server endpoint. You will need the `/sse` route. The full URL, by default, is `http://localhost:5000/sse`. Name the server whatever you would like.
+Select the HTTP option and enter the URL to the MCP server endpoint. You will need the `/api/v1/mcp` route. The full URL, by default, is `http://localhost:5000/api/v1/mcp`. Name the server whatever you would like.
 
 The resulting `settings.json` contents will look something like this.
 
@@ -42,13 +52,13 @@ The resulting `settings.json` contents will look something like this.
 "mcp": {
     "servers": {
         "PSU": {
-            "url": "http://localhost:5000/sse"
+            "url": "http://localhost:5000/api/v1/mcp"
         }
     }
 }
 ```
 
-If the server is configured properly, the CoPilot plugin will list the number of tools.
+If the server is configured properly, the Copilot plugin will list the number of tools.
 
 <figure><img src="../../.gitbook/assets/image (313).png" alt=""><figcaption></figcaption></figure>
 
