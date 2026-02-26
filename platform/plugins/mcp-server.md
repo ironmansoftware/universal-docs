@@ -4,7 +4,7 @@ description: Enable a model context protocol server.
 
 # MCP Server
 
-**Identifier:** `PowerShellUniversal.Plugins.MCP`
+**Identifier:** `PowerShellUniversal.Plugin.MCP`
 
 The Model Context Protocol is a mechanism for communicating with AI agents, like GitHub Copilot. You can enable this MCP plugin to expose your scripts as an MCP AI agent tool.
 

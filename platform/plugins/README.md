@@ -15,7 +15,7 @@ Plugins are enabled in `appsettings.json` or through environment variables. See 
     "Plugins": [
         "SQL",
         "PowerShellUniversal.Language.CSharp"
-    }
+    ]
 }
 ```
 
