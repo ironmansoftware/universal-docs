@@ -4,6 +4,28 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2026.1.3 - 02/27/2026
+
+### Improvements
+
+* [CVE-2026-3277](https://www.cve.org/CVERecord?id=CVE-2026-3277) The OpenID Connect Client Secret now uses a secret variable rather than a string when configured in the admin console
+* Added support for Devolutions license keys
+* Install-PSUServer and Update-PSUServer now pull images from the Devolutions' CDN
+* MCP Tool UI is now shown in the admin console when the plugin is enabled
+* MCP Tools now pass caller information to the script
+* UDTable initially loads data in reverse order when using -ShowSort
+
+### Fixes
+
+* Fixed a localization issue with New-UDTable
+* Fixed an Invalid configuration error after reloading config
+* Fixed an issue install the PowerShell Universal server using the Devolutions.PowerShellUniversal module
+* Fixed an issue where a user could not set PSCredential for created variable from module in the admin console
+* Fixed an issue where the Delete button disappears on Variables page
+* Fixed an issue where the ResetAdminAccount environment variable process would not set PasswordLastSet
+* Fixed an issue with MCP Tool authorization
+* Fixed Invalid PSModulePath causing issues loading code PowerShell modules
+
 ## 2026.1.2 - 02/13/2026
 
 ### Improvements

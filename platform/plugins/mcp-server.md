@@ -58,6 +58,25 @@ The resulting `settings.json` contents will look something like this.
 }
 ```
 
+If you are using tools that require authentication, you will need to use the `/api/v1/mcp/secure` endpoint and pass an App Token in the headers.
+
+{% code overflow="wrap" %}
+```json
+"mcp": {
+    "servers": {
+        "PSU": {
+            "url": "http://localhost:5000/api/v1/mcp/secure",
+            "headers": {
+                "Authorization": "Bearer token"
+            }
+        }
+    }
+}
+```
+{% endcode %}
+
+
+
 If the server is configured properly, the Copilot plugin will list the number of tools.
 
 <figure><img src="../../.gitbook/assets/image (313).png" alt=""><figcaption></figcaption></figure>
