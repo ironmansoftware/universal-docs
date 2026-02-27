@@ -41,7 +41,7 @@ If you want your deployment module to appear on the PSModulePath, you can append
 
 {% code overflow="wrap" %}
 ```powershell
-Invoke-RestMethod http://localhost:5000/api/v1/deployments -Method POST -InFile mymodule.nupkg
+Invoke-RestMethod http://localhost:5000/api/v1/deployments?asModule=true -Method POST -InFile mymodule.nupkg
 ```
 {% endcode %}
 
