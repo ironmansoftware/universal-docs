@@ -35,6 +35,16 @@ Invoke-RestMethod http://localhost:5000/api/v1/deployments -Method POST -Body (@
 } | ConvertTo-Json)
 ```
 
+#### Applying a Deployment as Module
+
+If you want your deployment module to appear on the PSModulePath, you can append the `asModule` query string parameter to the path. This ensures that functions in the deployment module are available in the environment.
+
+{% code overflow="wrap" %}
+```powershell
+Invoke-RestMethod http://localhost:5000/api/v1/deployments -Method POST -InFile mymodule.nupkg
+```
+{% endcode %}
+
 ### Admin Console
 
 We do not recommend manually creating deployments as automation should be preferred, but it is possible through the admin console.
