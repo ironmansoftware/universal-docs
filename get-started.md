@@ -13,7 +13,7 @@ You'll need to install the PowerShell Universal server. [There are a lot of ways
 You can install PowerShell Universal as a service. Ensure that PowerShell is running as administrator, or the service won't install correctly.
 
 ```powershell
-Install-Module Universal
+Install-Module Devolutions.PowerShellUniversal
 Install-PSUServer
 ```
 {% endtab %}
@@ -21,8 +21,8 @@ Install-PSUServer
 {% tab title="Linux" %}
 You can install PowerShell Universal using the following shell script:
 
-```
-Install-Module Universal
+```powershell
+Install-Module Devolutions.PowerShellUniversal
 Install-PSUServer
 ```
 {% endtab %}
@@ -30,8 +30,8 @@ Install-PSUServer
 {% tab title="Mac OS X" %}
 You can install PowerShell Universal using the Universal PowerShell module:
 
-```
-Install-Module Universal
+```powershell
+Install-Module Devolutions.PowerShellUniversal
 Install-PSUServer -AddToPath
 Start-PSUServer -Port 5000
 ```
@@ -66,7 +66,7 @@ APIs allow you to call PowerShell scripts over HTTP. To create an API, click API
 
 Next, click details on your new API and enter the following command into the editor:
 
-```
+```powershell
 Get-ComputerInfo
 ```
 
@@ -74,7 +74,7 @@ Save the script and then click the Execute button to test it out.
 
 You can also execute the API via `Invoke-RestMethod`.
 
-```
+```powershell
 PS C:\Users\adamr> Invoke-RestMethod http://localhost:5000/hello-world
 
 WindowsBuildLabEx                                       : 22000.1.amd64fre.co_release.210604-1628

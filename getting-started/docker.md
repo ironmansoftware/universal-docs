@@ -131,8 +131,8 @@ Start the container by pulling the image and then running a container with the d
 #### Running a basic image
 
 ```
-docker pull ironmansoftware/universal
-docker run --name 'PSU' -it -p 5000:5000 ironmansoftware/universal
+docker pull devolutions/powershell-universal
+docker run --name 'PSU' -it -p 5000:5000 devolutions/powershell-universal
 ```
 
 #### Present an image to a different port
@@ -142,8 +142,8 @@ If port 5000 is unavailable on your host, switch to another port.
 e.g. Present on port 80
 
 ```
-docker pull ironmansoftware/universal
-docker run --name 'PSU' -it -p 80:5000 ironmansoftware/universal
+docker pull devolutions/powershell-universal
+docker run --name 'PSU' -it -p 80:5000 devolutions/powershell-universal
 ```
 
 #### Mount a volume
@@ -155,8 +155,8 @@ The `docker run` command allows you to mount a volume for persistent storage. Mo
 The following command mounts the folder `C:\docker\volumes\PSU` to `/root` on your container:
 
 ```
-docker pull ironmansoftware/universal
-docker run --name 'PSU' -it -p 5000:5000 -v C:\docker\volumes\PSU:/root ironmansoftware/universal 
+docker pull devolutions/powershell-universal
+docker run --name 'PSU' -it -p 5000:5000 -v C:\docker\volumes\PSU:/root devolutions/powershell-universal 
 ```
 
 **Mount a volume on Container on Mac and Linux**
@@ -164,8 +164,8 @@ docker run --name 'PSU' -it -p 5000:5000 -v C:\docker\volumes\PSU:/root ironmans
 The following command mounts the folder `/docker/volumes/PSU` to `/root` on your container:
 
 ```
-docker pull ironmansoftware/universal
-docker run --name 'PSU' -it -p 5000:5000 -v /docker/volumes/PSU:/root ironmansoftware/universal 
+docker pull devolutions/powershell-universal
+docker run --name 'PSU' -it -p 5000:5000 -v /docker/volumes/PSU:/root devolutions/powershell-universal 
 ```
 
 #### Stopping a Container
@@ -205,7 +205,7 @@ version: "5.2.1"
 services:
   PSU:
     container_name: PSU
-    image: ironmansoftware/universal:latest
+    image: devolutions/powershell-universal:latest
     ports:
       - 5000:5000
     restart: unless-stopped
@@ -224,7 +224,7 @@ version: "5.2.1"
 services:
   PSU:
     container_name: PSU
-    image: ironmansoftware/universal:latest
+    image: devolutions/powershell-universal:latest
     ports:
       - 5000:5000
     restart: unless-stopped
@@ -248,15 +248,15 @@ Example Output:
 
 ```
 Creating network "PSU_default" with the default driver
-Pulling PSU (ironmansoftware/universal:latest)...
-latest: Pulling from ironmansoftware/universal
+Pulling PSU (devolutions/powershell-universal:latest)...
+latest: Pulling from devolutions/powershell-universal
 7608715873ec: Pull complete
 4e66273c6cfb: Pull complete
 2649c52300c2: Pull complete
 a20175666bc7: Pull complete
 65ce93bc0653: Pull complete
 Digest: sha256:d7ff98e6197d21070aac325c2efbefa393a4952d2e8ba6b1327dc97824ec4d55
-Status: Downloaded newer image for ironmansoftware/universal:latest
+Status: Downloaded newer image for devolutions/powershell-universal:latest
 Creating PSU ... done
 ```
 
@@ -291,7 +291,7 @@ version: "5.2.1"
 services:
   PSU:
     container_name: PSU
-    image: ironmansoftware/universal:latest
+    image: devolutions/powershell-universal:latest
     ports:
       - 5000:5000
     restart: unless-stopped
@@ -317,7 +317,7 @@ version: "5.2.1"
 services:
   PSU:
     container_name: PSU
-    image: ironmansoftware/universal:latest
+    image: devolutions/powershell-universal:latest
     ports:
       - 5000:5000
     restart: unless-stopped
@@ -342,8 +342,8 @@ This Dockerfile exposes port 5000, creates a /data volume, sets configuration en
 
 #### Writing a Dockerfile script for Linux
 
-```
-FROM ironmansoftware/universal:latest
+```docker
+FROM devolutions/powershell-universal:latest
 LABEL description="Universal - The ultimate platform for building web-based IT Tools" 
 
 EXPOSE 5000
@@ -365,8 +365,8 @@ docker build . --tag=universal-persistent
 
 #### Windows
 
-```
-FROM ironmansoftware/universal:5.0.0-windowsservercore-1809
+```docker
+FROM devolutions/powershell-universal:5.0.0-windowsservercore-1809
 LABEL description="Universal - The ultimate platform for building web-based IT Tools" 
 
 EXPOSE 5000

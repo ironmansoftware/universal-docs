@@ -99,8 +99,8 @@ Follow the backup procedures above and then perform the upgrade.
 First, upgrade the local PowerShell Universal module and verify the expected version is installed.
 
 ```powershell
-Update-Module Universal
-Import-Module Universal -PassThru
+Update-Module Devolutions.PowerShellUniversal
+Import-Module Devolutions.PowerShellUniversal -PassThru
 ```
 
 Next, run `Update-PSUServer` to download and unzip the new PSU instance.
@@ -306,8 +306,8 @@ Remove-PSUServer
 Open a new command prompt and run the following.
 
 ```powershell
-Uninstall-Module Universal
-Install-Module Universal
+Uninstall-Module Devolutions.PowerShellUniversal
+Install-Module Devolutions.PowerShellUniversal
 Install-PSUServer
 ```
 

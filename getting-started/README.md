@@ -49,7 +49,7 @@ You can also download the ZIP from our [Downloads page](https://ironmansoftware.
 
 You can start Universal by unzipping the contents, unblocking the files and then executing `Universal.Server.exe`.
 
-```
+```powershell
 Expand-Archive -Path .\Universal.zip -DestinationPath .\Universal
 Get-ChildItem .\Universal -Recurse | Unblock-File
 Start-Process .\Universal\Universal.Server.exe
@@ -153,13 +153,13 @@ sudo ufw allow 5000/tcp
 
 You can use the PowerShell Universal PowerShell module to install the Universal server. To install the module, use `Install-Module`.
 
-```
-Install-Module Universal
+```powershell
+Install-Module Devolutions.PowerShellUniversal
 ```
 
 To install the Universal server, you can use `Install-PSUServer`.
 
-```
+```powershell
 Install-PSUServer -LatestVersion
 ```
 
@@ -216,10 +216,10 @@ ZIP files for each platform we support are on our downloads page. Each ZIP conta
 
 ### Docker
 
-The `ironmansoftware/universal-agent:latest` container image provides the PowerShell Universal Agent as a Linux docker container.
+The `devolutions/powershell-universal-agent:latest` container image provides the PowerShell Universal Agent as a Linux docker container.
 
 ```
-docker pull ironmansoftware/universal-agent:latest
+docker pull devolutions/powershell-universal-agent:latest
 ```
 
 ## Next Steps
