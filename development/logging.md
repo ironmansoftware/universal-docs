@@ -12,9 +12,9 @@ Both log files will be found in `%ProgramData%\PowerShellUniversal`.
 
 ## System Logging
 
-System logging is configured via the application settings (appsettings.json) or environment variables. System logs typically contain internal logging that is helpful for determining what is happening within the PowerShell Universal server and not necessarily your scripts.&#x20;
+System logging is configured via the application settings (appsettings.json) or environment variables. System logs typically contain internal logging that is helpful for determining what is happening within the PowerShell Universal server and not necessarily your scripts.
 
-The system log settings are found at the root of appsettings.json.&#x20;
+The system log settings are found at the root of appsettings.json.
 
 ```json
 {
@@ -23,7 +23,7 @@ The system log settings are found at the root of appsettings.json.&#x20;
 }
 ```
 
-System log path can contain environment variables. Valid log levels include:&#x20;
+System log path can contain environment variables. Valid log levels include:
 
 * Verbose
 * Debug
@@ -31,7 +31,7 @@ System log path can contain environment variables. Valid log levels include:&#x2
 * Warning
 * Error
 
-We recommend running at Information or above in production environments and only moving below those levels when debugging issues.&#x20;
+We recommend running at Information or above in production environments and only moving below those levels when debugging issues.
 
 ## Configuration
 
@@ -86,6 +86,42 @@ You can use the `Write-PSULog` cmdlet to write to logs from within your scripts.
 ```powershell
 Write-PSULog -Feature 'MyFeature' -Message 'MyMessage'
 ```
+
+### Console
+
+You can allow `Write-PSULog` to output to the streams of the current PowerShell session by using the `-Console` switch parameter. Depending on the level you select, the log messages will appear on those streams.&#x20;
+
+{% code overflow="wrap" %}
+```powershell
+# Information Stream
+Write-PSULog -Console -Message "MyInfoMessage" -Level Information
+# Error Stream
+Write-PSULog -Console -Message "MyErrorMessage" -Level Error
+# Warning Stream
+Write-PSULog -Console -Message "MyWarningMessage" -Level Warning
+```
+{% endcode %}
+
+### Nested Runspaces
+
+If your solution creates its own runspaces, either directly or via jobs, you can continue to use `Write-PSUJob` but will need to provide the global `$UniversalClient` variable to the runspace.&#x20;
+
+{% code overflow="wrap" %}
+```powershell
+$iss= [InitialSessionState]::CreateDefault()
+$var1 = [SessionStateVariableEntry]::new("UniversalClient",
+                                      $UniversalClient,
+                                      "The PSU Client")
+$iss.Variables.Add($var1)
+$runspace = [runspacefactory]::CreateRunspace($iss)
+$runspace.Open()
+$script = { Write-PSULog -Message 'Hello from a runspace!' }
+$pipeline = $runspace.CreatePipeline()
+$pipeline.Commands.AddScript($script)
+$pipeline.Invoke()
+$runspace.Close()
+```
+{% endcode %}
 
 ## Viewing Logs
 
