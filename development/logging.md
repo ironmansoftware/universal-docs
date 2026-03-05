@@ -104,7 +104,7 @@ Write-PSULog -Console -Message "MyWarningMessage" -Level Warning
 
 ### Nested Runspaces
 
-If your solution creates its own runspaces, either directly or via jobs, you can continue to use `Write-PSUJob` but will need to provide the global `$UniversalClient` variable to the runspace.&#x20;
+If your solution creates its own runspaces, either directly or via jobs, you can continue to use `Write-PSULog` but will need to provide the global `$UniversalClient` variable to the runspace.&#x20;
 
 {% code overflow="wrap" %}
 ```powershell
