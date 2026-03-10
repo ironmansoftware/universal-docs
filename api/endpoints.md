@@ -172,17 +172,17 @@ You can write to the live log from within your endpoints with cmdlets like `Writ
 
 ## Testing
 
-You can use the Test tab in the Endpoint editor to test your APIs. Using this Test tool, you can adjust headers, the query string, and body. You can also adjust the Authentication and Authorization for the test.&#x20;
+You can use the Test tab in the Endpoint editor to test your APIs. Using this Test tool, you can adjust headers, the query string, and body. You can also adjust the Authentication and Authorization for the test.
 
 <figure><img src="../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption><p>Endpoint Test Tab</p></figcaption></figure>
 
-When using the test tab, any changes to the values of the test will result in an updated Code block that you can then use within PowerShell. Click the Code tab to view the test code.&#x20;
+When using the test tab, any changes to the values of the test will result in an updated Code block that you can then use within PowerShell. Click the Code tab to view the test code.
 
 ```powershell
 Invoke-RestMethod -Uri 'http://localhost:5000/test-api?Page=1' -Headers @{'X-Custom-Header' = 'Value';} -Method 'POST'
 ```
 
-Additionally, tests performed within the tester will be stored for 30 days to allow for retesting without having to reconfigure all the properties. Clicking the Apply button will setup the Test tool with the same properties.&#x20;
+Additionally, tests performed within the tester will be stored for 30 days to allow for retesting without having to reconfigure all the properties. Clicking the Apply button will setup the Test tool with the same properties.
 
 <figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption><p>Test History</p></figcaption></figure>
 
@@ -254,9 +254,9 @@ New-PSUEndpoint -Url '/user/:name' -Endpoint {
 }
 ```
 
-If you use the `CmdletBinding` or `Parameter` attribute within your param block, the endpoint will strictly enforce which parameters are allowed into the endpoint.&#x20;
+If you use the `CmdletBinding` or `Parameter` attribute within your param block, the endpoint will strictly enforce which parameters are allowed into the endpoint.
 
-For example, the following enforces that the name parameter is specified.&#x20;
+For example, the following enforces that the name parameter is specified.
 
 ```powershell
 New-PSUEndpoint -Url '/user' -Endpoint {
@@ -273,13 +273,43 @@ Invoke-RestMethod http://localhost:5000/user -Method Post -Body (@{
 } | ConvertTo-Json) -ContentType 'application/json'
 ```
 
-If you change your endpoint to avoid using the `Parameter` attribute, you can pass in any number of params and they will be bound as variables and not parameters to the endpoint.&#x20;
+If you change your endpoint to avoid using the `Parameter` attribute, you can pass in any number of params and they will be bound as variables and not parameters to the endpoint.
 
 ```powershell
 New-PSUEndpoint -Url '/user' -Endpoint {
     param($Name)
 }
 ```
+
+### Method Parameter Sets
+
+You can define parameter sets using method parameters. By default, PowerShell Universal will inspect the param block to determine whether these `Get`, `Put`, `Post`, `Delete`, or other HTTP method names are specified and will include them automatically. When endpoints accept multiple methods, it may not be able to determine which parameter set to call based on the data provided. In the example below, both the Get and the Post accept the name parameter. There is also no way to call the Post without a name so validation could fail.
+
+To alleviate this, include `Post` and `Get` parameters that are part of their respective parameter set. PowerShell Universal will include this parameter to ensure the proper parameter set is called.
+
+{% code overflow="wrap" %}
+```powershell
+New-PSUEndpoint -Url '/user' -Method @("Get", "Post") -Endpoint {
+    param(
+       [Parameter(ParameterSetName = "GET")]
+       [Parameter(ParameterSetName = "POST", Mandatory)]
+       $Name,
+       [Parameter(ParameterSetName = "GET")]
+       [Switch]$Get,
+       [Parameter(ParameterSetName = "POST")]
+       [Switch]$Post
+    )
+    
+    if ($Get) {
+       # Get User
+    } 
+    
+    if ($Post) {
+       # Create User
+    }
+}
+```
+{% endcode %}
 
 ## Returning Data
 
