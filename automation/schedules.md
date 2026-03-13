@@ -24,7 +24,17 @@ Simple schedules are really just helpers for various standard CRON schedules. Wh
 
 ### CRON
 
-CRON schedules use CRON expressions to define schedules. PowerShell Universal takes advantage of Chronos. For examples of valid expressions, [click here](https://github.com/HangfireIO/Cronos).
+CRON schedules use CRON expressions to define schedules. PowerShell Universal takes advantage of a library called Cronos. For more examples of valid expressions, [click here](https://github.com/HangfireIO/Cronos).
+
+Some examples of basic CRON expressions are shown below.
+
+| Expression           | Description                                                                        |
+| -------------------- | ---------------------------------------------------------------------------------- |
+| `* * * * *`          | Every minute                                                                       |
+| `0 0 1 * *`          | At midnight, on day 1 of every month                                               |
+| `*/5 * * * *`        | Every 5 minutes                                                                    |
+| `30,45-15/2 1 * * *` | Every 2 minute from 1:00 AM to 01:15 AM and from 1:45 AM to 1:59 AM and at 1:30 AM |
+| `0 0 * * MON-FRI`    | At 00:00, Monday through Friday                                                    |
 
 ### One-Time
 
@@ -104,7 +114,7 @@ The Random Delay property causes a schedule to start anywhere between 0 and 60 s
 
 ## Available in Branch
 
-In multi-branch environments, it may be necessary to avoid running schedules based on the branch that is loaded in PowerShell Universal. You can use the `-AvailableInBranch`option on `New-PSUSchedule` to avoid having a schedule run when running in a certain branch. This value is also available in the admin console under the schedule settings when git is enabled.&#x20;
+In multi-branch environments, it may be necessary to avoid running schedules based on the branch that is loaded in PowerShell Universal. You can use the `-AvailableInBranch`option on `New-PSUSchedule` to avoid having a schedule run when running in a certain branch. This value is also available in the admin console under the schedule settings when git is enabled.
 
 <figure><img src="../.gitbook/assets/image (269).png" alt=""><figcaption><p>Available in Branch</p></figcaption></figure>
 
