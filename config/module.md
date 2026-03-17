@@ -32,17 +32,17 @@ You can use Default Credentials, or Windows Credentials, as well. This mechanism
 
 ### Credentials
 
-If you have form authentication enabled, you can use Basic authentication by specifying a `PSCredential` object to the `-Credential` parameter of `Connect-PSUServer`.&#x20;
+If you have form authentication enabled, you can use Basic authentication by specifying a `PSCredential` object to the `-Credential` parameter of `Connect-PSUServer`.
 
 ### Scope
 
-`Connect-PSUServer` supports a scope parameter to define how to persist the connection information. By default, the scope is Process. The process scope stores the connection information in a static .NET scope. All cmdlets run in the current process will use this connection information.&#x20;
+`Connect-PSUServer` supports a scope parameter to define how to persist the connection information. By default, the scope is Process. The process scope stores the connection information in a static .NET scope. All cmdlets run in the current process will use this connection information.
 
-If you are using `Connect-PSUServer` in a  multi-runspace environment, like the Integrated environment or within apps in PowerShell Universal, you may want to only store the connection information for the current runspace. Use the `-Scope Runspace` parmaeter value to adjust how the connection information is stored.&#x20;
+If you are using `Connect-PSUServer` in a multi-runspace environment, like the Integrated environment or within apps in PowerShell Universal, you may want to only store the connection information for the current runspace. Use the `-Scope Runspace` parmaeter value to adjust how the connection information is stored.
 
 ### Disconnecting
 
-You can disconnect from the PowerShell Universal server by using the `Disconnect-PSUServer` cmdlet. If you have used the Runspace scope, it will clear the necessary variables and if you used the Process scope, it will clear the necessary static properties.&#x20;
+You can disconnect from the PowerShell Universal server by using the `Disconnect-PSUServer` cmdlet. If you have used the Runspace scope, it will clear the necessary variables and if you used the Process scope, it will clear the necessary static properties.
 
 ## Internal Connections
 
@@ -50,15 +50,15 @@ When using the Universal module within PowerShell Universal, it isn't necessary 
 
 ### Authorization
 
-Calls to the Universal cmdlets do not require additional authorization when run within the Universal server. That said, they will run in the context of the user that is calling the Script, API or App. For example, if an API Reader calls an API that then calls the `Get-PSUJob` cmdlet, they will not have access because their context does not allow it.
+When using the Strict security model, authorization is based on the caller. For example, if a user calls and API endpoint and that endpoint calls `Invoke-PSUScript`, the call is on behalf of the endpoint caller. Permissions of the caller are enforced on the script execution.&#x20;
 
-The API developer can work around this by providing an App Token that does have the necessary permissions.
+When using other security models, the cmdlets are called on behalf of the System user and authorization is not enforced based on the caller of the resource.&#x20;
 
 #### Authorization Security Model
 
 You can change the authorization model to allow any calls from within PowerShell Universal to function without an app token. While this may be considered less secure by some, it depends on your organization's use of the platform. This value can be set in `appsettings.json` or within the `API__SecurityModel` environment variable.
 
-Strict mode requires that the external PowerShell Universal APIs are used for communication. In strict mode, you cannot use the `-Integrated` switch. A user context is required for authentication. This means that when using the module in non-user contexts, like the Schedules, you will need to provide an app token.&#x20;
+A user context is required for authentication. This means that when using the module in non-user contexts, like the Schedules, you will need to provide an app token.
 
 In scopes that have a user context, like an app, calls to cmdlets are made under that user's privileges. For example, if a user accessing an app doesn't have access to call `Get-PSUScript`, the cmdlet will not be usable without an app token with those privileges.
 
@@ -80,7 +80,7 @@ Permissive mode still uses the external PowerShell Universal APIs and communicat
 }
 ```
 
-You can also use the `Integrated` Security Model to completely avoid the need to configure app tokens, URLs or certificates. The Integrated Security Model does not communicate the user context, even when the user is authenticated. It also uses the back-channel TCP connection rather than the PowerShell Universal external API.&#x20;
+You can also use the `Integrated` Security Model to completely avoid the need to configure app tokens, URLs or certificates. The Integrated Security Model does not communicate the user context, even when the user is authenticated. It also uses the back-channel TCP connection rather than the PowerShell Universal external API.
 
 ```json
 {
@@ -104,9 +104,9 @@ In some environments, it may be required to allow PowerShell Universal to trust 
 
 ### Integrated Mode
 
-Integrated mode uses the internal PowerShell Universal backchannel connection to communicate with the services via the Universal module. When using Integrated mode, call context is not provided to the services. This means that no authorization or authentication is performed. Integrated mode is useful in environments that do not require any security for internal API calls. It also bypasses the need to configure certificates or API URLs.
+Integrated mode uses the internal PowerShell Universal backchannel connection to communicate with the services via the Universal module. When using Integrated mode, authorization is only performed when the API is in Strict security mode.&#x20;
 
-You can invoke cmdlets using integrated mode by using the `-Integrated` switch parameter. The server Security Model setting must be either `Permissive` or `Integrated` to use the `-Integrated` parameter.
+You can invoke cmdlets using integrated mode by using the `-Integrated` switch parameter.&#x20;
 
 The server Security Model can also be set to `Integrated`. This forces all cmdlet calls to use the integrated mode and no longer requires the use of the `-Integrated` parameter.
 

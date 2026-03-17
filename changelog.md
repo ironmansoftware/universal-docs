@@ -4,6 +4,35 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2026.1.4 - 03/17/2026
+
+### New Features
+
+* Add Resume-PSUFileWatcher and Suspend-PSUFileWatcher
+
+### Improvements
+
+* [CVE-2026-3563](https://www.cve.org/CVERecord?id=CVE-2026-3563) Improve URL Validation
+* Add a deterministic login port for Developer Edition
+* Added support for the -Integrated mode for cmdlets when running Strict API security mode
+* Job Table Column Selector Not Working
+* Published folders do not work as part of a module
+* Removed built-in, experimental MCP tools
+
+### Fixes
+
+* [CVE-2026-4064](https://www.cve.org/CVERecord?id=CVE-2026-4064) Fixed an issue with invalid authorization of some gRPC endpoints
+* Fix cmdlets for creating and executing terminal instances
+* Git cant find branch
+* Groom job fails to delete job history in SQL Server due to self-referencing FK on Job.ParentJobId (SqlException 547)
+* Interactive Login for Run-As Fails on Latest Version
+* Issue with Hangfire job queuing on non-existent agent queues
+* MCPTools not loading from mcpTools.ps1
+* Modules as deployments fail to set PSModulePath on server restart
+* MSI Doesn't Honor INSTALLFOLDER specified on command line
+* Param() block doesn't work in external module endpoint
+* PSU doesn't recognize any parameters of functions from external modules
+
 ## 2026.1.3 - 02/27/2026
 
 ### Improvements
