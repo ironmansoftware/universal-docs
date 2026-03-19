@@ -4,6 +4,13 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2026.1.5 - 03/19/2026
+
+### Fixes
+
+* Admin account not matching "admin" doesn't work with ResetAdminAccount
+* gRPC error when invoking Universal cmdlets within PowerShell Universal
+
 ## 2026.1.4 - 03/17/2026
 
 ### New Features

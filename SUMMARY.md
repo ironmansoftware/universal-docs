@@ -206,5 +206,5 @@
 ## Changelogs
 
 * [Changelog](changelog.md)
+* [Security Advisories](changelogs/cves.md)
 * [Roadmap](changelogs/roadmap.md)
-* [CVEs](changelogs/cves.md)
