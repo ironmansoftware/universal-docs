@@ -113,6 +113,6 @@ NOTES
     Scheduled Endpoints|Caches a random value every ten seconds
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

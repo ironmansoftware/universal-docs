@@ -123,6 +123,6 @@ NOTES
     Commits and merges the changes in `file.txt` with the commit message `My commit message`.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

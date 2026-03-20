@@ -107,7 +107,7 @@ NOTES
     Returns a 404 status code from the /hello endpoint when the GET method is called. This is specifying a custom body as well.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
     New-PSUEndpoint 
 
 

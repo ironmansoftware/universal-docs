@@ -103,6 +103,6 @@ NOTES
     Returns stats about the PSU instance.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

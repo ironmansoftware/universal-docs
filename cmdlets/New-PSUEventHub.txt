@@ -143,6 +143,6 @@ NOTES
     Creates a new event hub named 'Hub' with the description 'A new event hub'.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

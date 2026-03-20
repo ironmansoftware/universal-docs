@@ -398,7 +398,7 @@ NOTES
     Creates a script within PSU based on the script block provided. This will create a Script1.ps1 file within the repository directory.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
     Get-PSUScript 
     Remove-PSUScript 
     Invoke-PSUScript 

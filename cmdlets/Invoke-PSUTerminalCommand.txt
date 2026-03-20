@@ -126,6 +126,6 @@ NOTES
     Creates a new terminal instance of Terminal1 and then invokes a command within it.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

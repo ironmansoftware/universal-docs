@@ -92,7 +92,7 @@ NOTES
     Returns a successful authentication result if the user name is 'Adam'. Returns a custom error message if that user is not.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
     New-PSUAuthorizationClaim 
     Set-PSUAuthenticationMethod 
 

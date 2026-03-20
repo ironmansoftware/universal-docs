@@ -163,6 +163,6 @@ NOTES
     Creates a new terminal for the integrated environment.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

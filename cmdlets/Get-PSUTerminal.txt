@@ -113,6 +113,6 @@ NOTES
     Returns the Terminal1 terminal configuration.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

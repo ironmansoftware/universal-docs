@@ -258,6 +258,6 @@ NOTES
     Sets the description and manual time of Script1.ps1.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

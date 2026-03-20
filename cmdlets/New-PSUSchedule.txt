@@ -447,6 +447,6 @@ NOTES
     Creates a schedule that runs once in 30 minutes in the 'America/Phoenix' time zone.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

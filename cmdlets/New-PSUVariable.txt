@@ -242,6 +242,6 @@ NOTES
     Creates a new variable in the vault named `Vault`. The variable's value is not stored in PSU and will only be retrieved when running scripts.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

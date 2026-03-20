@@ -207,7 +207,7 @@ NOTES
     Creates a new trigger that calls the LogServerStart.ps1 file when the PowerShell Universal server is started.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
     New-PSUScript 
     New-PSUDashboard 
     Get-PSUDashboard 

@@ -103,6 +103,6 @@ NOTES
     Starts an edit within PowerShell Universal when git sync is used.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

@@ -167,6 +167,6 @@ NOTES
     Returns a list of git sync jobs.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

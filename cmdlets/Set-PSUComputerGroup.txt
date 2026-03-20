@@ -155,6 +155,6 @@ NOTES
     Updates the computer group with the ID of 1 to have the name of 'Test Group'.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

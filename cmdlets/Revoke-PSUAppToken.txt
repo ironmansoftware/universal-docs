@@ -114,6 +114,6 @@ NOTES
     Revokes app token 1.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

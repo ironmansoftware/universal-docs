@@ -115,6 +115,6 @@ NOTES
     Starts a new instance of Terminal1 and then returns all running terminal instances.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

@@ -379,7 +379,7 @@ NOTES
     Creates an app using the app.ps1 file in the repository directory and serves it at the base URL of /app.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 
 

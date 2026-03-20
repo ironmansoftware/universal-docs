@@ -176,6 +176,6 @@ NOTES
     Creates a new health check named 'Test Health Check' that runs the Test-Path cmdlet.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

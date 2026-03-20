@@ -150,6 +150,6 @@ NOTES
     Event Handler|An element with an event handler.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

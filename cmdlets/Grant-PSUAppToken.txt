@@ -160,7 +160,7 @@ NOTES
     Generates a new app token using the specified signing key for the MyIdentity user.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
     Get-PSUIdentity 
 
 

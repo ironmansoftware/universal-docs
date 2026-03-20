@@ -113,6 +113,6 @@ NOTES
     Removes a cache entry with the key of 'Test'.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

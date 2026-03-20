@@ -193,6 +193,6 @@ NOTES
     Sets the remote and branch for git settings.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

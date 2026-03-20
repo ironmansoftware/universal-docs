@@ -215,6 +215,6 @@ NOTES
     Creates a new role with a policy defined that checks to see if the user's claim contains the 'myGroup' claim.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

@@ -173,6 +173,6 @@ NOTES
     Creates a new tag called Release Pipeline that will be red in the UI.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

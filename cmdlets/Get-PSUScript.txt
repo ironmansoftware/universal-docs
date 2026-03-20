@@ -191,6 +191,6 @@ NOTES
     Returns all scripts with the 'Release' tag.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

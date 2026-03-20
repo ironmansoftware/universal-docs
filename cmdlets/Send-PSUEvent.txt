@@ -179,6 +179,6 @@ NOTES
     Sends an event to the MyHub event hub. All connected clients will receive the event.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

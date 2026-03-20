@@ -319,7 +319,7 @@ NOTES
     Creates a REST API using the PowerShell Universal Management API. When calling the management API, you will need to define the computer name and the app token to successfully call the API.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
     New-PSUApiResponse 
 
 

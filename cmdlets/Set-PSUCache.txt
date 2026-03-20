@@ -192,7 +192,7 @@ NOTES
     Caches data with a sliding cache of 10 minutes. If the data isn't accessed for 10 minutes, it will be invalidated and purged from the cache. If the data is accessed, the timer will reset for another 10 minutes.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
     Get-PSUCache 
 
 

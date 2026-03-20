@@ -137,7 +137,7 @@ NOTES
     Returns the DataTable cache data. Server-wide cache data is stored as CLIXML and deserialized before being returned to the pipeline.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
     Set-PSUCache 
 
 

@@ -178,6 +178,6 @@ NOTES
     Publishes the website folder and sets the default document to index.html. This allows the you to navigate to the URL http://localhost:5000/website and the web server will return the index.html file automatically. This is helpful for static websites.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

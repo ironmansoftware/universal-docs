@@ -130,7 +130,7 @@ NOTES
     Returns the trigger with the name 'Job Failed'
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
     New-PSUTrigger 
     Set-PSUTrigger 
     Remove-PSUTrigger 
