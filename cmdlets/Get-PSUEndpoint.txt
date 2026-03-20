@@ -135,6 +135,6 @@ NOTES
     Returns the endpoints that have the URL '/url'.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

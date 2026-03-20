@@ -245,7 +245,7 @@ NOTES
     Invokes 'Script1.ps1' as the user 'adam'. Passwords are retrieved from secret managers and cannot be passed in as strings.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
     Get-PSUEnvironment 
 
 

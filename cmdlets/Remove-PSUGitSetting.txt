@@ -113,6 +113,6 @@ NOTES
     Removes git settings from PowerShell Universal.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

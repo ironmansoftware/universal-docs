@@ -337,7 +337,7 @@ NOTES
     Creates a new environment that uses persistent runspaces. Persistent runspaces are used for APIs and do not reset between each execution.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
     New-PSUVariable 
 
 

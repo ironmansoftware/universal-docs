@@ -149,7 +149,7 @@ NOTES
     Creates a new rate limit that prevents the user from calling the /myEndpoint endpoint more than 100 times in 10 minutes.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
     Set-PSUSetting 
 
 

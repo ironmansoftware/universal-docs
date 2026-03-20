@@ -103,6 +103,6 @@ NOTES
     Returns all settings for PSU.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

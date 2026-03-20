@@ -164,6 +164,6 @@ NOTES
     Returns all schedules for the script 'Script.ps1'
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

@@ -137,6 +137,6 @@ NOTES
     Creates a new middleware named 'Middle' that adds a cookie to the response.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

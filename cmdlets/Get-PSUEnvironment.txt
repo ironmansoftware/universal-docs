@@ -118,7 +118,7 @@ NOTES
     Returns the environment with ID 1.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
     New-PSUEnvironment 
     Remove-PSUEnvironment 
     Set-PSUEnvironment 

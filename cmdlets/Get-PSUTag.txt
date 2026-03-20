@@ -130,6 +130,6 @@ NOTES
     Returns the tag named 'Release'
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

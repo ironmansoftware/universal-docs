@@ -103,6 +103,6 @@ NOTES
     Returns git settings.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

@@ -156,6 +156,6 @@ NOTES
     Sets the color of the release tag.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

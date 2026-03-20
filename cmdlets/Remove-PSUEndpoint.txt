@@ -125,7 +125,7 @@ NOTES
     Removes the endpoint with Id 1.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
     Get-PSUEndpoint 
 
 

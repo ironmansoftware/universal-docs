@@ -429,7 +429,7 @@ NOTES
     Forms authentication script blocks receive a single $Credential parameter that contains a PSCredential object. You need to return a New-PSUAuthenticationResult from the script block to grant and deny access.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
     New-PSUAuthenticationResult 
 
 

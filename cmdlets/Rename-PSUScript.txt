@@ -124,6 +124,6 @@ NOTES
     Renames the script Script1.ps1 to Script2.ps1.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

@@ -184,6 +184,6 @@ NOTES
     Sets the value of the username variable to lee.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

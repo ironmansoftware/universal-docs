@@ -129,6 +129,6 @@ NOTES
     Creates a new Private folder in the Scripts folder of the PSU folder structure.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

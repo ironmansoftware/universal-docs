@@ -112,7 +112,7 @@ NOTES
     Authenticates a user named 'admin' and adds a custom authorization claim. Authorization claims can be used in role policy scripts and are accessible in dashboards.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
     Set-PSUAuthenticationMethod 
     New-PSUAuthenticationResult 
 

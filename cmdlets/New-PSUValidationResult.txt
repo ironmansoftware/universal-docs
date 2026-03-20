@@ -68,6 +68,6 @@ NOTES
     Creates a new validation result that is unsuccessful with an error message.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 

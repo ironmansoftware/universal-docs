@@ -144,6 +144,6 @@ NOTES
     Creates the identity 'Adam' and assigns the role of administrator.
     
 RELATED LINKS
-    Online Version: https://go.microsoft.com/fwlink/?LinkID=217032
+    
 
 
