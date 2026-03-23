@@ -187,6 +187,10 @@ Configures the hosts that are allowed to make cross-origin resource sharing requ
 | Url               | Sets the external URL used internally by Universal. This is necessary when running Universal from within a reverse proxy like IIS. When using cmdlets like `Get-UAScript` from within a running job, the Universal server needs to determine where the web server. When running within a proxy, it cannot determine this itself. You will want to configure this to point to the name and port of the IIS website in this configuration. |
 | HideManagementDoc | If true, hides the PowerShell Universal Management API's OpenAPI documentation.                                                                                                                                                                                                                                                                                                                                                          |
 
+{% hint style="warning" %}
+\`Api.Url\` is used internally by PowerShell Universal when cmdlets need to call back to the PSU server from jobs, endpoints, or other internal execution contexts. In reverse-proxy or load-balanced environments, make sure this value points to a stable, directly reachable URL for the PSU host. Using a DNS alias or other indirect endpoint can cause intermittent cmdlet failures if that alias resolves through an unstable proxy or backend path. If needed, specify \`-ComputerName\` explicitly for the cmdlet call.
+{% endhint %}
+
 ### **Authentication**
 
 **Default Value**
