@@ -10,7 +10,7 @@ Please report vulnerabilities to Devolutions. To learn about our vulnerability r
 
 Security advisories after October 2025 can be found on the [Devolutions Advisories page](https://devolutions.net/security/advisories/).
 
-## Legacy Advisories
+## Past Advisories
 
 ### CVE-2025-54552 - 7/25/2025 - Information disclosure
 
