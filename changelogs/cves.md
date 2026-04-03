@@ -8,7 +8,7 @@ Please report vulnerabilities to Devolutions. To learn about our vulnerability r
 
 ## Devolutions Advisories
 
-You can find all recent PowerShell Universal advisories at the [Devolutions Advisories page](https://devolutions.net/security/advisories/).
+Security advisories after October 2025 can be found on the [Devolutions Advisories page](https://devolutions.net/security/advisories/).
 
 ## Legacy Advisories
 
