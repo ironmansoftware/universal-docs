@@ -45,7 +45,7 @@ You can edit the repository files directly in the admin console by navigating to
 
 <figure><img src="../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
 
-You can also edit the repository directly on disk using editors like Visual Studio Code. By default, files are stored in `%ProgramData%\UniversalAutomation\Repository`. You will need to toggle the node into VS Code editing mode. The toggle to do so can be found on the home page. Only administrators will see this button and, if Disable Code First Editing is on in Settings \ General, you will not be able to change the edit mode.&#x20;
+You can also edit the repository directly on disk using editors like Visual Studio Code. By default, files are stored in `%ProgramData%\UniversalAutomation\Repository`. You will need to toggle the node into VS Code editing mode. The toggle to do so can be found on the home page. Only administrators will see this button and, if Disable Code First Editing is on in Settings \ General, you will not be able to change the edit mode.
 
 <figure><img src="../.gitbook/assets/image (296).png" alt=""><figcaption></figcaption></figure>
 
@@ -261,6 +261,20 @@ logs.*
 .git.*
 ```
 
+## File Encoding
+
+You can configure file encoding in the Settings \ General page. By default, PowerShell Universal will use UTF-8 with a byte order mark (`utf-8-bom`) at the beginning of the file. If you would like to disable the byte order mark, you can change the encoding to `utf-8`.&#x20;
+
+Supported encodings are any returned by [Encoding.GetEncodings](https://learn.microsoft.com/en-us/dotnet/api/system.text.encoding.getencodings?view=net-10.0#system-text-encoding-getencodings). For example:
+
+* `utf-32`
+* `utf-32-bom`
+* `utf-8`
+* `utf-8-bom`
+* `windows-1250`
+
+You can add `-bom` to end of the encoding to add the byte order mark.
+
 ## Read-Only Configuration Sections
 
 Read-Only sections allow you to include script in your configuration files that will not be touched by changes in the admin console. This allows you to run additional logic, generate resources dynamically and create classes for use in OpenAPI schemas.
@@ -288,7 +302,7 @@ New-PSUEndpoint -Url "/user" -Endpoint {
 
 ## Database Resources
 
-You can optionally configure resources to be stored in the database rather than within the configuration repository. These resources will no longer be stored on disk and will be stored directly in the database. This makes them instantly available to allow connected computers in the PSU cluster.&#x20;
+You can optionally configure resources to be stored in the database rather than within the configuration repository. These resources will no longer be stored on disk and will be stored directly in the database. This makes them instantly available to allow connected computers in the PSU cluster.
 
 {% hint style="warning" %}
 When configured, configuration files for resources will be ignored.
