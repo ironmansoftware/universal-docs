@@ -48,13 +48,23 @@ Online licenses work the same as offline but check the subscription status on ir
 
 You can obtain a free developer license by logging in with a [Devolutions Account](https://docs.devolutions.net/portal/profile/create-devolutions-account/). Using a developer license allows for use in non-production workloads. You can use this license for developing or testing PowerShell Universal.&#x20;
 
-{% hint style="warning" %}
-You will need to be accessing PowerShell Universal locally in order to login with a Devolutions account. Docker and reverse proxy hosting, like IIS, is not supported.
-{% endhint %}
-
 During the first run wizard, you will be presented with the option to login with a Devolutions Account. After doing so, you will be redirected back to PowerShell Universal with a license installed.
 
 <figure><img src=".gitbook/assets/image (328).png" alt=""><figcaption></figcaption></figure>
+
+### Static Login Port
+
+PowerShell Universal, by default, will select a random port in the range 60370 to 61370 to listen for login attempts. This to due to restrictions of the authentication provider for Devolutions login. If you would like a static port, for use with systems like IIS and Docker, you can use the `PSULoginPort` setting or environment variable.
+
+You will still need to expose this port via the hosting system you are using.&#x20;
+
+{% code overflow="wrap" %}
+```json
+{
+    "PSULoginPort": 60370
+}
+```
+{% endcode %}
 
 ## Licensed Features
 

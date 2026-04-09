@@ -4,6 +4,35 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2026.1.6 - 04/09/2026
+
+### Improvements
+
+* Added an option to turn off the byte-order mark when files where written by the configuration system
+* Improve Scrolling in Admin Console
+* Improved New-UDForm validation behavior
+* Improved PostgreSQL connection handling
+
+### Fixes
+
+* Failed to register BuiltInLocalVault and PSUSecretStore
+* Fixed a module loading issue with Windows PowerShell
+* Fixed an issue calling scripts from triggers in script API security mode
+* Fixed an issue discovering Pester test files in nested folders
+* Fixed an issue loading folders for modules on the Scripts page
+* Fixed an issue loading the Devolutions.PowerShell module
+* Fixed an issue with Deployments from a Resource Repository
+* Fixed an issue with Devolutions Login
+* Fixed an issue with Grant-PSUAppToken
+* Fixed an issue with method parameters for OpenAPI docs
+* Fixed an issue with psu admin password reset
+* Fixed an issue with psu LiteDB database conversion
+* Fixed an issue with RegEx-style API handing
+* Fixed an issue with SQLite database locking
+* Fixed an issue with the built-in $ApiUrl variable
+* Fixed an issue with the Linux ARM64 container image
+* Fixed an issue with the ThreadJob module missing in Linux container images
+
 ## 2026.1.5 - 03/19/2026
 
 ### Fixes
