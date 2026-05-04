@@ -56,6 +56,8 @@ By default, PowerShell Universal runs on port 5000 of localhost. Open a web brow
 
 The first time you navigate to PowerShell Universal, you can login with a [Devolutions account](https://docs.devolutions.net/portal/profile/create-devolutions-account/) in order to receive a free developer license. This license will enable all features and is intended for non-production workflows.
 
+This Developer License flow is intended for local development and requires local access to the PowerShell Universal host. If users are accessing PSU only from remote browsers through Docker, IIS, or a reverse proxy, they should use one of the standard license paths instead.
+
 ### First Run Wizard
 
 Optionally, you can select to run the First Run wizard setup instead of logging in with a Devolutions account and provide a license key.
