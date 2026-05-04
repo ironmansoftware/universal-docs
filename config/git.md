@@ -370,8 +370,9 @@ With the service stopped, you can directly populate Git fields in `appsettings.j
 
 Restart the service and verify the settings appear in **Settings → Git**. If they vanish again, the debug logs will indicate whether a permission issue, endpoint protection software, or configuration validation error is causing the reset.
 
-```
-```
+### unknown certificate lookup failure: 16777280
+
+When using the integrated git library, you may encounter issues with certificate when connecting to locally hosted git repositories. In this configuration, we recommend using the external git client to provide more support for configuration of the certificate look up process.
 
 ## Included Files
 
