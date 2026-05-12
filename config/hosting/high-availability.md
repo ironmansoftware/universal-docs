@@ -27,11 +27,18 @@ PowerShell Universal supports the use of load balancers such as F5 and nginx. Th
 
 To aid with load balancing; you can use the `/api/v1/status` endpoint for your nodes. The endpoint will return status codes based on the current state of the node. `200` means the node is online and ready to receive requests. Servers running in maintenance mode will return `503`. Servers that failed to start due to a configuration error, will return `500`. Servers with apps that failed to start will also return `500`.
 
-## Maintenance Mode
+## Status APIs
 
-You can set your nodes into Maintenance Mode by clicking Platform \ Computers and checking the maintenance mode option. Once maintenance mode is enabled, the `/api/v1/status` endpoint will begin returning `503`. This should be configured to disable traffic being routed to the node while maintenance is performed.
+### &#x20;`/api/v1/status`
 
-### /api/v2/status
+You can set your nodes into Maintenance Mode by clicking Platform \ Computers and checking the maintenance mode option. Once maintenance mode is enabled, the `/api/v1/status` endpoint will begin returning `503`. This should be configured to disable traffic being routed to the node while maintenance is performed. This endpoint will also return 5xx if the following is true:
+
+* Computer is in a startup error status
+* Computer is in maintenance mode
+* Critical app is in a startup failed state
+* API endpoints are configured but are not running properly
+
+### `/api/v2/status`
 
 The v2 status API will return a `503` for additional reasons. They include:
 
