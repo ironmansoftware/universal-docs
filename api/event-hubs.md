@@ -63,6 +63,10 @@ To create an event hub, click APIs \ Event Hub and click Create New Event Hub. E
 
 You will need to install and configure the [PowerShell Universal Agent](../config/agent.md) to use Event Hubs. The agent is provided in multiple platforms, as an installable MSI on Windows and as a Docker container image.
 
+{% hint style="warning" %}
+If the agent log reports \`Event Hub not found\`, first verify that the \`Hub\` value in \`agent.json\` exactly matches an Event Hub configured on the target PowerShell Universal instance. In common setups, this means the agent reached the server but the named hub does not exist there yet or the names do not match.
+{% endhint %}
+
 ## Send Events
 
 From within the PowerShell Universal server, you can send events from a hub to connected clients using the `Send-PSUEvent` cmdlet (`Invoke-PSUCommand` is an alias to `Send-PSUEvent`).
@@ -80,6 +84,16 @@ Invoke-PSUCommand -Hub "MyHub" -Command "Start-Process" -Parameters @{
     FilePath = "Notepad"
 }
 ```
+
+### Inspect Current Connections
+
+Use `Get-PSUEventHubConnection -Active` to see the agents that are connected right now.
+
+```powershell
+Get-PSUEventHubConnection -Hub 'eventHub' -Active
+```
+
+The unfiltered command can also include older disconnected connections, so `-Active` is the quickest troubleshooting view when you want to confirm whether an agent is currently online. If you need to target a specific client, use the returned `ConnectionId` with `Send-PSUEvent`.
 
 ## Receive Data from Clients
 
