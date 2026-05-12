@@ -4,7 +4,7 @@ description: Information about PowerShell Universal agents.
 
 # Agent
 
-PowerShell Universal Agents provide a mechanism to run scripts on remote machines without having to configure PowerShell Remoting. Agents are lightweight services that host the PowerShell SDK and connect to PowerShell Universal using WebSockets.&#x20;
+PowerShell Universal Agents provide a mechanism to run scripts on remote machines without having to configure PowerShell Remoting. Agents are lightweight services that host the PowerShell SDK and connect to PowerShell Universal using WebSockets.
 
 You can learn how to send commands to agents on the [Event Hubs page](../api/event-hubs.md).
 
@@ -14,7 +14,7 @@ You can learn more about installing the agent on our [Installation page](../gett
 
 ## agent.json
 
-After installing the agent, you will need to configure the client by using an `agent.json` file.&#x20;
+After installing the agent, you will need to configure the client by using an `agent.json` file.
 
 This JSON file configures the Agent to connect to the hub and run scripts when invoked.
 
@@ -32,11 +32,11 @@ This JSON file configures the Agent to connect to the hub and run scripts when i
 }
 ```
 
-### Location&#x20;
+### Location
 
-#### System&#x20;
+#### System
 
-The system location of `agent.json` is in `$ENV:ProgramData\PowerShellUniversal`.&#x20;
+The system location of `agent.json` is in `$ENV:ProgramData\PowerShellUniversal`.
 
 #### User
 
@@ -70,15 +70,15 @@ Windows Authentication will be used to authenticate against the hub.
 
 The script to execute when an event is received. This script is read into memory and not from disk. Variables such as `$PSScriptRoot` are currently not supported. This is optional as event hubs can also run commands directly.
 
+If `ScriptPath` is a relative path such as `script.ps1`, the agent resolves it relative to the PowerShell Universal data directory. On Windows, that means `%ProgramData%\PowerShellUniversal\script.ps1` unless you provide a fully qualified path.
+
 #### Description
 
 The description for this connection. This will be reported to the PowerShell Universal server.
 
 ## Environment Variables
 
-Environment variables can be used to configure various operational settings for the agent.&#x20;
-
-
+Environment variables can be used to configure various operational settings for the agent.
 
 | Name                              | Description                                            | Default Value |
 | --------------------------------- | ------------------------------------------------------ | ------------- |
