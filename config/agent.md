@@ -14,7 +14,7 @@ You can learn more about installing the agent on our [Installation page](../gett
 
 ## agent.json
 
-After installing the agent, you will need to configure the client by using an `agent.json` file.
+After installing the agent, you will need to configure the client by using an `agent.json` file. If the file does not exist, you will need to create it.
 
 This JSON file configures the Agent to connect to the hub and run scripts when invoked.
 
