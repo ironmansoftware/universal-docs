@@ -4,6 +4,25 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2026.1.7 - 05/20/2026
+
+### Improvements
+
+* Added open source disclosure page
+* Added support for DontShow in the ParameterAttribute in the admin console
+* Added the ability to provide scripts by path in modules
+* Removed the translate button
+* Updated URLs for forum, feature request and bug reports
+
+### Fixes
+
+* Fixed an issue loading system modules in Windows PowerShell 5.1 environments
+* Fixed an issue where jobs could get stuck in a canceling state
+* Fixed an issue where some editors were tiny in the admin console
+* Fixed an issue with deployments from a resource repository
+* Fixed an issue with duplicate pinned deployments
+* Fixed an issue with the file encoding settings when set to an empty value
+
 ## 2026.1.6 - 04/09/2026
 
 ### Improvements
