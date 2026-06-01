@@ -3,7 +3,6 @@
 * [❓ About](README.md)
 * [📰 What's new?](whats-new.md)
 * [⏯️ Get Started](get-started.md)
-* [📺 Video Library](video-library.md)
 * [📚 Additional Resources](additional-resources.md)
 * [⬇️ Installation](getting-started/README.md)
   * [Docker](getting-started/docker.md)
@@ -36,6 +35,7 @@
 * [Terminals](automation/terminals.md)
 * [Tests](automation/tests.md)
 * [Triggers](automation/triggers.md)
+* [Workflows](automation/workflows.md)
 
 ## 📊 Apps
 
@@ -121,6 +121,12 @@
   * [Cascading Style Sheets](apps/themes/cascading-style-sheets.md)
   * [Styles](apps/themes/styles.md)
 
+## 🤖 Intelligence
+
+* [AI Agents](intelligence/ai-agents.md)
+* [AI Tools](intelligence/ai-tools.md)
+* [Built In MCP Tools](intelligence/built-in-mcp-tools.md)
+
 ## 🌐 Portal
 
 * [About the Universal Portal](portal.md)
@@ -148,7 +154,6 @@
   * [C# API Endpoints](platform/plugins/c-api-endpoints.md)
   * [OpenTelemetry](platform/plugins/opentelemetry.md)
   * [YARP](platform/plugins/yarp.md)
-  * [MCP Server](platform/plugins/mcp-server.md)
 * [Published Folders](platform/published-folders.md)
 * [Tags](platform/tags.md)
 * [Telemetry](platform/telemetry.md)

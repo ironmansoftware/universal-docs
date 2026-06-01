@@ -4,100 +4,37 @@ description: What's new in PowerShell Universal.
 
 # 📰 What's new?
 
-## 2026.1&#x20;
+## 2026.2
 
-### Devolutions Account Login
+### AI Agent Jobs
 
-Login with a [Devolutions Account](https://docs.devolutions.net/portal/profile/create-devolutions-account/) and receive a free PowerShell Universal developer license. You can use this license for development and testing. It will activate the full feature set. This license cannot be used for production workloads. It requires accessing PowerShell Universal from the local machine.
+Configure AI Agent with access to OpenAI, Anthropic and local LLM models to run prompts within the PowerShell Universal jobs engine. Define agent context and assign AI tools to allow agents to execute PowerShell scripts in a secure manner. Integrate AI agent prompts directly into Workflows.
 
-### New Version Scheme
+### AI and MCP Tools
 
-PowerShell Universal has aligned with other Devolutions' products and will use dated versions moving forward.
+Expose PowerShell scripts for consumption by local AI agents or through Model Context Protocol (MCP) for agents running outside PowerShell Universal. Tools automatically create the proper metadata for each script and expose its description and parameters. Execution of tools are logged in the job history table and protected by role-based access controls.&#x20;
 
-## 5.6
+### Built-In MCP Tools
 
-### Improved Notification Indicator
+Built-In MCP tools provide better context to agents working with the PSU platform. Tools that return information about resource types, resources, and commands ensure that agents can more accurately and quickly build solutions autonomously.
 
-Notifications are now grouped by type in the drop down for the indicator and provides a quick way to view notifications of specific levels.
+### Workflows
 
-### Script Upload and Discovery
+A new workflow engine allows users to chain together PowerShell scripts and AI agent prompts in a visual designer to quickly compose automation solutions. Workflows feature the same ability as scripts for execution, schedule and security.&#x20;
 
-Upload scripts from your local machine to PowerShell Universal or discover scripts that are already on the server but not registered with the platform.
+### Visual Studio Code Extension
 
-### SSH Key Support for Git
+A fully redesigned VS Code extension offers easier configuration, views of resource with linked instances, virtual file system support for remote editing and automatic configuration of the PSU MCP server to enable GitHub Copilot and other agents to access and inspect the platform. By blending PSU MCP with the virtual file system, agents can build solutions with live PSU instances and verify their work.
 
-PowerShell Universal can now generate SSH keys for use when connecting with remote git repositories.
+### Enhanced File-Based Change Tracking
 
-## 5.5
+File-based change tracking can now inspected to see all the changes that are made to disk when using PSU. By default, changes will can be registered and users can decide whether to reload resources affected by the file changes. Optionally, changes can be applied automatically to quickly iterate on local PSU instances.&#x20;
 
-### Windows Forms Login
+### .NET 10 and PowerShell 7.6
 
-Login with Windows credentials without having to use Windows Authentication. Enter your user name and password and PowerShell Universal will perform a local login and evaluate your group membership for role-based access.
+The platform now targets .NET 10 and PowerShell 7.6 for integrated environments, the PowerShell host processes and agent.&#x20;
 
-### Reference and Using Support for C# Endpoints
+### Deployment-by-Module
 
-C# endpoints can now reference assemblies and include using statements to extend the functionality provided and simplify the code written.
+PowerShell Universal configurations can now be deployed through modules, including installing required modules, from registered PowerShell Resource Repositories. This provides an approach to build and version configuration artifacts without having to rely on git directly in PSU.&#x20;
 
-## 5.4
-
-### PSU Admin CLI
-
-Access an in-browser terminal that is automatically authenticated with your user's permissions to invoke PSU cmdlets against the system.
-
-### Script Metrics
-
-Track success rates, execution time and target variables like where the job was run and as which user.
-
-### Least Busy Load Balancer for Jobs
-
-PSU will now select the least busy server to run jobs when multiple servers are valid targets for a job.
-
-### PowerShell 7.5 and .NET 9.0
-
-Updated to PowerShell 7.5 SDK and .NET 9.0 to support the latest features in both platforms.
-
-## 5.3&#x20;
-
-### SAML2 Metadata Support
-
-Load SAML2 metadata when configuration authentication to easily enable logins from identity providers.
-
-### Run as Support for APIs
-
-Run API endpoints as alternate user accounts.
-
-## 5.2&#x20;
-
-### Git Settings and Branch Support
-
-Switch between different git repositories and branches to quickly change the configuration of the PowerShell Universal server.
-
-### PowerShell Repository Management
-
-Register custom PowerShell repositories to allow for discovery and installation of PowerShell modules outside of the PowerShell Gallery.
-
-### Vault Management
-
-Register secret vaults in PowerShell Universal to more easily integrate with third-party vaults like Az.KeyVault and CyberArk.
-
-## 5.0
-
-### New Admin Console and Portal
-
-The admin console has been rebuilt using Blazor for ASP.NET. The look and feel are the same but more tightly associated with the backend Universal platform. The [PowerShell Universal Portal](broken-reference/) provides a simple-to-use access point for consumers of PSU resources. You can assign resources by role, and they will be grouped by tags in a searchable interface without the complexities of the admin console.
-
-### Granular Permissions
-
-Authorization within the platform is now configured via a[ granular permission system](https://docs.powershelluniversal.com/security/enterprise-security/permissions) that controls which users have access to which resources. This also includes new roles for specific feature groups, so administrators do not need to configure privileges for every scenario.
-
-### PostgreSQL Support
-
-PostgreSQL is now supported as a persistence store. PostgreSQL is open source and free.
-
-### Updated Runtimes
-
-PowerShell Universal v5 is built on .NET 9 and PowerShell 7.5.
-
-### gRPC Cmdlets
-
-The Universal module now uses gRPC for all communication with the system. gRPC is an interprocess communication technology that is fast and runs over HTTP. By unifying on a single technology, the cmdlets now take advantage of all the granular privileges and help reduce technical debt in the platform.

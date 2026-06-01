@@ -4,9 +4,9 @@ description: Additional PowerShell Universal resources.
 
 # 📚 Additional Resources
 
-## [Blog](https://blog.ironmansoftware.com/tags/powershelluniversal/)
+## [Blog](https://devolutions.net/blog/)
 
-The Ironman Software blog has articles about PowerShell Universal.
+The Devolutions blog has articles about PowerShell Universal.
 
 ## [Demo](https://demo.powershelluniversal.com/)
 
@@ -16,18 +16,14 @@ Demo instance of PowerShell Universal.
 
 Chat with other PowerShell Universal users.
 
-## [Downloads](https://ironmansoftware.com/downloads)
+## [Downloads](https://devolutions.net/download-center/)
 
 Download the latest version of PowerShell Universal.
 
-## [Forums](https://forums.ironmansoftware.com)
+## [Forums](https://forum.devolutions.net/product/powershell-universal)
 
 Connect with the PowerShell Universal community.
 
-## [Pricing](https://ironmansoftware.com/pricing/powershell-universal)
+## [Pricing](https://store.devolutions.net/)
 
 Purchase a license for the features of PowerShell Universal.
-
-## [Scripts](https://github.com/ironmansoftware/scripts)
-
-Examples and full solutions for PowerShell Universal.

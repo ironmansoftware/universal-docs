@@ -4,6 +4,68 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+## 2026.2 - 06/01/2026
+
+### Improvements
+
+* Added a Force Reclone to the git tools in the Support Tools section
+* Added Advanced mode to Windows installer
+* Added AI Agent and prompt job support
+* Added basic PSRemoting support for jobs
+* Added built in MCP server for PowerShell Universal resource types, resources and resource reloading
+* Added change tracking window to view files changed by the server and on disk
+* Added computer information in the header
+* Added logging settings to agent.json
+* Added support for Devolutions trial licenses
+* Added support for endpoint metrics
+* Added support for git disable SSL verify
+* Added support for repository.psd1 to allow for RequiredModules to be installed and root module for deployments
+* Added support for the HEAD HTTP method in endpoints
+* Added support for variables in schedule conditions
+* Added support for Workflows, Workflow Jobs and Workflow Designer
+* Added the ability to provide a maintenance banner in the admin console
+* Added version to platform assemblies
+* AI Tools are now enabled by default without adding a plugin
+* Buttons are now disabled in manual git mode and not hidden
+* Complete rebuild of VS Code extension with support for PSU virtual file system, MCP server, and auto connect to developer PSU instances
+* Improve Invoke-PSUCommand timeout message
+* Improved behavior of MCP tools when parameters don't have descriptions
+* Improved CRON definition experience in admin console
+* Improved git merge conflict error reporting
+* Improved Install-PSUServer and Update-PSUServer error handling behavior
+* Improved performance of Get-PSUCache and persistent cache data
+* Improved reporting of job origin
+* Improved script search in admin console
+* Improved terminal experience in admin console
+* Improved Windows service startup time
+* Increased the size of the save script button and changed the color
+* Removed code tab when viewing resources that are provided by modules
+* Removed the Web\VS Code toggle and added an auto load toggle to the change tracking window
+* Removed upload to support button for logs
+* Renamed MCP Tools to AI Tools
+* Target .NET 10 and PowerShell 7.6
+* The community edition can now view the Files page
+
+### Fixes
+
+* Fixed a race condition with schedule configuration from code
+* Fixed a timeout issue with the internal git client
+* Fixed an exception thrown when customizing git settings
+* Fixed an issue accessing secrets in endpoints
+* Fixed an issue calling Invoke-PSUScript as a non-admin user
+* Fixed an issue clearing account based license keys
+* Fixed an issue display one tab with New-UDTabs
+* Fixed an issue installing modules in the admin console
+* Fixed an issue using scheduled endpoints in apps
+* Fixed an issue where OIDC settings originating from appsettings.json could be written to authentication.ps1
+* Fixed an issue where users could access endpoints.json anonymously to view Open API docs
+* Fixed an issue with case-sensitive search for tags
+* Fixed an issue with Get-PSUJob returning 0 for MemoryBytes property on all running jobs
+* Fixed an issue with Open API docs incorrectly caching role-based access for docs
+* Fixed an issue with the ValidateNotNullAttribute causing a script to fail to run
+* Fixed DateTime Overflow Exception during RunspacePool Exhaustion
+* Fixed scoping issues with variables in apps
+
 ## 2026.1.7 - 05/20/2026
 
 ### Improvements

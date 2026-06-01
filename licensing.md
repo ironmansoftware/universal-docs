@@ -28,14 +28,6 @@ You can use the `PSULICENSE` environment variable to set a license. The value of
 
 Proxy configuration can be done by clicking Settings \ General and configuring the proxy URI and, optionally, credentials. You can also configure proxy settings with the `Set-PSUSetting` cmdlet.
 
-### Account-Based Licensing
-
-When using account-based licensing, you will enter your account's license key. Whenever you activate a PowerShell Universal server, it will assign a license to computer. This license key does not change so there is no need to install a new license when renewing. You can view the assigned computers and account license key in your Ironman Software account.
-
-The PowerShell Universal server needs to have access to ironmansoftware.com.
-
-<figure><img src=".gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
-
 ### Offline Licenses
 
 Offline license files are required for environments that do not have internet access. You will need to install a new license file when you plan to upgrade to a version past the expiration date of the license.
@@ -47,10 +39,6 @@ Online licenses work the same as offline but check the subscription status on ir
 ## Developer License
 
 You can obtain a free developer license by logging in with a [Devolutions Account](https://docs.devolutions.net/portal/profile/create-devolutions-account/). Using a developer license allows for use in non-production workloads. You can use this license for developing or testing PowerShell Universal.&#x20;
-
-{% hint style="warning" %}
-Developer License onboarding is intended for local editing and requires a browser on the PowerShell Universal host, or another truly local access path. This flow uses a localhost callback and is not supported for remote browsers through Docker, IIS, or reverse proxy hosting.
-{% endhint %}
 
 During the first run wizard, you will be presented with the option to login with a Devolutions Account. After doing so, you will be redirected back to PowerShell Universal with a license installed.
 
@@ -69,6 +57,46 @@ PowerShell Universal, by default, selects a random localhost port in the range `
 }
 ```
 {% endcode %}
+
+### Docker
+
+If you want to use Docker as a mechanism for hosting your development instance of PowerShell Universal, you will need to open a port for the login port. This includes specifying the static login port as well as mapping it out of the Docker instance.&#x20;
+
+{% code overflow="wrap" %}
+```
+docker run --rm -it `
+  -e PSULoginPort=60370 `
+  -p 5000:5000 `
+  -p 60370:60370 `
+  devolutions/powershell-universal
+```
+{% endcode %}
+
+#### IIS
+
+If you want to use IIS as mechanism for hosting your development instance of PowerShell Universal, you will need to set the static login port as part of your `web.config` file.
+
+{% code overflow="wrap" %}
+```xml
+<configuration>
+  <system.webServer>
+    <handlers>
+      <add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified" />
+    </handlers>
+    <aspNetCore processPath="Universal.Server.exe" arguments="--appsettings .\appsettings.json" forwardWindowsAuthToken="false" stdoutLogEnabled="true" stdoutLogFile=".\logs\log" hostingModel="OutOfProcess">
+      <environmentVariables>
+        <environmentVariable name="PSULoginPort" value="60370" />
+    </environmentVariables>
+    </aspNetCore>
+  </system.webServer>
+
+</configuration>
+```
+{% endcode %}
+
+After doing so, you will need to add a new binding for the login port.
+
+<figure><img src=".gitbook/assets/image (329).png" alt=""><figcaption></figcaption></figure>
 
 ## Licensed Features
 
@@ -106,6 +134,8 @@ The following features of PowerShell Universal require a license.
   * Triggers
   * Terminals
   * Tests
+  * Workflows
+* Intelligence
 * Apps
   * App Page Editor
   * App Function Editor

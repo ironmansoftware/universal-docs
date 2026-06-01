@@ -15,6 +15,7 @@ All configuration cmdlets are part of the [Universal ](https://www.powershellgal
 Files stored in the repository are stored as plain text to allow for easy differencing with source control tools.
 
 * Authentication
+* AI Agents and Tools
 * Apps
 * Endpoints
 * Environments
@@ -45,9 +46,7 @@ You can edit the repository files directly in the admin console by navigating to
 
 <figure><img src="../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
 
-You can also edit the repository directly on disk using editors like Visual Studio Code. By default, files are stored in `%ProgramData%\UniversalAutomation\Repository`. You will need to toggle the node into VS Code editing mode. The toggle to do so can be found on the home page. Only administrators will see this button and, if Disable Code First Editing is on in Settings \ General, you will not be able to change the edit mode.
-
-<figure><img src="../.gitbook/assets/image (296).png" alt=""><figcaption></figcaption></figure>
+You can also edit the repository directly on disk using editors like Visual Studio Code. By default, files are stored in `%ProgramData%\UniversalAutomation\Repository`. You will need either enable auto reload or resolve changes manually. You can view changed files by navigation to Settings \ Files \ Configuration Tracker.
 
 ## Configuration Scripts
 
@@ -60,6 +59,22 @@ Stored in `.universal\authentication.ps1`
 This script is responsible for configuring [forms authentication](security/#forms-authentication). If forms authentication is not being used, this file is ignored.
 
 You can use the [`Set-PSUAuthentication` ](../cmdlets/Set-PSUAuthenticationMethod.txt)cmdlet in this file.
+
+### AiAgents.ps1
+
+{% hint style="info" %}
+Stored in `.universal\aiAgents.ps1`
+{% endhint %}
+
+This script is responsible for configuration AI Agents. Use the `New-PSUAIAgents` cmdlet in this file.
+
+### AiTools.ps1
+
+{% hint style="info" %}
+Stored in `.universal\aiTools.ps1`
+{% endhint %}
+
+This script is responsible for configuration AI Tools. Use the `New-PSUAITool` cmdlet in this file.
 
 ### Branding.ps1
 
