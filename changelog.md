@@ -6,6 +6,10 @@ description: Changelog for PowerShell Universal.
 
 ## 2026.2 - 06/01/2026
 
+{% hint style="info" %}
+This update requires a database schema update. If you have migrations enabled, this will happen automatically. If you are hosting in IIS, you will need [version 10.0 of the ASP.NET Hosting Bundle](https://dotnet.microsoft.com/en-us/download/dotnet/10.0).
+{% endhint %}
+
 ### Improvements
 
 * Added a Force Reclone to the git tools in the Support Tools section

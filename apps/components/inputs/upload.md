@@ -11,7 +11,7 @@ This component works with [UDForm](form.md) and [UDStepper](../navigation/steppe
 ## Uploading a File
 
 {% hint style="warning" %}
-Upload ony supports files up to 2 GB in size.
+Upload only supports files up to 2 GB in size.
 {% endhint %}
 
 Uploads a file and shows the contents via a toast.
@@ -73,4 +73,4 @@ New-UDUpload -Text 'Upload Image' -OnUpload {
 
 ## API
 
-[**New-UDUpload**](https://github.com/ironmansoftware/universal-docs/blob/v5/cmdlets/New-UDUpload.txt)
+[**New-UDUpload**](../../../cmdlets/New-UDUpload.txt)
