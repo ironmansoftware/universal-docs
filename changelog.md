@@ -4,6 +4,10 @@ description: Changelog for PowerShell Universal.
 
 # Changelog
 
+{% hint style="warning" %}
+Release notes will be moving to the [Devolutions website](https://devolutions.net/powershell-universal/release-notes/).
+{% endhint %}
+
 ## 2026.2 - 06/01/2026
 
 {% hint style="info" %}
