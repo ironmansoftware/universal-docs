@@ -120,7 +120,7 @@ NOTES
     
     -------------------------- Example 1 --------------------------
     
-    PS C:\> Get-PSUApp -Name 'MyApp' | Stop-PSUApp
+    PS C:\> Stop-PSUApp -Name 'MyApp'
     
     Stops the 'MyApp' app in PowerShell Universal.
     
