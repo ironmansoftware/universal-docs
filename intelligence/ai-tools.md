@@ -4,45 +4,127 @@ description: Call PowerShell scripts in AI Agents and through MCP.
 
 # AI Tools
 
-AI Tools allow you to expose your PowerShell scripts as tools that agents can call in PSU and through the PSU MCP server. You can enforce authorization to limit who has access to the tools.&#x20;
+AI Tools let you expose PowerShell scripts as callable tools for AI Agents and for external MCP clients. They are useful when you want a model to retrieve PSU data, run a controlled action, or hand structured output back into a prompt.
+
+Each tool can require authentication, enforce roles, and optionally be exposed over MCP.
 
 ## Create an AI Tool
 
-Navigate to Intelligence / AI Tools and click Create AI Tool. Select a script to expose as an AI Tool. You can define whether you want to expose it as MCP by checking the MCP checkbox. Tools can also enforce authentication and authorization.&#x20;
+Navigate to Intelligence / AI Tools and click Create AI Tool. Select the script to expose, then decide whether the tool should be available:
+
+* only to PSU AI Agents
+* to both AI Agents and MCP clients by enabling `MCP`
+
+If `Authenticated` is enabled, the caller must be signed in. If roles are also assigned, the caller must have at least one of those roles.
 
 ### Description
 
-The Description is very important for your tools. In order for agents to correctly select your tool, you need to provide a good description of when to call it and what it returns.&#x20;
+The description is one of the most important parts of the tool. It should tell the model:
+
+* when to use the tool
+* what the tool returns
+* whether the tool changes state
+* any important parameter expectations
+
+Short, concrete descriptions work best.
 
 ### Parameters
 
-Parameters are automatically discovered in your PowerShell scripts. It is very important to provide thorough comment-based help for your parameters to allow the agent to understand the use of your tool.
+Parameters are discovered automatically from the PowerShell script. Comment-based help is strongly recommended because PSU uses it to build better tool descriptions and parameter schemas.
+
+This example script makes a good AI Tool because it has clear parameters and predictable output:
+
+```powershell
+<#
+.SYNOPSIS
+Returns the top running processes by CPU usage.
+
+.PARAMETER Count
+The number of processes to return.
+#>
+param(
+        [Parameter()]
+        [int]$Count = 5
+)
+
+Get-Process |
+        Sort-Object CPU -Descending |
+        Select-Object -First $Count Name, Id, CPU
+```
+
+Expose it as a tool:
+
+```powershell
+New-PSUAiTool -Name 'Get Running Processes' `
+    -Description 'Returns the top running processes by CPU usage.' `
+    -ScriptFullPath '/tools/Get-RunningProcesses.ps1' `
+    -Authenticated `
+    -Role @('Operator') `
+    -Mcp
+```
+
+Useful cmdlets include:
+
+* `Get-PSUAiTool`
+* `New-PSUAiTool`
+* `Set-PSUAiTool`
+* `Remove-PSUAiTool`
+
+For example, to review tools:
+
+```powershell
+Get-PSUAiTool
+Get-PSUAiTool -Name 'Get Running Processes'
+```
 
 ## Using a Tool in AI Agents
 
-Within PSU AI Agents, you can assign tools by editing the agent properties and selecting the tool. Role based access controls will be enforce both at the agent prompt level and at the tool call level. The initiator of the prompt needs the proper roles in both cases.&#x20;
+Within an AI Agent, assign tool names directly or use wildcard patterns such as `ticket_*` or `*`. PSU only makes the matching tools available to that agent.
 
-Calls to AI Tools will result in child jobs of the AI Agent prompt job.
+Role-based access is enforced at both levels:
+
+* the user must be allowed to run the agent
+* the user must also be allowed to run the tool
+
+Tool executions started by an agent appear as child jobs of the AI prompt job.
+
+Example agent configuration:
+
+```powershell
+Set-PSUAiAgent -Name 'SupportAgent' -Tool @('Get Running Processes', 'ticket_*')
+```
 
 ## Using a Tool over MCP
 
-Model Context Protocol (MCP) provides a mechanism to call agents remotely. PSU exposes your selected AI tools over a built in MCP server. You can access the MCP server at the `/api/v1/mcp` route. When connecting, you can specify an JWT bearer token to properly authenticate your agent. The configuration will depend on which agent you are using to connect to PSU.&#x20;
+Model Context Protocol (MCP) allows remote clients such as GitHub Copilot to discover and call your tools. PSU exposes MCP at `/api/v1/mcp`.
 
-Calls to your tools via MCP will result in MCP jobs listed in your jobs table.&#x20;
+Only tools with `Mcp` enabled are listed to MCP clients.
+
+When exposed over MCP, tool names are normalized for the client. For example, spaces and periods are converted to underscores.
+
+When an MCP client connects, PSU filters the visible tools based on:
+
+* whether the tool is marked for MCP
+* whether the caller is authenticated when required
+* whether the caller has at least one required role
+
+Calls made through MCP appear as MCP jobs in the Jobs page.
+
+If your client supports bearer tokens, provide a PSU app token when connecting to the MCP endpoint.
 
 ## Access in GitHub Copilot
 
-You can provide GitHub Copilot to your PowerShell Universal scripts by configuring the AI agent in VS Code.
+GitHub Copilot can call PSU tools when VS Code is configured to connect to the PSU MCP server.
 
-In this example, we are using a script with a single call to Get-Process.
+In this example, the tool wraps a script that returns running processes:
 
 ```powershell
 Get-Process | Select-Object Name, Id
 ```
 
-With the MCP plugin enabled, we can configure GitHub Copilot. You will need the extension installed before continuing. In VS Code, press `Ctrl+Shift+P` and search for `MCP: Add Server...`.
+With the MCP extension enabled, press `Ctrl+Shift+P` and run `MCP: Add Server...`.
 
-Select the HTTP option and enter the URL to the MCP server endpoint. You will need the `/api/v1/mcp` route. The full URL, by default, is `http://localhost:5000/api/v1/mcp`. Name the server whatever you would like.
+Choose the HTTP option and enter the MCP endpoint URL. By default, this is `http://localhost:5000/api/v1/mcp`.
 
 The resulting `settings.json` contents will look something like this.
 
@@ -56,14 +138,18 @@ The resulting `settings.json` contents will look something like this.
 }
 ```
 
-If the server is configured properly, the Copilot plugin will list the number of tools.
+If the connection is successful, Copilot will show the number of available tools.
 
-With VS Code configured, we can now use our AI agent tool. Click the Copilot icon and open a new chat.
+You can then ask Copilot to use the PSU tool. For example:
 
-<figure><img src="../.gitbook/assets/image (307).png" alt=""><figcaption></figcaption></figure>
+```text
+Use the PSU tool to list the top 5 processes and create a PowerShell script that writes them to JSON.
+```
 
-Within the chat window, you can prompt Copilot with a question such as `Can you please list all the processes as an array of strings in a new PowerShell scripts?` Copilot will call our PSU tool and retrieve the list of processes and then generate a PowerShell script in VS Code.
+If you also expose a tool that starts a process, a prompt like this can trigger that action:
 
-<figure><img src="../.gitbook/assets/image (310).png" alt=""><figcaption></figcaption></figure>
+```text
+Use the PSU tool to start a new process named calc.
+```
 
-Because we also have an endpoint to start processes, you can also prompt Copilot to do so with a statement like: `Can you start a new process in PowerShell Universal named calc?`. This will cause the `calc.exe` process to start because the PSU endpoint will be called with that argument.
+Keep tool descriptions and parameter help clear so Copilot can choose the correct tool without trial and error.
