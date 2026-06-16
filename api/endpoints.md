@@ -30,6 +30,10 @@ The only contents that you need to provide in the editor are the script you wish
 Avoid using endpoint URLs that match internal PowerShell Universal Management API URLs, as this causes unexpected behavior. You can reference the [OpenAPI documentation](openapi.md#management-api-documentation) for the [Management API](../config/management-api.md) to verify that none of the URLs match.
 {% endhint %}
 
+{% hint style="warning" %}
+PowerShell Universal enforces a strict 1:1 mapping between a managed endpoint and its underlying script file. You cannot map multiple endpoints to the identical physical path. If you need distinct authentication or logic rules on a single path, configure a single endpoint that uses the `$Method` variable internally to route and validate traffic for different verbs.
+{% endhint %}
+
 ## HTTP Methods
 
 Endpoints can have one or more HTTP methods defined. To determine which method is used by an endpoint, use the built-in `$Method` variable.
