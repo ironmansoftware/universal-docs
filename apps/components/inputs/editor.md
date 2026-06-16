@@ -4,7 +4,7 @@ description: A text editor component for Universal Apps.
 
 # Editor
 
-The editor component is based on [Editor.js](https://editorjs.io/). It's a block editor that accepts text, links, lists, code and images.&#x20;
+The editor component is based on [Editor.js](https://editorjs.io/). It's a block editor that accepts text, links, lists, code and images.
 
 When working with the editor, you can receive data about the current document via the `OnChange` parameter. By default, data is returned in the Editor.js [JSON format](https://editorjs.io/saving-data).
 
@@ -16,13 +16,13 @@ To create a basic editor, use the `New-UDEditor` cmdlet.
 New-UDEditor
 ```
 
-The editor will be available and you can add new blocks by clicking the plus button.&#x20;
+The editor will be available and you can add new blocks by clicking the plus button.
 
 ![](<../../../.gitbook/assets/image (262).png>)
 
 ## Working with Data
 
-If you define a script block for the `-OnChange` event handler. The `$EventData` variable will contain the current status of the editor. By default, this returns the Editor.JS [JSON block format](https://editorjs.io/saving-data).&#x20;
+If you define a script block for the `-OnChange` event handler. The `$EventData` variable will contain the current status of the editor. By default, this returns the Editor.JS [JSON block format](https://editorjs.io/saving-data).
 
 ```
 New-UDEditor -OnChange {
@@ -30,7 +30,7 @@ New-UDEditor -OnChange {
 }
 ```
 
-You can also use the HTML render plugin by specifying the `-Format` parameter.&#x20;
+You can also use the HTML render plugin by specifying the `-Format` parameter.
 
 ```
 New-UDEditor -OnChange {
@@ -38,15 +38,30 @@ New-UDEditor -OnChange {
 } -Format 'html'
 ```
 
-To specify the default data for the editor, use the `-Data` parameter. You need to specify the JSON block format.&#x20;
+To specify the default data for the editor, use the `-Data` parameter. You must provide a hashtable formatted as an Editor.JS JSON block object.
 
-```
+{% hint style="info" %}
+Even if `-Format html` is specified, the `-Data` parameter always requires the default data to follow the Editor.JS JSON block object structure (e.g., a hashtable with a `blocks` array), not a raw HTML string.
+{% endhint %}
+
+```powershell
+$Data = @{
+    blocks = @(
+        @{
+            type = "paragraph"
+            data = @{
+                text = "Default Text"
+            }
+        }
+    )
+}
+
 New-UDEditor -Data $Data
 ```
 
 ## Image Support
 
-In order to support images, you will need to provide a [published folder](../../../platform/published-folders.md) in which to upload the images. Once a published folder is defined, images can be uploaded directly in the editor. They will be placed within the directory and then served through the request path.&#x20;
+In order to support images, you will need to provide a [published folder](../../../platform/published-folders.md) in which to upload the images. Once a published folder is defined, images can be uploaded directly in the editor. They will be placed within the directory and then served through the request path.
 
 ```powershell
 New-UDEditor -PublishedFolder 'MyImages'
