@@ -2,6 +2,8 @@
 description: The ultimate command center for your PowerShell environment.
 ---
 
+# Documentation has moved to [Devolutions Docs](https://docs.devolutions.net/powershell-universal)!
+
 # ❓ About
 
 <figure><img src=".gitbook/assets/image (332) (1).png" alt=""><figcaption><p>PowerShell Universal Admin Console</p></figcaption></figure>
